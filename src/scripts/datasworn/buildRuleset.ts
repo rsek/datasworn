@@ -16,6 +16,7 @@ import { cleanRuleset } from './cleanRuleset.js'
 import { mergeRulesetData } from './mergeRulesetParts.js'
 import { loadRulesetFile } from './readRulesetFile.js'
 import { writeRuleset } from './writeRuleset.js'
+import { pascalCase } from '../../schema/utils/string.js'
 
 const metadataKeys: string[] = []
 
@@ -25,7 +26,7 @@ forEach(RulesExpansion.properties, (v, k) => {
 
 /** Builds all YAML files for a given package configuration */
 export async function buildRuleset(
-	{ id, paths, pkg }: DataPackageConfig,
+	{ id, paths, type, pkg }: DataPackageConfig,
 	ajv: typeof AJV,
 	jsl: Draft07
 ) {
@@ -123,5 +124,7 @@ export async function buildRuleset(
 
 	await Promise.all(toWrite)
 
-	Log.info(`✅ Finished writing sourcebook "${id}" to ${formatPath(destDir)}`)
+	Log.info(
+		`✅ Finished writing ${pascalCase(type)} "${id}" to ${formatPath(destDir)}`
+	)
 }
