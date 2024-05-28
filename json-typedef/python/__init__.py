@@ -2400,16 +2400,7 @@ class DelveSiteDenizen:
     """
 
     frequency: 'DelveSiteDenizenFrequency'
-    max: 'int'
-    """
-    High end of the dice range for this denizen.
-    """
-
-    min: 'int'
-    """
-    Low end of the dice range for this denizen.
-    """
-
+    roll: 'DiceRange'
     name: 'Optional[Label]'
     """
     A name for the denizen, if it's different than the `name` property of the
@@ -2426,8 +2417,7 @@ class DelveSiteDenizen:
     def from_json_data(cls, data: Any) -> 'DelveSiteDenizen':
         return cls(
             _from_json_data(DelveSiteDenizenFrequency, data.get("frequency")),
-            _from_json_data(int, data.get("max")),
-            _from_json_data(int, data.get("min")),
+            _from_json_data(DiceRange, data.get("roll")),
             _from_json_data(Optional[Label], data.get("name")),
             _from_json_data(Optional[NpcID], data.get("npc")),
         )
@@ -2435,8 +2425,7 @@ class DelveSiteDenizen:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["frequency"] = _to_json_data(self.frequency)
-        data["max"] = _to_json_data(self.max)
-        data["min"] = _to_json_data(self.min)
+        data["roll"] = _to_json_data(self.roll)
         if self.name is not None:
              data["name"] = _to_json_data(self.name)
         if self.npc is not None:
@@ -2504,7 +2493,6 @@ class DelveSiteDomain:
     """
 
     description: 'Optional[MarkdownString]'
-    icon: 'Optional[SvgImageURL]'
     name_oracle: 'Optional[OracleRollableID]'
     """
     An oracle table ID containing place name elements. For examples, see
@@ -2530,7 +2518,6 @@ class DelveSiteDomain:
             _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
-            _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[OracleRollableID], data.get("name_oracle")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[Tags], data.get("tags")),
@@ -2551,8 +2538,6 @@ class DelveSiteDomain:
              data["canonical_name"] = _to_json_data(self.canonical_name)
         if self.description is not None:
              data["description"] = _to_json_data(self.description)
-        if self.icon is not None:
-             data["icon"] = _to_json_data(self.icon)
         if self.name_oracle is not None:
              data["name_oracle"] = _to_json_data(self.name_oracle)
         if self.suggestions is not None:
@@ -2713,6 +2698,37 @@ class DiceExpression:
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
+
+@dataclass
+class DiceRange:
+    """
+    Represents a range of dice roll results, bounded by `min` and `max`
+    (inclusive).
+    """
+
+    max: 'int'
+    """
+    High end of the dice range.
+    """
+
+    min: 'int'
+    """
+    Low end of the dice range.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'DiceRange':
+        return cls(
+            _from_json_data(int, data.get("max")),
+            _from_json_data(int, data.get("min")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["max"] = _to_json_data(self.max)
+        data["min"] = _to_json_data(self.min)
+        return data
 
 @dataclass
 class DictKey:
@@ -6181,16 +6197,7 @@ class OracleTableRowText:
     Represents a row in an oracle table, with a single text cell.
     """
 
-    max: 'int'
-    """
-    High end of the dice range for this table row.
-    """
-
-    min: 'int'
-    """
-    Low end of the dice range for this table row.
-    """
-
+    roll: 'DiceRange'
     text: 'MarkdownString'
     """
     The primary text content of this row.
@@ -6215,8 +6222,7 @@ class OracleTableRowText:
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleTableRowText':
         return cls(
-            _from_json_data(int, data.get("max")),
-            _from_json_data(int, data.get("min")),
+            _from_json_data(DiceRange, data.get("roll")),
             _from_json_data(MarkdownString, data.get("text")),
             _from_json_data(Optional[I18nHints], data.get("_i18n")),
             _from_json_data(Optional[OracleRollableID], data.get("embed_table")),
@@ -6229,8 +6235,7 @@ class OracleTableRowText:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["max"] = _to_json_data(self.max)
-        data["min"] = _to_json_data(self.min)
+        data["roll"] = _to_json_data(self.roll)
         data["text"] = _to_json_data(self.text)
         if self.i18n is not None:
              data["_i18n"] = _to_json_data(self.i18n)
@@ -6254,16 +6259,7 @@ class OracleTableRowText2:
     Represents a row in an oracle table that provides a secondary text field.
     """
 
-    max: 'int'
-    """
-    High end of the dice range for this table row.
-    """
-
-    min: 'int'
-    """
-    Low end of the dice range for this table row.
-    """
-
+    roll: 'DiceRange'
     text: 'MarkdownString'
     """
     The primary text content of this row.
@@ -6289,8 +6285,7 @@ class OracleTableRowText2:
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleTableRowText2':
         return cls(
-            _from_json_data(int, data.get("max")),
-            _from_json_data(int, data.get("min")),
+            _from_json_data(DiceRange, data.get("roll")),
             _from_json_data(MarkdownString, data.get("text")),
             _from_json_data(MarkdownString, data.get("text2")),
             _from_json_data(Optional[I18nHints], data.get("_i18n")),
@@ -6304,8 +6299,7 @@ class OracleTableRowText2:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["max"] = _to_json_data(self.max)
-        data["min"] = _to_json_data(self.min)
+        data["roll"] = _to_json_data(self.roll)
         data["text"] = _to_json_data(self.text)
         data["text2"] = _to_json_data(self.text2)
         if self.i18n is not None:
@@ -6330,16 +6324,7 @@ class OracleTableRowText3:
     Represents a row in an oracle table with 3 text cells.
     """
 
-    max: 'int'
-    """
-    High end of the dice range for this table row.
-    """
-
-    min: 'int'
-    """
-    Low end of the dice range for this table row.
-    """
-
+    roll: 'DiceRange'
     text: 'MarkdownString'
     """
     The primary text content of this row.
@@ -6366,8 +6351,7 @@ class OracleTableRowText3:
     @classmethod
     def from_json_data(cls, data: Any) -> 'OracleTableRowText3':
         return cls(
-            _from_json_data(int, data.get("max")),
-            _from_json_data(int, data.get("min")),
+            _from_json_data(DiceRange, data.get("roll")),
             _from_json_data(MarkdownString, data.get("text")),
             _from_json_data(MarkdownString, data.get("text2")),
             _from_json_data(MarkdownString, data.get("text3")),
@@ -6382,8 +6366,7 @@ class OracleTableRowText3:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["max"] = _to_json_data(self.max)
-        data["min"] = _to_json_data(self.min)
+        data["roll"] = _to_json_data(self.roll)
         data["text"] = _to_json_data(self.text)
         data["text2"] = _to_json_data(self.text2)
         data["text3"] = _to_json_data(self.text3)
@@ -8923,8 +8906,7 @@ class TruthOptionTable:
 class TruthOption:
     description: 'MarkdownString'
     quest_starter: 'MarkdownString'
-    max: 'Optional[int]'
-    min: 'Optional[int]'
+    roll: 'DiceRange'
     summary: 'Optional[MarkdownString]'
     table: 'Optional[TruthOptionTable]'
     """
@@ -8938,8 +8920,7 @@ class TruthOption:
         return cls(
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(MarkdownString, data.get("quest_starter")),
-            _from_json_data(Optional[int], data.get("max")),
-            _from_json_data(Optional[int], data.get("min")),
+            _from_json_data(DiceRange, data.get("roll")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
             _from_json_data(Optional[TruthOptionTable], data.get("table")),
         )
@@ -8948,10 +8929,7 @@ class TruthOption:
         data: Dict[str, Any] = {}
         data["description"] = _to_json_data(self.description)
         data["quest_starter"] = _to_json_data(self.quest_starter)
-        if self.max is not None:
-             data["max"] = _to_json_data(self.max)
-        if self.min is not None:
-             data["min"] = _to_json_data(self.min)
+        data["roll"] = _to_json_data(self.roll)
         if self.summary is not None:
              data["summary"] = _to_json_data(self.summary)
         if self.table is not None:

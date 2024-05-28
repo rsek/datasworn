@@ -1366,13 +1366,8 @@ pub struct DelveSiteDenizen {
     #[serde(rename = "frequency")]
     pub frequency: DelveSiteDenizenFrequency,
 
-    /// High end of the dice range for this denizen.
-    #[serde(rename = "max")]
-    pub max: i16,
-
-    /// Low end of the dice range for this denizen.
-    #[serde(rename = "min")]
-    pub min: i16,
+    #[serde(rename = "roll")]
+    pub roll: DiceRange,
 
     /// A name for the denizen, if it's different than the `name` property of
     /// the NPC.
@@ -1453,10 +1448,6 @@ pub struct DelveSiteDomain {
     #[serde(rename = "description")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<Box<MarkdownString>>,
-
-    #[serde(rename = "icon")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub icon: Option<Box<SvgImageUrl>>,
 
     /// An oracle table ID containing place name elements. For examples, see
     /// oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in
@@ -1550,6 +1541,19 @@ pub type DelveSiteThemeId = String;
 
 /// A simple dice roll expression with an optional modifer.
 pub type DiceExpression = String;
+
+/// Represents a range of dice roll results, bounded by `min` and `max`
+/// (inclusive).
+#[derive(Serialize, Deserialize)]
+pub struct DiceRange {
+    /// High end of the dice range.
+    #[serde(rename = "max")]
+    pub max: i16,
+
+    /// Low end of the dice range.
+    #[serde(rename = "min")]
+    pub min: i16,
+}
 
 /// A `snake_case` key used in a Datasworn dictionary object.
 pub type DictKey = String;
@@ -3667,13 +3671,8 @@ pub struct OracleTableRollableTableText3 {
 /// Represents a row in an oracle table, with a single text cell.
 #[derive(Serialize, Deserialize)]
 pub struct OracleTableRowText {
-    /// High end of the dice range for this table row.
-    #[serde(rename = "max")]
-    pub max: i16,
-
-    /// Low end of the dice range for this table row.
-    #[serde(rename = "min")]
-    pub min: i16,
+    #[serde(rename = "roll")]
+    pub roll: DiceRange,
 
     /// The primary text content of this row.
     #[serde(rename = "text")]
@@ -3714,13 +3713,8 @@ pub struct OracleTableRowText {
 /// Represents a row in an oracle table that provides a secondary text field.
 #[derive(Serialize, Deserialize)]
 pub struct OracleTableRowText2 {
-    /// High end of the dice range for this table row.
-    #[serde(rename = "max")]
-    pub max: i16,
-
-    /// Low end of the dice range for this table row.
-    #[serde(rename = "min")]
-    pub min: i16,
+    #[serde(rename = "roll")]
+    pub roll: DiceRange,
 
     /// The primary text content of this row.
     #[serde(rename = "text")]
@@ -3764,13 +3758,8 @@ pub struct OracleTableRowText2 {
 /// Represents a row in an oracle table with 3 text cells.
 #[derive(Serialize, Deserialize)]
 pub struct OracleTableRowText3 {
-    /// High end of the dice range for this table row.
-    #[serde(rename = "max")]
-    pub max: i16,
-
-    /// Low end of the dice range for this table row.
-    #[serde(rename = "min")]
-    pub min: i16,
+    #[serde(rename = "roll")]
+    pub roll: DiceRange,
 
     /// The primary text content of this row.
     #[serde(rename = "text")]
@@ -5222,13 +5211,8 @@ pub struct TruthOption {
     #[serde(rename = "quest_starter")]
     pub questStarter: MarkdownString,
 
-    #[serde(rename = "max")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub max: Option<Box<i16>>,
-
-    #[serde(rename = "min")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub min: Option<Box<i16>>,
+    #[serde(rename = "roll")]
+    pub roll: DiceRange,
 
     #[serde(rename = "summary")]
     #[serde(skip_serializing_if = "Option::is_none")]

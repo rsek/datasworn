@@ -15,11 +15,8 @@ public class DelveSiteDenizen {
     @JsonProperty("frequency")
     private DelveSiteDenizenFrequency frequency;
 
-    @JsonProperty("max")
-    private Short max;
-
-    @JsonProperty("min")
-    private Short min;
+    @JsonProperty("roll")
+    private DiceRange roll;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("name")
@@ -47,35 +44,17 @@ public class DelveSiteDenizen {
     }
 
     /**
-     * Getter for max.<p>
-     * High end of the dice range for this denizen.
+     * Getter for roll.<p>
      */
-    public Short getMax() {
-        return max;
+    public DiceRange getRoll() {
+        return roll;
     }
 
     /**
-     * Setter for max.<p>
-     * High end of the dice range for this denizen.
+     * Setter for roll.<p>
      */
-    public void setMax(Short max) {
-        this.max = max;
-    }
-
-    /**
-     * Getter for min.<p>
-     * Low end of the dice range for this denizen.
-     */
-    public Short getMin() {
-        return min;
-    }
-
-    /**
-     * Setter for min.<p>
-     * Low end of the dice range for this denizen.
-     */
-    public void setMin(Short min) {
-        this.min = min;
+    public void setRoll(DiceRange roll) {
+        this.roll = roll;
     }
 
     /**

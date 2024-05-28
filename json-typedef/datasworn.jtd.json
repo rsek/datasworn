@@ -1946,6 +1946,25 @@
 				"description": "Provides string templates that may be used in place of the static row text from `OracleTableRow#text`, `OracleTableRow#text2`, and `OracleTableRow#text3`.\n\n  These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text:some_oracle_table_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#text` from the target oracle table ID."
 			}
 		},
+		"DiceRange": {
+			"properties": {
+				"min": {
+					"type": "int16",
+					"metadata": {
+						"description": "Low end of the dice range."
+					}
+				},
+				"max": {
+					"type": "int16",
+					"metadata": {
+						"description": "High end of the dice range."
+					}
+				}
+			},
+			"metadata": {
+				"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive)."
+			}
+		},
 		"OracleCollection": {
 			"discriminator": "oracle_type",
 			"mapping": {
@@ -3142,17 +3161,8 @@
 						"description": "The primary text content of this row."
 					}
 				},
-				"min": {
-					"type": "int16",
-					"metadata": {
-						"description": "Low end of the dice range for this table row."
-					}
-				},
-				"max": {
-					"type": "int16",
-					"metadata": {
-						"description": "High end of the dice range for this table row."
-					}
+				"roll": {
+					"ref": "DiceRange"
 				}
 			},
 			"optionalProperties": {
@@ -3198,17 +3208,8 @@
 						"description": "The primary text content of this row."
 					}
 				},
-				"min": {
-					"type": "int16",
-					"metadata": {
-						"description": "Low end of the dice range for this table row."
-					}
-				},
-				"max": {
-					"type": "int16",
-					"metadata": {
-						"description": "High end of the dice range for this table row."
-					}
+				"roll": {
+					"ref": "DiceRange"
 				},
 				"text2": {
 					"ref": "MarkdownString"
@@ -3257,17 +3258,8 @@
 						"description": "The primary text content of this row."
 					}
 				},
-				"min": {
-					"type": "int16",
-					"metadata": {
-						"description": "Low end of the dice range for this table row."
-					}
-				},
-				"max": {
-					"type": "int16",
-					"metadata": {
-						"description": "High end of the dice range for this table row."
-					}
+				"roll": {
+					"ref": "DiceRange"
 				},
 				"text2": {
 					"ref": "MarkdownString"
@@ -5599,6 +5591,9 @@
 		},
 		"TruthOption": {
 			"properties": {
+				"roll": {
+					"ref": "DiceRange"
+				},
 				"description": {
 					"ref": "MarkdownString"
 				},
@@ -5607,12 +5602,6 @@
 				}
 			},
 			"optionalProperties": {
-				"min": {
-					"type": "int16"
-				},
-				"max": {
-					"type": "int16"
-				},
 				"summary": {
 					"ref": "MarkdownString"
 				},
@@ -6003,20 +5992,11 @@
 		},
 		"DelveSiteDenizen": {
 			"properties": {
-				"min": {
-					"type": "int16",
-					"metadata": {
-						"description": "Low end of the dice range for this denizen."
-					}
-				},
-				"max": {
-					"type": "int16",
-					"metadata": {
-						"description": "High end of the dice range for this denizen."
-					}
-				},
 				"frequency": {
 					"ref": "DelveSiteDenizenFrequency"
+				},
+				"roll": {
+					"ref": "DiceRange"
 				}
 			},
 			"optionalProperties": {
@@ -6106,9 +6086,6 @@
 				},
 				"description": {
 					"ref": "MarkdownString"
-				},
-				"icon": {
-					"ref": "SvgImageUrl"
 				},
 				"name_oracle": {
 					"ref": "OracleRollableId",

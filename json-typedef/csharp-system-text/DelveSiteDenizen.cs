@@ -13,17 +13,8 @@ namespace Datasworn
         [JsonPropertyName("frequency")]
         public DelveSiteDenizenFrequency Frequency { get; set; }
 
-        /// <summary>
-        /// High end of the dice range for this denizen.
-        /// </summary>
-        [JsonPropertyName("max")]
-        public short Max { get; set; }
-
-        /// <summary>
-        /// Low end of the dice range for this denizen.
-        /// </summary>
-        [JsonPropertyName("min")]
-        public short Min { get; set; }
+        [JsonPropertyName("roll")]
+        public DiceRange Roll { get; set; }
 
         /// <summary>
         /// A name for the denizen, if it's different than the `name` property

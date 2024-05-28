@@ -1801,12 +1801,7 @@ module Datasworn
   # in Ironsworn: Delve.
   class DelveSiteDenizen
     attr_accessor :frequency
-
-    # High end of the dice range for this denizen.
-    attr_accessor :max
-
-    # Low end of the dice range for this denizen.
-    attr_accessor :min
+    attr_accessor :roll
 
     # A name for the denizen, if it's different than the `name` property of
     # the NPC.
@@ -1818,8 +1813,7 @@ module Datasworn
     def self.from_json_data(data)
       out = DelveSiteDenizen.new
       out.frequency = Datasworn::from_json_data(DelveSiteDenizenFrequency, data["frequency"])
-      out.max = Datasworn::from_json_data(Integer, data["max"])
-      out.min = Datasworn::from_json_data(Integer, data["min"])
+      out.roll = Datasworn::from_json_data(DiceRange, data["roll"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.npc = Datasworn::from_json_data(NpcID, data["npc"])
       out
@@ -1828,8 +1822,7 @@ module Datasworn
     def to_json_data
       data = {}
       data["frequency"] = Datasworn::to_json_data(frequency)
-      data["max"] = Datasworn::to_json_data(max)
-      data["min"] = Datasworn::to_json_data(min)
+      data["roll"] = Datasworn::to_json_data(roll)
       data["name"] = Datasworn::to_json_data(name) unless name.nil?
       data["npc"] = Datasworn::to_json_data(npc) unless npc.nil?
       data
@@ -1912,7 +1905,6 @@ module Datasworn
     # different from `name`.
     attr_accessor :canonical_name
     attr_accessor :description
-    attr_accessor :icon
 
     # An oracle table ID containing place name elements. For examples, see
     # oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in
@@ -1935,7 +1927,6 @@ module Datasworn
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
-      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
       out.name_oracle = Datasworn::from_json_data(OracleRollableID, data["name_oracle"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
       out.tags = Datasworn::from_json_data(Tags, data["tags"])
@@ -1954,7 +1945,6 @@ module Datasworn
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["description"] = Datasworn::to_json_data(description) unless description.nil?
-      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
       data["name_oracle"] = Datasworn::to_json_data(name_oracle) unless name_oracle.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
@@ -2106,6 +2096,30 @@ module Datasworn
 
     def to_json_data
       Datasworn.to_json_data(value)
+    end
+  end
+
+  # Represents a range of dice roll results, bounded by `min` and `max`
+  # (inclusive).
+  class DiceRange
+    # High end of the dice range.
+    attr_accessor :max
+
+    # Low end of the dice range.
+    attr_accessor :min
+
+    def self.from_json_data(data)
+      out = DiceRange.new
+      out.max = Datasworn::from_json_data(Integer, data["max"])
+      out.min = Datasworn::from_json_data(Integer, data["min"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["max"] = Datasworn::to_json_data(max)
+      data["min"] = Datasworn::to_json_data(min)
+      data
     end
   end
 
@@ -4817,11 +4831,7 @@ module Datasworn
 
   # Represents a row in an oracle table, with a single text cell.
   class OracleTableRowText
-    # High end of the dice range for this table row.
-    attr_accessor :max
-
-    # Low end of the dice range for this table row.
-    attr_accessor :min
+    attr_accessor :roll
 
     # The primary text content of this row.
     attr_accessor :text
@@ -4839,8 +4849,7 @@ module Datasworn
 
     def self.from_json_data(data)
       out = OracleTableRowText.new
-      out.max = Datasworn::from_json_data(Integer, data["max"])
-      out.min = Datasworn::from_json_data(Integer, data["min"])
+      out.roll = Datasworn::from_json_data(DiceRange, data["roll"])
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
       out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
       out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
@@ -4854,8 +4863,7 @@ module Datasworn
 
     def to_json_data
       data = {}
-      data["max"] = Datasworn::to_json_data(max)
-      data["min"] = Datasworn::to_json_data(min)
+      data["roll"] = Datasworn::to_json_data(roll)
       data["text"] = Datasworn::to_json_data(text)
       data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
       data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
@@ -4870,11 +4878,7 @@ module Datasworn
 
   # Represents a row in an oracle table that provides a secondary text field.
   class OracleTableRowText2
-    # High end of the dice range for this table row.
-    attr_accessor :max
-
-    # Low end of the dice range for this table row.
-    attr_accessor :min
+    attr_accessor :roll
 
     # The primary text content of this row.
     attr_accessor :text
@@ -4893,8 +4897,7 @@ module Datasworn
 
     def self.from_json_data(data)
       out = OracleTableRowText2.new
-      out.max = Datasworn::from_json_data(Integer, data["max"])
-      out.min = Datasworn::from_json_data(Integer, data["min"])
+      out.roll = Datasworn::from_json_data(DiceRange, data["roll"])
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
       out.text2 = Datasworn::from_json_data(MarkdownString, data["text2"])
       out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
@@ -4909,8 +4912,7 @@ module Datasworn
 
     def to_json_data
       data = {}
-      data["max"] = Datasworn::to_json_data(max)
-      data["min"] = Datasworn::to_json_data(min)
+      data["roll"] = Datasworn::to_json_data(roll)
       data["text"] = Datasworn::to_json_data(text)
       data["text2"] = Datasworn::to_json_data(text2)
       data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
@@ -4926,11 +4928,7 @@ module Datasworn
 
   # Represents a row in an oracle table with 3 text cells.
   class OracleTableRowText3
-    # High end of the dice range for this table row.
-    attr_accessor :max
-
-    # Low end of the dice range for this table row.
-    attr_accessor :min
+    attr_accessor :roll
 
     # The primary text content of this row.
     attr_accessor :text
@@ -4950,8 +4948,7 @@ module Datasworn
 
     def self.from_json_data(data)
       out = OracleTableRowText3.new
-      out.max = Datasworn::from_json_data(Integer, data["max"])
-      out.min = Datasworn::from_json_data(Integer, data["min"])
+      out.roll = Datasworn::from_json_data(DiceRange, data["roll"])
       out.text = Datasworn::from_json_data(MarkdownString, data["text"])
       out.text2 = Datasworn::from_json_data(MarkdownString, data["text2"])
       out.text3 = Datasworn::from_json_data(MarkdownString, data["text3"])
@@ -4967,8 +4964,7 @@ module Datasworn
 
     def to_json_data
       data = {}
-      data["max"] = Datasworn::to_json_data(max)
-      data["min"] = Datasworn::to_json_data(min)
+      data["roll"] = Datasworn::to_json_data(roll)
       data["text"] = Datasworn::to_json_data(text)
       data["text2"] = Datasworn::to_json_data(text2)
       data["text3"] = Datasworn::to_json_data(text3)
@@ -7304,8 +7300,7 @@ module Datasworn
   class TruthOption
     attr_accessor :description
     attr_accessor :quest_starter
-    attr_accessor :max
-    attr_accessor :min
+    attr_accessor :roll
     attr_accessor :summary
 
     # Represents a basic rollable oracle table with one roll column and one text
@@ -7316,8 +7311,7 @@ module Datasworn
       out = TruthOption.new
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.quest_starter = Datasworn::from_json_data(MarkdownString, data["quest_starter"])
-      out.max = Datasworn::from_json_data(Integer, data["max"])
-      out.min = Datasworn::from_json_data(Integer, data["min"])
+      out.roll = Datasworn::from_json_data(DiceRange, data["roll"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
       out.table = Datasworn::from_json_data(TruthOptionTable, data["table"])
       out
@@ -7327,8 +7321,7 @@ module Datasworn
       data = {}
       data["description"] = Datasworn::to_json_data(description)
       data["quest_starter"] = Datasworn::to_json_data(quest_starter)
-      data["max"] = Datasworn::to_json_data(max) unless max.nil?
-      data["min"] = Datasworn::to_json_data(min) unless min.nil?
+      data["roll"] = Datasworn::to_json_data(roll)
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
       data["table"] = Datasworn::to_json_data(table) unless table.nil?
       data

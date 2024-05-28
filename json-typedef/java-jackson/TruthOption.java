@@ -14,13 +14,8 @@ public class TruthOption {
     @JsonProperty("quest_starter")
     private MarkdownString questStarter;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("max")
-    private Short max;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("min")
-    private Short min;
+    @JsonProperty("roll")
+    private DiceRange roll;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("summary")
@@ -62,31 +57,17 @@ public class TruthOption {
     }
 
     /**
-     * Getter for max.<p>
+     * Getter for roll.<p>
      */
-    public Short getMax() {
-        return max;
+    public DiceRange getRoll() {
+        return roll;
     }
 
     /**
-     * Setter for max.<p>
+     * Setter for roll.<p>
      */
-    public void setMax(Short max) {
-        this.max = max;
-    }
-
-    /**
-     * Getter for min.<p>
-     */
-    public Short getMin() {
-        return min;
-    }
-
-    /**
-     * Setter for min.<p>
-     */
-    public void setMin(Short min) {
-        this.min = min;
+    public void setRoll(DiceRange roll) {
+        this.roll = roll;
     }
 
     /**

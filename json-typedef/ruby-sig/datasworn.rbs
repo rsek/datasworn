@@ -626,8 +626,7 @@ module Datasworn
 
   class DelveSiteDenizen
     attr_accessor frequency: DelveSiteDenizenFrequency
-    attr_accessor max: Integer
-    attr_accessor min: Integer
+    attr_accessor roll: DiceRange
     attr_accessor name: Label?
     attr_accessor npc: NpcID?
 
@@ -668,7 +667,6 @@ module Datasworn
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
     attr_accessor description: MarkdownString?
-    attr_accessor icon: SvgImageURL?
     attr_accessor name_oracle: OracleRollableID?
     attr_accessor suggestions: Suggestions?
     attr_accessor tags: Tags?
@@ -730,6 +728,14 @@ module Datasworn
     attr_accessor value: String
 
     def self.from_json_data: (untyped) -> DiceExpression
+    def to_json_data: () -> untyped
+  end
+
+  class DiceRange
+    attr_accessor max: Integer
+    attr_accessor min: Integer
+
+    def self.from_json_data: (untyped) -> DiceRange
     def to_json_data: () -> untyped
   end
 
@@ -1695,8 +1701,7 @@ module Datasworn
   end
 
   class OracleTableRowText
-    attr_accessor max: Integer
-    attr_accessor min: Integer
+    attr_accessor roll: DiceRange
     attr_accessor text: MarkdownString
     attr_accessor i18n: I18nHints?
     attr_accessor embed_table: OracleRollableID?
@@ -1711,8 +1716,7 @@ module Datasworn
   end
 
   class OracleTableRowText2
-    attr_accessor max: Integer
-    attr_accessor min: Integer
+    attr_accessor roll: DiceRange
     attr_accessor text: MarkdownString
     attr_accessor text2: MarkdownString
     attr_accessor i18n: I18nHints?
@@ -1728,8 +1732,7 @@ module Datasworn
   end
 
   class OracleTableRowText3
-    attr_accessor max: Integer
-    attr_accessor min: Integer
+    attr_accessor roll: DiceRange
     attr_accessor text: MarkdownString
     attr_accessor text2: MarkdownString
     attr_accessor text3: MarkdownString
@@ -2577,8 +2580,7 @@ module Datasworn
   class TruthOption
     attr_accessor description: MarkdownString
     attr_accessor quest_starter: MarkdownString
-    attr_accessor max: Integer?
-    attr_accessor min: Integer?
+    attr_accessor roll: DiceRange
     attr_accessor summary: MarkdownString?
     attr_accessor table: TruthOptionTable?
 

@@ -3062,6 +3062,23 @@
 			},
 			"additionalProperties": false
 		},
+		"DiceRange": {
+			"title": "DiceRange",
+			"type": "object",
+			"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+			"required": ["min", "max"],
+			"properties": {
+				"min": {
+					"type": "integer",
+					"description": "Low end of the dice range."
+				},
+				"max": {
+					"type": "integer",
+					"description": "High end of the dice range."
+				}
+			},
+			"additionalProperties": false
+		},
 		"OracleCollection": {
 			"title": "OracleCollection",
 			"type": "object",
@@ -3522,34 +3539,20 @@
 			"description": "Represents a row in an oracle table, with a single text cell.",
 			"required": ["text"],
 			"properties": {
-				"min": {
-					"description": "Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
-					"default": null,
-					"anyOf": [
-						{
-							"type": "integer",
-							"description": "Low end of the dice range for this table row."
-						},
-						{
-							"type": "null"
-						}
-					]
-				},
-				"max": {
-					"description": "High end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
-					"default": null,
-					"anyOf": [
-						{
-							"type": "integer",
-							"description": "High end of the dice range for this table row."
-						},
-						{
-							"type": "null"
-						}
-					]
-				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
+				},
+				"roll": {
+					"description": "`null` represents an unrollable row, included only for rendering purposes.",
+					"default": null,
+					"anyOf": [
+						{
+							"$ref": "#/definitions/DiceRange"
+						},
+						{
+							"type": "null"
+						}
+					]
 				},
 				"text": {
 					"$ref": "#/definitions/MarkdownString",
@@ -3590,34 +3593,20 @@
 			"description": "Represents a row in an oracle table that provides a secondary text field.",
 			"required": ["text", "text2"],
 			"properties": {
-				"min": {
-					"description": "Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
-					"default": null,
-					"anyOf": [
-						{
-							"type": "integer",
-							"description": "Low end of the dice range for this table row."
-						},
-						{
-							"type": "null"
-						}
-					]
-				},
-				"max": {
-					"description": "High end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
-					"default": null,
-					"anyOf": [
-						{
-							"type": "integer",
-							"description": "High end of the dice range for this table row."
-						},
-						{
-							"type": "null"
-						}
-					]
-				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
+				},
+				"roll": {
+					"description": "`null` represents an unrollable row, included only for rendering purposes.",
+					"default": null,
+					"anyOf": [
+						{
+							"$ref": "#/definitions/DiceRange"
+						},
+						{
+							"type": "null"
+						}
+					]
 				},
 				"text": {
 					"$ref": "#/definitions/MarkdownString",
@@ -3669,34 +3658,20 @@
 			"description": "Represents a row in an oracle table with 3 text cells.",
 			"required": ["text", "text2", "text3"],
 			"properties": {
-				"min": {
-					"description": "Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
-					"default": null,
-					"anyOf": [
-						{
-							"type": "integer",
-							"description": "Low end of the dice range for this table row."
-						},
-						{
-							"type": "null"
-						}
-					]
-				},
-				"max": {
-					"description": "High end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.",
-					"default": null,
-					"anyOf": [
-						{
-							"type": "integer",
-							"description": "High end of the dice range for this table row."
-						},
-						{
-							"type": "null"
-						}
-					]
-				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
+				},
+				"roll": {
+					"description": "`null` represents an unrollable row, included only for rendering purposes.",
+					"default": null,
+					"anyOf": [
+						{
+							"$ref": "#/definitions/DiceRange"
+						},
+						{
+							"type": "null"
+						}
+					]
 				},
 				"text": {
 					"$ref": "#/definitions/MarkdownString",
@@ -7188,13 +7163,10 @@
 		"TruthOption": {
 			"title": "TruthOption",
 			"type": "object",
-			"required": ["description", "quest_starter"],
+			"required": ["roll", "description", "quest_starter"],
 			"properties": {
-				"min": {
-					"type": "integer"
-				},
-				"max": {
-					"type": "integer"
+				"roll": {
+					"$ref": "#/definitions/DiceRange"
 				},
 				"summary": {
 					"$ref": "#/definitions/MarkdownString"
@@ -7531,229 +7503,361 @@
 							"type": "array",
 							"items": [
 								{
+									"title": "DelveSiteDenizenStatic",
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 1
-										},
-										"max": {
-											"type": "number",
-											"const": 27
-										},
 										"frequency": {
 											"type": "string",
 											"const": "very_common"
+										},
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 1
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 27
+												}
+											}
 										}
 									},
 									"additionalProperties": true
 								},
 								{
+									"title": "DelveSiteDenizenStatic",
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 28
-										},
-										"max": {
-											"type": "number",
-											"const": 41
-										},
 										"frequency": {
 											"type": "string",
 											"const": "common"
+										},
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 28
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 41
+												}
+											}
 										}
 									},
 									"additionalProperties": true
 								},
 								{
+									"title": "DelveSiteDenizenStatic",
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 42
-										},
-										"max": {
-											"type": "number",
-											"const": 55
-										},
 										"frequency": {
 											"type": "string",
 											"const": "common"
+										},
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 42
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 55
+												}
+											}
 										}
 									},
 									"additionalProperties": true
 								},
 								{
+									"title": "DelveSiteDenizenStatic",
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 56
-										},
-										"max": {
-											"type": "number",
-											"const": 69
-										},
 										"frequency": {
 											"type": "string",
 											"const": "common"
+										},
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 56
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 69
+												}
+											}
 										}
 									},
 									"additionalProperties": true
 								},
 								{
+									"title": "DelveSiteDenizenStatic",
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 70
-										},
-										"max": {
-											"type": "number",
-											"const": 75
-										},
 										"frequency": {
 											"type": "string",
 											"const": "uncommon"
+										},
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 70
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 75
+												}
+											}
 										}
 									},
 									"additionalProperties": true
 								},
 								{
+									"title": "DelveSiteDenizenStatic",
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 76
-										},
-										"max": {
-											"type": "number",
-											"const": 81
-										},
 										"frequency": {
 											"type": "string",
 											"const": "uncommon"
+										},
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 76
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 81
+												}
+											}
 										}
 									},
 									"additionalProperties": true
 								},
 								{
+									"title": "DelveSiteDenizenStatic",
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 82
-										},
-										"max": {
-											"type": "number",
-											"const": 87
-										},
 										"frequency": {
 											"type": "string",
 											"const": "uncommon"
+										},
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 82
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 87
+												}
+											}
 										}
 									},
 									"additionalProperties": true
 								},
 								{
+									"title": "DelveSiteDenizenStatic",
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 88
-										},
-										"max": {
-											"type": "number",
-											"const": 93
-										},
 										"frequency": {
 											"type": "string",
 											"const": "uncommon"
+										},
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 88
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 93
+												}
+											}
 										}
 									},
 									"additionalProperties": true
 								},
 								{
+									"title": "DelveSiteDenizenStatic",
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 94
-										},
-										"max": {
-											"type": "number",
-											"const": 95
-										},
 										"frequency": {
 											"type": "string",
 											"const": "rare"
+										},
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 94
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 95
+												}
+											}
 										}
 									},
 									"additionalProperties": true
 								},
 								{
+									"title": "DelveSiteDenizenStatic",
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 96
-										},
-										"max": {
-											"type": "number",
-											"const": 97
-										},
 										"frequency": {
 											"type": "string",
 											"const": "rare"
+										},
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 96
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 97
+												}
+											}
 										}
 									},
 									"additionalProperties": true
 								},
 								{
+									"title": "DelveSiteDenizenStatic",
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 98
-										},
-										"max": {
-											"type": "number",
-											"const": 99
-										},
 										"frequency": {
 											"type": "string",
 											"const": "rare"
+										},
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 98
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 99
+												}
+											}
 										}
 									},
 									"additionalProperties": true
 								},
 								{
+									"title": "DelveSiteDenizenStatic",
 									"type": "object",
-									"required": ["min", "max", "frequency"],
+									"required": ["frequency", "roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 100
-										},
-										"max": {
-											"type": "number",
-											"const": 100
-										},
 										"frequency": {
 											"type": "string",
 											"const": "unforeseen"
+										},
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 100
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 100
+												}
+											}
 										}
 									},
 									"additionalProperties": true
@@ -7776,7 +7880,7 @@
 			"title": "DelveSiteDenizen",
 			"type": "object",
 			"description": "Represents an entry in a site denizen matrix. Denizen matrices are described in Ironsworn: Delve.",
-			"required": ["min", "max", "frequency"],
+			"required": ["frequency", "roll"],
 			"properties": {
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -7786,16 +7890,11 @@
 					"$ref": "#/definitions/NpcId",
 					"description": "The ID of the relevant NPC entry, if one is specified."
 				},
-				"min": {
-					"type": "integer",
-					"description": "Low end of the dice range for this denizen."
-				},
-				"max": {
-					"type": "integer",
-					"description": "High end of the dice range for this denizen."
-				},
 				"frequency": {
 					"$ref": "#/definitions/DelveSiteDenizenFrequency"
+				},
+				"roll": {
+					"$ref": "#/definitions/DiceRange"
 				}
 			},
 			"additionalProperties": false
@@ -7830,9 +7929,6 @@
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "An oracle table ID containing place name elements. For examples, see oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in oracle collection ID `delve/collections/oracles/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (ID: delve/oracles/site_name/format) to create random names for delve sites."
 				},
-				"icon": {
-					"$ref": "#/definitions/SvgImageUrl"
-				},
 				"summary": {
 					"$ref": "#/definitions/MarkdownString",
 					"deprecated": true
@@ -7850,183 +7946,291 @@
 							"items": [
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 21
-										},
-										"max": {
-											"type": "number",
-											"const": 43
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 21
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 43
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 44
-										},
-										"max": {
-											"type": "number",
-											"const": 56
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 44
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 56
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 57
-										},
-										"max": {
-											"type": "number",
-											"const": 64
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 57
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 64
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 65
-										},
-										"max": {
-											"type": "number",
-											"const": 68
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 65
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 68
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 69
-										},
-										"max": {
-											"type": "number",
-											"const": 72
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 69
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 72
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 73
-										},
-										"max": {
-											"type": "number",
-											"const": 76
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 73
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 76
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 77
-										},
-										"max": {
-											"type": "number",
-											"const": 80
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 77
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 80
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 81
-										},
-										"max": {
-											"type": "number",
-											"const": 84
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 81
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 84
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 85
-										},
-										"max": {
-											"type": "number",
-											"const": 88
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 85
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 88
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 89
-										},
-										"max": {
-											"type": "number",
-											"const": 98
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 89
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 98
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 99
-										},
-										"max": {
-											"type": "number",
-											"const": 99
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 99
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 99
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 100
-										},
-										"max": {
-											"type": "number",
-											"const": 100
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 100
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 100
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								}
 							],
 							"minItems": 12,
@@ -8048,78 +8252,123 @@
 							"items": [
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 31
-										},
-										"max": {
-											"type": "number",
-											"const": 33
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 31
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 33
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 34
-										},
-										"max": {
-											"type": "number",
-											"const": 36
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 34
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 36
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 37
-										},
-										"max": {
-											"type": "number",
-											"const": 39
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 37
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 39
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 40
-										},
-										"max": {
-											"type": "number",
-											"const": 42
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 40
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 42
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 43
-										},
-										"max": {
-											"type": "number",
-											"const": 45
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 43
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 45
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								}
 							],
 							"minItems": 5,
@@ -8189,78 +8438,123 @@
 							"items": [
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 1
-										},
-										"max": {
-											"type": "number",
-											"const": 4
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 1
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 4
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 5
-										},
-										"max": {
-											"type": "number",
-											"const": 8
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 5
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 8
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 9
-										},
-										"max": {
-											"type": "number",
-											"const": 12
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 9
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 12
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 13
-										},
-										"max": {
-											"type": "number",
-											"const": 16
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 13
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 16
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 17
-										},
-										"max": {
-											"type": "number",
-											"const": 20
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 17
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 20
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								}
 							],
 							"minItems": 5,
@@ -8282,183 +8576,291 @@
 							"items": [
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 1
-										},
-										"max": {
-											"type": "number",
-											"const": 5
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 1
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 5
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 6
-										},
-										"max": {
-											"type": "number",
-											"const": 10
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 6
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 10
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 11
-										},
-										"max": {
-											"type": "number",
-											"const": 12
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 11
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 12
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 13
-										},
-										"max": {
-											"type": "number",
-											"const": 14
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 13
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 14
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 15
-										},
-										"max": {
-											"type": "number",
-											"const": 16
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 15
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 16
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 17
-										},
-										"max": {
-											"type": "number",
-											"const": 18
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 17
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 18
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 19
-										},
-										"max": {
-											"type": "number",
-											"const": 20
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 19
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 20
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 21
-										},
-										"max": {
-											"type": "number",
-											"const": 22
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 21
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 22
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 23
-										},
-										"max": {
-											"type": "number",
-											"const": 24
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 23
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 24
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 25
-										},
-										"max": {
-											"type": "number",
-											"const": 26
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 25
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 26
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 27
-										},
-										"max": {
-											"type": "number",
-											"const": 28
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 27
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 28
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								},
 								{
 									"type": "object",
-									"required": ["min", "max"],
+									"required": ["roll"],
 									"properties": {
-										"min": {
-											"type": "number",
-											"const": 29
-										},
-										"max": {
-											"type": "number",
-											"const": 30
+										"roll": {
+											"title": "DiceRangeStatic",
+											"type": "object",
+											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
+											"required": ["min", "max"],
+											"properties": {
+												"min": {
+													"type": "number",
+													"description": "Low end of the dice range.",
+													"const": 29
+												},
+												"max": {
+													"type": "number",
+													"description": "High end of the dice range.",
+													"const": 30
+												}
+											}
 										}
-									},
-									"additionalProperties": true
+									}
 								}
 							],
 							"minItems": 12,

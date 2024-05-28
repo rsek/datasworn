@@ -12,13 +12,8 @@ namespace Datasworn
         [JsonPropertyName("quest_starter")]
         public MarkdownString QuestStarter { get; set; }
 
-        [JsonPropertyName("max")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public short? Max { get; set; }
-
-        [JsonPropertyName("min")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public short? Min { get; set; }
+        [JsonPropertyName("roll")]
+        public DiceRange Roll { get; set; }
 
         [JsonPropertyName("summary")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

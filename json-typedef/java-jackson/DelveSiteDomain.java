@@ -46,10 +46,6 @@ public class DelveSiteDomain {
     private MarkdownString description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("icon")
-    private SvgImageUrl icon;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("name_oracle")
     private OracleRollableId nameOracle;
 
@@ -218,20 +214,6 @@ public class DelveSiteDomain {
      */
     public void setDescription(MarkdownString description) {
         this.description = description;
-    }
-
-    /**
-     * Getter for icon.<p>
-     */
-    public SvgImageUrl getIcon() {
-        return icon;
-    }
-
-    /**
-     * Setter for icon.<p>
-     */
-    public void setIcon(SvgImageUrl icon) {
-        this.icon = icon;
     }
 
     /**

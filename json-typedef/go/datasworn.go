@@ -1293,11 +1293,7 @@ type DelveSite struct {
 type DelveSiteDenizen struct {
 	Frequency DelveSiteDenizenFrequency `json:"frequency"`
 
-	// High end of the dice range for this denizen.
-	Max int16 `json:"max"`
-
-	// Low end of the dice range for this denizen.
-	Min int16 `json:"min"`
+	Roll DiceRange `json:"roll"`
 
 	// A name for the denizen, if it's different than the `name` property of the
 	// NPC.
@@ -1356,8 +1352,6 @@ type DelveSiteDomain struct {
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
 	Description *MarkdownString `json:"description,omitempty"`
-
-	Icon *SvgImageURL `json:"icon,omitempty"`
 
 	// An oracle table ID containing place name elements. For examples, see
 	// oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in
@@ -1425,6 +1419,16 @@ type DelveSiteThemeID = string
 
 // A simple dice roll expression with an optional modifer.
 type DiceExpression = string
+
+// Represents a range of dice roll results, bounded by `min` and `max`
+// (inclusive).
+type DiceRange struct {
+	// High end of the dice range.
+	Max int16 `json:"max"`
+
+	// Low end of the dice range.
+	Min int16 `json:"min"`
+}
 
 // A `snake_case` key used in a Datasworn dictionary object.
 type DictKey = string
@@ -3091,11 +3095,7 @@ type OracleTableRollableTableText3 struct {
 
 // Represents a row in an oracle table, with a single text cell.
 type OracleTableRowText struct {
-	// High end of the dice range for this table row.
-	Max int16 `json:"max"`
-
-	// Low end of the dice range for this table row.
-	Min int16 `json:"min"`
+	Roll DiceRange `json:"roll"`
 
 	// The primary text content of this row.
 	Text MarkdownString `json:"text"`
@@ -3119,11 +3119,7 @@ type OracleTableRowText struct {
 
 // Represents a row in an oracle table that provides a secondary text field.
 type OracleTableRowText2 struct {
-	// High end of the dice range for this table row.
-	Max int16 `json:"max"`
-
-	// Low end of the dice range for this table row.
-	Min int16 `json:"min"`
+	Roll DiceRange `json:"roll"`
 
 	// The primary text content of this row.
 	Text MarkdownString `json:"text"`
@@ -3149,11 +3145,7 @@ type OracleTableRowText2 struct {
 
 // Represents a row in an oracle table with 3 text cells.
 type OracleTableRowText3 struct {
-	// High end of the dice range for this table row.
-	Max int16 `json:"max"`
-
-	// Low end of the dice range for this table row.
-	Min int16 `json:"min"`
+	Roll DiceRange `json:"roll"`
 
 	// The primary text content of this row.
 	Text MarkdownString `json:"text"`
@@ -4403,9 +4395,7 @@ type TruthOption struct {
 
 	QuestStarter MarkdownString `json:"quest_starter"`
 
-	Max *int16 `json:"max,omitempty"`
-
-	Min *int16 `json:"min,omitempty"`
+	Roll DiceRange `json:"roll"`
 
 	Summary *MarkdownString `json:"summary,omitempty"`
 

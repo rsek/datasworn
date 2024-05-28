@@ -1450,6 +1450,19 @@ export interface OracleRollTemplate {
     text3?: TemplateString;
 }
 /**
+ * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+ */
+export interface DiceRange {
+    /**
+     * Low end of the dice range.
+     */
+    min: number;
+    /**
+     * High end of the dice range.
+     */
+    max: number;
+}
+/**
  * @remarks Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.
  */
 export type OracleCollection = OracleTablesCollection | OracleTableSharedRolls | OracleTableSharedText | OracleTableSharedText2 | OracleTableSharedText3;
@@ -1635,15 +1648,10 @@ export interface OracleTableRowText {
      */
     _i18n?: I18nHints;
     /**
-     * Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.
+     * `null` represents an unrollable row, included only for rendering purposes.
      * @default null
      */
-    min?: number | null;
-    /**
-     * High end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.
-     * @default null
-     */
-    max?: number | null;
+    roll?: DiceRange | null;
     tags?: Tags;
 }
 /**
@@ -1674,15 +1682,10 @@ export interface OracleTableRowText2 {
      */
     _i18n?: I18nHints;
     /**
-     * Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.
+     * `null` represents an unrollable row, included only for rendering purposes.
      * @default null
      */
-    min?: number | null;
-    /**
-     * High end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.
-     * @default null
-     */
-    max?: number | null;
+    roll?: DiceRange | null;
     tags?: Tags;
     /**
      * The secondary text for this row. Use `null` to represent a cell with a blank or empty vlue.
@@ -1717,15 +1720,10 @@ export interface OracleTableRowText3 {
      */
     _i18n?: I18nHints;
     /**
-     * Low end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.
+     * `null` represents an unrollable row, included only for rendering purposes.
      * @default null
      */
-    min?: number | null;
-    /**
-     * High end of the dice range for this table row. `null` represents an unrollable row, included only for rendering purposes.
-     * @default null
-     */
-    max?: number | null;
+    roll?: DiceRange | null;
     tags?: Tags;
     /**
      * The secondary text for this row. Use `null` to represent a cell with a blank or empty vlue.
@@ -3572,8 +3570,7 @@ export interface Truth {
     your_character?: MarkdownString;
 }
 export interface TruthOption {
-    min?: number;
-    max?: number;
+    roll: DiceRange;
     summary?: MarkdownString;
     description: MarkdownString;
     quest_starter: MarkdownString;
@@ -3796,64 +3793,196 @@ export interface DelveSite {
      */
     denizens: DelveSiteDenizen[] & [
         {
-            min: 1;
-            max: 27;
             frequency: 'very_common';
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 1;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 27;
+            };
         },
         {
-            min: 28;
-            max: 41;
             frequency: 'common';
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 28;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 41;
+            };
         },
         {
-            min: 42;
-            max: 55;
             frequency: 'common';
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 42;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 55;
+            };
         },
         {
-            min: 56;
-            max: 69;
             frequency: 'common';
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 56;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 69;
+            };
         },
         {
-            min: 70;
-            max: 75;
             frequency: 'uncommon';
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 70;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 75;
+            };
         },
         {
-            min: 76;
-            max: 81;
             frequency: 'uncommon';
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 76;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 81;
+            };
         },
         {
-            min: 82;
-            max: 87;
             frequency: 'uncommon';
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 82;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 87;
+            };
         },
         {
-            min: 88;
-            max: 93;
             frequency: 'uncommon';
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 88;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 93;
+            };
         },
         {
-            min: 94;
-            max: 95;
             frequency: 'rare';
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 94;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 95;
+            };
         },
         {
-            min: 96;
-            max: 97;
             frequency: 'rare';
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 96;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 97;
+            };
         },
         {
-            min: 98;
-            max: 99;
             frequency: 'rare';
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 98;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 99;
+            };
         },
         {
-            min: 100;
-            max: 100;
             frequency: 'unforeseen';
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 100;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 100;
+            };
         }
     ];
 }
@@ -3866,18 +3995,11 @@ export interface DelveSiteDenizen {
      */
     name?: Label;
     /**
-     * Low end of the dice range for this denizen.
-     */
-    min: number;
-    /**
-     * High end of the dice range for this denizen.
-     */
-    max: number;
-    /**
      * The ID of the relevant NPC entry, if one is specified.
      */
     npc?: NpcId;
     frequency: DelveSiteDenizenFrequency;
+    roll: DiceRange;
 }
 export type DelveSiteDenizenFrequency = 'very_common' | 'common' | 'uncommon' | 'rare' | 'unforeseen';
 /**
@@ -3912,81 +4034,267 @@ export interface DelveSiteDomain {
      */
     summary: MarkdownString;
     description?: MarkdownString;
-    icon?: SvgImageUrl;
     /**
      * An oracle table ID containing place name elements. For examples, see oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in oracle collection ID `delve/collections/oracles/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (ID: delve/oracles/site_name/format) to create random names for delve sites.
      */
     name_oracle?: OracleRollableId;
     features: OracleTableRowText[] & [
         {
-            min: 21;
-            max: 43;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 21;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 43;
+            };
         },
         {
-            min: 44;
-            max: 56;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 44;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 56;
+            };
         },
         {
-            min: 57;
-            max: 64;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 57;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 64;
+            };
         },
         {
-            min: 65;
-            max: 68;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 65;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 68;
+            };
         },
         {
-            min: 69;
-            max: 72;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 69;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 72;
+            };
         },
         {
-            min: 73;
-            max: 76;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 73;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 76;
+            };
         },
         {
-            min: 77;
-            max: 80;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 77;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 80;
+            };
         },
         {
-            min: 81;
-            max: 84;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 81;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 84;
+            };
         },
         {
-            min: 85;
-            max: 88;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 85;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 88;
+            };
         },
         {
-            min: 89;
-            max: 98;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 89;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 98;
+            };
         },
         {
-            min: 99;
-            max: 99;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 99;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 99;
+            };
         },
         {
-            min: 100;
-            max: 100;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 100;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 100;
+            };
         }
     ];
     dangers: OracleTableRowText[] & [
         {
-            min: 31;
-            max: 33;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 31;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 33;
+            };
         },
         {
-            min: 34;
-            max: 36;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 34;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 36;
+            };
         },
         {
-            min: 37;
-            max: 39;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 37;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 39;
+            };
         },
         {
-            min: 40;
-            max: 42;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 40;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 42;
+            };
         },
         {
-            min: 43;
-            max: 45;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 43;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 45;
+            };
         }
     ];
 }
@@ -4022,74 +4330,261 @@ export interface DelveSiteTheme {
     icon?: SvgImageUrl;
     features: OracleTableRowText[] & [
         {
-            min: 1;
-            max: 4;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 1;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 4;
+            };
         },
         {
-            min: 5;
-            max: 8;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 5;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 8;
+            };
         },
         {
-            min: 9;
-            max: 12;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 9;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 12;
+            };
         },
         {
-            min: 13;
-            max: 16;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 13;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 16;
+            };
         },
         {
-            min: 17;
-            max: 20;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 17;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 20;
+            };
         }
     ];
     dangers: OracleTableRowText[] & [
         {
-            min: 1;
-            max: 5;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 1;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 5;
+            };
         },
         {
-            min: 6;
-            max: 10;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 6;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 10;
+            };
         },
         {
-            min: 11;
-            max: 12;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 11;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 12;
+            };
         },
         {
-            min: 13;
-            max: 14;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 13;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 14;
+            };
         },
         {
-            min: 15;
-            max: 16;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 15;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 16;
+            };
         },
         {
-            min: 17;
-            max: 18;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 17;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 18;
+            };
         },
         {
-            min: 19;
-            max: 20;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 19;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 20;
+            };
         },
         {
-            min: 21;
-            max: 22;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 21;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 22;
+            };
         },
         {
-            min: 23;
-            max: 24;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 23;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 24;
+            };
         },
         {
-            min: 25;
-            max: 26;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 25;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 26;
+            };
         },
         {
-            min: 27;
-            max: 28;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 27;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 28;
+            };
         },
         {
-            min: 29;
-            max: 30;
+            /**
+             * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
+             */
+            roll: {
+                /**
+                 * Low end of the dice range.
+                 */
+                min: 29;
+                /**
+                 * High end of the dice range.
+                 */
+                max: 30;
+            };
         }
     ];
 }

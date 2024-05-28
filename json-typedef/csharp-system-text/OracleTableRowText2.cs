@@ -11,17 +11,8 @@ namespace Datasworn
     /// </summary>
     public class OracleTableRowText2
     {
-        /// <summary>
-        /// High end of the dice range for this table row.
-        /// </summary>
-        [JsonPropertyName("max")]
-        public short Max { get; set; }
-
-        /// <summary>
-        /// Low end of the dice range for this table row.
-        /// </summary>
-        [JsonPropertyName("min")]
-        public short Min { get; set; }
+        [JsonPropertyName("roll")]
+        public DiceRange Roll { get; set; }
 
         /// <summary>
         /// The primary text content of this row.

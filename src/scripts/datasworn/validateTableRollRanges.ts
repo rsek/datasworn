@@ -15,7 +15,7 @@ import type {
 
 // TODO
 
-type RollableRange = Pick<OracleTableRow, 'min' | 'max'>
+type RowLike = { roll: { min: number; max: number } | null }
 
 /**
  *
@@ -23,18 +23,15 @@ type RollableRange = Pick<OracleTableRow, 'min' | 'max'>
  * @param b The second row to compare.
  * @returns `-1` if `a` comes before `b`, `1` if `b` comes before `a`, or `0` if the sort order is unchanged.
  */
-function compareRowRanges(a: RollableRange, b: RollableRange) {
-	const aIsNullRow = a.min === null && a.max === null
-	const bIsNullRow = b.min === null && b.max === null
+function compareRowRanges(a: RowLike, b: RowLike) {
+	if (a.roll == null && b.roll == null) return 0
 
-	if (aIsNullRow && bIsNullRow) return 0
+	if (a.roll == null && b.roll != null) return -1
 
-	if (aIsNullRow && !bIsNullRow) return -1
-
-	if (bIsNullRow && !aIsNullRow) return 1
+	if (a.roll != null && b.roll == null) return 1
 
 	// @ts-expect-error
-	return a.min < b.min ? -1 : b.min > a.min ? 1 : 0
+	return a.roll.min < b.roll.min ? -1 : b.roll.min > a.roll.min ? 1 : 0
 }
 
 const rowTextKeys = [
@@ -102,28 +99,29 @@ export function validateTableRollRanges(
 		const row = rows[i]
 
 		// unrollable row for cosmetic purposes -- doesn't need validation
-		if (row.min === null && row.max === null) continue
+		if (row.roll == null) continue
+
+		const { min, max } = row.roll
 
 		// min and max must both be null or both be integers
 		if (
-			row.min === null ||
-			row.max === null ||
-			!(Number.isInteger(row.min) && Number.isInteger(row.max))
+			min === null ||
+			max === null ||
+			!(Number.isInteger(min) && Number.isInteger(max))
 		)
 			throw new Error(
 				`Row (${i}) min and max must both be integers, or both be null`
 			)
 
-		if (row.min < rollMin)
+		if (min < rollMin)
 			throw new Error(`Row (${i}) min is less than the minimum possible roll.`)
-		if (row.max > rollMax)
+		if (max > rollMax)
 			throw new Error(
 				`Row (${i}) max is greater than the maximum possible roll.`
 			)
 
 		// min must be less than or equal to max
-		if (row.min > row.max)
-			throw new Error(`Row (${i}) min is greater than row max`)
+		if (min > max) throw new Error(`Row (${i}) min is greater than row max`)
 
 		// what happens if there's blank rows intermixed, rather than a block at the start?
 		// would this be easier if we compared the next row instead?
@@ -132,10 +130,10 @@ export function validateTableRollRanges(
 
 		const previousRow = rows[i - 1] ?? null
 
-		if (previousRow == null) continue
+		if (previousRow?.roll == null) continue
 
 		// if there's a previous row, its max must be 1 lower than this row's min
-		if (previousRow.max !== row.min + 1)
+		if (previousRow.roll.max !== min + 1)
 			throw new Error(
 				`Row (${i}) roll range is not sequential with previous row.`
 			)

@@ -62,10 +62,6 @@ namespace Datasworn
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public MarkdownString? Description { get; set; }
 
-        [JsonPropertyName("icon")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public SvgImageUrl? Icon { get; set; }
-
         /// <summary>
         /// An oracle table ID containing place name elements. For examples, see
         /// oracle ID `delve/oracles/site_name/place/barrow`, and its siblings
