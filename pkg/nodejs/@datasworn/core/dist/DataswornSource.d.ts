@@ -182,42 +182,42 @@ export interface Expansion {
 /**
  * A unique ID for an AssetAbility.
  * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/assets\/([a-z][a-z_]*)\/([a-z][a-z_]*)\/abilities\/(0|[1-9][0-9]*)$/
+ * /^([a-z][a-z0-9_]{3,})\/assets\/([a-z][a-z_]*)\/([a-z][a-z_]*)\/abilities\/(0|[1-9][0-9]*)$/
  * ```
  */
 export type AssetAbilityId = string;
 /**
  * A unique ID for an AssetCollection.
  * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/collections\/assets\/([a-z][a-z_]*)$/
+ * /^([a-z][a-z0-9_]{3,})\/collections\/assets\/([a-z][a-z_]*)$/
  * ```
  */
 export type AssetCollectionId = string;
 /**
  * A wildcarded ID that can be used to match multiple AssetCollections.
  * @pattern ```javascript
- * /^(\*|([a-z0-9_]{3,}))\/collections\/assets\/(\*|([a-z][a-z_]*))$/
+ * /^(\*|([a-z][a-z0-9_]{3,}))\/collections\/assets\/(\*|([a-z][a-z_]*))$/
  * ```
  */
 export type AssetCollectionIdWildcard = string;
 /**
  * A unique ID for an Asset.
  * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/assets\/([a-z][a-z_]*)\/([a-z][a-z_]*)$/
+ * /^([a-z][a-z0-9_]{3,})\/assets\/([a-z][a-z_]*)\/([a-z][a-z_]*)$/
  * ```
  */
 export type AssetId = string;
 /**
  * A wildcarded ID that can be used to match multiple Assets.
  * @pattern ```javascript
- * /^(\*|([a-z0-9_]{3,}))\/assets\/(\*|([a-z][a-z_]*))\/(\*|([a-z][a-z_]*))$/
+ * /^(\*|([a-z][a-z0-9_]{3,}))\/assets\/(\*|([a-z][a-z_]*))\/(\*|([a-z][a-z_]*))$/
  * ```
  */
 export type AssetIdWildcard = string;
 /**
  * A unique ID for an AtlasCollection.
  * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/collections\/atlas\/([a-z][a-z_]*)$/
+ * /^([a-z][a-z0-9_]{3,})\/collections\/atlas\/([a-z][a-z_]*)$/
  * ```
  * @example "classic/collections/atlas/ironlands"
  */
@@ -225,14 +225,14 @@ export type AtlasCollectionId = string;
 /**
  * A wildcarded ID that can be used to match multiple AtlasCollections.
  * @pattern ```javascript
- * /^(\*|([a-z0-9_]{3,}))\/collections\/atlas\/(\*|([a-z][a-z_]*))$/
+ * /^(\*|([a-z][a-z0-9_]{3,}))\/collections\/atlas\/(\*|([a-z][a-z_]*))$/
  * ```
  */
 export type AtlasCollectionIdWildcard = string;
 /**
  * A unique ID for an AtlasEntry.
  * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/atlas\/([a-z][a-z_]*)\/([a-z][a-z_]*)$/
+ * /^([a-z][a-z0-9_]{3,})\/atlas\/([a-z][a-z_]*)\/([a-z][a-z_]*)$/
  * ```
  * @example "classic/atlas/ironlands/hinterlands"
  */
@@ -240,14 +240,14 @@ export type AtlasEntryId = string;
 /**
  * A wildcarded ID that can be used to match multiple AtlasEntrys.
  * @pattern ```javascript
- * /^(\*|([a-z0-9_]{3,}))\/atlas\/(\*|([a-z][a-z_]*))\/(\*|([a-z][a-z_]*))$/
+ * /^(\*|([a-z][a-z0-9_]{3,}))\/atlas\/(\*|([a-z][a-z_]*))\/(\*|([a-z][a-z_]*))$/
  * ```
  */
 export type AtlasEntryIdWildcard = string;
 /**
  * A unique ID for a ConditionMeterRule.
  * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/rules\/condition_meters\/([a-z][a-z_]*)$/
+ * /^([a-z][a-z0-9_]{3,})\/rules\/condition_meters\/([a-z][a-z_]*)$/
  * ```
  * @example "classic/rules/condition_meters/health"
  * @example "starforged/rules/condition_meters/spirit"
@@ -256,7 +256,7 @@ export type ConditionMeterRuleId = string;
 /**
  * A unique ID for a DelveSiteDomain.
  * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/site_domains\/([a-z][a-z_]*)$/
+ * /^([a-z][a-z0-9_]{3,})\/site_domains\/([a-z][a-z_]*)$/
  * ```
  * @example "delve/site_domains/shadowfen"
  */
@@ -264,14 +264,14 @@ export type DelveSiteDomainId = string;
 /**
  * A wildcarded ID that can be used to match multiple DelveSiteDomains.
  * @pattern ```javascript
- * /^(\*|([a-z0-9_]{3,}))\/site_domains\/(\*|([a-z][a-z_]*))$/
+ * /^(\*|([a-z][a-z0-9_]{3,}))\/site_domains\/(\*|([a-z][a-z_]*))$/
  * ```
  */
 export type DelveSiteDomainIdWildcard = string;
 /**
  * A unique ID for a DelveSite.
  * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/delve_sites\/([a-z][a-z_]*)$/
+ * /^([a-z][a-z0-9_]{3,})\/delve_sites\/([a-z][a-z_]*)$/
  * ```
  * @example "delve/delve_sites/alvas_rest"
  */
@@ -279,14 +279,14 @@ export type DelveSiteId = string;
 /**
  * A wildcarded ID that can be used to match multiple DelveSites.
  * @pattern ```javascript
- * /^(\*|([a-z0-9_]{3,}))\/delve_sites\/(\*|([a-z][a-z_]*))$/
+ * /^(\*|([a-z][a-z0-9_]{3,}))\/delve_sites\/(\*|([a-z][a-z_]*))$/
  * ```
  */
 export type DelveSiteIdWildcard = string;
 /**
  * A unique ID for a DelveSiteTheme.
  * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/site_themes\/([a-z][a-z_]*)$/
+ * /^([a-z][a-z0-9_]{3,})\/site_themes\/([a-z][a-z_]*)$/
  * ```
  * @example "delve/site_themes/hallowed"
  */
@@ -294,7 +294,7 @@ export type DelveSiteThemeId = string;
 /**
  * A wildcarded ID that can be used to match multiple DelveSiteThemes.
  * @pattern ```javascript
- * /^(\*|([a-z0-9_]{3,}))\/site_themes\/(\*|([a-z][a-z_]*))$/
+ * /^(\*|([a-z][a-z0-9_]{3,}))\/site_themes\/(\*|([a-z][a-z_]*))$/
  * ```
  */
 export type DelveSiteThemeIdWildcard = string;
@@ -309,7 +309,7 @@ export type DictKey = string;
 /**
  * The ID of a Datasworn package that relies on an external package to provide its ruleset.
  * @pattern ```javascript
- * /^([a-z0-9_]{3,})$/
+ * /^([a-z][a-z0-9_]{3,})$/
  * ```
  * @example "delve"
  */
@@ -317,7 +317,7 @@ export type ExpansionId = string;
 /**
  * A unique ID for an ImpactRuleCollection.
  * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/collections\/rules\/impacts\/([a-z][a-z_]*)$/
+ * /^([a-z][a-z0-9_]{3,})\/collections\/rules\/impacts\/([a-z][a-z_]*)$/
  * ```
  * @example "classic/collections/rules/impacts/conditions"
  * @example "starforged/collections/rules/impacts/vehicle_troubles"
@@ -326,7 +326,7 @@ export type ImpactRuleCollectionId = string;
 /**
  * A unique ID for an ImpactRule.
  * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/rules\/impacts\/([a-z][a-z_]*)\/([a-z][a-z_]*)$/
+ * /^([a-z][a-z0-9_]{3,})\/rules\/impacts\/([a-z][a-z_]*)\/([a-z][a-z_]*)$/
  * ```
  * @example "classic/rules/impacts/conditions/wounded"
  * @example "starforged/rules/impacts/vehicle_troubles/battered"
@@ -335,7 +335,7 @@ export type ImpactRuleId = string;
 /**
  * A unique ID for a MoveCategory.
  * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/collections\/moves\/([a-z][a-z_]*)$/
+ * /^([a-z][a-z0-9_]{3,})\/collections\/moves\/([a-z][a-z_]*)$/
  * ```
  * @example "starforged/collections/moves/adventure"
  */
@@ -343,7 +343,7 @@ export type MoveCategoryId = string;
 /**
  * A wildcarded ID that can be used to match multiple MoveCategorys.
  * @pattern ```javascript
- * /^(\*|([a-z0-9_]{3,}))\/collections\/moves\/(\*|([a-z][a-z_]*))$/
+ * /^(\*|([a-z][a-z0-9_]{3,}))\/collections\/moves\/(\*|([a-z][a-z_]*))$/
  * ```
  */
 export type MoveCategoryIdWildcard = string;
@@ -360,7 +360,7 @@ export type MoveIdWildcard = string;
 /**
  * A unique ID for a NpcCollection.
  * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/collections\/npcs\/([a-z][a-z_]*)$/
+ * /^([a-z][a-z0-9_]{3,})\/collections\/npcs\/([a-z][a-z_]*)$/
  * ```
  * @example "classic/collections/npcs/firstborn"
  * @example "starforged/collections/npcs/sample_npcs"
@@ -369,14 +369,14 @@ export type NpcCollectionId = string;
 /**
  * A wildcarded ID that can be used to match multiple NpcCollections.
  * @pattern ```javascript
- * /^(\*|([a-z0-9_]{3,}))\/collections\/npcs\/(\*|([a-z][a-z_]*))$/
+ * /^(\*|([a-z][a-z0-9_]{3,}))\/collections\/npcs\/(\*|([a-z][a-z_]*))$/
  * ```
  */
 export type NpcCollectionIdWildcard = string;
 /**
  * A unique ID for a Npc.
  * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/npcs\/([a-z][a-z_]*)\/([a-z][a-z_]*)$/
+ * /^([a-z][a-z0-9_]{3,})\/npcs\/([a-z][a-z_]*)\/([a-z][a-z_]*)$/
  * ```
  * @example "classic/npcs/firstborn/elf"
  * @example "starforged/npcs/sample_npcs/chiton"
@@ -385,14 +385,14 @@ export type NpcId = string;
 /**
  * A wildcarded ID that can be used to match multiple Npcs.
  * @pattern ```javascript
- * /^(\*|([a-z0-9_]{3,}))\/npcs\/(\*|([a-z][a-z_]*))\/(\*|([a-z][a-z_]*))$/
+ * /^(\*|([a-z][a-z0-9_]{3,}))\/npcs\/(\*|([a-z][a-z_]*))\/(\*|([a-z][a-z_]*))$/
  * ```
  */
 export type NpcIdWildcard = string;
 /**
  * A unique ID for a NpcVariant.
  * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/npcs\/([a-z][a-z_]*)\/([a-z][a-z_]*)\/variants\/([a-z][a-z_]*)$/
+ * /^([a-z][a-z0-9_]{3,})\/npcs\/([a-z][a-z_]*)\/([a-z][a-z_]*)\/variants\/([a-z][a-z_]*)$/
  * ```
  * @example "starforged/npcs/sample_npcs/chiton/variants/chiton_drone_pack"
  */
@@ -400,7 +400,7 @@ export type NpcVariantId = string;
 /**
  * A unique ID for an OracleCollection.
  * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/collections\/oracles(\/([a-z][a-z_]*)){1,3}$/
+ * /^([a-z][a-z0-9_]{3,})\/collections\/oracles(\/([a-z][a-z_]*)){1,3}$/
  * ```
  * @example "starforged/collections/oracles/core"
  * @example "starforged/collections/oracles/character/names"
@@ -410,7 +410,7 @@ export type OracleCollectionId = string;
 /**
  * A wildcarded ID that can be used to match multiple OracleCollections.
  * @pattern ```javascript
- * /^(\*|([a-z0-9_]{3,}))\/collections\/oracles((\/([a-z][a-z_]*)){1,3}|\/\*\*|\/\*\*\/([a-z][a-z_]*)|\/([a-z][a-z_]*)\/\*\*)$/
+ * /^(\*|([a-z][a-z0-9_]{3,}))\/collections\/oracles((\/([a-z][a-z_]*)){1,3}|\/\*\*|\/\*\*\/([a-z][a-z_]*)|\/([a-z][a-z_]*)\/\*\*)$/
  * ```
  */
 export type OracleCollectionIdWildcard = string;
@@ -423,14 +423,14 @@ export type OracleRollableId = string;
 /**
  * Oracle table wildcards can also use '**' to represent any number of collection levels in the oracle tree.
  * @pattern ```javascript
- * /^(\*|([a-z0-9_]{3,}))\/oracles((\/([a-z][a-z_]*)){1,3}|\/\*\*|\/\*\*\/([a-z][a-z_]*)|\/([a-z][a-z_]*)\/\*\*)\/(\*|([a-z][a-z_]*))$/
+ * /^(\*|([a-z][a-z0-9_]{3,}))\/oracles((\/([a-z][a-z_]*)){1,3}|\/\*\*|\/\*\*\/([a-z][a-z_]*)|\/([a-z][a-z_]*)\/\*\*)\/(\*|([a-z][a-z_]*))$/
  * ```
  */
 export type OracleRollableIdWildcard = string;
 /**
  * A unique ID for a Rarity.
  * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/rarities\/([a-z][a-z_]*)$/
+ * /^([a-z][a-z0-9_]{3,})\/rarities\/([a-z][a-z_]*)$/
  * ```
  * @example "classic/rarities/ayethins_journal"
  */
@@ -438,14 +438,14 @@ export type RarityId = string;
 /**
  * A wildcarded ID that can be used to match multiple Raritys.
  * @pattern ```javascript
- * /^(\*|([a-z0-9_]{3,}))\/rarities\/(\*|([a-z][a-z_]*))$/
+ * /^(\*|([a-z][a-z0-9_]{3,}))\/rarities\/(\*|([a-z][a-z_]*))$/
  * ```
  */
 export type RarityIdWildcard = string;
 /**
  * The ID of standalone Datasworn package that describes its own ruleset.
  * @pattern ```javascript
- * /^([a-z0-9_]{3,})$/
+ * /^([a-z][a-z0-9_]{3,})$/
  * ```
  * @example "classic"
  * @example "starforged"
@@ -455,7 +455,7 @@ export type RulesetId = string;
 /**
  * A unique ID for a SpecialTrackRule.
  * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/rules\/special_tracks\/([a-z][a-z_]*)$/
+ * /^([a-z][a-z0-9_]{3,})\/rules\/special_tracks\/([a-z][a-z_]*)$/
  * ```
  * @example "classic/rules/special_tracks/bonds"
  * @example "delve/rules/special_tracks/failure"
@@ -465,14 +465,14 @@ export type SpecialTrackRuleId = string;
 /**
  * A unique ID for a StatRule.
  * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/rules\/stats\/([a-z][a-z_]*)$/
+ * /^([a-z][a-z0-9_]{3,})\/rules\/stats\/([a-z][a-z_]*)$/
  * ```
  */
 export type StatRuleId = string;
 /**
  * A unique ID for a Truth.
  * @pattern ```javascript
- * /^([a-z0-9_]{3,})\/truths\/([a-z][a-z_]*)$/
+ * /^([a-z][a-z0-9_]{3,})\/truths\/([a-z][a-z_]*)$/
  * ```
  * @example "classic/truths/iron"
  * @example "starforged/truths/iron"
@@ -481,7 +481,7 @@ export type TruthId = string;
 /**
  * A wildcarded ID that can be used to match multiple Truths.
  * @pattern ```javascript
- * /^(\*|([a-z0-9_]{3,}))\/truths\/(\*|([a-z][a-z_]*))$/
+ * /^(\*|([a-z][a-z0-9_]{3,}))\/truths\/(\*|([a-z][a-z_]*))$/
  * ```
  */
 export type TruthIdWildcard = string;

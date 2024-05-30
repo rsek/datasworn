@@ -7,7 +7,7 @@ export const ObjectType = Utils.UnionEnumFromRecord({
 	// Collections
 	oracle_collection: '',
 	asset_collection: '',
-	move_collection: '',
+	move_category: '',
 	npc_collection: '',
 	atlas: '',
 

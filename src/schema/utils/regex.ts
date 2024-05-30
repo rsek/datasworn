@@ -12,12 +12,13 @@ import { escapeRegExp, omit } from 'lodash-es'
 import { JsonTypeDef } from '../Symbols.js'
 import { setSourceDataSchema } from './Computed.js'
 import { type SetOptional } from './SetOptional.js'
+import Regex from '../../pkg-core/IdElements/Regex.js'
 
 const sep = escapeRegExp('/')
 const wc = escapeRegExp('*')
 const wce = wc + wc
-const node = /([a-z][a-z_]*)/
-const namespace = /([a-z0-9_]{3,})/
+const node = Regex.DictKeyElement
+const namespace = Regex.RulesPackageElement
 const index = /(0|[1-9][0-9]*)/
 const range = /([1-9][0-9]*)-([1-9][0-9]*)/
 const collection = /collections/

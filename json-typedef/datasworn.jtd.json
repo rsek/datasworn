@@ -327,28 +327,28 @@
 			"type": "string",
 			"metadata": {
 				"description": "A unique ID for an AssetAbility.",
-				"pattern": "^([a-z0-9_]{3,})\\/assets\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\/abilities\\/(0|[1-9][0-9]*)$"
+				"pattern": "^([a-z][a-z0-9_]{3,})\\/assets\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\/abilities\\/(0|[1-9][0-9]*)$"
 			}
 		},
 		"AssetCollectionId": {
 			"type": "string",
 			"metadata": {
 				"description": "A unique ID for an AssetCollection.",
-				"pattern": "^([a-z0-9_]{3,})\\/collections\\/assets\\/([a-z][a-z_]*)$"
+				"pattern": "^([a-z][a-z0-9_]{3,})\\/collections\\/assets\\/([a-z][a-z_]*)$"
 			}
 		},
 		"AssetId": {
 			"type": "string",
 			"metadata": {
 				"description": "A unique ID for an Asset.",
-				"pattern": "^([a-z0-9_]{3,})\\/assets\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)$"
+				"pattern": "^([a-z][a-z0-9_]{3,})\\/assets\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)$"
 			}
 		},
 		"AssetIdWildcard": {
 			"type": "string",
 			"metadata": {
 				"description": "A wildcarded ID that can be used to match multiple Assets.",
-				"pattern": "^(\\*|([a-z0-9_]{3,}))\\/assets\\/(\\*|([a-z][a-z_]*))\\/(\\*|([a-z][a-z_]*))$"
+				"pattern": "^(\\*|([a-z][a-z0-9_]{3,}))\\/assets\\/(\\*|([a-z][a-z_]*))\\/(\\*|([a-z][a-z_]*))$"
 			}
 		},
 		"AtlasCollectionId": {
@@ -358,7 +358,7 @@
 				"examples": [
 					"classic/collections/atlas/ironlands"
 				],
-				"pattern": "^([a-z0-9_]{3,})\\/collections\\/atlas\\/([a-z][a-z_]*)$"
+				"pattern": "^([a-z][a-z0-9_]{3,})\\/collections\\/atlas\\/([a-z][a-z_]*)$"
 			}
 		},
 		"AtlasEntryId": {
@@ -368,7 +368,7 @@
 				"examples": [
 					"classic/atlas/ironlands/hinterlands"
 				],
-				"pattern": "^([a-z0-9_]{3,})\\/atlas\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)$"
+				"pattern": "^([a-z][a-z0-9_]{3,})\\/atlas\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)$"
 			}
 		},
 		"DelveSiteDomainId": {
@@ -378,7 +378,7 @@
 				"examples": [
 					"delve/site_domains/shadowfen"
 				],
-				"pattern": "^([a-z0-9_]{3,})\\/site_domains\\/([a-z][a-z_]*)$"
+				"pattern": "^([a-z][a-z0-9_]{3,})\\/site_domains\\/([a-z][a-z_]*)$"
 			}
 		},
 		"DelveSiteId": {
@@ -388,7 +388,7 @@
 				"examples": [
 					"delve/delve_sites/alvas_rest"
 				],
-				"pattern": "^([a-z0-9_]{3,})\\/delve_sites\\/([a-z][a-z_]*)$"
+				"pattern": "^([a-z][a-z0-9_]{3,})\\/delve_sites\\/([a-z][a-z_]*)$"
 			}
 		},
 		"DelveSiteThemeId": {
@@ -398,7 +398,7 @@
 				"examples": [
 					"delve/site_themes/hallowed"
 				],
-				"pattern": "^([a-z0-9_]{3,})\\/site_themes\\/([a-z][a-z_]*)$"
+				"pattern": "^([a-z][a-z0-9_]{3,})\\/site_themes\\/([a-z][a-z_]*)$"
 			}
 		},
 		"DictKey": {
@@ -415,7 +415,7 @@
 				"examples": [
 					"delve"
 				],
-				"pattern": "^([a-z0-9_]{3,})$"
+				"pattern": "^([a-z][a-z0-9_]{3,})$"
 			}
 		},
 		"MoveCategoryId": {
@@ -425,13 +425,13 @@
 				"examples": [
 					"starforged/collections/moves/adventure"
 				],
-				"pattern": "^([a-z0-9_]{3,})\\/collections\\/moves\\/([a-z][a-z_]*)$"
+				"pattern": "^([a-z][a-z0-9_]{3,})\\/collections\\/moves\\/([a-z][a-z_]*)$"
 			}
 		},
 		"MoveId": {
 			"type": "string",
 			"metadata": {
-				"pattern": "^(([a-z0-9_]{3,})\\/moves\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)|([a-z0-9_]{3,})\\/assets\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\/abilities\\/(0|[1-9][0-9]*)\\/moves\\/([a-z][a-z_]*))$",
+				"pattern": "^(([a-z][a-z0-9_]{3,})\\/moves\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)|([a-z][a-z0-9_]{3,})\\/assets\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\/abilities\\/(0|[1-9][0-9]*)\\/moves\\/([a-z][a-z_]*))$",
 				"description": "A move ID, for a standard move or a unique asset move",
 				"examples": [
 					"classic/moves/combat/strike",
@@ -442,7 +442,7 @@
 		"MoveIdWildcard": {
 			"type": "string",
 			"metadata": {
-				"pattern": "^((\\*|([a-z0-9_]{3,}))\\/moves\\/(\\*|([a-z][a-z_]*))\\/(\\*|([a-z][a-z_]*))|(\\*|([a-z0-9_]{3,}))\\/assets\\/(\\*|([a-z][a-z_]*))\\/(\\*|([a-z][a-z_]*))\\/abilities\\/(\\*|(0|[1-9][0-9]*))\\/moves\\/(\\*|([a-z][a-z_]*)))$",
+				"pattern": "^((\\*|([a-z][a-z0-9_]{3,}))\\/moves\\/(\\*|([a-z][a-z_]*))\\/(\\*|([a-z][a-z_]*))|(\\*|([a-z][a-z0-9_]{3,}))\\/assets\\/(\\*|([a-z][a-z_]*))\\/(\\*|([a-z][a-z_]*))\\/abilities\\/(\\*|(0|[1-9][0-9]*))\\/moves\\/(\\*|([a-z][a-z_]*)))$",
 				"description": "A move ID with wildcards.",
 				"examples": [
 					"*/moves/*/face_danger",
@@ -458,7 +458,7 @@
 					"classic/collections/npcs/firstborn",
 					"starforged/collections/npcs/sample_npcs"
 				],
-				"pattern": "^([a-z0-9_]{3,})\\/collections\\/npcs\\/([a-z][a-z_]*)$"
+				"pattern": "^([a-z][a-z0-9_]{3,})\\/collections\\/npcs\\/([a-z][a-z_]*)$"
 			}
 		},
 		"NpcId": {
@@ -469,7 +469,7 @@
 					"classic/npcs/firstborn/elf",
 					"starforged/npcs/sample_npcs/chiton"
 				],
-				"pattern": "^([a-z0-9_]{3,})\\/npcs\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)$"
+				"pattern": "^([a-z][a-z0-9_]{3,})\\/npcs\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)$"
 			}
 		},
 		"NpcVariantId": {
@@ -479,7 +479,7 @@
 				"examples": [
 					"starforged/npcs/sample_npcs/chiton/variants/chiton_drone_pack"
 				],
-				"pattern": "^([a-z0-9_]{3,})\\/npcs\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\/variants\\/([a-z][a-z_]*)$"
+				"pattern": "^([a-z][a-z0-9_]{3,})\\/npcs\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\/variants\\/([a-z][a-z_]*)$"
 			}
 		},
 		"OracleCollectionId": {
@@ -491,7 +491,7 @@
 					"starforged/collections/oracles/character/names",
 					"starforged/collections/oracles/planets/furnace/settlements"
 				],
-				"pattern": "^([a-z0-9_]{3,})\\/collections\\/oracles(\\/([a-z][a-z_]*)){1,3}$"
+				"pattern": "^([a-z][a-z0-9_]{3,})\\/collections\\/oracles(\\/([a-z][a-z_]*)){1,3}$"
 			}
 		},
 		"OracleRollableId": {
@@ -503,7 +503,7 @@
 					"starforged/oracles/character/names/given",
 					"starforged/oracles/planets/furnace/settlements/terminus"
 				],
-				"pattern": "^([a-z0-9_]{3,})\\/oracles(\\/([a-z][a-z_]*)){1,3}\\/([a-z][a-z_]*)$"
+				"pattern": "^([a-z][a-z0-9_]{3,})\\/oracles(\\/([a-z][a-z_]*)){1,3}\\/([a-z][a-z_]*)$"
 			}
 		},
 		"RarityId": {
@@ -513,7 +513,7 @@
 				"examples": [
 					"classic/rarities/ayethins_journal"
 				],
-				"pattern": "^([a-z0-9_]{3,})\\/rarities\\/([a-z][a-z_]*)$"
+				"pattern": "^([a-z][a-z0-9_]{3,})\\/rarities\\/([a-z][a-z_]*)$"
 			}
 		},
 		"RulesetId": {
@@ -525,7 +525,7 @@
 					"starforged",
 					"sundered_isles"
 				],
-				"pattern": "^([a-z0-9_]{3,})$"
+				"pattern": "^([a-z][a-z0-9_]{3,})$"
 			}
 		},
 		"TruthId": {
@@ -536,7 +536,7 @@
 					"classic/truths/iron",
 					"starforged/truths/iron"
 				],
-				"pattern": "^([a-z0-9_]{3,})\\/truths\\/([a-z][a-z_]*)$"
+				"pattern": "^([a-z][a-z0-9_]{3,})\\/truths\\/([a-z][a-z_]*)$"
 			}
 		},
 		"AuthorInfo": {
@@ -1436,7 +1436,7 @@
 				}
 			},
 			"metadata": {
-				"propertyPattern": "^([a-z0-9_]{3,})$",
+				"propertyPattern": "^([a-z][a-z0-9_]{3,})$",
 				"description": "A dictionary of tags, keyed by the RulesetID that the tags are from."
 			}
 		},

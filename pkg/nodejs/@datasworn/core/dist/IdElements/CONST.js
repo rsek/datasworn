@@ -5,6 +5,7 @@ var CONST;
     /** The maximum depth for nesting collections, relative to the root dictionary for its type */
     CONST.RECURSIVE_PATH_ELEMENTS_MAX = 3;
     CONST.RECURSIVE_PATH_ELEMENTS_MIN = 1;
+    CONST.PACKAGE_ID_LENGTH_MIN = 3;
     /** The separator character for Datasworn IDs. */
     CONST.Sep = '/';
     /** The wildcard character for Datasworn IDs that matches any key in a dictionary object. */

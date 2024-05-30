@@ -1,6 +1,6 @@
 import type * as Datasworn from './Datasworn.js'
 
-import { CONST, TypeElements, TypeGuard } from './IdElements/index.js'
+import { CONST, Regex, TypeElements, TypeGuard } from './IdElements/index.js'
 import ObjectGlobber from './ObjectGlobPath/ObjectGlobber.js'
 import { ParseError } from './Id/Errors.js'
 import type * as Strings from './Id/Strings.js'
@@ -101,9 +101,9 @@ abstract class IdParser<
 		return this.#matcher
 	}
 
-	static readonly NamespacePattern = /[a-z0-9_]{3,}/
-	static readonly DictKeyPattern = /[a-z][a-z_]*/
-	static readonly RecursiveDictKeyPattern = /[a-z][a-z_]*(\/[a-z][a-z_]*){0,2}/
+	static readonly NamespacePattern = Regex.RulesPackageElement
+	static readonly DictKeyPattern = Regex.DictKeyElement
+	static readonly RecursiveDictKeyPattern = Regex.RecursiveDictKeyElement
 
 	static #createMatcher(...elements: string[]) {
 		return new RegExp(

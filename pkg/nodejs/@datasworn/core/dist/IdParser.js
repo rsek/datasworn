@@ -382,9 +382,9 @@ _a = IdParser, _IdParser_matcher = new WeakMap(), _IdParser_rulesPackage = new W
         : __classPrivateFieldGet(this, _a, "m", _IdParser_validateKey).call(this, key);
 };
 _IdParser_datasworn = { value: null };
-IdParser.NamespacePattern = /[a-z0-9_]{3,}/;
-IdParser.DictKeyPattern = /[a-z][a-z_]*/;
-IdParser.RecursiveDictKeyPattern = /[a-z][a-z_]*(\/[a-z][a-z_]*){0,2}/;
+IdParser.NamespacePattern = index_js_1.Regex.RulesPackageElement;
+IdParser.DictKeyPattern = index_js_1.Regex.DictKeyElement;
+IdParser.RecursiveDictKeyPattern = index_js_1.Regex.RecursiveDictKeyElement;
 class CollectionId extends IdParser {
     constructor(rulesPackage, subtype, ...pathKeys) {
         super({

@@ -2,6 +2,7 @@ declare namespace CONST {
     /** The maximum depth for nesting collections, relative to the root dictionary for its type */
     const RECURSIVE_PATH_ELEMENTS_MAX = 3;
     const RECURSIVE_PATH_ELEMENTS_MIN = 1;
+    const PACKAGE_ID_LENGTH_MIN = 3;
     /** The separator character for Datasworn IDs. */
     const Sep: "/";
     type Sep = typeof Sep;
