@@ -7171,6 +7171,28 @@ module Datasworn
     end
   end
 
+  class TruthType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    TRUTH = new("truth")
+
+    def self.from_json_data(data)
+      {
+        "truth" => TRUTH,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
   # A setting truth category.
   class Truth
     # The unique Datasworn ID for this item.
@@ -7184,6 +7206,7 @@ module Datasworn
     # The primary name/label for this item.
     attr_accessor :name
     attr_accessor :options
+    attr_accessor :type
 
     # Any implementation hints or other developer-facing comments on this
     # object. These should be omitted when presenting the object for gameplay.
@@ -7205,6 +7228,7 @@ module Datasworn
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.options = Datasworn::from_json_data(Array[TruthOption], data["options"])
+      out.type = Datasworn::from_json_data(TruthType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
@@ -7222,6 +7246,7 @@ module Datasworn
       data["dice"] = Datasworn::to_json_data(dice)
       data["name"] = Datasworn::to_json_data(name)
       data["options"] = Datasworn::to_json_data(options)
+      data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?

@@ -5554,6 +5554,11 @@
 					"elements": {
 						"ref": "TruthOption"
 					}
+				},
+				"type": {
+					"enum": [
+						"truth"
+					]
 				}
 			},
 			"optionalProperties": {

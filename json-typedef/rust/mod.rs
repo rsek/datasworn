@@ -5123,6 +5123,12 @@ pub struct TriggerSpecialTrackEnhancement {
     pub conditions: Vec<TriggerSpecialTrackConditionEnhancement>,
 }
 
+#[derive(Serialize, Deserialize)]
+pub enum TruthType {
+    #[serde(rename = "truth")]
+    Truth,
+}
+
 /// A setting truth category.
 #[derive(Serialize, Deserialize)]
 pub struct Truth {
@@ -5144,6 +5150,9 @@ pub struct Truth {
 
     #[serde(rename = "options")]
     pub options: Vec<TruthOption>,
+
+    #[serde(rename = "type")]
+    pub type_: TruthType,
 
     /// Any implementation hints or other developer-facing comments on this
     /// object. These should be omitted when presenting the object for gameplay.

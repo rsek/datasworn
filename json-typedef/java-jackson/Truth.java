@@ -27,6 +27,9 @@ public class Truth {
     @JsonProperty("options")
     private List<TruthOption> options;
 
+    @JsonProperty("type")
+    private TruthType type;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
     private String comment;
@@ -134,6 +137,20 @@ public class Truth {
      */
     public void setOptions(List<TruthOption> options) {
         this.options = options;
+    }
+
+    /**
+     * Getter for type.<p>
+     */
+    public TruthType getType() {
+        return type;
+    }
+
+    /**
+     * Setter for type.<p>
+     */
+    public void setType(TruthType type) {
+        this.type = type;
     }
 
     /**

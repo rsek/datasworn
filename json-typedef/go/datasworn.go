@@ -4334,6 +4334,12 @@ type TriggerSpecialTrackEnhancement struct {
 	Conditions []TriggerSpecialTrackConditionEnhancement `json:"conditions"`
 }
 
+type TruthType string
+
+const (
+	TruthTypeTruth TruthType = "truth"
+)
+
 // A setting truth category.
 type Truth struct {
 	// The unique Datasworn ID for this item.
@@ -4349,6 +4355,8 @@ type Truth struct {
 	Name Label `json:"name"`
 
 	Options []TruthOption `json:"options"`
+
+	Type TruthType `json:"type"`
 
 	// Any implementation hints or other developer-facing comments on this object.
 	// These should be omitted when presenting the object for gameplay.

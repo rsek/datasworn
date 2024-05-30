@@ -5,6 +5,7 @@ import * as TableRow from './oracles/TableRow.js'
 import { DiceExpression } from './common/Rolls.js'
 import { OracleTableText } from './index.js'
 import { DiceRange } from './common/Range.js'
+import { Discriminable } from './Utils.js'
 
 // export const TruthOptionTableRow = Type.Omit(
 // 	TableRow.OracleTableRowText,
@@ -34,15 +35,19 @@ export const TruthOption = Type.Object(
 
 export type TruthOption = Static<typeof TruthOption>
 
-export const Truth = Generic.SourcedNode(
-	Type.Ref(Id.TruthId),
-	Type.Object({
-		dice: Type.Ref(DiceExpression, { default: '1d100' }),
-		icon: Type.Optional(Type.Ref(Metadata.SvgImageUrl)),
-		summary: Type.Optional(Type.Ref(Localize.MarkdownString)),
-		options: Type.Array(Type.Ref(TruthOption), { rollable: true }),
-		your_character: Type.Optional(Type.Ref(Localize.MarkdownString))
-	}),
+export const Truth = Discriminable(
+	Generic.SourcedNode(
+		Type.Ref(Id.TruthId),
+		Type.Object({
+			dice: Type.Ref(DiceExpression, { default: '1d100' }),
+			icon: Type.Optional(Type.Ref(Metadata.SvgImageUrl)),
+			summary: Type.Optional(Type.Ref(Localize.MarkdownString)),
+			options: Type.Array(Type.Ref(TruthOption), { rollable: true }),
+			your_character: Type.Optional(Type.Ref(Localize.MarkdownString))
+		})
+	),
+	'type',
+	'truth',
 	{
 		$id: 'Truth',
 		description: 'A setting truth category.'

@@ -3893,6 +3893,7 @@ export interface Truth {
 	summary?: MarkdownString
 	options: TruthOption[]
 	your_character?: MarkdownString
+	type: 'truth'
 }
 
 export interface TruthOption {

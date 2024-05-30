@@ -61076,6 +61076,7 @@
 	"truths": {
 		"cataclysm": {
 			"_id": "starforged/truths/cataclysm",
+			"type": "truth",
 			"name": "Cataclysm",
 			"icon": "icons/truths/cataclysm.svg",
 			"dice": "1d100",
@@ -61254,6 +61255,7 @@
 		},
 		"exodus": {
 			"_id": "starforged/truths/exodus",
+			"type": "truth",
 			"name": "Exodus",
 			"icon": "icons/truths/exodus.svg",
 			"dice": "1d100",
@@ -61302,6 +61304,7 @@
 		},
 		"communities": {
 			"_id": "starforged/truths/communities",
+			"type": "truth",
 			"name": "Communities",
 			"icon": "icons/truths/communities.svg",
 			"dice": "1d100",
@@ -61350,6 +61353,7 @@
 		},
 		"iron": {
 			"_id": "starforged/truths/iron",
+			"type": "truth",
 			"name": "Iron",
 			"icon": "icons/truths/iron.svg",
 			"dice": "1d100",
@@ -61398,6 +61402,7 @@
 		},
 		"laws": {
 			"_id": "starforged/truths/laws",
+			"type": "truth",
 			"name": "Laws",
 			"icon": "icons/truths/laws.svg",
 			"dice": "1d100",
@@ -61446,6 +61451,7 @@
 		},
 		"religion": {
 			"_id": "starforged/truths/religion",
+			"type": "truth",
 			"name": "Religion",
 			"icon": "icons/truths/religion.svg",
 			"dice": "1d100",
@@ -61494,6 +61500,7 @@
 		},
 		"magic": {
 			"_id": "starforged/truths/magic",
+			"type": "truth",
 			"name": "Magic",
 			"icon": "icons/truths/magic.svg",
 			"dice": "1d100",
@@ -61583,6 +61590,7 @@
 		},
 		"communication_and_data": {
 			"_id": "starforged/truths/communication_and_data",
+			"type": "truth",
 			"name": "Communication and Data",
 			"icon": "icons/truths/communication_and_data.svg",
 			"dice": "1d100",
@@ -61631,6 +61639,7 @@
 		},
 		"medicine": {
 			"_id": "starforged/truths/medicine",
+			"type": "truth",
 			"name": "Medicine",
 			"icon": "icons/truths/medicine.svg",
 			"dice": "1d100",
@@ -61679,6 +61688,7 @@
 		},
 		"artificial_intelligence": {
 			"_id": "starforged/truths/artificial_intelligence",
+			"type": "truth",
 			"name": "Artificial Intelligence",
 			"icon": "icons/truths/artificial_intelligence.svg",
 			"dice": "1d100",
@@ -61754,6 +61764,7 @@
 		},
 		"war": {
 			"_id": "starforged/truths/war",
+			"type": "truth",
 			"name": "War",
 			"icon": "icons/truths/war.svg",
 			"dice": "1d100",
@@ -61802,6 +61813,7 @@
 		},
 		"lifeforms": {
 			"_id": "starforged/truths/lifeforms",
+			"type": "truth",
 			"name": "Lifeforms",
 			"icon": "icons/truths/lifeforms.svg",
 			"dice": "1d100",
@@ -61850,6 +61862,7 @@
 		},
 		"precursors": {
 			"_id": "starforged/truths/precursors",
+			"type": "truth",
 			"name": "Precursors",
 			"icon": "icons/truths/precursors.svg",
 			"dice": "1d100",
@@ -61898,6 +61911,7 @@
 		},
 		"horrors": {
 			"_id": "starforged/truths/horrors",
+			"type": "truth",
 			"name": "Horrors",
 			"icon": "icons/truths/horrors.svg",
 			"dice": "1d100",

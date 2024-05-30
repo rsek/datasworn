@@ -35,6 +35,9 @@ namespace Datasworn
         [JsonPropertyName("options")]
         public IList<TruthOption> Options { get; set; }
 
+        [JsonPropertyName("type")]
+        public TruthType Type_ { get; set; }
+
         /// <summary>
         /// Any implementation hints or other developer-facing comments on
         /// this object. These should be omitted when presenting the object

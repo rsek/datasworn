@@ -2534,12 +2534,22 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class TruthType
+    attr_accessor value: String
+
+    TRUTH: TruthType
+
+    def self.from_json_data: (untyped) -> TruthType
+    def to_json_data: () -> untyped
+  end
+
   class Truth
     attr_accessor id: TruthID
     attr_accessor source: SourceInfo
     attr_accessor dice: DiceExpression
     attr_accessor name: Label
     attr_accessor options: Array[TruthOption]
+    attr_accessor type: TruthType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
     attr_accessor icon: SvgImageURL?

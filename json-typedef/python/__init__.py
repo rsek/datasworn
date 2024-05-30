@@ -8762,6 +8762,15 @@ class TriggerSpecialTrackEnhancement:
         data["conditions"] = _to_json_data(self.conditions)
         return data
 
+class TruthType(Enum):
+    TRUTH = "truth"
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'TruthType':
+        return cls(data)
+
+    def to_json_data(self) -> Any:
+        return self.value
+
 @dataclass
 class Truth:
     """
@@ -8786,6 +8795,7 @@ class Truth:
     """
 
     options: 'List[TruthOption]'
+    type: 'TruthType'
     comment: 'Optional[str]'
     """
     Any implementation hints or other developer-facing comments on this object.
@@ -8812,6 +8822,7 @@ class Truth:
             _from_json_data(DiceExpression, data.get("dice")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(List[TruthOption], data.get("options")),
+            _from_json_data(TruthType, data.get("type")),
             _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
@@ -8828,6 +8839,7 @@ class Truth:
         data["dice"] = _to_json_data(self.dice)
         data["name"] = _to_json_data(self.name)
         data["options"] = _to_json_data(self.options)
+        data["type"] = _to_json_data(self.type)
         if self.comment is not None:
              data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:

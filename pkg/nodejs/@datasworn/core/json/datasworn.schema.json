@@ -6955,11 +6955,15 @@
 			"title": "Truth",
 			"type": "object",
 			"description": "A setting truth category.",
-			"required": ["_id", "name", "dice", "options", "_source"],
+			"required": ["_id", "type", "name", "dice", "options", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/TruthId",
 					"description": "The unique Datasworn ID for this item."
+				},
+				"type": {
+					"type": "string",
+					"const": "truth"
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
