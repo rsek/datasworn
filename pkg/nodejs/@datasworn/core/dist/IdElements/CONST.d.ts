@@ -6,6 +6,10 @@ declare namespace CONST {
     /** The separator character for Datasworn IDs. */
     const Sep: "/";
     type Sep = typeof Sep;
+    const PropSep: ".";
+    type PropSep = typeof PropSep;
+    const KeySep: "/";
+    type KeySep = typeof KeySep;
     /** The wildcard character for Datasworn IDs that matches any key in a dictionary object. */
     const WildcardString: "*";
     type WildcardString = typeof WildcardString;

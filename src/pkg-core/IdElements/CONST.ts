@@ -8,6 +8,12 @@ namespace CONST {
 	export const Sep = '/' as const
 	export type Sep = typeof Sep
 
+  export const PropSep = '.' as const
+	export type PropSep = typeof PropSep
+
+	export const KeySep = Sep
+	export type KeySep = typeof KeySep
+
 	/** The wildcard character for Datasworn IDs that matches any key in a dictionary object. */
 	export const WildcardString = '*' as const
 	export type WildcardString = typeof WildcardString
