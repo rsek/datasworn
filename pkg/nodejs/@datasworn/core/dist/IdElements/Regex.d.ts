@@ -6,6 +6,7 @@ declare namespace Regex {
     const DictKey: RegExp;
     const RulesPackageElement: RegExp;
     const RulesPackageId: RegExp;
+    const IndexElement: RegExp;
     const RecursiveDictKeyElement: RegExp;
 }
 export default Regex;

@@ -6,27 +6,27 @@ oracles:
   monstrosity:
     name: Monstrosity
     type: oracle_collection
-    summary: Discover the nature of a [nightspawn](id:delve/npcs/horrors/nightspawn) or other frightful creature within your world.
+    summary: Discover the nature of a [nightspawn](id:delve/npc/horrors/nightspawn) or other frightful creature within your world.
     description: |-
-      Use the Monstrosity oracle to define the nature of a [Nightspawn](id:delve/npcs/horrors/nightspawn), or to introduce a new type of [animal](id:classic/collections/npcs/animal), [beast](id:classic/collections/npcs/beast), or [horror](id:classic/collections/npcs/horror) in your world.
+      Use the Monstrosity oracle to define the nature of a [Nightspawn](id:delve/npc/horrors/nightspawn), or to introduce a new type of [animal](id:classic/npc_collection/animal), [beast](id:classic/npc_collection/beast), or [horror](id:classic/npc_collection/horror) in your world.
 
-      To create a monstrosity, start by rolling for its [Size](id:delve/oracles/monstrosity/size) and [Primary Form](id:delve/oracles/monstrosity/primary_form). Then, roll up to four times for [Characteristics](id:delve/oracles/monstrosity/characteristics) and keep up to three of those results. Do the same for [Abilities](id:delve/oracles/monstrosity/abilities).
+      To create a monstrosity, start by rolling for its [Size](id:delve/oracle_rollable/monstrosity/size) and [Primary Form](id:delve/oracle_rollable/monstrosity/primary_form). Then, roll up to four times for [Characteristics](id:delve/oracle_rollable/monstrosity/characteristics) and keep up to three of those results. Do the same for [Abilities](id:delve/oracle_rollable/monstrosity/abilities).
 
-      Give the monstrosity a rank. Choose one appropriate to its features, or use the [Challenge Rank](id:classic/oracles/turning_point/challenge_rank) oracle.
+      Give the monstrosity a rank. Choose one appropriate to its features, or use the [Challenge Rank](id:classic/oracle_rollable/turning_point/challenge_rank) oracle.
 
       Finally, envision your creation and give it a name. It’s part of your world now.
 
-      Some results on these tables include two related options separated by a slash (/). Pick the one which best fits the nature of the creature or is the most interesting. You can also make one of the options likely, and [Ask the Oracle](id:classic/moves/fate/ask_the_oracle) (using the pick two procedure) to confirm your choice. Or just take both!
+      Some results on these tables include two related options separated by a slash (/). Pick the one which best fits the nature of the creature or is the most interesting. You can also make one of the options likely, and [Ask the Oracle](id:classic/move/fate/ask_the_oracle) (using the pick two procedure) to confirm your choice. Or just take both!
 
       You should weave these abilities into the fiction of your encounter with a monstrosity. Combined with its physical characteristics, they help define the creature’s approach and tactics. Make moves as appropriate to overcome, avoid, or face the consequences of these abilities.
 
-      To learn more about your creation’s nature, you can roll on additional tables. Use the [Character Goal](id:classic/oracles/character/goal) oracle to give the monstrosity a purpose. Roll on the [Character Disposition](id:classic/oracles/character/disposition) and [Activity](id:delve/oracles/character/activity) oracles to frame your initial encounter. Another roll or two can give your monstrosity nuance and complexity, making it a deeper part of your story.
+      To learn more about your creation’s nature, you can roll on additional tables. Use the [Character Goal](id:classic/oracle_rollable/character/goal) oracle to give the monstrosity a purpose. Roll on the [Character Disposition](id:classic/oracle_rollable/character/disposition) and [Activity](id:delve/oracle_rollable/character/activity) oracles to frame your initial encounter. Another roll or two can give your monstrosity nuance and complexity, making it a deeper part of your story.
     suggestions:
       oracles:
-        - classic/oracles/turning_point/challenge_rank
-        - classic/oracles/character/goal
-        - classic/oracles/character/disposition
-        - delve/oracles/character/activity
+        - classic/oracle_rollable/turning_point/challenge_rank
+        - classic/oracle_rollable/character/goal
+        - classic/oracle_rollable/character/disposition
+        - delve/oracle_rollable/character/activity
     _source:
       <<:  &Source
         license: https://creativecommons.org/licenses/by/4.0
@@ -66,7 +66,7 @@ oracles:
         oracle_type: table_text
         type: oracle_rollable
         summary: |-
-          Some results on these tables include two related options separated by a slash (/). Pick the one which best fits the nature of the creature or is the most interesting. You can also make one of the options likely, and [Ask the Oracle](id:classic/moves/fate/ask_the_oracle) (using the pick two procedure) to confirm your choice. Or just take both!
+          Some results on these tables include two related options separated by a slash (/). Pick the one which best fits the nature of the creature or is the most interesting. You can also make one of the options likely, and [Ask the Oracle](id:classic/move/fate/ask_the_oracle) (using the pick two procedure) to confirm your choice. Or just take both!
         # usage:
         #   initial: true
         _source:
@@ -147,7 +147,7 @@ oracles:
         #   initial: true
         summary: Roll up to four times for Characteristics and keep up to three of those results.
         description: |-
-          Some results on these tables include two related options separated by a slash (/). Pick the one which best fits the nature of the creature or is the most interesting. You can also make one of the options likely, and [Ask the Oracle](id:classic/moves/fate/ask_the_oracle) (using the pick two procedure) to confirm your choice. Or just take both!
+          Some results on these tables include two related options separated by a slash (/). Pick the one which best fits the nature of the creature or is the most interesting. You can also make one of the options likely, and [Ask the Oracle](id:classic/move/fate/ask_the_oracle) (using the pick two procedure) to confirm your choice. Or just take both!
         _source:
           <<: *Source
           page: 215
@@ -219,7 +219,7 @@ oracles:
         #   initial: true
         summary: Roll up to four times for Abilities and keep up to three of those results.
         description: |-
-          Some results on these tables include two related options separated by a slash (/). Pick the one which best fits the nature of the creature or is the most interesting. You can also make one of the options likely, and [Ask the Oracle](id:classic/moves/fate/ask_the_oracle) (using the pick two procedure) to confirm your choice. Or just take both!
+          Some results on these tables include two related options separated by a slash (/). Pick the one which best fits the nature of the creature or is the most interesting. You can also make one of the options likely, and [Ask the Oracle](id:classic/move/fate/ask_the_oracle) (using the pick two procedure) to confirm your choice. Or just take both!
 
           You should weave these abilities into the fiction of your encounter with a monstrosity. Combined with its physical characteristics, they help define the creature’s approach and tactics. Make moves as appropriate to overcome, avoid, or face the consequences of these abilities.
         _source:

@@ -6,7 +6,7 @@ site_domains:
   barrow:
     type: delve_site_domain
     name: Barrow
-    name_oracle: delve/oracles/site_name/place/barrow
+    name_oracle: delve/oracle_rollable/site_name/place/barrow
     # https://game-icons.net/1x1/cathelineau/tumulus.html
     _source:
       <<: &Source
@@ -46,20 +46,20 @@ site_domains:
         text: Something unusual or unexpected
         suggestions:
           oracles:
-            - delve/oracles/feature/aspect
-            - delve/oracles/feature/focus
+            - delve/oracle_rollable/feature/aspect
+            - delve/oracle_rollable/feature/focus
       - &Row.NewTheme
         roll: { min: 99, max: 99 }
         text: You transition into a new theme
         suggestions:
           oracles:
-            - delve/oracles/site_nature/theme
+            - delve/oracle_rollable/site_nature/theme
       - &Row.NewDomain
         roll: { min: 100, max: 100 }
         text: You transition into a new domain
         suggestions:
           oracles:
-            - delve/oracles/site_nature/domain
+            - delve/oracle_rollable/site_nature/domain
     dangers:
       - roll: { min: 31, max: 33 }
         text: Denizen guards this area
@@ -67,8 +67,8 @@ site_domains:
         text: Trap
         suggestions: &SuggestTrap
           oracles:
-            - delve/oracles/trap/event
-            - delve/oracles/trap/component
+            - delve/oracle_rollable/trap/event
+            - delve/oracle_rollable/trap/component
       - roll: { min: 37, max: 39 }
         text: Death makes its presence known
       - roll: { min: 40, max: 42 }
@@ -78,7 +78,7 @@ site_domains:
   cavern:
     type: delve_site_domain
     name: Cavern
-    name_oracle: delve/oracles/site_name/place/cavern
+    name_oracle: delve/oracle_rollable/site_name/place/cavern
     # https://game-icons.net/1x1/lorc/stalagtite.html
     _source:
       <<: *Source
@@ -124,7 +124,7 @@ site_domains:
   frozen_cavern:
     type: delve_site_domain
     name: Frozen cavern
-    name_oracle: delve/oracles/site_name/place/frozen_cavern
+    name_oracle: delve/oracle_rollable/site_name/place/frozen_cavern
     _source:
       <<: *Source
       page: 89
@@ -169,7 +169,7 @@ site_domains:
   icereach:
     type: delve_site_domain
     name: Icereach
-    name_oracle: delve/oracles/site_name/place/icereach
+    name_oracle: delve/oracle_rollable/site_name/place/icereach
     _source:
       <<: *Source
       page: 89
@@ -214,7 +214,7 @@ site_domains:
   mine:
     type: delve_site_domain
     name: Mine
-    name_oracle: delve/oracles/site_name/place/mine
+    name_oracle: delve/oracle_rollable/site_name/place/mine
     # https://game-icons.net/1x1/delapouite/stone-pile.html
     _source:
       <<: *Source
@@ -260,7 +260,7 @@ site_domains:
   pass:
     type: delve_site_domain
     name: Pass
-    name_oracle: delve/oracles/site_name/place/pass
+    name_oracle: delve/oracle_rollable/site_name/place/pass
     _source:
       <<: *Source
       page: 90
@@ -305,14 +305,14 @@ site_domains:
   ruin:
     type: delve_site_domain
     name: Ruin
-    name_oracle: delve/oracles/site_name/place/ruin
+    name_oracle: delve/oracle_rollable/site_name/place/ruin
     # https://game-icons.net/1x1/delapouite/broken-wall.html
     _source:
       <<: *Source
       page: 91
     summary: The crumbling legacy of a dead civilization.
     description: |-
-      These decaying edifices, skeletal and shadowed, mark the remains of once-great communities and civilizations. Some of these sites have been newly adapted by [Ironlanders](id:classic/collections/npcs/ironlanders) as shelter, temple, or citadel. Others are home only to dangerous creatures and dark forces.
+      These decaying edifices, skeletal and shadowed, mark the remains of once-great communities and civilizations. Some of these sites have been newly adapted by [Ironlanders](id:classic/npc_collection/ironlanders) as shelter, temple, or citadel. Others are home only to dangerous creatures and dark forces.
 
       Newly discovered ruins tempt bold explorers with the promise of powerful legacies and forgotten secrets. But most see these places as a portent of our inescapable, grim fate in these lands. Someday, another people may delve into the ruins of what we leave behind.
     features:
@@ -352,7 +352,7 @@ site_domains:
   sea_cave:
     type: delve_site_domain
     name: Sea cave
-    name_oracle: delve/oracles/site_name/place/sea_cave
+    name_oracle: delve/oracle_rollable/site_name/place/sea_cave
     _source:
       <<: *Source
       page: 91
@@ -397,7 +397,7 @@ site_domains:
   shadowfen:
     type: delve_site_domain
     name: Shadowfen
-    name_oracle: delve/oracles/site_name/place/shadowfen
+    name_oracle: delve/oracle_rollable/site_name/place/shadowfen
     _source:
       <<: *Source
       page: 92
@@ -442,7 +442,7 @@ site_domains:
   stronghold:
     type: delve_site_domain
     name: Stronghold
-    name_oracle: delve/oracles/site_name/place/stronghold
+    name_oracle: delve/oracle_rollable/site_name/place/stronghold
     _source:
       <<: *Source
       page: 92
@@ -485,7 +485,7 @@ site_domains:
   tanglewood:
     type: delve_site_domain
     name: Tanglewood
-    name_oracle: delve/oracles/site_name/place/tanglewood
+    name_oracle: delve/oracle_rollable/site_name/place/tanglewood
     # https://game-icons.net/1x1/lorc/dead-wood.html
     _source:
       <<: *Source
@@ -532,15 +532,15 @@ site_domains:
   underkeep:
     type: delve_site_domain
     name: Underkeep
-    name_oracle: delve/oracles/site_name/place/underkeep
+    name_oracle: delve/oracle_rollable/site_name/place/underkeep
     _source:
       <<: *Source
       page: 93
     summary: An age-old subterranean dungeon.
     description: |-
-      These subterranean structures are a mystery. They are inexplicably ancient, older perhaps than even the [Firstborn](id:classic/collections/npcs/firstborn). Their passages and halls hide dangers within unfathomable darkness.
+      These subterranean structures are a mystery. They are inexplicably ancient, older perhaps than even the [Firstborn](id:classic/npc_collection/firstborn). Their passages and halls hide dangers within unfathomable darkness.
 
-      Most [Ironlanders](id:classic/collections/npcs/ironlanders) stay well clear of these places. But some stumble upon the entrance to an underkeep and delve inside, drawn by its secrets or the alluring promise of forgotten power. Others, desperate for protection from the perils of the surface world, foolishly try to use the depths of an underkeep as a sanctum for their kin or clan. They soon discover that the greatest threats lie beneath.
+      Most [Ironlanders](id:classic/npc_collection/ironlanders) stay well clear of these places. But some stumble upon the entrance to an underkeep and delve inside, drawn by its secrets or the alluring promise of forgotten power. Others, desperate for protection from the perils of the surface world, foolishly try to use the depths of an underkeep as a sanctum for their kin or clan. They soon discover that the greatest threats lie beneath.
     features:
       - roll: { min: 21, max: 43 }
         text: Carved passages

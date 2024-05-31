@@ -207,15 +207,15 @@ oracles:
               - &ObservedFromSpace.8
                 roll: { min: 89, max: 98 }
                 <<: &DescriptorFocus
-                  text: &DF.result '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+                  text: &DF.result '[Descriptor](id:starforged/oracle_rollable/core/descriptor) + [Focus](id:starforged/oracle_rollable/core/focus)'
                   oracle_rolls: &DF.rolls
-                    - oracle: starforged/oracles/core/descriptor
+                    - oracle: starforged/oracle_rollable/core/descriptor
                       auto: true
-                    - oracle: starforged/oracles/core/focus
+                    - oracle: starforged/oracle_rollable/core/focus
                       auto: true
               - &ObservedFromSpace.9
                 roll: { min: 99, max: 100 }
-                text: '[Precursor Vault](id:starforged/collections/oracles/vaults) (orbital)'
+                text: '[Precursor Vault](id:starforged/oracle_collection/vaults) (orbital)'
           feature:
             <<: &Feature
               name: Planetside Feature
@@ -268,7 +268,7 @@ oracles:
                 <<: *DescriptorFocus
               - &Feature.14
                 roll: { min: 99, max: 100 }
-                text: '[Precursor Vault](id:starforged/collections/oracles/vaults) (planetside)'
+                text: '[Precursor Vault](id:starforged/oracle_collection/vaults) (planetside)'
           life:
             <<: &Life
               name: Life
@@ -1921,11 +1921,11 @@ oracles:
                 text: Sludge-filled river networks
               - roll: { min: 89, max: 98 }
                 <<: &DescriptorFocus
-                  text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+                  text: '[Descriptor](id:starforged/oracle_rollable/core/descriptor) + [Focus](id:starforged/oracle_rollable/core/focus)'
                   oracle_rolls:
-                    - oracle: starforged/oracles/core/descriptor
+                    - oracle: starforged/oracle_rollable/core/descriptor
                       auto: true
-                    - oracle: starforged/oracles/core/focus
+                    - oracle: starforged/oracle_rollable/core/focus
                       auto: true
               - *ObservedFromSpace.9
           feature:
@@ -2113,11 +2113,11 @@ oracles:
                 text: Narrow livable band
               - roll: { min: 89, max: 98 }
                 <<: &DescriptorFocus
-                  text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+                  text: '[Descriptor](id:starforged/oracle_rollable/core/descriptor) + [Focus](id:starforged/oracle_rollable/core/focus)'
                   oracle_rolls:
-                    - oracle: starforged/oracles/core/descriptor
+                    - oracle: starforged/oracle_rollable/core/descriptor
                       auto: true
-                    - oracle: starforged/oracles/core/focus
+                    - oracle: starforged/oracle_rollable/core/focus
                       auto: true
               - *ObservedFromSpace.9
           feature:
@@ -2180,7 +2180,7 @@ oracles:
                     part_of_speech: adjective
                 oracle_rolls:
                   - number_of_rolls: 2
-                    oracle: &biome starforged/oracles/planets/vital/biomes
+                    oracle: &biome starforged/oracle_rollable/planets/vital/biomes
               - roll: { min: 21, max: 70 }
                 text: Diverse (three biomes)
                 _i18n: *i18n.result.adjective

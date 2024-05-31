@@ -25,9 +25,9 @@ oracles:
           page: 296
         suggestions:
           oracles:
-            - starforged/oracles/core/theme
+            - starforged/oracle_rollable/core/theme
         summary: &ActionThemeSummary |-
-          When you [Ask the Oracle](id:starforged/moves/fate/ask_the_oracle) about a goal, situation, or event, roll for an [Action](id:starforged/oracles/core/action) and [Theme](id:starforged/oracles/core/theme). Together, these provide an interpretative verb/noun prompt.
+          When you [Ask the Oracle](id:starforged/move/fate/ask_the_oracle) about a goal, situation, or event, roll for an [Action](id:starforged/oracle_rollable/core/action) and [Theme](id:starforged/oracle_rollable/core/theme). Together, these provide an interpretative verb/noun prompt.
         rows:
           - _i18n: &Verb
               text:
@@ -340,7 +340,7 @@ oracles:
           page: 297
         suggestions:
           oracles:
-            - starforged/oracles/core/action
+            - starforged/oracle_rollable/core/action
         summary: *ActionThemeSummary
         rows:
           - _i18n: &CommonNoun
@@ -656,9 +656,9 @@ oracles:
           page: 298
         suggestions:
           oracles:
-            - starforged/oracles/core/focus
+            - starforged/oracle_rollable/core/focus
         summary: &DescriptorFocusSummary |-
-          When you [Ask the Oracle](id:starforged/moves/fate/ask_the_oracle) to help define the nature of a location, discovery, or encounter, roll for a [Descriptor](id:starforged/oracles/core/descriptor) and a [Focus](id:starforged/oracles/core/focus) for an adjective/noun prompt.
+          When you [Ask the Oracle](id:starforged/move/fate/ask_the_oracle) to help define the nature of a location, discovery, or encounter, roll for a [Descriptor](id:starforged/oracle_rollable/core/descriptor) and a [Focus](id:starforged/oracle_rollable/core/focus) for an adjective/noun prompt.
         rows:
           - _i18n: &Adjective
               text:
@@ -971,7 +971,7 @@ oracles:
           page: 299
         suggestions:
           oracles:
-            - starforged/oracles/core/descriptor
+            - starforged/oracle_rollable/core/descriptor
         summary: *DescriptorFocusSummary
         rows:
           - _i18n: *CommonNoun

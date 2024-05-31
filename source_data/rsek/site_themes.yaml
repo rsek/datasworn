@@ -5,7 +5,7 @@ ruleset: classic
 site_themes:
   morphic:
     name: Morphic
-    icon: icons/site_themes/morphic.svg
+    icon: icons/delve_site_theme/morphic.svg
     _source: &Source
       authors:
         - name: rsek
@@ -53,7 +53,7 @@ site_themes:
         text: Pleasant fantasy, easy to get lost in
   protean:
     name: Protean
-    icon: icons/site_themes/protean.svg
+    icon: icons/delve_site_theme/protean.svg
     _source: *Source
     summary: A place of primordial chaos, in constant flux.
     features:
@@ -94,7 +94,7 @@ site_themes:
         text: Draw a domain; 5th danger occurs
   skyborne:
     name: Skyborne
-    icon: icons/site_themes/skyborne.svg
+    icon: icons/delve_site_theme/skyborne.svg
     _source: *Source
     summary: A place that soars high above the world below.
     features:
@@ -136,7 +136,7 @@ site_themes:
         text: Buffeted by powerful winds
   threatened:
     name: Threatened
-    icon: icons/site_themes/threatened.svg
+    icon: icons/delve_site_theme/threatened.svg
     _source: *Source
     summary: This place is on the verge of calamity.
     features:

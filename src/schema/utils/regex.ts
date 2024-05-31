@@ -13,15 +13,15 @@ import { JsonTypeDef } from '../Symbols.js'
 import { setSourceDataSchema } from './Computed.js'
 import { type SetOptional } from './SetOptional.js'
 import Regex from '../../pkg-core/IdElements/Regex.js'
+import CONST from '../../pkg-core/IdElements/CONST.js'
 
-const sep = escapeRegExp('/')
-const wc = escapeRegExp('*')
-const wce = wc + wc
+const sep = escapeRegExp(CONST.Sep)
+const propSep = escapeRegExp(CONST.PropSep)
+const wc = escapeRegExp(CONST.WildcardString)
+const wce = escapeRegExp(CONST.GlobstarString)
 const node = Regex.DictKeyElement
 const namespace = Regex.RulesPackageElement
-const index = /(0|[1-9][0-9]*)/
-const range = /([1-9][0-9]*)-([1-9][0-9]*)/
-const collection = /collections/
+const index = /\d+/
 const nodeRecursive = recurse(node)
 
 const recursiveElementWildcard = oneOf(
@@ -39,19 +39,9 @@ export const NodeRecursive = Symbol(nodeRecursive.source)
 export type NodeRecursive = typeof NodeRecursive
 export const Index = Symbol(index.source)
 export type Index = typeof Index
-export const DiceRange = Symbol(range.source)
-export type DiceRange = typeof DiceRange
-export const Collection = Symbol(collection.source)
-export type Collection = typeof Collection
 const noSeparator = [NodeRecursive]
-type IdElementSymbol =
-	| Pkg
-	| NodeRecursive
-	| Node
-	| Index
-	| DiceRange
-	| Collection
-export type IdElement = IdElementSymbol | string
+type IdElementSymbol = Pkg | NodeRecursive | Node | Index
+export type IdElement = IdElementSymbol | string | PropertyElement
 
 export const PatternElements = Symbol('PatternElements')
 type IdOptions = StringOptions & { $id: string }
@@ -106,8 +96,8 @@ export function Id(elements: IdElement[], options: IdOptions) {
 
 	return result
 }
-export function RecursiveCollectableId(type: IdElement[], options: IdOptions) {
-	const base = Id([Pkg, ...type, NodeRecursive, Node], options)
+export function RecursiveCollectableId(type: string, options: IdOptions) {
+	const base = Id([Pkg, type, NodeRecursive, Node], options)
 	return setSourceDataSchema(base, (schema) => {
 		// const nuPattern = Id(['{{COLLECTION}}', Node], options)
 		return IdUnion(
@@ -122,12 +112,12 @@ export function RecursiveCollectableId(type: IdElement[], options: IdOptions) {
 		)
 	})
 }
-export function RecursiveCollectionId(type: IdElement[], options: IdOptions) {
-	const base = Id([Pkg, Collection, ...type, NodeRecursive], options)
+export function RecursiveCollectionId(type: string, options: IdOptions) {
+	const base = Id([Pkg, type, NodeRecursive], options)
 	return base
 }
-export function CollectableId(type: IdElement[], options: IdOptions) {
-	const base = Id([Pkg, ...type, Node, Node], options)
+export function CollectableId(type: string, options: IdOptions) {
+	const base = Id([Pkg, type, Node, Node], options)
 	return setSourceDataSchema(base, (schema) => {
 		// const nuPattern = Id(['{{COLLECTION}}', Node], options)
 		return IdUnion(
@@ -142,27 +132,25 @@ export function CollectableId(type: IdElement[], options: IdOptions) {
 		)
 	})
 }
-export function CollectionId(type: IdElement[], options: IdOptions) {
-	const base = Id([Pkg, Collection, ...type, Node], options)
+export function CollectionId(type: string, options: IdOptions) {
+	const base = Id([Pkg, type, Node], options)
 
 	return base
 }
 
-export function UncollectableId(type: IdElement[], options: IdOptions) {
-	const base = Id([Pkg, ...type, Node], options)
+export function NonCollectableId(type: string, options: IdOptions) {
+	const base = Id([Pkg, type, Node], options)
 
 	return base
 }
 
-export function Extend(base: TId, append: IdElement[], options: IdOptions) {
-	const baseElements = base[PatternElements].filter(
-		(f) => f !== Collection
-	) as [string, ...IdElement[]]
+export function PropertyOf(base: TId, append: IdElement[], options: IdOptions) {
+	const baseElements = base[PatternElements]
 
 	return Id([...baseElements, ...append], options)
 }
 
-export function toWildcard(
+export function toWildcardId(
 	base: TId,
 	options: SetOptional<IdOptions, '$id'> = {}
 ) {
@@ -172,7 +160,7 @@ export function toWildcard(
 
 	if (base.title && !options.title)
 		options.title = base.title + ' (with wildcard)'
-	const elements = base[PatternElements].map((item) => _toWildcard(item))
+	const elements = base[PatternElements].map((item) => _toWildcardElement(item))
 
 	if (!options.description && options.$id) {
 		const targetName = options.$id.replace(/IdWildcard$/, '')
@@ -191,15 +179,31 @@ function group(pattern: RegExp) {
 	return new RegExp(`(${pattern.source})`)
 }
 function recurse(pattern: RegExp) {
-	return new RegExp(`(${sep}${pattern.source}){1,3}`)
+	return new RegExp(
+		`(${sep}${pattern.source}){${CONST.RECURSIVE_PATH_ELEMENTS_MIN},${CONST.RECURSIVE_PATH_ELEMENTS_MAX}}`
+	)
 }
 function oneOf(...items: RegExp[]) {
 	return group(new RegExp(items.map((item) => item.source).join('|')))
 }
-function _toWildcard<T extends IdElement>(element: T) {
+
+export class PropertyElement {
+	key: string
+
+	toString() {
+		return this.key
+	}
+
+	constructor(key: string) {
+		this.key = key
+	}
+}
+
+function _toWildcardElement<T extends IdElement>(element: T) {
 	switch (true) {
+		case element instanceof PropertyElement:
+			return element.key
 		case typeof element === 'string':
-		case element === Collection:
 			return element
 		case element === NodeRecursive:
 			return recursiveElementWildcard.source
@@ -220,13 +224,15 @@ function getPatternSubstrings(...elements: IdElement[]) {
 
 		const nextElement = elements[i + 1]
 
-		const needsSeparator =
+		const needsSlashSeparator =
 			(typeof element === 'string' || !noSeparator.includes(element as any)) &&
-			i > 0
+			i > 0 &&
+			!(element instanceof PropertyElement)
 		// &&
 		// nextElement?.description?.startsWith('(/')
 
-		if (needsSeparator) idParts.push(sep)
+		if (needsSlashSeparator) idParts.push(sep)
+		else if (element instanceof PropertyElement) idParts.push(propSep)
 
 		idParts.push((element as symbol).description ?? element)
 	}

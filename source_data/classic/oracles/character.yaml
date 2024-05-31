@@ -120,8 +120,8 @@ oracles:
             text: Unusual role
             suggestions:
               oracles:
-                - classic/oracles/action_and_theme/action
-                - classic/oracles/action_and_theme/theme
+                - classic/oracle_rollable/action_and_theme/action
+                - classic/oracle_rollable/action_and_theme/theme
       goal:
         name: Character Goal
         type: oracle_rollable

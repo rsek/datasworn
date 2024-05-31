@@ -10,12 +10,13 @@ const CONST_js_1 = __importDefault(require("./CONST.js"));
 var Regex;
 (function (Regex) {
     const DictKeyBase = /[a-z][a-z_]*/;
-    Regex.DictKeyElement = new RegExp(`(${DictKeyBase.source})`);
+    Regex.DictKeyElement = DictKeyBase;
     Regex.DictKey = new RegExp(`^${DictKeyBase.source}$`);
     const RulesPackageBase = new RegExp(`[a-z][a-z0-9_]{${CONST_js_1.default.PACKAGE_ID_LENGTH_MIN},}`);
-    Regex.RulesPackageElement = new RegExp(`(${RulesPackageBase.source})`);
+    Regex.RulesPackageElement = RulesPackageBase;
     Regex.RulesPackageId = new RegExp(`^${RulesPackageBase.source}$`);
+    Regex.IndexElement = /\d+/;
     const RecursiveDictKeyBase = new RegExp(`${DictKeyBase.source}(?:\\${CONST_js_1.default.Sep}${DictKeyBase.source}){${CONST_js_1.default.RECURSIVE_PATH_ELEMENTS_MIN - 1},${CONST_js_1.default.RECURSIVE_PATH_ELEMENTS_MAX - 1}}`);
-    Regex.RecursiveDictKeyElement = new RegExp(`(${RecursiveDictKeyBase.source})`);
+    Regex.RecursiveDictKeyElement = RecursiveDictKeyBase;
 })(Regex || (Regex = {}));
 exports.default = Regex;
