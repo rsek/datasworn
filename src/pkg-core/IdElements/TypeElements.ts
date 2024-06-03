@@ -1,66 +1,102 @@
-import { type RulesPackage } from '../Datasworn.js'
+import type { Datasworn } from '../index.js'
 
 /**
  * Datasworn ID elements that represent specific types of Datasworn object.
  */
 namespace TypeElements {
-	/**
-	 * ID type element representing a collection. It must be followed by a second ID element indicating its subtype.
-	 */
-	export const Collection = 'collections' as const
-	export type Collection = typeof Collection
-
 	export namespace Collectable {
-		/** ID type elements for types that can exist in recursive collections. */
-		export const Recursive = ['oracles', 'atlas', 'npcs'] as const
-		export type Recursive = (typeof Recursive)[number]
+		/** Object types that can exist in recursive collections. */
+		export enum Recursive {
+			AtlasEntry = 'atlas_entry',
+			Npc = 'npc',
+			OracleRollable = 'oracle_rollable'
+		}
 
 		/** ID type elements for types that can exist in non-recursive collections. */
-		export const NonRecursive = ['moves', 'assets'] as const
-		export type NonRecursive = (typeof NonRecursive)[number]
+		export enum NonRecursive {
+			Asset = 'asset',
+			Move = 'move'
+		}
 
 		/** Union of ID type elements for types that can exist in recursive or non-recursive collections. */
-		export const Any = [...NonRecursive, ...Recursive] as const
 		export type Any = Recursive | NonRecursive
 	}
 
-	export namespace CollectionSubtype {
-		export type Any<T extends Collectable.Any = Collectable.Any> = [
-			Collection,
-			T
-		]
-		export type RecursiveSubtype<
-			T extends Collectable.Recursive = Collectable.Recursive
-		> = Any<T>
-		export type NonRecursiveSubtype<
-			T extends Collectable.NonRecursive = Collectable.NonRecursive
-		> = Any<T>
+	export namespace Collection {
+		export enum Recursive {
+			AtlasCollection = 'atlas_collection',
+			NpcCollection = 'npc_collection',
+			OracleCollection = 'oracle_collection'
+		}
+		export enum NonRecursive {
+			AssetCollection = 'asset_collection',
+			MoveCategory = 'move_category'
+		}
+
+		export type Any = Recursive | NonRecursive
 	}
 
 	/** ID type elements for types that don't use collections at all. */
-	export const NonCollectable = [
-		'delve_sites',
-		'site_themes',
-		'site_domains',
-		'truths',
-		'rarities'
-	] as const
-	export type NonCollectable = (typeof NonCollectable)[number]
+	export enum NonCollectable {
+		DelveSite = 'delve_site',
+		DelveSiteDomain = 'delve_site_domain',
+		DelveSiteTheme = 'delve_site_theme',
+		Rarity = 'rarity',
+		Truth = 'truth'
+	}
 
-	export const AnyPrimary = [
-		...Collectable.Any,
-		...NonCollectable,
-		Collection
-	] as const satisfies readonly AnyPrimary[]
-	export type AnyPrimary = Collectable.Any | NonCollectable | Collection
+	export type Any = Collectable.Any | Collection.Any | NonCollectable
 
-	export type AnyTypeRoot = keyof RulesPackage & AnyPrimary
+	const collectedByMap = {
+		[Collection.NonRecursive.AssetCollection]: Collectable.NonRecursive.Asset,
+		[Collection.NonRecursive.MoveCategory]: Collectable.NonRecursive.Move,
+		[Collection.Recursive.AtlasCollection]: Collectable.Recursive.AtlasEntry,
+		[Collection.Recursive.NpcCollection]: Collectable.Recursive.Npc,
+		[Collection.Recursive.OracleCollection]:
+			Collectable.Recursive.OracleRollable
+	} as const satisfies Record<Collection.Any, Collectable.Any>
 
-	/** A type element tuple representing a fully-qualified type. The first element is the primary type. Some types have a second element that indicates a subtype.  */
-	export type AnyTuple =
-		| [Collectable.Any]
-		| [NonCollectable]
-		| CollectionSubtype.Any
+	export type CollectedBy<T extends Collection.Any> = (typeof collectedByMap)[T]
+
+	export const typeRootKeys = {
+		[Collection.NonRecursive.AssetCollection]: 'assets',
+		[Collectable.NonRecursive.Asset]: 'assets',
+		[Collection.NonRecursive.MoveCategory]: 'moves',
+		[Collectable.NonRecursive.Move]: 'moves',
+		[Collection.Recursive.AtlasCollection]: 'atlas',
+		[Collectable.Recursive.AtlasEntry]: 'atlas',
+		[Collection.Recursive.NpcCollection]: 'npcs',
+		[Collectable.Recursive.Npc]: 'npcs',
+		[Collection.Recursive.OracleCollection]: 'oracles',
+		[Collectable.Recursive.OracleRollable]: 'oracles',
+		[NonCollectable.DelveSite]: 'delve_sites',
+		[NonCollectable.Truth]: 'truths',
+		[NonCollectable.DelveSiteDomain]: 'site_domains',
+		[NonCollectable.DelveSiteTheme]: 'site_themes',
+		[NonCollectable.Rarity]: 'rarities'
+	} as const satisfies Record<Any, keyof Datasworn.RulesPackage>
+
+	export type TypeRootKey<T extends Any = Any> = (typeof typeRootKeys)[T]
+
+	interface TypeMap {
+		[Collection.NonRecursive.AssetCollection]: Datasworn.AssetCollection
+		[Collectable.NonRecursive.Asset]: Datasworn.Asset
+		[Collection.NonRecursive.MoveCategory]: Datasworn.MoveCategory
+		[Collectable.NonRecursive.Move]: Datasworn.Move
+		[Collection.Recursive.AtlasCollection]: Datasworn.AtlasCollection
+		[Collectable.Recursive.AtlasEntry]: Datasworn.AtlasEntry
+		[Collection.Recursive.NpcCollection]: Datasworn.NpcCollection
+		[Collectable.Recursive.Npc]: Datasworn.Npc
+		[Collection.Recursive.OracleCollection]: Datasworn.OracleCollection
+		[Collectable.Recursive.OracleRollable]: Datasworn.OracleRollable
+		[NonCollectable.DelveSite]: Datasworn.DelveSite
+		[NonCollectable.Truth]: Datasworn.Truth
+		[NonCollectable.DelveSiteDomain]: Datasworn.DelveSiteDomain
+		[NonCollectable.DelveSiteTheme]: Datasworn.DelveSiteTheme
+		[NonCollectable.Rarity]: Datasworn.Rarity
+	}
+
+	export type TypeNode<T extends Any = Any> = TypeMap[T]
 }
 
 export default TypeElements

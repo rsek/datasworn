@@ -196,60 +196,23 @@ export type AnyPathKeys =
 	| Strings.CollectablePathKeys
 	| Strings.NonCollectablePathKeys
 
-export type ExtractTypeKeys<T extends Strings.AnyId> =
-	T extends Strings.AnyCollectionId
-		? ExtractCollectionTypeKeys<T>
-		: Split<T, IdElements.CONST.Sep> extends [string, infer U, ...string[]]
-		  ? [U]
-		  : AnyTypeKeys
-
-export type AnyTypeKeys =
-	| [
-			IdElements.TypeElements.Collection,
-			IdElements.TypeElements.Collectable.Any
-	  ]
-	| [IdElements.TypeElements.Collectable.Any]
-	| [IdElements.TypeElements.NonCollectable]
-
-type ExtractCollectionTypeKeys<T extends Strings.AnyCollectionId> = Split<
-	T,
-	IdElements.CONST.Sep
-> extends [
-	string,
-	infer A extends IdElements.TypeElements.Collection,
-	infer B extends IdElements.TypeElements.Collectable.Any,
-	...string[]
-]
-	? [A, B]
-	: never
+export type ExtractTypeKey<T extends Strings.AnyId> =
+	Split<T, IdElements.CONST.Sep> extends [
+		string,
+		infer U extends IdElements.TypeElements.Any,
+		...string[]
+	]
+		? U
+		: IdElements.TypeElements.Any
 
 export type ExtractPathKeys<T extends Strings.AnyId> =
-	T extends Strings.NonRecursiveCollectionId<any, any, infer U extends string>
-		? [U]
-		: T extends Strings.RecursiveCollectionId<
-					any,
-					any,
-					infer U extends Strings.CollectionAncestorKeys
-		    >
-		  ? U
-		  : T extends Strings.NonRecursiveCollectionId<
-						any,
-						any,
-						infer U extends string
-		      >
-		    ? [U]
-		    : T extends NonRecursiveCollectableId<
-							any,
-							any,
-							infer U0 extends string,
-							infer U1 extends string
-		        >
-		      ? [U0, U1]
-		      : T extends Strings.RecursiveCollectableId<any, any, infer U>
-		        ? U
-		        : T extends NonCollectableId<any, any, infer U extends string>
-		          ? [U]
-		          : never
+	Split<T, IdElements.CONST.Sep> extends [
+		string,
+		IdElements.TypeElements.Any,
+		...infer U extends string[]
+	]
+		? U
+		: never
 // T extends Strings.Id<
 // 	any,
 // 	any,
@@ -280,10 +243,10 @@ export type RootKeyForId<T extends Strings.AnyId> =
 	T extends Strings.AnyCollectionId
 		? ExtractCollectedTypeElement<T>
 		: T extends Strings.NonRecursiveCollectableId
-		  ? ExtractCollectableTypeElement<T>
-		  : T extends Strings.NonCollectableId
-		    ? ExtractNonCollectableTypeElement<T>
-		    : never
+			? ExtractCollectableTypeElement<T>
+			: T extends Strings.NonCollectableId
+				? ExtractNonCollectableTypeElement<T>
+				: never
 
 export type RootKeyForType<T extends AnyIdentified> = RootKeyForId<IdForType<T>>
 
@@ -293,27 +256,8 @@ export type TypeForId<T extends Strings.AnyId> = TypeForTypeName<
 	TypeNameForId<T>
 >
 
-export type TypeForTypeElements<
-	Type extends IdElements.TypeElements.AnyPrimary,
-	Subtype extends Strings.SubtypeOf<Type>
-> = Type extends IdElements.TypeElements.Collection
-	? NameForTypeComposite<`${Type}/${Subtype}`>
-	: Type extends
-				| IdElements.TypeElements.Collectable.Any
-				| IdElements.TypeElements.NonCollectable
-	  ? NameForTypeComposite<Type>
-	  : never
-
-export type TypeForTypeKeys<T extends AnyTypeKeys> =
+export type TypeForTypeKeys<T extends Datasworn.ObjectType> =
 	TypesByName[NameFromTypeKeys<T>]
-
-type NameFromCollectionSubtype<
-	T extends IdElements.TypeElements.Collectable.Any
-> = NameForTypeComposite<`${IdElements.TypeElements.Collection}/${T}`>
-
-type _CollectionTypeFromSubtype<
-	T extends IdElements.TypeElements.Collectable.Any
-> = TypesByName[NameFromCollectionSubtype<T>]
 
 type NameFromTypeKeys<T extends AnyTypeKeys> = T extends [
 	IdElements.TypeElements.Collection,
@@ -324,28 +268,28 @@ type NameFromTypeKeys<T extends AnyTypeKeys> = T extends [
 				infer U extends
 					| IdElements.TypeElements.Collectable.Any
 					| IdElements.TypeElements.NonCollectable
-	    ]
-	  ? NameForTypeComposite<U>
-	  : never
+		  ]
+		? NameForTypeComposite<U>
+		: never
 
 type _f = NameFromTypeKeys<['delve_sites']>
 
 export type ExtractParentCollectionKey<
 	T extends Strings.NonRecursiveCollectableId
-> = T extends Strings.NonRecursiveCollectableId<
-	any,
-	any,
-	infer U extends string,
-	any
->
-	? U
-	: never
+> =
+	T extends Strings.NonRecursiveCollectableId<
+		any,
+		any,
+		infer U extends string,
+		any
+	>
+		? U
+		: never
 
 export type AnyTypeName = keyof TypesByName
 type TypeToTypeName<T extends AnyTypeName> = TypesByName[T]
-type TypeNameToType<T extends AnyIdentified> = T extends TypeToTypeName<infer U>
-	? U
-	: never
+type TypeNameToType<T extends AnyIdentified> =
+	T extends TypeToTypeName<infer U> ? U : never
 
 export type IdForType<T extends AnyIdentified> =
 	IdsByTypeName[TypeNameToType<T>]
@@ -391,8 +335,8 @@ export type ParentOf<
 > = T extends Strings.RecursiveCollectionId
 	? RecursiveCollectionParent<T>
 	: T extends Strings.AnyCollectableId
-	  ? CollectableParent<T>
-	  : never
+		? CollectableParent<T>
+		: never
 
 export type RecursiveCollectionParent<T extends Strings.RecursiveCollectionId> =
 	T extends `${infer RulesPackage}${IdElements.CONST.Sep}${infer Type extends
@@ -407,49 +351,50 @@ export type CollectableParent<T extends Strings.AnyCollectableId> =
 		? Join<
 				[RulesPackage, IdElements.CONST.CollectionsKey, Subtype, Ancestors],
 				IdElements.CONST.Sep
-		  >
+			>
 		: never
 
 // T extends `${string}${IdElements.CONST.Sep}${infer Subtype extends IdElements.TypeElements.Collectable.Any}${IdElements.CONST.Sep}${infer CollectionKeyHead}${IdElements.CONST.Sep}${string}`
 
 type ExtractPathElements<T extends string> =
-	T extends `${string}/${AnyCollectionTypeComposite}/${infer U extends string}`
+	T extends `${string}/${IdElements.TypeElements.Any}/${infer U extends string}`
 		? Split<U>
-		: T extends `${string}/${AnyTypeComposite}/${infer U extends string}`
-		  ? Split<U>
-		  : never
+		: never
 
 export type ExtractAncestorPathElements<
 	T extends Strings.RecursiveCollectableId
-> = ExtractPathElements<T> extends [
-	...infer U extends Strings.CollectionPathKeys,
-	string
-]
-	? U
-	: never
+> =
+	ExtractPathElements<T> extends [
+		...infer U extends Strings.CollectionPathKeys,
+		string
+	]
+		? U
+		: never
 
 export type ExtractAncestorCollectionPathElements<
 	T extends Strings.RecursiveCollectionId
-> = ExtractPathElements<T> extends [
-	...infer U extends Strings.CollectionAncestorKeys,
-	string
-]
-	? U
-	: never
+> =
+	ExtractPathElements<T> extends [
+		...infer U extends Strings.CollectionAncestorKeys,
+		string
+	]
+		? U
+		: never
 
 export type Last<T extends unknown[]> = T extends [infer U]
 	? U
 	: T extends [...T[number][], infer U]
-	  ? U
-	  : never
+		? U
+		: never
 
 export type DropLast<T extends unknown[]> = T extends [T[number]]
 	? []
 	: T extends [...infer U extends T[number][], T[number]]
-	  ? U
-	  : never
+		? U
+		: never
 
-type _fff = ExtractAncestorPathElements<'sundered_isles/oracles/core/action'>
+type _fff =
+	ExtractAncestorPathElements<'sundered_isles/oracle_rollable/core/action'>
 
 export type {
 	AnyCollectionType as AnyCollection,

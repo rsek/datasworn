@@ -1,14 +1,17 @@
 namespace CONST {
 	/** The maximum depth for nesting collections, relative to the root dictionary for its type */
-	export const RECURSIVE_PATH_ELEMENTS_MAX = 3
-	export const RECURSIVE_PATH_ELEMENTS_MIN = 1
-  export const PACKAGE_ID_LENGTH_MIN = 3
+  export const RECURSIVE_PATH_ELEMENTS_MAX = 3 as const
+	export type RECURSIVE_PATH_ELEMENTS_MAX = typeof RECURSIVE_PATH_ELEMENTS_MAX
+	export const RECURSIVE_PATH_ELEMENTS_MIN = 1 as const
+	export type RECURSIVE_PATH_ELEMENTS_MIN = typeof RECURSIVE_PATH_ELEMENTS_MIN
+	export const PACKAGE_ID_LENGTH_MIN = 3 as const
+	export type PACKAGE_ID_LENGTH_MIN = typeof PACKAGE_ID_LENGTH_MIN
 
 	/** The separator character for Datasworn IDs. */
 	export const Sep = '/' as const
 	export type Sep = typeof Sep
 
-  export const PropSep = '.' as const
+	export const PropSep = '.' as const
 	export type PropSep = typeof PropSep
 
 	export const KeySep = Sep

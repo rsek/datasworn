@@ -1,28 +1,65 @@
+import type { DictKey, ExpansionId, RulesetId } from '../Datasworn.js'
 import type * as IdElements from '../IdElements/index.js'
-import { type AnyTypeKeys, type Join } from './Utils.js'
+import { type Join } from './Utils.js'
 
-export type RulesPackageId = string
-export type DictKey = string
+// next two types originally from https://stackoverflow.com/questions/39494689/is-it-possible-to-restrict-number-to-a-certain-range/70307091#comment127925458_70307091
 
-export type CollectionAncestorKeys = [] | [DictKey] | [DictKey, DictKey]
-export type CollectionPathKeys =
-	| [DictKey]
-	| [DictKey, DictKey]
-	| [DictKey, DictKey, DictKey]
+type Enumerate<
+	N extends number,
+	Acc extends number[] = []
+> = Acc['length'] extends N
+	? Acc[number]
+	: Enumerate<N, [...Acc, Acc['length']]>
+
+/** A Union of integer values from F to T, exclusive */
+type Range<F extends number, T extends number> = Exclude<
+	Enumerate<T>,
+	Enumerate<F>
+>
+
+type CollectionPathLength =
+	| IdElements.CONST.RECURSIVE_PATH_ELEMENTS_MIN
+	| Range<
+			IdElements.CONST.RECURSIVE_PATH_ELEMENTS_MIN,
+			IdElements.CONST.RECURSIVE_PATH_ELEMENTS_MAX
+	  >
+	| IdElements.CONST.RECURSIVE_PATH_ELEMENTS_MAX
+
+type CollectionAncestorsLength =
+	| 0
+	| Range<
+			IdElements.CONST.RECURSIVE_PATH_ELEMENTS_MIN,
+			IdElements.CONST.RECURSIVE_PATH_ELEMENTS_MAX
+	  >
+
+export type TupleOfLength<Length extends number, T> = T[] & { length: Length }
+export type RulesPackageId = RulesetId | ExpansionId
+
+// export type CollectionAncestorKeys = [] | [DictKey] | [DictKey, DictKey]
+export type CollectionAncestorKeys = TupleOfLength<
+	CollectionAncestorsLength,
+	DictKey
+>
+// export type CollectionPathKeys =
+// 	| [DictKey]
+// 	| [DictKey, DictKey]
+// 	| [DictKey, DictKey, DictKey]
+export type CollectionPathKeys = TupleOfLength<CollectionPathLength, DictKey>
 export type CollectablePathKeys = [...CollectionPathKeys, DictKey]
 export type NonCollectablePathKeys = [DictKey]
 
 /** ID for a valid collectable object for a collection ID. */
-export type ExtractCollectee<T extends AnyCollectionId> = T extends Join<
-	[
-		infer A extends string,
-		IdElements.CONST.CollectionsKey,
-		infer B extends string
-	],
-	IdElements.CONST.Sep
->
-	? Join<[A, B, DictKey], IdElements.CONST.Sep>
-	: never
+export type ExtractCollectee<T extends AnyCollectionId> =
+	T extends Join<
+		[
+			infer A extends string,
+			IdElements.CONST.CollectionsKey,
+			infer B extends string
+		],
+		IdElements.CONST.Sep
+	>
+		? Join<[A, B, DictKey], IdElements.CONST.Sep>
+		: never
 
 // `${infer A}${IdElements.CONST.Sep}${IdElements.CONST.CollectionsKey}${IdElements.CONST.Sep}${infer B}`
 // `${A}${IdElements.CONST.Sep}${B}${IdElements.CONST.Sep}${string}`
@@ -38,9 +75,9 @@ export type OmitItemsOfType<T extends any[], O> = T extends [
 
 export type Id<
 	RulesPackage extends RulesPackageId,
-	TypeKeys extends AnyTypeKeys,
-	PathKeys extends string[]
-> = Join<[RulesPackage, ...TypeKeys, ...PathKeys], IdElements.CONST.Sep>
+	TypeKey extends IdElements.TypeElements.Any,
+	PathKeys extends DictKey[]
+> = Join<[RulesPackage, TypeKey, ...PathKeys], IdElements.CONST.Sep>
 
 // Subtype extends null
 // 	? Join<[RulesPackage, Type, ...CollectionKeys, Key], IdElements.CONST.Sep>
@@ -55,8 +92,13 @@ export type RecursiveCollectableId<
 		IdElements.TypeElements.Collectable.Recursive = IdElements.TypeElements.Collectable.Recursive,
 	AncestorKeys extends CollectionPathKeys = CollectionPathKeys,
 	Key extends string = string
-> = Id<RulesPackage, [Type], [...AncestorKeys, Key]>
-type _AtlasEntryId = RecursiveCollectableId<string, 'atlas'>
+> = Id<RulesPackage, Type, [...AncestorKeys, Key]>
+type _AtlasEntryId = RecursiveCollectableId<
+	string,
+	IdElements.TypeElements.Collectable.Recursive.AtlasEntry,
+	['ff'],
+	'f'
+>
 
 export type CollectableId<
 	RulesPackage extends RulesPackageId = RulesPackageId,
@@ -64,7 +106,7 @@ export type CollectableId<
 		IdElements.TypeElements.Collectable.Any = IdElements.TypeElements.Collectable.Any,
 	AncestorKeys extends DictKey[] = DictKey[],
 	Key extends DictKey = DictKey
-> = Id<RulesPackage, [Type], [...AncestorKeys, Key]>
+> = Id<RulesPackage, Type, [...AncestorKeys, Key]>
 
 // `${RulesPackage}${IdElements.CONST.Sep}${Type}${IdElements.CONST.Sep}${RecursiveCollectionKeys}${IdElements.CONST.Sep}${Key}`
 
@@ -75,7 +117,12 @@ export type NonRecursiveCollectableId<
 	ParentKey extends DictKey = DictKey,
 	Key extends DictKey = DictKey
 > = CollectableId<RulesPackage, Type, [ParentKey], Key>
-type _AssetId = NonRecursiveCollectableId<string, 'moves'>
+type _AssetId = NonRecursiveCollectableId<
+	string,
+	IdElements.TypeElements.Collectable.NonRecursive.Asset,
+	'a',
+	'b'
+>
 
 // `${RulesPackage}${IdElements.CONST.Sep}${Type}${IdElements.CONST.Sep}${DictKey}${IdElements.CONST.Sep}${Key}`
 
@@ -83,35 +130,39 @@ type _AssetId = NonRecursiveCollectableId<string, 'moves'>
 
 export type CollectionId<
 	RulesPackage extends RulesPackageId = RulesPackageId,
-	Subtype extends
-		IdElements.TypeElements.Collectable.Any = IdElements.TypeElements.Collectable.Any,
+	Type extends
+		IdElements.TypeElements.Collection.Any = IdElements.TypeElements.Collection.Any,
 	AncestorKeys extends string[] = string[],
 	Key extends string = string
-> = Id<
-	RulesPackage,
-	[IdElements.TypeElements.Collection, Subtype],
-	[...AncestorKeys, Key]
->
+> = Id<RulesPackage, Type, [...AncestorKeys, Key]>
 
 export type RecursiveCollectionId<
 	RulesPackage extends RulesPackageId = RulesPackageId,
-	Subtype extends
-		IdElements.TypeElements.Collectable.Recursive = IdElements.TypeElements.Collectable.Recursive,
+	Type extends
+		IdElements.TypeElements.Collection.Recursive = IdElements.TypeElements.Collection.Recursive,
 	AncestorKeys extends CollectionAncestorKeys = CollectionAncestorKeys,
 	Key extends string = string
-> = CollectionId<RulesPackage, Subtype, AncestorKeys, Key>
+> = CollectionId<RulesPackage, Type, AncestorKeys, Key>
 
-type _AtlasId = RecursiveCollectionId<string, 'atlas'>
+type _AtlasCollectionId = RecursiveCollectionId<
+	string,
+	IdElements.TypeElements.Collection.Recursive.AtlasCollection,
+	[],
+	'f'
+>
 
 // `${RulesPackage}${IdElements.CONST.Sep}${IdElements.TypeElements.Collection}${IdElements.CONST.Sep}${Subtype}${IdElements.CONST.Sep}${RecursiveCollectionKeysString}`
 export type NonRecursiveCollectionId<
 	RulesPackage extends RulesPackageId = RulesPackageId,
-	Subtype extends
-		IdElements.TypeElements.Collectable.NonRecursive = IdElements.TypeElements.Collectable.NonRecursive,
+	Type extends
+		IdElements.TypeElements.Collection.NonRecursive = IdElements.TypeElements.Collection.NonRecursive,
 	Key extends DictKey = DictKey
-> = CollectionId<RulesPackage, Subtype, [], Key>
+> = CollectionId<RulesPackage, Type, [], Key>
 
-type _AssetCollectionId = NonRecursiveCollectionId<string, 'moves'>
+type _AssetCollectionId = NonRecursiveCollectionId<
+	string,
+	IdElements.TypeElements.Collection.NonRecursive.AssetCollection
+>
 
 // `${RulesPackage}${IdElements.CONST.Sep}${IdElements.TypeElements.Collection}${IdElements.CONST.Sep}${Subtype}${IdElements.CONST.Sep}${Key}`
 
@@ -120,9 +171,13 @@ export type NonCollectableId<
 	Type extends
 		IdElements.TypeElements.NonCollectable = IdElements.TypeElements.NonCollectable,
 	Key extends DictKey = DictKey
-> = Id<RulesPackage, [Type], [Key]>
+> = Id<RulesPackage, Type, [Key]>
 
-type _TruthId = NonCollectableId<string, 'truths'>
+type _TruthId = NonCollectableId<
+	'fff',
+	IdElements.TypeElements.NonCollectable.Truth,
+	'f'
+>
 
 // `${RulesPackage}${IdElements.CONST.Sep}${Type}${IdElements.CONST.Sep}${Key}`
 
@@ -135,8 +190,3 @@ export type AnyCollectionId = RecursiveCollectionId | NonRecursiveCollectionId
 export type AnyId = AnyCollectableId | AnyCollectionId | NonCollectableId
 
 export type AnyCollectionKeys = CollectionAncestorKeys | CollectionPathKeys
-
-export type SubtypeOf<Type extends IdElements.TypeElements.AnyPrimary> =
-	Type extends IdElements.TypeElements.Collection
-		? IdElements.TypeElements.Collectable.Any
-		: null

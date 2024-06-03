@@ -70,71 +70,8 @@ export interface TypesByName
 
 export type AnyTypeName = keyof TypesByName
 
-export type AnyCollectionTypeComposite =
-	`${IdElements.TypeElements.Collection}${IdElements.CONST.Sep}${IdElements.TypeElements.Collectable.Any}`
-
-export type AnyTypeComposite =
-	| IdElements.TypeElements.NonCollectable
-	| IdElements.TypeElements.Collectable.Any
-	| AnyCollectionTypeComposite
-
-export const TypeCompositesByName = {
-	AssetCollection: 'collections/assets',
-	AtlasCollection: 'collections/atlas',
-	MoveCategory: 'collections/moves',
-	NpcCollection: 'collections/npcs',
-	OracleCollection: 'collections/oracles',
-	Asset: 'assets',
-	AtlasEntry: 'atlas',
-	DelveSite: 'delve_sites',
-	Move: 'moves',
-	Npc: 'npcs',
-	OracleRollable: 'oracles',
-	Rarity: 'rarities',
-	DelveSiteDomain: 'site_domains',
-	DelveSiteTheme: 'site_themes',
-	Truth: 'truths'
-} as const satisfies Record<AnyTypeName, AnyTypeComposite>
-
-export type TypeCompositesByName = typeof TypeCompositesByName
-
-export const NamesByTypeComposite = {
-	'collections/assets': 'AssetCollection',
-	'collections/atlas': 'AtlasCollection',
-	'collections/moves': 'MoveCategory',
-	'collections/npcs': 'NpcCollection',
-	'collections/oracles': 'OracleCollection',
-	assets: 'Asset',
-	atlas: 'AtlasEntry',
-	delve_sites: 'DelveSite',
-	moves: 'Move',
-	npcs: 'Npc',
-	oracles: 'OracleRollable',
-	rarities: 'Rarity',
-	site_domains: 'DelveSiteDomain',
-	site_themes: 'DelveSiteTheme',
-	truths: 'Truth'
-} as const satisfies Record<
-	TypeCompositesByName[keyof TypeCompositesByName],
-	keyof TypeCompositesByName
->
-
-export type NamesByTypeComposite = typeof NamesByTypeComposite
-
-export type NameForTypeComposite<T extends AnyTypeComposite> =
-	NamesByTypeComposite[T]
-export type TypeCompositeForName<T extends AnyTypeName> =
-	TypeCompositesByName[T]
-
-type TypesByTypeComposite = {
-	[T in AnyTypeComposite]: TypesByName[NameForTypeComposite<T>]
-}
-
-export type TypeForTypeComposite<T extends AnyTypeComposite> =
-	TypesByTypeComposite[T]
-
 export interface IdsByTypeName extends Record<AnyTypeName, Id.AnyId> {
-	AssetCollection: Id.NonRecursiveCollectionId<string, 'assets'>
+	AssetCollection: Id.NonRecursiveCollectionId<string, 'asset_collection'>
 	AtlasCollection: Id.RecursiveCollectionId<string, 'atlas'>
 	MoveCategory: Id.NonRecursiveCollectionId<string, 'moves'>
 	NpcCollection: Id.RecursiveCollectionId<string, 'npcs'>

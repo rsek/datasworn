@@ -7,8 +7,10 @@ import Regex from './Regex.js'
 import CONST from './CONST.js'
 import TypeElements from './TypeElements.js'
 import type * as Id from '../Id/Strings.js'
+import type { DictKey } from '../Datasworn.js'
+
 namespace TypeGuard {
-	export function DictKey(value: unknown): value is Id.DictKey {
+	export function DictKey(value: unknown): value is DictKey {
 		return typeof value === 'string' && Regex.DictKey.test(value)
 	}
 
@@ -30,61 +32,61 @@ namespace TypeGuard {
 		return Wildcard(value) || Globstar(value)
 	}
 
+	export function RecursiveCollectionType(
+		value: unknown
+	): value is TypeElements.Collection.Recursive {
+		for (const k in TypeElements.Collection.Recursive)
+			if (TypeElements.Collection.Recursive[k] === value) return true
+
+		return false
+	}
+
+	export function NonRecursiveCollectionType(
+		value: unknown
+	): value is TypeElements.Collection.NonRecursive {
+		for (const k in TypeElements.Collection.NonRecursive)
+			if (TypeElements.Collection.NonRecursive[k] === value) return true
+
+		return false
+	}
+
 	export function CollectionType(
 		value: unknown
-	): value is TypeElements.Collection {
-		return value === TypeElements.Collection
+	): value is TypeElements.Collection.Any {
+		return RecursiveCollectionType(value) || NonRecursiveCollectionType(value)
 	}
 
 	export function NonCollectableType(
 		value: unknown
 	): value is TypeElements.NonCollectable {
-		return TypeElements.NonCollectable.includes(
-			value as TypeElements.NonCollectable
-		)
+		for (const k in TypeElements.NonCollectable)
+			if (TypeElements.NonCollectable[k] === value) return true
+
+		return false
 	}
 
-	export function CollectionSubtype(
-		typeTuple: unknown[]
-	): typeTuple is [TypeElements.Collection, TypeElements.Collectable.Any] {
-		const isTuple = Array.isArray(typeTuple) && typeTuple.length === 2
-		if (!isTuple) return false
-		const [collectionType, subtype] = typeTuple
-		return CollectionType(collectionType) && CollectableType(subtype)
+	export function RecursiveCollectableType(
+		value: unknown
+	): value is TypeElements.Collectable.Recursive {
+		for (const k in TypeElements.Collectable.Recursive)
+			if (TypeElements.Collectable.Recursive[k] === value) return true
+
+		return false
 	}
 
-	export function RecursiveCollectionSubtype(
-		typeTuple: unknown[]
-	): typeTuple is [
-		TypeElements.Collection,
-		TypeElements.Collectable.Recursive
-	] {
-		const isTuple = Array.isArray(typeTuple) && typeTuple.length === 2
-		if (!isTuple) return false
-		const [collectionType, subtype] = typeTuple
-		return CollectionType(collectionType) && RecursiveCollectableType(subtype)
-	}
+	export function NonRecursiveCollectableType(
+		value: unknown
+	): value is TypeElements.Collectable.NonRecursive {
+		for (const k in TypeElements.Collectable.NonRecursive)
+			if (TypeElements.Collectable.NonRecursive[k] === value) return true
 
-	export function NonRecursiveCollectionSubtype(
-		typeTuple: unknown[]
-	): typeTuple is [
-		TypeElements.Collection,
-		TypeElements.Collectable.NonRecursive
-	] {
-		const isTuple = Array.isArray(typeTuple) && typeTuple.length === 2
-		if (!isTuple) return false
-		const [collectionType, subtype] = typeTuple
-		return (
-			CollectionType(collectionType) && NonRecursiveCollectableType(subtype)
-		)
+		return false
 	}
 
 	export function CollectableType(
 		value: unknown
 	): value is TypeElements.Collectable.Any {
-		return TypeElements.Collectable.Any.includes(
-			value as TypeElements.Collectable.Any
-		)
+		return RecursiveCollectableType(value) || NonRecursiveCollectableType(value)
 	}
 
 	export function AnyType(
@@ -92,26 +94,11 @@ namespace TypeGuard {
 	): value is
 		| TypeElements.NonCollectable
 		| TypeElements.Collectable.Any
-		| TypeElements.Collection {
+		| TypeElements.Collection.Any {
 		return (
 			NonCollectableType(value) ||
 			CollectableType(value) ||
 			CollectionType(value)
-		)
-	}
-
-	export function RecursiveCollectableType(
-		value: unknown
-	): value is TypeElements.Collectable.Recursive {
-		return TypeElements.Collectable.Recursive.includes(
-			value as TypeElements.Collectable.Recursive
-		)
-	}
-	export function NonRecursiveCollectableType(
-		value: unknown
-	): value is TypeElements.Collectable.NonRecursive {
-		return TypeElements.Collectable.NonRecursive.includes(
-			value as TypeElements.Collectable.NonRecursive
 		)
 	}
 }
