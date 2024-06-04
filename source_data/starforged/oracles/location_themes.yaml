@@ -25,7 +25,7 @@ oracles:
         * __Peril:__ Use this table to help envision a complication or hazard.
         * __Opportunity:__ Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.
 
-      You can answer questions about a place using only the tables provided for a theme, such as when delving into an [Infested](id:starforged/collections/oracles/location_themes/infested) cave. Or pair a theme with other location oracles for more flavor and variety; for example, you might explore a [Haunted](id:starforged/collections/oracles/location_themes/haunted) [Grave World](id:starforged/collections/oracles/planets/grave), a [Ruined](id:starforged/collections/oracles/location_themes/ruined) [Derelict](id:starforged/collections/oracles/derelicts), a [Sacred](id:starforged/collections/oracles/location_themes/sacred) [Precursor Vault](id:starforged/collections/oracles/vaults), or an [Inhabited](id:starforged/collections/oracles/location_themes/inhabited) [Settlement](id:starforged/collections/oracles/settlements).
+      You can answer questions about a place using only the tables provided for a theme, such as when delving into an [Infested](id:starforged/oracle_collection/location_themes/infested) cave. Or pair a theme with other location oracles for more flavor and variety; for example, you might explore a [Haunted](id:starforged/oracle_collection/location_themes/haunted) [Grave World](id:starforged/oracle_collection/planets/grave), a [Ruined](id:starforged/oracle_collection/location_themes/ruined) [Derelict](id:starforged/oracle_collection/derelicts), a [Sacred](id:starforged/oracle_collection/location_themes/sacred) [Precursor Vault](id:starforged/oracle_collection/vaults), or an [Inhabited](id:starforged/oracle_collection/location_themes/inhabited) [Settlement](id:starforged/oracle_collection/settlements).
 
       When mixing-and-matching a theme with another set of tables, use the techniques described for an __oracle array__ (page 384) to determine which oracle you reference for that question or phase of your exploration.
     contents:
@@ -46,42 +46,42 @@ oracles:
           Choose a theme that supports what you know of that location’s nature. For a random theme, roll on the table above.
         rows:
           - roll: { min: 1, max: 15 }
-            text: '[Chaotic](id:starforged/collections/oracles/location_themes/chaotic)'
+            text: '[Chaotic](id:starforged/oracle_collection/location_themes/chaotic)'
             text2: &Chaotic.summary Reality is corrupted or warped in this place.
             icon: &Chaotic.icon icons/location_theme/chaotic.svg
             # set_attributes: {location_theme: [chaotic]}
           - roll: { min: 16, max: 25 }
-            text: '[Fortified](id:starforged/collections/oracles/location_themes/fortified)'
+            text: '[Fortified](id:starforged/oracle_collection/location_themes/fortified)'
             text2: &Fortified.summary Enemies defend this place against intruders.
             icon: &Fortified.icon icons/location_theme/fortified.svg
             # set_attributes: {location_theme: [fortified]}
           - roll: { min: 26, max: 35 }
-            text: '[Haunted](id:starforged/collections/oracles/location_themes/haunted)'
+            text: '[Haunted](id:starforged/oracle_collection/location_themes/haunted)'
             text2: &Haunted.summary Restless spirits are bound to this place.
             icon: &Haunted.icon icons/location_theme/haunted.svg
             # set_attributes: {location_theme: [haunted]}
           - roll: { min: 36, max: 50 }
-            text: '[Infested](id:starforged/collections/oracles/location_themes/infested)'
+            text: '[Infested](id:starforged/oracle_collection/location_themes/infested)'
             text2: &Infested.summary Foul creatures have overrun this place.
             icon: &Infested.icon icons/location_theme/infested.svg
             # set_attributes: {location_theme: [infested]}
           - roll: { min: 51, max: 60 }
-            text: '[Inhabited](id:starforged/collections/oracles/location_themes/inhabited)'
+            text: '[Inhabited](id:starforged/oracle_collection/location_themes/inhabited)'
             text2: &Inhabited.summary People have built a community in this place.
             icon: &Inhabited.icon icons/location_theme/inhabited.svg
             # set_attributes: {location_theme: [inhabited]}
           - roll: { min: 61, max: 75 }
-            text: '[Mechanical](id:starforged/collections/oracles/location_themes/mechanical)'
+            text: '[Mechanical](id:starforged/oracle_collection/location_themes/mechanical)'
             text2: &Mechanical.summary Machines and technology hold sway in this place.
             icon: &Mechanical.icon icons/location_theme/mechanical.svg
             # set_attributes: {location_theme: [mechanical]}
           - roll: { min: 76, max: 90 }
-            text: '[Ruined](id:starforged/collections/oracles/location_themes/ruined)'
+            text: '[Ruined](id:starforged/oracle_collection/location_themes/ruined)'
             text2: &Ruined.summary Time, disaster, or war have ravaged this place.
             icon: &Ruined.icon icons/location_theme/ruined.svg
             # set_attributes: {location_theme: [ruined]}
           - roll: { min: 91, max: 100 }
-            text: '[Sacred](id:starforged/collections/oracles/location_themes/sacred)'
+            text: '[Sacred](id:starforged/oracle_collection/location_themes/sacred)'
             text2: &Sacred.summary Worshipers glorify strange powers in this place.
             icon: &Sacred.icon icons/location_theme/sacred.svg
             # set_attributes: {location_theme: [sacred]}
@@ -143,11 +143,11 @@ oracles:
               - &Feature.12
                 roll: { min: 97, max: 100 }
                 text: |-
-                  [Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)
+                  [Descriptor](id:starforged/oracle_rollable/core/descriptor) + [Focus](id:starforged/oracle_rollable/core/focus)
                 oracle_rolls:
-                  - oracle: starforged/oracles/core/descriptor
+                  - oracle: starforged/oracle_rollable/core/descriptor
                     auto: true
-                  - oracle: starforged/oracles/core/focus
+                  - oracle: starforged/oracle_rollable/core/focus
                     auto: true
           peril:
             <<: &Peril
@@ -190,11 +190,11 @@ oracles:
               - &Peril.10
                 roll: { min: 91, max: 98 }
                 text: |-
-                  [Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)
+                  [Action](id:starforged/oracle_rollable/core/action) + [Theme](id:starforged/oracle_rollable/core/theme)
                 oracle_rolls:
-                  - oracle: starforged/oracles/core/action
+                  - oracle: starforged/oracle_rollable/core/action
                     auto: true
-                  - oracle: starforged/oracles/core/theme
+                  - oracle: starforged/oracle_rollable/core/theme
                     auto: true
               - &Peril.11
                 roll: { min: 99, max: 100 }

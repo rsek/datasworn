@@ -19,7 +19,7 @@ assets:
     description: |-
       __Companions__ are NPC helpers. When you gain a companion, give them a name and envision their look and personality.
 
-      Companions utilize a health meter that can be reduced if an outcome puts them in harm's way. When your companion faces harm, make the [Companion Takes a Hit](id:starforged/moves/suffer/companion_takes_a_hit) move. When their health is at 0, they are in danger of being killed or destroyed.
+      Companions utilize a health meter that can be reduced if an outcome puts them in harm's way. When your companion faces harm, make the [Companion Takes a Hit](id:starforged/move/suffer/companion_takes_a_hit) move. When their health is at 0, they are in danger of being killed or destroyed.
     contents:
       banshee:
         name: Banshee
@@ -48,18 +48,18 @@ assets:
                   disables_asset: true
               moves: &BiologicalCompanionHealth.moves
                 suffer:
-                  - starforged/moves/suffer/companion_takes_a_hit
+                  - starforged/move/suffer/companion_takes_a_hit
                 recover:
-                  - starforged/moves/recover/heal
+                  - starforged/move/recover/heal
             max: 4
             value: 4
         abilities:
           - text: |-
-              Your banshee companion accompanies you on planetside missions, using its echolocation to help guide the way. When you ride your banshee as you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition) or [Set a Course](id:starforged/moves/exploration/set_a_course), you may roll +its health.
+              Your banshee companion accompanies you on planetside missions, using its echolocation to help guide the way. When you ride your banshee as you [Undertake an Expedition](id:starforged/move/exploration/undertake_an_expedition) or [Set a Course](id:starforged/move/exploration/set_a_course), you may roll +its health.
             enhance_moves:
               - enhances:
-                  - starforged/moves/exploration/undertake_an_expedition
-                  - starforged/moves/exploration/set_a_course
+                  - starforged/move/exploration/undertake_an_expedition
+                  - starforged/move/exploration/set_a_course
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -84,7 +84,7 @@ assets:
               When you make a combat move and roll a 1 on your action die, the banshee senses the danger and emits a powerful scream to alert you or distract your foes. You may reroll that die.
             enhance_moves:
               - enhances:
-                  - '*/moves/combat/*'
+                  - '*/move/combat/*'
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -103,15 +103,15 @@ assets:
             moves:
               <<: *BiologicalCompanionHealth.moves
               recover:
-                - starforged/moves/recover/repair
+                - starforged/move/recover/repair
         abilities:
           - text: |-
-              Your combat bot companion fights at your side. When you [Strike](id:starforged/moves/combat/strike) aided by the bot, add +1; if you [Clash](id:starforged/moves/combat/clash), take +1 momentum on a hit.
+              Your combat bot companion fights at your side. When you [Strike](id:starforged/move/combat/strike) aided by the bot, add +1; if you [Clash](id:starforged/move/combat/clash), take +1 momentum on a hit.
             enabled: true
             enhance_moves:
               - &CombatBotAugment0
                 enhances:
-                  - starforged/moves/combat/strike
+                  - starforged/move/combat/strike
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -120,23 +120,23 @@ assets:
                       method: null
               - <<: *CombatBotAugment0
                 enhances:
-                  - starforged/moves/combat/clash
+                  - starforged/move/combat/clash
           - text: |-
-              When you use the threat of violence to [Compel](id:starforged/moves/adventure/compel) or [Gain Ground](id:starforged/moves/combat/gain_ground) while the bot brings its weapons to bear, you may roll +its health. If you do, take +1 momentum on a hit. On a strong hit with a match, the bot's display is especially persuasive; take another +1 momentum.
+              When you use the threat of violence to [Compel](id:starforged/move/adventure/compel) or [Gain Ground](id:starforged/move/combat/gain_ground) while the bot brings its weapons to bear, you may roll +its health. If you do, take +1 momentum on a hit. On a strong hit with a match, the bot's display is especially persuasive; take another +1 momentum.
             enhance_moves:
               - enhances:
-                  - starforged/moves/adventure/compel
-                  - starforged/moves/combat/gain_ground
+                  - starforged/move/adventure/compel
+                  - starforged/move/combat/gain_ground
                 roll_type: action_roll
                 trigger:
                   conditions:
                     - text: Using the threat of violence while the bot brings its weapons to bear
                       <<: *AssetHealth.RollOption
           - text: |-
-              Once per fight, when you [React Under Fire](id:starforged/moves/combat/react_under_fire) by using the bot to draw fire or create a diversion, roll +its health. On a strong hit, mark progress. On a weak hit, face the cost as normal, but then you are in control.
+              Once per fight, when you [React Under Fire](id:starforged/move/combat/react_under_fire) by using the bot to draw fire or create a diversion, roll +its health. On a strong hit, mark progress. On a weak hit, face the cost as normal, but then you are in control.
             enhance_moves:
               - enhances:
-                  - starforged/moves/combat/react_under_fire
+                  - starforged/move/combat/react_under_fire
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -154,11 +154,11 @@ assets:
             value: 3
         abilities:
           - text: |-
-              Your glowcat companion perceives the inner emotions and intentions of people and creatures in its vicinity, and embodies those impressions through the colors and intensity of its luminescent fur. When you [Secure an Advantage](id:starforged/moves/adventure/secure_an_advantage) by studying the glowcat’s reactions in a charged interaction, add +its health.
+              Your glowcat companion perceives the inner emotions and intentions of people and creatures in its vicinity, and embodies those impressions through the colors and intensity of its luminescent fur. When you [Secure an Advantage](id:starforged/move/adventure/secure_an_advantage) by studying the glowcat’s reactions in a charged interaction, add +its health.
             enabled: true
             enhance_moves:
               - enhances:
-                  - 'starforged/moves/*/secure_an_advantage'
+                  - 'starforged/move/*/secure_an_advantage'
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -166,10 +166,10 @@ assets:
                       roll_options: null
                       method: null
           - text: |-
-              When you [Compel](id:starforged/moves/adventure/compel), the glowcat’s reactions will help guide your approach; you may reroll your action die if its value is less than the glowcat’s health.
+              When you [Compel](id:starforged/move/adventure/compel), the glowcat’s reactions will help guide your approach; you may reroll your action die if its value is less than the glowcat’s health.
             enhance_moves:
               - enhances:
-                  - starforged/moves/adventure/compel
+                  - starforged/move/adventure/compel
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -177,10 +177,10 @@ assets:
                       roll_options: null
                       method: null
           - text: |-
-              When you [Endure Stress](id:starforged/moves/suffer/endure_stress) in the company of the glowcat, add +1. On a strong hit with a match, take +momentum equal to their health.
+              When you [Endure Stress](id:starforged/move/suffer/endure_stress) in the company of the glowcat, add +1. On a strong hit with a match, take +momentum equal to their health.
             enhance_moves:
               - enhances:
-                  - starforged/moves/suffer/endure_stress
+                  - starforged/move/suffer/endure_stress
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -241,21 +241,21 @@ assets:
                       <<: *AssetHealth.RollOption
             enabled: true
           - text: |-
-              When you make the [Companion Takes a Hit](id:starforged/moves/suffer/companion_takes_a_hit) move for the rockhorn, count a weak hit as a strong hit. On a strong hit with a match, its rapid healing makes it unstoppable; give it another +1 health or take +1 momentum.
+              When you make the [Companion Takes a Hit](id:starforged/move/suffer/companion_takes_a_hit) move for the rockhorn, count a weak hit as a strong hit. On a strong hit with a match, its rapid healing makes it unstoppable; give it another +1 health or take +1 momentum.
             enhance_moves:
               - enhances:
-                  - starforged/moves/suffer/companion_takes_a_hit
+                  - starforged/move/suffer/companion_takes_a_hit
                 roll_type: action_roll
                 trigger:
                   conditions:
                     - text: For the rockhorn
                       <<: *AssetHealth.RollOption
           - text: |-
-              The rockhorn will come to your aid in your most vulnerable moments. When you [Endure Harm](id:starforged/moves/suffer/endure_harm) or [Endure Stress](id:starforged/moves/suffer/endure_stress) and score a miss, you may reroll your action die if its value is less than the rockhorn’s health.
+              The rockhorn will come to your aid in your most vulnerable moments. When you [Endure Harm](id:starforged/move/suffer/endure_harm) or [Endure Stress](id:starforged/move/suffer/endure_stress) and score a miss, you may reroll your action die if its value is less than the rockhorn’s health.
             enhance_moves:
               - enhances:
-                  - starforged/moves/suffer/endure_harm
-                  - starforged/moves/suffer/endure_stress
+                  - starforged/move/suffer/endure_harm
+                  - starforged/move/suffer/endure_stress
                 roll_type: action_roll
 
       sidekick:
@@ -287,10 +287,10 @@ assets:
                       roll_options: null
                       method: null
           - text: |-
-              When you [Enter the Fray](id:starforged/moves/combat/enter_the_fray) with the support of your sidekick, take +2 momentum on a hit. When you [Clash](id:starforged/moves/combat/clash) together, add +1.
+              When you [Enter the Fray](id:starforged/move/combat/enter_the_fray) with the support of your sidekick, take +2 momentum on a hit. When you [Clash](id:starforged/move/combat/clash) together, add +1.
             enhance_moves:
               - enhances:
-                  - starforged/moves/combat/enter_the_fray
+                  - starforged/move/combat/enter_the_fray
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -298,7 +298,7 @@ assets:
                       roll_options: null
                       method: null
               - enhances:
-                  - starforged/moves/combat/clash
+                  - starforged/move/combat/clash
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -306,11 +306,11 @@ assets:
                       roll_options: null
                       method: null
           - text: |-
-              When your sidekick acts to get you out of a tough spot, you may [Face Danger](id:starforged/moves/adventure/face_danger) or [React Under Fire](id:starforged/moves/combat/react_under_fire) and roll +their health (instead of your own stat). On a hit, take +1 momentum.
+              When your sidekick acts to get you out of a tough spot, you may [Face Danger](id:starforged/move/adventure/face_danger) or [React Under Fire](id:starforged/move/combat/react_under_fire) and roll +their health (instead of your own stat). On a hit, take +1 momentum.
             enhance_moves:
               - enhances:
-                  - 'starforged/moves/*/face_danger'
-                  - starforged/moves/combat/react_under_fire
+                  - 'starforged/move/*/face_danger'
+                  - starforged/move/combat/react_under_fire
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -339,11 +339,11 @@ assets:
                       roll_options: null
                       method: null
           - text: |-
-              You are attuned to the resonance of the sprite's crystalline structure, and can communicate with it at a distance and perceive through its senses. When you [Secure an Advantage](id:starforged/moves/adventure/secure_an_advantage) by observing a situation from its perspective, or remotely [Gather Information](id:starforged/moves/adventure/gather_information), add +its health.
+              You are attuned to the resonance of the sprite's crystalline structure, and can communicate with it at a distance and perceive through its senses. When you [Secure an Advantage](id:starforged/move/adventure/secure_an_advantage) by observing a situation from its perspective, or remotely [Gather Information](id:starforged/move/adventure/gather_information), add +its health.
             enhance_moves:
               - enhances:
-                  - 'starforged/moves/*/secure_an_advantage'
-                  - starforged/moves/adventure/gather_information
+                  - 'starforged/move/*/secure_an_advantage'
+                  - starforged/move/adventure/gather_information
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -365,11 +365,11 @@ assets:
             value: 3
         abilities:
           - text: |-
-              Your survey bot companion scans the path ahead. When you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition) (+wits) overland or within a site, add +1.
+              Your survey bot companion scans the path ahead. When you [Undertake an Expedition](id:starforged/move/exploration/undertake_an_expedition) (+wits) overland or within a site, add +1.
             enabled: true
             enhance_moves:
               - enhances:
-                  - starforged/moves/exploration/undertake_an_expedition
+                  - starforged/move/exploration/undertake_an_expedition
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -379,27 +379,27 @@ assets:
                         - using: stat
                           stat: wits
           - text: |-
-              Once per expedition, when you [Secure an Advantage](id:starforged/moves/adventure/secure_an_advantage) by sending the bot to scout ahead, roll +its health. On a hit, also mark progress on the expedition. On a strong hit with a match, the bot uncovers an unexpected feature or location; envision what it reveals and mark 1 tick on your discoveries legacy track.
+              Once per expedition, when you [Secure an Advantage](id:starforged/move/adventure/secure_an_advantage) by sending the bot to scout ahead, roll +its health. On a hit, also mark progress on the expedition. On a strong hit with a match, the bot uncovers an unexpected feature or location; envision what it reveals and mark 1 tick on your discoveries legacy track.
             enhance_moves:
               - enhances:
-                  - 'starforged/moves/*/secure_an_advantage'
+                  - 'starforged/move/*/secure_an_advantage'
                 roll_type: action_roll
                 trigger:
                   conditions:
                     - text: Once per expedition, by sending the survey bot to scout ahead
                       <<: *AssetHealth.RollOption
           - text: |-
-              When you [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) aided by the bot's sensors, or [Face Danger](id:starforged/moves/adventure/face_danger) to detect a threat, roll +its health and take +1 momentum on a hit.
+              When you [Explore a Waypoint](id:starforged/move/exploration/explore_a_waypoint) aided by the bot's sensors, or [Face Danger](id:starforged/move/adventure/face_danger) to detect a threat, roll +its health and take +1 momentum on a hit.
             enhance_moves:
               - enhances:
-                  - starforged/moves/exploration/explore_a_waypoint
+                  - starforged/move/exploration/explore_a_waypoint
                 roll_type: action_roll
                 trigger:
                   conditions:
                     - text: Aided by the survey bot's sensors
                       <<: *AssetHealth.RollOption
               - enhances:
-                  - 'starforged/moves/*/face_danger'
+                  - 'starforged/move/*/face_danger'
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -417,12 +417,12 @@ assets:
             value: 2
             moves:
               recover:
-                - starforged/moves/suffer/endure_stress
+                - starforged/move/suffer/endure_stress
               suffer:
-                - starforged/moves/suffer/companion_takes_a_hit
+                - starforged/move/suffer/companion_takes_a_hit
         abilities:
           - text: |-
-              You are physically bound to a being with 2 health. When you make aggressive moves while giving yourself to the symbiote's power, add +its health. If you face physical harm, choose either the [Endure Harm](id:starforged/moves/suffer/endure_harm) or [Companion Takes a Hit](id:starforged/moves/suffer/companion_takes_a_hit) move. To restore the symbiote's health, you must [Endure Stress](id:starforged/moves/suffer/endure_stress) and give the symbiote +health equal to the -spirit you face. If you make a move aided by the symbiote and roll a 1 on your action die, your fragile bond is broken for several hours.
+              You are physically bound to a being with 2 health. When you make aggressive moves while giving yourself to the symbiote's power, add +its health. If you face physical harm, choose either the [Endure Harm](id:starforged/move/suffer/endure_harm) or [Companion Takes a Hit](id:starforged/move/suffer/companion_takes_a_hit) move. To restore the symbiote's health, you must [Endure Stress](id:starforged/move/suffer/endure_stress) and give the symbiote +health equal to the -spirit you face. If you make a move aided by the symbiote and roll a 1 on your action die, your fragile bond is broken for several hours.
             enabled: true
             # TODO: move to restore symbiote health?
             enhance_moves:
@@ -433,7 +433,7 @@ assets:
                       roll_options: null
                       method: null
           - text: |-
-              When you make a move and heed the symbiote's guidance (decide after rolling), you may reroll any dice. Then, [Endure Stress](id:starforged/moves/suffer/endure_stress) (-2).
+              When you make a move and heed the symbiote's guidance (decide after rolling), you may reroll any dice. Then, [Endure Stress](id:starforged/move/suffer/endure_stress) (-2).
             enhance_moves:
               - roll_type: action_roll
           - text: |-
@@ -464,10 +464,10 @@ assets:
                     - text: By directing the utility bot to access a system, cut through an obstacle, analyze a mechanical issue, or assemble or disassemble a device
                       <<: *AssetHealth.RollOption
           - text: |-
-              When you [Repair](id:starforged/moves/recover/repair) aided by the bot, add +1. On a miss, it reveals an alternative approach which will take extra time; you may reroll any dice, but first [Lose Momentum](id:starforged/moves/suffer/lose_momentum) (-2).
+              When you [Repair](id:starforged/move/recover/repair) aided by the bot, add +1. On a miss, it reveals an alternative approach which will take extra time; you may reroll any dice, but first [Lose Momentum](id:starforged/move/suffer/lose_momentum) (-2).
             enhance_moves:
               - enhances:
-                  - starforged/moves/recover/repair
+                  - starforged/move/recover/repair
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -475,10 +475,10 @@ assets:
                       roll_options: null
                       method: null
           - text: |-
-              When you [Check Your Gear](id:starforged/moves/adventure/check_your_gear) to see if the bot has a specific tool or technique available, roll +its health and take +1 momentum on a hit.
+              When you [Check Your Gear](id:starforged/move/adventure/check_your_gear) to see if the bot has a specific tool or technique available, roll +its health and take +1 momentum on a hit.
             enhance_moves:
               - enhances:
-                  - starforged/moves/adventure/check_your_gear
+                  - starforged/move/adventure/check_your_gear
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -497,11 +497,11 @@ assets:
             value: 4
         abilities:
           - text: |-
-              Your voidglider companion cruises in your starship’s energy wake and can help guide the way on spaceborne journeys. When you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition), add +1.
+              Your voidglider companion cruises in your starship’s energy wake and can help guide the way on spaceborne journeys. When you [Undertake an Expedition](id:starforged/move/exploration/undertake_an_expedition), add +1.
             enabled: true
             enhance_moves:
               - enhances:
-                  - starforged/moves/exploration/undertake_an_expedition
+                  - starforged/move/exploration/undertake_an_expedition
                 roll_type: action_roll
                 trigger:
                   conditions:

@@ -27,23 +27,23 @@ oracles:
           page: 176
         rows:
           - roll: { min: 1, max: 12 }
-            text: '[Barrier Islands](id:classic/atlas/ironlands/barrier_islands)'
+            text: '[Barrier Islands](id:classic/atlas_entry/ironlands/barrier_island)'
           - roll: { min: 13, max: 24 }
-            text: '[Ragged Coast](id:classic/atlas/ironlands/ragged_coast)'
+            text: '[Ragged Coast](id:classic/atlas_entry/ironlands/ragged_coas)'
           - roll: { min: 25, max: 34 }
-            text: '[Deep Wilds](id:classic/atlas/ironlands/deep_wilds)'
+            text: '[Deep Wilds](id:classic/atlas_entry/ironlands/deep_wild)'
           - roll: { min: 35, max: 46 }
-            text: '[Flooded Lands](id:classic/atlas/ironlands/flooded_lands)'
+            text: '[Flooded Lands](id:classic/atlas_entry/ironlands/flooded_land)'
           - roll: { min: 47, max: 60 }
-            text: '[Havens](id:classic/atlas/ironlands/havens)'
+            text: '[Havens](id:classic/atlas_entry/ironlands/haven)'
           - roll: { min: 61, max: 72 }
-            text: '[Hinterlands](id:classic/atlas/ironlands/hinterlands)'
+            text: '[Hinterlands](id:classic/atlas_entry/ironlands/hinterland)'
           - roll: { min: 73, max: 84 }
-            text: '[Tempest Hills](id:classic/atlas/ironlands/tempest_hills)'
+            text: '[Tempest Hills](id:classic/atlas_entry/ironlands/tempest_hill)'
           - roll: { min: 85, max: 94 }
-            text: '[Veiled Mountains](id:classic/atlas/ironlands/veiled_mountains)'
+            text: '[Veiled Mountains](id:classic/atlas_entry/ironlands/veiled_mountain)'
           - roll: { min: 95, max: 99 }
-            text: '[Shattered Wastes](id:classic/atlas/ironlands/shattered_wastes)'
+            text: '[Shattered Wastes](id:classic/atlas_entry/ironlands/shattered_waste)'
           - roll: { min: 100, max: 100 }
             text: Elsewhere
       location:
@@ -280,7 +280,7 @@ oracles:
         oracle_type: table_text
         type: oracle_rollable
         canonical_name: 'Oracle 6: Location Descriptor'
-        summary: Use this oracle to add detail to the [Location](id:classic/oracles/place/location) or [Coastal Waters Location](id:classic/oracles/place/coastal_waters_location) oracles, or by itself to generate a description of a location. Roll more than once for extra detail.
+        summary: Use this oracle to add detail to the [Location](id:classic/oracle_rollable/place/location) or [Coastal Waters Location](id:classic/oracle_rollable/place/coastal_waters_location) oracles, or by itself to generate a description of a location. Roll more than once for extra detail.
         _source:
           <<: *Source
           title: Ironsworn Rulebook

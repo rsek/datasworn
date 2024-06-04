@@ -63,7 +63,7 @@
 						"ref": "OracleTablesCollection"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections."
 					}
 				},
@@ -72,7 +72,7 @@
 						"ref": "MoveCategory"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object containing move categories, which contain moves."
 					}
 				},
@@ -81,7 +81,7 @@
 						"ref": "AssetCollection"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object containing asset collections, which contain assets."
 					}
 				}
@@ -95,7 +95,7 @@
 						"ref": "AtlasCollection"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object containing atlas collections, which contain atlas entries."
 					}
 				},
@@ -104,7 +104,7 @@
 						"ref": "NpcCollection"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object containing NPC collections, which contain NPCs."
 					}
 				},
@@ -113,7 +113,7 @@
 						"ref": "Truth"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object of truth categories."
 					}
 				},
@@ -122,7 +122,7 @@
 						"ref": "Rarity"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object containing rarities, like those presented in Ironsworn: Delve."
 					}
 				},
@@ -131,7 +131,7 @@
 						"ref": "DelveSite"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object of delve sites, like the premade delve sites presented in Ironsworn: Delve"
 					}
 				},
@@ -140,7 +140,7 @@
 						"ref": "DelveSiteTheme"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object containing delve site themes."
 					}
 				},
@@ -149,7 +149,7 @@
 						"ref": "DelveSiteDomain"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object containing delve site domains."
 					}
 				}
@@ -225,7 +225,7 @@
 						"ref": "OracleTablesCollection"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections."
 					}
 				},
@@ -234,7 +234,7 @@
 						"ref": "MoveCategory"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object containing move categories, which contain moves."
 					}
 				},
@@ -243,7 +243,7 @@
 						"ref": "AssetCollection"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object containing asset collections, which contain assets."
 					}
 				},
@@ -252,7 +252,7 @@
 						"ref": "AtlasCollection"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object containing atlas collections, which contain atlas entries."
 					}
 				},
@@ -261,7 +261,7 @@
 						"ref": "NpcCollection"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object containing NPC collections, which contain NPCs."
 					}
 				},
@@ -270,7 +270,7 @@
 						"ref": "Truth"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object of truth categories."
 					}
 				},
@@ -279,7 +279,7 @@
 						"ref": "Rarity"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object containing rarities, like those presented in Ironsworn: Delve."
 					}
 				},
@@ -288,7 +288,7 @@
 						"ref": "DelveSite"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object of delve sites, like the premade delve sites presented in Ironsworn: Delve"
 					}
 				},
@@ -297,7 +297,7 @@
 						"ref": "DelveSiteTheme"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object containing delve site themes."
 					}
 				},
@@ -306,7 +306,7 @@
 						"ref": "DelveSiteDomain"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object containing delve site domains."
 					}
 				},
@@ -327,28 +327,28 @@
 			"type": "string",
 			"metadata": {
 				"description": "A unique ID for an AssetAbility.",
-				"pattern": "^([a-z][a-z0-9_]{3,})\\/assets\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\/abilities\\/(0|[1-9][0-9]*)$"
+				"pattern": "^[a-z][a-z0-9_]{3,}\\/asset\\/[a-z][a-z_]*\\/[a-z][a-z_]*\\.abilities\\/\\d+$"
 			}
 		},
 		"AssetCollectionId": {
 			"type": "string",
 			"metadata": {
 				"description": "A unique ID for an AssetCollection.",
-				"pattern": "^([a-z][a-z0-9_]{3,})\\/collections\\/assets\\/([a-z][a-z_]*)$"
+				"pattern": "^[a-z][a-z0-9_]{3,}\\/asset_collection\\/[a-z][a-z_]*$"
 			}
 		},
 		"AssetId": {
 			"type": "string",
 			"metadata": {
 				"description": "A unique ID for an Asset.",
-				"pattern": "^([a-z][a-z0-9_]{3,})\\/assets\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)$"
+				"pattern": "^[a-z][a-z0-9_]{3,}\\/asset\\/[a-z][a-z_]*\\/[a-z][a-z_]*$"
 			}
 		},
 		"AssetIdWildcard": {
 			"type": "string",
 			"metadata": {
 				"description": "A wildcarded ID that can be used to match multiple Assets.",
-				"pattern": "^(\\*|([a-z][a-z0-9_]{3,}))\\/assets\\/(\\*|([a-z][a-z_]*))\\/(\\*|([a-z][a-z_]*))$"
+				"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/asset\\/(\\*|[a-z][a-z_]*)\\/(\\*|[a-z][a-z_]*)$"
 			}
 		},
 		"AtlasCollectionId": {
@@ -356,9 +356,9 @@
 			"metadata": {
 				"description": "A unique ID for an AtlasCollection.",
 				"examples": [
-					"classic/collections/atlas/ironlands"
+					"classic/atlas_collection/ironlands"
 				],
-				"pattern": "^([a-z][a-z0-9_]{3,})\\/collections\\/atlas\\/([a-z][a-z_]*)$"
+				"pattern": "^[a-z][a-z0-9_]{3,}\\/atlas_entry\\/[a-z][a-z_]*$"
 			}
 		},
 		"AtlasEntryId": {
@@ -366,9 +366,9 @@
 			"metadata": {
 				"description": "A unique ID for an AtlasEntry.",
 				"examples": [
-					"classic/atlas/ironlands/hinterlands"
+					"classic/atlas_entry/ironlands/hinterlands"
 				],
-				"pattern": "^([a-z][a-z0-9_]{3,})\\/atlas\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)$"
+				"pattern": "^[a-z][a-z0-9_]{3,}\\/atlas_entry(\\/[a-z][a-z_]*){1,3}\\/[a-z][a-z_]*$"
 			}
 		},
 		"DelveSiteDomainId": {
@@ -376,9 +376,9 @@
 			"metadata": {
 				"description": "A unique ID for a DelveSiteDomain.",
 				"examples": [
-					"delve/site_domains/shadowfen"
+					"delve/delve_site_domain/shadowfen"
 				],
-				"pattern": "^([a-z][a-z0-9_]{3,})\\/site_domains\\/([a-z][a-z_]*)$"
+				"pattern": "^[a-z][a-z0-9_]{3,}\\/delve_site_domain\\/[a-z][a-z_]*$"
 			}
 		},
 		"DelveSiteId": {
@@ -386,9 +386,9 @@
 			"metadata": {
 				"description": "A unique ID for a DelveSite.",
 				"examples": [
-					"delve/delve_sites/alvas_rest"
+					"delve/delve_site/alvas_rest"
 				],
-				"pattern": "^([a-z][a-z0-9_]{3,})\\/delve_sites\\/([a-z][a-z_]*)$"
+				"pattern": "^[a-z][a-z0-9_]{3,}\\/delve_site\\/[a-z][a-z_]*$"
 			}
 		},
 		"DelveSiteThemeId": {
@@ -396,16 +396,16 @@
 			"metadata": {
 				"description": "A unique ID for a DelveSiteTheme.",
 				"examples": [
-					"delve/site_themes/hallowed"
+					"delve/delve_site_theme/hallowed"
 				],
-				"pattern": "^([a-z][a-z0-9_]{3,})\\/site_themes\\/([a-z][a-z_]*)$"
+				"pattern": "^[a-z][a-z0-9_]{3,}\\/delve_site_theme\\/[a-z][a-z_]*$"
 			}
 		},
 		"DictKey": {
 			"type": "string",
 			"metadata": {
 				"description": "A `snake_case` key used in a Datasworn dictionary object.",
-				"pattern": "^([a-z][a-z_]*)$"
+				"pattern": "^[a-z][a-z_]*$"
 			}
 		},
 		"ExpansionId": {
@@ -415,7 +415,7 @@
 				"examples": [
 					"delve"
 				],
-				"pattern": "^([a-z][a-z0-9_]{3,})$"
+				"pattern": "^[a-z][a-z0-9_]{3,}$"
 			}
 		},
 		"MoveCategoryId": {
@@ -423,30 +423,30 @@
 			"metadata": {
 				"description": "A unique ID for a MoveCategory.",
 				"examples": [
-					"starforged/collections/moves/adventure"
+					"starforged/move_category/adventure"
 				],
-				"pattern": "^([a-z][a-z0-9_]{3,})\\/collections\\/moves\\/([a-z][a-z_]*)$"
+				"pattern": "^[a-z][a-z0-9_]{3,}\\/move_category\\/[a-z][a-z_]*$"
 			}
 		},
 		"MoveId": {
 			"type": "string",
 			"metadata": {
-				"pattern": "^(([a-z][a-z0-9_]{3,})\\/moves\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)|([a-z][a-z0-9_]{3,})\\/assets\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\/abilities\\/(0|[1-9][0-9]*)\\/moves\\/([a-z][a-z_]*))$",
+				"pattern": "^[a-z][a-z0-9_]{3,}\\/move\\/[a-z][a-z_]*\\/[a-z][a-z_]*$|^([a-z][a-z0-9_]{3,})\\/asset\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\.abilities\\/(\\d+)\\.moves\\/([a-z][a-z_]*)$",
 				"description": "A move ID, for a standard move or a unique asset move",
 				"examples": [
-					"classic/moves/combat/strike",
-					"starforged/assets/module/grappler/abilities/0/moves/ready_grappler"
+					"classic/move/combat/strike",
+					"starforged/asset/module/grappler.abilities/0.moves/ready_grappler"
 				]
 			}
 		},
 		"MoveIdWildcard": {
 			"type": "string",
 			"metadata": {
-				"pattern": "^((\\*|([a-z][a-z0-9_]{3,}))\\/moves\\/(\\*|([a-z][a-z_]*))\\/(\\*|([a-z][a-z_]*))|(\\*|([a-z][a-z0-9_]{3,}))\\/assets\\/(\\*|([a-z][a-z_]*))\\/(\\*|([a-z][a-z_]*))\\/abilities\\/(\\*|(0|[1-9][0-9]*))\\/moves\\/(\\*|([a-z][a-z_]*)))$",
+				"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/move\\/(\\*|[a-z][a-z_]*)\\/(\\*|[a-z][a-z_]*)$|^(\\*|[a-z][a-z0-9_]{3,})\\/asset\\/(\\*|[a-z][a-z_]*)\\/(\\*|[a-z][a-z_]*)\\.abilities\\/(\\*|\\d+)\\.moves\\/(\\*|[a-z][a-z_]*)$",
 				"description": "A move ID with wildcards.",
 				"examples": [
-					"*/moves/*/face_danger",
-					"*/assets/ritual/*/abilities/*/moves/*"
+					"*/move/*/face_danger",
+					"*/asset/ritual/*.abilities/*.moves/*"
 				]
 			}
 		},
@@ -455,10 +455,10 @@
 			"metadata": {
 				"description": "A unique ID for a NpcCollection.",
 				"examples": [
-					"classic/collections/npcs/firstborn",
-					"starforged/collections/npcs/sample_npcs"
+					"classic/npc_collection/firstborn",
+					"starforged/npc_collection/sample_npcs"
 				],
-				"pattern": "^([a-z][a-z0-9_]{3,})\\/collections\\/npcs\\/([a-z][a-z_]*)$"
+				"pattern": "^[a-z][a-z0-9_]{3,}\\/npc_collection\\/[a-z][a-z_]*$"
 			}
 		},
 		"NpcId": {
@@ -466,10 +466,10 @@
 			"metadata": {
 				"description": "A unique ID for a Npc.",
 				"examples": [
-					"classic/npcs/firstborn/elf",
-					"starforged/npcs/sample_npcs/chiton"
+					"classic/npc/firstborn/elf",
+					"starforged/npc/sample_npcs/chiton"
 				],
-				"pattern": "^([a-z][a-z0-9_]{3,})\\/npcs\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)$"
+				"pattern": "^[a-z][a-z0-9_]{3,}\\/npc(\\/[a-z][a-z_]*){1,3}\\/[a-z][a-z_]*$"
 			}
 		},
 		"NpcVariantId": {
@@ -477,9 +477,9 @@
 			"metadata": {
 				"description": "A unique ID for a NpcVariant.",
 				"examples": [
-					"starforged/npcs/sample_npcs/chiton/variants/chiton_drone_pack"
+					"starforged/npc/sample_npcs/chiton.variants/chiton_drone_pack"
 				],
-				"pattern": "^([a-z][a-z0-9_]{3,})\\/npcs\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\/variants\\/([a-z][a-z_]*)$"
+				"pattern": "^[a-z][a-z0-9_]{3,}\\/npc(\\/[a-z][a-z_]*){1,3}\\/[a-z][a-z_]*\\/variants\\/[a-z][a-z_]*$"
 			}
 		},
 		"OracleCollectionId": {
@@ -487,11 +487,11 @@
 			"metadata": {
 				"description": "A unique ID for an OracleCollection.",
 				"examples": [
-					"starforged/collections/oracles/core",
-					"starforged/collections/oracles/character/names",
-					"starforged/collections/oracles/planets/furnace/settlements"
+					"starforged/oracle_collection/core",
+					"starforged/oracle_collection/character/names",
+					"starforged/oracle_collection/planets/furnace/settlements"
 				],
-				"pattern": "^([a-z][a-z0-9_]{3,})\\/collections\\/oracles(\\/([a-z][a-z_]*)){1,3}$"
+				"pattern": "^[a-z][a-z0-9_]{3,}\\/oracle_collection(\\/[a-z][a-z_]*){1,3}$"
 			}
 		},
 		"OracleRollableId": {
@@ -499,11 +499,11 @@
 			"metadata": {
 				"description": "A unique ID for an OracleRollable.",
 				"examples": [
-					"starforged/oracles/core/action",
-					"starforged/oracles/character/names/given",
-					"starforged/oracles/planets/furnace/settlements/terminus"
+					"starforged/oracle_rollable/core/action",
+					"starforged/oracle_rollable/character/names/given",
+					"starforged/oracle_rollable/planets/furnace/settlements/terminus"
 				],
-				"pattern": "^([a-z][a-z0-9_]{3,})\\/oracles(\\/([a-z][a-z_]*)){1,3}\\/([a-z][a-z_]*)$"
+				"pattern": "^[a-z][a-z0-9_]{3,}\\/oracle_rollable(\\/[a-z][a-z_]*){1,3}\\/[a-z][a-z_]*$"
 			}
 		},
 		"RarityId": {
@@ -513,7 +513,7 @@
 				"examples": [
 					"classic/rarities/ayethins_journal"
 				],
-				"pattern": "^([a-z][a-z0-9_]{3,})\\/rarities\\/([a-z][a-z_]*)$"
+				"pattern": "^[a-z][a-z0-9_]{3,}\\/rarity\\/[a-z][a-z_]*$"
 			}
 		},
 		"RulesetId": {
@@ -525,7 +525,7 @@
 					"starforged",
 					"sundered_isles"
 				],
-				"pattern": "^([a-z][a-z0-9_]{3,})$"
+				"pattern": "^[a-z][a-z0-9_]{3,}$"
 			}
 		},
 		"TruthId": {
@@ -533,10 +533,10 @@
 			"metadata": {
 				"description": "A unique ID for a Truth.",
 				"examples": [
-					"classic/truths/iron",
-					"starforged/truths/iron"
+					"classic/truth/iron",
+					"starforged/truth/iron"
 				],
-				"pattern": "^([a-z][a-z0-9_]{3,})\\/truths\\/([a-z][a-z_]*)$"
+				"pattern": "^[a-z][a-z0-9_]{3,}\\/truth\\/[a-z][a-z_]*$"
 			}
 		},
 		"AuthorInfo": {
@@ -873,7 +873,7 @@
 						"ref": "ImpactRule"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object of the Impacts in this category."
 					}
 				}
@@ -949,7 +949,7 @@
 						"ref": "StatRule"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "Describes the standard stats used by player characters in this ruleset."
 					}
 				},
@@ -958,7 +958,7 @@
 						"ref": "ConditionMeterRule"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "Describes the standard condition meters used by player characters in this ruleset."
 					}
 				},
@@ -967,7 +967,7 @@
 						"ref": "ImpactCategory"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "Describes the standard impacts/debilities used by player characters in this ruleset."
 					}
 				},
@@ -976,7 +976,7 @@
 						"ref": "SpecialTrackRule"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "Describes the special tracks used by player characters in this ruleset, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged)."
 					}
 				},
@@ -985,7 +985,7 @@
 						"ref": "TagRule"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$"
+						"propertyPattern": "^[a-z][a-z_]*$"
 					}
 				}
 			},
@@ -1000,7 +1000,7 @@
 						"ref": "StatRule"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "Describes the standard stats used by player characters in this ruleset."
 					}
 				},
@@ -1009,7 +1009,7 @@
 						"ref": "ConditionMeterRule"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "Describes the standard condition meters used by player characters in this ruleset."
 					}
 				},
@@ -1018,7 +1018,7 @@
 						"ref": "ImpactCategory"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "Describes the standard impacts/debilities used by player characters in this ruleset."
 					}
 				},
@@ -1027,7 +1027,7 @@
 						"ref": "SpecialTrackRule"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "Describes the special tracks used by player characters in this ruleset, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged)."
 					}
 				},
@@ -1036,7 +1036,7 @@
 						"ref": "TagRule"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$"
+						"propertyPattern": "^[a-z][a-z_]*$"
 					}
 				}
 			},
@@ -1432,11 +1432,11 @@
 					"ref": "Tag"
 				},
 				"metadata": {
-					"propertyPattern": "^([a-z][a-z_]*)$"
+					"propertyPattern": "^[a-z][a-z_]*$"
 				}
 			},
 			"metadata": {
-				"propertyPattern": "^([a-z][a-z0-9_]{3,})$",
+				"propertyPattern": "^[a-z][a-z0-9_]{3,}$",
 				"description": "A dictionary of tags, keyed by the RulesetID that the tags are from."
 			}
 		},
@@ -1475,7 +1475,7 @@
 				"controls": {
 					"values": {},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$"
+						"propertyPattern": "^[a-z][a-z_]*$"
 					}
 				}
 			},
@@ -1693,7 +1693,7 @@
 						"ref": "NpcVariant"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$"
+						"propertyPattern": "^[a-z][a-z_]*$"
 					}
 				}
 			},
@@ -1795,7 +1795,7 @@
 						"ref": "Npc"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$"
+						"propertyPattern": "^[a-z][a-z_]*$"
 					}
 				}
 			},
@@ -2062,7 +2062,7 @@
 								"ref": "OracleTableRollable"
 							},
 							"metadata": {
-								"propertyPattern": "^([a-z][a-z_]*)$"
+								"propertyPattern": "^[a-z][a-z_]*$"
 							}
 						},
 						"collections": {
@@ -2070,7 +2070,7 @@
 								"ref": "OracleCollection"
 							},
 							"metadata": {
-								"propertyPattern": "^([a-z][a-z_]*)$"
+								"propertyPattern": "^[a-z][a-z_]*$"
 							}
 						}
 					},
@@ -2182,7 +2182,7 @@
 								"ref": "OracleColumnText"
 							},
 							"metadata": {
-								"propertyPattern": "^([a-z][a-z_]*)$"
+								"propertyPattern": "^[a-z][a-z_]*$"
 							}
 						}
 					},
@@ -2294,7 +2294,7 @@
 								"ref": "OracleColumnText"
 							},
 							"metadata": {
-								"propertyPattern": "^([a-z][a-z_]*)$"
+								"propertyPattern": "^[a-z][a-z_]*$"
 							}
 						}
 					},
@@ -2409,7 +2409,7 @@
 								"ref": "OracleColumnText2"
 							},
 							"metadata": {
-								"propertyPattern": "^([a-z][a-z_]*)$"
+								"propertyPattern": "^[a-z][a-z_]*$"
 							}
 						}
 					},
@@ -2521,7 +2521,7 @@
 								"ref": "OracleColumnText3"
 							},
 							"metadata": {
-								"propertyPattern": "^([a-z][a-z_]*)$"
+								"propertyPattern": "^[a-z][a-z_]*$"
 							}
 						}
 					},
@@ -3405,7 +3405,7 @@
 						"ref": "OracleTableRollable"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$"
+						"propertyPattern": "^[a-z][a-z_]*$"
 					}
 				},
 				"collections": {
@@ -3413,7 +3413,7 @@
 						"ref": "OracleCollection"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$"
+						"propertyPattern": "^[a-z][a-z_]*$"
 					}
 				}
 			},
@@ -3861,7 +3861,7 @@
 						"ref": "Move"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$"
+						"propertyPattern": "^[a-z][a-z_]*$"
 					}
 				}
 			},
@@ -4456,7 +4456,7 @@
 						"ref": "AssetOptionField"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "Options are input fields set when the player purchases the asset. They're likely to remain the same through the life of the asset. Typically, they are rendered at the top of the asset card."
 					}
 				},
@@ -4471,7 +4471,7 @@
 						"ref": "AssetControlField"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "Controls are condition meters, clocks, counters, and other asset input fields whose values are expected to change throughout the life of the asset."
 					}
 				},
@@ -4520,7 +4520,7 @@
 						"ref": "Move"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "Unique moves added by this asset ability."
 					}
 				},
@@ -4529,7 +4529,7 @@
 						"ref": "AssetAbilityOptionField"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "Fields that are expected to be set once and remain the same through the life of the asset."
 					}
 				},
@@ -4538,7 +4538,7 @@
 						"ref": "AssetAbilityControlField"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "Fields whose values are expected to change over the life of the asset."
 					}
 				},
@@ -4837,7 +4837,7 @@
 						"ref": "Asset"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$"
+						"propertyPattern": "^[a-z][a-z_]*$"
 					}
 				}
 			},
@@ -5001,7 +5001,7 @@
 								"ref": "AssetConditionMeterControlField"
 							},
 							"metadata": {
-								"propertyPattern": "^([a-z][a-z_]*)$",
+								"propertyPattern": "^[a-z][a-z_]*$",
 								"description": "Checkbox controls rendered as part of the condition meter."
 							}
 						}
@@ -5058,7 +5058,7 @@
 													"ref": "SelectEnhancementFieldChoice"
 												},
 												"metadata": {
-													"propertyPattern": "^([a-z][a-z_]*)$"
+													"propertyPattern": "^[a-z][a-z_]*$"
 												}
 											}
 										},
@@ -5069,7 +5069,7 @@
 								}
 							},
 							"metadata": {
-								"propertyPattern": "^([a-z][a-z_]*)$"
+								"propertyPattern": "^[a-z][a-z_]*$"
 							}
 						}
 					},
@@ -5178,7 +5178,7 @@
 						"ref": "AssetControlFieldEnhancement"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$",
+						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "Controls are condition meters, clocks, counters, and other asset input fields whose values are expected to change throughout the life of the asset."
 					}
 				},
@@ -5224,7 +5224,7 @@
 								"ref": "SelectValueFieldChoice"
 							},
 							"metadata": {
-								"propertyPattern": "^([a-z][a-z_]*)$"
+								"propertyPattern": "^[a-z][a-z_]*$"
 							}
 						}
 					},
@@ -5288,7 +5288,7 @@
 													"ref": "SelectEnhancementFieldChoice"
 												},
 												"metadata": {
-													"propertyPattern": "^([a-z][a-z_]*)$"
+													"propertyPattern": "^[a-z][a-z_]*$"
 												}
 											}
 										},
@@ -5299,7 +5299,7 @@
 								}
 							},
 							"metadata": {
-								"propertyPattern": "^([a-z][a-z_]*)$"
+								"propertyPattern": "^[a-z][a-z_]*$"
 							}
 						}
 					},
@@ -5732,7 +5732,7 @@
 						"ref": "AtlasEntry"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$"
+						"propertyPattern": "^[a-z][a-z_]*$"
 					}
 				},
 				"collections": {
@@ -5740,7 +5740,7 @@
 						"ref": "AtlasCollection"
 					},
 					"metadata": {
-						"propertyPattern": "^([a-z][a-z_]*)$"
+						"propertyPattern": "^[a-z][a-z_]*$"
 					}
 				}
 			}

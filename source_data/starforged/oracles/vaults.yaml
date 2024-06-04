@@ -28,13 +28,13 @@ oracles:
         rows:
           - roll: { min: 1, max: 50 }
             text: Planetside
-            icon: icon/oracles/location/planetside.svg
+            icon: icon/oracle_rollable/location/planetside.svg
           - roll: { min: 51, max: 75 }
             text: Orbital
-            icon: icon/oracles/location/orbital.svg
+            icon: icon/oracle_rollable/location/orbital.svg
           - roll: { min: 76, max: 100 }
             text: Deep Space
-            icon: icon/oracles/location/deep_space.svg
+            icon: icon/oracle_rollable/location/deep_space.svg
       scale:
         name: Scale
         oracle_type: table_text
@@ -294,11 +294,11 @@ oracles:
             # is
           - roll: { min: 96, max: 100 }
             <<: &DescriptorFocus
-              text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+              text: '[Descriptor](id:starforged/oracle_rollable/core/descriptor) + [Focus](id:starforged/oracle_rollable/core/focus)'
               oracle_rolls:
-                - oracle: starforged/oracles/core/descriptor
+                - oracle: starforged/oracle_rollable/core/descriptor
                   auto: true
-                - oracle: starforged/oracles/core/focus
+                - oracle: starforged/oracle_rollable/core/focus
                   auto: true
     collections:
       interior:
@@ -308,7 +308,7 @@ oracles:
         _source: &CollectionSource
           <<: *Source
           page: 364
-        summary: If you enter the site, check the [Inner First Look](id:starforged/oracles/vaults/interior/first_look) table for initial impressions of what lies within. If you explore further, use the [Interior Feature](id:starforged/oracles/vaults/interior/feature) table to define what you find or encounter. If you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition) within a vault, check this table if you want help setting the scene for a waypoint.
+        summary: If you enter the site, check the [Inner First Look](id:starforged/oracle_rollable/vaults/interior/first_look) table for initial impressions of what lies within. If you explore further, use the [Interior Feature](id:starforged/oracle_rollable/vaults/interior/feature) table to define what you find or encounter. If you [Undertake an Expedition](id:starforged/move/exploration/undertake_an_expedition) within a vault, check this table if you want help setting the scene for a waypoint.
         icon: icons/vaults/interior.svg
         contents:
           first_look:
@@ -465,7 +465,7 @@ oracles:
               - roll: { min: 83, max: 85 }
                 text: Vertical shaft
               - roll: { min: 86, max: 90 }
-                text: 'Transition into the [Sanctum](id:starforged/oracles/vaults/sanctum)'
+                text: 'Transition into the [Sanctum](id:starforged/oracle_rollable/vaults/sanctum)'
               - roll: { min: 91, max: 95 }
                 <<: *DescriptorFocus
               - roll: { min: 96, max: 100 }
@@ -482,7 +482,7 @@ oracles:
               page: 367
             # usage:
             #   repeatable: true
-            summary: Use this table to help envision a complication within a vault, such as when you [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) and are prompted to envision a peril.
+            summary: Use this table to help envision a complication within a vault, such as when you [Explore a Waypoint](id:starforged/move/exploration/explore_a_waypoint) and are prompted to envision a peril.
             # content:
             #   part_of_speech: [fragment]
             #   tags: [peril, event, present]
@@ -527,11 +527,11 @@ oracles:
                 text: Unnerving sound or sensation
               - roll: { min: 96, max: 99 }
                 <<: &ActionTheme
-                  text: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
+                  text: '[Action](id:starforged/oracle_rollable/core/action) + [Theme](id:starforged/oracle_rollable/core/theme)'
                   oracle_rolls:
-                    - oracle: starforged/oracles/core/action
+                    - oracle: starforged/oracle_rollable/core/action
                       auto: true
-                    - oracle: starforged/oracles/core/theme
+                    - oracle: starforged/oracle_rollable/core/theme
                       auto: true
               - roll: { min: 100, max: 100 }
                 text: Roll twice
@@ -547,7 +547,7 @@ oracles:
               page: 367
             # usage:
             #   repeatable: true
-            summary: Use this table to help envision a favorable circumstance within a vault, such as when you [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) and are prompted to envision an opportunity.
+            summary: Use this table to help envision a favorable circumstance within a vault, such as when you [Explore a Waypoint](id:starforged/move/exploration/explore_a_waypoint) and are prompted to envision an opportunity.
             # content:
             #   part_of_speech: [fragment]
             #   tags: [opportunity]

@@ -6,7 +6,7 @@ oracles:
   moves:
     name: Moves
     type: oracle_collection
-    enhances: classic/collections/oracles/moves
+    enhances: classic/oracle_collection/moves
     _source:
       <<: &Source
         license: https://creativecommons.org/licenses/by/4.0
@@ -32,7 +32,7 @@ oracles:
         #       table_key: edge
         #       content_type: result
         name: Delve the Depths
-        # move: delve/moves/delve/delve_the_depths
+        # move: delve/move/delve/delve_the_depths
         _source: &CollectionSource
           <<: *Source
           page: 21
@@ -45,15 +45,15 @@ oracles:
               type: oracle_rollable
             rows:
               - roll: { min: 1, max: 45 }
-                text: &DelveTheDepths.0 'Mark progress and [Reveal a Danger](id:delve/moves/delve/reveal_a_danger).'
+                text: &DelveTheDepths.0 'Mark progress and [Reveal a Danger](id:delve/move/delve/reveal_a_danger).'
               - roll: { min: 46, max: 65 }
                 text: &DelveTheDepths.1 'Mark progress.'
               - roll: { min: 66, max: 75 }
-                text: &DelveTheDepths.2 'Choose one: Mark progress or [Find an Opportunity](id:delve/moves/delve/find_an_opportunity).'
+                text: &DelveTheDepths.2 'Choose one: Mark progress or [Find an Opportunity](id:delve/move/delve/find_an_opportunity).'
               - roll: { min: 76, max: 80 }
-                text: &DelveTheDepths.3 'Take both: Mark progress and [Find an Opportunity](id:delve/moves/delve/find_an_opportunity).'
+                text: &DelveTheDepths.3 'Take both: Mark progress and [Find an Opportunity](id:delve/move/delve/find_an_opportunity).'
               - roll: { min: 81, max: 100 }
-                text: &DelveTheDepths.4 'Mark progress twice and [Reveal a Danger](id:delve/moves/delve/reveal_a_danger).'
+                text: &DelveTheDepths.4 'Mark progress twice and [Reveal a Danger](id:delve/move/delve/reveal_a_danger).'
           shadow:
             name: Shadow
             <<: *DelveTheDepths
@@ -87,7 +87,7 @@ oracles:
         name: Find an Opportunity
         oracle_type: table_text
         type: oracle_rollable
-        # Move: delve/moves/delve/find_an_opportunity
+        # Move: delve/move/delve/find_an_opportunity
         _source:
           <<: *Source
           page: 30
@@ -150,7 +150,7 @@ oracles:
                 duplicates: make_it_worse
       reveal_a_danger_alt:
         name: Reveal a Danger (alternate version)
-        replaces: delve/oracles/moves/reveal_a_danger
+        replaces: delve/oracle_rollable/moves/reveal_a_danger
         oracle_type: table_text
         type: oracle_rollable
         _source:
@@ -193,7 +193,7 @@ oracles:
           page: 155
         rows:
           - roll: { min: 1, max: 30 }
-            text: 'The threat readies its next step, or a new danger looms. If you are in a position to prevent this development, you may attempt to do so. If you succeed, [Reach a Milestone](id:classic/moves/quest/reach_a_milestone). Otherwise, mark menace.'
+            text: 'The threat readies its next step, or a new danger looms. If you are in a position to prevent this development, you may attempt to do so. If you succeed, [Reach a Milestone](id:classic/move/quest/reach_a_milestone). Otherwise, mark menace.'
           - roll: { min: 31, max: 70 }
             text: 'The threat works subtly to advance toward its goal, or the danger escalates. Mark menace.'
           - roll: { min: 71, max: 100 }

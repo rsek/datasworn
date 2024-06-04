@@ -8,6 +8,8 @@ var CONST;
     CONST.PACKAGE_ID_LENGTH_MIN = 3;
     /** The separator character for Datasworn IDs. */
     CONST.Sep = '/';
+    CONST.PropSep = '.';
+    CONST.KeySep = CONST.Sep;
     /** The wildcard character for Datasworn IDs that matches any key in a dictionary object. */
     CONST.WildcardString = '*';
     /** A globstar (recursive wildcard) representing any number of levels of in recursive collections. */

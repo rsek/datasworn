@@ -1,14 +1,12 @@
-import { type RulesPackage } from '../Datasworn.js'
-import type * as Path from './Path.js'
-import { arrayIs } from './arrayIs.js'
-import { type TypeForId } from '../Id/Utils.js'
-import type * as Id from '../Id/index.js'
-import CONST from '../IdElements/CONST.js'
-import TypeGuard from '../IdElements/TypeGuard.js'
-
-// TODO: make this friendly to lookups in Map objects.
+import { type RulesPackage } from './Datasworn.js'
+import { arrayIs } from './Utils/Array.js'
+import type { ExtractTypeId } from './Utils/Id.js'
+import { CONST, TypeGuard } from './IdElements/index.js'
+import type * as Id from './StringId.js'
+import type DataswornNode from './DataswornNode.js'
 
 /**
+ * Traverses objects using a simple glob expression. Currently, the glob features are limited to '*' and '**' wildcards; it doesn't handle expansion of braces, pipes, and so on.
  * @internal
  */
 class ObjectGlobber<
@@ -19,7 +17,7 @@ class ObjectGlobber<
 	}
 
 	/** Keys that are part of the real object path, but not part of the ID */
-	static readonly implicitKeys = ['contents', 'collections']
+	static readonly implicitKeys = [CONST.ContentsKey, CONST.CollectionsKey]
 
 	/** Does this path contain any wildcard or globstar elements? */
 	get wildcard() {
@@ -120,20 +118,24 @@ class ObjectGlobber<
 		)
 	}
 
+	/** Return the first array element. */
 	first() {
 		return this[0]
 	}
 
+	/** Return the last array element. */
 	last() {
 		return this[this.length - 1]
 	}
 
+	/** Return the array items without the last element. */
 	head() {
-		return this.slice(1)
+		return this.slice(0, -1)
 	}
 
+	/** Return the array items without the first element. */
 	tail() {
-		return this.slice(0, -1)
+		return this.slice(1)
 	}
 
 	static getMatches(
@@ -300,9 +302,9 @@ class ObjectGlobber<
 	 */
 	static walk<T extends Id.AnyId>(
 		from: Record<string, RulesPackage>,
-		path: ObjectGlobber<Path.PathForId<T>>,
+		path: ObjectGlobber,
 		forEach?: ObjectGlobber.WalkIteratee
-	): TypeForId<T>
+	): DataswornNode.ByType<ExtractTypeId<T>>
 	static walk(
 		from: object,
 		path: ObjectGlobber,
@@ -418,8 +420,8 @@ class ObjectGlobber<
 	): T extends typeof CONST.WildcardString
 		? (typeof ObjectGlobber)['WILDCARD']
 		: T extends typeof CONST.GlobstarString
-		  ? (typeof ObjectGlobber)['GLOBSTAR']
-		  : T {
+			? (typeof ObjectGlobber)['GLOBSTAR']
+			: T {
 		switch (true) {
 			case TypeGuard.Wildcard(item):
 				return ObjectGlobber.WILDCARD as any
@@ -436,8 +438,8 @@ class ObjectGlobber<
 	): T extends (typeof ObjectGlobber)['WILDCARD']
 		? typeof CONST.WildcardString
 		: T extends (typeof ObjectGlobber)['GLOBSTAR']
-		  ? typeof CONST.GlobstarString
-		  : T {
+			? typeof CONST.GlobstarString
+			: T {
 		switch (item) {
 			case ObjectGlobber.WILDCARD:
 			case ObjectGlobber.GLOBSTAR:

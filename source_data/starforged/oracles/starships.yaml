@@ -144,11 +144,11 @@ oracles:
                 text: Transport passengers
               - &Mission.30
                 roll: { min: 86, max: 90 }
-                text: '[Action](id:starforged/oracles/core/action) + [Theme](id:starforged/oracles/core/theme)'
+                text: '[Action](id:starforged/oracle_rollable/core/action) + [Theme](id:starforged/oracle_rollable/core/theme)'
                 oracle_rolls:
-                  - oracle: starforged/oracles/core/action
+                  - oracle: starforged/oracle_rollable/core/action
                     auto: true
-                  - oracle: starforged/oracles/core/theme
+                  - oracle: starforged/oracle_rollable/core/theme
                     auto: true
               - &Mission.31
                 roll: { min: 91, max: 100 }
@@ -401,9 +401,9 @@ oracles:
             _i18n: *CommonNoun
           - roll: { min: 68, max: 82 }
             text: Multipurpose
-            text2: '[Starship Mission](id:starforged/oracles/starships/mission)'
+            text2: '[Starship Mission](id:starforged/oracle_rollable/starships/mission)'
             oracle_rolls:
-              - oracle: starforged/oracles/starships/mission
+              - oracle: starforged/oracle_rollable/starships/mission
             _i18n: &Adjective
               text:
                 part_of_speech: adjective
@@ -412,10 +412,10 @@ oracles:
             text2: null
             _i18n: *Adjective
           - roll: { min: 85, max: 94 }
-            text: '[Fleet](id:starforged/oracles/starships/fleet)'
+            text: '[Fleet](id:starforged/oracle_rollable/starships/fleet)'
             text2: null
             oracle_rolls:
-              - oracle: starforged/oracles/starships/fleet
+              - oracle: starforged/oracle_rollable/starships/fleet
           - roll: { min: 95, max: 100 }
             text: Ships in conflict (roll twice)
             text2: null
@@ -454,9 +454,9 @@ oracles:
             text: Transport and escorts
             _i18n: *CommonNoun
           - roll: { min: 91, max: 100 }
-            text: '[Starship Mission](id:starforged/oracles/starships/mission)'
+            text: '[Starship Mission](id:starforged/oracle_rollable/starships/mission)'
             oracle_rolls:
-              - oracle: starforged/oracles/starships/mission
+              - oracle: starforged/oracle_rollable/starships/mission
       initial_contact:
         name: Initial Contact
         oracle_type: table_text
@@ -493,7 +493,7 @@ oracles:
           - roll: { min: 91, max: 95 }
             text: Destroyed
           - roll: { min: 96, max: 100 }
-            text: '[Derelict](id:starforged/collections/oracles/derelicts)'
+            text: '[Derelict](id:starforged/oracle_collection/derelicts)'
       first_look:
         name: First Look
         oracle_type: table_text
@@ -551,11 +551,11 @@ oracles:
           - roll: { min: 91, max: 94 }
             text: Towing or linked
           - roll: { min: 95, max: 100 }
-            text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
+            text: '[Descriptor](id:starforged/oracle_rollable/core/descriptor) + [Focus](id:starforged/oracle_rollable/core/focus)'
             oracle_rolls:
-              - oracle: starforged/oracles/core/descriptor
+              - oracle: starforged/oracle_rollable/core/descriptor
                 auto: true
-              - oracle: starforged/oracles/core/focus
+              - oracle: starforged/oracle_rollable/core/focus
                 auto: true
       starship_name:
         name: Starship Name

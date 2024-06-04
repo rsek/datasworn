@@ -84,10 +84,10 @@ rules:
       contents:
         cursed:
           label: cursed
-          description: 'Cursed is marked when you [Face Death](ironsworn/moves/suffer/face_death) and return with a soul-bound quest. This burden can only be cleared by completing the quest.'
+          description: 'Cursed is marked when you [Face Death](ironsworn/move/suffer/face_death) and return with a soul-bound quest. This burden can only be cleared by completing the quest.'
         tormented:
           label: tormented
-          description: 'Tormented is marked when you [Face Desolation](ironsworn/moves/suffer/face_desolation) and undertake a quest to prevent a dire future.'
+          description: 'Tormented is marked when you [Face Desolation](ironsworn/move/suffer/face_desolation) and undertake a quest to prevent a dire future.'
   special_tracks:
     bonds:
       label: bonds

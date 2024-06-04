@@ -13,7 +13,7 @@ site_domains:
       title: Themes & Domains by rsek
       url: https://perchance.org/rsek-delve-themes-domains
       date: 2022-07-05
-    icon: icons/site_domains/dreamscape.svg
+    icon: icons/delve_site_domain/dreamscape.svg
     summary: A place where dream-logic supplants natural law.
     features:
       - roll: { min: 21, max: 43 }
@@ -39,20 +39,20 @@ site_domains:
         text: Something unusual or unexpected
         suggestions:
           oracles:
-            - delve/oracles/feature/aspect
-            - delve/oracles/feature/focus
+            - delve/oracle_rollable/feature/aspect
+            - delve/oracle_rollable/feature/focus
       - &Feature.newTheme
         text: You transition into a new theme
         roll: { min: 99, max: 99 }
         suggestions:
           oracles:
-            - delve/oracles/site_nature/theme
+            - delve/oracle_rollable/site_nature/theme
       - &Feature.newDomain
         roll: { min: 100, max: 100 }
         text: You transition into a new domain
         suggestions:
           oracles:
-            - delve/oracles/site_nature/domain
+            - delve/oracle_rollable/site_nature/domain
     dangers:
       - roll: { min: 31, max: 33 }
         text: Time variance complicates real world
@@ -67,7 +67,7 @@ site_domains:
   infrastructure:
     name: Infrastructure
     _source: *Source
-    icon: icons/site_domains/infrastructure.svg
+    icon: icons/delve_site_domain/infrastructure.svg
     summary: The substrate of public life or private enterprise.
     features:
       - roll: { min: 21, max: 43 }
@@ -105,7 +105,7 @@ site_domains:
   plains:
     name: Plains
     _source: *Source
-    icon: icons/site_domains/plains.svg
+    icon: icons/delve_site_domain/plains.svg
     summary: A grassland, steppe, or other open country.
     features:
       - roll: { min: 21, max: 43 }
@@ -143,7 +143,7 @@ site_domains:
   repository:
     name: Repository
     _source: *Source
-    icon: icons/site_domains/repository.svg
+    icon: icons/delve_site_domain/repository.svg
     summary: A place to store or display precious things.
     features:
       - roll: { min: 21, max: 43 }
@@ -181,7 +181,7 @@ site_domains:
   revel:
     name: Revel
     _source: *Source
-    icon: icons/site_domains/revel.svg
+    icon: icons/delve_site_domain/revel.svg
     summary: Functions, festivities, and frolics.
     features:
       - roll: { min: 21, max: 43 }
@@ -219,7 +219,7 @@ site_domains:
   wastes:
     name: Wastes
     _source: *Source
-    icon: icons/site_domains/wastes.svg
+    icon: icons/delve_site_domain/wastes.svg
     summary: A badland, desert, tundra, or other barren place.
     features:
       - roll: { min: 21, max: 43 }
