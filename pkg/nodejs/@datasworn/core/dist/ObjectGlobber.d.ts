@@ -1,9 +1,10 @@
-import { type RulesPackage } from '../Datasworn.js';
-import type * as Path from './Path.js';
-import { type TypeForId } from '../Id/Utils.js';
-import type * as Id from '../Id/index.js';
-import CONST from '../IdElements/CONST.js';
+import { type RulesPackage } from './Datasworn.js';
+import type { ExtractTypeId } from './Utils/Id.js';
+import { CONST } from './IdElements/index.js';
+import type * as Id from './StringId.js';
+import type DataswornNode from './DataswornNode.js';
 /**
+ * Traverses objects using a simple glob expression. Currently, the glob features are limited to '*' and '**' wildcards; it doesn't handle expansion of braces, pipes, and so on.
  * @internal
  */
 declare class ObjectGlobber<TTuple extends Array<PropertyKey> = Array<PropertyKey>> extends Array<TTuple[number]> {
@@ -23,9 +24,13 @@ declare class ObjectGlobber<TTuple extends Array<PropertyKey> = Array<PropertyKe
     walk<T>(from: object, forEach?: ObjectGlobber.WalkIteratee): T;
     is<T extends ObjectGlobber>(path: T): path is T & this;
     static isGlobElement(element: unknown): boolean;
+    /** Return the first array element. */
     first(): TTuple[number];
+    /** Return the last array element. */
     last(): TTuple[number];
+    /** Return the array items without the last element. */
     head(): TTuple[number][];
+    /** Return the array items without the first element. */
     tail(): TTuple[number][];
     static getMatches(from: object, keys: PropertyKey[], { matchTest, includeArrays }?: {
         matchTest?: ObjectGlobber.MatchTest;
@@ -47,7 +52,7 @@ declare class ObjectGlobber<TTuple extends Array<PropertyKey> = Array<PropertyKe
      * @param forEach An optional function to run on every walked value.
      * @throws If a key is an invalid type, or if a key can't be found.
      */
-    static walk<T extends Id.AnyId>(from: Record<string, RulesPackage>, path: ObjectGlobber<Path.PathForId<T>>, forEach?: ObjectGlobber.WalkIteratee): TypeForId<T>;
+    static walk<T extends Id.AnyId>(from: Record<string, RulesPackage>, path: ObjectGlobber, forEach?: ObjectGlobber.WalkIteratee): DataswornNode.ByType<ExtractTypeId<T>>;
     /** Return all object paths in a given object. Paths that contain only a primitive value (boolean, number, string) are omitted. */
     static getObjectPaths(object: object, includeArrays?: boolean, currentPath?: ObjectGlobber): ObjectGlobber<PropertyKey[]>[];
     /** Replace a wildcard/globstar string with a Symbol */

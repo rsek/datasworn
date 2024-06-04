@@ -4,16 +4,12 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 var _a, _ObjectGlobber_getPlainObjectPaths, _ObjectGlobber_getMapPaths;
 Object.defineProperty(exports, "__esModule", { value: true });
-const arrayIs_js_1 = require("./arrayIs.js");
-const CONST_js_1 = __importDefault(require("../IdElements/CONST.js"));
-const TypeGuard_js_1 = __importDefault(require("../IdElements/TypeGuard.js"));
-// TODO: make this friendly to lookups in Map objects.
+const Array_js_1 = require("./Utils/Array.js");
+const index_js_1 = require("./IdElements/index.js");
 /**
+ * Traverses objects using a simple glob expression. Currently, the glob features are limited to '*' and '**' wildcards; it doesn't handle expansion of braces, pipes, and so on.
  * @internal
  */
 class ObjectGlobber extends Array {
@@ -84,24 +80,28 @@ class ObjectGlobber extends Array {
         return this.every((valueA, i) => {
             const valueB = path[i];
             if (Array.isArray(valueA) && Array.isArray(valueB))
-                return (0, arrayIs_js_1.arrayIs)(valueA, valueB);
+                return (0, Array_js_1.arrayIs)(valueA, valueB);
             return Object.is(valueA, valueB);
         });
     }
     static isGlobElement(element) {
         return (element === _a.WILDCARD || element === _a.GLOBSTAR);
     }
+    /** Return the first array element. */
     first() {
         return this[0];
     }
+    /** Return the last array element. */
     last() {
         return this[this.length - 1];
     }
+    /** Return the array items without the last element. */
     head() {
-        return this.slice(1);
-    }
-    tail() {
         return this.slice(0, -1);
+    }
+    /** Return the array items without the first element. */
+    tail() {
+        return this.slice(1);
     }
     static getMatches(from, keys, { matchTest, includeArrays = false } = { includeArrays: false }) {
         const nextKey = keys[0];
@@ -244,9 +244,9 @@ class ObjectGlobber extends Array {
     /** Replace a wildcard/globstar string with a Symbol */
     static replaceGlobString(item) {
         switch (true) {
-            case TypeGuard_js_1.default.Wildcard(item):
+            case index_js_1.TypeGuard.Wildcard(item):
                 return _a.WILDCARD;
-            case TypeGuard_js_1.default.Globstar(item):
+            case index_js_1.TypeGuard.Globstar(item):
                 return _a.GLOBSTAR;
             default:
                 return item;
@@ -294,11 +294,11 @@ _a = ObjectGlobber, _ObjectGlobber_getPlainObjectPaths = function _ObjectGlobber
     return results;
 };
 /** Keys that are part of the real object path, but not part of the ID */
-ObjectGlobber.implicitKeys = ['contents', 'collections'];
+ObjectGlobber.implicitKeys = [index_js_1.CONST.ContentsKey, index_js_1.CONST.CollectionsKey];
 (function (ObjectGlobber) {
     /** Represents a glob wildcard path element, usually expressed as `*` */
-    ObjectGlobber.WILDCARD = Symbol(CONST_js_1.default.WildcardString);
+    ObjectGlobber.WILDCARD = Symbol(index_js_1.CONST.WildcardString);
     /** Represents a globstar (recursive wildcard) path element, usually expressed as `**` */
-    ObjectGlobber.GLOBSTAR = Symbol(CONST_js_1.default.GlobstarString);
+    ObjectGlobber.GLOBSTAR = Symbol(index_js_1.CONST.GlobstarString);
 })(ObjectGlobber || (ObjectGlobber = {}));
 exports.default = ObjectGlobber;

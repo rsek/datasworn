@@ -7,16 +7,16 @@ const CONST_js_1 = __importDefault(require("./CONST.js"));
 /**
  * Regular expressions used to validate Datasworn ID elements.
  */
-var Regex;
-(function (Regex) {
+var Pattern;
+(function (Pattern) {
     const DictKeyBase = /[a-z][a-z_]*/;
-    Regex.DictKeyElement = DictKeyBase;
-    Regex.DictKey = new RegExp(`^${DictKeyBase.source}$`);
+    Pattern.DictKeyElement = DictKeyBase;
+    Pattern.DictKey = new RegExp(`^${DictKeyBase.source}$`);
     const RulesPackageBase = new RegExp(`[a-z][a-z0-9_]{${CONST_js_1.default.PACKAGE_ID_LENGTH_MIN},}`);
-    Regex.RulesPackageElement = RulesPackageBase;
-    Regex.RulesPackageId = new RegExp(`^${RulesPackageBase.source}$`);
-    Regex.IndexElement = /\d+/;
+    Pattern.RulesPackageElement = RulesPackageBase;
+    Pattern.RulesPackageId = new RegExp(`^${RulesPackageBase.source}$`);
+    Pattern.IndexElement = /\d+/;
     const RecursiveDictKeyBase = new RegExp(`${DictKeyBase.source}(?:\\${CONST_js_1.default.Sep}${DictKeyBase.source}){${CONST_js_1.default.RECURSIVE_PATH_ELEMENTS_MIN - 1},${CONST_js_1.default.RECURSIVE_PATH_ELEMENTS_MAX - 1}}`);
-    Regex.RecursiveDictKeyElement = RecursiveDictKeyBase;
-})(Regex || (Regex = {}));
-exports.default = Regex;
+    Pattern.RecursiveDictKeyElement = RecursiveDictKeyBase;
+})(Pattern || (Pattern = {}));
+exports.default = Pattern;

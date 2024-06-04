@@ -1,7 +1,7 @@
 /**
  * Regular expressions used to validate Datasworn ID elements.
  */
-declare namespace Regex {
+declare namespace Pattern {
     const DictKeyElement: RegExp;
     const DictKey: RegExp;
     const RulesPackageElement: RegExp;
@@ -9,4 +9,4 @@ declare namespace Regex {
     const IndexElement: RegExp;
     const RecursiveDictKeyElement: RegExp;
 }
-export default Regex;
+export default Pattern;

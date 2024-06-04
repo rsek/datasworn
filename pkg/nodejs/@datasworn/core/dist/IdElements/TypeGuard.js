@@ -7,17 +7,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const Regex_js_1 = __importDefault(require("./Regex.js"));
+const Pattern_js_1 = __importDefault(require("./Pattern.js"));
 const CONST_js_1 = __importDefault(require("./CONST.js"));
-const TypeElements_js_1 = __importDefault(require("./TypeElements.js"));
+const NodeTypeId_js_1 = __importDefault(require("./NodeTypeId.js"));
 var TypeGuard;
 (function (TypeGuard) {
     function DictKey(value) {
-        return typeof value === 'string' && Regex_js_1.default.DictKey.test(value);
+        return typeof value === 'string' && Pattern_js_1.default.DictKey.test(value);
     }
     TypeGuard.DictKey = DictKey;
     function RulesPackageId(value) {
-        return typeof value === 'string' && Regex_js_1.default.RulesPackageId.test(value);
+        return typeof value === 'string' && Pattern_js_1.default.RulesPackageId.test(value);
     }
     TypeGuard.RulesPackageId = RulesPackageId;
     function Wildcard(value) {
@@ -32,40 +32,47 @@ var TypeGuard;
         return Wildcard(value) || Globstar(value);
     }
     TypeGuard.AnyWildcard = AnyWildcard;
+    function RecursiveCollectionType(value) {
+        for (const v of NodeTypeId_js_1.default.Collection.Recursive)
+            if (v === value)
+                return true;
+        return false;
+    }
+    TypeGuard.RecursiveCollectionType = RecursiveCollectionType;
+    function NonRecursiveCollectionType(value) {
+        for (const v of NodeTypeId_js_1.default.Collection.NonRecursive)
+            if (v === value)
+                return true;
+        return false;
+    }
+    TypeGuard.NonRecursiveCollectionType = NonRecursiveCollectionType;
     function CollectionType(value) {
-        return value === TypeElements_js_1.default.Collection;
+        return RecursiveCollectionType(value) || NonRecursiveCollectionType(value);
     }
     TypeGuard.CollectionType = CollectionType;
     function NonCollectableType(value) {
-        return TypeElements_js_1.default.NonCollectable.includes(value);
+        for (const v of NodeTypeId_js_1.default.NonCollectable)
+            if (v === value)
+                return true;
+        return false;
     }
     TypeGuard.NonCollectableType = NonCollectableType;
-    function CollectionSubtype(typeTuple) {
-        const isTuple = Array.isArray(typeTuple) && typeTuple.length === 2;
-        if (!isTuple)
-            return false;
-        const [collectionType, subtype] = typeTuple;
-        return CollectionType(collectionType) && CollectableType(subtype);
+    function RecursiveCollectableType(value) {
+        for (const v of NodeTypeId_js_1.default.Collectable.Recursive)
+            if (v === value)
+                return true;
+        return false;
     }
-    TypeGuard.CollectionSubtype = CollectionSubtype;
-    function RecursiveCollectionSubtype(typeTuple) {
-        const isTuple = Array.isArray(typeTuple) && typeTuple.length === 2;
-        if (!isTuple)
-            return false;
-        const [collectionType, subtype] = typeTuple;
-        return CollectionType(collectionType) && RecursiveCollectableType(subtype);
+    TypeGuard.RecursiveCollectableType = RecursiveCollectableType;
+    function NonRecursiveCollectableType(value) {
+        for (const v of NodeTypeId_js_1.default.Collectable.NonRecursive)
+            if (v === value)
+                return true;
+        return false;
     }
-    TypeGuard.RecursiveCollectionSubtype = RecursiveCollectionSubtype;
-    function NonRecursiveCollectionSubtype(typeTuple) {
-        const isTuple = Array.isArray(typeTuple) && typeTuple.length === 2;
-        if (!isTuple)
-            return false;
-        const [collectionType, subtype] = typeTuple;
-        return (CollectionType(collectionType) && NonRecursiveCollectableType(subtype));
-    }
-    TypeGuard.NonRecursiveCollectionSubtype = NonRecursiveCollectionSubtype;
+    TypeGuard.NonRecursiveCollectableType = NonRecursiveCollectableType;
     function CollectableType(value) {
-        return TypeElements_js_1.default.Collectable.Any.includes(value);
+        return RecursiveCollectableType(value) || NonRecursiveCollectableType(value);
     }
     TypeGuard.CollectableType = CollectableType;
     function AnyType(value) {
@@ -74,13 +81,5 @@ var TypeGuard;
             CollectionType(value));
     }
     TypeGuard.AnyType = AnyType;
-    function RecursiveCollectableType(value) {
-        return TypeElements_js_1.default.Collectable.Recursive.includes(value);
-    }
-    TypeGuard.RecursiveCollectableType = RecursiveCollectableType;
-    function NonRecursiveCollectableType(value) {
-        return TypeElements_js_1.default.Collectable.NonRecursive.includes(value);
-    }
-    TypeGuard.NonRecursiveCollectableType = NonRecursiveCollectableType;
 })(TypeGuard || (TypeGuard = {}));
 exports.default = TypeGuard;

@@ -14,10 +14,13 @@ exports.enhanceCollection = void 0;
 // }
 // console.log(classic.oracles.character)
 /**
+ * Applies overrides to Datasworn collection from another Datasworn collection.
  * Mutates `target`.
  * @param target The collection object to be enhanced.
  * @param source The changes to be applied to `target`
  * @param strictOverrides Should enhancements to collections and collectables require a matching `enhances` or `overrides` property? (default: `true`)
+ * @returns The mutated `target`
+ * @experimental
  */
 function enhanceCollection(target, source, strictOverrides = true) {
     if (strictOverrides &&
@@ -96,7 +99,8 @@ function enhanceCollection(target, source, strictOverrides = true) {
                         oldValue.set(childKey, updatedChild);
                     }
                     else {
-                        const updatedChild = childKey in oldValue
+                        const updatedChild = childKey in
+                            oldValue
                             ? enhanceCollection(oldValue[childKey], sourceChild, strictOverrides)
                             : sourceChild;
                         oldValue[childKey] = updatedChild;
