@@ -76,7 +76,7 @@ abstract class IdParser<
 	public set rulesPackage(value: RulesPackage) {
 		if (IdParser.#validateRulesPackage(value))
 			throw new Error(
-				`${value as any} is not a valid RulesPackageId or wildcard ("*").`
+				`${value as any} is not a valid RulesPackageId or wildcard ("${CONST.WildcardString}").`
 			)
 		this.#resetCachedProperties()
 		this.#rulesPackage = value
@@ -158,7 +158,7 @@ abstract class IdParser<
 
 	static #createMatcher(...elements: string[]) {
 		return new RegExp(
-			'^' + elements.map(IdParser.#getPatternFragment).join('/') + '$'
+			'^' + elements.map(IdParser.#getPatternFragment).join(CONST.Sep) + '$'
 		)
 	}
 
@@ -207,7 +207,7 @@ abstract class IdParser<
 	static get<T extends Strings.AnyId>(
 		id: T,
 		tree?: (typeof IdParser)['datasworn']
-	): TypeId.NodeOfType<ExtractTypeId<T>>
+	): TypeId.TypeNode<ExtractTypeId<T>>
 	static get<T extends IdParser>(
 		id: T,
 		tree?: (typeof IdParser)['datasworn']
@@ -223,7 +223,7 @@ abstract class IdParser<
 	}
 
 	get(tree?: (typeof IdParser)['datasworn']) {
-		return IdParser.get(this, tree) as TypeId.NodeOfType<Type>
+		return IdParser.get(this, tree) as TypeId.TypeNode<Type>
 	}
 
 	static fromOptions<

@@ -104,7 +104,7 @@ namespace TypeId {
 	}
 
 	/** Gets the node object type corresponding to a given TypeId. */
-	export type NodeOfType<T extends Any = Any> = TypeMap[T]
+	export type TypeNode<T extends Any = Any> = TypeMap[T]
 }
 
 export default TypeId

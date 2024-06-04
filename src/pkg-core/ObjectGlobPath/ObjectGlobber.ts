@@ -1,5 +1,5 @@
 import { type RulesPackage } from '../Datasworn.js'
-import type * as Path from './Path.js'
+// import type * as Path from './Path.js'
 import { arrayIs } from './arrayIs.js'
 import type * as Id from '../Id/index.js'
 import CONST from '../IdElements/CONST.js'
@@ -119,20 +119,24 @@ class ObjectGlobber<
 		)
 	}
 
+	/** Return the first array element. */
 	first() {
 		return this[0]
 	}
 
+	/** Return the last array element. */
 	last() {
 		return this[this.length - 1]
 	}
 
+	/** Return the array items without the last element. */
 	head() {
-		return this.slice(1)
+		return this.slice(0, -1)
 	}
 
+	/** Return the array items without the first element. */
 	tail() {
-		return this.slice(0, -1)
+		return this.slice(1)
 	}
 
 	static getMatches(
@@ -299,9 +303,9 @@ class ObjectGlobber<
 	 */
 	static walk<T extends Id.AnyId>(
 		from: Record<string, RulesPackage>,
-		path: ObjectGlobber<Path.PathForId<T>>,
+		path: ObjectGlobber,
 		forEach?: ObjectGlobber.WalkIteratee
-	): TypeId.NodeOfType<ExtractTypeId<T>>
+	): TypeId.TypeNode<ExtractTypeId<T>>
 	static walk(
 		from: object,
 		path: ObjectGlobber,
