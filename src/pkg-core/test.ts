@@ -1,3 +1,7 @@
+/**
+ * A very lazy test script. If TS complains about TypeErrors in here, then something is broken!
+ */
+
 import type * as Strings from './StringId.js'
 import { IdParser } from './IdParser.js'
 // import { readFileSync } from 'fs'
