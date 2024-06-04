@@ -1,11 +1,12 @@
 import { type RulesPackage } from './Datasworn.js'
 import { arrayIs } from './Utils/Array.js'
 import type { ExtractTypeId } from './Utils/Id.js'
-import { CONST, TypeGuard, type NodeTypeId } from './IdElements/index.js'
+import { CONST, TypeGuard } from './IdElements/index.js'
 import type * as Id from './StringId.js'
 import type DataswornNode from './DataswornNode.js'
 
 /**
+ * Traverses objects using a simple glob expression. Currently, the glob features are limited to '*' and '**' wildcards; it doesn't handle expansion of braces, pipes, and so on.
  * @internal
  */
 class ObjectGlobber<
@@ -16,7 +17,7 @@ class ObjectGlobber<
 	}
 
 	/** Keys that are part of the real object path, but not part of the ID */
-	static readonly implicitKeys = ['contents', 'collections']
+	static readonly implicitKeys = [CONST.ContentsKey, CONST.CollectionsKey]
 
 	/** Does this path contain any wildcard or globstar elements? */
 	get wildcard() {
