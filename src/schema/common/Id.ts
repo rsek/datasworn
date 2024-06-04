@@ -1,31 +1,27 @@
 import {
-	type TUnion,
+	Type,
 	type Static,
 	type TRef,
 	type TString,
-	Type
+	type TUnion
 } from '@sinclair/typebox'
 import { type Opaque } from 'type-fest'
+import JtdType from '../../scripts/json-typedef/typedef.js'
+import { JsonTypeDef } from '../Symbols.js'
 import {
+	CollectableId,
 	CollectionId,
-	DiceRange,
 	PropertyOf as Extend,
 	Id,
-	type IdElement,
-	IdUnion,
 	Index,
 	Node,
+	NonCollectableId,
 	Pkg,
+	PropertyElement,
 	RecursiveCollectableId,
 	RecursiveCollectionId,
-	NonCollectableId,
-	toWildcardId,
-	CollectableId,
-	PropertyElement
+	toWildcardId
 } from '../utils/regex.js'
-import { RecursiveCollectable } from '../index.js'
-import { JsonTypeDef } from '../Symbols.js'
-import JtdType from '../../scripts/json-typedef/typedef.js'
 
 export const RulesetId = Id([Pkg], {
 	$id: 'RulesetId',
@@ -78,12 +74,12 @@ export const NpcIdWildcard = toWildcardId(NpcId, {
 })
 export type NpcIdWildcard = Opaque<Static<typeof NpcIdWildcard>>
 
-export const NpcVariantId = Extend(NpcId, ['variants', Node], {
-	$id: 'NpcVariantId',
-	examples: ['starforged/npc/sample_npcs/chiton.variants/chiton_drone_pack']
-})
+// export const NpcVariantId = Extend(NpcId, ['variants', Node], {
+// 	$id: 'NpcVariantId',
+// 	examples: ['starforged/npc/sample_npcs/chiton.variants/chiton_drone_pack']
+// })
 
-export type NpcVariantId = Opaque<Static<typeof NpcVariantId>>
+// export type NpcVariantId = Opaque<Static<typeof NpcVariantId>>
 
 export const AssetCollectionId = CollectionId('asset_collection', {
 	$id: 'AssetCollectionId'

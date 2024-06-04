@@ -60028,14 +60028,12 @@
 					],
 					"variants": {
 						"chiton_drone_pack": {
-							"_id": "starforged/npc/sample_npcs/chiton/variants/chiton_drone_pack",
 							"name": "Chiton drone pack",
 							"rank": 3,
 							"nature": "Monster",
 							"description": "Chiton drones rarely operate independently. Instead, they hunt and attack in packs under the telepathic control of their queen."
 						},
 						"chiton_queen": {
-							"_id": "starforged/npc/sample_npcs/chiton/variants/chiton_queen",
 							"name": "Chiton queen",
 							"rank": 4,
 							"nature": "Monster",
@@ -60077,7 +60075,6 @@
 					],
 					"variants": {
 						"devotant_of_the_colossi": {
-							"_id": "starforged/npc/sample_npcs/colossus/variants/devotant_of_the_colossi",
 							"name": "Devotant of the colossi",
 							"rank": 2,
 							"nature": "Human",
@@ -60119,7 +60116,6 @@
 					],
 					"variants": {
 						"convergent_crystallid": {
-							"_id": "starforged/npc/sample_npcs/crystallid/variants/convergent_crystallid",
 							"name": "Convergent crystallid",
 							"rank": 4,
 							"nature": "Creature",
@@ -60166,14 +60162,12 @@
 					],
 					"variants": {
 						"pirate_boarding_party": {
-							"_id": "starforged/npc/sample_npcs/drift_pirate/variants/pirate_boarding_party",
 							"name": "Pirate boarding party",
 							"rank": 3,
 							"nature": "Human",
 							"description": "After reeling in a disabled ship, drift pirates breach the hull and swarm the corridors. They target critical systems and compartments to seize the ship and its cargo for their flotilla."
 						},
 						"pirate_cutlass": {
-							"_id": "starforged/npc/sample_npcs/drift_pirate/variants/pirate_cutlass",
 							"name": "Pirate cutlass",
 							"rank": 2,
 							"nature": "Vehicle",
@@ -60211,7 +60205,6 @@
 					"tactics": ["Surround and envelop", "Absorb energy"],
 					"variants": {
 						"wisp_congregation": {
-							"_id": "starforged/npc/sample_npcs/ember_wisp/variants/wisp_congregation",
 							"name": "Wisp congregation",
 							"rank": 2,
 							"nature": "Creature",
@@ -60257,14 +60250,12 @@
 					],
 					"variants": {
 						"firestorm_raiding_team": {
-							"_id": "starforged/npc/sample_npcs/firestorm_trooper/variants/firestorm_raiding_team",
 							"name": "Firestorm raiding team",
 							"rank": 4,
 							"nature": "Human",
 							"description": "Feared throughout the Forge for their brutal tactics and destructive weaponry, coordinated teams of firestorm troopers descend upon settlements and stations in powered exosuits, flying the banners of their orders amid the smoke and flames of the devastation."
 						},
 						"firestorm_dropship": {
-							"_id": "starforged/npc/sample_npcs/firestorm_trooper/variants/firestorm_dropship",
 							"name": "Firestorm dropship",
 							"rank": 2,
 							"nature": "Vehicle",
@@ -60308,7 +60299,6 @@
 					],
 					"variants": {
 						"mega_flarewing": {
-							"_id": "starforged/npc/sample_npcs/flarewing_shark/variants/mega_flarewing",
 							"name": "Mega flarewing",
 							"rank": 5,
 							"nature": "Creature",
@@ -60351,7 +60341,6 @@
 					],
 					"variants": {
 						"ghost_ship": {
-							"_id": "starforged/npc/sample_npcs/ghost/variants/ghost_ship",
 							"name": "Ghost ship",
 							"rank": 3,
 							"nature": "Vehicle",
@@ -60389,7 +60378,6 @@
 					"tactics": ["Swarm larger foes", "Disable ship systems"],
 					"variants": {
 						"gnawling_brood_mother": {
-							"_id": "starforged/npc/sample_npcs/gnawling/variants/gnawling_brood_mother",
 							"name": "Gnawling brood mother",
 							"rank": 3,
 							"nature": "Creature",
@@ -60432,7 +60420,6 @@
 					],
 					"variants": {
 						"howlcat_pack": {
-							"_id": "starforged/npc/sample_npcs/howlcat/variants/howlcat_pack",
 							"name": "Howlcat pack",
 							"rank": 3,
 							"nature": "Creature",
@@ -60479,14 +60466,12 @@
 					],
 					"variants": {
 						"machine_mites": {
-							"_id": "starforged/npc/sample_npcs/iron_auger/variants/machine_mites",
 							"name": "Machine mites",
 							"rank": 2,
 							"nature": "Machine",
 							"description": "Iron augers self-replicate by producing swarms of tiny machine spawn. When those offspring come within range of a source of minerals or metals, they latch onto it and begin consuming the energy-giving material. Experienced spacers make a close inspection of their ship when pulling into port; a horde of undetected machine mites can eventually strip a craft of its outer hull."
 						},
 						"planet_eater": {
-							"_id": "starforged/npc/sample_npcs/iron_auger/variants/planet_eater",
 							"name": "Planet-eater",
 							"rank": 5,
 							"nature": "Machine",
@@ -60527,7 +60512,6 @@
 					],
 					"variants": {
 						"flowering_puppet_vine": {
-							"_id": "starforged/npc/sample_npcs/puppet_vine/variants/flowering_puppet_vine",
 							"name": "Flowering puppet vine",
 							"rank": 3,
 							"nature": "Monster",
@@ -60571,7 +60555,6 @@
 					],
 					"variants": {
 						"pyralis_youngling": {
-							"_id": "starforged/npc/sample_npcs/pyralis/variants/pyralis_youngling",
 							"name": "Pyralis youngling",
 							"rank": 2,
 							"nature": "Creature",
@@ -60616,7 +60599,6 @@
 					],
 					"variants": {
 						"chimera": {
-							"_id": "starforged/npc/sample_npcs/risen/variants/chimera",
 							"name": "Chimera",
 							"rank": 4,
 							"nature": "Horror",
@@ -60661,14 +60643,12 @@
 					],
 					"variants": {
 						"hover_prowlers": {
-							"_id": "starforged/npc/sample_npcs/scrap_bandit/variants/hover_prowlers",
 							"name": "Hover prowlers",
 							"rank": 3,
 							"nature": "Human",
 							"description": "Teams of bandits, riding jerry-built hoverbikes and skiffs, are the vanguard for planetside raids. They scout settlement defenses, ride as escort for the clan's war rig, and create chaos to overrun defenders."
 						},
 						"war_rig": {
-							"_id": "starforged/npc/sample_npcs/scrap_bandit/variants/war_rig",
 							"name": "War rig",
 							"rank": 4,
 							"nature": "Vehicle",
@@ -60714,7 +60694,6 @@
 					],
 					"variants": {
 						"enforcer": {
-							"_id": "starforged/npc/sample_npcs/servitor/variants/enforcer",
 							"name": "Enforcer",
 							"rank": 3,
 							"nature": "Machine",
@@ -60760,14 +60739,12 @@
 					],
 					"variants": {
 						"sicklehorn_matriarch": {
-							"_id": "starforged/npc/sample_npcs/sicklehorn/variants/sicklehorn_matriarch",
 							"name": "Sicklehorn matriarch",
 							"rank": 3,
 							"nature": "Creature",
 							"description": "A powerful matriarch leads each sicklehorn herd. She is larger than other members, with a thicker hide and more elaborate horns. A matriarch is formidable on her own, but typically has the strongest members of the herd by her side."
 						},
 						"sicklehorn_stampede": {
-							"_id": "starforged/npc/sample_npcs/sicklehorn/variants/sicklehorn_stampede",
 							"name": "Sicklehorn stampede",
 							"rank": 4,
 							"nature": "Creature",
@@ -60809,7 +60786,6 @@
 					],
 					"variants": {
 						"roost_swarm": {
-							"_id": "starforged/npc/sample_npcs/sky_roost/variants/roost_swarm",
 							"name": "Roost swarm",
 							"rank": 4,
 							"nature": "Creature",
@@ -60854,14 +60830,12 @@
 					],
 					"variants": {
 						"infected_bot": {
-							"_id": "starforged/npc/sample_npcs/technoplasm/variants/infected_bot",
 							"name": "Infected bot",
 							"rank": 2,
 							"nature": "Machine",
 							"description": "When bots fall prey to technoplasm outbreaks, they are transformed into horrific amalgams of machine and living proto-ooze. Once subsumed, they set out to serve the primitive impulses of the infection, defending affected sites and finding new machines to corrupt."
 						},
 						"scourge_ship": {
-							"_id": "starforged/npc/sample_npcs/technoplasm/variants/scourge_ship",
 							"name": "Scourge ship",
 							"rank": 4,
 							"nature": "Vehicle",
@@ -60906,7 +60880,6 @@
 					],
 					"variants": {
 						"shepherd_pod": {
-							"_id": "starforged/npc/sample_npcs/void_shepherd/variants/shepherd_pod",
 							"name": "Shepherd pod",
 							"rank": 4,
 							"nature": "Creature",
@@ -60951,14 +60924,12 @@
 					],
 					"variants": {
 						"warden_cohort": {
-							"_id": "starforged/npc/sample_npcs/warden/variants/warden_cohort",
 							"name": "Warden cohort",
 							"rank": 4,
 							"nature": "Human",
 							"description": "Many of the surviving wardens left the battlefield behind, but some now serve as guns-for-hire, banding together to form small mercenary companies. Five wardens are as effective as fifty soldiers."
 						},
 						"fury": {
-							"_id": "starforged/npc/sample_npcs/warden/variants/fury",
 							"name": "Fury",
 							"rank": 5,
 							"nature": "Monster",
@@ -60998,7 +60969,6 @@
 					"tactics": ["Dig and hide", "When desperate, rake with claws"],
 					"variants": {
 						"dowser": {
-							"_id": "starforged/npc/sample_npcs/water_witcher/variants/dowser",
 							"name": "Dowser",
 							"rank": 2,
 							"nature": "Human",
@@ -61043,14 +61013,12 @@
 					],
 					"variants": {
 						"worldbreaker_brood": {
-							"_id": "starforged/npc/sample_npcs/worldbreaker/variants/worldbreaker_brood",
 							"name": "Worldbreaker brood",
 							"rank": 3,
 							"nature": "Creature",
 							"description": "The young of the worldbreakers are a fraction of the size of their older counterparts, yet still dwarf most humans, and boast a voracious appetite. Unlike their solitary parents, immature worms hunt in small packs, working together to burrow beneath easy prey."
 						},
 						"elder_worm": {
-							"_id": "starforged/npc/sample_npcs/worldbreaker/variants/elder_worm",
 							"name": "Elder worm",
 							"rank": 5,
 							"nature": "Creature",

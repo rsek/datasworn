@@ -8,9 +8,6 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class NpcVariant {
-    @JsonProperty("_id")
-    private NpcVariantId id;
-
     @JsonProperty("description")
     private MarkdownString description;
 
@@ -24,30 +21,10 @@ public class NpcVariant {
     private ChallengeRank rank;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("_comment")
-    private String comment;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("summary")
     private MarkdownString summary;
 
     public NpcVariant() {
-    }
-
-    /**
-     * Getter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public NpcVariantId getId() {
-        return id;
-    }
-
-    /**
-     * Setter for id.<p>
-     * The unique Datasworn ID for this item.
-     */
-    public void setId(NpcVariantId id) {
-        this.id = id;
     }
 
     /**
@@ -106,24 +83,6 @@ public class NpcVariant {
      */
     public void setRank(ChallengeRank rank) {
         this.rank = rank;
-    }
-
-    /**
-     * Getter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
-     */
-    public String getComment() {
-        return comment;
-    }
-
-    /**
-     * Setter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
-     */
-    public void setComment(String comment) {
-        this.comment = comment;
     }
 
     /**

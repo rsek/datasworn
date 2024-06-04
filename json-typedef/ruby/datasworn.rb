@@ -3256,57 +3256,32 @@ module Datasworn
   end
 
   class NpcVariant
-    # The unique Datasworn ID for this item.
-    attr_accessor :id
     attr_accessor :description
     attr_accessor :name
     attr_accessor :nature
 
     # The suggested challenge rank for this NPC.
     attr_accessor :rank
-
-    # Any implementation hints or other developer-facing comments on this
-    # object. These should be omitted when presenting the object for gameplay.
-    attr_accessor :comment
     attr_accessor :summary
 
     def self.from_json_data(data)
       out = NpcVariant.new
-      out.id = Datasworn::from_json_data(NpcVariantID, data["_id"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.nature = Datasworn::from_json_data(NpcNature, data["nature"])
       out.rank = Datasworn::from_json_data(ChallengeRank, data["rank"])
-      out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
       out
     end
 
     def to_json_data
       data = {}
-      data["_id"] = Datasworn::to_json_data(id)
       data["description"] = Datasworn::to_json_data(description)
       data["name"] = Datasworn::to_json_data(name)
       data["nature"] = Datasworn::to_json_data(nature)
       data["rank"] = Datasworn::to_json_data(rank)
-      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
       data
-    end
-  end
-
-  # A unique ID for a NpcVariant.
-  class NpcVariantID
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = NpcVariantID.new
-      out.value = Datasworn.from_json_data(String, data)
-      out
-    end
-
-    def to_json_data
-      Datasworn.to_json_data(value)
     end
   end
 

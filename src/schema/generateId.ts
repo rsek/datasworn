@@ -9,12 +9,6 @@ type NodeLike = {
 	collections?: Record<string, NodeLike>
 }
 
-// 'starforged/oracle/core/action'
-
-// '.' as "next element is a literal property" character, e.g.
-// asset ability move ID? 'starforged/asset/ritual/commune.abilities/0.moves/commune'
-// NPC variant ID? 'starforged/npc/sth/some_guy.variants/a_larger_guy'
-//
 
 const typeRootKeys = [
 	'oracles',
@@ -99,19 +93,8 @@ function walkAndAssignIds(
 			assignAssetAbilityIds(assetAbility, i, asset._id)
 		})
 	}
-
-	if (node.type === 'npc') assignNpcVariantIds(node as Datasworn.Npc)
 }
 
-// TODO: npc variant IDs should probably be deprecated, TBH
-function assignNpcVariantIds(npc: Datasworn.Npc) {
-	if ('variants' in npc) {
-		for (const k in npc.variants) {
-			const npcVariant = npc.variants[k] as DataswornSource.NpcVariant
-			npcVariant._id ||= [npc._id, CONST.Sep, 'variants', CONST.Sep, k].join('')
-		}
-	}
-}
 
 function assignAssetAbilityIds(
 	assetAbility: DataswornSource.AssetAbility,

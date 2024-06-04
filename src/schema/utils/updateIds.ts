@@ -1,4 +1,4 @@
-type IdReplacementMap = Record<string, { old: RegExp; new: string }>
+import type NodeTypeId from '../../pkg-core/IdElements/NodeTypeId.js'
 
 const moveIdPatterns = [
 	// standard moves
@@ -7,14 +7,23 @@ const moveIdPatterns = [
 	/(?<pkg>\*|[a-z][a-z0-9_]{3,})\/assets\/(?<path>\*|[a-z][a-z_]*)\/(\*|[a-z][a-z_]*)\/abilities\/(\*|(?:0|[1-9][0-9]*))\/moves\/(?<key>\*|[a-z][a-z_]*)/
 ]
 
-const key = /(?<key>[a-z][a-z_]*|\*)/
-const recursiveCollectionPath =
-	/(?<path>[a-z][a-z_]*(?:\/[a-z][a-z_]*){0,2}|\*{1,2})/
+// const key = /(?<key>[a-z][a-z_]*|\*)/
+// const recursiveCollectionPath =
+// 	/(?<path>[a-z][a-z_]*(?:\/[a-z][a-z_]*){0,2}|\*{1,2})/
 
-const pkg = /(?<pkg>[a-z][a-z0-9_]{3,}|\*)/
-const recursivePath =
-	/(?<path>[a-z][a-z_]*(?:\/(?:[a-z][a-z_]*|\*|\**)){0,2}|\*\*)/
-const path = /(?<path>[a-z][a-z_]*|\*)/
+// const pkg = /(?<pkg>[a-z][a-z0-9_]{3,}|\*)/
+// const recursivePath =child_id_n
+// 	/(?<path>[a-z][a-z_]*(?:\/(?:[a-z][a-z_]*|\*|\**)){0,2}|\*\*)/
+// const path = /(?<path>[a-z][a-z_]*|\*)/
+
+const MinorNodeTypes = ['asset_move', 'asset_ability'] as const
+type ChildNodeType = (typeof MinorNodeTypes)[number]
+
+type IdReplacer = { typeId: NodeTypeId.Any; old: RegExp; new: string }
+
+type IdReplacementMap = Record<string, IdReplacer[]>
+
+const ff: IdReplacementMap = {}
 
 const f: IdReplacementMap = {
 	AssetMoveId: {
@@ -67,7 +76,6 @@ const f: IdReplacementMap = {
 		old: /(?<pkg>\*|[a-z][a-z0-9_]{3,})\/moves\/(?<path>(?:\*|[a-z][a-z_]*)\/(?:\*|[a-z][a-z_]*))/,
 		new: '$1/move/$2'
 	},
-
 	NpcCollectionId: {
 		old: /(?<pkg>\*|[a-z][a-z0-9_]{3,})\/collections\/npcs\/(?<path>[a-z_/*]+)/,
 		new: '$1/npc_collection/$2'

@@ -2351,10 +2351,6 @@ pub type NpcNature = Label;
 
 #[derive(Serialize, Deserialize)]
 pub struct NpcVariant {
-    /// The unique Datasworn ID for this item.
-    #[serde(rename = "_id")]
-    pub id: NpcVariantId,
-
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
@@ -2368,19 +2364,10 @@ pub struct NpcVariant {
     #[serde(rename = "rank")]
     pub rank: ChallengeRank,
 
-    /// Any implementation hints or other developer-facing comments on this
-    /// object. These should be omitted when presenting the object for gameplay.
-    #[serde(rename = "_comment")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub comment: Option<Box<String>>,
-
     #[serde(rename = "summary")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Box<MarkdownString>>,
 }
-
-/// A unique ID for a NpcVariant.
-pub type NpcVariantId = String;
 
 #[derive(Serialize, Deserialize)]
 pub enum ObjectType {

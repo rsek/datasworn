@@ -2081,9 +2081,6 @@ type NpcID = string
 type NpcNature = Label
 
 type NpcVariant struct {
-	// The unique Datasworn ID for this item.
-	ID NpcVariantID `json:"_id"`
-
 	Description MarkdownString `json:"description"`
 
 	Name Label `json:"name"`
@@ -2093,15 +2090,8 @@ type NpcVariant struct {
 	// The suggested challenge rank for this NPC.
 	Rank ChallengeRank `json:"rank"`
 
-	// Any implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
-	Comment *string `json:"_comment,omitempty"`
-
 	Summary *MarkdownString `json:"summary,omitempty"`
 }
-
-// A unique ID for a NpcVariant.
-type NpcVariantID = string
 
 type ObjectType string
 

@@ -38,13 +38,14 @@ const NpcMixin = Utils.Assign([
 	})
 ])
 
-export const NpcVariant = Generic.IdentifiedNode(
-	Type.Ref(Id.NpcVariantId),
-	Type.Pick(NpcMixin, ['name', 'rank', 'nature', 'summary', 'description']),
+export const NpcVariant = Type.Pick(
+	NpcMixin,
+	['name', 'rank', 'nature', 'summary', 'description'],
 	{
 		$id: 'NpcVariant'
 	}
 )
+
 
 export type NpcVariant = Static<typeof NpcVariant>
 

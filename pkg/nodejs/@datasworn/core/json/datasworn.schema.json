@@ -562,15 +562,6 @@
 			"description": "A wildcarded ID that can be used to match multiple Npcs.",
 			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/npc((\\/[a-z][a-z_]*){1,3}|\\/\\*\\*|\\/\\*\\*\\/[a-z][a-z_]*|\\/[a-z][a-z_]*\\/\\*\\*)\\/(\\*|[a-z][a-z_]*)$"
 		},
-		"NpcVariantId": {
-			"title": "NpcVariantId",
-			"type": "string",
-			"description": "A unique ID for a NpcVariant.",
-			"examples": [
-				"starforged/npc/sample_npcs/chiton.variants/chiton_drone_pack"
-			],
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/npc(\\/[a-z][a-z_]*){1,3}\\/[a-z][a-z_]*\\/variants\\/[a-z][a-z_]*$"
-		},
 		"OracleCollectionId": {
 			"title": "OracleCollectionId",
 			"type": "string",
@@ -2720,12 +2711,8 @@
 		"NpcVariant": {
 			"title": "NpcVariant",
 			"type": "object",
-			"required": ["_id", "name", "rank", "nature", "description"],
+			"required": ["name", "rank", "nature", "description"],
 			"properties": {
-				"_id": {
-					"$ref": "#/definitions/NpcVariantId",
-					"description": "The unique Datasworn ID for this item."
-				},
 				"name": {
 					"$ref": "#/definitions/Label"
 				},
@@ -2741,10 +2728,6 @@
 				},
 				"description": {
 					"$ref": "#/definitions/MarkdownString"
-				},
-				"_comment": {
-					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				}
 			}
 		},

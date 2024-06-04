@@ -350,14 +350,6 @@ export type NpcId = string;
  */
 export type NpcIdWildcard = string;
 /**
- * A unique ID for a NpcVariant.
- * @pattern ```javascript
- * /^[a-z][a-z0-9_]{3,}\/npc(\/[a-z][a-z_]*){1,3}\/[a-z][a-z_]*\/variants\/[a-z][a-z_]*$/
- * ```
- * @example "starforged/npc/sample_npcs/chiton.variants/chiton_drone_pack"
- */
-export type NpcVariantId = string;
-/**
  * A unique ID for an OracleCollection.
  * @pattern ```javascript
  * /^[a-z][a-z0-9_]{3,}\/oracle_collection(\/[a-z][a-z_]*){1,3}$/
@@ -1310,14 +1302,6 @@ export interface NpcCollection {
  */
 export type NpcNature = Label;
 export interface NpcVariant {
-    /**
-     * The unique Datasworn ID for this item.
-     */
-    _id: NpcVariantId;
-    /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
-     */
-    _comment?: string;
     name: Label;
     /**
      * The suggested challenge rank for this NPC.

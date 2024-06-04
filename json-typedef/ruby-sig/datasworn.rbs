@@ -1140,22 +1140,13 @@ module Datasworn
   end
 
   class NpcVariant
-    attr_accessor id: NpcVariantID
     attr_accessor description: MarkdownString
     attr_accessor name: Label
     attr_accessor nature: NpcNature
     attr_accessor rank: ChallengeRank
-    attr_accessor comment: String?
     attr_accessor summary: MarkdownString?
 
     def self.from_json_data: (untyped) -> NpcVariant
-    def to_json_data: () -> untyped
-  end
-
-  class NpcVariantID
-    attr_accessor value: String
-
-    def self.from_json_data: (untyped) -> NpcVariantID
     def to_json_data: () -> untyped
   end
 

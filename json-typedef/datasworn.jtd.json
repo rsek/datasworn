@@ -472,16 +472,6 @@
 				"pattern": "^[a-z][a-z0-9_]{3,}\\/npc(\\/[a-z][a-z_]*){1,3}\\/[a-z][a-z_]*$"
 			}
 		},
-		"NpcVariantId": {
-			"type": "string",
-			"metadata": {
-				"description": "A unique ID for a NpcVariant.",
-				"examples": [
-					"starforged/npc/sample_npcs/chiton.variants/chiton_drone_pack"
-				],
-				"pattern": "^[a-z][a-z0-9_]{3,}\\/npc(\\/[a-z][a-z_]*){1,3}\\/[a-z][a-z_]*\\/variants\\/[a-z][a-z_]*$"
-			}
-		},
 		"OracleCollectionId": {
 			"type": "string",
 			"metadata": {
@@ -1822,12 +1812,6 @@
 		},
 		"NpcVariant": {
 			"properties": {
-				"_id": {
-					"ref": "NpcVariantId",
-					"metadata": {
-						"description": "The unique Datasworn ID for this item."
-					}
-				},
 				"name": {
 					"ref": "Label"
 				},
@@ -1845,17 +1829,10 @@
 				}
 			},
 			"optionalProperties": {
-				"_comment": {
-					"type": "string",
-					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
-					}
-				},
 				"summary": {
 					"ref": "MarkdownString"
 				}
-			},
-			"metadata": {}
+			}
 		},
 		"DiceExpression": {
 			"type": "string",
