@@ -1,11 +1,5 @@
-import fs from 'fs-extra'
-import type { OracleTablesCollection } from '../Datasworn.js'
-import type {
-	AnyCollectable,
-	AnyCollection,
-	CollectableChildOf
-} from '../Id/Utils.js'
-import type { Datasworn } from '../index.js'
+// import fs from 'fs-extra'
+import type DataswornNode from './DataswornNode.js'
 
 // const classic = fs.readJSONSync(
 // 	'./pkg/nodejs/@datasworn/ironsworn-classic/json/classic.json'
@@ -23,12 +17,15 @@ import type { Datasworn } from '../index.js'
 // console.log(classic.oracles.character)
 
 /**
+ * Applies overrides to Datasworn collection from another Datasworn collection.
  * Mutates `target`.
  * @param target The collection object to be enhanced.
  * @param source The changes to be applied to `target`
  * @param strictOverrides Should enhancements to collections and collectables require a matching `enhances` or `overrides` property? (default: `true`)
+ * @returns The mutated `target`
+ * @experimental
  */
-export function enhanceCollection<T extends AnyCollection>(
+export function enhanceCollection<T extends DataswornNode.Collection.Any>(
 	target: T,
 	source: T,
 	strictOverrides = true
@@ -123,7 +120,7 @@ export function enhanceCollection<T extends AnyCollection>(
 				break
 			case 'collections': {
 				// child collections are enhanced recursively
-				const sourceChildren: Iterable<[string, AnyCollection]> =
+				const sourceChildren: Iterable<[string, DataswornNode.Collection.Any]> =
 					newValue instanceof Map ? newValue : Object.entries(newValue)
 
 				for (const [childKey, sourceChild] of sourceChildren) {
@@ -138,7 +135,8 @@ export function enhanceCollection<T extends AnyCollection>(
 						oldValue.set(childKey, updatedChild)
 					} else {
 						const updatedChild =
-							childKey in (oldValue as Record<string, AnyCollection>)
+							childKey in
+							(oldValue as Record<string, DataswornNode.Collection.Any>)
 								? enhanceCollection(
 										oldValue[childKey],
 										sourceChild,

@@ -12,15 +12,15 @@ import { escapeRegExp, omit } from 'lodash-es'
 import { JsonTypeDef } from '../Symbols.js'
 import { setSourceDataSchema } from './Computed.js'
 import { type SetOptional } from './SetOptional.js'
-import Regex from '../../pkg-core/IdElements/Regex.js'
+import Pattern from '../../pkg-core/IdElements/Pattern.js'
 import CONST from '../../pkg-core/IdElements/CONST.js'
 
 const sep = escapeRegExp(CONST.Sep)
 const propSep = escapeRegExp(CONST.PropSep)
 const wc = escapeRegExp(CONST.WildcardString)
 const wce = escapeRegExp(CONST.GlobstarString)
-const node = Regex.DictKeyElement
-const namespace = Regex.RulesPackageElement
+const node = Pattern.DictKeyElement
+const namespace = Pattern.RulesPackageElement
 const index = /\d+/
 const nodeRecursive = recurse(node)
 

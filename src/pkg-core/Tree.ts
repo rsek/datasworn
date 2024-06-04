@@ -1,9 +1,8 @@
-import type * as Datasworn from '../Datasworn.js'
+import type * as Datasworn from './Datasworn.js'
 import type * as Strings from './StringId.js'
 
-// datasworn objects
-export type DataswornTree =
+/** A keyed object containing multiple Datasworn RulesPackages */
+
+export type Tree =
 	| Record<Strings.RulesPackageId, Datasworn.RulesPackage>
 	| Map<Strings.RulesPackageId, Datasworn.RulesPackage>
-
-

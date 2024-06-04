@@ -1,5 +1,5 @@
 import type * as Strings from './StringId.js'
-import { IdParser } from '../IdParser.js'
+import { IdParser } from './IdParser.js'
 // import { readFileSync } from 'fs'
 
 // const path = './datasworn/starforged/starforged.json'

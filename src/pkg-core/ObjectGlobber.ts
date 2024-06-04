@@ -1,11 +1,9 @@
-import { type RulesPackage } from '../Datasworn.js'
-// import type * as Path from './Path.js'
-import { arrayIs } from './arrayIs.js'
-import type * as Id from '../Id/index.js'
-import CONST from '../IdElements/CONST.js'
-import TypeGuard from '../IdElements/TypeGuard.js'
-import type TypeId from '../IdElements/TypeId.js'
-import type { ExtractTypeId } from '../Id/IdUtils.js'
+import { type RulesPackage } from './Datasworn.js'
+import { arrayIs } from './Utils/Array.js'
+import type { ExtractTypeId } from './Utils/Id.js'
+import { CONST, TypeGuard, type NodeTypeId } from './IdElements/index.js'
+import type * as Id from './StringId.js'
+import type DataswornNode from './DataswornNode.js'
 
 /**
  * @internal
@@ -305,7 +303,7 @@ class ObjectGlobber<
 		from: Record<string, RulesPackage>,
 		path: ObjectGlobber,
 		forEach?: ObjectGlobber.WalkIteratee
-	): TypeId.TypeNode<ExtractTypeId<T>>
+	): DataswornNode.ByType<ExtractTypeId<T>>
 	static walk(
 		from: object,
 		path: ObjectGlobber,

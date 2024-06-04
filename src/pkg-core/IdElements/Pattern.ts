@@ -3,7 +3,7 @@ import CONST from './CONST.js'
 /**
  * Regular expressions used to validate Datasworn ID elements.
  */
-namespace Regex {
+namespace Pattern {
 	const DictKeyBase = /[a-z][a-z_]*/
 	export const DictKeyElement = DictKeyBase
 	export const DictKey = new RegExp(`^${DictKeyBase.source}$`)
@@ -22,5 +22,4 @@ namespace Regex {
 	export const RecursiveDictKeyElement = RecursiveDictKeyBase
 }
 
-export default Regex
-
+export default Pattern

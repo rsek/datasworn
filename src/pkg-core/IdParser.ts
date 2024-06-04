@@ -1,23 +1,24 @@
-import type { DropLast, Head, Last } from './Id/ArrayUtils.js'
-import { ParseError } from './Id/Errors.js'
+import type { DropLast, Last } from './Utils/Array.js'
+import { ParseError } from './Errors.js'
 import type {
 	ExtractAncestorKeys,
 	ExtractKey,
 	ExtractParentCollectionKey,
 	ExtractRulesPackage,
 	ExtractTypeId
-} from './Id/IdUtils.js'
-import type * as Strings from './Id/StringId.js'
-import CONST from './IdElements/CONST.js'
-import Regex from './IdElements/Regex.js'
-import TypeGuard from './IdElements/TypeGuard.js'
-import TypeId from './IdElements/TypeId.js'
-import ObjectGlobber from './ObjectGlobPath/ObjectGlobber.js'
-import type { Datasworn } from './index.js'
-
-export type DataswornTree =
-	| Record<string, Datasworn.RulesPackage>
-	| Map<string, Datasworn.RulesPackage>
+} from './Utils/Id.js'
+import type * as StringId from './StringId.js'
+import {
+	CONST,
+	Pattern,
+	TypeGuard,
+	NodeTypeId,
+	type PathKeys
+} from './IdElements/index.js'
+import ObjectGlobber from './ObjectGlobber.js'
+import type * as Datasworn from './Datasworn.js'
+import type DataswornNode from './DataswornNode.js'
+import type { Tree } from './Tree.js'
 
 namespace IdParser {
 	export type FormatType =
@@ -29,7 +30,7 @@ namespace IdParser {
 
 	export type Options<
 		RulesPackage extends string = string,
-		Type extends TypeId.Any = TypeId.Any,
+		Type extends NodeTypeId.Any = NodeTypeId.Any,
 		PathKeys extends Datasworn.DictKey[] = Datasworn.DictKey[]
 	> = {
 		/**
@@ -52,7 +53,7 @@ namespace IdParser {
 
 abstract class IdParser<
 	RulesPackage extends string = string,
-	Type extends TypeId.Any = TypeId.Any,
+	Type extends NodeTypeId.Any = NodeTypeId.Any,
 	PathKeys extends string[] = string[]
 > implements IdParser.Options<RulesPackage, Type, PathKeys>
 {
@@ -94,7 +95,7 @@ abstract class IdParser<
 	}
 
 	get typeRootKey() {
-		return TypeId.typeRootKeys[this.type] as TypeId.TypeRootKey<Type>
+		return NodeTypeId.getRootKey(this.type)
 	}
 
 	// computed properties
@@ -162,9 +163,9 @@ abstract class IdParser<
 		)
 	}
 
-	static readonly RulesPackagePattern = Regex.RulesPackageElement
-	static readonly DictKeyPattern = Regex.DictKeyElement
-	static readonly RecursiveDictKeyPattern = Regex.RecursiveDictKeyElement
+	static readonly RulesPackagePattern = Pattern.RulesPackageElement
+	static readonly DictKeyPattern = Pattern.DictKeyElement
+	static readonly RecursiveDictKeyPattern = Pattern.RecursiveDictKeyElement
 
 	static #getPatternFragment(element: string, index: number) {
 		switch (element) {
@@ -204,15 +205,15 @@ abstract class IdParser<
 	 * Get a Datasworn node by its ID.
 	 * @throws If the ID is invalid; if a path to the identified object can't be found; if no Datasworn tree is provided (either in IdParser.datasworn or as an argument).
 	 */
-	static get<T extends Strings.AnyId>(
+	static get<T extends StringId.AnyId>(
 		id: T,
 		tree?: (typeof IdParser)['datasworn']
-	): TypeId.TypeNode<ExtractTypeId<T>>
+	): DataswornNode.ByType<ExtractTypeId<T>>
 	static get<T extends IdParser>(
 		id: T,
 		tree?: (typeof IdParser)['datasworn']
 	): ReturnType<T['get']>
-	static get<T extends Strings.AnyId | IdParser>(
+	static get<T extends StringId.AnyId | IdParser>(
 		id: T,
 		tree = IdParser.datasworn
 	) {
@@ -223,13 +224,13 @@ abstract class IdParser<
 	}
 
 	get(tree?: (typeof IdParser)['datasworn']) {
-		return IdParser.get(this, tree) as TypeId.TypeNode<Type>
+		return IdParser.get(this, tree) as DataswornNode.ByType<Type>
 	}
 
 	static fromOptions<
 		RulesPackage extends string,
-		Type extends TypeId.Collection.Recursive,
-		CollectionAncestorKeys extends Strings.CollectionAncestorKeys,
+		Type extends NodeTypeId.Collection.Recursive,
+		CollectionAncestorKeys extends PathKeys.CollectionAncestorKeys,
 		Key extends string
 	>(
 		options: IdParser.Options<
@@ -240,15 +241,15 @@ abstract class IdParser<
 	): RecursiveCollectionId<RulesPackage, Type, CollectionAncestorKeys, Key>
 	static fromOptions<
 		RulesPackage extends string,
-		Type extends TypeId.Collection.NonRecursive,
+		Type extends NodeTypeId.Collection.NonRecursive,
 		Key extends string
 	>(
 		options: IdParser.Options<RulesPackage, Type, [Key]>
 	): NonRecursiveCollectionId<RulesPackage, Type, Key>
 	static fromOptions<
 		RulesPackage extends string,
-		Type extends TypeId.Collectable.Recursive,
-		CollectableAncestorKeys extends Strings.CollectableAncestorKeys,
+		Type extends NodeTypeId.Collectable.Recursive,
+		CollectableAncestorKeys extends PathKeys.CollectableAncestorKeys,
 		Key extends string
 	>(
 		options: IdParser.Options<
@@ -259,7 +260,7 @@ abstract class IdParser<
 	): RecursiveCollectableId<RulesPackage, Type, CollectableAncestorKeys, Key>
 	static fromOptions<
 		RulesPackage extends string,
-		Type extends TypeId.Collectable.NonRecursive,
+		Type extends NodeTypeId.Collectable.NonRecursive,
 		CollectionKey extends string,
 		Key extends string
 	>(
@@ -267,7 +268,7 @@ abstract class IdParser<
 	): NonRecursiveCollectableId<RulesPackage, Type, CollectionKey, Key>
 	static fromOptions<
 		RulesPackage extends string,
-		Type extends TypeId.NonCollectable,
+		Type extends NodeTypeId.NonCollectable,
 		Key extends string
 	>(
 		options: IdParser.Options<RulesPackage, Type, [Key]>
@@ -300,7 +301,7 @@ abstract class IdParser<
 				return new RecursiveCollectionId(
 					rulesPackage,
 					type,
-					...(pathKeys as Strings.CollectionPathKeys)
+					...(pathKeys as PathKeys.CollectionPathKeys)
 				) as any
 			case TypeGuard.NonRecursiveCollectionType(type):
 				return new NonRecursiveCollectionId(
@@ -316,7 +317,7 @@ abstract class IdParser<
 		}
 	}
 
-	static toPath(options: IdParser.Options | Strings.AnyId): ObjectGlobber {
+	static toPath(options: IdParser.Options | StringId.AnyId): ObjectGlobber {
 		const parsedId: IdParser =
 			options instanceof IdParser
 				? options
@@ -366,13 +367,13 @@ abstract class IdParser<
 	static parse(id: string): IdParser.Options {
 		const [rulesPackage, type, ...pathKeys] = id.split(CONST.Sep) as [
 			string, // RulesPackageId
-			string, // TypeId
+			string, // NodeTypeId
 			...string[] // PathKeys
 		]
 
 		const result: IdParser.Options = {
 			rulesPackage,
-			type: type as TypeId.Any,
+			type: type as NodeTypeId.Any,
 			pathKeys
 		}
 
@@ -385,19 +386,19 @@ abstract class IdParser<
 		return result
 	}
 
-	static fromString<T extends Strings.NonRecursiveCollectableId>(
+	static fromString<T extends StringId.NonRecursiveCollectableId>(
 		id: T
 	): NonRecursiveCollectableId.FromString<T>
-	static fromString<T extends Strings.RecursiveCollectableId>(
+	static fromString<T extends StringId.RecursiveCollectableId>(
 		id: T
 	): RecursiveCollectableId.FromString<T>
-	static fromString<T extends Strings.NonRecursiveCollectionId>(
+	static fromString<T extends StringId.NonRecursiveCollectionId>(
 		id: T
 	): NonRecursiveCollectionId.FromString<T>
-	static fromString<T extends Strings.RecursiveCollectionId>(
+	static fromString<T extends StringId.RecursiveCollectionId>(
 		id: T
 	): RecursiveCollectionId.FromString<T>
-	static fromString<T extends Strings.NonCollectableId>(
+	static fromString<T extends StringId.NonCollectableId>(
 		id: T
 	): NonCollectableId.FromString<T>
 	static fromString(id: string): IdParser {
@@ -447,7 +448,7 @@ abstract class IdParser<
 	}
 
 	// Static private methods
-	static #validateRulesPackage(key: unknown): key is Strings.RulesPackageId {
+	static #validateRulesPackage(key: unknown): key is StringId.RulesPackageId {
 		return TypeGuard.RulesPackageId(key) || TypeGuard.Wildcard(key)
 	}
 
@@ -533,14 +534,14 @@ abstract class IdParser<
 	// Static properties
 
 	/** An optional reference to the Datasworn tree object, shared by all subclasses. Used as the default value for several traversal methods. */
-	static datasworn: DataswornTree | null = null
+	static datasworn: Tree | null = null
 }
 
 // derived classes
 
 class NonCollectableId<
 	RulesPackage extends string = string,
-	Type extends TypeId.NonCollectable = TypeId.NonCollectable,
+	Type extends NodeTypeId.NonCollectable = NodeTypeId.NonCollectable,
 	Key extends string = string
 > extends IdParser<RulesPackage, Type, [Key]> {
 	constructor(rulesPackage: RulesPackage, type: Type, key: Key) {
@@ -549,14 +550,14 @@ class NonCollectableId<
 }
 interface NonCollectableId<
 	RulesPackage extends string = string,
-	Type extends TypeId.NonCollectable = TypeId.NonCollectable,
+	Type extends NodeTypeId.NonCollectable = NodeTypeId.NonCollectable,
 	Key extends string = string
 > extends IdParser<RulesPackage, Type, [Key]> {
-	get id(): Strings.NonCollectableId<RulesPackage, Type, Key>
+	get id(): StringId.NonCollectableId<RulesPackage, Type, Key>
 	get isCollectable(): false
 	get elements(): [RulesPackage, Type, Key]
 	get isCollection(): false
-	get typeRootKey(): TypeId.TypeRootKey<Type>
+	get typeRootKey(): NodeTypeId.RootKey<Type>
 	get collectionAncestorKeys(): []
 	get pathKeys(): [Key]
 	get key(): Key
@@ -564,20 +565,20 @@ interface NonCollectableId<
 
 abstract class CollectableId<
 	RulesPackage extends string = string,
-	Type extends TypeId.Collectable.Any = TypeId.Collectable.Any,
+	Type extends NodeTypeId.Collectable.Any = NodeTypeId.Collectable.Any,
 	CollectionPathKeys extends string[] = string[],
 	Key extends string = string
 > extends IdParser<RulesPackage, Type, [...CollectionPathKeys, Key]> {}
 interface CollectableId<
 	RulesPackage extends string = string,
-	Type extends TypeId.Collectable.Any = TypeId.Collectable.Any,
+	Type extends NodeTypeId.Collectable.Any = NodeTypeId.Collectable.Any,
 	CollectionPathKeys extends string[] = string[],
 	Key extends string = string
 > extends IdParser<RulesPackage, Type, [...CollectionPathKeys, Key]> {
 	get isCollectable(): true
 	get elements(): [RulesPackage, Type, ...CollectionPathKeys, Key]
 	get isCollection(): false
-	get typeRootKey(): TypeId.TypeRootKey<Type>
+	get typeRootKey(): NodeTypeId.RootKey<Type>
 	get collectionAncestorKeys(): CollectionPathKeys
 	get pathKeys(): [...CollectionPathKeys, Key]
 	get key(): Key
@@ -592,7 +593,7 @@ interface RecursiveId extends IdParser {
 class NonRecursiveCollectableId<
 	RulesPackage extends string = string,
 	Type extends
-		TypeId.Collectable.NonRecursive = TypeId.Collectable.NonRecursive,
+		NodeTypeId.Collectable.NonRecursive = NodeTypeId.Collectable.NonRecursive,
 	CollectionKey extends string = string,
 	Key extends string = string
 > extends CollectableId<RulesPackage, Type, [CollectionKey], Key> {
@@ -612,11 +613,11 @@ class NonRecursiveCollectableId<
 interface NonRecursiveCollectableId<
 	RulesPackage extends string = string,
 	Type extends
-		TypeId.Collectable.NonRecursive = TypeId.Collectable.NonRecursive,
+		NodeTypeId.Collectable.NonRecursive = NodeTypeId.Collectable.NonRecursive,
 	CollectionKey extends string = string,
 	Key extends string = string
 > extends CollectableId<RulesPackage, Type, [CollectionKey], Key> {
-	get id(): Strings.NonRecursiveCollectableId<
+	get id(): StringId.NonRecursiveCollectableId<
 		RulesPackage,
 		Type,
 		CollectionKey,
@@ -627,9 +628,10 @@ interface NonRecursiveCollectableId<
 
 class RecursiveCollectableId<
 		RulesPackage extends string = string,
-		Type extends TypeId.Collectable.Recursive = TypeId.Collectable.Recursive,
+		Type extends
+			NodeTypeId.Collectable.Recursive = NodeTypeId.Collectable.Recursive,
 		CollectableAncestorKeys extends
-			Strings.CollectableAncestorKeys = Strings.CollectableAncestorKeys,
+			PathKeys.CollectableAncestorKeys = PathKeys.CollectableAncestorKeys,
 		Key extends string = string
 	>
 	extends CollectableId<RulesPackage, Type, CollectableAncestorKeys, Key>
@@ -649,12 +651,13 @@ class RecursiveCollectableId<
 }
 interface RecursiveCollectableId<
 	RulesPackage extends string = string,
-	Type extends TypeId.Collectable.Recursive = TypeId.Collectable.Recursive,
+	Type extends
+		NodeTypeId.Collectable.Recursive = NodeTypeId.Collectable.Recursive,
 	CollectableAncestorKeys extends
-		Strings.CollectableAncestorKeys = Strings.CollectableAncestorKeys,
+		PathKeys.CollectableAncestorKeys = PathKeys.CollectableAncestorKeys,
 	Key extends string = string
 > extends CollectableId<RulesPackage, Type, CollectableAncestorKeys, Key> {
-	get id(): Strings.RecursiveCollectableId<
+	get id(): StringId.RecursiveCollectableId<
 		RulesPackage,
 		Type,
 		CollectableAncestorKeys,
@@ -662,19 +665,18 @@ interface RecursiveCollectableId<
 	>
 	get isRecursive(): true
 
-  get pathKeys(): [...CollectableAncestorKeys, Key]
+	get pathKeys(): [...CollectableAncestorKeys, Key]
 
 	get collectionAncestorKeys(): CollectableAncestorKeys
 
-  get elements(): [RulesPackage,Type,...CollectableAncestorKeys,Key]
-
+	get elements(): [RulesPackage, Type, ...CollectableAncestorKeys, Key]
 }
 
 abstract class CollectionId<
 	RulesPackage extends string = string,
-	Type extends TypeId.Collection.Any = TypeId.Collection.Any,
+	Type extends NodeTypeId.Collection.Any = NodeTypeId.Collection.Any,
 	CollectionAncestorKeys extends
-		Strings.CollectionAncestorKeys = Strings.CollectionAncestorKeys,
+		PathKeys.CollectionAncestorKeys = PathKeys.CollectionAncestorKeys,
 	Key extends string = string
 > extends IdParser<RulesPackage, Type, [...CollectionAncestorKeys, Key]> {
 	constructor(
@@ -689,22 +691,22 @@ abstract class CollectionId<
 		key: ChildKey
 	): CollectableId<
 		RulesPackage,
-		TypeId.CollectedBy<Type>,
+		NodeTypeId.CollectedBy<Type>,
 		[...CollectionAncestorKeys, Key],
 		ChildKey
 	>
 }
 interface CollectionId<
 	RulesPackage extends string = string,
-	Type extends TypeId.Collection.Any = TypeId.Collection.Any,
+	Type extends NodeTypeId.Collection.Any = NodeTypeId.Collection.Any,
 	CollectionAncestorKeys extends
-		Strings.CollectionAncestorKeys = Strings.CollectionAncestorKeys,
+		PathKeys.CollectionAncestorKeys = PathKeys.CollectionAncestorKeys,
 	Key extends string = string
 > extends IdParser<RulesPackage, Type, [...CollectionAncestorKeys, Key]> {
 	get elements(): [RulesPackage, Type, ...CollectionAncestorKeys, Key]
 	get isCollectable(): false
 	get isCollection(): true
-	get typeRootKey(): TypeId.TypeRootKey<Type>
+	get typeRootKey(): NodeTypeId.RootKey<Type>
 	get collectionAncestorKeys(): CollectionAncestorKeys
 	get pathKeys(): [...CollectionAncestorKeys, Key]
 	get key(): Key
@@ -712,9 +714,10 @@ interface CollectionId<
 
 class RecursiveCollectionId<
 		RulesPackage extends string = string,
-		Type extends TypeId.Collection.Recursive = TypeId.Collection.Recursive,
+		Type extends
+			NodeTypeId.Collection.Recursive = NodeTypeId.Collection.Recursive,
 		CollectionAncestorKeys extends
-			Strings.CollectionAncestorKeys = Strings.CollectionAncestorKeys,
+			PathKeys.CollectionAncestorKeys = PathKeys.CollectionAncestorKeys,
 		Key extends string = string
 	>
 	extends CollectionId<RulesPackage, Type, CollectionAncestorKeys, Key>
@@ -724,13 +727,13 @@ class RecursiveCollectionId<
 		key: ChildKey
 	): RecursiveCollectableId<
 		RulesPackage,
-		TypeId.CollectedBy<Type>,
+		NodeTypeId.CollectedBy<Type>,
 		[...CollectionAncestorKeys, Key],
 		ChildKey
 	> {
 		return new RecursiveCollectableId(
 			this.rulesPackage,
-			TypeId.collectedByMap[this.type],
+			NodeTypeId.getCollectedBy(this.type),
 			...this.collectionAncestorKeys,
 			this.key,
 			key
@@ -739,7 +742,7 @@ class RecursiveCollectionId<
 
 	createCollectionChild<ChildKey extends string>(
 		key: ChildKey
-	): this['pathKeys'] extends Strings.CollectionAncestorKeys
+	): this['pathKeys'] extends PathKeys.CollectionAncestorKeys
 		? RecursiveCollectionId<RulesPackage, Type, this['pathKeys'], ChildKey>
 		: never {
 		if (this.pathKeys.length >= CONST.RECURSIVE_PATH_ELEMENTS_MAX)
@@ -759,7 +762,7 @@ class RecursiveCollectionId<
 	/**
 	 * @throws If a parent ID isn't possible (because this ID doesn't have a parent collection.)
 	 */
-	getParent(): this['collectionAncestorKeys'] extends Strings.CollectionPathKeys
+	getParent(): this['collectionAncestorKeys'] extends PathKeys.CollectionPathKeys
 		? RecursiveCollectionId<
 				RulesPackage,
 				Type,
@@ -786,14 +789,15 @@ class RecursiveCollectionId<
 }
 interface RecursiveCollectionId<
 	RulesPackage extends string = string,
-	Type extends TypeId.Collection.Recursive = TypeId.Collection.Recursive,
+	Type extends
+		NodeTypeId.Collection.Recursive = NodeTypeId.Collection.Recursive,
 	CollectionAncestorKeys extends
-		Strings.CollectionAncestorKeys = Strings.CollectionAncestorKeys,
+		PathKeys.CollectionAncestorKeys = PathKeys.CollectionAncestorKeys,
 	Key extends string = string
 > extends CollectionId<RulesPackage, Type, CollectionAncestorKeys, Key> {
 	get pathKeys(): [...CollectionAncestorKeys, Key]
 
-	get id(): Strings.RecursiveCollectionId<
+	get id(): StringId.RecursiveCollectionId<
 		RulesPackage,
 		Type,
 		CollectionAncestorKeys,
@@ -802,25 +806,26 @@ interface RecursiveCollectionId<
 	get isRecursive(): true
 	get collectionAncestorKeys(): CollectionAncestorKeys
 
-  get elements(): [RulesPackage,Type,...CollectionAncestorKeys,Key]
+	get elements(): [RulesPackage, Type, ...CollectionAncestorKeys, Key]
 }
 
 class NonRecursiveCollectionId<
 	RulesPackage extends string = string,
-	Type extends TypeId.Collection.NonRecursive = TypeId.Collection.NonRecursive,
+	Type extends
+		NodeTypeId.Collection.NonRecursive = NodeTypeId.Collection.NonRecursive,
 	Key extends string = string
 > extends CollectionId<RulesPackage, Type, [], Key> {
 	createChild<ChildKey extends string>(
 		key: ChildKey
 	): NonRecursiveCollectableId<
 		RulesPackage,
-		TypeId.CollectedBy<Type>,
+		NodeTypeId.CollectedBy<Type>,
 		Key,
 		ChildKey
 	> {
 		return new NonRecursiveCollectableId(
 			this.type,
-			TypeId.collectedByMap[this.type],
+			NodeTypeId.getCollectedBy(this.type),
 			this.key,
 			key
 		) as any
@@ -828,26 +833,24 @@ class NonRecursiveCollectionId<
 }
 interface NonRecursiveCollectionId<
 	RulesPackage extends string = string,
-	Type extends TypeId.Collection.NonRecursive = TypeId.Collection.NonRecursive,
+	Type extends
+		NodeTypeId.Collection.NonRecursive = NodeTypeId.Collection.NonRecursive,
 	Key extends string = string
 > extends CollectionId<RulesPackage, Type, [], Key> {
-	get id(): Strings.NonRecursiveCollectionId<RulesPackage, Type, Key>
+	get id(): StringId.NonRecursiveCollectionId<RulesPackage, Type, Key>
 	get isRecursive(): false
 	get pathKeys(): [Key]
-  get collectionAncestorKeys(): []
-  get elements(): [RulesPackage,Type,Key]
+	get collectionAncestorKeys(): []
+	get elements(): [RulesPackage, Type, Key]
 }
 
 namespace NonCollectableId {
-	export type FromString<T extends Strings.NonCollectableId> = NonCollectableId<
-		ExtractRulesPackage<T>,
-		ExtractTypeId<T>,
-		ExtractKey<T>
-	>
+	export type FromString<T extends StringId.NonCollectableId> =
+		NonCollectableId<ExtractRulesPackage<T>, ExtractTypeId<T>, ExtractKey<T>>
 }
 
 namespace NonRecursiveCollectableId {
-	export type FromString<T extends Strings.NonRecursiveCollectableId> =
+	export type FromString<T extends StringId.NonRecursiveCollectableId> =
 		NonRecursiveCollectableId<
 			ExtractRulesPackage<T>,
 			ExtractTypeId<T>,
@@ -857,7 +860,7 @@ namespace NonRecursiveCollectableId {
 }
 
 namespace RecursiveCollectableId {
-	export type FromString<T extends Strings.RecursiveCollectableId> =
+	export type FromString<T extends StringId.RecursiveCollectableId> =
 		RecursiveCollectableId<
 			ExtractRulesPackage<T>,
 			ExtractTypeId<T>,
@@ -867,7 +870,7 @@ namespace RecursiveCollectableId {
 }
 
 namespace RecursiveCollectionId {
-	export type FromString<T extends Strings.RecursiveCollectionId> =
+	export type FromString<T extends StringId.RecursiveCollectionId> =
 		RecursiveCollectionId<
 			ExtractRulesPackage<T>,
 			ExtractTypeId<T>,
@@ -876,7 +879,7 @@ namespace RecursiveCollectionId {
 		>
 }
 namespace NonRecursiveCollectionId {
-	export type FromString<T extends Strings.NonRecursiveCollectionId> =
+	export type FromString<T extends StringId.NonRecursiveCollectionId> =
 		NonRecursiveCollectionId<
 			ExtractRulesPackage<T>,
 			ExtractTypeId<T>,

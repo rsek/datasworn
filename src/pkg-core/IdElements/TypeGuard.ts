@@ -3,19 +3,19 @@
  * @module
  */
 
-import Regex from './Regex.js'
+import Pattern from './Pattern.js'
 import CONST from './CONST.js'
-import TypeId from './TypeId.js'
-import type * as Id from '../Id/StringId.js'
+import type * as Id from '../StringId.js'
 import type { DictKey } from '../Datasworn.js'
+import NodeTypeId from './NodeTypeId.js'
 
 namespace TypeGuard {
 	export function DictKey(value: unknown): value is DictKey {
-		return typeof value === 'string' && Regex.DictKey.test(value)
+		return typeof value === 'string' && Pattern.DictKey.test(value)
 	}
 
 	export function RulesPackageId(value: unknown): value is Id.RulesPackageId {
-		return typeof value === 'string' && Regex.RulesPackageId.test(value)
+		return typeof value === 'string' && Pattern.RulesPackageId.test(value)
 	}
 
 	export function Wildcard(value: unknown): value is CONST.WildcardString {
@@ -34,44 +34,49 @@ namespace TypeGuard {
 
 	export function RecursiveCollectionType(
 		value: unknown
-	): value is TypeId.Collection.Recursive {
-		for (const v of TypeId.Collection.Recursive) if (v === value) return true
+	): value is NodeTypeId.Collection.Recursive {
+		for (const v of NodeTypeId.Collection.Recursive)
+			if (v === value) return true
 
 		return false
 	}
 
 	export function NonRecursiveCollectionType(
 		value: unknown
-	): value is TypeId.Collection.NonRecursive {
-		for (const v of TypeId.Collection.NonRecursive) if (v === value) return true
+	): value is NodeTypeId.Collection.NonRecursive {
+		for (const v of NodeTypeId.Collection.NonRecursive)
+			if (v === value) return true
 
 		return false
 	}
 
 	export function CollectionType(
 		value: unknown
-	): value is TypeId.Collection.Any {
+	): value is NodeTypeId.Collection.Any {
 		return RecursiveCollectionType(value) || NonRecursiveCollectionType(value)
 	}
 
-	export function NonCollectableType(value: unknown): value is TypeId.NonCollectable {
-		for (const v of TypeId.NonCollectable) if (v === value) return true
+	export function NonCollectableType(
+		value: unknown
+	): value is NodeTypeId.NonCollectable {
+		for (const v of NodeTypeId.NonCollectable) if (v === value) return true
 
 		return false
 	}
 
 	export function RecursiveCollectableType(
 		value: unknown
-	): value is TypeId.Collectable.Recursive {
-		for (const v of TypeId.Collectable.Recursive) if (v === value) return true
+	): value is NodeTypeId.Collectable.Recursive {
+		for (const v of NodeTypeId.Collectable.Recursive)
+			if (v === value) return true
 
 		return false
 	}
 
 	export function NonRecursiveCollectableType(
 		value: unknown
-	): value is TypeId.Collectable.NonRecursive {
-		for (const v of TypeId.Collectable.NonRecursive)
+	): value is NodeTypeId.Collectable.NonRecursive {
+		for (const v of NodeTypeId.Collectable.NonRecursive)
 			if (v === value) return true
 
 		return false
@@ -79,16 +84,16 @@ namespace TypeGuard {
 
 	export function CollectableType(
 		value: unknown
-	): value is TypeId.Collectable.Any {
+	): value is NodeTypeId.Collectable.Any {
 		return RecursiveCollectableType(value) || NonRecursiveCollectableType(value)
 	}
 
 	export function AnyType(
 		value: unknown
 	): value is
-		| TypeId.NonCollectable
-		| TypeId.Collectable.Any
-		| TypeId.Collection.Any {
+		| NodeTypeId.NonCollectable
+		| NodeTypeId.Collectable.Any
+		| NodeTypeId.Collection.Any {
 		return (
 			NonCollectableType(value) ||
 			CollectableType(value) ||
