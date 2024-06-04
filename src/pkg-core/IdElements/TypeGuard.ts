@@ -5,8 +5,8 @@
 
 import Regex from './Regex.js'
 import CONST from './CONST.js'
-import TypeElements from './TypeElements.js'
-import type * as Id from '../Id/Strings.js'
+import TypeId from './TypeId.js'
+import type * as Id from '../Id/StringId.js'
 import type { DictKey } from '../Datasworn.js'
 
 namespace TypeGuard {
@@ -34,67 +34,61 @@ namespace TypeGuard {
 
 	export function RecursiveCollectionType(
 		value: unknown
-	): value is TypeElements.Collection.Recursive {
-		for (const k in TypeElements.Collection.Recursive)
-			if (TypeElements.Collection.Recursive[k] === value) return true
+	): value is TypeId.Collection.Recursive {
+		for (const v of TypeId.Collection.Recursive) if (v === value) return true
 
 		return false
 	}
 
 	export function NonRecursiveCollectionType(
 		value: unknown
-	): value is TypeElements.Collection.NonRecursive {
-		for (const k in TypeElements.Collection.NonRecursive)
-			if (TypeElements.Collection.NonRecursive[k] === value) return true
+	): value is TypeId.Collection.NonRecursive {
+		for (const v of TypeId.Collection.NonRecursive) if (v === value) return true
 
 		return false
 	}
 
 	export function CollectionType(
 		value: unknown
-	): value is TypeElements.Collection.Any {
+	): value is TypeId.Collection.Any {
 		return RecursiveCollectionType(value) || NonRecursiveCollectionType(value)
 	}
 
-	export function NonCollectableType(
-		value: unknown
-	): value is TypeElements.NonCollectable {
-		for (const k in TypeElements.NonCollectable)
-			if (TypeElements.NonCollectable[k] === value) return true
+	export function NonCollectableType(value: unknown): value is TypeId.NonCollectable {
+		for (const v of TypeId.NonCollectable) if (v === value) return true
 
 		return false
 	}
 
 	export function RecursiveCollectableType(
 		value: unknown
-	): value is TypeElements.Collectable.Recursive {
-		for (const k in TypeElements.Collectable.Recursive)
-			if (TypeElements.Collectable.Recursive[k] === value) return true
+	): value is TypeId.Collectable.Recursive {
+		for (const v of TypeId.Collectable.Recursive) if (v === value) return true
 
 		return false
 	}
 
 	export function NonRecursiveCollectableType(
 		value: unknown
-	): value is TypeElements.Collectable.NonRecursive {
-		for (const k in TypeElements.Collectable.NonRecursive)
-			if (TypeElements.Collectable.NonRecursive[k] === value) return true
+	): value is TypeId.Collectable.NonRecursive {
+		for (const v of TypeId.Collectable.NonRecursive)
+			if (v === value) return true
 
 		return false
 	}
 
 	export function CollectableType(
 		value: unknown
-	): value is TypeElements.Collectable.Any {
+	): value is TypeId.Collectable.Any {
 		return RecursiveCollectableType(value) || NonRecursiveCollectableType(value)
 	}
 
 	export function AnyType(
 		value: unknown
 	): value is
-		| TypeElements.NonCollectable
-		| TypeElements.Collectable.Any
-		| TypeElements.Collection.Any {
+		| TypeId.NonCollectable
+		| TypeId.Collectable.Any
+		| TypeId.Collection.Any {
 		return (
 			NonCollectableType(value) ||
 			CollectableType(value) ||

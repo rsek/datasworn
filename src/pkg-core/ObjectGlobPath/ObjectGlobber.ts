@@ -1,12 +1,11 @@
 import { type RulesPackage } from '../Datasworn.js'
 import type * as Path from './Path.js'
 import { arrayIs } from './arrayIs.js'
-import { type TypeForId } from '../Id/Utils.js'
 import type * as Id from '../Id/index.js'
 import CONST from '../IdElements/CONST.js'
 import TypeGuard from '../IdElements/TypeGuard.js'
-
-// TODO: make this friendly to lookups in Map objects.
+import type TypeId from '../IdElements/TypeId.js'
+import type { ExtractTypeId } from '../Id/IdUtils.js'
 
 /**
  * @internal
@@ -302,7 +301,7 @@ class ObjectGlobber<
 		from: Record<string, RulesPackage>,
 		path: ObjectGlobber<Path.PathForId<T>>,
 		forEach?: ObjectGlobber.WalkIteratee
-	): TypeForId<T>
+	): TypeId.NodeOfType<ExtractTypeId<T>>
 	static walk(
 		from: object,
 		path: ObjectGlobber,
@@ -418,8 +417,8 @@ class ObjectGlobber<
 	): T extends typeof CONST.WildcardString
 		? (typeof ObjectGlobber)['WILDCARD']
 		: T extends typeof CONST.GlobstarString
-		  ? (typeof ObjectGlobber)['GLOBSTAR']
-		  : T {
+			? (typeof ObjectGlobber)['GLOBSTAR']
+			: T {
 		switch (true) {
 			case TypeGuard.Wildcard(item):
 				return ObjectGlobber.WILDCARD as any
@@ -436,8 +435,8 @@ class ObjectGlobber<
 	): T extends (typeof ObjectGlobber)['WILDCARD']
 		? typeof CONST.WildcardString
 		: T extends (typeof ObjectGlobber)['GLOBSTAR']
-		  ? typeof CONST.GlobstarString
-		  : T {
+			? typeof CONST.GlobstarString
+			: T {
 		switch (item) {
 			case ObjectGlobber.WILDCARD:
 			case ObjectGlobber.GLOBSTAR:

@@ -1,24 +1,35 @@
-import type * as Strings from './Strings.js'
+import type * as Strings from './StringId.js'
 import { IdParser } from '../IdParser.js'
+// import { readFileSync } from 'fs'
+
+// const path = './datasworn/starforged/starforged.json'
+
+// IdParser.datasworn = {
+// 	starforged: JSON.parse(readFileSync(path, { encoding: 'utf-8' }))
+// }
 
 const recursiveCollectionString =
-	'sundered_isles/collections/oracles/core' satisfies Strings.RecursiveCollectionId
+	'starforged/oracle_collection/core' satisfies Strings.RecursiveCollectionId
 const recursiveCollectableString =
-	'sundered_isles/oracles/core/action' satisfies Strings.RecursiveCollectableId
+	'starforged/oracle_rollable/core/action' satisfies Strings.RecursiveCollectableId
 const nonRecursiveCollectionString =
-	'starforged/collections/moves/combat' satisfies Strings.NonRecursiveCollectionId
+	'starforged/move_category/combat' satisfies Strings.NonRecursiveCollectionId
 const nonRecursiveCollectableString =
-	'starforged/moves/combat/strike' satisfies Strings.NonRecursiveCollectableId
+	'starforged/move/combat/strike' satisfies Strings.NonRecursiveCollectableId
 const nonCollectableString =
-	'delve/site_themes/hallowed' satisfies Strings.NonCollectableId
+	'starforged/truth/magic' satisfies Strings.NonCollectableId
 
-const recursiveCollectableId = IdParser.from(recursiveCollectableString)
+const recursiveCollectableId = IdParser.fromString(recursiveCollectableString)
 
-const nonRecursiveCollectionId = IdParser.from(nonRecursiveCollectionString)
-const recursiveCollectionId = IdParser.from(recursiveCollectionString)
+const nonRecursiveCollectionId = IdParser.fromString(
+	nonRecursiveCollectionString
+)
+const recursiveCollectionId = IdParser.fromString(recursiveCollectionString)
 
-const nonRecursiveCollectableId = IdParser.from(nonRecursiveCollectableString)
-const nonCollectableId = IdParser.from(nonCollectableString)
+const nonRecursiveCollectableId = IdParser.fromString(
+	nonRecursiveCollectableString
+)
+const nonCollectableId = IdParser.fromString(nonCollectableString)
 
 for (const id of [
 	recursiveCollectableId,
@@ -26,5 +37,7 @@ for (const id of [
 	nonRecursiveCollectableId,
 	nonRecursiveCollectionId,
 	nonCollectableId
-])
-	console.log(id.toString(), id.toPath().join('.'))
+]) {
+	console.log(id.toString(), '=>', id.toPath().join('.'))
+	console.log(`Retrieved "${id.get()?.name}"`)
+}
