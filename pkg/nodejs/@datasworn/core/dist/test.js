@@ -2,7 +2,6 @@
 /**
  * A very lazy test script. If TS complains about TypeErrors in here, then something is broken!
  */
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 const IdParser_js_1 = require("./IdParser.js");
 // import { readFileSync } from 'fs'
@@ -28,5 +27,5 @@ for (const id of [
     nonCollectableId
 ]) {
     console.log(id.toString(), '=>', id.toPath().join('.'));
-    console.log(`Retrieved "${(_a = id.get()) === null || _a === void 0 ? void 0 : _a.name}"`);
+    // console.log(`Retrieved "${id.get()?.name}"`)
 }

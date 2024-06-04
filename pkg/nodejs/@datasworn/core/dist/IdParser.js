@@ -13,27 +13,30 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _IdParser_instances, _a, _IdParser_rulesPackage, _IdParser_type, _IdParser_pathKeys, _IdParser_matcher, _IdParser_createMatcher, _IdParser_getPatternFragment, _IdParser_resetCachedProperties, _IdParser_globber, _IdParser_validateOptions, _IdParser_getFormatType, _IdParser_validateRulesPackage, _IdParser_validatePathKeys, _IdParser_validateDictKey, _IdParser_validateCollectionKey;
+var _IdParser_instances, _a, _IdParser_rulesPackage, _IdParser_typeId, _IdParser_pathKeys, _IdParser_matcher, _IdParser_resetCachedProperties, _IdParser_globber, _IdParser_createMatcher, _IdParser_getPatternFragment, _IdParser_parse, _IdParser_validateOptions, _IdParser_getFormatType, _IdParser_validateRulesPackage, _IdParser_validatePathKeys, _IdParser_validateDictKey, _IdParser_validateCollectionKey;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RecursiveCollectionId = exports.RecursiveCollectableId = exports.NonRecursiveCollectionId = exports.NonRecursiveCollectableId = exports.NonCollectableId = exports.IdParser = void 0;
 const Errors_js_1 = require("./Errors.js");
 const index_js_1 = require("./IdElements/index.js");
 const ObjectGlobber_js_1 = __importDefault(require("./ObjectGlobber.js"));
 class IdParser {
-    constructor({ rulesPackage, type, pathKeys }) {
+    constructor({ rulesPackage, typeId, pathKeys }) {
         _IdParser_instances.add(this);
         // ID parts
         _IdParser_rulesPackage.set(this, void 0);
-        _IdParser_type.set(this, void 0);
+        _IdParser_typeId.set(this, void 0);
         _IdParser_pathKeys.set(this, void 0);
         _IdParser_matcher.set(this, null
-        // Private methods
-        /** The regular expression that matches for a wildcard ID. */
+        /** Reset any cached matchers or paths. */
         );
         /** Lazy prop for this ID's Globber */
-        _IdParser_globber.set(this, null);
+        _IdParser_globber.set(this, null
+        /** Converts the ID to an ObjectGlobber representing the actual path to the identified object.
+         * @internal
+         */
+        );
         __classPrivateFieldSet(this, _IdParser_rulesPackage, rulesPackage, "f");
-        __classPrivateFieldSet(this, _IdParser_type, type, "f");
+        __classPrivateFieldSet(this, _IdParser_typeId, typeId, "f");
         __classPrivateFieldSet(this, _IdParser_pathKeys, pathKeys, "f");
     }
     get rulesPackage() {
@@ -45,23 +48,29 @@ class IdParser {
         __classPrivateFieldGet(this, _IdParser_instances, "m", _IdParser_resetCachedProperties).call(this);
         __classPrivateFieldSet(this, _IdParser_rulesPackage, value, "f");
     }
-    get type() {
-        return __classPrivateFieldGet(this, _IdParser_type, "f");
+    get typeId() {
+        return __classPrivateFieldGet(this, _IdParser_typeId, "f");
     }
     get pathKeys() {
         return __classPrivateFieldGet(this, _IdParser_pathKeys, "f");
     }
     get typeRootKey() {
-        return index_js_1.NodeTypeId.getRootKey(this.type);
+        return index_js_1.NodeTypeId.getRootKey(this.typeId);
     }
     // computed properties
     /** The parsed elements of the ID as an array of strings. */
     get elements() {
-        return [this.rulesPackage, this.type, ...this.pathKeys];
+        return [this.rulesPackage, this.typeId, ...this.pathKeys];
     }
+    /**
+     * Returns a string representation of the ID.
+     */
     get id() {
         return this.elements.join(index_js_1.CONST.Sep);
     }
+    /**
+     * Returns a string representation of the ID. Effectively an alias for {@link IdParser.id}
+     */
     toString() {
         return this.id;
     }
@@ -79,24 +88,26 @@ class IdParser {
     }
     /** Does this ID contain recursive elements? */
     get isRecursive() {
-        return (index_js_1.TypeGuard.RecursiveCollectableType(this.type) ||
-            index_js_1.TypeGuard.RecursiveCollectionType(this.type));
+        return (index_js_1.TypeGuard.RecursiveCollectableType(this.typeId) ||
+            index_js_1.TypeGuard.RecursiveCollectionType(this.typeId));
     }
     /** Does this ID refer to a collectable object? */
     get isCollectable() {
-        return index_js_1.TypeGuard.CollectableType(this.type);
+        return index_js_1.TypeGuard.CollectableType(this.typeId);
     }
     /** Does this ID refer to a collection? */
     get isCollection() {
-        return index_js_1.TypeGuard.CollectionType(this.type);
+        return index_js_1.TypeGuard.CollectionType(this.typeId);
     }
-    // Private methods
     /** The regular expression that matches for a wildcard ID. */
     get matcher() {
         if (!(__classPrivateFieldGet(this, _IdParser_matcher, "f") instanceof RegExp))
             __classPrivateFieldSet(this, _IdParser_matcher, __classPrivateFieldGet(_a, _a, "m", _IdParser_createMatcher).call(_a, ...this.elements), "f");
         return __classPrivateFieldGet(this, _IdParser_matcher, "f");
     }
+    /** Converts the ID to an ObjectGlobber representing the actual path to the identified object.
+     * @internal
+     */
     toPath() {
         if (__classPrivateFieldGet(this, _IdParser_globber, "f") == null) {
             const path = _a.toPath(this);
@@ -105,16 +116,20 @@ class IdParser {
         }
         return __classPrivateFieldGet(this, _IdParser_globber, "f");
     }
+    /**
+     * Get a Datasworn node by its ID.
+     * @throws If the ID is invalid; if a path to the identified object can't be found; if no Datasworn tree is provided (either in {@link IdParser.datasworn} or as an argument).
+     */
+    get(tree) {
+        return _a.get(this, tree);
+    }
     static get(id, tree = _a.datasworn) {
         const parsedId = id instanceof _a ? id : _a.fromString(id);
         return parsedId.toPath().walk(tree);
     }
-    get(tree) {
-        return _a.get(this, tree);
-    }
     static fromOptions(options) {
         __classPrivateFieldGet(this, _a, "m", _IdParser_validateOptions).call(this, options);
-        const { rulesPackage, type, pathKeys } = options;
+        const { rulesPackage, typeId: type, pathKeys } = options;
         switch (true) {
             case index_js_1.TypeGuard.NonCollectableType(type):
                 return new NonCollectableId(rulesPackage, type, ...pathKeys);
@@ -162,33 +177,16 @@ class IdParser {
         dotPathElements.push(parsedId.key);
         return new ObjectGlobber_js_1.default(...dotPathElements);
     }
-    // Public static  methods
-    /**
-     * Parses an ID string in to an IdParser options object.
-     * @throws If it can't parse the ID.
-     */
-    static parse(id) {
-        const [rulesPackage, type, ...pathKeys] = id.split(index_js_1.CONST.Sep);
-        const result = {
-            rulesPackage,
-            type: type,
-            pathKeys
-        };
-        try {
-            __classPrivateFieldGet(this, _a, "m", _IdParser_validateOptions).call(this, result);
-        }
-        catch (e) {
-            throw new Errors_js_1.ParseError(id, e);
-        }
-        return result;
-    }
     static fromString(id) {
-        const options = _a.parse(id);
+        const options = __classPrivateFieldGet(_a, _a, "m", _IdParser_parse).call(_a, id);
         return _a.fromOptions(options);
     }
 }
 exports.IdParser = IdParser;
-_a = IdParser, _IdParser_rulesPackage = new WeakMap(), _IdParser_type = new WeakMap(), _IdParser_pathKeys = new WeakMap(), _IdParser_matcher = new WeakMap(), _IdParser_globber = new WeakMap(), _IdParser_instances = new WeakSet(), _IdParser_createMatcher = function _IdParser_createMatcher(...elements) {
+_a = IdParser, _IdParser_rulesPackage = new WeakMap(), _IdParser_typeId = new WeakMap(), _IdParser_pathKeys = new WeakMap(), _IdParser_matcher = new WeakMap(), _IdParser_globber = new WeakMap(), _IdParser_instances = new WeakSet(), _IdParser_resetCachedProperties = function _IdParser_resetCachedProperties() {
+    __classPrivateFieldSet(this, _IdParser_matcher, null, "f");
+    __classPrivateFieldSet(this, _IdParser_globber, null, "f");
+}, _IdParser_createMatcher = function _IdParser_createMatcher(...elements) {
     return new RegExp('^' + elements.map(__classPrivateFieldGet(_a, _a, "m", _IdParser_getPatternFragment)).join(index_js_1.CONST.Sep) + '$');
 }, _IdParser_getPatternFragment = function _IdParser_getPatternFragment(element, index) {
     switch (element) {
@@ -203,10 +201,21 @@ _a = IdParser, _IdParser_rulesPackage = new WeakMap(), _IdParser_type = new Weak
         default:
             return element;
     }
-}, _IdParser_resetCachedProperties = function _IdParser_resetCachedProperties() {
-    __classPrivateFieldSet(this, _IdParser_matcher, null, "f");
-    __classPrivateFieldSet(this, _IdParser_globber, null, "f");
-}, _IdParser_validateOptions = function _IdParser_validateOptions({ rulesPackage, type, pathKeys }) {
+}, _IdParser_parse = function _IdParser_parse(id) {
+    const [rulesPackage, type, ...pathKeys] = id.split(index_js_1.CONST.Sep);
+    const result = {
+        rulesPackage,
+        typeId: type,
+        pathKeys
+    };
+    try {
+        __classPrivateFieldGet(this, _a, "m", _IdParser_validateOptions).call(this, result);
+    }
+    catch (e) {
+        throw new Errors_js_1.ParseError(id, e);
+    }
+    return result;
+}, _IdParser_validateOptions = function _IdParser_validateOptions({ rulesPackage, typeId: type, pathKeys }) {
     if (!__classPrivateFieldGet(this, _a, "m", _IdParser_validateRulesPackage).call(this, rulesPackage))
         throw new Error(`"${String(rulesPackage)}" is not a valid Datasworn package ID or wildcard.`);
     // validate type
@@ -275,16 +284,16 @@ _a = IdParser, _IdParser_rulesPackage = new WeakMap(), _IdParser_type = new Weak
         ? index_js_1.TypeGuard.Globstar(key) || __classPrivateFieldGet(this, _a, "m", _IdParser_validateDictKey).call(this, key)
         : __classPrivateFieldGet(this, _a, "m", _IdParser_validateDictKey).call(this, key);
 };
-IdParser.RulesPackagePattern = index_js_1.Pattern.RulesPackageElement;
-IdParser.DictKeyPattern = index_js_1.Pattern.DictKeyElement;
-IdParser.RecursiveDictKeyPattern = index_js_1.Pattern.RecursiveDictKeyElement;
 // Static properties
 /** An optional reference to the Datasworn tree object, shared by all subclasses. Used as the default value for several traversal methods. */
 IdParser.datasworn = null;
+IdParser.RulesPackagePattern = index_js_1.Pattern.RulesPackageElement;
+IdParser.DictKeyPattern = index_js_1.Pattern.DictKeyElement;
+IdParser.RecursiveDictKeyPattern = index_js_1.Pattern.RecursiveDictKeyElement;
 // derived classes
 class NonCollectableId extends IdParser {
     constructor(rulesPackage, type, key) {
-        super({ rulesPackage, type, pathKeys: [key] });
+        super({ rulesPackage, typeId: type, pathKeys: [key] });
     }
 }
 exports.NonCollectableId = NonCollectableId;
@@ -294,7 +303,7 @@ class NonRecursiveCollectableId extends CollectableId {
     constructor(rulesPackage, type, collectionKey, key) {
         super({
             rulesPackage,
-            type,
+            typeId: type,
             pathKeys: [collectionKey, key]
         });
     }
@@ -302,7 +311,7 @@ class NonRecursiveCollectableId extends CollectableId {
 exports.NonRecursiveCollectableId = NonRecursiveCollectableId;
 class RecursiveCollectableId extends CollectableId {
     constructor(rulesPackage, type, ...pathKeys) {
-        super({ rulesPackage, type, pathKeys });
+        super({ rulesPackage, typeId: type, pathKeys });
     }
     get recursionDepth() {
         return this.collectionAncestorKeys.length;
@@ -311,17 +320,17 @@ class RecursiveCollectableId extends CollectableId {
 exports.RecursiveCollectableId = RecursiveCollectableId;
 class CollectionId extends IdParser {
     constructor(rulesPackage, type, ...pathKeys) {
-        super({ rulesPackage, type, pathKeys });
+        super({ rulesPackage, typeId: type, pathKeys });
     }
 }
 class RecursiveCollectionId extends CollectionId {
     createChild(key) {
-        return new RecursiveCollectableId(this.rulesPackage, index_js_1.NodeTypeId.getCollectedBy(this.type), ...this.collectionAncestorKeys, this.key, key);
+        return new RecursiveCollectableId(this.rulesPackage, index_js_1.NodeTypeId.getCollectedBy(this.typeId), ...this.collectionAncestorKeys, this.key, key);
     }
     createCollectionChild(key) {
         if (this.pathKeys.length >= index_js_1.CONST.RECURSIVE_PATH_ELEMENTS_MAX)
             throw new Errors_js_1.ParseError(this.id, `Cant't generate a child collection ID because this ID has reached the maximum recursion depth (${index_js_1.CONST.RECURSIVE_PATH_ELEMENTS_MAX})`);
-        return new RecursiveCollectionId(this.rulesPackage, this.type, ...this.pathKeys, key);
+        return new RecursiveCollectionId(this.rulesPackage, this.typeId, ...this.pathKeys, key);
     }
     /**
      * @throws If a parent ID isn't possible (because this ID doesn't have a parent collection.)
@@ -329,7 +338,7 @@ class RecursiveCollectionId extends CollectionId {
     getParent() {
         if (this.collectionAncestorKeys.length === 0)
             throw new Errors_js_1.ParseError(this.id, `Can't generate a parent ID because this ID has no ancestors.`);
-        return new RecursiveCollectionId(this.rulesPackage, this.type, ...this.collectionAncestorKeys);
+        return new RecursiveCollectionId(this.rulesPackage, this.typeId, ...this.collectionAncestorKeys);
     }
     get recursionDepth() {
         return this.pathKeys.length;
@@ -338,7 +347,7 @@ class RecursiveCollectionId extends CollectionId {
 exports.RecursiveCollectionId = RecursiveCollectionId;
 class NonRecursiveCollectionId extends CollectionId {
     createChild(key) {
-        return new NonRecursiveCollectableId(this.type, index_js_1.NodeTypeId.getCollectedBy(this.type), this.key, key);
+        return new NonRecursiveCollectableId(this.typeId, index_js_1.NodeTypeId.getCollectedBy(this.typeId), this.key, key);
     }
 }
 exports.NonRecursiveCollectionId = NonRecursiveCollectionId;

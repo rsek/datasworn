@@ -34,14 +34,14 @@ namespace IdParser {
 		PathKeys extends Datasworn.DictKey[] = Datasworn.DictKey[]
 	> = {
 		/**
-		 * The first element of the ID, representing the RulesPackage that the object is from.
+		 * The first element of the ID, representing the RulesPackage that the identified node is from.
 		 * @example "classic"
 		 * @example "delve"
 		 * @example "starforged"
 		 */
 		rulesPackage: RulesPackage
 		/**
-		 * The second element of the ID, which indicate the object's type. This is the same value as the `type` property of the object.
+		 * The second element of the ID, representing the {@link DataswornNode}'s type. This is the same value as the `type` property of the node.
 		 * @example "oracle_rollable"
 		 * @example "oracle_collection"
 		 * @example "asset"
