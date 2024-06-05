@@ -14,7 +14,9 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DataswornTree = void 0;
+exports.updateIdsInString = exports.DataswornTree = void 0;
 __exportStar(require("./IdParser.js"), exports);
 var DataswornTree_js_1 = require("./DataswornTree.js");
 Object.defineProperty(exports, "DataswornTree", { enumerable: true, get: function () { return DataswornTree_js_1.DataswornTree; } });
+var migrations_js_1 = require("./migrations.js");
+Object.defineProperty(exports, "updateIdsInString", { enumerable: true, get: function () { return migrations_js_1.updateIdsInString; } });

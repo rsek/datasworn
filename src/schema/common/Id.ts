@@ -74,13 +74,6 @@ export const NpcIdWildcard = toWildcardId(NpcId, {
 })
 export type NpcIdWildcard = Opaque<Static<typeof NpcIdWildcard>>
 
-// export const NpcVariantId = Extend(NpcId, ['variants', Node], {
-// 	$id: 'NpcVariantId',
-// 	examples: ['starforged/npc/sample_npcs/chiton.variants/chiton_drone_pack']
-// })
-
-// export type NpcVariantId = Opaque<Static<typeof NpcVariantId>>
-
 export const AssetCollectionId = CollectionId('asset_collection', {
 	$id: 'AssetCollectionId'
 })

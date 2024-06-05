@@ -80,12 +80,37 @@ export function IdUnion(members: TId[], options: ObjectOptions) {
 export function Id(elements: IdElement[], options: IdOptions) {
 	const targetName = options.$id.replace(/Id$/, '')
 	const indefiniteArticle = targetName.match(/^[AEIOU]/) ? 'an' : 'a'
-	const pattern = new RegExp(
-		`^${getPatternSubstrings(...elements).join('')}$`
-	).source
+	const baseRegex = new RegExp(
+		`^${getPatternSubstrings(...elements)
+			// .map((el, i, arr) => {
+			// 	// skip if it's a single element - no meaningful groups
+			// 	if (arr.length === 1) return el
+			// 	// skip if it's a separator element
+			// 	if (el.toString() === sep || el.toString() === propSep) return el
+			// 	if (el.toString().startsWith('(?') || !el.toString().startsWith('('))
+			// 		return '(' + el.toString() + ')'
+
+			// 	return el
+			// })
+			.join('')}$`
+	)
+	// the regex needs some clean up to work right in the JSON schema
+	const pattern = baseRegex.source
 		// clean up any lingering doubled slashes
 		.replace('\\/(\\/', '(\\/')
 		.replace('\\/((\\/', '((\\/')
+
+	// validate examples against the regex
+	// if (options.examples) {
+	// 	for (const example of options.examples) {
+	// 		if (typeof example !== 'string')
+	// 			throw new Error("Got an Id example value that wasn't a string")
+	// 		if (!baseRegex.test(example))
+	// 			throw new Error(
+	// 				`Example ID "${example}" doesn't match the JSON schema regular expression.`
+	// 			)
+	// 	}
+	// }
 
 	const result = Type.String({
 		pattern,
