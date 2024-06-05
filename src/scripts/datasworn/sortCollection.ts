@@ -38,7 +38,7 @@ export function sortTopLevelCollection<
 
 	// Log.info(result)
 
-	return result
+	return result as D
 }
 
 export function sortCollection<

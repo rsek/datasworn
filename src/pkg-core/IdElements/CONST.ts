@@ -32,6 +32,12 @@ namespace CONST {
 	/** Key in Collection that contains a dictionary object of collectable items. */
 	export const ContentsKey = 'contents' as const
 	export type ContentsKey = typeof ContentsKey
+
+  export const AssetAbilitiesKey = 'abilities' as const
+	export type AssetAbilitiesKey = typeof AssetAbilitiesKey
+
+	export const AssetAbilityMovesKey = 'moves' as const
+	export type AssetAbilityMovesKey = typeof AssetAbilityMovesKey
 }
 
 export default CONST

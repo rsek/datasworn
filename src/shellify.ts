@@ -9,7 +9,8 @@ export function shellify<T extends ShellCommandParams>(
 ) {
 	const substrings: string[] = [command, ...args.map((arg) => `"${arg}"`)]
 
-	for (const [k, v] of Object.entries(options)) {
+	for (const k in options) {
+		const v = options[k]
 		let str = `--${argCase(k)}`
 		switch (typeof v) {
 			case 'string':

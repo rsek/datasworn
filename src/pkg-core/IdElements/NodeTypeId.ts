@@ -52,10 +52,11 @@ namespace NodeTypeId {
 		oracle_collection: 'oracle_rollable'
 	} as const satisfies Record<Collection.Any, Collectable.Any>
 
-	export type CollectedBy<T extends Collection.Any> = (typeof CollectedByMap)[T]
+	export type CollectableOf<T extends Collection.Any> =
+		(typeof CollectedByMap)[T]
 
-	export function getCollectedBy<T extends Collection.Any>(typeId: T) {
-		return CollectedByMap[typeId] as CollectedBy<T>
+	export function getCollectableOf<T extends Collection.Any>(typeId: T) {
+		return CollectedByMap[typeId] as CollectableOf<T>
 	}
 
 	export const CollectionOfMap = {

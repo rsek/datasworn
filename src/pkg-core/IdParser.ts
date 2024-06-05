@@ -1,4 +1,4 @@
-import type { DropLast, Last } from './Utils/Array.js'
+import type { Head, LastElementOf } from './Utils/Array.js'
 import { ParseError } from './Errors.js'
 import type {
 	ExtractAncestorKeys,
@@ -16,9 +16,10 @@ import {
 	type PathKeys
 } from './IdElements/index.js'
 import ObjectGlobber from './ObjectGlobber.js'
-import type * as Datasworn from './Datasworn.js'
+import type * as DataswornSource from './DataswornSource.js'
 import type DataswornNode from './DataswornNode.js'
 import type { Tree } from './Tree.js'
+import type { Datasworn } from './index.js'
 
 namespace IdParser {
 	export type FormatType =
@@ -31,7 +32,10 @@ namespace IdParser {
 	export type Options<
 		RulesPackage extends string = string,
 		TypeId extends NodeTypeId.Any = NodeTypeId.Any,
-		PathKeys extends Datasworn.DictKey[] = Datasworn.DictKey[]
+		PathKeys extends (DataswornSource.DictKey | number)[] = (
+			| DataswornSource.DictKey
+			| number
+		)[]
 	> = {
 		/**
 		 * The first element of the ID, representing the RulesPackage that the identified node is from.
@@ -54,7 +58,7 @@ namespace IdParser {
 abstract class IdParser<
 	RulesPackage extends string = string,
 	TypeId extends NodeTypeId.Any = NodeTypeId.Any,
-	PathKeys extends string[] = string[]
+	PathKeys extends (string | number)[] = (string | number)[]
 > implements IdParser.Options<RulesPackage, TypeId, PathKeys>
 {
 	constructor({
@@ -183,6 +187,16 @@ abstract class IdParser<
 		return this.#globber
 	}
 
+	/** Assign a string ID to a Datasworn node, and all eligible descendant nodes.
+	 * @param node The Datasworn
+	 * @param recursive Should IDs be assigned to descendant objects too? (default: true)
+	 * @returns The mutated object.
+	 */
+	assignIdsIn(node: DataswornNode.ByType<TypeId>, recursive = true) {
+		node._id = this.id
+		return node
+	}
+
 	/**
 	 * Get a Datasworn node by its ID.
 	 * @throws If the ID is invalid; if a path to the identified object can't be found; if no Datasworn tree is provided (either in {@link IdParser.datasworn} or as an argument).
@@ -308,7 +322,7 @@ abstract class IdParser<
 
 	// Private methods
 
-	static #createMatcher(...elements: string[]) {
+	static #createMatcher(...elements: (string | number)[]) {
 		return new RegExp(
 			'^' + elements.map(IdParser.#getPatternFragment).join(CONST.Sep) + '$'
 		)
@@ -329,6 +343,7 @@ abstract class IdParser<
 				return element
 		}
 	}
+	// Public static  methods
 
 	static toPath(options: IdParser): ObjectGlobber
 	static toPath(options: IdParser.Options): ObjectGlobber
@@ -343,7 +358,7 @@ abstract class IdParser<
 					? IdParser.fromString(options as any)
 					: IdParser.fromOptions(options as any)
 
-		const dotPathElements: string[] = []
+		const dotPathElements: (string | number)[] = []
 
 		// e.g. "starforged"
 		dotPathElements.push(parsedId.rulesPackage)
@@ -376,7 +391,32 @@ abstract class IdParser<
 		return new ObjectGlobber(...dotPathElements) as any
 	}
 
-	// Public static  methods
+	static readonly typeRootKeys = new Set(Object.values(NodeTypeId.RootKeys))
+
+	/**
+	 * Recursively assigns IDs to all eligibile nodes within a given {@link DataswornSource.RulesPackage}.
+	 * @param rulesPackage The rules package to assign IDs to. This function mutates the object.
+	 * @returns The mutated `rulesPackage`, which now satisfies the requirements for a complete {@link Datasworn.RulesPackage}
+	 */
+	static assignIdsInRulesPackage<T extends DataswornSource.RulesPackage>(
+		rulesPackage: T
+	): Extract<Datasworn.RulesPackage, Pick<T, 'type'>> {
+		for (const k of this.typeRootKeys) {
+			const typeRoot = rulesPackage[k]
+			if (typeRoot == null) continue
+			for (const dictKey in typeRoot) {
+				const topLevelNode = typeRoot[dictKey]
+				const parser = IdParser.fromOptions({
+					rulesPackage: rulesPackage._id,
+					typeId: topLevelNode.type as any,
+					pathKeys: [dictKey]
+				})
+				parser.assignIdsIn(topLevelNode, true)
+			}
+		}
+    // @ts-expect-error
+		return rulesPackage
+	}
 
 	/**
 	 * Parses an ID string in to an IdParser options object.
@@ -484,7 +524,7 @@ abstract class IdParser<
 	static #validatePathKeys(
 		pathKeys: unknown[],
 		format: IdParser.FormatType
-	): pathKeys is Datasworn.DictKey[] {
+	): pathKeys is DataswornSource.DictKey[] {
 		let min: number
 		let max: number
 		let isRecursive: boolean
@@ -545,7 +585,7 @@ abstract class IdParser<
 		key: unknown,
 		recursive = false,
 		collection = false
-	): key is Datasworn.DictKey {
+	): key is DataswornSource.DictKey {
 		if (recursive && collection)
 			TypeGuard.AnyWildcard(key) || TypeGuard.DictKey(key)
 		return TypeGuard.Wildcard(key) || TypeGuard.DictKey(key)
@@ -574,10 +614,12 @@ class NonCollectableId<
 	TypeId extends NodeTypeId.NonCollectable = NodeTypeId.NonCollectable,
 	Key extends string = string
 > extends IdParser<RulesPackage, TypeId, [Key]> {
-	constructor(rulesPackage: RulesPackage, type: TypeId, key: Key) {
-		super({ rulesPackage, typeId: type, pathKeys: [key] })
+	constructor(rulesPackage: RulesPackage, typeId: TypeId, key: Key) {
+		super({ rulesPackage, typeId: typeId, pathKeys: [key] })
 	}
+	// no override necessary for assignIdsIn
 }
+
 interface NonCollectableId<
 	RulesPackage extends string = string,
 	TypeId extends NodeTypeId.NonCollectable = NodeTypeId.NonCollectable,
@@ -591,6 +633,11 @@ interface NonCollectableId<
 	get collectionAncestorKeys(): []
 	get pathKeys(): [Key]
 	get key(): Key
+}
+
+namespace NonCollectableId {
+	export type FromString<T extends StringId.NonCollectableId> =
+		NonCollectableId<ExtractRulesPackage<T>, ExtractTypeId<T>, ExtractKey<T>>
 }
 
 abstract class CollectableId<
@@ -629,13 +676,13 @@ class NonRecursiveCollectableId<
 > extends CollectableId<RulesPackage, TypeId, [CollectionKey], Key> {
 	constructor(
 		rulesPackage: RulesPackage,
-		type: TypeId,
+		typeId: TypeId,
 		collectionKey: CollectionKey,
 		key: Key
 	) {
 		super({
 			rulesPackage,
-			typeId: type,
+			typeId,
 			pathKeys: [collectionKey, key]
 		})
 	}
@@ -656,6 +703,16 @@ interface NonRecursiveCollectableId<
 	get isRecursive(): false
 }
 
+namespace NonRecursiveCollectableId {
+	export type FromString<T extends StringId.NonRecursiveCollectableId> =
+		NonRecursiveCollectableId<
+			ExtractRulesPackage<T>,
+			ExtractTypeId<T>,
+			ExtractParentCollectionKey<T>,
+			ExtractKey<T>
+		>
+}
+
 class RecursiveCollectableId<
 		RulesPackage extends string = string,
 		TypeId extends
@@ -669,10 +726,10 @@ class RecursiveCollectableId<
 {
 	constructor(
 		rulesPackage: RulesPackage,
-		type: TypeId,
+		typeId: TypeId,
 		...pathKeys: [...CollectableAncestorKeys, Key]
 	) {
-		super({ rulesPackage, typeId: type, pathKeys })
+		super({ rulesPackage, typeId, pathKeys })
 	}
 
 	get recursionDepth(): number {
@@ -702,6 +759,16 @@ interface RecursiveCollectableId<
 	get elements(): [RulesPackage, TypeId, ...CollectableAncestorKeys, Key]
 }
 
+namespace RecursiveCollectableId {
+	export type FromString<T extends StringId.RecursiveCollectableId> =
+		RecursiveCollectableId<
+			ExtractRulesPackage<T>,
+			ExtractTypeId<T>,
+			ExtractAncestorKeys<T>,
+			ExtractKey<T>
+		>
+}
+
 abstract class CollectionId<
 	RulesPackage extends string = string,
 	TypeId extends NodeTypeId.Collection.Any = NodeTypeId.Collection.Any,
@@ -711,20 +778,40 @@ abstract class CollectionId<
 > extends IdParser<RulesPackage, TypeId, [...CollectionAncestorKeys, Key]> {
 	constructor(
 		rulesPackage: RulesPackage,
-		type: TypeId,
+		typeId: TypeId,
 		...pathKeys: [...CollectionAncestorKeys, Key]
 	) {
-		super({ rulesPackage, typeId: type, pathKeys })
+		super({ rulesPackage, typeId, pathKeys })
 	}
 
-	abstract createChild<ChildKey extends string>(
+	createChild<ChildKey extends string>(
 		key: ChildKey
 	): CollectableId<
 		RulesPackage,
-		NodeTypeId.CollectedBy<TypeId>,
+		NodeTypeId.CollectableOf<TypeId>,
 		[...CollectionAncestorKeys, Key],
 		ChildKey
-	>
+	> {
+		// @ts-expect-error
+		return IdParser.fromOptions({
+			rulesPackage: this.rulesPackage,
+			// @ts-expect-error
+
+			typeId: NodeTypeId.getCollectableOf(this.typeId),
+			pathKeys: [...this.pathKeys, key]
+		})
+	}
+
+	override assignIdsIn(node: DataswornNode.ByType<TypeId>, recursive = true) {
+		if (recursive)
+			for (const childKey in node.contents) {
+				const childNode = node.contents[childKey]
+				if (childNode == null) continue
+				const childParser = this.createChild(childKey)
+				childNode._id = childParser.id
+			}
+		return super.assignIdsIn(node, recursive)
+	}
 }
 interface CollectionId<
 	RulesPackage extends string = string,
@@ -753,28 +840,9 @@ class RecursiveCollectionId<
 	extends CollectionId<RulesPackage, TypeId, CollectionAncestorKeys, Key>
 	implements RecursiveId
 {
-	createChild<ChildKey extends string>(
-		key: ChildKey
-	): RecursiveCollectableId<
-		RulesPackage,
-		NodeTypeId.CollectedBy<TypeId>,
-		[...CollectionAncestorKeys, Key],
-		ChildKey
-	> {
-		return new RecursiveCollectableId(
-			this.rulesPackage,
-			NodeTypeId.getCollectedBy(this.typeId),
-			...this.collectionAncestorKeys,
-			this.key,
-			key
-		)
-	}
-
 	createCollectionChild<ChildKey extends string>(
 		key: ChildKey
-	): this['pathKeys'] extends PathKeys.CollectionAncestorKeys
-		? RecursiveCollectionId<RulesPackage, TypeId, this['pathKeys'], ChildKey>
-		: never {
+	): RecursiveCollectionId.ChildCollectionOf<this, ChildKey> {
 		if (this.pathKeys.length >= CONST.RECURSIVE_PATH_ELEMENTS_MAX)
 			throw new ParseError(
 				this.id,
@@ -789,17 +857,21 @@ class RecursiveCollectionId<
 		) as any
 	}
 
+	override assignIdsIn(node: DataswornNode.ByType<TypeId>, recursive = true) {
+		if (recursive && CONST.CollectionsKey in node)
+			for (const childKey in node.collections) {
+				const childCollection = node.collections[childKey]
+				if (childCollection == null) continue
+				const childParser = this.createCollectionChild(childKey)
+				childParser.assignIdsIn(childCollection as any, recursive)
+			}
+		return super.assignIdsIn(node, recursive)
+	}
+
 	/**
 	 * @throws If a parent ID isn't possible (because this ID doesn't have a parent collection.)
 	 */
-	getParent(): this['collectionAncestorKeys'] extends PathKeys.CollectionPathKeys
-		? RecursiveCollectionId<
-				RulesPackage,
-				TypeId,
-				DropLast<CollectionAncestorKeys>,
-				Last<CollectionAncestorKeys>
-			>
-		: never {
+	getParentCollection(): RecursiveCollectionId.ParentCollectionOf<this> {
 		if (this.collectionAncestorKeys.length === 0)
 			throw new ParseError(
 				this.id,
@@ -837,6 +909,63 @@ interface RecursiveCollectionId<
 	get collectionAncestorKeys(): CollectionAncestorKeys
 
 	get elements(): [RulesPackage, TypeId, ...CollectionAncestorKeys, Key]
+	createChild<ChildKey extends string>(
+		key: ChildKey
+	): RecursiveCollectableId<
+		RulesPackage,
+		NodeTypeId.CollectableOf<TypeId>,
+		[...CollectionAncestorKeys, Key],
+		ChildKey
+	>
+	// {
+	// 	return new RecursiveCollectableId(
+	// 		this.rulesPackage,
+	// 		NodeTypeId.getCollectedBy(this.typeId),
+	// 		...this.collectionAncestorKeys,
+	// 		this.key,
+	// 		key
+	// 	)
+	// }
+}
+
+namespace RecursiveCollectionId {
+	export type FromString<T extends StringId.RecursiveCollectionId> =
+		RecursiveCollectionId<
+			ExtractRulesPackage<T>,
+			ExtractTypeId<T>,
+			ExtractAncestorKeys<T>,
+			ExtractKey<T>
+		>
+	export type ChildOf<
+		T extends RecursiveCollectionId,
+		K extends string = string
+	> = RecursiveCollectableId<
+		T['rulesPackage'],
+		NodeTypeId.CollectableOf<T['typeId']>,
+		T['pathKeys'],
+		K
+	>
+	export type ChildCollectionOf<
+		T extends RecursiveCollectionId,
+		K extends string = string
+	> = T['pathKeys'] extends PathKeys.CollectionAncestorKeys
+		? RecursiveCollectionId<T['rulesPackage'], T['typeId'], T['pathKeys'], K>
+		: never
+
+	export type ParentCollectionOf<T extends RecursiveCollectionId> =
+		T['collectionAncestorKeys'] extends [infer K extends string]
+			? RecursiveCollectionId<T['rulesPackage'], T['typeId'], [], K>
+			: T['collectionAncestorKeys'] extends [
+						infer U extends string,
+						infer K extends string
+				  ]
+				? RecursiveCollectionId<T['rulesPackage'], T['typeId'], [U], K>
+				: T['collectionAncestorKeys'] extends [
+							...infer U extends PathKeys.CollectionAncestorKeys,
+							infer K extends string
+					  ]
+					? RecursiveCollectionId<T['rulesPackage'], T['typeId'], U, K>
+					: never
 }
 
 class NonRecursiveCollectionId<
@@ -844,23 +973,7 @@ class NonRecursiveCollectionId<
 	TypeId extends
 		NodeTypeId.Collection.NonRecursive = NodeTypeId.Collection.NonRecursive,
 	Key extends string = string
-> extends CollectionId<RulesPackage, TypeId, [], Key> {
-	createChild<ChildKey extends string>(
-		key: ChildKey
-	): NonRecursiveCollectableId<
-		RulesPackage,
-		NodeTypeId.CollectedBy<TypeId>,
-		Key,
-		ChildKey
-	> {
-		return new NonRecursiveCollectableId(
-			this.typeId,
-			NodeTypeId.getCollectedBy(this.typeId),
-			this.key,
-			key
-		) as any
-	}
-}
+> extends CollectionId<RulesPackage, TypeId, [], Key> {}
 interface NonRecursiveCollectionId<
 	RulesPackage extends string = string,
 	TypeId extends
@@ -872,42 +985,17 @@ interface NonRecursiveCollectionId<
 	get pathKeys(): [Key]
 	get collectionAncestorKeys(): []
 	get elements(): [RulesPackage, TypeId, Key]
+
+	createChild<ChildKey extends string>(
+		key: ChildKey
+	): NonRecursiveCollectableId<
+		RulesPackage,
+		NodeTypeId.CollectableOf<TypeId>,
+		Key,
+		ChildKey
+	>
 }
 
-namespace NonCollectableId {
-	export type FromString<T extends StringId.NonCollectableId> =
-		NonCollectableId<ExtractRulesPackage<T>, ExtractTypeId<T>, ExtractKey<T>>
-}
-
-namespace NonRecursiveCollectableId {
-	export type FromString<T extends StringId.NonRecursiveCollectableId> =
-		NonRecursiveCollectableId<
-			ExtractRulesPackage<T>,
-			ExtractTypeId<T>,
-			ExtractParentCollectionKey<T>,
-			ExtractKey<T>
-		>
-}
-
-namespace RecursiveCollectableId {
-	export type FromString<T extends StringId.RecursiveCollectableId> =
-		RecursiveCollectableId<
-			ExtractRulesPackage<T>,
-			ExtractTypeId<T>,
-			ExtractAncestorKeys<T>,
-			ExtractKey<T>
-		>
-}
-
-namespace RecursiveCollectionId {
-	export type FromString<T extends StringId.RecursiveCollectionId> =
-		RecursiveCollectionId<
-			ExtractRulesPackage<T>,
-			ExtractTypeId<T>,
-			ExtractAncestorKeys<T>,
-			ExtractKey<T>
-		>
-}
 namespace NonRecursiveCollectionId {
 	export type FromString<T extends StringId.NonRecursiveCollectionId> =
 		NonRecursiveCollectionId<
@@ -915,6 +1003,15 @@ namespace NonRecursiveCollectionId {
 			ExtractTypeId<T>,
 			ExtractKey<T>
 		>
+	export type ChildOf<
+		T extends NonRecursiveCollectionId,
+		K extends string
+	> = NonRecursiveCollectableId<
+		T['rulesPackage'],
+		NodeTypeId.CollectableOf<T['typeId']>,
+		T['key'],
+		K
+	>
 }
 
 export {

@@ -18,5 +18,7 @@ var CONST;
     CONST.CollectionsKey = 'collections';
     /** Key in Collection that contains a dictionary object of collectable items. */
     CONST.ContentsKey = 'contents';
+    CONST.AssetAbilitiesKey = 'abilities';
+    CONST.AssetAbilityMovesKey = 'moves';
 })(CONST || (CONST = {}));
 exports.default = CONST;

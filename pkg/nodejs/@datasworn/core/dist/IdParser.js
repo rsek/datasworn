@@ -116,6 +116,15 @@ class IdParser {
         }
         return __classPrivateFieldGet(this, _IdParser_globber, "f");
     }
+    /** Assign a string ID to a Datasworn node, and all eligible descendant nodes.
+     * @param node The Datasworn
+     * @param recursive Should IDs be assigned to descendant objects too? (default: true)
+     * @returns The mutated object.
+     */
+    assignIdsIn(node, recursive = true) {
+        node._id = this.id;
+        return node;
+    }
     /**
      * Get a Datasworn node by its ID.
      * @throws If the ID is invalid; if a path to the identified object can't be found; if no Datasworn tree is provided (either in {@link IdParser.datasworn} or as an argument).
@@ -176,6 +185,29 @@ class IdParser {
         }
         dotPathElements.push(parsedId.key);
         return new ObjectGlobber_js_1.default(...dotPathElements);
+    }
+    /**
+     * Recursively assigns IDs to all eligibile nodes within a given {@link DataswornSource.RulesPackage}.
+     * @param rulesPackage The rules package to assign IDs to. This function mutates the object.
+     * @returns The mutated `rulesPackage`, which now satisfies the requirements for a complete {@link Datasworn.RulesPackage}
+     */
+    static assignIdsInRulesPackage(rulesPackage) {
+        for (const k of this.typeRootKeys) {
+            const typeRoot = rulesPackage[k];
+            if (typeRoot == null)
+                continue;
+            for (const dictKey in typeRoot) {
+                const topLevelNode = typeRoot[dictKey];
+                const parser = _a.fromOptions({
+                    rulesPackage: rulesPackage._id,
+                    typeId: topLevelNode.type,
+                    pathKeys: [dictKey]
+                });
+                parser.assignIdsIn(topLevelNode, true);
+            }
+        }
+        // @ts-expect-error
+        return rulesPackage;
     }
     static fromString(id) {
         const options = __classPrivateFieldGet(_a, _a, "m", _IdParser_parse).call(_a, id);
@@ -284,6 +316,7 @@ _a = IdParser, _IdParser_rulesPackage = new WeakMap(), _IdParser_typeId = new We
         ? index_js_1.TypeGuard.Globstar(key) || __classPrivateFieldGet(this, _a, "m", _IdParser_validateDictKey).call(this, key)
         : __classPrivateFieldGet(this, _a, "m", _IdParser_validateDictKey).call(this, key);
 };
+IdParser.typeRootKeys = new Set(Object.values(index_js_1.NodeTypeId.RootKeys));
 // Static properties
 /** An optional reference to the Datasworn tree object, shared by all subclasses. Used as the default value for several traversal methods. */
 IdParser.datasworn = null;
@@ -292,26 +325,26 @@ IdParser.DictKeyPattern = index_js_1.Pattern.DictKeyElement;
 IdParser.RecursiveDictKeyPattern = index_js_1.Pattern.RecursiveDictKeyElement;
 // derived classes
 class NonCollectableId extends IdParser {
-    constructor(rulesPackage, type, key) {
-        super({ rulesPackage, typeId: type, pathKeys: [key] });
+    constructor(rulesPackage, typeId, key) {
+        super({ rulesPackage, typeId: typeId, pathKeys: [key] });
     }
 }
 exports.NonCollectableId = NonCollectableId;
 class CollectableId extends IdParser {
 }
 class NonRecursiveCollectableId extends CollectableId {
-    constructor(rulesPackage, type, collectionKey, key) {
+    constructor(rulesPackage, typeId, collectionKey, key) {
         super({
             rulesPackage,
-            typeId: type,
+            typeId,
             pathKeys: [collectionKey, key]
         });
     }
 }
 exports.NonRecursiveCollectableId = NonRecursiveCollectableId;
 class RecursiveCollectableId extends CollectableId {
-    constructor(rulesPackage, type, ...pathKeys) {
-        super({ rulesPackage, typeId: type, pathKeys });
+    constructor(rulesPackage, typeId, ...pathKeys) {
+        super({ rulesPackage, typeId, pathKeys });
     }
     get recursionDepth() {
         return this.collectionAncestorKeys.length;
@@ -319,23 +352,51 @@ class RecursiveCollectableId extends CollectableId {
 }
 exports.RecursiveCollectableId = RecursiveCollectableId;
 class CollectionId extends IdParser {
-    constructor(rulesPackage, type, ...pathKeys) {
-        super({ rulesPackage, typeId: type, pathKeys });
+    constructor(rulesPackage, typeId, ...pathKeys) {
+        super({ rulesPackage, typeId, pathKeys });
+    }
+    createChild(key) {
+        // @ts-expect-error
+        return IdParser.fromOptions({
+            rulesPackage: this.rulesPackage,
+            // @ts-expect-error
+            typeId: index_js_1.NodeTypeId.getCollectableOf(this.typeId),
+            pathKeys: [...this.pathKeys, key]
+        });
+    }
+    assignIdsIn(node, recursive = true) {
+        if (recursive)
+            for (const childKey in node.contents) {
+                const childNode = node.contents[childKey];
+                if (childNode == null)
+                    continue;
+                const childParser = this.createChild(childKey);
+                childNode._id = childParser.id;
+            }
+        return super.assignIdsIn(node, recursive);
     }
 }
 class RecursiveCollectionId extends CollectionId {
-    createChild(key) {
-        return new RecursiveCollectableId(this.rulesPackage, index_js_1.NodeTypeId.getCollectedBy(this.typeId), ...this.collectionAncestorKeys, this.key, key);
-    }
     createCollectionChild(key) {
         if (this.pathKeys.length >= index_js_1.CONST.RECURSIVE_PATH_ELEMENTS_MAX)
             throw new Errors_js_1.ParseError(this.id, `Cant't generate a child collection ID because this ID has reached the maximum recursion depth (${index_js_1.CONST.RECURSIVE_PATH_ELEMENTS_MAX})`);
         return new RecursiveCollectionId(this.rulesPackage, this.typeId, ...this.pathKeys, key);
     }
+    assignIdsIn(node, recursive = true) {
+        if (recursive && index_js_1.CONST.CollectionsKey in node)
+            for (const childKey in node.collections) {
+                const childCollection = node.collections[childKey];
+                if (childCollection == null)
+                    continue;
+                const childParser = this.createCollectionChild(childKey);
+                childParser.assignIdsIn(childCollection, recursive);
+            }
+        return super.assignIdsIn(node, recursive);
+    }
     /**
      * @throws If a parent ID isn't possible (because this ID doesn't have a parent collection.)
      */
-    getParent() {
+    getParentCollection() {
         if (this.collectionAncestorKeys.length === 0)
             throw new Errors_js_1.ParseError(this.id, `Can't generate a parent ID because this ID has no ancestors.`);
         return new RecursiveCollectionId(this.rulesPackage, this.typeId, ...this.collectionAncestorKeys);
@@ -346,8 +407,5 @@ class RecursiveCollectionId extends CollectionId {
 }
 exports.RecursiveCollectionId = RecursiveCollectionId;
 class NonRecursiveCollectionId extends CollectionId {
-    createChild(key) {
-        return new NonRecursiveCollectableId(this.typeId, index_js_1.NodeTypeId.getCollectedBy(this.typeId), this.key, key);
-    }
 }
 exports.NonRecursiveCollectionId = NonRecursiveCollectionId;

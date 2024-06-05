@@ -111,7 +111,8 @@ export function setDescriptions<T extends TObject>(
 	descriptions: Partial<Record<keyof T['properties'], string | undefined>>,
 	override = true
 ) {
-	for (const [property, description] of Object.entries(descriptions)) {
+	for (const property in descriptions) {
+		const description = descriptions[property]
 		if (schema.properties[property] == null) continue
 		if (!override && !isEmpty(schema.properties[property].description)) continue
 		schema.properties[property].description = description

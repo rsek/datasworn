@@ -36,10 +36,10 @@ var NodeTypeId;
         npc_collection: 'npc',
         oracle_collection: 'oracle_rollable'
     };
-    function getCollectedBy(typeId) {
+    function getCollectableOf(typeId) {
         return NodeTypeId.CollectedByMap[typeId];
     }
-    NodeTypeId.getCollectedBy = getCollectedBy;
+    NodeTypeId.getCollectableOf = getCollectableOf;
     NodeTypeId.CollectionOfMap = {
         asset: 'asset_collection',
         move: 'move_category',

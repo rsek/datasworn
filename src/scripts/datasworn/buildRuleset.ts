@@ -4,19 +4,19 @@ import fs from 'fs-extra'
 import { type Draft07 } from 'json-schema-library'
 import { forEach } from 'lodash-es'
 import path from 'path'
+import { IdParser } from '../../pkg-core/IdParser.js'
 import { RulesExpansion } from '../../schema/Rules.js'
 import { type DataPackageConfig } from '../../schema/tools/build/index.js'
+import { pascalCase } from '../../schema/utils/string.js'
 import type * as Datasworn from '../../types/Datasworn.js'
 import { formatPath } from '../../utils.js'
 import { ROOT_OUTPUT } from '../const.js'
 import Log from '../utils/Log.js'
 import type AJV from '../validation/ajv.js'
-import { buildRulesetData } from './buildRulesetData.js'
 import { cleanRuleset } from './cleanRuleset.js'
 import { mergeRulesetData } from './mergeRulesetParts.js'
 import { loadRulesetFile } from './readRulesetFile.js'
 import { writeRuleset } from './writeRuleset.js'
-import { pascalCase } from '../../schema/utils/string.js'
 
 const metadataKeys: string[] = []
 
@@ -63,14 +63,17 @@ export async function buildRuleset(
 		})
 	)
 
-	const builtFiles = new Map<string, Datasworn.RulesPackage>()
+	const builtFiles = new Map<
+		string,
+		Extract<Datasworn.RulesPackage, { type: typeof type }>
+	>()
 
 	await Promise.all(
 		sourceFiles.map(async (filePath) => {
 			try {
 				const sourceData = await loadRulesetFile(filePath, ajv)
 
-				const builtData = await buildRulesetData(sourceData)
+				const builtData = IdParser.assignIdsInRulesPackage(sourceData)
 
 				builtFiles.set(filePath, builtData)
 			} catch (error) {
@@ -79,39 +82,11 @@ export async function buildRuleset(
 		})
 	)
 
-	// Array.from(builtFiles.entries())
-	// 	// sort by file name so that they merge in the same order every time (prevents JSON diff noise). the order itself is arbitrary, but must be the same no matter who runs it.
-	// 	.sort(([a], [b]) => a.localeCompare(b, 'en-US'))
-	// 	.forEach(([_, data]) => merge(ruleset, data))
-
 	const ruleset = cleanRuleset(mergeRulesetData(builtFiles), jsl)
-
-	// console.log(ruleset)
 
 	const toWrite: Array<Promise<any>> = [
 		writeRuleset(path.join(destDir, `${ruleset._id}.json`), ruleset)
 	]
-
-	/** JSON transformer to strip underscore (macro) properties */
-
-	// for (const [k, v] of Object.entries(ruleset)) {
-	// 	if (isMacroKey(k)) continue
-	// 	if (metadataKeys.includes(k as any)) continue
-	// 	if (v == null || Object.keys(v)?.length === 0) continue
-
-	// 	const jsonToValidate = { id, [k]: v }
-
-	// 	// TODO: rewrite this using keywords and Draft.each() from json-schema-library ??
-
-	// 	ajv.validate('Datasworn', jsonToValidate)
-
-	// 	const jsonOut = cleanRuleset(jsonToValidate, jsl)
-	// 	// const jsonOut = jsonToValidate
-
-	// 	const outPath = path.join(destDir, `${k}.json`)
-
-	// 	toWrite.push(writeRuleset(outPath, jsonOut))
-	// }
 
 	if (oldJsonFiles?.length > 0)
 		Log.info(

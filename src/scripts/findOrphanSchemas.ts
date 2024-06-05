@@ -6,8 +6,7 @@ const schemaIds = new Set<string>()
 const data = await fs.readJson('datasworn/datasworn.schema.json', {
 	reviver(key, value) {
 		if (key === 'definitions' && typeof value === 'object')
-			for (const schemaId of Object.keys(value) as string[])
-				schemaIds.add(schemaId)
+			for (const schemaId in value) schemaIds.add(schemaId)
 		if (key === '$ref' && typeof value === 'string')
 			usedSchemas.add(value.split('/').pop() as string)
 		return value

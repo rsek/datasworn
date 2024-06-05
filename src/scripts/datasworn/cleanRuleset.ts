@@ -10,19 +10,27 @@ import { type Draft07 } from 'json-schema-library'
 import { Type } from '@sinclair/typebox'
 import Assert from './validators.js'
 
-const metadataKeys: string[] = []
+/** Top-level properties to omit from key sorting. */
+const topLevelKeysBlackList = [
+	'rules'
+] as const satisfies (keyof Datasworn.RulesPackage)[]
+/** Separator character used for JSON pointers. */
+const pointerSep = '/'
+/** Hash character that prepends generated JSON pointers. */
+const hashChar = '#'
+
 export function cleanRuleset(datasworn: Datasworn.RulesPackage, jsl: Draft07) {
 	const sortedPointers: Record<string, unknown> = {}
 
 	// sort non-dictionary objects
 	jsl.each(datasworn, (schema, value: any, hashPointer) => {
-		const sep = '/'
+		const nicePointer = hashPointer.startsWith(hashChar)
+			? hashPointer.replace(hashChar, pointerSep)
+			: hashPointer
 
-		const nicePointer = hashPointer.replace(/^#\//, sep)
+		const key = nicePointer.split(pointerSep).pop() as string
 
-		const key = nicePointer.split(sep).pop() as string
-
-		if (nicePointer === sep) return
+		if (nicePointer === pointerSep) return
 
 		// if (value?._id) console.log(value._id, '=>', nicePointer)
 
@@ -35,30 +43,24 @@ export function cleanRuleset(datasworn: Datasworn.RulesPackage, jsl: Draft07) {
 	})
 
 	// sort collections
-	for (const [k, v] of Object.entries(datasworn)) {
-		// this should probably just be, like, a validator
-		// if (metadataKeys.includes(k)) continue
-		// if (typeof v !== 'object') continue
-		// if (Array.isArray(v)) continue
+	for (const k in datasworn) {
+		if (topLevelKeysBlackList.includes(k as any)) continue
+		const v = datasworn[k as keyof Datasworn.RulesPackage]
 		if (!Assert.SourcedNodeDictionary.Check(v)) continue
-		if (k === 'rules') continue
 
-		// log.info(`iterating key: ${k}`)
 		const result = sortTopLevelCollection(v)
 
-		// console.log(result)
+		// @ts-expect-error
 		datasworn[k] = result
 	}
 
-	// console.log('pointersToDelete', pointersToDelete)
-	// console.log('pointersToSort', pointersToSort)
 	const jsonOut = JSON.parse(JSON.stringify(datasworn, replacer))
 
 	// for (const pointer of pointersToDelete)
 	// 	if (JsonPointer.has(jsonOut, pointer)) JsonPointer.remove(jsonOut, pointer)
-	for (const [pointer, sortedValue] of Object.entries(sortedPointers))
+	for (const pointer in sortedPointers)
 		if (JsonPointer.has(jsonOut, pointer))
-			JsonPointer.set(jsonOut, pointer, sortedValue)
+			JsonPointer.set(jsonOut, pointer, sortedPointers[pointer])
 
 	return jsonOut as Datasworn.RulesPackage
 }

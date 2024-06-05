@@ -22,11 +22,11 @@ const AJV = new Ajv({
 	verbose: true
 })
 
-for (const [format, data] of Object.entries(FORMATS))
-	AJV.addFormat(format, data)
+for (const format in FORMATS) AJV.addFormat(format, FORMATS[format])
 
-for (const [keyword, data] of Object.entries(KEYWORDS))
-	AJV.addKeyword({ keyword, ...data })
+for (const keyword in KEYWORDS)
+	AJV.addKeyword({ keyword, ...KEYWORDS[keyword] })
+
 
 addFormats(AJV)
 

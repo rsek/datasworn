@@ -32,8 +32,8 @@ declare namespace NodeTypeId {
         readonly npc_collection: "npc";
         readonly oracle_collection: "oracle_rollable";
     };
-    type CollectedBy<T extends Collection.Any> = (typeof CollectedByMap)[T];
-    function getCollectedBy<T extends Collection.Any>(typeId: T): CollectedBy<T>;
+    type CollectableOf<T extends Collection.Any> = (typeof CollectedByMap)[T];
+    function getCollectableOf<T extends Collection.Any>(typeId: T): CollectableOf<T>;
     const CollectionOfMap: {
         readonly asset: "asset_collection";
         readonly move: "move_category";

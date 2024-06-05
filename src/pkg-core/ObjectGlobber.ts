@@ -374,7 +374,6 @@ class ObjectGlobber<
 		const results: Array<ObjectGlobber> = []
 
 		for (const k in object) {
-			if (!Object.hasOwn(object, k)) continue
 			const nextObject = object[k]
 			if (typeof nextObject !== 'object') continue
 			if (Object.is(nextObject, null)) continue
