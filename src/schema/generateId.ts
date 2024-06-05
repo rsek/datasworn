@@ -1,24 +1,18 @@
-import type * as DataswornSource from '../pkg-core/DataswornSource.js'
+import type DataswornNode from '../pkg-core/DataswornNode.js'
 import CONST from '../pkg-core/IdElements/CONST.js'
-import type { Datasworn } from '../pkg-core/index.js'
+import type { Datasworn, DataswornSource } from '../pkg-core/index.js'
+
+const IdKey = '_id' as const satisfies keyof DataswornNode.Any
+const AssetAbilitiesKey = 'abilities' as const satisfies keyof Datasworn.Asset
+const AssetAbilityMovesKey =
+	'moves' as const satisfies keyof Datasworn.AssetAbility
 
 type NodeLike = {
+	[IdKey]?: string
 	type: string
-	_id?: string
-	contents?: Record<string, NodeLike>
-	collections?: Record<string, NodeLike>
+	[CONST.ContentsKey]?: Record<string, NodeLike>
+	[CONST.CollectionsKey]?: Record<string, NodeLike>
 }
-
-
-const typeRootKeys = [
-	'oracles',
-	'moves',
-	'assets',
-	'atlas',
-	'npcs',
-	'truths',
-	'rarities'
-] satisfies (keyof DataswornSource.Expansion)[]
 
 const metadataKeys = [
 	'datasworn_version',
@@ -40,7 +34,7 @@ type TypeRoot = Exclude<DataswornSource.Expansion[TypeRootKey], undefined>
 type TypeTrunk = TypeRoot[keyof TypeRoot]
 
 export function assignIds(rulesPackage: DataswornSource.RulesPackage) {
-	const rulesPackageId = rulesPackage._id
+	const rulesPackageId = rulesPackage[IdKey]
 	for (const k in rulesPackage) {
 		// @ts-expect-error
 		if (metadataKeys.includes(k)) continue
@@ -61,7 +55,7 @@ export function assignIds(rulesPackage: DataswornSource.RulesPackage) {
 // ) {
 // 	const idParts: string[] = [rulesPackageId, node.type, dictKey]
 
-// 	node._id ||= idParts.join(CONST.Sep)
+// 	node[IdKey] ||= idParts.join(CONST.Sep)
 
 // }
 
@@ -70,55 +64,44 @@ function walkAndAssignIds(
 	key: string | number,
 	parentId: string
 ) {
-	node._id ||= createId(node, key, parentId)
+	node[IdKey] ||= createId(node, key, parentId)
 
-	if ('contents' in node) {
+	if (CONST.ContentsKey in node) {
 		for (const key in node.contents) {
 			const childNode = node.contents[key]
-			walkAndAssignIds(childNode, key, node._id)
+			walkAndAssignIds(childNode, key, node[IdKey])
 		}
 	}
-	if ('collections' in node) {
+	if (CONST.CollectionsKey in node) {
 		for (const key in node.collections) {
 			const childNode = node.collections[key]
-			walkAndAssignIds(childNode, key, node._id)
+			walkAndAssignIds(childNode, key, node[IdKey])
 		}
 	}
 
-	// extra stuff for specific types
+	// extra stuff for asset abilities
 
 	if (node.type === 'asset') {
 		const asset = node as Datasworn.Asset
-		asset.abilities.forEach((assetAbility, i) => {
-			assignAssetAbilityIds(assetAbility, i, asset._id)
+		asset[AssetAbilitiesKey].forEach((assetAbility, i) => {
+			assignAssetAbilityIds(assetAbility, i, asset[IdKey])
 		})
 	}
 }
-
 
 function assignAssetAbilityIds(
 	assetAbility: DataswornSource.AssetAbility,
 	index: number,
 	parentId: string
 ) {
-	assetAbility._id ||= [
-		parentId,
-		CONST.Sep,
-		'abilities',
-		CONST.Sep,
-		index
-	].join('')
+	assetAbility[IdKey] ||= [parentId, AssetAbilitiesKey, index].join(CONST.Sep)
 
-	if ('moves' in assetAbility)
-		for (const moveKey in assetAbility.moves) {
-			const move = assetAbility.moves[moveKey]
-			move._id ||= [
-				assetAbility._id,
-				CONST.Sep,
-				'moves',
-				CONST.Sep,
-				moveKey
-			].join('')
+	if (AssetAbilityMovesKey in assetAbility)
+		for (const moveKey in assetAbility[AssetAbilityMovesKey]) {
+			const move = assetAbility[AssetAbilityMovesKey][moveKey]
+			move[IdKey] ||= [assetAbility[IdKey], AssetAbilityMovesKey, moveKey].join(
+				CONST.Sep
+			)
 		}
 }
 
