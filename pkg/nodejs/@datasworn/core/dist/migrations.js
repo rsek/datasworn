@@ -1,25 +1,16 @@
 "use strict";
+/** Utilties to assist in migration of Datasworn data across versions. */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateIdsInString = void 0;
+exports.applyReplacements = exports.updateId = exports.updateIdsInMarkdown = exports.updateIdsInString = exports.IdReplacementMap = void 0;
 const CONST_js_1 = __importDefault(require("./IdElements/CONST.js"));
-const moveIdPatterns = [
-    // standard moves
-    /(?<pkg>\*|[a-z][a-z0-9_]{3,})\/moves\/(?<path>(?:\*|[a-z][a-z_]*)\/(?:\*|[a-z][a-z_]*))/,
-    // asset moves
-    /(?<pkg>\*|[a-z][a-z0-9_]{3,})\/assets\/(?<path>\*|[a-z][a-z_]*)\/(\*|[a-z][a-z_]*)\/abilities\/(\*|(?:0|[1-9][0-9]*))\/moves\/(?<key>\*|[a-z][a-z_]*)/
-];
-// const key = /(?<key>[a-z][a-z_]*|\*)/
-// const recursiveCollectionPath =
-// 	/(?<path>[a-z][a-z_]*(?:\/[a-z][a-z_]*){0,2}|\*{1,2})/
-// const pkg = /(?<pkg>[a-z][a-z0-9_]{3,}|\*)/
-// const recursivePath =child_id_n
-// 	/(?<path>[a-z][a-z_]*(?:\/(?:[a-z][a-z_]*|\*|\**)){0,2}|\*\*)/
-// const path = /(?<path>[a-z][a-z_]*|\*)/
 const MinorNodeTypes = ['asset_ability_move', 'asset_ability'];
-const idReplacementMap = {
+/**
+ * Provides an array of {@link IdReplacer} objects for each Datasworn ID type.
+ */
+exports.IdReplacementMap = {
     asset_collection: [
         {
             old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/collections\/assets\/(?<path>[a-z_/*]+)$/,
@@ -126,6 +117,9 @@ const idReplacementMap = {
 /**
  * Updates old (pre-0.1.0) Datasworn IDs (and pointers that reference them in markdown strings) for use with v0.1.0.
  * Intended for use as the `replacer` in {@link JSON.stringify} or the `reviver` in {@link JSON.parse}; this way, it will iterate over every string value so you can update all the IDs in one go.
+ *
+ * NOTE: This function assumes that Datasworn's markdown formatting is mostly intact. If you diverge,
+ *
  * @param key The JSON value's key. Not actually used right now, but retained so it's parameters are consistent with the typical replacer/reviver functions.
  * @param value The JSON value itself.
  * @returns The updated string value, or the original string value if no changes were made.
@@ -183,18 +177,26 @@ function updateIdsInMarkdown(md) {
         newStr = newStr.replaceAll(pattern, updateId);
     return newStr;
 }
+exports.updateIdsInMarkdown = updateIdsInMarkdown;
+/**
+ * Updates a Datasworn ID. The string must consist *only* of an ID, like those found in the `_id` property of many Datasworn nodes.
+ *
+ * To update IDs within a longer string, see {@link updateIdsInString}.
+ * @param oldId The ID to attempt migration on.
+ * @param typeHint An optional type hint. If you know the ID type ahead of time, this lets the function skip some iteration over irrelevant ID categories, which might make it faster.
+ */
 function updateId(oldId, typeHint) {
     var _a;
-    if (typeHint != null && typeHint in idReplacementMap) {
+    if (typeHint != null && typeHint in exports.IdReplacementMap) {
         // type is already known, so we can skip straight to running the replacements
-        const replacers = idReplacementMap[typeHint];
-        return (_a = _applyReplacements(oldId, replacers)) !== null && _a !== void 0 ? _a : oldId;
+        const replacers = exports.IdReplacementMap[typeHint];
+        return (_a = applyReplacements(oldId, replacers)) !== null && _a !== void 0 ? _a : oldId;
     }
     else {
         // unknown type, run all of them until one sticks
-        for (const typeId in idReplacementMap) {
-            const replacers = idReplacementMap[typeId];
-            const newId = _applyReplacements(oldId, replacers);
+        for (const typeId in exports.IdReplacementMap) {
+            const replacers = exports.IdReplacementMap[typeId];
+            const newId = applyReplacements(oldId, replacers);
             if (newId == null)
                 continue;
             return newId;
@@ -203,11 +205,13 @@ function updateId(oldId, typeHint) {
     // fall back to old id
     return oldId;
 }
+exports.updateId = updateId;
 /** Applies a replacement from an array of replacer objects to a string; the first matching replacer is used. If no matching replacer is found, returns `null` instead. */
-function _applyReplacements(str, replacers) {
+function applyReplacements(str, replacers) {
     for (const replacer of replacers)
         if (replacer.old.test(str))
             return str.replace(replacer.old, replacer.new);
     // if no replacement is found, return null
     return null;
 }
+exports.applyReplacements = applyReplacements;

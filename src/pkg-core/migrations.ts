@@ -1,30 +1,27 @@
+/** Utilties to assist in migration of Datasworn data across versions. */
+
 import CONST from './IdElements/CONST.js'
 import type NodeTypeId from './IdElements/NodeTypeId.js'
-
-const moveIdPatterns = [
-	// standard moves
-	/(?<pkg>\*|[a-z][a-z0-9_]{3,})\/moves\/(?<path>(?:\*|[a-z][a-z_]*)\/(?:\*|[a-z][a-z_]*))/,
-	// asset moves
-	/(?<pkg>\*|[a-z][a-z0-9_]{3,})\/assets\/(?<path>\*|[a-z][a-z_]*)\/(\*|[a-z][a-z_]*)\/abilities\/(\*|(?:0|[1-9][0-9]*))\/moves\/(?<key>\*|[a-z][a-z_]*)/
-]
-
-// const key = /(?<key>[a-z][a-z_]*|\*)/
-// const recursiveCollectionPath =
-// 	/(?<path>[a-z][a-z_]*(?:\/[a-z][a-z_]*){0,2}|\*{1,2})/
-
-// const pkg = /(?<pkg>[a-z][a-z0-9_]{3,}|\*)/
-// const recursivePath =child_id_n
-// 	/(?<path>[a-z][a-z_]*(?:\/(?:[a-z][a-z_]*|\*|\**)){0,2}|\*\*)/
-// const path = /(?<path>[a-z][a-z_]*|\*)/
 
 const MinorNodeTypes = ['asset_ability_move', 'asset_ability'] as const
 type MinorNodeType = (typeof MinorNodeTypes)[number]
 
-type IdReplacer = { old: RegExp; new: string }
+export type IdReplacer = {
+	/** A regular expression matching the old ID. */
+	old: RegExp
+	/** A replacement template string to replace the old ID with. */
+	new: string
+}
 
-type IdReplacementMap = Record<NodeTypeId.Any | MinorNodeType, IdReplacer[]>
+export type IdReplacementMap = Record<
+	NodeTypeId.Any | MinorNodeType,
+	IdReplacer[]
+>
 
-const idReplacementMap: IdReplacementMap = {
+/**
+ * Provides an array of {@link IdReplacer} objects for each Datasworn ID type.
+ */
+export const IdReplacementMap = {
 	asset_collection: [
 		{
 			old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/collections\/assets\/(?<path>[a-z_/*]+)$/,
@@ -127,11 +124,14 @@ const idReplacementMap: IdReplacementMap = {
 			new: '$1/asset/$2.abilities/$3'
 		}
 	]
-}
+} as const satisfies IdReplacementMap
 
 /**
  * Updates old (pre-0.1.0) Datasworn IDs (and pointers that reference them in markdown strings) for use with v0.1.0.
  * Intended for use as the `replacer` in {@link JSON.stringify} or the `reviver` in {@link JSON.parse}; this way, it will iterate over every string value so you can update all the IDs in one go.
+ *
+ * NOTE: This function assumes that Datasworn's markdown formatting is mostly intact. If you diverge,
+ *
  * @param key The JSON value's key. Not actually used right now, but retained so it's parameters are consistent with the typical replacer/reviver functions.
  * @param value The JSON value itself.
  * @returns The updated string value, or the original string value if no changes were made.
@@ -190,24 +190,31 @@ const markdownIdPatterns = [markdownMacroPattern, markdownLinkPattern]
  * @param md The markdown string to change.
  * @returns A new string with the replaced values.
  */
-function updateIdsInMarkdown(md: string) {
+export function updateIdsInMarkdown(md: string) {
 	let newStr = md
 	for (const pattern of markdownIdPatterns)
 		newStr = newStr.replaceAll(pattern, updateId)
 	return newStr
 }
 
-function updateId(oldId: string, typeHint?: NodeTypeId.Any) {
-	if (typeHint != null && typeHint in idReplacementMap) {
+/**
+ * Updates a Datasworn ID. The string must consist *only* of an ID, like those found in the `_id` property of many Datasworn nodes.
+ *
+ * To update IDs within a longer string, see {@link updateIdsInString}.
+ * @param oldId The ID to attempt migration on.
+ * @param typeHint An optional type hint. If you know the ID type ahead of time, this lets the function skip some iteration over irrelevant ID categories, which might make it faster.
+ */
+export function updateId(oldId: string, typeHint?: keyof IdReplacementMap) {
+	if (typeHint != null && typeHint in IdReplacementMap) {
 		// type is already known, so we can skip straight to running the replacements
-		const replacers = idReplacementMap[typeHint]
-		return _applyReplacements(oldId, replacers) ?? oldId
+		const replacers = IdReplacementMap[typeHint]
+		return applyReplacements(oldId, replacers) ?? oldId
 	} else {
 		// unknown type, run all of them until one sticks
-		for (const typeId in idReplacementMap) {
+		for (const typeId in IdReplacementMap) {
 			const replacers =
-				idReplacementMap[typeId as keyof typeof idReplacementMap]
-			const newId = _applyReplacements(oldId, replacers)
+				IdReplacementMap[typeId as keyof typeof IdReplacementMap]
+			const newId = applyReplacements(oldId, replacers)
 			if (newId == null) continue
 			return newId
 		}
@@ -217,7 +224,7 @@ function updateId(oldId: string, typeHint?: NodeTypeId.Any) {
 }
 
 /** Applies a replacement from an array of replacer objects to a string; the first matching replacer is used. If no matching replacer is found, returns `null` instead. */
-function _applyReplacements(str: string, replacers: IdReplacer[]) {
+export function applyReplacements(str: string, replacers: IdReplacer[]) {
 	for (const replacer of replacers)
 		if (replacer.old.test(str)) return str.replace(replacer.old, replacer.new)
 
