@@ -1,7 +1,7 @@
 import * as pkgs from '../pkg/pkgConfig.js'
 import Log from '../utils/Log.js'
 import AJV from '../validation/ajv.js'
-import { buildRuleset } from './buildRuleset.js'
+import { buildRulesPackage } from './buildRulesPackage.js'
 import { loadSchema, loadSourceSchema } from '../schema/loadSchema.js'
 
 const profiler = Log.startTimer()
@@ -18,7 +18,7 @@ Log.info('⚙️  Building sourcebooks...')
 
 await Promise.all(
 	Object.values(pkgs).map(async (pkg) =>
-		buildRuleset(pkg, AJV, JSL).catch((e) =>
+		buildRulesPackage(pkg, AJV, JSL).catch((e) =>
 			Log.error(`Failed to build package "${pkg.id}":`, e)
 		)
 	)

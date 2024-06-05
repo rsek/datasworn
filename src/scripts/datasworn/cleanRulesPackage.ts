@@ -1,5 +1,5 @@
 import JsonPointer from 'json-pointer'
-import type * as Datasworn from './../../types/Datasworn.js'
+import type * as Datasworn from '../../types/Datasworn.js'
 import {
 	isSortableObjectSchema,
 	sortDataswornKeys,
@@ -19,7 +19,10 @@ const pointerSep = '/'
 /** Hash character that prepends generated JSON pointers. */
 const hashChar = '#'
 
-export function cleanRuleset(datasworn: Datasworn.RulesPackage, jsl: Draft07) {
+export function cleanRulesPackage(
+	datasworn: Datasworn.RulesPackage,
+	jsl: Draft07
+) {
 	const sortedPointers: Record<string, unknown> = {}
 
 	// sort non-dictionary objects

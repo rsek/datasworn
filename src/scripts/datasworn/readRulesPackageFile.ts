@@ -4,7 +4,7 @@ import Log from '../utils/Log.js'
 import type AJV from '../validation/ajv.js'
 import { readSourceData } from '../utils/readWrite.js'
 
-export async function loadRulesetFile(filePath: string, ajv: typeof AJV) {
+export async function readRulesPackageFile(filePath: string, ajv: typeof AJV) {
 	Log.info(`📖 Reading ${formatPath(filePath)}`)
 
 	const sourceData = await readSourceData(filePath)

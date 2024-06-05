@@ -2,7 +2,9 @@ import { merge } from 'lodash-es'
 import type * as Datasworn from '../../types/Datasworn.js'
 import { sortDataswornKeys } from './sort.js'
 
-export function mergeRulesetData(data: Map<string, Datasworn.RulesPackage>) {
+export function mergeRulesPackageParts(
+	data: Map<string, Datasworn.RulesPackage>
+) {
 	const ruleset = {} as Datasworn.RulesPackage
 
 	const entries = Array.from(data.entries())

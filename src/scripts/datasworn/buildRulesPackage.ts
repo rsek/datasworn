@@ -13,10 +13,10 @@ import { formatPath } from '../../utils.js'
 import { ROOT_OUTPUT } from '../const.js'
 import Log from '../utils/Log.js'
 import type AJV from '../validation/ajv.js'
-import { cleanRuleset } from './cleanRuleset.js'
-import { mergeRulesetData } from './mergeRulesetParts.js'
-import { loadRulesetFile } from './readRulesetFile.js'
-import { writeRuleset } from './writeRuleset.js'
+import { cleanRulesPackage } from './cleanRulesPackage.js'
+import { mergeRulesPackageParts } from './mergeRulesPackageParts.js'
+import { readRulesPackageFile } from './readRulesPackageFile.js'
+import { writeRuleset } from './writeRulesPackage.js'
 
 const metadataKeys: string[] = []
 
@@ -25,7 +25,7 @@ forEach(RulesExpansion.properties, (v, k) => {
 })
 
 /** Builds all YAML files for a given package configuration */
-export async function buildRuleset(
+export async function buildRulesPackage(
 	{ id, paths, type, pkg }: DataPackageConfig,
 	ajv: typeof AJV,
 	jsl: Draft07
@@ -71,7 +71,7 @@ export async function buildRuleset(
 	await Promise.all(
 		sourceFiles.map(async (filePath) => {
 			try {
-				const sourceData = await loadRulesetFile(filePath, ajv)
+				const sourceData = await readRulesPackageFile(filePath, ajv)
 
 				const builtData = IdParser.assignIdsInRulesPackage(sourceData)
 
@@ -82,7 +82,7 @@ export async function buildRuleset(
 		})
 	)
 
-	const ruleset = cleanRuleset(mergeRulesetData(builtFiles), jsl)
+	const ruleset = cleanRulesPackage(mergeRulesPackageParts(builtFiles), jsl)
 
 	const toWrite: Array<Promise<any>> = [
 		writeRuleset(path.join(destDir, `${ruleset._id}.json`), ruleset)
