@@ -4,17 +4,14 @@ import fs from 'fs-extra'
 import { type Draft07 } from 'json-schema-library'
 import { forEach } from 'lodash-es'
 import path from 'path'
-import { IdParser } from '../../pkg-core/IdParser.js'
 import { RulesExpansion } from '../../schema/Rules.js'
 import { type DataPackageConfig } from '../../schema/tools/build/index.js'
 import { pascalCase } from '../../schema/utils/string.js'
-import type * as Datasworn from '../../types/Datasworn.js'
 import { formatPath } from '../../utils.js'
 import { ROOT_OUTPUT } from '../const.js'
 import Log from '../utils/Log.js'
 import type AJV from '../validation/ajv.js'
-import { cleanRulesPackage } from './cleanRulesPackage.js'
-import { mergeRulesPackageParts } from './mergeRulesPackageParts.js'
+import { RulesPackageBuilder } from './RulesPackageBuilder.js'
 import { readRulesPackageFile } from './readRulesPackageFile.js'
 import { writeRuleset } from './writeRulesPackage.js'
 
@@ -63,29 +60,25 @@ export async function buildRulesPackage(
 		})
 	)
 
-	const builtFiles = new Map<
-		string,
-		Extract<Datasworn.RulesPackage, { type: typeof type }>
-	>()
+	const builder = new RulesPackageBuilder()
 
 	await Promise.all(
-		sourceFiles.map(async (filePath) => {
+		sourceFiles.map(async (fileName) => {
 			try {
-				const sourceData = await readRulesPackageFile(filePath, ajv)
-
-				const builtData = IdParser.assignIdsInRulesPackage(sourceData)
-
-				builtFiles.set(filePath, builtData)
+				builder.addFiles({
+					fileName,
+					data: await readRulesPackageFile(fileName, ajv)
+				})
 			} catch (error) {
-				Log.error(`Failed to build from ${formatPath(filePath)}:`, error)
+				Log.error(`Failed to build from ${formatPath(fileName)}:`, error)
 			}
 		})
 	)
 
-	const ruleset = cleanRulesPackage(mergeRulesPackageParts(builtFiles), jsl)
+	const jsonContent = builder.mergeFiles().sortKeys().merged
 
 	const toWrite: Array<Promise<any>> = [
-		writeRuleset(path.join(destDir, `${ruleset._id}.json`), ruleset)
+		writeRuleset(path.join(destDir, `${jsonContent._id}.json`), jsonContent)
 	]
 
 	if (oldJsonFiles?.length > 0)

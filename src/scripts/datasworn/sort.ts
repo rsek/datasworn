@@ -41,7 +41,7 @@ const relationshipKeys = [
 	'name_oracle',
 	'npc',
 	'extra_card'
-]
+] as const
 
 const usageKeys = [
 	'auto',
@@ -54,7 +54,7 @@ const usageKeys = [
 	'player',
 	'is_impact',
 	'disables_asset'
-]
+] as const
 
 const shortDescriptionKeys = [
 	'result',
@@ -65,17 +65,16 @@ const shortDescriptionKeys = [
 	'dangers',
 	'drives',
 	'tactics'
-]
+] as const
 const longDescriptionKeys = [
 	'text',
 	'text2',
 	'text3',
 	'description',
 	'your_character'
-]
-const longArrayKeys = ['denizens', 'enhance_moves', 'rows', 'table']
-
-const numericKeys = ['min', 'max', 'value', 'rank']
+] as const
+const longArrayKeys = ['denizens', 'enhance_moves', 'rows', 'table'] as const
+const numericKeys = ['min', 'max', 'value', 'rank'] as const
 
 const rulesKeys = [
 	// top level
@@ -102,7 +101,10 @@ const rulesKeys = [
 	'xp_cost'
 ] as const
 
-const sourceMetadataKeys = [...Object.keys(SourceInfo.properties), 'email']
+const sourceMetadataKeys = [
+	...Object.keys(SourceInfo.properties),
+	'email'
+] as const
 
 export const dataSwornKeyOrder = [
 	...idKeys,
@@ -271,7 +273,7 @@ const schemaKeyOrder = [
 	'then',
 	'else',
 	DefsKey
-]
+] as const
 
 export function sortSchemaKeys<T extends JSONSchema>(schema: T) {
 	const sortedSchema = sortObjectKeys(schema, schemaKeyOrder)
@@ -285,8 +287,7 @@ export function sortSchemaKeys<T extends JSONSchema>(schema: T) {
 
 	return sortedSchema
 }
-
-function sortObjectKeys<T extends object>(
+export function sortObjectKeys<T extends object>(
 	object: T,
 	keyOrder: Readonly<string[]> = []
 ) {

@@ -192,8 +192,13 @@ abstract class IdParser<
 	 * @param recursive Should IDs be assigned to descendant objects too? (default: true)
 	 * @returns The mutated object.
 	 */
-	assignIdsIn(node: DataswornNode.ByType<TypeId>, recursive = true) {
+	assignIdsIn(
+		node: DataswornNode.ByType<TypeId>,
+		recursive = true,
+		index?: Map<string, DataswornNode.Any>
+	) {
 		node._id = this.id
+		if (index instanceof Map) index.set(this.id as StringId.AnyId, node)
 		return node
 	}
 
@@ -396,10 +401,12 @@ abstract class IdParser<
 	/**
 	 * Recursively assigns IDs to all eligibile nodes within a given {@link DataswornSource.RulesPackage}.
 	 * @param rulesPackage The rules package to assign IDs to. This function mutates the object.
+	 * @param index If provided, nodes that receive IDs will be indexed in the map (with their ID as the key).
 	 * @returns The mutated `rulesPackage`, which now satisfies the requirements for a complete {@link Datasworn.RulesPackage}
 	 */
 	static assignIdsInRulesPackage<T extends DataswornSource.RulesPackage>(
-		rulesPackage: T
+		rulesPackage: T,
+		index?: Map<string, DataswornNode.Any>
 	): Extract<Datasworn.RulesPackage, Pick<T, 'type'>> {
 		for (const k of this.typeRootKeys) {
 			const typeRoot = rulesPackage[k]
@@ -411,10 +418,10 @@ abstract class IdParser<
 					typeId: topLevelNode.type as any,
 					pathKeys: [dictKey]
 				})
-				parser.assignIdsIn(topLevelNode, true)
+				parser.assignIdsIn(topLevelNode, true, index)
 			}
 		}
-    // @ts-expect-error
+		// @ts-expect-error
 		return rulesPackage
 	}
 
@@ -802,15 +809,19 @@ abstract class CollectionId<
 		})
 	}
 
-	override assignIdsIn(node: DataswornNode.ByType<TypeId>, recursive = true) {
+	override assignIdsIn(
+		node: DataswornNode.ByType<TypeId>,
+		recursive = true,
+		index?: Map<string, DataswornNode.Any>
+	) {
 		if (recursive)
 			for (const childKey in node.contents) {
 				const childNode = node.contents[childKey]
 				if (childNode == null) continue
 				const childParser = this.createChild(childKey)
-				childNode._id = childParser.id
+				childParser.assignIdsIn(childNode as any, recursive, index)
 			}
-		return super.assignIdsIn(node, recursive)
+		return super.assignIdsIn(node, recursive, index)
 	}
 }
 interface CollectionId<
@@ -857,15 +868,19 @@ class RecursiveCollectionId<
 		) as any
 	}
 
-	override assignIdsIn(node: DataswornNode.ByType<TypeId>, recursive = true) {
+	override assignIdsIn(
+		node: DataswornNode.ByType<TypeId>,
+		recursive = true,
+		index?: Map<string, DataswornNode.Any>
+	) {
 		if (recursive && CONST.CollectionsKey in node)
 			for (const childKey in node.collections) {
 				const childCollection = node.collections[childKey]
 				if (childCollection == null) continue
 				const childParser = this.createCollectionChild(childKey)
-				childParser.assignIdsIn(childCollection as any, recursive)
+				childParser.assignIdsIn(childCollection as any, recursive, index)
 			}
-		return super.assignIdsIn(node, recursive)
+		return super.assignIdsIn(node, recursive, index)
 	}
 
 	/**
