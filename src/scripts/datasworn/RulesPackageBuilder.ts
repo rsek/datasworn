@@ -1,22 +1,11 @@
-import { merge, type initial } from 'lodash-es'
+import type DataswornNode from '../../pkg-core/DataswornNode.js'
 import {
 	IdParser,
 	type Datasworn,
 	type DataswornSource
 } from '../../pkg-core/index.js'
-import {
-	dataSwornKeyOrder,
-	isSortableObjectSchema,
-	sortDataswornKeys,
-	sortObjectKeys,
-	unsortableKeys
-} from './sort.js'
-import type { Draft07 } from 'json-schema-library'
-import { sortTopLevelCollection } from './sortCollection.js'
-import Assert from './validators.js'
-import JsonPointer from 'json-pointer'
 import Log from '../utils/Log.js'
-import type DataswornNode from '../../pkg-core/DataswornNode.js'
+import { dataSwornKeyOrder, sortDataswornKeys, sortObjectKeys } from './sort.js'
 
 export class RulesPackageBuilder<
 	TSource extends DataswornSource.RulesPackage = DataswornSource.RulesPackage,
@@ -93,57 +82,6 @@ export class RulesPackageBuilder<
 
 	/** Hash character that prepends generated JSON pointers. */
 	static readonly hashChar = '#' as const
-
-	static cleanRulesPackage(datasworn: Datasworn.RulesPackage, jsl: Draft07) {
-		const sortedPointers: Record<string, unknown> = {}
-
-		// sort non-dictionary objects
-		jsl.each(datasworn, (schema, value: any, hashPointer) => {
-			const nicePointer = hashPointer.startsWith(RulesPackageBuilder.hashChar)
-				? hashPointer.replace(
-						RulesPackageBuilder.hashChar,
-						RulesPackageBuilder.pointerSep
-					)
-				: hashPointer
-
-			const key = nicePointer
-				.split(RulesPackageBuilder.pointerSep)
-				.pop() as string
-
-			if (nicePointer === RulesPackageBuilder.pointerSep) return
-
-			// if (value?._id) console.log(value._id, '=>', nicePointer)
-
-			if (
-				value != null &&
-				!unsortableKeys.includes(key as any) &&
-				isSortableObjectSchema(schema)
-			)
-				sortedPointers[nicePointer] = sortDataswornKeys(value)
-		})
-
-		// sort collections
-		for (const k in datasworn) {
-			if (this.topLevelKeysBlackList.includes(k as any)) continue
-			const v = datasworn[k as keyof Datasworn.RulesPackage]
-			if (!Assert.SourcedNodeDictionary.Check(v)) continue
-
-			const result = sortTopLevelCollection(v)
-
-			// @ts-expect-error
-			datasworn[k] = result
-		}
-
-		const jsonOut = JSON.parse(JSON.stringify(datasworn))
-
-		// for (const pointer of pointersToDelete)
-		// 	if (JsonPointer.has(jsonOut, pointer)) JsonPointer.remove(jsonOut, pointer)
-		for (const pointer in sortedPointers)
-			if (JsonPointer.has(jsonOut, pointer))
-				JsonPointer.set(jsonOut, pointer, sortedPointers[pointer])
-
-		return jsonOut as Datasworn.RulesPackage
-	}
 
 	constructor(...files: RulesPackageFile<TSource>[])
 	constructor(...files: RulesPackageFileData<TSource>[])

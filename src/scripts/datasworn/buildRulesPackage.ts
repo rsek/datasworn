@@ -13,7 +13,7 @@ import Log from '../utils/Log.js'
 import type AJV from '../validation/ajv.js'
 import { RulesPackageBuilder } from './RulesPackageBuilder.js'
 import { readRulesPackageFile } from './readRulesPackageFile.js'
-import { writeRuleset } from './writeRulesPackage.js'
+import { writeRulesPackage } from './writeRulesPackage.js'
 
 const metadataKeys: string[] = []
 
@@ -78,7 +78,10 @@ export async function buildRulesPackage(
 	const jsonContent = builder.mergeFiles().sortKeys().merged
 
 	const toWrite: Array<Promise<any>> = [
-		writeRuleset(path.join(destDir, `${jsonContent._id}.json`), jsonContent)
+		writeRulesPackage(
+			path.join(destDir, `${jsonContent._id}.json`),
+			jsonContent
+		)
 	]
 
 	if (oldJsonFiles?.length > 0)

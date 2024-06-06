@@ -7,7 +7,7 @@ import { writeJSON } from '../utils/readWrite.js'
 const isMacroKey = (key: string) => false
 const replacer = (k: string, v: unknown) => (isMacroKey(k) ? undefined : v)
 
-export async function writeRuleset(outPath: string, data: unknown) {
+export async function writeRulesPackage(outPath: string, data: unknown) {
 	return fs
 		.ensureFile(outPath)
 		.then(async () => {
