@@ -22,39 +22,19 @@ export class RulesPackageBuilder<
 		data: unknown
 	) => data is T
 
-	// basic method: take JSON objects + package config, merge/sort/clean them
-	// basic i/o for the files should *not* be done here -- the idea is to have something reusable
-
 	readonly files = new Map<string, RulesPackageFile<TSource>>()
 	readonly fileIds = new Map<string, Set<string>>()
 
 	merged: TTarget = {} as TTarget
-
-	// static mergeFiles<T extends DataswornSource.RulesPackage>(
-	// 	data: Map<string, T>
-	// ) {
-	// 	const ruleset = {} as T
-
-	// 	const sortedEntries = Array.from(data.entries())
-	// 		// sort by file name so that they merge in the same order every time (prevents JSON diff noise). the order itself is arbitrary, but must be the same no matter who runs it -- this is why localeCompare specifies a static locale
-	// 		.sort(([a], [b]) => a.localeCompare(b, 'en-US'))
-
-	// 	for (const [_, file] of sortedEntries) this.merge(ruleset, file)
-
-	// 	return sortDataswornKeys(ruleset) as Extract<Datasworn.RulesPackage, T>
-	// }
 
 	mergeFiles() {
 		const sortedEntries = Array.from(this.files)
 			// sort by file name so that they merge in the same order every time (prevents JSON diff noise). the order itself is arbitrary, but must be the same no matter who runs it -- this is why localeCompare specifies a static locale
 			.sort(([a], [b]) => a.localeCompare(b, 'en-US'))
 
-		const mergeUnsorted = {} as TTarget
-
 		for (const [_, file] of sortedEntries)
-			RulesPackageBuilder.merge(mergeUnsorted, file.data)
+			RulesPackageBuilder.merge(this.merged, file.data)
 
-		this.merged = mergeUnsorted
 		return this
 	}
 
