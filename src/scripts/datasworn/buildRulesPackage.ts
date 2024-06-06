@@ -83,7 +83,7 @@ export async function buildRulesPackage(
 
 	if (oldJsonFiles?.length > 0)
 		Log.info(
-			`🧹 Deleting ${oldJsonFiles?.length} old JSON files from ${formatPath(
+			`🧹 Deleting ${oldJsonFiles?.length} old JSON files in ${formatPath(
 				destDir
 			)}`
 		)
