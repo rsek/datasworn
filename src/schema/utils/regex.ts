@@ -15,8 +15,7 @@ import { type SetOptional } from './SetOptional.js'
 import Pattern from '../../pkg-core/IdElements/Pattern.js'
 import CONST from '../../pkg-core/IdElements/CONST.js'
 
-const sep = escapeRegExp(CONST.Sep)
-const propSep = escapeRegExp(CONST.PropSep)
+const sep = escapeRegExp(CONST.PathSep)
 const wc = escapeRegExp(CONST.WildcardString)
 const wce = escapeRegExp(CONST.GlobstarString)
 const node = Pattern.DictKeyElement

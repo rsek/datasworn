@@ -12,7 +12,7 @@ export type Id<
 	RulesPackage extends RulesPackageId,
 	TypeKey extends NodeTypeId.Any,
 	PathKeys extends DictKey[]
-> = Join<[RulesPackage, TypeKey, ...PathKeys], CONST.Sep>
+> = Join<[RulesPackage, TypeKey, ...PathKeys], CONST.PathSep>
 
 export type RecursiveCollectableId<
 	RulesPackage extends RulesPackageId = RulesPackageId,

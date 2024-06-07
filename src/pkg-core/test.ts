@@ -42,6 +42,6 @@ for (const id of [
 	nonRecursiveCollectionId,
 	nonCollectableId
 ]) {
-	console.log(id.toString(), '=>', id.toPath().join('.'))
+	console.log(id.toRegex(), '=>', id.toPath().join('.'))
 	// console.log(`Retrieved "${id.get()?.name}"`)
 }

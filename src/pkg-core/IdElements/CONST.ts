@@ -8,14 +8,17 @@ namespace CONST {
 	export type PACKAGE_ID_LENGTH_MIN = typeof PACKAGE_ID_LENGTH_MIN
 
 	/** The separator character for Datasworn IDs. */
-	export const Sep = '/' as const
-	export type Sep = typeof Sep
+	export const PathSep = '/' as const
+	export type PathSep = typeof PathSep
 
-	export const PropSep = '.' as const
-	export type PropSep = typeof PropSep
+	export const PathTypeSep = '.' as const
+	export type PathTypeSep = typeof PathTypeSep
 
-	export const KeySep = Sep
+	export const KeySep = PathSep
 	export type KeySep = typeof KeySep
+
+	export const PrefixSep = ':' as const
+	export type PrefixSep = typeof PrefixSep
 
 	/** The wildcard character for Datasworn IDs that matches any key in a dictionary object. */
 	export const WildcardString = '*' as const

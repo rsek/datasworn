@@ -113,13 +113,19 @@ abstract class IdParser<
 	 * Returns a string representation of the ID.
 	 */
 	get id() {
-		return this.elements.join(CONST.Sep)
+		return (
+			this.typeId +
+			CONST.PrefixSep +
+			[this.rulesPackage, ...this.pathKeys].join(CONST.PathSep)
+		)
+
+		// return this.elements.join(CONST.Sep)
 	}
 
 	/**
 	 * Returns a string representation of the ID. Effectively an alias for {@link IdParser.id}
 	 */
-	toString(): this['id'] {
+	toRegex(): this['id'] {
 		return this.id
 	}
 
@@ -319,7 +325,7 @@ abstract class IdParser<
 				) as any
 			default:
 				throw new ParseError(
-					[rulesPackage, type, ...pathKeys].join(CONST.Sep),
+					[rulesPackage, type, ...pathKeys].join(CONST.PathSep),
 					`Parsed ID doesn't belong to a known ID type, and can't be assigned a subclass.`
 				)
 		}
@@ -329,7 +335,7 @@ abstract class IdParser<
 
 	static #createMatcher(...elements: (string | number)[]) {
 		return new RegExp(
-			'^' + elements.map(IdParser.#getPatternFragment).join(CONST.Sep) + '$'
+			'^' + elements.map(IdParser.#getPatternFragment).join(CONST.PathSep) + '$'
 		)
 	}
 
@@ -430,7 +436,7 @@ abstract class IdParser<
 	 * @throws If it can't parse the ID.
 	 */
 	static #parse(id: string): IdParser.Options {
-		const [rulesPackage, type, ...pathKeys] = id.split(CONST.Sep) as [
+		const [rulesPackage, type, ...pathKeys] = id.split(CONST.PathSep) as [
 			string, // RulesPackageId
 			string, // NodeTypeId
 			...string[] // PathKeys
@@ -611,7 +617,7 @@ abstract class IdParser<
 
 	static readonly RulesPackagePattern = Pattern.RulesPackageElement
 	static readonly DictKeyPattern = Pattern.DictKeyElement
-	static readonly RecursiveDictKeyPattern = Pattern.RecursiveDictKeyElement
+	static readonly RecursiveDictKeyPattern = Pattern.RecursiveDictKeysElement
 }
 
 // derived classes

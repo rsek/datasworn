@@ -151,7 +151,7 @@ export function updateIdsInString(key: string, value: unknown) {
 		// won't match a RulesPackageId, but we don't
 		// care about them.
 		case typeof value !== 'string':
-		case !str.includes(CONST.Sep):
+		case !str.includes(CONST.PathSep):
 			return value
 
 		// implies a markdown ID reference.

@@ -1394,7 +1394,7 @@
 						"roll": "Roll",
 						"text": "Result"
 					},
-					"_id": "classic/oracle_rollable/action_and_theme/action"
+					"_id": "oracle_rollable:classic/action_and_theme/action"
 				},
 				"theme": {
 					"name": "Theme",
@@ -2624,11 +2624,11 @@
 						"roll": "Roll",
 						"text": "Result"
 					},
-					"_id": "classic/oracle_rollable/action_and_theme/theme"
+					"_id": "oracle_rollable:classic/action_and_theme/theme"
 				}
 			},
 			"oracle_type": "tables",
-			"_id": "classic/oracle_collection/action_and_theme"
+			"_id": "oracle_collection:classic/action_and_theme"
 		},
 		"character": {
 			"name": "Character",
@@ -3037,7 +3037,7 @@
 						"roll": "Roll",
 						"text": "Result"
 					},
-					"_id": "classic/oracle_rollable/character/role"
+					"_id": "oracle_rollable:classic/character/role"
 				},
 				"goal": {
 					"name": "Character Goal",
@@ -3304,7 +3304,7 @@
 						"roll": "Roll",
 						"text": "Result"
 					},
-					"_id": "classic/oracle_rollable/character/goal"
+					"_id": "oracle_rollable:classic/character/goal"
 				},
 				"descriptor": {
 					"name": "Character Descriptor",
@@ -4535,11 +4535,11 @@
 						"roll": "Roll",
 						"text": "Result"
 					},
-					"_id": "classic/oracle_rollable/character/descriptor"
+					"_id": "oracle_rollable:classic/character/descriptor"
 				}
 			},
 			"oracle_type": "tables",
-			"_id": "classic/oracle_collection/character"
+			"_id": "oracle_collection:classic/character"
 		},
 		"moves": {
 			"name": "Moves",
@@ -4598,7 +4598,7 @@
 								}
 							],
 							"dice": "1d100",
-							"_id": "classic/oracle_rollable/moves/ask_the_oracle/almost_certain"
+							"_id": "oracle_rollable:classic/moves/ask_the_oracle/almost_certain"
 						},
 						"likely": {
 							"name": "Likely",
@@ -4624,7 +4624,7 @@
 								}
 							],
 							"dice": "1d100",
-							"_id": "classic/oracle_rollable/moves/ask_the_oracle/likely"
+							"_id": "oracle_rollable:classic/moves/ask_the_oracle/likely"
 						},
 						"fifty_fifty": {
 							"name": "50/50",
@@ -4650,7 +4650,7 @@
 								}
 							],
 							"dice": "1d100",
-							"_id": "classic/oracle_rollable/moves/ask_the_oracle/fifty_fifty"
+							"_id": "oracle_rollable:classic/moves/ask_the_oracle/fifty_fifty"
 						},
 						"unlikely": {
 							"name": "Unlikely",
@@ -4676,7 +4676,7 @@
 								}
 							],
 							"dice": "1d100",
-							"_id": "classic/oracle_rollable/moves/ask_the_oracle/unlikely"
+							"_id": "oracle_rollable:classic/moves/ask_the_oracle/unlikely"
 						},
 						"small_chance": {
 							"name": "Small Chance",
@@ -4702,13 +4702,13 @@
 								}
 							],
 							"dice": "1d100",
-							"_id": "classic/oracle_rollable/moves/ask_the_oracle/small_chance"
+							"_id": "oracle_rollable:classic/moves/ask_the_oracle/small_chance"
 						}
 					},
 					"column_labels": {
 						"text": "Result"
 					},
-					"_id": "classic/oracle_collection/moves/ask_the_oracle"
+					"_id": "oracle_collection:classic/moves/ask_the_oracle"
 				}
 			},
 			"contents": {
@@ -4770,7 +4770,7 @@
 						"roll": "Roll",
 						"text": "Result"
 					},
-					"_id": "classic/oracle_rollable/moves/endure_harm"
+					"_id": "oracle_rollable:classic/moves/endure_harm"
 				},
 				"endure_stress": {
 					"name": "Endure Stress",
@@ -4823,7 +4823,7 @@
 						"roll": "Roll",
 						"text": "Result"
 					},
-					"_id": "classic/oracle_rollable/moves/endure_stress"
+					"_id": "oracle_rollable:classic/moves/endure_stress"
 				},
 				"pay_the_price": {
 					"name": "Pay the Price",
@@ -4969,11 +4969,11 @@
 						"roll": "Roll",
 						"text": "Result"
 					},
-					"_id": "classic/oracle_rollable/moves/pay_the_price"
+					"_id": "oracle_rollable:classic/moves/pay_the_price"
 				}
 			},
 			"oracle_type": "tables",
-			"_id": "classic/oracle_collection/moves"
+			"_id": "oracle_collection:classic/moves"
 		},
 		"name": {
 			"name": "Name",
@@ -6234,7 +6234,7 @@
 								"roll": "Roll",
 								"text": "Result"
 							},
-							"_id": "classic/oracle_rollable/name/ironlander/a"
+							"_id": "oracle_rollable:classic/name/ironlander/a"
 						},
 						"b": {
 							"_source": {
@@ -7460,10 +7460,10 @@
 								"roll": "Roll",
 								"text": "Result"
 							},
-							"_id": "classic/oracle_rollable/name/ironlander/b"
+							"_id": "oracle_rollable:classic/name/ironlander/b"
 						}
 					},
-					"_id": "classic/oracle_collection/name/ironlander"
+					"_id": "oracle_collection:classic/name/ironlander"
 				},
 				"other": {
 					"name": "Other Names",
@@ -7791,7 +7791,7 @@
 								}
 							],
 							"dice": "1d100",
-							"_id": "classic/oracle_rollable/name/other/giants"
+							"_id": "oracle_rollable:classic/name/other/giants"
 						},
 						"varou": {
 							"name": "Varou",
@@ -8100,7 +8100,7 @@
 								}
 							],
 							"dice": "1d100",
-							"_id": "classic/oracle_rollable/name/other/varou"
+							"_id": "oracle_rollable:classic/name/other/varou"
 						},
 						"trolls": {
 							"name": "Trolls",
@@ -8409,13 +8409,13 @@
 								}
 							],
 							"dice": "1d100",
-							"_id": "classic/oracle_rollable/name/other/trolls"
+							"_id": "oracle_rollable:classic/name/other/trolls"
 						}
 					},
 					"column_labels": {
 						"roll": "Roll"
 					},
-					"_id": "classic/oracle_collection/name/other"
+					"_id": "oracle_collection:classic/name/other"
 				}
 			},
 			"contents": {
@@ -9044,11 +9044,11 @@
 						"roll": "Roll",
 						"text": "Result"
 					},
-					"_id": "classic/oracle_rollable/name/elf"
+					"_id": "oracle_rollable:classic/name/elf"
 				}
 			},
 			"oracle_type": "tables",
-			"_id": "classic/oracle_collection/name"
+			"_id": "oracle_collection:classic/name"
 		},
 		"place": {
 			"name": "Place Oracles",
@@ -9161,7 +9161,7 @@
 						"roll": "Roll",
 						"text": "Result"
 					},
-					"_id": "classic/oracle_rollable/place/region"
+					"_id": "oracle_rollable:classic/place/region"
 				},
 				"location": {
 					"name": "Location",
@@ -9800,7 +9800,7 @@
 						"roll": "Roll",
 						"text": "Result"
 					},
-					"_id": "classic/oracle_rollable/place/location"
+					"_id": "oracle_rollable:classic/place/location"
 				},
 				"coastal_waters_location": {
 					"name": "Coastal Waters Location",
@@ -10031,7 +10031,7 @@
 						"roll": "Roll",
 						"text": "Result"
 					},
-					"_id": "classic/oracle_rollable/place/coastal_waters_location"
+					"_id": "oracle_rollable:classic/place/coastal_waters_location"
 				},
 				"descriptor": {
 					"name": "Location Descriptor",
@@ -10658,11 +10658,11 @@
 						"roll": "Roll",
 						"text": "Result"
 					},
-					"_id": "classic/oracle_rollable/place/descriptor"
+					"_id": "oracle_rollable:classic/place/descriptor"
 				}
 			},
 			"oracle_type": "tables",
-			"_id": "classic/oracle_collection/place"
+			"_id": "oracle_collection:classic/place"
 		},
 		"settlement": {
 			"name": "Settlement Oracles",
@@ -11038,7 +11038,7 @@
 						"roll": "Roll",
 						"text": "Result"
 					},
-					"_id": "classic/oracle_rollable/settlement/trouble"
+					"_id": "oracle_rollable:classic/settlement/trouble"
 				},
 				"name": {
 					"name": "Settlement Name",
@@ -11183,7 +11183,7 @@
 						"roll": "Roll",
 						"text": "Result"
 					},
-					"_id": "classic/oracle_rollable/settlement/name"
+					"_id": "oracle_rollable:classic/settlement/name"
 				}
 			},
 			"collections": {
@@ -11350,7 +11350,7 @@
 								"roll": "Roll",
 								"text": "Result"
 							},
-							"_id": "classic/oracle_rollable/settlement/name/landscape_feature"
+							"_id": "oracle_rollable:classic/settlement/name/landscape_feature"
 						},
 						"manmade_edifice": {
 							"canonical_name": "A manmade edifice",
@@ -11497,7 +11497,7 @@
 								"roll": "Roll",
 								"text": "Result"
 							},
-							"_id": "classic/oracle_rollable/settlement/name/manmade_edifice"
+							"_id": "oracle_rollable:classic/settlement/name/manmade_edifice"
 						},
 						"creature": {
 							"canonical_name": "A creature",
@@ -11644,7 +11644,7 @@
 								"roll": "Roll",
 								"text": "Result"
 							},
-							"_id": "classic/oracle_rollable/settlement/name/creature"
+							"_id": "oracle_rollable:classic/settlement/name/creature"
 						},
 						"historical_event": {
 							"canonical_name": "A historical event",
@@ -11791,7 +11791,7 @@
 								"roll": "Roll",
 								"text": "Result"
 							},
-							"_id": "classic/oracle_rollable/settlement/name/historical_event"
+							"_id": "oracle_rollable:classic/settlement/name/historical_event"
 						},
 						"old_world_language": {
 							"canonical_name": "A word in an Old World language",
@@ -11938,7 +11938,7 @@
 								"roll": "Roll",
 								"text": "Result"
 							},
-							"_id": "classic/oracle_rollable/settlement/name/old_world_language"
+							"_id": "oracle_rollable:classic/settlement/name/old_world_language"
 						},
 						"environmental_aspect": {
 							"canonical_name": "A season or environmental aspect",
@@ -12085,7 +12085,7 @@
 								"roll": "Roll",
 								"text": "Result"
 							},
-							"_id": "classic/oracle_rollable/settlement/name/environmental_aspect"
+							"_id": "oracle_rollable:classic/settlement/name/environmental_aspect"
 						},
 						"something_else": {
 							"oracle_type": "table_text",
@@ -12180,10 +12180,10 @@
 								"roll": "Roll",
 								"text": "Result"
 							},
-							"_id": "classic/oracle_rollable/settlement/name/something_else"
+							"_id": "oracle_rollable:classic/settlement/name/something_else"
 						}
 					},
-					"_id": "classic/oracle_collection/settlement/name"
+					"_id": "oracle_collection:classic/settlement/name"
 				},
 				"quick_name": {
 					"canonical_name": "Oracle 8: Quick Settlement Name Generator",
@@ -12511,7 +12511,7 @@
 								}
 							],
 							"dice": "1d100",
-							"_id": "classic/oracle_rollable/settlement/quick_name/prefix"
+							"_id": "oracle_rollable:classic/settlement/quick_name/prefix"
 						},
 						"suffix": {
 							"name": "Suffix",
@@ -12820,16 +12820,16 @@
 								}
 							],
 							"dice": "1d100",
-							"_id": "classic/oracle_rollable/settlement/quick_name/suffix"
+							"_id": "oracle_rollable:classic/settlement/quick_name/suffix"
 						}
 					},
 					"column_labels": {
 						"roll": "Roll"
 					},
-					"_id": "classic/oracle_collection/settlement/quick_name"
+					"_id": "oracle_collection:classic/settlement/quick_name"
 				}
 			},
-			"_id": "classic/oracle_collection/settlement"
+			"_id": "oracle_collection:classic/settlement"
 		},
 		"turning_point": {
 			"name": "Turning Point Oracles",
@@ -12998,7 +12998,7 @@
 						"roll": "Roll",
 						"text": "Result"
 					},
-					"_id": "classic/oracle_rollable/turning_point/combat_action"
+					"_id": "oracle_rollable:classic/turning_point/combat_action"
 				},
 				"mystic_backlash": {
 					"name": "Mystic Backlash",
@@ -13209,7 +13209,7 @@
 						"roll": "Roll",
 						"text": "Result"
 					},
-					"_id": "classic/oracle_rollable/turning_point/mystic_backlash"
+					"_id": "oracle_rollable:classic/turning_point/mystic_backlash"
 				},
 				"major_plot_twist": {
 					"canonical_name": "Oracle 18: Major Plot Twist",
@@ -13385,7 +13385,7 @@
 						"roll": "Roll",
 						"text": "Result"
 					},
-					"_id": "classic/oracle_rollable/turning_point/major_plot_twist"
+					"_id": "oracle_rollable:classic/turning_point/major_plot_twist"
 				},
 				"challenge_rank": {
 					"canonical_name": "Oracle 19: Challenge Rank",
@@ -13447,11 +13447,11 @@
 						"roll": "Roll",
 						"text": "Result"
 					},
-					"_id": "classic/oracle_rollable/turning_point/challenge_rank"
+					"_id": "oracle_rollable:classic/turning_point/challenge_rank"
 				}
 			},
 			"oracle_type": "tables",
-			"_id": "classic/oracle_collection/turning_point"
+			"_id": "oracle_collection:classic/turning_point"
 		}
 	},
 	"assets": {
@@ -13576,7 +13576,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/combat_talent/archer"
+					"_id": "asset:classic/combat_talent/archer"
 				},
 				"berserker": {
 					"type": "asset",
@@ -13662,7 +13662,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/combat_talent/berserker"
+					"_id": "asset:classic/combat_talent/berserker"
 				},
 				"brawler": {
 					"type": "asset",
@@ -13750,7 +13750,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/combat_talent/brawler"
+					"_id": "asset:classic/combat_talent/brawler"
 				},
 				"cutthroat": {
 					"type": "asset",
@@ -13848,7 +13848,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/combat_talent/cutthroat"
+					"_id": "asset:classic/combat_talent/cutthroat"
 				},
 				"duelist": {
 					"type": "asset",
@@ -13918,7 +13918,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/combat_talent/duelist"
+					"_id": "asset:classic/combat_talent/duelist"
 				},
 				"fletcher": {
 					"type": "asset",
@@ -14026,7 +14026,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/combat_talent/fletcher"
+					"_id": "asset:classic/combat_talent/fletcher"
 				},
 				"ironclad": {
 					"type": "asset",
@@ -14142,7 +14142,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/combat_talent/ironclad"
+					"_id": "asset:classic/combat_talent/ironclad"
 				},
 				"long_arm": {
 					"type": "asset",
@@ -14238,7 +14238,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/combat_talent/long_arm"
+					"_id": "asset:classic/combat_talent/long_arm"
 				},
 				"shield_bearer": {
 					"type": "asset",
@@ -14322,7 +14322,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/combat_talent/shield_bearer"
+					"_id": "asset:classic/combat_talent/shield_bearer"
 				},
 				"skirmisher": {
 					"type": "asset",
@@ -14411,7 +14411,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/combat_talent/skirmisher"
+					"_id": "asset:classic/combat_talent/skirmisher"
 				},
 				"slinger": {
 					"type": "asset",
@@ -14491,7 +14491,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/combat_talent/slinger"
+					"_id": "asset:classic/combat_talent/slinger"
 				},
 				"sunderer": {
 					"type": "asset",
@@ -14606,7 +14606,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/combat_talent/sunderer"
+					"_id": "asset:classic/combat_talent/sunderer"
 				},
 				"swordmaster": {
 					"type": "asset",
@@ -14671,7 +14671,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/combat_talent/swordmaster"
+					"_id": "asset:classic/combat_talent/swordmaster"
 				},
 				"thunder_bringer": {
 					"type": "asset",
@@ -14746,10 +14746,10 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/combat_talent/thunder_bringer"
+					"_id": "asset:classic/combat_talent/thunder_bringer"
 				}
 			},
-			"_id": "classic/asset_collection/combat_talent"
+			"_id": "asset_collection:classic/combat_talent"
 		},
 		"companion": {
 			"name": "Companion Assets",
@@ -14878,7 +14878,7 @@
 					},
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/companion/cave_lion"
+					"_id": "asset:classic/companion/cave_lion"
 				},
 				"giant_spider": {
 					"type": "asset",
@@ -14996,7 +14996,7 @@
 					},
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/companion/giant_spider"
+					"_id": "asset:classic/companion/giant_spider"
 				},
 				"hawk": {
 					"type": "asset",
@@ -15135,7 +15135,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/companion/hawk"
+					"_id": "asset:classic/companion/hawk"
 				},
 				"horse": {
 					"type": "asset",
@@ -15263,7 +15263,7 @@
 					},
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/companion/horse"
+					"_id": "asset:classic/companion/horse"
 				},
 				"hound": {
 					"type": "asset",
@@ -15374,7 +15374,7 @@
 					},
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/companion/hound"
+					"_id": "asset:classic/companion/hound"
 				},
 				"kindred": {
 					"type": "asset",
@@ -15496,7 +15496,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/companion/kindred"
+					"_id": "asset:classic/companion/kindred"
 				},
 				"mammoth": {
 					"type": "asset",
@@ -15600,7 +15600,7 @@
 					},
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/companion/mammoth"
+					"_id": "asset:classic/companion/mammoth"
 				},
 				"owl": {
 					"type": "asset",
@@ -15717,7 +15717,7 @@
 					},
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/companion/owl"
+					"_id": "asset:classic/companion/owl"
 				},
 				"raven": {
 					"type": "asset",
@@ -15828,7 +15828,7 @@
 					},
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/companion/raven"
+					"_id": "asset:classic/companion/raven"
 				},
 				"young_wyvern": {
 					"type": "asset",
@@ -15932,10 +15932,10 @@
 					},
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/companion/young_wyvern"
+					"_id": "asset:classic/companion/young_wyvern"
 				}
 			},
-			"_id": "classic/asset_collection/companion"
+			"_id": "asset_collection:classic/companion"
 		},
 		"path": {
 			"name": "Path Assets",
@@ -16088,7 +16088,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/alchemist"
+					"_id": "asset:classic/path/alchemist"
 				},
 				"animal_kin": {
 					"type": "asset",
@@ -16167,7 +16167,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/animal_kin"
+					"_id": "asset:classic/path/animal_kin"
 				},
 				"banner_sworn": {
 					"type": "asset",
@@ -16261,7 +16261,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/banner_sworn"
+					"_id": "asset:classic/path/banner_sworn"
 				},
 				"battle_scarred": {
 					"type": "asset",
@@ -16320,7 +16320,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/battle_scarred"
+					"_id": "asset:classic/path/battle_scarred"
 				},
 				"blade_bound": {
 					"type": "asset",
@@ -16410,7 +16410,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/blade_bound"
+					"_id": "asset:classic/path/blade_bound"
 				},
 				"bonded": {
 					"type": "asset",
@@ -16465,7 +16465,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/bonded"
+					"_id": "asset:classic/path/bonded"
 				},
 				"commander": {
 					"type": "asset",
@@ -16572,7 +16572,7 @@
 					},
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/commander"
+					"_id": "asset:classic/path/commander"
 				},
 				"dancer": {
 					"type": "asset",
@@ -16703,7 +16703,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/dancer"
+					"_id": "asset:classic/path/dancer"
 				},
 				"devotant": {
 					"type": "asset",
@@ -16857,7 +16857,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/devotant"
+					"_id": "asset:classic/path/devotant"
 				},
 				"empowered": {
 					"type": "asset",
@@ -16947,7 +16947,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/empowered"
+					"_id": "asset:classic/path/empowered"
 				},
 				"fated": {
 					"type": "asset",
@@ -17029,7 +17029,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/fated"
+					"_id": "asset:classic/path/fated"
 				},
 				"fortune_hunter": {
 					"type": "asset",
@@ -17129,7 +17129,7 @@
 					},
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/fortune_hunter"
+					"_id": "asset:classic/path/fortune_hunter"
 				},
 				"herbalist": {
 					"type": "asset",
@@ -17224,7 +17224,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/herbalist"
+					"_id": "asset:classic/path/herbalist"
 				},
 				"honorbound": {
 					"type": "asset",
@@ -17288,7 +17288,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/honorbound"
+					"_id": "asset:classic/path/honorbound"
 				},
 				"improviser": {
 					"type": "asset",
@@ -17374,7 +17374,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/improviser"
+					"_id": "asset:classic/path/improviser"
 				},
 				"infiltrator": {
 					"type": "asset",
@@ -17481,7 +17481,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/infiltrator"
+					"_id": "asset:classic/path/infiltrator"
 				},
 				"lorekeeper": {
 					"type": "asset",
@@ -17577,7 +17577,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/lorekeeper"
+					"_id": "asset:classic/path/lorekeeper"
 				},
 				"loyalist": {
 					"type": "asset",
@@ -17655,7 +17655,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/loyalist"
+					"_id": "asset:classic/path/loyalist"
 				},
 				"masked": {
 					"type": "asset",
@@ -17789,7 +17789,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/masked"
+					"_id": "asset:classic/path/masked"
 				},
 				"oathbreaker": {
 					"type": "asset",
@@ -17872,7 +17872,7 @@
 						}
 					],
 					"shared": false,
-					"_id": "classic/asset/path/oathbreaker"
+					"_id": "asset:classic/path/oathbreaker"
 				},
 				"outcast": {
 					"type": "asset",
@@ -17968,7 +17968,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/outcast"
+					"_id": "asset:classic/path/outcast"
 				},
 				"pretender": {
 					"type": "asset",
@@ -18087,7 +18087,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/pretender"
+					"_id": "asset:classic/path/pretender"
 				},
 				"revenant": {
 					"type": "asset",
@@ -18170,7 +18170,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/revenant"
+					"_id": "asset:classic/path/revenant"
 				},
 				"rider": {
 					"type": "asset",
@@ -18259,7 +18259,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/rider"
+					"_id": "asset:classic/path/rider"
 				},
 				"ritualist": {
 					"type": "asset",
@@ -18315,7 +18315,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/ritualist"
+					"_id": "asset:classic/path/ritualist"
 				},
 				"shadow_kin": {
 					"type": "asset",
@@ -18375,7 +18375,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/shadow_kin"
+					"_id": "asset:classic/path/shadow_kin"
 				},
 				"sighted": {
 					"type": "asset",
@@ -18461,7 +18461,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/sighted"
+					"_id": "asset:classic/path/sighted"
 				},
 				"slayer": {
 					"type": "asset",
@@ -18579,7 +18579,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/slayer"
+					"_id": "asset:classic/path/slayer"
 				},
 				"spirit_bound": {
 					"type": "asset",
@@ -18661,7 +18661,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/spirit_bound"
+					"_id": "asset:classic/path/spirit_bound"
 				},
 				"storyweaver": {
 					"type": "asset",
@@ -18735,7 +18735,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/storyweaver"
+					"_id": "asset:classic/path/storyweaver"
 				},
 				"trickster": {
 					"type": "asset",
@@ -18819,7 +18819,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/trickster"
+					"_id": "asset:classic/path/trickster"
 				},
 				"veteran": {
 					"type": "asset",
@@ -18896,7 +18896,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/veteran"
+					"_id": "asset:classic/path/veteran"
 				},
 				"waterborn": {
 					"type": "asset",
@@ -18979,7 +18979,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/waterborn"
+					"_id": "asset:classic/path/waterborn"
 				},
 				"wayfinder": {
 					"type": "asset",
@@ -19065,7 +19065,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/wayfinder"
+					"_id": "asset:classic/path/wayfinder"
 				},
 				"weaponmaster": {
 					"type": "asset",
@@ -19145,7 +19145,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/weaponmaster"
+					"_id": "asset:classic/path/weaponmaster"
 				},
 				"wildblood": {
 					"type": "asset",
@@ -19236,7 +19236,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/wildblood"
+					"_id": "asset:classic/path/wildblood"
 				},
 				"wright": {
 					"type": "asset",
@@ -19352,10 +19352,10 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/path/wright"
+					"_id": "asset:classic/path/wright"
 				}
 			},
-			"_id": "classic/asset_collection/path"
+			"_id": "asset_collection:classic/path"
 		},
 		"ritual": {
 			"name": "Ritual Assets",
@@ -19466,7 +19466,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/ritual/augur"
+					"_id": "asset:classic/ritual/augur"
 				},
 				"awakening": {
 					"type": "asset",
@@ -19570,7 +19570,7 @@
 					},
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/ritual/awakening"
+					"_id": "asset:classic/ritual/awakening"
 				},
 				"bind": {
 					"type": "asset",
@@ -19664,7 +19664,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/ritual/bind"
+					"_id": "asset:classic/ritual/bind"
 				},
 				"communion": {
 					"type": "asset",
@@ -19758,7 +19758,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/ritual/communion"
+					"_id": "asset:classic/ritual/communion"
 				},
 				"divination": {
 					"type": "asset",
@@ -19852,7 +19852,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/ritual/divination"
+					"_id": "asset:classic/ritual/divination"
 				},
 				"invoke": {
 					"type": "asset",
@@ -19993,7 +19993,7 @@
 					},
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/ritual/invoke"
+					"_id": "asset:classic/ritual/invoke"
 				},
 				"keen": {
 					"type": "asset",
@@ -20087,7 +20087,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/ritual/keen"
+					"_id": "asset:classic/ritual/keen"
 				},
 				"leech": {
 					"type": "asset",
@@ -20181,7 +20181,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/ritual/leech"
+					"_id": "asset:classic/ritual/leech"
 				},
 				"lightbearer": {
 					"type": "asset",
@@ -20306,7 +20306,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/ritual/lightbearer"
+					"_id": "asset:classic/ritual/lightbearer"
 				},
 				"scry": {
 					"type": "asset",
@@ -20400,7 +20400,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/ritual/scry"
+					"_id": "asset:classic/ritual/scry"
 				},
 				"shadow_walk": {
 					"type": "asset",
@@ -20494,7 +20494,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/ritual/shadow_walk"
+					"_id": "asset:classic/ritual/shadow_walk"
 				},
 				"sway": {
 					"type": "asset",
@@ -20588,7 +20588,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/ritual/sway"
+					"_id": "asset:classic/ritual/sway"
 				},
 				"talisman": {
 					"type": "asset",
@@ -20682,7 +20682,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/ritual/talisman"
+					"_id": "asset:classic/ritual/talisman"
 				},
 				"tether": {
 					"type": "asset",
@@ -20811,7 +20811,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/ritual/tether"
+					"_id": "asset:classic/ritual/tether"
 				},
 				"totem": {
 					"type": "asset",
@@ -20905,7 +20905,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/ritual/totem"
+					"_id": "asset:classic/ritual/totem"
 				},
 				"visage": {
 					"type": "asset",
@@ -20999,7 +20999,7 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/ritual/visage"
+					"_id": "asset:classic/ritual/visage"
 				},
 				"ward": {
 					"type": "asset",
@@ -21093,10 +21093,10 @@
 					],
 					"count_as_impact": false,
 					"shared": false,
-					"_id": "classic/asset/ritual/ward"
+					"_id": "asset:classic/ritual/ward"
 				}
 			},
-			"_id": "classic/asset_collection/ritual"
+			"_id": "asset_collection:classic/ritual"
 		}
 	},
 	"atlas": {
@@ -21145,7 +21145,7 @@
 					],
 					"description": "This long string of islands parallels the [Ragged Coast](id:classic/atlas_entry/ironlands/ragged_coast). They are beautiful, but imposing. The slate-gray cliffs rise dramatically out of the water, topped by treeless moors. Waterfalls, fed by persistent rains, plunge over these cliffs into the raging sea. The winds are fierce and ever-present. In the winter, sleet, snow, and ocean mist can cut visibility to the length of one’s arm.\n\nThe islands are sparsely populated by [Ironlanders](id:classic/npc_collection/ironlanders), mostly fisher-folk who brave the surrounding waters. Their settlements cling to narrow, rock-strewn shores or lie on high overlooks. At night, the dim lights of their fires and torches glimmer pitifully against the wild, storm-tossed sea.",
 					"quest_starter": "The spectral maiden appears at the bow of your ship, offering to guide you safely through the storm—for a price. What does she demand of you?",
-					"_id": "classic/atlas_entry/ironlands/barrier_islands"
+					"_id": "atlas_entry:classic/ironlands/barrier_islands"
 				},
 				"ragged_coast": {
 					"name": "Ragged Coast",
@@ -21174,7 +21174,7 @@
 					],
 					"description": "This coast is marked by massive fjords. It is a rugged land of snow-capped cliffs overlooking blue waters.\n\n[Ironlander](id:classic/npc_collection/ironlanders) settlements are located at the head of the fjords in the shelter of narrow valleys. From there, both fisher-folk and [raiders](id:classic/npc/ironlanders/raider) set sail. Their kin gather to see them off, laying wreaths of spruce in their wake.\n\nIn the center of each settlement, at the front of the longhouse, a stack of rune-marked river stones memorialize those who did not return—one stone for each of the lost.",
 					"quest_starter": "A ship which set off from a coastal settlement is found washed up on shore. It is empty. This ship carried something of great importance, now lost. What was it, and why do you swear to recover it?",
-					"_id": "classic/atlas_entry/ironlands/ragged_coast"
+					"_id": "atlas_entry:classic/ironlands/ragged_coast"
 				},
 				"deep_wilds": {
 					"name": "Deep Wilds",
@@ -21204,7 +21204,7 @@
 					],
 					"description": "The Deep Wilds are a vast swath of ancient forest. The ground is a lush carpet of ferns and lichens. The gnarled branches are cloaked in hanging moss. The air is almost perpetually misty and wet. Unlike the bordering regions, heavy snow is rare here. Instead, there is the ceaseless patter of rain dripping from high boughs and the rush of river over rock. The air carries the earthy smells of damp and decay.\n\nA few [Ironlanders](id:classic/npc_collection/ironlanders) live along the fringes of the Deep Wilds, taking advantage of the relatively temperate climate and abundant game. However, most avoid this region. This is a land of the [firstborn](id:classic/npc_collection/firstborn), of monstrous [beasts](id:classic/npc_collection/beasts), of [horrors](id:classic/npc_collection/horrors) that defy description. This is the world before humans.",
 					"quest_starter": "An [Ironlander](id:classic/npc_collection/ironlanders) has sided with an enemy in the heart of the Wilds, and is leading attacks against Ironlander settlements. Who is this person? Who have they joined forces with? What will you do to stop these attacks?",
-					"_id": "classic/atlas_entry/ironlands/deep_wilds"
+					"_id": "atlas_entry:classic/ironlands/deep_wilds"
 				},
 				"flooded_lands": {
 					"name": "Flooded Lands",
@@ -21233,7 +21233,7 @@
 					],
 					"description": "This is a low-lying region of bogs, swamps, lakes, and slow-moving rivers. Near the coast, the water is salty and riddled with dead trees. Further north, the morass of forested wetlands and bogs is interspersed with rare patches of higher ground. Through it all, twisting rivers make their sluggish journey to the sea. The smell of these lands is rotten and dank. It is the smell of slow death.\n\nA few hardy [Ironlanders](id:classic/npc_collection/ironlanders) live here in small settlements built atop hillocks, or in homes standing on stilts over the wetlands. Most fish and forage, making their way among the waterways on flat-bottomed boats propelled by long poles. Some dig through peat for bog iron—a cold, wet, grueling task.\n\nTravel is precarious here. One step has you on solid ground. The next sends you plunging through a thin layer of peat into a murky bog. Then, bony hands reach out to you, grasping, pulling. “Stay with me,” a voice whispers. “Stay with me here in the dark.”",
 					"quest_starter": "Rising flood waters threaten to overwhelm an Ironlander settlement. Escape by boat is the only option, but there are few boats and many people. What’s more, there is something hungry in the water, waiting to feed.",
-					"_id": "classic/atlas_entry/ironlands/flooded_lands"
+					"_id": "atlas_entry:classic/ironlands/flooded_lands"
 				},
 				"havens": {
 					"name": "Havens",
@@ -21261,7 +21261,7 @@
 					],
 					"description": "This is an expansive region of forests, rivers, shrubland, and low hills. After an arduous journey, after untold losses, the first Ironlander settlers looked upon the Havens as a fresh start—a relative oasis in a fierce, uncaring land. It gave them hope.\n\nYears later, that hope is fading. Even within the Havens, there is little rest or safety. The winters are long. The harvests are never enough. [Raiders](id:classic/npc/ironlanders/raider) strike without mercy. The thick woods, deep rivers and dark nights hold secrets and lurking [horrors](id:classic/npc_collection/horrors). Some say the Ironlands is a living thing, a malevolent spirit, intent on ridding itself of the human invaders. Slowly, season by season, year by year, it is succeeding.\n\nThe [Ironlander](id:classic/npc_collection/ironlanders) settlements in this region typically stand on hills or at the confluence of rivers. The buildings are made of wood, or sometimes stone, with roofs covered in turf. The central homes and communal structures are protected by an outer palisade fashioned from earth and wood. Outside these walls, from spring through autumn, farmers work the meager fields. In winter, the settlements are smothered by deep snow and oppressive gray clouds.",
 					"quest_starter": "A settlement has fallen under the unjust rule of a cruel leader. What leverage do they hold over these people? What is your connection to the community? What can be done to overthrow this tyrant?",
-					"_id": "classic/atlas_entry/ironlands/havens"
+					"_id": "atlas_entry:classic/ironlands/havens"
 				},
 				"hinterlands": {
 					"name": "Hinterlands",
@@ -21289,7 +21289,7 @@
 					],
 					"description": "This high terrain consists of a long string of forested hills.\n\nIsolated [Ironlander](id:classic/npc_collection/ironlanders) settlements in this region serve primarily as bases for [hunters](id:classic/npc/ironlanders/hunter) and trappers. A few farmers do the best they can with the rocky soil, but the people depend mostly on meat, mushrooms, berries, and other bounties from the forest to sustain them during the long winters.\n\nThose winters are bitter and harsh. Snow gathers as deep as an Ironlander is tall, or more. Hunters, cloaked in heavy furs, wear snowshoes to navigate across the rough terrain. At night, they make camp. They drink and tell stories. They try to ward away the encroaching darkness with a blazing fire. They cast nervous glances at sounds just beyond the light.\n\nIn the spring and summer, the melting snow feeds tumultuous rivers. The forests burst with rich life. But, always there is a chill in the air. Always there is a reminder of the coming winter.",
 					"quest_starter": "A group of [Ironlanders](id:classic/npc_collection/ironlanders) have been forced out of their Hinterland settlement. What caused them to leave? With winter coming, and food in short supply, will you attempt to reclaim their settlement or convince someone to take them in?",
-					"_id": "classic/atlas_entry/ironlands/hinterlands"
+					"_id": "atlas_entry:classic/ironlands/hinterlands"
 				},
 				"tempest_hills": {
 					"name": "Tempest Hills",
@@ -21319,7 +21319,7 @@
 					],
 					"description": "These highlands are defined by rugged hills and low mountains, thin conifer woods, and wide, grassy plateaus, leading up to the heights of the [Veiled Mountains](id:classic/atlas_entry/ironlands/veiled_mountain). Through most seasons, the constant ill-winds break against the sides of the hills, screeching and moaning. In the dead of winter, some say these winds carry the names of those fated to die during the long cold season.\n\nNomadic [Ironlanders](id:classic/npc_collection/ironlanders) live among the hills, herding livestock. In the spring and summer they move among high pastures. In the winter, they find some relief from the brutal weather in sheltered valleys.\n\nOthers live in mining settlements, drawing iron ore from riverbeds and shallow digs. Their furnaces, sending up plumes of black smoke, convert the ore into wrought iron, which is sent south for trade with the [Havens](id:classic/atlas_entry/ironlands/haven).",
 					"quest_starter": "You have come across or learned of a rich source of unclaimed iron and silver among these hills. What hazards must be overcome before a mine can be established? What force opposes you or attempts to establish its own claim?",
-					"_id": "classic/atlas_entry/ironlands/tempest_hills"
+					"_id": "atlas_entry:classic/ironlands/tempest_hills"
 				},
 				"veiled_mountains": {
 					"name": "Veiled Mountains",
@@ -21348,7 +21348,7 @@
 					],
 					"description": "Commonly referred to as the Veils, these great mountains mark the northern bounds of the settled lands. They are almost perpetually shrouded in cloud, snow, and mist. On the rare day they are visible to those [Ironlanders](id:classic/npc_collection/ironlanders) far south in the [Havens](id:classic/atlas_entry/ironlands/haven), the sight of the towering peaks is enough to inspire a mix of fear and awe.\n\nFor a few, that feeling is a call rather than a warning. The Ironlanders who dwell here are mostly members of small mining communities. They seek fortunes in iron or silver, but often find only death in the endless, brutal cold. Even those who manage to eke out some sort of life among the Veils are sure to head south before the onset of winter. Before the long dark takes hold.",
 					"quest_starter": "As winter fast approaches, there is no sign of the [Ironlanders](id:classic/npc_collection/ironlanders) who live in a small mining community on the flanks of the Veils. They should have been off the mountain weeks ago. Time is running out.",
-					"_id": "classic/atlas_entry/ironlands/veiled_mountains"
+					"_id": "atlas_entry:classic/ironlands/veiled_mountains"
 				},
 				"shattered_wastes": {
 					"name": "Shattered Wastes",
@@ -21375,10 +21375,10 @@
 					],
 					"description": "To the north of the [Veiled Mountains](id:classic/atlas_entry/ironlands/veiled_mountain) lies the Shattered Wastes, a plain of jagged, broken ice.\n\nNo one knows the bounds of this land or what lies beyond. No [Ironlanders](id:classic/npc_collection/ironlanders) dwell here, and only a handful have explored the passage into the Wastes through the Veils. Those who survived the journey returned with stories of unimaginable cold and things moving beneath the ice.",
 					"quest_starter": "The traveler returned from his journey into the Shattered Wastes with dead, frostbitten hands and extraordinary stories. The others scoff at him, but you believe. Why? What does he tell you? What compels you to see for yourself?",
-					"_id": "classic/atlas_entry/ironlands/shattered_wastes"
+					"_id": "atlas_entry:classic/ironlands/shattered_wastes"
 				}
 			},
-			"_id": "classic/atlas_collection/ironlands"
+			"_id": "atlas_collection:classic/ironlands"
 		}
 	},
 	"moves": {
@@ -21482,7 +21482,7 @@
 							"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/move/fate/pay_the_price)."
 						}
 					},
-					"_id": "classic/move/adventure/face_danger"
+					"_id": "move:classic/adventure/face_danger"
 				},
 				"secure_an_advantage": {
 					"name": "Secure an Advantage",
@@ -21567,7 +21567,7 @@
 							"text": "On a __miss__, you fail or your assumptions betray you. [Pay the Price](id:classic/move/fate/pay_the_price)."
 						}
 					},
-					"_id": "classic/move/adventure/secure_an_advantage"
+					"_id": "move:classic/adventure/secure_an_advantage"
 				},
 				"gather_information": {
 					"name": "Gather Information",
@@ -21611,7 +21611,7 @@
 							"text": "On a __miss__, your investigation unearths a dire threat or reveals an unwelcome truth that undermines your quest. [Pay the Price](id:classic/move/fate/pay_the_price)."
 						}
 					},
-					"_id": "classic/move/adventure/gather_information"
+					"_id": "move:classic/adventure/gather_information"
 				},
 				"heal": {
 					"name": "Heal",
@@ -21669,7 +21669,7 @@
 							"text": "On a __miss__, your aid is ineffective. [Pay the Price](id:classic/move/fate/pay_the_price)."
 						}
 					},
-					"_id": "classic/move/adventure/heal"
+					"_id": "move:classic/adventure/heal"
 				},
 				"resupply": {
 					"name": "Resupply",
@@ -21713,7 +21713,7 @@
 							"text": "On a __miss__, you find nothing helpful. [Pay the Price](id:classic/move/fate/pay_the_price)."
 						}
 					},
-					"_id": "classic/move/adventure/resupply"
+					"_id": "move:classic/adventure/resupply"
 				},
 				"make_camp": {
 					"name": "Make Camp",
@@ -21757,7 +21757,7 @@
 							"text": "On a __miss__, you take no comfort. [Pay the Price](id:classic/move/fate/pay_the_price)."
 						}
 					},
-					"_id": "classic/move/adventure/make_camp"
+					"_id": "move:classic/adventure/make_camp"
 				},
 				"undertake_a_journey": {
 					"name": "Undertake a Journey",
@@ -21801,7 +21801,7 @@
 							"text": "On a __miss__, you are waylaid by a perilous event. [Pay the Price](id:classic/move/fate/pay_the_price)."
 						}
 					},
-					"_id": "classic/move/adventure/undertake_a_journey"
+					"_id": "move:classic/adventure/undertake_a_journey"
 				},
 				"reach_your_destination": {
 					"name": "Reach Your Destination",
@@ -21847,10 +21847,10 @@
 							"text": "On a __strong hit__, the situation at your destination favors you. Choose one.\n\n  * Make another move now (not a progress move), and add +1.\n  * Take +1 momentum."
 						}
 					},
-					"_id": "classic/move/adventure/reach_your_destination"
+					"_id": "move:classic/adventure/reach_your_destination"
 				}
 			},
-			"_id": "classic/move_category/adventure"
+			"_id": "move_category:classic/adventure"
 		},
 		"relationship": {
 			"name": "Relationship Moves",
@@ -21932,7 +21932,7 @@
 							"text": "On a __miss__, they refuse or make a demand which costs you greatly. [Pay the Price](id:classic/move/fate/pay_the_price)."
 						}
 					},
-					"_id": "classic/move/relationship/compel"
+					"_id": "move:classic/relationship/compel"
 				},
 				"sojourn": {
 					"name": "Sojourn",
@@ -21976,7 +21976,7 @@
 							"text": "On a __miss__, you find no help here. [Pay the Price](id:classic/move/fate/pay_the_price)."
 						}
 					},
-					"_id": "classic/move/relationship/sojourn"
+					"_id": "move:classic/relationship/sojourn"
 				},
 				"draw_the_circle": {
 					"name": "Draw the Circle",
@@ -22020,7 +22020,7 @@
 							"text": "On a __miss__, you begin the duel at a disadvantage. Your foe has initiative. [Pay the Price](id:classic/move/fate/pay_the_price).\n\nThen, make moves to resolve the fight. If you are the victor, you may make a lawful demand, and your opponent must comply or forfeit their honor and standing. If you refuse the challenge, surrender, or are defeated, they make a demand of you."
 						}
 					},
-					"_id": "classic/move/relationship/draw_the_circle"
+					"_id": "move:classic/relationship/draw_the_circle"
 				},
 				"forge_a_bond": {
 					"name": "Forge a Bond",
@@ -22064,7 +22064,7 @@
 							"text": "On a __miss__, they reject you. [Pay the Price](id:classic/move/fate/pay_the_price)."
 						}
 					},
-					"_id": "classic/move/relationship/forge_a_bond"
+					"_id": "move:classic/relationship/forge_a_bond"
 				},
 				"test_your_bond": {
 					"name": "Test Your Bond",
@@ -22108,7 +22108,7 @@
 							"text": "On a __miss__, clear the bond and [Pay the Price](id:classic/move/fate/pay_the_price)."
 						}
 					},
-					"_id": "classic/move/relationship/test_your_bond"
+					"_id": "move:classic/relationship/test_your_bond"
 				},
 				"aid_your_ally": {
 					"name": "Aid Your Ally",
@@ -22132,7 +22132,7 @@
 					},
 					"text": "When __you [Secure an Advantage](id:classic/move/adventure/secure_an_advantage) in direct support of an ally__, and score a hit, they (instead of you) can take the benefits of the move. If you are in combat and score a strong hit, you and your ally have initiative.",
 					"outcomes": null,
-					"_id": "classic/move/relationship/aid_your_ally"
+					"_id": "move:classic/relationship/aid_your_ally"
 				},
 				"write_your_epilogue": {
 					"name": "Write Your Epilogue",
@@ -22175,10 +22175,10 @@
 							"text": "On a __miss__, your fears are realized."
 						}
 					},
-					"_id": "classic/move/relationship/write_your_epilogue"
+					"_id": "move:classic/relationship/write_your_epilogue"
 				}
 			},
-			"_id": "classic/move_category/relationship"
+			"_id": "move_category:classic/relationship"
 		},
 		"combat": {
 			"name": "Combat Moves",
@@ -22260,7 +22260,7 @@
 							"text": "On a __miss__, combat begins with you at a disadvantage. [Pay the Price](id:classic/move/fate/pay_the_price). Your foe has initiative."
 						}
 					},
-					"_id": "classic/move/combat/enter_the_fray"
+					"_id": "move:classic/combat/enter_the_fray"
 				},
 				"strike": {
 					"name": "Strike",
@@ -22315,7 +22315,7 @@
 							"text": "On a __miss__, your attack fails and you must [Pay the Price](id:classic/move/fate/pay_the_price). Your foe has initiative."
 						}
 					},
-					"_id": "classic/move/combat/strike"
+					"_id": "move:classic/combat/strike"
 				},
 				"clash": {
 					"name": "Clash",
@@ -22370,7 +22370,7 @@
 							"text": "On a __miss__, you are outmatched and must [Pay the Price](id:classic/move/fate/pay_the_price). Your foe has initiative."
 						}
 					},
-					"_id": "classic/move/combat/clash"
+					"_id": "move:classic/combat/clash"
 				},
 				"turn_the_tide": {
 					"name": "Turn the Tide",
@@ -22394,7 +22394,7 @@
 					},
 					"text": "Once per fight, when you __risk it all__, you may steal initiative from your foe to make a move (not a progress move). When you do, add +1 and take +1 momentum on a hit. If you fail to score a hit on that move, you must suffer a dire outcome. [Pay the Price](id:classic/move/fate/pay_the_price).",
 					"outcomes": null,
-					"_id": "classic/move/combat/turn_the_tide"
+					"_id": "move:classic/combat/turn_the_tide"
 				},
 				"end_the_fight": {
 					"name": "End the Fight",
@@ -22440,7 +22440,7 @@
 							"text": "On a __miss__, you have lost this fight. [Pay the Price](id:classic/move/fate/pay_the_price)."
 						}
 					},
-					"_id": "classic/move/combat/end_the_fight"
+					"_id": "move:classic/combat/end_the_fight"
 				},
 				"battle": {
 					"name": "Battle",
@@ -22525,10 +22525,10 @@
 							"text": "On a __miss__, you are defeated and the objective is lost to you. [Pay the Price](id:classic/move/fate/pay_the_price)."
 						}
 					},
-					"_id": "classic/move/combat/battle"
+					"_id": "move:classic/combat/battle"
 				}
 			},
-			"_id": "classic/move_category/combat"
+			"_id": "move_category:classic/combat"
 		},
 		"suffer": {
 			"name": "Suffer Moves",
@@ -22594,7 +22594,7 @@
 							"text": "On a __miss__, also suffer -1 momentum. If you are at 0 health, you must mark wounded or maimed (if currently unmarked) or roll on the following table.\n\n{{table:classic/oracle_rollable/moves/endure_harm}}"
 						}
 					},
-					"_id": "classic/move/suffer/endure_harm"
+					"_id": "move:classic/suffer/endure_harm"
 				},
 				"face_death": {
 					"name": "Face Death",
@@ -22638,7 +22638,7 @@
 							"text": "On a __miss__, you are dead."
 						}
 					},
-					"_id": "classic/move/suffer/face_death"
+					"_id": "move:classic/suffer/face_death"
 				},
 				"companion_endure_harm": {
 					"name": "Companion Endure Harm",
@@ -22687,7 +22687,7 @@
 							"text": "On a __miss__, also suffer -1 momentum. If your companion’s health is 0, they are gravely wounded and out of action. Without aid, they die in an hour or two.\n\nIf you roll a miss with a 1 on your action die, and your companion’s health is 0, they are now dead. Take 1 experience for each marked ability on your companion asset, and remove it."
 						}
 					},
-					"_id": "classic/move/suffer/companion_endure_harm"
+					"_id": "move:classic/suffer/companion_endure_harm"
 				},
 				"endure_stress": {
 					"name": "Endure Stress",
@@ -22736,7 +22736,7 @@
 							"text": "On a __miss__, also suffer -1 momentum. If you are at 0 spirit, you must mark shaken or corrupted (if currently unmarked) or roll on the following table.\n\n{{table:classic/oracle_rollable/moves/endure_stress}}"
 						}
 					},
-					"_id": "classic/move/suffer/endure_stress"
+					"_id": "move:classic/suffer/endure_stress"
 				},
 				"face_desolation": {
 					"name": "Face Desolation",
@@ -22780,7 +22780,7 @@
 							"text": "On a __miss__, you succumb to despair or horror and are lost."
 						}
 					},
-					"_id": "classic/move/suffer/face_desolation"
+					"_id": "move:classic/suffer/face_desolation"
 				},
 				"out_of_supply": {
 					"name": "Out of Supply",
@@ -22804,7 +22804,7 @@
 					},
 					"text": "When __your supply is exhausted__ (reduced to 0), mark unprepared. If you suffer additional -supply while unprepared, you must exchange each additional -supply for any combination of -health, -spirit or -momentum as appropriate to the circumstances.",
 					"outcomes": null,
-					"_id": "classic/move/suffer/out_of_supply"
+					"_id": "move:classic/suffer/out_of_supply"
 				},
 				"face_a_setback": {
 					"name": "Face a Setback",
@@ -22828,10 +22828,10 @@
 					},
 					"text": "When __your momentum is at its minimum__ (-6), and you suffer additional -momentum, choose one.\n\n  * Exchange each additional -momentum for any combination of -health, -spirit, or -supply as appropriate to the circumstances.\n  * Envision an event or discovery ([Ask the Oracle](id:classic/move/fate/ask_the_oracle) if unsure) which undermines your progress in a current quest, journey or fight. Then, for each additional _momentum, clear 1 unit of progress on that track per its rank (troublesome=clear 3 progress; dangerous=clear 2 progress; formidable=clear 1 progress; extreme=clear 2 ticks; epic=clear 1 tick).",
 					"outcomes": null,
-					"_id": "classic/move/suffer/face_a_setback"
+					"_id": "move:classic/suffer/face_a_setback"
 				}
 			},
-			"_id": "classic/move_category/suffer"
+			"_id": "move_category:classic/suffer"
 		},
 		"quest": {
 			"name": "Quest Moves",
@@ -22892,7 +22892,7 @@
 							"text": "On a __miss__, you face a significant obstacle before you can begin your quest. Envision what stands in your way ([Ask the Oracle](id:classic/move/fate/ask_the_oracle) if unsure), and choose one.\n\n  * You press on: Suffer -2 momentum, and do what you must to overcome this obstacle.\n  * You give up: [Forsake Your Vow](id:classic/move/quest/forsake_your_vow)."
 						}
 					},
-					"_id": "classic/move/quest/swear_an_iron_vow"
+					"_id": "move:classic/quest/swear_an_iron_vow"
 				},
 				"reach_a_milestone": {
 					"name": "Reach a Milestone",
@@ -22916,7 +22916,7 @@
 					},
 					"text": "When __you make significant progress in your quest by overcoming a critical obstacle, completing a perilous journey, solving a complex mystery, defeating a powerful threat, gaining vital support, or acquiring a crucial item__, you may mark progress.\n\n  * Troublesome quest: Mark 3 progress.\n  * Dangerous quest: Mark 2 progress.\n  * Formidable quest: Mark 1 progress.\n  * Extreme quest: Mark 2 ticks.\n  * Epic quest: Mark 1 tick.",
 					"outcomes": null,
-					"_id": "classic/move/quest/reach_a_milestone"
+					"_id": "move:classic/quest/reach_a_milestone"
 				},
 				"fulfill_your_vow": {
 					"name": "Fulfill Your Vow",
@@ -22962,7 +22962,7 @@
 							"text": "On a __miss__, your quest is undone. Envision what happens ([Ask the Oracle](id:classic/move/fate/ask_the_oracle) if unsure), and choose one.\n\n  * You recommit: Clear all but one filled progress, and raise the quest’s rank by one (if not already epic).\n  * You give up: [Forsake Your Vow](id:classic/move/quest/forsake_your_vow)."
 						}
 					},
-					"_id": "classic/move/quest/fulfill_your_vow"
+					"_id": "move:classic/quest/fulfill_your_vow"
 				},
 				"forsake_your_vow": {
 					"name": "Forsake Your Vow",
@@ -22986,7 +22986,7 @@
 					},
 					"text": "When __you renounce your quest, betray your promise, or the goal is lost to you__, clear the vow and [Endure Stress](id:classic/move/suffer/endure_stress). You suffer _spirit equal to the rank of your quest (troublesome=1; dangerous=2; formidable=3; extreme=4; epic=5). If the vow was made to a person or community with whom you share a bond, Test Your Bond when you next meet.",
 					"outcomes": null,
-					"_id": "classic/move/quest/forsake_your_vow"
+					"_id": "move:classic/quest/forsake_your_vow"
 				},
 				"advance": {
 					"name": "Advance",
@@ -23010,10 +23010,10 @@
 					},
 					"text": "When __you focus on your skills, receive training, find inspiration, earn a reward, or gain a companion__, you may spend 3 experience to add a new asset, or 2 experience to upgrade an asset.",
 					"outcomes": null,
-					"_id": "classic/move/quest/advance"
+					"_id": "move:classic/quest/advance"
 				}
 			},
-			"_id": "classic/move_category/quest"
+			"_id": "move_category:classic/quest"
 		},
 		"fate": {
 			"name": "Fate Moves",
@@ -23056,7 +23056,7 @@
 					},
 					"text": "When __you suffer the outcome of a move__, choose one.\n\n  * Make the most obvious negative outcome happen.\n  * Envision two negative outcomes. Rate one as ‘likely’, and [Ask the Oracle](id:classic/move/fate/ask_the_oracle) using the yes/no table. On a ‘yes’, make that outcome happen. Otherwise, make it the other.\n  * Roll on the following table. If you have difficulty interpreting the result to fit the current situation, roll again.\n\n{{table:classic/oracle_rollable/moves/pay_the_price}}",
 					"outcomes": null,
-					"_id": "classic/move/fate/pay_the_price"
+					"_id": "move:classic/fate/pay_the_price"
 				},
 				"ask_the_oracle": {
 					"name": "Ask the Oracle",
@@ -23087,10 +23087,10 @@
 					},
 					"text": "When __you seek to resolve questions, discover details in the world, determine how other characters respond, or trigger encounters or events__, you may...\n\n  * Draw a conclusion: Decide the answer based on the most interesting and obvious result.\n  * Ask a yes/no question: Decide the odds of a ‘yes’, and roll on the table below to check the answer.\n  * Pick two: Envision two options. Rate one as ‘likely’, and roll on the table below to see if it is true. If not, it is the other.\n  * Spark an idea: Brainstorm or use a random prompt.\n\nOdds           | The answer is ‘yes’ if you roll...\n---------------|-----------------------------------\nAlmost Certain | 11 or greater\nLikely         | 26 or greater\n50/50          | 51 or greater\nUnlikely       | 76 or greater\nSmall Chance   | 91 or greater\n\nOn a match, an extreme result or twist has occurred.",
 					"outcomes": null,
-					"_id": "classic/move/fate/ask_the_oracle"
+					"_id": "move:classic/fate/ask_the_oracle"
 				}
 			},
-			"_id": "classic/move_category/fate"
+			"_id": "move_category:classic/fate"
 		}
 	},
 	"npcs": {
@@ -23139,7 +23139,7 @@
 					"tactics": ["Spring from hiding", "Ferocious attacks"],
 					"description": "Another people sailed to the Ironlands from the [Old World](id:classic/truths/old_world) long before our kin settled here. Something happened. Something changed them.\n\nWhether it was the long struggle in a harsh land, the ravages of war, or the corruption of some dark force, they left their humanity behind and became what we call the broken. Now, they exist only to kill, to destroy.\n\nWe fear the broken for their savagery. But, more than this, we fear them as a dark portent of what we might one day become.",
 					"quest_starter": "Years ago, an Ironlander child was taken by a broken tribe. Now they are seen living among them. What is your connection to this person? Can they be brought home, or are they forever lost?",
-					"_id": "classic/npc/ironlanders/broken"
+					"_id": "npc:classic/ironlanders/broken"
 				},
 				"common_folk": {
 					"name": "Common Folk",
@@ -23167,7 +23167,7 @@
 					"tactics": ["Desperate defense", "Stand together"],
 					"description": "Most of us in the Ironlands are common folk. We are farmers, laborers, crafters, sailors, and traders. When trouble comes, we know which way the pointy end goes and we stand together to protect our homes and kin.",
 					"quest_starter": "Two prominent families are at odds. What is the source of the conflict? What is your relationship to them? What danger threatens to destroy their community if they can’t put aside their petty squabble?",
-					"_id": "classic/npc/ironlanders/common_folk"
+					"_id": "npc:classic/ironlanders/common_folk"
 				},
 				"hunter": {
 					"name": "Hunter",
@@ -23195,7 +23195,7 @@
 					"tactics": ["Set traps", "Keep to the shadows", "Deadly shot"],
 					"description": "Hunters face brutal weather, difficult terrain, dangerous [animals](id:classic/npc_collection/animals), and worse. Many never return from their hunts. Others return, but are forever changed.",
 					"quest_starter": "A hunter returns to her village, panic-stricken and pleading for help. The rest of her party is still out there. What happened to them?",
-					"_id": "classic/npc/ironlanders/hunter"
+					"_id": "npc:classic/ironlanders/hunter"
 				},
 				"mystic": {
 					"name": "Mystic",
@@ -23223,7 +23223,7 @@
 					],
 					"description": "Some say you can tell a mystic by looking them in the eye. They walk in two worlds, and their eyes shimmer with that dark reflection of realms beyond our own. We call it the sight. Some hold that darkness in check. Others are consumed by it.",
 					"quest_starter": "A mystic returns to their home after a years-long journey. They are changed. What new power or knowledge do now they wield? What do they seek to do with it? Why do you oppose them?",
-					"_id": "classic/npc/ironlanders/mystic"
+					"_id": "npc:classic/ironlanders/mystic"
 				},
 				"raider": {
 					"name": "Raider",
@@ -23252,7 +23252,7 @@
 					"description": "Raiders survive by seizing what they need from others. Our grain. Our meat. Our animals. Our iron. They’ll take it all, and leave us facing the long winter with nothing to sustain us but prayers to indifferent gods.",
 					"quest_starter": "You were raised as a raider, born to battle, but long ago left that life. Troubled by your past, you vow to wipe this powerful clan from the Ironlands. How can you defeat them? What will happen when you must face your former shield-kin?",
 					"your_truth": "A large raider clan is known and feared throughout the Ironlands. What is it called? Who leads it?",
-					"_id": "classic/npc/ironlanders/raider"
+					"_id": "npc:classic/ironlanders/raider"
 				},
 				"warrior": {
 					"name": "Warrior",
@@ -23281,10 +23281,10 @@
 					"description": "Some Ironlanders, through strength of arms, set themselves apart from the common rabble. They are trained to fight, or simply born to it. For them, a sword, spear or axe is as natural a tool as any hammer or spade.",
 					"quest_starter": "A legendary warrior, now well past their prime, swears to face a daunting foe in one final battle. What help do they ask of you and why? Who is their enemy?",
 					"your_truth": "Warrior’s shields are often emblazoned with meaningful symbols. What are they? Family crests? Animal totems? Mystical sigils? Motifs honoring the nations of the [Old World](id:classic/truths/old_world)? If you carry a shield, what is painted on yours?",
-					"_id": "classic/npc/ironlanders/warrior"
+					"_id": "npc:classic/ironlanders/warrior"
 				}
 			},
-			"_id": "classic/npc_collection/ironlanders"
+			"_id": "npc_collection:classic/ironlanders"
 		},
 		"firstborn": {
 			"name": "Firstborn",
@@ -23339,7 +23339,7 @@
 					"description": "Elves are strange beings of the forest, seldom seen beyond the ancient woods of the [Deep Wilds](id:classic/atlas_entry/ironlands/deep_wild). They are fiercely protective of their lands and suspicious of humans. Their scouts patrol the borderlands, riding the fearsome mounts we call [gaunts](id:classic/npc/animals/gaunt). Others of their kind watch us from the shadow of the deep woods, spears and bow at the ready. Some say elven mystics can bind the animals and beasts of the forest to aid in the defense of the Wilds.\n\nA few warn that the elves are biding their time, readying the attack which will drive us from these lands.",
 					"quest_starter": "The leader of an Ironlander community seeks an audience with the elves. For what purpose? Why are you compelled to help?",
 					"your_truth": "Elves conceal their faces behind ornate wooden masks. What do these masks signify?",
-					"_id": "classic/npc/firstborn/elf"
+					"_id": "npc:classic/firstborn/elf"
 				},
 				"giant": {
 					"name": "Giant",
@@ -23373,7 +23373,7 @@
 					"description": "Giants dwell in the [Tempest Hills](id:classic/atlas_entry/ironlands/tempest_hill) and [Veiled Mountains](id:classic/atlas_entry/ironlands/veiled_mountain). They live a nomadic life alone or in small family units, herding oxen, mountain goats, and sheep. In their own language they are called the Jokul.\n\nMany Ironlanders misinterpret their quiet nature for dullness, but giants are keenly intelligent and observant. They have a great respect for life, even for our kind, and will use trickery and negotiation to avoid a fight. When they are left without other options, an enraged giant is a devastating, relentless force.",
 					"quest_starter": "A pair of giants are raiding human settlements, stealing supplies and livestock. With winter coming, the survival of those settlements is threatened. What is driving the giants down from the hills?",
 					"your_truth": "Every fifth spring, the giant clans meet for a gathering. There, the memory-keepers sing of a great giant hero, revered by all. Who is this hero?",
-					"_id": "classic/npc/firstborn/giant"
+					"_id": "npc:classic/firstborn/giant"
 				},
 				"primordial": {
 					"name": "Primordial",
@@ -23401,7 +23401,7 @@
 					"tactics": ["Control the elements", "Destroy with primal rage"],
 					"description": "The primordials, said to be the vestigial spirits of long-forgotten gods, are the most ancient of the firstborn. Each embodies some aspect of the natural world, bound in a form which is a crude mimicry of a human or large animal. A river primordial is a mass of rock, gravel, and flowing water. A forest primordial is comprised of wood, earth, rocks, and plants. A mountain primordial is a lumbering being of glacier stone and ice. A fire primordial, depending on its mood, might take form as embers, ash and smoke—or as a raging pyre.\n\nThey range in size from the height of an Ironlander to half-again as tall as a [giant](id:classic/npc/firstborn/giant). Rumors persist of primordials who dwell in the deepest parts of the Wilds, or high in the ranges of the [Veiled Mountains](id:classic/atlas_entry/ironlands/veiled_mountain), who are as tall as an ancient tree. Beyond, some suggest, in the [Shattered Wastes](id:classic/atlas_entry/ironlands/shattered_waste), live primordials who tower into the clouds. Is the sound of distant thunder sometimes the footfalls of mountain-sized primordials who dwell beyond the edges of the known world?\n\nPrimordials are solitary beings and as unpredictable as the natural forces they personify. They might ignore you. They might lurk at a distance, as if observing you. Or, they might attack. They do not speak in any language we can understand. Some suggest they have no intelligence, and are merely a manifestation of the natural world, no different than a winter storm.\n\nHow do you kill an primordial? Most scoff at the idea. You are just as likely to kill the rain or the sea. A mystic might tell you to use a weapon imbued with elemental power. Don’t trust them. If you see a primordial, keep your distance. Better yet, run.",
 					"quest_starter": "In the dead of winter, a fire primordial is razing homes and burning a nearby wood. At night, orange flames light the sky. What can be done to stop this destruction?",
-					"_id": "classic/npc/firstborn/primordial"
+					"_id": "npc:classic/firstborn/primordial"
 				},
 				"troll": {
 					"name": "Troll",
@@ -23431,7 +23431,7 @@
 					"tactics": ["Be sneaky", "Bite and claw", "Run and hide"],
 					"description": "Trolls mostly live in the [Flooded Land](id:classic/atlas_entry/ironlands/flooded_land), but it’s not unusual to encounter one in the [Hinterlands](id:classic/atlas_entry/ironlands/hinterland) or even in the southern reaches of the [Havens](id:classic/atlas_entry/ironlands/haven). They are solitary creatures, wary of contact with Ironlanders but likely to attack if scared or provoked.\n\nThey move with their back hunched, often skulking on all four gangly limbs. When they stand straight they are much taller than humans—nearly as tall as a giant. Their skin is a sickly pale gray, but they can camouflage themselves by changing it to match their environment.\n\nTrolls collect objects of all sorts, and particularly value Ironlander trinkets. They are tormented by the fear of others stealing their hoard, and are constantly seeking out new, better hiding places. The items are mostly junk to anyone but a troll, but occasionally an object of real value finds its way into the dregs.",
 					"quest_starter": "The villagers tolerate the troll who lives nearby because its presence serves to dissuade a greater threat. They even donate items for its hoard, and put up with its occasional thievery. But now, the troll is missing. What is the looming threat the troll helped avert?",
-					"_id": "classic/npc/firstborn/troll"
+					"_id": "npc:classic/firstborn/troll"
 				},
 				"varou": {
 					"name": "Varou",
@@ -23467,10 +23467,10 @@
 					"description": "The varou are humanoid beings who dwell within the [Deep Wilds](id:classic/atlas_entry/ironlands/deep_wild) and in the woods of the [Hinterlands](id:classic/atlas_entry/ironlands/hinterland). They have fierce, wolf-like features and are broad-shouldered and a head taller than the average Ironlander. Their long hair is ornately groomed and decorated with beads and other trinkets.\n\nThe varou value territory above all things. They often war amongst themselves and against the [elves](id:classic/npc/firstborn/elf) to gain or defend holdings. They mark their claims by carving clan symbols into trees. Only the foolish ignore the warning of these border signs. Several of our settlements—built too close to varou territory—are now abandoned ruins bearing the mark of a victorious varou clan.",
 					"quest_starter": "A varou clan has carved their mark into the trees surrounding an Ironlander community, claiming it as their territory. An attack is surely imminent. What will you do to prevent it?",
 					"your_truth": "A young varou receives their keth—a curved dagger—before undergoing a rite of passage. What must they do to take their place among the adults of the clan?",
-					"_id": "classic/npc/firstborn/varou"
+					"_id": "npc:classic/firstborn/varou"
 				}
 			},
-			"_id": "classic/npc_collection/firstborn"
+			"_id": "npc_collection:classic/firstborn"
 		},
 		"animals": {
 			"name": "Animals",
@@ -23512,7 +23512,7 @@
 					"tactics": ["Roar", "Pin down", "Maul with savage force"],
 					"description": "Most bears are not aggressive. They avoid Ironlanders and are unlikely to attack unless they see you as a threat.\n\nThere are exceptions. The silver bears of the [Veiled Mountains](id:classic/atlas_entry/ironlands/veiled_mountain), which sometimes range as far south as the [Tempest Hills](id:classic/atlas_entry/ironlands/tempest_hill), are territorial, powerful, and aggressive. Likewise, the ash bear, encountered in woodlands through the Ironlands, is known for its ferocity and cunning. If either catch the scent of you on the wind, they are likely to hunt you down and attack.",
 					"quest_starter": "A group of hunters felled a large ash bear with several arrows. It tumbled into a river and was swept away. Unfortunately, the bear they thought dead is now stalking the group as they make their way back home.",
-					"_id": "classic/npc/animals/bear"
+					"_id": "npc:classic/animals/bear"
 				},
 				"boar": {
 					"name": "Boar",
@@ -23536,7 +23536,7 @@
 					"tactics": ["Charge and gore", "Circle and attack again"],
 					"description": "In the [Old World](id:classic/truths/old_world), wild boars were belligerent and dangerous animals. Here in the Ironlands? They are even bigger and meaner. They will attack without warning or provocation. They will run you down, gore you, bite you, and circle around to do it all again. And again. And again.",
 					"quest_starter": "A boar hunt ends in tragedy when an Ironlander is gored and grievously\nwounded. How do you know this person? What terrible truth do they\nreveal as they lay dying?",
-					"_id": "classic/npc/animals/boar"
+					"_id": "npc:classic/animals/boar"
 				},
 				"gaunt": {
 					"name": "Gaunt",
@@ -23565,7 +23565,7 @@
 					"description": "A gaunt is a creature unique to the Ironlands. They maneuver across the rough, dense terrain of the [Deep Wilds](id:classic/atlas_entry/ironlands/deep_wild) and [Hinterlands](id:classic/atlas_entry/ironlands/hinterland) with uncanny speed and grace. This makes them ideal as mounts for the [elves](id:classic/npc/firstborn/elf), who breed and train them.\n\nA gaunt will not usually act aggressively without provocation, but they are as deadly as the fiercest warhorse under the command of a talented rider.",
 					"quest_starter": "Villages in the [Hinterlands](id:classic/atlas_entry/ironlands/hinterland) have fallen prey to a large band of gaunt-riding elves. They attack with sudden and violent force, and are gone before any sort of defense can be mustered. Their leader, a warrior of unmatched skill, rides a distinctive white gaunt. What has driven these elves to strike out against the Ironlanders?",
 					"your_truth": "Some gaunts live in wild herds. They once roamed the wilds in countless numbers, but few now remain. What has happened to thin these herds so dramatically?",
-					"_id": "classic/npc/animals/gaunt"
+					"_id": "npc:classic/animals/gaunt"
 				},
 				"marsh_rat": {
 					"name": "Marsh Rat",
@@ -23589,7 +23589,7 @@
 					"tactics": ["Swarm and bite"],
 					"description": "The marsh rat is a rodent of unusual size. They are all-too-common in the [Flooded Lands](id:classic/atlas_entry/ironlands/flooded_land) or in wetlands within the [Hinterlands](id:classic/atlas_entry/ironlands/hinterland) and [Deep Wilds](id:classic/atlas_entry/ironlands/deep_wild).\n\nThey will eat almost anything, including carrion and waste. Our grain stores and pantries are an easy target for a hungry pack, who will dig tunnels or chew through walls to get at the food. They will also try to make a meal out of living prey—deer, cattle, or even an unlucky Ironlander. It is said that a swarm of marsh rats can kill a horse and reduce it to bone in a matter of hours.",
 					"quest_starter": "Marsh rats raided the stores of an isolated settlement. How will you ensure the Ironlanders have enough food to survive the coming winter?",
-					"_id": "classic/npc/animals/marsh_rat"
+					"_id": "npc:classic/animals/marsh_rat"
 				},
 				"wolf": {
 					"name": "Wolf",
@@ -23613,10 +23613,10 @@
 					"tactics": ["Stalk", "Pack rush", "Drag to the ground"],
 					"description": "The Ironlands are home to several breeds of wolves. Most are not aggressive and stay clear of settlements and travelers. Despite that, attacks against Ironlanders are not unknown. A harsh winter and insufficient prey can drive a pack to hunt livestock or even an unwary Ironlander. As night falls we hear their howls, and hope they are well fed.",
 					"quest_starter": "You find the grisly remains of a pack of wolves. All are dead, even the cubs. What caused this? Why is it a harbinger of a greater danger?",
-					"_id": "classic/npc/animals/wolf"
+					"_id": "npc:classic/animals/wolf"
 				}
 			},
-			"_id": "classic/npc_collection/animals"
+			"_id": "npc_collection:classic/animals"
 		},
 		"beasts": {
 			"name": "Beasts",
@@ -23668,7 +23668,7 @@
 					"description": "Basilisks dwell in the [Flooded Lands](id:classic/atlas_entry/ironlands/flooded_land), lurking in the murky waters of the swamps or within marshy thickets. There, they wait patiently for prey. They regularly feed on marsh rats or deer, but will eagerly make a meal out of a passing Ironlander.",
 					"quest_starter": "The adventurer set out to slay a basilisk, only to become its next meal. Because the serpent digests its prey slowly, the remains of the adventurer are still undoubtedly within the beast—along with the heirloom sword he wielded. What is your relationship to this person? Why is recovering the sword so important to you?",
 					"your_truth": "Some piece of a basilisk anatomy is prized by the Ironlanders. What is it? How is it used?",
-					"_id": "classic/npc/beasts/basilisk"
+					"_id": "npc:classic/beasts/basilisk"
 				},
 				"elder_beast": {
 					"name": "Elder Beast",
@@ -23696,7 +23696,7 @@
 					"description": "Elder beasts—wolves, bears and boars—are huge, monstrous versions of their common kin. They are primarily solitary creatures, though elder wolves have been known to lead a pack of common wolves. They are not aggressive, but are protective of their lands and the creatures within it. Some say they are avatars of the old gods and as long-lived as the oldest trees.",
 					"quest_starter": "An elder wolf, white as snow, appears to you in a dream. When you wake, the memory of its piercing gaze lingers. Is the vision a dark portent or a promise? Why are you compelled to seek this beast out?",
 					"your_truth": "What people of the Ironlands revere and protect the elder beasts? What group hunts them and why?",
-					"_id": "classic/npc/beasts/elder_beast"
+					"_id": "npc:classic/beasts/elder_beast"
 				},
 				"harrow_spider": {
 					"name": "Harrow Spider",
@@ -23724,7 +23724,7 @@
 					"tactics": ["Drop atop prey", "Bite with pincers", "Trap in webbing"],
 					"description": "These gigantic creatures are a menace in woodlands throughout the Ironlands. Despite their size, they move through high branches with unnatural grace, dropping suddenly to grapple their prey and entomb them in webbing.",
 					"quest_starter": "A brood of harrow spiders attacked a contingent of Ironlanders. The single survivor tells of the horrifying encounter and the monstrous brood mother—a harrow spider larger and stronger than a warhorse. What was this group’s mission? What important item are you sworn to recover from one of the victims?",
-					"_id": "classic/npc/beasts/harrow_spider"
+					"_id": "npc:classic/beasts/harrow_spider"
 				},
 				"leviathan": {
 					"name": "Leviathan",
@@ -23758,7 +23758,7 @@
 					"description": "These massive sea beasts lurk in the darkness of the deepest fjords and in the abyssal depths beyond the [Barrier Islands](id:classic/atlas_entry/ironlands/barrier_island). They sometimes surface to hunt within shallower waters. They will indiscriminately destroy any Ironlander craft which stray to close to their hunting grounds.\n\nWatchful sailors might catch sight of a leviathan circling their boat, studying them, in the moments before it attacks. Their dagger-shaped head is as tough and destructive as any battering ram, able to shatter a ship in a single blow.",
 					"quest_starter": "A leviathan lurks off the coast, preying on fishing boats and trade ships. Among the dead is someone important to you. Who is it? You have vowed to send this beast back to the depths, but doing so will require a mythic weapon—The Abyssal Harpoon, an [Old World](id:classic/truths/old_world) artifact said to be carved from the bones of a long-dead sea god. Where is this weapon rumored to be held?",
 					"your_truth": "Some coastal people believe leviathans are a manifestation of an ancient spirit. What is it?",
-					"_id": "classic/npc/beasts/leviathan"
+					"_id": "npc:classic/beasts/leviathan"
 				},
 				"mammoth": {
 					"name": "Mammoth",
@@ -23790,7 +23790,7 @@
 					"tactics": ["Form a protective circle", "Charge", "Trample", "Gore"],
 					"description": "These beasts resemble the elephants of the [Old World](id:classic/truths/old_world)’s southern realms, but are larger and covered in a coat of thick fur. They travel in herds among the [Tempest Hills](id:classic/atlas_entry/ironlands/tempest_hill), migrating south with the winter and north with the spring. They are not aggressive creatures, but are fearless and will fight to the death to protect their young.\n\nA herd of mammoths is an amazing and humbling sight, but smart Ironlanders keep their distance and stay upwind.",
 					"quest_starter": "A mammoth calf wanders alone into an Ironlander settlement. Why do you swear to reunite it with its herd?",
-					"_id": "classic/npc/beasts/mammoth"
+					"_id": "npc:classic/beasts/mammoth"
 				},
 				"wyvern": {
 					"name": "Wyvern",
@@ -23825,10 +23825,10 @@
 					"description": "There are several breeds of wyverns in the Ironlands. To the west, tawny wyverns nest in the cliffs of the [Barrier Islands](id:classic/atlas_entry/ironlands/barrier_island) and [Ragged Coast](id:classic/atlas_entry/ironlands/ragged_coas), diving for fish in the surrounding waters. Inland, the verdant wyverns dwell in forested regions. The largest and most fearsome breed, the iron wyverns, hunt among the [Tempest Hills](id:classic/atlas_entry/ironlands/tempest_hill) and along the flanks of the [Veiled Mountains](classic/atlas_entry/ironlands/veiled_mountain).\n\nAll wyverns have wolfish heads with wide jaws, thick bodies, and sinuous tails. They have short hind limbs and elongated forelimbs which extend along their wings. In flight, they are a terrifying but awe-inspiring creature. On the ground, they lumber heavily on all four limbs, their wings folded back, jaws agape, gaze fixed on their prey. They are the grim cruelty of the Ironlands given form. They are death.",
 					"quest_starter": "Ancient cave paintings in the [Tempest Hills](id:classic/atlas_entry/ironlands/tempest_hill) show humanoids riding atop wyverns. Perhaps these beasts can be tamed. Why are you obsessed with this possibility?",
 					"your_truth": "Rumors persist of a wyvern graveyard where wyverns instinctively go when their death is near. Where is this supposedly located? In what way do Ironlanders make use of wyvern bones?",
-					"_id": "classic/npc/beasts/wyvern"
+					"_id": "npc:classic/beasts/wyvern"
 				}
 			},
-			"_id": "classic/npc_collection/beasts"
+			"_id": "npc_collection:classic/beasts"
 		},
 		"horrors": {
 			"name": "Horrors",
@@ -23878,7 +23878,7 @@
 					],
 					"description": "Bonewalkers are human remains given unnatural life. The source of the dark energy that animates them is a mystery. Some say it is the will of dark gods. Some say an ancient evil permeates this land and seeps into porous bones of the dead. Or, perhaps it is the work of corrupt mystics.\n\nBonewalkers usually roam the location of their final resting place—a burial site, a cursed battlefield, or a settlement blighted by disease or violence. Nothing remains of their previous selves. They are soulless monsters driven only to destroy the living.",
 					"quest_starter": "A horde of bonewalkers marches relentlessly towards the [Havens](id:classic/atlas_entry/ironlands/haven). What dark force has gathered this army of the undead? How will you stop them?",
-					"_id": "classic/npc/horrors/bonewalker"
+					"_id": "npc:classic/horrors/bonewalker"
 				},
 				"frostbound": {
 					"name": "Frostbound",
@@ -23907,7 +23907,7 @@
 					"description": "Some who fall prey to the long winters or the wild storms of the northern regions are given a horrible new life as the frostbound. These animated corpses are cursed to forever seek out the warmth their death took from them.",
 					"quest_starter": "A group of frostbound lurk along a mountain trail. This path is the only safe route to the lowlands from a mining village.",
 					"your_truth": "Can creatures other than Ironlanders become frostbound? If so, undeath gives them uncanny strength. Make them one rank higher than their living form.",
-					"_id": "classic/npc/horrors/frostbound"
+					"_id": "npc:classic/horrors/frostbound"
 				},
 				"chimera": {
 					"name": "Chimera",
@@ -23938,7 +23938,7 @@
 					],
 					"description": "A chimera is the corrupted form of animal flesh given unnatural life. Its body is a collection of various dead creatures, fused together into a twisted, massive entity which knows only pain and hunger. When a dozen blood-tinged eyes focus on you, when its gibbering mouths open at once to scream, your only hope is a quick death.",
 					"quest_starter": "Multiple chimera have spawned from the heart of a deep wood. What evil is at work there?",
-					"_id": "classic/npc/horrors/chimera"
+					"_id": "npc:classic/horrors/chimera"
 				},
 				"haunt": {
 					"name": "Haunt",
@@ -23972,7 +23972,7 @@
 					"description": "Haunts are restless spirits bound to this world by a traumatic or unjust death. They may be tied to a location, an object, or even a person.\n\nA haunt who manifests as a physical being can be dispelled by overcoming them in a fight, but only temporarily. They will only be at peace when their death is avenged or resolved. Some say a haunt can be banished, but these rituals are a lost art.",
 					"quest_starter": "You are plagued by a haunt. Who is it? What do they want of you?",
 					"your_truth": "When someone dies a violent death, or at the hand of another, they are often laid to rest using a specific, ceremonial rite. This, it is believed, prevents them from returning as a haunt. What is this ritual? What rare material is required?",
-					"_id": "classic/npc/horrors/haunt"
+					"_id": "npc:classic/horrors/haunt"
 				},
 				"hollow": {
 					"name": "Hollow",
@@ -24005,7 +24005,7 @@
 					"description": "It is said that [elves](id:classic/npc/firstborn/elf) who die an unjust death or have cause to seek retribution can rise as a hollow. Their form is a rippling mass of dead leaves, plants, soil, carrion, and insects. They move with a nightmarish, shambling gait. Their face is the wooden mask they wore in life. Their voice is the rattle of the wind through dry leaves.\n\nAs with [haunts](id:classic/npc/horrors/haunt), they can be temporarily defeated but cannot be killed by physical means. They are a relentless force. They will not stop until they enact their vengeance.",
 					"quest_starter": "A hollow terrorizes an Ironlander village. What does it seek? What will you do to stop it?",
 					"your_truth": "How do elven communities view a risen hollow? Are they seen as spirits of righteous vengeance or as dangerous aberrations?",
-					"_id": "classic/npc/horrors/hollow"
+					"_id": "npc:classic/horrors/hollow"
 				},
 				"iron_revenant": {
 					"name": "Iron Revenant",
@@ -24036,7 +24036,7 @@
 					],
 					"description": "Some vows are held so fiercely that they survive even after death. An iron revenant is an incorporeal force of furious resolve, the unfinished vow of an Ironsworn given horrible form as a construct of metal.\n\nAttacks may slow them down or temporarily break apart their armored form, but they have no flesh to pierce and cannot be killed. An iron revenant will not stop until their vow is fulfilled.",
 					"quest_starter": "Someone you knew has taken form as an iron revenant. Who is it? What is their vow?",
-					"_id": "classic/npc/horrors/iron_revenant"
+					"_id": "npc:classic/horrors/iron_revenant"
 				},
 				"sodden": {
 					"name": "Sodden",
@@ -24066,10 +24066,10 @@
 					"description": "A sodden is the restless spirit of someone who drowned or was put to rest in water. They can appear in seas, rivers, lakes, ponds or marshes. It is said that their loneliness compels them to draw living victims into their watery lairs.\n\nA sodden is not confined to its resting place. In fact, some believe that surviving an encounter with a sodden will leave you vulnerable around any body of water until the spirit finishes its work.",
 					"quest_starter": "Someone you know died and appears to you as a sodden. Who are they? Can anything be done to put them to rest?",
 					"your_truth": "Many Ironlanders habitually perform a quick ritual when near a body of water, believing it keeps any lurking sodden at bay. What do they do? Is there any truth to this custom?",
-					"_id": "classic/npc/horrors/sodden"
+					"_id": "npc:classic/horrors/sodden"
 				}
 			},
-			"_id": "classic/npc_collection/horrors"
+			"_id": "npc_collection:classic/horrors"
 		}
 	},
 	"truths": {
@@ -24115,7 +24115,7 @@
 				}
 			],
 			"dice": "1d100",
-			"_id": "classic/truth/old_world"
+			"_id": "truth:classic/old_world"
 		},
 		"iron": {
 			"name": "Iron",
@@ -24159,7 +24159,7 @@
 				}
 			],
 			"dice": "1d100",
-			"_id": "classic/truth/iron"
+			"_id": "truth:classic/iron"
 		},
 		"legacies": {
 			"name": "Legacies",
@@ -24203,7 +24203,7 @@
 				}
 			],
 			"dice": "1d100",
-			"_id": "classic/truth/legacies"
+			"_id": "truth:classic/legacies"
 		},
 		"communities": {
 			"name": "Communities",
@@ -24247,7 +24247,7 @@
 				}
 			],
 			"dice": "1d100",
-			"_id": "classic/truth/communities"
+			"_id": "truth:classic/communities"
 		},
 		"leaders": {
 			"name": "Leaders",
@@ -24291,7 +24291,7 @@
 				}
 			],
 			"dice": "1d100",
-			"_id": "classic/truth/leaders"
+			"_id": "truth:classic/leaders"
 		},
 		"defense": {
 			"name": "Defense",
@@ -24335,7 +24335,7 @@
 				}
 			],
 			"dice": "1d100",
-			"_id": "classic/truth/defense"
+			"_id": "truth:classic/defense"
 		},
 		"mysticism": {
 			"name": "Mysticism",
@@ -24379,7 +24379,7 @@
 				}
 			],
 			"dice": "1d100",
-			"_id": "classic/truth/mysticism"
+			"_id": "truth:classic/mysticism"
 		},
 		"religion": {
 			"name": "Religion",
@@ -24423,7 +24423,7 @@
 				}
 			],
 			"dice": "1d100",
-			"_id": "classic/truth/religion"
+			"_id": "truth:classic/religion"
 		},
 		"firstborn": {
 			"name": "Firstborn",
@@ -24467,7 +24467,7 @@
 				}
 			],
 			"dice": "1d100",
-			"_id": "classic/truth/firstborn"
+			"_id": "truth:classic/firstborn"
 		},
 		"beasts": {
 			"name": "Beasts",
@@ -24511,7 +24511,7 @@
 				}
 			],
 			"dice": "1d100",
-			"_id": "classic/truth/beasts"
+			"_id": "truth:classic/beasts"
 		},
 		"horrors": {
 			"name": "Horrors",
@@ -24555,7 +24555,7 @@
 				}
 			],
 			"dice": "1d100",
-			"_id": "classic/truth/horrors"
+			"_id": "truth:classic/horrors"
 		}
 	}
 }
