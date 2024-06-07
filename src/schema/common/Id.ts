@@ -136,24 +136,6 @@ export const DelveSiteDomainIdWildcard = toWildcardId(DelveSiteDomainId, {
 })
 export type DelveSiteDomainIdWildcard = Static<typeof DelveSiteDomainIdWildcard>
 
-// export const DomainFeatureRowId = Extend(
-// 	DelveSiteDomainId,
-// 	['features', DiceRange],
-// 	{
-// 		$id: 'DomainFeatureRowId'
-// 	}
-// )
-// export type DomainFeatureRowId = Opaque<Static<typeof DomainFeatureRowId>>
-
-// export const DomainDangerRowId = Extend(
-// 	DelveSiteDomainId,
-// 	['dangers', DiceRange],
-// 	{
-// 		$id: 'DomainDangerRowId'
-// 	}
-// )
-// export type DomainDangerRowId = Opaque<Static<typeof DomainDangerRowId>>
-
 export const MoveCategoryId = CollectionId('move_category', {
 	examples: ['starforged/move_category/adventure'],
 	$id: 'MoveCategoryId'
