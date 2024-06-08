@@ -15,7 +15,7 @@ oracles:
         url: https://ironswornrpg.com
         date: 2019-06-05
       page: 178
-    summary: To give the settlement additional detail, roll on the [Location Descriptor](classic/oracle_rollable/place/descriptor) oracle. To spark an idea for an event or feature related to the settlement, roll on the [Action](id:classic/oracle_rollable/action_and_theme/action) and [Theme](id:classic/oracle_rollable/action_and_theme/theme) oracles.
+    summary: To give the settlement additional detail, roll on the [Location Descriptor](oracle_rollable:classic/place/descriptor) oracle. To spark an idea for an event or feature related to the settlement, roll on the [Action](oracle_rollable:classic/action_and_theme/action) and [Theme](oracle_rollable:classic/action_and_theme/theme) oracles.
     contents:
       trouble:
         name: Settlement Trouble
@@ -134,44 +134,44 @@ oracles:
             text: &Landscape_Feature |-
               __A feature of the landscape.__ Envision what it is. What makes it unusual or distinctive?
             # technically, these embedded tables are all labeled "Examples". should this be structured differently in order to convey this?
-            embed_table: classic/oracle_rollable/settlement/name/landscape_feature
+            embed_table: oracle_rollable:classic/settlement/name/landscape_feature
             oracle_rolls:
-              - oracle: classic/oracle_rollable/settlement/name/landscape_feature
+              - oracle: oracle_rollable:classic/settlement/name/landscape_feature
           - roll: { min: 16, max: 30 }
             text: &Manmade_Edifice |-
               __A manmade edifice.__ What is it? Why is it important to this settlement’s history?,
-            embed_table: classic/oracle_rollable/settlement/name/manmade_edifice
+            embed_table: oracle_rollable:classic/settlement/name/manmade_edifice
             oracle_rolls:
-              - oracle: classic/oracle_rollable/settlement/name/manmade_edifice
+              - oracle: oracle_rollable:classic/settlement/name/manmade_edifice
           - roll: { min: 31, max: 45 }
             text: &Creature |-
               __A creature.__ Why have the people of this settlement chosen this creature as their totem? How is it represented in art or rituals?
-            embed_table: classic/oracle_rollable/settlement/name/creature
+            embed_table: oracle_rollable:classic/settlement/name/creature
             oracle_rolls:
-              - oracle: classic/oracle_rollable/settlement/name/creature
+              - oracle: oracle_rollable:classic/settlement/name/creature
           - roll: { min: 46, max: 60 }
             text: &Historical_Event |-
               __A historical event.__ What happened here? What place or practice commemorates this event?
-            embed_table: classic/oracle_rollable/settlement/name/historical_event
+            embed_table: oracle_rollable:classic/settlement/name/historical_event
             oracle_rolls:
-              - oracle: classic/oracle_rollable/settlement/name/historical_event
+              - oracle: oracle_rollable:classic/settlement/name/historical_event
           - roll: { min: 61, max: 75 }
             text: &Old_World_Language |-
               __A word in an Old World language.__ What culture is represented by this word? What does it translate to?
-            embed_table: classic/oracle_rollable/settlement/name/old_world_language
+            embed_table: oracle_rollable:classic/settlement/name/old_world_language
             oracle_rolls:
-              - oracle: classic/oracle_rollable/settlement/name/old_world_language
+              - oracle: oracle_rollable:classic/settlement/name/old_world_language
           - roll: { min: 76, max: 90 }
             text: &Environmental_Aspect |-
               __A season or environmental aspect.__ What influence does the weather have on this settlement?
-            embed_table: classic/oracle_rollable/settlement/name/environmental_aspect
+            embed_table: oracle_rollable:classic/settlement/name/environmental_aspect
             oracle_rolls:
-              - oracle: classic/oracle_rollable/settlement/name/environmental_aspect
+              - oracle: oracle_rollable:classic/settlement/name/environmental_aspect
           - roll: { min: 91, max: 100 }
             text: 'Something Else...'
-            embed_table: classic/oracle_rollable/settlement/name/something_else
+            embed_table: oracle_rollable:classic/settlement/name/something_else
             oracle_rolls:
-              - oracle: classic/oracle_rollable/settlement/name/something_else
+              - oracle: oracle_rollable:classic/settlement/name/something_else
                 auto: true
     collections:
       name:
@@ -447,7 +447,7 @@ oracles:
         oracle_type: table_shared_rolls
         type: oracle_collection
         # template:
-        #   text: '{{text:classic/oracle_rollable/settlement/quick_name/prefix}}{{text:classic/oracle_rollable/settlement/quick_name/suffix}}'
+        #   text: '{{text:oracle_rollable:classic/settlement/quick_name/prefix}}{{text:oracle_rollable:classic/settlement/quick_name/suffix}}'
         _source: &CollectionSource
           <<: *Source
           page: 180

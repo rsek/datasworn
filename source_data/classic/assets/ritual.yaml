@@ -32,7 +32,7 @@ assets:
         # sub? https://game-icons.net/1x1/lorc/crow-dive.html
         abilities:
           - text: &move:Asset.Augur |-
-              When you summon a flock of crows and ask a single question, roll +wits. On a strong hit, you interpret their calls as a helpful omen. Envision the response ([Ask the Oracle](id:classic/move/fate/ask_the_oracle) if unsure) and take +2 momentum. On a weak hit, the crows ignore your question and offer a clue to an unrelated problem or opportunity in this area. Envision what you learn ([Ask the Oracle](id:classic/move/fate/ask_the_oracle) if unsure), and take +1 momentum.
+              When you summon a flock of crows and ask a single question, roll +wits. On a strong hit, you interpret their calls as a helpful omen. Envision the response ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure) and take +2 momentum. On a weak hit, the crows ignore your question and offer a clue to an unrelated problem or opportunity in this area. Envision what you learn ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure), and take +1 momentum.
             enabled: true
             moves:
               augur:
@@ -50,17 +50,17 @@ assets:
                 text: *move:Asset.Augur
                 outcomes:
                   strong_hit:
-                    text: On a __strong hit__, you interpret their calls as a helpful omen. Envision the response ([Ask the Oracle](id:classic/move/fate/ask_the_oracle) if unsure) and take +2 momentum.
+                    text: On a __strong hit__, you interpret their calls as a helpful omen. Envision the response ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure) and take +2 momentum.
                   weak_hit:
-                    text: On a __weak hit__, the crows ignore your question and offer a clue to an unrelated problem or opportunity in this area. Envision what you learn ([Ask the Oracle](id:classic/move/fate/ask_the_oracle) if unsure), and take +1 momentum.
+                    text: On a __weak hit__, the crows ignore your question and offer a clue to an unrelated problem or opportunity in this area. Envision what you learn ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure), and take +1 momentum.
                   miss: &MoveOutcome.Miss.Generic
                     text: |-
-                      On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](id:classic/move/fate/pay_the_price).
+                      On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price).
           - text: |-
-              As above, and the crows will also help guide you on the proper path. On a hit, add +1 on the next segment when you [Undertake a Journey](id:classic/move/adventure/undertake_a_journey).
+              As above, and the crows will also help guide you on the proper path. On a hit, add +1 on the next segment when you [Undertake a Journey](move:classic/adventure/undertake_a_journey).
             enhance_moves:
               - enhances:
-                  - classic/asset/ritual/augur.abilities/0.moves/augur
+                  - asset.ability.move:classic/ritual/augur.0.augur
                 roll_type: action_roll
           - &Ritual.Ability.2
             text: |-
@@ -69,7 +69,7 @@ assets:
               - &Ritual.Ability.2.enhancement
                 roll_type: action_roll
                 enhances:
-                  - classic/asset/ritual/augur.abilities/0.moves/augur
+                  - asset.ability.move:classic/ritual/augur.0.augur
       awakening:
         type: asset
         category: Ritual
@@ -80,7 +80,7 @@ assets:
         # icon not on game-icons
         abilities:
           - text: &move:Asset.Awakening |-
-              When you create a simulacrum, roll +heart. On a strong hit, your creation is given unnatural life. If it aids you as you make a move to assault or overcome an obstacle through strength, add +2. It has 3 health and suffers harm as appropriate, but is not a companion and may not be healed. At 0 health, it is dead. On a weak hit, as above, but if you roll a 1 on your action die when aided by your creation, you must [Face Danger](id:classic/move/adventure/face_danger) +heart to keep it from turning on you (as a formidable foe).
+              When you create a simulacrum, roll +heart. On a strong hit, your creation is given unnatural life. If it aids you as you make a move to assault or overcome an obstacle through strength, add +2. It has 3 health and suffers harm as appropriate, but is not a companion and may not be healed. At 0 health, it is dead. On a weak hit, as above, but if you roll a 1 on your action die when aided by your creation, you must [Face Danger](move:classic/adventure/face_danger) +heart to keep it from turning on you (as a formidable foe).
             enabled: true
             moves:
               awaken_simulacrum:
@@ -104,7 +104,7 @@ assets:
                     text: |-
                       On a __weak hit__, your creation is given unnatural life. If it aids you as you make a move to assault or overcome an obstacle through strength, add +2. It has 3 health and suffers harm as appropriate, but is not a companion and may not be healed. At 0 health, it is dead.
 
-                      However, if you roll a 1 on your action die when aided by your creation, you must [Face Danger](id:classic/move/adventure/face_danger) +heart to keep it from turning on you (as a formidable foe).
+                      However, if you roll a 1 on your action die when aided by your creation, you must [Face Danger](move:classic/adventure/face_danger) +heart to keep it from turning on you (as a formidable foe).
                   miss: *MoveOutcome.Miss.Generic
           - text: Your simulacrum has 6 health.
             enhance_asset:
@@ -116,7 +116,7 @@ assets:
             enhance_moves:
               - <<: *Ritual.Ability.2.enhancement
                 enhances:
-                  - classic/asset/ritual/awakening.abilities/0.moves/awaken_simulacrum
+                  - asset.ability.move:classic/ritual/awakening.0.awaken_simulacrum
         controls:
           health:
             field_type: condition_meter
@@ -133,7 +133,7 @@ assets:
         # icon not on game-icons
         abilities:
           - text: &move:Asset.Bind |-
-              When you wear an animal pelt and dance in moonlight, roll +wits. On a strong hit, you or an ally may wear the pelt and add +1 when making moves with the related stat (wolf-edge; bear-iron; deer-heart; fox-shadow; boar-wits). If the wearer rolls a 1 on their action die while making a move using the pelt, the magic is spent. On a weak hit, as above, but the wilds call as you dance; [Endure Stress](id:classic/move/suffer/endure_stress) (2 stress).
+              When you wear an animal pelt and dance in moonlight, roll +wits. On a strong hit, you or an ally may wear the pelt and add +1 when making moves with the related stat (wolf-edge; bear-iron; deer-heart; fox-shadow; boar-wits). If the wearer rolls a 1 on their action die while making a move using the pelt, the magic is spent. On a weak hit, as above, but the wilds call as you dance; [Endure Stress](move:classic/suffer/endure_stress) (2 stress).
             enabled: true
             moves:
               bind:
@@ -155,7 +155,7 @@ assets:
                       On a __strong hit__, you or an ally may wear the pelt and add +1 when making moves with the related stat (wolf-edge; bear-iron; deer-heart; fox-shadow; boar-wits). If the wearer rolls a 1 on their action die while making a move using the pelt, the magic is spent.
                   weak_hit:
                     text: |-
-                      On a __weak hit__, you succeed, but the wilds call as you dance; [Endure Stress](id:classic/move/suffer/endure_stress) (2 stress).
+                      On a __weak hit__, you succeed, but the wilds call as you dance; [Endure Stress](move:classic/suffer/endure_stress) (2 stress).
 
                       You or an ally may wear the pelt and add +1 when making moves with the related stat (wolf-edge; bear-iron; deer-heart; fox-shadow; boar-wits). If the wearer rolls a 1 on their action die while making a move using the pelt, the magic is spent.
                   miss: *MoveOutcome.Miss.Generic
@@ -163,13 +163,13 @@ assets:
               As above, and you may instead perform this ritual wearing the pelt of a beast. If you do, name the related stat and add +2 (instead of +1).
             enhance_moves:
               - enhances:
-                  - classic/asset/ritual/bind.abilities/0.moves/bind
+                  - asset.ability.move:classic/ritual/bind.0.bind
                 roll_type: action_roll
           - <<: *Ritual.Ability.2
             enhance_moves:
               - <<: *Ritual.Ability.2.enhancement
                 enhances:
-                  - classic/asset/ritual/bind.abilities/0.moves/bind
+                  - asset.ability.move:classic/ritual/bind.0.bind
       communion:
         type: asset
         category: Ritual
@@ -180,7 +180,7 @@ assets:
         # icon not on game-icons
         abilities:
           - text: &move:Asset.Communion |-
-              When you surround the remains of a recently deceased intelligent creature with lit candles, and summon its spirit, roll +heart. Add +1 if you share a bond. On a strong hit, the spirit appears and you may converse for a few minutes. Make moves as appropriate (add +1). On a weak hit, as above, but the spirit also delivers troubling news unrelated to your purpose. Envision what it tells you ([Ask the Oracle](id:classic/move/fate/ask_the_oracle) if unsure) and [Endure Stress](id:classic/move/suffer/endure_stress) (1 stress).
+              When you surround the remains of a recently deceased intelligent creature with lit candles, and summon its spirit, roll +heart. Add +1 if you share a bond. On a strong hit, the spirit appears and you may converse for a few minutes. Make moves as appropriate (add +1). On a weak hit, as above, but the spirit also delivers troubling news unrelated to your purpose. Envision what it tells you ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure) and [Endure Stress](move:classic/suffer/endure_stress) (1 stress).
             enabled: true
             moves:
               commune:
@@ -204,19 +204,19 @@ assets:
                     text: |-
                       On a __weak hit__, the spirit appears and you may converse for a few minutes. Make moves as appropriate (add +1).
 
-                      However, the spirit also delivers troubling news unrelated to your purpose. Envision what it tells you ([Ask the Oracle](id:classic/move/fate/ask_the_oracle) if unsure) and [Endure Stress](id:classic/move/suffer/endure_stress) (1 stress).
+                      However, the spirit also delivers troubling news unrelated to your purpose. Envision what it tells you ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure) and [Endure Stress](move:classic/suffer/endure_stress) (1 stress).
                   miss: *MoveOutcome.Miss.Generic
           - text: |-
               As above, and you may also commune with the long-dead.
             enhance_moves:
               - enhances:
-                  - classic/asset/ritual/communion.abilities/0.moves/commune
+                  - asset.ability.move:classic/ritual/communion.0.commune
                 roll_type: action_roll
           - <<: *Ritual.Ability.2
             enhance_moves:
               - <<: *Ritual.Ability.2.enhancement
                 enhances:
-                  - classic/asset/ritual/communion.abilities/0.moves/commune
+                  - asset.ability.move:classic/ritual/communion.0.commune
       divination:
         type: asset
         category: Ritual
@@ -227,7 +227,7 @@ assets:
         # https://game-icons.net/1x1/lorc/rune-stone.html
         abilities:
           - text: &move:Asset.Divination |-
-              When you take a drop of blood from a willing subject (not yourself) and cast the rune-carved stones, roll +heart. On a strong hit, you may read the runes to gain insight about the subject and people close to them, including information you and the subject have no knowledge of. If you use the reading to [Gather Information](id:classic/move/adventure/gather_information), [Compel](id:classic/move/relationship/compel), or [Forge a Bond](id:classic/move/relationship/forge_a_bond), add +1. On a weak hit, as above, but the runes reveal their secrets only with extra time and focus; suffer -2 momentum.
+              When you take a drop of blood from a willing subject (not yourself) and cast the rune-carved stones, roll +heart. On a strong hit, you may read the runes to gain insight about the subject and people close to them, including information you and the subject have no knowledge of. If you use the reading to [Gather Information](move:classic/adventure/gather_information), [Compel](move:classic/relationship/compel), or [Forge a Bond](move:classic/relationship/forge_a_bond), add +1. On a weak hit, as above, but the runes reveal their secrets only with extra time and focus; suffer -2 momentum.
             enabled: true
             moves:
               cast_runes:
@@ -248,26 +248,26 @@ assets:
                     text: |-
                       On a __strong hit__, you may read the runes to gain insight about the subject and people close to them, including information you and the subject have no knowledge of.
 
-                      If you use the reading to [Gather Information](id:classic/move/adventure/gather_information), [Compel](id:classic/move/relationship/compel), or [Forge a Bond](id:classic/move/relationship/forge_a_bond), add +1.
+                      If you use the reading to [Gather Information](move:classic/adventure/gather_information), [Compel](move:classic/relationship/compel), or [Forge a Bond](move:classic/relationship/forge_a_bond), add +1.
                   weak_hit:
                     text: |-
                       On a __weak hit__, you succeed, but the runes reveal their secrets only with extra time and focus; suffer -2 momentum.
 
                       You may read the runes to gain insight about the subject and people close to them, including information you and the subject have no knowledge of.
 
-                      If you use the reading to [Gather Information](id:classic/move/adventure/gather_information), [Compel](id:classic/move/relationship/compel), or [Forge a Bond](id:classic/move/relationship/forge_a_bond), add +1.
+                      If you use the reading to [Gather Information](move:classic/adventure/gather_information), [Compel](move:classic/relationship/compel), or [Forge a Bond](move:classic/relationship/forge_a_bond), add +1.
                   miss: *MoveOutcome.Miss.Generic
           - text: |-
               As above, and your divination can also reveal information about the subject’s future.
             enhance_moves:
               - enhances:
-                  - classic/asset/ritual/divination.abilities/0.moves/cast_runes
+                  - asset.ability.move:classic/ritual/divination.0.cast_runes
                 roll_type: action_roll
           - <<: *Ritual.Ability.2
             enhance_moves:
               - <<: *Ritual.Ability.2.enhancement
                 enhances:
-                  - classic/asset/ritual/divination.abilities/0.moves/cast_runes
+                  - asset.ability.move:classic/ritual/divination.0.cast_runes
       invoke:
         type: asset
         category: Ritual
@@ -278,7 +278,7 @@ assets:
         # https://game-icons.net/1x1/lorc/embrassed-energy.html
         abilities:
           - text: &move:Asset.Invoke |-
-              When you consume the mystical essence of your surroundings, roll +wits. On a strong hit, add the value of your action die to your essence track (max 6). You may then [Secure an Advantage](id:classic/move/adventure/secure_an_advantage) or [Face Danger](id:classic/move/adventure/face_danger) +essence to create minor mystical effects or illusions. If you do, suffer -1 essence and take +1 momentum on a hit. On a weak hit, as above, but capturing these energies is harrowing; [Endure Stress](id:classic/move/suffer/endure_stress) (2 stress).
+              When you consume the mystical essence of your surroundings, roll +wits. On a strong hit, add the value of your action die to your essence track (max 6). You may then [Secure an Advantage](move:classic/adventure/secure_an_advantage) or [Face Danger](move:classic/adventure/face_danger) +essence to create minor mystical effects or illusions. If you do, suffer -1 essence and take +1 momentum on a hit. On a weak hit, as above, but capturing these energies is harrowing; [Endure Stress](move:classic/suffer/endure_stress) (2 stress).
             enabled: true
             moves:
               invoke:
@@ -299,17 +299,17 @@ assets:
                     text: |-
                       On a __strong hit__, add the value of your action die to your essence track (max 6).
 
-                      You may then [Secure an Advantage](id:classic/move/adventure/secure_an_advantage) or [Face Danger](id:classic/move/adventure/face_danger) +essence to create minor mystical effects or illusions. If you do, suffer -1 essence and take +1 momentum on a hit.
+                      You may then [Secure an Advantage](move:classic/adventure/secure_an_advantage) or [Face Danger](move:classic/adventure/face_danger) +essence to create minor mystical effects or illusions. If you do, suffer -1 essence and take +1 momentum on a hit.
                   weak_hit:
                     text: |-
-                      On a __weak hit__, add the value of your action die to your essence track (max 6). However, capturing these energies is harrowing; [Endure Stress](id:classic/move/suffer/endure_stress) (2 stress).
+                      On a __weak hit__, add the value of your action die to your essence track (max 6). However, capturing these energies is harrowing; [Endure Stress](move:classic/suffer/endure_stress) (2 stress).
 
-                      You may then [Secure an Advantage](id:classic/move/adventure/secure_an_advantage) or [Face Danger](id:classic/move/adventure/face_danger) +essence to create minor mystical effects or illusions. If you do, suffer -1 essence and take +1 momentum on a hit.
+                      You may then [Secure an Advantage](move:classic/adventure/secure_an_advantage) or [Face Danger](move:classic/adventure/face_danger) +essence to create minor mystical effects or illusions. If you do, suffer -1 essence and take +1 momentum on a hit.
                   miss: *MoveOutcome.Miss.Generic
             enhance_moves:
               - enhances:
-                  - classic/move/adventure/secure_an_advantage
-                  - classic/move/adventure/face_danger
+                  - move:classic/adventure/secure_an_advantage
+                  - move:classic/adventure/face_danger
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -320,10 +320,10 @@ assets:
                           assets: null
                           control: essence
           - text: |-
-              You may [Compel](id:classic/move/relationship/compel) +essence (and suffer -1 essence) through a show of power.
+              You may [Compel](move:classic/relationship/compel) +essence (and suffer -1 essence) through a show of power.
             enhance_moves:
               - enhances:
-                  - classic/move/relationship/compel
+                  - move:classic/relationship/compel
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -337,7 +337,7 @@ assets:
               When you perform this ritual, add +1 and take +1 essence on a hit.
             enhance_moves:
               - enhances:
-                  - classic/asset/ritual/invoke.abilities/0.moves/invoke
+                  - asset.ability.move:classic/ritual/invoke.0.invoke
                 roll_type: action_roll
         controls:
           essence:
@@ -355,7 +355,7 @@ assets:
         # icon not on game-icons
         abilities:
           - text: &move:Asset.Keen |-
-              When you hold a weapon and sing a keen for those it has killed, roll +heart. On a strong hit, the wielder inflicts +1 harm when they [Strike](id:classic/move/combat/strike) or [Clash](id:classic/move/combat/clash). If they roll a 1 on their action die when making a move to inflict harm, the magic is spent. On a weak hit, as above, but the voices of those who were slain join in your song; [Endure Stress](id:classic/move/suffer/endure_stress) (2 stress).
+              When you hold a weapon and sing a keen for those it has killed, roll +heart. On a strong hit, the wielder inflicts +1 harm when they [Strike](move:classic/combat/strike) or [Clash](move:classic/combat/clash). If they roll a 1 on their action die when making a move to inflict harm, the magic is spent. On a weak hit, as above, but the voices of those who were slain join in your song; [Endure Stress](move:classic/suffer/endure_stress) (2 stress).
             enabled: true
             moves:
               keen:
@@ -374,24 +374,24 @@ assets:
                 outcomes:
                   strong_hit:
                     text: |-
-                      On a __strong hit__, the wielder inflicts +1 harm when they [Strike](id:classic/move/combat/strike) or [Clash](id:classic/move/combat/clash). If they roll a 1 on their action die when making a move to inflict harm, the magic is spent.
+                      On a __strong hit__, the wielder inflicts +1 harm when they [Strike](move:classic/combat/strike) or [Clash](move:classic/combat/clash). If they roll a 1 on their action die when making a move to inflict harm, the magic is spent.
                   weak_hit:
                     text: |-
-                      On a __weak hit__, you succeed, but the voices of those who were slain join in your song; [Endure Stress](id:classic/move/suffer/endure_stress) (2 stress).
+                      On a __weak hit__, you succeed, but the voices of those who were slain join in your song; [Endure Stress](move:classic/suffer/endure_stress) (2 stress).
 
-                      The wielder inflicts +1 harm when they [Strike](id:classic/move/combat/strike) or [Clash](id:classic/move/combat/clash). If they roll a 1 on their action die when making a move to inflict harm, the magic is spent.
+                      The wielder inflicts +1 harm when they [Strike](move:classic/combat/strike) or [Clash](move:classic/combat/clash). If they roll a 1 on their action die when making a move to inflict harm, the magic is spent.
                   miss: *MoveOutcome.Miss.Generic
           - text: |-
-              As above, and the wielder may also (one time only) add +1 and take +2 momentum on a hit when they [Draw the Circle](id:classic/move/relationship/draw_the_circle), [Enter the Fray](id:classic/move/combat/enter_the_fray), or [Battle](id:classic/move/combat/battle).
+              As above, and the wielder may also (one time only) add +1 and take +2 momentum on a hit when they [Draw the Circle](move:classic/relationship/draw_the_circle), [Enter the Fray](move:classic/combat/enter_the_fray), or [Battle](move:classic/combat/battle).
             enhance_moves:
               - enhances:
-                  - classic/asset/ritual/keen.abilities/0.moves/keen
+                  - asset.ability.move:classic/ritual/keen.0.keen
                 roll_type: action_roll
           - <<: *Ritual.Ability.2
             enhance_moves:
               - <<: *Ritual.Ability.2.enhancement
                 enhances:
-                  - classic/asset/ritual/keen.abilities/0.moves/keen
+                  - asset.ability.move:classic/ritual/keen.0.keen
       leech:
         type: asset
         category: Ritual
@@ -435,13 +435,13 @@ assets:
               As above, and you may also touch an ally or companion and let them take any remaining points as +health or +momentum.
             enhance_moves:
               - enhances:
-                  - classic/asset/ritual/leech.abilities/0.moves/draw_blood_rune
+                  - asset.ability.move:classic/ritual/leech.0.draw_blood_rune
                 roll_type: action_roll
           - <<: *Ritual.Ability.2
             enhance_moves:
               - <<: *Ritual.Ability.2.enhancement
                 enhances:
-                  - classic/asset/ritual/leech.abilities/0.moves/draw_blood_rune
+                  - asset.ability.move:classic/ritual/leech.0.draw_blood_rune
       lightbearer:
         type: asset
         category: Ritual
@@ -457,7 +457,7 @@ assets:
             value: 0
             moves:
               recover:
-                - classic/asset/ritual/lightbearer.abilities/0.moves/capture_light
+                - asset.ability.move:classic/ritual/lightbearer.0.capture_light
         # https://game-icons.net/1x1/lorc/explosion-rays.html
         abilities:
           - text: &move:Asset.Lightbearer |-
@@ -490,11 +490,11 @@ assets:
                       When you make a move to overcome or navigate darkness, you may add +2 and suffer -1 light.
                   miss: *MoveOutcome.Miss.Generic
           - text: |-
-              You may use your light to [Strike](id:classic/move/combat/strike) or [Clash](id:classic/move/combat/clash) against a dark-dwelling foe. Choose the amount of light to unleash, and roll +light (instead of +iron or +edge). Suffer -light equal to that amount. On a hit, your harm is 1+your unleashed light.
+              You may use your light to [Strike](move:classic/combat/strike) or [Clash](move:classic/combat/clash) against a dark-dwelling foe. Choose the amount of light to unleash, and roll +light (instead of +iron or +edge). Suffer -light equal to that amount. On a hit, your harm is 1+your unleashed light.
             enhance_moves:
               - enhances:
-                  - classic/move/combat/strike
-                  - classic/move/combat/clash
+                  - move:classic/combat/strike
+                  - move:classic/combat/clash
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -508,7 +508,7 @@ assets:
             enhance_moves:
               - <<: *Ritual.Ability.2.enhancement
                 enhances:
-                  - classic/asset/ritual/lightbearer.abilities/0.moves/capture_light
+                  - asset.ability.move:classic/ritual/lightbearer.0.capture_light
       scry:
         type: asset
         category: Ritual
@@ -519,10 +519,10 @@ assets:
         # icon not on game-icons
         abilities:
           - text: &move:Asset.Scry |-
-              When you look into flames to study a remote person or location, roll +shadow. You or someone with you must have knowledge of the target. On a strong hit, you may [Gather Information](id:classic/move/adventure/gather_information) through observation using +shadow or +wits. On a weak hit, as above, but the flames are hungry; choose one to sacrifice.
+              When you look into flames to study a remote person or location, roll +shadow. You or someone with you must have knowledge of the target. On a strong hit, you may [Gather Information](move:classic/adventure/gather_information) through observation using +shadow or +wits. On a weak hit, as above, but the flames are hungry; choose one to sacrifice.
 
-                * Your blood: [Endure Harm](id:classic/move/suffer/endure_harm) (2 harm).
-                * Something precious: [Endure Stress](id:classic/move/suffer/endure_stress) (2 stress).
+                * Your blood: [Endure Harm](move:classic/suffer/endure_harm) (2 harm).
+                * Something precious: [Endure Stress](move:classic/suffer/endure_stress) (2 stress).
                 * Provisions: Suffer -2 supply.
             enabled: true
             moves:
@@ -542,28 +542,28 @@ assets:
                 outcomes:
                   strong_hit:
                     text: |-
-                      On a __strong hit__, you may [Gather Information](id:classic/move/adventure/gather_information) through observation using +shadow or +wits.
+                      On a __strong hit__, you may [Gather Information](move:classic/adventure/gather_information) through observation using +shadow or +wits.
                   weak_hit:
                     text: |-
                       On a __weak hit__, you succeed, but the flames are hungry; choose one to sacrifice.
 
-                        * Your blood: [Endure Harm](id:classic/move/suffer/endure_harm) (2 harm).
-                        * Something precious: [Endure Stress](id:classic/move/suffer/endure_stress) (2 stress).
+                        * Your blood: [Endure Harm](move:classic/suffer/endure_harm) (2 harm).
+                        * Something precious: [Endure Stress](move:classic/suffer/endure_stress) (2 stress).
                         * Provisions: Suffer -2 supply.
 
-                      You may [Gather Information](id:classic/move/adventure/gather_information) through observation using +shadow or +wits.
+                      You may [Gather Information](move:classic/adventure/gather_information) through observation using +shadow or +wits.
                   miss: *MoveOutcome.Miss.Generic
           - text: |-
               As above, and you may instead study a past event.
             enhance_moves:
               - roll_type: action_roll
                 enhances:
-                  - classic/asset/ritual/scry.abilities/0.moves/scry
+                  - asset.ability.move:classic/ritual/scry.0.scry
           - <<: *Ritual.Ability.2
             enhance_moves:
               - <<: *Ritual.Ability.2.enhancement
                 enhances:
-                  - classic/asset/ritual/scry.abilities/0.moves/scry
+                  - asset.ability.move:classic/ritual/scry.0.scry
       shadow_walk:
         type: asset
         category: Ritual
@@ -574,7 +574,7 @@ assets:
         # https://game-icons.net/1x1/lorc/concentric-crescents.html
         abilities:
           - text: &move:Asset.Shadow-Walk |-
-              When you cloak yourself with the gossamer veil of the shadow realms, roll +shadow. On a strong hit, take +1 momentum. Then, reroll any dice (one time only) when you make a move by ambushing, hiding, or sneaking. On a weak hit, as above, but the shadows try to lead you astray. You must first [Face Danger](id:classic/move/adventure/face_danger) to find your way.
+              When you cloak yourself with the gossamer veil of the shadow realms, roll +shadow. On a strong hit, take +1 momentum. Then, reroll any dice (one time only) when you make a move by ambushing, hiding, or sneaking. On a weak hit, as above, but the shadows try to lead you astray. You must first [Face Danger](move:classic/adventure/face_danger) to find your way.
             enabled: true
             moves:
               shadow_walk:
@@ -596,21 +596,21 @@ assets:
                       On a __strong hit__, take +1 momentum. Then, reroll any dice (one time only) when you make a move by ambushing, hiding, or sneaking.
                   weak_hit:
                     text: |-
-                      On a __weak hit__, you succeed, but the shadows try to lead you astray. You must first [Face Danger](id:classic/move/adventure/face_danger) to find your way.
+                      On a __weak hit__, you succeed, but the shadows try to lead you astray. You must first [Face Danger](move:classic/adventure/face_danger) to find your way.
 
                       Take +1 momentum. Then, reroll any dice (one time only) when you make a move by ambushing, hiding, or sneaking.
                   miss: *MoveOutcome.Miss.Generic
           - text: |-
-              As above, and you may also travel along the hidden paths of the shadow realms to [Undertake a Journey](id:classic/move/adventure/undertake_a_journey) using +shadow (instead of +wits). If you do, [Endure Stress](id:classic/move/suffer/endure_stress) (1 stress) and mark progress twice on a strong hit.
+              As above, and you may also travel along the hidden paths of the shadow realms to [Undertake a Journey](move:classic/adventure/undertake_a_journey) using +shadow (instead of +wits). If you do, [Endure Stress](move:classic/suffer/endure_stress) (1 stress) and mark progress twice on a strong hit.
             enhance_moves:
               - enhances:
-                  - classic/asset/ritual/shadow_walk.abilities/0.moves/shadow_walk
+                  - asset.ability.move:classic/ritual/shadow_walk.0.shadow_walk
                 roll_type: action_roll
           - <<: *Ritual.Ability.2
             enhance_moves:
               - <<: *Ritual.Ability.2.enhancement
                 enhances:
-                  - classic/asset/ritual/shadow_walk.abilities/0.moves/shadow_walk
+                  - asset.ability.move:classic/ritual/shadow_walk.0.shadow_walk
       sway:
         type: asset
         category: Ritual
@@ -621,7 +621,7 @@ assets:
         # icon not on game-icons
         abilities:
           - text: &move:Asset.Sway |-
-              When you speak a person’s name three times to the wind, roll +wits. On a strong hit, the wind whispers of this person’s need. Envision what you hear ([Ask the Oracle](id:classic/move/fate/ask_the_oracle) if unsure). If you use this information or fulfill this need when you [Compel](id:classic/move/relationship/compel) them, you may reroll any dice (one time only). On a weak hit, as above, but this person’s need creates a troubling dilemma or complication; [Endure Stress](id:classic/move/suffer/endure_stress) (1 stress).
+              When you speak a person’s name three times to the wind, roll +wits. On a strong hit, the wind whispers of this person’s need. Envision what you hear ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure). If you use this information or fulfill this need when you [Compel](move:classic/relationship/compel) them, you may reroll any dice (one time only). On a weak hit, as above, but this person’s need creates a troubling dilemma or complication; [Endure Stress](move:classic/suffer/endure_stress) (1 stress).
             enabled: true
             moves:
               sway:
@@ -640,25 +640,25 @@ assets:
                 outcomes:
                   strong_hit:
                     text: |-
-                      On a __strong hit__, the wind whispers of this person’s need. Envision what you hear ([Ask the Oracle](id:classic/move/fate/ask_the_oracle) if unsure). If you use this information or fulfill this need when you [Compel](id:classic/move/relationship/compel) them, you may reroll any dice (one time only).
+                      On a __strong hit__, the wind whispers of this person’s need. Envision what you hear ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure). If you use this information or fulfill this need when you [Compel](move:classic/relationship/compel) them, you may reroll any dice (one time only).
                   weak_hit:
                     text: |-
-                      On a __weak hit__, you succeed, but this person’s need creates a troubling dilemma or complication; [Endure Stress](id:classic/move/suffer/endure_stress) (1 stress).
+                      On a __weak hit__, you succeed, but this person’s need creates a troubling dilemma or complication; [Endure Stress](move:classic/suffer/endure_stress) (1 stress).
 
-                      The wind whispers of this person’s need. Envision what you hear ([Ask the Oracle](id:classic/move/fate/ask_the_oracle) if unsure). If you use this information or fulfill this need when you [Compel](id:classic/move/relationship/compel) them, you may reroll any dice (one time only).
+                      The wind whispers of this person’s need. Envision what you hear ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure). If you use this information or fulfill this need when you [Compel](move:classic/relationship/compel) them, you may reroll any dice (one time only).
                   miss: *MoveOutcome.Miss.Generic
           - text: |-
-              As above, and if you score a strong hit when you [Compel](id:classic/move/relationship/compel), you may also reroll any dice (one time only) when you [Gather Information](id:classic/move/adventure/gather_information) from this person.
+              As above, and if you score a strong hit when you [Compel](move:classic/relationship/compel), you may also reroll any dice (one time only) when you [Gather Information](move:classic/adventure/gather_information) from this person.
             enhance_moves:
               - enhances:
-                  - classic/asset/ritual/shadow_walk.abilities/0.moves/shadow_walk
+                  - asset.ability.move:classic/ritual/shadow_walk.0.shadow_walk
                 roll_type: action_roll
                 # TODO: ongoing effect
           - <<: *Ritual.Ability.2
             enhance_moves:
               - <<: *Ritual.Ability.2.enhancement
                 enhances:
-                  - classic/asset/ritual/sway.abilities/0.moves/sway
+                  - asset.ability.move:classic/ritual/sway.0.sway
       talisman:
         type: asset
         category: Ritual
@@ -697,13 +697,13 @@ assets:
               As above, and you may instead fashion a charm which aids the wearer against all supernatural threats, such as mystic rituals or horrors.
             enhance_moves:
               - enhances:
-                  - classic/asset/ritual/talisman.abilities/0.moves/fashion_talisman
+                  - asset.ability.move:classic/ritual/talisman.0.fashion_talisman
                 roll_type: action_roll
           - <<: *Ritual.Ability.2
             enhance_moves:
               - <<: *Ritual.Ability.2.enhancement
                 enhances:
-                  - classic/asset/ritual/talisman.abilities/0.moves/fashion_talisman
+                  - asset.ability.move:classic/ritual/talisman.0.fashion_talisman
       tether:
         type: asset
         category: Ritual
@@ -714,7 +714,7 @@ assets:
         # derived from https://game-icons.net/1x1/lorc/sonic-lightning.html ?
         abilities:
           - text: &move:Asset.Tether |-
-              When you commune with the spirits of a place, roll +heart. If you share a bond with someone there, add +1. On a strong hit, you are tethered. When you [Undertake a Journey](id:classic/move/adventure/undertake_a_journey) to return, you may roll +spirit or +heart (instead of +wits), and take +1 momentum on a hit. When you [Reach Your Destination](id:classic/move/adventure/reach_your_destination), take +2 momentum on a strong hit. The tether is lost if you perform this ritual elsewhere, or when you [Face Desolation](id:classic/move/suffer/face_desolation). On a weak hit, as above, but the spirits reveal a disturbing aspect of the place; [Endure Stress](id:classic/move/suffer/endure_stress) (2 stress).
+              When you commune with the spirits of a place, roll +heart. If you share a bond with someone there, add +1. On a strong hit, you are tethered. When you [Undertake a Journey](move:classic/adventure/undertake_a_journey) to return, you may roll +spirit or +heart (instead of +wits), and take +1 momentum on a hit. When you [Reach Your Destination](move:classic/adventure/reach_your_destination), take +2 momentum on a strong hit. The tether is lost if you perform this ritual elsewhere, or when you [Face Desolation](move:classic/suffer/face_desolation). On a weak hit, as above, but the spirits reveal a disturbing aspect of the place; [Endure Stress](move:classic/suffer/endure_stress) (2 stress).
             enabled: true
             moves:
               tether:
@@ -733,16 +733,16 @@ assets:
                 outcomes:
                   strong_hit:
                     text: |-
-                      On a __strong hit__, you are tethered. When you [Undertake a Journey](id:classic/move/adventure/undertake_a_journey) to return, you may roll +spirit or +heart (instead of +wits), and take +1 momentum on a hit. When you [Reach Your Destination](id:classic/move/adventure/reach_your_destination), take +2 momentum on a strong hit. The tether is lost if you perform this ritual elsewhere, or when you [Face Desolation](id:classic/move/suffer/face_desolation).
+                      On a __strong hit__, you are tethered. When you [Undertake a Journey](move:classic/adventure/undertake_a_journey) to return, you may roll +spirit or +heart (instead of +wits), and take +1 momentum on a hit. When you [Reach Your Destination](move:classic/adventure/reach_your_destination), take +2 momentum on a strong hit. The tether is lost if you perform this ritual elsewhere, or when you [Face Desolation](move:classic/suffer/face_desolation).
                   weak_hit:
                     text: |-
-                      On a __weak hit__, you succeed, but the spirits reveal a disturbing aspect of the place; [Endure Stress](id:classic/move/suffer/endure_stress) (2 stress).
+                      On a __weak hit__, you succeed, but the spirits reveal a disturbing aspect of the place; [Endure Stress](move:classic/suffer/endure_stress) (2 stress).
 
-                      You are tethered. When you [Undertake a Journey](id:classic/move/adventure/undertake_a_journey) to return, you may roll +spirit or +heart (instead of +wits), and take +1 momentum on a hit. When you [Reach Your Destination](id:classic/move/adventure/reach_your_destination), take +2 momentum on a strong hit. The tether is lost if you perform this ritual elsewhere, or when you [Face Desolation](id:classic/move/suffer/face_desolation).
+                      You are tethered. When you [Undertake a Journey](move:classic/adventure/undertake_a_journey) to return, you may roll +spirit or +heart (instead of +wits), and take +1 momentum on a hit. When you [Reach Your Destination](move:classic/adventure/reach_your_destination), take +2 momentum on a strong hit. The tether is lost if you perform this ritual elsewhere, or when you [Face Desolation](move:classic/suffer/face_desolation).
                   miss: *MoveOutcome.Miss.Generic
             enhance_moves:
               - enhances:
-                  - classic/move/adventure/undertake_a_journey
+                  - move:classic/adventure/undertake_a_journey
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -754,13 +754,13 @@ assets:
                         - using: condition_meter
                           condition_meter: spirit
               - enhances:
-                  - classic/move/suffer/face_desolation
+                  - move:classic/suffer/face_desolation
                 roll_type: action_roll
           - text: |-
-              As above, and you may also reroll any dice when you [Sojourn](id:classic/move/relationship/sojourn) in the tethered place.
+              As above, and you may also reroll any dice when you [Sojourn](move:classic/relationship/sojourn) in the tethered place.
             enhance_moves:
               - enhances:
-                  - classic/move/relationship/sojourn
+                  - move:classic/relationship/sojourn
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -771,7 +771,7 @@ assets:
             enhance_moves:
               - <<: *Ritual.Ability.2.enhancement
                 enhances:
-                  - classic/asset/ritual/tether.abilities/0.moves/tether
+                  - asset.ability.move:classic/ritual/tether.0.tether
       totem:
         type: asset
         category: Ritual
@@ -782,7 +782,7 @@ assets:
         # icon not on game-icons
         abilities:
           - text: &move:Asset.Totem |-
-              When you hold a totem of your animal or beast companion and focus on it, roll +heart. On a strong hit, you are bound together. Add +1 and take +1 momentum on a hit when you use a companion ability. If you roll a 1 on your action die when using a companion ability, the magic is spent. On a weak hit, as above, but creating this connection is unsettling; [Endure Stress](id:classic/move/suffer/endure_stress) (1 stress).
+              When you hold a totem of your animal or beast companion and focus on it, roll +heart. On a strong hit, you are bound together. Add +1 and take +1 momentum on a hit when you use a companion ability. If you roll a 1 on your action die when using a companion ability, the magic is spent. On a weak hit, as above, but creating this connection is unsettling; [Endure Stress](move:classic/suffer/endure_stress) (1 stress).
             enabled: true
             moves:
               focus_totem:
@@ -804,7 +804,7 @@ assets:
                       On a __strong hit__, you are bound together. Add +1 and take +1 momentum on a hit when you use a companion ability. If you roll a 1 on your action die when using a companion ability, the magic is spent.
                   weak_hit:
                     text: |-
-                      On a __weak hit__, you succeed, but creating this connection is unsettling; [Endure Stress](id:classic/move/suffer/endure_stress) (1 stress).
+                      On a __weak hit__, you succeed, but creating this connection is unsettling; [Endure Stress](move:classic/suffer/endure_stress) (1 stress).
 
                       You are bound together. Add +1 and take +1 momentum on a hit when you use a companion ability. If you roll a 1 on your action die when using a companion ability, the magic is spent.
                   miss: *MoveOutcome.Miss.Generic
@@ -812,13 +812,13 @@ assets:
               As above, and you may also perceive the world through your companion’s senses while you make moves aided by them (even when you are apart).
             enhance_moves:
               - enhances:
-                  - classic/asset/ritual/totem.abilities/0.moves/focus_totem
+                  - asset.ability.move:classic/ritual/totem.0.focus_totem
                 roll_type: action_roll
           - <<: *Ritual.Ability.2
             enhance_moves:
               - <<: *Ritual.Ability.2.enhancement
                 enhances:
-                  - classic/asset/ritual/totem.abilities/0.moves/focus_totem
+                  - asset.ability.move:classic/ritual/totem.0.focus_totem
       visage:
         type: asset
         category: Ritual
@@ -830,7 +830,7 @@ assets:
         # possible substitute: https://game-icons.net/1x1/lorc/skull-mask.html
         abilities:
           - text: &move:Asset.Visage |-
-              When you paint yourself in blood and ash, roll +wits. On a strong hit, you may add +2 and take +1 momentum on a hit when you [Secure an Advantage](id:classic/move/adventure/secure_an_advantage) or [Compel](id:classic/move/relationship/compel) using fear or intimidation. If you roll a 1 on your action die when making a move aided by your visage, the magic is spent. On a weak hit, as above, but the blood must be your own; [Endure Harm](id:classic/move/suffer/endure_harm) (2 harm).
+              When you paint yourself in blood and ash, roll +wits. On a strong hit, you may add +2 and take +1 momentum on a hit when you [Secure an Advantage](move:classic/adventure/secure_an_advantage) or [Compel](move:classic/relationship/compel) using fear or intimidation. If you roll a 1 on your action die when making a move aided by your visage, the magic is spent. On a weak hit, as above, but the blood must be your own; [Endure Harm](move:classic/suffer/endure_harm) (2 harm).
             enabled: true
             moves:
               paint_visage:
@@ -849,24 +849,24 @@ assets:
                 outcomes:
                   strong_hit:
                     text: |-
-                      On a __strong hit__, you may add +2 and take +1 momentum on a hit when you [Secure an Advantage](id:classic/move/adventure/secure_an_advantage) or [Compel](id:classic/move/relationship/compel) using fear or intimidation. If you roll a 1 on your action die when making a move aided by your visage, the magic is spent.
+                      On a __strong hit__, you may add +2 and take +1 momentum on a hit when you [Secure an Advantage](move:classic/adventure/secure_an_advantage) or [Compel](move:classic/relationship/compel) using fear or intimidation. If you roll a 1 on your action die when making a move aided by your visage, the magic is spent.
                   weak_hit:
                     text: |-
-                      On a __weak hit__, you succeed, but the blood must be your own; [Endure Harm](id:classic/move/suffer/endure_harm) (2 harm).
+                      On a __weak hit__, you succeed, but the blood must be your own; [Endure Harm](move:classic/suffer/endure_harm) (2 harm).
 
-                      You may add +2 and take +1 momentum on a hit when you [Secure an Advantage](id:classic/move/adventure/secure_an_advantage) or [Compel](id:classic/move/relationship/compel) using fear or intimidation. If you roll a 1 on your action die when making a move aided by your visage, the magic is spent.
+                      You may add +2 and take +1 momentum on a hit when you [Secure an Advantage](move:classic/adventure/secure_an_advantage) or [Compel](move:classic/relationship/compel) using fear or intimidation. If you roll a 1 on your action die when making a move aided by your visage, the magic is spent.
                   miss: *MoveOutcome.Miss.Generic
           - text: |-
-              As above, and you may also add +1 when you [Strike](id:classic/move/combat/strike), [Clash](id:classic/move/combat/clash), or [Battle](id:classic/move/combat/battle).
+              As above, and you may also add +1 when you [Strike](move:classic/combat/strike), [Clash](move:classic/combat/clash), or [Battle](move:classic/combat/battle).
             enhance_moves:
               - enhances:
-                  - classic/asset/ritual/visage.abilities/0.moves/paint_visage
+                  - asset.ability.move:classic/ritual/visage.0.paint_visage
                 roll_type: action_roll
           - <<: *Ritual.Ability.2
             enhance_moves:
               - <<: *Ritual.Ability.2.enhancement
                 enhances:
-                  - classic/asset/ritual/visage.abilities/0.moves/paint_visage
+                  - asset.ability.move:classic/ritual/visage.0.paint_visage
       ward:
         type: asset
         category: Ritual
@@ -917,10 +917,10 @@ assets:
               As above, and improve the effect of your ward (+2 momentum, +2 harm, and [‘almost certain’](id:classic/oracle_rollable/move/ask_the_oracle/almost_certain)).
             enhance_moves:
               - enhances:
-                  - classic/asset/ritual/ward.abilities/0.moves/ward
+                  - asset.ability.move:classic/ritual/ward.0.ward
                 roll_type: action_roll
           - <<: *Ritual.Ability.2
             enhance_moves:
               - <<: *Ritual.Ability.2.enhancement
                 enhances:
-                  - classic/asset/ritual/ward.abilities/0.moves/ward
+                  - asset.ability.move:classic/ritual/ward.0.ward

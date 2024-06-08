@@ -26,7 +26,7 @@ oracles:
         #   part_of_speech: [fragment]
         #   tags: [peril, event, present]
         summary: |-
-          This oracle will introduce narrative turns, troubles, and revelations. It can be used as an alternative to the [Pay the Price](id:starforged/move/fate/pay_the_price) table when you encounter a negative outcome at a crucial moment. In particular, you might use this table after rolling matched 10s on the challenge dice.
+          This oracle will introduce narrative turns, troubles, and revelations. It can be used as an alternative to the [Pay the Price](move:starforged/fate/pay_the_price) table when you encounter a negative outcome at a crucial moment. In particular, you might use this table after rolling matched 10s on the challenge dice.
         rows:
           - roll: { min: 1, max: 4 }
             text: Crucial equipment or device fails
@@ -105,7 +105,7 @@ oracles:
         # usage:
         recommended_rolls: { min: 1, max: 2 }
         summary: |-
-          When you [Gather Information](id:starforged/move/adventure/gather_information) to investigate a mystery, you might uncover clues in the form of messages, rumors, eyewitness reports, data, or physical evidence. You can use this oracle to help reveal what this evidence connects to or implicates. Then, use the outcome of the [Gather Information](id:starforged/move/adventure/gather_information) roll—strong hit, weak hit, or miss—to guide whether the clue brings clarity or complications.
+          When you [Gather Information](move:starforged/adventure/gather_information) to investigate a mystery, you might uncover clues in the form of messages, rumors, eyewitness reports, data, or physical evidence. You can use this oracle to help reveal what this evidence connects to or implicates. Then, use the outcome of the [Gather Information](move:starforged/adventure/gather_information) roll—strong hit, weak hit, or miss—to guide whether the clue brings clarity or complications.
         rows:
           - roll: { min: 1, max: 3 }
             text: 'Affirms a previously understood fact or clue'
@@ -168,11 +168,11 @@ oracles:
           - roll: { min: 88, max: 90 }
             text: 'Suggests an imposter or forgery'
           - roll: { min: 91, max: 100 }
-            text: '[Descriptor](id:starforged/oracle_rollable/core/descriptor) + [Focus](id:starforged/oracle_rollable/core/focus)'
+            text: '[Descriptor](oracle_rollable:starforged/core/descriptor) + [Focus](oracle_rollable:starforged/core/focus)'
             oracle_rolls:
-              - oracle: starforged/oracle_rollable/core/descriptor
+              - oracle: oracle_rollable:starforged/core/descriptor
                 auto: true
-              - oracle: starforged/oracle_rollable/core/focus
+              - oracle: oracle_rollable:starforged/core/focus
                 auto: true
       anomaly_effect:
         name: Anomaly Effect

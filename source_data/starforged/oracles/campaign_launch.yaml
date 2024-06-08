@@ -32,167 +32,167 @@ oracles:
         rows:
           - roll: { min: 1, max: 5 }
             text: Battlefield Medic
-            text2: '[Healer](id:starforged/asset/path/healer); [Veteran](id:starforged/asset/path/veteran)'
+            text2: '[Healer](asset:starforged/path/healer); [Veteran](asset:starforged/path/veteran)'
             <<: &i18n
               _i18n:
                 text:
                   part_of_speech: common_noun
             # suggestions:
             #   assets:
-            #     - starforged/asset/path/healer
-            #     - starforged/asset/path/veteran
+            #     - asset:starforged/path/healer
+            #     - asset:starforged/path/veteran
           - <<: *i18n
             roll: { min: 6, max: 10 }
             text: Delegate
-            text2: '[Bannersworn](id:starforged/asset/path/bannersworn); [Diplomat](id:starforged/asset/path/diplomat)'
+            text2: '[Bannersworn](asset:starforged/path/bannersworn); [Diplomat](asset:starforged/path/diplomat)'
             # suggestions:
             #   assets:
-            #     - starforged/asset/path/bannersworn
-            #     - starforged/asset/path/diplomat
+            #     - asset:starforged/path/bannersworn
+            #     - asset:starforged/path/diplomat
           - <<: *i18n
             roll: { min: 11, max: 15 }
             text: Exobiologist
-            text2: '[Lore Hunter](id:starforged/asset/path/lore_hunter); [Naturalist](id:starforged/asset/path/naturalist)'
+            text2: '[Lore Hunter](asset:starforged/path/lore_hunter); [Naturalist](asset:starforged/path/naturalist)'
             # suggestions:
             #   assets:
-            #     - starforged/asset/path/lore_hunter
-            #     - starforged/asset/path/naturalist
+            #     - asset:starforged/path/lore_hunter
+            #     - asset:starforged/path/naturalist
           - <<: *i18n
             roll: { min: 16, max: 20 }
             text: Far Trader
-            text2: '[Navigator](id:starforged/asset/path/navigator); [Trader](id:starforged/asset/path/trader)'
+            text2: '[Navigator](asset:starforged/path/navigator); [Trader](asset:starforged/path/trader)'
             # suggestions:
             #   assets:
-            #     - starforged/asset/path/navigator
-            #     - starforged/asset/path/trader
+            #     - asset:starforged/path/navigator
+            #     - asset:starforged/path/trader
           - <<: *i18n
             roll: { min: 21, max: 25 }
             text: Fugitive Hunter
-            text2: '[Armored](id:starforged/asset/path/armored); [Bounty Hunter](id:starforged/asset/path/bounty_hunter)'
+            text2: '[Armored](asset:starforged/path/armored); [Bounty Hunter](asset:starforged/path/bounty_hunter)'
             # suggestions:
             #   assets:
-            #     - starforged/asset/path/armored
-            #     - starforged/asset/path/bounty_hunter
+            #     - asset:starforged/path/armored
+            #     - asset:starforged/path/bounty_hunter
           - <<: *i18n
             roll: { min: 26, max: 30 }
             text: Hacker
-            text2: '[Infiltrator](id:starforged/asset/path/infiltrator); [Tech](id:starforged/asset/path/tech)'
+            text2: '[Infiltrator](asset:starforged/path/infiltrator); [Tech](asset:starforged/path/tech)'
             # suggestions:
             #   assets:
-            #     - starforged/asset/path/infiltrator
-            #     - starforged/asset/path/tech
+            #     - asset:starforged/path/infiltrator
+            #     - asset:starforged/path/tech
           - <<: *i18n
             roll: { min: 31, max: 35 }
             text: Hotshot Pilot
-            text2: '[Ace](id:starforged/asset/path/ace); [Navigator](id:starforged/asset/path/navigator)'
+            text2: '[Ace](asset:starforged/path/ace); [Navigator](asset:starforged/path/navigator)'
             # suggestions:
             #   assets:
-            #     - starforged/asset/path/ace
-            #     - starforged/asset/path/navigator
+            #     - asset:starforged/path/ace
+            #     - asset:starforged/path/navigator
           - <<: *i18n
             roll: { min: 36, max: 40 }
             text: Interstellar Scout
-            text2: '[Explorer](id:starforged/asset/path/explorer); [Voidborn](id:starforged/asset/path/voidborn)'
+            text2: '[Explorer](asset:starforged/path/explorer); [Voidborn](asset:starforged/path/voidborn)'
             # suggestions:
             #   assets:
-            #     - starforged/asset/path/explorer
-            #     - starforged/asset/path/voidborn
+            #     - asset:starforged/path/explorer
+            #     - asset:starforged/path/voidborn
           - <<: *i18n
             roll: { min: 41, max: 45 }
             text: Monster Hunter
-            text2: '[Gunner](id:starforged/asset/path/gunner); [Slayer](id:starforged/asset/path/slayer)'
+            text2: '[Gunner](asset:starforged/path/gunner); [Slayer](asset:starforged/path/slayer)'
             # suggestions:
             #   assets:
-            #     - starforged/asset/path/gunner
-            #     - starforged/asset/path/slayer
+            #     - asset:starforged/path/gunner
+            #     - asset:starforged/path/slayer
           - <<: *i18n
             roll: { min: 46, max: 50 }
             text: Occultist
-            text2: '[Outcast](id:starforged/asset/path/outcast); [Shade](id:starforged/asset/path/shade)'
+            text2: '[Outcast](asset:starforged/path/outcast); [Shade](asset:starforged/path/shade)'
             # suggestions:
             #   assets:
-            #     - starforged/asset/path/outcast
-            #     - starforged/asset/path/shade
+            #     - asset:starforged/path/outcast
+            #     - asset:starforged/path/shade
           - <<: *i18n
             roll: { min: 51, max: 55 }
             text: Operative
-            text2: '[Infiltrator](id:starforged/asset/path/infiltrator); [Blademaster](id:starforged/asset/path/blademaster)'
+            text2: '[Infiltrator](asset:starforged/path/infiltrator); [Blademaster](asset:starforged/path/blademaster)'
             # suggestions:
             #   assets:
-            #     - starforged/asset/path/infiltrator
-            #     - starforged/asset/path/blademaster
+            #     - asset:starforged/path/infiltrator
+            #     - asset:starforged/path/blademaster
           - <<: *i18n
             roll: { min: 56, max: 60 }
             text: Outlaw
-            text2: '[Fugitive](id:starforged/asset/path/fugitive); [Gunslinger](id:starforged/asset/path/gunslinger)'
+            text2: '[Fugitive](asset:starforged/path/fugitive); [Gunslinger](asset:starforged/path/gunslinger)'
             # suggestions:
             #   assets:
-            #     - starforged/asset/path/fugitive
-            #     - starforged/asset/path/gunslinger
+            #     - asset:starforged/path/fugitive
+            #     - asset:starforged/path/gunslinger
           - <<: *i18n
             roll: { min: 61, max: 65 }
             text: Private Investigator
-            text2: '[Brawler](id:starforged/asset/path/brawler); [Sleuth](id:starforged/asset/path/sleuth)'
+            text2: '[Brawler](asset:starforged/path/brawler); [Sleuth](asset:starforged/path/sleuth)'
             # suggestions:
             #   assets:
-            #     - starforged/asset/path/brawler
-            #     - starforged/asset/path/sleuth
+            #     - asset:starforged/path/brawler
+            #     - asset:starforged/path/sleuth
           - <<: *i18n
             roll: { min: 66, max: 70 }
             text: Prophet
-            text2: '[Devotant](id:starforged/asset/path/devotant); [Seer](id:starforged/asset/path/seer)'
+            text2: '[Devotant](asset:starforged/path/devotant); [Seer](asset:starforged/path/seer)'
             # suggestions:
             #   assets:
-            #     - starforged/asset/path/devotant
-            #     - starforged/asset/path/seer
+            #     - asset:starforged/path/devotant
+            #     - asset:starforged/path/seer
           - <<: *i18n
             roll: { min: 71, max: 75 }
             text: Psionicist
-            text2: '[Kinetic](id:starforged/asset/path/kinetic); [Vestige](id:starforged/asset/path/vestige)'
+            text2: '[Kinetic](asset:starforged/path/kinetic); [Vestige](asset:starforged/path/vestige)'
             # suggestions:
             #   assets:
-            #     - starforged/asset/path/kinetic
-            #     - starforged/asset/path/vestige
+            #     - asset:starforged/path/kinetic
+            #     - asset:starforged/path/vestige
           - <<: *i18n
             roll: { min: 76, max: 80 }
             text: Smuggler
-            text2: '[Courier](id:starforged/asset/path/courier); [Scoundrel](id:starforged/asset/path/scoundrel)'
+            text2: '[Courier](asset:starforged/path/courier); [Scoundrel](asset:starforged/path/scoundrel)'
             # suggestions:
             #   assets:
-            #     - starforged/asset/path/courier
-            #     - starforged/asset/path/scoundrel
+            #     - asset:starforged/path/courier
+            #     - asset:starforged/path/scoundrel
           - <<: *i18n
             roll: { min: 81, max: 85 }
             text: Spiritualist
-            text2: '[Haunted](id:starforged/asset/path/haunted); [Empath](id:starforged/asset/path/empath)'
+            text2: '[Haunted](asset:starforged/path/haunted); [Empath](asset:starforged/path/empath)'
             # suggestions:
             #   assets:
-            #     - starforged/asset/path/haunted
-            #     - starforged/asset/path/empath
+            #     - asset:starforged/path/haunted
+            #     - asset:starforged/path/empath
           - <<: *i18n
             roll: { min: 86, max: 90 }
             text: Starship Engineer
-            text2: '[Gearhead](id:starforged/asset/path/gearhead); [Tech](id:starforged/asset/path/tech)'
+            text2: '[Gearhead](asset:starforged/path/gearhead); [Tech](asset:starforged/path/tech)'
             # suggestions:
             #   assets:
-            #     - starforged/asset/path/gearhead
-            #     - starforged/asset/path/tech
+            #     - asset:starforged/path/gearhead
+            #     - asset:starforged/path/tech
           - <<: *i18n
             roll: { min: 91, max: 95 }
             text: Supersoldier
-            text2: '[Augmented](id:starforged/asset/path/augmented); [Mercenary](id:starforged/asset/path/mercenary)'
+            text2: '[Augmented](asset:starforged/path/augmented); [Mercenary](asset:starforged/path/mercenary)'
             # suggestions:
             #   assets:
-            #     - starforged/asset/path/augmented
-            #     - starforged/asset/path/mercenary
+            #     - asset:starforged/path/augmented
+            #     - asset:starforged/path/mercenary
           - <<: *i18n
             roll: { min: 96, max: 100 }
             text: Tomb Raider
-            text2: '[Scavenger](id:starforged/asset/path/scavenger); [Scoundrel](id:starforged/asset/path/scoundrel)'
+            text2: '[Scavenger](asset:starforged/path/scavenger); [Scoundrel](asset:starforged/path/scoundrel)'
             # suggestions:
             #   assets:
-            #     - starforged/asset/path/scavenger
-            #     - starforged/asset/path/scoundrel
+            #     - asset:starforged/path/scavenger
+            #     - asset:starforged/path/scoundrel
       backstory_prompts:
         name: Backstory Prompts
         oracle_type: table_text

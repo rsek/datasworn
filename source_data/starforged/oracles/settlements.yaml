@@ -186,11 +186,11 @@ oracles:
             text: 'Within or near [Precursor Vault](id:starforged/oracle_collection/vaults)'
             # suggestions: [*obj:Vault]
           - roll: { min: 91, max: 100 }
-            text: '[Descriptor](id:starforged/oracle_rollable/core/descriptor) + [Focus](id:starforged/oracle_rollable/core/focus)'
+            text: '[Descriptor](oracle_rollable:starforged/core/descriptor) + [Focus](oracle_rollable:starforged/core/focus)'
             oracle_rolls:
-              - oracle: starforged/oracle_rollable/core/descriptor
+              - oracle: oracle_rollable:starforged/core/descriptor
                 auto: true
-              - oracle: starforged/oracle_rollable/core/focus
+              - oracle: oracle_rollable:starforged/core/focus
                 auto: true
 
       initial_contact:
@@ -377,11 +377,11 @@ oracles:
             _i18n: *CommonNoun
           - roll: { min: 96, max: 100 }
             <<: &ActionTheme
-              text: '[Action](id:starforged/oracle_rollable/core/action) + [Theme](id:starforged/oracle_rollable/core/theme)'
+              text: '[Action](oracle_rollable:starforged/core/action) + [Theme](oracle_rollable:starforged/core/theme)'
               oracle_rolls:
-                - oracle: starforged/oracle_rollable/core/action
+                - oracle: oracle_rollable:starforged/core/action
                   auto: true
-                - oracle: starforged/oracle_rollable/core/theme
+                - oracle: oracle_rollable:starforged/core/theme
                   auto: true
       trouble:
         name: Settlement Trouble

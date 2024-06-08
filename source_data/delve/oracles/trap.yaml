@@ -18,9 +18,9 @@ oracles:
     summary: Identify the characteristics and effects of a trap within a site.
     # TODO: replace the page ref for scene challenges to an article on the topic, once that's available
     description: |-
-      If you encounter a trap within a site, use these oracles to better understand the nature or function of this obstacle. Roll once for an [Event](id:delve/oracle_rollable/trap/event) and once for a [Component](id:delve/oracle_rollable/trap/component), and interpret the response as appropriate to the situation and environment. A trap might be a physical, supernatural, or an ambush by a denizen.
+      If you encounter a trap within a site, use these oracles to better understand the nature or function of this obstacle. Roll once for an [Event](oracle_rollable:delve/trap/event) and once for a [Component](oracle_rollable:delve/trap/component), and interpret the response as appropriate to the situation and environment. A trap might be a physical, supernatural, or an ambush by a denizen.
 
-      If you are in a position to overcome or avoid the trap, make moves to see what happens. A simple trap might be dealt with in a single action, such as through the [Face Danger](id:classic/move/adventure/face_danger) move. A complex trap could be represented as a scene challenge (*Ironsworn Core*, page 234).
+      If you are in a position to overcome or avoid the trap, make moves to see what happens. A simple trap might be dealt with in a single action, such as through the [Face Danger](move:classic/adventure/face_danger) move. A complex trap could be represented as a scene challenge (*Ironsworn Core*, page 234).
     contents:
       trap:
         name: Event
@@ -29,7 +29,7 @@ oracles:
         type: oracle_rollable
         suggestions:
           oracles:
-            - delve/oracle_rollable/trap/component
+            - oracle_rollable:delve/trap/component
         _source:
           <<: *Source
           page: 217
@@ -119,7 +119,7 @@ oracles:
         type: oracle_rollable
         suggestions:
           oracles:
-            - delve/oracle_rollable/trap/event
+            - oracle_rollable:delve/trap/event
         _source:
           <<: *Source
           page: 217

@@ -19,7 +19,7 @@ assets:
     description: |-
       The __command vehicle__ is your interstellar STARSHIP. It is a default asset for your character, taken when you begin your campaign. If you are playing with others, this is a shared asset; each of you may use the STARSHIP's abilities while aboard the craft.
 
-      The command vehicle has an integrity meter and starts at 5 integrity. When your STARSHIP takes a hit, make the [Withstand Damage](id:starforged/move/suffer/withstand_damage) move to see what happens.
+      The command vehicle has an integrity meter and starts at 5 integrity. When your STARSHIP takes a hit, make the [Withstand Damage](move:starforged/suffer/withstand_damage) move to see what happens.
     contents:
       starship:
         name: Starship
@@ -34,7 +34,7 @@ assets:
           attachments:
             max: null
             assets:
-              - '*/asset/module/*'
+              - 'asset:*/module/*'
           options: &Options_Name
             name:
               field_type: text
@@ -49,9 +49,9 @@ assets:
               min: 0
               moves:
                 suffer:
-                  - starforged/move/suffer/withstand_damage
+                  - move:starforged/suffer/withstand_damage
                 recover:
-                  - starforged/move/recover/repair
+                  - move:starforged/recover/repair
               controls:
                 battered: &Vehicle.Battered
                   label: battered
@@ -63,17 +63,17 @@ assets:
                   is_impact: true
         abilities:
           - text: |-
-              Your armed, multipurpose starship is suited for interstellar and atmospheric flight. It can comfortably transport several people, has space for cargo, and can carry and launch support vehicles. When you [Advance](id:starforged/move/legacy/advance), you may spend experience to equip this vehicle with module assets.
+              Your armed, multipurpose starship is suited for interstellar and atmospheric flight. It can comfortably transport several people, has space for cargo, and can carry and launch support vehicles. When you [Advance](move:starforged/legacy/advance), you may spend experience to equip this vehicle with module assets.
             enabled: true
             enhance_moves:
               - enhances:
-                  - starforged/move/legacy/advance
+                  - move:starforged/legacy/advance
                 roll_type: no_roll
           - text: |-
-              When you [Finish an Expedition](id:starforged/move/exploration/finish_an_expedition) (dangerous or greater) in your starship and score a hit, this journey strengthened your ties to your ship and any fellow travelers. You and your allies may mark 1 tick on your bonds legacy track.
+              When you [Finish an Expedition](move:starforged/exploration/finish_an_expedition) (dangerous or greater) in your starship and score a hit, this journey strengthened your ties to your ship and any fellow travelers. You and your allies may mark 1 tick on your bonds legacy track.
             enhance_moves:
               - enhances:
-                  - starforged/move/exploration/finish_an_expedition
+                  - move:starforged/exploration/finish_an_expedition
                 roll_type: progress_roll
                 trigger:
                   conditions:
@@ -81,10 +81,10 @@ assets:
                       method: null
                       text: In your starship (dangerous or greater)
           - text: |-
-              When you [Withstand Damage](id:starforged/move/suffer/withstand_damage), you may roll +heart. If you do, [Endure Stress](id:starforged/move/suffer/endure_stress) (-1) on a weak hit or miss.
+              When you [Withstand Damage](move:starforged/suffer/withstand_damage), you may roll +heart. If you do, [Endure Stress](move:starforged/suffer/endure_stress) (-1) on a weak hit or miss.
             enhance_moves:
               - enhances:
-                  - starforged/move/suffer/withstand_damage
+                  - move:starforged/suffer/withstand_damage
                 roll_type: action_roll
                 trigger:
                   conditions:

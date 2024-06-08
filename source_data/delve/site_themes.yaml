@@ -37,8 +37,8 @@ site_themes:
         text: Ancient trap
         suggestions: &SuggestTrap
           oracles:
-            - classic/oracle_rollable/trap/event
-            - classic/oracle_rollable/trap/component
+            - oracle_rollable:classic/trap/event
+            - oracle_rollable:classic/trap/component
       - roll: { min: 6, max: 10 }
         text: Hazardous architecture or terrain
       - roll: { min: 11, max: 12 }

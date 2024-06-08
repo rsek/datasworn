@@ -143,11 +143,11 @@ oracles:
               - &Feature.12
                 roll: { min: 97, max: 100 }
                 text: |-
-                  [Descriptor](id:starforged/oracle_rollable/core/descriptor) + [Focus](id:starforged/oracle_rollable/core/focus)
+                  [Descriptor](oracle_rollable:starforged/core/descriptor) + [Focus](oracle_rollable:starforged/core/focus)
                 oracle_rolls:
-                  - oracle: starforged/oracle_rollable/core/descriptor
+                  - oracle: oracle_rollable:starforged/core/descriptor
                     auto: true
-                  - oracle: starforged/oracle_rollable/core/focus
+                  - oracle: oracle_rollable:starforged/core/focus
                     auto: true
           peril:
             <<: &Peril
@@ -190,11 +190,11 @@ oracles:
               - &Peril.10
                 roll: { min: 91, max: 98 }
                 text: |-
-                  [Action](id:starforged/oracle_rollable/core/action) + [Theme](id:starforged/oracle_rollable/core/theme)
+                  [Action](oracle_rollable:starforged/core/action) + [Theme](oracle_rollable:starforged/core/theme)
                 oracle_rolls:
-                  - oracle: starforged/oracle_rollable/core/action
+                  - oracle: oracle_rollable:starforged/core/action
                     auto: true
-                  - oracle: starforged/oracle_rollable/core/theme
+                  - oracle: oracle_rollable:starforged/core/theme
                     auto: true
               - &Peril.11
                 roll: { min: 99, max: 100 }

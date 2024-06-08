@@ -87,7 +87,7 @@ const AssetConditionMeterMixin = Type.Object({
 			{
 				suffer: Type.Optional(
 					Type.Array(
-						Type.Ref(Id.MoveIdWildcard, {
+						Type.Ref(Id.AnyMoveIdWildcard, {
 							examples: [
 								'classic/moves/suffer/companion_endure_harm',
 								'starforged/moves/suffer/companion_takes_a_hit',
@@ -102,7 +102,7 @@ const AssetConditionMeterMixin = Type.Object({
 				),
 				recover: Type.Optional(
 					Type.Array(
-						Type.Ref(Id.MoveIdWildcard, {
+						Type.Ref(Id.AnyMoveIdWildcard, {
 							examples: [
 								'classic/moves/adventure/heal',
 								'classic/moves/adventure/make_camp',

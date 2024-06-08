@@ -10,13 +10,13 @@ oracles:
     description: |-
       These oracles support the optional threat mechanics detailed in Chapter 6.
 
-      You can use the [Category](id:delve/oracle_rollable/threat/category) oracle above to randomly select a broad type of threat for your campaign. If you are told to roll twice, take both results and decide how these two threats act together or represent a more complex situation. For example, choosing both a [Malignant Plague](id:delve/oracle_rollable/threat/malignant_plague) and [Zealous Cult](id:delve/oracle_rollable/threat/zealous_cult) might signify an evil sect which has unleashed a sickness upon the Ironlands in service to some dark god.
+      You can use the [Category](oracle_rollable:delve/threat/category) oracle above to randomly select a broad type of threat for your campaign. If you are told to roll twice, take both results and decide how these two threats act together or represent a more complex situation. For example, choosing both a [Malignant Plague](oracle_rollable:delve/threat/malignant_plague) and [Zealous Cult](oracle_rollable:delve/threat/zealous_cult) might signify an evil sect which has unleashed a sickness upon the Ironlands in service to some dark god.
 
-      For additional detail, use other oracles as appropriate. For example, you can look to the [Action](id:classic/oracle_rollable/action_and_theme/action) and [Theme](id:classic/oracle_rollable/action_and_theme/theme) oracles (Ironsworn Core, page 174) or [Character Goal](id:classic/oracle_rollable/character/goal) oracle (Ironsworn Core, page 182) to define the motivations of a [Scheming Leader](id:delve/oracle_rollable/threat/scheming_leader).
+      For additional detail, use other oracles as appropriate. For example, you can look to the [Action](oracle_rollable:classic/action_and_theme/action) and [Theme](oracle_rollable:classic/action_and_theme/theme) oracles (Ironsworn Core, page 174) or [Character Goal](oracle_rollable:classic/character/goal) oracle (Ironsworn Core, page 182) to define the motivations of a [Scheming Leader](oracle_rollable:delve/threat/scheming_leader).
 
-      Once you’ve introduced a threat, consider how it endangers something or someone important to you, and [Swear an Iron Vow](id:classic/move/quest/swear_an_iron_vow) to see its goal undone.
+      Once you’ve introduced a threat, consider how it endangers something or someone important to you, and [Swear an Iron Vow](move:classic/quest/swear_an_iron_vow) to see its goal undone.
 
-      Then, as you [Advance a Threat](id:delve/move/threat/advance_a_threat), you can roll on the oracle table for your specific threat to generate an action, approach, or complication. Interpret the oracle’s answer as appropriate to the nature of the threat and the current situation.
+      Then, as you [Advance a Threat](move:delve/threat/advance_a_threat), you can roll on the oracle table for your specific threat to generate an action, approach, or complication. Interpret the oracle’s answer as appropriate to the nature of the threat and the current situation.
 
       If you aren’t using the threat mechanics within your campaign, you can use still these oracles to inspire details for enemies, troubles, and complications.
     _source:
@@ -40,50 +40,50 @@ oracles:
         canonical_name: 'Threat: Category'
         rows:
           - roll: { min: 1, max: 10 }
-            text: '[Burgeoning Conflict](id:delve/oracle_rollable/threat/burgeoning_conflict)'
+            text: '[Burgeoning Conflict](oracle_rollable:delve/threat/burgeoning_conflict)'
             # suggestions:
             #   oracles:
-            #     - delve/oracle_rollable/threat/burgeoning_conflict
+            #     - oracle_rollable:delve/threat/burgeoning_conflict
           - roll: { min: 11, max: 20 }
-            text: '[Cursed Site](id:delve/oracle_rollable/threat/cursed_site)'
+            text: '[Cursed Site](oracle_rollable:delve/threat/cursed_site)'
             # suggestions:
             #   oracles:
-            #     - delve/oracle_rollable/threat/cursed_site
+            #     - oracle_rollable:delve/threat/cursed_site
           - roll: { min: 21, max: 30 }
-            text: '[Environmental Calamity](id:delve/oracle_rollable/threat/environmental_calamity)'
+            text: '[Environmental Calamity](oracle_rollable:delve/threat/environmental_calamity)'
             # suggestions:
             #   oracles:
-            #     - delve/oracle_rollable/threat/environmental_calamity
+            #     - oracle_rollable:delve/threat/environmental_calamity
           - roll: { min: 31, max: 40 }
-            text: '[Malignant Plague](id:delve/oracle_rollable/threat/malignant_plague)'
+            text: '[Malignant Plague](oracle_rollable:delve/threat/malignant_plague)'
             # suggestions:
             #   oracles:
-            #     - delve/oracle_rollable/threat/malignant_plague
+            #     - oracle_rollable:delve/threat/malignant_plague
           - roll: { min: 41, max: 50 }
-            text: '[Rampaging Creature](id:delve/oracle_rollable/threat/rampaging_creature)'
+            text: '[Rampaging Creature](oracle_rollable:delve/threat/rampaging_creature)'
             # suggestions:
             #   oracles:
-            #     - delve/oracle_rollable/threat/rampaging_creature
+            #     - oracle_rollable:delve/threat/rampaging_creature
           - roll: { min: 51, max: 60 }
-            text: '[Ravaging Horde](id:delve/oracle_rollable/threat/ravaging_horde)'
+            text: '[Ravaging Horde](oracle_rollable:delve/threat/ravaging_horde)'
             # suggestions:
             #   oracles:
-            #     - delve/oracle_rollable/threat/ravaging_horde
+            #     - oracle_rollable:delve/threat/ravaging_horde
           - roll: { min: 61, max: 70 }
-            text: '[Scheming Leader](id:delve/oracle_rollable/threat/scheming_leader)'
+            text: '[Scheming Leader](oracle_rollable:delve/threat/scheming_leader)'
             # suggestions:
             #   oracles:
-            #     - delve/oracle_rollable/threat/scheming_leader
+            #     - oracle_rollable:delve/threat/scheming_leader
           - roll: { min: 71, max: 80 }
-            text: '[Power-Hungry Mystic](id:delve/oracle_rollable/threat/power_hungry_mystic)'
+            text: '[Power-Hungry Mystic](oracle_rollable:delve/threat/power_hungry_mystic)'
             # suggestions:
             #   oracles:
-            #     - delve/oracle_rollable/threat/power_hungry_mystic
+            #     - oracle_rollable:delve/threat/power_hungry_mystic
           - roll: { min: 81, max: 90 }
-            text: '[Zealous Cult](id:delve/oracle_rollable/threat/zealous_cult)'
+            text: '[Zealous Cult](oracle_rollable:delve/threat/zealous_cult)'
             # suggestions:
             #   oracles:
-            #     - delve/oracle_rollable/threat/zealous_cult
+            #     - oracle_rollable:delve/threat/zealous_cult
           - roll: { min: 91, max: 100 }
             text: Roll twice
             oracle_rolls:

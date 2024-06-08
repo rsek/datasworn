@@ -280,7 +280,7 @@ oracles:
         oracle_type: table_text
         type: oracle_rollable
         canonical_name: 'Oracle 6: Location Descriptor'
-        summary: Use this oracle to add detail to the [Location](id:classic/oracle_rollable/place/location) or [Coastal Waters Location](id:classic/oracle_rollable/place/coastal_waters_location) oracles, or by itself to generate a description of a location. Roll more than once for extra detail.
+        summary: Use this oracle to add detail to the [Location](oracle_rollable:classic/place/location) or [Coastal Waters Location](oracle_rollable:classic/place/coastal_waters_location) oracles, or by itself to generate a description of a location. Roll more than once for extra detail.
         _source:
           <<: *Source
           title: Ironsworn Rulebook

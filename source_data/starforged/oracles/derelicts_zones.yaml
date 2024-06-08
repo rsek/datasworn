@@ -31,7 +31,7 @@ oracles:
               type: oracle_rollable
               name: Area
               summary: |-
-                Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you [Undertake an Expedition](id:starforged/move/exploration/undertake_an_expedition), an area can serve as a waypoint in your survey of the derelict.
+                Roll on this table to help envision the spaces you encounter in that segment of your exploration. Each zone may consist of one or more areas as appropriate to what you envision for the overall complexity of the derelict. If you [Undertake an Expedition](move:starforged/exploration/undertake_an_expedition), an area can serve as a waypoint in your survey of the derelict.
             _source: *CollectionSource
             rows:
               - roll: { min: 1, max: 50 }
@@ -99,11 +99,11 @@ oracles:
                 text: Wrecked passage or debris
               - roll: { min: 96, max: 100 }
                 <<: &DescriptorFocus
-                  text: '[Descriptor](id:starforged/oracle_rollable/core/descriptor) + [Focus](id:starforged/oracle_rollable/core/focus)'
+                  text: '[Descriptor](oracle_rollable:starforged/core/descriptor) + [Focus](oracle_rollable:starforged/core/focus)'
                   oracle_rolls:
-                    - oracle: starforged/oracle_rollable/core/descriptor
+                    - oracle: oracle_rollable:starforged/core/descriptor
                       auto: true
-                    - oracle: starforged/oracle_rollable/core/focus
+                    - oracle: oracle_rollable:starforged/core/focus
                       auto: true
           peril:
             <<: &Peril
@@ -143,11 +143,11 @@ oracles:
                 text: Unsettling sound or disturbance
               - &Peril.9
                 roll: { min: 91, max: 98 }
-                text: '[Action](id:starforged/oracle_rollable/core/action) + [Theme](id:starforged/oracle_rollable/core/theme)'
+                text: '[Action](oracle_rollable:starforged/core/action) + [Theme](oracle_rollable:starforged/core/theme)'
                 oracle_rolls:
-                  - oracle: starforged/oracle_rollable/core/action
+                  - oracle: oracle_rollable:starforged/core/action
                     auto: true
-                  - oracle: starforged/oracle_rollable/core/theme
+                  - oracle: oracle_rollable:starforged/core/theme
                     auto: true
               - &Peril.10
                 roll: { min: 99, max: 100 }
@@ -162,7 +162,7 @@ oracles:
               type: oracle_rollable
               name: Opportunity
               summary: |-
-                Roll on this table when you want inspiration for a beneficial encounter or event within a derelict, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:starforged/move/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:starforged/move/exploration/explore_a_waypoint) and find an opportunity.
+                Roll on this table when you want inspiration for a beneficial encounter or event within a derelict, such as when you roll a strong hit with a match as you [Undertake an Expedition](move:starforged/exploration/undertake_an_expedition), or if you [Explore a Waypoint](move:starforged/exploration/explore_a_waypoint) and find an opportunity.
             rows:
               - &Opportunity.0
                 roll: { min: 1, max: 20 }

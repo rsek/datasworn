@@ -6,7 +6,7 @@ rarities:
   ayethins_journal:
     type: rarity
     name: Ayethin’s Journal
-    asset: classic/asset/path/alchemist
+    asset: asset:classic/path/alchemist
     _source:
       <<: &Source
         title: 'Ironsworn: Delve'
@@ -23,7 +23,7 @@ rarities:
   black_fang:
     type: rarity
     name: Black Fang
-    asset: classic/asset/path/animal_kin
+    asset: asset:classic/path/animal_kin
     _source:
       <<: *Source
       page: 182
@@ -34,7 +34,7 @@ rarities:
   resolute_banner:
     type: rarity
     name: Resolute Banner
-    asset: classic/asset/path/banner_sworn
+    asset: asset:classic/path/banner_sworn
     _source:
       <<: *Source
       page: 182
@@ -46,7 +46,7 @@ rarities:
   cairn_stone_of_the_sundered:
     type: rarity
     name: Cairn Stone of the Sundered
-    asset: classic/asset/path/battle_scarred
+    asset: asset:classic/path/battle_scarred
     _source:
       <<: *Source
       page: 182
@@ -59,7 +59,7 @@ rarities:
   bracer_of_the_first_blood:
     type: rarity
     name: Bracer of the First Blood
-    asset: classic/asset/path/blade_bound
+    asset: asset:classic/path/blade_bound
     _source:
       <<: *Source
       page: 183
@@ -72,7 +72,7 @@ rarities:
   waterskin_of_fellowship:
     type: rarity
     name: Waterskin of Fellowship
-    asset: classic/asset/path/bonded
+    asset: asset:classic/path/bonded
     _source:
       <<: *Source
       page: 183
@@ -85,7 +85,7 @@ rarities:
   scarves_of_the_northern_lights:
     type: rarity
     name: Scarves of the Northern Lights
-    asset: classic/asset/path/dancer
+    asset: asset:classic/path/dancer
     _source:
       <<: *Source
       page: 183
@@ -98,7 +98,7 @@ rarities:
   founders_reliquary:
     type: rarity
     name: Founder’s Reliquary
-    asset: classic/asset/path/devotant
+    asset: asset:classic/path/devotant
     _source:
       <<: *Source
       page: 184
@@ -109,7 +109,7 @@ rarities:
   sigil_of_the_broken_circlet:
     type: rarity
     name: Sigil of the Broken Circlet
-    asset: classic/asset/path/empowered
+    asset: asset:classic/path/empowered
     _source:
       <<: *Source
       page: 184
@@ -120,7 +120,7 @@ rarities:
   coin_of_favor:
     type: rarity
     name: Coin of Favor
-    asset: classic/asset/path/fortune_hunter
+    asset: asset:classic/path/fortune_hunter
     _source:
       <<: *Source
       page: 184
@@ -132,7 +132,7 @@ rarities:
   silverstone_pestle:
     type: rarity
     name: Silverstone Pestle
-    asset: classic/asset/path/herbalist
+    asset: asset:classic/path/herbalist
     _source:
       <<: *Source
       page: 184
@@ -143,7 +143,7 @@ rarities:
   unbreakable_torc:
     type: rarity
     name: Unbreakable Torc
-    asset: classic/asset/path/honorbound
+    asset: asset:classic/path/honorbound
     _source:
       <<: *Source
       page: 185
@@ -154,7 +154,7 @@ rarities:
   blackguards_baldric:
     type: rarity
     name: Blackguard’s Baldric
-    asset: classic/asset/path/improviser
+    asset: asset:classic/path/improviser
     _source:
       <<: *Source
       page: 185
@@ -165,7 +165,7 @@ rarities:
   basilisk_cloak:
     type: rarity
     name: Basilisk Cloak
-    asset: classic/asset/path/infiltrator
+    asset: asset:classic/path/infiltrator
     _source:
       <<: *Source
       page: 185
@@ -176,7 +176,7 @@ rarities:
   horn_of_the_mammoth:
     type: rarity
     name: Horn of the Mammoth
-    asset: classic/asset/path/loyalist
+    asset: asset:classic/path/loyalist
     _source:
       <<: *Source
       page: 185
@@ -190,7 +190,7 @@ rarities:
   progenitor_shard:
     type: rarity
     name: Progenitor Shard
-    asset: classic/asset/path/masked
+    asset: asset:classic/path/masked
     _source:
       <<: *Source
       page: 186
@@ -201,7 +201,7 @@ rarities:
   sundered_sword:
     type: rarity
     name: Sundered Sword
-    asset: classic/asset/path/oathbreaker
+    asset: asset:classic/path/oathbreaker
     _source:
       <<: *Source
       page: 186
@@ -212,7 +212,7 @@ rarities:
   mark_of_the_exile:
     type: rarity
     name: Mark of the Exile
-    asset: classic/asset/path/outcast
+    asset: asset:classic/path/outcast
     _source:
       <<: *Source
       page: 186
@@ -225,7 +225,7 @@ rarities:
   tattoo_of_many_faces:
     type: rarity
     name: Tattoo of Many Faces
-    asset: classic/asset/path/pretender
+    asset: asset:classic/path/pretender
     _source:
       <<: *Source
       page: 187
@@ -236,7 +236,7 @@ rarities:
   shroud_of_retribution:
     type: rarity
     name: Shroud of Retribution
-    asset: classic/asset/path/revenant
+    asset: asset:classic/path/revenant
     _source:
       <<: *Source
       page: 187
@@ -247,7 +247,7 @@ rarities:
   horsemaster_helm:
     type: rarity
     name: Horsemaster Helm
-    asset: classic/asset/path/rider
+    asset: asset:classic/path/rider
     _source:
       <<: *Source
       page: 187
@@ -258,7 +258,7 @@ rarities:
   book_of_the_cipher:
     type: rarity
     name: Book of the Cipher
-    asset: classic/asset/path/ritualist
+    asset: asset:classic/path/ritualist
     _source:
       <<: *Source
       page: 187
@@ -269,7 +269,7 @@ rarities:
   barrow_clasp:
     type: rarity
     name: Barrow Clasp
-    asset: classic/asset/path/shadow_kin
+    asset: asset:classic/path/shadow_kin
     _source:
       <<: *Source
       page: 188
@@ -282,7 +282,7 @@ rarities:
   seeing_stone:
     type: rarity
     name: Seeing Stone
-    asset: classic/asset/path/sighted
+    asset: asset:classic/path/sighted
     _source:
       <<: *Source
       page: 188
@@ -293,7 +293,7 @@ rarities:
   slayers_medallion:
     type: rarity
     name: Slayer’s Medallion
-    asset: classic/asset/path/slayer
+    asset: asset:classic/path/slayer
     _source:
       <<: *Source
       page: 188
@@ -306,7 +306,7 @@ rarities:
   mirror_of_the_eidolon:
     type: rarity
     name: Mirror of the Eidolon
-    asset: classic/asset/path/spirit_bound
+    asset: asset:classic/path/spirit_bound
     _source:
       <<: *Source
       page: 189
@@ -320,7 +320,7 @@ rarities:
   goldwhyns_denouement:
     type: rarity
     name: Goldwhyn’s Denouement
-    asset: classic/asset/path/storyweaver
+    asset: asset:classic/path/storyweaver
     _source:
       <<: *Source
       page: 189
@@ -331,7 +331,7 @@ rarities:
   opal_of_whispers:
     type: rarity
     name: Opal of Whispers
-    asset: classic/asset/path/trickster
+    asset: asset:classic/path/trickster
     _source:
       <<: *Source
       page: 189
@@ -342,7 +342,7 @@ rarities:
   helm_of_the_unbroken:
     type: rarity
     name: Helm of the Unbroken
-    asset: classic/asset/path/veteran
+    asset: asset:classic/path/veteran
     _source:
       <<: *Source
       page: 190
@@ -355,7 +355,7 @@ rarities:
   leviathans_lament:
     type: rarity
     name: Leviathan’s Lament
-    asset: classic/asset/path/waterborn
+    asset: asset:classic/path/waterborn
     _source:
       <<: *Source
       page: 190
@@ -368,7 +368,7 @@ rarities:
   bough_of_the_surest_path:
     type: rarity
     name: Bough of the Surest Path
-    asset: classic/asset/path/wayfinder
+    asset: asset:classic/path/wayfinder
     _source:
       <<: *Source
       page: 190
@@ -382,7 +382,7 @@ rarities:
   whetstone_of_the_bear:
     type: rarity
     name: Whetstone of the Bear
-    asset: classic/asset/path/weaponmaster
+    asset: asset:classic/path/weaponmaster
     _source:
       <<: *Source
       page: 191
@@ -395,7 +395,7 @@ rarities:
   vignette_of_the_weald:
     type: rarity
     name: Vignette of the Weald
-    asset: classic/asset/path/wildblood
+    asset: asset:classic/path/wildblood
     _source:
       <<: *Source
       page: 191
@@ -408,7 +408,7 @@ rarities:
   artisans_gloves:
     type: rarity
     name: Artisan’s Gloves
-    asset: classic/asset/path/wright
+    asset: asset:classic/path/wright
     _source:
       <<: *Source
       page: 191
@@ -419,7 +419,7 @@ rarities:
   farsight_quiver:
     type: rarity
     name: Farsight Quiver
-    asset: classic/asset/combat_talent/archer
+    asset: asset:classic/combat_talent/archer
     _source:
       <<: *Source
       page: 192
@@ -430,7 +430,7 @@ rarities:
   mantle_of_many_beasts:
     type: rarity
     name: Mantle of Many Beasts
-    asset: classic/asset/combat_talent/berserker
+    asset: asset:classic/combat_talent/berserker
     _source:
       <<: *Source
       page: 192
@@ -441,7 +441,7 @@ rarities:
   iron_fist:
     type: rarity
     name: Iron Fist
-    asset: classic/asset/combat_talent/brawler
+    asset: asset:classic/combat_talent/brawler
     _source:
       <<: *Source
       page: 192
@@ -452,7 +452,7 @@ rarities:
   dagger_of_the_blooded:
     type: rarity
     name: Dagger of the Blooded
-    asset: classic/asset/combat_talent/cutthroat
+    asset: asset:classic/combat_talent/cutthroat
     _source:
       <<: *Source
       page: 192
@@ -463,7 +463,7 @@ rarities:
   iron_dyad:
     type: rarity
     name: Iron Dyad
-    asset: classic/asset/combat_talent/duelist
+    asset: asset:classic/combat_talent/duelist
     _source:
       <<: *Source
       page: 193
@@ -474,7 +474,7 @@ rarities:
   raptors_talon:
     type: rarity
     name: Raptor’s Talon
-    asset: classic/asset/combat_talent/fletcher
+    asset: asset:classic/combat_talent/fletcher
     _source:
       <<: *Source
       page: 193
@@ -485,7 +485,7 @@ rarities:
   starfall_hauberk:
     type: rarity
     name: Starfall Hauberk
-    asset: classic/asset/combat_talent/ironclad
+    asset: asset:classic/combat_talent/ironclad
     _source:
       <<: *Source
       page: 193
@@ -498,7 +498,7 @@ rarities:
   rovers_staff:
     type: rarity
     name: Rover’s Staff
-    asset: classic/asset/combat_talent/long_arm
+    asset: asset:classic/combat_talent/long_arm
     _source:
       <<: *Source
       page: 193
@@ -510,7 +510,7 @@ rarities:
   heart_of_the_aegis:
     type: rarity
     name: Heart of the Aegis
-    asset: classic/asset/combat_talent/shield_bearer
+    asset: asset:classic/combat_talent/shield_bearer
     _source:
       <<: *Source
       page: 194
@@ -521,7 +521,7 @@ rarities:
   dragons_bite:
     type: rarity
     name: Dragon’s Bite
-    asset: classic/asset/combat_talent/skirmisher
+    asset: asset:classic/combat_talent/skirmisher
     _source:
       <<: *Source
       page: 194
@@ -532,7 +532,7 @@ rarities:
   giant_bane:
     type: rarity
     name: Giant Bane
-    asset: classic/asset/combat_talent/slinger
+    asset: asset:classic/combat_talent/slinger
     _source:
       <<: *Source
       page: 194
@@ -545,7 +545,7 @@ rarities:
   warbringer:
     type: rarity
     name: Warbringer
-    asset: classic/asset/combat_talent/sunderer
+    asset: asset:classic/combat_talent/sunderer
     _source:
       <<: *Source
       page: 194
@@ -556,7 +556,7 @@ rarities:
   honing_sheath:
     type: rarity
     name: Honing Sheath
-    asset: classic/asset/combat_talent/swordmaster
+    asset: asset:classic/combat_talent/swordmaster
     _source:
       <<: *Source
       page: 195
@@ -568,7 +568,7 @@ rarities:
   hammer_of_reckoning:
     type: rarity
     name: Hammer of Reckoning
-    asset: classic/asset/combat_talent/thunder_bringer
+    asset: asset:classic/combat_talent/thunder_bringer
     _source:
       <<: *Source
       page: 195
@@ -580,7 +580,7 @@ rarities:
   crows_patron:
     type: rarity
     name: Crow’s Patron
-    asset: classic/asset/ritual/augur
+    asset: asset:classic/ritual/augur
     _source:
       <<: *Source
       page: 196
@@ -591,7 +591,7 @@ rarities:
   breath_of_life:
     type: rarity
     name: Breath of Life
-    asset: classic/asset/ritual/awakening
+    asset: asset:classic/ritual/awakening
     _source:
       <<: *Source
       page: 196
@@ -604,7 +604,7 @@ rarities:
   moonshadow_ring:
     type: rarity
     name: Moonshadow Ring
-    asset: classic/asset/ritual/bind
+    asset: asset:classic/ritual/bind
     _source:
       <<: *Source
       page: 196
@@ -615,7 +615,7 @@ rarities:
   incense_of_beckoning:
     type: rarity
     name: Incense of Beckoning
-    asset: classic/asset/ritual/communion
+    asset: asset:classic/ritual/communion
     _source:
       <<: *Source
       page: 196
@@ -627,7 +627,7 @@ rarities:
   riddlestone:
     type: rarity
     name: Riddlestone
-    asset: classic/asset/ritual/divination
+    asset: asset:classic/ritual/divination
     _source:
       <<: *Source
       page: 197
@@ -640,7 +640,7 @@ rarities:
   invokers_lodestone:
     type: rarity
     name: Invoker’s Lodestone
-    asset: classic/asset/ritual/invoke
+    asset: asset:classic/ritual/invoke
     _source:
       <<: *Source
       page: 197
@@ -652,7 +652,7 @@ rarities:
   ravens_song:
     type: rarity
     name: Raven’s Song
-    asset: classic/asset/ritual/keen
+    asset: asset:classic/ritual/keen
     _source:
       <<: *Source
       page: 197
@@ -663,7 +663,7 @@ rarities:
   wolfs_feast:
     type: rarity
     name: Wolf’s Feast
-    asset: classic/asset/ritual/leech
+    asset: asset:classic/ritual/leech
     _source:
       <<: *Source
       page: 197
@@ -674,7 +674,7 @@ rarities:
   daybreak_stone:
     type: rarity
     name: Daybreak Stone
-    asset: classic/asset/ritual/lightbearer
+    asset: asset:classic/ritual/lightbearer
     _source:
       <<: *Source
       page: 198
@@ -685,7 +685,7 @@ rarities:
   beholders_dust:
     type: rarity
     name: Beholder’s Dust
-    asset: classic/asset/ritual/scry
+    asset: asset:classic/ritual/scry
     _source:
       <<: *Source
       page: 198
@@ -698,7 +698,7 @@ rarities:
   ring_of_secret_paths:
     type: rarity
     name: Ring of Secret Paths
-    asset: classic/asset/ritual/shadow_walk
+    asset: asset:classic/ritual/shadow_walk
     _source:
       <<: *Source
       page: 198
@@ -709,7 +709,7 @@ rarities:
   chime_of_secrets:
     type: rarity
     name: Chime of Secrets
-    asset: classic/asset/ritual/sway
+    asset: asset:classic/ritual/sway
     _source:
       <<: *Source
       page: 198
@@ -720,7 +720,7 @@ rarities:
   beads_of_many_domains:
     type: rarity
     name: Beads of Many Domains
-    asset: classic/asset/ritual/talisman
+    asset: asset:classic/ritual/talisman
     _source:
       <<: *Source
       page: 199
@@ -734,7 +734,7 @@ rarities:
   wayfarers_promise:
     type: rarity
     name: Wayfarer’s Promise
-    asset: classic/asset/ritual/tether
+    asset: asset:classic/ritual/tether
     _source:
       <<: *Source
       page: 199

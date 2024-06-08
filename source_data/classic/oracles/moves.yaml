@@ -77,11 +77,11 @@ oracles:
           page: 91
         rows:
           - roll: { min: 1, max: 10 }
-            text: 'The harm is mortal. [Face Death](id:classic/move/suffer/face_death).'
+            text: 'The harm is mortal. [Face Death](move:classic/suffer/face_death).'
           - roll: { min: 11, max: 20 }
-            text: 'You are dying. You need to Heal within an hour or two, or [Face Death](id:classic/move/suffer/face_death).'
+            text: 'You are dying. You need to Heal within an hour or two, or [Face Death](move:classic/suffer/face_death).'
           - roll: { min: 21, max: 35 }
-            text: 'You are unconscious and out of action. If left alone, you come back to your senses in an hour or two. If you are vulnerable to a foe not inclined to show mercy, [Face Death](id:classic/move/suffer/face_death).'
+            text: 'You are unconscious and out of action. If left alone, you come back to your senses in an hour or two. If you are vulnerable to a foe not inclined to show mercy, [Face Death](move:classic/suffer/face_death).'
           - roll: { min: 36, max: 50 }
             text: 'You are reeling and fighting to stay conscious. If you engage in any vigorous activity (such as running or fighting) before taking a breather for a few minutes, roll on this table again (before resolving the other move).'
           - roll: { min: 51, max: 100 }
@@ -95,9 +95,9 @@ oracles:
           page: 93
         rows:
           - roll: { min: 1, max: 10 }
-            text: 'You are overwhelmed. [Face Desolation](id:classic/move/suffer/face_desolation).'
+            text: 'You are overwhelmed. [Face Desolation](move:classic/suffer/face_desolation).'
           - roll: { min: 11, max: 25 }
-            text: 'You give up. [Forsake Your Vow](id:classic/move/quest/forsake_your_vow) (if possible, one relevant to your current crisis).'
+            text: 'You give up. [Forsake Your Vow](move:classic/quest/forsake_your_vow) (if possible, one relevant to your current crisis).'
           - roll: { min: 26, max: 50 }
             text: 'You give in to a fear or compulsion, and act against your better instincts.'
           - roll: { min: 51, max: 100 }
@@ -111,7 +111,7 @@ oracles:
           page: 105
         rows:
           - roll: { min: 1, max: 2 }
-            text: 'Roll again and apply that result but make it worse. If you roll this result yet again, think of something dreadful that changes the course of your quest ([Ask the Oracle](id:classic/move/fate/ask_the_oracle) if unsure) and make it happen.'
+            text: 'Roll again and apply that result but make it worse. If you roll this result yet again, think of something dreadful that changes the course of your quest ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure) and make it happen.'
           - roll: { min: 3, max: 5 }
             text: 'A person or community you trusted loses faith in you, or acts against you.'
           - roll: { min: 6, max: 9 }

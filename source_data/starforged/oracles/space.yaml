@@ -23,7 +23,7 @@ oracles:
         oracle_type: table_shared_text
         type: oracle_collection
         summary: |-
-          Use the Space Sightings oracle to introduce a location or encounter on a spaceborne expedition. For example, roll on this table when you [Ask the Oracle](id:starforged/move/fate/ask_the_oracle) to envision the primary feature of a waypoint as you [Undertake an Expedition](id:starforged/move/exploration/undertake_an_expedition). Check your result by referencing the column for your current location: Terminus, Outlands, or Expanse.
+          Use the Space Sightings oracle to introduce a location or encounter on a spaceborne expedition. For example, roll on this table when you [Ask the Oracle](move:starforged/fate/ask_the_oracle) to envision the primary feature of a waypoint as you [Undertake an Expedition](move:starforged/exploration/undertake_an_expedition). Check your result by referencing the column for your current location: Terminus, Outlands, or Expanse.
         # usage:
         #   allow_duplicates: true
         #   requires:
@@ -41,9 +41,9 @@ oracles:
             rows:
               - &Sighting.0
                 roll: { min: 1, max: 15 }
-                text: '[Stellar Object](id:starforged/oracle_rollable/space/stellar_object)'
+                text: '[Stellar Object](oracle_rollable:starforged/space/stellar_object)'
                 oracle_rolls:
-                  - oracle: starforged/oracle_rollable/space/stellar_object
+                  - oracle: oracle_rollable:starforged/space/stellar_object
               - &Sighting.1
                 roll: { min: 16, max: 35 }
                 text: '[Planet](id:starforged/oracle_collection/planets)'
@@ -64,11 +64,11 @@ oracles:
                   text: '[Creature](id:starforged/oracle_collection/creatures)'
               - roll: { min: 56, max: 60 }
                 <<: &Sighting.7
-                  text: '[Descriptor](id:starforged/oracle_rollable/core/descriptor) + [Focus](id:starforged/oracle_rollable/core/focus)'
+                  text: '[Descriptor](oracle_rollable:starforged/core/descriptor) + [Focus](oracle_rollable:starforged/core/focus)'
                   oracle_rolls:
-                    - oracle: starforged/oracle_rollable/core/descriptor
+                    - oracle: oracle_rollable:starforged/core/descriptor
                       auto: true
-                    - oracle: starforged/oracle_rollable/core/focus
+                    - oracle: oracle_rollable:starforged/core/focus
                       auto: true
               - roll: { min: 61, max: 65 }
                 <<: &Sighting.8
@@ -218,7 +218,7 @@ oracles:
         oracle_type: table_shared_rolls
         type: oracle_collection
         # template:
-        #   text: '{{text:starforged/oracle_rollable/space/sector_name/prefix}} {{text:starforged/oracle_rollable/space/sector_name/suffix}}'
+        #   text: '{{text:oracle_rollable:starforged/space/sector_name/prefix}} {{text:oracle_rollable:starforged/space/sector_name/suffix}}'
         contents:
           prefix:
             name: Prefix
@@ -226,7 +226,7 @@ oracles:
             type: oracle_rollable
             suggestions:
               oracles:
-                - starforged/oracle_rollable/space/sector_name/suffix
+                - oracle_rollable:starforged/space/sector_name/suffix
             # content:
             #   part_of_speech: [proper noun fragment]
             #   tags: [template fragment]
@@ -445,7 +445,7 @@ oracles:
             summary: To give a sector or region of space a random name, roll once for the first word and once for the second word. Or just roll once choose a suitable pairing from anywhere in that row.
             suggestions:
               oracles:
-                - starforged/oracle_rollable/space/sector_name/prefix
+                - oracle_rollable:starforged/space/sector_name/prefix
             # _i18n:
             #   text:
             #     part_of_speech: common_noun
@@ -726,11 +726,11 @@ oracles:
             text: Unsettling sounds or disturbances
           - roll: { min: 97, max: 99 }
             <<: &ActionTheme
-              text: '[Action](id:starforged/oracle_rollable/core/action) + [Theme](id:starforged/oracle_rollable/core/theme)'
+              text: '[Action](oracle_rollable:starforged/core/action) + [Theme](oracle_rollable:starforged/core/theme)'
               oracle_rolls:
-                - oracle: starforged/oracle_rollable/core/action
+                - oracle: oracle_rollable:starforged/core/action
                   auto: true
-                - oracle: starforged/oracle_rollable/core/theme
+                - oracle: oracle_rollable:starforged/core/theme
                   auto: true
           - roll: { min: 100, max: 100 }
             text: Roll twice
@@ -752,7 +752,7 @@ oracles:
         # content:
         #   part_of_speech: [fragment]
         #   tags: [opportunity]
-        summary: Choose or roll on this table when you want inspiration for a beneficial encounter or event on a spaceborne journey, such as when you roll a strong hit with a match as you [Undertake an Expedition](id:starforged/move/exploration/undertake_an_expedition), or if you [Explore a Waypoint](id:starforged/move/exploration/explore_a_waypoint) and find an opportunity.
+        summary: Choose or roll on this table when you want inspiration for a beneficial encounter or event on a spaceborne journey, such as when you roll a strong hit with a match as you [Undertake an Expedition](move:starforged/exploration/undertake_an_expedition), or if you [Explore a Waypoint](move:starforged/exploration/explore_a_waypoint) and find an opportunity.
         rows:
           - roll: { min: 1, max: 4 }
             text: Advance warning of an environmental threat

@@ -368,14 +368,14 @@
 			"title": "RulesetId",
 			"type": "string",
 			"description": "The ID of standalone Datasworn package that describes its own ruleset.",
-			"examples": ["classic", "starforged", "sundered_isles"],
+			"examples": ["classic", "starforged"],
 			"pattern": "^[a-z][a-z0-9_]{3,}$"
 		},
 		"ExpansionId": {
 			"title": "ExpansionId",
 			"type": "string",
 			"description": "The ID of a Datasworn package that relies on an external package to provide its ruleset.",
-			"examples": ["delve"],
+			"examples": ["delve", "sundered_isles"],
 			"pattern": "^[a-z][a-z0-9_]{3,}$"
 		},
 		"DictKey": {
@@ -384,6 +384,17 @@
 			"description": "A `snake_case` key used in a Datasworn dictionary object.",
 			"remarks": "If you need to generate a key from a user-provided label, it's recommended to use a 'slugify' function/library, e.g. https://www.npmjs.com/package/slugify for NodeJS.",
 			"pattern": "^[a-z][a-z_]*$"
+		},
+		"AnyMoveIdWildcard": {
+			"title": "AnyMoveIdWildcard",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/MoveIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityMoveIdWildcard"
+				}
+			]
 		},
 		"AssetId": {
 			"title": "AssetId",
@@ -395,7 +406,7 @@
 			"title": "AssetIdWildcard",
 			"type": "string",
 			"description": "A wildcarded AssetId that can be used to match multiple Asset objects.",
-			"pattern": "^asset:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*(?:\\/\\*){0,1}|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})|\\*\\*(?:\\/\\*){0,2})$"
+			"pattern": "^asset:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})$"
 		},
 		"AssetCollectionId": {
 			"title": "AssetCollectionId",
@@ -407,7 +418,7 @@
 			"title": "AssetCollectionIdWildcard",
 			"type": "string",
 			"description": "A wildcarded AssetCollectionId that can be used to match multiple AssetCollection objects.",
-			"pattern": "^asset_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1})|\\*\\*(?:\\/\\*)?)$"
+			"pattern": "^asset_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1})$"
 		},
 		"AssetAbilityId": {
 			"title": "AssetAbilityId",
@@ -419,7 +430,7 @@
 			"title": "AssetAbilityIdWildcard",
 			"type": "string",
 			"description": "A wildcarded AssetAbilityId that can be used to match multiple AssetAbility objects.",
-			"pattern": "^asset\\.ability:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*(?:\\/\\*){0,1}|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})|\\*\\*(?:\\/\\*){0,2})\\.(\\d+|\\*)$"
+			"pattern": "^asset\\.ability:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})\\.(\\d+|\\*)$"
 		},
 		"AssetAbilityMoveId": {
 			"title": "AssetAbilityMoveId",
@@ -431,7 +442,7 @@
 			"title": "AssetAbilityMoveIdWildcard",
 			"type": "string",
 			"description": "A wildcarded AssetAbilityMoveId that can be used to match multiple AssetAbilityMove objects.",
-			"pattern": "^asset\\.ability\\.move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*(?:\\/\\*){0,1}|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})|\\*\\*(?:\\/\\*){0,2})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
+			"pattern": "^asset\\.ability\\.move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
 		},
 		"AtlasCollectionId": {
 			"title": "AtlasCollectionId",
@@ -443,7 +454,7 @@
 			"title": "AtlasCollectionIdWildcard",
 			"type": "string",
 			"description": "A wildcarded AtlasCollectionId that can be used to match multiple AtlasCollection objects.",
-			"pattern": "^atlas_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*(?:\\/\\*){0,2}|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,3})|\\*\\*(?:\\/\\*)?)$"
+			"pattern": "^atlas_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,3})$"
 		},
 		"AtlasEntryId": {
 			"title": "AtlasEntryId",
@@ -455,7 +466,7 @@
 			"title": "AtlasEntryIdWildcard",
 			"type": "string",
 			"description": "A wildcarded AtlasEntryId that can be used to match multiple AtlasEntry objects.",
-			"pattern": "^atlas_entry:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*(?:\\/\\*){0,3}|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})|\\*\\*(?:\\/\\*){0,2})$"
+			"pattern": "^atlas_entry:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})$"
 		},
 		"DelveSiteId": {
 			"title": "DelveSiteId",
@@ -467,7 +478,7 @@
 			"title": "DelveSiteIdWildcard",
 			"type": "string",
 			"description": "A wildcarded DelveSiteId that can be used to match multiple DelveSite objects.",
-			"pattern": "^delve_site:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1})|\\*\\*(?:\\/\\*)?)$"
+			"pattern": "^delve_site:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1})$"
 		},
 		"DelveSiteDomainId": {
 			"title": "DelveSiteDomainId",
@@ -479,7 +490,7 @@
 			"title": "DelveSiteDomainIdWildcard",
 			"type": "string",
 			"description": "A wildcarded DelveSiteDomainId that can be used to match multiple DelveSiteDomain objects.",
-			"pattern": "^delve_site_domain:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1})|\\*\\*(?:\\/\\*)?)$"
+			"pattern": "^delve_site_domain:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1})$"
 		},
 		"DelveSiteThemeId": {
 			"title": "DelveSiteThemeId",
@@ -491,7 +502,7 @@
 			"title": "DelveSiteThemeIdWildcard",
 			"type": "string",
 			"description": "A wildcarded DelveSiteThemeId that can be used to match multiple DelveSiteTheme objects.",
-			"pattern": "^delve_site_theme:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1})|\\*\\*(?:\\/\\*)?)$"
+			"pattern": "^delve_site_theme:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1})$"
 		},
 		"MoveId": {
 			"title": "MoveId",
@@ -503,7 +514,7 @@
 			"title": "MoveIdWildcard",
 			"type": "string",
 			"description": "A wildcarded MoveId that can be used to match multiple Move objects.",
-			"pattern": "^move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*(?:\\/\\*){0,1}|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})|\\*\\*(?:\\/\\*){0,2})$"
+			"pattern": "^move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})$"
 		},
 		"MoveCategoryId": {
 			"title": "MoveCategoryId",
@@ -515,7 +526,7 @@
 			"title": "MoveCategoryIdWildcard",
 			"type": "string",
 			"description": "A wildcarded MoveCategoryId that can be used to match multiple MoveCategory objects.",
-			"pattern": "^move_category:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1})|\\*\\*(?:\\/\\*)?)$"
+			"pattern": "^move_category:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1})$"
 		},
 		"NpcId": {
 			"title": "NpcId",
@@ -527,7 +538,7 @@
 			"title": "NpcIdWildcard",
 			"type": "string",
 			"description": "A wildcarded NpcId that can be used to match multiple Npc objects.",
-			"pattern": "^npc:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*(?:\\/\\*){0,3}|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})|\\*\\*(?:\\/\\*){0,2})$"
+			"pattern": "^npc:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})$"
 		},
 		"NpcCollectionId": {
 			"title": "NpcCollectionId",
@@ -539,7 +550,7 @@
 			"title": "NpcCollectionIdWildcard",
 			"type": "string",
 			"description": "A wildcarded NpcCollectionId that can be used to match multiple NpcCollection objects.",
-			"pattern": "^npc_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*(?:\\/\\*){0,2}|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,3})|\\*\\*(?:\\/\\*)?)$"
+			"pattern": "^npc_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,3})$"
 		},
 		"OracleCollectionId": {
 			"title": "OracleCollectionId",
@@ -551,7 +562,7 @@
 			"title": "OracleCollectionIdWildcard",
 			"type": "string",
 			"description": "A wildcarded OracleCollectionId that can be used to match multiple OracleCollection objects.",
-			"pattern": "^oracle_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*(?:\\/\\*){0,2}|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,3})|\\*\\*(?:\\/\\*)?)$"
+			"pattern": "^oracle_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,3})$"
 		},
 		"OracleRollableId": {
 			"title": "OracleRollableId",
@@ -563,7 +574,7 @@
 			"title": "OracleRollableIdWildcard",
 			"type": "string",
 			"description": "A wildcarded OracleRollableId that can be used to match multiple OracleRollable objects.",
-			"pattern": "^oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*(?:\\/\\*){0,3}|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})|\\*\\*(?:\\/\\*){0,2})$"
+			"pattern": "^oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})$"
 		},
 		"RarityId": {
 			"title": "RarityId",
@@ -575,7 +586,7 @@
 			"title": "RarityIdWildcard",
 			"type": "string",
 			"description": "A wildcarded RarityId that can be used to match multiple Rarity objects.",
-			"pattern": "^rarity:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1})|\\*\\*(?:\\/\\*)?)$"
+			"pattern": "^rarity:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1})$"
 		},
 		"TruthId": {
 			"title": "TruthId",
@@ -587,7 +598,7 @@
 			"title": "TruthIdWildcard",
 			"type": "string",
 			"description": "A wildcarded TruthId that can be used to match multiple Truth objects.",
-			"pattern": "^truth:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1})|\\*\\*(?:\\/\\*)?)$"
+			"pattern": "^truth:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1})$"
 		},
 		"AuthorInfo": {
 			"title": "AuthorInfo",
@@ -4489,7 +4500,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/MoveIdWildcard"
+								"$ref": "#/definitions/AnyMoveIdWildcard"
 							}
 						},
 						{
@@ -4740,7 +4751,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/MoveIdWildcard"
+								"$ref": "#/definitions/AnyMoveIdWildcard"
 							}
 						},
 						{
@@ -4887,7 +4898,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/MoveIdWildcard"
+								"$ref": "#/definitions/AnyMoveIdWildcard"
 							}
 						},
 						{
@@ -4999,7 +5010,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/MoveIdWildcard"
+								"$ref": "#/definitions/AnyMoveIdWildcard"
 							}
 						},
 						{
@@ -5957,7 +5968,7 @@
 							"type": "array",
 							"description": "The ID(s) of recovery moves associated with this meter.",
 							"items": {
-								"$ref": "#/definitions/MoveIdWildcard",
+								"$ref": "#/definitions/AnyMoveIdWildcard",
 								"examples": [
 									"classic/moves/adventure/heal",
 									"classic/moves/adventure/make_camp",
@@ -5971,7 +5982,7 @@
 							"type": "array",
 							"description": "The ID(s) of suffer moves associated with the condition meter. If the suffer move makes an action roll, this condition meter value should be made available as a roll option.",
 							"items": {
-								"$ref": "#/definitions/MoveIdWildcard",
+								"$ref": "#/definitions/AnyMoveIdWildcard",
 								"examples": [
 									"classic/moves/suffer/companion_endure_harm",
 									"starforged/moves/suffer/companion_takes_a_hit",

@@ -69,10 +69,10 @@ namespace PathSymbol {
 		}
 	}
 
-	export class DictKey<
+	export class DictKey<Origin, Prop extends DictPropKeyIn<Origin>> extends PathSymbol<
 		Origin,
-		Prop extends DictPropKeyIn<Origin>
-	> extends PathSymbol<Origin, Prop> {
+		Prop
+	> {
 		static readonly PATTERN = Pattern.DictKeyElement
 		static readonly WILDCARD = new RegExp(
 			`${DictKey.PATTERN.source}|\\${CONST.PathSep}\\${CONST.WildcardString}|\\${CONST.PathSep}\\${CONST.WildcardString}\\${CONST.WildcardString}`
@@ -103,6 +103,8 @@ namespace PathSymbol {
 			return '${string}'
 		}
 
+		static #dictKeysGlobstar(min, max) {}
+
 		static renderDictKeys(min: number, max: number, wildcard = false): RegExp {
 			// exit early if there's nothing to do
 			if (min === 1 && max === 1 && !wildcard) return PathSymbol.DictKey.PATTERN
@@ -117,24 +119,7 @@ namespace PathSymbol {
 
 			if (!wildcard) return RegExp(wrappedKey)
 
-			const maxKeysAfterGlobstar = max - 1
-			const minKeysAfterGlobstar = 0
-
-			let globstarGroup = IdPattern.GLOBSTAR
-			// a globstar that replaces up to the entire set of DictKeys
-
-			// optional subsequent single-level wildcards
-			if (maxKeysAfterGlobstar > 0)
-				globstarGroup += `(?:${IdPattern.PathSep}${IdPattern.WILDCARD}){${minKeysAfterGlobstar},${maxKeysAfterGlobstar}}`
-			wrappedKey = globstarGroup + '|' + wrappedKey
-
-			if (
-				!(wrappedKey.startsWith('(?:') && wrappedKey.endsWith(')')) &&
-				wrappedKey.includes('|')
-			)
-				wrappedKey = `(?:${wrappedKey})`
-
-			return RegExp(wrappedKey)
+			return new RegExp(wrappedKey)
 		}
 
 		static repsStringTemplateLiteral(min: number, max: number) {
@@ -489,17 +474,17 @@ class PathFormat<Origin = Datasworn.RulesPackage> extends Array<
 			}
 		}
 
-		if (canBeGlobstar) {
-			const maxWildcardsAfterInitialGlobstar = this.length - 1
-			const extraWildcards =
-				maxWildcardsAfterInitialGlobstar === 1
-					? `(?:${IdPattern.PathSep}${IdPattern.WILDCARD})?`
-					: maxWildcardsAfterInitialGlobstar > 1
-						? `(?:${IdPattern.PathSep}${IdPattern.WILDCARD}){0,${maxWildcardsAfterInitialGlobstar}}`
-						: ''
-			// valid to represent the whole fragment
-			base = `${base}|${IdPattern.GLOBSTAR}${extraWildcards}`
-		}
+		// if (canBeGlobstar) {
+		// 	const maxWildcardsAfterInitialGlobstar = this.length - 1
+		// 	const extraWildcards =
+		// 		maxWildcardsAfterInitialGlobstar === 1
+		// 			? `(?:${IdPattern.PathSep}${IdPattern.WILDCARD})?`
+		// 			: maxWildcardsAfterInitialGlobstar > 1
+		// 				? `(?:${IdPattern.PathSep}${IdPattern.WILDCARD}){0,${maxWildcardsAfterInitialGlobstar}}`
+		// 				: ''
+		// 	// valid to represent the whole fragment
+		// 	base = `${base}|${IdPattern.GLOBSTAR}${extraWildcards}`
+		// }
 
 		switch (group) {
 			case 'capture_group':
@@ -513,7 +498,7 @@ class PathFormat<Origin = Datasworn.RulesPackage> extends Array<
 				break
 			case 'none':
 			default:
-				if (canBeGlobstar) base = `(?:${base})`
+				// if (canBeGlobstar) base = `(?:${base})`
 				break
 		}
 		// Lone globstar is valid for any ID type (to match all IDs of the same type)

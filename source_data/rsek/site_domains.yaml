@@ -39,20 +39,20 @@ site_domains:
         text: Something unusual or unexpected
         suggestions:
           oracles:
-            - delve/oracle_rollable/feature/aspect
-            - delve/oracle_rollable/feature/focus
+            - oracle_rollable:delve/feature/aspect
+            - oracle_rollable:delve/feature/focus
       - &Feature.newTheme
         text: You transition into a new theme
         roll: { min: 99, max: 99 }
         suggestions:
           oracles:
-            - delve/oracle_rollable/site_nature/theme
+            - oracle_rollable:delve/site_nature/theme
       - &Feature.newDomain
         roll: { min: 100, max: 100 }
         text: You transition into a new domain
         suggestions:
           oracles:
-            - delve/oracle_rollable/site_nature/domain
+            - oracle_rollable:delve/site_nature/domain
     dangers:
       - roll: { min: 31, max: 33 }
         text: Time variance complicates real world

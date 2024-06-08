@@ -69,7 +69,7 @@ oracles:
         _source:
           <<: *Source
           page: 189
-        summary: Those who deal in magic may find themselves at the mercy of chaos. This oracle can supplement, or replace, the [Pay the Price](id:classic/move/fate/pay_the_price) table when resolving the outcome of a failed ritual or other negative interaction with mystical forces. Use this oracle in dramatic moments, or to introduce an unexpected outcome triggered by a match.
+        summary: Those who deal in magic may find themselves at the mercy of chaos. This oracle can supplement, or replace, the [Pay the Price](move:classic/fate/pay_the_price) table when resolving the outcome of a failed ritual or other negative interaction with mystical forces. Use this oracle in dramatic moments, or to introduce an unexpected outcome triggered by a match.
         rows:
           - roll: { min: 1, max: 4 }
             text: 'Your ritual has the opposite affect.'

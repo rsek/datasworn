@@ -16,7 +16,7 @@ oracles:
           - name: Shawn Tomkin
       page: 336
     summary: |-
-      Roll for a [basic form](id:starforged/oracle_rollable/creatures/basic_form), and flesh out the creature’s appearance using this [Creature First Look](id:starforged/oracle_rollable/creatures/first_look) table. Then, roll on the [Encountered Behavior](id:starforged/oracle_rollable/creatures/encountered_behavior) table to envision this creature’s motivation and frame how the encounter begins.
+      Roll for a [basic form](oracle_rollable:starforged/creatures/basic_form), and flesh out the creature’s appearance using this [Creature First Look](oracle_rollable:starforged/creatures/first_look) table. Then, roll on the [Encountered Behavior](oracle_rollable:starforged/creatures/encountered_behavior) table to envision this creature’s motivation and frame how the encounter begins.
     contents:
       environment:
         name: Environment
@@ -39,35 +39,35 @@ oracles:
             icon: &Space.icon icons/creature/environment/space.svg
             # set_attributes: {environment: [space]}
             oracle_rolls:
-              - oracle: starforged/oracle_rollable/creatures/basic_form/space
+              - oracle: oracle_rollable:starforged/creatures/basic_form/space
           - <<:  *i18n.result.common_noun
             roll: { min: 6, max: 15 }
             text: Interior
             icon: &Interior.icon icons/creature/environment/interior.svg
             # set_attributes: {environment: [interior]}
             oracle_rolls:
-              - oracle: starforged/oracle_rollable/creatures/basic_form/interior
+              - oracle: oracle_rollable:starforged/creatures/basic_form/interior
           - <<:  *i18n.result.common_noun
             roll: { min: 16, max: 55 }
             text: Land
             icon: &Land.icon icons/creature/environment/land.svg
             # set_attributes: {environment: [land]}
             oracle_rolls:
-              - oracle: starforged/oracle_rollable/creatures/basic_form/land
+              - oracle: oracle_rollable:starforged/creatures/basic_form/land
           - <<:  *i18n.result.common_noun
             roll: { min: 56, max: 80 }
             text: Liquid
             icon: &Liquid.icon icons/creature/environment/liquid.svg
             # set_attributes: {environment: [liquid]}
             oracle_rolls:
-              - oracle: starforged/oracle_rollable/creatures/basic_form/liquid
+              - oracle: oracle_rollable:starforged/creatures/basic_form/liquid
           - <<:  *i18n.result.common_noun
             roll: { min: 81, max: 100 }
             text: Air
             icon: &Air.icon icons/creature/environment/air.svg
             # set_attributes: {environment: [air]}
             oracle_rolls:
-              - oracle: starforged/oracle_rollable/creatures/basic_form/air
+              - oracle: oracle_rollable:starforged/creatures/basic_form/air
       scale:
         name: Scale
         oracle_type: table_text
@@ -107,9 +107,9 @@ oracles:
             # set_attributes: {creature_scale: [huge]}
           - <<: *i18n.result.adjective
             roll: { min: 100, max: 100 }
-            text: '[Ultra-scale](id:starforged/oracle_rollable/creatures/ultra_scale)'
+            text: '[Ultra-scale](oracle_rollable:starforged/creatures/ultra_scale)'
             oracle_rolls:
-              - oracle: starforged/oracle_rollable/creatures/ultra_scale
+              - oracle: oracle_rollable:starforged/creatures/ultra_scale
                 auto: true
       ultra_scale:
         name: Ultra-scale
@@ -481,7 +481,7 @@ oracles:
         # content:
         # part_of_speech: [fragment]
         summary: |-
-          Roll for a basic form, and flesh out the creature’s appearance using the [First Look](id:starforged/oracle_rollable/creatures/first_look) table.
+          Roll for a basic form, and flesh out the creature’s appearance using the [First Look](oracle_rollable:starforged/creatures/first_look) table.
         contents:
           space:
             name: Space
