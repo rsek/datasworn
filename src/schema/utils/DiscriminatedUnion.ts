@@ -10,7 +10,8 @@ import {
 	type TProperties,
 	type TSchema,
 	type TUnion,
-	type TRef
+	type TRef,
+	type ObjectOptions
 } from '@sinclair/typebox'
 import { keyBy, omit } from 'lodash-es'
 import { Discriminator, Mapping, Members } from '../Symbols.js'
@@ -44,7 +45,7 @@ export type TDiscriminableBy<
 	V extends string = string
 > = TObject<T['properties'] & { [K in D]: TLiteral<V> }>
 
-type TDiscriminableKeyOf<T extends TDiscriminable> = DiscriminableKeyOf<
+export type TDiscriminableKeyOf<T extends TDiscriminable> = DiscriminableKeyOf<
 	Static<T>
 >
 
@@ -67,7 +68,7 @@ export type TDiscriminatorMap<
 > = Record<D, T & TDiscriminable>
 // > = {
 // 	[Schema in T as Static<T>[D] & string]: Schema
-// }
+// }TDiscriminatedUnion
 
 // type TDiscriminatorMap<D extends string, V extends string = string> = {
 // 	[K in V]: TDiscriminable<D, K>
@@ -75,7 +76,7 @@ export type TDiscriminatorMap<
 
 export interface TDiscriminatedUnion<
 	M extends TDiscriminatorMap<TDiscriminable>,
-	D extends TDiscriminableKeyFor<M>
+	D extends TDiscriminableKeyFor<M> = TDiscriminableKeyFor<M>
 > extends TSchema {
 	type: 'object'
 	static: Static<TUnion<ValueIn<M>[]>>
@@ -94,6 +95,23 @@ export interface TDiscriminatedUnion<
 	[Discriminator]: D
 	[Mapping]: M
 }
+
+export type TDiscriminatorMappingOf<
+	T extends TDiscriminatedUnion<TDiscriminatorMap<TDiscriminable>>
+> = T[typeof Mapping]
+
+export type TDiscriminatedMemberType<T extends TDiscriminatedUnion<any>> =
+	T extends TDiscriminatedUnion<
+		infer U extends TDiscriminatorMap<TDiscriminable>,
+		any
+	>
+		? keyof U
+		: never
+
+export type TDiscriminatedMember<
+	T extends TDiscriminatedUnion<any>,
+	TMemberType extends TDiscriminatedMemberType<T> = TDiscriminatedMemberType<T>
+> = T extends TDiscriminatedUnion<infer U> ? U[TMemberType] : never
 
 export function Discriminable<
 	D extends string,
@@ -140,6 +158,32 @@ export function DiscriminatedUnion<
 		[Kind]: 'DiscriminatedUnion'
 	} as unknown as TDiscriminatedUnion<M, D>
 }
+
+export function OmitDiscriminatedUnionMembers<
+	TBase extends TDiscriminatedUnion<TDiscriminatorMap<TDiscriminable>>,
+	TOmitKeys extends (keyof TBase[typeof Mapping])[]
+>(base: TBase, omitKeys: TOmitKeys, options: ObjectOptions = {}) {
+	const remapping = {} as Omit<TBase[typeof Mapping], TOmitKeys[number]>
+
+	for (const k in base[Mapping])
+		if (!omitKeys.includes(k as any))
+			// @ts-expect-error
+			remapping[k] = base[Mapping][k]
+
+	return DiscriminatedUnion(
+		remapping,
+		base[Discriminator],
+		options
+	) as TOmitDiscriminatedUnionMembers<TBase, TOmitKeys>
+}
+export type TOmitDiscriminatedUnionMembers<
+	TBase extends TDiscriminatedUnion<TDiscriminatorMap<TDiscriminable>>,
+	TOmitKeys extends (keyof TBase[typeof Mapping])[]
+> = TDiscriminatedUnion<
+	Omit<TBase[typeof Mapping], TOmitKeys[number]>,
+	TBase[typeof Discriminator]
+>
+
 
 function DiscriminatedUnionCheck(
 	schema: TDiscriminatedUnion<

@@ -5,6 +5,7 @@ import NodeTypeId from '../pkg-core/IdElements/NodeTypeId.js'
 import Pattern from '../pkg-core/IdElements/Pattern.js'
 import type { Datasworn } from '../pkg-core/index.js'
 import { pascalCase } from '../schema/utils/string.js'
+import type { Join, PascalCase, Split } from 'type-fest'
 
 type RegexGroupType =
 	| 'none'
@@ -69,10 +70,10 @@ namespace PathSymbol {
 		}
 	}
 
-	export class DictKey<Origin, Prop extends DictPropKeyIn<Origin>> extends PathSymbol<
+	export class DictKey<
 		Origin,
-		Prop
-	> {
+		Prop extends DictPropKeyIn<Origin>
+	> extends PathSymbol<Origin, Prop> {
 		static readonly PATTERN = Pattern.DictKeyElement
 		static readonly WILDCARD = new RegExp(
 			`${DictKey.PATTERN.source}|\\${CONST.PathSep}\\${CONST.WildcardString}|\\${CONST.PathSep}\\${CONST.WildcardString}\\${CONST.WildcardString}`
@@ -87,11 +88,11 @@ namespace PathSymbol {
 		}
 
 		get pattern() {
-			return DictKey.renderDictKeys(this.minReps, this.maxReps)
+			return DictKey.PATTERN
 		}
 
 		get wildcardPattern() {
-			return DictKey.renderDictKeys(this.minReps, this.maxReps, true)
+			return DictKey.WILDCARD
 		}
 
 		clone() {
@@ -103,11 +104,12 @@ namespace PathSymbol {
 			return '${string}'
 		}
 
-		static #dictKeysGlobstar(min, max) {}
-
 		static renderDictKeys(min: number, max: number, wildcard = false): RegExp {
 			// exit early if there's nothing to do
-			if (min === 1 && max === 1 && !wildcard) return PathSymbol.DictKey.PATTERN
+			if (min === 1 && max === 1)
+				return wildcard
+					? PathSymbol.DictKey.WILDCARD
+					: PathSymbol.DictKey.PATTERN
 
 			const base = wildcard
 				? `${IdPattern.PathSep}(?:${PathSymbol.DictKey.PATTERN.source}|${IdPattern.WILDCARD}|${IdPattern.GLOBSTAR})`
@@ -421,7 +423,6 @@ class PathFormat<Origin = Datasworn.RulesPackage> extends Array<
 		let base = ''
 		let dictKeys: PathSymbol.DictKey<any, any>[] = []
 		const isOnlyPart = this.length === 1
-		const canBeGlobstar = wildcard && !isOnlyPart
 
 		// TODO: apply globstar *after*?, rather then in the static prop WILDCARD?
 
@@ -443,29 +444,29 @@ class PathFormat<Origin = Datasworn.RulesPackage> extends Array<
 					break
 				case part instanceof PathSymbol.DictKey &&
 					!(nextPart instanceof PathSymbol.DictKey): {
-						// end of this DictKey chain; assemble complete DictKey string, and reset array
-						dictKeys.push(part)
-						const { min, max } = PathSymbol.DictKey.reduceReps(...dictKeys)
-						const toAppend = PathSymbol.DictKey.renderDictKeys(
-							min,
-							max,
-							wildcard
-						).source
-						if (
-							!toAppend.startsWith(`(?:${IdPattern.PathSep}`) &&
-							toAppend.length > 0
-						)
-							base += IdPattern.PathSep
-						// if (min > 0 && max > 2) {
-						// 	toAppend = toAppend.replace(
-						// 		`|${IdPattern.GLOBSTAR})`,
-						// 		`|(?:${IdPattern.GLOBSTAR}){${min === max ? min - 1 : min - 1 + ',' + (max - 1)}})`
-						// 	)
-						// }
-						base += toAppend
-						dictKeys = []
-						break
-					}
+					// end of this DictKey chain; assemble complete DictKey string, and reset array
+					dictKeys.push(part)
+					const { min, max } = PathSymbol.DictKey.reduceReps(...dictKeys)
+					const toAppend = PathSymbol.DictKey.renderDictKeys(
+						min,
+						max,
+						wildcard
+					).source
+					if (
+						!toAppend.startsWith(`(?:${IdPattern.PathSep}`) &&
+						toAppend.length > 0
+					)
+						base += IdPattern.PathSep
+					// if (min > 0 && max > 2) {
+					// 	toAppend = toAppend.replace(
+					// 		`|${IdPattern.GLOBSTAR})`,
+					// 		`|(?:${IdPattern.GLOBSTAR}){${min === max ? min - 1 : min - 1 + ',' + (max - 1)}})`
+					// 	)
+					// }
+					base += toAppend
+					dictKeys = []
+					break
+				}
 				default:
 					// standard handling
 					if (!isFirstPart) base += IdPattern.PathSep
@@ -590,19 +591,6 @@ for (const k of NodeTypeId.Collectable.NonRecursive) {
 	)
 
 	patterns.push(pattern)
-
-	if (k === 'asset') {
-		const assetAbility = (pattern as IdPattern<Datasworn.Asset>)
-			.clone()
-			.addNewTypeGroup('ability')
-			.addIndex('abilities') satisfies IdPattern<Datasworn.AssetAbility>
-		const assetAbilityMove = assetAbility
-			.clone()
-			.addNewTypeGroup('move')
-			.addDictKey('moves') satisfies IdPattern<Datasworn.Move>
-
-		patterns.push(assetAbility, assetAbilityMove)
-	}
 }
 for (const k of NodeTypeId.NonCollectable) {
 	const key = k as NodeTypeId.NonCollectable
@@ -613,13 +601,77 @@ for (const k of NodeTypeId.NonCollectable) {
 
 	patterns.push(pattern)
 }
-const ids: Record<string, TString> = {}
+
+function lazyPlural(str: string) {
+	if (str.endsWith('y')) return str.slice(0, -2) + 'ies'
+	return str + 's'
+}
+
+function addThing(
+	pattern: IdPattern,
+	typeId: NodeTypeId.AnyPrimary | Split<NodeTypeId.EmbedOnlyTypes, '.'>[1]
+) {
+	const newPattern = pattern.clone().addNewTypeGroup(typeId)
+
+	if (typeId in NodeTypeId.RootKeys)
+		return newPattern.addDictKey(
+			NodeTypeId.getRootKey(typeId as NodeTypeId.AnyPrimary)
+		)
+
+	switch (typeId as Exclude<typeof typeId, NodeTypeId.AnyPrimary>) {
+		case 'ability':
+		case 'option':
+			// @ts-expect-error
+			return newPattern.addIndex(lazyPlural(typeId))
+
+		default:
+			throw new Error(
+				`Couldn't determine property for embedded type "${typeId}"`
+			)
+	}
+}
+
+for (const compositeTypeId of NodeTypeId.EmbeddedTypes) {
+	const [parentTypeId, typeId] = compositeTypeId.split('.') as Split<
+		typeof compositeTypeId,
+		'.'
+	>
+
+	const parentPattern = patterns.find(
+		(pattern) => pattern[0].typeId === parentTypeId
+	) as IdPattern<DataswornNode.ByType<typeof parentTypeId>>
+
+	if (parentPattern == null)
+		throw new Error(`Couldn't find parent IdPattern of type "${parentTypeId}"`)
+
+	const embeddedPattern = addThing(parentPattern, typeId)
+	patterns.push(embeddedPattern)
+
+	const childTypeIds = NodeTypeId.EmbedOfEmbedTypes.filter((t) =>
+		t.startsWith(compositeTypeId)
+	)
+
+	if (childTypeIds.length === 0) continue
+
+	for (const childTypeIdComposite of childTypeIds) {
+		const [_parentTypeId, _typeId, childTypeId] = childTypeIdComposite.split(
+			'.'
+		) as Split<typeof childTypeIdComposite, '.'>
+		const childPattern = addThing(embeddedPattern, childTypeId)
+		patterns.push(childPattern)
+	}
+}
+
+type IdSchemaName =
+	`${PascalCase<Join<Split<NodeTypeId.Any, '.'>, '_'>>}${'Id' | 'IdWildcard'}`
+
+const ids = {} as Record<IdSchemaName, TString>
 
 for (const pattern of patterns.sort((a, b) =>
 	a.getLeftSide().source.localeCompare(b.getLeftSide().source, 'en-US')
 )) {
 	for (const schema of [pattern.toSchema(), pattern.toWildcardSchema()])
-		ids[schema.$id as string] = schema
+		ids[schema.$id as PascalCase<IdSchemaName>] = schema
 }
 
 export default ids

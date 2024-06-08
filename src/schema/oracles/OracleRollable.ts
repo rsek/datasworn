@@ -64,14 +64,6 @@ function RollableTable<OracleRow extends TObject, MappingKey extends string>(
 	column_labels: ReturnType<typeof ColumnLabels<OracleRow>> | null,
 	options: SetRequired<ObjectOptions, '$id'>
 ) {
-	// const base = Type.Object({
-	// 	oracle_type: Type.Literal(mappingKey),
-	// 	...(column_labels != null
-	// 		? TableMixin<OracleRow>(column_labels).properties
-	// 		: {}),
-	// 	...RollableMixin(row).properties
-	// })
-
 	const base = FlatIntersect([
 		Type.Object({ oracle_type: Type.Literal(mappingKey) }),
 		RollableMixin(row),

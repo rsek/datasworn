@@ -89,9 +89,9 @@ const AssetConditionMeterMixin = Type.Object({
 					Type.Array(
 						Type.Ref(Id.AnyMoveIdWildcard, {
 							examples: [
-								'classic/moves/suffer/companion_endure_harm',
-								'starforged/moves/suffer/companion_takes_a_hit',
-								'starforged/moves/suffer/withstand_damage'
+								'move:classic/suffer/companion_endure_harm',
+								'move:starforged/suffer/companion_takes_a_hit',
+								'move:starforged/suffer/withstand_damage'
 							]
 						}),
 						{
@@ -104,11 +104,11 @@ const AssetConditionMeterMixin = Type.Object({
 					Type.Array(
 						Type.Ref(Id.AnyMoveIdWildcard, {
 							examples: [
-								'classic/moves/adventure/heal',
-								'classic/moves/adventure/make_camp',
-								'classic/moves/relationship/sojourn',
-								'starforged/moves/recover/heal',
-								'starforged/moves/recover/repair'
+								'move:classic/adventure/heal',
+								'move:classic/adventure/make_camp',
+								'move:classic/relationship/sojourn',
+								'move:starforged/recover/heal',
+								'move:starforged/recover/repair'
 							]
 						}),
 						{

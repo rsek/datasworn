@@ -3,9 +3,14 @@ import { Id, Localize, Metadata } from './common/index.js'
 import * as Generic from './Generic.js'
 import * as TableRow from './oracles/TableRow.js'
 import { DiceExpression } from './common/Rolls.js'
-import { OracleTableText } from './index.js'
+import { OracleRollable, OracleTableText } from './index.js'
 import { DiceRange } from './common/Range.js'
-import { Discriminable } from './Utils.js'
+import { Computed, Discriminable, DiscriminatedUnion } from './Utils.js'
+import { EmbeddedNode } from './utils/EmbeddedNode.js'
+import { Mapping } from './Symbols.js'
+import { mapKeys, mapValues } from 'lodash-es'
+import { pascalCase } from './utils/string.js'
+import type { PascalCase } from 'type-fest'
 
 // export const TruthOptionTableRow = Type.Omit(
 // 	TableRow.OracleTableRowText,
@@ -16,24 +21,46 @@ import { Discriminable } from './Utils.js'
 // )
 // export type TruthOptionTableRow = Static<typeof TruthOptionTableRow>
 
-const RollableStub = Type.Pick(OracleTableText, ['oracle_type', 'dice', 'rows'])
+export type TruthOption = Static<typeof TruthOption>
+
+// TODO: generalize this to EmbeddedOracleRollable
+// provide an ID union for it.
+const oracleRollableMapping = mapValues(OracleRollable[Mapping], (schema) =>
+	EmbeddedNode(schema, 'truth.option', [], { $id: 'TruthOption' + schema.$id })
+)
+
+export const {
+	column_text: TruthOptionOracleColumnText,
+	column_text2: TruthOptionOracleColumnText2,
+	column_text3: TruthOptionOracleColumnText3,
+	table_text: TruthOptionOracleTableText,
+	table_text2: TruthOptionOracleTableText2,
+	table_text3: TruthOptionOracleTableText3
+} = oracleRollableMapping
+
+export const TruthOptionOracleRollable = DiscriminatedUnion(
+	oracleRollableMapping,
+	'oracle_type',
+	{ $id: 'TruthOptionOracleRollable' }
+)
+
+export type TruthOptionOracleRollable = Static<typeof TruthOptionOracleRollable>
 
 export const TruthOption = Type.Object(
 	{
+		_id: Computed(Type.Ref(Id.TruthOptionId)),
 		roll: Type.Ref(DiceRange),
 		summary: Type.Optional(Type.Ref(Localize.MarkdownString)),
 		description: Type.Ref(Localize.MarkdownString),
 		quest_starter: Type.Ref(Localize.MarkdownString),
-		// TODO: this should probably be a proper table object so that custom dice can be specified...
-		table: Type.Optional(
-			RollableStub
-			// Type.Array(Type.Ref(TableRow.OracleTableRowText))
+		oracles: Type.Optional(
+			Generic.Dictionary(Type.Ref(TruthOptionOracleRollable), {
+				title: 'TruthOptionOracles'
+			})
 		)
 	},
 	{ $id: 'TruthOption' }
 )
-
-export type TruthOption = Static<typeof TruthOption>
 
 export const Truth = Discriminable(
 	Generic.SourcedNode(

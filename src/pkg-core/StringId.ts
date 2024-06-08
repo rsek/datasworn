@@ -10,7 +10,7 @@ export type RulesPackageId = RulesetId | ExpansionId
 
 export type Id<
 	RulesPackage extends RulesPackageId,
-	TypeKey extends NodeTypeId.Any,
+	TypeKey extends NodeTypeId.AnyPrimary,
 	PathKeys extends DictKey[]
 > = Join<[RulesPackage, TypeKey, ...PathKeys], CONST.PathSep>
 

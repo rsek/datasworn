@@ -31,7 +31,7 @@ namespace IdParser {
 
 	export type Options<
 		RulesPackage extends string = string,
-		TypeId extends NodeTypeId.Any = NodeTypeId.Any,
+		TypeId extends NodeTypeId.AnyPrimary = NodeTypeId.AnyPrimary,
 		PathKeys extends (DataswornSource.DictKey | number)[] = (
 			| DataswornSource.DictKey
 			| number
@@ -57,7 +57,7 @@ namespace IdParser {
 
 abstract class IdParser<
 	RulesPackage extends string = string,
-	TypeId extends NodeTypeId.Any = NodeTypeId.Any,
+	TypeId extends NodeTypeId.AnyPrimary = NodeTypeId.AnyPrimary,
 	PathKeys extends (string | number)[] = (string | number)[]
 > implements IdParser.Options<RulesPackage, TypeId, PathKeys>
 {
@@ -444,7 +444,7 @@ abstract class IdParser<
 
 		const result: IdParser.Options = {
 			rulesPackage,
-			typeId: type as NodeTypeId.Any,
+			typeId: type as NodeTypeId.AnyPrimary,
 			pathKeys
 		}
 

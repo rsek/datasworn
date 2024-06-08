@@ -37,21 +37,21 @@ export const DictKey = Type.String({
 export type DictKey = Static<typeof DictKey>
 
 export const AnyMoveIdWildcard = Type.Union(
-	[Type.Ref('MoveIdWildcard'), Type.Ref('AssetAbilityMoveIdWildcard')],
+	[Type.Ref(ids.MoveIdWildcard), Type.Ref(ids.AssetAbilityMoveIdWildcard)],
 	{
 		$id: 'AnyMoveIdWildcard'
 	}
 )
 export type AnyMoveIdWildcard = string
 
-export default {
+const Ids = {
 	RulesetId,
 	ExpansionId,
 	DictKey,
 	AnyMoveIdWildcard,
 	...ids
-}
+} as const
 
-
+export default Ids
 
 export type TAnyId = TRef<TString | TUnion<(TString | TRef<TString>)[]>>

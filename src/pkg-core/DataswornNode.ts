@@ -15,11 +15,12 @@ namespace DataswornNode {
 	}
 
 	type TypeMap = {
-		[k in NodeTypeId.Any]: Extract<DataswornNode.Any, { type: k }>
+		[k in NodeTypeId.AnyPrimary]: Extract<DataswornNode.Any, { type: k }>
 	}
 
 	/** Gets the node object type corresponding to a given TypeId. */
-	export type ByType<T extends NodeTypeId.Any = NodeTypeId.Any> = TypeMap[T]
+	export type ByType<T extends NodeTypeId.AnyPrimary = NodeTypeId.AnyPrimary> =
+		TypeMap[T]
 
 	/** A union of all Datasworn node types. */
 	export type Any =

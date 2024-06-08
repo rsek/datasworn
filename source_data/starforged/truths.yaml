@@ -31,19 +31,22 @@ truths:
 
           We suspect the sun plague was caused by:
 
-          {{table:starforged/truth/cataclysm.table/0}}
-        table:
-          oracle_type: table_text
-          dice: 1d100
-          rows:
-          - roll: { min: 1, max: 25 }
-            text: Temporal distortions from a supermassive black hole
-          - roll: { min: 26, max: 50 }
-            text: Sudden dark matter decay
-          - roll: { min: 51, max: 75 }
-            text: Superweapon run amok
-          - roll: { min: 76, max: 100 }
-            text: Scientific experiment gone awry
+          {{table:truth.option.oracle_rollable:starforged/cataclysm.0.sun_plague_cause}}
+        oracles:
+        # TODO
+          sun_plague_cause:
+            name: Sun Plague Cause
+            type: oracle_rollable
+            oracle_type: table_text
+            rows:
+            - roll: { min: 1, max: 25 }
+              text: Temporal distortions from a supermassive black hole
+            - roll: { min: 26, max: 50 }
+              text: Sudden dark matter decay
+            - roll: { min: 51, max: 75 }
+              text: Superweapon run amok
+            - roll: { min: 76, max: 100 }
+              text: Scientific experiment gone awry
         quest_starter: |-
           The galaxy your people left behind is a cold, lightless grave. But a solitary star still glows, a beacon in a vast darkness. How did this star survive the plague? Why do you vow to find the means to travel across the immeasurable gulf to this distant light?
       - roll: { min: 34, max: 67 }
@@ -53,25 +56,27 @@ truths:
 
           These entities took the form of:
 
-          {{table:starforged/truth/cataclysm.table/1}}
-        table:
-          oracle_type: table_text
-          dice: 1d100
-          rows:
-          - roll: { min: 1, max: 15 }
-            text: Corrupting biological scourges
-          - roll: { min: 16, max: 30 }
-            text: 'Swarming, animalistic creatures'
-          - roll: { min: 31, max: 44 }
-            text: Monstrous humanoids
-          - roll: { min: 45, max: 58 }
-            text: 'Spirits of alluring, divine form'
-          - roll: { min: 59, max: 72 }
-            text: Beings of chaotic energy
-          - roll: { min: 73, max: 86 }
-            text: Titanic creatures of horrific power
-          - roll: { min: 87, max: 100 }
-            text: World-eating abominations of unimaginable scale
+          {{table:truth.option.oracle_rollable:starforged/cataclysm.1.entities}}
+        oracles:
+          entities:
+            name: Entities
+            type: oracle_rollable
+            oracle_type: table_text
+            rows:
+            - roll: { min: 1, max: 15 }
+              text: Corrupting biological scourges
+            - roll: { min: 16, max: 30 }
+              text: 'Swarming, animalistic creatures'
+            - roll: { min: 31, max: 44 }
+              text: Monstrous humanoids
+            - roll: { min: 45, max: 58 }
+              text: 'Spirits of alluring, divine form'
+            - roll: { min: 59, max: 72 }
+              text: Beings of chaotic energy
+            - roll: { min: 73, max: 86 }
+              text: Titanic creatures of horrific power
+            - roll: { min: 87, max: 100 }
+              text: World-eating abominations of unimaginable scale
         quest_starter: |-
           Here in the Forge, a rogue faction holds an artifact of these interdimensional entities. What is the nature of this relic? What power or dark fate does the faction intend to unleash?
       - roll: { min: 68, max: 100 }
@@ -81,21 +86,23 @@ truths:
 
           In this final war, we were set upon by:
 
-          {{table:starforged/truth/cataclysm.table/2}}
-        table:
-          oracle_type: table_text
-          dice: 1d100
-          rows:
-          - roll: { min: 1, max: 20 }
-            text: Artificial intelligence
-          - roll: { min: 21, max: 40 }
-            text: Religious zealots
-          - roll: { min: 41, max: 60 }
-            text: Genetically engineered soldiers
-          - roll: { min: 61, max: 80 }
-            text: Self-replicating nanomachines
-          - roll: { min: 81, max: 100 }
-            text: A tyrannical faction or leader
+          {{table:truth.option.oracle_rollable:starforged/cataclysm.2.foe}}
+        oracles:
+          foe:
+            name: Foe
+            type: oracle_rollable
+            oracle_type: table_text
+            rows:
+            - roll: { min: 1, max: 20 }
+              text: Artificial intelligence
+            - roll: { min: 21, max: 40 }
+              text: Religious zealots
+            - roll: { min: 41, max: 60 }
+              text: Genetically engineered soldiers
+            - roll: { min: 61, max: 80 }
+              text: Self-replicating nanomachines
+            - roll: { min: 81, max: 100 }
+              text: A tyrannical faction or leader
         quest_starter: |-
           A delegation of your dreaded foe arrives in the Forge. They claim to represent a rebel force seeking sanctuary. In return, they offer vital information. What news do they carry?
     your_character: |-
@@ -261,21 +268,23 @@ truths:
 
           These powers are born of:
 
-          {{table:starforged/truth/magic.table/1}}
-        table:
-          oracle_type: table_text
-          dice: 1d100
-          rows:
-          - roll: { min: 1, max: 20 }
-            text: Genetic engineering
-          - roll: { min: 21, max: 40 }
-            text: Psychic experimentation
-          - roll: { min: 41, max: 60 }
-            text: Evolutionary mutations
-          - roll: { min: 61, max: 80 }
-            text: Magitech augmentations
-          - roll: { min: 81, max: 100 }
-            text: Ancient knowledge held by secretive orders
+          {{table:truth.option.oracle_rollable:starforged/magic.1.power_source}}
+        oracles:
+          power_source:
+            name: Power Source
+            type: oracle_rollable
+            oracle_type: table_text
+            rows:
+            - roll: { min: 1, max: 20 }
+              text: Genetic engineering
+            - roll: { min: 21, max: 40 }
+              text: Psychic experimentation
+            - roll: { min: 41, max: 60 }
+              text: Evolutionary mutations
+            - roll: { min: 61, max: 80 }
+              text: Magitech augmentations
+            - roll: { min: 81, max: 100 }
+              text: Ancient knowledge held by secretive orders
         quest_starter: |-
           A young paragon wields incredible power, but cannot control it. They have been shunned by family and friends. They are also hunted by a person or organization who seeks to use them as a weapon. Why are you sworn to protect the paragon? What fabled location might offer a new home for them?
       - roll: { min: 68, max: 100 }
@@ -358,19 +367,21 @@ truths:
         description: |-
           Our computers are limited to simple digital systems and the most basic machine intelligence. This is because:
 
-          {{table:starforged/truth/artificial_intelligence.table/0}}
+          {{table:truth.option.oracle_rollable:starforged/artificial_intelligence.0.computer_limitation}}
 
           The Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves.
-        table:
-          oracle_type: table_text
-          dice: 1d100
-          rows:
-          - roll: { min: 1, max: 33 }
-            text: The energies of the Forge corrupt advanced systems
-          - roll: { min: 34, max: 67 }
-            text: AI was outlawed in the aftermath of the machine wars
-          - roll: { min: 68, max: 100 }
-            text: We have lost the knowledge to create and maintain AI
+        oracles:
+          computer_limitation:
+            name: Computer Limitation
+            type: oracle_rollable
+            oracle_type: table_text
+            rows:
+            - roll: { min: 1, max: 33 }
+              text: The energies of the Forge corrupt advanced systems
+            - roll: { min: 34, max: 67 }
+              text: AI was outlawed in the aftermath of the machine wars
+            - roll: { min: 68, max: 100 }
+              text: We have lost the knowledge to create and maintain AI
         quest_starter: |-
           An Adept is tormented by a dire future they have seen for the inhabitants of the Forge. What does this vision show?
       - roll: { min: 34, max: 67 }

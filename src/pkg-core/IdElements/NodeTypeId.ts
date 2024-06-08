@@ -1,4 +1,5 @@
 import type * as Datasworn from '../Datasworn.js'
+import type CONST from './CONST.js'
 
 /**
  * Datasworn ID elements that represent specific types of Datasworn object. They appear in the second position, immediately after the {@link RulesPackageId} element.
@@ -42,7 +43,8 @@ namespace NodeTypeId {
 	] as const
 	export type NonCollectable = (typeof NonCollectable)[number]
 
-	export type Any = Collectable.Any | Collection.Any | NonCollectable
+	/** Any primary node type. Primary node types can have IDs that address only their type (IDs without '.' separators). */
+	export type AnyPrimary = Collectable.Any | Collection.Any | NonCollectable
 
 	export const CollectedByMap = {
 		asset_collection: 'asset',
@@ -75,6 +77,34 @@ namespace NodeTypeId {
 		return CollectionOfMap[typeId] as CollectionOf<T>
 	}
 
+	export const EmbeddableTypes = [
+		'oracle_rollable',
+		'move'
+	] as const satisfies [...(Collectable.Any | NonCollectable)[]]
+	export type EmbeddableTypes = (typeof EmbeddableTypes)[number]
+	export const EmbedOnlyTypes = [
+		'asset.ability',
+		'truth.option'
+	] as const satisfies `${AnyPrimary}${CONST.PathTypeSep}${string}`[]
+	export type EmbedOnlyTypes = (typeof EmbedOnlyTypes)[number]
+
+	export const EmbeddedTypes = [
+		'asset.ability',
+		'truth.option',
+		'move.oracle_rollable'
+	] as const satisfies [
+		...typeof EmbedOnlyTypes,
+		...`${AnyPrimary}${CONST.PathTypeSep}${EmbeddableTypes}`[]
+	]
+	export type EmbeddedTypes = (typeof EmbeddedTypes)[number]
+
+	export const EmbedOfEmbedTypes = [
+		'asset.ability.move',
+		'asset.ability.oracle_rollable',
+		'truth.option.oracle_rollable'
+	] as const satisfies `${EmbeddedTypes}${CONST.PathTypeSep}${EmbeddableTypes}`[]
+	export type EmbedOfEmbedTypes = (typeof EmbedOfEmbedTypes)[number]
+
 	export const RootKeys = {
 		asset_collection: 'assets',
 		asset: 'assets',
@@ -91,10 +121,12 @@ namespace NodeTypeId {
 		delve_site_domain: 'site_domains',
 		delve_site_theme: 'site_themes',
 		rarity: 'rarities'
-	} as const satisfies Record<Any, keyof Datasworn.RulesPackage>
+	} as const satisfies Record<AnyPrimary, keyof Datasworn.RulesPackage>
 
-	export type RootKey<T extends Any = Any> = (typeof RootKeys)[T]
-	export function getRootKey<T extends Any>(typeId: T) {
+	export type Any = AnyPrimary | EmbeddedTypes | EmbedOfEmbedTypes
+
+	export type RootKey<T extends AnyPrimary = AnyPrimary> = (typeof RootKeys)[T]
+	export function getRootKey<T extends AnyPrimary>(typeId: T) {
 		return RootKeys[typeId] as RootKey<T>
 	}
 }

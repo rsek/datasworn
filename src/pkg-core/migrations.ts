@@ -14,7 +14,7 @@ export type IdReplacer = {
 }
 
 export type IdReplacementMap = Record<
-	NodeTypeId.Any | MinorNodeType,
+	NodeTypeId.AnyPrimary | MinorNodeType,
 	IdReplacer[]
 >
 

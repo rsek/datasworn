@@ -20,7 +20,7 @@ export type AnyCollectionKeys = CollectionAncestorKeys | CollectionPathKeys
 export type ExtractRulesPackage<T extends AnyId> =
 	Split<T> extends [
 		infer RulesPackage extends RulesPackageId,
-		NodeTypeId.Any,
+		NodeTypeId.AnyPrimary,
 		...string[]
 	]
 		? RulesPackage
@@ -79,37 +79,38 @@ type ExtractNonRecursiveCollectionTypeId<T extends NonRecursiveCollectionId> =
 		? TypeId
 		: never
 export type ExtractPathKeys<T extends AnyId> =
-	Split<T> extends [RulesPackageId, NodeTypeId.Any, ...infer U] ? U : never
+	Split<T> extends [RulesPackageId, NodeTypeId.AnyPrimary, ...infer U]
+		? U
+		: never
 export type ExtractKey<T extends AnyId> =
 	Split<T> extends [
 		RulesPackageId,
-		NodeTypeId.Any,
+		NodeTypeId.AnyPrimary,
 		...string[],
 		infer Key extends string
 	]
 		? Key
 		: Split<T> extends [
 					RulesPackageId,
-					NodeTypeId.Any,
+					NodeTypeId.AnyPrimary,
 					infer Key extends string
 			  ]
 			? Key
 			: never
-export type ExtractAncestorKeys<T extends AnyId> =
-	T extends RecursiveCollectionId
-		? ExtractRecursiveCollectionAncestorKeys<T>
-		: T extends RecursiveCollectableId
-			? ExtractRecursiveCollectableAncestorKeys<T>
-			: Split<T> extends [
-						RulesPackageId,
-						NodeTypeId.Any,
-						...infer AncestorKeys extends string[],
-						string
-				  ]
-				? AncestorKeys
-				: Split<T> extends [RulesPackageId, NodeTypeId.Any, string]
-					? []
-					: never
+export type ExtractAncestorKeys<T extends AnyId> = T extends RecursiveCollectionId
+	? ExtractRecursiveCollectionAncestorKeys<T>
+	: T extends RecursiveCollectableId
+		? ExtractRecursiveCollectableAncestorKeys<T>
+		: Split<T> extends [
+					RulesPackageId,
+					NodeTypeId.AnyPrimary,
+					...infer AncestorKeys extends string[],
+					string
+			  ]
+			? AncestorKeys
+			: Split<T> extends [RulesPackageId, NodeTypeId.AnyPrimary, string]
+				? []
+				: never
 export type ExtractParentCollectionKey<T extends NonRecursiveCollectableId> =
 	Split<T> extends [
 		RulesPackageId,
