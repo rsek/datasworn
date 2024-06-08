@@ -5,7 +5,7 @@ import {
 	type TSchema,
 	type TString
 } from '@sinclair/typebox'
-import * as Id from '../common/Id.js'
+import Id from '../common/Id.js'
 
 export const DictionaryBrand = Symbol('Dictionary')
 

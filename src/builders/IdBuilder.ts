@@ -1,7 +1,7 @@
-import { Type, type StringOptions } from '@sinclair/typebox'
+import { Type, type StringOptions, type TString } from '@sinclair/typebox'
 import type DataswornNode from '../pkg-core/DataswornNode.js'
 import CONST from '../pkg-core/IdElements/CONST.js'
-import type NodeTypeId from '../pkg-core/IdElements/NodeTypeId.js'
+import NodeTypeId from '../pkg-core/IdElements/NodeTypeId.js'
 import Pattern from '../pkg-core/IdElements/Pattern.js'
 import type { Datasworn } from '../pkg-core/index.js'
 import { pascalCase } from '../schema/utils/string.js'
@@ -87,11 +87,11 @@ namespace PathSymbol {
 		}
 
 		get pattern() {
-			return DictKey.repsRegex(this.minReps, this.maxReps, DictKey.PATTERN)
+			return DictKey.renderDictKeys(this.minReps, this.maxReps)
 		}
 
 		get wildcardPattern() {
-			return DictKey.repsRegex(this.minReps, this.maxReps, DictKey.WILDCARD)
+			return DictKey.renderDictKeys(this.minReps, this.maxReps, true)
 		}
 
 		clone() {
@@ -101,6 +101,40 @@ namespace PathSymbol {
 		static get stringTemplateLiteral() {
 			// eslint-disable-next-line no-template-curly-in-string
 			return '${string}'
+		}
+
+		static renderDictKeys(min: number, max: number, wildcard = false): RegExp {
+			// exit early if there's nothing to do
+			if (min === 1 && max === 1 && !wildcard) return PathSymbol.DictKey.PATTERN
+
+			const base = wildcard
+				? `${IdPattern.PathSep}(?:${PathSymbol.DictKey.PATTERN.source}|${IdPattern.WILDCARD}|${IdPattern.GLOBSTAR})`
+				: IdPattern.PathSep + PathSymbol.DictKey.PATTERN.source
+
+			const minMax = min === max ? min.toString() : `${min},${max}`
+
+			let wrappedKey = `(?:${base}){${minMax}}`
+
+			if (!wildcard) return RegExp(wrappedKey)
+
+			const maxKeysAfterGlobstar = max - 1
+			const minKeysAfterGlobstar = 0
+
+			let globstarGroup = IdPattern.GLOBSTAR
+			// a globstar that replaces up to the entire set of DictKeys
+
+			// optional subsequent single-level wildcards
+			if (maxKeysAfterGlobstar > 0)
+				globstarGroup += `(?:${IdPattern.PathSep}${IdPattern.WILDCARD}){${minKeysAfterGlobstar},${maxKeysAfterGlobstar}}`
+			wrappedKey = globstarGroup + '|' + wrappedKey
+
+			if (
+				!(wrappedKey.startsWith('(?:') && wrappedKey.endsWith(')')) &&
+				wrappedKey.includes('|')
+			)
+				wrappedKey = `(?:${wrappedKey})`
+
+			return RegExp(wrappedKey)
 		}
 
 		static repsStringTemplateLiteral(min: number, max: number) {
@@ -119,29 +153,6 @@ namespace PathSymbol {
 				variantsToGenerate--
 			}
 			return variants
-		}
-
-		static repsRegex(min: number, max: number | null, regex: RegExp): RegExp {
-			let minMax: string
-
-			switch (true) {
-				case min === 1 && max === 1:
-					return regex
-				case typeof max !== 'number':
-					// for open ended repeats
-					minMax = `${min},`
-					break
-				case max === min:
-					minMax = min.toString()
-					break
-				default:
-					minMax = `${min},${max}`
-					break
-			}
-
-			const src = `(?:${IdPattern.PathSep}${regex.source}){${minMax}}`
-
-			return new RegExp(src)
 		}
 
 		static reduceReps(...dictKeys: DictKey<any, any>[]) {
@@ -315,7 +326,7 @@ class IdPattern<
 		const typeName = this.map((item) => pascalCase(item.typeId)).join('')
 		const indefiniteArticle = typeName.match(/^[aeiou]/i) ? 'an' : 'a'
 		const $id = typeName + 'IdWildcard'
-		const description = `A unique ID representing ${indefiniteArticle} ${typeName} object.`
+		const description = `A wildcarded ${typeName}Id that can be used to match multiple ${typeName} objects.`
 		// named capture groups aren't universally available, so JSON schema docs recommend against using them
 		const pattern = this.toRegex(true, 'capture_group', true).source
 
@@ -435,8 +446,7 @@ class PathFormat<Origin = Datasworn.RulesPackage> extends Array<
 			const isFirstPart = i === 0
 
 			switch (true) {
-				case wildcard &&
-					isOnlyPart &&
+				case isOnlyPart &&
 					part instanceof PathSymbol.DictKey &&
 					!(part instanceof PathSymbol.RecursiveDictKeys):
 					base += part.pattern.source + '|' + IdPattern.WILDCARD // single-symbol paths can't be globstarred
@@ -448,26 +458,29 @@ class PathFormat<Origin = Datasworn.RulesPackage> extends Array<
 					break
 				case part instanceof PathSymbol.DictKey &&
 					!(nextPart instanceof PathSymbol.DictKey): {
-					// end of this DictKey chain; assemble complete DictKey string, and reset array
-					dictKeys.push(part)
-					const { min, max } = PathSymbol.DictKey.reduceReps(...dictKeys)
-					let toAppend = PathSymbol.DictKey.repsRegex(
-						min,
-						max,
-						wildcard ? PathSymbol.DictKey.WILDCARD : PathSymbol.DictKey.PATTERN
-					).source
-					if (!toAppend.startsWith(`(?:${IdPattern.PathSep}`))
-						base += IdPattern.PathSep
-					if (min > 0 && max > 2) {
-						toAppend = toAppend.replace(
-							`|${IdPattern.GLOBSTAR})`,
-							`|(?:${IdPattern.GLOBSTAR}){${min === max ? min - 1 : min - 1 + ',' + (max - 1)}})`
+						// end of this DictKey chain; assemble complete DictKey string, and reset array
+						dictKeys.push(part)
+						const { min, max } = PathSymbol.DictKey.reduceReps(...dictKeys)
+						const toAppend = PathSymbol.DictKey.renderDictKeys(
+							min,
+							max,
+							wildcard
+						).source
+						if (
+							!toAppend.startsWith(`(?:${IdPattern.PathSep}`) &&
+							toAppend.length > 0
 						)
+							base += IdPattern.PathSep
+						// if (min > 0 && max > 2) {
+						// 	toAppend = toAppend.replace(
+						// 		`|${IdPattern.GLOBSTAR})`,
+						// 		`|(?:${IdPattern.GLOBSTAR}){${min === max ? min - 1 : min - 1 + ',' + (max - 1)}})`
+						// 	)
+						// }
+						base += toAppend
+						dictKeys = []
+						break
 					}
-					base += toAppend
-					dictKeys = []
-					break
-				}
 				default:
 					// standard handling
 					if (!isFirstPart) base += IdPattern.PathSep
@@ -478,7 +491,7 @@ class PathFormat<Origin = Datasworn.RulesPackage> extends Array<
 
 		if (canBeGlobstar) {
 			const maxWildcardsAfterInitialGlobstar = this.length - 1
-			let extraWildcards =
+			const extraWildcards =
 				maxWildcardsAfterInitialGlobstar === 1
 					? `(?:${IdPattern.PathSep}${IdPattern.WILDCARD})?`
 					: maxWildcardsAfterInitialGlobstar > 1
@@ -554,40 +567,74 @@ class PathFormat<Origin = Datasworn.RulesPackage> extends Array<
 	}
 }
 
-const asset = IdPattern.createNonRecursiveCollectable(
-	'asset',
-	'assets'
-) satisfies IdPattern<Datasworn.Asset>
-const assetAbility = asset
-	.clone()
-	.addNewTypeGroup('ability')
-	.addIndex('abilities') satisfies IdPattern<Datasworn.AssetAbility>
-const assetAbilityMove = assetAbility
-	.clone()
-	.addNewTypeGroup('move')
-	.addDictKey('moves') satisfies IdPattern<Datasworn.Move>
-const oracleCollection = IdPattern.createRecursiveCollection(
-	'oracle_collection',
-	'oracles'
-)
+const patterns: IdPattern[] = []
 
-const oracleRollable = IdPattern.createRecursiveCollectable(
-	'oracle_rollable',
-	'oracles'
-)
+for (const k of NodeTypeId.Collection.Recursive) {
+	const key = k as NodeTypeId.Collection.Recursive
+	const pattern = IdPattern.createRecursiveCollection(
+		key,
+		NodeTypeId.getRootKey(key)
+	)
 
-const moveCategory = IdPattern.fromRoot('move_collection').addDictKey(
-	'moves'
-) satisfies IdPattern<Datasworn.MoveCategory>
+	patterns.push(pattern)
+}
+for (const k of NodeTypeId.Collection.NonRecursive) {
+	const key = k as NodeTypeId.Collection.NonRecursive
+	const pattern = IdPattern.createNonRecursiveCollection(
+		key,
+		NodeTypeId.getRootKey(key)
+	)
 
-const move = moveCategory
-	.clone()
-	.addDictKey('contents') satisfies IdPattern<Datasworn.Move>
+	patterns.push(pattern)
+}
+for (const k of NodeTypeId.Collectable.Recursive) {
+	const key = k as NodeTypeId.Collectable.Recursive
+	const pattern = IdPattern.createRecursiveCollectable(
+		key,
+		NodeTypeId.getRootKey(key)
+	)
 
-// console.log(asset.toSchema())
-// console.log(assetAbility.toSchema())
-// console.log(assetAbilityMove.toSchema())
-// console.log(oracleCollection.toSchema())
-console.log(assetAbilityMove.toSchema())
-console.log(assetAbilityMove.toWildcardSchema())
-console.log(oracleRollable.toWildcardSchema())
+	patterns.push(pattern)
+}
+
+for (const k of NodeTypeId.Collectable.NonRecursive) {
+	const key = k as NodeTypeId.Collectable.NonRecursive
+	const pattern = IdPattern.createNonRecursiveCollectable(
+		key,
+		NodeTypeId.getRootKey(key)
+	)
+
+	patterns.push(pattern)
+
+	if (k === 'asset') {
+		const assetAbility = (pattern as IdPattern<Datasworn.Asset>)
+			.clone()
+			.addNewTypeGroup('ability')
+			.addIndex('abilities') satisfies IdPattern<Datasworn.AssetAbility>
+		const assetAbilityMove = assetAbility
+			.clone()
+			.addNewTypeGroup('move')
+			.addDictKey('moves') satisfies IdPattern<Datasworn.Move>
+
+		patterns.push(assetAbility, assetAbilityMove)
+	}
+}
+for (const k of NodeTypeId.NonCollectable) {
+	const key = k as NodeTypeId.NonCollectable
+	const pattern = IdPattern.createNonCollectable(
+		key,
+		NodeTypeId.getRootKey(key)
+	)
+
+	patterns.push(pattern)
+}
+const ids: Record<string, TString> = {}
+
+for (const pattern of patterns.sort((a, b) =>
+	a.getLeftSide().source.localeCompare(b.getLeftSide().source, 'en-US')
+)) {
+	for (const schema of [pattern.toSchema(), pattern.toWildcardSchema()])
+		ids[schema.$id as string] = schema
+}
+
+export default ids

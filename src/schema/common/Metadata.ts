@@ -1,5 +1,5 @@
 import { type Static, Type } from '@sinclair/typebox'
-import * as Id from './Id.js'
+import Id from './Id.js'
 import { Nullable } from '../utils/Nullable.js'
 import { JsonTypeDef } from '../Symbols.js'
 import JtdType from '../../scripts/json-typedef/typedef.js'

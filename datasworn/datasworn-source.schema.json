@@ -506,129 +506,12 @@
 			},
 			"additionalProperties": true
 		},
-		"AssetAbilityId": {
-			"title": "AssetAbilityId",
+		"RulesetId": {
+			"title": "RulesetId",
 			"type": "string",
-			"description": "A unique ID for an AssetAbility.",
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/asset\\/[a-z][a-z_]*\\/[a-z][a-z_]*\\.abilities\\/\\d+$"
-		},
-		"AssetCollectionId": {
-			"title": "AssetCollectionId",
-			"type": "string",
-			"description": "A unique ID for an AssetCollection.",
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/asset_collection\\/[a-z][a-z_]*$"
-		},
-		"AssetCollectionIdWildcard": {
-			"title": "AssetCollectionIdWildcard",
-			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple AssetCollections.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/asset_collection\\/(\\*|[a-z][a-z_]*)$"
-		},
-		"AssetId": {
-			"anyOf": [
-				{
-					"title": "AssetId",
-					"type": "string",
-					"description": "A unique ID for an Asset.",
-					"pattern": "^[a-z][a-z0-9_]{3,}\\/asset\\/[a-z][a-z_]*\\/[a-z][a-z_]*$"
-				},
-				{
-					"title": "AssetId",
-					"type": "string",
-					"description": "A unique ID for an Asset.",
-					"pattern": "^[a-z][a-z0-9_]{3,}\\/asset\\/[a-z][a-z_]*\\/[a-z][a-z_]*$"
-				}
-			]
-		},
-		"AssetIdWildcard": {
-			"title": "AssetIdWildcard",
-			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple Assets.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/asset\\/(\\*|[a-z][a-z_]*)\\/(\\*|[a-z][a-z_]*)$"
-		},
-		"AtlasCollectionId": {
-			"title": "AtlasCollectionId",
-			"type": "string",
-			"description": "A unique ID for an AtlasCollection.",
-			"examples": ["classic/atlas_collection/ironlands"],
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/atlas_entry\\/[a-z][a-z_]*$"
-		},
-		"AtlasCollectionIdWildcard": {
-			"title": "AtlasCollectionIdWildcard",
-			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple AtlasCollections.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/atlas_entry\\/(\\*|[a-z][a-z_]*)$"
-		},
-		"AtlasEntryId": {
-			"examples": ["classic/atlas_entry/ironlands/hinterlands"],
-			"anyOf": [
-				{
-					"title": "AtlasEntryId",
-					"type": "string",
-					"description": "A unique ID for an AtlasEntry.",
-					"examples": ["classic/atlas_entry/ironlands/hinterlands"],
-					"pattern": "^[a-z][a-z0-9_]{3,}\\/atlas_entry(\\/[a-z][a-z_]*){1,3}\\/[a-z][a-z_]*$"
-				},
-				{
-					"title": "AtlasEntryId",
-					"type": "string",
-					"description": "A unique ID for an AtlasEntry.",
-					"examples": ["classic/atlas_entry/ironlands/hinterlands"],
-					"pattern": "^[a-z][a-z0-9_]{3,}\\/atlas_entry(\\/[a-z][a-z_]*){1,3}\\/[a-z][a-z_]*$"
-				}
-			]
-		},
-		"AtlasEntryIdWildcard": {
-			"title": "AtlasEntryIdWildcard",
-			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple AtlasEntrys.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/atlas_entry((\\/[a-z][a-z_]*){1,3}|\\/\\*\\*|\\/\\*\\*\\/[a-z][a-z_]*|\\/[a-z][a-z_]*\\/\\*\\*)\\/(\\*|[a-z][a-z_]*)$"
-		},
-		"DelveSiteDomainId": {
-			"title": "DelveSiteDomainId",
-			"type": "string",
-			"description": "A unique ID for a DelveSiteDomain.",
-			"examples": ["delve/delve_site_domain/shadowfen"],
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/delve_site_domain\\/[a-z][a-z_]*$"
-		},
-		"DelveSiteDomainIdWildcard": {
-			"title": "DelveSiteDomainIdWildcard",
-			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple DelveSiteDomains.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/delve_site_domain\\/(\\*|[a-z][a-z_]*)$"
-		},
-		"DelveSiteId": {
-			"title": "DelveSiteId",
-			"type": "string",
-			"description": "A unique ID for a DelveSite.",
-			"examples": ["delve/delve_site/alvas_rest"],
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/delve_site\\/[a-z][a-z_]*$"
-		},
-		"DelveSiteIdWildcard": {
-			"title": "DelveSiteIdWildcard",
-			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple DelveSites.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/delve_site\\/(\\*|[a-z][a-z_]*)$"
-		},
-		"DelveSiteThemeId": {
-			"title": "DelveSiteThemeId",
-			"type": "string",
-			"description": "A unique ID for a DelveSiteTheme.",
-			"examples": ["delve/delve_site_theme/hallowed"],
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/delve_site_theme\\/[a-z][a-z_]*$"
-		},
-		"DelveSiteThemeIdWildcard": {
-			"title": "DelveSiteThemeIdWildcard",
-			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple DelveSiteThemes.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/delve_site_theme\\/(\\*|[a-z][a-z_]*)$"
-		},
-		"DictKey": {
-			"title": "DictKey",
-			"type": "string",
-			"description": "A `snake_case` key used in a Datasworn dictionary object.",
-			"remarks": "If you need to generate a key from a user-provided label, it's recommended to use a 'slugify' function/library, e.g. https://www.npmjs.com/package/slugify for NodeJS.",
-			"pattern": "^[a-z][a-z_]*$"
+			"description": "The ID of standalone Datasworn package that describes its own ruleset.",
+			"examples": ["classic", "starforged", "sundered_isles"],
+			"pattern": "^[a-z][a-z0-9_]{3,}$"
 		},
 		"ExpansionId": {
 			"title": "ExpansionId",
@@ -637,217 +520,216 @@
 			"examples": ["delve"],
 			"pattern": "^[a-z][a-z0-9_]{3,}$"
 		},
+		"DictKey": {
+			"title": "DictKey",
+			"type": "string",
+			"description": "A `snake_case` key used in a Datasworn dictionary object.",
+			"remarks": "If you need to generate a key from a user-provided label, it's recommended to use a 'slugify' function/library, e.g. https://www.npmjs.com/package/slugify for NodeJS.",
+			"pattern": "^[a-z][a-z_]*$"
+		},
+		"AssetId": {
+			"title": "AssetId",
+			"type": "string",
+			"description": "A unique ID representing an Asset object.",
+			"pattern": "^asset:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2})$"
+		},
+		"AssetIdWildcard": {
+			"title": "AssetIdWildcard",
+			"type": "string",
+			"description": "A wildcarded AssetId that can be used to match multiple Asset objects.",
+			"pattern": "^asset:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*(?:\\/\\*){0,1}|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})|\\*\\*(?:\\/\\*){0,2})$"
+		},
+		"AssetCollectionId": {
+			"title": "AssetCollectionId",
+			"type": "string",
+			"description": "A unique ID representing an AssetCollection object.",
+			"pattern": "^asset_collection:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
+		},
+		"AssetCollectionIdWildcard": {
+			"title": "AssetCollectionIdWildcard",
+			"type": "string",
+			"description": "A wildcarded AssetCollectionId that can be used to match multiple AssetCollection objects.",
+			"pattern": "^asset_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1})|\\*\\*(?:\\/\\*)?)$"
+		},
+		"AssetAbilityId": {
+			"title": "AssetAbilityId",
+			"type": "string",
+			"description": "A unique ID representing an AssetAbility object.",
+			"pattern": "^asset\\.ability:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2})\\.(\\d+)$"
+		},
+		"AssetAbilityIdWildcard": {
+			"title": "AssetAbilityIdWildcard",
+			"type": "string",
+			"description": "A wildcarded AssetAbilityId that can be used to match multiple AssetAbility objects.",
+			"pattern": "^asset\\.ability:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*(?:\\/\\*){0,1}|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})|\\*\\*(?:\\/\\*){0,2})\\.(\\d+|\\*)$"
+		},
+		"AssetAbilityMoveId": {
+			"title": "AssetAbilityMoveId",
+			"type": "string",
+			"description": "A unique ID representing an AssetAbilityMove object.",
+			"pattern": "^asset\\.ability\\.move:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2})\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
+		},
+		"AssetAbilityMoveIdWildcard": {
+			"title": "AssetAbilityMoveIdWildcard",
+			"type": "string",
+			"description": "A wildcarded AssetAbilityMoveId that can be used to match multiple AssetAbilityMove objects.",
+			"pattern": "^asset\\.ability\\.move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*(?:\\/\\*){0,1}|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})|\\*\\*(?:\\/\\*){0,2})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
+		},
+		"AtlasCollectionId": {
+			"title": "AtlasCollectionId",
+			"type": "string",
+			"description": "A unique ID representing an AtlasCollection object.",
+			"pattern": "^atlas_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,3})$"
+		},
+		"AtlasCollectionIdWildcard": {
+			"title": "AtlasCollectionIdWildcard",
+			"type": "string",
+			"description": "A wildcarded AtlasCollectionId that can be used to match multiple AtlasCollection objects.",
+			"pattern": "^atlas_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*(?:\\/\\*){0,2}|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,3})|\\*\\*(?:\\/\\*)?)$"
+		},
+		"AtlasEntryId": {
+			"title": "AtlasEntryId",
+			"type": "string",
+			"description": "A unique ID representing an AtlasEntry object.",
+			"pattern": "^atlas_entry:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})$"
+		},
+		"AtlasEntryIdWildcard": {
+			"title": "AtlasEntryIdWildcard",
+			"type": "string",
+			"description": "A wildcarded AtlasEntryId that can be used to match multiple AtlasEntry objects.",
+			"pattern": "^atlas_entry:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*(?:\\/\\*){0,3}|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})|\\*\\*(?:\\/\\*){0,2})$"
+		},
+		"DelveSiteId": {
+			"title": "DelveSiteId",
+			"type": "string",
+			"description": "A unique ID representing a DelveSite object.",
+			"pattern": "^delve_site:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
+		},
+		"DelveSiteIdWildcard": {
+			"title": "DelveSiteIdWildcard",
+			"type": "string",
+			"description": "A wildcarded DelveSiteId that can be used to match multiple DelveSite objects.",
+			"pattern": "^delve_site:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1})|\\*\\*(?:\\/\\*)?)$"
+		},
+		"DelveSiteDomainId": {
+			"title": "DelveSiteDomainId",
+			"type": "string",
+			"description": "A unique ID representing a DelveSiteDomain object.",
+			"pattern": "^delve_site_domain:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
+		},
+		"DelveSiteDomainIdWildcard": {
+			"title": "DelveSiteDomainIdWildcard",
+			"type": "string",
+			"description": "A wildcarded DelveSiteDomainId that can be used to match multiple DelveSiteDomain objects.",
+			"pattern": "^delve_site_domain:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1})|\\*\\*(?:\\/\\*)?)$"
+		},
+		"DelveSiteThemeId": {
+			"title": "DelveSiteThemeId",
+			"type": "string",
+			"description": "A unique ID representing a DelveSiteTheme object.",
+			"pattern": "^delve_site_theme:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
+		},
+		"DelveSiteThemeIdWildcard": {
+			"title": "DelveSiteThemeIdWildcard",
+			"type": "string",
+			"description": "A wildcarded DelveSiteThemeId that can be used to match multiple DelveSiteTheme objects.",
+			"pattern": "^delve_site_theme:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1})|\\*\\*(?:\\/\\*)?)$"
+		},
+		"MoveId": {
+			"title": "MoveId",
+			"type": "string",
+			"description": "A unique ID representing a Move object.",
+			"pattern": "^move:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2})$"
+		},
+		"MoveIdWildcard": {
+			"title": "MoveIdWildcard",
+			"type": "string",
+			"description": "A wildcarded MoveId that can be used to match multiple Move objects.",
+			"pattern": "^move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*(?:\\/\\*){0,1}|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})|\\*\\*(?:\\/\\*){0,2})$"
+		},
 		"MoveCategoryId": {
 			"title": "MoveCategoryId",
 			"type": "string",
-			"description": "A unique ID for a MoveCategory.",
-			"examples": ["starforged/move_category/adventure"],
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/move_category\\/[a-z][a-z_]*$"
+			"description": "A unique ID representing a MoveCategory object.",
+			"pattern": "^move_category:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
 		},
 		"MoveCategoryIdWildcard": {
 			"title": "MoveCategoryIdWildcard",
 			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple MoveCategorys.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/move_category\\/(\\*|[a-z][a-z_]*)$"
-		},
-		"MoveId": {
-			"title": "MoveId",
-			"description": "A move ID, for a standard move or a unique asset move",
-			"examples": [
-				"classic/move/combat/strike",
-				"starforged/asset/module/grappler.abilities/0.moves/ready_grappler"
-			],
-			"anyOf": [
-				{
-					"title": "StandardMoveId",
-					"description": "A move ID for a standard move.",
-					"anyOf": [
-						{
-							"title": "StandardMoveId",
-							"type": "string",
-							"description": "A move ID for a standard move.",
-							"pattern": "^[a-z][a-z0-9_]{3,}\\/move\\/[a-z][a-z_]*\\/[a-z][a-z_]*$"
-						},
-						{
-							"title": "StandardMoveId",
-							"type": "string",
-							"description": "A move ID for a standard move.",
-							"pattern": "^[a-z][a-z0-9_]{3,}\\/move\\/[a-z][a-z_]*\\/[a-z][a-z_]*$"
-						}
-					]
-				},
-				{
-					"title": "AssetMoveId",
-					"type": "string",
-					"description": "A move ID for an asset move.",
-					"pattern": "^([a-z][a-z0-9_]{3,})\\/asset\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\.abilities\\/(\\d+)\\.moves\\/([a-z][a-z_]*)$"
-				}
-			]
-		},
-		"MoveIdWildcard": {
-			"title": "MoveIdWildcard",
-			"description": "A move ID with wildcards.",
-			"examples": [
-				"*/move/*/face_danger",
-				"*/asset/ritual/*.abilities/*.moves/*"
-			],
-			"anyOf": [
-				{
-					"title": "StandardMoveId (with wildcard)",
-					"type": "string",
-					"description": "A wildcarded ID that can be used to match multiple StandardMoves.",
-					"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/move\\/(\\*|[a-z][a-z_]*)\\/(\\*|[a-z][a-z_]*)$"
-				},
-				{
-					"title": "AssetMoveIdWildcard",
-					"type": "string",
-					"description": "A move ID for an asset move.",
-					"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/asset\\/(\\*|[a-z][a-z_]*)\\/(\\*|[a-z][a-z_]*)\\.abilities\\/(\\*|\\d+)\\.moves\\/(\\*|[a-z][a-z_]*)$"
-				}
-			]
-		},
-		"NpcCollectionId": {
-			"title": "NpcCollectionId",
-			"type": "string",
-			"description": "A unique ID for a NpcCollection.",
-			"examples": [
-				"classic/npc_collection/firstborn",
-				"starforged/npc_collection/sample_npcs"
-			],
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/npc_collection\\/[a-z][a-z_]*$"
-		},
-		"NpcCollectionIdWildcard": {
-			"title": "NpcCollectionIdWildcard",
-			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple NpcCollections.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/npc_collection\\/(\\*|[a-z][a-z_]*)$"
+			"description": "A wildcarded MoveCategoryId that can be used to match multiple MoveCategory objects.",
+			"pattern": "^move_category:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1})|\\*\\*(?:\\/\\*)?)$"
 		},
 		"NpcId": {
-			"examples": [
-				"classic/npc/firstborn/elf",
-				"starforged/npc/sample_npcs/chiton"
-			],
-			"anyOf": [
-				{
-					"title": "NpcId",
-					"type": "string",
-					"description": "A unique ID for a Npc.",
-					"examples": [
-						"classic/npc/firstborn/elf",
-						"starforged/npc/sample_npcs/chiton"
-					],
-					"pattern": "^[a-z][a-z0-9_]{3,}\\/npc(\\/[a-z][a-z_]*){1,3}\\/[a-z][a-z_]*$"
-				},
-				{
-					"title": "NpcId",
-					"type": "string",
-					"description": "A unique ID for a Npc.",
-					"examples": [
-						"classic/npc/firstborn/elf",
-						"starforged/npc/sample_npcs/chiton"
-					],
-					"pattern": "^[a-z][a-z0-9_]{3,}\\/npc(\\/[a-z][a-z_]*){1,3}\\/[a-z][a-z_]*$"
-				}
-			]
+			"title": "NpcId",
+			"type": "string",
+			"description": "A unique ID representing a Npc object.",
+			"pattern": "^npc:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})$"
 		},
 		"NpcIdWildcard": {
 			"title": "NpcIdWildcard",
 			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple Npcs.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/npc((\\/[a-z][a-z_]*){1,3}|\\/\\*\\*|\\/\\*\\*\\/[a-z][a-z_]*|\\/[a-z][a-z_]*\\/\\*\\*)\\/(\\*|[a-z][a-z_]*)$"
+			"description": "A wildcarded NpcId that can be used to match multiple Npc objects.",
+			"pattern": "^npc:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*(?:\\/\\*){0,3}|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})|\\*\\*(?:\\/\\*){0,2})$"
+		},
+		"NpcCollectionId": {
+			"title": "NpcCollectionId",
+			"type": "string",
+			"description": "A unique ID representing a NpcCollection object.",
+			"pattern": "^npc_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,3})$"
+		},
+		"NpcCollectionIdWildcard": {
+			"title": "NpcCollectionIdWildcard",
+			"type": "string",
+			"description": "A wildcarded NpcCollectionId that can be used to match multiple NpcCollection objects.",
+			"pattern": "^npc_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*(?:\\/\\*){0,2}|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,3})|\\*\\*(?:\\/\\*)?)$"
 		},
 		"OracleCollectionId": {
 			"title": "OracleCollectionId",
 			"type": "string",
-			"description": "A unique ID for an OracleCollection.",
-			"examples": [
-				"starforged/oracle_collection/core",
-				"starforged/oracle_collection/character/names",
-				"starforged/oracle_collection/planets/furnace/settlements"
-			],
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/oracle_collection(\\/[a-z][a-z_]*){1,3}$"
+			"description": "A unique ID representing an OracleCollection object.",
+			"pattern": "^oracle_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,3})$"
 		},
 		"OracleCollectionIdWildcard": {
 			"title": "OracleCollectionIdWildcard",
 			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple OracleCollections.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/oracle_collection((\\/[a-z][a-z_]*){1,3}|\\/\\*\\*|\\/\\*\\*\\/[a-z][a-z_]*|\\/[a-z][a-z_]*\\/\\*\\*)$"
+			"description": "A wildcarded OracleCollectionId that can be used to match multiple OracleCollection objects.",
+			"pattern": "^oracle_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*(?:\\/\\*){0,2}|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,3})|\\*\\*(?:\\/\\*)?)$"
 		},
 		"OracleRollableId": {
 			"title": "OracleRollableId",
-			"examples": [
-				"starforged/oracle_rollable/core/action",
-				"starforged/oracle_rollable/character/names/given",
-				"starforged/oracle_rollable/planets/furnace/settlements/terminus"
-			],
-			"anyOf": [
-				{
-					"title": "OracleRollableId",
-					"type": "string",
-					"description": "A unique ID for an OracleRollable.",
-					"examples": [
-						"starforged/oracle_rollable/core/action",
-						"starforged/oracle_rollable/character/names/given",
-						"starforged/oracle_rollable/planets/furnace/settlements/terminus"
-					],
-					"pattern": "^[a-z][a-z0-9_]{3,}\\/oracle_rollable(\\/[a-z][a-z_]*){1,3}\\/[a-z][a-z_]*$"
-				},
-				{
-					"title": "OracleRollableId",
-					"type": "string",
-					"description": "A unique ID for an OracleRollable.",
-					"examples": [
-						"starforged/oracle_rollable/core/action",
-						"starforged/oracle_rollable/character/names/given",
-						"starforged/oracle_rollable/planets/furnace/settlements/terminus"
-					],
-					"pattern": "^[a-z][a-z0-9_]{3,}\\/oracle_rollable(\\/[a-z][a-z_]*){1,3}\\/[a-z][a-z_]*$"
-				}
-			]
+			"type": "string",
+			"description": "A unique ID representing an OracleRollable object.",
+			"pattern": "^oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})$"
 		},
 		"OracleRollableIdWildcard": {
 			"title": "OracleRollableIdWildcard",
 			"type": "string",
-			"description": "Oracle table wildcards can also use '**' to represent any number of collection levels in the oracle tree.",
-			"examples": [
-				"*/oracle_rollable/**/peril",
-				"starforged/oracle_rollable/character/names/*",
-				"starforged/oracle_rollable/planets/*/settlements/*"
-			],
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/oracle_rollable((\\/[a-z][a-z_]*){1,3}|\\/\\*\\*|\\/\\*\\*\\/[a-z][a-z_]*|\\/[a-z][a-z_]*\\/\\*\\*)\\/(\\*|[a-z][a-z_]*)$"
+			"description": "A wildcarded OracleRollableId that can be used to match multiple OracleRollable objects.",
+			"pattern": "^oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*(?:\\/\\*){0,3}|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})|\\*\\*(?:\\/\\*){0,2})$"
 		},
 		"RarityId": {
 			"title": "RarityId",
 			"type": "string",
-			"description": "A unique ID for a Rarity.",
-			"examples": ["classic/rarities/ayethins_journal"],
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/rarity\\/[a-z][a-z_]*$"
+			"description": "A unique ID representing a Rarity object.",
+			"pattern": "^rarity:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
 		},
 		"RarityIdWildcard": {
 			"title": "RarityIdWildcard",
 			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple Raritys.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/rarity\\/(\\*|[a-z][a-z_]*)$"
-		},
-		"RulesetId": {
-			"title": "RulesetId",
-			"type": "string",
-			"description": "The ID of standalone Datasworn package that describes its own ruleset.",
-			"examples": ["classic", "starforged", "sundered_isles"],
-			"pattern": "^[a-z][a-z0-9_]{3,}$"
+			"description": "A wildcarded RarityId that can be used to match multiple Rarity objects.",
+			"pattern": "^rarity:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1})|\\*\\*(?:\\/\\*)?)$"
 		},
 		"TruthId": {
 			"title": "TruthId",
 			"type": "string",
-			"description": "A unique ID for a Truth.",
-			"examples": ["classic/truth/iron", "starforged/truth/iron"],
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/truth\\/[a-z][a-z_]*$"
+			"description": "A unique ID representing a Truth object.",
+			"pattern": "^truth:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
 		},
 		"TruthIdWildcard": {
 			"title": "TruthIdWildcard",
 			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple Truths.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/truth\\/(\\*|[a-z][a-z_]*)$"
+			"description": "A wildcarded TruthId that can be used to match multiple Truth objects.",
+			"pattern": "^truth:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/(?:\\*\\*|(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1})|\\*\\*(?:\\/\\*)?)$"
 		},
 		"AuthorInfo": {
 			"title": "AuthorInfo",

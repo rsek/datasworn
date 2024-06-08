@@ -1,5 +1,6 @@
 // no dependencies
-export * as Id from './Id.js'
+export { default as Id } from './Id.js'
+
 export * as Localize from './Localize.js'
 
 // depends on Id or Localize
