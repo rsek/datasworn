@@ -82,28 +82,28 @@ namespace NodeTypeId {
 		'move'
 	] as const satisfies [...(Collectable.Any | NonCollectable)[]]
 	export type EmbeddableTypes = (typeof EmbeddableTypes)[number]
-	export const EmbedOnlyTypes = [
-		'asset.ability',
-		'truth.option'
-	] as const satisfies `${AnyPrimary}${CONST.PathTypeSep}${string}`[]
+	export const EmbedOnlyTypes = ['ability', 'option'] as const
 	export type EmbedOnlyTypes = (typeof EmbedOnlyTypes)[number]
+	type EmbedOnlyTypePath = `${AnyPrimary}${CONST.PathTypeSep}${EmbedOnlyTypes}`
 
-	export const EmbeddedTypes = [
+	export const EmbeddedTypePaths = [
 		'asset.ability',
 		'truth.option',
 		'move.oracle_rollable'
 	] as const satisfies [
-		...typeof EmbedOnlyTypes,
-		...`${AnyPrimary}${CONST.PathTypeSep}${EmbeddableTypes}`[]
+		...(
+			| `${AnyPrimary}${CONST.PathTypeSep}${EmbeddableTypes}`
+			| EmbedOnlyTypePath
+		)[]
 	]
-	export type EmbeddedTypes = (typeof EmbeddedTypes)[number]
+	export type EmbeddedTypePaths = (typeof EmbeddedTypePaths)[number]
 
-	export const EmbedOfEmbedTypes = [
+	export const EmbedOfEmbedTypePaths = [
 		'asset.ability.move',
 		'asset.ability.oracle_rollable',
 		'truth.option.oracle_rollable'
-	] as const satisfies `${EmbeddedTypes}${CONST.PathTypeSep}${EmbeddableTypes}`[]
-	export type EmbedOfEmbedTypes = (typeof EmbedOfEmbedTypes)[number]
+	] as const satisfies `${EmbeddedTypePaths}${CONST.PathTypeSep}${EmbeddableTypes}`[]
+	export type EmbedOfEmbedTypePaths = (typeof EmbedOfEmbedTypePaths)[number]
 
 	export const RootKeys = {
 		asset_collection: 'assets',
@@ -123,7 +123,12 @@ namespace NodeTypeId {
 		rarity: 'rarities'
 	} as const satisfies Record<AnyPrimary, keyof Datasworn.RulesPackage>
 
-	export type Any = AnyPrimary | EmbeddedTypes | EmbedOfEmbedTypes
+	export const EmbeddedPropertyKeys = {
+		ability: 'abilities',
+		option: 'options'
+	} as const satisfies Record<EmbedOnlyTypes, string>
+
+	export type Any = AnyPrimary | EmbeddedTypePaths | EmbedOfEmbedTypePaths
 
 	export type RootKey<T extends AnyPrimary = AnyPrimary> = (typeof RootKeys)[T]
 	export function getRootKey<T extends AnyPrimary>(typeId: T) {

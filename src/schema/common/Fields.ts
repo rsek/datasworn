@@ -8,7 +8,7 @@ import {
 	type TSchema
 } from '@sinclair/typebox'
 import { Mapping, Members } from '../Symbols.js'
-import { type TMoveEnhancement } from '../Moves.js'
+import { type TMoveEnhancement } from 'schema/moves/MoveEnhancement.js'
 import * as Utils from '../Utils.js'
 import { type TAssetEnhancement } from '../assets/Enhancement.js'
 import * as Base from './Inputs.js'

@@ -3,14 +3,13 @@ import { Id, Localize, Metadata } from './common/index.js'
 import * as Generic from './Generic.js'
 import * as TableRow from './oracles/TableRow.js'
 import { DiceExpression } from './common/Rolls.js'
-import { OracleRollable, OracleTableText } from './index.js'
+import { OracleTableText } from './index.js'
 import { DiceRange } from './common/Range.js'
-import { Computed, Discriminable, DiscriminatedUnion } from './Utils.js'
-import { EmbeddedNode } from './utils/EmbeddedNode.js'
-import { Mapping } from './Symbols.js'
-import { mapKeys, mapValues } from 'lodash-es'
+import { Computed, Discriminable } from './Utils.js'
+import { mapKeys } from 'lodash-es'
 import { pascalCase } from './utils/string.js'
 import type { PascalCase } from 'type-fest'
+import { EmbeddedOracleRollable } from './oracles/EmbeddedOracleRollable.js'
 
 // export const TruthOptionTableRow = Type.Omit(
 // 	TableRow.OracleTableRowText,
@@ -23,29 +22,6 @@ import type { PascalCase } from 'type-fest'
 
 export type TruthOption = Static<typeof TruthOption>
 
-// TODO: generalize this to EmbeddedOracleRollable
-// provide an ID union for it.
-const oracleRollableMapping = mapValues(OracleRollable[Mapping], (schema) =>
-	EmbeddedNode(schema, 'truth.option', [], { $id: 'TruthOption' + schema.$id })
-)
-
-export const {
-	column_text: TruthOptionOracleColumnText,
-	column_text2: TruthOptionOracleColumnText2,
-	column_text3: TruthOptionOracleColumnText3,
-	table_text: TruthOptionOracleTableText,
-	table_text2: TruthOptionOracleTableText2,
-	table_text3: TruthOptionOracleTableText3
-} = oracleRollableMapping
-
-export const TruthOptionOracleRollable = DiscriminatedUnion(
-	oracleRollableMapping,
-	'oracle_type',
-	{ $id: 'TruthOptionOracleRollable' }
-)
-
-export type TruthOptionOracleRollable = Static<typeof TruthOptionOracleRollable>
-
 export const TruthOption = Type.Object(
 	{
 		_id: Computed(Type.Ref(Id.TruthOptionId)),
@@ -54,9 +30,14 @@ export const TruthOption = Type.Object(
 		description: Type.Ref(Localize.MarkdownString),
 		quest_starter: Type.Ref(Localize.MarkdownString),
 		oracles: Type.Optional(
-			Generic.Dictionary(Type.Ref(TruthOptionOracleRollable), {
-				title: 'TruthOptionOracles'
-			})
+			Generic.Dictionary(
+				Type.Ref(EmbeddedOracleRollable, {
+					title: 'TruthOptionOracleRollable'
+				}),
+				{
+					title: 'TruthOptionOracles'
+				}
+			)
 		)
 	},
 	{ $id: 'TruthOption' }

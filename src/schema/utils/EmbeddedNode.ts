@@ -10,47 +10,27 @@ import {
 	type TUnion
 } from '@sinclair/typebox'
 import type { Writable } from 'type-fest'
-import CONST from '../../pkg-core/IdElements/CONST.js'
+import type CONST from '../../pkg-core/IdElements/CONST.js'
 import NodeTypeId from '../../pkg-core/IdElements/NodeTypeId.js'
-import { Discriminator, Mapping } from '../Symbols.js'
-import {
-	DiscriminatedUnion,
-	type TDiscriminable,
-	type TDiscriminableKeyFor,
-	type TDiscriminatedUnion,
-	type TDiscriminatorMap
-} from './DiscriminatedUnion.js'
-import { pascalCase } from './string.js'
 import { Computed } from './Computed.js'
+import { pascalCase } from './string.js'
 
 const EmbeddedDictionaryKeys = Object.values(NodeTypeId.RootKeys)
 type EmbeddedDictionaryKeys = (typeof EmbeddedDictionaryKeys)[number]
 
 const ReplacedEmbedKeys = ['_id'] as const
 type ReplacedEmbedKeys = Writable<typeof ReplacedEmbedKeys>
-const OmittedEmbedKeys = ['_source'] as const
+const OmittedEmbedKeys = ['_source', 'enhances', 'replaces'] as const
 type OmittedEmbedKeys = Writable<typeof OmittedEmbedKeys>
 
 type TTypeNode = TObject<{ type: TLiteral<string> }>
 
 export function EmbeddedNode<
 	TBase extends TTypeNode,
-	TParentType extends string,
 	TId extends TRef<TString | TUnion<TString[]>>,
 	TEmbedKeys extends EmbeddedDictionaryKeys[]
->(
-	base: TBase,
-	parentType: TParentType,
-	allowEmbeds: TEmbedKeys,
-	options: ObjectOptions = {}
-) {
-	const typeLiteral =
-		`${parentType}${CONST.PathTypeSep}${base.properties.type.const}` as const
-	const type = Type.Literal(
-		`${parentType}${CONST.PathTypeSep}${base.properties.type.const}`
-	) as TEmbeddedNodeTypeLiteral<TBase, TParentType>
-
-	const typeName = typeLiteral.split(CONST.PathTypeSep).map(pascalCase).join('')
+>(base: TBase, allowEmbeds: TEmbedKeys, options: ObjectOptions = {}) {
+	const typeName = `Embedded${pascalCase(base.properties.type.const)}`
 
 	const _id = Computed(Type.Ref(typeName + 'Id'))
 
@@ -69,10 +49,7 @@ export function EmbeddedNode<
 
 	const { properties } = Type.Omit(base, omittedKeys)
 
-	const result = Type.Object(
-		{ _id, type, ...properties },
-		{ $id: typeName, ...options }
-	)
+	const result = Type.Object({ _id, ...properties }, options)
 
 	// @ts-expect-error
 	return result as TEmbeddedNode<TBase, TParentType, TId, TEmbedKeys>

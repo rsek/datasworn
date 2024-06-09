@@ -1,35 +1,25 @@
-import { Type, type Static, type TUnsafe, TProperties } from '@sinclair/typebox'
-import { type Id, Metadata, Localize } from './common/index.js'
+import { Type, type Static, type TUnsafe } from '@sinclair/typebox'
 import * as Generic from './Generic.js'
+import { Localize, type Id } from './common/index.js'
 
-import { Asset, type TAssetCollection } from './Assets.js'
+import { mapValues } from 'lodash-es'
+import * as CONST from '../scripts/const.js'
+import { type TAssetCollection } from './Assets.js'
 import { type TAtlasCollection } from './Atlas.js'
 import {
-	type TDelveSiteDomain,
-	type TDelveSiteTheme,
 	type TDelveSite,
-	DelveSite,
-	DelveSiteTheme,
-	DelveSiteDomain
+	type TDelveSiteDomain,
+	type TDelveSiteTheme
 } from './DelveSites.js'
-import {
-	Move,
-	MoveActionRoll,
-	MoveNoRoll,
-	type MoveCategory,
-	MoveProgressRoll,
-	MoveSpecialTrack
-} from './Moves.js'
-import { Npc, type TNpcCollection } from './Npcs.js'
-import { type TOracleTablesCollection } from './oracles/OracleCollection.js'
-import { Rarity, type TRarity } from './Rarities.js'
+import { type TNpcCollection } from './Npcs.js'
+import { type TRarity } from './Rarities.js'
+import * as Rules from './Rules.js'
 import { type TRules } from './Rules.js'
 import { type TTruth } from './Truths.js'
 import * as Utils from './Utils.js'
-import * as Rules from './Rules.js'
 import { SourceInfo } from './common/Metadata.js'
-import { mapValues } from 'lodash-es'
-import * as CONST from '../scripts/const.js'
+import { type MoveCategory } from './moves/MoveCategory.js'
+import { type TOracleTablesCollection } from './oracles/OracleCollection.js'
 
 export const Version = Type.Literal(CONST.VERSION, {
 	description: 'The version of the Datasworn format used by this data.',

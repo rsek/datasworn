@@ -26,7 +26,7 @@ export function IdentifiedNode<T extends TObject>(
 				_comment: Type.Optional(
 					Type.String({
 						description:
-							'Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.'
+							'Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.'
 					})
 				)
 			}),

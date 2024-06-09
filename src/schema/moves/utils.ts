@@ -22,7 +22,6 @@ import {
 import * as Generic from '../Generic.js'
 import * as Utils from '../utils/Assign.js'
 import type { ObjectProperties } from '../utils/ObjectProperties.js'
-import { AnyMoveIdWildcard } from '../common/Id.js'
 
 /** The property key used to discriminate move subtypes */
 export const moveDiscriminator = 'roll_type'
@@ -99,7 +98,7 @@ export function MoveEnhancement<
 		trigger: Type.Optional(trigger)
 	})
 
-	return Generic.EnhanceMany(base, Type.Ref(AnyMoveIdWildcard), {
+	return Generic.EnhanceMany(base, Type.Ref('AnyMoveIdWildcard'), {
 		description:
 			'An object that describes changes to a move. These changes should be applied recursively, altering only the specified properties; enhanced arrays should be concatencated with the original array value.',
 		...options

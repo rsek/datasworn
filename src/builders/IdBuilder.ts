@@ -1,4 +1,9 @@
-import { Type, type StringOptions, type TString } from '@sinclair/typebox'
+import {
+	Type,
+	type StringOptions,
+	type TString,
+	type TUnion
+} from '@sinclair/typebox'
 import type DataswornNode from '../pkg-core/DataswornNode.js'
 import CONST from '../pkg-core/IdElements/CONST.js'
 import NodeTypeId from '../pkg-core/IdElements/NodeTypeId.js'
@@ -602,36 +607,44 @@ for (const k of NodeTypeId.NonCollectable) {
 	patterns.push(pattern)
 }
 
-function lazyPlural(str: string) {
-	if (str.endsWith('y')) return str.slice(0, -2) + 'ies'
-	return str + 's'
-}
+const embeddedIdNames: Record<NodeTypeId.AnyPrimary, string[]> = {}
 
-function addThing(
-	pattern: IdPattern,
-	typeId: NodeTypeId.AnyPrimary | Split<NodeTypeId.EmbedOnlyTypes, '.'>[1]
+function extendForEmbed(
+	base: IdPattern,
+	embeddedTypeId: NodeTypeId.AnyPrimary | NodeTypeId.EmbedOnlyTypes
 ) {
-	const newPattern = pattern.clone().addNewTypeGroup(typeId)
+	let newPattern = base.clone().addNewTypeGroup(embeddedTypeId)
 
-	if (typeId in NodeTypeId.RootKeys)
-		return newPattern.addDictKey(
-			NodeTypeId.getRootKey(typeId as NodeTypeId.AnyPrimary)
+	if (embeddedTypeId in NodeTypeId.RootKeys) {
+		newPattern = newPattern.addDictKey(
+			NodeTypeId.getRootKey(embeddedTypeId as NodeTypeId.AnyPrimary)
+		)
+		embeddedIdNames[embeddedTypeId] ||= []
+		embeddedIdNames[embeddedTypeId].push(
+			base.map(({ typeId }) => pascalCase(typeId)).join('')
 		)
 
-	switch (typeId as Exclude<typeof typeId, NodeTypeId.AnyPrimary>) {
+		return newPattern
+	}
+
+	switch (embeddedTypeId as NodeTypeId.EmbedOnlyTypes) {
 		case 'ability':
 		case 'option':
 			// @ts-expect-error
-			return newPattern.addIndex(lazyPlural(typeId))
+			return newPattern.addIndex(
+				NodeTypeId.EmbeddedPropertyKeys[
+					embeddedTypeId as NodeTypeId.EmbedOnlyTypes
+				]
+			)
 
 		default:
 			throw new Error(
-				`Couldn't determine property for embedded type "${typeId}"`
+				`Couldn't determine property for embedded type "${embeddedTypeId}"`
 			)
 	}
 }
 
-for (const compositeTypeId of NodeTypeId.EmbeddedTypes) {
+for (const compositeTypeId of NodeTypeId.EmbeddedTypePaths) {
 	const [parentTypeId, typeId] = compositeTypeId.split('.') as Split<
 		typeof compositeTypeId,
 		'.'
@@ -644,10 +657,10 @@ for (const compositeTypeId of NodeTypeId.EmbeddedTypes) {
 	if (parentPattern == null)
 		throw new Error(`Couldn't find parent IdPattern of type "${parentTypeId}"`)
 
-	const embeddedPattern = addThing(parentPattern, typeId)
+	const embeddedPattern = extendForEmbed(parentPattern, typeId)
 	patterns.push(embeddedPattern)
 
-	const childTypeIds = NodeTypeId.EmbedOfEmbedTypes.filter((t) =>
+	const childTypeIds = NodeTypeId.EmbedOfEmbedTypePaths.filter((t) =>
 		t.startsWith(compositeTypeId)
 	)
 
@@ -657,7 +670,7 @@ for (const compositeTypeId of NodeTypeId.EmbeddedTypes) {
 		const [_parentTypeId, _typeId, childTypeId] = childTypeIdComposite.split(
 			'.'
 		) as Split<typeof childTypeIdComposite, '.'>
-		const childPattern = addThing(embeddedPattern, childTypeId)
+		const childPattern = extendForEmbed(embeddedPattern, childTypeId)
 		patterns.push(childPattern)
 	}
 }
@@ -673,5 +686,59 @@ for (const pattern of patterns.sort((a, b) =>
 	for (const schema of [pattern.toSchema(), pattern.toWildcardSchema()])
 		ids[schema.$id as PascalCase<IdSchemaName>] = schema
 }
+
+// generate unions for embedded types, and Any*Id for their base types
+for (const typeId in embeddedIdNames) {
+	const unionTypes = embeddedIdNames[typeId]
+	if (unionTypes.length === 0) continue
+	const baseTypeId = `${pascalCase(typeId)}Id`
+	const embeddedTypeId = `Embedded${baseTypeId}`
+	const anyTypeId = `Any${baseTypeId}`
+
+	ids[embeddedTypeId] = Type.Union(
+		unionTypes.map((parentType) => Type.Ref(parentType + baseTypeId)),
+		{
+			$id: embeddedTypeId
+		}
+	)
+	ids[embeddedTypeId + 'Wildcard'] = Type.Union(
+		unionTypes.map((parentType) =>
+			Type.Ref(parentType + baseTypeId + 'Wildcard')
+		),
+		{
+			$id: embeddedTypeId + 'Wildcard'
+		}
+	)
+
+	ids[anyTypeId] = Type.Union(
+		[Type.Ref(embeddedTypeId), Type.Ref(baseTypeId)],
+		{ $id: anyTypeId }
+	)
+	ids[anyTypeId + 'Wildcard'] = Type.Union(
+		[Type.Ref(embeddedTypeId + 'Wildcard'), Type.Ref(baseTypeId + 'Wildcard')],
+		{ $id: anyTypeId + 'Wildcard' }
+	)
+}
+
+const idTypes: string[] = []
+const wildcardIdTypes: string[] = []
+for (const idTypeName in ids) {
+	const idType = ids[idTypeName] as TUnion | TString
+
+	// skip things that are already a union
+	if (idType.type !== 'string') continue
+
+	if (idTypeName.endsWith('Wildcard')) wildcardIdTypes.push(idTypeName)
+	else idTypes.push(idTypeName)
+}
+
+ids['AnyId'] = Type.Union(
+	idTypes.map((idType) => Type.Ref(idType)),
+	{ $id: 'AnyId' }
+)
+ids['AnyIdWildcard'] = Type.Union(
+	wildcardIdTypes.map((idType) => Type.Ref(idType)),
+	{ $id: 'AnyIdWildcard' }
+)
 
 export default ids

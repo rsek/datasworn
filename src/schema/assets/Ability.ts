@@ -1,10 +1,12 @@
 import { Type, type Static } from '@sinclair/typebox'
 import * as Generic from '../Generic.js'
-import * as Moves from '../Moves.js'
+import { EmbeddedMove } from '../moves/EmbeddedMove.js'
+import { MoveEnhancement } from '../moves/MoveEnhancement.js'
 import { type Tags } from '../Rules.js'
 import { Id, Localize } from '../common/index.js'
 import { AssetEnhancement } from './Enhancement.js'
 import { AssetAbilityControlField, AssetAbilityOptionField } from './Fields.js'
+import { EmbeddedOracleRollable } from '../oracles/EmbeddedOracleRollable.js'
 
 export const AssetAbility = Generic.IdentifiedNode(
 	Type.Ref(Id.AssetAbilityId),
@@ -23,9 +25,23 @@ export const AssetAbility = Generic.IdentifiedNode(
 			description: 'Is this asset ability enabled?'
 		}),
 		moves: Type.Optional(
-			Generic.Dictionary(Type.Ref(Moves.Move), {
-				description: 'Unique moves added by this asset ability.'
-			})
+			Generic.Dictionary(
+				Type.Ref(EmbeddedMove, { title: 'AssetAbilityMove' }),
+				{
+					title: 'AssetAbilityMoves',
+					description: 'Unique moves added by this asset ability.'
+				}
+			)
+		),
+		oracles: Type.Optional(
+			Generic.Dictionary(
+				Type.Ref(EmbeddedOracleRollable, {
+					title: 'AssetAbilityOracleRollable'
+				}),
+				{
+					title: 'AssetAbilityOracles'
+				}
+			)
 		),
 		options: Type.Optional(
 			Generic.Dictionary(Type.Ref(AssetAbilityOptionField), {
@@ -45,7 +61,7 @@ export const AssetAbility = Generic.IdentifiedNode(
 			})
 		),
 		enhance_moves: Type.Optional(
-			Type.Array(Type.Ref(Moves.MoveEnhancement), {
+			Type.Array(Type.Ref(MoveEnhancement), {
 				description:
 					'Describes changes made to various moves by this asset ability. Usually these require specific trigger conditions.'
 				// releaseStage: 'experimental'

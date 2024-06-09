@@ -9,6 +9,7 @@ import {
 import ids from '../../builders/IdBuilder.js'
 import Pattern from '../../pkg-core/IdElements/Pattern.js'
 
+
 export const RulesetId = Type.String({
 	$id: 'RulesetId',
 	examples: ['classic', 'starforged'],
@@ -27,6 +28,13 @@ export const ExpansionId = Type.String({
 })
 export type ExpansionId = Static<typeof ExpansionId>
 
+export const RulesPackageId = Type.Union(
+	[Type.Ref(RulesetId), Type.Ref(ExpansionId)],
+	{
+		$id: 'RulesPackageId'
+	}
+)
+
 export const DictKey = Type.String({
 	$id: 'DictKey',
 	pattern: Pattern.DictKey.source,
@@ -36,22 +44,14 @@ export const DictKey = Type.String({
 })
 export type DictKey = Static<typeof DictKey>
 
-export const AnyMoveIdWildcard = Type.Union(
-	[Type.Ref(ids.MoveIdWildcard), Type.Ref(ids.AssetAbilityMoveIdWildcard)],
-	{
-		$id: 'AnyMoveIdWildcard'
-	}
-)
-export type AnyMoveIdWildcard = string
-
-const Ids = {
+const Id = {
 	RulesetId,
 	ExpansionId,
+	RulesPackageId,
 	DictKey,
-	AnyMoveIdWildcard,
 	...ids
 } as const
 
-export default Ids
+export default Id
 
 export type TAnyId = TRef<TString | TUnion<(TString | TRef<TString>)[]>>
