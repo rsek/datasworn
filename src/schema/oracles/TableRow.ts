@@ -77,7 +77,10 @@ type TableRow<
 > = Props & Static<typeof TableRowBase>
 
 export function StaticRowPartial(min: number, max: number) {
-	return Type.Object({ roll: StaticDiceRange(min, max) })
+	return Type.Object(
+		{ roll: StaticDiceRange(min, max) },
+		{ additionalProperties: true }
+	)
 }
 // export const OracleTableRowBasic = Generic.IdentifiedNode(
 // 	Type.Ref(Id.OracleTableRowId),

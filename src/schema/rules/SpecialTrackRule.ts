@@ -3,7 +3,7 @@ import { Localize } from '../common/index.js'
 
 export const SpecialTrackRule = Type.Object(
 	{
-		label: Type.Ref(Localize.InputLabel, {
+		label: Type.Ref(Localize.Label, {
 			description: 'A label for this special track.'
 		}),
 		description: Type.Ref(Localize.MarkdownString, {

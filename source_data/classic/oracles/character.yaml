@@ -119,7 +119,6 @@ oracles:
             roll: { min: 100, max: 100 }
             text: Unusual role
             suggestions:
-              oracles:
                 - oracle_rollable:classic/action_and_theme/action
                 - oracle_rollable:classic/action_and_theme/theme
       goal:

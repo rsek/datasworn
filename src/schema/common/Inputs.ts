@@ -34,7 +34,7 @@ export function Input<Value extends TSchema>(
 ) {
 	return Type.Object(
 		{
-			label: Type.Ref(Localize.InputLabel),
+			label: Type.Ref(Localize.Label),
 			value: {
 				description: 'The current value of this input.',
 				...value
@@ -254,7 +254,7 @@ export type TTextInput = typeof TextInput
  * @abstract
  */
 const SelectOptionBase = Type.Object({
-	label: Type.Ref(Localize.InputLabel),
+	label: Type.Ref(Localize.Label),
 	choice_type: Type.Literal('choice')
 })
 
@@ -290,7 +290,7 @@ export interface Choices<T> {
 }
 
 const SelectChoicesGroupBase = Type.Object({
-	name: Type.Ref(Localize.InputLabel, {
+	name: Type.Ref(Localize.Label, {
 		description: 'A label for this option group.'
 	}),
 	choice_type: Type.Literal('choice_group')

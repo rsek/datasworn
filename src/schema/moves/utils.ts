@@ -22,6 +22,7 @@ import {
 import * as Generic from '../Generic.js'
 import * as Utils from '../utils/Assign.js'
 import type { ObjectProperties } from '../utils/ObjectProperties.js'
+import { EmbeddedOracleRollable } from '../oracles/EmbeddedOracleRollable.js'
 
 /** The property key used to discriminate move subtypes */
 export const moveDiscriminator = 'roll_type'
@@ -37,10 +38,10 @@ const MoveBase = Type.Object({
 		description: 'The complete rules text of the move.'
 	}),
 	oracles: Type.Optional(
-		Type.Array(Type.Ref(Id.OracleRollableId), {
-			description:
-				"Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement."
-		})
+		Generic.Dictionary(
+			Type.Ref(EmbeddedOracleRollable, { title: 'MoveOracleRollable' }),
+			{ title: 'MoveOracles' }
+		)
 	)
 })
 

@@ -24,7 +24,6 @@ oracles:
           <<: *Source
           page: 296
         suggestions:
-          oracles:
             - oracle_rollable:starforged/core/theme
         summary: &ActionThemeSummary |-
           When you [Ask the Oracle](move:starforged/fate/ask_the_oracle) about a goal, situation, or event, roll for an [Action](oracle_rollable:starforged/core/action) and [Theme](oracle_rollable:starforged/core/theme). Together, these provide an interpretative verb/noun prompt.
@@ -339,7 +338,6 @@ oracles:
           <<: *Source
           page: 297
         suggestions:
-          oracles:
             - oracle_rollable:starforged/core/action
         summary: *ActionThemeSummary
         rows:
@@ -655,7 +653,6 @@ oracles:
           <<: *Source
           page: 298
         suggestions:
-          oracles:
             - oracle_rollable:starforged/core/focus
         summary: &DescriptorFocusSummary |-
           When you [Ask the Oracle](move:starforged/fate/ask_the_oracle) to help define the nature of a location, discovery, or encounter, roll for a [Descriptor](oracle_rollable:starforged/core/descriptor) and a [Focus](oracle_rollable:starforged/core/focus) for an adjective/noun prompt.
@@ -970,7 +967,6 @@ oracles:
           <<: *Source
           page: 299
         suggestions:
-          oracles:
             - oracle_rollable:starforged/core/descriptor
         summary: *DescriptorFocusSummary
         rows:

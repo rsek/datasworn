@@ -36,7 +36,6 @@ assets:
               create_elixir:
                 name: Create Elixir
                 type: move
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you create an elixir...
@@ -398,7 +397,6 @@ assets:
               commemorate:
                 name: Commemorate
                 type: move
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you or an ally make a progress move and score a hit, and you perform a dance to commemorate the event...
@@ -1074,7 +1072,6 @@ assets:
               scrape_by:
                 name: Scrape By
                 type: move
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When your supply is reduced to 0...
@@ -1120,7 +1117,6 @@ assets:
               establish_false_identity:
                 name: Establish False Identity
                 type: move
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you establish a false identity...

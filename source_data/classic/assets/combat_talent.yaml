@@ -203,7 +203,7 @@ assets:
                 roll_type: action_roll
                 trigger:
                   conditions:
-                    - text: against an unspecting foe
+                    - text: against an unsuspecting foe
                       roll_options: null
                       method: null
           - text: |-
@@ -320,7 +320,6 @@ assets:
               craft_arrow:
                 name: Craft Arrow
                 type: move
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you craft a single arrow designated for a specific foe...
@@ -660,7 +659,6 @@ assets:
               carve_rune:
                 name: Carve Rune
                 type: move
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you make a tribute to a fallen foe (formidable or greater) by carving a rune in the haft of your axe...

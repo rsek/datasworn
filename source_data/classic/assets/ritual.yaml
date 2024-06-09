@@ -38,7 +38,6 @@ assets:
               augur:
                 type: move
                 name: Augur
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you summon a flock of crows and ask a single question...
@@ -86,7 +85,6 @@ assets:
               awaken_simulacrum:
                 type: move
                 name: Awaken Simulacrum
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you create a simulacrum...
@@ -139,7 +137,6 @@ assets:
               bind:
                 type: move
                 name: Bind
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you wear an animal pelt and dance in moonlight...
@@ -186,7 +183,6 @@ assets:
               commune:
                 type: move
                 name: Commune
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you surround the remains of a recently deceased intelligent creature with lit candles, and summon its spirit...
@@ -233,7 +229,6 @@ assets:
               cast_runes:
                 type: move
                 name: Cast Runes
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you take a drop of blood from a willing subject (not yourself) and cast the rune-carved stones...
@@ -284,7 +279,6 @@ assets:
               invoke:
                 type: move
                 name: Invoke
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you consume the mystical essence of your surroundings...
@@ -361,7 +355,6 @@ assets:
               keen:
                 type: move
                 name: Keen
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you hold a weapon and sing a keen for those it has killed...
@@ -409,7 +402,6 @@ assets:
               draw_blood_rune:
                 type: move
                 name: Draw Blood Rune
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you mark your hands or weapon with an intricate blood rune...
@@ -467,7 +459,6 @@ assets:
               capture_light:
                 type: move
                 name: Capture Light
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you focus on a source of light and capture its essence...
@@ -529,7 +520,6 @@ assets:
               scry:
                 type: move
                 name: Scry
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you look into flames to study a remote person or location (you or someone with you must have knowledge of the target)...
@@ -580,7 +570,6 @@ assets:
               shadow_walk:
                 type: move
                 name: Shadow-Walk
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you cloak yourself with the gossamer veil of the shadow realms...
@@ -627,7 +616,6 @@ assets:
               sway:
                 type: move
                 name: Sway
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you speak a person’s name three times to the wind...
@@ -675,7 +663,6 @@ assets:
               fashion_talisman:
                 type: move
                 name: Fashion Talisman
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you fashion a charm that protects against a specific person or creature...
@@ -720,7 +707,6 @@ assets:
               tether:
                 type: move
                 name: Tether
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you commune with the spirits of a place...
@@ -788,7 +774,6 @@ assets:
               focus_totem:
                 type: move
                 name: Focus Totem
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you hold a totem of your animal or beast companion and focus on it...
@@ -836,7 +821,6 @@ assets:
               paint_visage:
                 type: move
                 name: Paint Visage
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you paint yourself in blood and ash...
@@ -887,7 +871,6 @@ assets:
               ward:
                 type: move
                 name: Ward
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you walk a wide circle, sprinkling the ground with salt...
@@ -914,7 +897,7 @@ assets:
                         * Your ward is ‘likely’ ([Ask the Oracle](id:classic/oracle_rollable/move/ask_the_oracle/likely)) to trap a foe within the boundary.
                   miss: *MoveOutcome.Miss.Generic
           - text: |-
-              As above, and improve the effect of your ward (+2 momentum, +2 harm, and [‘almost certain’](id:classic/oracle_rollable/move/ask_the_oracle/almost_certain)).
+              As above, and improve the effect of your ward (+2 momentum, +2 harm, and [‘almost certain’](move.oracle_rollable:classic/fate/ask_the_oracle.almost_certain)).
             enhance_moves:
               - enhances:
                   - asset.ability.move:classic/ritual/ward.0.ward

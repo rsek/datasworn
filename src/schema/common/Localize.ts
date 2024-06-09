@@ -3,25 +3,19 @@ import { UnionEnumFromRecord } from '../utils/UnionEnumFromRecord.js'
 
 export const Label = Type.String({
 	$id: 'Label',
-	description: 'A localized plain text name or label.',
+	description:
+		'A localized, player-facing name or label, formatted as plain text. In some contexts it may be undesirable to render this text, but it should always be exposed to assistive technology (e.g. with `aria-label` in HTML).',
 	i18n: true
 })
 export type Label = Static<typeof Label>
 
-export const InputLabel = Type.String({
-	pattern: /^[^A-Z]+$/.source,
-	$id: 'InputLabel',
-	description:
-		'A localized label for an input. In some contexts it may be undesirable to render this text, but it should always be exposed to assistive technology (e.g. with `aria-label` in HTML).',
-	i18n: true
-})
-export type InputLabel = Lowercase<string>
-
-
 export const MarkdownString = Type.String({
 	$id: 'MarkdownString',
-	description:
-		'Localized text, formatted in Markdown.\n\nIt uses some custom syntax; e.g. `{{table:some_oracle_table_id}}` indicates that the referenced oracle table is rendered there in the source material.',
+	description: `Localized, player-facing text, formatted in Markdown. It is *not* formatted for use "out of the box"; it uses some custom syntax, intended to be replaced in whatever way is most appropriate for your implementation.
+
+* \`[Link text](move:starforged/suffer/pay_the_price)\`: A link to the identified object. The ID must conform to the \`AnyId\` type; no wildcards allowed.
+* \`{{table>oracle_rollable:starforged/core/action}}\`: the referenced oracle is rendered here in the source material. The ID must conform to the \`AnyOracleRollableId\` type; no wildcards allowed.
+`,
 	format: 'markdown',
 	i18n: true
 })
@@ -32,7 +26,7 @@ export const TemplateString = Type.String({
 	i18n: true,
 	description: `A rich text string in Markdown with replaced values from oracle roll results.
 
-The custom syntax \`{{some_row_key:some_oracle_table_id}}\` should be replaced by the \`some_row_key\` string of a rolled oracle table. This is usually the \`result\` key, for example \`{{result:starforged/oracles/core/action}}\`
+The custom syntax \`{{some_row_key>some_oracle_table_id}}\` should be replaced by the \`some_row_key\` string of a rolled oracle table. This is usually the \`text\` key, for example \`{{text>oracle_rollable:starforged/core/action}}\`
 `,
 	format: 'markdown',
 	releaseStage: 'experimental'
@@ -55,7 +49,7 @@ export const PartOfSpeech = UnionEnumFromRecord(
 		adjective_as_proper_noun: 'An adjective used as a proper noun.',
 		common_noun_as_proper_noun: 'An common noun used as a proper noun.'
 	},
-	{ $id: 'PartOfSpeech' }
+	{ $id: 'PartOfSpeech', releaseStage: 'experimental' }
 )
 export type PartOfSpeech = Static<typeof PartOfSpeech>
 

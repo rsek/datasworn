@@ -92,7 +92,7 @@ export const OracleRollTemplate = Type.Object(
 		releaseStage: 'experimental',
 		description: `Provides string templates that may be used in place of the static row text from \`OracleTableRow#text\`, \`OracleTableRow#text2\`, and \`OracleTableRow#text3\`.
 
-  These strings are formatted in Markdown, but use a special syntax for their placeholders: \`{{text:some_oracle_table_id}}\`. The placeholder should be replaced with the value of a rolled (or selected) \`OracleTableRow#text\` from the target oracle table ID.`
+  These strings are formatted in Markdown, but use a special syntax for their placeholders: \`{{text>some_oracle_rollable_id}}\`. The placeholder should be replaced with the value of a rolled (or selected) \`OracleTableRow#text\` from the target oracle rollable ID.`
 	}
 )
 export type OracleRollTemplate = Static<typeof OracleRollTemplate>

@@ -137,7 +137,6 @@ assets:
             moves:
               ready_grappler:
                 name: Ready Grappler
-                _source: *AssetSource
                 roll_type: action_roll
                 type: move
                 trigger:
@@ -248,7 +247,6 @@ assets:
               draw_reserves:
                 name: Draw Reserves
                 type: move
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you [Sacrifice Resources](move:starforged/suffer/sacrifice_resources) and your supply is reduced to 0...
@@ -604,7 +602,6 @@ assets:
               raise_shields:
                 name: Raise Shields
                 type: move
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you raise your shields...
@@ -666,7 +663,7 @@ assets:
             min: 0
             moves:
               recover:
-                - asset:starforged/module/shields.abilities/0.moves/raise_shields
+                - asset.ability.move:starforged/module/shields.0.raise_shields
       stealth_tech:
         name: Stealth Tech
         type: asset

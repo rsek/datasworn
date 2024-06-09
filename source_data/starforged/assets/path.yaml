@@ -95,7 +95,6 @@ assets:
               craft_projectiles:
                 name: Craft Projectiles
                 type: move
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you replenish your ammo by crafting projectiles...
@@ -212,7 +211,6 @@ assets:
               commemorate:
                 name: Commemorate
                 type: move
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you create or perform a significant artistic work as a public memorial or tribute...
@@ -744,7 +742,6 @@ assets:
               read_heart:
                 name: Read Heart
                 type: move
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you read the intent, emotions, or memories of a nearby being...
@@ -867,7 +864,6 @@ assets:
               gather_energy:
                 name: Gather Energy
                 type: move
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you rest and meditate to gather fiery energy...
@@ -1322,7 +1318,6 @@ assets:
               loop_back:
                 name: Loop Back
                 type: move
-                _source: *AssetSource
                 # Burn momentum: false
                 #TODO: add to IMove? Move usage?
                 roll_type: action_roll
@@ -1619,7 +1614,6 @@ assets:
               scrape_by:
                 name: Scrape By
                 type: move
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you [Sacrifice Resources](move:starforged/suffer/sacrifice_resources) and your supply is reduced to 0...
@@ -1807,7 +1801,6 @@ assets:
               shroud_in_darkness:
                 name: Shroud in Darkness
                 type: move
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you expand your veil to immerse your surroundings in darkness...
@@ -1921,7 +1914,6 @@ assets:
               snipe_minor_foe:
                 name: Snipe Minor Foe
                 type: move
-                _source: *AssetSource
                 roll_type: action_roll
                 trigger:
                   text: When you target a minor foe from a distance (outside of a fight)...

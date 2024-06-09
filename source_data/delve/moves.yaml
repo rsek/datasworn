@@ -65,9 +65,51 @@ moves:
           <<: *Source
           page: 21
         oracles:
-          - oracle_rollable:move:delve/delve_the_depths/edge
-          - oracle_rollable:move:delve/delve_the_depths/shadow
-          - oracle_rollable:move:delve/delve_the_depths/wits
+          edge:
+            name: Edge
+            <<: &DelveTheDepths
+              oracle_type: column_text
+              type: oracle_rollable
+            rows:
+              - roll: { min: 1, max: 45 }
+                text: &DelveTheDepths.0 'Mark progress and [Reveal a Danger](move:delve/delve/reveal_a_danger).'
+              - roll: { min: 46, max: 65 }
+                text: &DelveTheDepths.1 'Mark progress.'
+              - roll: { min: 66, max: 75 }
+                text: &DelveTheDepths.2 'Choose one: Mark progress or [Find an Opportunity](move:delve/delve/find_an_opportunity).'
+              - roll: { min: 76, max: 80 }
+                text: &DelveTheDepths.3 'Take both: Mark progress and [Find an Opportunity](move:delve/delve/find_an_opportunity).'
+              - roll: { min: 81, max: 100 }
+                text: &DelveTheDepths.4 'Mark progress twice and [Reveal a Danger](move:delve/delve/reveal_a_danger).'
+          shadow:
+            name: Shadow
+            <<: *DelveTheDepths
+            rows:
+              - roll: { min: 1, max: 30 }
+                text: *DelveTheDepths.0
+              - roll: { min: 31, max: 65 }
+                text: *DelveTheDepths.1
+              - roll: { min: 66, max: 90 }
+                text: *DelveTheDepths.2
+              - roll: { min: 91, max: 99 }
+                text: *DelveTheDepths.3
+              - roll: { min: 100, max: 100 }
+                text: *DelveTheDepths.4
+          wits:
+            name: Wits
+            <<: *DelveTheDepths
+            rows:
+              - roll: { min: 1, max: 40 }
+                text: *DelveTheDepths.0
+              - roll: { min: 41, max: 55 }
+                text: *DelveTheDepths.1
+              - roll: { min: 56, max: 80 }
+                text: *DelveTheDepths.2
+              - roll: { min: 81, max: 99 }
+                text: *DelveTheDepths.3
+              - roll: { min: 100, max: 100 }
+                text: *DelveTheDepths.4
+
         text: |-
           When you __traverse an area within a perilous site__, envision your surroundings ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure). Then, consider your approach. If you navigate this area...
 
@@ -102,7 +144,31 @@ moves:
         trigger:
           text: When you encounter a helpful situation or feature within a site...
         oracles:
-          - oracle_rollable:delve/moves/find_an_opportunity
+          find_an_opportunity:
+            name: Find an Opportunity
+            oracle_type: table_text
+            type: oracle_rollable
+            rows:
+              - roll: { min: 1, max: 25 }
+                text: 'The terrain favors you, or you find a hidden path.'
+              - roll: { min: 26, max: 45 }
+                text: 'An aspect of the history or nature of this place is revealed.'
+              - roll: { min: 46, max: 57 }
+                text: 'You locate a secure area.'
+              - roll: { min: 58, max: 68 }
+                text: 'A clue offers insight or direction.'
+              - roll: { min: 69, max: 78 }
+                text: 'You get the drop on a denizen.'
+              - roll: { min: 79, max: 86 }
+                text: 'This area provides an opportunity to scavenge, forage, or hunt.'
+              - roll: { min: 87, max: 90 }
+                text: 'You locate an interesting or helpful object.'
+              - roll: { min: 91, max: 94 }
+                text: 'You are alerted to a potential threat.'
+              - roll: { min: 95, max: 98 }
+                text: 'You encounter a denizen who might support you.'
+              - roll: { min: 99, max: 100 }
+                text: 'You encounter a denizen in need of help.'
         text: |-
           When __you encounter a helpful situation or feature within a site__, roll on the following table. If you are making this move as a result of a strong hit on [Delve the Depths](move:delve/delve/delve_the_depths), you may pick or envision an opportunity instead of rolling.
 
@@ -122,7 +188,39 @@ moves:
         trigger:
           text: When you encounter a risky situation within a site...
         oracles:
-          - oracle_rollable:delve/moves/reveal_a_danger
+          reveal_a_danger:
+            name: Reveal a Danger
+            oracle_type: table_text
+            type: oracle_rollable
+            rows:
+              - roll: { min: 1, max: 30 }
+                text: 'Check the theme card.'
+              - roll: { min: 31, max: 45 }
+                text: 'Check the domain card.'
+              - roll: { min: 46, max: 57 }
+                text: &Reveal_a_Danger_1 'You encounter a hostile denizen.'
+              - roll: { min: 58, max: 68 }
+                text: &Reveal_a_Danger_2 'You face an environmental or architectural hazard.'
+              - roll: { min: 69, max: 76 }
+                text: &Reveal_a_Danger_3 'A discovery undermines or complicates your quest.'
+              - roll: { min: 77, max: 79 }
+                text: &Reveal_a_Danger_4 'You confront a harrowing situation or sensation.'
+              - roll: { min: 80, max: 82 }
+                text: &Reveal_a_Danger_5 'You face the consequences of an earlier choice or approach.'
+              - roll: { min: 83, max: 85 }
+                text: &Reveal_a_Danger_6 'Your way is blocked or trapped.'
+              - roll: { min: 86, max: 88 }
+                text: &Reveal_a_Danger_7 'A resource is diminished, broken, or lost.'
+              - roll: { min: 89, max: 91 }
+                text: &Reveal_a_Danger_8 'You face a perplexing mystery or tough choice.'
+              - roll: { min: 92, max: 94 }
+                text: &Reveal_a_Danger_9 'You lose your way or are delayed.'
+              - roll: { min: 95, max: 100 }
+                text: &Reveal_a_Danger_10 'Roll twice more on this table. Both results occur. If they are the same result, make it worse.'
+                oracle_rolls:
+                  - number_of_rolls: 2
+                    auto: true
+                    duplicates: make_it_worse
         text: |-
           When __you encounter a risky situation within a site__, envision the danger or roll on the following table.
 
@@ -271,7 +369,36 @@ moves:
         name: Reveal a Danger (alternate version)
         replaces: move:delve/delve/reveal_a_danger
         oracles:
-          - oracle_rollable:delve/moves/reveal_a_danger_alt
+          reveal_a_danger_alt:
+            name: Reveal a Danger (alternate version)
+            oracle_type: table_text
+            type: oracle_rollable
+            rows:
+              - roll: { min: 1, max: 22 }
+                text: *Reveal_a_Danger_1
+              - roll: { min: 23, max: 42 }
+                text: *Reveal_a_Danger_2
+              - roll: { min: 43, max: 58 }
+                text: *Reveal_a_Danger_3
+              - roll: { min: 59, max: 64 }
+                text: *Reveal_a_Danger_4
+              - roll: { min: 65, max: 70 }
+                text: *Reveal_a_Danger_5
+              - roll: { min: 71, max: 76 }
+                text: *Reveal_a_Danger_6
+              - roll: { min: 77, max: 82 }
+                text: *Reveal_a_Danger_7
+              - roll: { min: 83, max: 88 }
+                text: *Reveal_a_Danger_8
+              - roll: { min: 89, max: 94 }
+                text: *Reveal_a_Danger_9
+              - roll: { min: 95, max: 100 }
+                text: *Reveal_a_Danger_10
+                oracle_rolls:
+                  - number_of_rolls: 2
+                    auto: true
+                    duplicates: make_it_worse
+
         # optional: true
         _source:
           <<: *Source
@@ -365,7 +492,20 @@ moves:
           <<: *Source
           page: 154
         oracles:
-          - oracle_rollable:delve/moves/advance_a_threat
+          advance_a_threat:
+            name: Advance a Threat
+            oracle_type: table_text
+            type: oracle_rollable
+            match:
+              text: |-
+                On a match, this development also exposes a surprising aspect of the threat’s plan or nature.
+            rows:
+              - roll: { min: 1, max: 30 }
+                text: 'The threat readies its next step, or a new danger looms. If you are in a position to prevent this development, you may attempt to do so. If you succeed, [Reach a Milestone](move:classic/quest/reach_a_milestone). Otherwise, mark menace.'
+              - roll: { min: 31, max: 70 }
+                text: 'The threat works subtly to advance toward its goal, or the danger escalates. Mark menace.'
+              - roll: { min: 71, max: 100 }
+                text: 'The threat makes a dramatic and immediate move, or a major event reveals new complications. Mark menace twice.'
         trigger:
           text: When you give ground to a threat through inaction, failure, or delay...
         text: |-

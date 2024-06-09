@@ -27,7 +27,6 @@ oracles:
         type: oracle_rollable
         canonical_name: 'Feature: Aspect'
         suggestions:
-          oracles:
             - oracle_rollable:delve/feature/focus
         _source:
           <<: *Source
@@ -195,7 +194,6 @@ oracles:
         type: oracle_rollable
         canonical_name: 'Feature: Focus'
         suggestions:
-          oracles:
             - oracle_rollable:delve/feature/aspect
         _source:
           <<: *Source

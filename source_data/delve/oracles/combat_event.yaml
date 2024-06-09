@@ -23,7 +23,6 @@ oracles:
 
       For example, you are fighting a rhaskar, a bear-like beast. It has initiative, and you want to know what it does next. You [Ask the Oracle](move:classic/fate/ask_the_oracle), rolling [Method](oracle_rollable:delve/combat_event/method) and [Target](oracle_rollable:delve/combat_event/target). The oracle responds, “Await Weakness.” You envision the rhaskar circling you, its keen eyes narrowing as it looks for an opening in your defenses. You must [Face Danger](move:classic/adventure/face_danger) to avoid being outmaneuvered.
     suggestions:
-      oracles:
         - oracle_rollable:classic/turning_point/combat_action
     contents:
       method:
@@ -32,7 +31,6 @@ oracles:
         type: oracle_rollable
         canonical_name: 'Combat Event: Method'
         suggestions:
-          oracles:
             - oracle_rollable:delve/combat_event/target
         _source:
           <<: *Source
@@ -197,7 +195,6 @@ oracles:
         type: oracle_rollable
         canonical_name: 'Combat Event: Target'
         suggestions:
-          oracles:
             - oracle_rollable:delve/combat_event/method
         _source:
           <<: *Source

@@ -37,7 +37,6 @@ oracles:
             summary: |-
               Given and family names can be used independently as standalone names. In many cases you can reverse the order.
             suggestions:
-              oracles:
                 - oracle_rollable:starforged/characters/name/callsign
                 - oracle_rollable:starforged/characters/name/family_name
             oracle_type: column_text
@@ -350,7 +349,6 @@ oracles:
             summary: |-
               Spacers are often known only by their callsigns, with their “dirtside names” reserved for family and close friends.
             suggestions:
-              oracles:
                 - oracle_rollable:starforged/characters/name/given_name
                 - oracle_rollable:starforged/characters/name/family_name
             oracle_type: column_text
@@ -661,7 +659,6 @@ oracles:
             summary: |-
               Given and family names can be used independently as standalone names. In many cases you can reverse the order.
             suggestions:
-              oracles:
                 - oracle_rollable:starforged/characters/name/given_name
                 - oracle_rollable:starforged/characters/name/callsign
             oracle_type: column_text

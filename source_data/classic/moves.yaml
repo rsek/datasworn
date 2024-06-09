@@ -952,7 +952,21 @@ moves:
         name: Endure Harm
         type: move
         oracles:
-          - oracle_rollable:classic/moves/endure_harm
+          endure_harm:
+            name: Endure Harm
+            oracle_type: table_text
+            type: oracle_rollable
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: 'The harm is mortal. [Face Death](move:classic/suffer/face_death).'
+              - roll: { min: 11, max: 20 }
+                text: 'You are dying. You need to Heal within an hour or two, or [Face Death](move:classic/suffer/face_death).'
+              - roll: { min: 21, max: 35 }
+                text: 'You are unconscious and out of action. If left alone, you come back to your senses in an hour or two. If you are vulnerable to a foe not inclined to show mercy, [Face Death](move:classic/suffer/face_death).'
+              - roll: { min: 36, max: 50 }
+                text: 'You are reeling and fighting to stay conscious. If you engage in any vigorous activity (such as running or fighting) before taking a breather for a few minutes, roll on this table again (before resolving the other move).'
+              - roll: { min: 51, max: 100 }
+                text: 'You are battered but still standing.'
         roll_type: action_roll
         trigger:
           text: When you face physical damage...
@@ -1072,7 +1086,19 @@ moves:
         name: Endure Stress
         type: move
         oracles:
-          - oracle_rollable:classic/moves/endure_stress
+          endure_stress:
+            name: Endure Stress
+            oracle_type: table_text
+            type: oracle_rollable
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: 'You are overwhelmed. [Face Desolation](move:classic/suffer/face_desolation).'
+              - roll: { min: 11, max: 25 }
+                text: 'You give up. [Forsake Your Vow](move:classic/quest/forsake_your_vow) (if possible, one relevant to your current crisis).'
+              - roll: { min: 26, max: 50 }
+                text: 'You give in to a fear or compulsion, and act against your better instincts.'
+              - roll: { min: 51, max: 100 }
+                text: 'You persevere.'
         roll_type: action_roll
         trigger:
           text: When you face mental shock or despair...
@@ -1311,8 +1337,6 @@ moves:
       pay_the_price:
         name: Pay the Price
         type: move
-        oracles:
-          - oracle_rollable:classic/moves/pay_the_price
         _source:
           <<: *Source
           page: 105
@@ -1326,16 +1350,97 @@ moves:
             * Envision two negative outcomes. Rate one as ‘likely’, and [Ask the Oracle](move:classic/fate/ask_the_oracle) using the yes/no table. On a ‘yes’, make that outcome happen. Otherwise, make it the other.
             * Roll on the following table. If you have difficulty interpreting the result to fit the current situation, roll again.
 
-          {{table:oracle_rollable:classic/moves/pay_the_price}}
+          {{table>move.oracle_rollable:classic/suffer/pay_the_price.pay_the_price}}
+        oracles:
+          pay_the_price:
+            name: Pay the Price
+            oracle_type: table_text
+            type: oracle_rollable
+            rows:
+              - roll: { min: 1, max: 2 }
+                text: 'Roll again and apply that result but make it worse. If you roll this result yet again, think of something dreadful that changes the course of your quest ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure) and make it happen.'
+              - roll: { min: 3, max: 5 }
+                text: 'A person or community you trusted loses faith in you, or acts against you.'
+              - roll: { min: 6, max: 9 }
+                text: 'A person or community you care about is exposed to danger.'
+              - roll: { min: 10, max: 16 }
+                text: 'You are separated from something or someone.'
+              - roll: { min: 17, max: 23 }
+                text: 'Your action has an unintended effect.'
+              - roll: { min: 24, max: 32 }
+                text: 'Something of value is lost or destroyed.'
+              - roll: { min: 33, max: 41 }
+                text: 'The current situation worsens.'
+              - roll: { min: 42, max: 50 }
+                text: 'A new danger or foe is revealed.'
+              - roll: { min: 51, max: 59 }
+                text: 'It causes a delay or puts you at a disadvantage.'
+              - roll: { min: 60, max: 68 }
+                text: 'It is harmful.'
+              - roll: { min: 69, max: 76 }
+                text: 'It is stressful.'
+              - roll: { min: 77, max: 85 }
+                text: 'A surprising development complicates your quest.'
+              - roll: { min: 86, max: 90 }
+                text: 'It wastes resources.'
+              - roll: { min: 91, max: 94 }
+                text: 'It forces you to act against your best intentions.'
+              - roll: { min: 95, max: 98 }
+                text: 'A friend, companion, or ally is put in harm’s way (or you are, if alone).'
+              - roll: { min: 99, max: 100 }
+                text: 'Roll twice more on this table. Both results occur. If they are the same result, make it worse.'
+                oracle_rolls:
+                  - number_of_rolls: 2
+                    auto: true
+                    duplicates: make_it_worse
       ask_the_oracle:
         name: Ask the Oracle
         type: move
         oracles:
-          - oracle_rollable:classic/move/ask_the_oracle/small_chance
-          - oracle_rollable:classic/move/ask_the_oracle/unlikely
-          - oracle_rollable:classic/move/ask_the_oracle/fifty_fifty
-          - oracle_rollable:classic/move/ask_the_oracle/likely
-          - oracle_rollable:classic/move/ask_the_oracle/almost_certain
+          almost_certain:
+            name: Almost Certain
+            <<: &AtO
+              oracle_type: column_text
+              type: oracle_rollable
+              match:
+                text: On a match, an extreme result or twist has occurred.
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: 'No'
+              - roll: { min: 11, max: 100 }
+                text: 'Yes'
+          likely:
+            name: Likely
+            <<: *AtO
+            rows:
+              - roll: { min: 1, max: 25 }
+                text: 'No'
+              - roll: { min: 26, max: 100 }
+                text: 'Yes'
+          fifty_fifty:
+            name: 50/50
+            <<: *AtO
+            rows:
+              - roll: { min: 1, max: 50 }
+                text: 'No'
+              - roll: { min: 51, max: 100 }
+                text: 'Yes'
+          unlikely:
+            name: Unlikely
+            <<: *AtO
+            rows:
+              - roll: { min: 1, max: 75 }
+                text: 'No'
+              - roll: { min: 76, max: 100 }
+                text: 'Yes'
+          small_chance:
+            name: Small Chance
+            <<: *AtO
+            rows:
+              - roll: { min: 1, max: 90 }
+                text: 'No'
+              - roll: { min: 91, max: 100 }
+                text: 'Yes'
         _source:
           <<: *Source
           page: 107

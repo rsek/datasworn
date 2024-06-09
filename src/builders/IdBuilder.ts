@@ -734,11 +734,19 @@ for (const idTypeName in ids) {
 
 ids['AnyId'] = Type.Union(
 	idTypes.map((idType) => Type.Ref(idType)),
-	{ $id: 'AnyId' }
+	{
+		$id: 'AnyId',
+		description:
+			'Represents any kind of non-wildcard ID, including IDs of embedded objects.'
+	}
 )
 ids['AnyIdWildcard'] = Type.Union(
 	wildcardIdTypes.map((idType) => Type.Ref(idType)),
-	{ $id: 'AnyIdWildcard' }
+	{
+		$id: 'AnyIdWildcard',
+		description:
+			'Represents any kind of wildcard ID, including IDs of embedded objects.'
+	}
 )
 
 export default ids

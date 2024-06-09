@@ -22,7 +22,6 @@ oracles:
 
       To learn more about your creation’s nature, you can roll on additional tables. Use the [Character Goal](oracle_rollable:classic/character/goal) oracle to give the monstrosity a purpose. Roll on the [Character Disposition](oracle_rollable:classic/character/disposition) and [Activity](oracle_rollable:delve/character/activity) oracles to frame your initial encounter. Another roll or two can give your monstrosity nuance and complexity, making it a deeper part of your story.
     suggestions:
-      oracles:
         - oracle_rollable:classic/turning_point/challenge_rank
         - oracle_rollable:classic/character/goal
         - oracle_rollable:classic/character/disposition

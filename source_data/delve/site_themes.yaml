@@ -36,7 +36,6 @@ site_themes:
       - roll: { min: 1, max: 5 }
         text: Ancient trap
         suggestions: &SuggestTrap
-          oracles:
             - oracle_rollable:classic/trap/event
             - oracle_rollable:classic/trap/component
       - roll: { min: 6, max: 10 }

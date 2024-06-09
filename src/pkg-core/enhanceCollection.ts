@@ -79,7 +79,7 @@ export function enhanceCollection<T extends DataswornNode.Collection.Any>(
 		}
 
 		switch (key) {
-			// IDs should never be overwritten -- they need to relate to the object's 'real' position or the id lookup won't work.
+			// target's id should never be overwritten -- they need to relate to the object's 'real' position or the id lookup won't work.
 			case '_id':
 			case 'enhances':
 			case 'replaces':

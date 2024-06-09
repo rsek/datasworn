@@ -28,7 +28,6 @@ oracles:
         oracle_type: table_text
         type: oracle_rollable
         suggestions:
-          oracles:
             - oracle_rollable:delve/trap/component
         _source:
           <<: *Source
@@ -118,7 +117,6 @@ oracles:
         oracle_type: table_text
         type: oracle_rollable
         suggestions:
-          oracles:
             - oracle_rollable:delve/trap/event
         _source:
           <<: *Source

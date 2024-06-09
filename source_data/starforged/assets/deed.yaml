@@ -313,7 +313,6 @@ assets:
             enabled: true
             moves:
               seek_safe_haven:
-                _source: *AssetSource
                 name: Seek Safe Haven
                 roll_type: special_track
                 type: move

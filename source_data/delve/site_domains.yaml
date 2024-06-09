@@ -45,20 +45,17 @@ site_domains:
         roll: { min: 89, max: 98 }
         text: Something unusual or unexpected
         suggestions:
-          oracles:
             - oracle_rollable:delve/feature/aspect
             - oracle_rollable:delve/feature/focus
       - &Row.NewTheme
         roll: { min: 99, max: 99 }
         text: You transition into a new theme
         suggestions:
-          oracles:
             - oracle_rollable:delve/site_nature/theme
       - &Row.NewDomain
         roll: { min: 100, max: 100 }
         text: You transition into a new domain
         suggestions:
-          oracles:
             - oracle_rollable:delve/site_nature/domain
     dangers:
       - roll: { min: 31, max: 33 }
@@ -66,7 +63,6 @@ site_domains:
       - roll: { min: 34, max: 36 }
         text: Trap
         suggestions: &SuggestTrap
-          oracles:
             - oracle_rollable:delve/trap/event
             - oracle_rollable:delve/trap/component
       - roll: { min: 37, max: 39 }

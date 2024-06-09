@@ -144,18 +144,9 @@ export const SourceInfo = Type.Object(
 
 export type SourceInfo = Static<typeof SourceInfo>
 
-export const Suggestions = Type.Partial(
-	Type.Object({
-		oracles: Type.Array(Type.Ref(Id.OracleRollableId)),
-		assets: Type.Array(Type.Ref(Id.AssetId)),
-		moves: Type.Array(Type.Ref(Id.MoveId)),
-		site_domains: Type.Array(Type.Ref(Id.DelveSiteDomainId)),
-		site_themes: Type.Array(Type.Ref(Id.DelveSiteThemeId)),
-		npcs: Type.Array(Type.Ref(Id.NpcId)),
-		atlas: Type.Array(Type.Ref(Id.AtlasEntryId)),
-		rarities: Type.Array(Type.Ref(Id.RarityId))
-	}),
-	{ $id: 'Suggestions', releaseStage: 'experimental' }
-)
+export const Suggestions = Type.Array(Type.Ref('AnyId'), {
+	$id: 'Suggestions',
+	releaseStage: 'experimental'
+})
 
 export type Suggestions = Static<typeof Suggestions>
