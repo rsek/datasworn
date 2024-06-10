@@ -25,7 +25,7 @@ export async function buildRulesPackage(
 	ajv: typeof AJV,
 	jsl: Draft07
 ) {
-	Log.info(`⚙️  Building ruleset: ${id}`)
+	Log.info(`⚙️  Building rules package: ${id}`)
 
 	const destDir = path.join(ROOT_OUTPUT, id)
 
