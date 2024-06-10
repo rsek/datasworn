@@ -62,6 +62,7 @@ module.exports = {
 				destructuredArrayIgnorePattern: '^_',
 				ignoreRestSiblings: true
 			}
-		]
+		],
+		'no-implicit-coercion': ['error', { string: true }]
 	}
 }

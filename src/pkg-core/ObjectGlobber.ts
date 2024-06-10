@@ -3,7 +3,7 @@ import { arrayIs } from './Utils/Array.js'
 import type { ExtractTypeId } from './Utils/Id.js'
 import { CONST, TypeGuard } from './IdElements/index.js'
 import type * as Id from './StringId.js'
-import type DataswornNode from './DataswornNode.js'
+import type TypeNode from './TypeNode.js'
 
 /**
  * Traverses objects using a simple glob expression. Currently, the glob features are limited to '*' and '**' wildcards; it doesn't handle expansion of braces, pipes, and so on.
@@ -304,7 +304,7 @@ class ObjectGlobber<
 		from: Record<string, RulesPackage>,
 		path: ObjectGlobber,
 		forEach?: ObjectGlobber.WalkIteratee
-	): DataswornNode.ByType<ExtractTypeId<T>>
+	): TypeNode.ByType<ExtractTypeId<T>>
 	static walk(
 		from: object,
 		path: ObjectGlobber,

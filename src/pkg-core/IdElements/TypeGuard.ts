@@ -7,9 +7,15 @@ import Pattern from './Pattern.js'
 import CONST from './CONST.js'
 import type * as Id from '../StringId.js'
 import type { DictKey } from '../Datasworn.js'
-import NodeTypeId from './NodeTypeId.js'
+import TypeId from './TypeId.js'
 
 namespace TypeGuard {
+	export function IndexKey(value: string): value is `${number}` {
+		const integer = Number.parseInt(value, 10)
+
+		return Number.isInteger(integer) && integer >= 0
+	}
+
 	export function DictKey(value: unknown): value is DictKey {
 		return typeof value === 'string' && Pattern.DictKey.test(value)
 	}
@@ -32,68 +38,37 @@ namespace TypeGuard {
 		return Wildcard(value) || Globstar(value)
 	}
 
-	export function RecursiveCollectionType(
-		value: unknown
-	): value is NodeTypeId.Collection.Recursive {
-		for (const v of NodeTypeId.Collection.Recursive)
-			if (v === value) return true
-
-		return false
-	}
-
-	export function NonRecursiveCollectionType(
-		value: unknown
-	): value is NodeTypeId.Collection.NonRecursive {
-		for (const v of NodeTypeId.Collection.NonRecursive)
-			if (v === value) return true
-
-		return false
-	}
-
-	export function CollectionType(
-		value: unknown
-	): value is NodeTypeId.Collection.Any {
-		return RecursiveCollectionType(value) || NonRecursiveCollectionType(value)
+	export function CollectionType(value: unknown): value is TypeId.Collection {
+		return TypeId.Collection.includes(value as TypeId.Collection)
 	}
 
 	export function NonCollectableType(
 		value: unknown
-	): value is NodeTypeId.NonCollectable {
-		for (const v of NodeTypeId.NonCollectable) if (v === value) return true
-
-		return false
+	): value is TypeId.NonCollectable {
+		return TypeId.NonCollectable.includes(value as TypeId.NonCollectable)
 	}
 
-	export function RecursiveCollectableType(
-		value: unknown
-	): value is NodeTypeId.Collectable.Recursive {
-		for (const v of NodeTypeId.Collectable.Recursive)
-			if (v === value) return true
-
-		return false
+	export function CollectableType(value: unknown): value is TypeId.Collectable {
+		return TypeId.Collectable.includes(value as TypeId.Collectable)
 	}
 
-	export function NonRecursiveCollectableType(
+	export function EmbedOnlyType(
 		value: unknown
-	): value is NodeTypeId.Collectable.NonRecursive {
-		for (const v of NodeTypeId.Collectable.NonRecursive)
-			if (v === value) return true
-
-		return false
+	): value is TypeId.EmbedOnlyTypes {
+		return TypeId.EmbedOnlyTypes.includes(value as TypeId.EmbedOnlyTypes)
 	}
 
-	export function CollectableType(
+	export function EmbeddablePrimaryType(
 		value: unknown
-	): value is NodeTypeId.Collectable.Any {
-		return RecursiveCollectableType(value) || NonRecursiveCollectableType(value)
+	): value is TypeId.EmbeddablePrimaryTypes {
+		return TypeId.EmbeddablePrimaryTypes.includes(
+			value as TypeId.EmbeddablePrimaryTypes
+		)
 	}
 
-	export function AnyType(
+	export function AnyPrimaryType(
 		value: unknown
-	): value is
-		| NodeTypeId.NonCollectable
-		| NodeTypeId.Collectable.Any
-		| NodeTypeId.Collection.Any {
+	): value is TypeId.NonCollectable | TypeId.Collectable | TypeId.Collection {
 		return (
 			NonCollectableType(value) ||
 			CollectableType(value) ||

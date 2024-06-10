@@ -31,7 +31,7 @@ truths:
 
           We suspect the sun plague was caused by:
 
-          {{table:truth.option.oracle_rollable:starforged/cataclysm.0.sun_plague_cause}}
+          {{table>truth.option.oracle_rollable:starforged/cataclysm.0.sun_plague_cause}}
         oracles:
           sun_plague_cause:
             name: Sun Plague Cause
@@ -55,7 +55,7 @@ truths:
 
           These entities took the form of:
 
-          {{table:truth.option.oracle_rollable:starforged/cataclysm.1.entities}}
+          {{table>truth.option.oracle_rollable:starforged/cataclysm.1.entities}}
         oracles:
           entities:
             name: Entities
@@ -85,7 +85,7 @@ truths:
 
           In this final war, we were set upon by:
 
-          {{table:truth.option.oracle_rollable:starforged/cataclysm.2.foe}}
+          {{table>truth.option.oracle_rollable:starforged/cataclysm.2.foe}}
         oracles:
           foe:
             name: Foe
@@ -267,7 +267,7 @@ truths:
 
           These powers are born of:
 
-          {{table:truth.option.oracle_rollable:starforged/magic.1.power_source}}
+          {{table>truth.option.oracle_rollable:starforged/magic.1.power_source}}
         oracles:
           power_source:
             name: Power Source
@@ -366,7 +366,7 @@ truths:
         description: |-
           Our computers are limited to simple digital systems and the most basic machine intelligence. This is because:
 
-          {{table:truth.option.oracle_rollable:starforged/artificial_intelligence.0.computer_limitation}}
+          {{table>truth.option.oracle_rollable:starforged/artificial_intelligence.0.computer_limitation}}
 
           The Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. But to gain this insight they sacrifice much of themselves.
         oracles:

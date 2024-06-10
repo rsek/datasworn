@@ -6,14 +6,12 @@ import { forEach } from 'lodash-es'
 import path from 'path'
 import { RulesExpansion } from '../../schema/Rules.js'
 import { type DataPackageConfig } from '../../schema/tools/build/index.js'
-import { pascalCase } from '../../schema/utils/string.js'
 import { formatPath } from '../../utils.js'
 import { ROOT_OUTPUT } from '../const.js'
 import Log from '../utils/Log.js'
 import type AJV from '../validation/ajv.js'
 import { RulesPackageBuilder } from './RulesPackageBuilder.js'
-import { readRulesPackageFile } from './readRulesPackageFile.js'
-import { writeRulesPackage } from './writeRulesPackage.js'
+import { readSourceData, writeJSON } from '../utils/readWrite.js'
 
 const metadataKeys: string[] = []
 
@@ -60,42 +58,45 @@ export async function buildRulesPackage(
 		})
 	)
 
-	const builder = new RulesPackageBuilder()
+	RulesPackageBuilder.setup(Log, ajv)
+
+	const builder = new RulesPackageBuilder(id)
 
 	await Promise.all(
 		sourceFiles.map(async (fileName) => {
+			Log.info(`📖 Reading ${formatPath(fileName)}`)
 			try {
+				const data = await readSourceData(fileName)
 				builder.addFiles({
 					fileName,
-					data: await readRulesPackageFile(fileName, ajv)
+					data
 				})
 			} catch (error) {
-				Log.error(`Failed to build from ${formatPath(fileName)}:`, error)
+				Log.error(error)
 			}
 		})
 	)
 
-	const jsonContent = builder.mergeFiles().sortKeys().merged
+	const data = builder.build()
 
-	const toWrite: Array<Promise<any>> = [
-		writeRulesPackage(
-			path.join(destDir, `${jsonContent._id}.json`),
-			jsonContent
-		)
-	]
+	const outPath = path.join(destDir, `${data._id}.json`)
 
-	if (oldJsonFiles?.length > 0)
+	if (oldJsonFiles?.length > 0) {
 		Log.info(
 			`🧹 Deleting ${oldJsonFiles?.length} old JSON files in ${formatPath(
 				destDir
 			)}`
 		)
+		await cleanup
+	}
 
-	await cleanup
+	await fs.ensureFile(outPath)
 
-	await Promise.all(toWrite)
+	Log.info(`✏️  Writing to ${formatPath(outPath)}`)
 
-	Log.info(
-		`✅ Finished writing ${pascalCase(type)} "${id}" to ${formatPath(destDir)}`
-	)
+	try {
+		await writeJSON(outPath, data)
+	} catch (e) {
+		Log.error(`Failed to write ${formatPath(outPath)}:`, e)
+	}
 }

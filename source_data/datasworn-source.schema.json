@@ -542,61 +542,61 @@
 			"title": "AssetId",
 			"type": "string",
 			"description": "A unique ID representing an Asset object.",
-			"pattern": "^asset:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2})$"
+			"pattern": "^asset:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})$"
 		},
 		"AssetIdWildcard": {
 			"title": "AssetIdWildcard",
 			"type": "string",
 			"description": "A wildcarded AssetId that can be used to match multiple Asset objects.",
-			"pattern": "^asset:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})$"
+			"pattern": "^asset:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})$"
 		},
 		"AssetCollectionId": {
 			"title": "AssetCollectionId",
 			"type": "string",
 			"description": "A unique ID representing an AssetCollection object.",
-			"pattern": "^asset_collection:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
+			"pattern": "^asset_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,3})$"
 		},
 		"AssetCollectionIdWildcard": {
 			"title": "AssetCollectionIdWildcard",
 			"type": "string",
 			"description": "A wildcarded AssetCollectionId that can be used to match multiple AssetCollection objects.",
-			"pattern": "^asset_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
+			"pattern": "^asset_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,3})$"
 		},
 		"AssetAbilityId": {
 			"title": "AssetAbilityId",
 			"type": "string",
 			"description": "A unique ID representing an AssetAbility object.",
-			"pattern": "^asset\\.ability:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2})\\.(\\d+)$"
+			"pattern": "^asset\\.ability:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})\\.(\\d+)$"
 		},
 		"AssetAbilityIdWildcard": {
 			"title": "AssetAbilityIdWildcard",
 			"type": "string",
 			"description": "A wildcarded AssetAbilityId that can be used to match multiple AssetAbility objects.",
-			"pattern": "^asset\\.ability:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})\\.(\\d+|\\*)$"
+			"pattern": "^asset\\.ability:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})\\.(\\d+|\\*)$"
 		},
 		"AssetAbilityMoveId": {
 			"title": "AssetAbilityMoveId",
 			"type": "string",
 			"description": "A unique ID representing an AssetAbilityMove object.",
-			"pattern": "^asset\\.ability\\.move:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2})\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
+			"pattern": "^asset\\.ability\\.move:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
 		},
 		"AssetAbilityMoveIdWildcard": {
 			"title": "AssetAbilityMoveIdWildcard",
 			"type": "string",
 			"description": "A wildcarded AssetAbilityMoveId that can be used to match multiple AssetAbilityMove objects.",
-			"pattern": "^asset\\.ability\\.move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
+			"pattern": "^asset\\.ability\\.move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
 		},
 		"AssetAbilityOracleRollableId": {
 			"title": "AssetAbilityOracleRollableId",
 			"type": "string",
 			"description": "A unique ID representing an AssetAbilityOracleRollable object.",
-			"pattern": "^asset\\.ability\\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2})\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
+			"pattern": "^asset\\.ability\\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
 		},
 		"AssetAbilityOracleRollableIdWildcard": {
 			"title": "AssetAbilityOracleRollableIdWildcard",
 			"type": "string",
 			"description": "A wildcarded AssetAbilityOracleRollableId that can be used to match multiple AssetAbilityOracleRollable objects.",
-			"pattern": "^asset\\.ability\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
+			"pattern": "^asset\\.ability\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
 		},
 		"AtlasCollectionId": {
 			"title": "AtlasCollectionId",
@@ -662,37 +662,37 @@
 			"title": "MoveId",
 			"type": "string",
 			"description": "A unique ID representing a Move object.",
-			"pattern": "^move:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2})$"
+			"pattern": "^move:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})$"
 		},
 		"MoveIdWildcard": {
 			"title": "MoveIdWildcard",
 			"type": "string",
 			"description": "A wildcarded MoveId that can be used to match multiple Move objects.",
-			"pattern": "^move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})$"
+			"pattern": "^move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})$"
 		},
 		"MoveCategoryId": {
 			"title": "MoveCategoryId",
 			"type": "string",
 			"description": "A unique ID representing a MoveCategory object.",
-			"pattern": "^move_category:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
+			"pattern": "^move_category:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,3})$"
 		},
 		"MoveCategoryIdWildcard": {
 			"title": "MoveCategoryIdWildcard",
 			"type": "string",
 			"description": "A wildcarded MoveCategoryId that can be used to match multiple MoveCategory objects.",
-			"pattern": "^move_category:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
+			"pattern": "^move_category:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,3})$"
 		},
 		"MoveOracleRollableId": {
 			"title": "MoveOracleRollableId",
 			"type": "string",
 			"description": "A unique ID representing a MoveOracleRollable object.",
-			"pattern": "^move\\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2})\\.([a-z][a-z_]*|\\*)$"
+			"pattern": "^move\\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})\\.([a-z][a-z_]*|\\*)$"
 		},
 		"MoveOracleRollableIdWildcard": {
 			"title": "MoveOracleRollableIdWildcard",
 			"type": "string",
 			"description": "A wildcarded MoveOracleRollableId that can be used to match multiple MoveOracleRollable objects.",
-			"pattern": "^move\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})\\.([a-z][a-z_]*|\\*)$"
+			"pattern": "^move\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})\\.([a-z][a-z_]*|\\*)$"
 		},
 		"NpcId": {
 			"title": "NpcId",
@@ -872,6 +872,7 @@
 		},
 		"AnyId": {
 			"title": "AnyId",
+			"description": "Represents any kind of non-wildcard ID, including IDs of embedded objects.",
 			"anyOf": [
 				{
 					"$ref": "#/definitions/AssetId"
@@ -940,6 +941,7 @@
 		},
 		"AnyIdWildcard": {
 			"title": "AnyIdWildcard",
+			"description": "Represents any kind of wildcard ID, including IDs of embedded objects.",
 			"anyOf": [
 				{
 					"$ref": "#/definitions/AssetIdWildcard"
@@ -1126,7 +1128,7 @@
 			"type": "array",
 			"releaseStage": "experimental",
 			"items": {
-				"$ref": "#/definitions/AnyId"
+				"$ref": "#/definitions/AnyIdWildcard"
 			}
 		},
 		"SvgImageUrl": {
@@ -8919,7 +8921,7 @@
 				},
 				"name_oracle": {
 					"$ref": "#/definitions/OracleRollableId",
-					"description": "An oracle table ID containing place name elements. For examples, see oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in oracle collection ID `delve/collections/oracles/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (ID: delve/oracles/site_name/format) to create random names for delve sites."
+					"description": "An oracle table ID containing place name elements. For examples, see oracle ID `oracle_rollable:delve/site_name/place/barrow`, and its siblings in oracle collection ID `oracle_collection:delve/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (`oracle_rollable:delve/site_name/format`) to create random names for delve sites."
 				},
 				"summary": {
 					"$ref": "#/definitions/MarkdownString",

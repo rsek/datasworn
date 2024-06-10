@@ -542,61 +542,61 @@
 			"title": "AssetId",
 			"type": "string",
 			"description": "A unique ID representing an Asset object.",
-			"pattern": "^asset:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2})$"
+			"pattern": "^asset:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})$"
 		},
 		"AssetIdWildcard": {
 			"title": "AssetIdWildcard",
 			"type": "string",
 			"description": "A wildcarded AssetId that can be used to match multiple Asset objects.",
-			"pattern": "^asset:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})$"
+			"pattern": "^asset:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})$"
 		},
 		"AssetCollectionId": {
 			"title": "AssetCollectionId",
 			"type": "string",
 			"description": "A unique ID representing an AssetCollection object.",
-			"pattern": "^asset_collection:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
+			"pattern": "^asset_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,3})$"
 		},
 		"AssetCollectionIdWildcard": {
 			"title": "AssetCollectionIdWildcard",
 			"type": "string",
 			"description": "A wildcarded AssetCollectionId that can be used to match multiple AssetCollection objects.",
-			"pattern": "^asset_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
+			"pattern": "^asset_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,3})$"
 		},
 		"AssetAbilityId": {
 			"title": "AssetAbilityId",
 			"type": "string",
 			"description": "A unique ID representing an AssetAbility object.",
-			"pattern": "^asset\\.ability:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2})\\.(\\d+)$"
+			"pattern": "^asset\\.ability:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})\\.(\\d+)$"
 		},
 		"AssetAbilityIdWildcard": {
 			"title": "AssetAbilityIdWildcard",
 			"type": "string",
 			"description": "A wildcarded AssetAbilityId that can be used to match multiple AssetAbility objects.",
-			"pattern": "^asset\\.ability:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})\\.(\\d+|\\*)$"
+			"pattern": "^asset\\.ability:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})\\.(\\d+|\\*)$"
 		},
 		"AssetAbilityMoveId": {
 			"title": "AssetAbilityMoveId",
 			"type": "string",
 			"description": "A unique ID representing an AssetAbilityMove object.",
-			"pattern": "^asset\\.ability\\.move:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2})\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
+			"pattern": "^asset\\.ability\\.move:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
 		},
 		"AssetAbilityMoveIdWildcard": {
 			"title": "AssetAbilityMoveIdWildcard",
 			"type": "string",
 			"description": "A wildcarded AssetAbilityMoveId that can be used to match multiple AssetAbilityMove objects.",
-			"pattern": "^asset\\.ability\\.move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
+			"pattern": "^asset\\.ability\\.move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
 		},
 		"AssetAbilityOracleRollableId": {
 			"title": "AssetAbilityOracleRollableId",
 			"type": "string",
 			"description": "A unique ID representing an AssetAbilityOracleRollable object.",
-			"pattern": "^asset\\.ability\\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2})\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
+			"pattern": "^asset\\.ability\\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
 		},
 		"AssetAbilityOracleRollableIdWildcard": {
 			"title": "AssetAbilityOracleRollableIdWildcard",
 			"type": "string",
 			"description": "A wildcarded AssetAbilityOracleRollableId that can be used to match multiple AssetAbilityOracleRollable objects.",
-			"pattern": "^asset\\.ability\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
+			"pattern": "^asset\\.ability\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
 		},
 		"AtlasCollectionId": {
 			"title": "AtlasCollectionId",
@@ -662,37 +662,37 @@
 			"title": "MoveId",
 			"type": "string",
 			"description": "A unique ID representing a Move object.",
-			"pattern": "^move:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2})$"
+			"pattern": "^move:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})$"
 		},
 		"MoveIdWildcard": {
 			"title": "MoveIdWildcard",
 			"type": "string",
 			"description": "A wildcarded MoveId that can be used to match multiple Move objects.",
-			"pattern": "^move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})$"
+			"pattern": "^move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})$"
 		},
 		"MoveCategoryId": {
 			"title": "MoveCategoryId",
 			"type": "string",
 			"description": "A unique ID representing a MoveCategory object.",
-			"pattern": "^move_category:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
+			"pattern": "^move_category:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,3})$"
 		},
 		"MoveCategoryIdWildcard": {
 			"title": "MoveCategoryIdWildcard",
 			"type": "string",
 			"description": "A wildcarded MoveCategoryId that can be used to match multiple MoveCategory objects.",
-			"pattern": "^move_category:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
+			"pattern": "^move_category:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,3})$"
 		},
 		"MoveOracleRollableId": {
 			"title": "MoveOracleRollableId",
 			"type": "string",
 			"description": "A unique ID representing a MoveOracleRollable object.",
-			"pattern": "^move\\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2})\\.([a-z][a-z_]*|\\*)$"
+			"pattern": "^move\\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})\\.([a-z][a-z_]*|\\*)$"
 		},
 		"MoveOracleRollableIdWildcard": {
 			"title": "MoveOracleRollableIdWildcard",
 			"type": "string",
 			"description": "A wildcarded MoveOracleRollableId that can be used to match multiple MoveOracleRollable objects.",
-			"pattern": "^move\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2})\\.([a-z][a-z_]*|\\*)$"
+			"pattern": "^move\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})\\.([a-z][a-z_]*|\\*)$"
 		},
 		"NpcId": {
 			"title": "NpcId",
@@ -872,6 +872,7 @@
 		},
 		"AnyId": {
 			"title": "AnyId",
+			"description": "Represents any kind of non-wildcard ID, including IDs of embedded objects.",
 			"anyOf": [
 				{
 					"$ref": "#/definitions/AssetId"
@@ -940,6 +941,7 @@
 		},
 		"AnyIdWildcard": {
 			"title": "AnyIdWildcard",
+			"description": "Represents any kind of wildcard ID, including IDs of embedded objects.",
 			"anyOf": [
 				{
 					"$ref": "#/definitions/AssetIdWildcard"
@@ -1123,59 +1125,11 @@
 		},
 		"Suggestions": {
 			"title": "Suggestions",
-			"type": "object",
+			"type": "array",
 			"releaseStage": "experimental",
-			"properties": {
-				"oracles": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/OracleRollableId"
-					}
-				},
-				"assets": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/AssetId"
-					}
-				},
-				"atlas": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/AtlasEntryId"
-					}
-				},
-				"moves": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/MoveId"
-					}
-				},
-				"npcs": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/NpcId"
-					}
-				},
-				"rarities": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/RarityId"
-					}
-				},
-				"site_domains": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/DelveSiteDomainId"
-					}
-				},
-				"site_themes": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/DelveSiteThemeId"
-					}
-				}
-			},
-			"additionalProperties": false
+			"items": {
+				"$ref": "#/definitions/AnyIdWildcard"
+			}
 		},
 		"SvgImageUrl": {
 			"title": "SvgImageUrl",
@@ -1241,29 +1195,23 @@
 			},
 			"additionalProperties": false
 		},
-		"InputLabel": {
-			"title": "InputLabel",
-			"type": "string",
-			"description": "A localized label for an input. In some contexts it may be undesirable to render this text, but it should always be exposed to assistive technology (e.g. with `aria-label` in HTML).",
-			"i18n": true,
-			"pattern": "^[^A-Z]+$"
-		},
 		"Label": {
 			"title": "Label",
 			"type": "string",
-			"description": "A localized plain text name or label.",
+			"description": "A localized, player-facing name or label, formatted as plain text. In some contexts it may be undesirable to render this text, but it should always be exposed to assistive technology (e.g. with `aria-label` in HTML).",
 			"i18n": true
 		},
 		"MarkdownString": {
 			"title": "MarkdownString",
 			"type": "string",
-			"description": "Localized text, formatted in Markdown.\n\nIt uses some custom syntax; e.g. `{{table:some_oracle_table_id}}` indicates that the referenced oracle table is rendered there in the source material.",
+			"description": "Localized, player-facing text, formatted in Markdown. It is *not* formatted for use \"out of the box\"; it uses some custom syntax, intended to be replaced in whatever way is most appropriate for your implementation.\n\n* `[Link text](move:starforged/suffer/pay_the_price)`: A link to the identified object. The ID must conform to the `AnyId` type; no wildcards allowed.\n* `{{table>oracle_rollable:starforged/core/action}}`: the referenced oracle is rendered here in the source material. The ID must conform to the `AnyOracleRollableId` type; no wildcards allowed.\n",
 			"i18n": true,
 			"format": "markdown"
 		},
 		"PartOfSpeech": {
 			"title": "PartOfSpeech",
 			"description": "  - `common_noun`: A common noun.\n  - `proper_noun`: A proper noun.\n  - `adjunct_common_noun`: A common noun used as an adjective, to modify another noun.\n  - `adjunct_proper_noun`: A proper noun used as an adjective, to modify another noun.\n  - `verb`: A verb in present tense\n  - `gerund`: Gerund or present participle of a verb, e.g. \"going\", \"seeing\", \"waving\". Can function as a noun, an adjective, or a progressive verb.\n  - `adjective`: An adjective.\n  - `attributive_verb`: A verb used as an adjective, to modify a noun.\n  - `adjective_as_proper_noun`: An adjective used as a proper noun.\n  - `common_noun_as_proper_noun`: An common noun used as a proper noun.",
+			"releaseStage": "experimental",
 			"enum": [
 				"common_noun",
 				"proper_noun",
@@ -1280,7 +1228,7 @@
 		"TemplateString": {
 			"title": "TemplateString",
 			"type": "string",
-			"description": "A rich text string in Markdown with replaced values from oracle roll results.\n\nThe custom syntax `{{some_row_key:some_oracle_table_id}}` should be replaced by the `some_row_key` string of a rolled oracle table. This is usually the `result` key, for example `{{result:starforged/oracles/core/action}}`\n",
+			"description": "A rich text string in Markdown with replaced values from oracle roll results.\n\nThe custom syntax `{{some_row_key>some_oracle_table_id}}` should be replaced by the `some_row_key` string of a rolled oracle table. This is usually the `text` key, for example `{{text>oracle_rollable:starforged/core/action}}`\n",
 			"releaseStage": "experimental",
 			"i18n": true,
 			"format": "markdown"
@@ -1306,7 +1254,7 @@
 			"required": ["label", "max", "description"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"rollable": {
 					"type": "boolean",
@@ -1347,7 +1295,7 @@
 			"required": ["label", "description", "contents"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel",
+					"$ref": "#/definitions/Label",
 					"description": "A label for this impact category."
 				},
 				"description": {
@@ -1374,7 +1322,7 @@
 			"required": ["label", "description"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel",
+					"$ref": "#/definitions/Label",
 					"description": "The label for this impact."
 				},
 				"prevents_recovery": {
@@ -1561,7 +1509,7 @@
 			"required": ["label", "description"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel",
+					"$ref": "#/definitions/Label",
 					"description": "A label for this special track."
 				},
 				"optional": {
@@ -1588,7 +1536,7 @@
 			"required": ["label", "description"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel",
+					"$ref": "#/definitions/Label",
 					"description": "A label for this stat.",
 					"examples": ["edge"]
 				},
@@ -2758,7 +2706,7 @@
 			"required": ["label", "using", "value"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"using": {
 					"type": "string",
@@ -3190,7 +3138,7 @@
 		"OracleRollTemplate": {
 			"title": "OracleRollTemplate",
 			"type": "object",
-			"description": "Provides string templates that may be used in place of the static row text from `OracleTableRow#text`, `OracleTableRow#text2`, and `OracleTableRow#text3`.\n\n  These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text:some_oracle_table_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#text` from the target oracle table ID.",
+			"description": "Provides string templates that may be used in place of the static row text from `OracleTableRow#text`, `OracleTableRow#text2`, and `OracleTableRow#text3`.\n\n  These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text>some_oracle_rollable_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#text` from the target oracle rollable ID.",
 			"releaseStage": "experimental",
 			"properties": {
 				"text": {
@@ -5715,10 +5663,14 @@
 					"title": "MoveOutcomes"
 				},
 				"oracles": {
-					"type": "array",
-					"description": "Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.",
-					"items": {
-						"$ref": "#/definitions/OracleRollableId"
+					"title": "MoveOracles",
+					"type": "object",
+					"remarks": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^[a-z][a-z_]*$": {
+							"$ref": "#/definitions/EmbeddedOracleRollable",
+							"title": "MoveOracleRollable"
+						}
 					}
 				},
 				"suggestions": {
@@ -5960,10 +5912,14 @@
 					"default": null
 				},
 				"oracles": {
-					"type": "array",
-					"description": "Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.",
-					"items": {
-						"$ref": "#/definitions/OracleRollableId"
+					"title": "MoveOracles",
+					"type": "object",
+					"remarks": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^[a-z][a-z_]*$": {
+							"$ref": "#/definitions/EmbeddedOracleRollable",
+							"title": "MoveOracleRollable"
+						}
 					}
 				},
 				"suggestions": {
@@ -6110,10 +6066,14 @@
 					"title": "MoveOutcomes"
 				},
 				"oracles": {
-					"type": "array",
-					"description": "Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.",
-					"items": {
-						"$ref": "#/definitions/OracleRollableId"
+					"title": "MoveOracles",
+					"type": "object",
+					"remarks": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^[a-z][a-z_]*$": {
+							"$ref": "#/definitions/EmbeddedOracleRollable",
+							"title": "MoveOracleRollable"
+						}
 					}
 				},
 				"suggestions": {
@@ -6223,10 +6183,14 @@
 					"title": "MoveOutcomes"
 				},
 				"oracles": {
-					"type": "array",
-					"description": "Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.",
-					"items": {
-						"$ref": "#/definitions/OracleRollableId"
+					"title": "MoveOracles",
+					"type": "object",
+					"remarks": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^[a-z][a-z_]*$": {
+							"$ref": "#/definitions/EmbeddedOracleRollable",
+							"title": "MoveOracleRollable"
+						}
 					}
 				},
 				"suggestions": {
@@ -7038,7 +7002,7 @@
 			"required": ["label", "field_type"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"field_type": {
 					"type": "string",
@@ -7072,7 +7036,7 @@
 			"required": ["label", "field_type"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"field_type": {
 					"type": "string",
@@ -7185,7 +7149,7 @@
 			"required": ["label", "field_type", "max"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"field_type": {
 					"type": "string",
@@ -7511,7 +7475,7 @@
 			"required": ["label", "field_type", "max"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"field_type": {
 					"type": "string",
@@ -7554,7 +7518,7 @@
 			"required": ["label", "field_type", "max"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"field_type": {
 					"type": "string",
@@ -7595,7 +7559,7 @@
 			"required": ["label", "field_type"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"field_type": {
 					"type": "string",
@@ -7643,7 +7607,7 @@
 			"required": ["label", "field_type", "choices"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"field_type": {
 					"type": "string",
@@ -7723,7 +7687,7 @@
 			"required": ["label", "choice_type"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"choice_type": {
 					"type": "string",
@@ -7749,7 +7713,7 @@
 			"required": ["name", "choice_type", "choices"],
 			"properties": {
 				"name": {
-					"$ref": "#/definitions/InputLabel",
+					"$ref": "#/definitions/Label",
 					"description": "A label for this option group."
 				},
 				"choice_type": {
@@ -7776,7 +7740,7 @@
 			"required": ["label", "field_type", "choices"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"field_type": {
 					"type": "string",
@@ -7847,7 +7811,7 @@
 						"type": "object",
 						"properties": {
 							"label": {
-								"$ref": "#/definitions/InputLabel"
+								"$ref": "#/definitions/Label"
 							},
 							"choice_type": {
 								"const": "choice",
@@ -7881,7 +7845,7 @@
 						"type": "object",
 						"properties": {
 							"label": {
-								"$ref": "#/definitions/InputLabel"
+								"$ref": "#/definitions/Label"
 							},
 							"choice_type": {
 								"const": "choice",
@@ -7915,7 +7879,7 @@
 						"type": "object",
 						"properties": {
 							"label": {
-								"$ref": "#/definitions/InputLabel"
+								"$ref": "#/definitions/Label"
 							},
 							"choice_type": {
 								"const": "choice",
@@ -7966,7 +7930,7 @@
 						"type": "object",
 						"properties": {
 							"label": {
-								"$ref": "#/definitions/InputLabel"
+								"$ref": "#/definitions/Label"
 							},
 							"choice_type": {
 								"const": "choice",
@@ -8016,7 +7980,7 @@
 						"type": "object",
 						"properties": {
 							"label": {
-								"$ref": "#/definitions/InputLabel"
+								"$ref": "#/definitions/Label"
 							},
 							"choice_type": {
 								"const": "choice",
@@ -8052,7 +8016,7 @@
 						"type": "object",
 						"properties": {
 							"label": {
-								"$ref": "#/definitions/InputLabel"
+								"$ref": "#/definitions/Label"
 							},
 							"choice_type": {
 								"const": "choice",
@@ -8087,7 +8051,7 @@
 						"type": "object",
 						"properties": {
 							"label": {
-								"$ref": "#/definitions/InputLabel"
+								"$ref": "#/definitions/Label"
 							},
 							"choice_type": {
 								"const": "choice",
@@ -8116,7 +8080,7 @@
 			"required": ["label", "field_type"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"field_type": {
 					"type": "string",
@@ -8957,7 +8921,7 @@
 				},
 				"name_oracle": {
 					"$ref": "#/definitions/OracleRollableId",
-					"description": "An oracle table ID containing place name elements. For examples, see oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in oracle collection ID `delve/collections/oracles/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (ID: delve/oracles/site_name/format) to create random names for delve sites."
+					"description": "An oracle table ID containing place name elements. For examples, see oracle ID `oracle_rollable:delve/site_name/place/barrow`, and its siblings in oracle collection ID `oracle_collection:delve/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (`oracle_rollable:delve/site_name/format`) to create random names for delve sites."
 				},
 				"summary": {
 					"$ref": "#/definitions/MarkdownString",
@@ -8996,7 +8960,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9020,7 +8985,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9044,7 +9010,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9068,7 +9035,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9092,7 +9060,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9116,7 +9085,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9140,7 +9110,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9164,7 +9135,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9188,7 +9160,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9212,7 +9185,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9236,7 +9210,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9260,7 +9235,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								}
 							],
 							"minItems": 12,
@@ -9302,7 +9278,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9326,7 +9303,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9350,7 +9328,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9374,7 +9353,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9398,7 +9378,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								}
 							],
 							"minItems": 5,
@@ -9488,7 +9469,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9512,7 +9494,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9536,7 +9519,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9560,7 +9544,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9584,7 +9569,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								}
 							],
 							"minItems": 5,
@@ -9626,7 +9612,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9650,7 +9637,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9674,7 +9662,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9698,7 +9687,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9722,7 +9712,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9746,7 +9737,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9770,7 +9762,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9794,7 +9787,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9818,7 +9812,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9842,7 +9837,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9866,7 +9862,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -9890,7 +9887,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								}
 							],
 							"minItems": 12,

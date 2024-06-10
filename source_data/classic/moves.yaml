@@ -992,7 +992,7 @@ moves:
 
           On a __miss__, also suffer -1 momentum. If you are at 0 health, you must mark wounded or maimed (if currently unmarked) or roll on the following table.
 
-          {{table:oracle_rollable:classic/moves/endure_harm}}
+          {{table>oracle_rollable:classic/moves/endure_harm}}
         outcomes:
           strong_hit:
             text: |-
@@ -1007,7 +1007,7 @@ moves:
             text: |-
               On a __miss__, also suffer -1 momentum. If you are at 0 health, you must mark wounded or maimed (if currently unmarked) or roll on the following table.
 
-              {{table:oracle_rollable:classic/moves/endure_harm}}
+              {{table>oracle_rollable:classic/moves/endure_harm}}
       face_death:
         name: Face Death
         type: move
@@ -1124,7 +1124,7 @@ moves:
 
           On a __miss__, also suffer -1 momentum. If you are at 0 spirit, you must mark shaken or corrupted (if currently unmarked) or roll on the following table.
 
-          {{table:oracle_rollable:classic/moves/endure_stress}}
+          {{table>oracle_rollable:classic/moves/endure_stress}}
         outcomes:
           strong_hit:
             text: |-
@@ -1138,7 +1138,7 @@ moves:
             text: |-
               On a __miss__, also suffer -1 momentum. If you are at 0 spirit, you must mark shaken or corrupted (if currently unmarked) or roll on the following table.
 
-              {{table:oracle_rollable:classic/moves/endure_stress}}
+              {{table>oracle_rollable:classic/moves/endure_stress}}
       face_desolation:
         name: Face Desolation
         type: move

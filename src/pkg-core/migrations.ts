@@ -1,7 +1,7 @@
 /** Utilties to assist in migration of Datasworn data across versions. */
 
 import CONST from './IdElements/CONST.js'
-import type NodeTypeId from './IdElements/NodeTypeId.js'
+import type TypeId from './IdElements/TypeId.js'
 
 const MinorNodeTypes = ['asset_ability_move', 'asset_ability'] as const
 type MinorNodeType = (typeof MinorNodeTypes)[number]
@@ -14,7 +14,7 @@ export type IdReplacer = {
 }
 
 export type IdReplacementMap = Record<
-	NodeTypeId.AnyPrimary | MinorNodeType,
+	TypeId.AnyPrimary | MinorNodeType,
 	IdReplacer[]
 >
 

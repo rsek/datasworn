@@ -11,11 +11,11 @@ import {
 } from '@sinclair/typebox'
 import type { Writable } from 'type-fest'
 import type CONST from '../../pkg-core/IdElements/CONST.js'
-import NodeTypeId from '../../pkg-core/IdElements/NodeTypeId.js'
+import TypeId from '../../pkg-core/IdElements/TypeId.js'
 import { Computed } from './Computed.js'
 import { pascalCase } from './string.js'
 
-const EmbeddedDictionaryKeys = Object.values(NodeTypeId.RootKeys)
+const EmbeddedDictionaryKeys = Object.values(TypeId.RootKeys)
 type EmbeddedDictionaryKeys = (typeof EmbeddedDictionaryKeys)[number]
 
 const ReplacedEmbedKeys = ['_id'] as const

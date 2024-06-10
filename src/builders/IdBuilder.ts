@@ -4,9 +4,9 @@ import {
 	type TString,
 	type TUnion
 } from '@sinclair/typebox'
-import type DataswornNode from '../pkg-core/DataswornNode.js'
+import type TypeNode from '../pkg-core/TypeNode.js'
 import CONST from '../pkg-core/IdElements/CONST.js'
-import NodeTypeId from '../pkg-core/IdElements/NodeTypeId.js'
+import TypeId from '../pkg-core/IdElements/TypeId.js'
 import Pattern from '../pkg-core/IdElements/Pattern.js'
 import type { Datasworn } from '../pkg-core/index.js'
 import { pascalCase } from '../schema/utils/string.js'
@@ -356,58 +356,39 @@ class IdPattern<
 		this.push(...formats)
 	}
 
-	static createRecursiveCollection<T extends NodeTypeId.Collection.Recursive>(
+	static createCollection<T extends TypeId.Collection>(
 		typeId: T,
-		typeRoot: NodeTypeId.RootKey<T>
+		typeRoot: TypeId.RootKey<T>
 	) {
 		return (
 			IdPattern.fromRoot(typeId)
 				// @ts-expect-error this happens because not all union members of OracleCollection have the 'collections' property
 				.addRecursiveDictKeys(typeRoot, CONST.CollectionsKey) as IdPattern<
-				DataswornNode.ByType<T>
+				TypeNode.ByType<T>
 			>
 		)
 	}
 
-	static createRecursiveCollectable<T extends NodeTypeId.Collectable.Recursive>(
+	static createCollectable<T extends TypeId.Collectable>(
 		typeId: T,
-		typeRoot: NodeTypeId.RootKey<T>
+		typeRoot: TypeId.RootKey<T>
 	) {
 		return (
 			IdPattern.fromRoot(typeId)
 				// @ts-expect-error
 				.addRecursiveDictKeys(typeRoot, CONST.CollectionsKey)
 				// @ts-expect-error
-				.addDictKey(CONST.ContentsKey) as IdPattern<DataswornNode.ByType<T>>
+				.addDictKey(CONST.ContentsKey) as IdPattern<TypeNode.ByType<T>>
 		)
 	}
 
-	static createNonCollectable<T extends NodeTypeId.NonCollectable>(
+	static createNonCollectable<T extends TypeId.NonCollectable>(
 		typeId: T,
-		typeRoot: NodeTypeId.RootKey<T>
+		typeRoot: TypeId.RootKey<T>
 	) {
 		return IdPattern.fromRoot(typeId).addDictKey(typeRoot) as IdPattern<
-			DataswornNode.ByType<T>
+			TypeNode.ByType<T>
 		>
-	}
-
-	static createNonRecursiveCollection<
-		T extends NodeTypeId.Collection.NonRecursive
-	>(typeId: T, typeRoot: NodeTypeId.RootKey<T>) {
-		return IdPattern.fromRoot(typeId).addDictKey(typeRoot) as IdPattern<
-			DataswornNode.ByType<T>
-		>
-	}
-
-	static createNonRecursiveCollectable<
-		T extends NodeTypeId.Collectable.NonRecursive
-	>(typeId: T, typeRoot: NodeTypeId.RootKey<T>) {
-		return (
-			IdPattern.fromRoot(typeId)
-				.addDictKey(typeRoot)
-				// @ts-expect-error not totally sure why this one gripes tho
-				.addDictKey(CONST.ContentsKey) as IdPattern<DataswornNode.ByType<T>>
-		)
 	}
 }
 
@@ -560,64 +541,37 @@ class PathFormat<Origin = Datasworn.RulesPackage> extends Array<
 
 const patterns: IdPattern[] = []
 
-for (const k of NodeTypeId.Collection.Recursive) {
-	const key = k as NodeTypeId.Collection.Recursive
-	const pattern = IdPattern.createRecursiveCollection(
-		key,
-		NodeTypeId.getRootKey(key)
-	)
-
-	patterns.push(pattern)
-}
-for (const k of NodeTypeId.Collection.NonRecursive) {
-	const key = k as NodeTypeId.Collection.NonRecursive
-	const pattern = IdPattern.createNonRecursiveCollection(
-		key,
-		NodeTypeId.getRootKey(key)
-	)
-
-	patterns.push(pattern)
-}
-for (const k of NodeTypeId.Collectable.Recursive) {
-	const key = k as NodeTypeId.Collectable.Recursive
-	const pattern = IdPattern.createRecursiveCollectable(
-		key,
-		NodeTypeId.getRootKey(key)
-	)
+for (const k of TypeId.Collection) {
+	const key = k as TypeId.Collection
+	const pattern = IdPattern.createCollection(key, TypeId.getRootKey(key))
 
 	patterns.push(pattern)
 }
 
-for (const k of NodeTypeId.Collectable.NonRecursive) {
-	const key = k as NodeTypeId.Collectable.NonRecursive
-	const pattern = IdPattern.createNonRecursiveCollectable(
-		key,
-		NodeTypeId.getRootKey(key)
-	)
+for (const k of TypeId.Collectable) {
+	const key = k as TypeId.Collectable
+	const pattern = IdPattern.createCollectable(key, TypeId.getRootKey(key))
 
 	patterns.push(pattern)
 }
-for (const k of NodeTypeId.NonCollectable) {
-	const key = k as NodeTypeId.NonCollectable
-	const pattern = IdPattern.createNonCollectable(
-		key,
-		NodeTypeId.getRootKey(key)
-	)
+for (const k of TypeId.NonCollectable) {
+	const key = k as TypeId.NonCollectable
+	const pattern = IdPattern.createNonCollectable(key, TypeId.getRootKey(key))
 
 	patterns.push(pattern)
 }
 
-const embeddedIdNames: Record<NodeTypeId.AnyPrimary, string[]> = {}
+const embeddedIdNames: Record<TypeId.AnyPrimary, string[]> = {}
 
 function extendForEmbed(
 	base: IdPattern,
-	embeddedTypeId: NodeTypeId.AnyPrimary | NodeTypeId.EmbedOnlyTypes
+	embeddedTypeId: TypeId.AnyPrimary | TypeId.EmbedOnlyTypes
 ) {
 	let newPattern = base.clone().addNewTypeGroup(embeddedTypeId)
 
-	if (embeddedTypeId in NodeTypeId.RootKeys) {
+	if (embeddedTypeId in TypeId.RootKeys) {
 		newPattern = newPattern.addDictKey(
-			NodeTypeId.getRootKey(embeddedTypeId as NodeTypeId.AnyPrimary)
+			TypeId.getRootKey(embeddedTypeId as TypeId.AnyPrimary)
 		)
 		embeddedIdNames[embeddedTypeId] ||= []
 		embeddedIdNames[embeddedTypeId].push(
@@ -627,14 +581,12 @@ function extendForEmbed(
 		return newPattern
 	}
 
-	switch (embeddedTypeId as NodeTypeId.EmbedOnlyTypes) {
+	switch (embeddedTypeId as TypeId.EmbedOnlyTypes) {
 		case 'ability':
 		case 'option':
 			// @ts-expect-error
 			return newPattern.addIndex(
-				NodeTypeId.EmbeddedPropertyKeys[
-					embeddedTypeId as NodeTypeId.EmbedOnlyTypes
-				]
+				TypeId.EmbeddedPropertyKeys[embeddedTypeId as TypeId.EmbedOnlyTypes]
 			)
 
 		default:
@@ -644,7 +596,7 @@ function extendForEmbed(
 	}
 }
 
-for (const compositeTypeId of NodeTypeId.EmbeddedTypePaths) {
+for (const compositeTypeId of TypeId.EmbeddedTypePaths) {
 	const [parentTypeId, typeId] = compositeTypeId.split('.') as Split<
 		typeof compositeTypeId,
 		'.'
@@ -652,7 +604,7 @@ for (const compositeTypeId of NodeTypeId.EmbeddedTypePaths) {
 
 	const parentPattern = patterns.find(
 		(pattern) => pattern[0].typeId === parentTypeId
-	) as IdPattern<DataswornNode.ByType<typeof parentTypeId>>
+	) as IdPattern<TypeNode.ByType<typeof parentTypeId>>
 
 	if (parentPattern == null)
 		throw new Error(`Couldn't find parent IdPattern of type "${parentTypeId}"`)
@@ -660,7 +612,7 @@ for (const compositeTypeId of NodeTypeId.EmbeddedTypePaths) {
 	const embeddedPattern = extendForEmbed(parentPattern, typeId)
 	patterns.push(embeddedPattern)
 
-	const childTypeIds = NodeTypeId.EmbedOfEmbedTypePaths.filter((t) =>
+	const childTypeIds = TypeId.EmbedOfEmbedTypePaths.filter((t) =>
 		t.startsWith(compositeTypeId)
 	)
 
@@ -676,7 +628,7 @@ for (const compositeTypeId of NodeTypeId.EmbeddedTypePaths) {
 }
 
 type IdSchemaName =
-	`${PascalCase<Join<Split<NodeTypeId.Any, '.'>, '_'>>}${'Id' | 'IdWildcard'}`
+	`${PascalCase<Join<Split<TypeId.Any, '.'>, '_'>>}${'Id' | 'IdWildcard'}`
 
 const ids = {} as Record<IdSchemaName, TString>
 

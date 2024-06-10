@@ -171,9 +171,7 @@
 					"type": "oracle_rollable",
 					"oracle_type": "table_text",
 					"canonical_name": "Oracle 1: Action",
-					"suggestions": {
-						"oracles": ["oracle_rollable:classic/action_and_theme/theme"]
-					},
+					"suggestions": ["oracle_rollable:classic/action_and_theme/theme"],
 					"summary": "Use this table to inspire a discovery, event, character goal, or situation. A roll on this table can be combined with a [Theme](oracle_rollable:classic/action_and_theme/theme) to provide an action and a subject. Then, interpret the result based on the context of the question and your current situation.",
 					"_source": {
 						"authors": [
@@ -1413,9 +1411,7 @@
 						"date": "2019-06-05",
 						"page": 175
 					},
-					"suggestions": {
-						"oracles": ["oracle_rollable:classic/action_and_theme/action"]
-					},
+					"suggestions": ["oracle_rollable:classic/action_and_theme/action"],
 					"summary": "As with the [Action](oracle_rollable:classic/action_and_theme/action) oracle, this is an interpretative table which you can use to answer questions or generate new situations. Combined, the Action and Theme tables provide creative prompts suitable for most situations and questions. In fact, with some creative interpretations, it’s entirely possible to play with only these two tables.",
 					"rows": [
 						{
@@ -3024,12 +3020,10 @@
 								"max": 100
 							},
 							"text": "Unusual role",
-							"suggestions": {
-								"oracles": [
-									"oracle_rollable:classic/action_and_theme/action",
-									"oracle_rollable:classic/action_and_theme/theme"
-								]
-							}
+							"suggestions": [
+								"oracle_rollable:classic/action_and_theme/action",
+								"oracle_rollable:classic/action_and_theme/theme"
+							]
 						}
 					],
 					"dice": "1d100",
@@ -4540,440 +4534,6 @@
 			},
 			"oracle_type": "tables",
 			"_id": "oracle_collection:classic/character"
-		},
-		"moves": {
-			"name": "Moves",
-			"type": "oracle_collection",
-			"_source": {
-				"authors": [
-					{
-						"name": "Shawn Tomkin"
-					}
-				],
-				"title": "Ironsworn Rulebook",
-				"license": "https://creativecommons.org/licenses/by/4.0",
-				"url": "https://ironswornrpg.com",
-				"date": "2019-06-05",
-				"page": 49
-			},
-			"collections": {
-				"ask_the_oracle": {
-					"name": "Ask the Oracle",
-					"oracle_type": "table_shared_text",
-					"type": "oracle_collection",
-					"_source": {
-						"authors": [
-							{
-								"name": "Shawn Tomkin"
-							}
-						],
-						"title": "Ironsworn Rulebook",
-						"license": "https://creativecommons.org/licenses/by/4.0",
-						"url": "https://ironswornrpg.com",
-						"date": "2019-06-05",
-						"page": 107
-					},
-					"contents": {
-						"almost_certain": {
-							"name": "Almost Certain",
-							"oracle_type": "column_text",
-							"type": "oracle_rollable",
-							"match": {
-								"text": "On a match, an extreme result or twist has occurred."
-							},
-							"rows": [
-								{
-									"roll": {
-										"min": 1,
-										"max": 10
-									},
-									"text": "No"
-								},
-								{
-									"roll": {
-										"min": 11,
-										"max": 100
-									},
-									"text": "Yes"
-								}
-							],
-							"dice": "1d100",
-							"_id": "oracle_rollable:classic/moves/ask_the_oracle/almost_certain"
-						},
-						"likely": {
-							"name": "Likely",
-							"oracle_type": "column_text",
-							"type": "oracle_rollable",
-							"match": {
-								"text": "On a match, an extreme result or twist has occurred."
-							},
-							"rows": [
-								{
-									"roll": {
-										"min": 1,
-										"max": 25
-									},
-									"text": "No"
-								},
-								{
-									"roll": {
-										"min": 26,
-										"max": 100
-									},
-									"text": "Yes"
-								}
-							],
-							"dice": "1d100",
-							"_id": "oracle_rollable:classic/moves/ask_the_oracle/likely"
-						},
-						"fifty_fifty": {
-							"name": "50/50",
-							"oracle_type": "column_text",
-							"type": "oracle_rollable",
-							"match": {
-								"text": "On a match, an extreme result or twist has occurred."
-							},
-							"rows": [
-								{
-									"roll": {
-										"min": 1,
-										"max": 50
-									},
-									"text": "No"
-								},
-								{
-									"roll": {
-										"min": 51,
-										"max": 100
-									},
-									"text": "Yes"
-								}
-							],
-							"dice": "1d100",
-							"_id": "oracle_rollable:classic/moves/ask_the_oracle/fifty_fifty"
-						},
-						"unlikely": {
-							"name": "Unlikely",
-							"oracle_type": "column_text",
-							"type": "oracle_rollable",
-							"match": {
-								"text": "On a match, an extreme result or twist has occurred."
-							},
-							"rows": [
-								{
-									"roll": {
-										"min": 1,
-										"max": 75
-									},
-									"text": "No"
-								},
-								{
-									"roll": {
-										"min": 76,
-										"max": 100
-									},
-									"text": "Yes"
-								}
-							],
-							"dice": "1d100",
-							"_id": "oracle_rollable:classic/moves/ask_the_oracle/unlikely"
-						},
-						"small_chance": {
-							"name": "Small Chance",
-							"oracle_type": "column_text",
-							"type": "oracle_rollable",
-							"match": {
-								"text": "On a match, an extreme result or twist has occurred."
-							},
-							"rows": [
-								{
-									"roll": {
-										"min": 1,
-										"max": 90
-									},
-									"text": "No"
-								},
-								{
-									"roll": {
-										"min": 91,
-										"max": 100
-									},
-									"text": "Yes"
-								}
-							],
-							"dice": "1d100",
-							"_id": "oracle_rollable:classic/moves/ask_the_oracle/small_chance"
-						}
-					},
-					"column_labels": {
-						"text": "Result"
-					},
-					"_id": "oracle_collection:classic/moves/ask_the_oracle"
-				}
-			},
-			"contents": {
-				"endure_harm": {
-					"name": "Endure Harm",
-					"oracle_type": "table_text",
-					"type": "oracle_rollable",
-					"_source": {
-						"authors": [
-							{
-								"name": "Shawn Tomkin"
-							}
-						],
-						"title": "Ironsworn Rulebook",
-						"license": "https://creativecommons.org/licenses/by/4.0",
-						"url": "https://ironswornrpg.com",
-						"date": "2019-06-05",
-						"page": 91
-					},
-					"rows": [
-						{
-							"roll": {
-								"min": 1,
-								"max": 10
-							},
-							"text": "The harm is mortal. [Face Death](move:classic/suffer/face_death)."
-						},
-						{
-							"roll": {
-								"min": 11,
-								"max": 20
-							},
-							"text": "You are dying. You need to Heal within an hour or two, or [Face Death](move:classic/suffer/face_death)."
-						},
-						{
-							"roll": {
-								"min": 21,
-								"max": 35
-							},
-							"text": "You are unconscious and out of action. If left alone, you come back to your senses in an hour or two. If you are vulnerable to a foe not inclined to show mercy, [Face Death](move:classic/suffer/face_death)."
-						},
-						{
-							"roll": {
-								"min": 36,
-								"max": 50
-							},
-							"text": "You are reeling and fighting to stay conscious. If you engage in any vigorous activity (such as running or fighting) before taking a breather for a few minutes, roll on this table again (before resolving the other move)."
-						},
-						{
-							"roll": {
-								"min": 51,
-								"max": 100
-							},
-							"text": "You are battered but still standing."
-						}
-					],
-					"dice": "1d100",
-					"column_labels": {
-						"roll": "Roll",
-						"text": "Result"
-					},
-					"_id": "oracle_rollable:classic/moves/endure_harm"
-				},
-				"endure_stress": {
-					"name": "Endure Stress",
-					"oracle_type": "table_text",
-					"type": "oracle_rollable",
-					"_source": {
-						"authors": [
-							{
-								"name": "Shawn Tomkin"
-							}
-						],
-						"title": "Ironsworn Rulebook",
-						"license": "https://creativecommons.org/licenses/by/4.0",
-						"url": "https://ironswornrpg.com",
-						"date": "2019-06-05",
-						"page": 93
-					},
-					"rows": [
-						{
-							"roll": {
-								"min": 1,
-								"max": 10
-							},
-							"text": "You are overwhelmed. [Face Desolation](move:classic/suffer/face_desolation)."
-						},
-						{
-							"roll": {
-								"min": 11,
-								"max": 25
-							},
-							"text": "You give up. [Forsake Your Vow](move:classic/quest/forsake_your_vow) (if possible, one relevant to your current crisis)."
-						},
-						{
-							"roll": {
-								"min": 26,
-								"max": 50
-							},
-							"text": "You give in to a fear or compulsion, and act against your better instincts."
-						},
-						{
-							"roll": {
-								"min": 51,
-								"max": 100
-							},
-							"text": "You persevere."
-						}
-					],
-					"dice": "1d100",
-					"column_labels": {
-						"roll": "Roll",
-						"text": "Result"
-					},
-					"_id": "oracle_rollable:classic/moves/endure_stress"
-				},
-				"pay_the_price": {
-					"name": "Pay the Price",
-					"oracle_type": "table_text",
-					"type": "oracle_rollable",
-					"_source": {
-						"authors": [
-							{
-								"name": "Shawn Tomkin"
-							}
-						],
-						"title": "Ironsworn Rulebook",
-						"license": "https://creativecommons.org/licenses/by/4.0",
-						"url": "https://ironswornrpg.com",
-						"date": "2019-06-05",
-						"page": 105
-					},
-					"rows": [
-						{
-							"roll": {
-								"min": 1,
-								"max": 2
-							},
-							"text": "Roll again and apply that result but make it worse. If you roll this result yet again, think of something dreadful that changes the course of your quest ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure) and make it happen."
-						},
-						{
-							"roll": {
-								"min": 3,
-								"max": 5
-							},
-							"text": "A person or community you trusted loses faith in you, or acts against you."
-						},
-						{
-							"roll": {
-								"min": 6,
-								"max": 9
-							},
-							"text": "A person or community you care about is exposed to danger."
-						},
-						{
-							"roll": {
-								"min": 10,
-								"max": 16
-							},
-							"text": "You are separated from something or someone."
-						},
-						{
-							"roll": {
-								"min": 17,
-								"max": 23
-							},
-							"text": "Your action has an unintended effect."
-						},
-						{
-							"roll": {
-								"min": 24,
-								"max": 32
-							},
-							"text": "Something of value is lost or destroyed."
-						},
-						{
-							"roll": {
-								"min": 33,
-								"max": 41
-							},
-							"text": "The current situation worsens."
-						},
-						{
-							"roll": {
-								"min": 42,
-								"max": 50
-							},
-							"text": "A new danger or foe is revealed."
-						},
-						{
-							"roll": {
-								"min": 51,
-								"max": 59
-							},
-							"text": "It causes a delay or puts you at a disadvantage."
-						},
-						{
-							"roll": {
-								"min": 60,
-								"max": 68
-							},
-							"text": "It is harmful."
-						},
-						{
-							"roll": {
-								"min": 69,
-								"max": 76
-							},
-							"text": "It is stressful."
-						},
-						{
-							"roll": {
-								"min": 77,
-								"max": 85
-							},
-							"text": "A surprising development complicates your quest."
-						},
-						{
-							"roll": {
-								"min": 86,
-								"max": 90
-							},
-							"text": "It wastes resources."
-						},
-						{
-							"roll": {
-								"min": 91,
-								"max": 94
-							},
-							"text": "It forces you to act against your best intentions."
-						},
-						{
-							"roll": {
-								"min": 95,
-								"max": 98
-							},
-							"text": "A friend, companion, or ally is put in harm’s way (or you are, if alone)."
-						},
-						{
-							"roll": {
-								"min": 99,
-								"max": 100
-							},
-							"text": "Roll twice more on this table. Both results occur. If they are the same result, make it worse.",
-							"oracle_rolls": [
-								{
-									"number_of_rolls": 2,
-									"auto": true,
-									"duplicates": "make_it_worse",
-									"oracle": null,
-									"dice": null
-								}
-							]
-						}
-					],
-					"dice": "1d100",
-					"column_labels": {
-						"roll": "Roll",
-						"text": "Result"
-					},
-					"_id": "oracle_rollable:classic/moves/pay_the_price"
-				}
-			},
-			"oracle_type": "tables",
-			"_id": "oracle_collection:classic/moves"
 		},
 		"name": {
 			"name": "Name",
@@ -13530,7 +13090,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/combat_talent/archer.0"
 						},
 						{
 							"text": "Once per fight, when you [Strike](move:classic/combat/strike) or [Clash](move:classic/combat/clash), you may take extra shots and suffer -1 supply (decide before rolling). When you do, reroll any dice. On a hit, inflict +2 harm and take +1 momentum.",
@@ -13552,7 +13113,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/archer.1"
 						},
 						{
 							"text": "When you [Resupply](move:classic/adventure/resupply) by hunting, add +1 and take +1 momentum on a hit.",
@@ -13571,7 +13133,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/archer.2"
 						}
 					],
 					"count_as_impact": false,
@@ -13616,7 +13179,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/combat_talent/berserker.0"
 						},
 						{
 							"text": "When you [Strike](move:classic/combat/strike) or [Clash](move:classic/combat/clash) by unleashing your rage (decide before rolling), inflict +1 harm on a hit. Then, choose one.\n\n  * Push yourself: [Endure Harm](move:classic/suffer/endure_harm) (1 harm).\n  * Lose yourself: [Endure Stress](move:classic/suffer/endure_stress) (1 stress).",
@@ -13638,7 +13202,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/berserker.1"
 						},
 						{
 							"text": "When you [Endure Harm](move:classic/suffer/endure_harm) in a fight, and your health is above 0, you may let the pain inflame your wildness (decide before rolling). If you then score a strong hit and choose to embrace the pain, take +momentum equal to your remaining health. A weak hit counts as a miss.",
@@ -13657,7 +13222,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/berserker.2"
 						}
 					],
 					"count_as_impact": false,
@@ -13704,7 +13270,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/combat_talent/brawler.0"
 						},
 						{
 							"text": "When you use an unarmed attack or simple weapon to [Strike](move:classic/combat/strike) with deadly intent, add +2 and inflict 2 harm on a hit (instead of 1). On a weak hit or miss, suffer -1 momentum (in addition to any other outcome of the move).",
@@ -13723,7 +13290,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/brawler.1"
 						},
 						{
 							"text": "When you [Face Danger](move:classic/adventure/face_danger) or [Clash](move:classic/combat/clash) against a brawling attack, add +1 and take +1 momentum on a hit.",
@@ -13745,7 +13313,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/brawler.2"
 						}
 					],
 					"count_as_impact": false,
@@ -13780,14 +13349,15 @@
 									"trigger": {
 										"conditions": [
 											{
-												"text": "against an unspecting foe",
+												"text": "against an unsuspecting foe",
 												"roll_options": null,
 												"method": null
 											}
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/combat_talent/cutthroat.0"
 						},
 						{
 							"text": "When you [Compel](move:classic/relationship/compel) someone at the point of your blade, or when you rely on your blade to [Face Danger](move:classic/adventure/face_danger), add +1.",
@@ -13819,7 +13389,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/cutthroat.1"
 						},
 						{
 							"text": "Once per fight, when you [Secure an Advantage](move:classic/adventure/secure_an_advantage) +shadow by performing a feint or misdirection, reroll any dice and take +1 momentum on a hit.",
@@ -13843,7 +13414,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/cutthroat.2"
 						}
 					],
 					"count_as_impact": false,
@@ -13879,7 +13451,8 @@
 									],
 									"roll_type": "action_roll"
 								}
-							]
+							],
+							"_id": "asset.ability:classic/combat_talent/duelist.0"
 						},
 						{
 							"text": "Once per fight, when you [Secure an Advantage](move:classic/adventure/secure_an_advantage) +edge by making a bold display of your combat prowess, you may reroll any dice.",
@@ -13903,7 +13476,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/duelist.1"
 						},
 						{
 							"text": "When you [Draw the Circle](move:classic/relationship/draw_the_circle), choose one (before rolling).\n\n  * Add +2.\n  * Take +2 momentum on a hit.",
@@ -13913,7 +13487,8 @@
 									"roll_type": "action_roll"
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/duelist.2"
 						}
 					],
 					"count_as_impact": false,
@@ -13954,7 +13529,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/combat_talent/fletcher.0"
 						},
 						{
 							"text": "When you [Resupply](move:classic/adventure/resupply) by recovering or gathering arrows after a battle, add +2.",
@@ -13973,7 +13549,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/fletcher.1"
 						},
 						{
 							"text": "When you craft a single arrow designated for a specific foe, envision the process and materials, and roll +wits. On a strong hit, take both. On a weak hit, choose one.\n\n  * Seeker: When a shooter uses the arrow to [Strike](move:classic/combat/strike) or [Clash](move:classic/combat/clash) against this foe, reroll any dice (one time only).\n  * Ravager: When a shooter uses the arrow to inflict harm against this foe, inflict +1d6 harm (one time only).",
@@ -13981,17 +13558,6 @@
 								"craft_arrow": {
 									"name": "Craft Arrow",
 									"type": "move",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you craft a single arrow designated for a specific foe...",
@@ -14018,10 +13584,12 @@
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/combat_talent/fletcher.2.craft_arrow"
 								}
 							},
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/fletcher.2"
 						}
 					],
 					"count_as_impact": false,
@@ -14099,7 +13667,8 @@
 									}
 								}
 							],
-							"enabled": true
+							"enabled": true,
+							"_id": "asset.ability:classic/combat_talent/ironclad.0"
 						},
 						{
 							"text": "When you [Clash](move:classic/combat/clash) while you are geared for war, add +1.",
@@ -14118,7 +13687,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/ironclad.1"
 						},
 						{
 							"text": "When you [Compel](move:classic/relationship/compel) in a situation where strength of arms is a factor, add +2.",
@@ -14137,7 +13707,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/ironclad.2"
 						}
 					],
 					"count_as_impact": false,
@@ -14187,7 +13758,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/combat_talent/long_arm.0"
 						},
 						{
 							"text": "When you [Secure an Advantage](move:classic/adventure/secure_an_advantage) +edge using your staff to disarm, trip, shove, or stun your foe, add +1 and take +1 momentum on a hit.",
@@ -14211,7 +13783,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/long_arm.1"
 						},
 						{
 							"text": "When you [Undertake a Journey](move:classic/adventure/undertake_a_journey) and score a strong hit, or if you accompany an ally who scores a strong hit on that move, your staff provides support and comfort in your travels; take +1 momentum.",
@@ -14233,7 +13806,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/long_arm.2"
 						}
 					],
 					"count_as_impact": false,
@@ -14288,7 +13862,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/combat_talent/shield_bearer.0"
 						},
 						{
 							"text": "When you paint your shield with a meaningful symbol, envision what you create. Then, if you [Endure Stress](move:classic/suffer/endure_stress) as you face off against a fearsome foe, add +1 and take +1 momentum on a hit.",
@@ -14307,7 +13882,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/shield_bearer.1"
 						},
 						{
 							"text": "When forced to [Endure Harm](move:classic/suffer/endure_harm) in a fight, you may instead sacrifice your shield and ignore all harm. If you do, the shield is destroyed. Once per fight, you also take initiative when you sacrifice your shield to avoid harm.",
@@ -14317,7 +13893,8 @@
 									"roll_type": "action_roll"
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/shield_bearer.2"
 						}
 					],
 					"count_as_impact": false,
@@ -14368,7 +13945,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/combat_talent/skirmisher.0"
 						},
 						{
 							"text": "When you [Strike](move:classic/combat/strike) in close combat, you may attempt to drive your spear home (decide before rolling). If you do, add +1 and inflict +2 harm on a hit. If you score a hit and the fight continues, [Face Danger](move:classic/adventure/face_danger) +iron to recover your spear.",
@@ -14387,7 +13965,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/skirmisher.1"
 						},
 						{
 							"text": "When you [Secure an Advantage](move:classic/adventure/secure_an_advantage) by bracing your spear against a charging foe, add +1 and take +1 momentum on a hit.",
@@ -14406,7 +13985,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/skirmisher.2"
 						}
 					],
 					"count_as_impact": false,
@@ -14448,7 +14028,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/combat_talent/slinger.0"
 						},
 						{
 							"text": "When you [Strike](move:classic/combat/strike) by launching stones at an advancing foe, you may choose one (before rolling).\n\n  * Hold them back: Retain initiative on a weak hit, but inflict only 1 harm.\n  * Hit them hard: Inflict +1 harm on a hit, but suffer -1 momentum.",
@@ -14467,7 +14048,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/slinger.1"
 						},
 						{
 							"text": "When you [Secure an Advantage](move:classic/adventure/secure_an_advantage) by preparing stones of a special quality or material, add +1. Then, take +1 momentum or +1 supply on a hit.",
@@ -14486,7 +14068,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/slinger.2"
 						}
 					],
 					"count_as_impact": false,
@@ -14531,7 +14114,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/combat_talent/sunderer.0"
 						},
 						{
 							"text": "When you have your axe in hand, and use the promise of violence to [Compel](move:classic/relationship/compel) or [Secure an Advantage](move:classic/adventure/secure_an_advantage), add +1 and take +1 momentum on a hit.",
@@ -14553,7 +14137,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/sunderer.1"
 						},
 						{
 							"text": "When you make a tribute to a fallen foe (formidable or greater) by carving a rune in the haft of your axe, roll +heart. On a strong hit, inflict +1d6 harm (one time only) when you [Strike](move:classic/combat/strike) or [Clash](move:classic/combat/clash). On a weak hit, as above, but this death weighs on you; [Endure Stress](move:classic/suffer/endure_stress) (2 stress).",
@@ -14561,17 +14146,6 @@
 								"carve_rune": {
 									"name": "Carve Rune",
 									"type": "move",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you make a tribute to a fallen foe (formidable or greater) by carving a rune in the haft of your axe...",
@@ -14598,10 +14172,12 @@
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/combat_talent/sunderer.2.carve_rune"
 								}
 							},
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/sunderer.2"
 						}
 					],
 					"count_as_impact": false,
@@ -14637,7 +14213,8 @@
 									],
 									"roll_type": "action_roll"
 								}
-							]
+							],
+							"_id": "asset.ability:classic/combat_talent/swordmaster.0"
 						},
 						{
 							"text": "When you [Clash](move:classic/combat/clash) and score a strong hit, add +1 if you immediately follow with a [Strike](move:classic/combat/strike).",
@@ -14647,7 +14224,8 @@
 									"roll_type": "action_roll"
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/swordmaster.1"
 						},
 						{
 							"text": "When you [Swear an Iron Vow](move:classic/quest/swear_an_iron_vow) by kneeling and grasping your sword’s blade, add +1 and take +1 momentum on a hit. If you let the edge draw blood from your hands, [Endure Harm](move:classic/suffer/endure_harm) (1 harm) in exchange for an additional +1 momentum on a hit.",
@@ -14666,7 +14244,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/swordmaster.2"
 						}
 					],
 					"count_as_impact": false,
@@ -14712,7 +14291,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/combat_talent/thunder_bringer.0"
 						},
 						{
 							"text": "When you [Strike](move:classic/combat/strike) a foe to knock them back, stun them, or put them off balance, inflict 1 harm (instead of 2) and take +2 momentum on a hit. On a strong hit, you also create an opening and add +1 on your next move.",
@@ -14731,7 +14311,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/thunder_bringer.1"
 						},
 						{
 							"text": "When you [Turn the Tide](move:classic/combat/turn_the_tide), you may [Strike](move:classic/combat/strike) with all the fury and power you can muster. If you do (decide before rolling), you may reroll any dice and inflict +2 harm on a strong hit, but count a weak hit as a miss.",
@@ -14741,7 +14322,8 @@
 									"roll_type": "action_roll"
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/combat_talent/thunder_bringer.2"
 						}
 					],
 					"count_as_impact": false,
@@ -14816,7 +14398,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/cave_lion.0"
 						},
 						{
 							"name": "Inescapable",
@@ -14844,7 +14427,8 @@
 									"roll_type": "action_roll"
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/cave_lion.1"
 						},
 						{
 							"name": "Protective",
@@ -14855,7 +14439,8 @@
 									"roll_type": "action_roll"
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/cave_lion.2"
 						}
 					],
 					"controls": {
@@ -14923,7 +14508,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/giant_spider.0"
 						},
 						{
 							"name": "Soul-Piercing",
@@ -14948,7 +14534,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/giant_spider.1"
 						},
 						{
 							"name": "Ensnaring",
@@ -14973,7 +14560,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/giant_spider.2"
 						}
 					],
 					"controls": {
@@ -15063,7 +14651,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/hawk.0"
 						},
 						{
 							"name": "Fierce",
@@ -15088,7 +14677,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/hawk.1"
 						},
 						{
 							"name": "Vigilant",
@@ -15130,7 +14720,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/hawk.2"
 						}
 					],
 					"count_as_impact": false,
@@ -15189,7 +14780,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/horse.0"
 						},
 						{
 							"name": "Fearless",
@@ -15217,7 +14809,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/horse.1"
 						},
 						{
 							"name": "Mighty",
@@ -15240,7 +14833,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/horse.2"
 						}
 					],
 					"controls": {
@@ -15308,7 +14902,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/hound.0"
 						},
 						{
 							"name": "Ferocious",
@@ -15331,7 +14926,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/hound.1"
 						},
 						{
 							"name": "Loyal",
@@ -15351,7 +14947,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/hound.2"
 						}
 					],
 					"controls": {
@@ -15444,7 +15041,8 @@
 									"enhances": null
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/kindred.0"
 						},
 						{
 							"name": "Shield-Kin",
@@ -15480,7 +15078,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/kindred.1"
 						},
 						{
 							"name": "Bonded",
@@ -15491,7 +15090,8 @@
 									"roll_type": "action_roll"
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/kindred.2"
 						}
 					],
 					"count_as_impact": false,
@@ -15526,7 +15126,8 @@
 						{
 							"name": "Lumbering",
 							"text": "When your mammoth travels with you as you [Undertake a Journey](move:classic/adventure/undertake_a_journey), you may add +2 but suffer -1 momentum (decide before rolling).",
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/mammoth.0"
 						},
 						{
 							"name": "Beast of burden",
@@ -15554,7 +15155,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/mammoth.1"
 						},
 						{
 							"name": "Overpowering",
@@ -15577,7 +15179,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/mammoth.2"
 						}
 					],
 					"controls": {
@@ -15663,7 +15266,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/owl.0"
 						},
 						{
 							"name": "Sage",
@@ -15683,7 +15287,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/owl.1"
 						},
 						{
 							"name": "Embodying",
@@ -15694,7 +15299,8 @@
 									"enhances": ["move:classic/suffer/face_death"]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/owl.2"
 						}
 					],
 					"controls": {
@@ -15770,7 +15376,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/raven.0"
 						},
 						{
 							"name": "Knowing",
@@ -15781,7 +15388,8 @@
 									"enhances": ["move:classic/suffer/face_death"]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/raven.1"
 						},
 						{
 							"name": "Diligent",
@@ -15805,7 +15413,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/raven.2"
 						}
 					],
 					"controls": {
@@ -15864,7 +15473,8 @@
 									"enhances": ["move:classic/adventure/undertake_a_journey"]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/young_wyvern.0"
 						},
 						{
 							"name": "Indomitable",
@@ -15884,7 +15494,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/young_wyvern.1"
 						},
 						{
 							"name": "Savage",
@@ -15909,7 +15520,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/companion/young_wyvern.2"
 						}
 					],
 					"controls": {
@@ -15979,17 +15591,6 @@
 								"create_elixir": {
 									"name": "Create Elixir",
 									"type": "move",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you create an elixir...",
@@ -16057,9 +15658,11 @@
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/path/alchemist.0.create_elixir"
 								}
-							}
+							},
+							"_id": "asset.ability:classic/path/alchemist.0"
 						},
 						{
 							"text": "As above, and you may choose two effects for a single dose, or create two doses of the same effect.",
@@ -16071,7 +15674,8 @@
 									]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/alchemist.1"
 						},
 						{
 							"text": "When you prepare an elixir, add +1 and take +1 momentum on a hit.",
@@ -16083,7 +15687,8 @@
 									]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/alchemist.2"
 						}
 					],
 					"count_as_impact": false,
@@ -16124,7 +15729,8 @@
 									},
 									"enhances": null
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/animal_kin.0"
 						},
 						{
 							"text": "You may add or upgrade an animal or beast companion asset for 1 fewer experience. Once you mark all their abilities, you may [Forge a Bond](move:classic/relationship/forge_a_bond) with them and take an automatic strong hit. When you do, mark a bond twice and take 1 experience.",
@@ -16143,7 +15749,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/animal_kin.1"
 						},
 						{
 							"text": "Once per fight, when you leverage your animal or beast companion to make a move, reroll any dice. On a hit, take +1 momentum.",
@@ -16162,7 +15769,8 @@
 									"enhances": null
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/animal_kin.2"
 						}
 					],
 					"count_as_impact": false,
@@ -16215,7 +15823,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/banner_sworn.0"
 						},
 						{
 							"text": "When you [Sojourn](move:classic/relationship/sojourn) or [Make Camp](move:classic/adventure/make_camp) in the company of your banner-kin, add +1 and take +1 momentum on a hit.",
@@ -16237,7 +15846,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/banner_sworn.1"
 						},
 						{
 							"text": "When you [Enter the Fray](move:classic/combat/enter_the_fray) bearing your banner, add +1 and take +1 momentum on a hit. When you burn momentum while carrying your banner in combat, take +1 momentum after you reset.",
@@ -16256,7 +15866,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/banner_sworn.2"
 						}
 					],
 					"count_as_impact": false,
@@ -16283,11 +15894,13 @@
 					"abilities": [
 						{
 							"text": "You focus your energies: Reduce your edge or iron by 1 and add +2 to wits or heart, or +1 to each (to a maximum of +4).",
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/battle_scarred.0"
 						},
 						{
 							"text": "You overcome your limitations: Reduce your maximum health by 1. Maimed no longer counts as a debility, and does not reduce your maximum momentum or reset value. When you [Endure Stress](move:classic/suffer/endure_stress) +heart, take +1 momentum on a strong hit.",
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/battle_scarred.1"
 						},
 						{
 							"text": "You have stared down death before: When you are at 0 health and [Endure Harm](move:classic/suffer/endure_harm), you may roll +wits or +heart (instead of +health or +iron). If you do, take +1 momentum on a hit.",
@@ -16315,7 +15928,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/battle_scarred.2"
 						}
 					],
 					"count_as_impact": false,
@@ -16367,7 +15981,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/blade_bound.0"
 						},
 						{
 							"text": "When you [Gather Information](move:classic/adventure/gather_information) by listening to the whispers of your kin-blade, add +1 and take +2 momentum on a hit. Then, [Endure Stress](move:classic/suffer/endure_stress) (2 stress).",
@@ -16386,7 +16001,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/blade_bound.1"
 						},
 						{
 							"text": "When you [Strike](move:classic/combat/strike) with your kin-blade to inflict savage harm (decide before rolling), add +1 and inflict +2 harm on a hit. Then, [Endure Stress](move:classic/suffer/endure_stress) (2 stress).",
@@ -16405,7 +16021,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/blade_bound.2"
 						}
 					],
 					"count_as_impact": false,
@@ -16446,11 +16063,13 @@
 									},
 									"enhances": null
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/bonded.0"
 						},
 						{
 							"text": "When you completely fill a box on your bonds progress track, envision what your relationships have taught you. Then, take 1 experience and +2 momentum.",
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/bonded.1"
 						},
 						{
 							"text": "When you make a move in a crucial moment and score a miss, you may cling to thoughts of your bond-kin for courage or encouragement. If you do, reroll any dice. On another miss, in addition to the outcome of the move, you must mark shaken or corrupted. If both debilities are already marked, [Face Desolation](move:classic/suffer/face_desolation).",
@@ -16460,7 +16079,8 @@
 									"enhances": null
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/bonded.2"
 						}
 					],
 					"count_as_impact": false,
@@ -16519,7 +16139,8 @@
 									],
 									"roll_type": "action_roll"
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/commander.0"
 						},
 						{
 							"text": "You may dispatch scouts from your warband to [Gather Information](move:classic/adventure/gather_information) or [Resupply](move:classic/adventure/resupply); if you do, roll +strength.",
@@ -16547,11 +16168,13 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/commander.1"
 						},
 						{
 							"text": "Once you [Forge a Bond](move:classic/relationship/forge_a_bond) with your warband, take +1 momentum on a hit when you leverage a warband ability.",
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/commander.2"
 						}
 					],
 					"controls": {
@@ -16613,7 +16236,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/dancer.0"
 						},
 						{
 							"text": "When you [Face Danger](move:classic/adventure/face_danger) +edge in a fight by nimbly avoiding your foe’s attacks, add +1 and take +1 momentum on a hit.",
@@ -16632,7 +16256,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/dancer.1"
 						},
 						{
 							"text": "When you or an ally make a progress move and score a hit, you may perform a dance to commemorate the event. If you do, roll +edge. On a strong hit, you and each of your allies take +2 momentum and +1 spirit. On a weak hit, you take +1 momentum or +1 spirit, but your allies are unmoved.",
@@ -16658,17 +16283,6 @@
 								"commemorate": {
 									"name": "Commemorate",
 									"type": "move",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you or an ally make a progress move and score a hit, and you perform a dance to commemorate the event...",
@@ -16695,10 +16309,12 @@
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/path/dancer.2.commemorate"
 								}
 							},
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/dancer.2"
 						}
 					],
 					"count_as_impact": false,
@@ -16789,7 +16405,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/devotant.0"
 						},
 						{
 							"text": "When you [Swear an Iron Vow](move:classic/quest/swear_an_iron_vow) to serve your god on a divine quest, you may roll +your god’s stat and reroll any dice. When you [Fulfill Your Vow](move:classic/quest/fulfill_your_vow) and mark experience, take +1 experience.",
@@ -16827,7 +16444,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/devotant.1"
 						},
 						{
 							"text": "When you [Sojourn](move:classic/relationship/sojourn) by sharing the word of your god, you may roll +your god’s stat. If you do, take +1 momentum on a hit.",
@@ -16852,7 +16470,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/devotant.2"
 						}
 					],
 					"count_as_impact": false,
@@ -16891,7 +16510,8 @@
 									"roll_type": "action_roll",
 									"enhances": ["move:classic/relationship/sojourn"]
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/empowered.0"
 						},
 						{
 							"text": "When you exert your title or lineage to [Compel](move:classic/relationship/compel), add +1 and take +1 momentum on a hit.",
@@ -16910,7 +16530,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/empowered.1"
 						},
 						{
 							"text": "When you forgo your title or lineage and [Forge a Bond](move:classic/relationship/forge_a_bond) as an equal, or when you [Swear an Iron Vow](move:classic/quest/swear_an_iron_vow) to serve someone of a lower station, add +1 and take +1 momentum or +1 spirit on a hit.",
@@ -16942,7 +16563,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/empowered.2"
 						}
 					],
 					"count_as_impact": false,
@@ -16986,7 +16608,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/fated.0"
 						},
 						{
 							"text": "When you [Reach a Milestone](move:classic/quest/reach_a_milestone) on your background vow, take +2 momentum or +1 spirit.",
@@ -17005,7 +16628,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/fated.1"
 						},
 						{
 							"text": "For every two boxes filled on your background vow progress track, take 1 experience. When you [Fulfill Your Vow](move:classic/quest/fulfill_your_vow), your fate is at hand. Envision your final sacrifice and reroll any dice.",
@@ -17024,7 +16648,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/fated.2"
 						}
 					],
 					"count_as_impact": false,
@@ -17091,11 +16716,13 @@
 									},
 									"enhances": null
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/fortune_hunter.0"
 						},
 						{
 							"text": "When in a community or trading, you may suffer -1 wealth and take +2 supply.",
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/fortune_hunter.1"
 						},
 						{
 							"text": "When you [Resupply](move:classic/adventure/resupply) by scavenging or looting, and score a strong hit with a match, you may envision finding an object of value. If you do, take +1 supply (instead of +2) and +1 wealth.",
@@ -17114,7 +16741,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/fortune_hunter.2"
 						}
 					],
 					"controls": {
@@ -17178,7 +16806,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/herbalist.0"
 						},
 						{
 							"text": "When you [Heal](move:classic/adventure/heal) a companion, ally, or other character, and score a hit, take +1 spirit or +1 momentum.",
@@ -17197,7 +16826,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/herbalist.1"
 						},
 						{
 							"text": "When you [Make Camp](move:classic/adventure/make_camp) and choose the option to partake, you can create a restorative meal. If you do, you and your companions take +1 health. Any allies who choose to partake also take +1 health, and do not suffer -supply.",
@@ -17219,7 +16849,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/herbalist.2"
 						}
 					],
 					"count_as_impact": false,
@@ -17251,7 +16882,8 @@
 									"roll_type": "no_roll",
 									"enhances": ["move:classic/combat/turn_the_tide"]
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/honorbound.0"
 						},
 						{
 							"text": "When you [Secure an Advantage](move:classic/adventure/secure_an_advantage) or [Compel](move:classic/relationship/compel) by telling a hard truth, add +1 and take +1 momentum on a hit. On a weak hit or miss, envision how this truth complicates your current situation.",
@@ -17273,7 +16905,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/honorbound.1"
 						},
 						{
 							"text": "When you [Fulfill Your Vow](move:classic/quest/fulfill_your_vow) and score a miss, you may reroll one challenge die. If you score a miss again, reduce your maximum spirit by 1. You may recover this lost spirit when you next [Fulfill Your Vow](move:classic/quest/fulfill_your_vow) and score a strong hit.",
@@ -17283,7 +16916,8 @@
 									"enhances": ["move:classic/quest/fulfill_your_vow"]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/honorbound.2"
 						}
 					],
 					"count_as_impact": false,
@@ -17328,7 +16962,8 @@
 									}
 								}
 							],
-							"enabled": true
+							"enabled": true,
+							"_id": "asset.ability:classic/path/improviser.0"
 						},
 						{
 							"text": "When you [Secure an Advantage](move:classic/adventure/secure_an_advantage) or [Face Danger](move:classic/adventure/face_danger) by cobbling together an ad hoc tool or apparatus, add +1 and take +1 momentum on a hit. After rolling, you may also suffer -1 supply and add +1 more.",
@@ -17350,7 +16985,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/improviser.1"
 						},
 						{
 							"text": "When you throw caution to the wind and make an impulsive move in a risky situation, you may add +2. If you do, take +1 momentum on a strong hit, but count a weak hit as a miss.",
@@ -17369,7 +17005,8 @@
 									"enhances": null
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/improviser.2"
 						}
 					],
 					"count_as_impact": false,
@@ -17410,7 +17047,8 @@
 									},
 									"enhances": null
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/infiltrator.0"
 						},
 						{
 							"text": "When you [Gather Information](move:classic/adventure/gather_information) within an enemy area to discover their positions, plans, or methods, or when you [Secure an Advantage](move:classic/adventure/secure_an_advantage) within that area through observation, you may roll +shadow (instead of +wits). If you do, take +1 momentum on a hit.",
@@ -17452,7 +17090,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/infiltrator.1"
 						},
 						{
 							"text": "When you [Resupply](move:classic/adventure/resupply) within an enemy area by scavenging or looting, you may roll +shadow (instead of +wits). If you do, take +1 momentum or +1 supply on a hit.",
@@ -17476,7 +17115,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/infiltrator.2"
 						}
 					],
 					"count_as_impact": false,
@@ -17536,7 +17176,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/lorekeeper.0"
 						},
 						{
 							"text": "When you learn of a site or object holding lost knowledge, and [Swear an Iron Vow](move:classic/quest/swear_an_iron_vow) to recover it for the archive, reroll any dice. When you [Fulfill Your Vow](move:classic/quest/fulfill_your_vow) and mark experience, take +1 experience.",
@@ -17568,11 +17209,13 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/lorekeeper.1"
 						},
 						{
 							"text": "One time only, you may browse the archive’s forbidden depths. If you do, raise your wits by 1 and roll an action die. On 1-3, you must also mark corrupted or [Face Desolation](move:classic/suffer/face_desolation) (ignoring momentum).",
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/lorekeeper.2"
 						}
 					],
 					"count_as_impact": false,
@@ -17604,7 +17247,8 @@
 									"roll_type": "no_roll",
 									"enhances": ["move:classic/adventure/aid_your_ally"]
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/loyalist.0"
 						},
 						{
 							"text": "When an ally makes the [Endure Stress](move:classic/suffer/endure_stress) move in your company, they add +1 and you take +1 momentum on a hit.",
@@ -17627,7 +17271,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/loyalist.1"
 						},
 						{
 							"text": "When you stand with your ally as they make a progress move, envision how you support them. Then, roll one challenge die. On a 1-9, your ally may replace one of their challenge dice with yours. On a 10, envision how you inadvertently undermine their action; your ally must replace their lowest challenge die with yours.",
@@ -17650,7 +17295,8 @@
 									"enhances": null
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/loyalist.2"
 						}
 					],
 					"count_as_impact": false,
@@ -17731,7 +17377,8 @@
 									},
 									"enhances": null
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/masked.0"
 						},
 						{
 							"text": "As above, and you may instead add +2 and suffer -2 (decide before rolling).",
@@ -17756,7 +17403,8 @@
 									"enhances": null
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/masked.1"
 						},
 						{
 							"text": "When you [Face Death](move:classic/suffer/face_death) or [Face Desolation](move:classic/suffer/face_desolation) while wearing the mask, you may roll +its stat (instead of +heart).",
@@ -17784,7 +17432,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/masked.2"
 						}
 					],
 					"count_as_impact": false,
@@ -17827,7 +17476,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/oathbreaker.0"
 						},
 						{
 							"text": "When you [Secure an Advantage](move:classic/adventure/secure_an_advantage) or [Compel](move:classic/relationship/compel) by reaffirming your commitment to your marked vow, add +1 and take +1 momentum on a hit.",
@@ -17849,7 +17499,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/oathbreaker.1"
 						},
 						{
 							"text": "When you [Fulfill Your Vow](move:classic/quest/fulfill_your_vow) on your marked quest and score a hit, you find redemption and automatically activate this ability at no cost. You may then improve one of your stats by +1 and discard this asset.",
@@ -17868,7 +17519,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/oathbreaker.2"
 						}
 					],
 					"shared": false,
@@ -17904,17 +17556,6 @@
 								"scrape_by": {
 									"name": "Scrape By",
 									"type": "move",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When your supply is reduced to 0...",
@@ -17941,9 +17582,11 @@
 										"miss": {
 											"text": "On a __miss__, you are [Out of Supply](move:classic/suffer/out_of_supply)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/path/outcast.0.scrape_by"
 								}
-							}
+							},
+							"_id": "asset.ability:classic/path/outcast.0"
 						},
 						{
 							"text": "When you [Sojourn](move:classic/relationship/sojourn), you may reroll any dice. If you do (decide before your first roll), your needs are few, but your isolation sets you apart from others. A strong hit counts as a weak hit.",
@@ -17953,7 +17596,8 @@
 									"enhances": ["move:classic/relationship/sojourn"]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/outcast.1"
 						},
 						{
 							"text": "When you [Reach Your Destination](move:classic/adventure/reach_your_destination) and score a strong hit, you recall or recognize something helpful about this place. Envision what it is, and take +2 momentum.",
@@ -17963,7 +17607,8 @@
 									"enhances": ["move:classic/adventure/reach_your_destination"]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/outcast.2"
 						}
 					],
 					"count_as_impact": false,
@@ -17994,17 +17639,6 @@
 								"establish_false_identity": {
 									"name": "Establish False Identity",
 									"type": "move",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you establish a false identity...",
@@ -18031,9 +17665,11 @@
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/path/pretender.0.establish_false_identity"
 								}
-							}
+							},
+							"_id": "asset.ability:classic/path/pretender.0"
 						},
 						{
 							"text": "As above, and you may roll +shadow (instead of +heart) when you [Sojourn](move:classic/relationship/sojourn) under your false identity. If you do, take +1 momentum on a hit.",
@@ -18063,7 +17699,8 @@
 									]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/pretender.1"
 						},
 						{
 							"text": "When you [Secure an Advantage](move:classic/adventure/secure_an_advantage) by revealing your true identity in a dramatic moment, reroll any dice.",
@@ -18082,7 +17719,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/pretender.2"
 						}
 					],
 					"count_as_impact": false,
@@ -18127,7 +17765,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/revenant.0"
 						},
 						{
 							"text": "When you make a move to investigate, oppose, or interact with a horror, spirit, or other undead being, add +1.",
@@ -18146,7 +17785,8 @@
 									"enhances": null
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/revenant.1"
 						},
 						{
 							"text": "When you bring death to your foe to [End the Fight](move:classic/combat/end_the_fight), you may burn momentum to cancel one (not both) of the challenge dice if your momentum is greater than the value of that die. If you do, [Endure Stress](move:classic/suffer/endure_stress) (2 stress).",
@@ -18165,7 +17805,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/revenant.2"
 						}
 					],
 					"count_as_impact": false,
@@ -18220,7 +17861,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/rider.0"
 						},
 						{
 							"text": "When you [Undertake a Journey](move:classic/adventure/undertake_a_journey), you may push your horse harder and add +1 (after rolling). If you do, make the [Companion Endure Harm](move:classic/suffer/companion_endure_harm) move (1 harm).",
@@ -18230,7 +17872,8 @@
 									"enhances": ["move:classic/adventure/undertake_a_journey"]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/rider.1"
 						},
 						{
 							"text": "When you [Secure an Advantage](move:classic/adventure/secure_an_advantage) +wits by sizing up a perilous situation from the saddle, you are one with your horse’s instincts. Add +1 and take +1 momentum on a hit.",
@@ -18254,7 +17897,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/rider.2"
 						}
 					],
 					"count_as_impact": false,
@@ -18296,7 +17940,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/ritualist.0"
 						},
 						{
 							"text": "When you perform a ritual, you may suffer -1 supply and add +1 (decide before rolling).",
@@ -18306,11 +17951,13 @@
 									"enhances": ["asset.ability.move:*/ritual/*.*.*"]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/ritualist.1"
 						},
 						{
 							"text": "When you tattoo the essence of a new ritual onto your skin, envision the mark you create. You may then purchase and upgrade that ritual asset for 1 fewer experience.",
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/ritualist.2"
 						}
 					],
 					"count_as_impact": false,
@@ -18337,7 +17984,8 @@
 					"abilities": [
 						{
 							"text": "You harden your heart: Reduce your heart stat by 1 and add up to +2 to shadow (to a maximum of +4).",
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/shadow_kin.0"
 						},
 						{
 							"text": "You are attuned to the realms of shadow: When you perform a ritual, add +1.",
@@ -18347,7 +17995,8 @@
 									"enhances": ["asset.ability.move:*/ritual/*.*.*"]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/shadow_kin.1"
 						},
 						{
 							"text": "You know the sly ways of death: When you [Face Death](move:classic/suffer/face_death), you may roll +shadow (instead of +heart). On a weak hit, if you choose to undertake a deathbound quest, you may roll +shadow (instead of +heart) and reroll any dice as you [Swear an Iron Vow](move:classic/quest/swear_an_iron_vow). When you [Fulfill Your Vow](move:classic/quest/fulfill_your_vow) on that quest and and mark experience, take +2 experience.",
@@ -18370,7 +18019,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/shadow_kin.2"
 						}
 					],
 					"count_as_impact": false,
@@ -18414,7 +18064,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/sighted.0"
 						},
 						{
 							"text": "When you [Compel](move:classic/relationship/compel), [Forge a Bond](move:classic/relationship/forge_a_bond), or [Test Your Bond](move:classic/relationship/test_your_bond) with a fellow mystic or mystical being, add +1 and take +1 momentum on a hit.",
@@ -18437,7 +18088,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/sighted.1"
 						},
 						{
 							"text": "When you [Secure an Advantage](move:classic/adventure/secure_an_advantage) by studying someone or something in a charged situation, add +1 and take +1 momentum on a hit. When you also pierce the veil to explore deeper truths (decide before rolling), you may reroll any dice. If you do, count a weak hit as a miss.",
@@ -18456,7 +18108,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/sighted.2"
 						}
 					],
 					"count_as_impact": false,
@@ -18510,7 +18163,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/slayer.0"
 						},
 						{
 							"text": "When you [Swear an Iron Vow](move:classic/quest/swear_an_iron_vow) to slay a beast or horror, you may reroll any dice. When you [Fulfill Your Vow](move:classic/quest/fulfill_your_vow) and mark experience, take +1 experience.",
@@ -18542,7 +18196,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/slayer.1"
 						},
 						{
 							"text": "When you slay a beast or horror (at least formidable), you may take a trophy and choose one.\n\n  * Power a ritual: When you or an ally make a ritual move, reroll any dice (one time only).\n  * Prove your worth: When you [Sojourn](move:classic/relationship/sojourn), reroll any dice (one time only).",
@@ -18574,7 +18229,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/slayer.2"
 						}
 					],
 					"count_as_impact": false,
@@ -18618,7 +18274,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/spirit_bound.0"
 						},
 						{
 							"text": "When you [Face Death](move:classic/suffer/face_death) guided by the spirit, add +1. On a strong hit, envision what you learn and take 1 experience.",
@@ -18637,7 +18294,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/spirit_bound.1"
 						},
 						{
 							"text": "One time only, when you successfully [Fulfill Your Vow](move:classic/quest/fulfill_your_vow) (formidable or greater) in service to the spirit, choose one.\n\n  * Let them go: Take 2 experience for each marked ability and discard this asset.\n  * Deepen your connection: Add +1 more when you leverage this asset.",
@@ -18656,7 +18314,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/spirit_bound.2"
 						}
 					],
 					"count_as_impact": false,
@@ -18701,7 +18360,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/storyweaver.0"
 						},
 						{
 							"text": "When you [Make Camp](move:classic/adventure/make_camp) and choose the option to relax, you may share a story with your allies or compose a new story if alone. If you do, envision the story you tell and take +1 spirit or +1 momentum. Any allies who choose to relax in your company may also take +1 spirit or +1 momentum.",
@@ -18711,7 +18371,8 @@
 									"roll_type": "action_roll"
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/storyweaver.1"
 						},
 						{
 							"text": "When you [Sojourn](move:classic/relationship/sojourn) within a community with which you share a bond, add +2 (instead of +1).",
@@ -18730,7 +18391,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/storyweaver.2"
 						}
 					],
 					"count_as_impact": false,
@@ -18756,7 +18418,8 @@
 					"abilities": [
 						{
 							"text": "When you [Face Danger](move:classic/adventure/face_danger), [Secure an Advantage](move:classic/adventure/secure_an_advantage), or [Compel](move:classic/relationship/compel) by lying, bluffing, stealing, or cheating, add +1.",
-							"enabled": true
+							"enabled": true,
+							"_id": "asset.ability:classic/path/trickster.0"
 						},
 						{
 							"text": "When you [Gather Information](move:classic/adventure/gather_information) by investigating a devious scheme, you may roll +shadow (instead of +wits). If you do, take +2 momentum on a hit.",
@@ -18780,7 +18443,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/trickster.1"
 						},
 						{
 							"text": "When you [Forge a Bond](move:classic/relationship/forge_a_bond) for a relationship founded on a lie, choose one.\n\n  * Keep your secret: Roll +shadow (instead of +heart).\n  * Reveal the truth: Roll +heart. On a strong hit, mark a bond twice and take 1 experience. A weak hit counts as a miss.",
@@ -18814,7 +18478,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/trickster.2"
 						}
 					],
 					"count_as_impact": false,
@@ -18840,7 +18505,8 @@
 					"abilities": [
 						{
 							"text": "When you burn momentum to improve your result in combat, envision how your hard-won fighting experience gives you the upper hand. Then, take +1 momentum after you reset, and add +1 when you make your next move. Once per fight, you also take initiative when burning momentum to improve a miss to a weak hit.",
-							"enabled": true
+							"enabled": true,
+							"_id": "asset.ability:classic/path/veteran.0"
 						},
 						{
 							"text": "When you [Swear an Iron Vow](move:classic/quest/swear_an_iron_vow) to someone who fought beside you, or [Forge a Bond](move:classic/relationship/forge_a_bond) with them, add +2 and take +2 momentum on a hit.",
@@ -18872,7 +18538,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/veteran.1"
 						},
 						{
 							"text": "When you [Resupply](move:classic/adventure/resupply) by looting the dead on a field of battle, add +1 and take +1 momentum on a hit.",
@@ -18891,7 +18558,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/veteran.2"
 						}
 					],
 					"count_as_impact": false,
@@ -18936,7 +18604,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/waterborn.0"
 						},
 						{
 							"text": "When you [Undertake a Journey](move:classic/adventure/undertake_a_journey) by boat or ship, add +1. On a strong hit, also choose one.\n\n  * The wind is at your back: Mark progress twice.\n  * Find safe anchor: [Make Camp](move:classic/adventure/make_camp) now and reroll any dice.\n  * Reap the bounty: [Resupply](move:classic/adventure/resupply) now and reroll any dice.",
@@ -18955,7 +18624,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/waterborn.1"
 						},
 						{
 							"text": "When you [Enter the Fray](move:classic/combat/enter_the_fray) aboard a boat or ship, reroll any dice.",
@@ -18974,7 +18644,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/waterborn.2"
 						}
 					],
 					"count_as_impact": false,
@@ -19006,7 +18677,8 @@
 									"enhances": ["move:classic/adventure/undertake_a_journey"],
 									"roll_type": "action_roll"
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/wayfinder.0"
 						},
 						{
 							"text": "When you [Secure an Advantage](move:classic/adventure/secure_an_advantage) or [Gather Information](move:classic/adventure/gather_information) by carefully surveying the landscape or scouting ahead, add +1 and take +1 momentum on a hit.",
@@ -19028,7 +18700,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/wayfinder.1"
 						},
 						{
 							"text": "When you [Swear an Iron Vow](move:classic/quest/swear_an_iron_vow) to safely guide someone on a perilous journey, you may reroll any dice. When you [Fulfill Your Vow](move:classic/quest/fulfill_your_vow) and mark experience, take +1 experience.",
@@ -19060,7 +18733,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/wayfinder.2"
 						}
 					],
 					"count_as_impact": false,
@@ -19102,7 +18776,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/weaponmaster.0"
 						},
 						{
 							"text": "When you study or train in a new weapon or technique, you may obtain and upgrade that combat talent for 1 fewer experience.",
@@ -19121,7 +18796,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/weaponmaster.1"
 						},
 						{
 							"text": "When you [Turn the Tide](move:classic/combat/turn_the_tide) with a sudden change of weapon or technique, and your next move is a [Strike](move:classic/combat/strike), add +1 and inflict +2 harm on a strong hit.",
@@ -19140,7 +18816,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/weaponmaster.2"
 						}
 					],
 					"count_as_impact": false,
@@ -19185,7 +18862,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/wildblood.0"
 						},
 						{
 							"text": "When you [Face Danger](move:classic/adventure/face_danger) or [Secure an Advantage](move:classic/adventure/secure_an_advantage) by hiding or sneaking in the woodlands, add +1 and take +1 momentum on a hit.",
@@ -19207,7 +18885,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/wildblood.1"
 						},
 						{
 							"text": "When you [Make Camp](move:classic/adventure/make_camp) in the woodlands, you may roll +wits (instead of +supply). If you do, you and your allies each choose 1 more option on a hit.",
@@ -19231,7 +18910,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/wildblood.2"
 						}
 					],
 					"count_as_impact": false,
@@ -19292,7 +18972,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/path/wright.0"
 						},
 						{
 							"text": "As above, and you may suffer -1 supply (after rolling) to add an additional +1.",
@@ -19324,7 +19005,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/wright.1"
 						},
 						{
 							"text": "When you give the item you create as a gift to commemorate an important event or relationship, you may (one time only) reroll any dice when you [Compel](move:classic/relationship/compel), [Forge a Bond](move:classic/relationship/forge_a_bond), or [Test Your Bond](move:classic/relationship/test_your_bond).",
@@ -19347,7 +19029,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/path/wright.2"
 						}
 					],
 					"count_as_impact": false,
@@ -19398,17 +19081,6 @@
 								"augur": {
 									"type": "move",
 									"name": "Augur",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you summon a flock of crows and ask a single question...",
@@ -19435,9 +19107,11 @@
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/ritual/augur.0.augur"
 								}
-							}
+							},
+							"_id": "asset.ability:classic/ritual/augur.0"
 						},
 						{
 							"text": "As above, and the crows will also help guide you on the proper path. On a hit, add +1 on the next segment when you [Undertake a Journey](move:classic/adventure/undertake_a_journey).",
@@ -19449,7 +19123,8 @@
 									"roll_type": "action_roll"
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/augur.1"
 						},
 						{
 							"text": "When you perform this ritual, add +1 and take +1 momentum on a hit.",
@@ -19461,7 +19136,8 @@
 									]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/augur.2"
 						}
 					],
 					"count_as_impact": false,
@@ -19492,17 +19168,6 @@
 								"awaken_simulacrum": {
 									"type": "move",
 									"name": "Awaken Simulacrum",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you create a simulacrum...",
@@ -19529,9 +19194,11 @@
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/ritual/awakening.0.awaken_simulacrum"
 								}
-							}
+							},
+							"_id": "asset.ability:classic/ritual/awakening.0"
 						},
 						{
 							"text": "Your simulacrum has 6 health.",
@@ -19543,7 +19210,8 @@
 									}
 								}
 							},
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/awakening.1"
 						},
 						{
 							"text": "When you perform this ritual, add +1 and take +1 momentum on a hit.",
@@ -19555,7 +19223,8 @@
 									]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/awakening.2"
 						}
 					],
 					"controls": {
@@ -19596,17 +19265,6 @@
 								"bind": {
 									"type": "move",
 									"name": "Bind",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you wear an animal pelt and dance in moonlight...",
@@ -19633,9 +19291,11 @@
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/ritual/bind.0.bind"
 								}
-							}
+							},
+							"_id": "asset.ability:classic/ritual/bind.0"
 						},
 						{
 							"text": "As above, and you may instead perform this ritual wearing the pelt of a beast. If you do, name the related stat and add +2 (instead of +1).",
@@ -19645,7 +19305,8 @@
 									"roll_type": "action_roll"
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/bind.1"
 						},
 						{
 							"text": "When you perform this ritual, add +1 and take +1 momentum on a hit.",
@@ -19655,7 +19316,8 @@
 									"enhances": ["asset.ability.move:classic/ritual/bind.0.bind"]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/bind.2"
 						}
 					],
 					"count_as_impact": false,
@@ -19686,17 +19348,6 @@
 								"commune": {
 									"type": "move",
 									"name": "Commune",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you surround the remains of a recently deceased intelligent creature with lit candles, and summon its spirit...",
@@ -19723,9 +19374,11 @@
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/ritual/communion.0.commune"
 								}
-							}
+							},
+							"_id": "asset.ability:classic/ritual/communion.0"
 						},
 						{
 							"text": "As above, and you may also commune with the long-dead.",
@@ -19737,7 +19390,8 @@
 									"roll_type": "action_roll"
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/communion.1"
 						},
 						{
 							"text": "When you perform this ritual, add +1 and take +1 momentum on a hit.",
@@ -19749,7 +19403,8 @@
 									]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/communion.2"
 						}
 					],
 					"count_as_impact": false,
@@ -19780,17 +19435,6 @@
 								"cast_runes": {
 									"type": "move",
 									"name": "Cast Runes",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you take a drop of blood from a willing subject (not yourself) and cast the rune-carved stones...",
@@ -19817,9 +19461,11 @@
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/ritual/divination.0.cast_runes"
 								}
-							}
+							},
+							"_id": "asset.ability:classic/ritual/divination.0"
 						},
 						{
 							"text": "As above, and your divination can also reveal information about the subject’s future.",
@@ -19831,7 +19477,8 @@
 									"roll_type": "action_roll"
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/divination.1"
 						},
 						{
 							"text": "When you perform this ritual, add +1 and take +1 momentum on a hit.",
@@ -19843,7 +19490,8 @@
 									]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/divination.2"
 						}
 					],
 					"count_as_impact": false,
@@ -19874,17 +19522,6 @@
 								"invoke": {
 									"type": "move",
 									"name": "Invoke",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you consume the mystical essence of your surroundings...",
@@ -19911,7 +19548,8 @@
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/ritual/invoke.0.invoke"
 								}
 							},
 							"enhance_moves": [
@@ -19937,7 +19575,8 @@
 										]
 									}
 								}
-							]
+							],
+							"_id": "asset.ability:classic/ritual/invoke.0"
 						},
 						{
 							"text": "You may [Compel](move:classic/relationship/compel) +essence (and suffer -1 essence) through a show of power.",
@@ -19962,7 +19601,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/invoke.1"
 						},
 						{
 							"text": "When you perform this ritual, add +1 and take +1 essence on a hit.",
@@ -19974,7 +19614,8 @@
 									"roll_type": "action_roll"
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/invoke.2"
 						}
 					],
 					"controls": {
@@ -20015,17 +19656,6 @@
 								"keen": {
 									"type": "move",
 									"name": "Keen",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you hold a weapon and sing a keen for those it has killed...",
@@ -20052,9 +19682,11 @@
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/ritual/keen.0.keen"
 								}
-							}
+							},
+							"_id": "asset.ability:classic/ritual/keen.0"
 						},
 						{
 							"text": "As above, and the wielder may also (one time only) add +1 and take +2 momentum on a hit when they [Draw the Circle](move:classic/relationship/draw_the_circle), [Enter the Fray](move:classic/combat/enter_the_fray), or [Battle](move:classic/combat/battle).",
@@ -20064,7 +19696,8 @@
 									"roll_type": "action_roll"
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/keen.1"
 						},
 						{
 							"text": "When you perform this ritual, add +1 and take +1 momentum on a hit.",
@@ -20074,7 +19707,8 @@
 									"enhances": ["asset.ability.move:classic/ritual/keen.0.keen"]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/keen.2"
 						}
 					],
 					"count_as_impact": false,
@@ -20105,17 +19739,6 @@
 								"draw_blood_rune": {
 									"type": "move",
 									"name": "Draw Blood Rune",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you mark your hands or weapon with an intricate blood rune...",
@@ -20142,9 +19765,11 @@
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/ritual/leech.0.draw_blood_rune"
 								}
-							}
+							},
+							"_id": "asset.ability:classic/ritual/leech.0"
 						},
 						{
 							"text": "As above, and you may also touch an ally or companion and let them take any remaining points as +health or +momentum.",
@@ -20156,7 +19781,8 @@
 									"roll_type": "action_roll"
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/leech.1"
 						},
 						{
 							"text": "When you perform this ritual, add +1 and take +1 momentum on a hit.",
@@ -20168,7 +19794,8 @@
 									]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/leech.2"
 						}
 					],
 					"count_as_impact": false,
@@ -20214,17 +19841,6 @@
 								"capture_light": {
 									"type": "move",
 									"name": "Capture Light",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you focus on a source of light and capture its essence...",
@@ -20251,9 +19867,11 @@
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/ritual/lightbearer.0.capture_light"
 								}
-							}
+							},
+							"_id": "asset.ability:classic/ritual/lightbearer.0"
 						},
 						{
 							"text": "You may use your light to [Strike](move:classic/combat/strike) or [Clash](move:classic/combat/clash) against a dark-dwelling foe. Choose the amount of light to unleash, and roll +light (instead of +iron or +edge). Suffer -light equal to that amount. On a hit, your harm is 1+your unleashed light.",
@@ -20281,7 +19899,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/lightbearer.1"
 						},
 						{
 							"text": "When you perform this ritual, add +1 and take +1 momentum on a hit.",
@@ -20293,7 +19912,8 @@
 									]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/lightbearer.2"
 						}
 					],
 					"count_as_impact": false,
@@ -20324,17 +19944,6 @@
 								"scry": {
 									"type": "move",
 									"name": "Scry",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you look into flames to study a remote person or location (you or someone with you must have knowledge of the target)...",
@@ -20361,9 +19970,11 @@
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/ritual/scry.0.scry"
 								}
-							}
+							},
+							"_id": "asset.ability:classic/ritual/scry.0"
 						},
 						{
 							"text": "As above, and you may instead study a past event.",
@@ -20373,7 +19984,8 @@
 									"enhances": ["asset.ability.move:classic/ritual/scry.0.scry"]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/scry.1"
 						},
 						{
 							"text": "When you perform this ritual, add +1 and take +1 momentum on a hit.",
@@ -20383,7 +19995,8 @@
 									"enhances": ["asset.ability.move:classic/ritual/scry.0.scry"]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/scry.2"
 						}
 					],
 					"count_as_impact": false,
@@ -20414,17 +20027,6 @@
 								"shadow_walk": {
 									"type": "move",
 									"name": "Shadow-Walk",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you cloak yourself with the gossamer veil of the shadow realms...",
@@ -20451,9 +20053,11 @@
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/ritual/shadow_walk.0.shadow_walk"
 								}
-							}
+							},
+							"_id": "asset.ability:classic/ritual/shadow_walk.0"
 						},
 						{
 							"text": "As above, and you may also travel along the hidden paths of the shadow realms to [Undertake a Journey](move:classic/adventure/undertake_a_journey) using +shadow (instead of +wits). If you do, [Endure Stress](move:classic/suffer/endure_stress) (1 stress) and mark progress twice on a strong hit.",
@@ -20465,7 +20069,8 @@
 									"roll_type": "action_roll"
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/shadow_walk.1"
 						},
 						{
 							"text": "When you perform this ritual, add +1 and take +1 momentum on a hit.",
@@ -20477,7 +20082,8 @@
 									]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/shadow_walk.2"
 						}
 					],
 					"count_as_impact": false,
@@ -20508,17 +20114,6 @@
 								"sway": {
 									"type": "move",
 									"name": "Sway",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you speak a person’s name three times to the wind...",
@@ -20545,9 +20140,11 @@
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/ritual/sway.0.sway"
 								}
-							}
+							},
+							"_id": "asset.ability:classic/ritual/sway.0"
 						},
 						{
 							"text": "As above, and if you score a strong hit when you [Compel](move:classic/relationship/compel), you may also reroll any dice (one time only) when you [Gather Information](move:classic/adventure/gather_information) from this person.",
@@ -20559,7 +20156,8 @@
 									"roll_type": "action_roll"
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/sway.1"
 						},
 						{
 							"text": "When you perform this ritual, add +1 and take +1 momentum on a hit.",
@@ -20569,7 +20167,8 @@
 									"enhances": ["asset.ability.move:classic/ritual/sway.0.sway"]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/sway.2"
 						}
 					],
 					"count_as_impact": false,
@@ -20600,17 +20199,6 @@
 								"fashion_talisman": {
 									"type": "move",
 									"name": "Fashion Talisman",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you fashion a charm that protects against a specific person or creature...",
@@ -20637,9 +20225,11 @@
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/ritual/talisman.0.fashion_talisman"
 								}
-							}
+							},
+							"_id": "asset.ability:classic/ritual/talisman.0"
 						},
 						{
 							"text": "As above, and you may instead fashion a charm which aids the wearer against all supernatural threats, such as mystic rituals or horrors.",
@@ -20651,7 +20241,8 @@
 									"roll_type": "action_roll"
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/talisman.1"
 						},
 						{
 							"text": "When you perform this ritual, add +1 and take +1 momentum on a hit.",
@@ -20663,7 +20254,8 @@
 									]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/talisman.2"
 						}
 					],
 					"count_as_impact": false,
@@ -20694,17 +20286,6 @@
 								"tether": {
 									"type": "move",
 									"name": "Tether",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you commune with the spirits of a place...",
@@ -20731,7 +20312,8 @@
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/ritual/tether.0.tether"
 								}
 							},
 							"enhance_moves": [
@@ -20761,7 +20343,8 @@
 									"enhances": ["move:classic/suffer/face_desolation"],
 									"roll_type": "action_roll"
 								}
-							]
+							],
+							"_id": "asset.ability:classic/ritual/tether.0"
 						},
 						{
 							"text": "As above, and you may also reroll any dice when you [Sojourn](move:classic/relationship/sojourn) in the tethered place.",
@@ -20780,7 +20363,8 @@
 									}
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/tether.1"
 						},
 						{
 							"text": "When you perform this ritual, add +1 and take +1 momentum on a hit.",
@@ -20792,7 +20376,8 @@
 									]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/tether.2"
 						}
 					],
 					"count_as_impact": false,
@@ -20823,17 +20408,6 @@
 								"focus_totem": {
 									"type": "move",
 									"name": "Focus Totem",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you hold a totem of your animal or beast companion and focus on it...",
@@ -20860,9 +20434,11 @@
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/ritual/totem.0.focus_totem"
 								}
-							}
+							},
+							"_id": "asset.ability:classic/ritual/totem.0"
 						},
 						{
 							"text": "As above, and you may also perceive the world through your companion’s senses while you make moves aided by them (even when you are apart).",
@@ -20874,7 +20450,8 @@
 									"roll_type": "action_roll"
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/totem.1"
 						},
 						{
 							"text": "When you perform this ritual, add +1 and take +1 momentum on a hit.",
@@ -20886,7 +20463,8 @@
 									]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/totem.2"
 						}
 					],
 					"count_as_impact": false,
@@ -20917,17 +20495,6 @@
 								"paint_visage": {
 									"type": "move",
 									"name": "Paint Visage",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you paint yourself in blood and ash...",
@@ -20954,9 +20521,11 @@
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/ritual/visage.0.paint_visage"
 								}
-							}
+							},
+							"_id": "asset.ability:classic/ritual/visage.0"
 						},
 						{
 							"text": "As above, and you may also add +1 when you [Strike](move:classic/combat/strike), [Clash](move:classic/combat/clash), or [Battle](move:classic/combat/battle).",
@@ -20968,7 +20537,8 @@
 									"roll_type": "action_roll"
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/visage.1"
 						},
 						{
 							"text": "When you perform this ritual, add +1 and take +1 momentum on a hit.",
@@ -20980,7 +20550,8 @@
 									]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/visage.2"
 						}
 					],
 					"count_as_impact": false,
@@ -21011,17 +20582,6 @@
 								"ward": {
 									"type": "move",
 									"name": "Ward",
-									"_source": {
-										"authors": [
-											{
-												"name": "Shawn Tomkin"
-											}
-										],
-										"license": "https://creativecommons.org/licenses/by/4.0",
-										"title": "Ironsworn Assets Master Set",
-										"date": "2019-06-05",
-										"url": "https://ironswornrpg.com"
-									},
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you walk a wide circle, sprinkling the ground with salt...",
@@ -21048,19 +20608,22 @@
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
-									}
+									},
+									"_id": "asset.ability.move:classic/ritual/ward.0.ward"
 								}
-							}
+							},
+							"_id": "asset.ability:classic/ritual/ward.0"
 						},
 						{
-							"text": "As above, and improve the effect of your ward (+2 momentum, +2 harm, and [‘almost certain’](id:classic/oracle_rollable/move/ask_the_oracle/almost_certain)).",
+							"text": "As above, and improve the effect of your ward (+2 momentum, +2 harm, and [‘almost certain’](move.oracle_rollable:classic/fate/ask_the_oracle.almost_certain)).",
 							"enhance_moves": [
 								{
 									"enhances": ["asset.ability.move:classic/ritual/ward.0.ward"],
 									"roll_type": "action_roll"
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/ward.1"
 						},
 						{
 							"text": "When you perform this ritual, add +1 and take +1 momentum on a hit.",
@@ -21070,7 +20633,8 @@
 									"enhances": ["asset.ability.move:classic/ritual/ward.0.ward"]
 								}
 							],
-							"enabled": false
+							"enabled": false,
+							"_id": "asset.ability:classic/ritual/ward.2"
 						}
 					],
 					"count_as_impact": false,
@@ -22532,7 +22096,56 @@
 				"endure_harm": {
 					"name": "Endure Harm",
 					"type": "move",
-					"oracles": ["oracle_rollable:classic/moves/endure_harm"],
+					"oracles": {
+						"endure_harm": {
+							"name": "Endure Harm",
+							"oracle_type": "table_text",
+							"type": "oracle_rollable",
+							"rows": [
+								{
+									"roll": {
+										"min": 1,
+										"max": 10
+									},
+									"text": "The harm is mortal. [Face Death](move:classic/suffer/face_death)."
+								},
+								{
+									"roll": {
+										"min": 11,
+										"max": 20
+									},
+									"text": "You are dying. You need to Heal within an hour or two, or [Face Death](move:classic/suffer/face_death)."
+								},
+								{
+									"roll": {
+										"min": 21,
+										"max": 35
+									},
+									"text": "You are unconscious and out of action. If left alone, you come back to your senses in an hour or two. If you are vulnerable to a foe not inclined to show mercy, [Face Death](move:classic/suffer/face_death)."
+								},
+								{
+									"roll": {
+										"min": 36,
+										"max": 50
+									},
+									"text": "You are reeling and fighting to stay conscious. If you engage in any vigorous activity (such as running or fighting) before taking a breather for a few minutes, roll on this table again (before resolving the other move)."
+								},
+								{
+									"roll": {
+										"min": 51,
+										"max": 100
+									},
+									"text": "You are battered but still standing."
+								}
+							],
+							"dice": "1d100",
+							"column_labels": {
+								"roll": "Roll",
+								"text": "Result"
+							},
+							"_id": "move.oracle_rollable:classic/suffer/endure_harm.endure_harm"
+						}
+					},
 					"roll_type": "action_roll",
 					"trigger": {
 						"text": "When you face physical damage...",
@@ -22564,7 +22177,7 @@
 						"date": "2019-06-05",
 						"page": 91
 					},
-					"text": "When __you face physical damage__, suffer -health equal to your foe’s rank or as appropriate to the situation. If your health is 0, suffer -momentum equal to any remaining -health. Then, roll +health or +iron, whichever is higher.\n\nOn a __strong hit__, choose one.\n\n  * Shake it off: If your health is greater than 0, suffer -1 momentum in exchange for +1 health.\n  * Embrace the pain: Take +1 momentum.\n\nOn a __weak hit__, you press on.\n\nOn a __miss__, also suffer -1 momentum. If you are at 0 health, you must mark wounded or maimed (if currently unmarked) or roll on the following table.\n\n{{table:oracle_rollable:classic/moves/endure_harm}}",
+					"text": "When __you face physical damage__, suffer -health equal to your foe’s rank or as appropriate to the situation. If your health is 0, suffer -momentum equal to any remaining -health. Then, roll +health or +iron, whichever is higher.\n\nOn a __strong hit__, choose one.\n\n  * Shake it off: If your health is greater than 0, suffer -1 momentum in exchange for +1 health.\n  * Embrace the pain: Take +1 momentum.\n\nOn a __weak hit__, you press on.\n\nOn a __miss__, also suffer -1 momentum. If you are at 0 health, you must mark wounded or maimed (if currently unmarked) or roll on the following table.\n\n{{table>oracle_rollable:classic/moves/endure_harm}}",
 					"outcomes": {
 						"strong_hit": {
 							"text": "On a __strong hit__, choose one.\n\n  * Shake it off: If your health is greater than 0, suffer -1 momentum in exchange for +1 health.\n  * Embrace the pain: Take +1 momentum."
@@ -22573,7 +22186,7 @@
 							"text": "On a __weak hit__, you press on."
 						},
 						"miss": {
-							"text": "On a __miss__, also suffer -1 momentum. If you are at 0 health, you must mark wounded or maimed (if currently unmarked) or roll on the following table.\n\n{{table:oracle_rollable:classic/moves/endure_harm}}"
+							"text": "On a __miss__, also suffer -1 momentum. If you are at 0 health, you must mark wounded or maimed (if currently unmarked) or roll on the following table.\n\n{{table>oracle_rollable:classic/moves/endure_harm}}"
 						}
 					},
 					"_id": "move:classic/suffer/endure_harm"
@@ -22674,7 +22287,49 @@
 				"endure_stress": {
 					"name": "Endure Stress",
 					"type": "move",
-					"oracles": ["oracle_rollable:classic/moves/endure_stress"],
+					"oracles": {
+						"endure_stress": {
+							"name": "Endure Stress",
+							"oracle_type": "table_text",
+							"type": "oracle_rollable",
+							"rows": [
+								{
+									"roll": {
+										"min": 1,
+										"max": 10
+									},
+									"text": "You are overwhelmed. [Face Desolation](move:classic/suffer/face_desolation)."
+								},
+								{
+									"roll": {
+										"min": 11,
+										"max": 25
+									},
+									"text": "You give up. [Forsake Your Vow](move:classic/quest/forsake_your_vow) (if possible, one relevant to your current crisis)."
+								},
+								{
+									"roll": {
+										"min": 26,
+										"max": 50
+									},
+									"text": "You give in to a fear or compulsion, and act against your better instincts."
+								},
+								{
+									"roll": {
+										"min": 51,
+										"max": 100
+									},
+									"text": "You persevere."
+								}
+							],
+							"dice": "1d100",
+							"column_labels": {
+								"roll": "Roll",
+								"text": "Result"
+							},
+							"_id": "move.oracle_rollable:classic/suffer/endure_stress.endure_stress"
+						}
+					},
 					"roll_type": "action_roll",
 					"trigger": {
 						"text": "When you face mental shock or despair...",
@@ -22706,7 +22361,7 @@
 						"date": "2019-06-05",
 						"page": 95
 					},
-					"text": "When __you face mental shock or despair__, suffer -spirit equal to your foe’s rank or as appropriate to the situation. If your spirit is 0, suffer -momentum equal to any remaining -spirit. Then, roll +spirit or +heart, whichever is higher.\n\nOn a __strong hit__, choose one.\n\n  * Shake it off: If your spirit is greater than 0, suffer -1 momentum in exchange for +1 spirit\n  * Embrace the darkness: Take +1 momentum\n\nOn a __weak hit__, you press on.\n\nOn a __miss__, also suffer -1 momentum. If you are at 0 spirit, you must mark shaken or corrupted (if currently unmarked) or roll on the following table.\n\n{{table:oracle_rollable:classic/moves/endure_stress}}",
+					"text": "When __you face mental shock or despair__, suffer -spirit equal to your foe’s rank or as appropriate to the situation. If your spirit is 0, suffer -momentum equal to any remaining -spirit. Then, roll +spirit or +heart, whichever is higher.\n\nOn a __strong hit__, choose one.\n\n  * Shake it off: If your spirit is greater than 0, suffer -1 momentum in exchange for +1 spirit\n  * Embrace the darkness: Take +1 momentum\n\nOn a __weak hit__, you press on.\n\nOn a __miss__, also suffer -1 momentum. If you are at 0 spirit, you must mark shaken or corrupted (if currently unmarked) or roll on the following table.\n\n{{table>oracle_rollable:classic/moves/endure_stress}}",
 					"outcomes": {
 						"strong_hit": {
 							"text": "On a __strong hit__, choose one.\n\n  * Shake it off: If your spirit is greater than 0, suffer -1 momentum in exchange for +1 spirit\n  * Embrace the darkness: Take +1 momentum"
@@ -22715,7 +22370,7 @@
 							"text": "On a __weak hit__, you press on."
 						},
 						"miss": {
-							"text": "On a __miss__, also suffer -1 momentum. If you are at 0 spirit, you must mark shaken or corrupted (if currently unmarked) or roll on the following table.\n\n{{table:oracle_rollable:classic/moves/endure_stress}}"
+							"text": "On a __miss__, also suffer -1 momentum. If you are at 0 spirit, you must mark shaken or corrupted (if currently unmarked) or roll on the following table.\n\n{{table>oracle_rollable:classic/moves/endure_stress}}"
 						}
 					},
 					"_id": "move:classic/suffer/endure_stress"
@@ -23018,7 +22673,6 @@
 				"pay_the_price": {
 					"name": "Pay the Price",
 					"type": "move",
-					"oracles": ["oracle_rollable:classic/moves/pay_the_price"],
 					"_source": {
 						"authors": [
 							{
@@ -23036,20 +22690,281 @@
 						"text": "When you suffer the outcome of a move...",
 						"conditions": null
 					},
-					"text": "When __you suffer the outcome of a move__, choose one.\n\n  * Make the most obvious negative outcome happen.\n  * Envision two negative outcomes. Rate one as ‘likely’, and [Ask the Oracle](move:classic/fate/ask_the_oracle) using the yes/no table. On a ‘yes’, make that outcome happen. Otherwise, make it the other.\n  * Roll on the following table. If you have difficulty interpreting the result to fit the current situation, roll again.\n\n{{table:oracle_rollable:classic/moves/pay_the_price}}",
+					"text": "When __you suffer the outcome of a move__, choose one.\n\n  * Make the most obvious negative outcome happen.\n  * Envision two negative outcomes. Rate one as ‘likely’, and [Ask the Oracle](move:classic/fate/ask_the_oracle) using the yes/no table. On a ‘yes’, make that outcome happen. Otherwise, make it the other.\n  * Roll on the following table. If you have difficulty interpreting the result to fit the current situation, roll again.\n\n{{table>move.oracle_rollable:classic/suffer/pay_the_price.pay_the_price}}",
+					"oracles": {
+						"pay_the_price": {
+							"name": "Pay the Price",
+							"oracle_type": "table_text",
+							"type": "oracle_rollable",
+							"rows": [
+								{
+									"roll": {
+										"min": 1,
+										"max": 2
+									},
+									"text": "Roll again and apply that result but make it worse. If you roll this result yet again, think of something dreadful that changes the course of your quest ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure) and make it happen."
+								},
+								{
+									"roll": {
+										"min": 3,
+										"max": 5
+									},
+									"text": "A person or community you trusted loses faith in you, or acts against you."
+								},
+								{
+									"roll": {
+										"min": 6,
+										"max": 9
+									},
+									"text": "A person or community you care about is exposed to danger."
+								},
+								{
+									"roll": {
+										"min": 10,
+										"max": 16
+									},
+									"text": "You are separated from something or someone."
+								},
+								{
+									"roll": {
+										"min": 17,
+										"max": 23
+									},
+									"text": "Your action has an unintended effect."
+								},
+								{
+									"roll": {
+										"min": 24,
+										"max": 32
+									},
+									"text": "Something of value is lost or destroyed."
+								},
+								{
+									"roll": {
+										"min": 33,
+										"max": 41
+									},
+									"text": "The current situation worsens."
+								},
+								{
+									"roll": {
+										"min": 42,
+										"max": 50
+									},
+									"text": "A new danger or foe is revealed."
+								},
+								{
+									"roll": {
+										"min": 51,
+										"max": 59
+									},
+									"text": "It causes a delay or puts you at a disadvantage."
+								},
+								{
+									"roll": {
+										"min": 60,
+										"max": 68
+									},
+									"text": "It is harmful."
+								},
+								{
+									"roll": {
+										"min": 69,
+										"max": 76
+									},
+									"text": "It is stressful."
+								},
+								{
+									"roll": {
+										"min": 77,
+										"max": 85
+									},
+									"text": "A surprising development complicates your quest."
+								},
+								{
+									"roll": {
+										"min": 86,
+										"max": 90
+									},
+									"text": "It wastes resources."
+								},
+								{
+									"roll": {
+										"min": 91,
+										"max": 94
+									},
+									"text": "It forces you to act against your best intentions."
+								},
+								{
+									"roll": {
+										"min": 95,
+										"max": 98
+									},
+									"text": "A friend, companion, or ally is put in harm’s way (or you are, if alone)."
+								},
+								{
+									"roll": {
+										"min": 99,
+										"max": 100
+									},
+									"text": "Roll twice more on this table. Both results occur. If they are the same result, make it worse.",
+									"oracle_rolls": [
+										{
+											"number_of_rolls": 2,
+											"auto": true,
+											"duplicates": "make_it_worse",
+											"oracle": null,
+											"dice": null
+										}
+									]
+								}
+							],
+							"dice": "1d100",
+							"column_labels": {
+								"roll": "Roll",
+								"text": "Result"
+							},
+							"_id": "move.oracle_rollable:classic/fate/pay_the_price.pay_the_price"
+						}
+					},
 					"outcomes": null,
 					"_id": "move:classic/fate/pay_the_price"
 				},
 				"ask_the_oracle": {
 					"name": "Ask the Oracle",
 					"type": "move",
-					"oracles": [
-						"oracle_rollable:classic/move/ask_the_oracle/small_chance",
-						"oracle_rollable:classic/move/ask_the_oracle/unlikely",
-						"oracle_rollable:classic/move/ask_the_oracle/fifty_fifty",
-						"oracle_rollable:classic/move/ask_the_oracle/likely",
-						"oracle_rollable:classic/move/ask_the_oracle/almost_certain"
-					],
+					"oracles": {
+						"almost_certain": {
+							"name": "Almost Certain",
+							"oracle_type": "column_text",
+							"type": "oracle_rollable",
+							"match": {
+								"text": "On a match, an extreme result or twist has occurred."
+							},
+							"rows": [
+								{
+									"roll": {
+										"min": 1,
+										"max": 10
+									},
+									"text": "No"
+								},
+								{
+									"roll": {
+										"min": 11,
+										"max": 100
+									},
+									"text": "Yes"
+								}
+							],
+							"dice": "1d100",
+							"_id": "move.oracle_rollable:classic/fate/ask_the_oracle.almost_certain"
+						},
+						"likely": {
+							"name": "Likely",
+							"oracle_type": "column_text",
+							"type": "oracle_rollable",
+							"match": {
+								"text": "On a match, an extreme result or twist has occurred."
+							},
+							"rows": [
+								{
+									"roll": {
+										"min": 1,
+										"max": 25
+									},
+									"text": "No"
+								},
+								{
+									"roll": {
+										"min": 26,
+										"max": 100
+									},
+									"text": "Yes"
+								}
+							],
+							"dice": "1d100",
+							"_id": "move.oracle_rollable:classic/fate/ask_the_oracle.likely"
+						},
+						"fifty_fifty": {
+							"name": "50/50",
+							"oracle_type": "column_text",
+							"type": "oracle_rollable",
+							"match": {
+								"text": "On a match, an extreme result or twist has occurred."
+							},
+							"rows": [
+								{
+									"roll": {
+										"min": 1,
+										"max": 50
+									},
+									"text": "No"
+								},
+								{
+									"roll": {
+										"min": 51,
+										"max": 100
+									},
+									"text": "Yes"
+								}
+							],
+							"dice": "1d100",
+							"_id": "move.oracle_rollable:classic/fate/ask_the_oracle.fifty_fifty"
+						},
+						"unlikely": {
+							"name": "Unlikely",
+							"oracle_type": "column_text",
+							"type": "oracle_rollable",
+							"match": {
+								"text": "On a match, an extreme result or twist has occurred."
+							},
+							"rows": [
+								{
+									"roll": {
+										"min": 1,
+										"max": 75
+									},
+									"text": "No"
+								},
+								{
+									"roll": {
+										"min": 76,
+										"max": 100
+									},
+									"text": "Yes"
+								}
+							],
+							"dice": "1d100",
+							"_id": "move.oracle_rollable:classic/fate/ask_the_oracle.unlikely"
+						},
+						"small_chance": {
+							"name": "Small Chance",
+							"oracle_type": "column_text",
+							"type": "oracle_rollable",
+							"match": {
+								"text": "On a match, an extreme result or twist has occurred."
+							},
+							"rows": [
+								{
+									"roll": {
+										"min": 1,
+										"max": 90
+									},
+									"text": "No"
+								},
+								{
+									"roll": {
+										"min": 91,
+										"max": 100
+									},
+									"text": "Yes"
+								}
+							],
+							"dice": "1d100",
+							"_id": "move.oracle_rollable:classic/fate/ask_the_oracle.small_chance"
+						}
+					},
 					"_source": {
 						"authors": [
 							{
@@ -24077,7 +23992,8 @@
 						"max": 33
 					},
 					"description": "The savage clans called the Skulde invaded the kingdoms of the Old World. Our armies fell. Most were killed or taken into slavery. Those who escaped set sail aboard anything that would float. After an arduous months-long voyage, the survivors made landfall upon the Ironlands.",
-					"quest_starter": "You are a descendant of the Skulde. Because of your heritage, your family has long borne the distrust of your fellow Ironlanders. Now, a small force of Skulde have landed on our shores. Are they the harbinger of an invasion? Where do your loyalties lie?"
+					"quest_starter": "You are a descendant of the Skulde. Because of your heritage, your family has long borne the distrust of your fellow Ironlanders. Now, a small force of Skulde have landed on our shores. Are they the harbinger of an invasion? Where do your loyalties lie?",
+					"_id": "truth.option:classic/old_world.0"
 				},
 				{
 					"roll": {
@@ -24085,7 +24001,8 @@
 						"max": 67
 					},
 					"description": "The sickness moved like a horrible wave across the Old World, killing all in its path. Thousands fled aboard ships. However, the plague could not be outrun. On many ships, the disease was contained through ruthless measures—tossing overboard any who exhibited the slightest symptom. Other ships were forever lost. In the end, those who survived found the Ironlands and made it their new home. Some say we will forever be cursed by those we left behind.",
-					"quest_starter": "A settlement is stricken by disease. Though this sickness bears some similarities to the Old World plague, it doesn’t kill its victims. Instead, it changes them. How does this disease manifest? Why do you swear to seek out a cure?"
+					"quest_starter": "A settlement is stricken by disease. Though this sickness bears some similarities to the Old World plague, it doesn’t kill its victims. Instead, it changes them. How does this disease manifest? Why do you swear to seek out a cure?",
+					"_id": "truth.option:classic/old_world.1"
 				},
 				{
 					"roll": {
@@ -24093,7 +24010,8 @@
 						"max": 100
 					},
 					"description": "The Old World could no longer sustain us. We were too large in number. We had felled the forests. Our crops withered in the barren ground. The cities and villages overflowed with desperate, hungry people. Petty kings battled for scraps. We cast our fate to the sea and found the Ironlands. A new world. A fresh start.",
-					"quest_starter": "Decades ago, the exodus ended. Since then, no ships have sailed here from the Old World. Until now. Word comes of a single ship, newly arrived across the vast ocean, grounded on the rocks of the Barrier Islands. When you hear the name of this ship, you swear to uncover the fate of its passengers. Why is it so important to you?"
+					"quest_starter": "Decades ago, the exodus ended. Since then, no ships have sailed here from the Old World. Until now. Word comes of a single ship, newly arrived across the vast ocean, grounded on the rocks of the Barrier Islands. When you hear the name of this ship, you swear to uncover the fate of its passengers. Why is it so important to you?",
+					"_id": "truth.option:classic/old_world.2"
 				}
 			],
 			"dice": "1d100",
@@ -24121,7 +24039,8 @@
 						"max": 33
 					},
 					"description": "The imposing hills and mountains of the Ironlands are rich in iron ore. Most prized of all is the star-forged black iron.",
-					"quest_starter": "The caravan, bound for the distant southlands, left the mining settlement last season but never arrived at its destination. It carried a bounty of black iron. Why is finding this lost caravan so important to you?"
+					"quest_starter": "The caravan, bound for the distant southlands, left the mining settlement last season but never arrived at its destination. It carried a bounty of black iron. Why is finding this lost caravan so important to you?",
+					"_id": "truth.option:classic/iron.0"
 				},
 				{
 					"roll": {
@@ -24129,7 +24048,8 @@
 						"max": 67
 					},
 					"description": "The weather is bleak. Rain and wind sweep in from the ocean. The winters are long and bitter. One of the first settlers complained, \"Only those made of iron dare live in this foul place\" – and thus our land was named.",
-					"quest_starter": "The harvest fell short. The unrelenting snows left the village isolated. The food is running out. What will you do to see these people through this harsh season?"
+					"quest_starter": "The harvest fell short. The unrelenting snows left the village isolated. The food is running out. What will you do to see these people through this harsh season?",
+					"_id": "truth.option:classic/iron.1"
 				},
 				{
 					"roll": {
@@ -24137,7 +24057,8 @@
 						"max": 100
 					},
 					"description": "Inscrutable metal pillars are found throughout the land. They are iron gray, and smooth as river stone. No one knows their purpose. Some say they are as old as the world. Some, such as the Iron Priests, worship them and swear vows upon them. Most make the warding sign and hurry along their way when they happen across one. The pillars do not tarnish, and even the sharpest blade cannot mark them.",
-					"quest_starter": "Your dreams are haunted by visions of a pillar which stands in an unfamiliar landscape. What do you see? Why are you sworn to seek it out?"
+					"quest_starter": "Your dreams are haunted by visions of a pillar which stands in an unfamiliar landscape. What do you see? Why are you sworn to seek it out?",
+					"_id": "truth.option:classic/iron.2"
 				}
 			],
 			"dice": "1d100",
@@ -24165,7 +24086,8 @@
 						"max": 33
 					},
 					"description": "We are the first humans to walk these lands.",
-					"quest_starter": "In the writings of one of the first settlers, there is a description of a glade in the heart of the Deep Wilds. The spirits of this place are said to grant a miraculous blessing. What boon does it bestow?"
+					"quest_starter": "In the writings of one of the first settlers, there is a description of a glade in the heart of the Deep Wilds. The spirits of this place are said to grant a miraculous blessing. What boon does it bestow?",
+					"_id": "truth.option:classic/legacies.0"
 				},
 				{
 					"roll": {
@@ -24173,7 +24095,8 @@
 						"max": 67
 					},
 					"description": "Other humans sailed here from the Old World untold years ago, but all that is left of them is a savage, feral people we call the broken. Is their fate to become our own?",
-					"quest_starter": "You find a child—one of the broken. It is wounded, and hunted by others of its kind. Do you protect it, even at the risk of inviting the wrath of the broken tribes?"
+					"quest_starter": "You find a child—one of the broken. It is wounded, and hunted by others of its kind. Do you protect it, even at the risk of inviting the wrath of the broken tribes?",
+					"_id": "truth.option:classic/legacies.1"
 				},
 				{
 					"roll": {
@@ -24181,7 +24104,8 @@
 						"max": 100
 					},
 					"description": "Before the Ironlanders, before even the firstborn, another people lived here. Their ancient ruins are found throughout the Ironlands.",
-					"quest_starter": "Miners uncovered an underground ruin. Thereafter, the people of the settlement are haunted by strange dreams. The ruins call to them, they say. Several have disappeared in that dark, ancient place – including someone important to you."
+					"quest_starter": "Miners uncovered an underground ruin. Thereafter, the people of the settlement are haunted by strange dreams. The ruins call to them, they say. Several have disappeared in that dark, ancient place – including someone important to you.",
+					"_id": "truth.option:classic/legacies.2"
 				}
 			],
 			"dice": "1d100",
@@ -24209,7 +24133,8 @@
 						"max": 33
 					},
 					"description": "We are few in number in this accursed land. Most rarely have contact with anyone outside our own small steading or village, and strangers are viewed with deep suspicion.",
-					"quest_starter": "In the dead of winter, a desperate man arrives at a snowbound steading. He is wounded, hungry, and nearly frozen to death. His family has been taken. By whom? Will you brave the merciless winter to save them?"
+					"quest_starter": "In the dead of winter, a desperate man arrives at a snowbound steading. He is wounded, hungry, and nearly frozen to death. His family has been taken. By whom? Will you brave the merciless winter to save them?",
+					"_id": "truth.option:classic/communities.0"
 				},
 				{
 					"roll": {
@@ -24217,7 +24142,8 @@
 						"max": 67
 					},
 					"description": "We live in communities called circles. These are settlements ranging in size from a steading with a few families to a village of several hundred. Some circles belong to nomadic folk. Some powerful circles might include a cluster of settlements. We trade (and sometimes feud) with other circles.",
-					"quest_starter": "A decades-long feud between two circles has flared into open conflict. What is the cause of this dispute? Do you join in the fight, or swear to put a stop to it?"
+					"quest_starter": "A decades-long feud between two circles has flared into open conflict. What is the cause of this dispute? Do you join in the fight, or swear to put a stop to it?",
+					"_id": "truth.option:classic/communities.1"
 				},
 				{
 					"roll": {
@@ -24225,7 +24151,8 @@
 						"max": 100
 					},
 					"description": "We have forged the Ironlands into a home. Villages within the Havens are connected by well-trod roads. Trade caravans travel between settlements in the Havens and those in outlying regions. Even so, much of this land is untamed.",
-					"quest_starter": "Caravans are forced to pay for passage along a trade road. This payment, one-quarter of the goods carried, leaves several communities without sufficient winter stores. Who is making these demands? How will you set things right?"
+					"quest_starter": "Caravans are forced to pay for passage along a trade road. This payment, one-quarter of the goods carried, leaves several communities without sufficient winter stores. Who is making these demands? How will you set things right?",
+					"_id": "truth.option:classic/communities.2"
 				}
 			],
 			"dice": "1d100",
@@ -24253,7 +24180,8 @@
 						"max": 33
 					},
 					"description": "Leadership is as varied as the people. Some communities are governed by the head of a powerful family. Or, they have a council of elders who make decisions and settle disputes. In others, the priests hold sway. For some, it is duels in the circle that decide.",
-					"quest_starter": "You have vivid reoccurring dreams of an Ironlands city. It has strong stone walls, bustling markets, and a keep on a high hill. And so many people! Nowhere in the Ironlands does such a city exist. In your dreams, you are the ruler of this city. Somehow, no matter how long it takes, you must make this vision a reality."
+					"quest_starter": "You have vivid reoccurring dreams of an Ironlands city. It has strong stone walls, bustling markets, and a keep on a high hill. And so many people! Nowhere in the Ironlands does such a city exist. In your dreams, you are the ruler of this city. Somehow, no matter how long it takes, you must make this vision a reality.",
+					"_id": "truth.option:classic/leaders.0"
 				},
 				{
 					"roll": {
@@ -24261,7 +24189,8 @@
 						"max": 67
 					},
 					"description": "Each of our communities has its own leader, called an overseer. Every seventh spring, the people affirm their current overseer or choose a new one. Some overseers wear the iron circlet reluctantly, while others thirst for power and gain it through schemes or threats.",
-					"quest_starter": "An overseer has fallen ill. She is sure to die without help, and the illness is unknown to the village healer. Poison, or perhaps even foul magic, is suspected. The families in the community are now at each other’s throats as they position their preferred candidates to take up the iron circlet. Will you discover the truth of the overseer’s illness and restore her to health?"
+					"quest_starter": "An overseer has fallen ill. She is sure to die without help, and the illness is unknown to the village healer. Poison, or perhaps even foul magic, is suspected. The families in the community are now at each other’s throats as they position their preferred candidates to take up the iron circlet. Will you discover the truth of the overseer’s illness and restore her to health?",
+					"_id": "truth.option:classic/leaders.1"
 				},
 				{
 					"roll": {
@@ -24269,7 +24198,8 @@
 						"max": 100
 					},
 					"description": "Numerous clan-chiefs rule over petty domains. Most are intent on becoming the one true king. Their squabbles will be our undoing.",
-					"quest_starter": "You secretly possess one-half of the True Crown, an Old World relic. Centuries ago, this crown was broken in two when an assassin’s axe split the head of the supreme ruler. You are descended from that lineage. Who gave you this relic? Will you find the other half of the broken crown and attempt to unite the clans under your rule? Or, do you see another use for it?"
+					"quest_starter": "You secretly possess one-half of the True Crown, an Old World relic. Centuries ago, this crown was broken in two when an assassin’s axe split the head of the supreme ruler. You are descended from that lineage. Who gave you this relic? Will you find the other half of the broken crown and attempt to unite the clans under your rule? Or, do you see another use for it?",
+					"_id": "truth.option:classic/leaders.2"
 				}
 			],
 			"dice": "1d100",
@@ -24297,7 +24227,8 @@
 						"max": 33
 					},
 					"description": "Here in the Ironlands, supplies are too precious, and the lands are too sparsely populated, to support organized fighting forces. When a community is threatened, the people stand together to protect their own.",
-					"quest_starter": "A settlement is unable, or unwilling, to defend itself against an imminent threat. Why? What peril do they face? What will you do to protect them?"
+					"quest_starter": "A settlement is unable, or unwilling, to defend itself against an imminent threat. Why? What peril do they face? What will you do to protect them?",
+					"_id": "truth.option:classic/defense.0"
 				},
 				{
 					"roll": {
@@ -24305,7 +24236,8 @@
 						"max": 67
 					},
 					"description": "The wardens are our soldiers, guards, and militia. They serve their communities by standing sentry, patrolling surrounding lands, and organizing defenses in times of crisis. Most have strong ties to their community. Others, called free wardens, are wandering mercenaries who hire on to serve a community or protect caravans.",
-					"quest_starter": "You come upon a dying warden. She tells you of an important mission, and charges you with its completion. \"Swear to me,\" she says, reaching out with a bloodied hand to give you an object crucial to the quest. What is it?"
+					"quest_starter": "You come upon a dying warden. She tells you of an important mission, and charges you with its completion. \"Swear to me,\" she says, reaching out with a bloodied hand to give you an object crucial to the quest. What is it?",
+					"_id": "truth.option:classic/defense.1"
 				},
 				{
 					"roll": {
@@ -24313,7 +24245,8 @@
 						"max": 100
 					},
 					"description": "Our warbands are rallied to strike at our enemies or defend our holdings. Though not nearly as impressive as the armies that once marched across the Old World, these forces are as well-trained and equipped as their communities can manage. The banners of the warbands are adorned with depictions of their Old World history and Ironland victories.",
-					"quest_starter": "A warband was wiped out in a battle against an overwhelming enemy. What is your connection to this band? Who defeated them? Will you carry their banner on a quest for vengeance, or do you vow to see it brought home to a place of honor?"
+					"quest_starter": "A warband was wiped out in a battle against an overwhelming enemy. What is your connection to this band? Who defeated them? Will you carry their banner on a quest for vengeance, or do you vow to see it brought home to a place of honor?",
+					"_id": "truth.option:classic/defense.2"
 				}
 			],
 			"dice": "1d100",
@@ -24341,7 +24274,8 @@
 						"max": 33
 					},
 					"description": "Some still find comfort in the old ways. They call on mystics to divine the fortune of their newborn, or ask them to perform rituals to invoke a bountiful harvest. Others act out of fear against those who they suspect of having power. However, most folk believe true magic—if it ever existed—is lost to us now.",
-					"quest_starter": "Someone close to you is accused of cursing a settlement, causing fields to go fallow and cattle to become sick. What is the evidence of this? Will you defend this person and uncover the true cause of the settlement’s troubles?"
+					"quest_starter": "Someone close to you is accused of cursing a settlement, causing fields to go fallow and cattle to become sick. What is the evidence of this? Will you defend this person and uncover the true cause of the settlement’s troubles?",
+					"_id": "truth.option:classic/mysticism.0"
 				},
 				{
 					"roll": {
@@ -24349,7 +24283,8 @@
 						"max": 100
 					},
 					"description": "Magic is rare and dangerous, but those few who wield the power are truly gifted.",
-					"quest_starter": "You have heard stories of someone who wields true power. They live in an isolated settlement far away. Who told you of this mystic? Are they feared or respected? Why do you swear to seek them out?"
+					"quest_starter": "You have heard stories of someone who wields true power. They live in an isolated settlement far away. Who told you of this mystic? Are they feared or respected? Why do you swear to seek them out?",
+					"_id": "truth.option:classic/mysticism.1"
 				},
 				{
 					"roll": {
@@ -24357,7 +24292,8 @@
 						"max": 100
 					},
 					"description": "Magic courses through this land as the rivers flow through the hills. The power is there for those who choose to harness it, and even the common folk often know a helpful ritual or two.",
-					"quest_starter": "Someone you love walked the paths of power, and succumbed to it. Who are they? Why did they fall into darkness? Where are they now? Do you seek to save them or defeat them?"
+					"quest_starter": "Someone you love walked the paths of power, and succumbed to it. Who are they? Why did they fall into darkness? Where are they now? Do you seek to save them or defeat them?",
+					"_id": "truth.option:classic/mysticism.2"
 				}
 			],
 			"dice": "1d100",
@@ -24385,7 +24321,8 @@
 						"max": 33
 					},
 					"description": "A few Ironlanders still make signs or mumble prayers out of habit or tradition, but most believe the gods long ago abandoned us.",
-					"quest_starter": "A charismatic Ironlander, encouraging her followers to renounce the vestiges of Old World religions, proposes a new path for this new world. What doctrine does she teach? What does she seek to achieve? Are you sworn to aid or stop her?"
+					"quest_starter": "A charismatic Ironlander, encouraging her followers to renounce the vestiges of Old World religions, proposes a new path for this new world. What doctrine does she teach? What does she seek to achieve? Are you sworn to aid or stop her?",
+					"_id": "truth.option:classic/religion.0"
 				},
 				{
 					"roll": {
@@ -24393,7 +24330,8 @@
 						"max": 67
 					},
 					"description": "The people honor old gods and new. In this harsh land, a prayer is a simple but powerful comfort.",
-					"quest_starter": "An Ironlander is determined to make a pilgrimage into dangerous lands. What holy place do they seek? Why do you swear to aid them on this journey? Who seeks to stop them and why?"
+					"quest_starter": "An Ironlander is determined to make a pilgrimage into dangerous lands. What holy place do they seek? Why do you swear to aid them on this journey? Who seeks to stop them and why?",
+					"_id": "truth.option:classic/religion.1"
 				},
 				{
 					"roll": {
@@ -24401,7 +24339,8 @@
 						"max": 100
 					},
 					"description": "Our gods are many. They make themselves known through manifestations and miracles. Some say they even secretly walk among us. The priests convey the will of the gods and hold sway over many communities.",
-					"quest_starter": "You bear the mark of a god. What is it? The priests declare this as a sign you are chosen to fulfill a destiny. Do you accept this fate, and swear to see it through, or are you determined to see it undone? What force opposes you?"
+					"quest_starter": "You bear the mark of a god. What is it? The priests declare this as a sign you are chosen to fulfill a destiny. Do you accept this fate, and swear to see it through, or are you determined to see it undone? What force opposes you?",
+					"_id": "truth.option:classic/religion.2"
 				}
 			],
 			"dice": "1d100",
@@ -24429,7 +24368,8 @@
 						"max": 33
 					},
 					"description": "The firstborn have passed into legend. Some say the remnants of the old tribes still dwell in deep forests or high mountains. Most believe they were never anything more than myth.",
-					"quest_starter": "Someone obsessed with the firstborn wants to find evidence of their existence. This will require an expedition into the far reaches of the Ironlands. What is your role in this mission?"
+					"quest_starter": "Someone obsessed with the firstborn wants to find evidence of their existence. This will require an expedition into the far reaches of the Ironlands. What is your role in this mission?",
+					"_id": "truth.option:classic/firstborn.0"
 				},
 				{
 					"roll": {
@@ -24437,7 +24377,8 @@
 						"max": 67
 					},
 					"description": "The firstborn live in isolation and are fiercely protective of their own lands.",
-					"quest_starter": "The elf, outcast from his kind, lives with Ironlanders. Over time, he became a part of the community. Now, he is dying. He yearns to return to his people before he passes. Does he seek absolution or justice? Why do you swear to help him? What force opposes his return?"
+					"quest_starter": "The elf, outcast from his kind, lives with Ironlanders. Over time, he became a part of the community. Now, he is dying. He yearns to return to his people before he passes. Does he seek absolution or justice? Why do you swear to help him? What force opposes his return?",
+					"_id": "truth.option:classic/firstborn.1"
 				},
 				{
 					"roll": {
@@ -24445,7 +24386,8 @@
 						"max": 100
 					},
 					"description": "The firstborn hold sway in the Ironlands. The elves of the deep forests and the giants of the hills tolerate us and even trade with us—for now. Ironlanders fear the day they decide we are no longer welcome here.",
-					"quest_starter": "Humans and giants are on the brink of war. What has happened? Who do you side with? Can anything be done to defuse the situation?"
+					"quest_starter": "Humans and giants are on the brink of war. What has happened? Who do you side with? Can anything be done to defuse the situation?",
+					"_id": "truth.option:classic/firstborn.2"
 				}
 			],
 			"dice": "1d100",
@@ -24473,7 +24415,8 @@
 						"max": 33
 					},
 					"description": "The beasts of old are nothing but legend. A few who travel into the deep forests and high mountains return with wild tales of monstrous creatures, but they are obviously delusional. No such things exist.",
-					"quest_starter": "You were witness to an attack by what you thought was an animal of monstrous proportions. No one believes you. In fact, you are accused of the murder you blame on this beast. How can you prove your innocence? Can you even trust your own memories of the event?"
+					"quest_starter": "You were witness to an attack by what you thought was an animal of monstrous proportions. No one believes you. In fact, you are accused of the murder you blame on this beast. How can you prove your innocence? Can you even trust your own memories of the event?",
+					"_id": "truth.option:classic/beasts.0"
 				},
 				{
 					"roll": {
@@ -24481,7 +24424,8 @@
 						"max": 67
 					},
 					"description": "Monstrous beasts stalk the wild areas of the Ironlands.",
-					"quest_starter": "A prominent Ironlander is consumed with the need to bring vengeance upon a specific beast. What makes this creature distinctive? How did it earn the wrath of this Ironlander? Do you aid this person in their quest, or act to prevent their blind hate from destroying more than just the beast?"
+					"quest_starter": "A prominent Ironlander is consumed with the need to bring vengeance upon a specific beast. What makes this creature distinctive? How did it earn the wrath of this Ironlander? Do you aid this person in their quest, or act to prevent their blind hate from destroying more than just the beast?",
+					"_id": "truth.option:classic/beasts.1"
 				},
 				{
 					"roll": {
@@ -24489,7 +24433,8 @@
 						"max": 100
 					},
 					"description": "Beasts of all sorts roam the Ironlands. They dwell primarily in the reaches, but range into the settled lands to hunt. There, they often prey on cattle, but attacks on travelers, caravans, or even settlements are not uncommon.",
-					"quest_starter": "Professional slayers earn their keep by killing beasts. This particular slayer, famed throughout the Ironlands for her numerous kills, has gone missing on a hunt. Did she finally meet her match, or is something more nefarious at play. What is your connection to her?"
+					"quest_starter": "Professional slayers earn their keep by killing beasts. This particular slayer, famed throughout the Ironlands for her numerous kills, has gone missing on a hunt. Did she finally meet her match, or is something more nefarious at play. What is your connection to her?",
+					"_id": "truth.option:classic/beasts.2"
 				}
 			],
 			"dice": "1d100",
@@ -24517,7 +24462,8 @@
 						"max": 33
 					},
 					"description": "Nothing but stories to frighten children.",
-					"quest_starter": "The murders began last season. Local gossip suggests they are the work of a vengeful horror, but there may be more mundane forces at work. What is your connection to these killings? What will you do to stop them?"
+					"quest_starter": "The murders began last season. Local gossip suggests they are the work of a vengeful horror, but there may be more mundane forces at work. What is your connection to these killings? What will you do to stop them?",
+					"_id": "truth.option:classic/horrors.0"
 				},
 				{
 					"roll": {
@@ -24525,7 +24471,8 @@
 						"max": 67
 					},
 					"description": "We are wary of dark forests and deep waterways, for monsters lurk in those places. In the depths of the long-night, when all is wreathed in darkness, only fools venture beyond their homes.",
-					"quest_starter": "You bear the scars of an attack by a horror. What was it? Are those scars physical, emotional, or both? How do you seek to make yourself whole again?"
+					"quest_starter": "You bear the scars of an attack by a horror. What was it? Are those scars physical, emotional, or both? How do you seek to make yourself whole again?",
+					"_id": "truth.option:classic/horrors.1"
 				},
 				{
 					"roll": {
@@ -24533,7 +24480,8 @@
 						"max": 100
 					},
 					"description": "The dead do not rest in the Ironlands. At night we light torches, scatter salt, and post sentries at the gate. It is not enough. They are coming.",
-					"quest_starter": "A group of Ironlanders establish a settlement in a territory cursed by a malevolent horror. What evil plagues this land? Why are the Ironlanders so intent on settling here? Will you aid them, or attempt to force them to give up this foolish undertaking?"
+					"quest_starter": "A group of Ironlanders establish a settlement in a territory cursed by a malevolent horror. What evil plagues this land? Why are the Ironlanders so intent on settling here? Will you aid them, or attempt to force them to give up this foolish undertaking?",
+					"_id": "truth.option:classic/horrors.2"
 				}
 			],
 			"dice": "1d100",

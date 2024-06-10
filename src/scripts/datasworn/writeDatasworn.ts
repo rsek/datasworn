@@ -14,16 +14,15 @@ AJV.removeSchema()
 await loadSourceSchema()
 const { JSL } = await loadSchema()
 
-Log.info('⚙️  Building sourcebooks...')
+Log.info('⚙️  Building rules packages...')
 
-await Promise.all(
-	Object.values(pkgs).map(async (pkg) =>
-		buildRulesPackage(pkg, AJV, JSL).catch((e) =>
-			Log.error(`Failed to build package "${pkg.id}":`, e)
-		)
-	)
-)
+const toBuild: Promise<void>[] = []
+
+for (const k in pkgs)
+	toBuild.push(buildRulesPackage(pkgs[k as keyof typeof pkgs], AJV, JSL))
+
+await Promise.all(toBuild)
 
 profiler.done({
-	message: `Finished in ${Date.now() - profiler.start.valueOf()}ms`
+	message: `Finished building ${toBuild.length} package(s) in ${Date.now() - profiler.start.valueOf()}ms`
 })

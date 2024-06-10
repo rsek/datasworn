@@ -1333,7 +1333,7 @@ moves:
 
           On a __weak hit__, you achieve your objective, but not without cost. Roll on the table below or choose one. If the fight continues, you are in a bad spot.
 
-          {{table:oracle_rollable:starforged/moves/take_decisive_action}}
+          {{table>oracle_rollable:starforged/moves/take_decisive_action}}
 
           On a __miss__, you are defeated or your objective is lost. [Pay the Price](move:starforged/fate/pay_the_price).
         outcomes:
@@ -1343,7 +1343,7 @@ moves:
             text: |-
               On a __weak hit__, you achieve your objective, but not without cost. Roll on the table below or choose one. If the fight continues, you are in a bad spot.
 
-              {{table:oracle_rollable:starforged/moves/take_decisive_action}}
+              {{table>oracle_rollable:starforged/moves/take_decisive_action}}
           miss:
             text: On a __miss__, you are defeated or your objective is lost. [Pay the Price](move:starforged/fate/pay_the_price).
         _source:
@@ -1675,7 +1675,7 @@ moves:
             * __Support vehicle:__ Mark the vehicle as __battered__ or roll on the table below. If the vehicle is destroyed, discard the asset.
             * __Incidental vehicle:__ Roll on the table below.
 
-          {{table:oracle_rollable:starforged/moves/withstand_damage}}
+          {{table>oracle_rollable:starforged/moves/withstand_damage}}
         outcomes:
           strong_hit:
             text: |-
@@ -1693,7 +1693,7 @@ moves:
                 * __Support vehicle:__ Mark the vehicle as __battered__ or roll on the table below. If the vehicle is destroyed, discard the asset.
                 * __Incidental vehicle:__ Roll on the table below.
 
-                {{table:oracle_rollable:starforged/moves/withstand_damage}}
+                {{table>oracle_rollable:starforged/moves/withstand_damage}}
         _source:
           <<: *Source
           page: 206
@@ -2324,7 +2324,7 @@ moves:
           text: When you suffer the outcome of an action...
         suggestions:
           - oracle_rollable:starforged/misc/story_complication
-          - oracle_rollable:**/peril
+          - oracle_rollable:**/*/peril
           - oracle_rollable:**/peril/**
         oracles:
           pay_the_price:
@@ -2382,7 +2382,7 @@ moves:
             * [Ask the Oracle](move:starforged/fate/ask_the_oracle) for inspiration. Interpret the answer as a hardship or complication appropriate to the situation.
             * Roll on the table below. If the result doesn’t fit the situation, roll again.
 
-          {{table:oracle_rollable:starforged/moves/pay_the_price}}
+          {{table>oracle_rollable:starforged/moves/pay_the_price}}
         _source:
           <<: *Source
           page: 232

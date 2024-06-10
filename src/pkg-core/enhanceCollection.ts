@@ -1,5 +1,5 @@
 // import fs from 'fs-extra'
-import type DataswornNode from './DataswornNode.js'
+import type TypeNode from './TypeNode.js'
 
 // const classic = fs.readJSONSync(
 // 	'./pkg/nodejs/@datasworn/ironsworn-classic/json/classic.json'
@@ -25,7 +25,7 @@ import type DataswornNode from './DataswornNode.js'
  * @returns The mutated `target`
  * @experimental
  */
-export function enhanceCollection<T extends DataswornNode.Collection.Any>(
+export function enhanceCollection<T extends TypeNode.Collection>(
 	target: T,
 	source: T,
 	strictOverrides = true
@@ -120,7 +120,7 @@ export function enhanceCollection<T extends DataswornNode.Collection.Any>(
 				break
 			case 'collections': {
 				// child collections are enhanced recursively
-				const sourceChildren: Iterable<[string, DataswornNode.Collection.Any]> =
+				const sourceChildren: Iterable<[string, TypeNode.Collection]> =
 					newValue instanceof Map ? newValue : Object.entries(newValue)
 
 				for (const [childKey, sourceChild] of sourceChildren) {
@@ -135,8 +135,7 @@ export function enhanceCollection<T extends DataswornNode.Collection.Any>(
 						oldValue.set(childKey, updatedChild)
 					} else {
 						const updatedChild =
-							childKey in
-							(oldValue as Record<string, DataswornNode.Collection.Any>)
+							childKey in (oldValue as Record<string, TypeNode.Collection>)
 								? enhanceCollection(
 										oldValue[childKey],
 										sourceChild,

@@ -144,7 +144,7 @@ export const SourceInfo = Type.Object(
 
 export type SourceInfo = Static<typeof SourceInfo>
 
-export const Suggestions = Type.Array(Type.Ref('AnyId'), {
+export const Suggestions = Type.Array(Type.Ref('AnyIdWildcard'), {
 	$id: 'Suggestions',
 	releaseStage: 'experimental'
 })

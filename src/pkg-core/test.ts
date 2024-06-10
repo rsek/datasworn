@@ -12,36 +12,24 @@ import { IdParser } from './IdParser.js'
 // 	starforged: JSON.parse(readFileSync(path, { encoding: 'utf-8' }))
 // }
 
-const recursiveCollectionString =
-	'starforged/oracle_collection/core' satisfies Strings.RecursiveCollectionId
-const recursiveCollectableString =
-	'starforged/oracle_rollable/core/action' satisfies Strings.RecursiveCollectableId
-const nonRecursiveCollectionString =
-	'starforged/move_category/combat' satisfies Strings.NonRecursiveCollectionId
-const nonRecursiveCollectableString =
-	'starforged/move/combat/strike' satisfies Strings.NonRecursiveCollectableId
+const collectionString =
+	'oracle_collection:starforged/core' satisfies Strings.CollectionId
+const collectableString =
+	'oracle_rollable:starforged/core/action' satisfies Strings.CollectableId
 const nonCollectableString =
-	'starforged/truth/magic' satisfies Strings.NonCollectableId
+	'truth:starforged/magic' satisfies Strings.NonCollectableId
 
-const recursiveCollectableId = IdParser.fromString(recursiveCollectableString)
+const recursiveCollectableId = IdParser.parse(collectableString)
 
-const nonRecursiveCollectionId = IdParser.fromString(
-	nonRecursiveCollectionString
-)
-const recursiveCollectionId = IdParser.fromString(recursiveCollectionString)
+const recursiveCollectionId = IdParser.parse(collectionString)
 
-const nonRecursiveCollectableId = IdParser.fromString(
-	nonRecursiveCollectableString
-)
-const nonCollectableId = IdParser.fromString(nonCollectableString)
+const nonCollectableId = IdParser.parse(nonCollectableString)
 
 for (const id of [
 	recursiveCollectableId,
 	recursiveCollectionId,
-	nonRecursiveCollectableId,
-	nonRecursiveCollectionId,
 	nonCollectableId
 ]) {
-	console.log(id.toRegex(), '=>', id.toPath().join('.'))
+	console.log(id.id, '=>', id.toGlobberPath().join('.'))
 	// console.log(`Retrieved "${id.get()?.name}"`)
 }

@@ -1,17 +1,29 @@
-import type DataswornNode from '../../pkg-core/DataswornNode.js'
+import path from 'path'
+import type TypeNode from '../../pkg-core/TypeNode.js'
 import {
 	IdParser,
 	type Datasworn,
 	type DataswornSource
 } from '../../pkg-core/index.js'
 import Log from '../utils/Log.js'
+import type AJV from '../validation/ajv.js'
 import { dataSwornKeyOrder, sortDataswornKeys, sortObjectKeys } from './sort.js'
+import { cwd } from 'process'
+import { pascalCase } from '../../schema/utils/string.js'
+import { formatPath } from '../../utils.js'
 
+/** Merges and validates JSON data from multiple DataswornSource files. */
 export class RulesPackageBuilder<
 	TSource extends DataswornSource.RulesPackage = DataswornSource.RulesPackage,
 	TTarget extends Datasworn.RulesPackage = Datasworn.RulesPackage
 > {
-	static logger = Log
+	static setup(logger: typeof console | typeof Log, ajv: typeof AJV) {
+		this.logger = logger
+		this.ajv = ajv
+	}
+
+	static logger: typeof console | typeof Log
+	static ajv: typeof AJV
 
 	// reference to function that validates objects against schema.
 	static validator_source: <T extends DataswornSource.RulesPackage>(
@@ -36,6 +48,49 @@ export class RulesPackageBuilder<
 			RulesPackageBuilder.merge(this.merged, file.data)
 
 		return this
+	}
+
+	#build() {
+		return this.mergeFiles().sortKeys().merged
+	}
+
+	static validate(data: unknown): data is Datasworn.RulesPackage {
+		const isValid = this.ajv.validate('Datasworn', data)
+
+		if (!isValid) {
+			const shortErrors = this.ajv.errors?.map(
+				({ instancePath, parentSchema, message }) => ({
+					parentSchema: parentSchema?.$id ?? parentSchema?.title,
+					instancePath,
+					message
+				})
+			)
+			throw Error(
+				`Failed schema validation. ${JSON.stringify(shortErrors, undefined, '\t')}`
+			)
+		}
+
+		return true
+	}
+
+	build() {
+		try {
+			// const bProfiler = Log.startTimer()
+			const result = this.#build()
+			// bProfiler.done({
+			// 	message: `🧩 Assembled "${this.id}" in ${Date.now() - bProfiler.start.valueOf()}ms`
+			// })
+
+			// const vProfiler = Log.startTimer()
+			RulesPackageBuilder.validate(result)
+			// vProfiler.done({
+			// 	message: `✅ Validated "${this.id}" in ${Date.now() - vProfiler.start.valueOf()}ms`
+			// })
+
+			return result
+		} catch (e) {
+			throw new Error(`Couldn't build <${this.id}>. ${String(e)}`)
+		}
 	}
 
 	sortKeys() {
@@ -63,13 +118,17 @@ export class RulesPackageBuilder<
 	/** Hash character that prepends generated JSON pointers. */
 	static readonly hashChar = '#' as const
 
-	constructor(...files: RulesPackageFile<TSource>[])
-	constructor(...files: RulesPackageFileData<TSource>[])
+	constructor(id: string, ...files: RulesPackageFile<TSource>[])
+	constructor(id: string, ...files: RulesPackageFileData<TSource>[])
 	constructor(
+		id: string,
 		...files: (RulesPackageFileData<TSource> | RulesPackageFile<TSource>)[]
 	) {
+		this.id = id
 		this.addFiles(...files)
 	}
+
+	id: string
 
 	#addFile(file: RulesPackageFileData<TSource> | RulesPackageFile<TSource>) {
 		const fileToAdd =
@@ -81,7 +140,12 @@ export class RulesPackageBuilder<
 	addFiles(
 		...files: (RulesPackageFileData<TSource> | RulesPackageFile<TSource>)[]
 	) {
-		for (const file of files) void this.#addFile(file)
+		for (const file of files)
+			try {
+				void this.#addFile(file)
+			} catch (e) {
+				throw new Error(`Failed to add "${file.fileName}"! ${String(e)}`)
+			}
 
 		return this
 	}
@@ -132,26 +196,69 @@ class RulesPackageFile<
 	TSource extends DataswornSource.RulesPackage = DataswornSource.RulesPackage
 > implements RulesPackageFileData<TSource>
 {
+	static get logger() {
+		return RulesPackageBuilder.logger
+	}
+
+	static get ajv() {
+		return RulesPackageBuilder.ajv
+	}
+
 	fileName: string
 
-	index = new Map<string, DataswornNode.Any>()
+	index = new Map<string, TypeNode.AnyPrimary>()
 
-	data: TSource
+	#data: TSource
+
+	public get data(): TSource {
+		return this.#data
+	}
+
+	public set data(value) {
+		this.#data = value
+	}
+
+	static validateSource(data: unknown): data is DataswornSource.RulesPackage {
+		const isValid = this.ajv.validate('DataswornSource', data)
+
+		if (!isValid) {
+			const shortErrors = this.ajv.errors?.map(
+				({ instancePath, parentSchema, message }) => ({
+					parentSchema: parentSchema?.$id ?? parentSchema?.title,
+					instancePath,
+					message
+				})
+			)
+			throw Error(JSON.stringify(shortErrors, undefined, '\t'))
+		}
+
+		return true
+	}
 
 	constructor({ data, fileName }: RulesPackageFileData<TSource>) {
-		this.data = data
 		this.fileName = fileName
+
+		try {
+			RulesPackageFile.validateSource(data)
+		} catch (e) {
+			throw new Error(
+				`${path.relative(cwd(), fileName)} doesn't match DataswornSource\n${String(e)}`
+			)
+		}
+
+		this.#data = data
 
 		this.init()
 	}
 
 	init() {
-		this.assignIds()
-		// todo -- should probably apply source validation?
-	}
+		// ensure IdParser logs to the same place
+		// @ts-expect-error
+		IdParser.logger = RulesPackageFile.logger
 
-	protected assignIds() {
-		IdParser.assignIdsInRulesPackage(this.data, this.index)
+		RulesPackageBuilder.logger.debug(`RulesPackageFile#init > ${this.fileName}`)
+
+		void IdParser.assignIdsInRulesPackage(this.data, this.index)
 	}
 }
 
