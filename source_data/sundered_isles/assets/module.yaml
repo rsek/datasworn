@@ -309,7 +309,7 @@ assets:
             Your ship’s hold is stocked with reserves. When you [Sacrifice Resources](move:starforged/suffer/sacrifice_resources) and your hold supply is reduced to 0, first roll +integrity instead of marking unprepared. On a strong hit, take +1 supply. On a weak hit or miss, mark unprepared.
           # TODO: new move
         - text: |-
-            Your hold is fitted with secret compartments. When the ship undergoes an inspection or search, [Ask the Oracle](move:starforged/fate/ask_the_oracle) if the compartments stay hidden, setting the odds as likely. If the answer is “no,” c, but you may [Face Danger](move:starforged/adventure/face_danger) to distract or direct their attention elsewhere; if you do, reroll any dice.
+            Your hold is fitted with secret compartments. When the ship undergoes an inspection or search, [Ask the Oracle](move:starforged/fate/ask_the_oracle) if the compartments stay hidden, setting the odds as likely. If the answer is “no,” the searchers are suspicious, but you may [Face Danger](move:starforged/adventure/face_danger) to distract or direct their attention elsewhere; if you do, reroll any dice.
           enhance_moves:
           - enhances:
             - move:starforged/*/face_danger
