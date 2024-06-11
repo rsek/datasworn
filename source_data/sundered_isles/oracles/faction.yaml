@@ -1248,7 +1248,6 @@ oracles:
               page: 184
             contents:
               type:
-                # TODO: virtual name, decide if i want to keep it
                 name: Theme Type
                 canonical_name: Themes
                 type: oracle_rollable
@@ -1258,25 +1257,25 @@ oracles:
                   page: 184
                 rows:
                   - roll: { min: 1, max: 10 }
-                    text: Affluence
+                    text: "[Affluence](oracle_collection:sundered_isles/faction/name/themes/affluence)"
                   - roll: { min: 11, max: 20 }
-                    text: Craft
+                    text: "[Craft](oracle_collection:sundered_isles/faction/name/themes/craft)"
                   - roll: { min: 21, max: 30 }
-                    text: Discovery
+                    text: "[Discovery](oracle_collection:sundered_isles/faction/name/themes/discovery)"
                   - roll: { min: 31, max: 40 }
-                    text: Faith
+                    text: "[Faith](oracle_collection:sundered_isles/faction/name/themes/faith)"
                   - roll: { min: 41, max: 50 }
-                    text: Loyalty
+                    text: "[Loyalty](oracle_collection:sundered_isles/faction/name/themes/loyalty)"
                   - roll: { min: 51, max: 60 }
-                    text: Mysticism
+                    text: "[Mysticism](oracle_collection:sundered_isles/faction/name/themes/mysticism)"
                   - roll: { min: 61, max: 70 }
-                    text: Rebellion
+                    text: "[Rebellion](oracle_collection:sundered_isles/faction/name/themes/rebellion)"
                   - roll: { min: 71, max: 80 }
-                    text: Secrecy
+                    text: "[Secrecy](oracle_collection:sundered_isles/faction/name/themes/secrecy)"
                   - roll: { min: 81, max: 90 }
-                    text: War
+                    text: "[War](oracle_collection:sundered_isles/faction/name/themes/war)"
                   - roll: { min: 91, max: 100 }
-                    text: Curses
+                    text: "[Curses](oracle_collection:sundered_isles/faction/name/themes/curses)"
             collections:
               affluence:
                 name: Affluence

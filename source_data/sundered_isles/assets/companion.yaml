@@ -63,7 +63,7 @@ assets:
                   label: out of action
                   field_type: checkbox
                   disables_asset: true
-              moves: &BiologicalCompanionHealth.moves
+              moves:
                 suffer:
                   - move:starforged/suffer/companion_takes_a_hit
                 recover:
@@ -84,8 +84,13 @@ assets:
 
               * If you rolled a miss, reroll all dice. If you miss again, the skull leads you astray.
               * If you rolled a hit, take +1 momentum and add +1 on your next related move.
-          # TODO: is there a way to add a cursed die to this?
-
+          # TODO: worth developing a cursed die tag for this purpose? do other moves use it?
+          enhance_moves:
+            - roll_type: action_roll
+              enhances: null
+              trigger:
+                conditions:
+                  - text: When you make a move in the chattering skull's presence
         - text: |-
             When you roll a match with a 10 on the cursed die, you learn a surprising or dreadful aspect of the skull’s history or nature; mark 1 box on your bonds legacy track.
         - text: |-
@@ -104,9 +109,28 @@ assets:
         category: Companion
         abilities:
         - enabled: true
-          text: |-
+          text: &CallDolphin |-
             Your dolphin companion is a helpful but often errant friend. When you call the dolphin, roll +heart. On a hit, it appears and will remain in the area for an hour or two. You may (one time only) reroll any dice on a move to overcome an obstacle or hazard with its help. On a strong hit, also take +2 momentum. On a miss, it is away or unable to respond; [Pay the Price](move:starforged/fate/pay_the_price).
-          # TODO: new move
+          moves:
+            call_dolphin:
+              type: move
+              name: Call Dolphin
+              roll_type: action_roll
+              trigger:
+                conditions:
+                  - method: player_choice
+                    roll_options:
+                      - using: stat
+                        stat: heart
+                text: When you call the dolphin...
+              text: *CallDolphin
+              outcomes:
+                strong_hit:
+                  text: On a __strong hit__, it appears and will remain in the area for an hour or two. Take +2 momentum. You may (one time only) reroll any dice on a move to overcome an obstacle or hazard with its help.
+                weak_hit:
+                  text: On a __weak hit__, it appears and will remain in the area for an hour or two. You may (one time only) reroll any dice on a move to overcome an obstacle or hazard with its help.
+                miss:
+                  text: On a __miss__, it is away or unable to respond; [Pay the Price](move:starforged/fate/pay_the_price).
         - text: |-
             When you make a move to detect or evade a threat while swimming in the company of the dolphin, roll +its health and take +1 momentum on a hit.
           enhance_moves:
@@ -114,6 +138,9 @@ assets:
             trigger:
               conditions:
                 - text: When you make a move to detect or evade a threat while swimming in the company of the dolphin
+                  roll_options:
+                    - using: asset_control
+                      control: health
         - text: |-
             When you [Undertake an Expedition](move:starforged/exploration/undertake_an_expedition) and score a miss with a match, you may envision the dolphin appearing unbidden to guide you out of trouble. If you do, reroll both challenge dice.
           enhance_moves:
@@ -230,12 +257,16 @@ assets:
         - enabled: true
           text: &MonkeyBusinessText |-
             Your monkey companion finds its own trouble. Once per situation, when you score a miss, you may suffer the cost by envisioning the monkey causing mischief or getting into danger. If you do, roll +its health. On a strong hit, the monkey unwittingly turns the situation in your favor; take +2 momentum. On a weak hit, it provides a distraction or mild boon; take +1 momentum. On a miss, it faces its own cost or makes the situation worse.
+          enhance_moves:
+            - roll_type: no_roll
+              enhances:
+                - "move:*/fate/pay_the_price"
           moves:
             monkey_business:
               type: move
-              # TODO: also consider: "Monkeyshine", "Monkey Around", etc
-              name: Monkey Business
+              name: Suffer Monkey Business
               roll_type: action_roll
+              # TODO: It'd be cool to position this as a suffer move; maybe as an enhancement to player object condition meters?
               trigger:
                 text: Once per situation, when you score a miss, and you suffer the cost by envisioning the monkey causing mischief or getting into danger...
                 conditions:
@@ -284,6 +315,32 @@ assets:
         - enabled: true
           text: |-
             Your parrot companion offers random wisdom. When you seek inspiration, context, or direction, use your oracle dice to choose a table (1–25: [Action](oracle_rollable:sundered_isles/core/action), 26–50: [Theme](oracle_rollable:sundered_isles/core/theme), 51–75: [Descriptor](oracle_rollable:sundered_isles/core/descriptor), 76–100: [Focus](oracle_rollable:sundered_isles/core/focus)). Then, roll to learn what your parrot says. If you connect this prompt to your current situation for new insight, take +1 momentum.
+          oracles:
+            parrot_wisdom:
+              type: oracle_rollable
+              name: Parrot Wisdom
+              oracle_type: table_text
+              rows:
+              - roll: {min: 1, max: 25}
+                text: "[Action](oracle_rollable:sundered_isles/core/action)"
+                oracle_rolls:
+                  - auto: true
+                    oracle: oracle_rollable:sundered_isles/core/action
+              - roll: {min: 26, max: 50}
+                text: "[Theme](oracle_rollable:sundered_isles/core/theme)"
+                oracle_rolls:
+                  - auto: true
+                    oracle: oracle_rollable:sundered_isles/core/theme
+              - roll: {min: 51, max: 75}
+                text: "[Descriptor](oracle_rollable:sundered_isles/core/descriptor)"
+                oracle_rolls:
+                  - auto: true
+                    oracle: oracle_rollable:sundered_isles/core/descriptor
+              - roll: {min: 76, max: 100}
+                text: "[Focus](oracle_rollable:sundered_isles/core/focus)"
+                oracle_rolls:
+                  - auto: true
+                    oracle: oracle_rollable:sundered_isles/core/focus
         - text: |-
             Once per fight, when you score a miss, you may envision how the parrot appears on the scene to cause a timely distraction. If you do, make it a strong hit instead.
         - text: |-
@@ -325,6 +382,12 @@ assets:
                   - text: When you make a move to flee a danger aboard a ship or within a confined site, and let your rat take the lead
         - text: |-
             When you make a move by setting loose the rat to cause a distraction or commotion among a crowd or in a public space, add +1 and take +1 momentum on a hit. On a strong hit with a match, it creates unexpected chaos; take +1 momentum more.
+          enhance_moves:
+            - roll_type: action_roll
+              trigger:
+                conditions:
+                  - text: When you make a move by setting loose the rat to cause a distraction or commotion among a crowd or in a public space
+              enhances: null
         - text: |-
             You may [Explore a Waypoint](move:starforged/exploration/explore_a_waypoint) (even if not on an expedition) by sending the rat to search a promising confined area for something of interest or value. If you do, roll +its health. On a miss, its instincts have you forewarned; you may reroll one challenge die.
           enhance_moves:
@@ -333,7 +396,7 @@ assets:
             roll_type: action_roll
             trigger:
               conditions:
-              - text: If you do
+              - text: by sending the rat to search a promising confined area for something of interest or value (even if not on an expedition)
                 roll_options:
                 - using: asset_control
                   assets: null
@@ -365,7 +428,8 @@ assets:
             roll_type: progress_roll
             trigger:
               conditions:
-              - text: When you summon the Kraken in a sight
+              - text: When you summon the Kraken in a fight
+                method: strong_hit
         - text: |-
             When you make a move using a threat to call the Kraken as leverage, add +2.
           enhance_moves:

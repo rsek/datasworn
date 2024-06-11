@@ -135,9 +135,30 @@ assets:
                 roll_options:
                 - using: asset_control
                   control: integrity
-        - text: |-
+        - text: &HostEvent |-
             When you host a formal ceremony or reception aboard your ship, roll +heart or +integrity, whichever is higher. On a strong hit, the event goes as planned; you and any allies in attendance mark 2 ticks on your bonds legacy track. On a weak hit, as above, but you must first deal with an unfortunate conflict or interruption. On a miss, the event flops or is dramatically cut short; [Pay the Price](move:starforged/fate/pay_the_price).
-          # TODO: new move
+          moves:
+            host_reception:
+              type: move
+              name: Host Reception
+              roll_type: action_roll
+              trigger:
+                conditions:
+                  - method: highest
+                    roll_options:
+                      - using: attached_asset_control
+                        control: integrity
+                      - using: stat
+                        stat: heart
+                text: When you host a formal ceremony or reception aboard your ship...
+              text: *HostEvent
+              outcomes:
+                strong_hit:
+                  text: On a __strong hit__, the event goes as planned; you and any allies in attendance mark 2 ticks on your bonds legacy track.
+                weak_hit:
+                  text: On a __weak hit__, you must first deal with an unfortunate conflict or interruption. After, the event goes as planned; you and any allies in attendance mark 2 ticks on your bonds legacy track.
+                miss:
+                  text: On a __miss__, the event flops or is dramatically cut short; [Pay the Price](move:starforged/fate/pay_the_price).
         - text: |-
             When you [Withstand Damage](move:starforged/suffer/withstand_damage) and the ship’s finery bears the cost, you may mark this module as broken and ignore the damage. When you [Repair](move:starforged/recover/repair) and fix this asset, take +2 momentum.
           enhance_moves:
@@ -174,7 +195,15 @@ assets:
               - text: by firing your harpoon cannon at a large foe or threat
         - text: |-
             As above, and if you fire the cannon in close quarters, add +2. If at a distance, take +1 momentum on a hit.
-          # TODO
+          enhance_moves:
+          - enhances:
+            - move:starforged/*/secure_an_advantage
+            - move:starforged/combat/gain_ground
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: by firing your harpoon cannon at a large foe or threat in close quarters
+              - text: by firing your harpoon cannon at a large foe or threat at a distance
         - text: |-
             When you [Gain Ground](move:starforged/combat/gain_ground) by maneuvering against a harpooned target to entangle or hinder, take +1 momentum on a strong hit and envision the ensuing chaos.
           enhance_moves:
@@ -219,7 +248,7 @@ assets:
               - text: by scavenging weapons or ammo from your foes after a fight
         - text: |-
             When you are out of options and set the fuse to self-destruct your command vehicle, activate this ability at no cost. If you do, envision how the sacrifice allows you to escape or overcome your foes amid the chaos. Then, mark 1 box on your quests legacy track and [Overcome Destruction](move:starforged/threshold/overcome_destruction).
-          # TODO: "activate at no cost" ?
+          # TODO: "activate at no cost"  flag?
       improved_galley:
         name: Improved Galley
         type: asset
@@ -236,14 +265,47 @@ assets:
           - enhances:
             - move:starforged/exploration/set_a_course
             roll_type: action_roll
-        - text: |-
+        - text: &IndulgeWithProvisions |-
             When you draw on your provisions to indulge yourself and others onboard, roll +supply and [Sacrifice Resources](move:starforged/suffer/sacrifice_resources) (-2). On a strong hit, you and your allies each choose two. On a weak hit, you each choose one. On a miss, the event is ruined by a crisis, complication, or dispute.
 
               * Bolster your ties: Mark 2 ticks on your bonds legacy track.
               * Build resolve: Take +2 momentum.
               * Take comfort: [Hearten](move:starforged/recover/hearten) with an automatic strong hit.
               * Gain strength: Take +2 health.
-          # TODO: move
+          moves:
+            indulge_with_provisions:
+              type: move
+              name: Indulge With Provisions
+              roll_type: action_roll
+              trigger:
+                conditions:
+                  - method: player_choice
+                    roll_options:
+                      - using: asset_control
+                        control: supply_hold
+                      - using: condition_meter
+                        condition_meter: supply
+                text: When you draw on your provisions to indulge yourself and others onboard...
+              text: *IndulgeWithProvisions
+              outcomes:
+                strong_hit:
+                  text: |-
+                    On a __strong hit__, you and your allies each choose two.
+
+                      * Bolster your ties: Mark 2 ticks on your bonds legacy track.
+                      * Build resolve: Take +2 momentum.
+                      * Take comfort: [Hearten](move:starforged/recover/hearten) with an automatic strong hit.
+                      * Gain strength: Take +2 health.
+                weak_hit:
+                  text: |-
+                    On a __weak hit__, you and your allies each choose one.
+
+                      * Bolster your ties: Mark 2 ticks on your bonds legacy track.
+                      * Build resolve: Take +2 momentum.
+                      * Take comfort: [Hearten](move:starforged/recover/hearten) with an automatic strong hit.
+                      * Gain strength: Take +2 health.
+                miss:
+                  text: On a __miss__, the event is ruined by a crisis, complication, or dispute.
         - text: |-
             When you [Sojourn](move:starforged/recover/sojourn) and score a strong hit, take +1 supply as the galley is restocked.
           enhance_moves:
@@ -305,9 +367,28 @@ assets:
             trigger:
               conditions:
               - text: to gain gear or provisions for your ship’s hold
-        - text: |-
+        - text: &ImprovedHoldMove |-
             Your ship’s hold is stocked with reserves. When you [Sacrifice Resources](move:starforged/suffer/sacrifice_resources) and your hold supply is reduced to 0, first roll +integrity instead of marking unprepared. On a strong hit, take +1 supply. On a weak hit or miss, mark unprepared.
-          # TODO: new move
+          moves:
+            draw_reserves:
+              name: Draw Reserves
+              type: move
+              roll_type: action_roll
+              trigger:
+                text: When you [Sacrifice Resources](move:starforged/suffer/sacrifice_resources) and your hold supply is reduced to 0...
+                conditions:
+                  - method: player_choice
+                    roll_options:
+                      - using: attached_asset_control
+                        control: integrity
+              text: *ImprovedHoldMove
+              outcomes:
+                strong_hit:
+                  text: On a __strong hit__, you don't need to mark unprepared. Take +1 supply.
+                weak_hit:
+                  text: On a __weak hit__, mark unprepared as normal.
+                miss:
+                  text: On a __miss__, mark unprepared as normal.
         - text: |-
             Your hold is fitted with secret compartments. When the ship undergoes an inspection or search, [Ask the Oracle](move:starforged/fate/ask_the_oracle) if the compartments stay hidden, setting the odds as likely. If the answer is “no,” the searchers are suspicious, but you may [Face Danger](move:starforged/adventure/face_danger) to distract or direct their attention elsewhere; if you do, reroll any dice.
           enhance_moves:
@@ -374,10 +455,9 @@ assets:
               * Rally: You and your allies take +1 health or +2 momentum.
               * Get to work: Take +1 integrity.
           moves:
-          # TODO: rename?
-            tend_wounded:
+            aid_wounded:
               type: move
-              name: Tend Wounded
+              name: Aid Wounded
               roll_type: action_roll
               trigger:
                 conditions:
@@ -522,9 +602,30 @@ assets:
             field_type: text
         abilities:
         - enabled: true
-          text: |-
+          text: &DepartPortMove |-
             Choose one of your stats to represent the figurehead’s theme. When you depart a port or anchorage, you may roll +linked stat. You cannot burn momentum on this roll. On a strong hit, the figurehead’s luck offers a boon; you and your allies take +2 momentum and +1 spirit. On a weak hit, you and your allies take +1 momentum. On a miss, the luck is foul; you and your allies [Lose Momentum](move:starforged/suffer/lose_momentum) (-1), and the figurehead offers no benefits until you next check its luck.
-          # TODO: new move
+          moves:
+            depart_port:
+            # TODO
+            # allow_momentum_burn: false
+              type: move
+              name: Depart Port
+              roll_type: action_roll
+              trigger:
+                conditions:
+                  - method: player_choice
+                    roll_options:
+                      - using: asset_option
+                        option: linked_stat
+                text:  When you depart a port or anchorage...
+              text: *DepartPortMove
+              outcomes:
+                strong_hit:
+                  text: On a __strong hit__, the figurehead’s luck offers a boon; you and your allies take +2 momentum and +1 spirit.
+                weak_hit:
+                  text: On a __weak hit__, you and your allies take +1 momentum.
+                miss:
+                  text: On a __miss__, the luck is foul; you and your allies [Lose Momentum](move:starforged/suffer/lose_momentum) (-1), and the figurehead offers no benefits until you next check its luck.
         - text: |-
             When you make a move +linked stat while aboard ship, and score a miss with a match, you may reroll both challenge dice.
           enhance_moves:
@@ -533,6 +634,7 @@ assets:
             trigger:
               conditions:
               - text: When you make a move +linked stat while aboard ship
+                method: null
                 roll_options:
                 - using: asset_option
                   option: linked_stat

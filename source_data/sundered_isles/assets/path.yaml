@@ -64,7 +64,7 @@ assets:
           - enabled: true
             text: |-
                You are a machine, and do not eat, drink, or breathe. You [Endure Harm](move:sundered_isles/suffer/endure_harm) as normal, but restore health only when you [Repair](move:sundered_isles/recover/repair) (spend 1 repair point to take +1 health, and 2 points to clear the wounded impact).
-            # TODO: enhance player? alter the moves used to recover
+            # TODO: enhance player? alter the moves used to recover health
           - text: |-
               When you make a move to build, repair, or study another mechanical device, or question or convince a mechanical being, you may roll +spirit. On a match, you gain understanding or affinity; mark 1 tick on your bonds legacy track.
             enhance_moves:
@@ -78,12 +78,11 @@ assets:
                           condition_meter: spirit
           - text: |-
                Gain one path asset (not [Augmented](asset:sundered_isles/path/augmented)) at no extra cost to represent a mechanical fitting or modification. Spend 1 experience to upgrade this asset, or 1 experience to swap for another path asset with an equal number of upgrades. You may suffer the cost of a move by marking the installed asset as broken, and spend 2 repair points to restore its function.
-            # TODO: it doesn't like the wildcard pattern, what gives?
-            # enhance_asset:
-            #   attachments:
-            #     assets:
-            #       - */assets/path/*
-            #     max: 1
+            enhance_asset:
+              attachments:
+                assets:
+                  - asset:*/path/*
+                max: 1
       crew_commander:
         name: Crew Commander
         type: asset
@@ -292,12 +291,40 @@ assets:
                 trigger:
                   conditions:
                     - text: When you score a hit as you [Sojourn](move:starforged/recover/sojourn) during your first visit to a community, and [Hearten](move:starforged/recover/hearten) by honoring them with a song
-          - text: |-
+          - text: &MemorializeText |-
               When you suffer or encounter a tragic loss and perform a song to memorialize the dead, roll +heart. On a strong hit, take both. On a weak hit, choose one. On a miss, the performance leaves you or others troubled; [Pay the Price](move:starforged/fate/pay_the_price).
 
                 * Honor the lost: mark 2 ticks on your bonds legacy track.
                 * Offer comfort or inspiration: you and your allies take +2 spirit or +2 momentum.
-            # TODO: new move
+            moves:
+              memorialize_in_song:
+                type: move
+                name: Memorialize in Song
+                roll_type: action_roll
+                trigger:
+                  conditions:
+                    - method: player_choice
+                      roll_options:
+                        - using: stat
+                          stat: heart
+                  text: When you suffer or encounter a tragic loss and perform a song to memorialize the dead...
+                text: *MemorializeText
+                outcomes:
+                  strong_hit:
+                    text: |-
+                      On a __strong hit__, take both.
+
+                        * Honor the lost: mark 2 ticks on your bonds legacy track.
+                        * Offer comfort or inspiration: you and your allies take +2 spirit or +2 momentum.
+                  weak_hit:
+                    text: |-
+                      On a __weak hit__, choose one.
+
+                        * Honor the lost: mark 2 ticks on your bonds legacy track.
+                        * Offer comfort or inspiration: you and your allies take +2 spirit or +2 momentum.
+                  miss:
+                    text: |-
+                      On a __miss__, the performance leaves you or others troubled; [Pay the Price](move:starforged/fate/pay_the_price).
       musketeer:
         name: Musketeer
         type: asset
@@ -443,16 +470,49 @@ assets:
         category: Path
         abilities:
           - enabled: true
-            text: |-
+            text: &PeddleGoods |-
               Once per visit, when you offload valuable goods in a community, roll +wits. On a strong hit, choose two. On a weak hit, choose one. On a miss, you make a bad deal; [Pay the Price](move:starforged/fate/pay_the_price).
 
                 * Trade for services: Make one recovery move (not Sojourn) with an automatic strong hit
                 * Trade for clout or solidarity: Mark 1 tick on your bonds legacy track
                 * Trade for goods or coin: Mark 1 tick on your quests legacy track
-            # TODO: new move
+            moves:
+              peddle_your_wares:
+                type: move
+                name: Peddle Your Wares
+                roll_type: action_roll
+                trigger:
+                  conditions:
+                    - method: player_choice
+                      roll_options:
+                        - using: stat
+                          stat: wits
+                  text: Once per visit, when you offload valuable goods in a community...
+                text: *PeddleGoods
+                outcomes:
+                  strong_hit:
+                    text: |-
+                      On a __strong hit__, choose two.
+
+                        * Trade for services: Make one recovery move (not Sojourn) with an automatic strong hit
+                        * Trade for clout or solidarity: Mark 1 tick on your bonds legacy track
+                        * Trade for goods or coin: Mark 1 tick on your quests legacy track
+                  weak_hit:
+                    text: |-
+                      On a __weak hit__, choose one.
+
+                        * Trade for services: Make one recovery move (not Sojourn) with an automatic strong hit
+                        * Trade for clout or solidarity: Mark 1 tick on your bonds legacy track
+                        * Trade for goods or coin: Mark 1 tick on your quests legacy track
+                  miss:
+                    text: |-
+                      On a __miss__, you make a bad deal; [Pay the Price](move:starforged/fate/pay_the_price).
           - text: |-
               As above, and on a match, you uncover a chance to obtain a unique (if a strong hit) or problematic (if a miss) resource or item. Envision the opportunity. If you secure it, mark 2 ticks on your quests legacy track.
-            # TODO: enhances new move
+            enhance_moves:
+              - roll_type: action_roll
+                enhances:
+                  - asset.ability.move:sundered_isles/path/peddler.0.peddle_your_wares
           - text: |-
               When you [Develop Your Relationship](move:starforged/connection/develop_your_relationship) with a connection through a mutually beneficial trade, mark progress twice on the relationship.
             enhance_moves:
@@ -471,12 +531,43 @@ assets:
         tags: { sundered_isles: { starforged_friendly: true } }
         abilities:
           - enabled: true
-            text: |-
+            text: &SeizeYourPrize |-
               When you seize a notable ship or treasure, roll +wits. On a strong hit, take both, or choose one twice. On a weak hit, choose one. On a miss, choose one, but this prize also brings an unexpected danger; [Pay the Price](move:starforged/fate/pay_the_price).
 
                 * Build your fortune: Mark 1 tick on your quests legacy track.
                 * Share the spoils: Mark 1 tick on your bonds legacy track.
-            # TODO: new move
+            moves:
+              seize_your_prize:
+                 type: move
+                 name: Seize Your Prize
+                 roll_type: action_roll
+                 trigger:
+                   conditions:
+                    - method: player_choice
+                      roll_options:
+                         - using: stat
+                           stat: wits
+                   text: When you seize a notable ship or treasure...
+                 text: *SeizeYourPrize
+                 outcomes:
+                   strong_hit:
+                     text: |-
+                      On a __strong hit__, take both, or choose one twice.
+
+                        * Build your fortune: Mark 1 tick on your quests legacy track.
+                        * Share the spoils: Mark 1 tick on your bonds legacy track.
+                   weak_hit:
+                     text: |-
+                      On a __weak hit__, choose one.
+
+                        * Build your fortune: Mark 1 tick on your quests legacy track.
+                        * Share the spoils: Mark 1 tick on your bonds legacy track.
+                   miss:
+                     text: |-
+                      On a __miss__, choose one, but this prize also brings an unexpected danger; [Pay the Price](move:starforged/fate/pay_the_price).
+
+                        * Build your fortune: Mark 1 tick on your quests legacy track.
+                        * Share the spoils: Mark 1 tick on your bonds legacy track.
           - text: |-
               When you [Set a Course](move:starforged/exploration/set_a_course) for familiar hunting grounds or to intercept a specific target, you may reroll your action die if its value is less than your ship’s integrity. When you [Face Danger](move:starforged/adventure/face_danger) by sailing an area in search of prey, add +1 and take +1 momentum on a hit.
             enhance_moves:
@@ -501,6 +592,7 @@ assets:
                 trigger:
                   conditions:
                     - text: you choose to spend 1 experience
+                      method: strong_hit
       pistoleer:
         name: Pistoleer
         type: asset
@@ -734,13 +826,37 @@ assets:
                 trigger:
                   conditions:
                     - text: When you make a move using charm, flattery, or seduction, or by navigating elite social circles
-          - text: |-
+          - text: &GrandEntrance |-
               When you first make an appearance at a social event, you may attempt a grand or memorable entrance. If you do, roll +heart. On a strong hit, mark 1 tick on your bonds legacy track and take +3 momentum. On a weak hit, take +2 momentum. On a miss, choose one and [Endure Stress](move:starforged/suffer/endure_stress) (-2).
 
                 * You spot an unwelcome rival, authority, or former beau.
                 * You commit an embarrassing faux pas.
                 * You are upstaged by another’s entrance.
-            # TODO: new move
+            moves:
+              make_a_grand_entrance:
+                type: move
+                name: Make a Grand Entrance
+                roll_type: action_roll
+                trigger:
+                  conditions:
+                    - method: player_choice
+                      roll_options:
+                        - using: stat
+                          stat: heart
+                  text: When you first make an appearance at a social event, and attempt a grand or memorable entrance...
+                text: *GrandEntrance
+                outcomes:
+                  strong_hit:
+                    text: On a __strong hit__, mark 1 tick on your bonds legacy track and take +3 momentum.
+                  weak_hit:
+                    text: On a __weak hit__, take +2 momentum.
+                  miss:
+                    text: |-
+                      On a __miss__, choose one and [Endure Stress](move:starforged/suffer/endure_stress) (-2).
+
+                        * You spot an unwelcome rival, authority, or former beau.
+                        * You commit an embarrassing faux pas.
+                        * You are upstaged by another’s entrance.
           - text: |-
               When you [Hearten](move:starforged/recover/hearten) while attending an exclusive social event, reroll any dice. On a strong hit, you and any allies in your company take +1 momentum.
             enhance_moves:
@@ -959,9 +1075,9 @@ assets:
             text: &BindWindsText |-
               When you bind the winds to your will, roll +edge. On a strong hit, the winds are fine; you and your allies take +2 momentum now, and add +1 when you make a move to navigate or maneuver. On a weak hit, the winds are fair; take +2 momentum. On a miss, the capricious winds are foul; you and your allies [Lose Momentum](move:starforged/suffer/lose_momentum) (-2), and face weather-related hazards as appropriate. No matter the outcome, the winds are fair after a few hours.
             moves:
-              bind_winds:
+              bind_the_winds:
                 type: move
-                name: Bind Winds
+                name: Bind the Winds
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -989,15 +1105,25 @@ assets:
                       No matter the outcome, the winds are fair after a few hours.
           - text: |-
               As above, and add +1 when you bind the winds.
-            # TODO: enhance asset move.
+            enhance_moves:
+              - roll_type: action_roll
+                enhances:
+                  - asset.ability.move:sundered_isles/path/windbinder.0.bind_the_winds
           - text: |-
               Once per situation, you may summon a mighty cyclone. Take an automatic miss as defined above, but also wreak havoc on your foes; mark progress on a related quest, or mark progress twice on an objective in a fight.
-            # TODO: enhance asset move.
+            enhance_moves:
+              - roll_type: action_roll
+                enhances:
+                  - asset.ability.move:sundered_isles/path/windbinder.0.bind_the_winds
+                trigger:
+                  conditions:
+                    - method: miss
+                      text: Once per situation, when you summon a mighty cyclone
         controls:
           winds:
             label: winds
             field_type: select_enhancement
-            # TODO: icon
+            # TODO: icons for fields
             choices:
               fine:
                 label: fine

@@ -10,7 +10,6 @@ ruleset: starforged
   authors:
     - name: Shawn Tomkin
 truths:
-  # TODO: devise a factions property. good case for making it an array, so that each suggested faction is its own string
   sundering:
     name: Sundering
     type: truth
