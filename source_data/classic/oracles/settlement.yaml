@@ -447,7 +447,7 @@ oracles:
         oracle_type: table_shared_rolls
         type: oracle_collection
         # template:
-        #   text: '{{text:oracle_rollable:classic/settlement/quick_name/prefix}}{{text:oracle_rollable:classic/settlement/quick_name/suffix}}'
+        #   text: '{{text>oracle_rollable:classic/settlement/quick_name/prefix}}{{text>oracle_rollable:classic/settlement/quick_name/suffix}}'
         _source: &CollectionSource
           <<: *Source
           page: 180

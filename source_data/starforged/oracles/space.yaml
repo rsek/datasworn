@@ -218,7 +218,7 @@ oracles:
         oracle_type: table_shared_rolls
         type: oracle_collection
         # template:
-        #   text: '{{text:oracle_rollable:starforged/space/sector_name/prefix}} {{text:oracle_rollable:starforged/space/sector_name/suffix}}'
+        #   text: '{{text>oracle_rollable:starforged/space/sector_name/prefix}} {{text>oracle_rollable:starforged/space/sector_name/suffix}}'
         contents:
           prefix:
             name: Prefix

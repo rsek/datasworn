@@ -751,22 +751,22 @@ oracles:
                 roll: { min: 1, max: 40 }
                 text: '[Legacy](oracle_rollable:starforged/factions/name/legacy) [Affiliation](oracle_rollable:starforged/factions/name/affiliation)'
                 template:
-                  text: '{{text:oracle_rollable:starforged/factions/name/legacy}} {{text:oracle_rollable:starforged/factions/name/affiliation}}'
+                  text: '{{text>oracle_rollable:starforged/factions/name/legacy}} {{text>oracle_rollable:starforged/factions/name/affiliation}}'
               - <<: *i18n.template.result.proper_noun
                 roll: { min: 41, max: 55 }
                 text: '[Legacy](oracle_rollable:starforged/factions/name/legacy) [Identity](oracle_rollable:starforged/factions/name/identity)'
                 template:
-                  text: '{{text:oracle_rollable:starforged/factions/name/legacy}} {{text:oracle_rollable:starforged/factions/name/identity}}'
+                  text: '{{text>oracle_rollable:starforged/factions/name/legacy}} {{text>oracle_rollable:starforged/factions/name/identity}}'
               - <<: *i18n.template.result.proper_noun
                 roll: { min: 56, max: 70 }
                 text: '[Identity](oracle_rollable:starforged/factions/name/identity) *of the* [Legacy](oracle_rollable:starforged/factions/name/legacy) [Affiliation](oracle_rollable:starforged/factions/name/affiliation)'
                 template:
-                  text: '{{text:oracle_rollable:starforged/factions/name/identity}} of the {{text:oracle_rollable:starforged/factions/name/legacy}} {{text:oracle_rollable:starforged/factions/name/affiliation}}'
+                  text: '{{text>oracle_rollable:starforged/factions/name/identity}} of the {{text>oracle_rollable:starforged/factions/name/legacy}} {{text>oracle_rollable:starforged/factions/name/affiliation}}'
               - <<: *i18n.template.result.proper_noun
                 roll: { min: 71, max: 100 }
                 text: '[Affiliation](oracle_rollable:starforged/factions/name/affiliation) *of the* [Legacy](oracle_rollable:starforged/factions/name/legacy) [Identity](oracle_rollable:starforged/factions/name/identity)'
                 template:
-                  text: '{{text:oracle_rollable:starforged/factions/name/affiliation}} of the {{text:oracle_rollable:starforged/factions/name/legacy}} {{text:oracle_rollable:starforged/factions/name/identity}}'
+                  text: '{{text>oracle_rollable:starforged/factions/name/affiliation}} of the {{text>oracle_rollable:starforged/factions/name/legacy}} {{text>oracle_rollable:starforged/factions/name/identity}}'
           legacy:
             name: Legacy
             _source: *CollectionSource

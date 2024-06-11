@@ -46,7 +46,7 @@ oracles:
             roll: { min: 1, max: 25 }
             text: '[Description](oracle_rollable:delve/site_name/description) [Place](oracle_rollable:delve/site_name/place)'
             template:
-              text: '{{text:oracle_rollable:delve/site_name/description}} {{text:oracle_rollable:delve/site_name/place}}'
+              text: '{{text>oracle_rollable:delve/site_name/description}} {{text>oracle_rollable:delve/site_name/place}}'
             oracle_rolls:
               - oracle: oracle_rollable:delve/site_name/description
               - oracle: oracle_rollable:delve/site_name/place
@@ -54,7 +54,7 @@ oracles:
             roll: { min: 26, max: 50 }
             text: '[Place](oracle_rollable:delve/site_name/place) of [Detail](oracle_rollable:delve/site_name/detail)'
             template:
-              text: '{{text:oracle_rollable:delve/site_name/place}} of {{text:oracle_rollable:delve/site_name/detail}}'
+              text: '{{text>oracle_rollable:delve/site_name/place}} of {{text>oracle_rollable:delve/site_name/detail}}'
             oracle_rolls:
               - oracle: oracle_rollable:delve/site_name/place
               - oracle: oracle_rollable:delve/site_name/detail
@@ -62,7 +62,7 @@ oracles:
             roll: { min: 51, max: 70 }
             text: '[Place](oracle_rollable:delve/site_name/place) of [Description](oracle_rollable:delve/site_name/description) [Detail](oracle_rollable:delve/site_name/detail)'
             template:
-              text: '{{text:oracle_rollable:delve/site_name/place}} of {{text:oracle_rollable:delve/site_name/description}} {{text:oracle_rollable:delve/site_name/detail}}'
+              text: '{{text>oracle_rollable:delve/site_name/place}} of {{text>oracle_rollable:delve/site_name/description}} {{text>oracle_rollable:delve/site_name/detail}}'
             oracle_rolls:
               - oracle: oracle_rollable:delve/site_name/place
               - oracle: oracle_rollable:delve/site_name/description
@@ -71,7 +71,7 @@ oracles:
             roll: { min: 71, max: 80 }
             text: "[Place](oracle_rollable:delve/site_name/place) of [Namesake's](oracle_rollable:delve/site_name/namesake) [Detail](oracle_rollable:delve/site_name/detail)"
             template:
-              text: "{{text:oracle_rollable:delve/site_name/place}} of {{text:oracle_rollable:delve/site_name/namesake}}'s {{text:oracle_rollable:delve/site_name/detail}}"
+              text: "{{text>oracle_rollable:delve/site_name/place}} of {{text>oracle_rollable:delve/site_name/namesake}}'s {{text>oracle_rollable:delve/site_name/detail}}"
             oracle_rolls:
               - oracle: oracle_rollable:delve/site_name/place
               - oracle: oracle_rollable:delve/site_name/namesake
@@ -80,7 +80,7 @@ oracles:
             roll: { min: 81, max: 85 }
             text: "[Namesake's](oracle_rollable:delve/site_name/namesake) [Place](oracle_rollable:delve/site_name/place)"
             template:
-              text: "{{text:oracle_rollable:delve/site_name/namesake}}'s {{text:oracle_rollable:delve/site_name/place}}"
+              text: "{{text>oracle_rollable:delve/site_name/namesake}}'s {{text>oracle_rollable:delve/site_name/place}}"
             oracle_rolls:
               - oracle: oracle_rollable:delve/site_name/namesake
               - oracle: oracle_rollable:delve/site_name/place
@@ -88,7 +88,7 @@ oracles:
             roll: { min: 86, max: 95 }
             text: '[Description](oracle_rollable:delve/site_name/description) [Place](oracle_rollable:delve/site_name/place) of [Namesake](oracle_rollable:delve/site_name/namesake)'
             template:
-              text: '{{text:oracle_rollable:delve/site_name/description}} {{text:oracle_rollable:delve/site_name/place}} of {{text:oracle_rollable:delve/site_name/namesake}}'
+              text: '{{text>oracle_rollable:delve/site_name/description}} {{text>oracle_rollable:delve/site_name/place}} of {{text>oracle_rollable:delve/site_name/namesake}}'
             oracle_rolls:
               - oracle: oracle_rollable:delve/site_name/description
               - oracle: oracle_rollable:delve/site_name/place
@@ -97,7 +97,7 @@ oracles:
             roll: { min: 96, max: 100 }
             text: '[Place](oracle_rollable:delve/site_name/place) of [Namesake](oracle_rollable:delve/site_name/namesake)'
             template:
-              text: '{{text:oracle_rollable:delve/site_name/place}} of {{text:oracle_rollable:delve/site_name/namesake}}'
+              text: '{{text>oracle_rollable:delve/site_name/place}} of {{text>oracle_rollable:delve/site_name/namesake}}'
             oracle_rolls:
               - oracle: oracle_rollable:delve/site_name/place
               - oracle: oracle_rollable:delve/site_name/namesake
