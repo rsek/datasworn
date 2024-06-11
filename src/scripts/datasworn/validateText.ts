@@ -1,10 +1,10 @@
 import Pattern from '../../pkg-core/IdElements/Pattern.js'
 
-const typePattern = '[a-z][a-z_](?:.[a-z][a-z_]){0,2}+'
+const typeIdPattern = '[a-z][a-z_](?:.[a-z][a-z_]){0,2}+'
 const dictKeyOrIndexPattern = `[\\/\\.][a-z_0-9]+`
 const pathPattern = `${Pattern.RulesPackageElement.source}(?:${dictKeyOrIndexPattern})+?`
 
-const idPattern = `(?<type>${typePattern}):(?<path>${pathPattern})`
+const idPattern = `(?<typeId>${typeIdPattern}):(?<path>${pathPattern})`
 
 const idPointerPattern = new RegExp(`^${idPattern}$`)
 
@@ -93,21 +93,12 @@ export function validateMarkdownIdPointers(
 
 	for (const link of links) {
 		if (link.groups == null) continue
-		const { type, path } = link.groups
+		const { id } = link.groups
 
-		// ids.push(path)
-
-		switch (type) {
-			case 'id':
-				try {
-					validateIdPointer(path, validIds)
-				} catch (e) {
-					errors.push(e)
-				}
-				break
-
-			default:
-				errors.push(`Unknown Datasworn link type: ${link[0]}`)
+		try {
+			validateIdPointer(id, validIds)
+		} catch (e) {
+			errors.push(e)
 		}
 	}
 
