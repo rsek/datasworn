@@ -38,8 +38,9 @@ truths:
           An explorer brings news. They’ve located what they say is a nexus of chaotic energy. If it could be deactivated, the isles might find some measure of peace. Which power or foe seeks to harness this power to their own ends?
     your_character: |-
       If you are all that remains of a pre-Sundering people, culture, or tradition, you might be a [Vestige](asset:starforged/path/vestige). If the echoes of the cataclysm have left you with unnatural powers, you might be a [Sorcerer](asset:sundered_isles/path/sorcerer). If you embody the legacy of a deep-dwelling people, you might be [Waterborn](asset:sundered_isles/path/waterborn).
-    # factions: |-
-    #   A seafaring tribe seeks to locate and unite scattered people displaced during the Sundering. An order of sorcerers exploits the chaotic forces that caused the cataclysm.
+    factions:
+      - text: A seafaring tribe seeks to locate and unite scattered people displaced during the Sundering.
+      - text: An order of sorcerers exploits the chaotic forces that caused the cataclysm.
   relics:
     name: Relics
     type: truth
@@ -67,8 +68,10 @@ truths:
           Dozens of ancient towers have flared to life, sending up beacons of light visible from leagues away. These lodestars form a marked path that stretches well beyond the far horizon. Why do you set out to see where this path leads?
     your_character: |-
       If you are dedicated to searching out mysteries or preserving the legacy of lost relics, you might be a [Scholar](asset:sundered_isles/path/scholar). If you deal in recovered or stolen relics, you might be a [Peddler](asset:sundered_isles/path/peddler). If you delve wrecks and ruins to gather resources or riches, you might be a [Scavenger](asset:starforged/path/scavenger).
-    # factions: |-
-    #   A society of researchers and archaeologists works to understand lost people and relics. A sacred order of caretakers protects age-old sites from trespassers and grave robbers. An underground ring of fortune seekers supplies a black market trade of stolen treasures.
+    factions:
+      - text: A society of researchers and archaeologists works to understand lost people and relics.
+      - text: A sacred order of caretakers protects age-old sites from trespassers and grave robbers.
+      - text: An underground ring of fortune seekers supplies a black market trade of stolen treasures.
   modern_era:
     name: Modern Era
     type: truth
@@ -96,8 +99,11 @@ truths:
           An enemy faction is building a colossal machine of fantastic destructive potential. What is the nature of this machine, and why are you sworn to see it destroyed?
     your_character: |-
       If you hew to the traditions of shipbuilding and repair, you might be a [Shipwright](asset:sundered_isles/path/shipwright). If you understand the intricacies of machines, you might be a [Gearhead](asset:starforged/path/gearhead). If you are fitted with a mechanical enhancement, you might be [Augmented](asset:starforged/path/augmented). If you are forged by ancient secrets or newfound technologies, you might be a [Construct](asset:sundered_isles/path/construct).
-    # factions: |-
-    #   A shipwright’s guild honors and develops the age-old craft of shipbuilding. An industrialized trade company is ever-hungrier for raw materials. An order of artificers crafts extraordinary machines. A fellowship of outcast automatons must find their way in a world that largely sees them as tools or abominations.
+    factions:
+      - text: A shipwright’s guild honors and develops the age-old craft of shipbuilding.
+      - text: An industrialized trade company is ever-hungrier for raw materials.
+      - text: An order of artificers crafts extraordinary machines.
+      - text: A fellowship of outcast automatons must find their way in a world that largely sees them as tools or abominations.
   iron_vows:
     name: Iron Vows
     type: truth
@@ -125,8 +131,9 @@ truths:
           A merciless and powerful raider wears the bondstones of their victims as trophies. One of those totems is rightfully yours. To whom did it previously belong?
     your_character: |-
       If you are sworn to a cause, you might be [Bannersworn](asset:starforged/path/bannersworn). If you carry an honorbound blade, you might be a [Blademaster](asset:starforged/path/blademaster). If you fight for personal honor, you might be a [Duelist](asset:sundered_isles/path/duelist). If your vows are shared with those in your charge, you might be a [Crew Commander](asset:sundered_isles/path/crew_commander).
-    # factions: |-
-    #   An order of Ironsworn wardens is dedicated to protecting the people of the isles. A band of iron privateers sells their vows—and their loyalty—to the highest bidder.
+    factions:
+      - text: An order of Ironsworn wardens is dedicated to protecting the people of the isles.
+      - text: A band of iron privateers sells their vows—and their loyalty—to the highest bidder.
   navigation:
     name: Navigation
     type: truth
@@ -156,8 +163,9 @@ truths:
     your_character: |-
       If you are skilled at finding your way among the isles, you might be a [Navigator](asset:starforged/path/navigator). If you trailblaze inland paths, you might be an [Overlander](asset:sundered_isles/path/overlander). If you carry precious items on your expeditions, you might be a [Courier](asset:starforged/path/courier). If you wield mystical powers over the wind to see a ship safely on its way, you might be a [Windbinder](asset:sundered_isles/path/windbinder).
 
-    # factions: |-
-    #   A guild of navigators collects and safeguards charts of the isles. A coven of sea witches guides ships through cursed waters.
+    factions:
+      - text: A guild of navigators collects and safeguards charts of the isles.
+      - text: A coven of sea witches guides ships through cursed waters.
   empires:
     name: Empires
     type: truth
@@ -185,8 +193,10 @@ truths:
           A valuable prisoner is held in an imperial fortress. Who is this person, and why are they the best hope for rebellion?
     your_character: |-
       If you resolve disputes and secure anti-imperial alliances, you might be a [Diplomat](asset:starforged/path/diplomat). If you battle empires with blades and daring, you might be a [Swashbuckler](asset:sundered_isles/path/swashbuckler). If you work in the shadows, you might be a [Spy](asset:sundered_isles/path/spy). If you navigate court intrigues, you might be a [Socialite](asset:sundered_isles/path/socialite). If you are on the run from imperial forces, you might be a [Fugitive](asset:starforged/path/fugitive).
-    # factions: |-
-    #   A tyrannical empire seeks to expand its domain. A secret network of insurgents fights an empire from within. A rebel alliance fans the flames of freedom.
+    factions:
+      - text: A tyrannical empire seeks to expand its domain.
+      - text: A secret network of insurgents fights an empire from within.
+      - text: A rebel alliance fans the flames of freedom.
   piracy:
     name: Piracy
     type: truth
@@ -214,8 +224,10 @@ truths:
           There are schisms within the Dread Court. An assassination has tipped the latest gathering into chaos and threatens the future of this burgeoning power. Will you work to restore the alliance, or use the mayhem to your own advantage?
     your_character: |-
       If you hunt marauding pirates, you might be a [Bounty Hunter](asset:starforged/path/bounty_hunter). If you serve among a band of pirates, you might be a [Cutthroat](asset:sundered_isles/path/cutthroat). If you are a young greenhorn or stowaway among a pirate crew, you might be an [Urchin](asset:sundered_isles/path/urchin). If you stand in command of a pirate ship, you might be a [Pirate Captain](asset:sundered_isles/path/pirate_captain).
-    # factions: |-
-    #   An alliance of pirates unites against a common enemy. A guild of pirate hunters collects bounties on wanted marauders. An imperial navy seeks to scour the seas of pirates and other enemies.
+    factions:
+      - text: An alliance of pirates unites against a common enemy.
+      - text: A guild of pirate hunters collects bounties on wanted marauders.
+      - text: An imperial navy seeks to scour the seas of pirates and other enemies.
   religion:
     name: Religion
     type: truth
@@ -243,8 +255,11 @@ truths:
           A cult seeks to take control of a site reputed to hold an artifact of the fallen gods. What holy object do they seek? Why are you sworn to stop them?
     your_character: |-
       If you are an ardent follower of a religion or creed, you might be a [Devotant](asset:starforged/path/devotant). If you follow a prophesied path, you might be [Fated](asset:starforged/path/fated). If you are cursed by the gods with foul luck, you might be a [Jinx](asset:sundered_isles/path/jinx).
-    # factions: |-
-    #   A tribe of nature-worshipers is sworn to protect the Isles against despoilers. An order of zealous inquisitors hunts dissenters and heretics. A theocratic empire forces its oppressive beliefs upon others. An eldritch cult seeks to resurrect or awaken an ancient entity.
+    factions:
+      - text: A tribe of nature-worshipers is sworn to protect the Isles against despoilers.
+      - text: An order of zealous inquisitors hunts dissenters and heretics.
+      - text: A theocratic empire forces its oppressive beliefs upon others.
+      - text: An eldritch cult seeks to resurrect or awaken an ancient entity.
   magic:
     name: Magic
     type: truth
@@ -272,8 +287,10 @@ truths:
           Someone you love is corrupted by cursed powers, and is set on a destructive course of vengeance. What caused their fall? Do you seek to save them or defeat them?
     your_character: |-
       If you posses supernatural powers, you might be an [Empath](asset:starforged/path/empath), [Kinetic](asset:starforged/path/kinetic), [Necromancer](asset:sundered_isles/path/necromancer), [Seer](asset:starforged/path/seer), [Shade](asset:starforged/path/shade), [Sorcerer](asset:sundered_isles/path/sorcerer), or [Windbinder](asset:sundered_isles/path/windbinder). If your unnatural abilities have made you a pariah, you might be an [Outcast](asset:starforged/path/outcast).
-    # factions: |-
-    #   A circle of mystics protects ancient secrets and trains promising initiates. A sorcerous imperial guard uses its uncanny abilities to hunt down enemies of the empire. An order of witch hunters persecutes those with magical talents.
+    factions:
+      - text: A circle of mystics protects ancient secrets and trains promising initiates.
+      - text: A sorcerous imperial guard uses its uncanny abilities to hunt down enemies of the empire.
+      - text: An order of witch hunters persecutes those with magical talents.
   beasts:
     name: Beasts
     type: truth
@@ -301,8 +318,10 @@ truths:
           Tales tell of the means of forming a bond with the mightiest of the world’s beasts, the Kraken. Many have undertaken this quest, but none have succeeded. What must you accomplish to gain an accord with the Kraken, and why would you face this trial?
     your_character: |-
       If you are skilled at battling beasts, you might be a [Slayer](asset:starforged/path/slayer) or [Harpooner](asset:sundered_isles/path/harpooner). If you are bound to a beast, you might ride a [Dragon](asset:sundered_isles/companion/dragon) or summon [The Kraken](asset:sundered_isles/companion/kraken). If you transform into a beastly form, you might be a [Shapechanger](asset:sundered_isles/path/shapechanger).
-    # factions: |-
-    #   An order of beast slayers defends ships and settlements from beast attacks. A beast-hunting trade company deals in trophies and resources gathered from slain creatures. A clan of beast-bonded folk protects their sacred companions.
+    factions:
+      - text: An order of beast slayers defends ships and settlements from beast attacks.
+      - text: A beast-hunting trade company deals in trophies and resources gathered from slain creatures.
+      - text: A clan of beast-bonded folk protects their sacred companions.
   horrors:
     name: Horrors
     type: truth
@@ -330,5 +349,7 @@ truths:
           For generations, an infamous ghost fleet has haunted these seas, sending countless mariners to their doom. Why do you now seek to form an alliance with the cursed commander of this fleet?
     your_character: |-
       If you are plagued by a ghost, you might be [Haunted](asset:starforged/path/haunted). If you dedicate yourself to battling undead or monstrous forces, you might be a [Slayer](asset:starforged/path/slayer). If you have unnatural powers over death, you might be a [Necromancer](asset:sundered_isles/path/necromancer).
-    # factions: |-
-    #   An order of ghost-hunting occultists is sworn to vanquish the woken dead. The vampire clans sail the islands in their dreaded nightships, preying upon ships and settlements. A cabal of necromancers commands an undead fleet.
+    factions:
+      - text: An order of ghost-hunting occultists is sworn to vanquish the woken dead.
+      - text: The vampire clans sail the islands in their dreaded nightships, preying upon ships and settlements.
+      - text: A cabal of necromancers commands an undead fleet.

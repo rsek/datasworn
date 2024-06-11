@@ -3018,6 +3018,18 @@
 				}
 			}
 		},
+		"EntityPrompt": {
+			"title": "EntityPrompt",
+			"type": "object",
+			"description": "This type is a placeholder and may see signficant changes in v0.2.0.",
+			"releaseStage": "experimental",
+			"required": ["text"],
+			"properties": {
+				"text": {
+					"$ref": "#/definitions/MarkdownString"
+				}
+			}
+		},
 		"EmbeddedOracleColumnText": {
 			"title": "EmbeddedOracleColumnText",
 			"type": "object",
@@ -8067,6 +8079,14 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"factions": {
+					"type": "array",
+					"description": "Prompts for factions related to this truth, like those presented in standard isles. This is presented as a single paragraph in the original text; Datasworn uses an array (one faction prompt per string) to represent them in order to make them more suitable for programmatic use.\n\nThis property is a placeholder and may see signficant changes in v0.2.0.",
+					"releaseStage": "experimental",
+					"items": {
+						"$ref": "#/definitions/EntityPrompt"
+					}
 				}
 			}
 		},

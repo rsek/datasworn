@@ -1,24 +1,11 @@
 import { Type, type Static } from '@sinclair/typebox'
-import { Id, Localize, Metadata } from './common/index.js'
 import * as Generic from './Generic.js'
-import * as TableRow from './oracles/TableRow.js'
-import { DiceExpression } from './common/Rolls.js'
-import { OracleTableText } from './index.js'
-import { DiceRange } from './common/Range.js'
 import { Computed, Discriminable } from './Utils.js'
-import { mapKeys } from 'lodash-es'
-import { pascalCase } from './utils/string.js'
-import type { PascalCase } from 'type-fest'
+import { DiceRange } from './common/Range.js'
+import { DiceExpression } from './common/Rolls.js'
+import { Id, Localize, Metadata } from './common/index.js'
 import { EmbeddedOracleRollable } from './oracles/EmbeddedOracleRollable.js'
-
-// export const TruthOptionTableRow = Type.Omit(
-// 	TableRow.OracleTableRowText,
-// 	['_id'],
-// 	{
-// 		$id: 'TruthOptionTableRow'
-// 	}
-// )
-// export type TruthOptionTableRow = Static<typeof TruthOptionTableRow>
+import { EntityPrompt } from './entities/EntityPrompt.js'
 
 export type TruthOption = Static<typeof TruthOption>
 
@@ -51,7 +38,14 @@ export const Truth = Discriminable(
 			icon: Type.Optional(Type.Ref(Metadata.SvgImageUrl)),
 			summary: Type.Optional(Type.Ref(Localize.MarkdownString)),
 			options: Type.Array(Type.Ref(TruthOption), { rollable: true }),
-			your_character: Type.Optional(Type.Ref(Localize.MarkdownString))
+			your_character: Type.Optional(Type.Ref(Localize.MarkdownString)),
+			factions: Type.Optional(
+				Type.Array(Type.Ref(EntityPrompt), {
+					description:
+						'Prompts for factions related to this truth, like those presented in standard isles. This is presented as a single paragraph in the original text; Datasworn uses an array (one faction prompt per string) to represent them in order to make them more suitable for programmatic use.\n\nThis property is a placeholder and may see signficant changes in v0.2.0.',
+					releaseStage: 'experimental'
+				})
+			)
 		})
 	),
 	'type',

@@ -8,6 +8,7 @@ import * as Oracles from './Oracles.js'
 import * as Rarities from './Rarities.js'
 import * as Rules from './Rules.js'
 import * as Truths from './Truths.js'
+import * as Entities from './Entities.js'
 import { RulesPackage, Ruleset, Expansion } from './RulesPackages.js'
 import {
 	Id,
@@ -62,6 +63,7 @@ const defsBase = pickBy(
 		...Npcs,
 		...Rolls,
 		DiceRange,
+		...Entities,
 		...Oracles,
 		...Moves,
 		...Assets,
