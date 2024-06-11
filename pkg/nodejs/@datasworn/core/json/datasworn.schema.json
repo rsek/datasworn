@@ -364,100 +364,30 @@
 			},
 			"additionalProperties": true
 		},
-		"AssetAbilityId": {
-			"title": "AssetAbilityId",
+		"RulesetId": {
+			"title": "RulesetId",
 			"type": "string",
-			"description": "A unique ID for an AssetAbility.",
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/asset\\/[a-z][a-z_]*\\/[a-z][a-z_]*\\.abilities\\/\\d+$"
+			"description": "The ID of standalone Datasworn package that describes its own ruleset.",
+			"examples": ["classic", "starforged"],
+			"pattern": "^[a-z][a-z0-9_]{3,}$"
 		},
-		"AssetCollectionId": {
-			"title": "AssetCollectionId",
+		"ExpansionId": {
+			"title": "ExpansionId",
 			"type": "string",
-			"description": "A unique ID for an AssetCollection.",
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/asset_collection\\/[a-z][a-z_]*$"
+			"description": "The ID of a Datasworn package that relies on an external package to provide its ruleset.",
+			"examples": ["delve", "sundered_isles"],
+			"pattern": "^[a-z][a-z0-9_]{3,}$"
 		},
-		"AssetCollectionIdWildcard": {
-			"title": "AssetCollectionIdWildcard",
-			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple AssetCollections.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/asset_collection\\/(\\*|[a-z][a-z_]*)$"
-		},
-		"AssetId": {
-			"title": "AssetId",
-			"type": "string",
-			"description": "A unique ID for an Asset.",
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/asset\\/[a-z][a-z_]*\\/[a-z][a-z_]*$"
-		},
-		"AssetIdWildcard": {
-			"title": "AssetIdWildcard",
-			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple Assets.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/asset\\/(\\*|[a-z][a-z_]*)\\/(\\*|[a-z][a-z_]*)$"
-		},
-		"AtlasCollectionId": {
-			"title": "AtlasCollectionId",
-			"type": "string",
-			"description": "A unique ID for an AtlasCollection.",
-			"examples": ["classic/atlas_collection/ironlands"],
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/atlas_entry\\/[a-z][a-z_]*$"
-		},
-		"AtlasCollectionIdWildcard": {
-			"title": "AtlasCollectionIdWildcard",
-			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple AtlasCollections.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/atlas_entry\\/(\\*|[a-z][a-z_]*)$"
-		},
-		"AtlasEntryId": {
-			"title": "AtlasEntryId",
-			"type": "string",
-			"description": "A unique ID for an AtlasEntry.",
-			"examples": ["classic/atlas_entry/ironlands/hinterlands"],
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/atlas_entry(\\/[a-z][a-z_]*){1,3}\\/[a-z][a-z_]*$"
-		},
-		"AtlasEntryIdWildcard": {
-			"title": "AtlasEntryIdWildcard",
-			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple AtlasEntrys.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/atlas_entry((\\/[a-z][a-z_]*){1,3}|\\/\\*\\*|\\/\\*\\*\\/[a-z][a-z_]*|\\/[a-z][a-z_]*\\/\\*\\*)\\/(\\*|[a-z][a-z_]*)$"
-		},
-		"DelveSiteDomainId": {
-			"title": "DelveSiteDomainId",
-			"type": "string",
-			"description": "A unique ID for a DelveSiteDomain.",
-			"examples": ["delve/delve_site_domain/shadowfen"],
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/delve_site_domain\\/[a-z][a-z_]*$"
-		},
-		"DelveSiteDomainIdWildcard": {
-			"title": "DelveSiteDomainIdWildcard",
-			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple DelveSiteDomains.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/delve_site_domain\\/(\\*|[a-z][a-z_]*)$"
-		},
-		"DelveSiteId": {
-			"title": "DelveSiteId",
-			"type": "string",
-			"description": "A unique ID for a DelveSite.",
-			"examples": ["delve/delve_site/alvas_rest"],
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/delve_site\\/[a-z][a-z_]*$"
-		},
-		"DelveSiteIdWildcard": {
-			"title": "DelveSiteIdWildcard",
-			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple DelveSites.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/delve_site\\/(\\*|[a-z][a-z_]*)$"
-		},
-		"DelveSiteThemeId": {
-			"title": "DelveSiteThemeId",
-			"type": "string",
-			"description": "A unique ID for a DelveSiteTheme.",
-			"examples": ["delve/delve_site_theme/hallowed"],
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/delve_site_theme\\/[a-z][a-z_]*$"
-		},
-		"DelveSiteThemeIdWildcard": {
-			"title": "DelveSiteThemeIdWildcard",
-			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple DelveSiteThemes.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/delve_site_theme\\/(\\*|[a-z][a-z_]*)$"
+		"RulesPackageId": {
+			"title": "RulesPackageId",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/RulesetId"
+				},
+				{
+					"$ref": "#/definitions/ExpansionId"
+				}
+			]
 		},
 		"DictKey": {
 			"title": "DictKey",
@@ -466,173 +396,475 @@
 			"remarks": "If you need to generate a key from a user-provided label, it's recommended to use a 'slugify' function/library, e.g. https://www.npmjs.com/package/slugify for NodeJS.",
 			"pattern": "^[a-z][a-z_]*$"
 		},
-		"ExpansionId": {
-			"title": "ExpansionId",
+		"AssetId": {
+			"title": "AssetId",
 			"type": "string",
-			"description": "The ID of a Datasworn package that relies on an external package to provide its ruleset.",
-			"examples": ["delve"],
-			"pattern": "^[a-z][a-z0-9_]{3,}$"
+			"description": "A unique ID representing an Asset object.",
+			"pattern": "^asset:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})$"
+		},
+		"AssetIdWildcard": {
+			"title": "AssetIdWildcard",
+			"type": "string",
+			"description": "A wildcarded AssetId that can be used to match multiple Asset objects.",
+			"pattern": "^asset:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})$"
+		},
+		"AssetCollectionId": {
+			"title": "AssetCollectionId",
+			"type": "string",
+			"description": "A unique ID representing an AssetCollection object.",
+			"pattern": "^asset_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,3})$"
+		},
+		"AssetCollectionIdWildcard": {
+			"title": "AssetCollectionIdWildcard",
+			"type": "string",
+			"description": "A wildcarded AssetCollectionId that can be used to match multiple AssetCollection objects.",
+			"pattern": "^asset_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,3})$"
+		},
+		"AssetAbilityId": {
+			"title": "AssetAbilityId",
+			"type": "string",
+			"description": "A unique ID representing an AssetAbility object.",
+			"pattern": "^asset\\.ability:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})\\.(\\d+)$"
+		},
+		"AssetAbilityIdWildcard": {
+			"title": "AssetAbilityIdWildcard",
+			"type": "string",
+			"description": "A wildcarded AssetAbilityId that can be used to match multiple AssetAbility objects.",
+			"pattern": "^asset\\.ability:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})\\.(\\d+|\\*)$"
+		},
+		"AssetAbilityMoveId": {
+			"title": "AssetAbilityMoveId",
+			"type": "string",
+			"description": "A unique ID representing an AssetAbilityMove object.",
+			"pattern": "^asset\\.ability\\.move:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
+		},
+		"AssetAbilityMoveIdWildcard": {
+			"title": "AssetAbilityMoveIdWildcard",
+			"type": "string",
+			"description": "A wildcarded AssetAbilityMoveId that can be used to match multiple AssetAbilityMove objects.",
+			"pattern": "^asset\\.ability\\.move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
+		},
+		"AssetAbilityOracleRollableId": {
+			"title": "AssetAbilityOracleRollableId",
+			"type": "string",
+			"description": "A unique ID representing an AssetAbilityOracleRollable object.",
+			"pattern": "^asset\\.ability\\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
+		},
+		"AssetAbilityOracleRollableIdWildcard": {
+			"title": "AssetAbilityOracleRollableIdWildcard",
+			"type": "string",
+			"description": "A wildcarded AssetAbilityOracleRollableId that can be used to match multiple AssetAbilityOracleRollable objects.",
+			"pattern": "^asset\\.ability\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
+		},
+		"AtlasCollectionId": {
+			"title": "AtlasCollectionId",
+			"type": "string",
+			"description": "A unique ID representing an AtlasCollection object.",
+			"pattern": "^atlas_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,3})$"
+		},
+		"AtlasCollectionIdWildcard": {
+			"title": "AtlasCollectionIdWildcard",
+			"type": "string",
+			"description": "A wildcarded AtlasCollectionId that can be used to match multiple AtlasCollection objects.",
+			"pattern": "^atlas_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,3})$"
+		},
+		"AtlasEntryId": {
+			"title": "AtlasEntryId",
+			"type": "string",
+			"description": "A unique ID representing an AtlasEntry object.",
+			"pattern": "^atlas_entry:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})$"
+		},
+		"AtlasEntryIdWildcard": {
+			"title": "AtlasEntryIdWildcard",
+			"type": "string",
+			"description": "A wildcarded AtlasEntryId that can be used to match multiple AtlasEntry objects.",
+			"pattern": "^atlas_entry:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})$"
+		},
+		"DelveSiteId": {
+			"title": "DelveSiteId",
+			"type": "string",
+			"description": "A unique ID representing a DelveSite object.",
+			"pattern": "^delve_site:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
+		},
+		"DelveSiteIdWildcard": {
+			"title": "DelveSiteIdWildcard",
+			"type": "string",
+			"description": "A wildcarded DelveSiteId that can be used to match multiple DelveSite objects.",
+			"pattern": "^delve_site:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
+		},
+		"DelveSiteDomainId": {
+			"title": "DelveSiteDomainId",
+			"type": "string",
+			"description": "A unique ID representing a DelveSiteDomain object.",
+			"pattern": "^delve_site_domain:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
+		},
+		"DelveSiteDomainIdWildcard": {
+			"title": "DelveSiteDomainIdWildcard",
+			"type": "string",
+			"description": "A wildcarded DelveSiteDomainId that can be used to match multiple DelveSiteDomain objects.",
+			"pattern": "^delve_site_domain:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
+		},
+		"DelveSiteThemeId": {
+			"title": "DelveSiteThemeId",
+			"type": "string",
+			"description": "A unique ID representing a DelveSiteTheme object.",
+			"pattern": "^delve_site_theme:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
+		},
+		"DelveSiteThemeIdWildcard": {
+			"title": "DelveSiteThemeIdWildcard",
+			"type": "string",
+			"description": "A wildcarded DelveSiteThemeId that can be used to match multiple DelveSiteTheme objects.",
+			"pattern": "^delve_site_theme:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
+		},
+		"MoveId": {
+			"title": "MoveId",
+			"type": "string",
+			"description": "A unique ID representing a Move object.",
+			"pattern": "^move:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})$"
+		},
+		"MoveIdWildcard": {
+			"title": "MoveIdWildcard",
+			"type": "string",
+			"description": "A wildcarded MoveId that can be used to match multiple Move objects.",
+			"pattern": "^move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})$"
 		},
 		"MoveCategoryId": {
 			"title": "MoveCategoryId",
 			"type": "string",
-			"description": "A unique ID for a MoveCategory.",
-			"examples": ["starforged/move_category/adventure"],
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/move_category\\/[a-z][a-z_]*$"
+			"description": "A unique ID representing a MoveCategory object.",
+			"pattern": "^move_category:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,3})$"
 		},
 		"MoveCategoryIdWildcard": {
 			"title": "MoveCategoryIdWildcard",
 			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple MoveCategorys.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/move_category\\/(\\*|[a-z][a-z_]*)$"
+			"description": "A wildcarded MoveCategoryId that can be used to match multiple MoveCategory objects.",
+			"pattern": "^move_category:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,3})$"
 		},
-		"MoveId": {
-			"title": "MoveId",
-			"description": "A move ID, for a standard move or a unique asset move",
-			"examples": [
-				"classic/move/combat/strike",
-				"starforged/asset/module/grappler.abilities/0.moves/ready_grappler"
-			],
-			"anyOf": [
-				{
-					"title": "StandardMoveId",
-					"type": "string",
-					"description": "A move ID for a standard move.",
-					"pattern": "^[a-z][a-z0-9_]{3,}\\/move\\/[a-z][a-z_]*\\/[a-z][a-z_]*$"
-				},
-				{
-					"title": "AssetMoveId",
-					"type": "string",
-					"description": "A move ID for an asset move.",
-					"pattern": "^([a-z][a-z0-9_]{3,})\\/asset\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\.abilities\\/(\\d+)\\.moves\\/([a-z][a-z_]*)$"
-				}
-			]
-		},
-		"MoveIdWildcard": {
-			"title": "MoveIdWildcard",
-			"description": "A move ID with wildcards.",
-			"examples": [
-				"*/move/*/face_danger",
-				"*/asset/ritual/*.abilities/*.moves/*"
-			],
-			"anyOf": [
-				{
-					"title": "StandardMoveId (with wildcard)",
-					"type": "string",
-					"description": "A wildcarded ID that can be used to match multiple StandardMoves.",
-					"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/move\\/(\\*|[a-z][a-z_]*)\\/(\\*|[a-z][a-z_]*)$"
-				},
-				{
-					"title": "AssetMoveIdWildcard",
-					"type": "string",
-					"description": "A move ID for an asset move.",
-					"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/asset\\/(\\*|[a-z][a-z_]*)\\/(\\*|[a-z][a-z_]*)\\.abilities\\/(\\*|\\d+)\\.moves\\/(\\*|[a-z][a-z_]*)$"
-				}
-			]
-		},
-		"NpcCollectionId": {
-			"title": "NpcCollectionId",
+		"MoveOracleRollableId": {
+			"title": "MoveOracleRollableId",
 			"type": "string",
-			"description": "A unique ID for a NpcCollection.",
-			"examples": [
-				"classic/npc_collection/firstborn",
-				"starforged/npc_collection/sample_npcs"
-			],
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/npc_collection\\/[a-z][a-z_]*$"
+			"description": "A unique ID representing a MoveOracleRollable object.",
+			"pattern": "^move\\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})\\.([a-z][a-z_]*|\\*)$"
 		},
-		"NpcCollectionIdWildcard": {
-			"title": "NpcCollectionIdWildcard",
+		"MoveOracleRollableIdWildcard": {
+			"title": "MoveOracleRollableIdWildcard",
 			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple NpcCollections.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/npc_collection\\/(\\*|[a-z][a-z_]*)$"
+			"description": "A wildcarded MoveOracleRollableId that can be used to match multiple MoveOracleRollable objects.",
+			"pattern": "^move\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})\\.([a-z][a-z_]*|\\*)$"
 		},
 		"NpcId": {
 			"title": "NpcId",
 			"type": "string",
-			"description": "A unique ID for a Npc.",
-			"examples": [
-				"classic/npc/firstborn/elf",
-				"starforged/npc/sample_npcs/chiton"
-			],
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/npc(\\/[a-z][a-z_]*){1,3}\\/[a-z][a-z_]*$"
+			"description": "A unique ID representing a Npc object.",
+			"pattern": "^npc:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})$"
 		},
 		"NpcIdWildcard": {
 			"title": "NpcIdWildcard",
 			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple Npcs.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/npc((\\/[a-z][a-z_]*){1,3}|\\/\\*\\*|\\/\\*\\*\\/[a-z][a-z_]*|\\/[a-z][a-z_]*\\/\\*\\*)\\/(\\*|[a-z][a-z_]*)$"
+			"description": "A wildcarded NpcId that can be used to match multiple Npc objects.",
+			"pattern": "^npc:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})$"
+		},
+		"NpcCollectionId": {
+			"title": "NpcCollectionId",
+			"type": "string",
+			"description": "A unique ID representing a NpcCollection object.",
+			"pattern": "^npc_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,3})$"
+		},
+		"NpcCollectionIdWildcard": {
+			"title": "NpcCollectionIdWildcard",
+			"type": "string",
+			"description": "A wildcarded NpcCollectionId that can be used to match multiple NpcCollection objects.",
+			"pattern": "^npc_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,3})$"
 		},
 		"OracleCollectionId": {
 			"title": "OracleCollectionId",
 			"type": "string",
-			"description": "A unique ID for an OracleCollection.",
-			"examples": [
-				"starforged/oracle_collection/core",
-				"starforged/oracle_collection/character/names",
-				"starforged/oracle_collection/planets/furnace/settlements"
-			],
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/oracle_collection(\\/[a-z][a-z_]*){1,3}$"
+			"description": "A unique ID representing an OracleCollection object.",
+			"pattern": "^oracle_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,3})$"
 		},
 		"OracleCollectionIdWildcard": {
 			"title": "OracleCollectionIdWildcard",
 			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple OracleCollections.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/oracle_collection((\\/[a-z][a-z_]*){1,3}|\\/\\*\\*|\\/\\*\\*\\/[a-z][a-z_]*|\\/[a-z][a-z_]*\\/\\*\\*)$"
+			"description": "A wildcarded OracleCollectionId that can be used to match multiple OracleCollection objects.",
+			"pattern": "^oracle_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,3})$"
 		},
 		"OracleRollableId": {
 			"title": "OracleRollableId",
 			"type": "string",
-			"description": "A unique ID for an OracleRollable.",
-			"examples": [
-				"starforged/oracle_rollable/core/action",
-				"starforged/oracle_rollable/character/names/given",
-				"starforged/oracle_rollable/planets/furnace/settlements/terminus"
-			],
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/oracle_rollable(\\/[a-z][a-z_]*){1,3}\\/[a-z][a-z_]*$"
+			"description": "A unique ID representing an OracleRollable object.",
+			"pattern": "^oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,4})$"
 		},
 		"OracleRollableIdWildcard": {
 			"title": "OracleRollableIdWildcard",
 			"type": "string",
-			"description": "Oracle table wildcards can also use '**' to represent any number of collection levels in the oracle tree.",
-			"examples": [
-				"*/oracle_rollable/**/peril",
-				"starforged/oracle_rollable/character/names/*",
-				"starforged/oracle_rollable/planets/*/settlements/*"
-			],
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/oracle_rollable((\\/[a-z][a-z_]*){1,3}|\\/\\*\\*|\\/\\*\\*\\/[a-z][a-z_]*|\\/[a-z][a-z_]*\\/\\*\\*)\\/(\\*|[a-z][a-z_]*)$"
+			"description": "A wildcarded OracleRollableId that can be used to match multiple OracleRollable objects.",
+			"pattern": "^oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,4})$"
 		},
 		"RarityId": {
 			"title": "RarityId",
 			"type": "string",
-			"description": "A unique ID for a Rarity.",
-			"examples": ["classic/rarities/ayethins_journal"],
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/rarity\\/[a-z][a-z_]*$"
+			"description": "A unique ID representing a Rarity object.",
+			"pattern": "^rarity:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
 		},
 		"RarityIdWildcard": {
 			"title": "RarityIdWildcard",
 			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple Raritys.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/rarity\\/(\\*|[a-z][a-z_]*)$"
-		},
-		"RulesetId": {
-			"title": "RulesetId",
-			"type": "string",
-			"description": "The ID of standalone Datasworn package that describes its own ruleset.",
-			"examples": ["classic", "starforged", "sundered_isles"],
-			"pattern": "^[a-z][a-z0-9_]{3,}$"
+			"description": "A wildcarded RarityId that can be used to match multiple Rarity objects.",
+			"pattern": "^rarity:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
 		},
 		"TruthId": {
 			"title": "TruthId",
 			"type": "string",
-			"description": "A unique ID for a Truth.",
-			"examples": ["classic/truth/iron", "starforged/truth/iron"],
-			"pattern": "^[a-z][a-z0-9_]{3,}\\/truth\\/[a-z][a-z_]*$"
+			"description": "A unique ID representing a Truth object.",
+			"pattern": "^truth:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
 		},
 		"TruthIdWildcard": {
 			"title": "TruthIdWildcard",
 			"type": "string",
-			"description": "A wildcarded ID that can be used to match multiple Truths.",
-			"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/truth\\/(\\*|[a-z][a-z_]*)$"
+			"description": "A wildcarded TruthId that can be used to match multiple Truth objects.",
+			"pattern": "^truth:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
+		},
+		"TruthOptionId": {
+			"title": "TruthOptionId",
+			"type": "string",
+			"description": "A unique ID representing a TruthOption object.",
+			"pattern": "^truth\\.option:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)$"
+		},
+		"TruthOptionIdWildcard": {
+			"title": "TruthOptionIdWildcard",
+			"type": "string",
+			"description": "A wildcarded TruthOptionId that can be used to match multiple TruthOption objects.",
+			"pattern": "^truth\\.option:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)$"
+		},
+		"TruthOptionOracleRollableId": {
+			"title": "TruthOptionOracleRollableId",
+			"type": "string",
+			"description": "A unique ID representing a TruthOptionOracleRollable object.",
+			"pattern": "^truth\\.option\\.oracle_rollable:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
+		},
+		"TruthOptionOracleRollableIdWildcard": {
+			"title": "TruthOptionOracleRollableIdWildcard",
+			"type": "string",
+			"description": "A wildcarded TruthOptionOracleRollableId that can be used to match multiple TruthOptionOracleRollable objects.",
+			"pattern": "^truth\\.option\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
+		},
+		"EmbeddedMoveId": {
+			"$ref": "#/definitions/AssetAbilityMoveId",
+			"title": "EmbeddedMoveId"
+		},
+		"EmbeddedMoveIdWildcard": {
+			"$ref": "#/definitions/AssetAbilityMoveIdWildcard",
+			"title": "EmbeddedMoveIdWildcard"
+		},
+		"AnyMoveId": {
+			"title": "AnyMoveId",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/EmbeddedMoveId"
+				},
+				{
+					"$ref": "#/definitions/MoveId"
+				}
+			]
+		},
+		"AnyMoveIdWildcard": {
+			"title": "AnyMoveIdWildcard",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/EmbeddedMoveIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/MoveIdWildcard"
+				}
+			]
+		},
+		"EmbeddedOracleRollableId": {
+			"title": "EmbeddedOracleRollableId",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/AssetAbilityOracleRollableId"
+				},
+				{
+					"$ref": "#/definitions/TruthOptionOracleRollableId"
+				},
+				{
+					"$ref": "#/definitions/MoveOracleRollableId"
+				}
+			]
+		},
+		"EmbeddedOracleRollableIdWildcard": {
+			"title": "EmbeddedOracleRollableIdWildcard",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/AssetAbilityOracleRollableIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/TruthOptionOracleRollableIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/MoveOracleRollableIdWildcard"
+				}
+			]
+		},
+		"AnyOracleRollableId": {
+			"title": "AnyOracleRollableId",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/EmbeddedOracleRollableId"
+				},
+				{
+					"$ref": "#/definitions/OracleRollableId"
+				}
+			]
+		},
+		"AnyOracleRollableIdWildcard": {
+			"title": "AnyOracleRollableIdWildcard",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/EmbeddedOracleRollableIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/OracleRollableIdWildcard"
+				}
+			]
+		},
+		"AnyId": {
+			"title": "AnyId",
+			"description": "Represents any kind of non-wildcard ID, including IDs of embedded objects.",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/AssetId"
+				},
+				{
+					"$ref": "#/definitions/AssetCollectionId"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityId"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityMoveId"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityOracleRollableId"
+				},
+				{
+					"$ref": "#/definitions/AtlasCollectionId"
+				},
+				{
+					"$ref": "#/definitions/AtlasEntryId"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteId"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteDomainId"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteThemeId"
+				},
+				{
+					"$ref": "#/definitions/MoveId"
+				},
+				{
+					"$ref": "#/definitions/MoveCategoryId"
+				},
+				{
+					"$ref": "#/definitions/MoveOracleRollableId"
+				},
+				{
+					"$ref": "#/definitions/NpcId"
+				},
+				{
+					"$ref": "#/definitions/NpcCollectionId"
+				},
+				{
+					"$ref": "#/definitions/OracleCollectionId"
+				},
+				{
+					"$ref": "#/definitions/OracleRollableId"
+				},
+				{
+					"$ref": "#/definitions/RarityId"
+				},
+				{
+					"$ref": "#/definitions/TruthId"
+				},
+				{
+					"$ref": "#/definitions/TruthOptionId"
+				},
+				{
+					"$ref": "#/definitions/TruthOptionOracleRollableId"
+				}
+			]
+		},
+		"AnyIdWildcard": {
+			"title": "AnyIdWildcard",
+			"description": "Represents any kind of wildcard ID, including IDs of embedded objects.",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/AssetIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AssetCollectionIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityMoveIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityOracleRollableIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AtlasCollectionIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AtlasEntryIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteDomainIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteThemeIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/MoveIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/MoveCategoryIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/MoveOracleRollableIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/NpcIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/NpcCollectionIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/OracleCollectionIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/OracleRollableIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/RarityIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/TruthIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/TruthOptionIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/TruthOptionOracleRollableIdWildcard"
+				}
+			]
 		},
 		"AuthorInfo": {
 			"title": "AuthorInfo",
@@ -749,57 +981,10 @@
 		},
 		"Suggestions": {
 			"title": "Suggestions",
-			"type": "object",
+			"type": "array",
 			"releaseStage": "experimental",
-			"properties": {
-				"oracles": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/OracleRollableId"
-					}
-				},
-				"assets": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/AssetId"
-					}
-				},
-				"atlas": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/AtlasEntryId"
-					}
-				},
-				"moves": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/MoveId"
-					}
-				},
-				"npcs": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/NpcId"
-					}
-				},
-				"rarities": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/RarityId"
-					}
-				},
-				"site_domains": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/DelveSiteDomainId"
-					}
-				},
-				"site_themes": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/DelveSiteThemeId"
-					}
-				}
+			"items": {
+				"$ref": "#/definitions/AnyIdWildcard"
 			}
 		},
 		"SvgImageUrl": {
@@ -864,29 +1049,23 @@
 				}
 			}
 		},
-		"InputLabel": {
-			"title": "InputLabel",
-			"type": "string",
-			"description": "A localized label for an input. In some contexts it may be undesirable to render this text, but it should always be exposed to assistive technology (e.g. with `aria-label` in HTML).",
-			"i18n": true,
-			"pattern": "^[^A-Z]+$"
-		},
 		"Label": {
 			"title": "Label",
 			"type": "string",
-			"description": "A localized plain text name or label.",
+			"description": "A localized, player-facing name or label, formatted as plain text. In some contexts it may be undesirable to render this text, but it should always be exposed to assistive technology (e.g. with `aria-label` in HTML).",
 			"i18n": true
 		},
 		"MarkdownString": {
 			"title": "MarkdownString",
 			"type": "string",
-			"description": "Localized text, formatted in Markdown.\n\nIt uses some custom syntax; e.g. `{{table:some_oracle_table_id}}` indicates that the referenced oracle table is rendered there in the source material.",
+			"description": "Localized, player-facing text, formatted in Markdown. It is *not* formatted for use \"out of the box\"; it uses some custom syntax, intended to be replaced in whatever way is most appropriate for your implementation.\n\n* `[Link text](move:starforged/suffer/pay_the_price)`: A link to the identified object. The ID must conform to the `AnyId` type; no wildcards allowed.\n* `{{table>oracle_rollable:starforged/core/action}}`: the referenced oracle is rendered here in the source material. The ID must conform to the `AnyOracleRollableId` type; no wildcards allowed.\n",
 			"i18n": true,
 			"format": "markdown"
 		},
 		"PartOfSpeech": {
 			"title": "PartOfSpeech",
 			"description": "  - `common_noun`: A common noun.\n  - `proper_noun`: A proper noun.\n  - `adjunct_common_noun`: A common noun used as an adjective, to modify another noun.\n  - `adjunct_proper_noun`: A proper noun used as an adjective, to modify another noun.\n  - `verb`: A verb in present tense\n  - `gerund`: Gerund or present participle of a verb, e.g. \"going\", \"seeing\", \"waving\". Can function as a noun, an adjective, or a progressive verb.\n  - `adjective`: An adjective.\n  - `attributive_verb`: A verb used as an adjective, to modify a noun.\n  - `adjective_as_proper_noun`: An adjective used as a proper noun.\n  - `common_noun_as_proper_noun`: An common noun used as a proper noun.",
+			"releaseStage": "experimental",
 			"enum": [
 				"common_noun",
 				"proper_noun",
@@ -903,7 +1082,7 @@
 		"TemplateString": {
 			"title": "TemplateString",
 			"type": "string",
-			"description": "A rich text string in Markdown with replaced values from oracle roll results.\n\nThe custom syntax `{{some_row_key:some_oracle_table_id}}` should be replaced by the `some_row_key` string of a rolled oracle table. This is usually the `result` key, for example `{{result:starforged/oracles/core/action}}`\n",
+			"description": "A rich text string in Markdown with replaced values from oracle roll results.\n\nThe custom syntax `{{some_row_key>some_oracle_table_id}}` should be replaced by the `some_row_key` string of a rolled oracle table. This is usually the `text` key, for example `{{text>oracle_rollable:starforged/core/action}}`\n",
 			"releaseStage": "experimental",
 			"i18n": true,
 			"format": "markdown"
@@ -937,7 +1116,7 @@
 			],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"rollable": {
 					"type": "boolean",
@@ -977,7 +1156,7 @@
 			"required": ["label", "description", "contents"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel",
+					"$ref": "#/definitions/Label",
 					"description": "A label for this impact category."
 				},
 				"description": {
@@ -1009,7 +1188,7 @@
 			],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel",
+					"$ref": "#/definitions/Label",
 					"description": "The label for this impact."
 				},
 				"prevents_recovery": {
@@ -1199,7 +1378,7 @@
 			"required": ["label", "optional", "shared", "description"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel",
+					"$ref": "#/definitions/Label",
 					"description": "A label for this special track."
 				},
 				"optional": {
@@ -1225,7 +1404,7 @@
 			"required": ["label", "description"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel",
+					"$ref": "#/definitions/Label",
 					"description": "A label for this stat.",
 					"examples": ["edge"]
 				},
@@ -2376,7 +2555,7 @@
 			"required": ["label", "using", "value"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"using": {
 					"type": "string",
@@ -2605,7 +2784,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
@@ -2682,7 +2861,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
@@ -2803,7 +2982,7 @@
 		"OracleRollTemplate": {
 			"title": "OracleRollTemplate",
 			"type": "object",
-			"description": "Provides string templates that may be used in place of the static row text from `OracleTableRow#text`, `OracleTableRow#text2`, and `OracleTableRow#text3`.\n\n  These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text:some_oracle_table_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#text` from the target oracle table ID.",
+			"description": "Provides string templates that may be used in place of the static row text from `OracleTableRow#text`, `OracleTableRow#text2`, and `OracleTableRow#text3`.\n\n  These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text>some_oracle_rollable_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#text` from the target oracle rollable ID.",
 			"releaseStage": "experimental",
 			"properties": {
 				"text": {
@@ -2836,6 +3015,615 @@
 				"max": {
 					"type": "integer",
 					"description": "High end of the dice range."
+				}
+			}
+		},
+		"EmbeddedOracleColumnText": {
+			"title": "EmbeddedOracleColumnText",
+			"type": "object",
+			"required": ["_id", "type", "name", "oracle_type", "dice", "rows"],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/EmbeddedOracleRollableId"
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_rollable"
+				},
+				"name": {
+					"$ref": "#/definitions/Label",
+					"description": "The primary label at the head of this column."
+				},
+				"oracle_type": {
+					"type": "string",
+					"const": "column_text"
+				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An optional icon for this column."
+				},
+				"dice": {
+					"$ref": "#/definitions/DiceExpression",
+					"description": "The roll used to select a result on this oracle.",
+					"default": "1d100"
+				},
+				"summary": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
+				},
+				"match": {
+					"$ref": "#/definitions/OracleMatchBehavior",
+					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"tags": {
+					"$ref": "#/definitions/Tags"
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"rows": {
+					"type": "array",
+					"description": "An array of objects, each representing a single row of the table.",
+					"rollable": true,
+					"items": {
+						"$ref": "#/definitions/OracleTableRowText"
+					}
+				}
+			}
+		},
+		"EmbeddedOracleColumnText2": {
+			"title": "EmbeddedOracleColumnText2",
+			"type": "object",
+			"required": ["_id", "type", "name", "oracle_type", "dice", "rows"],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/EmbeddedOracleRollableId"
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_rollable"
+				},
+				"name": {
+					"$ref": "#/definitions/Label",
+					"description": "The primary label at the head of this column."
+				},
+				"oracle_type": {
+					"type": "string",
+					"const": "column_text2"
+				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An optional icon for this column."
+				},
+				"dice": {
+					"$ref": "#/definitions/DiceExpression",
+					"description": "The roll used to select a result on this oracle.",
+					"default": "1d100"
+				},
+				"summary": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
+				},
+				"match": {
+					"$ref": "#/definitions/OracleMatchBehavior",
+					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"tags": {
+					"$ref": "#/definitions/Tags"
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"rows": {
+					"type": "array",
+					"description": "An array of objects, each representing a single row of the table.",
+					"rollable": true,
+					"items": {
+						"$ref": "#/definitions/OracleTableRowText2"
+					}
+				}
+			}
+		},
+		"EmbeddedOracleColumnText3": {
+			"title": "EmbeddedOracleColumnText3",
+			"type": "object",
+			"required": ["_id", "type", "name", "oracle_type", "dice", "rows"],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/EmbeddedOracleRollableId"
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_rollable"
+				},
+				"name": {
+					"$ref": "#/definitions/Label",
+					"description": "The primary label at the head of this column."
+				},
+				"oracle_type": {
+					"type": "string",
+					"const": "column_text3"
+				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An optional icon for this column."
+				},
+				"dice": {
+					"$ref": "#/definitions/DiceExpression",
+					"description": "The roll used to select a result on this oracle.",
+					"default": "1d100"
+				},
+				"summary": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
+				},
+				"match": {
+					"$ref": "#/definitions/OracleMatchBehavior",
+					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"tags": {
+					"$ref": "#/definitions/Tags"
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"rows": {
+					"type": "array",
+					"description": "An array of objects, each representing a single row of the table.",
+					"rollable": true,
+					"items": {
+						"$ref": "#/definitions/OracleTableRowText3"
+					}
+				}
+			}
+		},
+		"EmbeddedOracleRollable": {
+			"title": "EmbeddedOracleRollable",
+			"type": "object",
+			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.",
+			"required": ["oracle_type"],
+			"properties": {
+				"oracle_type": {
+					"enum": [
+						"table_text",
+						"table_text2",
+						"table_text3",
+						"column_text",
+						"column_text2",
+						"column_text3"
+					]
+				}
+			},
+			"additionalProperties": true,
+			"allOf": [
+				{
+					"if": {
+						"properties": {
+							"oracle_type": {
+								"const": "table_text",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/EmbeddedOracleTableText"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"oracle_type": {
+								"const": "table_text2",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/EmbeddedOracleTableText2"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"oracle_type": {
+								"const": "table_text3",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/EmbeddedOracleTableText3"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"oracle_type": {
+								"const": "column_text",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/EmbeddedOracleColumnText"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"oracle_type": {
+								"const": "column_text2",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/EmbeddedOracleColumnText2"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"oracle_type": {
+								"const": "column_text3",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/EmbeddedOracleColumnText3"
+					}
+				}
+			]
+		},
+		"EmbeddedOracleTableText": {
+			"title": "EmbeddedOracleTableText",
+			"type": "object",
+			"required": [
+				"_id",
+				"type",
+				"name",
+				"oracle_type",
+				"dice",
+				"column_labels",
+				"rows"
+			],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/EmbeddedOracleRollableId"
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_rollable"
+				},
+				"name": {
+					"$ref": "#/definitions/Label",
+					"description": "The primary name/label for this item."
+				},
+				"canonical_name": {
+					"$ref": "#/definitions/Label",
+					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+				},
+				"oracle_type": {
+					"type": "string",
+					"const": "table_text"
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An icon that represents this table."
+				},
+				"dice": {
+					"$ref": "#/definitions/DiceExpression",
+					"description": "The roll used to select a result on this oracle.",
+					"default": "1d100"
+				},
+				"summary": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+				},
+				"description": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+				},
+				"match": {
+					"$ref": "#/definitions/OracleMatchBehavior",
+					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+				},
+				"recommended_rolls": {
+					"type": "object",
+					"required": ["min", "max"],
+					"properties": {
+						"min": {
+							"type": "integer",
+							"default": 1
+						},
+						"max": {
+							"type": "integer",
+							"default": 1
+						}
+					}
+				},
+				"column_labels": {
+					"title": "ColumnLabels",
+					"type": "object",
+					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
+					"default": {
+						"roll": "Roll",
+						"text": "Result"
+					},
+					"required": ["roll", "text"],
+					"properties": {
+						"roll": {
+							"$ref": "#/definitions/Label",
+							"default": "Roll"
+						},
+						"text": {
+							"$ref": "#/definitions/Label",
+							"default": "Result"
+						}
+					}
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"tags": {
+					"$ref": "#/definitions/Tags"
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"rows": {
+					"type": "array",
+					"description": "An array of objects, each representing a single row of the table.",
+					"rollable": true,
+					"items": {
+						"$ref": "#/definitions/OracleTableRowText"
+					}
+				}
+			}
+		},
+		"EmbeddedOracleTableText2": {
+			"title": "EmbeddedOracleTableText2",
+			"type": "object",
+			"required": [
+				"_id",
+				"type",
+				"name",
+				"oracle_type",
+				"dice",
+				"column_labels",
+				"rows"
+			],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/EmbeddedOracleRollableId"
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_rollable"
+				},
+				"name": {
+					"$ref": "#/definitions/Label",
+					"description": "The primary name/label for this item."
+				},
+				"canonical_name": {
+					"$ref": "#/definitions/Label",
+					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+				},
+				"oracle_type": {
+					"type": "string",
+					"const": "table_text2"
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An icon that represents this table."
+				},
+				"dice": {
+					"$ref": "#/definitions/DiceExpression",
+					"description": "The roll used to select a result on this oracle.",
+					"default": "1d100"
+				},
+				"summary": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+				},
+				"description": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+				},
+				"match": {
+					"$ref": "#/definitions/OracleMatchBehavior",
+					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+				},
+				"recommended_rolls": {
+					"type": "object",
+					"required": ["min", "max"],
+					"properties": {
+						"min": {
+							"type": "integer",
+							"default": 1
+						},
+						"max": {
+							"type": "integer",
+							"default": 1
+						}
+					}
+				},
+				"column_labels": {
+					"title": "ColumnLabels",
+					"type": "object",
+					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
+					"default": {
+						"roll": "Roll",
+						"text": "Result",
+						"text2": "Details"
+					},
+					"required": ["roll", "text", "text2"],
+					"properties": {
+						"roll": {
+							"$ref": "#/definitions/Label",
+							"default": "Roll"
+						},
+						"text": {
+							"$ref": "#/definitions/Label",
+							"default": "Result"
+						},
+						"text2": {
+							"$ref": "#/definitions/Label",
+							"default": "Details"
+						}
+					}
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"tags": {
+					"$ref": "#/definitions/Tags"
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"rows": {
+					"type": "array",
+					"description": "An array of objects, each representing a single row of the table.",
+					"rollable": true,
+					"items": {
+						"$ref": "#/definitions/OracleTableRowText2"
+					}
+				}
+			}
+		},
+		"EmbeddedOracleTableText3": {
+			"title": "EmbeddedOracleTableText3",
+			"type": "object",
+			"required": [
+				"_id",
+				"type",
+				"name",
+				"oracle_type",
+				"dice",
+				"column_labels",
+				"rows"
+			],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/EmbeddedOracleRollableId"
+				},
+				"type": {
+					"type": "string",
+					"const": "oracle_rollable"
+				},
+				"name": {
+					"$ref": "#/definitions/Label",
+					"description": "The primary name/label for this item."
+				},
+				"canonical_name": {
+					"$ref": "#/definitions/Label",
+					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+				},
+				"oracle_type": {
+					"type": "string",
+					"const": "table_text3"
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An icon that represents this table."
+				},
+				"dice": {
+					"$ref": "#/definitions/DiceExpression",
+					"description": "The roll used to select a result on this oracle.",
+					"default": "1d100"
+				},
+				"summary": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+				},
+				"description": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+				},
+				"match": {
+					"$ref": "#/definitions/OracleMatchBehavior",
+					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+				},
+				"recommended_rolls": {
+					"type": "object",
+					"required": ["min", "max"],
+					"properties": {
+						"min": {
+							"type": "integer",
+							"default": 1
+						},
+						"max": {
+							"type": "integer",
+							"default": 1
+						}
+					}
+				},
+				"column_labels": {
+					"title": "ColumnLabels",
+					"type": "object",
+					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
+					"default": {},
+					"required": ["roll", "text", "text2", "text3"],
+					"properties": {
+						"roll": {
+							"$ref": "#/definitions/Label"
+						},
+						"text": {
+							"$ref": "#/definitions/Label"
+						},
+						"text2": {
+							"$ref": "#/definitions/Label"
+						},
+						"text3": {
+							"$ref": "#/definitions/Label"
+						}
+					}
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"tags": {
+					"$ref": "#/definitions/Tags"
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"rows": {
+					"type": "array",
+					"description": "An array of objects, each representing a single row of the table.",
+					"rollable": true,
+					"items": {
+						"$ref": "#/definitions/OracleTableRowText3"
+					}
 				}
 			}
 		},
@@ -2979,7 +3767,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"rows": {
 					"type": "array",
@@ -3045,7 +3833,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"rows": {
 					"type": "array",
@@ -3111,7 +3899,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"rows": {
 					"type": "array",
@@ -3580,7 +4368,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
@@ -3685,7 +4473,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
@@ -3795,7 +4583,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
@@ -3900,7 +4688,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
@@ -4010,7 +4798,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"rows": {
 					"type": "array",
@@ -4133,7 +4921,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"rows": {
 					"type": "array",
@@ -4252,7 +5040,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"rows": {
 					"type": "array",
@@ -4353,7 +5141,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
@@ -4373,6 +5161,310 @@
 				"lowest",
 				"all"
 			]
+		},
+		"EmbeddedActionRollMove": {
+			"title": "EmbeddedActionRollMove",
+			"type": "object",
+			"required": [
+				"_id",
+				"type",
+				"name",
+				"roll_type",
+				"trigger",
+				"text",
+				"outcomes"
+			],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/EmbeddedMoveId"
+				},
+				"type": {
+					"type": "string",
+					"const": "move"
+				},
+				"name": {
+					"$ref": "#/definitions/Label",
+					"description": "The primary name/label for this item."
+				},
+				"canonical_name": {
+					"$ref": "#/definitions/Label",
+					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+				},
+				"roll_type": {
+					"type": "string",
+					"description": "A move that makes an action roll.",
+					"const": "action_roll"
+				},
+				"trigger": {
+					"$ref": "#/definitions/TriggerActionRoll",
+					"title": "Trigger",
+					"description": "Trigger conditions for this move."
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "The complete rules text of the move."
+				},
+				"outcomes": {
+					"$ref": "#/definitions/MoveOutcomes",
+					"title": "MoveOutcomes"
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"tags": {
+					"$ref": "#/definitions/Tags"
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				}
+			}
+		},
+		"EmbeddedMove": {
+			"title": "EmbeddedMove",
+			"type": "object",
+			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `roll_type` property as a discriminator.",
+			"required": ["roll_type"],
+			"properties": {
+				"roll_type": {
+					"enum": ["action_roll", "no_roll", "progress_roll", "special_track"]
+				}
+			},
+			"additionalProperties": true,
+			"allOf": [
+				{
+					"if": {
+						"properties": {
+							"roll_type": {
+								"const": "action_roll",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/EmbeddedActionRollMove"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"roll_type": {
+								"const": "no_roll",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/EmbeddedNoRollMove"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"roll_type": {
+								"const": "progress_roll",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/EmbeddedProgressRollMove"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"roll_type": {
+								"const": "special_track",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/EmbeddedSpecialTrackMove"
+					}
+				}
+			]
+		},
+		"EmbeddedNoRollMove": {
+			"title": "EmbeddedNoRollMove",
+			"type": "object",
+			"required": [
+				"_id",
+				"type",
+				"name",
+				"roll_type",
+				"trigger",
+				"text",
+				"outcomes"
+			],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/EmbeddedMoveId"
+				},
+				"type": {
+					"type": "string",
+					"const": "move"
+				},
+				"name": {
+					"$ref": "#/definitions/Label",
+					"description": "The primary name/label for this item."
+				},
+				"canonical_name": {
+					"$ref": "#/definitions/Label",
+					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+				},
+				"roll_type": {
+					"type": "string",
+					"description": "A move that makes no action rolls or progress rolls.",
+					"const": "no_roll"
+				},
+				"trigger": {
+					"$ref": "#/definitions/TriggerNoRoll",
+					"title": "Trigger",
+					"description": "Trigger conditions for this move."
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "The complete rules text of the move."
+				},
+				"outcomes": {
+					"title": "MoveOutcomes",
+					"type": "null",
+					"default": null
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"tags": {
+					"$ref": "#/definitions/Tags"
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				}
+			}
+		},
+		"EmbeddedProgressRollMove": {
+			"title": "EmbeddedProgressRollMove",
+			"type": "object",
+			"required": [
+				"_id",
+				"type",
+				"name",
+				"roll_type",
+				"tracks",
+				"trigger",
+				"text",
+				"outcomes"
+			],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/EmbeddedMoveId"
+				},
+				"type": {
+					"type": "string",
+					"const": "move"
+				},
+				"name": {
+					"$ref": "#/definitions/Label",
+					"description": "The primary name/label for this item."
+				},
+				"canonical_name": {
+					"$ref": "#/definitions/Label",
+					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+				},
+				"roll_type": {
+					"type": "string",
+					"description": "A progress move that rolls on a standard progress track type (defined by this move).",
+					"const": "progress_roll"
+				},
+				"tracks": {
+					"$ref": "#/definitions/ProgressTrackTypeInfo",
+					"description": "Describes the common features of progress tracks associated with this move."
+				},
+				"trigger": {
+					"$ref": "#/definitions/TriggerProgressRoll",
+					"title": "Trigger",
+					"description": "Trigger conditions for this move."
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "The complete rules text of the move."
+				},
+				"outcomes": {
+					"$ref": "#/definitions/MoveOutcomes",
+					"title": "MoveOutcomes"
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"tags": {
+					"$ref": "#/definitions/Tags"
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				}
+			}
+		},
+		"EmbeddedSpecialTrackMove": {
+			"title": "EmbeddedSpecialTrackMove",
+			"type": "object",
+			"required": [
+				"_id",
+				"type",
+				"name",
+				"roll_type",
+				"trigger",
+				"text",
+				"outcomes"
+			],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/EmbeddedMoveId"
+				},
+				"type": {
+					"type": "string",
+					"const": "move"
+				},
+				"name": {
+					"$ref": "#/definitions/Label",
+					"description": "The primary name/label for this item."
+				},
+				"canonical_name": {
+					"$ref": "#/definitions/Label",
+					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+				},
+				"roll_type": {
+					"type": "string",
+					"description": "A progress move that rolls on one or more special tracks, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).",
+					"const": "special_track"
+				},
+				"trigger": {
+					"$ref": "#/definitions/TriggerSpecialTrack",
+					"title": "Trigger",
+					"description": "Trigger conditions for this move."
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "The complete rules text of the move."
+				},
+				"outcomes": {
+					"$ref": "#/definitions/MoveOutcomes",
+					"title": "MoveOutcomes"
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"tags": {
+					"$ref": "#/definitions/Tags"
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				}
+			}
 		},
 		"Move": {
 			"title": "Move",
@@ -4494,10 +5586,14 @@
 					"title": "MoveOutcomes"
 				},
 				"oracles": {
-					"type": "array",
-					"description": "Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.",
-					"items": {
-						"$ref": "#/definitions/OracleRollableId"
+					"title": "MoveOracles",
+					"type": "object",
+					"remarks": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^[a-z][a-z_]*$": {
+							"$ref": "#/definitions/EmbeddedOracleRollable",
+							"title": "MoveOracleRollable"
+						}
 					}
 				},
 				"suggestions": {
@@ -4508,7 +5604,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
@@ -4534,7 +5630,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/MoveIdWildcard"
+								"$ref": "#/definitions/AnyMoveIdWildcard"
 							}
 						},
 						{
@@ -4616,7 +5712,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
@@ -4745,10 +5841,14 @@
 					"default": null
 				},
 				"oracles": {
-					"type": "array",
-					"description": "Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.",
-					"items": {
-						"$ref": "#/definitions/OracleRollableId"
+					"title": "MoveOracles",
+					"type": "object",
+					"remarks": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^[a-z][a-z_]*$": {
+							"$ref": "#/definitions/EmbeddedOracleRollable",
+							"title": "MoveOracleRollable"
+						}
 					}
 				},
 				"suggestions": {
@@ -4759,7 +5859,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
@@ -4785,7 +5885,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/MoveIdWildcard"
+								"$ref": "#/definitions/AnyMoveIdWildcard"
 							}
 						},
 						{
@@ -4892,10 +5992,14 @@
 					"title": "MoveOutcomes"
 				},
 				"oracles": {
-					"type": "array",
-					"description": "Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.",
-					"items": {
-						"$ref": "#/definitions/OracleRollableId"
+					"title": "MoveOracles",
+					"type": "object",
+					"remarks": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^[a-z][a-z_]*$": {
+							"$ref": "#/definitions/EmbeddedOracleRollable",
+							"title": "MoveOracleRollable"
+						}
 					}
 				},
 				"suggestions": {
@@ -4906,7 +6010,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
@@ -4932,7 +6036,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/MoveIdWildcard"
+								"$ref": "#/definitions/AnyMoveIdWildcard"
 							}
 						},
 						{
@@ -5004,10 +6108,14 @@
 					"title": "MoveOutcomes"
 				},
 				"oracles": {
-					"type": "array",
-					"description": "Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.",
-					"items": {
-						"$ref": "#/definitions/OracleRollableId"
+					"title": "MoveOracles",
+					"type": "object",
+					"remarks": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^[a-z][a-z_]*$": {
+							"$ref": "#/definitions/EmbeddedOracleRollable",
+							"title": "MoveOracleRollable"
+						}
 					}
 				},
 				"suggestions": {
@@ -5018,7 +6126,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
@@ -5044,7 +6152,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/MoveIdWildcard"
+								"$ref": "#/definitions/AnyMoveIdWildcard"
 							}
 						},
 						{
@@ -5589,7 +6697,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
@@ -5640,6 +6748,17 @@
 						}
 					}
 				},
+				"oracles": {
+					"title": "AssetAbilityOracles",
+					"type": "object",
+					"remarks": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^[a-z][a-z_]*$": {
+							"$ref": "#/definitions/EmbeddedOracleRollable",
+							"title": "AssetAbilityOracleRollable"
+						}
+					}
+				},
 				"enhance_asset": {
 					"$ref": "#/definitions/AssetEnhancement",
 					"description": "Changes made to the asset, when this ability is enabled."
@@ -5649,7 +6768,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"enhance_moves": {
 					"type": "array",
@@ -5659,12 +6778,14 @@
 					}
 				},
 				"moves": {
+					"title": "AssetAbilityMoves",
 					"type": "object",
 					"description": "Unique moves added by this asset ability.",
 					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
-							"$ref": "#/definitions/Move"
+							"$ref": "#/definitions/EmbeddedMove",
+							"title": "AssetAbilityMove"
 						}
 					}
 				}
@@ -5803,7 +6924,7 @@
 			],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"field_type": {
 					"type": "string",
@@ -5842,7 +6963,7 @@
 			],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"field_type": {
 					"type": "string",
@@ -5938,7 +7059,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
@@ -5953,7 +7074,7 @@
 			"required": ["label", "field_type", "rollable", "min", "max", "value"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"field_type": {
 					"type": "string",
@@ -6002,13 +7123,13 @@
 							"type": "array",
 							"description": "The ID(s) of recovery moves associated with this meter.",
 							"items": {
-								"$ref": "#/definitions/MoveIdWildcard",
+								"$ref": "#/definitions/AnyMoveIdWildcard",
 								"examples": [
-									"classic/moves/adventure/heal",
-									"classic/moves/adventure/make_camp",
-									"classic/moves/relationship/sojourn",
-									"starforged/moves/recover/heal",
-									"starforged/moves/recover/repair"
+									"move:classic/adventure/heal",
+									"move:classic/adventure/make_camp",
+									"move:classic/relationship/sojourn",
+									"move:starforged/recover/heal",
+									"move:starforged/recover/repair"
 								]
 							}
 						},
@@ -6016,11 +7137,11 @@
 							"type": "array",
 							"description": "The ID(s) of suffer moves associated with the condition meter. If the suffer move makes an action roll, this condition meter value should be made available as a roll option.",
 							"items": {
-								"$ref": "#/definitions/MoveIdWildcard",
+								"$ref": "#/definitions/AnyMoveIdWildcard",
 								"examples": [
-									"classic/moves/suffer/companion_endure_harm",
-									"starforged/moves/suffer/companion_takes_a_hit",
-									"starforged/moves/suffer/withstand_damage"
+									"move:classic/suffer/companion_endure_harm",
+									"move:starforged/suffer/companion_takes_a_hit",
+									"move:starforged/suffer/withstand_damage"
 								]
 							}
 						}
@@ -6276,7 +7397,7 @@
 			"required": ["label", "field_type", "rollable", "min", "max", "value"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"field_type": {
 					"type": "string",
@@ -6318,7 +7439,7 @@
 			"required": ["label", "field_type", "rollable", "min", "max", "value"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"field_type": {
 					"type": "string",
@@ -6358,7 +7479,7 @@
 			"required": ["label", "field_type", "rollable", "min", "max", "value"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"field_type": {
 					"type": "string",
@@ -6405,7 +7526,7 @@
 			"required": ["label", "field_type", "choices", "value"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"field_type": {
 					"type": "string",
@@ -6484,7 +7605,7 @@
 			"required": ["label", "choice_type"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"choice_type": {
 					"type": "string",
@@ -6509,7 +7630,7 @@
 			"required": ["name", "choice_type", "choices"],
 			"properties": {
 				"name": {
-					"$ref": "#/definitions/InputLabel",
+					"$ref": "#/definitions/Label",
 					"description": "A label for this option group."
 				},
 				"choice_type": {
@@ -6535,7 +7656,7 @@
 			"required": ["label", "field_type", "choices", "value"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"field_type": {
 					"type": "string",
@@ -6605,7 +7726,7 @@
 						"type": "object",
 						"properties": {
 							"label": {
-								"$ref": "#/definitions/InputLabel"
+								"$ref": "#/definitions/Label"
 							},
 							"choice_type": {
 								"const": "choice",
@@ -6638,7 +7759,7 @@
 						"type": "object",
 						"properties": {
 							"label": {
-								"$ref": "#/definitions/InputLabel"
+								"$ref": "#/definitions/Label"
 							},
 							"choice_type": {
 								"const": "choice",
@@ -6671,7 +7792,7 @@
 						"type": "object",
 						"properties": {
 							"label": {
-								"$ref": "#/definitions/InputLabel"
+								"$ref": "#/definitions/Label"
 							},
 							"choice_type": {
 								"const": "choice",
@@ -6721,7 +7842,7 @@
 						"type": "object",
 						"properties": {
 							"label": {
-								"$ref": "#/definitions/InputLabel"
+								"$ref": "#/definitions/Label"
 							},
 							"choice_type": {
 								"const": "choice",
@@ -6770,7 +7891,7 @@
 						"type": "object",
 						"properties": {
 							"label": {
-								"$ref": "#/definitions/InputLabel"
+								"$ref": "#/definitions/Label"
 							},
 							"choice_type": {
 								"const": "choice",
@@ -6805,7 +7926,7 @@
 						"type": "object",
 						"properties": {
 							"label": {
-								"$ref": "#/definitions/InputLabel"
+								"$ref": "#/definitions/Label"
 							},
 							"choice_type": {
 								"const": "choice",
@@ -6839,7 +7960,7 @@
 						"type": "object",
 						"properties": {
 							"label": {
-								"$ref": "#/definitions/InputLabel"
+								"$ref": "#/definitions/Label"
 							},
 							"choice_type": {
 								"const": "choice",
@@ -6867,7 +7988,7 @@
 			"required": ["label", "field_type", "value"],
 			"properties": {
 				"label": {
-					"$ref": "#/definitions/InputLabel"
+					"$ref": "#/definitions/Label"
 				},
 				"field_type": {
 					"type": "string",
@@ -6941,7 +8062,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
@@ -6952,8 +8073,11 @@
 		"TruthOption": {
 			"title": "TruthOption",
 			"type": "object",
-			"required": ["roll", "description", "quest_starter"],
+			"required": ["_id", "roll", "description", "quest_starter"],
 			"properties": {
+				"_id": {
+					"$ref": "#/definitions/TruthOptionId"
+				},
 				"roll": {
 					"$ref": "#/definitions/DiceRange"
 				},
@@ -6966,27 +8090,14 @@
 				"quest_starter": {
 					"$ref": "#/definitions/MarkdownString"
 				},
-				"table": {
+				"oracles": {
+					"title": "TruthOptionOracles",
 					"type": "object",
-					"description": "Represents a basic rollable oracle table with one roll column and one text result column.",
-					"required": ["oracle_type", "dice", "rows"],
-					"properties": {
-						"oracle_type": {
-							"type": "string",
-							"const": "table_text"
-						},
-						"dice": {
-							"$ref": "#/definitions/DiceExpression",
-							"description": "The roll used to select a result on this oracle.",
-							"default": "1d100"
-						},
-						"rows": {
-							"type": "array",
-							"description": "An array of objects, each representing a single row of the table.",
-							"rollable": true,
-							"items": {
-								"$ref": "#/definitions/OracleTableRowText"
-							}
+					"remarks": "Deserialize as a dictionary object.",
+					"patternProperties": {
+						"^[a-z][a-z_]*$": {
+							"$ref": "#/definitions/EmbeddedOracleRollable",
+							"title": "TruthOptionOracleRollable"
 						}
 					}
 				}
@@ -7070,7 +8181,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
@@ -7126,7 +8237,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
@@ -7201,7 +8312,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
@@ -7281,7 +8392,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"denizens": {
 					"description": "Represents the delve site's denizen matrix as an array of objects.",
@@ -7727,7 +8838,7 @@
 				},
 				"name_oracle": {
 					"$ref": "#/definitions/OracleRollableId",
-					"description": "An oracle table ID containing place name elements. For examples, see oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in oracle collection ID `delve/collections/oracles/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (ID: delve/oracles/site_name/format) to create random names for delve sites."
+					"description": "An oracle table ID containing place name elements. For examples, see oracle ID `oracle_rollable:delve/site_name/place/barrow`, and its siblings in oracle collection ID `oracle_collection:delve/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (`oracle_rollable:delve/site_name/format`) to create random names for delve sites."
 				},
 				"summary": {
 					"$ref": "#/definitions/MarkdownString",
@@ -7766,7 +8877,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -7790,7 +8902,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -7814,7 +8927,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -7838,7 +8952,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -7862,7 +8977,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -7886,7 +9002,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -7910,7 +9027,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -7934,7 +9052,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -7958,7 +9077,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -7982,7 +9102,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -8006,7 +9127,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -8030,7 +9152,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								}
 							],
 							"minItems": 12,
@@ -8072,7 +9195,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -8096,7 +9220,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -8120,7 +9245,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -8144,7 +9270,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -8168,7 +9295,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								}
 							],
 							"minItems": 5,
@@ -8188,7 +9316,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
@@ -8265,7 +9393,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -8289,7 +9418,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -8313,7 +9443,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -8337,7 +9468,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -8361,7 +9493,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								}
 							],
 							"minItems": 5,
@@ -8403,7 +9536,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -8427,7 +9561,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -8451,7 +9586,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -8475,7 +9611,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -8499,7 +9636,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -8523,7 +9661,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -8547,7 +9686,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -8571,7 +9711,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -8595,7 +9736,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -8619,7 +9761,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -8643,7 +9786,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								},
 								{
 									"type": "object",
@@ -8667,7 +9811,8 @@
 												}
 											}
 										}
-									}
+									},
+									"additionalProperties": true
 								}
 							],
 							"minItems": 12,
@@ -8687,7 +9832,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",

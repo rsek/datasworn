@@ -26,9 +26,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CONST = exports.PathKeys = exports.Pattern = exports.TypeGuard = exports.NodeTypeId = void 0;
-var NodeTypeId_js_1 = require("./NodeTypeId.js");
-Object.defineProperty(exports, "NodeTypeId", { enumerable: true, get: function () { return __importDefault(NodeTypeId_js_1).default; } });
+exports.CONST = exports.PathKeys = exports.Pattern = exports.TypeGuard = exports.TypeId = void 0;
+var TypeId_js_1 = require("./TypeId.js");
+Object.defineProperty(exports, "TypeId", { enumerable: true, get: function () { return __importDefault(TypeId_js_1).default; } });
 var TypeGuard_js_1 = require("./TypeGuard.js");
 Object.defineProperty(exports, "TypeGuard", { enumerable: true, get: function () { return __importDefault(TypeGuard_js_1).default; } });
 var Pattern_js_1 = require("./Pattern.js");

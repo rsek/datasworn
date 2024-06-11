@@ -1,16 +1,19 @@
 import type { DictKey, ExpansionId, RulesetId } from './Datasworn.js';
-import { type CONST, type NodeTypeId } from './IdElements/index.js';
-import { type CollectionPathKeys, type CollectionAncestorKeys } from './IdElements/PathKeys.js';
-import { type Join } from './Utils/String.js';
+import { type CONST, type TypeId } from './IdElements/index.js';
+import type * as PathKeys from './IdElements/PathKeys.js';
+import { type Join, type Split } from './Utils/String.js';
 export type RulesPackageId = RulesetId | ExpansionId;
-export type Id<RulesPackage extends RulesPackageId, TypeKey extends NodeTypeId.Any, PathKeys extends DictKey[]> = Join<[RulesPackage, TypeKey, ...PathKeys], CONST.Sep>;
-export type RecursiveCollectableId<RulesPackage extends RulesPackageId = RulesPackageId, Type extends NodeTypeId.Collectable.Recursive = NodeTypeId.Collectable.Recursive, AncestorKeys extends CollectionPathKeys = CollectionPathKeys, Key extends string = string> = Id<RulesPackage, Type, [...AncestorKeys, Key]>;
-export type CollectableId<RulesPackage extends RulesPackageId = RulesPackageId, Type extends NodeTypeId.Collectable.Any = NodeTypeId.Collectable.Any, AncestorKeys extends DictKey[] = DictKey[], Key extends DictKey = DictKey> = Id<RulesPackage, Type, [...AncestorKeys, Key]>;
-export type NonRecursiveCollectableId<RulesPackage extends RulesPackageId = RulesPackageId, Type extends NodeTypeId.Collectable.NonRecursive = NodeTypeId.Collectable.NonRecursive, ParentKey extends DictKey = DictKey, Key extends DictKey = DictKey> = CollectableId<RulesPackage, Type, [ParentKey], Key>;
-export type CollectionId<RulesPackage extends RulesPackageId = RulesPackageId, Type extends NodeTypeId.Collection.Any = NodeTypeId.Collection.Any, CollectionPathKeys extends string[] = string[], Key extends string = string> = Id<RulesPackage, Type, [...CollectionPathKeys, Key]>;
-export type RecursiveCollectionId<RulesPackage extends RulesPackageId = RulesPackageId, Type extends NodeTypeId.Collection.Recursive = NodeTypeId.Collection.Recursive, CollectionPathKeys extends CollectionAncestorKeys = CollectionAncestorKeys, Key extends string = string> = CollectionId<RulesPackage, Type, CollectionPathKeys, Key>;
-export type NonRecursiveCollectionId<RulesPackage extends RulesPackageId = RulesPackageId, Type extends NodeTypeId.Collection.NonRecursive = NodeTypeId.Collection.NonRecursive, Key extends DictKey = DictKey> = CollectionId<RulesPackage, Type, [], Key>;
-export type NonCollectableId<RulesPackage extends RulesPackageId = RulesPackageId, Type extends NodeTypeId.NonCollectable = NodeTypeId.NonCollectable, Key extends DictKey = DictKey> = Id<RulesPackage, Type, [Key]>;
-export type AnyCollectableId = RecursiveCollectableId | NonRecursiveCollectableId;
-export type AnyCollectionId = RecursiveCollectionId | NonRecursiveCollectionId;
-export type AnyId = AnyCollectableId | AnyCollectionId | NonCollectableId;
+export type TypeIdParts = string[];
+export type IdBase<TypeIds extends TypeIdParts, PathSegments extends string[] & {
+    length: TypeIds['length'];
+}> = `${Join<TypeIds, CONST.PathTypeSep>}${CONST.PrefixSep}${Join<PathSegments, CONST.PathTypeSep>}`;
+export type EmbeddedId<TypeIds extends Split<TypeId.EmbeddedTypePaths | TypeId.EmbedOfEmbedTypePaths, CONST.PathTypeSep> = Split<TypeId.EmbeddedTypePaths | TypeId.EmbedOfEmbedTypePaths, CONST.PathTypeSep>, PathSegments extends string[] & {
+    length: TypeIds['length'];
+} = string[] & {
+    length: TypeIds['length'];
+}> = IdBase<TypeIds, PathSegments>;
+export type PrimaryId<TypeId extends TypeId.AnyPrimary, RulesPackage extends RulesPackageId, PathKeys extends DictKey[]> = IdBase<[TypeId], [Join<[RulesPackage, ...PathKeys]>]>;
+export type CollectionId<TypeId extends TypeId.Collection = TypeId.Collection, RulesPackage extends RulesPackageId = RulesPackageId, CollectionAncestorKeys extends PathKeys.CollectionAncestorKeys = PathKeys.CollectionAncestorKeys, Key extends string = string> = PrimaryId<TypeId, RulesPackage, [...CollectionAncestorKeys, Key]>;
+export type CollectableId<TypeId extends TypeId.Collectable = TypeId.Collectable, RulesPackage extends RulesPackageId = RulesPackageId, CollectionPathKeys extends PathKeys.CollectableAncestorKeys = PathKeys.CollectableAncestorKeys, Key extends string = string> = PrimaryId<TypeId, RulesPackage, [...CollectionPathKeys, Key]>;
+export type NonCollectableId<TypeId extends TypeId.NonCollectable = TypeId.NonCollectable, RulesPackage extends RulesPackageId = RulesPackageId, Key extends DictKey = DictKey> = PrimaryId<TypeId, RulesPackage, [Key]>;
+export type AnyId = CollectableId | CollectionId | NonCollectableId;

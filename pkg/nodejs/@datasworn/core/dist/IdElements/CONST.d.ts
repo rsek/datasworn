@@ -7,12 +7,14 @@ declare namespace CONST {
     const PACKAGE_ID_LENGTH_MIN: 3;
     type PACKAGE_ID_LENGTH_MIN = typeof PACKAGE_ID_LENGTH_MIN;
     /** The separator character for Datasworn IDs. */
-    const Sep: "/";
-    type Sep = typeof Sep;
-    const PropSep: ".";
-    type PropSep = typeof PropSep;
+    const PathSep: "/";
+    type PathSep = typeof PathSep;
+    const PathTypeSep: ".";
+    type PathTypeSep = typeof PathTypeSep;
     const KeySep: "/";
     type KeySep = typeof KeySep;
+    const PrefixSep: ":";
+    type PrefixSep = typeof PrefixSep;
     /** The wildcard character for Datasworn IDs that matches any key in a dictionary object. */
     const WildcardString: "*";
     type WildcardString = typeof WildcardString;

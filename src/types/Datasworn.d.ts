@@ -203,7 +203,7 @@ export type DictKey = string
 /**
  * A unique ID representing an Asset object.
  * @pattern ```javascript
- * /^asset:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2})$/
+ * /^asset:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})$/
  * ```
  */
 export type AssetId = string
@@ -211,7 +211,7 @@ export type AssetId = string
 /**
  * A wildcarded AssetId that can be used to match multiple Asset objects.
  * @pattern ```javascript
- * /^asset:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2})$/
+ * /^asset:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})$/
  * ```
  */
 export type AssetIdWildcard = string
@@ -219,7 +219,7 @@ export type AssetIdWildcard = string
 /**
  * A unique ID representing an AssetCollection object.
  * @pattern ```javascript
- * /^asset_collection:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)$/
+ * /^asset_collection:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,3})$/
  * ```
  */
 export type AssetCollectionId = string
@@ -227,7 +227,7 @@ export type AssetCollectionId = string
 /**
  * A wildcarded AssetCollectionId that can be used to match multiple AssetCollection objects.
  * @pattern ```javascript
- * /^asset_collection:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)$/
+ * /^asset_collection:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,3})$/
  * ```
  */
 export type AssetCollectionIdWildcard = string
@@ -235,7 +235,7 @@ export type AssetCollectionIdWildcard = string
 /**
  * A unique ID representing an AssetAbility object.
  * @pattern ```javascript
- * /^asset\.ability:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2})\.(\d+)$/
+ * /^asset\.ability:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})\.(\d+)$/
  * ```
  */
 export type AssetAbilityId = string
@@ -243,7 +243,7 @@ export type AssetAbilityId = string
 /**
  * A wildcarded AssetAbilityId that can be used to match multiple AssetAbility objects.
  * @pattern ```javascript
- * /^asset\.ability:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2})\.(\d+|\*)$/
+ * /^asset\.ability:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})\.(\d+|\*)$/
  * ```
  */
 export type AssetAbilityIdWildcard = string
@@ -251,7 +251,7 @@ export type AssetAbilityIdWildcard = string
 /**
  * A unique ID representing an AssetAbilityMove object.
  * @pattern ```javascript
- * /^asset\.ability\.move:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2})\.(\d+)\.([a-z][a-z_]*|\*)$/
+ * /^asset\.ability\.move:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})\.(\d+)\.([a-z][a-z_]*|\*)$/
  * ```
  */
 export type AssetAbilityMoveId = string
@@ -259,7 +259,7 @@ export type AssetAbilityMoveId = string
 /**
  * A wildcarded AssetAbilityMoveId that can be used to match multiple AssetAbilityMove objects.
  * @pattern ```javascript
- * /^asset\.ability\.move:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2})\.(\d+|\*)\.([a-z][a-z_]*|\*)$/
+ * /^asset\.ability\.move:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})\.(\d+|\*)\.([a-z][a-z_]*|\*)$/
  * ```
  */
 export type AssetAbilityMoveIdWildcard = string
@@ -267,7 +267,7 @@ export type AssetAbilityMoveIdWildcard = string
 /**
  * A unique ID representing an AssetAbilityOracleRollable object.
  * @pattern ```javascript
- * /^asset\.ability\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2})\.(\d+)\.([a-z][a-z_]*|\*)$/
+ * /^asset\.ability\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})\.(\d+)\.([a-z][a-z_]*|\*)$/
  * ```
  */
 export type AssetAbilityOracleRollableId = string
@@ -275,7 +275,7 @@ export type AssetAbilityOracleRollableId = string
 /**
  * A wildcarded AssetAbilityOracleRollableId that can be used to match multiple AssetAbilityOracleRollable objects.
  * @pattern ```javascript
- * /^asset\.ability\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2})\.(\d+|\*)\.([a-z][a-z_]*|\*)$/
+ * /^asset\.ability\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})\.(\d+|\*)\.([a-z][a-z_]*|\*)$/
  * ```
  */
 export type AssetAbilityOracleRollableIdWildcard = string
@@ -363,7 +363,7 @@ export type DelveSiteThemeIdWildcard = string
 /**
  * A unique ID representing a Move object.
  * @pattern ```javascript
- * /^move:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2})$/
+ * /^move:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})$/
  * ```
  */
 export type MoveId = string
@@ -371,7 +371,7 @@ export type MoveId = string
 /**
  * A wildcarded MoveId that can be used to match multiple Move objects.
  * @pattern ```javascript
- * /^move:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2})$/
+ * /^move:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})$/
  * ```
  */
 export type MoveIdWildcard = string
@@ -379,7 +379,7 @@ export type MoveIdWildcard = string
 /**
  * A unique ID representing a MoveCategory object.
  * @pattern ```javascript
- * /^move_category:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)$/
+ * /^move_category:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,3})$/
  * ```
  */
 export type MoveCategoryId = string
@@ -387,7 +387,7 @@ export type MoveCategoryId = string
 /**
  * A wildcarded MoveCategoryId that can be used to match multiple MoveCategory objects.
  * @pattern ```javascript
- * /^move_category:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)$/
+ * /^move_category:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,3})$/
  * ```
  */
 export type MoveCategoryIdWildcard = string
@@ -395,7 +395,7 @@ export type MoveCategoryIdWildcard = string
 /**
  * A unique ID representing a MoveOracleRollable object.
  * @pattern ```javascript
- * /^move\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2})\.([a-z][a-z_]*|\*)$/
+ * /^move\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})\.([a-z][a-z_]*|\*)$/
  * ```
  */
 export type MoveOracleRollableId = string
@@ -403,7 +403,7 @@ export type MoveOracleRollableId = string
 /**
  * A wildcarded MoveOracleRollableId that can be used to match multiple MoveOracleRollable objects.
  * @pattern ```javascript
- * /^move\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2})\.([a-z][a-z_]*|\*)$/
+ * /^move\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})\.([a-z][a-z_]*|\*)$/
  * ```
  */
 export type MoveOracleRollableIdWildcard = string
@@ -560,6 +560,9 @@ export type AnyOracleRollableIdWildcard =
 	| EmbeddedOracleRollableIdWildcard
 	| OracleRollableIdWildcard
 
+/**
+ * Represents any kind of non-wildcard ID, including IDs of embedded objects.
+ */
 export type AnyId =
 	| AssetId
 	| AssetCollectionId
@@ -583,6 +586,9 @@ export type AnyId =
 	| TruthOptionId
 	| TruthOptionOracleRollableId
 
+/**
+ * Represents any kind of wildcard ID, including IDs of embedded objects.
+ */
 export type AnyIdWildcard =
 	| AssetIdWildcard
 	| AssetCollectionIdWildcard
@@ -694,16 +700,7 @@ export type SourceTitle = string
 /**
  * @experimental
  */
-export interface Suggestions {
-	oracles?: OracleRollableId[]
-	assets?: AssetId[]
-	moves?: MoveId[]
-	site_domains?: DelveSiteDomainId[]
-	site_themes?: DelveSiteThemeId[]
-	npcs?: NpcId[]
-	atlas?: AtlasEntryId[]
-	rarities?: RarityId[]
-}
+export type Suggestions = AnyIdWildcard[]
 
 /**
  * A relative (local) URL pointing to a vector image in the SVG format.
@@ -752,24 +749,17 @@ export interface I18nHints {
 }
 
 /**
- * A localized label for an input. In some contexts it may be undesirable to render this text, but it should always be exposed to assistive technology (e.g. with `aria-label` in HTML).
- * @pattern ```javascript
- * /^[^A-Z]+$/
- * ```
- * @i18n
- */
-export type InputLabel = string
-
-/**
- * A localized plain text name or label.
+ * A localized, player-facing name or label, formatted as plain text. In some contexts it may be undesirable to render this text, but it should always be exposed to assistive technology (e.g. with `aria-label` in HTML).
  * @i18n
  */
 export type Label = string
 
 /**
- * Localized text, formatted in Markdown.
+ * Localized, player-facing text, formatted in Markdown. It is *not* formatted for use "out of the box"; it uses some custom syntax, intended to be replaced in whatever way is most appropriate for your implementation.
  *
- * It uses some custom syntax; e.g. `{{table:some_oracle_table_id}}` indicates that the referenced oracle table is rendered there in the source material.
+ * * `[Link text](move:starforged/suffer/pay_the_price)`: A link to the identified object. The ID must conform to the `AnyId` type; no wildcards allowed.
+ * * `{{table>oracle_rollable:starforged/core/action}}`: the referenced oracle is rendered here in the source material. The ID must conform to the `AnyOracleRollableId` type; no wildcards allowed.
+ *
  * @i18n
  */
 export type MarkdownString = string
@@ -785,6 +775,7 @@ export type MarkdownString = string
  *   - `attributive_verb`: A verb used as an adjective, to modify a noun.
  *   - `adjective_as_proper_noun`: An adjective used as a proper noun.
  *   - `common_noun_as_proper_noun`: An common noun used as a proper noun.
+ * @experimental
  */
 export type PartOfSpeech =
 	| 'common_noun'
@@ -801,7 +792,7 @@ export type PartOfSpeech =
 /**
  * A rich text string in Markdown with replaced values from oracle roll results.
  *
- * The custom syntax `{{some_row_key:some_oracle_table_id}}` should be replaced by the `some_row_key` string of a rolled oracle table. This is usually the `result` key, for example `{{result:starforged/oracles/core/action}}`
+ * The custom syntax `{{some_row_key>some_oracle_table_id}}` should be replaced by the `some_row_key` string of a rolled oracle table. This is usually the `text` key, for example `{{text>oracle_rollable:starforged/core/action}}`
  *
  * @i18n
  * @experimental
@@ -835,7 +826,7 @@ export interface ConditionMeterRule {
 	 * @default false
 	 */
 	shared: boolean
-	label: InputLabel
+	label: Label
 	/**
 	 * The current value of this meter.
 	 * @default 0
@@ -863,7 +854,7 @@ export interface ImpactCategory {
 	/**
 	 * A label for this impact category.
 	 */
-	label: InputLabel
+	label: Label
 	/**
 	 * A description of this impact category.
 	 */
@@ -882,7 +873,7 @@ export interface ImpactRule {
 	/**
 	 * The label for this impact.
 	 */
-	label: InputLabel
+	label: Label
 	/**
 	 * A description of this impact.
 	 */
@@ -1002,7 +993,7 @@ export interface SpecialTrackRule {
 	/**
 	 * A label for this special track.
 	 */
-	label: InputLabel
+	label: Label
 	/**
 	 * A description of this special track.
 	 */
@@ -1027,7 +1018,7 @@ export interface StatRule {
 	 * A label for this stat.
 	 * @example "edge"
 	 */
-	label: InputLabel
+	label: Label
 	/**
 	 * A description of this stat.
 	 * @example "Quickness, agility, and prowess when fighting at a distance."
@@ -1468,7 +1459,7 @@ export interface ConditionMeterValueRef {
  * An arbitrary static integer value with a label.
  */
 export interface CustomValue {
-	label: InputLabel
+	label: Label
 	value: number
 	/**
 	 * An arbitrary static integer value with a label.
@@ -1686,7 +1677,7 @@ export interface OracleRoll {
 /**
  * Provides string templates that may be used in place of the static row text from `OracleTableRow#text`, `OracleTableRow#text2`, and `OracleTableRow#text3`.
  *
- *   These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text:some_oracle_table_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#text` from the target oracle table ID.
+ *   These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text>some_oracle_rollable_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#text` from the target oracle rollable ID.
  * @experimental
  */
 export interface OracleRollTemplate {
@@ -3172,9 +3163,9 @@ export interface MoveActionRoll {
 	 */
 	text: MarkdownString
 	/**
-	 * Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.
+	 * @remarks Deserialize as a dictionary object.
 	 */
-	oracles?: OracleRollableId[]
+	oracles?: Record<DictKey, EmbeddedOracleRollable>
 	/**
 	 * A move that makes an action roll.
 	 */
@@ -3302,9 +3293,9 @@ export interface MoveNoRoll {
 	 */
 	text: MarkdownString
 	/**
-	 * Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.
+	 * @remarks Deserialize as a dictionary object.
 	 */
-	oracles?: OracleRollableId[]
+	oracles?: Record<DictKey, EmbeddedOracleRollable>
 	/**
 	 * A move that makes no action rolls or progress rolls.
 	 */
@@ -3392,9 +3383,9 @@ export interface MoveProgressRoll {
 	 */
 	text: MarkdownString
 	/**
-	 * Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.
+	 * @remarks Deserialize as a dictionary object.
 	 */
-	oracles?: OracleRollableId[]
+	oracles?: Record<DictKey, EmbeddedOracleRollable>
 	/**
 	 * A progress move that rolls on a standard progress track type (defined by this move).
 	 */
@@ -3474,9 +3465,9 @@ export interface MoveSpecialTrack {
 	 */
 	text: MarkdownString
 	/**
-	 * Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.
+	 * @remarks Deserialize as a dictionary object.
 	 */
-	oracles?: OracleRollableId[]
+	oracles?: Record<DictKey, EmbeddedOracleRollable>
 	/**
 	 * A progress move that rolls on one or more special tracks, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
 	 */
@@ -3940,7 +3931,7 @@ export interface AssetAttachment {
 }
 
 export interface AssetCardFlipField {
-	label: InputLabel
+	label: Label
 	/**
 	 * Is the card flipped over?
 	 * @default false
@@ -3964,7 +3955,7 @@ export interface AssetCardFlipField {
 }
 
 export interface AssetCheckboxField {
-	label: InputLabel
+	label: Label
 	/**
 	 * Is the box checked?
 	 * @default false
@@ -4046,7 +4037,7 @@ export interface AssetCollection {
  * Some assets provide a special condition meter of their own. The most common example is the health meters on companion assets. Asset condition meters may also include their own controls, such as the checkboxes that Starforged companion assets use to indicate they are "out of action".
  */
 export interface AssetConditionMeter {
-	label: InputLabel
+	label: Label
 	/**
 	 * The current value of this meter.
 	 * @default 0
@@ -4159,7 +4150,7 @@ export type AssetOptionField =
  * @remarks Semantics are similar to HTML `<input type="number">`, but rendered as a clock (a circle with equally sized wedges).
  */
 export interface ClockField {
-	label: InputLabel
+	label: Label
 	/**
 	 * The current value of this input.
 	 * @default 0
@@ -4186,7 +4177,7 @@ export interface ClockField {
  * A meter with an integer value, bounded by a minimum and maximum.
  */
 export interface ConditionMeterField {
-	label: InputLabel
+	label: Label
 	/**
 	 * The current value of this meter.
 	 * @default 0
@@ -4217,7 +4208,7 @@ export interface ConditionMeterField {
  * @remarks Semantics are similar to `<input type="number" step="1">`
  */
 export interface CounterField {
-	label: InputLabel
+	label: Label
 	/**
 	 * The current value of this input.
 	 * @default 0
@@ -4246,7 +4237,7 @@ export interface CounterField {
  * @remarks Semantics are similar to the HTML `<select>` element
  */
 export interface SelectEnhancementField {
-	label: InputLabel
+	label: Label
 	/**
 	 * The current value of this input.
 	 * @default null
@@ -4271,7 +4262,7 @@ export interface SelectEnhancementField {
  * @remarks Semantics are similar to the HTML `<option>` element.
  */
 export interface SelectEnhancementFieldChoice {
-	label: InputLabel
+	label: Label
 	choice_type: 'choice'
 	enhance_asset?: AssetEnhancement
 	enhance_moves?: MoveEnhancement[]
@@ -4285,7 +4276,7 @@ export interface SelectEnhancementFieldChoiceGroup {
 	/**
 	 * A label for this option group.
 	 */
-	name: InputLabel
+	name: Label
 	choice_type: 'choice_group'
 	/**
 	 * @remarks Deserialize as a dictionary object.
@@ -4298,7 +4289,7 @@ export interface SelectEnhancementFieldChoiceGroup {
  * @remarks Semantics are similar to the HTML `<select>` element
  */
 export interface SelectValueField {
-	label: InputLabel
+	label: Label
 	/**
 	 * The current value of this input.
 	 * @default null
@@ -4320,7 +4311,7 @@ export interface SelectValueField {
  */
 export type SelectValueFieldChoice =
 	| {
-			label: InputLabel
+			label: Label
 			choice_type: 'choice'
 			stat: StatKey
 			/**
@@ -4329,7 +4320,7 @@ export type SelectValueFieldChoice =
 			using: 'stat'
 	  }
 	| {
-			label: InputLabel
+			label: Label
 			choice_type: 'choice'
 			condition_meter: ConditionMeterKey
 			/**
@@ -4338,7 +4329,7 @@ export type SelectValueFieldChoice =
 			using: 'condition_meter'
 	  }
 	| {
-			label: InputLabel
+			label: Label
 			choice_type: 'choice'
 			/**
 			 * Asset IDs (which may be wildcarded) that may provide the control field. For asset ability enhancements, `null` is used to represent the asset's own control fields.
@@ -4357,7 +4348,7 @@ export type SelectValueFieldChoice =
 			using: 'asset_control'
 	  }
 	| {
-			label: InputLabel
+			label: Label
 			choice_type: 'choice'
 			/**
 			 * Asset IDs (which may be wildcarded) that may provide the option field. For asset ability enhancements, `null` is used to represent the asset's own option fields.
@@ -4374,7 +4365,7 @@ export type SelectValueFieldChoice =
 			using: 'asset_option'
 	  }
 	| {
-			label: InputLabel
+			label: Label
 			choice_type: 'choice'
 			/**
 			 * The dictionary key of the asset control field.
@@ -4388,7 +4379,7 @@ export type SelectValueFieldChoice =
 			using: 'attached_asset_control'
 	  }
 	| {
-			label: InputLabel
+			label: Label
 			choice_type: 'choice'
 			/**
 			 * The dictionary key of the asset option field.
@@ -4400,7 +4391,7 @@ export type SelectValueFieldChoice =
 			using: 'attached_asset_option'
 	  }
 	| {
-			label: InputLabel
+			label: Label
 			choice_type: 'choice'
 			value: number
 			/**
@@ -4414,7 +4405,7 @@ export type SelectValueFieldChoice =
  * @remarks Semantics are similar to the HTML `<input type="text">` element.
  */
 export interface TextField {
-	label: InputLabel
+	label: Label
 	/**
 	 * The content of this text input, or `null` if it's empty
 	 * @default null
@@ -4935,7 +4926,7 @@ export interface DelveSiteDomain {
 	summary: MarkdownString
 	description?: MarkdownString
 	/**
-	 * An oracle table ID containing place name elements. For examples, see oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in oracle collection ID `delve/collections/oracles/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (ID: delve/oracles/site_name/format) to create random names for delve sites.
+	 * An oracle table ID containing place name elements. For examples, see oracle ID `oracle_rollable:delve/site_name/place/barrow`, and its siblings in oracle collection ID `oracle_collection:delve/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (`oracle_rollable:delve/site_name/format`) to create random names for delve sites.
 	 */
 	name_oracle?: OracleRollableId
 	features: OracleTableRowText[] &

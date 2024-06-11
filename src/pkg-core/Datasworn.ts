@@ -203,7 +203,7 @@ export type DictKey = string
 /**
  * A unique ID representing an Asset object.
  * @pattern ```javascript
- * /^asset:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2})$/
+ * /^asset:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})$/
  * ```
  */
 export type AssetId = string
@@ -211,7 +211,7 @@ export type AssetId = string
 /**
  * A wildcarded AssetId that can be used to match multiple Asset objects.
  * @pattern ```javascript
- * /^asset:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2})$/
+ * /^asset:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})$/
  * ```
  */
 export type AssetIdWildcard = string
@@ -219,7 +219,7 @@ export type AssetIdWildcard = string
 /**
  * A unique ID representing an AssetCollection object.
  * @pattern ```javascript
- * /^asset_collection:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)$/
+ * /^asset_collection:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,3})$/
  * ```
  */
 export type AssetCollectionId = string
@@ -227,7 +227,7 @@ export type AssetCollectionId = string
 /**
  * A wildcarded AssetCollectionId that can be used to match multiple AssetCollection objects.
  * @pattern ```javascript
- * /^asset_collection:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)$/
+ * /^asset_collection:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,3})$/
  * ```
  */
 export type AssetCollectionIdWildcard = string
@@ -235,7 +235,7 @@ export type AssetCollectionIdWildcard = string
 /**
  * A unique ID representing an AssetAbility object.
  * @pattern ```javascript
- * /^asset\.ability:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2})\.(\d+)$/
+ * /^asset\.ability:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})\.(\d+)$/
  * ```
  */
 export type AssetAbilityId = string
@@ -243,7 +243,7 @@ export type AssetAbilityId = string
 /**
  * A wildcarded AssetAbilityId that can be used to match multiple AssetAbility objects.
  * @pattern ```javascript
- * /^asset\.ability:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2})\.(\d+|\*)$/
+ * /^asset\.ability:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})\.(\d+|\*)$/
  * ```
  */
 export type AssetAbilityIdWildcard = string
@@ -251,7 +251,7 @@ export type AssetAbilityIdWildcard = string
 /**
  * A unique ID representing an AssetAbilityMove object.
  * @pattern ```javascript
- * /^asset\.ability\.move:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2})\.(\d+)\.([a-z][a-z_]*|\*)$/
+ * /^asset\.ability\.move:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})\.(\d+)\.([a-z][a-z_]*|\*)$/
  * ```
  */
 export type AssetAbilityMoveId = string
@@ -259,7 +259,7 @@ export type AssetAbilityMoveId = string
 /**
  * A wildcarded AssetAbilityMoveId that can be used to match multiple AssetAbilityMove objects.
  * @pattern ```javascript
- * /^asset\.ability\.move:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2})\.(\d+|\*)\.([a-z][a-z_]*|\*)$/
+ * /^asset\.ability\.move:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})\.(\d+|\*)\.([a-z][a-z_]*|\*)$/
  * ```
  */
 export type AssetAbilityMoveIdWildcard = string
@@ -267,7 +267,7 @@ export type AssetAbilityMoveIdWildcard = string
 /**
  * A unique ID representing an AssetAbilityOracleRollable object.
  * @pattern ```javascript
- * /^asset\.ability\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2})\.(\d+)\.([a-z][a-z_]*|\*)$/
+ * /^asset\.ability\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})\.(\d+)\.([a-z][a-z_]*|\*)$/
  * ```
  */
 export type AssetAbilityOracleRollableId = string
@@ -275,7 +275,7 @@ export type AssetAbilityOracleRollableId = string
 /**
  * A wildcarded AssetAbilityOracleRollableId that can be used to match multiple AssetAbilityOracleRollable objects.
  * @pattern ```javascript
- * /^asset\.ability\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2})\.(\d+|\*)\.([a-z][a-z_]*|\*)$/
+ * /^asset\.ability\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})\.(\d+|\*)\.([a-z][a-z_]*|\*)$/
  * ```
  */
 export type AssetAbilityOracleRollableIdWildcard = string
@@ -363,7 +363,7 @@ export type DelveSiteThemeIdWildcard = string
 /**
  * A unique ID representing a Move object.
  * @pattern ```javascript
- * /^move:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2})$/
+ * /^move:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})$/
  * ```
  */
 export type MoveId = string
@@ -371,7 +371,7 @@ export type MoveId = string
 /**
  * A wildcarded MoveId that can be used to match multiple Move objects.
  * @pattern ```javascript
- * /^move:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2})$/
+ * /^move:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})$/
  * ```
  */
 export type MoveIdWildcard = string
@@ -379,7 +379,7 @@ export type MoveIdWildcard = string
 /**
  * A unique ID representing a MoveCategory object.
  * @pattern ```javascript
- * /^move_category:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)$/
+ * /^move_category:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,3})$/
  * ```
  */
 export type MoveCategoryId = string
@@ -387,7 +387,7 @@ export type MoveCategoryId = string
 /**
  * A wildcarded MoveCategoryId that can be used to match multiple MoveCategory objects.
  * @pattern ```javascript
- * /^move_category:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)$/
+ * /^move_category:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,3})$/
  * ```
  */
 export type MoveCategoryIdWildcard = string
@@ -395,7 +395,7 @@ export type MoveCategoryIdWildcard = string
 /**
  * A unique ID representing a MoveOracleRollable object.
  * @pattern ```javascript
- * /^move\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2})\.([a-z][a-z_]*|\*)$/
+ * /^move\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})\.([a-z][a-z_]*|\*)$/
  * ```
  */
 export type MoveOracleRollableId = string
@@ -403,7 +403,7 @@ export type MoveOracleRollableId = string
 /**
  * A wildcarded MoveOracleRollableId that can be used to match multiple MoveOracleRollable objects.
  * @pattern ```javascript
- * /^move\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2})\.([a-z][a-z_]*|\*)$/
+ * /^move\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})\.([a-z][a-z_]*|\*)$/
  * ```
  */
 export type MoveOracleRollableIdWildcard = string
@@ -560,6 +560,9 @@ export type AnyOracleRollableIdWildcard =
 	| EmbeddedOracleRollableIdWildcard
 	| OracleRollableIdWildcard
 
+/**
+ * Represents any kind of non-wildcard ID, including IDs of embedded objects.
+ */
 export type AnyId =
 	| AssetId
 	| AssetCollectionId
@@ -583,6 +586,9 @@ export type AnyId =
 	| TruthOptionId
 	| TruthOptionOracleRollableId
 
+/**
+ * Represents any kind of wildcard ID, including IDs of embedded objects.
+ */
 export type AnyIdWildcard =
 	| AssetIdWildcard
 	| AssetCollectionIdWildcard
@@ -694,16 +700,7 @@ export type SourceTitle = string
 /**
  * @experimental
  */
-export interface Suggestions {
-	oracles?: OracleRollableId[]
-	assets?: AssetId[]
-	moves?: MoveId[]
-	site_domains?: DelveSiteDomainId[]
-	site_themes?: DelveSiteThemeId[]
-	npcs?: NpcId[]
-	atlas?: AtlasEntryId[]
-	rarities?: RarityId[]
-}
+export type Suggestions = AnyIdWildcard[]
 
 /**
  * A relative (local) URL pointing to a vector image in the SVG format.
@@ -752,24 +749,17 @@ export interface I18nHints {
 }
 
 /**
- * A localized label for an input. In some contexts it may be undesirable to render this text, but it should always be exposed to assistive technology (e.g. with `aria-label` in HTML).
- * @pattern ```javascript
- * /^[^A-Z]+$/
- * ```
+ * A localized, player-facing name or label, formatted as plain text. In some contexts it may be undesirable to render this text, but it should always be exposed to assistive technology (e.g. with `aria-label` in HTML).
  * @i18n
  */
 export type Label = string
 
 /**
- * A localized plain text name or label.
- * @i18n
- */
-export type Label = string
-
-/**
- * Localized text, formatted in Markdown.
+ * Localized, player-facing text, formatted in Markdown. It is *not* formatted for use "out of the box"; it uses some custom syntax, intended to be replaced in whatever way is most appropriate for your implementation.
  *
- * It uses some custom syntax; e.g. `{{table:some_oracle_table_id}}` indicates that the referenced oracle table is rendered there in the source material.
+ * * `[Link text](move:starforged/suffer/pay_the_price)`: A link to the identified object. The ID must conform to the `AnyId` type; no wildcards allowed.
+ * * `{{table>oracle_rollable:starforged/core/action}}`: the referenced oracle is rendered here in the source material. The ID must conform to the `AnyOracleRollableId` type; no wildcards allowed.
+ *
  * @i18n
  */
 export type MarkdownString = string
@@ -785,6 +775,7 @@ export type MarkdownString = string
  *   - `attributive_verb`: A verb used as an adjective, to modify a noun.
  *   - `adjective_as_proper_noun`: An adjective used as a proper noun.
  *   - `common_noun_as_proper_noun`: An common noun used as a proper noun.
+ * @experimental
  */
 export type PartOfSpeech =
 	| 'common_noun'
@@ -801,7 +792,7 @@ export type PartOfSpeech =
 /**
  * A rich text string in Markdown with replaced values from oracle roll results.
  *
- * The custom syntax `{{some_row_key:some_oracle_table_id}}` should be replaced by the `some_row_key` string of a rolled oracle table. This is usually the `result` key, for example `{{result:starforged/oracles/core/action}}`
+ * The custom syntax `{{some_row_key>some_oracle_table_id}}` should be replaced by the `some_row_key` string of a rolled oracle table. This is usually the `text` key, for example `{{text>oracle_rollable:starforged/core/action}}`
  *
  * @i18n
  * @experimental
@@ -1686,7 +1677,7 @@ export interface OracleRoll {
 /**
  * Provides string templates that may be used in place of the static row text from `OracleTableRow#text`, `OracleTableRow#text2`, and `OracleTableRow#text3`.
  *
- *   These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text:some_oracle_table_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#text` from the target oracle table ID.
+ *   These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text>some_oracle_rollable_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#text` from the target oracle rollable ID.
  * @experimental
  */
 export interface OracleRollTemplate {
@@ -3172,9 +3163,9 @@ export interface MoveActionRoll {
 	 */
 	text: MarkdownString
 	/**
-	 * Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.
+	 * @remarks Deserialize as a dictionary object.
 	 */
-	oracles?: OracleRollableId[]
+	oracles?: Record<DictKey, EmbeddedOracleRollable>
 	/**
 	 * A move that makes an action roll.
 	 */
@@ -3302,9 +3293,9 @@ export interface MoveNoRoll {
 	 */
 	text: MarkdownString
 	/**
-	 * Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.
+	 * @remarks Deserialize as a dictionary object.
 	 */
-	oracles?: OracleRollableId[]
+	oracles?: Record<DictKey, EmbeddedOracleRollable>
 	/**
 	 * A move that makes no action rolls or progress rolls.
 	 */
@@ -3392,9 +3383,9 @@ export interface MoveProgressRoll {
 	 */
 	text: MarkdownString
 	/**
-	 * Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.
+	 * @remarks Deserialize as a dictionary object.
 	 */
-	oracles?: OracleRollableId[]
+	oracles?: Record<DictKey, EmbeddedOracleRollable>
 	/**
 	 * A progress move that rolls on a standard progress track type (defined by this move).
 	 */
@@ -3474,9 +3465,9 @@ export interface MoveSpecialTrack {
 	 */
 	text: MarkdownString
 	/**
-	 * Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.
+	 * @remarks Deserialize as a dictionary object.
 	 */
-	oracles?: OracleRollableId[]
+	oracles?: Record<DictKey, EmbeddedOracleRollable>
 	/**
 	 * A progress move that rolls on one or more special tracks, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
 	 */
@@ -4935,7 +4926,7 @@ export interface DelveSiteDomain {
 	summary: MarkdownString
 	description?: MarkdownString
 	/**
-	 * An oracle table ID containing place name elements. For examples, see oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in oracle collection ID `delve/collections/oracles/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (ID: delve/oracles/site_name/format) to create random names for delve sites.
+	 * An oracle table ID containing place name elements. For examples, see oracle ID `oracle_rollable:delve/site_name/place/barrow`, and its siblings in oracle collection ID `oracle_collection:delve/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (`oracle_rollable:delve/site_name/format`) to create random names for delve sites.
 	 */
 	name_oracle?: OracleRollableId
 	features: OracleTableRowText[] &

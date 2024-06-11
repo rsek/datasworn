@@ -20,6 +20,8 @@ const AJV = new Ajv({
 	useDefaults: 'empty',
 	validateFormats: true,
 	verbose: true
+	// used for code generation
+	// code: { source: true, esm: true }
 })
 
 for (const format in FORMATS) AJV.addFormat(format, FORMATS[format])

@@ -54,7 +54,7 @@ function enhanceCollection(target, source, strictOverrides = true) {
             continue;
         }
         switch (key) {
-            // IDs should never be overwritten -- they need to relate to the object's 'real' position or the id lookup won't work.
+            // target's id should never be overwritten -- they need to relate to the object's 'real' position or the id lookup won't work.
             case '_id':
             case 'enhances':
             case 'replaces':
@@ -99,8 +99,7 @@ function enhanceCollection(target, source, strictOverrides = true) {
                         oldValue.set(childKey, updatedChild);
                     }
                     else {
-                        const updatedChild = childKey in
-                            oldValue
+                        const updatedChild = childKey in oldValue
                             ? enhanceCollection(oldValue[childKey], sourceChild, strictOverrides)
                             : sourceChild;
                         oldValue[childKey] = updatedChild;

@@ -180,105 +180,24 @@ export interface Expansion {
     rules?: RulesExpansion;
 }
 /**
- * A unique ID for an AssetAbility.
+ * The ID of standalone Datasworn package that describes its own ruleset.
  * @pattern ```javascript
- * /^[a-z][a-z0-9_]{3,}\/asset\/[a-z][a-z_]*\/[a-z][a-z_]*\.abilities\/\d+$/
+ * /^[a-z][a-z0-9_]{3,}$/
  * ```
+ * @example "classic"
+ * @example "starforged"
  */
-export type AssetAbilityId = string;
+export type RulesetId = string;
 /**
- * A unique ID for an AssetCollection.
+ * The ID of a Datasworn package that relies on an external package to provide its ruleset.
  * @pattern ```javascript
- * /^[a-z][a-z0-9_]{3,}\/asset_collection\/[a-z][a-z_]*$/
+ * /^[a-z][a-z0-9_]{3,}$/
  * ```
+ * @example "delve"
+ * @example "sundered_isles"
  */
-export type AssetCollectionId = string;
-/**
- * A wildcarded ID that can be used to match multiple AssetCollections.
- * @pattern ```javascript
- * /^(\*|[a-z][a-z0-9_]{3,})\/asset_collection\/(\*|[a-z][a-z_]*)$/
- * ```
- */
-export type AssetCollectionIdWildcard = string;
-export type AssetId = string;
-/**
- * A wildcarded ID that can be used to match multiple Assets.
- * @pattern ```javascript
- * /^(\*|[a-z][a-z0-9_]{3,})\/asset\/(\*|[a-z][a-z_]*)\/(\*|[a-z][a-z_]*)$/
- * ```
- */
-export type AssetIdWildcard = string;
-/**
- * A unique ID for an AtlasCollection.
- * @pattern ```javascript
- * /^[a-z][a-z0-9_]{3,}\/atlas_entry\/[a-z][a-z_]*$/
- * ```
- * @example "classic/atlas_collection/ironlands"
- */
-export type AtlasCollectionId = string;
-/**
- * A wildcarded ID that can be used to match multiple AtlasCollections.
- * @pattern ```javascript
- * /^(\*|[a-z][a-z0-9_]{3,})\/atlas_entry\/(\*|[a-z][a-z_]*)$/
- * ```
- */
-export type AtlasCollectionIdWildcard = string;
-/**
- * @example "classic/atlas_entry/ironlands/hinterlands"
- */
-export type AtlasEntryId = string;
-/**
- * A wildcarded ID that can be used to match multiple AtlasEntrys.
- * @pattern ```javascript
- * /^(\*|[a-z][a-z0-9_]{3,})\/atlas_entry((\/[a-z][a-z_]*){1,3}|\/\*\*|\/\*\*\/[a-z][a-z_]*|\/[a-z][a-z_]*\/\*\*)\/(\*|[a-z][a-z_]*)$/
- * ```
- */
-export type AtlasEntryIdWildcard = string;
-/**
- * A unique ID for a DelveSiteDomain.
- * @pattern ```javascript
- * /^[a-z][a-z0-9_]{3,}\/delve_site_domain\/[a-z][a-z_]*$/
- * ```
- * @example "delve/delve_site_domain/shadowfen"
- */
-export type DelveSiteDomainId = string;
-/**
- * A wildcarded ID that can be used to match multiple DelveSiteDomains.
- * @pattern ```javascript
- * /^(\*|[a-z][a-z0-9_]{3,})\/delve_site_domain\/(\*|[a-z][a-z_]*)$/
- * ```
- */
-export type DelveSiteDomainIdWildcard = string;
-/**
- * A unique ID for a DelveSite.
- * @pattern ```javascript
- * /^[a-z][a-z0-9_]{3,}\/delve_site\/[a-z][a-z_]*$/
- * ```
- * @example "delve/delve_site/alvas_rest"
- */
-export type DelveSiteId = string;
-/**
- * A wildcarded ID that can be used to match multiple DelveSites.
- * @pattern ```javascript
- * /^(\*|[a-z][a-z0-9_]{3,})\/delve_site\/(\*|[a-z][a-z_]*)$/
- * ```
- */
-export type DelveSiteIdWildcard = string;
-/**
- * A unique ID for a DelveSiteTheme.
- * @pattern ```javascript
- * /^[a-z][a-z0-9_]{3,}\/delve_site_theme\/[a-z][a-z_]*$/
- * ```
- * @example "delve/delve_site_theme/hallowed"
- */
-export type DelveSiteThemeId = string;
-/**
- * A wildcarded ID that can be used to match multiple DelveSiteThemes.
- * @pattern ```javascript
- * /^(\*|[a-z][a-z0-9_]{3,})\/delve_site_theme\/(\*|[a-z][a-z_]*)$/
- * ```
- */
-export type DelveSiteThemeIdWildcard = string;
+export type ExpansionId = string;
+export type RulesPackageId = RulesetId | ExpansionId;
 /**
  * A `snake_case` key used in a Datasworn dictionary object.
  * @remarks If you need to generate a key from a user-provided label, it's recommended to use a 'slugify' function/library, e.g. https://www.npmjs.com/package/slugify for NodeJS.
@@ -288,137 +207,315 @@ export type DelveSiteThemeIdWildcard = string;
  */
 export type DictKey = string;
 /**
- * The ID of a Datasworn package that relies on an external package to provide its ruleset.
+ * A unique ID representing an Asset object.
  * @pattern ```javascript
- * /^[a-z][a-z0-9_]{3,}$/
+ * /^asset:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})$/
  * ```
- * @example "delve"
  */
-export type ExpansionId = string;
+export type AssetId = string;
 /**
- * A unique ID for a MoveCategory.
+ * A wildcarded AssetId that can be used to match multiple Asset objects.
  * @pattern ```javascript
- * /^[a-z][a-z0-9_]{3,}\/move_category\/[a-z][a-z_]*$/
+ * /^asset:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})$/
  * ```
- * @example "starforged/move_category/adventure"
+ */
+export type AssetIdWildcard = string;
+/**
+ * A unique ID representing an AssetCollection object.
+ * @pattern ```javascript
+ * /^asset_collection:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,3})$/
+ * ```
+ */
+export type AssetCollectionId = string;
+/**
+ * A wildcarded AssetCollectionId that can be used to match multiple AssetCollection objects.
+ * @pattern ```javascript
+ * /^asset_collection:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,3})$/
+ * ```
+ */
+export type AssetCollectionIdWildcard = string;
+/**
+ * A unique ID representing an AssetAbility object.
+ * @pattern ```javascript
+ * /^asset\.ability:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})\.(\d+)$/
+ * ```
+ */
+export type AssetAbilityId = string;
+/**
+ * A wildcarded AssetAbilityId that can be used to match multiple AssetAbility objects.
+ * @pattern ```javascript
+ * /^asset\.ability:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})\.(\d+|\*)$/
+ * ```
+ */
+export type AssetAbilityIdWildcard = string;
+/**
+ * A unique ID representing an AssetAbilityMove object.
+ * @pattern ```javascript
+ * /^asset\.ability\.move:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})\.(\d+)\.([a-z][a-z_]*|\*)$/
+ * ```
+ */
+export type AssetAbilityMoveId = string;
+/**
+ * A wildcarded AssetAbilityMoveId that can be used to match multiple AssetAbilityMove objects.
+ * @pattern ```javascript
+ * /^asset\.ability\.move:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})\.(\d+|\*)\.([a-z][a-z_]*|\*)$/
+ * ```
+ */
+export type AssetAbilityMoveIdWildcard = string;
+/**
+ * A unique ID representing an AssetAbilityOracleRollable object.
+ * @pattern ```javascript
+ * /^asset\.ability\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})\.(\d+)\.([a-z][a-z_]*|\*)$/
+ * ```
+ */
+export type AssetAbilityOracleRollableId = string;
+/**
+ * A wildcarded AssetAbilityOracleRollableId that can be used to match multiple AssetAbilityOracleRollable objects.
+ * @pattern ```javascript
+ * /^asset\.ability\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})\.(\d+|\*)\.([a-z][a-z_]*|\*)$/
+ * ```
+ */
+export type AssetAbilityOracleRollableIdWildcard = string;
+/**
+ * A unique ID representing an AtlasCollection object.
+ * @pattern ```javascript
+ * /^atlas_collection:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,3})$/
+ * ```
+ */
+export type AtlasCollectionId = string;
+/**
+ * A wildcarded AtlasCollectionId that can be used to match multiple AtlasCollection objects.
+ * @pattern ```javascript
+ * /^atlas_collection:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,3})$/
+ * ```
+ */
+export type AtlasCollectionIdWildcard = string;
+/**
+ * A unique ID representing an AtlasEntry object.
+ * @pattern ```javascript
+ * /^atlas_entry:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})$/
+ * ```
+ */
+export type AtlasEntryId = string;
+/**
+ * A wildcarded AtlasEntryId that can be used to match multiple AtlasEntry objects.
+ * @pattern ```javascript
+ * /^atlas_entry:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})$/
+ * ```
+ */
+export type AtlasEntryIdWildcard = string;
+/**
+ * A unique ID representing a DelveSite object.
+ * @pattern ```javascript
+ * /^delve_site:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)$/
+ * ```
+ */
+export type DelveSiteId = string;
+/**
+ * A wildcarded DelveSiteId that can be used to match multiple DelveSite objects.
+ * @pattern ```javascript
+ * /^delve_site:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)$/
+ * ```
+ */
+export type DelveSiteIdWildcard = string;
+/**
+ * A unique ID representing a DelveSiteDomain object.
+ * @pattern ```javascript
+ * /^delve_site_domain:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)$/
+ * ```
+ */
+export type DelveSiteDomainId = string;
+/**
+ * A wildcarded DelveSiteDomainId that can be used to match multiple DelveSiteDomain objects.
+ * @pattern ```javascript
+ * /^delve_site_domain:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)$/
+ * ```
+ */
+export type DelveSiteDomainIdWildcard = string;
+/**
+ * A unique ID representing a DelveSiteTheme object.
+ * @pattern ```javascript
+ * /^delve_site_theme:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)$/
+ * ```
+ */
+export type DelveSiteThemeId = string;
+/**
+ * A wildcarded DelveSiteThemeId that can be used to match multiple DelveSiteTheme objects.
+ * @pattern ```javascript
+ * /^delve_site_theme:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)$/
+ * ```
+ */
+export type DelveSiteThemeIdWildcard = string;
+/**
+ * A unique ID representing a Move object.
+ * @pattern ```javascript
+ * /^move:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})$/
+ * ```
+ */
+export type MoveId = string;
+/**
+ * A wildcarded MoveId that can be used to match multiple Move objects.
+ * @pattern ```javascript
+ * /^move:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})$/
+ * ```
+ */
+export type MoveIdWildcard = string;
+/**
+ * A unique ID representing a MoveCategory object.
+ * @pattern ```javascript
+ * /^move_category:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,3})$/
+ * ```
  */
 export type MoveCategoryId = string;
 /**
- * A wildcarded ID that can be used to match multiple MoveCategorys.
+ * A wildcarded MoveCategoryId that can be used to match multiple MoveCategory objects.
  * @pattern ```javascript
- * /^(\*|[a-z][a-z0-9_]{3,})\/move_category\/(\*|[a-z][a-z_]*)$/
+ * /^move_category:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,3})$/
  * ```
  */
 export type MoveCategoryIdWildcard = string;
 /**
- * A move ID, for a standard move or a unique asset move
- * @example "classic/move/combat/strike"
- * @example "starforged/asset/module/grappler.abilities/0.moves/ready_grappler"
- */
-export type MoveId = string;
-/**
- * A move ID with wildcards.
- */
-export type MoveIdWildcard = string;
-/**
- * A unique ID for a NpcCollection.
+ * A unique ID representing a MoveOracleRollable object.
  * @pattern ```javascript
- * /^[a-z][a-z0-9_]{3,}\/npc_collection\/[a-z][a-z_]*$/
- * ```
- * @example "classic/npc_collection/firstborn"
- * @example "starforged/npc_collection/sample_npcs"
- */
-export type NpcCollectionId = string;
-/**
- * A wildcarded ID that can be used to match multiple NpcCollections.
- * @pattern ```javascript
- * /^(\*|[a-z][a-z0-9_]{3,})\/npc_collection\/(\*|[a-z][a-z_]*)$/
+ * /^move\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})\.([a-z][a-z_]*|\*)$/
  * ```
  */
-export type NpcCollectionIdWildcard = string;
+export type MoveOracleRollableId = string;
 /**
- * @example "classic/npc/firstborn/elf"
- * @example "starforged/npc/sample_npcs/chiton"
+ * A wildcarded MoveOracleRollableId that can be used to match multiple MoveOracleRollable objects.
+ * @pattern ```javascript
+ * /^move\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})\.([a-z][a-z_]*|\*)$/
+ * ```
+ */
+export type MoveOracleRollableIdWildcard = string;
+/**
+ * A unique ID representing a Npc object.
+ * @pattern ```javascript
+ * /^npc:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})$/
+ * ```
  */
 export type NpcId = string;
 /**
- * A wildcarded ID that can be used to match multiple Npcs.
+ * A wildcarded NpcId that can be used to match multiple Npc objects.
  * @pattern ```javascript
- * /^(\*|[a-z][a-z0-9_]{3,})\/npc((\/[a-z][a-z_]*){1,3}|\/\*\*|\/\*\*\/[a-z][a-z_]*|\/[a-z][a-z_]*\/\*\*)\/(\*|[a-z][a-z_]*)$/
+ * /^npc:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})$/
  * ```
  */
 export type NpcIdWildcard = string;
 /**
- * A unique ID for an OracleCollection.
+ * A unique ID representing a NpcCollection object.
  * @pattern ```javascript
- * /^[a-z][a-z0-9_]{3,}\/oracle_collection(\/[a-z][a-z_]*){1,3}$/
+ * /^npc_collection:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,3})$/
  * ```
- * @example "starforged/oracle_collection/core"
- * @example "starforged/oracle_collection/character/names"
- * @example "starforged/oracle_collection/planets/furnace/settlements"
+ */
+export type NpcCollectionId = string;
+/**
+ * A wildcarded NpcCollectionId that can be used to match multiple NpcCollection objects.
+ * @pattern ```javascript
+ * /^npc_collection:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,3})$/
+ * ```
+ */
+export type NpcCollectionIdWildcard = string;
+/**
+ * A unique ID representing an OracleCollection object.
+ * @pattern ```javascript
+ * /^oracle_collection:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,3})$/
+ * ```
  */
 export type OracleCollectionId = string;
 /**
- * A wildcarded ID that can be used to match multiple OracleCollections.
+ * A wildcarded OracleCollectionId that can be used to match multiple OracleCollection objects.
  * @pattern ```javascript
- * /^(\*|[a-z][a-z0-9_]{3,})\/oracle_collection((\/[a-z][a-z_]*){1,3}|\/\*\*|\/\*\*\/[a-z][a-z_]*|\/[a-z][a-z_]*\/\*\*)$/
+ * /^oracle_collection:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,3})$/
  * ```
  */
 export type OracleCollectionIdWildcard = string;
 /**
- * @example "starforged/oracle_rollable/core/action"
- * @example "starforged/oracle_rollable/character/names/given"
- * @example "starforged/oracle_rollable/planets/furnace/settlements/terminus"
+ * A unique ID representing an OracleRollable object.
+ * @pattern ```javascript
+ * /^oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})$/
+ * ```
  */
 export type OracleRollableId = string;
 /**
- * Oracle table wildcards can also use '**' to represent any number of collection levels in the oracle tree.
+ * A wildcarded OracleRollableId that can be used to match multiple OracleRollable objects.
  * @pattern ```javascript
- * /^(\*|[a-z][a-z0-9_]{3,})\/oracle_rollable((\/[a-z][a-z_]*){1,3}|\/\*\*|\/\*\*\/[a-z][a-z_]*|\/[a-z][a-z_]*\/\*\*)\/(\*|[a-z][a-z_]*)$/
+ * /^oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})$/
  * ```
  */
 export type OracleRollableIdWildcard = string;
 /**
- * A unique ID for a Rarity.
+ * A unique ID representing a Rarity object.
  * @pattern ```javascript
- * /^[a-z][a-z0-9_]{3,}\/rarity\/[a-z][a-z_]*$/
+ * /^rarity:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)$/
  * ```
- * @example "classic/rarities/ayethins_journal"
  */
 export type RarityId = string;
 /**
- * A wildcarded ID that can be used to match multiple Raritys.
+ * A wildcarded RarityId that can be used to match multiple Rarity objects.
  * @pattern ```javascript
- * /^(\*|[a-z][a-z0-9_]{3,})\/rarity\/(\*|[a-z][a-z_]*)$/
+ * /^rarity:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)$/
  * ```
  */
 export type RarityIdWildcard = string;
 /**
- * The ID of standalone Datasworn package that describes its own ruleset.
+ * A unique ID representing a Truth object.
  * @pattern ```javascript
- * /^[a-z][a-z0-9_]{3,}$/
+ * /^truth:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)$/
  * ```
- * @example "classic"
- * @example "starforged"
- * @example "sundered_isles"
- */
-export type RulesetId = string;
-/**
- * A unique ID for a Truth.
- * @pattern ```javascript
- * /^[a-z][a-z0-9_]{3,}\/truth\/[a-z][a-z_]*$/
- * ```
- * @example "classic/truth/iron"
- * @example "starforged/truth/iron"
  */
 export type TruthId = string;
 /**
- * A wildcarded ID that can be used to match multiple Truths.
+ * A wildcarded TruthId that can be used to match multiple Truth objects.
  * @pattern ```javascript
- * /^(\*|[a-z][a-z0-9_]{3,})\/truth\/(\*|[a-z][a-z_]*)$/
+ * /^truth:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)$/
  * ```
  */
 export type TruthIdWildcard = string;
+/**
+ * A unique ID representing a TruthOption object.
+ * @pattern ```javascript
+ * /^truth\.option:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)\.(\d+)$/
+ * ```
+ */
+export type TruthOptionId = string;
+/**
+ * A wildcarded TruthOptionId that can be used to match multiple TruthOption objects.
+ * @pattern ```javascript
+ * /^truth\.option:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)\.(\d+|\*)$/
+ * ```
+ */
+export type TruthOptionIdWildcard = string;
+/**
+ * A unique ID representing a TruthOptionOracleRollable object.
+ * @pattern ```javascript
+ * /^truth\.option\.oracle_rollable:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)\.(\d+)\.([a-z][a-z_]*|\*)$/
+ * ```
+ */
+export type TruthOptionOracleRollableId = string;
+/**
+ * A wildcarded TruthOptionOracleRollableId that can be used to match multiple TruthOptionOracleRollable objects.
+ * @pattern ```javascript
+ * /^truth\.option\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)\.(\d+|\*)\.([a-z][a-z_]*|\*)$/
+ * ```
+ */
+export type TruthOptionOracleRollableIdWildcard = string;
+export type EmbeddedMoveId = AssetAbilityMoveId;
+export type EmbeddedMoveIdWildcard = AssetAbilityMoveIdWildcard;
+export type AnyMoveId = EmbeddedMoveId | MoveId;
+export type AnyMoveIdWildcard = EmbeddedMoveIdWildcard | MoveIdWildcard;
+export type EmbeddedOracleRollableId = AssetAbilityOracleRollableId | TruthOptionOracleRollableId | MoveOracleRollableId;
+export type EmbeddedOracleRollableIdWildcard = AssetAbilityOracleRollableIdWildcard | TruthOptionOracleRollableIdWildcard | MoveOracleRollableIdWildcard;
+export type AnyOracleRollableId = EmbeddedOracleRollableId | OracleRollableId;
+export type AnyOracleRollableIdWildcard = EmbeddedOracleRollableIdWildcard | OracleRollableIdWildcard;
+/**
+ * Represents any kind of non-wildcard ID, including IDs of embedded objects.
+ */
+export type AnyId = AssetId | AssetCollectionId | AssetAbilityId | AssetAbilityMoveId | AssetAbilityOracleRollableId | AtlasCollectionId | AtlasEntryId | DelveSiteId | DelveSiteDomainId | DelveSiteThemeId | MoveId | MoveCategoryId | MoveOracleRollableId | NpcId | NpcCollectionId | OracleCollectionId | OracleRollableId | RarityId | TruthId | TruthOptionId | TruthOptionOracleRollableId;
+/**
+ * Represents any kind of wildcard ID, including IDs of embedded objects.
+ */
+export type AnyIdWildcard = AssetIdWildcard | AssetCollectionIdWildcard | AssetAbilityIdWildcard | AssetAbilityMoveIdWildcard | AssetAbilityOracleRollableIdWildcard | AtlasCollectionIdWildcard | AtlasEntryIdWildcard | DelveSiteIdWildcard | DelveSiteDomainIdWildcard | DelveSiteThemeIdWildcard | MoveIdWildcard | MoveCategoryIdWildcard | MoveOracleRollableIdWildcard | NpcIdWildcard | NpcCollectionIdWildcard | OracleCollectionIdWildcard | OracleRollableIdWildcard | RarityIdWildcard | TruthIdWildcard | TruthOptionIdWildcard | TruthOptionOracleRollableIdWildcard;
 /**
  * Information on the original creator of this material.
  * @example {}
@@ -500,16 +597,7 @@ export type SourceTitle = string;
 /**
  * @experimental
  */
-export interface Suggestions {
-    oracles?: OracleRollableId[];
-    assets?: AssetId[];
-    moves?: MoveId[];
-    site_domains?: DelveSiteDomainId[];
-    site_themes?: DelveSiteThemeId[];
-    npcs?: NpcId[];
-    atlas?: AtlasEntryId[];
-    rarities?: RarityId[];
-}
+export type Suggestions = AnyIdWildcard[];
 /**
  * A relative (local) URL pointing to a vector image in the SVG format.
  * @pattern ```javascript
@@ -552,22 +640,16 @@ export interface I18nHints {
     };
 }
 /**
- * A localized label for an input. In some contexts it may be undesirable to render this text, but it should always be exposed to assistive technology (e.g. with `aria-label` in HTML).
- * @pattern ```javascript
- * /^[^A-Z]+$/
- * ```
- * @i18n
- */
-export type InputLabel = string;
-/**
- * A localized plain text name or label.
+ * A localized, player-facing name or label, formatted as plain text. In some contexts it may be undesirable to render this text, but it should always be exposed to assistive technology (e.g. with `aria-label` in HTML).
  * @i18n
  */
 export type Label = string;
 /**
- * Localized text, formatted in Markdown.
+ * Localized, player-facing text, formatted in Markdown. It is *not* formatted for use "out of the box"; it uses some custom syntax, intended to be replaced in whatever way is most appropriate for your implementation.
  *
- * It uses some custom syntax; e.g. `{{table:some_oracle_table_id}}` indicates that the referenced oracle table is rendered there in the source material.
+ * * `[Link text](move:starforged/suffer/pay_the_price)`: A link to the identified object. The ID must conform to the `AnyId` type; no wildcards allowed.
+ * * `{{table>oracle_rollable:starforged/core/action}}`: the referenced oracle is rendered here in the source material. The ID must conform to the `AnyOracleRollableId` type; no wildcards allowed.
+ *
  * @i18n
  */
 export type MarkdownString = string;
@@ -582,12 +664,13 @@ export type MarkdownString = string;
  *   - `attributive_verb`: A verb used as an adjective, to modify a noun.
  *   - `adjective_as_proper_noun`: An adjective used as a proper noun.
  *   - `common_noun_as_proper_noun`: An common noun used as a proper noun.
+ * @experimental
  */
 export type PartOfSpeech = 'common_noun' | 'proper_noun' | 'adjunct_common_noun' | 'adjunct_proper_noun' | 'verb' | 'gerund' | 'adjective' | 'attributive_verb' | 'adjective_as_proper_noun' | 'common_noun_as_proper_noun';
 /**
  * A rich text string in Markdown with replaced values from oracle roll results.
  *
- * The custom syntax `{{some_row_key:some_oracle_table_id}}` should be replaced by the `some_row_key` string of a rolled oracle table. This is usually the `result` key, for example `{{result:starforged/oracles/core/action}}`
+ * The custom syntax `{{some_row_key>some_oracle_table_id}}` should be replaced by the `some_row_key` string of a rolled oracle table. This is usually the `text` key, for example `{{text>oracle_rollable:starforged/core/action}}`
  *
  * @i18n
  * @experimental
@@ -608,7 +691,7 @@ export interface ConditionMeterRule {
      * @default false
      */
     shared?: boolean;
-    label: InputLabel;
+    label: Label;
     /**
      * The current value of this meter.
      * @default 0
@@ -635,7 +718,7 @@ export interface ImpactCategory {
     /**
      * A label for this impact category.
      */
-    label: InputLabel;
+    label: Label;
     /**
      * A description of this impact category.
      */
@@ -653,7 +736,7 @@ export interface ImpactRule {
     /**
      * The label for this impact.
      */
-    label: InputLabel;
+    label: Label;
     /**
      * A description of this impact.
      */
@@ -758,7 +841,7 @@ export interface SpecialTrackRule {
     /**
      * A label for this special track.
      */
-    label: InputLabel;
+    label: Label;
     /**
      * A description of this special track.
      */
@@ -782,7 +865,7 @@ export interface StatRule {
      * A label for this stat.
      * @example "edge"
      */
-    label: InputLabel;
+    label: Label;
     /**
      * A description of this stat.
      * @example "Quickness, agility, and prowess when fighting at a distance."
@@ -1157,7 +1240,7 @@ export interface ConditionMeterValueRef {
  * An arbitrary static integer value with a label.
  */
 export interface CustomValue {
-    label: InputLabel;
+    label: Label;
     value: number;
     /**
      * An arbitrary static integer value with a label.
@@ -1188,7 +1271,7 @@ export interface Npc {
      */
     _id?: NpcId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -1229,7 +1312,7 @@ export interface NpcCollection {
      */
     _id?: NpcCollectionId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -1357,7 +1440,7 @@ export interface OracleRoll {
 /**
  * Provides string templates that may be used in place of the static row text from `OracleTableRow#text`, `OracleTableRow#text2`, and `OracleTableRow#text3`.
  *
- *   These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text:some_oracle_table_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#text` from the target oracle table ID.
+ *   These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text>some_oracle_rollable_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#text` from the target oracle rollable ID.
  * @experimental
  */
 export interface OracleRollTemplate {
@@ -1388,6 +1471,334 @@ export interface DiceRange {
      */
     max: number;
 }
+export interface EmbeddedOracleColumnText {
+    _id?: EmbeddedOracleRollableId;
+    /**
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
+     * The primary label at the head of this column.
+     */
+    name: Label;
+    /**
+     * Optional secondary text at the head of this column. For best results, this should be no more than a few words in length.
+     */
+    summary?: MarkdownString;
+    /**
+     * An optional thematic color for this column. For an example, see "Basic Creature Form" (Starforged p. 337)
+     */
+    color?: CssColor;
+    /**
+     * An optional icon for this column.
+     */
+    icon?: SvgImageUrl;
+    /**
+     * The roll used to select a result on this oracle.
+     * @default "1d100"
+     */
+    dice?: DiceExpression;
+    /**
+     * Most oracle tables are insensitive to matches, but a few define special match behavior.
+     */
+    match?: OracleMatchBehavior;
+    tags?: Tags;
+    suggestions?: Suggestions;
+    type: 'oracle_rollable';
+    /**
+     * An array of objects, each representing a single row of the table.
+     */
+    rows: OracleTableRowText[];
+    oracle_type: 'column_text';
+}
+export interface EmbeddedOracleColumnText2 {
+    _id?: EmbeddedOracleRollableId;
+    /**
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
+     * The primary label at the head of this column.
+     */
+    name: Label;
+    /**
+     * Optional secondary text at the head of this column. For best results, this should be no more than a few words in length.
+     */
+    summary?: MarkdownString;
+    /**
+     * An optional thematic color for this column. For an example, see "Basic Creature Form" (Starforged p. 337)
+     */
+    color?: CssColor;
+    /**
+     * An optional icon for this column.
+     */
+    icon?: SvgImageUrl;
+    /**
+     * The roll used to select a result on this oracle.
+     * @default "1d100"
+     */
+    dice?: DiceExpression;
+    /**
+     * Most oracle tables are insensitive to matches, but a few define special match behavior.
+     */
+    match?: OracleMatchBehavior;
+    tags?: Tags;
+    suggestions?: Suggestions;
+    type: 'oracle_rollable';
+    /**
+     * An array of objects, each representing a single row of the table.
+     */
+    rows: Array<OracleTableRowText2>;
+    oracle_type: 'column_text2';
+}
+export interface EmbeddedOracleColumnText3 {
+    _id?: EmbeddedOracleRollableId;
+    /**
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
+     * The primary label at the head of this column.
+     */
+    name: Label;
+    /**
+     * Optional secondary text at the head of this column. For best results, this should be no more than a few words in length.
+     */
+    summary?: MarkdownString;
+    /**
+     * An optional thematic color for this column. For an example, see "Basic Creature Form" (Starforged p. 337)
+     */
+    color?: CssColor;
+    /**
+     * An optional icon for this column.
+     */
+    icon?: SvgImageUrl;
+    /**
+     * The roll used to select a result on this oracle.
+     * @default "1d100"
+     */
+    dice?: DiceExpression;
+    /**
+     * Most oracle tables are insensitive to matches, but a few define special match behavior.
+     */
+    match?: OracleMatchBehavior;
+    tags?: Tags;
+    suggestions?: Suggestions;
+    type: 'oracle_rollable';
+    /**
+     * An array of objects, each representing a single row of the table.
+     */
+    rows: Array<OracleTableRowText3>;
+    oracle_type: 'column_text3';
+}
+/**
+ * @remarks Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.
+ */
+export type EmbeddedOracleRollable = EmbeddedOracleTableText | EmbeddedOracleTableText2 | EmbeddedOracleTableText3 | EmbeddedOracleColumnText | EmbeddedOracleColumnText2 | EmbeddedOracleColumnText3;
+export interface EmbeddedOracleTableText {
+    _id?: EmbeddedOracleRollableId;
+    /**
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
+     * The primary name/label for this item.
+     */
+    name: Label;
+    /**
+     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     */
+    canonical_name?: Label;
+    suggestions?: Suggestions;
+    tags?: Tags;
+    oracle_type: 'table_text';
+    /**
+     * The roll used to select a result on this oracle.
+     * @default "1d100"
+     */
+    dice?: DiceExpression;
+    /**
+     * Most oracle tables are insensitive to matches, but a few define special match behavior.
+     */
+    match?: OracleMatchBehavior;
+    type: 'oracle_rollable';
+    /**
+     * An array of objects, each representing a single row of the table.
+     */
+    rows: OracleTableRowText[];
+    recommended_rolls?: {
+        /**
+         * @default 1
+         */
+        min: number;
+        /**
+         * @default 1
+         */
+        max: number;
+    };
+    /**
+     * An icon that represents this table.
+     */
+    icon?: SvgImageUrl;
+    /**
+     * A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
+     */
+    summary?: MarkdownString;
+    /**
+     * A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
+     */
+    description?: MarkdownString;
+    /**
+     * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
+     * @default {}
+     */
+    column_labels?: {
+        /**
+         * @default "Roll"
+         */
+        roll: Label;
+        /**
+         * @default "Result"
+         */
+        text: Label;
+    };
+}
+export interface EmbeddedOracleTableText2 {
+    _id?: EmbeddedOracleRollableId;
+    /**
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
+     * The primary name/label for this item.
+     */
+    name: Label;
+    /**
+     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     */
+    canonical_name?: Label;
+    suggestions?: Suggestions;
+    tags?: Tags;
+    oracle_type: 'table_text2';
+    /**
+     * The roll used to select a result on this oracle.
+     * @default "1d100"
+     */
+    dice?: DiceExpression;
+    /**
+     * Most oracle tables are insensitive to matches, but a few define special match behavior.
+     */
+    match?: OracleMatchBehavior;
+    type: 'oracle_rollable';
+    /**
+     * An array of objects, each representing a single row of the table.
+     */
+    rows: Array<OracleTableRowText2>;
+    recommended_rolls?: {
+        /**
+         * @default 1
+         */
+        min: number;
+        /**
+         * @default 1
+         */
+        max: number;
+    };
+    /**
+     * An icon that represents this table.
+     */
+    icon?: SvgImageUrl;
+    /**
+     * A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
+     */
+    summary?: MarkdownString;
+    /**
+     * A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
+     */
+    description?: MarkdownString;
+    /**
+     * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
+     * @default {}
+     */
+    column_labels?: {
+        /**
+         * @default "Roll"
+         */
+        roll: Label;
+        /**
+         * @default "Result"
+         */
+        text: Label;
+        /**
+         * @default "Details"
+         */
+        text2: Label;
+    };
+}
+export interface EmbeddedOracleTableText3 {
+    _id?: EmbeddedOracleRollableId;
+    /**
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
+     * The primary name/label for this item.
+     */
+    name: Label;
+    /**
+     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     */
+    canonical_name?: Label;
+    suggestions?: Suggestions;
+    tags?: Tags;
+    oracle_type: 'table_text3';
+    /**
+     * The roll used to select a result on this oracle.
+     * @default "1d100"
+     */
+    dice?: DiceExpression;
+    /**
+     * Most oracle tables are insensitive to matches, but a few define special match behavior.
+     */
+    match?: OracleMatchBehavior;
+    type: 'oracle_rollable';
+    /**
+     * An array of objects, each representing a single row of the table.
+     */
+    rows: Array<OracleTableRowText3>;
+    recommended_rolls?: {
+        /**
+         * @default 1
+         */
+        min: number;
+        /**
+         * @default 1
+         */
+        max: number;
+    };
+    /**
+     * An icon that represents this table.
+     */
+    icon?: SvgImageUrl;
+    /**
+     * A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
+     */
+    summary?: MarkdownString;
+    /**
+     * A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
+     */
+    description?: MarkdownString;
+    /**
+     * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
+     * @default {}
+     */
+    column_labels?: {
+        roll: Label;
+        text: Label;
+        text2: Label;
+        text3: Label;
+    };
+}
 /**
  * @remarks Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.
  */
@@ -1401,7 +1812,7 @@ export interface OracleColumnText {
      */
     _id?: OracleRollableId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -1448,7 +1859,7 @@ export interface OracleColumnText2 {
      */
     _id?: OracleRollableId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -1495,7 +1906,7 @@ export interface OracleColumnText3 {
      */
     _id?: OracleRollableId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -1669,7 +2080,7 @@ export interface OracleTableSharedRolls {
      */
     _id?: OracleCollectionId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -1740,7 +2151,7 @@ export interface OracleTableSharedText {
      */
     _id?: OracleCollectionId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -1811,7 +2222,7 @@ export interface OracleTableSharedText2 {
      */
     _id?: OracleCollectionId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -1886,7 +2297,7 @@ export interface OracleTableSharedText3 {
      */
     _id?: OracleCollectionId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -1957,7 +2368,7 @@ export interface OracleTableText {
      */
     _id?: OracleRollableId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -2039,7 +2450,7 @@ export interface OracleTableText2 {
      */
     _id?: OracleRollableId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -2125,7 +2536,7 @@ export interface OracleTableText3 {
      */
     _id?: OracleRollableId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -2203,7 +2614,7 @@ export interface OracleTablesCollection {
      */
     _id?: OracleCollectionId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -2269,6 +2680,141 @@ export interface OracleTablesCollection {
  *   - `all`: Use _every_ roll option at once.
  */
 export type ActionRollMethod = 'miss' | 'weak_hit' | 'strong_hit' | 'player_choice' | 'highest' | 'lowest' | 'all';
+export interface EmbeddedActionRollMove {
+    _id?: EmbeddedMoveId;
+    /**
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
+     * The primary name/label for this item.
+     */
+    name: Label;
+    /**
+     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     */
+    canonical_name?: Label;
+    suggestions?: Suggestions;
+    tags?: Tags;
+    /**
+     * The complete rules text of the move.
+     */
+    text: MarkdownString;
+    /**
+     * A move that makes an action roll.
+     */
+    roll_type: 'action_roll';
+    /**
+     * Trigger conditions for this move.
+     */
+    trigger: TriggerActionRoll;
+    outcomes: MoveOutcomes;
+    type: 'move';
+}
+/**
+ * @remarks Deserialize as a discriminated union/polymorphic object type, using the `roll_type` property as a discriminator.
+ */
+export type EmbeddedMove = EmbeddedActionRollMove | EmbeddedNoRollMove | EmbeddedProgressRollMove | EmbeddedSpecialTrackMove;
+export interface EmbeddedNoRollMove {
+    _id?: EmbeddedMoveId;
+    /**
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
+     * The primary name/label for this item.
+     */
+    name: Label;
+    /**
+     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     */
+    canonical_name?: Label;
+    suggestions?: Suggestions;
+    tags?: Tags;
+    /**
+     * The complete rules text of the move.
+     */
+    text: MarkdownString;
+    /**
+     * A move that makes no action rolls or progress rolls.
+     */
+    roll_type: 'no_roll';
+    /**
+     * Trigger conditions for this move.
+     */
+    trigger: TriggerNoRoll;
+    /**
+     * @default null
+     */
+    outcomes?: null;
+    type: 'move';
+}
+export interface EmbeddedProgressRollMove {
+    _id?: EmbeddedMoveId;
+    /**
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
+     * The primary name/label for this item.
+     */
+    name: Label;
+    /**
+     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     */
+    canonical_name?: Label;
+    suggestions?: Suggestions;
+    tags?: Tags;
+    /**
+     * The complete rules text of the move.
+     */
+    text: MarkdownString;
+    /**
+     * A progress move that rolls on a standard progress track type (defined by this move).
+     */
+    roll_type: 'progress_roll';
+    /**
+     * Trigger conditions for this move.
+     */
+    trigger: TriggerProgressRoll;
+    outcomes: MoveOutcomes;
+    type: 'move';
+    /**
+     * Describes the common features of progress tracks associated with this move.
+     */
+    tracks: ProgressTrackTypeInfo;
+}
+export interface EmbeddedSpecialTrackMove {
+    _id?: EmbeddedMoveId;
+    /**
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     */
+    _comment?: string;
+    /**
+     * The primary name/label for this item.
+     */
+    name: Label;
+    /**
+     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     */
+    canonical_name?: Label;
+    suggestions?: Suggestions;
+    tags?: Tags;
+    /**
+     * The complete rules text of the move.
+     */
+    text: MarkdownString;
+    /**
+     * A progress move that rolls on one or more special tracks, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
+     */
+    roll_type: 'special_track';
+    /**
+     * Trigger conditions for this move.
+     */
+    trigger: TriggerSpecialTrack;
+    outcomes: MoveOutcomes;
+    type: 'move';
+}
 /**
  * @remarks Deserialize as a discriminated union/polymorphic object type, using the `roll_type` property as a discriminator.
  */
@@ -2282,7 +2828,7 @@ export interface MoveActionRoll {
      */
     _id?: MoveId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -2308,9 +2854,9 @@ export interface MoveActionRoll {
      */
     text: MarkdownString;
     /**
-     * Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.
+     * @remarks Deserialize as a dictionary object.
      */
-    oracles?: OracleRollableId[];
+    oracles?: Record<DictKey, EmbeddedOracleRollable>;
     /**
      * A move that makes an action roll.
      */
@@ -2330,7 +2876,7 @@ export interface MoveActionRollEnhancement {
      * An array of wildcard IDs. An item must match one of the wildcard IDs to receive this enhancement. If this is `null`, any ID is valid.
      * @default null
      */
-    enhances?: MoveIdWildcard[] | null;
+    enhances?: AnyMoveIdWildcard[] | null;
     /**
      * A move must have this `roll_type` to receive this enhancement. This is in addition to any other restrictions made by other properties.
      */
@@ -2343,7 +2889,7 @@ export interface MoveCategory {
      */
     _id?: MoveCategoryId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -2404,7 +2950,7 @@ export interface MoveNoRoll {
      */
     _id?: MoveId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -2430,9 +2976,9 @@ export interface MoveNoRoll {
      */
     text: MarkdownString;
     /**
-     * Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.
+     * @remarks Deserialize as a dictionary object.
      */
-    oracles?: OracleRollableId[];
+    oracles?: Record<DictKey, EmbeddedOracleRollable>;
     /**
      * A move that makes no action rolls or progress rolls.
      */
@@ -2455,7 +3001,7 @@ export interface MoveNoRollEnhancement {
      * An array of wildcard IDs. An item must match one of the wildcard IDs to receive this enhancement. If this is `null`, any ID is valid.
      * @default null
      */
-    enhances?: MoveIdWildcard[] | null;
+    enhances?: AnyMoveIdWildcard[] | null;
     /**
      * A move must have this `roll_type` to receive this enhancement. This is in addition to any other restrictions made by other properties.
      */
@@ -2490,7 +3036,7 @@ export interface MoveProgressRoll {
      */
     _id?: MoveId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -2516,9 +3062,9 @@ export interface MoveProgressRoll {
      */
     text: MarkdownString;
     /**
-     * Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.
+     * @remarks Deserialize as a dictionary object.
      */
-    oracles?: OracleRollableId[];
+    oracles?: Record<DictKey, EmbeddedOracleRollable>;
     /**
      * A progress move that rolls on a standard progress track type (defined by this move).
      */
@@ -2542,7 +3088,7 @@ export interface MoveProgressRollEnhancement {
      * An array of wildcard IDs. An item must match one of the wildcard IDs to receive this enhancement. If this is `null`, any ID is valid.
      * @default null
      */
-    enhances?: MoveIdWildcard[] | null;
+    enhances?: AnyMoveIdWildcard[] | null;
     /**
      * A move must have this `roll_type` to receive this enhancement. This is in addition to any other restrictions made by other properties.
      */
@@ -2565,7 +3111,7 @@ export interface MoveSpecialTrack {
      */
     _id?: MoveId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -2591,9 +3137,9 @@ export interface MoveSpecialTrack {
      */
     text: MarkdownString;
     /**
-     * Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement.
+     * @remarks Deserialize as a dictionary object.
      */
-    oracles?: OracleRollableId[];
+    oracles?: Record<DictKey, EmbeddedOracleRollable>;
     /**
      * A progress move that rolls on one or more special tracks, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
      */
@@ -2613,7 +3159,7 @@ export interface MoveSpecialTrackEnhancement {
      * An array of wildcard IDs. An item must match one of the wildcard IDs to receive this enhancement. If this is `null`, any ID is valid.
      * @default null
      */
-    enhances?: MoveIdWildcard[] | null;
+    enhances?: AnyMoveIdWildcard[] | null;
     /**
      * A move must have this `roll_type` to receive this enhancement. This is in addition to any other restrictions made by other properties.
      */
@@ -2873,7 +3419,7 @@ export interface Asset {
      */
     _id?: AssetId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -2947,7 +3493,7 @@ export interface AssetAbility {
      */
     _id?: AssetAbilityId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -2967,7 +3513,11 @@ export interface AssetAbility {
      * Unique moves added by this asset ability.
      * @remarks Deserialize as a dictionary object.
      */
-    moves?: Record<DictKey, Move>;
+    moves?: Record<DictKey, EmbeddedMove>;
+    /**
+     * @remarks Deserialize as a dictionary object.
+     */
+    oracles?: Record<DictKey, EmbeddedOracleRollable>;
     /**
      * Fields that are expected to be set once and remain the same through the life of the asset.
      * @remarks Deserialize as a dictionary object.
@@ -3011,7 +3561,7 @@ export interface AssetAttachment {
     max?: number | null;
 }
 export interface AssetCardFlipField {
-    label: InputLabel;
+    label: Label;
     /**
      * Is the card flipped over?
      * @default false
@@ -3034,7 +3584,7 @@ export interface AssetCardFlipField {
     disables_asset?: boolean;
 }
 export interface AssetCheckboxField {
-    label: InputLabel;
+    label: Label;
     /**
      * Is the box checked?
      * @default false
@@ -3062,7 +3612,7 @@ export interface AssetCollection {
      */
     _id?: AssetCollectionId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -3114,7 +3664,7 @@ export interface AssetCollection {
  * Some assets provide a special condition meter of their own. The most common example is the health meters on companion assets. Asset condition meters may also include their own controls, such as the checkboxes that Starforged companion assets use to indicate they are "out of action".
  */
 export interface AssetConditionMeter {
-    label: InputLabel;
+    label: Label;
     /**
      * The current value of this meter.
      * @default 0
@@ -3146,11 +3696,11 @@ export interface AssetConditionMeter {
         /**
          * The ID(s) of suffer moves associated with the condition meter. If the suffer move makes an action roll, this condition meter value should be made available as a roll option.
          */
-        suffer?: MoveIdWildcard[];
+        suffer?: AnyMoveIdWildcard[];
         /**
          * The ID(s) of recovery moves associated with this meter.
          */
-        recover?: MoveIdWildcard[];
+        recover?: AnyMoveIdWildcard[];
     };
     /**
      * Checkbox controls rendered as part of the condition meter.
@@ -3211,7 +3761,7 @@ export type AssetOptionField = SelectValueField | SelectEnhancementField | TextF
  * @remarks Semantics are similar to HTML `<input type="number">`, but rendered as a clock (a circle with equally sized wedges).
  */
 export interface ClockField {
-    label: InputLabel;
+    label: Label;
     /**
      * The current value of this input.
      * @default 0
@@ -3237,7 +3787,7 @@ export interface ClockField {
  * A meter with an integer value, bounded by a minimum and maximum.
  */
 export interface ConditionMeterField {
-    label: InputLabel;
+    label: Label;
     /**
      * The current value of this meter.
      * @default 0
@@ -3267,7 +3817,7 @@ export interface ConditionMeterField {
  * @remarks Semantics are similar to `<input type="number" step="1">`
  */
 export interface CounterField {
-    label: InputLabel;
+    label: Label;
     /**
      * The current value of this input.
      * @default 0
@@ -3295,7 +3845,7 @@ export interface CounterField {
  * @remarks Semantics are similar to the HTML `<select>` element
  */
 export interface SelectEnhancementField {
-    label: InputLabel;
+    label: Label;
     /**
      * The current value of this input.
      * @default null
@@ -3316,7 +3866,7 @@ export interface SelectEnhancementField {
  * @remarks Semantics are similar to the HTML `<option>` element.
  */
 export interface SelectEnhancementFieldChoice {
-    label: InputLabel;
+    label: Label;
     choice_type: 'choice';
     enhance_asset?: AssetEnhancement;
     enhance_moves?: MoveEnhancement[];
@@ -3329,7 +3879,7 @@ export interface SelectEnhancementFieldChoiceGroup {
     /**
      * A label for this option group.
      */
-    name: InputLabel;
+    name: Label;
     choice_type: 'choice_group';
     /**
      * @remarks Deserialize as a dictionary object.
@@ -3341,7 +3891,7 @@ export interface SelectEnhancementFieldChoiceGroup {
  * @remarks Semantics are similar to the HTML `<select>` element
  */
 export interface SelectValueField {
-    label: InputLabel;
+    label: Label;
     /**
      * The current value of this input.
      * @default null
@@ -3361,7 +3911,7 @@ export interface SelectValueField {
  * @remarks Deserialize as a discriminated union/polymorphic object type, using the `using` property as a discriminator.
  */
 export type SelectValueFieldChoice = {
-    label: InputLabel;
+    label: Label;
     choice_type: 'choice';
     stat: StatKey;
     /**
@@ -3369,7 +3919,7 @@ export type SelectValueFieldChoice = {
      */
     using: 'stat';
 } | {
-    label: InputLabel;
+    label: Label;
     choice_type: 'choice';
     condition_meter: ConditionMeterKey;
     /**
@@ -3377,7 +3927,7 @@ export type SelectValueFieldChoice = {
      */
     using: 'condition_meter';
 } | {
-    label: InputLabel;
+    label: Label;
     choice_type: 'choice';
     /**
      * Asset IDs (which may be wildcarded) that may provide the control field. For asset ability enhancements, `null` is used to represent the asset's own control fields.
@@ -3395,7 +3945,7 @@ export type SelectValueFieldChoice = {
      */
     using: 'asset_control';
 } | {
-    label: InputLabel;
+    label: Label;
     choice_type: 'choice';
     /**
      * Asset IDs (which may be wildcarded) that may provide the option field. For asset ability enhancements, `null` is used to represent the asset's own option fields.
@@ -3411,7 +3961,7 @@ export type SelectValueFieldChoice = {
      */
     using: 'asset_option';
 } | {
-    label: InputLabel;
+    label: Label;
     choice_type: 'choice';
     /**
      * The dictionary key of the asset control field.
@@ -3424,7 +3974,7 @@ export type SelectValueFieldChoice = {
      */
     using: 'attached_asset_control';
 } | {
-    label: InputLabel;
+    label: Label;
     choice_type: 'choice';
     /**
      * The dictionary key of the asset option field.
@@ -3435,7 +3985,7 @@ export type SelectValueFieldChoice = {
      */
     using: 'attached_asset_option';
 } | {
-    label: InputLabel;
+    label: Label;
     choice_type: 'choice';
     value: number;
     /**
@@ -3448,7 +3998,7 @@ export type SelectValueFieldChoice = {
  * @remarks Semantics are similar to the HTML `<input type="text">` element.
  */
 export interface TextField {
-    label: InputLabel;
+    label: Label;
     /**
      * The content of this text input, or `null` if it's empty
      * @default null
@@ -3469,7 +4019,7 @@ export interface Truth {
      */
     _id?: TruthId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -3497,25 +4047,15 @@ export interface Truth {
     type: 'truth';
 }
 export interface TruthOption {
+    _id?: TruthOptionId;
     roll: DiceRange;
     summary?: MarkdownString;
     description: MarkdownString;
     quest_starter: MarkdownString;
     /**
-     * Represents a basic rollable oracle table with one roll column and one text result column.
+     * @remarks Deserialize as a dictionary object.
      */
-    table?: {
-        oracle_type: 'table_text';
-        /**
-         * The roll used to select a result on this oracle.
-         * @default "1d100"
-         */
-        dice: DiceExpression;
-        /**
-         * An array of objects, each representing a single row of the table.
-         */
-        rows: OracleTableRowText[];
-    };
+    oracles?: Record<DictKey, EmbeddedOracleRollable>;
 }
 export interface AtlasCollection {
     /**
@@ -3523,7 +4063,7 @@ export interface AtlasCollection {
      */
     _id?: AtlasCollectionId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -3584,7 +4124,7 @@ export interface AtlasEntry {
      */
     _id?: AtlasEntryId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -3633,7 +4173,7 @@ export interface Rarity {
      */
     _id?: RarityId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -3678,7 +4218,7 @@ export interface DelveSite {
      */
     _id?: DelveSiteId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -3938,7 +4478,7 @@ export interface DelveSiteDomain {
      */
     _id?: DelveSiteDomainId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**
@@ -3962,7 +4502,7 @@ export interface DelveSiteDomain {
     summary: MarkdownString;
     description?: MarkdownString;
     /**
-     * An oracle table ID containing place name elements. For examples, see oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in oracle collection ID `delve/collections/oracles/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (ID: delve/oracles/site_name/format) to create random names for delve sites.
+     * An oracle table ID containing place name elements. For examples, see oracle ID `oracle_rollable:delve/site_name/place/barrow`, and its siblings in oracle collection ID `oracle_collection:delve/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (`oracle_rollable:delve/site_name/format`) to create random names for delve sites.
      */
     name_oracle?: OracleRollableId;
     features: OracleTableRowText[] & [
@@ -4234,7 +4774,7 @@ export interface DelveSiteTheme {
      */
     _id?: DelveSiteThemeId;
     /**
-     * Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
      */
     _comment?: string;
     /**

@@ -917,31 +917,36 @@ namespace CollectionId {
 		T extends CollectionId,
 		K extends string = string
 	> = CollectableId<
-		TypeId.CollectableOf<T['typeId']>,
+		TypeId.CollectableOf<T['primaryTypeId']>,
 		T['rulesPackage'],
-		T['pathKeys'],
+		T['primaryDictKeyElements'],
 		K
 	>
 	export type ChildCollectionOf<
 		T extends CollectionId,
 		K extends string = string
-	> = T['pathKeys'] extends PathKeys.CollectionAncestorKeys
-		? CollectionId<T['typeId'], T['rulesPackage'], T['pathKeys'], K>
+	> = T['primaryDictKeyElements'] extends PathKeys.CollectionAncestorKeys
+		? CollectionId<
+				T['primaryTypeId'],
+				T['rulesPackage'],
+				T['primaryDictKeyElements'],
+				K
+			>
 		: never
 
 	export type ParentCollectionOf<T extends CollectionId> =
 		T['collectionAncestorKeys'] extends [infer K extends string]
-			? CollectionId<T['typeId'], T['rulesPackage'], [], K>
+			? CollectionId<T['primaryTypeId'], T['rulesPackage'], [], K>
 			: T['collectionAncestorKeys'] extends [
 						infer U extends string,
 						infer K extends string
 				  ]
-				? CollectionId<T['typeId'], T['rulesPackage'], [U], K>
+				? CollectionId<T['primaryTypeId'], T['rulesPackage'], [U], K>
 				: T['collectionAncestorKeys'] extends [
 							...infer U extends PathKeys.CollectionAncestorKeys,
 							infer K extends string
 					  ]
-					? CollectionId<T['typeId'], T['rulesPackage'], U, K>
+					? CollectionId<T['primaryTypeId'], T['rulesPackage'], U, K>
 					: never
 }
 

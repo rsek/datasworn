@@ -78,12 +78,17 @@ type YAMLOptions = Simplify<
 export async function writeCode(
 	filePath: string,
 	content: string,
+	skipFormat = false,
 	parser = 'typescript',
 	{ prettierOptions }: { prettierOptions?: Prettier.Options } = {}
 ) {
-	if (prettierOptions == null)
-		prettierOptions = await getPrettierOptions(filePath, parser)
+	if (skipFormat) {
+		await fs.writeFile(filePath, content)
+	} else {
+		if (prettierOptions == null)
+			prettierOptions = await getPrettierOptions(filePath, parser)
 
-	const data = await Prettier.format(content, prettierOptions)
-	await fs.writeFile(filePath, data)
+		const data = await Prettier.format(content, prettierOptions)
+		await fs.writeFile(filePath, data)
+	}
 }

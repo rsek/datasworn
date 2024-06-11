@@ -1,4 +1,4 @@
-export { default as NodeTypeId } from './NodeTypeId.js';
+export { default as TypeId } from './TypeId.js';
 export { default as TypeGuard } from './TypeGuard.js';
 export { default as Pattern } from './Pattern.js';
 export * as PathKeys from './PathKeys.js';

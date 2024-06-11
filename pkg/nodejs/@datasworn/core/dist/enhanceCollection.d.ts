@@ -1,4 +1,4 @@
-import type DataswornNode from './DataswornNode.js';
+import type TypeNode from './TypeNode.js';
 /**
  * Applies overrides to Datasworn collection from another Datasworn collection.
  * Mutates `target`.
@@ -8,4 +8,4 @@ import type DataswornNode from './DataswornNode.js';
  * @returns The mutated `target`
  * @experimental
  */
-export declare function enhanceCollection<T extends DataswornNode.Collection.Any>(target: T, source: T, strictOverrides?: boolean): T;
+export declare function enhanceCollection<T extends TypeNode.Collection>(target: T, source: T, strictOverrides?: boolean): T;

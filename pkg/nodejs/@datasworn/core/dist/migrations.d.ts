@@ -1,5 +1,5 @@
 /** Utilties to assist in migration of Datasworn data across versions. */
-import type NodeTypeId from './IdElements/NodeTypeId.js';
+import type TypeId from './IdElements/TypeId.js';
 declare const MinorNodeTypes: readonly ["asset_ability_move", "asset_ability"];
 type MinorNodeType = (typeof MinorNodeTypes)[number];
 export type IdReplacer = {
@@ -8,78 +8,78 @@ export type IdReplacer = {
     /** A replacement template string to replace the old ID with. */
     new: string;
 };
-export type IdReplacementMap = Record<NodeTypeId.Any | MinorNodeType, IdReplacer[]>;
+export type IdReplacementMap = Record<TypeId.AnyPrimary | MinorNodeType, IdReplacer[]>;
 /**
  * Provides an array of {@link IdReplacer} objects for each Datasworn ID type.
  */
 export declare const IdReplacementMap: {
     readonly asset_collection: [{
         readonly old: RegExp;
-        readonly new: "$1/asset_collection/$2";
+        readonly new: "asset_collection:$1/$2";
     }];
     readonly asset: [{
         readonly old: RegExp;
-        readonly new: "$1/asset/$2";
+        readonly new: "asset:$1/$2";
     }];
     readonly atlas_collection: [{
         readonly old: RegExp;
-        readonly new: "$1/atlas_collection/$2";
+        readonly new: "atlas_collection:$1/$2";
     }];
     readonly atlas_entry: [{
         readonly old: RegExp;
-        readonly new: "$1/atlas_entry/$2";
+        readonly new: "atlas_entry:$1/$2";
     }];
     readonly delve_site_domain: [{
         readonly old: RegExp;
-        readonly new: "$1/delve_site_domain/$2";
+        readonly new: "delve_site_domain:$1/$2";
     }];
     readonly delve_site_theme: [{
         readonly old: RegExp;
-        readonly new: "$1/delve_site_theme/$2";
+        readonly new: "delve_site_theme:$1/$2";
     }];
     readonly delve_site: [{
         readonly old: RegExp;
-        readonly new: "$1/delve_site/$2";
+        readonly new: "delve_site:$1/$2";
     }];
     readonly move_category: [{
         readonly old: RegExp;
-        readonly new: "$1/move_category/$2";
+        readonly new: "move_category:$1/$2";
     }];
     readonly move: [{
         readonly old: RegExp;
-        readonly new: "$1/move/$2";
+        readonly new: "move:$1/$2";
     }];
     readonly npc_collection: [{
         readonly old: RegExp;
-        readonly new: "$1/npc_collection/$2";
+        readonly new: "npc_collection:$1/$2";
     }];
     readonly npc: [{
         readonly old: RegExp;
-        readonly new: "$1/npc/$2";
+        readonly new: "npc:$1/$2";
     }];
     readonly oracle_collection: [{
         readonly old: RegExp;
-        readonly new: "$1/oracle_collection/$2";
+        readonly new: "oracle_collection:$1/$2";
     }];
     readonly oracle_rollable: [{
         readonly old: RegExp;
-        readonly new: "$1/oracle_rollable/$2";
+        readonly new: "oracle_rollable:$1/$2";
     }];
     readonly rarity: [{
         readonly old: RegExp;
-        readonly new: "$1/rarity/$2";
+        readonly new: "rarity:$1/$2";
     }];
     readonly truth: [{
         readonly old: RegExp;
-        readonly new: "$1/truth/$2";
+        readonly new: "truth:$1/$2";
     }];
     readonly asset_ability_move: [{
         readonly old: RegExp;
-        readonly new: "$1/asset/$2.abilities/$3.moves/$4";
+        readonly new: "asset.ability.move:$1/$2.$3.$4";
     }];
     readonly asset_ability: [{
         readonly old: RegExp;
-        readonly new: "$1/asset/$2.abilities/$3";
+        readonly new: "asset.ability:$1/$2.$3";
     }];
 };
 /**

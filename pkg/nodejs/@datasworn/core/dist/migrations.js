@@ -14,103 +14,104 @@ exports.IdReplacementMap = {
     asset_collection: [
         {
             old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/collections\/assets\/(?<path>[a-z_/*]+)$/,
-            new: '$1/asset_collection/$2'
+            new: 'asset_collection:$1/$2'
         }
     ],
     asset: [
         {
             old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/assets\/(?<path>[a-z_/*]+)$/,
-            new: '$1/asset/$2'
+            new: 'asset:$1/$2'
         }
     ],
     atlas_collection: [
         {
             old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/collections\/atlas\/(?<path>[a-z_/*]+)$/,
-            new: '$1/atlas_collection/$2'
+            new: 'atlas_collection:$1/$2'
         }
     ],
     atlas_entry: [
         {
             old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/atlas\/(?<path>[a-z_/*]+)$/,
-            new: '$1/atlas_entry/$2'
+            new: 'atlas_entry:$1/$2'
         }
     ],
     delve_site_domain: [
         {
             old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/site_domains\/(?<path>[a-z_/*]+)$/,
-            new: '$1/delve_site_domain/$2'
+            new: 'delve_site_domain:$1/$2'
         }
     ],
     delve_site_theme: [
         {
             old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/site_themes\/(?<path>[a-z_/*]+)$/,
-            new: '$1/delve_site_theme/$2'
+            new: 'delve_site_theme:$1/$2'
         }
     ],
     delve_site: [
         {
             old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/delve_sites\/(?<path>[a-z_/*]+)$/,
-            new: '$1/delve_site/$2'
+            new: 'delve_site:$1/$2'
         }
     ],
     move_category: [
         {
             old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/collections\/moves\/(?<path>[a-z_/*]+)$/,
-            new: '$1/move_category/$2'
+            new: 'move_category:$1/$2'
         }
     ],
     move: [
         {
             old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/moves\/(?<path>(?:\*|[a-z][a-z_]*)\/(?:\*|[a-z][a-z_]*))$/,
-            new: '$1/move/$2'
+            new: 'move:$1/$2'
         }
     ],
     npc_collection: [
         {
             old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/collections\/npcs\/(?<path>[a-z_/*]+)$/,
-            new: '$1/npc_collection/$2'
+            new: 'npc_collection:$1/$2'
         }
     ],
     npc: [
         {
             old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/npcs\/(?<path>[a-z_/*]+)$/,
-            new: '$1/npc/$2'
+            new: 'npc:$1/$2'
         }
     ],
     oracle_collection: [
         {
             old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/collections\/oracles\/(?<path>[a-z_/*]+)$/,
-            new: '$1/oracle_collection/$2'
+            new: 'oracle_collection:$1/$2'
         }
     ],
     oracle_rollable: [
+        // TODO: add specific overrides for move oracles
         {
             old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/oracles\/(?<path>[a-z_/*]+)$/,
-            new: '$1/oracle_rollable/$2'
+            new: 'oracle_rollable:$1/$2'
         }
     ],
     rarity: [
         {
             old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/rarities\/(?<path>[a-z_/*]+)$/,
-            new: '$1/rarity/$2'
+            new: 'rarity:$1/$2'
         }
     ],
     truth: [
         {
             old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/truths\/(?<path>[a-z_/*]+)$/,
-            new: '$1/truth/$2'
+            new: 'truth:$1/$2'
         }
     ],
     asset_ability_move: [
         {
             old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/assets\/(?<path>(?:\*|[a-z][a-z_]*)\/(?:\*|[a-z][a-z_]*))\/abilities\/(?<index>\*|\d+)\/moves\/(?<key>\*|[a-z][a-z_]*)$/,
-            new: '$1/asset/$2.abilities/$3.moves/$4'
+            new: 'asset.ability.move:$1/$2.$3.$4'
         }
     ],
     asset_ability: [
         {
             old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/assets\/(?<path>(?:\*|[a-z][a-z_]*)\/(?:\*|[a-z][a-z_]*))\/abilities\/(?<index>\*|\d+)$/,
-            new: '$1/asset/$2.abilities/$3'
+            new: 'asset.ability:$1/$2.$3'
         }
     ]
 };
@@ -138,7 +139,7 @@ function updateIdsInString(key, value) {
         // won't match a RulesPackageId, but we don't
         // care about them.
         case typeof value !== 'string':
-        case !str.includes(CONST_js_1.default.Sep):
+        case !str.includes(CONST_js_1.default.PathSep):
             return value;
         // implies a markdown ID reference.
         case str.includes('['):

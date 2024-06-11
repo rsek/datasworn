@@ -2,7 +2,7 @@ import { type RulesPackage } from './Datasworn.js';
 import type { ExtractTypeId } from './Utils/Id.js';
 import { CONST } from './IdElements/index.js';
 import type * as Id from './StringId.js';
-import type DataswornNode from './DataswornNode.js';
+import type TypeNode from './TypeNode.js';
 /**
  * Traverses objects using a simple glob expression. Currently, the glob features are limited to '*' and '**' wildcards; it doesn't handle expansion of braces, pipes, and so on.
  * @internal
@@ -52,7 +52,7 @@ declare class ObjectGlobber<TTuple extends Array<PropertyKey> = Array<PropertyKe
      * @param forEach An optional function to run on every walked value.
      * @throws If a key is an invalid type, or if a key can't be found.
      */
-    static walk<T extends Id.AnyId>(from: Record<string, RulesPackage>, path: ObjectGlobber, forEach?: ObjectGlobber.WalkIteratee): DataswornNode.ByType<ExtractTypeId<T>>;
+    static walk<T extends Id.AnyId>(from: Record<string, RulesPackage>, path: ObjectGlobber, forEach?: ObjectGlobber.WalkIteratee): TypeNode.ByType<ExtractTypeId<T>>;
     /** Return all object paths in a given object. Paths that contain only a primitive value (boolean, number, string) are omitted. */
     static getObjectPaths(object: object, includeArrays?: boolean, currentPath?: ObjectGlobber): ObjectGlobber<PropertyKey[]>[];
     /** Replace a wildcard/globstar string with a Symbol */

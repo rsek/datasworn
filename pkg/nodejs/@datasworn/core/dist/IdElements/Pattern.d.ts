@@ -7,6 +7,6 @@ declare namespace Pattern {
     const RulesPackageElement: RegExp;
     const RulesPackageId: RegExp;
     const IndexElement: RegExp;
-    const RecursiveDictKeyElement: RegExp;
+    const RecursiveDictKeysElement: RegExp;
 }
 export default Pattern;

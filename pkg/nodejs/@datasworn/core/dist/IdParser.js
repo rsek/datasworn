@@ -1,128 +1,160 @@
 "use strict";
+var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (receiver, state, kind, f) {
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+};
 var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
     return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
 };
-var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (receiver, state, kind, f) {
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
-    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _IdParser_instances, _a, _IdParser_rulesPackage, _IdParser_typeId, _IdParser_pathKeys, _IdParser_matcher, _IdParser_resetCachedProperties, _IdParser_globber, _IdParser_createMatcher, _IdParser_getPatternFragment, _IdParser_parse, _IdParser_validateOptions, _IdParser_getFormatType, _IdParser_validateRulesPackage, _IdParser_validatePathKeys, _IdParser_validateDictKey, _IdParser_validateCollectionKey;
+var _IdParser_instances, _a, _IdParser_pathSegments, _IdParser_typeIds, _IdParser_validateTypeIds, _IdParser_toString, _IdParser_getIdFormat, _IdParser_validatePathSegments, _IdParser_validateIndexKey, _IdParser_assignIdsInDictionary, _IdParser_assignIdsInArray, _IdParser_globberPath, _IdParser_parseOptions, _IdParser_getClassForPrimaryTypeId, _IdParser_validateRulesPackage, _IdParser_validatePrimaryPathKeys, _IdParser_validateDictKey, _IdParser_validateCollectionKey;
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RecursiveCollectionId = exports.RecursiveCollectableId = exports.NonRecursiveCollectionId = exports.NonRecursiveCollectableId = exports.NonCollectableId = exports.IdParser = void 0;
-const Errors_js_1 = require("./Errors.js");
-const index_js_1 = require("./IdElements/index.js");
+exports.CollectionId = exports.EmbeddedId = exports.CollectableId = exports.NonCollectableId = exports.IdParser = void 0;
+const CONST_js_1 = __importDefault(require("./IdElements/CONST.js"));
+const TypeGuard_js_1 = __importDefault(require("./IdElements/TypeGuard.js"));
+const TypeId_js_1 = __importDefault(require("./IdElements/TypeId.js"));
 const ObjectGlobber_js_1 = __importDefault(require("./ObjectGlobber.js"));
+const index_js_1 = require("./IdElements/index.js");
+const Errors_js_1 = require("./Errors.js");
 class IdParser {
-    constructor({ rulesPackage, typeId, pathKeys }) {
+    get typeIds() {
+        return __classPrivateFieldGet(this, _IdParser_typeIds, "f");
+    }
+    set typeIds(value) {
+        __classPrivateFieldGet(_a, _a, "m", _IdParser_validateTypeIds).call(_a, value);
+        __classPrivateFieldSet(this, _IdParser_typeIds, value, "f");
+    }
+    get pathSegments() {
+        return __classPrivateFieldGet(this, _IdParser_pathSegments, "f");
+    }
+    set pathSegments(value) {
+        const formatType = __classPrivateFieldGet(_a, _a, "m", _IdParser_getIdFormat).call(_a, this.primaryTypeId);
+        __classPrivateFieldGet(_a, _a, "m", _IdParser_validatePathSegments).call(_a, formatType, value);
+        if (this.typeIds.length !== value.length)
+            throw new Error("The length of typeIds and pathSegments does't match.");
+        __classPrivateFieldSet(this, _IdParser_pathSegments, value, "f");
+    }
+    constructor(options) {
         _IdParser_instances.add(this);
-        // ID parts
-        _IdParser_rulesPackage.set(this, void 0);
-        _IdParser_typeId.set(this, void 0);
-        _IdParser_pathKeys.set(this, void 0);
-        _IdParser_matcher.set(this, null
-        /** Reset any cached matchers or paths. */
-        );
+        _IdParser_pathSegments.set(this, void 0);
+        _IdParser_typeIds.set(this, void 0);
+        // Public static  methods
         /** Lazy prop for this ID's Globber */
-        _IdParser_globber.set(this, null
+        _IdParser_globberPath.set(this, null
         /** Converts the ID to an ObjectGlobber representing the actual path to the identified object.
          * @internal
          */
         );
-        __classPrivateFieldSet(this, _IdParser_rulesPackage, rulesPackage, "f");
-        __classPrivateFieldSet(this, _IdParser_typeId, typeId, "f");
-        __classPrivateFieldSet(this, _IdParser_pathKeys, pathKeys, "f");
+        // prepare the ID so we can throw errors with it if necessary
+        const id = __classPrivateFieldGet(_a, _a, "m", _IdParser_toString).call(_a, options);
+        const { typeIds, pathSegments } = options;
+        const errors = [];
+        try {
+            this.typeIds = typeIds;
+            this.pathSegments = pathSegments;
+        }
+        catch (e) {
+            errors.push(e);
+        }
+        if (errors.length > 0)
+            throw new Errors_js_1.ParseError(id, errors.join('\n'));
     }
-    get rulesPackage() {
-        return __classPrivateFieldGet(this, _IdParser_rulesPackage, "f");
-    }
-    set rulesPackage(value) {
-        if (__classPrivateFieldGet(_a, _a, "m", _IdParser_validateRulesPackage).call(_a, value))
-            throw new Error(`${value} is not a valid RulesPackageId or wildcard ("${index_js_1.CONST.WildcardString}").`);
-        __classPrivateFieldGet(this, _IdParser_instances, "m", _IdParser_resetCachedProperties).call(this);
-        __classPrivateFieldSet(this, _IdParser_rulesPackage, value, "f");
-    }
-    get typeId() {
-        return __classPrivateFieldGet(this, _IdParser_typeId, "f");
-    }
-    get pathKeys() {
-        return __classPrivateFieldGet(this, _IdParser_pathKeys, "f");
-    }
-    get typeRootKey() {
-        return index_js_1.NodeTypeId.getRootKey(this.typeId);
-    }
-    // computed properties
-    /** The parsed elements of the ID as an array of strings. */
-    get elements() {
-        return [this.rulesPackage, this.typeId, ...this.pathKeys];
+    createdEmbeddedId(typeId, key) {
+        _a.logger.debug(`[createdEmbeddedId] ${this.id} > ${typeId}, ${key}`);
+        return new EmbeddedId(this, typeId, key.toString());
     }
     /**
      * Returns a string representation of the ID.
      */
     get id() {
-        return this.elements.join(index_js_1.CONST.Sep);
+        return __classPrivateFieldGet(_a, _a, "m", _IdParser_toString).call(_a, this);
     }
-    /**
-     * Returns a string representation of the ID. Effectively an alias for {@link IdParser.id}
-     */
     toString() {
         return this.id;
     }
-    /** Key elements that represent ancestor collection keys. */
-    get collectionAncestorKeys() {
-        return this.pathKeys.slice(0, -1);
+    // ID parts
+    get primaryTypeId() {
+        return this.typeIds[0];
     }
-    /** The last `pathKey` element, which represents the key for the identified object. */
-    get key() {
-        return this.pathKeys.at(-1);
+    get primaryPath() {
+        return this.pathSegments[0];
+    }
+    get primaryPathElements() {
+        return this.primaryPath.split(CONST_js_1.default.PathSep);
+    }
+    get rulesPackage() {
+        return this.primaryPathElements[0];
+    }
+    get primaryDictKeyElements() {
+        // omit rules package, which is the first
+        const [_rulesPackage, ...keyElements] = this.primaryPathElements;
+        return keyElements;
+    }
+    get fullTypeId() {
+        return this.typeIds.join(CONST_js_1.default.PathTypeSep);
+    }
+    get fullPath() {
+        return this.pathSegments.join(CONST_js_1.default.PathTypeSep);
+    }
+    get targetTypeId() {
+        return this.typeIds.at(-1);
+    }
+    get lastProperty() {
+        return TypeId_js_1.default.getRootKey(this.fullTypeId);
     }
     /** Does this ID contain any wildcard ("*") or globstar ("**") elements? */
     get isWildcard() {
-        return this.elements.some(index_js_1.TypeGuard.AnyWildcard);
+        return this.id.includes(CONST_js_1.default.WildcardString);
     }
-    /** Does this ID contain recursive elements? */
+    /** May this ID contain recursive elements in its path? */
     get isRecursive() {
-        return (index_js_1.TypeGuard.RecursiveCollectableType(this.typeId) ||
-            index_js_1.TypeGuard.RecursiveCollectionType(this.typeId));
+        return this.isCollectable || this.isCollection;
     }
-    /** Does this ID refer to a collectable object? */
+    /** Does this ID include a collectable object in its path? */
     get isCollectable() {
-        return index_js_1.TypeGuard.CollectableType(this.typeId);
+        return TypeGuard_js_1.default.CollectableType(this.primaryTypeId);
     }
-    /** Does this ID refer to a collection? */
+    /** Does this ID include a collection object in its path? */
     get isCollection() {
-        return index_js_1.TypeGuard.CollectionType(this.typeId);
-    }
-    /** The regular expression that matches for a wildcard ID. */
-    get matcher() {
-        if (!(__classPrivateFieldGet(this, _IdParser_matcher, "f") instanceof RegExp))
-            __classPrivateFieldSet(this, _IdParser_matcher, __classPrivateFieldGet(_a, _a, "m", _IdParser_createMatcher).call(_a, ...this.elements), "f");
-        return __classPrivateFieldGet(this, _IdParser_matcher, "f");
-    }
-    /** Converts the ID to an ObjectGlobber representing the actual path to the identified object.
-     * @internal
-     */
-    toPath() {
-        if (__classPrivateFieldGet(this, _IdParser_globber, "f") == null) {
-            const path = _a.toPath(this);
-            __classPrivateFieldSet(this, _IdParser_globber, path, "f");
-            return path;
-        }
-        return __classPrivateFieldGet(this, _IdParser_globber, "f");
+        return TypeGuard_js_1.default.CollectionType(this.primaryTypeId);
     }
     /** Assign a string ID to a Datasworn node, and all eligible descendant nodes.
      * @param node The Datasworn
      * @param recursive Should IDs be assigned to descendant objects too? (default: true)
      * @returns The mutated object.
      */
-    assignIdsIn(node, recursive = true) {
-        node._id = this.id;
+    assignIdsIn(node, recursive = true, index) {
+        if (typeof node._id === 'string')
+            _a.logger.warn(`Can't assign <${this.id}>, node already has <${node._id}>`);
+        else {
+            node._id = this.id;
+            _a.logger.debug(`[assignIdsIn] Assigned ${this.constructor.name} @ <${this.id}>`);
+        }
+        if (recursive) {
+            const embeddedTypes = TypeId_js_1.default.getEmbeddableTypes(this.fullTypeId);
+            for (const nextTypeId of embeddedTypes) {
+                const property = TypeId_js_1.default.getEmbeddedPropertyKey(nextTypeId);
+                if (!(property in node))
+                    continue;
+                const childNodes = node[property];
+                if (childNodes == null)
+                    continue;
+                if (Array.isArray(childNodes)) {
+                    __classPrivateFieldGet(this, _IdParser_instances, "m", _IdParser_assignIdsInArray).call(this, childNodes, nextTypeId, recursive, index);
+                }
+                else {
+                    __classPrivateFieldGet(this, _IdParser_instances, "m", _IdParser_assignIdsInDictionary).call(this, childNodes, nextTypeId, recursive, index);
+                }
+            }
+        }
+        if (index instanceof Map)
+            index.set(this.id, node);
         return node;
     }
     /**
@@ -133,169 +165,216 @@ class IdParser {
         return _a.get(this, tree);
     }
     static get(id, tree = _a.datasworn) {
-        const parsedId = id instanceof _a ? id : _a.fromString(id);
-        return parsedId.toPath().walk(tree);
+        const parsedId = id instanceof _a ? id : _a.parse(id);
+        return parsedId.toGlobberPath().walk(tree);
     }
-    static fromOptions(options) {
-        __classPrivateFieldGet(this, _a, "m", _IdParser_validateOptions).call(this, options);
-        const { rulesPackage, typeId: type, pathKeys } = options;
-        switch (true) {
-            case index_js_1.TypeGuard.NonCollectableType(type):
-                return new NonCollectableId(rulesPackage, type, ...pathKeys);
-            case index_js_1.TypeGuard.NonRecursiveCollectableType(type):
-                return new NonRecursiveCollectableId(rulesPackage, type, ...pathKeys);
-            case index_js_1.TypeGuard.RecursiveCollectableType(type):
-                return new RecursiveCollectableId(rulesPackage, type, ...pathKeys);
-            case index_js_1.TypeGuard.RecursiveCollectionType(type):
-                return new RecursiveCollectionId(rulesPackage, type, ...pathKeys);
-            case index_js_1.TypeGuard.NonRecursiveCollectionType(type):
-                return new NonRecursiveCollectionId(rulesPackage, type, ...pathKeys);
-            default:
-                throw new Errors_js_1.ParseError([rulesPackage, type, ...pathKeys].join(index_js_1.CONST.Sep), `Parsed ID doesn't belong to a known ID type, and can't be assigned a subclass.`);
+    /** Converts the ID to an ObjectGlobber representing the actual path to the identified object.
+     * @internal
+     */
+    toGlobberPath() {
+        if (__classPrivateFieldGet(this, _IdParser_globberPath, "f") instanceof ObjectGlobber_js_1.default)
+            return __classPrivateFieldGet(this, _IdParser_globberPath, "f");
+        const dotPath = [];
+        const [rulesPackage, trunkKey, ...branchKeys] = this.primaryPathElements;
+        const [primaryTypeId, ...embeddedTypeIds] = this.typeIds;
+        const [primaryPath, ...embeddedPaths] = this.pathSegments;
+        // primary path
+        // "starforged"
+        dotPath.push(rulesPackage);
+        //  "starforged.oracles"
+        dotPath.push(TypeId_js_1.default.getRootKey(primaryTypeId));
+        //  "starforged.oracles.core"
+        dotPath.push(trunkKey);
+        for (let i = 0; i < branchKeys.length; i++) {
+            const currentKey = branchKeys[i];
+            const isLastKey = i === branchKeys.length - 1;
+            const dictionaryProperty = this.isCollectable && isLastKey
+                ? CONST_js_1.default.ContentsKey
+                : CONST_js_1.default.CollectionsKey;
+            dotPath.push(dictionaryProperty, currentKey);
         }
-    }
-    static toPath(options) {
-        const parsedId = options instanceof _a
-            ? options
-            : typeof options === 'string'
-                ? _a.fromString(options)
-                : _a.fromOptions(options);
-        const dotPathElements = [];
-        // e.g. "starforged"
-        dotPathElements.push(parsedId.rulesPackage);
-        // e.g. "starforged.oracles"
-        dotPathElements.push(parsedId.typeRootKey);
-        if (parsedId.collectionAncestorKeys.length > 0) {
-            // console.log(_id.ancestorCollectionKeys)
-            const [rootAncestor, ...ancestors] = parsedId.collectionAncestorKeys;
-            // first ancestor collection key is always a key in the root object for the type
-            dotPathElements.push(rootAncestor);
-            // add path elements to navigate to any further ancestor keys
-            for (const collectionKey of ancestors)
-                dotPathElements.push(
-                // get the collection's dictionary of child collections
-                index_js_1.CONST.CollectionsKey, 
-                // get the child collection by its key
-                collectionKey);
-            // add path to the dictionary that contains the final key
-            if (parsedId.isCollection)
-                dotPathElements.push(index_js_1.CONST.CollectionsKey);
-            else if (parsedId.isCollectable)
-                dotPathElements.push(index_js_1.CONST.ContentsKey);
+        for (let i = 0; i < embeddedTypeIds.length; i++) {
+            const typeId = embeddedTypeIds[i];
+            const path = embeddedPaths[i];
+            const property = TypeId_js_1.default.getEmbeddedPropertyKey(typeId);
+            dotPath.push(property, path);
         }
-        dotPathElements.push(parsedId.key);
-        return new ObjectGlobber_js_1.default(...dotPathElements);
+        __classPrivateFieldSet(this, _IdParser_globberPath, new ObjectGlobber_js_1.default(...dotPath), "f");
+        return __classPrivateFieldGet(this, _IdParser_globberPath, "f");
     }
     /**
      * Recursively assigns IDs to all eligibile nodes within a given {@link DataswornSource.RulesPackage}.
      * @param rulesPackage The rules package to assign IDs to. This function mutates the object.
+     * @param index If provided, nodes that receive IDs will be indexed in the map (with their ID as the key).
      * @returns The mutated `rulesPackage`, which now satisfies the requirements for a complete {@link Datasworn.RulesPackage}
      */
-    static assignIdsInRulesPackage(rulesPackage) {
-        for (const k of this.typeRootKeys) {
-            const typeRoot = rulesPackage[k];
+    static assignIdsInRulesPackage(rulesPackage, index) {
+        const errorMessages = [];
+        for (const typeId in TypeId_js_1.default.RootKeys) {
+            const typeRootKey = TypeId_js_1.default.getRootKey(typeId);
+            const typeRoot = rulesPackage[typeRootKey];
             if (typeRoot == null)
                 continue;
             for (const dictKey in typeRoot) {
-                const topLevelNode = typeRoot[dictKey];
-                const parser = _a.fromOptions({
-                    rulesPackage: rulesPackage._id,
-                    typeId: topLevelNode.type,
-                    pathKeys: [dictKey]
-                });
-                parser.assignIdsIn(topLevelNode, true);
+                const trunkNode = typeRoot[dictKey];
+                if (trunkNode == null)
+                    continue;
+                const id = `${typeId}${CONST_js_1.default.PrefixSep}${rulesPackage._id}${CONST_js_1.default.PathSep}${dictKey}`;
+                let parser;
+                try {
+                    switch (true) {
+                        case TypeGuard_js_1.default.CollectionType(typeId):
+                            parser = new CollectionId(typeId, rulesPackage._id, dictKey);
+                            parser.assignIdsIn(trunkNode, true, index);
+                            break;
+                        case TypeGuard_js_1.default.NonCollectableType(typeId):
+                            parser = new NonCollectableId(typeId, rulesPackage._id, dictKey);
+                            parser.assignIdsIn(trunkNode, true, index);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                catch (e) {
+                    errorMessages.push(`Failed to create ID within <${id}>. ${String(e)}`);
+                }
             }
         }
+        if (errorMessages.length > 0)
+            throw new Error(errorMessages.join('\n'));
         // @ts-expect-error
         return rulesPackage;
     }
-    static fromString(id) {
-        const options = __classPrivateFieldGet(_a, _a, "m", _IdParser_parse).call(_a, id);
-        return _a.fromOptions(options);
+    static parse(id) {
+        const { typeIds, pathSegments } = __classPrivateFieldGet(this, _a, "m", _IdParser_parseOptions).call(this, id);
+        const [primaryTypeId, ...embeddedTypeIds] = typeIds;
+        const [primaryPath, ...embeddedPaths] = pathSegments;
+        const [rulesPackage, ...pathKeys] = primaryPath.split(CONST_js_1.default.PathSep);
+        const Ctor = __classPrivateFieldGet(_a, _a, "m", _IdParser_getClassForPrimaryTypeId).call(_a, primaryTypeId);
+        // @ts-expect-error
+        const base = new Ctor(primaryTypeId, rulesPackage, ...pathKeys);
+        if (embeddedTypeIds.length === 0)
+            return base;
+        let lastParser = base;
+        for (let i = 0; i < embeddedTypeIds.length; i++) {
+            const typeId = embeddedTypeIds[i];
+            const pathKey = embeddedPaths[i];
+            lastParser = lastParser.createdEmbeddedId(typeId, pathKey);
+        }
+        return lastParser;
     }
 }
 exports.IdParser = IdParser;
-_a = IdParser, _IdParser_rulesPackage = new WeakMap(), _IdParser_typeId = new WeakMap(), _IdParser_pathKeys = new WeakMap(), _IdParser_matcher = new WeakMap(), _IdParser_globber = new WeakMap(), _IdParser_instances = new WeakSet(), _IdParser_resetCachedProperties = function _IdParser_resetCachedProperties() {
-    __classPrivateFieldSet(this, _IdParser_matcher, null, "f");
-    __classPrivateFieldSet(this, _IdParser_globber, null, "f");
-}, _IdParser_createMatcher = function _IdParser_createMatcher(...elements) {
-    return new RegExp('^' + elements.map(__classPrivateFieldGet(_a, _a, "m", _IdParser_getPatternFragment)).join(index_js_1.CONST.Sep) + '$');
-}, _IdParser_getPatternFragment = function _IdParser_getPatternFragment(element, index) {
-    switch (element) {
-        case index_js_1.CONST.WildcardString:
-            // if it's the first element, return the RulesPackage-specific pattern
-            return index === 0
-                ? _a.RulesPackagePattern.source
-                : _a.DictKeyPattern.source;
-        case index_js_1.CONST.GlobstarString:
-            // TODO: to enforce maximum depth, dynamically generate this pattern based on current recursion level
-            return _a.RecursiveDictKeyPattern.source;
-        default:
-            return element;
-    }
-}, _IdParser_parse = function _IdParser_parse(id) {
-    const [rulesPackage, type, ...pathKeys] = id.split(index_js_1.CONST.Sep);
-    const result = {
-        rulesPackage,
-        typeId: type,
-        pathKeys
-    };
-    try {
-        __classPrivateFieldGet(this, _a, "m", _IdParser_validateOptions).call(this, result);
-    }
-    catch (e) {
-        throw new Errors_js_1.ParseError(id, e);
-    }
-    return result;
-}, _IdParser_validateOptions = function _IdParser_validateOptions({ rulesPackage, typeId: type, pathKeys }) {
-    if (!__classPrivateFieldGet(this, _a, "m", _IdParser_validateRulesPackage).call(this, rulesPackage))
-        throw new Error(`"${String(rulesPackage)}" is not a valid Datasworn package ID or wildcard.`);
-    // validate type
-    const formatType = __classPrivateFieldGet(this, _a, "m", _IdParser_getFormatType).call(this, type);
-    // validate path keys
-    __classPrivateFieldGet(this, _a, "m", _IdParser_validatePathKeys).call(this, pathKeys, formatType);
+_a = IdParser, _IdParser_pathSegments = new WeakMap(), _IdParser_typeIds = new WeakMap(), _IdParser_globberPath = new WeakMap(), _IdParser_instances = new WeakSet(), _IdParser_validateTypeIds = function _IdParser_validateTypeIds(typeIds) {
+    if (!(Array.isArray(typeIds) &&
+        typeIds.every((str) => typeof str === 'string')))
+        throw new Error(`Expected an array of strings but got ${JSON.stringify(typeIds)}`);
+    const [primaryTypeId, ...embeddedTypeIds] = typeIds;
+    if (!TypeGuard_js_1.default.AnyPrimaryType(primaryTypeId))
+        throw new Error(`Expected a primary type but got ${JSON.stringify(primaryTypeId)}`);
+    for (const typeId of embeddedTypeIds)
+        if (!(TypeGuard_js_1.default.EmbedOnlyType(typeId) ||
+            TypeGuard_js_1.default.EmbeddablePrimaryType(typeId)))
+            throw new Error(`Expected an embeddable type but got ${JSON.stringify(typeId)}`);
     return true;
-}, _IdParser_getFormatType = function _IdParser_getFormatType(typeId) {
+}, _IdParser_toString = function _IdParser_toString({ typeIds, pathSegments }) {
+    const leftSide = typeIds.join(CONST_js_1.default.PathTypeSep);
+    const rightSide = pathSegments.join(CONST_js_1.default.PathTypeSep);
+    return leftSide + CONST_js_1.default.PrefixSep + rightSide;
+}, _IdParser_getIdFormat = function _IdParser_getIdFormat(value) {
+    let primaryPathFormat;
     switch (true) {
-        case index_js_1.TypeGuard.NonCollectableType(typeId):
-            return 'non_collectable';
-        case index_js_1.TypeGuard.NonRecursiveCollectableType(typeId):
-            return 'non_recursive_collectable';
-        case index_js_1.TypeGuard.RecursiveCollectableType(typeId):
-            return 'recursive_collectable';
-        case index_js_1.TypeGuard.NonRecursiveCollectionType(typeId):
-            return 'non_recursive_collection';
-        case index_js_1.TypeGuard.RecursiveCollectionType(typeId):
-            return 'recursive_collection';
+        case TypeGuard_js_1.default.CollectionType(value):
+            primaryPathFormat = 'collection';
+            break;
+        case TypeGuard_js_1.default.CollectableType(value):
+            primaryPathFormat = 'collectable';
+            break;
+        case TypeGuard_js_1.default.NonCollectableType(value):
+            primaryPathFormat = 'non_collectable';
+            break;
         default:
-            throw new Error(`"${String(typeId)}" is not a valid Datasworn node type.`);
+            throw new Error(`Expected primary TypeId but got ${value}`);
+    }
+    return primaryPathFormat;
+}, _IdParser_validatePathSegments = function _IdParser_validatePathSegments(formatType, pathSegments) {
+    if (!(Array.isArray(pathSegments) &&
+        pathSegments.every((str) => typeof str === 'string')))
+        throw new Error(`Expected an array of strings, but got ${JSON.stringify(pathSegments)}`);
+    const [primaryPath, ...embeddedPaths] = pathSegments;
+    const [rulesPackage, ...primaryPathKeys] = primaryPath.split(CONST_js_1.default.PathSep);
+    if (!__classPrivateFieldGet(_a, _a, "m", _IdParser_validateRulesPackage).call(_a, rulesPackage))
+        throw new Error(`Expected a RulesPackageId, but got ${JSON.stringify(rulesPackage)}`);
+    for (const key of primaryPathKeys)
+        if (!__classPrivateFieldGet(_a, _a, "m", _IdParser_validateDictKey).call(_a, key))
+            throw new Error(`Expected a DictKey or wildcard, but got ${JSON.stringify(key)}`);
+    for (const embeddedPath of embeddedPaths) {
+        const pathParts = embeddedPath.split(CONST_js_1.default.PathSep);
+        for (const pathPart of pathParts)
+            if (!(__classPrivateFieldGet(_a, _a, "m", _IdParser_validateDictKey).call(_a, pathPart) ||
+                __classPrivateFieldGet(_a, _a, "m", _IdParser_validateIndexKey).call(_a, pathPart)))
+                throw new Error(`Expected a DictKey, array index, or wildcard, but got ${JSON.stringify(pathPart)}`);
+    }
+    __classPrivateFieldGet(_a, _a, "m", _IdParser_validatePrimaryPathKeys).call(_a, formatType, primaryPathKeys);
+    return true;
+}, _IdParser_validateIndexKey = function _IdParser_validateIndexKey(value) {
+    return TypeGuard_js_1.default.Wildcard(value) || TypeGuard_js_1.default.IndexKey(value);
+}, _IdParser_assignIdsInDictionary = function _IdParser_assignIdsInDictionary(childNodes, nextTypeId, recursive, index) {
+    _a.logger.debug('[#assignIdsInDictionary]');
+    for (const k in childNodes) {
+        const childNode = childNodes[k];
+        if (childNode == null)
+            continue;
+        const childParser = this.createdEmbeddedId(nextTypeId, k);
+        childParser.assignIdsIn(childNode, recursive, index);
+    }
+}, _IdParser_assignIdsInArray = function _IdParser_assignIdsInArray(childNodes, nextTypeId, recursive, index) {
+    _a.logger.debug('[#assignIdsInArray]');
+    for (let i = 0; i < childNodes.length; i++) {
+        const childNode = childNodes[i];
+        const childParser = this.createdEmbeddedId(nextTypeId, i);
+        childParser.assignIdsIn(childNode, recursive, index);
+    }
+}, _IdParser_parseOptions = function _IdParser_parseOptions(id) {
+    const [leftSide, rightSide] = id.split(CONST_js_1.default.PrefixSep);
+    const typeIds = leftSide.split(CONST_js_1.default.PathTypeSep);
+    const pathSegments = rightSide.split(CONST_js_1.default.PathTypeSep);
+    return {
+        typeIds,
+        pathSegments
+    };
+}, _IdParser_getClassForPrimaryTypeId = function _IdParser_getClassForPrimaryTypeId(typeId) {
+    switch (true) {
+        case TypeGuard_js_1.default.CollectionType(typeId):
+            return CollectionId;
+        case TypeGuard_js_1.default.CollectableType(typeId):
+            return CollectableId;
+        case TypeGuard_js_1.default.NonCollectableType(typeId):
+            return NonCollectableId;
+        default:
+            throw new Error(`Expected TypeId.AnyPrimary, but got ${JSON.stringify(typeId)}`);
     }
 }, _IdParser_validateRulesPackage = function _IdParser_validateRulesPackage(key) {
-    return index_js_1.TypeGuard.RulesPackageId(key) || index_js_1.TypeGuard.Wildcard(key);
-}, _IdParser_validatePathKeys = function _IdParser_validatePathKeys(pathKeys, format) {
+    return TypeGuard_js_1.default.RulesPackageId(key) || TypeGuard_js_1.default.Wildcard(key);
+}, _IdParser_validatePrimaryPathKeys = function _IdParser_validatePrimaryPathKeys(format, pathKeys) {
     let min;
     let max;
     let isRecursive;
     switch (format) {
         // collectables get an additional key -- this is the key of the collectable itself
-        case 'non_recursive_collectable':
-            min = max = index_js_1.CONST.RECURSIVE_PATH_ELEMENTS_MIN + 1;
-            isRecursive = false;
-            break;
-        case 'recursive_collectable':
-            min = index_js_1.CONST.RECURSIVE_PATH_ELEMENTS_MIN + 1;
-            max = index_js_1.CONST.RECURSIVE_PATH_ELEMENTS_MAX + 1;
+        case 'collectable':
+            min = CONST_js_1.default.RECURSIVE_PATH_ELEMENTS_MIN + 1;
+            max = CONST_js_1.default.RECURSIVE_PATH_ELEMENTS_MAX + 1;
             isRecursive = true;
             break;
-        case 'recursive_collection':
-            min = index_js_1.CONST.RECURSIVE_PATH_ELEMENTS_MIN;
-            max = index_js_1.CONST.RECURSIVE_PATH_ELEMENTS_MAX;
+        case 'collection':
+            min = CONST_js_1.default.RECURSIVE_PATH_ELEMENTS_MIN;
+            max = CONST_js_1.default.RECURSIVE_PATH_ELEMENTS_MAX;
             isRecursive = true;
             break;
-        case 'non_recursive_collection':
         case 'non_collectable':
         default:
-            min = max = index_js_1.CONST.RECURSIVE_PATH_ELEMENTS_MIN;
+            min = max = CONST_js_1.default.RECURSIVE_PATH_ELEMENTS_MIN;
             isRecursive = false;
     }
     if (pathKeys.length > max || pathKeys.length < min)
@@ -303,95 +382,91 @@ _a = IdParser, _IdParser_rulesPackage = new WeakMap(), _IdParser_typeId = new We
     const badCollectionKeys = pathKeys.filter((key) => !__classPrivateFieldGet(this, _a, "m", _IdParser_validateCollectionKey).call(this, key, isRecursive));
     if (badCollectionKeys.length > 0)
         throw new Error(`Received invalid ancestor collection keys: ${JSON.stringify(badCollectionKeys)}`);
-    if (index_js_1.TypeGuard.Globstar(pathKeys.at(-1)) &&
-        format !== 'recursive_collection')
+    if (TypeGuard_js_1.default.Globstar(pathKeys.at(-1)) && format !== 'collection')
         throw new Error(`Received a recursive wildcard as a key for a non-recursive collection type`);
     return true;
-}, _IdParser_validateDictKey = function _IdParser_validateDictKey(key, recursive = false, collection = false) {
-    if (recursive && collection)
-        index_js_1.TypeGuard.AnyWildcard(key) || index_js_1.TypeGuard.DictKey(key);
-    return index_js_1.TypeGuard.Wildcard(key) || index_js_1.TypeGuard.DictKey(key);
+}, _IdParser_validateDictKey = function _IdParser_validateDictKey(key) {
+    return TypeGuard_js_1.default.AnyWildcard(key) || TypeGuard_js_1.default.DictKey(key);
 }, _IdParser_validateCollectionKey = function _IdParser_validateCollectionKey(key, recursive = false) {
     return recursive
-        ? index_js_1.TypeGuard.Globstar(key) || __classPrivateFieldGet(this, _a, "m", _IdParser_validateDictKey).call(this, key)
+        ? TypeGuard_js_1.default.Globstar(key) || __classPrivateFieldGet(this, _a, "m", _IdParser_validateDictKey).call(this, key)
         : __classPrivateFieldGet(this, _a, "m", _IdParser_validateDictKey).call(this, key);
 };
-IdParser.typeRootKeys = new Set(Object.values(index_js_1.NodeTypeId.RootKeys));
+/**
+ * The object used for log messages.
+ * @default console
+ */
+IdParser.logger = console;
 // Static properties
 /** An optional reference to the Datasworn tree object, shared by all subclasses. Used as the default value for several traversal methods. */
 IdParser.datasworn = null;
 IdParser.RulesPackagePattern = index_js_1.Pattern.RulesPackageElement;
 IdParser.DictKeyPattern = index_js_1.Pattern.DictKeyElement;
-IdParser.RecursiveDictKeyPattern = index_js_1.Pattern.RecursiveDictKeyElement;
-// derived classes
+IdParser.RecursiveDictKeyPattern = index_js_1.Pattern.RecursiveDictKeysElement;
 class NonCollectableId extends IdParser {
-    constructor(rulesPackage, typeId, key) {
-        super({ rulesPackage, typeId: typeId, pathKeys: [key] });
+    constructor(typeId, rulesPackage, key) {
+        const pathSegment = [rulesPackage, key].join(CONST_js_1.default.PathSep);
+        super({
+            typeIds: [typeId],
+            pathSegments: [pathSegment]
+        });
     }
 }
 exports.NonCollectableId = NonCollectableId;
 class CollectableId extends IdParser {
-}
-class NonRecursiveCollectableId extends CollectableId {
-    constructor(rulesPackage, typeId, collectionKey, key) {
+    constructor(typeId, rulesPackage, ...pathKeys) {
+        const pathSegment = [rulesPackage, ...pathKeys].join(CONST_js_1.default.PathSep);
         super({
-            rulesPackage,
-            typeId,
-            pathKeys: [collectionKey, key]
+            typeIds: [typeId],
+            pathSegments: [pathSegment]
         });
-    }
-}
-exports.NonRecursiveCollectableId = NonRecursiveCollectableId;
-class RecursiveCollectableId extends CollectableId {
-    constructor(rulesPackage, typeId, ...pathKeys) {
-        super({ rulesPackage, typeId, pathKeys });
     }
     get recursionDepth() {
-        return this.collectionAncestorKeys.length;
+        // don't count this id's own key -- only collection depth is counted
+        return this.primaryDictKeyElements.length - 1;
     }
 }
-exports.RecursiveCollectableId = RecursiveCollectableId;
+exports.CollectableId = CollectableId;
 class CollectionId extends IdParser {
-    constructor(rulesPackage, typeId, ...pathKeys) {
-        super({ rulesPackage, typeId, pathKeys });
-    }
-    createChild(key) {
-        // @ts-expect-error
-        return IdParser.fromOptions({
-            rulesPackage: this.rulesPackage,
-            // @ts-expect-error
-            typeId: index_js_1.NodeTypeId.getCollectableOf(this.typeId),
-            pathKeys: [...this.pathKeys, key]
+    constructor(typeId, rulesPackage, ...pathKeys) {
+        const pathSegment = [rulesPackage, ...pathKeys].join(CONST_js_1.default.PathSep);
+        super({
+            typeIds: [typeId],
+            pathSegments: [pathSegment]
         });
     }
-    assignIdsIn(node, recursive = true) {
-        if (recursive)
-            for (const childKey in node.contents) {
-                const childNode = node.contents[childKey];
-                if (childNode == null)
-                    continue;
-                const childParser = this.createChild(childKey);
-                childNode._id = childParser.id;
-            }
-        return super.assignIdsIn(node, recursive);
+    get recursionDepth() {
+        return this.primaryDictKeyElements.length;
     }
-}
-class RecursiveCollectionId extends CollectionId {
-    createCollectionChild(key) {
-        if (this.pathKeys.length >= index_js_1.CONST.RECURSIVE_PATH_ELEMENTS_MAX)
-            throw new Errors_js_1.ParseError(this.id, `Cant't generate a child collection ID because this ID has reached the maximum recursion depth (${index_js_1.CONST.RECURSIVE_PATH_ELEMENTS_MAX})`);
-        return new RecursiveCollectionId(this.rulesPackage, this.typeId, ...this.pathKeys, key);
+    get collectionAncestorKeys() {
+        // everything but the last key, which belongs to the ID target
+        return this.primaryDictKeyElements.slice(0, -1);
     }
-    assignIdsIn(node, recursive = true) {
-        if (recursive && index_js_1.CONST.CollectionsKey in node)
-            for (const childKey in node.collections) {
-                const childCollection = node.collections[childKey];
-                if (childCollection == null)
-                    continue;
-                const childParser = this.createCollectionChild(childKey);
-                childParser.assignIdsIn(childCollection, recursive);
-            }
-        return super.assignIdsIn(node, recursive);
+    createChild(key) {
+        return new CollectableId(TypeId_js_1.default.getCollectableOf(this.primaryTypeId), ...this.primaryPathElements, key);
+    }
+    assignIdsIn(node, recursive = true, index) {
+        // run this up front so the log ordering is more intuitive
+        const base = super.assignIdsIn(node, recursive, index);
+        if (recursive) {
+            if (CONST_js_1.default.ContentsKey in node && node[CONST_js_1.default.ContentsKey] != null)
+                for (const childKey in node[CONST_js_1.default.ContentsKey]) {
+                    const childNode = node[CONST_js_1.default.ContentsKey][childKey];
+                    if (childNode == null)
+                        continue;
+                    const childParser = this.createChild(childKey);
+                    childParser.assignIdsIn(childNode, recursive, index);
+                }
+            if (CONST_js_1.default.CollectionsKey in node && node[CONST_js_1.default.CollectionsKey] != null)
+                for (const childKey in node[CONST_js_1.default.CollectionsKey]) {
+                    const childCollection = node[CONST_js_1.default.CollectionsKey][childKey];
+                    if (childCollection == null)
+                        continue;
+                    const childParser = this.createCollectionChild(childKey);
+                    childParser.assignIdsIn(childCollection, recursive, index);
+                }
+        }
+        return base;
     }
     /**
      * @throws If a parent ID isn't possible (because this ID doesn't have a parent collection.)
@@ -399,13 +474,32 @@ class RecursiveCollectionId extends CollectionId {
     getParentCollection() {
         if (this.collectionAncestorKeys.length === 0)
             throw new Errors_js_1.ParseError(this.id, `Can't generate a parent ID because this ID has no ancestors.`);
-        return new RecursiveCollectionId(this.rulesPackage, this.typeId, ...this.collectionAncestorKeys);
+        return new CollectionId(this.primaryTypeId, this.rulesPackage, ...this.collectionAncestorKeys);
     }
-    get recursionDepth() {
-        return this.pathKeys.length;
+    /**
+     * @throws If a child collection ID can't be created because the maximum recursion depth has been reached.
+     * @see {@link CONST.RECURSIVE_PATH_ELEMENTS_MAX}
+     */
+    createCollectionChild(key) {
+        if (this.recursionDepth >= CONST_js_1.default.RECURSIVE_PATH_ELEMENTS_MAX)
+            throw new Errors_js_1.ParseError(this.id, `Cant't generate a child collection ID because this ID has reached the maximum recursion depth (${CONST_js_1.default.RECURSIVE_PATH_ELEMENTS_MAX})`);
+        return new CollectionId(this.primaryTypeId, this.rulesPackage, ...this.primaryDictKeyElements, key);
     }
 }
-exports.RecursiveCollectionId = RecursiveCollectionId;
-class NonRecursiveCollectionId extends CollectionId {
+exports.CollectionId = CollectionId;
+class EmbeddedId extends IdParser {
+    constructor(parent, typeId, key) {
+        const options = {
+            typeIds: [...parent.typeIds, typeId],
+            pathSegments: [...parent.pathSegments, key.toString()]
+        };
+        super(options);
+    }
 }
-exports.NonRecursiveCollectionId = NonRecursiveCollectionId;
+exports.EmbeddedId = EmbeddedId;
+// const f = new CollectableId('asset', 'starforged', 'path', 'archer')
+// const ff = f.createEmbeddedId('ability', 0)
+// const fff = ff.createEmbeddedId('move', 'craft_arrows')
+// IdParser.logger.log(f.id, f.toGlobberPath())
+// IdParser.logger.log(ff.id, ff.toGlobberPath())
+// IdParser.logger.log(fff.id, fff.toGlobberPath())

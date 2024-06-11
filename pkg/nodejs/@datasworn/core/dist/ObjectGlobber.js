@@ -266,8 +266,6 @@ class ObjectGlobber extends Array {
 _a = ObjectGlobber, _ObjectGlobber_getPlainObjectPaths = function _ObjectGlobber_getPlainObjectPaths(object, includeArrays = false, currentPath = new _a()) {
     const results = [];
     for (const k in object) {
-        if (!Object.hasOwn(object, k))
-            continue;
         const nextObject = object[k];
         if (typeof nextObject !== 'object')
             continue;
