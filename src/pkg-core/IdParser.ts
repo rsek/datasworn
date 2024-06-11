@@ -155,7 +155,9 @@ abstract class IdParser<
 			)
 
 		const [primaryPath, ...embeddedPaths] = pathSegments as string[]
-		const [rulesPackage, ...primaryPathKeys] = primaryPath.split(CONST.PathSep)
+		const [rulesPackage, ...primaryPathKeys] = primaryPath.split(
+			CONST.PathKeySep
+		)
 		if (!IdParser.#validateRulesPackage(rulesPackage))
 			throw new Error(
 				`Expected a RulesPackageId, but got ${JSON.stringify(rulesPackage)}`
@@ -168,7 +170,7 @@ abstract class IdParser<
 				)
 
 		for (const embeddedPath of embeddedPaths) {
-			const pathParts = embeddedPath.split(CONST.PathSep)
+			const pathParts = embeddedPath.split(CONST.PathKeySep)
 			for (const pathPart of pathParts)
 				if (
 					!(
@@ -212,7 +214,7 @@ abstract class IdParser<
 	}
 
 	get primaryPathElements() {
-		return this.primaryPath.split(CONST.PathSep)
+		return this.primaryPath.split(CONST.PathKeySep)
 	}
 
 	get rulesPackage() {
@@ -294,7 +296,6 @@ abstract class IdParser<
 			)
 
 			for (const nextTypeId of embeddedTypes) {
-
 				const property = TypeId.getEmbeddedPropertyKey(nextTypeId)
 				if (!(property in node)) continue
 				const childNodes = node[property] as
@@ -445,7 +446,7 @@ abstract class IdParser<
 				const trunkNode = typeRoot[dictKey]
 				if (trunkNode == null) continue
 
-				const id = `${typeId}${CONST.PrefixSep}${rulesPackage._id}${CONST.PathSep}${dictKey}`
+				const id = `${typeId}${CONST.PrefixSep}${rulesPackage._id}${CONST.PathKeySep}${dictKey}`
 
 				let parser: CollectionId | NonCollectableId
 				try {
@@ -534,7 +535,7 @@ abstract class IdParser<
 			...TypeId.EmbeddableTypes[]
 		]
 		const [primaryPath, ...embeddedPaths] = pathSegments
-		const [rulesPackage, ...pathKeys] = primaryPath.split(CONST.PathSep)
+		const [rulesPackage, ...pathKeys] = primaryPath.split(CONST.PathKeySep)
 
 		const Ctor = IdParser.#getClassForPrimaryTypeId(primaryTypeId)
 		// @ts-expect-error
@@ -658,7 +659,7 @@ class NonCollectableId<
 	Key extends string = string
 > extends IdParser<[TypeId], [Join<[RulesPackage, Key]>]> {
 	constructor(typeId: TypeId, rulesPackage: RulesPackage, key: Key) {
-		const pathSegment = [rulesPackage, key].join(CONST.PathSep) as Join<
+		const pathSegment = [rulesPackage, key].join(CONST.PathKeySep) as Join<
 			[RulesPackage, Key]
 		>
 		super({
@@ -672,15 +673,12 @@ interface NonCollectableId<
 	TypeId extends TypeId.NonCollectable = TypeId.NonCollectable,
 	RulesPackage extends string = string,
 	Key extends string = string
-> extends IdParser<[TypeId], [`${RulesPackage}${CONST.PathSep}${Key}`]> {
+> extends IdParser<[TypeId], [`${RulesPackage}${CONST.PathKeySep}${Key}`]> {
 	get id(): StringId.NonCollectableId<TypeId, RulesPackage, Key>
 }
 namespace NonCollectableId {
-	export type FromString<T extends StringId.NonCollectableId> = NonCollectableId<
-		ExtractTypeId<T>,
-		ExtractRulesPackage<T>,
-		ExtractKey<T>
-	>
+	export type FromString<T extends StringId.NonCollectableId> =
+		NonCollectableId<ExtractTypeId<T>, ExtractRulesPackage<T>, ExtractKey<T>>
 }
 
 interface RecursiveId extends IdParser {
@@ -707,9 +705,9 @@ class CollectableId<
 		rulesPackage: RulesPackage,
 		...pathKeys: [...CollectableAncestorKeys, Key]
 	) {
-		const pathSegment = [rulesPackage, ...pathKeys].join(CONST.PathSep) as Join<
-			[RulesPackage, ...CollectableAncestorKeys, Key]
-		>
+		const pathSegment = [rulesPackage, ...pathKeys].join(
+			CONST.PathKeySep
+		) as Join<[RulesPackage, ...CollectableAncestorKeys, Key]>
 		super({
 			typeIds: [typeId],
 			pathSegments: [pathSegment]
@@ -776,9 +774,9 @@ class CollectionId<
 		rulesPackage: RulesPackage,
 		...pathKeys: [...CollectionAncestorKeys, Key]
 	) {
-		const pathSegment = [rulesPackage, ...pathKeys].join(CONST.PathSep) as Join<
-			[RulesPackage, ...CollectionAncestorKeys, Key]
-		>
+		const pathSegment = [rulesPackage, ...pathKeys].join(
+			CONST.PathKeySep
+		) as Join<[RulesPackage, ...CollectionAncestorKeys, Key]>
 		super({
 			typeIds: [typeId],
 			pathSegments: [pathSegment]

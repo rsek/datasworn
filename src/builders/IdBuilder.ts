@@ -75,13 +75,13 @@ namespace PathSymbol {
 		}
 	}
 
-	export class DictKey<
+	export class DictKey<Origin, Prop extends DictPropKeyIn<Origin>> extends PathSymbol<
 		Origin,
-		Prop extends DictPropKeyIn<Origin>
-	> extends PathSymbol<Origin, Prop> {
+		Prop
+	> {
 		static readonly PATTERN = Pattern.DictKeyElement
 		static readonly WILDCARD = new RegExp(
-			`${DictKey.PATTERN.source}|\\${CONST.PathSep}\\${CONST.WildcardString}|\\${CONST.PathSep}\\${CONST.WildcardString}\\${CONST.WildcardString}`
+			`${DictKey.PATTERN.source}|\\${CONST.PathKeySep}\\${CONST.WildcardString}|\\${CONST.PathKeySep}\\${CONST.WildcardString}\\${CONST.WildcardString}`
 		)
 
 		public get minReps(): number {
@@ -140,7 +140,7 @@ namespace PathSymbol {
 				for (let i = 0; i < variantsToGenerate; i++)
 					variantParts.push(DictKey.stringTemplateLiteral)
 
-				variants.push(variantParts.join(CONST.PathSep))
+				variants.push(variantParts.join(CONST.PathKeySep))
 
 				variantsToGenerate--
 			}
@@ -219,7 +219,7 @@ class IdPattern<
 
 	static readonly PrefixSep = CONST.PrefixSep
 
-	static readonly PathSep = '\\' + CONST.PathSep
+	static readonly PathSep = '\\' + CONST.PathKeySep
 
 	static readonly WILDCARD = '\\' + CONST.WildcardString
 	static readonly GLOBSTAR = IdPattern.WILDCARD + IdPattern.WILDCARD

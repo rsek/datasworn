@@ -4,7 +4,7 @@ import Log from '../utils/Log.js'
 
 // TODO: these should be interpolated from constants.ts
 const linkSymbolPattern =
-	/\[\w.*?\]\((?<type>[a-z_]+):(?<target>[a-z][a-z_]+(\/[a-z_0-9]+){2,}?)\)/g
+	/(?<=\[\w.+?\]\)((?<type>[a-z_]+):(?<target>[a-z][a-z_]+(\/[a-z_0-9]+){2,}?)\)/g
 
 const macroSymbolPattern =
 	/\{\{(?<type>[a-z_]+):(?<target>[a-z][a-z_]+(\/[a-z_0-9]+){2,}?)\}\}/g
