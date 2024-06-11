@@ -1,6 +1,6 @@
 namespace CONST {
 	/** The maximum depth for nesting collections, relative to the root dictionary for its type */
-  export const RECURSIVE_PATH_ELEMENTS_MAX = 3 as const
+  export const RECURSIVE_PATH_ELEMENTS_MAX = 4 as const
 	export type RECURSIVE_PATH_ELEMENTS_MAX = typeof RECURSIVE_PATH_ELEMENTS_MAX
 	export const RECURSIVE_PATH_ELEMENTS_MIN = 1 as const
 	export type RECURSIVE_PATH_ELEMENTS_MIN = typeof RECURSIVE_PATH_ELEMENTS_MIN

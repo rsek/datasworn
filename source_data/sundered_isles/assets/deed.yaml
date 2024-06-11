@@ -32,10 +32,10 @@ assets:
               You gain a specialist. The specialist is part of your crew, but is tracked as a connection and provides benefits to you and your allies per their role. When you [Withstand Damage](move:starforged/suffer/withstand_damage) and score a miss, or if you [Pay the Price](move:starforged/fate/pay_the_price), you may suffer the cost by noting the specialist as out of action. An out of action specialist provides no benefit. To restore a specialist to duty, resolve the situation as appropriate to the nature of the injury, trauma, or dispute.
             enhance_moves:
               - enhances:
-                  - starforged/moves/suffer/withstand_damage
+                  - move:starforged/suffer/withstand_damage
                 roll_type: action_roll
               - enhances:
-                  - starforged/moves/fate/pay_the_price
+                  - move:starforged/fate/pay_the_price
                 roll_type: no_roll
           - text: |-
               Gain additional specialists by spending 1 experience to add a connection to your crew as a specialist. Specialist bonuses may not be stacked for a single action.
@@ -43,7 +43,7 @@ assets:
               When you [Secure an Advantage](move:starforged/adventure/secure_an_advantage) by gathering your specialists to strategize or problem-solve, you may reroll one die for each participating specialist.
             enhance_moves:
               - enhances:
-                  - starforged/moves/*/secure_an_advantage
+                  - move:starforged/*/secure_an_advantage
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -64,7 +64,7 @@ assets:
               You are cursed and remade by your encounter with death or desolation. Discard two or more assets connected to your former nature, and take up to three assets to represent your damned existence. Give the new assets a special mark. When you [Advance](move:starforged/legacy/advance) and upgrade a damned asset, spend 1 experience (instead of 2).
             enhance_moves:
               - enhances:
-                  - starforged/moves/legacy/advance
+                  - move:starforged/legacy/advance
                 roll_type: no_roll
                 trigger:
                   conditions:
@@ -73,7 +73,7 @@ assets:
               Choose a community where you are accepted despite (or because of) your cursed nature. When you [Sojourn](move:starforged/recover/sojourn) there, reroll any dice.
             enhance_moves:
               - enhances:
-                  - starforged/moves/recover/sojourn
+                  - move:starforged/recover/sojourn
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -98,7 +98,7 @@ assets:
               Your fleet has a starting and max power of 4. When you make a move as a fleetwide action to get in position, avoid a hazard, or fight, roll +power. If your fleet bears the cost of a move, suffer -1 power. At 0 power, mark the fleet as wrecked. To refit the fleet, [Sojourn](move:starforged/recover/sojourn) and forgo an automatic strong hit on a recover move to take +2 power; if the fleet is wrecked, first spend 2 experience to clear that status.
             enhance_moves:
               - enhances:
-                  - starforged/moves/recover/sojourn
+                  - move:starforged/recover/sojourn
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -119,7 +119,7 @@ assets:
               When you [Undertake an Expedition](move:starforged/exploration/undertake_an_expedition), you may reroll your action die if its value is less than your fleet’s power.
             enhance_moves:
               - enhances:
-                  - starforged/moves/exploration/undertake_an_expedition
+                  - move:starforged/exploration/undertake_an_expedition
                 roll_type: action_roll
         controls:
           power:
@@ -128,7 +128,7 @@ assets:
             max: 4
             moves:
               recover:
-                - starforged/moves/recover/sojourn
+                - move:starforged/recover/sojourn
             controls:
               wrecked:
                 field_type: checkbox
@@ -148,13 +148,13 @@ assets:
               When you [Secure an Advantage](move:sundered_isles/adventure/secure_an_advantage) to plot a course through careful study of currents and weather, or if you [Face Danger](move:sundered_isles/adventure/face_danger) aboard ship to overcome or avoid an environmental hazard such as a storm or rogue wave, add +1 and take +1 momentum on a hit.
             enhance_moves:
               - enhances:
-                  - starforged/moves/*/secure_an_advantage
+                  - move:starforged/*/secure_an_advantage
                 roll_type: action_roll
                 trigger:
                   conditions:
                     - text: to plot a course through careful study of currents and weather
               - enhances:
-                  - starforged/moves/*/face_danger
+                  - move:starforged/*/face_danger
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -184,7 +184,7 @@ assets:
               count_as_impact: true
             enhance_moves:
               - enhances:
-                  - starforged/moves/suffer/endure_harm
+                  - move:starforged/suffer/endure_harm
                 roll_type: action_roll
                 trigger:
                   conditions:
@@ -203,7 +203,7 @@ assets:
               You may move at will between the mortal world and the realm of the dead, can take others with you, and may navigate those paths to bypass or hasten a mortal journey. When you [Undertake an Expedition](move:starforged/exploration/undertake_an_expedition) within the realms of the dead, roll +spirit. On a strong hit, mark progress.
             enhance_moves:
               - enhances:
-                  - starforged/moves/exploration/undertake_an_expedition
+                  - move:starforged/exploration/undertake_an_expedition
                 roll_type: action_roll
                 trigger:
                   conditions:

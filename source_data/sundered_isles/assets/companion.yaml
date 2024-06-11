@@ -34,7 +34,7 @@ assets:
             When the albatross flies ahead of your ship or perches on the ship’s mast as you [Finish an Expedition](move:starforged/exploration/finish_an_expedition), its luck is on your side. You may reroll one challenge die.
           enhance_moves:
           - enhances:
-            - starforged/moves/exploration/finish_an_expedition
+            - move:starforged/exploration/finish_an_expedition
             roll_type: progress_roll
             trigger:
               conditions:
@@ -43,7 +43,7 @@ assets:
             When you [Secure an Advantage](move:starforged/adventure/secure_an_advantage) at sea by asking the spirit embodied by the albatross for a favorable boon, you may roll +its health. If you do, take +1 momentum on a hit. On a strong hit with a match, also mark 1 tick on your bonds legacy track as you deepen your connection to your companion.
           enhance_moves:
           - enhances:
-            - starforged/moves/*/secure_an_advantage
+            - move:starforged/*/secure_an_advantage
             roll_type: action_roll
             trigger:
               conditions:
@@ -65,9 +65,9 @@ assets:
                   disables_asset: true
               moves: &BiologicalCompanionHealth.moves
                 suffer:
-                  - starforged/moves/suffer/companion_takes_a_hit
+                  - move:starforged/suffer/companion_takes_a_hit
                 recover:
-                  - starforged/moves/recover/heal
+                  - move:starforged/recover/heal
             max: 3
             value: 3
       chattering_skull:
@@ -118,7 +118,7 @@ assets:
             When you [Undertake an Expedition](move:starforged/exploration/undertake_an_expedition) and score a miss with a match, you may envision the dolphin appearing unbidden to guide you out of trouble. If you do, reroll both challenge dice.
           enhance_moves:
           - enhances:
-            - starforged/moves/exploration/undertake_an_expedition
+            - move:starforged/exploration/undertake_an_expedition
             roll_type: action_roll
         controls:
           health:
@@ -138,7 +138,7 @@ assets:
             Your dragon companion wards off trouble. When you [Secure an Advantage](move:starforged/adventure/secure_an_advantage) by letting it roam, roll +its health. You must [Sacrifice Resources](move:starforged/suffer/sacrifice_resources) (-1) about once a day to satiate its fierce appetite; otherwise, make the [Companion Takes a Hit](move:starforged/suffer/companion_takes_a_hit) (-2) move.
           enhance_moves:
           - enhances:
-            - starforged/moves/*/secure_an_advantage
+            - move:starforged/*/secure_an_advantage
             roll_type: action_roll
             trigger:
               conditions:
@@ -153,7 +153,7 @@ assets:
             When you make the [Companion Takes a Hit](move:starforged/suffer/companion_takes_a_hit) move, take +1 momentum on a strong hit.
           enhance_moves:
           - enhances:
-            - starforged/moves/suffer/companion_takes_a_hit
+            - move:starforged/suffer/companion_takes_a_hit
             roll_type: action_roll
             trigger:
               conditions:
@@ -179,7 +179,7 @@ assets:
             Your jungle cat companion leaps into the fight at your side. When you [Strike](move:starforged/combat/strike) aided by the cat, or if you make a move to intimidate your foes, add +1. If you [Clash](move:starforged/combat/clash), take +1 momentum on a hit.
           enhance_moves:
           - enhances:
-            - starforged/moves/combat/strike
+            - move:starforged/combat/strike
             roll_type: action_roll
             trigger:
               conditions:
@@ -190,7 +190,7 @@ assets:
               conditions:
                 - text: make a move to intimidate your foes, aided by the jungle cat
           - enhances:
-            - starforged/moves/combat/clash
+            - move:starforged/combat/clash
             roll_type: action_roll
             trigger:
               conditions:
@@ -199,7 +199,7 @@ assets:
             The jungle cat leads the way on treacherous overland journeys. When you [Undertake an Expedition](move:starforged/exploration/undertake_an_expedition) through wilderness, add +1. On a strong hit with a match, the cat guides you to an otherwise unseen opportunity; envision what you find and take +2 momentum.
           enhance_moves:
           - enhances:
-            - starforged/moves/exploration/undertake_an_expedition
+            - move:starforged/exploration/undertake_an_expedition
             roll_type: action_roll
             trigger:
               conditions:
@@ -208,8 +208,8 @@ assets:
             When you [Endure Stress](move:starforged/suffer/endure_stress) in the company of the jungle cat, or if you [Hearten](move:starforged/recover/hearten) in their company, add +1. On a strong hit with a match, you find inspiration or solace; take +momentum equal to their health.
           enhance_moves:
           - enhances:
-            - starforged/moves/suffer/endure_stress
-            - starforged/moves/recover/hearten
+            - move:starforged/suffer/endure_stress
+            - move:starforged/recover/hearten
             roll_type: action_roll
             trigger:
               conditions:
@@ -236,7 +236,6 @@ assets:
               # TODO: also consider: "Monkeyshine", "Monkey Around", etc
               name: Monkey Business
               roll_type: action_roll
-              _source: *Source
               trigger:
                 text: Once per situation, when you score a miss, and you suffer the cost by envisioning the monkey causing mischief or getting into danger...
                 conditions:
@@ -264,7 +263,7 @@ assets:
             When you [Resupply](move:starforged/recover/resupply) by asking the monkey to search or scavenge, add +1.
           enhance_moves:
           - enhances:
-            - starforged/moves/recover/resupply
+            - move:starforged/recover/resupply
             roll_type: action_roll
             trigger:
               conditions:
@@ -291,13 +290,13 @@ assets:
             The parrot squawks a warning when danger is near. When you [Face Danger](move:starforged/adventure/face_danger) to detect a threat, or if you [Enter the Fray](move:starforged/combat/enter_the_fray) against an ambush, add +its health.
           enhance_moves:
           - enhances:
-            - starforged/moves/combat/enter_the_fray
+            - move:starforged/combat/enter_the_fray
             roll_type: action_roll
             trigger:
               conditions:
               - text: When you [Enter the Fray](move:starforged/combat/enter_the_fray) against an ambush
           - enhances:
-            - starforged/moves/*/face_danger
+            - move:starforged/*/face_danger
             roll_type: action_roll
             trigger:
               conditions:
@@ -330,7 +329,7 @@ assets:
             You may [Explore a Waypoint](move:starforged/exploration/explore_a_waypoint) (even if not on an expedition) by sending the rat to search a promising confined area for something of interest or value. If you do, roll +its health. On a miss, its instincts have you forewarned; you may reroll one challenge die.
           enhance_moves:
           - enhances:
-            - starforged/moves/exploration/explore_a_waypoint
+            - move:starforged/exploration/explore_a_waypoint
             roll_type: action_roll
             trigger:
               conditions:
@@ -354,7 +353,7 @@ assets:
         abilities:
         - enabled: true
           text: |-
-            When you summon the Kraken, fill one segment of a four-segment clock. The Kraken will heed a single command to destroy or overcome any foe or obstacle. If you are in a fight, [Take Decisive Action](move:starforged/combat/take_decisive_action) with an automatic strong hit. When the clock is filled, [Ask the Oracle](oracle_rollable:starforged/moves/ask_the_oracle/fifty_fifty) (using the yes/no table) if the Kraken turns against you, making it 50/50. On a yes, discard this asset; the Kraken is now an epic foe. On a no, clear one segment of the clock.
+            When you summon the Kraken, fill one segment of a four-segment clock. The Kraken will heed a single command to destroy or overcome any foe or obstacle. If you are in a fight, [Take Decisive Action](move:starforged/combat/take_decisive_action) with an automatic strong hit. When the clock is filled, [Ask the Oracle](oracle_rollable:move:starforged/ask_the_oracle/fifty_fifty) (using the yes/no table) if the Kraken turns against you, making it 50/50. On a yes, discard this asset; the Kraken is now an epic foe. On a no, clear one segment of the clock.
           controls:
             clock:
               label: the Kraken turns against you
@@ -362,7 +361,7 @@ assets:
               max: 4
           enhance_moves:
           - enhances:
-            - starforged/moves/combat/take_decisive_action
+            - move:starforged/combat/take_decisive_action
             roll_type: progress_roll
             trigger:
               conditions:
@@ -378,7 +377,7 @@ assets:
             One time only, when you [Fulfill Your Vow](move:starforged/quest/fulfill_your_vow) (formidable or greater) in service to the Kraken and score a hit, choose one: clear all clock segments, or discard this asset and mark three boxes on your bonds legacy track.
           enhance_moves:
           - enhances:
-            - starforged/moves/quest/fulfill_your_vow
+            - move:starforged/quest/fulfill_your_vow
             roll_type: progress_roll
             trigger:
               conditions:
