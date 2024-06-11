@@ -46,7 +46,7 @@ oracles:
                     **Changing landscape**
                     [Overland Region](oracle_rollable:sundered_isles/overland/region)
                   oracle_rolls:
-                    - oracle: sundered_isles/oracles/overland/region
+                    - oracle: oracle_rollable:sundered_isles/overland/region
                       auto: false
               - roll: { min: 31, max: 35 }
                 <<: &Waypoints.2
@@ -62,11 +62,11 @@ oracles:
                       * [Descriptor](oracle_rollable:sundered_isles/core/descriptor) + [Focus](oracle_rollable:sundered_isles/core/focus)
                   oracle_rolls:
                     - auto: false
-                      oracle: sundered_isles/oracles/overland/details
+                      oracle: oracle_rollable:sundered_isles/overland/details
                     - auto: false
-                      oracle: sundered_isles/oracles/core/descriptor
+                      oracle: oracle_rollable:sundered_isles/core/descriptor
                     - auto: false
-                      oracle: sundered_isles/oracles/core/focus
+                      oracle: oracle_rollable:sundered_isles/core/focus
               - roll: { min: 56, max: 70 }
                 <<: &Waypoints.4
                   text: |-
@@ -85,7 +85,7 @@ oracles:
                 oracle_rolls:
                   - auto: false
                     number_of_rolls: 1
-                    oracle: sundered_isles/oracles/misc/interlude_scene
+                    oracle: oracle_rollable:sundered_isles/misc/interlude_scene
               - roll: { min: 86, max: 100 }
                 <<: &Waypoints.7
                   text: Roll twice
@@ -160,7 +160,7 @@ oracles:
               sundered_isles:
                 overland_region: highlands
                 <<: &LandmarkCurse
-                  cursed_by: sundered_isles/oracles/overland/region_landmarks/cursed
+                  cursed_by: oracle_rollable:sundered_isles/overland/region_landmarks/cursed
             _source:
               <<: *Source
               page: 150
@@ -670,7 +670,7 @@ oracles:
               sundered_isles:
                 curse_behavior: replace_result
                 cursed_version_of:
-                  - sundered_isles/oracles/overland/regional_landmark/*
+                  - oracle_rollable:sundered_isles/overland/regional_landmark/*
             _source:
               <<: *Source
               page: 155
@@ -741,7 +741,7 @@ oracles:
             text2: *highlands.summary
             tags: *highlands.tags
             oracle_rolls:
-              - oracle: sundered_isles/oracles/overland/region_landmarks/highlands
+              - oracle: oracle_rollable:sundered_isles/overland/region_landmarks/highlands
                 auto: false
             # text3: pg 150
           - roll: { min: 21, max: 45 }
@@ -749,7 +749,7 @@ oracles:
             text2: *jungle.summary
             tags: *jungle.tags
             oracle_rolls:
-              - oracle: sundered_isles/oracles/overland/region_landmarks/jungle
+              - oracle: oracle_rollable:sundered_isles/overland/region_landmarks/jungle
                 auto: false
             # text3: pg 150
           - roll: { min: 46, max: 50 }
@@ -757,7 +757,7 @@ oracles:
             text2: *lava_field.summary
             tags: *lava_field.tags
             oracle_rolls:
-              - oracle: sundered_isles/oracles/overland/region_landmarks/lava_field
+              - oracle: oracle_rollable:sundered_isles/overland/region_landmarks/lava_field
                 auto: false
             # text3: pg 151
           - roll: { min: 51, max: 55 }
@@ -765,7 +765,7 @@ oracles:
             text2: *marsh.summary
             tags: *marsh.tags
             oracle_rolls:
-              - oracle: sundered_isles/oracles/overland/region_landmarks/marsh
+              - oracle: oracle_rollable:sundered_isles/overland/region_landmarks/marsh
                 auto: false
             # text3: pg 151
           - roll: { min: 56, max: 60 }
@@ -773,7 +773,7 @@ oracles:
             text2: *river.summary
             tags: *river.tags
             oracle_rolls:
-              - oracle: sundered_isles/oracles/overland/region_landmarks/river
+              - oracle: oracle_rollable:sundered_isles/overland/region_landmarks/river
                 auto: false
             # text3: pg 152
           - roll: { min: 61, max: 65 }
@@ -781,7 +781,7 @@ oracles:
             text2: *scrub.summary
             tags: *scrub.tags
             oracle_rolls:
-              - oracle: sundered_isles/oracles/overland/region_landmarks/scrub
+              - oracle: oracle_rollable:sundered_isles/overland/region_landmarks/scrub
                 auto: false
             # text3: pg 152
           - roll: { min: 66, max: 75 }
@@ -789,7 +789,7 @@ oracles:
             text2: *shore.summary
             tags: *shore.tags
             oracle_rolls:
-              - oracle: sundered_isles/oracles/overland/region_landmarks/shore
+              - oracle: oracle_rollable:sundered_isles/overland/region_landmarks/shore
                 auto: false
             # text3: pg 153
           - roll: { min: 76, max: 85 }
@@ -797,7 +797,7 @@ oracles:
             text2: *swamp.summary
             tags: *swamp.tags
             oracle_rolls:
-              - oracle: sundered_isles/oracles/overland/region_landmarks/swamp
+              - oracle: oracle_rollable:sundered_isles/overland/region_landmarks/swamp
                 auto: false
             # text3: pg 153
           - roll: { min: 86, max: 90 }
@@ -805,7 +805,7 @@ oracles:
             text2: *wastes.summary
             tags: *wastes.tags
             oracle_rolls:
-              - oracle: sundered_isles/oracles/overland/region_landmarks/wastes
+              - oracle: oracle_rollable:sundered_isles/overland/region_landmarks/wastes
                 auto: false
             # text3: pg 154
           - roll: { min: 91, max: 100 }
@@ -813,7 +813,7 @@ oracles:
             text2: *woodland.summary
             tags: *woodland.tags
             oracle_rolls:
-              - oracle: sundered_isles/oracles/overland/region_landmarks/woodland
+              - oracle: oracle_rollable:sundered_isles/overland/region_landmarks/woodland
                 auto: false
             # text3: pg 154
       details:
@@ -825,7 +825,7 @@ oracles:
           page: 156
         tags:
           sundered_isles:
-            cursed_by: sundered_isles/oracles/overland/details_cursed
+            cursed_by: oracle_rollable:sundered_isles/overland/details_cursed
         rows:
           - roll: { min: 1, max: 1 }
             text: A tree trunk bears a crudely carved message
@@ -1035,7 +1035,7 @@ oracles:
           sundered_isles:
             curse_behavior: replace_result
             cursed_version_of:
-              - sundered_isles/oracles/overland/details
+              - oracle_rollable:sundered_isles/overland/details
         _source:
           <<: *Source
           page: 159
@@ -1315,14 +1315,14 @@ oracles:
             oracle_rolls:
               - auto: false
                 number_of_rolls: 1
-                oracle: sundered_isles/oracles/weather/foul
+                oracle: oracle_rollable:sundered_isles/weather/foul
           - roll: { min: 97, max: 99 }
             text: '[Action](oracle_rollable:sundered_isles/core/action) + [Theme](oracle_rollable:sundered_isles/core/theme)'
             oracle_rolls:
               - auto: true
-                oracle: sundered_isles/oracles/core/action
+                oracle: oracle_rollable:sundered_isles/core/action
               - auto: true
-                oracle: sundered_isles/oracles/core/theme
+                oracle: oracle_rollable:sundered_isles/core/theme
           - roll: { min: 100, max: 100 }
             text: Roll twice
             oracle_rolls:

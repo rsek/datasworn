@@ -62,11 +62,11 @@ oracles:
                           * [Descriptor](oracle_rollable:sundered_isles/core/descriptor) + [Focus](oracle_rollable:sundered_isles/core/focus)
                       oracle_rolls:
                         - auto: false
-                          oracle: sundered_isles/oracles/seafaring/details
+                          oracle: oracle_rollable:sundered_isles/seafaring/details
                         - auto: false
-                          oracle: sundered_isles/oracles/core/descriptor
+                          oracle: oracle_rollable:sundered_isles/core/descriptor
                         - auto: false
-                          oracle: sundered_isles/oracles/core/focus
+                          oracle: oracle_rollable:sundered_isles/core/focus
                   - roll: { min: 56, max: 65 }
                     <<: &Waypoint.4
                       text: |-
@@ -85,7 +85,7 @@ oracles:
                     oracle_rolls:
                       - auto: false
                         number_of_rolls: 1
-                        oracle: sundered_isles/oracles/misc/interlude_scene
+                        oracle: oracle_rollable:sundered_isles/misc/interlude_scene
                   - roll: { min: 86, max: 100 }
                     <<: &Waypoint.7
                       text: Roll twice
@@ -232,7 +232,7 @@ oracles:
         oracle_type: table_text
         tags:
           sundered_isles:
-            cursed_by: sundered_isles/oracles/seafaring/details_cursed
+            cursed_by: oracle_rollable:sundered_isles/seafaring/details_cursed
         _source:
           <<: *Source
           page: 122
@@ -444,7 +444,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_version_of:
-              - sundered_isles/oracles/seafaring/details
+              - oracle_rollable:sundered_isles/seafaring/details
             curse_behavior: replace_result
         _source:
           <<: *Source
@@ -725,14 +725,14 @@ oracles:
             oracle_rolls:
               - auto: false
                 number_of_rolls: 1
-                oracle: sundered_isles/oracles/weather/foul
+                oracle: oracle_rollable:sundered_isles/weather/foul
           - roll: { min: 97, max: 99 }
             text: '[Action](oracle_rollable:sundered_isles/core/action) + [Theme](oracle_rollable:sundered_isles/core/theme)'
             oracle_rolls:
               - auto: true
-                oracle: sundered_isles/oracles/core/action
+                oracle: oracle_rollable:sundered_isles/core/action
               - auto: true
-                oracle: sundered_isles/oracles/core/theme
+                oracle: oracle_rollable:sundered_isles/core/theme
           - roll: { min: 100, max: 100 }
             text: Roll twice
             oracle_rolls:

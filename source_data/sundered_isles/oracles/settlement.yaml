@@ -99,7 +99,7 @@ oracles:
         recommended_rolls: { min: 1, max: 2 }
         tags:
           sundered_isles:
-            cursed_by: sundered_isles/oracles/settlement/first_look_cursed
+            cursed_by: oracle_rollable:sundered_isles/settlement/first_look_cursed
         _source:
           <<: *Source
           page: 166
@@ -194,9 +194,9 @@ oracles:
             text: '[Descriptor](oracle_rollable:sundered_isles/core/descriptor) + [Focus](oracle_rollable:sundered_isles/core/focus)'
             oracle_rolls:
               - auto: true
-                oracle: sundered_isles/oracles/core/descriptor
+                oracle: oracle_rollable:sundered_isles/core/descriptor
               - auto: true
-                oracle: sundered_isles/oracles/core/focus
+                oracle: oracle_rollable:sundered_isles/core/focus
       first_look_cursed:
         name: Cursed Settlement First Look
         type: oracle_rollable
@@ -204,7 +204,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_version_of:
-              - sundered_isles/oracles/settlement/first_look
+              - oracle_rollable:sundered_isles/settlement/first_look
             curse_behavior: replace_result
         _source:
           <<: *Source
@@ -273,14 +273,14 @@ oracles:
             oracle_rolls:
               - auto: false
                 number_of_rolls: 1
-                oracle: sundered_isles/oracles/weather/cursed
+                oracle: oracle_rollable:sundered_isles/weather/cursed
       details:
         name: Settlement Details
         type: oracle_rollable
         oracle_type: table_text
         tags:
           sundered_isles:
-            cursed_by: sundered_isles/oracles/settlement/details_cursed
+            cursed_by: oracle_rollable:sundered_isles/settlement/details_cursed
         recommended_rolls: { min: 1, max: 2 }
         _source:
           <<: *Source
@@ -477,16 +477,16 @@ oracles:
             text: '[Action](oracle_rollable:sundered_isles/core/action) + [Theme](oracle_rollable:sundered_isles/core/theme)'
             oracle_rolls:
               - auto: true
-                oracle: sundered_isles/oracles/core/action
+                oracle: oracle_rollable:sundered_isles/core/action
               - auto: true
-                oracle: sundered_isles/oracles/core/theme
+                oracle: oracle_rollable:sundered_isles/core/theme
           - roll: { min: 98, max: 100 }
             text: '[Descriptor](oracle_rollable:sundered_isles/core/descriptor) + [Focus](oracle_rollable:sundered_isles/core/focus)'
             oracle_rolls:
               - auto: true
-                oracle: sundered_isles/oracles/core/descriptor
+                oracle: oracle_rollable:sundered_isles/core/descriptor
               - auto: true
-                oracle: sundered_isles/oracles/core/focus
+                oracle: oracle_rollable:sundered_isles/core/focus
       details_cursed:
         name: Cursed Settlement Details
         type: oracle_rollable
@@ -494,7 +494,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_version_of:
-              - sundered_isles/oracles/settlement/details
+              - oracle_rollable:sundered_isles/settlement/details
             curse_behavior: replace_result
         _source:
           <<: *Source
@@ -635,7 +635,7 @@ oracles:
         oracle_type: table_text
         tags:
           sundered_isles:
-            cursed_by: sundered_isles/oracles/settlement/name_cursed
+            cursed_by: oracle_rollable:sundered_isles/settlement/name_cursed
         _source:
           <<: *Source
           page: 175
@@ -847,7 +847,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_version_of:
-              - sundered_isles/oracles/settlement/name
+              - oracle_rollable:sundered_isles/settlement/name
             curse_behavior: replace_result
         _source:
           <<: *Source
@@ -1112,7 +1112,7 @@ oracles:
                 oracle_type: column_text2
                 tags:
                   sundered_isles:
-                    cursed_by: sundered_isles/oracles/settlement/identity/focus_cursed
+                    cursed_by: oracle_rollable:sundered_isles/settlement/identity/focus_cursed
                     location: shore
                 rows:
                   - roll: { min: 1, max: 3 }
@@ -1264,9 +1264,9 @@ oracles:
                       text: '[Action](oracle_rollable:sundered_isles/core/action) + [Theme](oracle_rollable:sundered_isles/core/theme)'
                       oracle_rolls:
                         - auto: true
-                          oracle: sundered_isles/oracles/core/action
+                          oracle: oracle_rollable:sundered_isles/core/action
                         - auto: true
-                          oracle: sundered_isles/oracles/core/theme
+                          oracle: oracle_rollable:sundered_isles/core/theme
                       text2:
               inland:
                 name: Inland
@@ -1274,7 +1274,7 @@ oracles:
                 oracle_type: column_text2
                 tags:
                   sundered_isles:
-                    cursed_by: sundered_isles/oracles/settlement/identity/focus_cursed
+                    cursed_by: oracle_rollable:sundered_isles/settlement/identity/focus_cursed
                     location: inland
                 rows:
                   - <<: *Focus.0
@@ -1352,7 +1352,7 @@ oracles:
                 oracle_type: column_text2
                 tags:
                   sundered_isles:
-                    cursed_by: sundered_isles/oracles/settlement/identity/focus_cursed
+                    cursed_by: oracle_rollable:sundered_isles/settlement/identity/focus_cursed
                     location: waterside
                 rows:
                   - <<: *Focus.0
@@ -1490,7 +1490,7 @@ oracles:
             tags:
               sundered_isles:
                 cursed_version_of:
-                  - sundered_isles/oracles/settlement/focus/*
+                  - oracle_rollable:sundered_isles/settlement/focus/*
                 curse_behavior: replace_result
             _source:
               <<: *Source

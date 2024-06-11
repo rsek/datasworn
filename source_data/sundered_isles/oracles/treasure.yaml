@@ -25,7 +25,7 @@ oracles:
         summary: If you’re not sure of a treasure’s location—such as when chasing down a rumored treasure or gathering details on a treasure-related quest—check this table.
         tags:
           sundered_isles:
-            cursed_by: sundered_isles/oracles/treasure/location_cursed
+            cursed_by: oracle_rollable:sundered_isles/treasure/location_cursed
         _source:
           <<: *Source
           page: 220
@@ -49,7 +49,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_version_of:
-              - sundered_isles/oracles/treasure/location
+              - oracle_rollable:sundered_isles/treasure/location
             curse_behavior: replace_result
         _source:
           <<: *Source
@@ -120,7 +120,7 @@ oracles:
         summary: Use this table to reveal characteristics of a treasure or its surroundings. Since the results often involve twists and complications, it is best reserved for notable finds and dramatic situations. Also, keep in mind that an aspect might be outside your character’s immediate viewpoint—if so, make note of it as a future trouble or opportunity.
         tags:
           sundered_isles:
-            cursed_by: sundered_isles/oracles/treasure/aspects_cursed
+            cursed_by: oracle_rollable:sundered_isles/treasure/aspects_cursed
         _source:
           <<: *Source
           page: 222
@@ -164,7 +164,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_version_of:
-              - sundered_isles/oracles/treasure/aspects
+              - oracle_rollable:sundered_isles/treasure/aspects
             curse_behavior: replace_result
         _source:
           <<: *Source
@@ -267,15 +267,15 @@ oracles:
             text: '[Descriptor](oracle_rollable:sundered_isles/core/descriptor) + [Focus](oracle_rollable:sundered_isles/core/focus)'
             oracle_rolls:
               - auto: true
-                oracle: sundered_isles/oracles/core/descriptor
+                oracle: oracle_rollable:sundered_isles/core/descriptor
               - auto: true
-                oracle: sundered_isles/oracles/core/focus
+                oracle: oracle_rollable:sundered_isles/core/focus
           - roll: { min: 89, max: 100 }
             text: '[Token](oracle_rollable:sundered_isles/treasure/tokens)'
             oracle_rolls:
               - auto: false
                 number_of_rolls: 1
-                oracle: sundered_isles/oracles/treasure/tokens
+                oracle: oracle_rollable:sundered_isles/treasure/tokens
       tokens:
         name: Tokens
         type: oracle_rollable
@@ -283,7 +283,7 @@ oracles:
         summary: A token is an item of personal significance—such as a memento, heirloom, or individual treasure. Use this table when prompted by the [Precious Items](oracle_rollable:sundered_isles/treasure/precious_items) table, or to add detail to a character. A token might have intrinsic value, but is often a thing of worth only to its owner. Not all treasures are silver and gold.
         tags:
           sundered_isles:
-            cursed_by: sundered_isles/oracles/treasure/tokens_cursed
+            cursed_by: oracle_rollable:sundered_isles/treasure/tokens_cursed
         _source:
           <<: *Source
           page: 223
@@ -495,7 +495,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_version_of:
-              - sundered_isles/oracles/treasure/tokens
+              - oracle_rollable:sundered_isles/treasure/tokens
             curse_behavior: replace_result
         _source:
           <<: *Source
@@ -597,14 +597,14 @@ oracles:
                   text: Trifle
                   text2: One [Precious Item](oracle_rollable:sundered_isles/treasure/precious_items)
                   oracle_rolls:
-                    - oracle: sundered_isles/oracles/treasure/precious_items
+                    - oracle: oracle_rollable:sundered_isles/treasure/precious_items
                       auto: false
               - roll: { min: 81, max: 100 }
                 <<: &Value.1
                   text: Stash
                   text2: Roll the action die and reveal that many [Precious Items](oracle_rollable:sundered_isles/treasure/precious_items)
                   oracle_rolls:
-                    - oracle: sundered_isles/oracles/treasure/precious_items
+                    - oracle: oracle_rollable:sundered_isles/treasure/precious_items
                       auto: false
               - <<: &Value.2
                   text: Trove

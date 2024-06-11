@@ -44,7 +44,7 @@ oracles:
                   oracle_rolls:
                     - auto: false
                       number_of_rolls: 1
-                      oracle: sundered_isles/oracles/weather/foul
+                      oracle: oracle_rollable:sundered_isles/weather/foul
           margins:
             name: Margins
             summary: Outer Seas
@@ -82,7 +82,7 @@ oracles:
           text2: Details
         tags:
           sundered_isles:
-            cursed_by: sundered_isles/oracles/weather/cursed
+            cursed_by: oracle_rollable:sundered_isles/weather/cursed
         _source:
           <<: *Source
           page: 130
@@ -115,7 +115,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_version_of:
-              - sundered_isles/oracles/weather/foul
+              - oracle_rollable:sundered_isles/weather/foul
             curse_behavior: replace_result
         _source:
           <<: *Source

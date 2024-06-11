@@ -22,7 +22,7 @@ oracles:
         recommended_rolls: { min: 1, max: 2 }
         tags:
           sundered_isles:
-            cursed_by: sundered_isles/oracles/campaign/backstory_cursed
+            cursed_by: oracle_rollable:sundered_isles/campaign/backstory_cursed
         _source:
           <<: *Source
         rows:
@@ -89,7 +89,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_version_of:
-              - sundered_isles/oracles/campaign/backstory
+              - oracle_rollable:sundered_isles/campaign/backstory
             curse_behavior: replace_result
         _source:
           <<: *Source
@@ -127,6 +127,7 @@ oracles:
       persona:
         name: Your Persona
         type: oracle_rollable
+        _comment: Formatting on this one is tricky to express in Datasworn!
         oracle_type: table_text3
         column_labels:
         # this isn't the columns are presented in the table, but makes more semantic sense in a web context
@@ -315,7 +316,7 @@ oracles:
         oracle_type: table_text
         tags:
           sundered_isles:
-            cursed_by: sundered_isles/oracles/campaign/ship_history_cursed
+            cursed_by: oracle_rollable:sundered_isles/campaign/ship_history_cursed
         _source:
           <<: *Source
         rows:
@@ -366,7 +367,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_version_of:
-              - sundered_isles/oracles/campaign/ship_history
+              - oracle_rollable:sundered_isles/campaign/ship_history
             curse_behavior: replace_result
         _source:
           <<: *Source
@@ -397,7 +398,7 @@ oracles:
         oracle_type: table_text
         tags:
           sundered_isles:
-            cursed_by: sundered_isles/oracles/campaign/crew_cursed
+            cursed_by: oracle_rollable:sundered_isles/campaign/crew_cursed
         _source:
           <<: *Source
         rows:
@@ -450,7 +451,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_version_of:
-              - sundered_isles/oracles/campaign/crew
+              - oracle_rollable:sundered_isles/campaign/crew
             curse_behavior: replace_result
         _source:
           <<: *Source
@@ -491,7 +492,7 @@ oracles:
         oracle_type: table_text2
         tags:
           sundered_isles:
-            cursed_by: sundered_isles/oracles/campaign/location_details_cursed
+            cursed_by: oracle_rollable:sundered_isles/campaign/location_details_cursed
         _source:
           <<: *Source
         rows:
@@ -586,7 +587,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_version_of:
-              - sundered_isles/oracles/campaign/location_details
+              - oracle_rollable:sundered_isles/campaign/location_details
             curse_behavior: replace_result
         _source:
           <<: *Source

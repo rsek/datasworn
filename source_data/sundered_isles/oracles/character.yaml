@@ -26,7 +26,7 @@ oracles:
         recommended_rolls: { min: 1, max: 2 }
         tags:
           sundered_isles:
-            cursed_by: sundered_isles/oracles/character/first_look_cursed
+            cursed_by: oracle_rollable:sundered_isles/character/first_look_cursed
         _source:
           <<: *Source
           page: 186
@@ -118,7 +118,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_version_of:
-              - sundered_isles/oracles/character/first_look
+              - oracle_rollable:sundered_isles/character/first_look
             curse_behavior: replace_result
         _source:
           <<: *Source
@@ -225,9 +225,9 @@ oracles:
             text: '[Action](oracle_rollable:sundered_isles/core/action) + [Theme](oracle_rollable:sundered_isles/core/theme)'
             oracle_rolls:
               - auto: true
-                oracle: sundered_isles/oracles/core/action
+                oracle: oracle_rollable:sundered_isles/core/action
               - auto: true
-                oracle: sundered_isles/oracles/core/theme
+                oracle: oracle_rollable:sundered_isles/core/theme
           - roll: { min: 96, max: 100 }
             text: Roll twice
             oracle_rolls:
@@ -346,9 +346,9 @@ oracles:
             text: '[Descriptor](oracle_rollable:sundered_isles/core/descriptor) + [Focus](oracle_rollable:sundered_isles/core/focus)'
             oracle_rolls:
               - auto: true
-                oracle: sundered_isles/oracles/core/descriptor
+                oracle: oracle_rollable:sundered_isles/core/descriptor
               - auto: true
-                oracle: sundered_isles/oracles/core/focus
+                oracle: oracle_rollable:sundered_isles/core/focus
       trademark_weapons:
         name: Trademark Weapons
         type: oracle_rollable
@@ -444,7 +444,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_version_of:
-              - sundered_isles/oracles/character/trademark_weapons
+              - oracle_rollable:sundered_isles/character/trademark_weapons
             curse_behavior: add_result
         summary: If you roll a [Trademark Weapon](oracle_rollable:sundered_isles/character/trademark_weapons) curse, take your result and give that weapon a cursed aspect from the table below.
         _source:
@@ -495,7 +495,7 @@ oracles:
         summary: As you interact with a person to gain a deeper understanding of their nature and personality, roll on this table to reveal new characteristics. Feel free to ignore, reroll, or adjust contradictions. Or envision how those contradictions add interesting complexity to the character.
         tags:
           sundered_isles:
-            cursed_by: sundered_isles/oracles/character/details_cursed
+            cursed_by: oracle_rollable:sundered_isles/character/details_cursed
         _source:
           <<: *Source
           page: 192
@@ -707,7 +707,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_version_of:
-              - sundered_isles/oracles/character/details
+              - oracle_rollable:sundered_isles/character/details
             curse_behavior: replace_result
         _source:
           <<: *Source
@@ -752,7 +752,7 @@ oracles:
         recommended_rolls: { min: 1, max: 2 }
         tags:
           sundered_isles:
-            cursed_by: sundered_isles/oracles/character/goals_cursed
+            cursed_by: oracle_rollable:sundered_isles/character/goals_cursed
         _source:
           <<: *Source
           page: 193
@@ -855,9 +855,9 @@ oracles:
             text: '[Action](oracle_rollable:sundered_isles/core/action) + [Theme](oracle_rollable:sundered_isles/core/theme)'
             oracle_rolls:
               - auto: true
-                oracle: sundered_isles/oracles/core/action
+                oracle: oracle_rollable:sundered_isles/core/action
               - auto: true
-                oracle: sundered_isles/oracles/core/theme
+                oracle: oracle_rollable:sundered_isles/core/theme
       goals_cursed:
         name: Cursed Character Goals
         type: oracle_rollable
@@ -865,7 +865,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_version_of:
-              - sundered_isles/oracles/character/goals
+              - oracle_rollable:sundered_isles/character/goals
             curse_behavior: replace_result
         _source:
           <<: *Source
@@ -2095,7 +2095,7 @@ oracles:
             oracle_type: table_text
             tags:
               sundered_isles:
-                cursed_by: sundered_isles/oracles/character/name/moniker_cursed/category
+                cursed_by: oracle_rollable:sundered_isles/character/name/moniker_cursed/category
             _source:
               <<: *Source
               page: 194
@@ -2305,7 +2305,7 @@ oracles:
             name: Cursed Moniker
             type: oracle_collection
             oracle_type: tables
-            summary: Use these tables to reveal an epitaph for a dreadful, eldritch, ill-fated, or mechanical character. For example, a pirate captain who adopts a much-feared identity would have a [Dreadful Persona](oracle_rollable:sundered_isles/character/name/moniker_cursed/dreadful_persona). A wretched, outcast mariner would have an [Ill-Fated Nature](id:sundered_isles/oracles/character/name/moniker_cursed/ill-fated_nature). Use the result alone, combine with a name, or pair results from two Cursed Moniker categories.
+            summary: Use these tables to reveal an epitaph for a dreadful, eldritch, ill-fated, or mechanical character. For example, a pirate captain who adopts a much-feared identity would have a [Dreadful Persona](oracle_rollable:sundered_isles/character/name/moniker_cursed/dreadful_persona). A wretched, outcast mariner would have an [Ill-Fated Nature](id:oracle_rollable:sundered_isles/character/name/moniker_cursed/ill-fated_nature). Use the result alone, combine with a name, or pair results from two Cursed Moniker categories.
             _source:
               <<: *Source
               page: 197
@@ -2317,7 +2317,7 @@ oracles:
                 tags:
                   sundered_isles:
                     cursed_version_of:
-                      - sundered_isles/oracles/character/name/moniker
+                      - oracle_rollable:sundered_isles/character/name/moniker
                     curse_behavior: replace_result
                 _source:
                   <<: *Source
@@ -2327,25 +2327,25 @@ oracles:
                     oracle_rolls:
                       - auto: false
                         number_of_rolls: 1
-                        oracle: sundered_isles/oracles/character/name/moniker_cursed/dreadful_persona
+                        oracle: oracle_rollable:sundered_isles/character/name/moniker_cursed/dreadful_persona
                   - roll: { min: 41, max: 60 }
                     text: '[Eldritch Powers](oracle_rollable:sundered_isles/character/name/moniker_cursed/eldritch_powers)'
                     oracle_rolls:
                       - auto: false
                         number_of_rolls: 1
-                        oracle: sundered_isles/oracles/character/name/moniker_cursed/eldritch_powers
+                        oracle: oracle_rollable:sundered_isles/character/name/moniker_cursed/eldritch_powers
                   - roll: { min: 61, max: 90 }
                     text: '[Ill-Fated Nature](oracle_rollable:sundered_isles/character/name/moniker_cursed/ill_fated_nature)'
                     oracle_rolls:
                       - auto: false
                         number_of_rolls: 1
-                        oracle: sundered_isles/oracles/character/name/moniker_cursed/ill_fated_nature
+                        oracle: oracle_rollable:sundered_isles/character/name/moniker_cursed/ill_fated_nature
                   - roll: { min: 91, max: 100 }
                     text: '[Mechanical Form](oracle_rollable:sundered_isles/character/name/moniker_cursed/mechanical_form)'
                     oracle_rolls:
                       - auto: false
                         number_of_rolls: 1
-                        oracle: sundered_isles/oracles/character/name/moniker_cursed/mechanical_form
+                        oracle: oracle_rollable:sundered_isles/character/name/moniker_cursed/mechanical_form
               dreadful_persona:
                 name: Dreadful Persona
                 type: oracle_rollable
