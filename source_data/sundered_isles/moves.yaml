@@ -29,7 +29,7 @@ moves:
     contents:
       undertake_an_expedition:
         name: Undertake an Expedition
-        replaces: starforged/moves/exploration/undertake_an_expedition
+        replaces: move:starforged/exploration/undertake_an_expedition
         roll_type: action_roll
         type: move
         trigger:
@@ -84,42 +84,135 @@ moves:
       # explore a waypoint: no changes
       make_a_discovery:
         name: Make a Discovery
-        replaces: starforged/moves/exploration/make_a_discovery
+        replaces: move:starforged/exploration/make_a_discovery
         roll_type: no_roll
         type: move
         trigger:
           text: When your exploration of a waypoint uncovers something wondrous...
         oracles:
-          - sundered_isles/oracles/moves/make_a_discovery
+          make_a_discovery:
+            name: Make a Discovery
+            type: oracle_rollable
+            oracle_type: table_text
+            rows:
+              - roll: { min: 1, max: 5 }
+                text: Abundant and unusual life
+              - roll: { min: 6, max: 10 }
+                text: Archive or map with revelatory details
+              - roll: { min: 11, max: 15 }
+                text: Awe-inspiring natural feature
+              - roll: { min: 16, max: 19 }
+                text: Beneficial enchantment or powers
+              - roll: { min: 20, max: 23 }
+                text: Benevolent spirit or apparition
+              - roll: { min: 24, max: 28 }
+                text: Clues to an enduring mystery
+              - roll: { min: 29, max: 33 }
+                text: Extraordinary natural phenomenon
+              - roll: { min: 34, max: 38 }
+                text: Majestic or remarkable creature
+              - roll: { min: 39, max: 42 }
+                text: Manifestation of a myth or legend
+              - roll: { min: 43, max: 47 }
+                text: Monumental architecture or artistry
+              - roll: { min: 48, max: 52 }
+                text: Otherworldly path or passage
+              - roll: { min: 53, max: 57 }
+                text: People with phenomenal abilities
+              - roll: { min: 58, max: 61 }
+                text: Prized natural resource
+              - roll: { min: 62, max: 65 }
+                text: Relic of legendary power
+              - roll: { min: 66, max: 70 }
+                text: Safeguarded or hidden location
+              - roll: { min: 71, max: 75 }
+                text: Sizable treasure
+              - roll: { min: 76, max: 80 }
+                text: Unique machine or technology
+              - roll: { min: 81, max: 85 }
+                text: Well-preserved artifact or specimen
+              - roll: { min: 86, max: 90 }
+                text: Wondrous visions or prophesies
+              - roll: { min: 91, max: 100 }
+                text: Roll twice
+                oracle_rolls:
+                  - auto: true
+                    number_of_rolls: 2
+                    duplicates: reroll
         text: |-
           __When your exploration of a waypoint uncovers something wondrous__, roll on the table below or choose one. Then, envision the nature of the discovery and how it is revealed. When you first experience or engage with the discovery, you and your allies may mark two ticks on your discoveries legacy track.
 
-          {{table:sundered_isles/oracles/moves/make_a_discovery}}
+          {{table>move.oracle_rollable:sundered_isles/exploration/make_a_discovery.make_a_discovery}}
         _source:
           <<: *Source
           page: 243
       confront_chaos:
         name: Confront Chaos
-        replaces: starforged/moves/exploration/confront_chaos
+        replaces: move:starforged/exploration/confront_chaos
         roll_type: no_roll
         type: move
         trigger:
           text: When your exploration of a waypoint uncovers something dreadful...
         oracles:
-          - sundered_isles/oracles/moves/confront_chaos
+          confront_chaos:
+            name: Confront Chaos
+            type: oracle_rollable
+            oracle_type: table_text
+            rows:
+              - roll: { min: 1, max: 5 }
+                text: Archive or map bearing a dire warning
+              - roll: { min: 6, max: 10 }
+                text: Baneful spells or wards
+              - roll: { min: 11, max: 15 }
+                text: Blighted or corrupted habitat
+              - roll: { min: 16, max: 20 }
+                text: Cataclysmic natural phenomenon
+              - roll: { min: 21, max: 25 }
+                text: Cursed treasure of irresistible lure
+              - roll: { min: 26, max: 30 }
+                text: Dead given unnatural life
+              - roll: { min: 31, max: 35 }
+                text: Fanatical followers of a dreadful power
+              - roll: { min: 36, max: 40 }
+                text: Fearsome creature of monstrous size
+              - roll: { min: 41, max: 45 }
+                text: Harrowing visions or prophesies
+              - roll: { min: 46, max: 50 }
+                text: Malevolent being of dreadful power
+              - roll: { min: 51, max: 55 }
+                text: Malignant affliction or parasite
+              - roll: { min: 56, max: 60 }
+                text: People of monstrous form
+              - roll: { min: 61, max: 65 }
+                text: Relic of accursed power
+              - roll: { min: 66, max: 70 }
+                text: Ruinous machine or technology
+              - roll: { min: 71, max: 75 }
+                text: Signs of an awakened evil
+              - roll: { min: 76, max: 80 }
+                text: Site of a baffling disappearance
+              - roll: { min: 81, max: 85 }
+                text: Site of great destruction
+              - roll: { min: 86, max: 90 }
+                text: Site of terrible carnage
+              - roll: { min: 91, max: 95 }
+                text: Swarming creatures of insatiable fury
+              - roll: { min: 96, max: 100 }
+                text: Wrathful spirit or apparition
+
         text: |-
           __When your exploration of a waypoint uncovers something dreadful__, decide the number of aspects: one, two, or three. Roll that number of times or choose that number of aspects on the table below. Then, envision how the encounter begins.
 
           For each result, when you first confront that aspect within the scope of the encounter, you and your allies may mark one tick on your discoveries legacy track.
 
-          {{table:sundered_isles/oracles/moves/confront_chaos}}
+          {{table>move.oracle_rollable:sundered_isles/exploration/confront_chaos.confront_chaos}}
         _source:
           <<: *Source
           page: 243
       # finish an expedition: no changes
       set_a_course:
         name: Set a Course
-        replaces: starforged/moves/exploration/set_a_course
+        replaces: move:starforged/exploration/set_a_course
         roll_type: action_roll
         type: move
         trigger:
@@ -160,14 +253,14 @@ moves:
   combat:
     name: Combat Moves
     type: move_category
-    enhances: starforged/collections/moves/combat
+    enhances: move_category:starforged/combat
     _source:
       <<: *Source
       page: 244
     contents:
       enter_the_fray:
         name: Enter the Fray
-        replaces: starforged/moves/combat/enter_the_fray
+        replaces: move:starforged/combat/enter_the_fray
         roll_type: action_roll
         type: move
         trigger:
@@ -239,7 +332,7 @@ moves:
   suffer:
     name: Suffer Moves
     type: move_category
-    enhances: starforged/collections/moves/suffer
+    enhances: move_category:starforged/suffer
     _source:
       <<: *Source
       page: 246
@@ -251,7 +344,7 @@ moves:
       # sacrifice resource: no changes
       withstand_damage:
         name: Withstand Damage
-        replaces: starforged/moves/suffer/withstand_damage
+        replaces: move:starforged/suffer/withstand_damage
         roll_type: action_roll
         type: move
         trigger:
@@ -261,12 +354,32 @@ moves:
               roll_options:
                 - using: asset_control
                   assets:
-                    - '*/assets/command_vehicle/*'
-                    - '*/assets/support_vehicle/*'
-                    - '*/assets/incidental_vehicle/*'
+                    - 'asset:*/command_vehicle/*'
+                    - 'asset:*/support_vehicle/*'
                   control: integrity
         oracles:
-          - starforged/oracles/moves/withstand_damage
+          # same as the starforged version
+          withstand_damage:
+            name: Withstand Damage
+            oracle_type: table_text
+            type: oracle_rollable
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: 'Immediate catastrophic destruction. All aboard must [Endure Harm](move:starforged/suffer/endure_harm) or [Face Death](move:starforged/threshold/face_death), as appropriate.'
+              - roll: { min: 11, max: 25 }
+                text: 'Destruction is imminent and unavoidable. If you do not have the means or intention to get clear, [Endure Harm](move:starforged/suffer/endure_harm) or [Face Death](move:starforged/threshold/face_death) as appropriate.'
+              - roll: { min: 26, max: 40 }
+                text: 'Destruction is imminent, but can be averted if you [Repair](move:starforged/recover/repair) your vehicle and raise its integrity above 0. If you fail, see 11-25.'
+              - roll: { min: 41, max: 55 }
+                text: 'You cannot [Repair](move:starforged/recover/repair) this vehicle until you [Resupply](move:starforged/recover/resupply) and obtain a crucial replacement part. If you roll this result again prior to that, see 11-25.'
+              - roll: { min: 56, max: 70 }
+                text: 'The vehicle is crippled or out of your control. To get it back in action, you must [Repair](move:starforged/recover/repair) and raise its integrity above 0.'
+              - roll: { min: 71, max: 85 }
+                text: "It's a rough ride. All aboard must make the [Endure Harm](move:starforged/suffer/endure_harm), [Endure Stress](move:starforged/suffer/endure_stress), or [Companion Takes a Hit](move:starforged/suffer/companion_takes_a_hit) move, suffering a serious (-2) cost."
+              - roll: { min: 86, max: 95 }
+                text: 'You’ve lost fuel, energy, or cargo. [Sacrifice Resources](move:starforged/suffer/sacrifice_resources) (-2).'
+              - roll: { min: 96, max: 100 }
+                text: 'Against all odds, the vehicle holds together.'
         text: |-
           __When your vehicle faces a damaging situation or environment__, suffer -1 integrity for minor damage, -2 for serious damage, or -3 for major damage. If your integrity is 0, [Lose Momentum](move:starforged/suffer/lose_momentum) equal to any remaining damage.
 
@@ -310,7 +423,7 @@ moves:
   recover:
     name: Recover Moves
     type: move_category
-    enhances: starforged/collections/moves/recover
+    enhances: move_category:starforged/recover
 
     # When you Repair and score a hit, you gain repair points. This is a limited resource used only within the scope of the move to prioritize and make repairs. The amount of repair points you earn varies according to the situation and the outcome of the move, per the included table. Here's a summary of those situations.
 
@@ -333,7 +446,7 @@ moves:
       # hearten
       resupply:
         name: Resupply
-        replaces: starforged/moves/recover/resupply
+        replaces: move:starforged/recover/resupply
         roll_type: action_roll
         type: move
         trigger:
@@ -403,7 +516,7 @@ moves:
           page: 248
       repair:
         name: Repair
-        replaces: starforged/moves/recover/repair
+        replaces: move:starforged/recover/repair
         roll_type: action_roll
         type: move
         trigger:
