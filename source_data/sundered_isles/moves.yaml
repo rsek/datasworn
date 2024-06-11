@@ -1,0 +1,498 @@
+_id: sundered_isles
+datasworn_version: "0.1.0"
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-06-01
+  title: Sundered Isles
+  url: https://ironswornrpg.com
+  license: null
+  authors:
+    - name: Shawn Tomkin
+moves:
+  # session moves: no changes
+  # adventure moves: no changes
+  # quest moves: no changes
+  exploration:
+    name: Exploration Moves
+    type: move_category
+    color: '#427FAA'
+    # summary: |-
+    #   Make __exploration moves__ as you traverse uncharted space, the surface of inhospitable planets, the depths of foreboding derelicts or enigmatic alien vaults, and other perilous sites.
+    # description: |-
+    #   The Forge is a vast, chaotic, and largely unexplored galaxy. Your sworn vows will take you through uncharted space, across the surface of inhospitable planets, and into the depths of foreboding derelicts, enigmatic alien vaults, and other perilous sites.
+
+    #   Will you survive these expeditions? What will they cost you? What wonders and horrors will you face? Use the __exploration moves__ to find out.
+    _source:
+      <<: *Source
+      page: 242
+    contents:
+      undertake_an_expedition:
+        name: Undertake an Expedition
+        replaces: starforged/moves/exploration/undertake_an_expedition
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you sail an unfamiliar route through perilous seas, find the way across hazardous terrain, or explore a mysterious site...
+          conditions:
+            - method: player_choice
+              text: Move at speed
+              roll_options:
+                - using: stat
+                  stat: edge
+            - method: player_choice
+              text: Keep under the radar
+              roll_options:
+                - using: stat
+                  stat: shadow
+            - method: player_choice
+              text: Stay vigilant
+              roll_options:
+                - using: stat
+                  stat: wits
+        text: |-
+          __When you sail an unfamiliar route through perilous seas, find the way across hazardous terrain, or explore a mysterious site__, give the expedition a name and rank.
+
+          Then, for each segment of the expedition, envision your approach. If you...
+
+            * Move at speed: Roll +edge
+            * Keep a low profile: Roll +shadow
+            * Stay vigilant: Roll +wits
+
+          On a __strong hit__, you reach a waypoint. Envision the location and mark progress per the rank of the expedition.
+
+          On a __weak hit__, as above, but this progress costs you. Choose one.
+
+            * Suffer costs en route: Make a suffer move (-2), or two suffer moves (-1).
+            * Face a peril at the waypoint: Envision what you encounter.
+
+          On a __miss__, you are waylaid by a crisis, or arrive at a waypoint to confront an immediate hardship or threat. Do not mark progress, and [Pay the Price](id:starforged/moves/fate/pay_the_price).
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, you reach a waypoint. Envision the location and mark progress per the rank of the expedition.
+          weak_hit:
+            text: |-
+              On a __weak hit__, you reach a waypoint, but this progress costs you. Envision the location and mark progress per the rank of the expedition, but choose one.
+
+                * Suffer costs en route: Make a suffer move (-2), or two suffer moves (-1).
+                * Face a peril at the waypoint: Envision what you encounter.
+          miss:
+            text: On a __miss__, you are waylaid by a crisis, or arrive at a waypoint to confront an immediate hardship or threat. Do not mark progress, and [Pay the Price](id:starforged/moves/fate/pay_the_price).
+        _source:
+          <<: *Source
+          page: 242
+      # explore a waypoint: no changes
+      make_a_discovery:
+        name: Make a Discovery
+        replaces: starforged/moves/exploration/make_a_discovery
+        roll_type: no_roll
+        type: move
+        trigger:
+          text: When your exploration of a waypoint uncovers something wondrous...
+        oracles:
+          - sundered_isles/oracles/moves/make_a_discovery
+        text: |-
+          __When your exploration of a waypoint uncovers something wondrous__, roll on the table below or choose one. Then, envision the nature of the discovery and how it is revealed. When you first experience or engage with the discovery, you and your allies may mark two ticks on your discoveries legacy track.
+
+          {{table:sundered_isles/oracles/moves/make_a_discovery}}
+        _source:
+          <<: *Source
+          page: 243
+      confront_chaos:
+        name: Confront Chaos
+        replaces: starforged/moves/exploration/confront_chaos
+        roll_type: no_roll
+        type: move
+        trigger:
+          text: When your exploration of a waypoint uncovers something dreadful...
+        oracles:
+          - sundered_isles/oracles/moves/confront_chaos
+        text: |-
+          __When your exploration of a waypoint uncovers something dreadful__, decide the number of aspects: one, two, or three. Roll that number of times or choose that number of aspects on the table below. Then, envision how the encounter begins.
+
+          For each result, when you first confront that aspect within the scope of the encounter, you and your allies may mark one tick on your discoveries legacy track.
+
+          {{table:sundered_isles/oracles/moves/confront_chaos}}
+        _source:
+          <<: *Source
+          page: 243
+      # finish an expedition: no changes
+      set_a_course:
+        name: Set a Course
+        replaces: starforged/moves/exploration/set_a_course
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you follow a known route through perilous space, across hazardous terrain, or within a mysterious site...
+          conditions:
+            - method: player_choice
+              roll_options:
+                - using: condition_meter
+                  condition_meter: supply
+                - using: asset_control
+                  control: supply
+        text: |-
+          __When you travel a known route through perilous seas, across hazardous terrain, or within a mysterious site__, roll +supply.
+
+          On a __strong hit__, you reach your destination and the situation there favors you. Take +1 momentum.
+
+          On a __weak hit__, you arrive, but face a cost or complication. Choose one.
+
+            * Suffer costs en route: Make a suffer move (-2), or two suffer moves (-1).
+            * Face a complication at the destination: Envision what you encounter.
+
+          On a __miss__, you are waylaid by a significant threat, and must [Pay the Price](id:starforged/moves/fate/pay_the_price). If you overcome this obstacle, you may push on safely to your destination.
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, you reach your destination and the situation there favors you. Take +1 momentum.
+          weak_hit:
+            text: |-
+              On a __weak hit__, you arrive, but face a cost or complication. Choose one.
+
+                * Suffer costs en route: Make a suffer move (-2), or two suffer moves (-1).
+                * Face a complication at the destination: Envision what you encounter.
+          miss:
+            text: |-
+              On a __miss__, you are waylaid by a significant threat, and must [Pay the Price](id:starforged/moves/fate/pay_the_price). If you overcome this obstacle, you may push on safely to your destination.
+        _source:
+          <<: *Source
+          page: 242
+  combat:
+    name: Combat Moves
+    type: move_category
+    enhances: starforged/collections/moves/combat
+    _source:
+      <<: *Source
+      page: 244
+    contents:
+      enter_the_fray:
+        name: Enter the Fray
+        replaces: starforged/moves/combat/enter_the_fray
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you initiate combat or are forced into a fight...
+          conditions:
+            - method: player_choice
+              text: On the move or maneuvering
+              roll_options:
+                - using: stat
+                  stat: edge
+            - method: player_choice
+              text: In command or facing off against your foe
+              roll_options:
+                - using: stat
+                  stat: heart
+            - method: player_choice
+              text: In the thick of it at close quarters
+              roll_options:
+                - using: stat
+                  stat: iron
+            - method: player_choice
+              text: Preparing to act against an unaware foe
+              roll_options:
+                - using: stat
+                  stat: shadow
+            - method: player_choice
+              text: Caught in a trap or sizing up the situation
+              roll_options:
+                - using: stat
+                  stat: wits
+        text: |-
+          __When you initiate combat or are forced into a fight__, envision your objective and give it a rank. If the combat includes discrete challenges or phases, set an objective with a rank for each.
+
+          Then, roll to see if you are in control. If you are...
+
+            * On the move or maneuvering: Roll +edge
+            * In command or facing off against your foe: Roll +heart
+            * In the thick of it at close quarters: Roll +iron
+            * Preparing to act against an unaware foe: Roll +shadow
+            * Caught in a trap or sizing up the situation: Roll +wits
+
+          On a __strong hit__, take both. On a __weak hit__, choose one.
+
+            * Take +2 momentum
+            * You are in control
+
+          On a __miss__, the fight begins with you in a bad spot.
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, take +2 momentum. You are in control.
+          weak_hit:
+            text: |-
+              On a __weak hit__, choose one.
+
+                * Take +2 momentum
+                * You are in control
+          miss:
+            text: On a __miss__, the fight begins with you in a bad spot.
+        _source:
+          <<: *Source
+          page: 244
+      # gain ground: no changes
+      # react under fire: no changes
+      # strike: no changes
+      # clash: no changes
+      # take decisive action: no changes
+      # face defeat: no changes
+      # battle: no changes
+  suffer:
+    name: Suffer Moves
+    type: move_category
+    enhances: starforged/collections/moves/suffer
+    _source:
+      <<: *Source
+      page: 246
+    contents:
+      # lose momentum: no changes
+      # endure harm: no changes
+      # endure stress: no changes
+      # companion takes a hit: no changes
+      # sacrifice resource: no changes
+      withstand_damage:
+        name: Withstand Damage
+        replaces: starforged/moves/suffer/withstand_damage
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When your vehicle faces a damaging situation or environment...
+          conditions:
+            - method: player_choice
+              roll_options:
+                - using: asset_control
+                  assets:
+                    - '*/assets/command_vehicle/*'
+                    - '*/assets/support_vehicle/*'
+                    - '*/assets/incidental_vehicle/*'
+                  control: integrity
+        oracles:
+          - starforged/oracles/moves/withstand_damage
+        text: |-
+          __When your vehicle faces a damaging situation or environment__, suffer -1 integrity for minor damage, -2 for serious damage, or -3 for major damage. If your integrity is 0, [Lose Momentum](id:starforged/moves/suffer/lose_momentum) equal to any remaining damage.
+
+          Then, if your integrity is 0 or you choose to resist the damage, roll +integrity.
+
+          On a __strong hit__, choose one.
+
+            * Bypass: If your vehicle is not battered, take +1 integrity
+            * Ride it out: Take +1 momentum
+
+          On a __weak hit__, if your vehicle is not battered, you may [Lose Momentum](id:starforged/moves/suffer/lose_momentum) (-1) in exchange for +1 integrity. Otherwise, carry on.
+
+          On a __miss__, it's worse than you thought. Suffer an additional -1 integrity or [Lose Momentum](id:starforged/moves/suffer/lose_momentum) (-2). If your integrity is 0, also suffer a cost according to the vehicle type.
+
+            * __Command vehicle:__ Mark the vehicle as __battered__ or __cursed__, mark a module as __broken__, destroy a broken module by discarding it, or roll on the table below. If the command vehicle is destroyed or sunk, [Overcome Destruction](id:starforged/moves/threshold/overcome_destruction).
+            * __Support vehicle:__ Mark the vehicle as __battered__ or roll on the table below. If the vehicle is destroyed or sunk, discard the asset.
+            * __Incidental vehicle:__ Roll on the table below.
+
+          {{table:starforged/oracles/moves/withstand_damage}}
+        outcomes:
+          strong_hit:
+            text: |-
+              On a __strong hit__, choose one.
+
+                * Bypass: If your vehicle is not battered, take +1 integrity
+                * Ride it out: Take +1 momentum
+          weak_hit:
+            text: On a __weak hit__, if your vehicle is not battered, you may [Lose Momentum](id:starforged/moves/suffer/lose_momentum) (-1) in exchange for +1 integrity. Otherwise, carry on.
+          miss:
+            text: |-
+              On a __miss__, it's worse than you thought. Suffer an additional -1 integrity or [Lose Momentum](id:starforged/moves/suffer/lose_momentum) (-2). If your integrity is 0, also suffer a cost according to the vehicle type.
+
+                * __Command vehicle:__ Mark the vehicle as __battered__ or __cursed__, mark a module as __broken__, destroy a broken module by discarding it, or roll on the table below. If the command vehicle is destroyed or sunk, [Overcome Destruction](id:starforged/moves/threshold/overcome_destruction).
+                * __Support vehicle:__ Mark the vehicle as __battered__ or roll on the table below. If the vehicle is destroyed or sunk, discard the asset.
+                * __Incidental vehicle:__ Roll on the table below.
+
+              {{table:starforged/oracles/moves/withstand_damage}}
+        _source:
+          <<: *Source
+          page: 247
+  recover:
+    name: Recover Moves
+    type: move_category
+    enhances: starforged/collections/moves/recover
+
+    # When you Repair and score a hit, you gain repair points. This is a limited resource used only within the scope of the move to prioritize and make repairs. The amount of repair points you earn varies according to the situation and the outcome of the move, per the included table. Here's a summary of those situations.
+
+    # At a Facility
+    # Serviced by a dockyard or other facility—not making your own repairs.
+
+    # At Anchor Making your own repairs while docked, anchored, or encamped—with sufficient time to give the repairs proper attention.
+
+    # Underway Making your own repairs while traveling or under time pressure.
+
+    # Under Fire
+    # Making your own repairs in a crisis, such as during combat, while navigating a hazardous environment, under extreme time pressure, or dealing with life-and-death repair issues.
+
+    _source:
+      <<: *Source
+      page: 248
+    contents:
+      # sojourn
+      # heal
+      # hearten
+      resupply:
+        name: Resupply
+        replaces: starforged/moves/recover/resupply
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you attempt to bolster your readiness...
+          conditions:
+            - method: player_choice
+              text: Barter or make an appeal
+              roll_options:
+                - using: stat
+                  stat: heart
+            - method: player_choice
+              text: Threaten or seize
+              roll_options:
+                - using: stat
+                  stat: iron
+            - method: player_choice
+              text: Steal or swindle
+              roll_options:
+                - using: stat
+                  stat: shadow
+            - method: player_choice
+              text: Scavenge or craft
+              roll_options:
+                - using: stat
+                  stat: wits
+            - method: player_choice
+              text: Gear up from your ship's stores
+              roll_options:
+                - using: asset_control
+                  control: supply
+        text: |-
+          __When you attempt to bolster your readiness__, envision the opportunity and your approach. If you...
+
+            * Barter or make an appeal: Roll +heart
+            * Threaten or seize: Roll +iron
+            * Steal or swindle: Roll +shadow
+            * Scavenge or craft: Roll +wits
+            * Gear up from your ship's stores: Roll +supply (hold)
+
+          On a __strong hit__, choose one.
+
+            * If you are unprepared, clear the impact and take +1 supply. Otherwise, take +2 supply.
+            * If you are in need of a specific item or resource that can reasonably be obtained, you acquire it. Take +1 momentum.
+
+          On a __weak hit__, as above, but you must first deal with a cost, complication, or demand. Envision the nature of this obstacle.
+
+          On a __miss__, you encounter an unexpected peril. [Pay the Price](id:starforged/moves/fate/pay_the_price).
+        outcomes:
+          strong_hit:
+            text: |-
+              On a __strong hit__, choose one.
+
+                * If you are unprepared, clear the impact and take +1 supply. Otherwise, take +2 supply.
+                * If you are in need of a specific item or resource that can reasonably be obtained, you acquire it. Take +1 momentum.
+          weak_hit:
+            text: |-
+              On a __weak hit__, you must first deal with a cost, complication, or demand. Envision the nature of this obstacle.
+
+              Then choose one.
+
+                * If you are unprepared, clear the impact and take +1 supply. Otherwise, take +2 supply.
+                * If you are in need of a specific item or resource that can reasonably be obtained, you acquire it. Take +1 momentum.
+          miss:
+            text: On a __miss__, you encounter an unexpected peril. [Pay the Price](id:starforged/moves/fate/pay_the_price).
+        _source:
+          <<: *Source
+          page: 248
+      repair:
+        name: Repair
+        replaces: starforged/moves/recover/repair
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you make repairs to your vehicles, modules, mechanical companions, or other equipment...
+          conditions:
+            - method: player_choice
+              text: Make your own repairs, or direct companions or crewmembers to make repairs
+              roll_options:
+                - using: stat
+                  stat: wits
+            - method: player_choice
+              text: Obtain repair services at a facility
+              roll_options:
+                - using: stat
+                  stat: heart
+        text: |-
+          __When you make repairs to your vehicles, modules, mechanical companions, or other equipment__, envision the situation and roll. If you...
+
+            * Make your own repairs, or direct companions or crewmembers to make repairs: Roll +wits
+            * Obtain repair services at a facility: Roll +heart
+
+          On a __hit__, you gain repair points as appropriate to the situation, per the table below. Additionally, if you make your own repairs, you may [Sacrifice Resources](id:starforged/moves/suffer/sacrifice_resources) (hold) and exchange each -1 of supply for 1 extra repair point (up to 3 points).
+
+          Situation     | Strong Hit | Weak Hit
+          --------------|------------|---------
+          At a facility |	7 points 	 | 5 points
+          At anchor 	  | 4 points 	 | 2 points
+          Underway 	    | 3 points 	 | 1 points
+          Under fire 	  | 2 points 	 | 0 points
+
+          Spend repair points as follows. Unused points are discarded.
+
+            * Clear the battered impact on a vehicle: 2 points
+            * Fix one broken module: 2 points
+            * Take +1 integrity on a vehicle: 1 point
+            * Take +1 health for a mechanical companion: 1 point
+            * Repair any other component or device: 3 points
+            * Repair any other equipment or device, but with a complication or malfunction: 2 points
+
+          On a __miss__, the repairs are not made and the situation worsens. [Pay the Price](id:starforged/moves/fate/pay_the_price).
+        outcomes:
+          strong_hit:
+            text: |-
+              On a __strong hit__, you gain repair points as appropriate to the situation, per the table below.
+
+              Situation     | Strong Hit | Weak Hit
+              --------------|------------|---------
+              At a facility |	7 points 	 | 5 points
+              At anchor 	  | 4 points 	 | 2 points
+              Underway 	    | 3 points 	 | 1 points
+              Under fire 	  | 2 points 	 | 0 points
+
+              Additionally, you may [Sacrifice Resources](id:starforged/moves/suffer/sacrifice_resources) and exchange each -1 of supply for 1 extra repair point (up to 3 points).
+
+              Spend repair points as follows. Unused points are discarded.
+
+                * Clear the battered impact on a vehicle: 2 points
+                * Fix one broken module: 2 points
+                * Take +1 integrity on a vehicle: 1 point
+                * Take +1 health for a mechanical companion: 1 point
+                * Repair any other device: 3 points
+                * Repair any other device, but with a complication or malfunction: 2 points
+          weak_hit:
+            text: |-
+              On a __weak hit__, you gain repair points as appropriate to the situation, per the table below.
+
+              Situation     | Strong Hit | Weak Hit
+              --------------|------------|---------
+              At a facility |	7 points 	 | 5 points
+              At anchor 	  | 4 points 	 | 2 points
+              Underway 	    | 3 points 	 | 1 points
+              Under fire 	  | 2 points 	 | 0 points
+
+              Additionally, you may [Sacrifice Resources](id:starforged/moves/suffer/sacrifice_resources) and exchange each -1 of supply for 1 extra repair point (up to 3 points).
+
+              Spend repair points as follows. Unused points are discarded.
+
+                * Clear the battered impact on a vehicle: 2 points
+                * Fix one broken module: 2 points
+                * Take +1 integrity on a vehicle: 1 point
+                * Take +1 health for a mechanical companion: 1 point
+                * Repair any other device: 3 points
+                * Repair any other device, but with a complication or malfunction: 2 points
+          miss:
+            text: On a __miss__, the repairs are not made and the situation worsens. [Pay the Price](id:starforged/moves/fate/pay_the_price).
+        _source:
+          <<: *Source
+          page: 249
+  # threshold moves: no changes
+  # legacy moves: no changes
+  # fate moves: no changes
+  # scene challenge moves: no changes

@@ -1,0 +1,1860 @@
+_id: sundered_isles
+datasworn_version: "0.1.0"
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-06-01
+  title: Sundered Isles
+  url: https://ironswornrpg.com
+  license: null
+  authors:
+    - name: Shawn Tomkin
+oracles:
+  faction:
+    name: Faction Oracles
+    type: oracle_collection
+    oracle_type: tables
+    _source:
+      <<: *Source
+      page: 176
+    contents:
+      type:
+        name: Faction Type
+        type: oracle_rollable
+        oracle_type: table_text2
+        # TODO figure out a way to implement this. might only be possible with entity templates? or a more complex tags object
+        summary: "On a cursed result, choose one: Make the faction one of [The Cursed](id:sundered_isles/oracles/faction/cursed/role), or keep the result and give the faction [Cursed Aspects](id:sundered_isles/oracles/faction/cursed/aspects)."
+        _source:
+          <<: *Source
+          page: 176
+        rows:
+          - roll: { min: 1, max: 50 }
+            text: "[Society](id:sundered_isles/collections/oracles/faction/society)"
+            text2: &Society.summary People who share traditions and a way of life
+            tags:
+              sundered_isles:
+                faction_type: society
+          - roll: { min: 51, max: 80 }
+            text: "[Organization](id:sundered_isles/collections/oracles/faction/organization)"
+            text2: &Organization.summary People joined in a collective trade, pursuit, or goal
+            tags:
+              sundered_isles:
+                faction_type: organization
+          - roll: { min: 81, max: 100 }
+            text: "[Empire](id:sundered_isles/collections/oracles/faction/empire)"
+            text2: &Empire.summary People seeking dominion over the isles
+            tags:
+              sundered_isles:
+                faction_type: empire
+      influence:
+        name: Faction Influence
+        type: oracle_rollable
+        oracle_type: table_text2
+        _source:
+          <<: *Source
+          page: 176
+        rows:
+          - roll: { min: 1, max: 10 }
+            text: Forsaken
+            text2: Banished or forgotten
+          - roll: { min: 11, max: 30 }
+            text: Isolated
+            text2: Limited influence in a remote location
+          - roll: { min: 31, max: 50 }
+            text: Localized
+            text2: Marginal influence in a small area
+          - roll: { min: 51, max: 70 }
+            text: Established
+            text2: Strong influence in a small area
+          - roll: { min: 71, max: 85 }
+            text: Notable
+            text2: Dispersed influence across a moderate area
+          - roll: { min: 86, max: 95 }
+            text: Dominant
+            text2: Far-reaching influence across a large area
+          - roll: { min: 96, max: 100 }
+            text: Inescapable
+            text2: Pervasive influence across a vast area
+      relationship:
+        name: Faction Relationship
+        type: oracle_rollable
+        oracle_type: table_text
+        summary: When you have a question about the relationship of one faction to another—or how an individual relates to a faction—use this table. The result is the commonly understood connection, but might not tell the whole story.
+        _source:
+          <<: *Source
+          page: 176
+        rows:
+          - roll: { min: 1, max: 4 }
+            text: Allied with
+          - roll: { min: 5, max: 8 }
+            text: Antagonistic towards
+          - roll: { min: 9, max: 12 }
+            text: Apathetic or unaware of
+          - roll: { min: 13, max: 15 }
+            text: Broke faith with
+          - roll: { min: 16, max: 19 }
+            text: Distrustful of
+          - roll: { min: 20, max: 23 }
+            text: Does business with
+          - roll: { min: 24, max: 26 }
+            text: Extorted by
+          - roll: { min: 27, max: 30 }
+            text: Holds contempt for
+          - roll: { min: 31, max: 34 }
+            text: Holds leverage over
+          - roll: { min: 35, max: 37 }
+            text: In control of
+          - roll: { min: 38, max: 41 }
+            text: Maneuvering against
+          - roll: { min: 42, max: 45 }
+            text: Needs aid from
+          - roll: { min: 46, max: 48 }
+            text: Negotiating with
+          - roll: { min: 49, max: 51 }
+            text: Owes a debt to
+          - roll: { min: 52, max: 55 }
+            text: Shares a rivalry with
+          - roll: { min: 56, max: 58 }
+            text: Shares information with
+          - roll: { min: 59, max: 61 }
+            text: Shares power with
+          - roll: { min: 62, max: 64 }
+            text: Shows grudging respect for
+          - roll: { min: 65, max: 67 }
+            text: Splintered from
+          - roll: { min: 68, max: 70 }
+            text: Subordinate to
+          - roll: { min: 71, max: 74 }
+            text: Supplied with resources by
+          - roll: { min: 75, max: 78 }
+            text: Supplies resources to
+          - roll: { min: 79, max: 81 }
+            text: Suspicious of
+          - roll: { min: 82, max: 84 }
+            text: Temporary alliance with
+          - roll: { min: 85, max: 88 }
+            text: Tolerates
+          - roll: { min: 89, max: 92 }
+            text: Trades favors with
+          - roll: { min: 93, max: 96 }
+            text: Warring with
+          - roll: { min: 97, max: 100 }
+            text: Roll twice
+            oracle_rolls:
+              - auto: true
+                number_of_rolls: 2
+                duplicates: reroll
+    collections:
+      society:
+        name: Society
+        type: oracle_collection
+        summary: *Society.summary
+        oracle_type: tables
+        _source:
+          <<: *Source
+          page: 178
+        contents:
+          chronicles:
+            name: Society Chronicles
+            type: oracle_rollable
+            oracle_type: table_text
+            summary: |-
+              Use this table to generate a history of notable events that shaped a society. Create a timeline of two or three milestones, envisioning how they led the society to its current place among the isles. The most recent event can help inspire a current situation that creates troubles or opportunities for these people.
+            recommended_rolls: { min: 2, max: 4 }
+            tags:
+              sundered_isles:
+                faction_type: society
+            _source:
+              <<: *Source
+              page: 178
+            rows:
+              - roll: { min: 1, max: 2 }
+                text: Betrayed by a longtime ally
+              - roll: { min: 3, max: 4 }
+                text: Betrayed by a treacherous leader
+              - roll: { min: 5, max: 6 }
+                text: Broke faith with a longtime ally
+              - roll: { min: 7, max: 8 }
+                text: Built a wondrous monument
+              - roll: { min: 9, max: 10 }
+                text: Caught in the crossfire of a war
+              - roll: { min: 11, max: 13 }
+                text: Discovered or obtained a rare resource
+              - roll: { min: 14, max: 15 }
+                text: Established a form of art or expression
+              - roll: { min: 16, max: 17 }
+                text: Established a new system of governance
+              - roll: { min: 18, max: 19 }
+                text: Established a powerful military force
+              - roll: { min: 20, max: 22 }
+                text: Established a unique trade or craft
+              - roll: { min: 23, max: 25 }
+                text: Exploited by a self-serving faction
+              - roll: { min: 26, max: 27 }
+                text: Faced a religious or spiritual schism
+              - roll: { min: 28, max: 30 }
+                text: Faced a troubled succession
+              - roll: { min: 31, max: 33 }
+                text: Faced occupation or invasion
+              - roll: { min: 34, max: 35 }
+                text: Faced the wasting of a place or resource
+              - roll: { min: 36, max: 38 }
+                text: Fateful encounter with another faction
+              - roll: { min: 39, max: 40 }
+                text: Fell into a bad debt or bargain
+              - roll: { min: 41, max: 42 }
+                text: Fled or abandoned an important location
+              - roll: { min: 43, max: 44 }
+                text: Formed an important bond or alliance
+              - roll: { min: 45, max: 46 }
+                text: Forsook a religion or belief system
+              - roll: { min: 47, max: 48 }
+                text: Fought a decisive battle
+              - roll: { min: 49, max: 51 }
+                text: Fought a war or revolution
+              - roll: { min: 52, max: 53 }
+                text: Founded a great settlement
+              - roll: { min: 54, max: 55 }
+                text: Founded a key academy or archive
+              - roll: { min: 56, max: 57 }
+                text: Founded a technology or innovation
+              - roll: { min: 58, max: 59 }
+                text: Gained a notable artifact or treasure
+              - roll: { min: 60, max: 61 }
+                text: Lost a notable artifact or treasure
+              - roll: { min: 62, max: 63 }
+                text: Made peace with a rival or enemy
+              - roll: { min: 64, max: 65 }
+                text: Reclaimed an important location
+              - roll: { min: 66, max: 68 }
+                text: Recorded a fateful prophecy
+              - roll: { min: 69, max: 70 }
+                text: Saw the collapse of a longtime ally
+              - roll: { min: 71, max: 73 }
+                text: Saw the emergence of a prophesied hero
+              - roll: { min: 74, max: 75 }
+                text: Saw the rise of a self-serving despot
+              - roll: { min: 76, max: 77 }
+                text: Saw the rise of an influential organization
+              - roll: { min: 78, max: 80 }
+                text: Scattered to far-flung locations
+              - roll: { min: 81, max: 83 }
+                text: Splintered into rival factions
+              - roll: { min: 84, max: 85 }
+                text: Suffered a devastating natural disaster
+              - roll: { min: 86, max: 87 }
+                text: Suffered a scarcity of resources
+              - roll: { min: 88, max: 89 }
+                text: Suffered internal strife or unrest
+              - roll: { min: 90, max: 91 }
+                text: Suffered the loss of a respected leader
+              - roll: { min: 92, max: 93 }
+                text: Took refuge in a remote or secret place
+              - roll: { min: 94, max: 96 }
+                text: Undertook a great migration or exodus
+              - roll: { min: 97, max: 98 }
+                text: Unified disparate tribes or clans
+              - roll: { min: 99, max: 100 }
+                text: Vanquished a rival or enemy
+          overseers:
+            name: Society Overseers
+            type: oracle_rollable
+            oracle_type: table_text
+            summary: Use this table to reveal the most influential or powerful leaders within a society.
+            tags:
+              sundered_isles:
+                faction_type: society
+            _source:
+              <<: *Source
+              page: 178
+            rows:
+              - roll: { min: 1, max: 5 }
+                text: Appointed local leaders
+              - roll: { min: 6, max: 10 }
+                text: Artisans or trade guilds
+              - roll: { min: 11, max: 15 }
+                text: Delegates gathered at convocations
+              - roll: { min: 16, max: 25 }
+                text: Elder councils
+              - roll: { min: 26, max: 35 }
+                text: Hereditary rulers
+              - roll: { min: 36, max: 40 }
+                text: Mystics or seers
+              - roll: { min: 41, max: 45 }
+                text: Prophesied or fated rulers
+              - roll: { min: 46, max: 50 }
+                text: Religious orders
+              - roll: { min: 51, max: 55 }
+                text: Scholars or sages
+              - roll: { min: 56, max: 60 }
+                text: Shadowy cabals
+              - roll: { min: 61, max: 70 }
+                text: Warlords or champions
+              - roll: { min: 71, max: 80 }
+                text: Single absolute authority
+              - roll: { min: 81, max: 90 }
+                text: Operatives of another faction
+              - roll: { min: 91, max: 100 }
+                text: Varied or informal leadership
+          touchstones:
+            name: Society Touchstones
+            type: oracle_rollable
+            oracle_type: table_text
+            recommended_rolls: { min: 1, max: 3 }
+            summary: |-
+              These touchstones represent common aspects of a society—not universal truths. Individual people and communities can contradict these assumptions with their own touchstones. If you encounter a far-flung community that is part of a known society, you can recheck this table for unique characteristics.
+            tags:
+              sundered_isles:
+                faction_type: society
+            _source:
+              <<: *Source
+              page: 179
+            rows:
+              - roll: { min: 1, max: 1 }
+                text: Affinity for celestial objects and motifs
+              - roll: { min: 2, max: 2 }
+                text: Affinity for nature and related motifs
+              - roll: { min: 3, max: 3 }
+                text: Affinity for the sea and related motifs
+              - roll: { min: 4, max: 4 }
+                text: Affinity for fire and related motifs
+              - roll: { min: 5, max: 5 }
+                text: Banishes the disloyal
+              - roll: { min: 6, max: 6 }
+                text: Forsakes ships and the sea
+              - roll: { min: 7, max: 7 }
+                text: Idealizes grace and swiftness
+              - roll: { min: 8, max: 8 }
+                text: Idealizes strength and power
+              - roll: { min: 9, max: 9 }
+                text: Idealizes subterfuge and cunning
+              - roll: { min: 10, max: 10 }
+                text: Lives mostly at sea
+              - roll: { min: 11, max: 11 }
+                text: Practices communal living
+              - roll: { min: 12, max: 12 }
+                text: Practices mysticism or magic
+              - roll: { min: 13, max: 13 }
+                text: Practices unusual death rites
+              - roll: { min: 14, max: 14 }
+                text: Resolves disputes through formal duels
+              - roll: { min: 15, max: 15 }
+                text: Studies the stars and moons for portents
+              - roll: { min: 16, max: 16 }
+                text: Suspicious of outsiders
+              - roll: { min: 17, max: 17 }
+                text: Trains an order of elite warriors
+              - roll: { min: 18, max: 18 }
+                text: Values artistic expression
+              - roll: { min: 19, max: 19 }
+                text: Values conquest and battle prowess
+              - roll: { min: 20, max: 20 }
+                text: Values courtesy and hospitality
+              - roll: { min: 21, max: 21 }
+                text: Values crafts and workmanship
+              - roll: { min: 22, max: 22 }
+                text: Values diplomacy and negotiation
+              - roll: { min: 23, max: 23 }
+                text: Values farming and agriculture
+              - roll: { min: 24, max: 24 }
+                text: Values medicine and healing
+              - roll: { min: 25, max: 25 }
+                text: Values science and knowledge
+              - roll: { min: 26, max: 26 }
+                text: Values stewardship of nature
+              - roll: { min: 27, max: 27 }
+                text: Values trade and commerce
+              - roll: { min: 28, max: 28 }
+                text: Values voyage and discovery
+              - roll: { min: 29, max: 30 }
+                text: Bonds with a certain type of creature
+              - roll: { min: 31, max: 32 }
+                text: Builds elaborate monuments
+              - roll: { min: 33, max: 34 }
+                text: Carefully preserves histories and maps
+              - roll: { min: 35, max: 36 }
+                text: Conducts piracy or raids
+              - roll: { min: 37, max: 38 }
+                text: Conducts rites of adulthood or ascension
+              - roll: { min: 39, max: 40 }
+                text: Distrustful of mysticism or magic
+              - roll: { min: 41, max: 42 }
+                text: Embarks on pilgrimages
+              - roll: { min: 43, max: 44 }
+                text: Favors a signature weapon
+              - roll: { min: 45, max: 46 }
+                text: Favors audacious and distinctive styles
+              - roll: { min: 47, max: 48 }
+                text: Favors austere and practical styles
+              - roll: { min: 49, max: 50 }
+                text: Favors body modifications or tattoos
+              - roll: { min: 51, max: 52 }
+                text: Favors isolationism and privacy
+              - roll: { min: 53, max: 54 }
+                text: Favors jewelry and adornments
+              - roll: { min: 55, max: 56 }
+                text: Follows a code of pacifism
+              - roll: { min: 57, max: 58 }
+                text: Follows a nomadic lifestyle
+              - roll: { min: 59, max: 60 }
+                text: Follows elaborate rules of courtship
+              - roll: { min: 61, max: 62 }
+                text: Guided by a strict code of honor
+              - roll: { min: 63, max: 64 }
+                text: Guided by superstition or prophecy
+              - roll: { min: 65, max: 66 }
+                text: Holds communal hunts
+              - roll: { min: 67, max: 68 }
+                text: Holds seasonal festivals
+              - roll: { min: 69, max: 70 }
+                text: Holds tournaments of skill or prowess
+              - roll: { min: 71, max: 72 }
+                text: Idolizes a martyred leader
+              - roll: { min: 73, max: 74 }
+                text: Lives within familial clans
+              - roll: { min: 75, max: 76 }
+                text: Maintains a strict caste system
+              - roll: { min: 77, max: 78 }
+                text: Perpetuates blood feuds
+              - roll: { min: 79, max: 80 }
+                text: Practices a renowned trade or craft
+              - roll: { min: 81, max: 82 }
+                text: Practices meditation
+              - roll: { min: 83, max: 84 }
+                text: Practices storytelling and oral histories
+              - roll: { min: 85, max: 86 }
+                text: Practices unique forms of dance or music
+              - roll: { min: 87, max: 88 }
+                text: Rallies communal defenses or militias
+              - roll: { min: 89, max: 90 }
+                text: Reveres ancestors
+              - roll: { min: 91, max: 92 }
+                text: Reveres nature and natural forces
+              - roll: { min: 93, max: 94 }
+                text: Sails in a distinctive type of vessel
+              - roll: { min: 95, max: 96 }
+                text: Seeks wisdom from oracles or seers
+              - roll: { min: 97, max: 98 }
+                text: Shuns modern technology or weaponry
+              - roll: { min: 99, max: 100 }
+                text: Speaks an ancient language
+      organization:
+        name: Organization
+        type: oracle_collection
+        oracle_type: tables
+        summary: *Organization.summary
+        _source:
+          <<: *Source
+          page: 180
+        contents:
+          type:
+            name: Organization Type
+            type: oracle_rollable
+            oracle_type: table_text
+            tags:
+              sundered_isles:
+                faction_type: organization
+            _source:
+              <<: *Source
+              page: 180
+            rows:
+              - roll: { min: 1, max: 2 }
+                text: Artisans
+              - roll: { min: 3, max: 6 }
+                text: Assassins
+              - roll: { min: 7, max: 10 }
+                text: Couriers
+              - roll: { min: 11, max: 18 }
+                text: Courtesans
+              - roll: { min: 19, max: 24 }
+                text: Healers
+              - roll: { min: 25, max: 30 }
+                text: Hunters
+              - roll: { min: 31, max: 36 }
+                text: Insurgents
+              - roll: { min: 37, max: 44 }
+                text: Mariners
+              - roll: { min: 45, max: 46 }
+                text: Mercenaries / privateers
+              - roll: { min: 47, max: 52 }
+                text: Mystics / seers
+              - roll: { min: 53, max: 56 }
+                text: Naturalists
+              - roll: { min: 57, max: 60 }
+                text: Navigators / cartographers
+              - roll: { min: 61, max: 62 }
+                text: Pirates / raiders
+              - roll: { min: 63, max: 66 }
+                text: Rebels
+              - roll: { min: 67, max: 72 }
+                text: Relic hunters
+              - roll: { min: 73, max: 76 }
+                text: Religious disciples
+              - roll: { min: 77, max: 78 }
+                text: Shipbuilders
+              - roll: { min: 79, max: 84 }
+                text: Smugglers
+              - roll: { min: 85, max: 90 }
+                text: Spies
+              - roll: { min: 91, max: 96 }
+                text: Traders
+              - roll: { min: 97, max: 100 }
+                text: Wreckers
+          methods:
+            name: Organization Methods
+            type: oracle_rollable
+            oracle_type: table_text
+            recommended_rolls: { min: 1, max: 2 }
+            tags:
+              sundered_isles:
+                faction_type: organization
+            _source:
+              <<: *Source
+              page: 180
+            rows:
+              - roll: { min: 1, max: 4 }
+                text: Evaluates recruits with elaborate tests
+              - roll: { min: 5, max: 8 }
+                text: Governed by a shadowy court or council
+              - roll: { min: 9, max: 11 }
+                text: Guided by a distinguished leader
+              - roll: { min: 12, max: 14 }
+                text: Holds challenges to test skills
+              - roll: { min: 15, max: 18 }
+                text: Holds regular gatherings or assemblies
+              - roll: { min: 19, max: 22 }
+                text: Honors fallen members with ceremonies
+              - roll: { min: 23, max: 25 }
+                text: Idolizes a long-dead founder
+              - roll: { min: 26, max: 28 }
+                text: Imposes rigorous admittance standards
+              - roll: { min: 29, max: 32 }
+                text: Maintains a central archive
+              - roll: { min: 33, max: 35 }
+                text: Maintains a strict hierarchy by seniority
+              - roll: { min: 36, max: 38 }
+                text: Maintains neutrality in a notable conflict
+              - roll: { min: 39, max: 41 }
+                text: Members adopt body ornamentations
+              - roll: { min: 42, max: 44 }
+                text: Members adopt disguises or personas
+              - roll: { min: 45, max: 47 }
+                text: Members bear an organization symbol
+              - roll: { min: 48, max: 51 }
+                text: Members share a unique language
+              - roll: { min: 52, max: 54 }
+                text: Members use a secret greeting
+              - roll: { min: 55, max: 58 }
+                text: Operates a system of apprenticeship
+              - roll: { min: 59, max: 62 }
+                text: Operates as independent cells
+              - roll: { min: 63, max: 65 }
+                text: Operates custom ships
+              - roll: { min: 66, max: 68 }
+                text: Operates under strict codes or laws
+              - roll: { min: 69, max: 71 }
+                text: Recruits members far-and-wide
+              - roll: { min: 72, max: 74 }
+                text: Relies on divination or prophecy
+              - roll: { min: 75, max: 77 }
+                text: Relies on mysticism or superstition
+              - roll: { min: 78, max: 80 }
+                text: Relies on trained creatures
+              - roll: { min: 81, max: 84 }
+                text: Splintered from another organization
+              - roll: { min: 85, max: 87 }
+                text: Traces its history to an ancient founding
+              - roll: { min: 88, max: 90 }
+                text: Trades in a unique currency or asset
+              - roll: { min: 91, max: 94 }
+                text: Uses a system of coded messages
+              - roll: { min: 95, max: 97 }
+                text: Uses specialized equipment or weapons
+              - roll: { min: 98, max: 100 }
+                text: Worships a god or faith
+          secrets:
+            name: Organization Secrets
+            type: oracle_rollable
+            oracle_type: table_text
+            recommended_rolls: { min: 1, max: 2 }
+            tags:
+              sundered_isles:
+                faction_type: organization
+            _source:
+              page: 180
+              <<: *Source
+            rows:
+              - roll: { min: 1, max: 5 }
+                text: Acquired an unexpected fortune
+              - roll: { min: 6, max: 10 }
+                text: Colluding with a criminal enterprise
+              - roll: { min: 11, max: 15 }
+                text: Corrupt leaders are siphoning resources
+              - roll: { min: 16, max: 20 }
+                text: Exploiting a prophecy or superstition
+              - roll: { min: 21, max: 25 }
+                text: Guided by a shadowy leader
+              - roll: { min: 26, max: 30 }
+                text: Harboring a fugitive within its ranks
+              - roll: { min: 31, max: 35 }
+                text: Hides true purpose behind a false front
+              - roll: { min: 36, max: 40 }
+                text: Holding leverage against a rival faction
+              - roll: { min: 41, max: 45 }
+                text: Holds a rare or powerful relic
+              - roll: { min: 46, max: 50 }
+                text: Infiltrated by a rival faction
+              - roll: { min: 51, max: 55 }
+                text: Operates from a secret location
+              - roll: { min: 56, max: 60 }
+                text: Owes a crippling debt
+              - roll: { min: 61, max: 65 }
+                text: Plagued by infighting
+              - roll: { min: 66, max: 70 }
+                text: Relies on bribes to corrupt officials
+              - roll: { min: 71, max: 75 }
+                text: Relies on spies and informants
+              - roll: { min: 76, max: 80 }
+                text: Suffering incompetent leadership
+              - roll: { min: 81, max: 85 }
+                text: Suffering the shortage of a key resource
+              - roll: { min: 86, max: 90 }
+                text: Supported by a mysterious benefactor
+              - roll: { min: 91, max: 95 }
+                text: Trafficking in dangerous goods
+              - roll: { min: 96, max: 100 }
+                text: Works covertly to incite conflicts
+      empire:
+        name: Empire
+        type: oracle_collection
+        oracle_type: tables
+        summary: *Empire.summary
+        _source:
+          <<: *Source
+          page: 181
+        contents:
+          leadership:
+            name: Imperial Leadership
+            type: oracle_rollable
+            oracle_type: table_text
+            tags:
+              sundered_isles:
+                faction_type: empire
+            _source:
+              <<: *Source
+              page: 181
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Assembly or council
+              - roll: { min: 11, max: 20 }
+                text: Dynastic ruler
+              - roll: { min: 21, max: 30 }
+                text: Military leader
+              - roll: { min: 31, max: 35 }
+                text: Prophesied ruler
+              - roll: { min: 36, max: 45 }
+                text: Regent
+              - roll: { min: 46, max: 55 }
+                text: Regional governors
+              - roll: { min: 56, max: 65 }
+                text: Religious leader
+              - roll: { min: 66, max: 75 }
+                text: Self-appointed dictator
+              - roll: { min: 76, max: 85 }
+                text: Wealthy elite
+              - roll: { min: 86, max: 100 }
+                text: Power struggle (roll twice)
+                oracle_rolls:
+                  - auto: true
+                    number_of_rolls: 2
+                    duplicates: keep
+          tactics:
+            name: Imperial Tactics
+            type: oracle_rollable
+            oracle_type: table_text
+            recommended_rolls: { min: 2, max: 3 }
+            summary: Empires deploy any number of strategies to expand their power and influence. Use this table to reveal the most visible methods or a current focus for an empire.
+            tags:
+              sundered_isles:
+                faction_type: empire
+            _source:
+              <<: *Source
+              page: 181
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Assassination
+              - roll: { min: 4, max: 6 }
+                text: Collusion with criminal factions
+              - roll: { min: 7, max: 10 }
+                text: Cultural suppression and assimilation
+              - roll: { min: 11, max: 13 }
+                text: Demands of conformity
+              - roll: { min: 14, max: 17 }
+                text: Disciplined military forces
+              - roll: { min: 18, max: 20 }
+                text: Displays of opulence
+              - roll: { min: 21, max: 24 }
+                text: Dogmatic religion
+              - roll: { min: 25, max: 28 }
+                text: Elite military units at the vanguard
+              - roll: { min: 29, max: 32 }
+                text: Embargoes and blockades
+              - roll: { min: 33, max: 36 }
+                text: Exploitation of natural resources
+              - roll: { min: 37, max: 40 }
+                text: Exploitation of workers
+              - roll: { min: 41, max: 44 }
+                text: Exploration and colonization
+              - roll: { min: 45, max: 47 }
+                text: Hoarding of relics
+              - roll: { min: 48, max: 51 }
+                text: Indoctrination and propaganda
+              - roll: { min: 52, max: 55 }
+                text: Industry and commerce
+              - roll: { min: 56, max: 58 }
+                text: Mysticism or magic
+              - roll: { min: 59, max: 62 }
+                text: Naval firepower
+              - roll: { min: 63, max: 66 }
+                text: Privateers and mercenaries
+              - roll: { min: 67, max: 69 }
+                text: Proxy wars and subversion
+              - roll: { min: 70, max: 72 }
+                text: Puppet governments
+              - roll: { min: 73, max: 76 }
+                text: Relentless agents or operatives
+              - roll: { min: 77, max: 79 }
+                text: Rigid class structures
+              - roll: { min: 80, max: 83 }
+                text: Secrecy and espionage
+              - roll: { min: 84, max: 86 }
+                text: Superstition or prophecy
+              - roll: { min: 87, max: 90 }
+                text: Theft of resources and riches
+              - roll: { min: 91, max: 93 }
+                text: Treaties and alliances
+              - roll: { min: 94, max: 96 }
+                text: Unification of splintered factions
+              - roll: { min: 97, max: 100 }
+                text: Unyielding authority and laws
+          vulnerabilities:
+            name: Imperial Vulnerabilities
+            type: oracle_rollable
+            oracle_type: table_text
+            recommended_rolls: { min: 1, max: 2 }
+            tags:
+              sundered_isles:
+                faction_type: empire
+            _source:
+              <<: *Source
+              page: 181
+            rows:
+              - roll: { min: 1, max: 4 }
+                text: Catastrophic military defeat
+              - roll: { min: 5, max: 8 }
+                text: Coffers are running low
+              - roll: { min: 9, max: 12 }
+                text: Crippling bureaucracy
+              - roll: { min: 13, max: 16 }
+                text: Defection of a key ally
+              - roll: { min: 17, max: 20 }
+                text: Defiant colony
+              - roll: { min: 21, max: 24 }
+                text: Feckless or distracted leadership
+              - roll: { min: 25, max: 28 }
+                text: Impending succession crisis
+              - roll: { min: 29, max: 34 }
+                text: Infighting and treachery among leaders
+              - roll: { min: 35, max: 38 }
+                text: Infiltrated by a rival
+              - roll: { min: 39, max: 42 }
+                text: Insurgency recruits new members
+              - roll: { min: 43, max: 46 }
+                text: Overconfidence in a tactic or weapon
+              - roll: { min: 47, max: 50 }
+                text: Overextended military
+              - roll: { min: 51, max: 54 }
+                text: Prophecy of their downfall
+              - roll: { min: 55, max: 58 }
+                text: Rampant internal corruption
+              - roll: { min: 59, max: 62 }
+                text: Religious schism causes dissent
+              - roll: { min: 63, max: 66 }
+                text: Rival empire emerges
+              - roll: { min: 67, max: 72 }
+                text: Sparks of rebellion
+              - roll: { min: 73, max: 78 }
+                text: Vulnerable industry
+              - roll: { min: 79, max: 84 }
+                text: Vulnerable resource in short supply
+              - roll: { min: 85, max: 90 }
+                text: Vulnerable trade route
+              - roll: { min: 91, max: 96 }
+                text: Vulnerable treasure hoard
+              - roll: { min: 97, max: 100 }
+                text: Whispers of a potential coup
+      cursed:
+        type: oracle_collection
+        name: The Cursed
+        oracle_type: tables
+        summary: For cursed factions that function as an organization, use the [Organization Methods](id:sundered_isles/oracles/faction/organization/methods) or [Organization Secrets](id:sundered_isles/oracles/faction/organization/secrets) tables for additional details. To reveal a current goal for a cursed faction or its leaders, use the [Cursed Character Goals](id:sundered_isles/oracles/character/goals_cursed) table. You can also give a cursed faction one or more [Cursed Aspects](id:sundered_isles/oracles/faction/cursed/aspects).
+        _source:
+          <<: *Source
+          page: 182
+        contents:
+          role:
+            name: Role
+            type: oracle_rollable
+            oracle_type: table_text
+            summary: Cursed factions include people and beings of a strange, supernatural, or dreadful nature, as well as factions dedicated to opposing those entities. Use the table below to reveal the role of a cursed faction.
+            _source:
+              <<: *Source
+              page: 182
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Artificers
+              - roll: { min: 11, max: 15 }
+                text: Beast hunters
+              - roll: { min: 16, max: 25 }
+                text: Constructs
+              - roll: { min: 26, max: 30 }
+                text: Cultists
+              - roll: { min: 31, max: 35 }
+                text: Deep-dwellers
+              - roll: { min: 36, max: 40 }
+                text: Ghost hunters or occultists
+              - roll: { min: 41, max: 45 }
+                text: Lycanthropes or shape changers
+              - roll: { min: 46, max: 55 }
+                text: Monster hunters
+              - roll: { min: 56, max: 65 }
+                text: Necromancers
+              - roll: { min: 66, max: 70 }
+                text: Sorcerers or witches
+              - roll: { min: 71, max: 80 }
+                text: Undead or undying
+              - roll: { min: 81, max: 85 }
+                text: Vampires
+              - roll: { min: 86, max: 90 }
+                text: Witch hunters
+              - roll: { min: 91, max: 100 }
+                text: Roll twice; combine those results as a single faction or set them against each other as opposing factions
+                oracle_rolls:
+                  - auto: true
+                    number_of_rolls: 2
+                    duplicates: keep
+          aspects:
+            name: Cursed Aspects
+            type: oracle_rollable
+            oracle_type: table_text
+            summary: Use this table to reveal uncanny aspects of a faction or its members.
+            recommended_rolls: { min: 1, max: 2 }
+            _source:
+              <<: *Source
+              page: 182
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Adopts multiple identities or forms
+              - roll: { min: 4, max: 6 }
+                text: Aided by a monstrous guardian
+              - roll: { min: 7, max: 8 }
+                text: Aided by infernal machines
+              - roll: { min: 9, max: 11 }
+                text: Bears a dreadful sigil or mark
+              - roll: { min: 12, max: 14 }
+                text: Consumed by dreadful vengeance
+              - roll: { min: 15, max: 17 }
+                text: Cursed by a spiteful god or entity
+              - roll: { min: 18, max: 20 }
+                text: Cursed by the deeds of their forebears
+              - roll: { min: 21, max: 23 }
+                text: Disguises their true nature
+              - roll: { min: 24, max: 26 }
+                text: Driven by dreadful vengeance
+              - roll: { min: 27, max: 29 }
+                text: Empowered or bound by fire
+              - roll: { min: 30, max: 32 }
+                text: Empowered or bound by the night
+              - roll: { min: 33, max: 35 }
+                text: Empowered or bound by the sea
+              - roll: { min: 36, max: 38 }
+                text: Empowered or bound by the wilds
+              - roll: { min: 39, max: 41 }
+                text: Forsaken or banished by others
+              - roll: { min: 42, max: 44 }
+                text: Forsakes the sunlight
+              - roll: { min: 45, max: 47 }
+                text: Gathers unwilling supplicants or recruits
+              - roll: { min: 48, max: 50 }
+                text: Haunted by unforgiving spirits
+              - roll: { min: 51, max: 53 }
+                text: Heralded by eerie weather or effects
+              - roll: { min: 54, max: 56 }
+                text: Holds a cursed relic or treasure
+              - roll: { min: 57, max: 59 }
+                text: Hunted by a dreadful faction or entity
+              - roll: { min: 60, max: 62 }
+                text: Invokes or summons dreadful creatures
+              - roll: { min: 63, max: 65 }
+                text: Members speak a sinister language
+              - roll: { min: 66, max: 68 }
+                text: Operates from a hidden location
+              - roll: { min: 69, max: 71 }
+                text: Practices dreadful rituals
+              - roll: { min: 72, max: 74 }
+                text: Sails dreadful ships
+              - roll: { min: 75, max: 77 }
+                text: Stricken with a terrible need
+              - roll: { min: 78, max: 80 }
+                text: Suffers from wasting or decay
+              - roll: { min: 81, max: 83 }
+                text: Supernaturally bound to a place or ship
+              - roll: { min: 84, max: 86 }
+                text: True nature revealed in moonlight
+              - roll: { min: 87, max: 89 }
+                text: Wields a weapon of dreadful power
+              - roll: { min: 90, max: 92 }
+                text: Wields an alluring nature
+              - roll: { min: 93, max: 95 }
+                text: Wields dreadful magic
+              - roll: { min: 96, max: 97 }
+                text: Wields strange technologies
+              - roll: { min: 98, max: 100 }
+                text: Worships a dreadful god or entity
+      name:
+        name: Faction Name
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: *Source
+          page: 183
+        contents:
+          culture:
+            name: "Faction Name: Culture"
+            type: oracle_rollable
+            oracle_type: table_text
+            _source:
+              <<: *Source
+              page: 183
+            rows:
+              - roll: { min: 1, max: 2 }
+                text: Akani
+              - roll: { min: 3, max: 4 }
+                text: Altarian
+              - roll: { min: 5, max: 6 }
+                text: Ankara
+              - roll: { min: 7, max: 8 }
+                text: Atlan
+              - roll: { min: 9, max: 10 }
+                text: Bakura
+              - roll: { min: 11, max: 12 }
+                text: Cassian
+              - roll: { min: 13, max: 14 }
+                text: Damos
+              - roll: { min: 15, max: 16 }
+                text: Drago
+              - roll: { min: 17, max: 18 }
+                text: Enderian
+              - roll: { min: 19, max: 20 }
+                text: Ettian
+              - roll: { min: 21, max: 22 }
+                text: Ferron
+              - roll: { min: 23, max: 24 }
+                text: Fiorin
+              - roll: { min: 25, max: 26 }
+                text: Ghal
+              - roll: { min: 27, max: 28 }
+                text: Harkiv
+              - roll: { min: 29, max: 30 }
+                text: Ishana
+              - roll: { min: 31, max: 32 }
+                text: Jovian
+              - roll: { min: 33, max: 34 }
+                text: Kanori
+              - roll: { min: 35, max: 36 }
+                text: Kazara
+              - roll: { min: 37, max: 38 }
+                text: Khazu
+              - roll: { min: 39, max: 40 }
+                text: Kolthu
+              - roll: { min: 41, max: 42 }
+                text: Kumati
+              - roll: { min: 43, max: 44 }
+                text: Lucian
+              - roll: { min: 45, max: 46 }
+                text: Lysian
+              - roll: { min: 47, max: 48 }
+                text: Makari
+              - roll: { min: 49, max: 50 }
+                text: Masaku
+              - roll: { min: 51, max: 52 }
+                text: Matu
+              - roll: { min: 53, max: 54 }
+                text: Moriden
+              - roll: { min: 55, max: 56 }
+                text: Motari
+              - roll: { min: 57, max: 58 }
+                text: Naveena
+              - roll: { min: 59, max: 60 }
+                text: Nazari
+              - roll: { min: 61, max: 62 }
+                text: Novsk
+              - roll: { min: 63, max: 64 }
+                text: Osara
+              - roll: { min: 65, max: 66 }
+                text: Pythian
+              - roll: { min: 67, max: 68 }
+                text: Qan
+              - roll: { min: 69, max: 70 }
+                text: Rayan
+              - roll: { min: 71, max: 72 }
+                text: Rhugal
+              - roll: { min: 73, max: 74 }
+                text: Sadir
+              - roll: { min: 75, max: 76 }
+                text: Sanira
+              - roll: { min: 77, max: 78 }
+                text: Savian
+              - roll: { min: 79, max: 80 }
+                text: Shunta
+              - roll: { min: 81, max: 82 }
+                text: Terion
+              - roll: { min: 83, max: 84 }
+                text: Thyrian
+              - roll: { min: 85, max: 86 }
+                text: Vallos
+              - roll: { min: 87, max: 88 }
+                text: Vanuyan
+              - roll: { min: 89, max: 90 }
+                text: Verian
+              - roll: { min: 91, max: 92 }
+                text: Vikani
+              - roll: { min: 93, max: 94 }
+                text: Visen
+              - roll: { min: 95, max: 96 }
+                text: Wulan
+              - roll: { min: 97, max: 98 }
+                text: Yamora
+              - roll: { min: 99, max: 100 }
+                text: Zhuan
+          identity_society:
+            name: "Faction Name: Society Identity"
+            type: oracle_rollable
+            oracle_type: table_text
+            tags:
+              sundered_isles:
+                faction_type: society
+            _source:
+              <<: *Source
+              page: 183
+            rows:
+              - roll: { min: 1, max: 15 }
+                text: Alliance
+              - roll: { min: 16, max: 30 }
+                text: Brethren
+              - roll: { min: 31, max: 35 }
+                text: Circle
+              - roll: { min: 36, max: 50 }
+                text: Clan
+              - roll: { min: 51, max: 55 }
+                text: Coalition
+              - roll: { min: 56, max: 60 }
+                text: Fellowship
+              - roll: { min: 61, max: 65 }
+                text: House
+              - roll: { min: 66, max: 70 }
+                text: Kinship
+              - roll: { min: 71, max: 75 }
+                text: Pact
+              - roll: { min: 76, max: 80 }
+                text: Sept
+              - roll: { min: 81, max: 95 }
+                text: Tribe
+              - roll: { min: 96, max: 100 }
+                text: Unity
+          identity_empire:
+            name: Empire Identity
+            type: oracle_rollable
+            oracle_type: table_text
+            tags:
+              sundered_isles:
+                faction_type: empire
+            _source:
+              <<: *Source
+              page: 183
+            rows:
+              - roll: { min: 1, max: 4 }
+                text: Alliance
+              - roll: { min: 5, max: 6 }
+                text: Ascendancy
+              - roll: { min: 7, max: 8 }
+                text: Coalition
+              - roll: { min: 9, max: 10 }
+                text: Collective
+              - roll: { min: 11, max: 14 }
+                text: Commonwealth
+              - roll: { min: 15, max: 16 }
+                text: Company
+              - roll: { min: 17, max: 18 }
+                text: Concord
+              - roll: { min: 19, max: 22 }
+                text: Confederation
+              - roll: { min: 23, max: 24 }
+                text: Consortium
+              - roll: { min: 25, max: 26 }
+                text: Crown
+              - roll: { min: 27, max: 28 }
+                text: Directorate
+              - roll: { min: 29, max: 32 }
+                text: Dominion
+              - roll: { min: 33, max: 34 }
+                text: Duchy
+              - roll: { min: 35, max: 38 }
+                text: Dynasty
+              - roll: { min: 39, max: 44 }
+                text: Empire
+              - roll: { min: 45, max: 50 }
+                text: Federation
+              - roll: { min: 51, max: 52 }
+                text: Hand
+              - roll: { min: 53, max: 58 }
+                text: Imperium
+              - roll: { min: 59, max: 60 }
+                text: Kingdom
+              - roll: { min: 61, max: 64 }
+                text: League
+              - roll: { min: 65, max: 66 }
+                text: Lordship
+              - roll: { min: 67, max: 68 }
+                text: Principality
+              - roll: { min: 69, max: 70 }
+                text: Realm
+              - roll: { min: 71, max: 72 }
+                text: Regency
+              - roll: { min: 73, max: 76 }
+                text: Republic
+              - roll: { min: 77, max: 78 }
+                text: Sovereignty
+              - roll: { min: 79, max: 80 }
+                text: States
+              - roll: { min: 81, max: 84 }
+                text: Supremacy
+              - roll: { min: 85, max: 86 }
+                text: Syndicate
+              - roll: { min: 87, max: 92 }
+                text: Trade Company
+              - roll: { min: 93, max: 94 }
+                text: Triumvirate
+              - roll: { min: 95, max: 100 }
+                text: Union
+          identity_organization:
+            name: "Faction Name: Organization Identity"
+            type: oracle_rollable
+            oracle_type: table_text
+            tags:
+              sundered_isles:
+                faction_type: organization
+            _source:
+              <<: *Source
+              page: 185
+            rows:
+              - roll: { min: 1, max: 2 }
+                text: Academy
+              - roll: { min: 3, max: 6 }
+                text: Alliance
+              - roll: { min: 7, max: 8 }
+                text: Assembly
+              - roll: { min: 9, max: 10 }
+                text: Association
+              - roll: { min: 11, max: 12 }
+                text: Band
+              - roll: { min: 13, max: 14 }
+                text: Brethren
+              - roll: { min: 15, max: 16 }
+                text: Brigade
+              - roll: { min: 17, max: 18 }
+                text: Brotherhood
+              - roll: { min: 19, max: 20 }
+                text: Cabal
+              - roll: { min: 21, max: 22 }
+                text: Chamber
+              - roll: { min: 23, max: 24 }
+                text: Charter
+              - roll: { min: 25, max: 26 }
+                text: Circle
+              - roll: { min: 27, max: 30 }
+                text: Coalition
+              - roll: { min: 31, max: 32 }
+                text: Cohort
+              - roll: { min: 33, max: 34 }
+                text: Collective
+              - roll: { min: 35, max: 36 }
+                text: Compact
+              - roll: { min: 37, max: 38 }
+                text: Company
+              - roll: { min: 39, max: 40 }
+                text: Consort
+              - roll: { min: 41, max: 42 }
+                text: Cooperative
+              - roll: { min: 43, max: 46 }
+                text: Council
+              - roll: { min: 47, max: 48 }
+                text: Coven
+              - roll: { min: 49, max: 50 }
+                text: Covenant
+              - roll: { min: 51, max: 52 }
+                text: Creed
+              - roll: { min: 53, max: 54 }
+                text: Crew
+              - roll: { min: 55, max: 58 }
+                text: Enclave
+              - roll: { min: 59, max: 60 }
+                text: Expedition
+              - roll: { min: 61, max: 64 }
+                text: Federation
+              - roll: { min: 65, max: 68 }
+                text: Fellowship
+              - roll: { min: 69, max: 72 }
+                text: Fleet
+              - roll: { min: 73, max: 74 }
+                text: Foundation
+              - roll: { min: 75, max: 78 }
+                text: Guild
+              - roll: { min: 79, max: 80 }
+                text: Institute
+              - roll: { min: 81, max: 84 }
+                text: League
+              - roll: { min: 85, max: 86 }
+                text: Lodge
+              - roll: { min: 87, max: 90 }
+                text: Order
+              - roll: { min: 91, max: 92 }
+                text: Partnership
+              - roll: { min: 93, max: 94 }
+                text: Ring
+              - roll: { min: 95, max: 96 }
+                text: Sect
+              - roll: { min: 97, max: 98 }
+                text: Sisterhood
+              - roll: { min: 99, max: 100 }
+                text: Union
+        collections:
+          themes:
+            name: "Faction Name: Themes"
+            type: oracle_collection
+            oracle_type: tables
+            _source:
+              <<: *Source
+              page: 184
+            contents:
+              type:
+                # TODO: virtual name, decide if i want to keep it
+                name: Theme Type
+                canonical_name: Themes
+                type: oracle_rollable
+                oracle_type: table_text
+                _source:
+                  <<: *Source
+                  page: 184
+                rows:
+                  - roll: { min: 1, max: 10 }
+                    text: Affluence
+                  - roll: { min: 11, max: 20 }
+                    text: Craft
+                  - roll: { min: 21, max: 30 }
+                    text: Discovery
+                  - roll: { min: 31, max: 40 }
+                    text: Faith
+                  - roll: { min: 41, max: 50 }
+                    text: Loyalty
+                  - roll: { min: 51, max: 60 }
+                    text: Mysticism
+                  - roll: { min: 61, max: 70 }
+                    text: Rebellion
+                  - roll: { min: 71, max: 80 }
+                    text: Secrecy
+                  - roll: { min: 81, max: 90 }
+                    text: War
+                  - roll: { min: 91, max: 100 }
+                    text: Curses
+            collections:
+              affluence:
+                name: Affluence
+                type: oracle_collection
+                oracle_type: table_shared_rolls
+                _source:
+                  <<: *Source
+                  page: 184
+                contents:
+                  aspect:
+                    name: Aspect
+                    type: oracle_rollable
+                    oracle_type: column_text
+                    rows:
+                      - roll: { min: 1, max: 10 }
+                        text: Emerald
+                      - roll: { min: 11, max: 20 }
+                        text: Gilded
+                      - roll: { min: 21, max: 30 }
+                        text: Golden
+                      - roll: { min: 31, max: 40 }
+                        text: Illustrious
+                      - roll: { min: 41, max: 50 }
+                        text: Jade
+                      - roll: { min: 51, max: 60 }
+                        text: Sapphire
+                      - roll: { min: 61, max: 70 }
+                        text: Silver
+                      - roll: { min: 71, max: 80 }
+                        text: Sovereign
+                      - roll: { min: 81, max: 90 }
+                        text: Supreme
+                      - roll: { min: 91, max: 100 }
+                        text: Trueborn
+                  persona:
+                    name: Persona
+                    type: oracle_rollable
+                    oracle_type: column_text
+                    rows:
+                      - roll: { min: 1, max: 10 }
+                        text: Brokers
+                      - roll: { min: 11, max: 20 }
+                        text: Crowns
+                      - roll: { min: 21, max: 30 }
+                        text: Lords
+                      - roll: { min: 31, max: 40 }
+                        text: Merchants
+                      - roll: { min: 41, max: 50 }
+                        text: Monarchs
+                      - roll: { min: 51, max: 60 }
+                        text: Mongers
+                      - roll: { min: 61, max: 70 }
+                        text: Patrons
+                      - roll: { min: 71, max: 80 }
+                        text: Princes
+                      - roll: { min: 81, max: 90 }
+                        text: Scions
+                      - roll: { min: 91, max: 100 }
+                        text: Regents
+              craft:
+                name: Craft
+                type: oracle_collection
+                oracle_type: table_shared_rolls
+                _source:
+                  <<: *Source
+                  page: 184
+                contents:
+                  aspect:
+                    name: Aspect
+                    type: oracle_rollable
+                    oracle_type: column_text
+                    rows:
+                      - roll: { min: 1, max: 10 }
+                        text: Adamantine
+                      - roll: { min: 11, max: 20 }
+                        text: Brass
+                      - roll: { min: 21, max: 30 }
+                        text: Copper
+                      - roll: { min: 31, max: 40 }
+                        text: Anchored
+                      - roll: { min: 41, max: 50 }
+                        text: Ember
+                      - roll: { min: 51, max: 60 }
+                        text: Forgeborn
+                      - roll: { min: 61, max: 70 }
+                        text: Iron
+                      - roll: { min: 71, max: 80 }
+                        text: Ironwrought
+                      - roll: { min: 81, max: 90 }
+                        text: Quicksilver
+                      - roll: { min: 91, max: 100 }
+                        text: Tempered
+                  persona:
+                    name: Persona
+                    type: oracle_rollable
+                    oracle_type: column_text
+                    rows:
+                      - roll: { min: 1, max: 10 }
+                        text: Anvils
+                      - roll: { min: 11, max: 20 }
+                        text: Artificers
+                      - roll: { min: 21, max: 30 }
+                        text: Artisans
+                      - roll: { min: 31, max: 40 }
+                        text: Hammers
+                      - roll: { min: 41, max: 50 }
+                        text: Hands
+                      - roll: { min: 51, max: 60 }
+                        text: Machinists
+                      - roll: { min: 61, max: 70 }
+                        text: Menders
+                      - roll: { min: 71, max: 80 }
+                        text: Riggers
+                      - roll: { min: 81, max: 90 }
+                        text: Sparks
+                      - roll: { min: 91, max: 100 }
+                        text: Tinkers
+              discovery:
+                name: Discovery
+                type: oracle_collection
+                oracle_type: table_shared_rolls
+                _source:
+                  <<: *Source
+                  page: 184
+                contents:
+                  aspect:
+                    name: Aspect
+                    type: oracle_rollable
+                    oracle_type: column_text
+                    rows:
+                      - roll: { min: 1, max: 10 }
+                        text: Ancient
+                      - roll: { min: 11, max: 20 }
+                        text: Awakened
+                      - roll: { min: 21, max: 30 }
+                        text: Azure
+                      - roll: { min: 31, max: 40 }
+                        text: Elder
+                      - roll: { min: 41, max: 50 }
+                        text: Emblazoned
+                      - roll: { min: 51, max: 60 }
+                        text: Enlightened
+                      - roll: { min: 61, max: 70 }
+                        text: First
+                      - roll: { min: 71, max: 80 }
+                        text: Roaming
+                      - roll: { min: 81, max: 90 }
+                        text: Starmarked
+                      - roll: { min: 91, max: 100 }
+                        text: Wandering
+                  persona:
+                    name: Persona
+                    type: oracle_rollable
+                    oracle_type: column_text
+                    rows:
+                    - roll: { min: 1, max: 10 }
+                      text: Adepts
+                    - roll: { min: 11, max: 20 }
+                      text: Archivists
+                    - roll: { min: 21, max: 30 }
+                      text: Beacons
+                    - roll: { min: 31, max: 40 }
+                      text: Couriers
+                    - roll: { min: 41, max: 50 }
+                      text: Guides
+                    - roll: { min: 51, max: 60 }
+                      text: Keepers
+                    - roll: { min: 61, max: 70 }
+                      text: Outlanders
+                    - roll: { min: 71, max: 80 }
+                      text: Seekers
+                    - roll: { min: 81, max: 90 }
+                      text: Venturers
+                    - roll: { min: 91, max: 100 }
+                      text: Wayfinders
+              faith:
+                name: Faith
+                type: oracle_collection
+                oracle_type: table_shared_rolls
+                _source:
+                  <<: *Source
+                  page: 184
+                contents:
+                  aspect:
+                    name: Aspect
+                    type: oracle_rollable
+                    oracle_type: column_text
+                    rows:
+                      - roll: { min: 1, max: 10 }
+                        text: Blessed
+                      - roll: { min: 11, max: 20 }
+                        text: Dawning
+                      - roll: { min: 21, max: 30 }
+                        text: Enduring
+                      - roll: { min: 31, max: 40 }
+                        text: Exalted
+                      - roll: { min: 41, max: 50 }
+                        text: Fated
+                      - roll: { min: 51, max: 60 }
+                        text: Hallowed
+                      - roll: { min: 61, max: 70 }
+                        text: Holy
+                      - roll: { min: 71, max: 80 }
+                        text: Radiant
+                      - roll: { min: 81, max: 90 }
+                        text: Sacred
+                      - roll: { min: 91, max: 100 }
+                        text: Shining
+                  persona:
+                    name: Persona
+                    type: oracle_rollable
+                    oracle_type: column_text
+                    rows:
+                    - roll: { min: 1, max: 10 }
+                      text: Acolytes
+                    - roll: { min: 11, max: 20 }
+                      text: Disciples
+                    - roll: { min: 21, max: 30 }
+                      text: Flames
+                    - roll: { min: 31, max: 40 }
+                      text: Harbingers
+                    - roll: { min: 41, max: 50 }
+                      text: Heralds
+                    - roll: { min: 51, max: 60 }
+                      text: Inquisitors
+                    - roll: { min: 61, max: 70 }
+                      text: Lightbringers
+                    - roll: { min: 71, max: 80 }
+                      text: Martyrs
+                    - roll: { min: 81, max: 90 }
+                      text: Redeemers
+                    - roll: { min: 91, max: 100 }
+                      text: Servants
+              loyalty:
+                name: Loyalty
+                type: oracle_collection
+                oracle_type: table_shared_rolls
+                _source:
+                  <<: *Source
+                  page: 184
+                contents:
+                  aspect:
+                    name: Aspect
+                    type: oracle_rollable
+                    oracle_type: column_text
+                    rows:
+                      - roll: { min: 1, max: 10 }
+                        text: Bannersworn
+                      - roll: { min: 11, max: 20 }
+                        text: Bonded
+                      - roll: { min: 21, max: 30 }
+                        text: Branded
+                      - roll: { min: 31, max: 40 }
+                        text: Kindred
+                      - roll: { min: 41, max: 50 }
+                        text: Resolute
+                      - roll: { min: 51, max: 60 }
+                        text: Steadfast
+                      - roll: { min: 61, max: 70 }
+                        text: Trueheart
+                      - roll: { min: 71, max: 80 }
+                        text: Unbroken
+                      - roll: { min: 81, max: 90 }
+                        text: Unified
+                      - roll: { min: 91, max: 100 }
+                        text: United
+                  persona:
+                    name: Persona
+                    type: oracle_rollable
+                    oracle_type: column_text
+                    rows:
+                    - roll: { min: 1, max: 10 }
+                      text: Allies
+                    - roll: { min: 11, max: 20 }
+                      text: Bulwarks
+                    - roll: { min: 21, max: 30 }
+                      text: Caretakers
+                    - roll: { min: 31, max: 40 }
+                      text: Guardians
+                    - roll: { min: 41, max: 50 }
+                      text: Loyalists
+                    - roll: { min: 51, max: 60 }
+                      text: Sentinels
+                    - roll: { min: 61, max: 70 }
+                      text: Sentries
+                    - roll: { min: 71, max: 80 }
+                      text: Shields
+                    - roll: { min: 81, max: 90 }
+                      text: Wardens
+                    - roll: { min: 91, max: 100 }
+                      text: Watchers
+              mysticism:
+                name: Mysticism
+                type: oracle_collection
+                oracle_type: table_shared_rolls
+                _source:
+                  <<: *Source
+                  page: 184
+                contents:
+                  aspect:
+                    name: Aspect
+                    type: oracle_rollable
+                    oracle_type: column_text
+                    rows:
+                      - roll: { min: 1, max: 10 }
+                        text: Astral
+                      - roll: { min: 11, max: 20 }
+                        text: Crystal
+                      - roll: { min: 21, max: 30 }
+                        text: Gleaming
+                      - roll: { min: 31, max: 40 }
+                        text: Moonbound
+                      - roll: { min: 41, max: 50 }
+                        text: Murmuring
+                      - roll: { min: 51, max: 60 }
+                        text: Obsidian
+                      - roll: { min: 61, max: 70 }
+                        text: Orbis
+                      - roll: { min: 71, max: 80 }
+                        text: Runemarked
+                      - roll: { min: 81, max: 90 }
+                        text: Shadow
+                      - roll: { min: 91, max: 100 }
+                        text: Spellbound
+                  persona:
+                    name: Persona
+                    type: oracle_rollable
+                    oracle_type: column_text
+                    rows:
+                      - roll: { min: 1, max: 10 }
+                        text: Adepts
+                      - roll: { min: 11, max: 20 }
+                        text: Alchemists
+                      - roll: { min: 21, max: 30 }
+                        text: Augurs
+                      - roll: { min: 31, max: 40 }
+                        text: Enchanters
+                      - roll: { min: 41, max: 50 }
+                        text: Mages
+                      - roll: { min: 51, max: 60 }
+                        text: Oracles
+                      - roll: { min: 61, max: 70 }
+                        text: Sages
+                      - roll: { min: 71, max: 80 }
+                        text: Seers
+                      - roll: { min: 81, max: 90 }
+                        text: Sorcerers
+                      - roll: { min: 91, max: 100 }
+                        text: Witches
+              rebellion:
+                name: Rebellion
+                type: oracle_collection
+                oracle_type: table_shared_rolls
+                _source:
+                  <<: *Source
+                  page: 185
+                contents:
+                  aspect:
+                    name: Aspect
+                    type: oracle_rollable
+                    oracle_type: column_text
+                    rows:
+                      - roll: { min: 1, max: 10 }
+                        text: Apostate
+                      - roll: { min: 11, max: 20 }
+                        text: Forsworn
+                      - roll: { min: 21, max: 30 }
+                        text: Free
+                      - roll: { min: 31, max: 40 }
+                        text: Mutinous
+                      - roll: { min: 41, max: 50 }
+                        text: Rebel
+                      - roll: { min: 51, max: 60 }
+                        text: Sovereign
+                      - roll: { min: 61, max: 70 }
+                        text: Tidebound
+                      - roll: { min: 71, max: 80 }
+                        text: Unbound
+                      - roll: { min: 81, max: 90 }
+                        text: Unchained
+                      - roll: { min: 91, max: 100 }
+                        text: Wayward
+                  persona:
+                    name: Persona
+                    type: oracle_rollable
+                    oracle_type: column_text
+                    rows:
+                    - roll: { min: 1, max: 10 }
+                      text: Crows
+                    - roll: { min: 11, max: 20 }
+                      text: Gulls
+                    - roll: { min: 21, max: 30 }
+                      text: Marauders
+                    - roll: { min: 31, max: 40 }
+                      text: Outcasts
+                    - roll: { min: 41, max: 50 }
+                      text: Pirates
+                    - roll: { min: 51, max: 60 }
+                      text: Reavers
+                    - roll: { min: 61, max: 70 }
+                      text: Drifters
+                    - roll: { min: 71, max: 80 }
+                      text: Relics
+                    - roll: { min: 81, max: 90 }
+                      text: Shards
+                    - roll: { min: 91, max: 100 }
+                      text: Tempests
+              secrecy:
+                name: Secrecy
+                type: oracle_collection
+                oracle_type: table_shared_rolls
+                _source:
+                  <<: *Source
+                  page: 185
+                contents:
+                  aspect:
+                    name: Aspect
+                    type: oracle_rollable
+                    oracle_type: column_text
+                    rows:
+                      - roll: { min: 1, max: 10 }
+                        text: Ashen
+                      - roll: { min: 11, max: 20 }
+                        text: Gossamer
+                      - roll: { min: 21, max: 30 }
+                        text: Gray
+                      - roll: { min: 31, max: 40 }
+                        text: Hidden
+                      - roll: { min: 41, max: 50 }
+                        text: Shrouded
+                      - roll: { min: 51, max: 60 }
+                        text: Silent
+                      - roll: { min: 61, max: 70 }
+                        text: Umbral
+                      - roll: { min: 71, max: 80 }
+                        text: Unseen
+                      - roll: { min: 81, max: 90 }
+                        text: Veiled
+                      - roll: { min: 91, max: 100 }
+                        text: Whispering
+                  persona:
+                    name: Persona
+                    type: oracle_rollable
+                    oracle_type: column_text
+                    rows:
+                      - roll: { min: 1, max: 10 }
+                        text: Cloaks
+                      - roll: { min: 11, max: 20 }
+                        text: Daggers
+                      - roll: { min: 21, max: 30 }
+                        text: Eyes
+                      - roll: { min: 31, max: 40 }
+                        text: Masks
+                      - roll: { min: 41, max: 50 }
+                        text: Phantoms
+                      - roll: { min: 51, max: 60 }
+                        text: Ravens
+                      - roll: { min: 61, max: 70 }
+                        text: Serpents
+                      - roll: { min: 71, max: 80 }
+                        text: Shadows
+                      - roll: { min: 81, max: 90 }
+                        text: Specters
+                      - roll: { min: 91, max: 100 }
+                        text: Spiders
+              war:
+                name: War
+                type: oracle_collection
+                oracle_type: table_shared_rolls
+                _source:
+                  <<: *Source
+                  page: 185
+                contents:
+                  aspect:
+                    name: Aspect
+                    type: oracle_rollable
+                    oracle_type: column_text
+                    rows:
+                      - roll: { min: 1, max: 10 }
+                        text: Battleborn
+                      - roll: { min: 11, max: 20 }
+                        text: Bloodied
+                      - roll: { min: 21, max: 30 }
+                        text: Crimson
+                      - roll: { min: 31, max: 40 }
+                        text: Flamebringer
+                      - roll: { min: 41, max: 50 }
+                        text: Hellfire
+                      - roll: { min: 51, max: 60 }
+                        text: Ironclad
+                      - roll: { min: 61, max: 70 }
+                        text: Scarlet
+                      - roll: { min: 71, max: 80 }
+                        text: Steelheart
+                      - roll: { min: 81, max: 90 }
+                        text: Undaunted
+                      - roll: { min: 91, max: 100 }
+                        text: Warforged
+                  persona:
+                    name: Persona
+                    type: oracle_rollable
+                    oracle_type: column_text
+                    rows:
+                    - roll: { min: 1, max: 10 }
+                      text: Arrows
+                    - roll: { min: 11, max: 20 }
+                      text: Blades
+                    - roll: { min: 21, max: 30 }
+                      text: Defenders
+                    - roll: { min: 31, max: 40 }
+                      text: Fighters
+                    - roll: { min: 41, max: 50 }
+                      text: Gauntlets
+                    - roll: { min: 51, max: 60 }
+                      text: Hounds
+                    - roll: { min: 61, max: 70 }
+                      text: Knights
+                    - roll: { min: 71, max: 80 }
+                      text: Talons
+                    - roll: { min: 81, max: 90 }
+                      text: Vanguards
+                    - roll: { min: 91, max: 100 }
+                      text: Wolves
+              curses:
+                name: Curses
+                type: oracle_collection
+                oracle_type: table_shared_rolls
+                _source:
+                  <<: *Source
+                  page: 185
+                contents:
+                  aspect:
+                    name: Aspect
+                    type: oracle_rollable
+                    oracle_type: column_text
+                    rows:
+                      - roll: { min: 1, max: 10 }
+                        text: Cursed
+                      - roll: { min: 11, max: 20 }
+                        text: Bloodless
+                      - roll: { min: 21, max: 30 }
+                        text: Bloody
+                      - roll: { min: 31, max: 40 }
+                        text: Broken
+                      - roll: { min: 41, max: 50 }
+                        text: Fallen
+                      - roll: { min: 51, max: 60 }
+                        text: Haunted
+                      - roll: { min: 61, max: 70 }
+                        text: Infernal
+                      - roll: { min: 71, max: 80 }
+                        text: Risen
+                      - roll: { min: 81, max: 90 }
+                        text: Shattered
+                      - roll: { min: 91, max: 100 }
+                        text: Undying
+                  persona:
+                    name: Persona
+                    type: oracle_rollable
+                    oracle_type: column_text
+                    rows:
+                    - roll: { min: 1, max: 10 }
+                      text: Bones
+                    - roll: { min: 11, max: 20 }
+                      text: Jackals
+                    - roll: { min: 21, max: 30 }
+                      text: Revenants
+                    - roll: { min: 31, max: 40 }
+                      text: Shades
+                    - roll: { min: 41, max: 50 }
+                      text: Skulls
+                    - roll: { min: 51, max: 60 }
+                      text: Slayers
+                    - roll: { min: 61, max: 70 }
+                      text: Souls
+                    - roll: { min: 71, max: 80 }
+                      text: Swarm
+                    - roll: { min: 81, max: 90 }
+                      text: Wraiths
+                    - roll: { min: 91, max: 100 }
+                      text: Wretches

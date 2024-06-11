@@ -1,0 +1,659 @@
+_id: sundered_isles
+datasworn_version: '0.1.0'
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-06-01
+  title: Sundered Isles
+  url: https://ironswornrpg.com
+  license: null
+  authors:
+    - name: Shawn Tomkin
+oracles:
+  treasure:
+    name: Treasure Oracles
+    type: oracle_collection
+    oracle_type: tables
+    _source:
+      <<: *Source
+      page: 220
+    contents:
+      location:
+        name: Treasure Location
+        type: oracle_rollable
+        oracle_type: table_text
+        summary: If you’re not sure of a treasure’s location—such as when chasing down a rumored treasure or gathering details on a treasure-related quest—check this table.
+        tags:
+          sundered_isles:
+            cursed_by: sundered_isles/oracles/treasure/location_cursed
+        _source:
+          <<: *Source
+          page: 220
+        rows:
+          - roll: { min: 1, max: 25 }
+            text: Borne on a [Ship](id:sundered_isles/collections/oracles/ship)
+          - roll: { min: 26, max: 50 }
+            text: Lost with a [Shipwreck](id:sundered_isles/collections/oracles/shipwreck)
+          - roll: { min: 51, max: 70 }
+            text: Hidden on an [Island](id:sundered_isles/collections/oracles/island)
+          - roll: { min: 71, max: 85 }
+            text: Sheltered in a [Cave](id:sundered_isles/collections/oracles/cave)
+          - roll: { min: 86, max: 95 }
+            text: Secured in a [Settlement](id:sundered_isles/collections/oracles/settlement)
+          - roll: { min: 96, max: 100 }
+            text: Preserved in a [Ruin](id:sundered_isles/collections/oracles/ruin)
+      location_cursed:
+        name: Cursed Location
+        type: oracle_rollable
+        oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/treasure/location
+            curse_behavior: replace_result
+        _source:
+          <<: *Source
+          page: 220
+        rows:
+          - roll: { min: 1, max: 5 }
+            text: Banished to the realm of the dead
+          - roll: { min: 6, max: 10 }
+            text: Consumed by a monstrous beast
+          - roll: { min: 11, max: 15 }
+            text: Entombed in a crypt or graveyard
+          - roll: { min: 16, max: 30 }
+            text: Held aboard a cursed ship
+          - roll: { min: 31, max: 35 }
+            text: Locked in a mechanized vault
+          - roll: { min: 36, max: 50 }
+            text: Lost in the heart of a trackless jungle
+          - roll: { min: 51, max: 65 }
+            text: Mired in a forsaken swamp
+          - roll: { min: 66, max: 80 }
+            text: Safeguarded in a monstrous beast's lair
+          - roll: { min: 81, max: 90 }
+            text: Sealed in the bowels of a raging volcano
+          - roll: { min: 91, max: 100 }
+            text: Sunk to the depths of an abyssal trench
+      repository:
+        name: Treasure Repository
+        type: oracle_rollable
+        summary: Choose the scale of the treasure’s repository—small, medium, large, or vast—as appropriate to situation and location. See the examples in the table below. If unsure, roll for the answer. The result helps set the potential Value of the treasure.
+        oracle_type: table_text2
+        column_labels:
+          roll: Roll
+          text: Size
+          text2: Examples
+        _source:
+          <<: *Source
+          page: 221
+        rows:
+          - roll: { min: 1, max: 25 }
+            text: Small
+            text2: Strongbox; desk drawer; bag or pouch
+            tags:
+              sundered_isles:
+                treasure_size: small
+          - roll: { min: 26, max: 70 }
+            text: Medium
+            text2: Chest; crate; ship cabin; cave alcove
+            tags:
+              sundered_isles:
+                treasure_size: medium
+          - roll: { min: 71, max: 95 }
+            text: Large
+            text2: Cargo hold; strongroom; cave chamber
+            tags:
+              sundered_isles:
+                treasure_size: large
+          - roll: { min: 96, max: 100 }
+            text: Vast
+            text2: Storehouse; great hall; cavern vault
+            tags:
+              sundered_isles:
+                treasure_size: vast
+      aspects:
+        name: Treasure Aspects
+        type: oracle_rollable
+        oracle_type: table_text
+        recommended_rolls: { min: 1, max: 2 }
+        summary: Use this table to reveal characteristics of a treasure or its surroundings. Since the results often involve twists and complications, it is best reserved for notable finds and dramatic situations. Also, keep in mind that an aspect might be outside your character’s immediate viewpoint—if so, make note of it as a future trouble or opportunity.
+        tags:
+          sundered_isles:
+            cursed_by: sundered_isles/oracles/treasure/aspects_cursed
+        _source:
+          <<: *Source
+          page: 222
+        rows:
+          - roll: { min: 1, max: 8 }
+            text: Bears the mark of a notorious figure
+          - roll: { min: 9, max: 16 }
+            text: Contains a long-lost object or artifact
+          - roll: { min: 17, max: 20 }
+            text: Coveted by a newly-revealed rival
+          - roll: { min: 21, max: 24 }
+            text: Guarded by a sentry or caretaker
+          - roll: { min: 25, max: 28 }
+            text: Held in a vulnerable repository
+          - roll: { min: 29, max: 32 }
+            text: Hidden among worthless items
+          - roll: { min: 33, max: 40 }
+            text: Holds a clue to a greater treasure
+          - roll: { min: 41, max: 48 }
+            text: Hunted by a foe or faction
+          - roll: { min: 49, max: 56 }
+            text: Includes counterfeit valuables
+          - roll: { min: 57, max: 64 }
+            text: Marked with a menacing warning
+          - roll: { min: 65, max: 72 }
+            text: Once claimed as pillage or spoils
+          - roll: { min: 73, max: 76 }
+            text: Planted as a lure for the unwary
+          - roll: { min: 77, max: 84 }
+            text: Protected by a clever trap
+          - roll: { min: 85, max: 88 }
+            text: Put out-of-reach by a barrier or obstacle
+          - roll: { min: 89, max: 96 }
+            text: Secured by a complex lock
+          - roll: { min: 97, max: 100 }
+            text: Shows signs of pilfering or tampering
+      aspects_cursed:
+        name: Cursed Aspects
+        type: oracle_rollable
+        oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/treasure/aspects
+            curse_behavior: replace_result
+        _source:
+          <<: *Source
+          page: 222
+        rows:
+          - roll: { min: 1, max: 4 }
+            text: Attracts foul creatures or vermin
+          - roll: { min: 5, max: 12 }
+            text: Awakens the dead
+          - roll: { min: 13, max: 16 }
+            text: Blighted by unnatural decay
+          - roll: { min: 17, max: 24 }
+            text: Causes foul luck
+          - roll: { min: 25, max: 28 }
+            text: Haunted by former keepers or victims
+          - roll: { min: 29, max: 32 }
+            text: Illusions conceal its true nature
+          - roll: { min: 33, max: 40 }
+            text: Imbued with a whispering sentience
+          - roll: { min: 41, max: 44 }
+            text: Incites a possessive obsession
+          - roll: { min: 45, max: 48 }
+            text: Inflicts a dreadful transformation
+          - roll: { min: 49, max: 52 }
+            text: Inflicts a sickness or wasting
+          - roll: { min: 53, max: 56 }
+            text: Marked with indelible bloodstains
+          - roll: { min: 57, max: 60 }
+            text: Marked with sinister glyphs
+          - roll: { min: 61, max: 64 }
+            text: Mystically bound to a location
+          - roll: { min: 65, max: 68 }
+            text: Mystically bound to a person
+          - roll: { min: 69, max: 72 }
+            text: Protected by a monstrous guardian
+          - roll: { min: 73, max: 80 }
+            text: Protected by a sorcerous spell
+          - roll: { min: 81, max: 84 }
+            text: Provokes dreadful visions or dreams
+          - roll: { min: 85, max: 92 }
+            text: Radiates a foul aura
+          - roll: { min: 93, max: 96 }
+            text: Sought after by a dreadful foe
+          - roll: { min: 97, max: 100 }
+            text: Summons a powerful being or creature
+      precious_items:
+        name: Precious Items
+        type: oracle_rollable
+        oracle_type: table_text
+        summary: Roll or select a number of items on this table as set by the treasure’s [Value](id:sundered_isles/collections/oracles/treasure/value). Each result represents a quantity of that item, such as a strongbox filled with pearls, barrels of aged rum, or a stack of precious metal ingots. To instead reveal a specific item of intrinsic or personal worth, check the [Tokens](id:sundered_isles/oracles/treasure/tokens) table.
+        _source:
+          <<: *Source
+          page: 223
+        rows:
+          - roll: { min: 1, max: 20 }
+            text: Cache of coins, gems, and jewels
+          - roll: { min: 21, max: 24 }
+            text: Aged rum
+          - roll: { min: 25, max: 28 }
+            text: Ancient artifacts
+          - roll: { min: 29, max: 30 }
+            text: Fine art
+          - roll: { min: 31, max: 32 }
+            text: Fine wine
+          - roll: { min: 33, max: 36 }
+            text: Gilded imperial regalia
+          - roll: { min: 37, max: 40 }
+            text: Glittering gemstones
+          - roll: { min: 41, max: 44 }
+            text: Gold coins
+          - roll: { min: 45, max: 46 }
+            text: Intricate mechanical devices
+          - roll: { min: 47, max: 50 }
+            text: Lustrous pearls
+          - roll: { min: 51, max: 54 }
+            text: Masterwork weapons
+          - roll: { min: 55, max: 58 }
+            text: Precious metal ingots
+          - roll: { min: 59, max: 60 }
+            text: Rare books
+          - roll: { min: 61, max: 62 }
+            text: Rare fossils
+          - roll: { min: 63, max: 64 }
+            text: Rare hides or furs
+          - roll: { min: 65, max: 66 }
+            text: Rare maps
+          - roll: { min: 67, max: 68 }
+            text: Rare medicinal herbs or compounds
+          - roll: { min: 69, max: 72 }
+            text: Rare spices
+          - roll: { min: 73, max: 74 }
+            text: Rare toxins or poisons
+          - roll: { min: 75, max: 76 }
+            text: Sacred relics
+          - roll: { min: 77, max: 80 }
+            text: Secret documents
+          - roll: { min: 81, max: 84 }
+            text: Unworked gemstones
+          - roll: { min: 85, max: 88 }
+            text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+            oracle_rolls:
+              - auto: true
+                oracle: sundered_isles/oracles/core/descriptor
+              - auto: true
+                oracle: sundered_isles/oracles/core/focus
+          - roll: { min: 89, max: 100 }
+            text: '[Token](id:sundered_isles/oracles/treasure/tokens)'
+            oracle_rolls:
+              - auto: false
+                number_of_rolls: 1
+                oracle: sundered_isles/oracles/treasure/tokens
+      tokens:
+        name: Tokens
+        type: oracle_rollable
+        oracle_type: table_text
+        summary: A token is an item of personal significance—such as a memento, heirloom, or individual treasure. Use this table when prompted by the [Precious Items](id:sundered_isles/oracles/treasure/precious_items) table, or to add detail to a character. A token might have intrinsic value, but is often a thing of worth only to its owner. Not all treasures are silver and gold.
+        tags:
+          sundered_isles:
+            cursed_by: sundered_isles/oracles/treasure/tokens_cursed
+        _source:
+          <<: *Source
+          page: 223
+        rows:
+          - roll: { min: 1, max: 1 }
+            text: Ancestral ring with a missing gemstone
+          - roll: { min: 2, max: 2 }
+            text: Ancient codex with cryptic secrets
+          - roll: { min: 3, max: 3 }
+            text: Ancient gold coin hung on a chain
+          - roll: { min: 4, max: 4 }
+            text: Animal figurine carved from amber
+          - roll: { min: 5, max: 5 }
+            text: Antique brass sextant
+          - roll: { min: 6, max: 6 }
+            text: Beautiful dress wrapped in silk paper
+          - roll: { min: 7, max: 7 }
+            text: Bloodstained map of an unknown island
+          - roll: { min: 8, max: 8 }
+            text: Book of scripture with ragged pages
+          - roll: { min: 9, max: 9 }
+            text: Bottle of very old wine
+          - roll: { min: 10, max: 10 }
+            text: Brass strongbox filled with bloodied rings
+          - roll: { min: 11, max: 11 }
+            text: Broken manacles
+          - roll: { min: 12, max: 12 }
+            text: Cameo portrait of a feminine figure
+          - roll: { min: 13, max: 13 }
+            text: Carefully folded flag
+          - roll: { min: 14, max: 14 }
+            text: Carved driftwood totem of a sea god
+          - roll: { min: 15, max: 15 }
+            text: Ceremonial wooden mask
+          - roll: { min: 16, max: 16 }
+            text: Clay jars filled with alchemical agents
+          - roll: { min: 17, max: 17 }
+            text: Cleaved fragment of a ship's figurehead
+          - roll: { min: 18, max: 18 }
+            text: Coral and pearl bracelet
+          - roll: { min: 19, max: 19 }
+            text: Crystalline flute
+          - roll: { min: 20, max: 20 }
+            text: Deck of marked playing cards
+          - roll: { min: 21, max: 21 }
+            text: Elaborate clockwork puzzle box
+          - roll: { min: 22, max: 22 }
+            text: Embroidered silk handkerchief
+          - roll: { min: 23, max: 23 }
+            text: Exquisite sword in a velvet-lined case
+          - roll: { min: 24, max: 24 }
+            text: Finely-crafted compass in a leather case
+          - roll: { min: 25, max: 25 }
+            text: Flask of aged rum
+          - roll: { min: 26, max: 26 }
+            text: Folded note with scrawled coordinates
+          - roll: { min: 27, max: 27 }
+            text: Forgery kit
+          - roll: { min: 28, max: 28 }
+            text: Gilded cage with a clockwork bird
+          - roll: { min: 29, max: 29 }
+            text: Gold key
+          - roll: { min: 30, max: 30 }
+            text: Gold locket with a lock of hair
+          - roll: { min: 31, max: 31 }
+            text: Gold reliquary filled with ash
+          - roll: { min: 32, max: 32 }
+            text: Gold ring hung on an iron chain
+          - roll: { min: 33, max: 33 }
+            text: Hand-drawn celestial chart
+          - roll: { min: 34, max: 34 }
+            text: Handwritten sheet music
+          - roll: { min: 35, max: 35 }
+            text: Intricate brass and silver astrolabe
+          - roll: { min: 36, max: 36 }
+            text: Iron medallion with a compass rose motif
+          - roll: { min: 37, max: 37 }
+            text: Ivory smoking pipe
+          - roll: { min: 38, max: 38 }
+            text: Jade mortar and pestle
+          - roll: { min: 39, max: 39 }
+            text: Jar of dirt
+          - roll: { min: 40, max: 40 }
+            text: Jeweled chalice
+          - roll: { min: 41, max: 41 }
+            text: Jeweled hair comb
+          - roll: { min: 42, max: 42 }
+            text: Journal filled with notes and sketches
+          - roll: { min: 43, max: 43 }
+            text: Large, flawless diamond
+          - roll: { min: 44, max: 44 }
+            text: Leather-wrapped forge hammer
+          - roll: { min: 45, max: 45 }
+            text: Leatherbound codebook
+          - roll: { min: 46, max: 46 }
+            text: Letter of marque signed with blood
+          - roll: { min: 47, max: 47 }
+            text: Letter of pardon
+          - roll: { min: 48, max: 48 }
+            text: Letter opener stained with dried blood
+          - roll: { min: 49, max: 49 }
+            text: Locket with a faded portrait
+          - roll: { min: 50, max: 50 }
+            text: Message in a bottle
+          - roll: { min: 51, max: 51 }
+            text: Military medal hung on a silk ribbon
+          - roll: { min: 52, max: 52 }
+            text: Music box
+          - roll: { min: 53, max: 53 }
+            text: Old chart with hand-drawn corrections
+          - roll: { min: 54, max: 54 }
+            text: One-half of a sundered crown
+          - roll: { min: 55, max: 55 }
+            text: One-half of a treasure map
+          - roll: { min: 56, max: 56 }
+            text: One-half of an ancient medallion
+          - roll: { min: 57, max: 57 }
+            text: Ornate hilt with a broken blade
+          - roll: { min: 58, max: 58 }
+            text: Ornate jeweled strongbox
+          - roll: { min: 59, max: 59 }
+            text: Oversized pearl
+          - roll: { min: 60, max: 60 }
+            text: Padlocked book
+          - roll: { min: 61, max: 61 }
+            text: Painted portrait of a heroic figure
+          - roll: { min: 62, max: 62 }
+            text: Pair of bone-carved dice
+          - roll: { min: 63, max: 63 }
+            text: Perfumed letter
+          - roll: { min: 64, max: 64 }
+            text: Platinum circlet set with a large ruby
+          - roll: { min: 65, max: 65 }
+            text: Pocket spyglass of wood and bronze
+          - roll: { min: 66, max: 66 }
+            text: Pocket watch with a personal engraving
+          - roll: { min: 67, max: 67 }
+            text: Pouch of silver musket balls
+          - roll: { min: 68, max: 68 }
+            text: Pouch with eight pieces of a silver coin
+          - roll: { min: 69, max: 69 }
+            text: Rare flowers pressed in a journal
+          - roll: { min: 70, max: 70 }
+            text: Rough-hewn stone key
+          - roll: { min: 71, max: 71 }
+            text: Sailor's journal filled with sea shanties
+          - roll: { min: 72, max: 72 }
+            text: Scrimshaw carving of a sea monster
+          - roll: { min: 73, max: 73 }
+            text: Sealed envelope with a black spot
+          - roll: { min: 74, max: 74 }
+            text: Set of crystal and obsidian chess pieces
+          - roll: { min: 75, max: 75 }
+            text: Set of metal lockpicks
+          - roll: { min: 76, max: 76 }
+            text: Set of onyx divination stones
+          - roll: { min: 77, max: 77 }
+            text: Shard of an iron meteorite
+          - roll: { min: 78, max: 78 }
+            text: Sheaf of wanted posters
+          - roll: { min: 79, max: 79 }
+            text: Ship in a bottle
+          - roll: { min: 80, max: 80 }
+            text: Ship's bell dented by musket shot
+          - roll: { min: 81, max: 81 }
+            text: Ship's drum with a shark skin drumhead
+          - roll: { min: 82, max: 82 }
+            text: Silver harmonica
+          - roll: { min: 83, max: 83 }
+            text: Single entry torn from a ship's log
+          - roll: { min: 84, max: 84 }
+            text: Single musket ball in a gold snuffbox
+          - roll: { min: 85, max: 85 }
+            text: Skeleton key
+          - roll: { min: 86, max: 86 }
+            text: Skull carved with an intricate map
+          - roll: { min: 87, max: 87 }
+            text: Skull of a rare or extinct creature
+          - roll: { min: 88, max: 88 }
+            text: Small clay urn filled with gold teeth
+          - roll: { min: 89, max: 89 }
+            text: Stoppered flask containing dark liquid
+          - roll: { min: 90, max: 90 }
+            text: Strip of cloth torn from a black flag
+          - roll: { min: 91, max: 91 }
+            text: Tea leaves in an embellished wood box
+          - roll: { min: 92, max: 92 }
+            text: Timeworn bronze sundial
+          - roll: { min: 93, max: 93 }
+            text: Unadorned iron box with a complex lock
+          - roll: { min: 94, max: 94 }
+            text: Velvet pouch filled with shark teeth
+          - roll: { min: 95, max: 95 }
+            text: Vial of cloudy seawater
+          - roll: { min: 96, max: 96 }
+            text: Vial of coagulated blood
+          - roll: { min: 97, max: 97 }
+            text: Water-stained love letter
+          - roll: { min: 98, max: 98 }
+            text: Wax seal ring with a royal crest
+          - roll: { min: 99, max: 99 }
+            text: Weathered nameplate of a long-lost ship
+          - roll: { min: 100, max: 100 }
+            text: Well-stocked surgeon's bag
+      tokens_cursed:
+        name: Cursed Tokens
+        type: oracle_rollable
+        oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/treasure/tokens
+            curse_behavior: replace_result
+        _source:
+          <<: *Source
+          page: 225
+        rows:
+          - roll: { min: 1, max: 2 }
+            text: Astrolabe with complex workings that signal a portentous cosmic event
+          - roll: { min: 3, max: 4 }
+            text: Black candle that reveals shadowy forms in its sputtering light
+          - roll: { min: 5, max: 7 }
+            text: Boatswain’s whistle that echoes with the cries of doomed mariners
+          - roll: { min: 8, max: 10 }
+            text: Chattering skull with dark gems fitted into its eye sockets
+          - roll: { min: 11, max: 13 }
+            text: Compass that stubbornly points at an unknown destination
+          - roll: { min: 14, max: 16 }
+            text: Conch shell that whispers enticingly of distant seas
+          - roll: { min: 17, max: 19 }
+            text: Corroded chronometer that offers glimpses of the past
+          - roll: { min: 20, max: 22 }
+            text: Cracked lantern that draws a beast of the abyssal depths to its pallid light
+          - roll: { min: 23, max: 24 }
+            text: Crown of jagged seashells and sharp coral that binds its wearer to the sea
+          - roll: { min: 25, max: 27 }
+            text: Dark cloak that transforms the look of the wearer
+          - roll: { min: 28, max: 29 }
+            text: Dueling sword that whispers of vengeful need
+          - roll: { min: 30, max: 32 }
+            text: Enigmatic map carved into a leathery sea serpent scale
+          - roll: { min: 33, max: 34 }
+            text: Fiddle of dark wood that—when played—evokes profound melancholy
+          - roll: { min: 35, max: 37 }
+            text: Fiendish puzzle box that compels its keeper to solve the riddle
+          - roll: { min: 38, max: 39 }
+            text: Filthy burial shroud that takes the shape of its former occupant on moonless nights
+          - roll: { min: 40, max: 41 }
+            text: Flask of green glass that releases a torrent of brackish seawater when unstopped
+          - roll: { min: 42, max: 43 }
+            text: Frayed and bloodied rope that slithers and coils of its own accord
+          - roll: { min: 44, max: 46 }
+            text: Glass eye that peers into the realm of the dead
+          - roll: { min: 47, max: 49 }
+            text: Iron mask that—when sworn upon—cannot be removed until the vow is fulfilled
+          - roll: { min: 50, max: 52 }
+            text: Jagged obsidian dagger marked with everlasting bloodstains
+          - roll: { min: 53, max: 54 }
+            text: Large, leathery egg that pulses and shudders
+          - roll: { min: 55, max: 57 }
+            text: Leatherbound tome filled with maddening, ever-changing glyphs
+          - roll: { min: 58, max: 60 }
+            text: Logbook filled with the rantings of a tormented captain
+          - roll: { min: 61, max: 63 }
+            text: Macabre tarot cards with shifting illustrations
+          - roll: { min: 64, max: 66 }
+            text: Magnetic lodestone that reveals messages within iron shavings
+          - roll: { min: 67, max: 69 }
+            text: Mechanical scarab that skitters, flies, and burrows
+          - roll: { min: 70, max: 71 }
+            text: Mirror that reveals a cadaverous visage of its subject
+          - roll: { min: 72, max: 74 }
+            text: Mummified hand whose grip is locked tight around a gold coin
+          - roll: { min: 75, max: 77 }
+            text: Ornate silver chalice that turns its contents to poison
+          - roll: { min: 78, max: 80 }
+            text: Ragged ship's flag that—when raised—summons an infamous cursed vessel
+          - roll: { min: 81, max: 82 }
+            text: Rusted iron sextant that reveals an unfamiliar sky in its silvered mirror
+          - roll: { min: 83, max: 85 }
+            text: Ship in a bottle that flounders upon a storm-tossed sea
+          - roll: { min: 86, max: 88 }
+            text: Spyglass that offers glimpses of faraway seas through a cracked lens
+          - roll: { min: 89, max: 91 }
+            text: Strongbox containing a still-beating heart
+          - roll: { min: 92, max: 94 }
+            text: Tarnished ship's bell that calls to the spirits of drowned mariners
+          - roll: { min: 95, max: 97 }
+            text: Tattered map that reveals its secrets under moonlight
+          - roll: { min: 98, max: 100 }
+            text: Whalebone staff that resonates with dormant power
+    collections:
+      value:
+        name: Treasure Value
+        type: oracle_collection
+        oracle_type: table_shared_text2
+        _source:
+          <<: *Source
+          page: 221
+        contents:
+          small:
+            name: Small
+            type: oracle_rollable
+            oracle_type: column_text2
+            tags:
+              sundered_isles:
+                treasure_size: small
+            rows:
+              - roll: { min: 1, max: 80 }
+                <<: &Value.0
+                  text: Trifle
+                  text2: One [Precious Item](id:sundered_isles/oracles/treasure/precious_items)
+                  oracle_rolls:
+                    - oracle: sundered_isles/oracles/treasure/precious_items
+                      auto: false
+              - roll: { min: 81, max: 100 }
+                <<: &Value.1
+                  text: Stash
+                  text2: Roll the action die and reveal that many [Precious Items](id:sundered_isles/oracles/treasure/precious_items)
+                  oracle_rolls:
+                    - oracle: sundered_isles/oracles/treasure/precious_items
+                      auto: false
+              - <<: &Value.2
+                  text: Trove
+                  text2: Bountiful riches
+              - <<: &Value.3
+                  text: Hoard
+                  text2: Immeasurable riches
+          medium:
+            name: Medium
+            type: oracle_rollable
+            oracle_type: column_text2
+            tags:
+              sundered_isles:
+                treasure_size: medium
+            rows:
+              - roll: { min: 1, max: 60 }
+                <<: *Value.0
+              - roll: { min: 61, max: 100 }
+                <<: *Value.1
+              - <<: *Value.2
+              - <<: *Value.3
+          large:
+            name: Large
+            type: oracle_rollable
+            oracle_type: column_text2
+            tags:
+              sundered_isles:
+                treasure_size: large
+            rows:
+              - roll: { min: 1, max: 30 }
+                <<: *Value.0
+              - roll: { min: 31, max: 98 }
+                <<: *Value.1
+              - roll: { min: 99, max: 100 }
+                <<: *Value.2
+              - <<: *Value.3
+          vast:
+            name: Vast
+            type: oracle_rollable
+            oracle_type: column_text2
+            tags:
+              sundered_isles:
+                treasure_size: vast
+            rows:
+              - roll: { min: 1, max: 10 }
+                <<: *Value.0
+              - roll: { min: 11, max: 93 }
+                <<: *Value.1
+              - roll: { min: 94, max: 98 }
+                <<: *Value.2
+              - roll: { min: 99, max: 100 }
+                <<: *Value.3

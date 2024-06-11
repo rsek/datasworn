@@ -1,0 +1,990 @@
+_id: sundered_isles
+datasworn_version: '0.1.0'
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-06-01
+  title: Sundered Isles
+  url: https://ironswornrpg.com
+  license: null
+  authors:
+    - name: Shawn Tomkin
+oracles:
+  misc:
+    name: Miscellaneous Oracles
+    type: oracle_collection
+    oracle_type: tables
+    _source:
+      <<: *Source
+      page: 226
+    contents:
+      prompts:
+        name: Prompts
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 226
+        rows:
+          - roll: { min: 1, max: 20 }
+            text: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
+            oracle_rolls:
+              - auto: true
+                oracle: sundered_isles/oracles/core/action
+              - auto: true
+                oracle: sundered_isles/oracles/core/theme
+          - roll: { min: 21, max: 40 }
+            text: '[Action](id:sundered_isles/oracles/core/action) + [Focus](id:sundered_isles/oracles/core/focus)'
+            oracle_rolls:
+              - auto: true
+                oracle: sundered_isles/oracles/core/action
+              - auto: true
+                oracle: sundered_isles/oracles/core/focus
+          - roll: { min: 41, max: 60 }
+            text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Theme](id:sundered_isles/oracles/core/theme)'
+            oracle_rolls:
+              - auto: true
+                oracle: sundered_isles/oracles/core/descriptor
+              - auto: true
+                oracle: sundered_isles/oracles/core/theme
+          - roll: { min: 61, max: 80 }
+            text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+            oracle_rolls:
+              - auto: true
+                oracle: sundered_isles/oracles/core/descriptor
+              - auto: true
+                oracle: sundered_isles/oracles/core/focus
+          - roll: { min: 81, max: 100 }
+            text: '[Action](id:sundered_isles/oracles/core/action) + [Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+            oracle_rolls:
+              - auto: true
+                oracle: sundered_isles/oracles/core/action
+              - auto: true
+                oracle: sundered_isles/oracles/core/descriptor
+              - auto: true
+                oracle: sundered_isles/oracles/core/focus
+      interlude_scene:
+        name: Interlude Scene
+        type: oracle_rollable
+        oracle_type: table_text2
+        column_labels:
+          roll: Roll
+          text: Result
+          text2: Questions to Consider
+        _source:
+          <<: *Source
+          page: 228
+        rows:
+          - roll: { min: 1, max: 4 }
+            text: Chronicle your adventures
+            text2: What do you describe within logs, journals, or maps? What adventure still calls to you?
+          - roll: { min: 5, max: 8 }
+            text: Commune with nature
+            text2: What flora or fauna do you encounter? What inspiration do you draw from the experience?
+          - roll: { min: 9, max: 11 }
+            text: Concoct a plan
+            text2: What new strategy do you devise? How will you put this plan in motion?
+          - roll: { min: 12, max: 14 }
+            text: Conduct research
+            text2: What is the nature of the research? What information or insight do you gain?
+          - roll: { min: 15, max: 17 }
+            text: Conduct training
+            text2: What skills or knowledge do you share? Who accepts the guidance, and who resists it?
+          - roll: { min: 18, max: 20 }
+            text: Confess a secret
+            text2: What do you reveal of your nature or background? How do others respond?
+          - roll: { min: 21, max: 24 }
+            text: Conjure up the past
+            text2: What is the subject of this reminiscence? Why is it meaningful in this moment?
+          - roll: { min: 25, max: 27 }
+            text: Create an object or artwork
+            text2: What do you create? What is it intended for?
+          - roll: { min: 28, max: 31 }
+            text: Experience a dream or vision
+            text2: What is the nature of the dream or vision? What meaning do you draw from it?
+          - roll: { min: 32, max: 34 }
+            text: Fight in a sparring match
+            text2: Who do you spar with? What issues do you provoke or resolve during the match?
+          - roll: { min: 35, max: 37 }
+            text: Find peace
+            text2: How do you reflect, meditate, or pray? What enlightenment do you gain?
+          - roll: { min: 38, max: 40 }
+            text: Hear a confession
+            text2: Who shares an aspect of their nature or background? What do they reveal?
+          - roll: { min: 41, max: 43 }
+            text: Indulge a vice
+            text2: What weakness or need do you indulge? How is this viewed by others?
+          - roll: { min: 44, max: 47 }
+            text: Join an event
+            text2: What is the occasion of this social gathering? How do you participate?
+          - roll: { min: 48, max: 50 }
+            text: Lead or join a song
+            text2: What is the subject of this song? Why is it meaningful to you or others?
+          - roll: { min: 51, max: 53 }
+            text: Motivate others
+            text2: Why is this motivation needed, and what is your approach? How do they respond?
+          - roll: { min: 54, max: 56 }
+            text: Play a game
+            text2: Who do you play with? What is discussed during the game?
+          - roll: { min: 57, max: 60 }
+            text: Practice a skill
+            text2: What talent do you hone? What do you learn from the exercise?
+          - roll: { min: 61, max: 64 }
+            text: Ready your gear
+            text2: How do you maintain your equipment or gear up? What are you preparing for?
+          - roll: { min: 65, max: 67 }
+            text: Record a message
+            text2: Who is the message meant for? What news or feelings do you share?
+          - roll: { min: 68, max: 70 }
+            text: Reinvent your look
+            text2: What inspires you to remake yourself? How do you debut your new look?
+          - roll: { min: 71, max: 73 }
+            text: Settle a conflict
+            text2: What caused this argument or fight? How do you resolve the situation?
+          - roll: { min: 74, max: 76 }
+            text: Share intimacy
+            text2: Who do you spend time with? How does your relationship evolve?
+          - roll: { min: 77, max: 79 }
+            text: Share your heritage
+            text2: What do you offer of your family's or people's history? What memory or regret does it evoke?
+          - roll: { min: 80, max: 82 }
+            text: Stay vigilant
+            text2: What are you on the lookout for? What do you spot or overhear?
+          - roll: { min: 83, max: 85 }
+            text: Stir up trouble
+            text2: What conflict do you incite or inflame? Why is the situation left unresolved?
+          - roll: { min: 86, max: 89 }
+            text: Take in the view
+            text2: What sublime or dramatic scenery do you witness? What emotion or memory does it inspire?
+          - roll: { min: 90, max: 92 }
+            text: Tell a tale
+            text2: What is the nature of this myth or legend? What emotion or lesson lingers after the telling?
+          - roll: { min: 93, max: 96 }
+            text: Undertake a communal labor
+            text2: What demanding project do you embark on with others? How does this bring you closer together?
+          - roll: { min: 97, max: 100 }
+            text: Undertake a menial task
+            text2: What solitary chore do you perform? What do you daydream about as you work?
+      story_complication:
+        name: Story Complication
+        type: oracle_rollable
+        oracle_type: table_text
+        summary: This oracle will introduce narrative turns, troubles, and revelations. It can be used as an alternative to the [Pay the Price](id:starforged/oracles/moves/pay_the_price) table when you encounter a negative outcome at a crucial moment. In particular, you might use this table after rolling matched 10s on the challenge dice.
+        _source:
+          <<: *Source
+          page: 230
+        rows:
+          - roll: { min: 1, max: 4 }
+            text: Crucial resource or equipment fails
+          - roll: { min: 5, max: 7 }
+            text: Crucial resource or equipment is sabotaged
+          - roll: { min: 8, max: 10 }
+            text: Debt or promise comes due
+          - roll: { min: 11, max: 14 }
+            text: Enemy reveals unexpected powers, abilities, or influence
+          - roll: { min: 15, max: 17 }
+            text: Enemy reveals their true agenda or nature
+          - roll: { min: 18, max: 20 }
+            text: Enemy unexpectedly benefits from your actions
+          - roll: { min: 21, max: 23 }
+            text: Key location is made inaccessible
+          - roll: { min: 24, max: 26 }
+            text: Key location is threatened or made unsafe
+          - roll: { min: 27, max: 29 }
+            text: Natural disaster is imminent
+          - roll: { min: 30, max: 33 }
+            text: Needed item or resource is unavailable
+          - roll: { min: 34, max: 36 }
+            text: Object of a quest is not what you assumed
+          - roll: { min: 37, max: 39 }
+            text: Old enemy resurfaces
+          - roll: { min: 40, max: 42 }
+            text: Simultaneous problems force a hard choice
+          - roll: { min: 43, max: 45 }
+            text: Someone important betrays your trust
+          - roll: { min: 46, max: 48 }
+            text: Someone important is threatened or endangered
+          - roll: { min: 49, max: 51 }
+            text: Someone important reveals their problematic secret or history
+          - roll: { min: 52, max: 54 }
+            text: Something important goes missing
+          - roll: { min: 55, max: 57 }
+            text: Resource, equipment, or device is shown to have unexpected effects
+          - roll: { min: 58, max: 61 }
+            text: Time pressure suddenly increases
+          - roll: { min: 62, max: 65 }
+            text: Trap is sprung
+          - roll: { min: 66, max: 68 }
+            text: True agenda of a connection or patron is revealed
+          - roll: { min: 69, max: 72 }
+            text: Trusted information is shown to be false
+          - roll: { min: 73, max: 76 }
+            text: Two seemingly unrelated problems are shown to be connected
+          - roll: { min: 77, max: 80 }
+            text: Undermined by self-doubt or vulnerabilities
+          - roll: { min: 81, max: 84 }
+            text: Unexpected enemies appear
+          - roll: { min: 85, max: 88 }
+            text: Urgent message distracts you from your quest
+          - roll: { min: 89, max: 92 }
+            text: You are tracked or followed
+          - roll: { min: 93, max: 95 }
+            text: You were diverted from the true crisis
+          - roll: { min: 96, max: 100 }
+            text: Roll twice
+            oracle_rolls:
+              - auto: true
+                number_of_rolls: 2
+                duplicates: reroll
+      story_clue:
+        name: Story Clue
+        type: oracle_rollable
+        oracle_type: table_text
+        summary: When you [Gather Information](id:starforged/moves/adventure/gather_information) to investigate a mystery, you might uncover clues in the form of messages, records, rumors, eyewitness reports, or physical evidence. You can use this oracle to help reveal what this evidence connects to or implicates. Then, use the outcome of the [Gather Information](id:starforged/moves/adventure/gather_information) roll—strong hit, weak hit, or miss—to guide whether the clue brings clarity or complications.
+        _source:
+          <<: *Source
+          page: 231
+        rows:
+          - roll: { min: 1, max: 3 }
+            text: Affirms a previously understood fact or clue
+          - roll: { min: 4, max: 6 }
+            text: Connects to a known rumor or scandal
+          - roll: { min: 7, max: 9 }
+            text: Connects to a previously unrelated mystery or quest
+          - roll: { min: 10, max: 12 }
+            text: Connects to your own expertise or interests
+          - roll: { min: 13, max: 15 }
+            text: Contradicts a previously understood fact or clue
+          - roll: { min: 16, max: 18 }
+            text: Evokes a personal memory
+          - roll: { min: 19, max: 21 }
+            text: Evokes a remarkable anomaly or phenomenon
+          - roll: { min: 22, max: 24 }
+            text: Evokes a vision or prophecy
+          - roll: { min: 25, max: 27 }
+            text: Involves a cultural touchstone
+          - roll: { min: 28, max: 30 }
+            text: Involves a hidden or mysterious faction
+          - roll: { min: 31, max: 33 }
+            text: Involves a hidden or mysterious person
+          - roll: { min: 34, max: 36 }
+            text: Involves a key or means of access
+          - roll: { min: 37, max: 39 }
+            text: Involves a machine or technology
+          - roll: { min: 40, max: 42 }
+            text: Involves a non-human being or creature
+          - roll: { min: 43, max: 45 }
+            text: Involves a notable faction
+          - roll: { min: 46, max: 48 }
+            text: Involves a notable person
+          - roll: { min: 49, max: 51 }
+            text: Involves a person or faction from your background
+          - roll: { min: 52, max: 54 }
+            text: Involves a personal item
+          - roll: { min: 55, max: 57 }
+            text: Involves an enemy or rival
+          - roll: { min: 58, max: 60 }
+            text: Involves an organism or biological evidence
+          - roll: { min: 61, max: 63 }
+            text: Involves an unusual ability or power
+          - roll: { min: 64, max: 66 }
+            text: Involves someone you trust
+          - roll: { min: 67, max: 69 }
+            text: Involves something rare, expensive, or precious
+          - roll: { min: 70, max: 72 }
+            text: Leads to a distant or unfamiliar place
+          - roll: { min: 73, max: 75 }
+            text: Leads to a hidden or forgotten place
+          - roll: { min: 76, max: 78 }
+            text: Leads to a nearby or familiar place
+          - roll: { min: 79, max: 81 }
+            text: Leads to a notable or central place
+          - roll: { min: 82, max: 84 }
+            text: Suggests a history of similar incidents
+          - roll: { min: 85, max: 87 }
+            text: Suggests a looming event or deadline
+          - roll: { min: 88, max: 90 }
+            text: Suggests an impostor or forgery
+          - roll: { min: 91, max: 100 }
+            text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+            oracle_rolls:
+              - auto: true
+                oracle: sundered_isles/oracles/core/descriptor
+              - auto: true
+                oracle: sundered_isles/oracles/core/focus
+      combat_action:
+        name: Combat Action
+        type: oracle_rollable
+        oracle_type: table_text
+        summary: Use this oracle to help inspire an action for a foe in a fight. When you’re not sure what an enemy does next, particularly when they have you in a bad spot, roll on this table and interpret the result as appropriate to the nature of the enemy and battleground.
+        _source:
+          <<: *Source
+          page: 232
+        rows:
+          - roll: { min: 1, max: 3 }
+            text: Back away or stand off
+          - roll: { min: 4, max: 6 }
+            text: Block a path or cut off an objective
+          - roll: { min: 7, max: 9 }
+            text: Change weapons or tactics
+          - roll: { min: 10, max: 12 }
+            text: Charge recklessly
+          - roll: { min: 13, max: 15 }
+            text: Compel a surrender or concession
+          - roll: { min: 16, max: 18 }
+            text: Corner, trap, or entangle
+          - roll: { min: 19, max: 21 }
+            text: Destroy something or render it useless
+          - roll: { min: 22, max: 24 }
+            text: Force off balance or out of position
+          - roll: { min: 25, max: 27 }
+            text: Hide or take cover
+          - roll: { min: 28, max: 30 }
+            text: Intimidate, taunt, or frighten
+          - roll: { min: 31, max: 33 }
+            text: Leverage the advantage of a weapon or ability
+          - roll: { min: 34, max: 36 }
+            text: Leverage the terrain or environment
+          - roll: { min: 37, max: 39 }
+            text: Lure into a vulnerable position
+          - roll: { min: 40, max: 42 }
+            text: Make a cautious or probing attack
+          - roll: { min: 43, max: 45 }
+            text: Make a ferocious or reckless attack
+          - roll: { min: 46, max: 48 }
+            text: Make a precise or careful attack
+          - roll: { min: 49, max: 51 }
+            text: Make a showy move intended to impress
+          - roll: { min: 52, max: 54 }
+            text: Maneuver to a better position
+          - roll: { min: 55, max: 57 }
+            text: Move in close or grapple
+          - roll: { min: 58, max: 60 }
+            text: Perform a feint or trick
+          - roll: { min: 61, max: 63 }
+            text: Prepare or bolster a defense
+          - roll: { min: 64, max: 66 }
+            text: Press an advantage
+          - roll: { min: 67, max: 69 }
+            text: Provoke a careless response
+          - roll: { min: 70, max: 72 }
+            text: Ready a decisive strike
+          - roll: { min: 73, max: 75 }
+            text: Recover or repair
+          - roll: { min: 76, max: 78 }
+            text: Reveal an unexpected ability or weapon
+          - roll: { min: 79, max: 81 }
+            text: Seize a weapon or resource
+          - roll: { min: 82, max: 84 }
+            text: Seize or overrun a position
+          - roll: { min: 85, max: 87 }
+            text: Shift the fight to a new area
+          - roll: { min: 88, max: 90 }
+            text: Signal or summon aid
+          - roll: { min: 91, max: 93 }
+            text: Use a decoy or distraction
+          - roll: { min: 94, max: 96 }
+            text: Use an unexpected weapon or ability
+          - roll: { min: 97, max: 100 }
+            text: Roll twice
+            oracle_rolls:
+              - auto: true
+                number_of_rolls: 2
+                duplicates: keep
+      sea_battle_features:
+        name: Sea Battle Features
+        type: oracle_rollable
+        oracle_type: table_text
+        recommended_rolls: { min: 1, max: 2 }
+        summary: Use this table to introduce terrain and environment features for a sea battle. This can help enliven the battle with obstacles and opportunities.
+        _source:
+          <<: *Source
+          page: 233
+        rows:
+          - roll: { min: 1, max: 2 }
+            text: Adrift mariners
+          - roll: { min: 3, max: 6 }
+            text: Congregating creatures
+          - roll: { min: 7, max: 10 }
+            text: Deepening night
+          - roll: { min: 11, max: 18 }
+            text: Expanse of rocky shoals
+          - roll: { min: 19, max: 24 }
+            text: Exposed sandbar
+          - roll: { min: 25, max: 30 }
+            text: Fast-changing tide
+          - roll: { min: 31, max: 36 }
+            text: Floating debris
+          - roll: { min: 37, max: 44 }
+            text: Fog bank
+          - roll: { min: 45, max: 46 }
+            text: Incoming rogue wave
+          - roll: { min: 47, max: 52 }
+            text: Large rocky islet
+          - roll: { min: 53, max: 56 }
+            text: Large sea creature
+          - roll: { min: 57, max: 60 }
+            text: Row of tall sea stacks
+          - roll: { min: 61, max: 62 }
+            text: Ship graveyard
+          - roll: { min: 63, max: 66 }
+            text: Smoking sea volcano
+          - roll: { min: 67, max: 72 }
+            text: Strong currents
+          - roll: { min: 73, max: 76 }
+            text: Swirling whirlpool
+          - roll: { min: 77, max: 78 }
+            text: Thickly-packed seaweed
+          - roll: { min: 79, max: 84 }
+            text: Tideswept reef
+          - roll: { min: 85, max: 90 }
+            text: '[Foul Weather](id:sundered_isles/oracles/weather/foul)'
+            oracle_rolls:
+              - auto: false
+                number_of_rolls: 1
+                oracle: sundered_isles/oracles/weather/foul
+          - roll: { min: 91, max: 96 }
+            text: '[Shipwreck](id:sundered_isles/collections/oracles/shipwreck)'
+          - roll: { min: 97, max: 100 }
+            text: '[Ruin](id:sundered_isles/collections/oracles/ruin)'
+    collections:
+      magnitude:
+        name: Magnitude
+        type: oracle_collection
+        oracle_type: table_shared_rolls
+        _source:
+          <<: *Source
+          page: 226
+        contents:
+          size:
+            name: Size
+            type: oracle_rollable
+            oracle_type: column_text
+            rows:
+              - <<: &Magnitude.0
+                  roll: { min: 1, max: 15 }
+                text: Undersized
+              - <<: &Magnitude.1
+                  roll: { min: 16, max: 35 }
+                text: Small
+              - <<: &Magnitude.2
+                  roll: { min: 36, max: 65 }
+                text: Medium
+              - <<: &Magnitude.3
+                  roll: { min: 66, max: 85 }
+                text: Large
+              - <<: &Magnitude.4
+                  roll: { min: 86, max: 100 }
+                text: Huge
+          number:
+            name: Number
+            type: oracle_rollable
+            oracle_type: column_text
+            rows:
+              - <<: *Magnitude.0
+                text: None / one
+              - <<: *Magnitude.1
+                text: Few
+              - <<: *Magnitude.2
+                text: Several
+              - <<: *Magnitude.3
+                text: Many
+              - <<: *Magnitude.4
+                text: Countless
+          distance:
+            name: Distance
+            type: oracle_rollable
+            oracle_type: column_text
+            rows:
+              - <<: *Magnitude.0
+                text: Very close
+              - <<: *Magnitude.1
+                text: Near
+              - <<: *Magnitude.2
+                text: Far
+              - <<: *Magnitude.3
+                text: Remote
+              - <<: *Magnitude.4
+                text: Inaccessible
+          speed:
+            name: Speed
+            type: oracle_rollable
+            oracle_type: column_text
+            rows:
+              - <<: *Magnitude.0
+                text: Immobile
+              - <<: *Magnitude.1
+                text: Slow
+              - <<: *Magnitude.2
+                text: Medium
+              - <<: *Magnitude.3
+                text: Fast
+              - <<: *Magnitude.4
+                text: Very fast
+          power:
+            name: Power
+            type: oracle_rollable
+            oracle_type: column_text
+            rows:
+              - <<: *Magnitude.0
+                text: Weak
+              - <<: *Magnitude.1
+                text: Minor
+              - <<: *Magnitude.2
+                text: Moderate
+              - <<: *Magnitude.3
+                text: Strong
+              - <<: *Magnitude.4
+                text: Overwhelming
+          complexity:
+            name: Complexity
+            type: oracle_rollable
+            oracle_type: column_text
+            rows:
+              - <<: *Magnitude.0
+                text: Simple
+              - <<: *Magnitude.1
+                text: Basic
+              - <<: *Magnitude.2
+                text: Manageable
+              - <<: *Magnitude.3
+                text: Complicated
+              - <<: *Magnitude.4
+                text: Bewildering
+          quality:
+            name: Quality
+            type: oracle_rollable
+            oracle_type: column_text
+            rows:
+              - <<: *Magnitude.0
+                text: Broken
+              - <<: *Magnitude.1
+                text: Fragile
+              - <<: *Magnitude.2
+                text: Reliable
+              - <<: *Magnitude.3
+                text: Durable
+              - <<: *Magnitude.4
+                text: Indestructible
+          value:
+            name: Value
+            type: oracle_rollable
+            oracle_type: column_text
+            rows:
+              - <<: *Magnitude.0
+                text: Worthless
+              - <<: *Magnitude.1
+                text: Cheap
+              - <<: *Magnitude.2
+                text: Common
+              - <<: *Magnitude.3
+                text: Valuable
+              - <<: *Magnitude.4
+                text: Priceless
+          disposition:
+            name: Disposition
+            type: oracle_rollable
+            oracle_type: column_text
+            rows:
+              - <<: *Magnitude.0
+                text: Friendly
+              - <<: *Magnitude.1
+                text: Open
+              - <<: *Magnitude.2
+                text: Wary
+              - <<: *Magnitude.3
+                text: Threatening
+              - <<: *Magnitude.4
+                text: Hostile
+          rank:
+            name: Rank
+            type: oracle_rollable
+            oracle_type: column_text
+            rows:
+              - <<: *Magnitude.0
+                text: Troublesome
+              - <<: *Magnitude.1
+                text: Dangerous
+              - <<: *Magnitude.2
+                text: Formidable
+              - <<: *Magnitude.3
+                text: Extreme
+              - <<: *Magnitude.4
+                text: Epic
+      local_seas:
+        name: Local Seas
+        type: oracle_collection
+        oracle_type: table_shared_rolls
+        _source:
+          <<: *Source
+          page: 227
+        contents:
+          prefix:
+            name: Prefix
+            type: oracle_rollable
+            oracle_type: column_text
+            rows:
+              - <<: &LocalSeas.0
+                  roll: { min: 1, max: 2 }
+                text: Ashen
+              - <<: &LocalSeas.1
+                  roll: { min: 3, max: 4 }
+                text: Barrier
+              - <<: &LocalSeas.2
+                  roll: { min: 5, max: 6 }
+                text: Bitter
+              - <<: &LocalSeas.3
+                  roll: { min: 7, max: 8 }
+                text: Blighted
+              - <<: &LocalSeas.4
+                  roll: { min: 9, max: 10 }
+                text: Bloodied
+              - <<: &LocalSeas.5
+                  roll: { min: 11, max: 12 }
+                text: Burning
+              - <<: &LocalSeas.6
+                  roll: { min: 13, max: 14 }
+                text: Crag
+              - <<: &LocalSeas.7
+                  roll: { min: 15, max: 16 }
+                text: Crimson
+              - <<: &LocalSeas.8
+                  roll: { min: 17, max: 18 }
+                text: Cursed
+              - <<: &LocalSeas.9
+                  roll: { min: 19, max: 20 }
+                text: Darkwater
+              - <<: &LocalSeas.10
+                  roll: { min: 21, max: 22 }
+                text: Dead
+              - <<: &LocalSeas.11
+                  roll: { min: 23, max: 24 }
+                text: Dread
+              - <<: &LocalSeas.12
+                  roll: { min: 25, max: 26 }
+                text: Ember
+              - <<: &LocalSeas.13
+                  roll: { min: 27, max: 28 }
+                text: Emerald
+              - <<: &LocalSeas.14
+                  roll: { min: 29, max: 30 }
+                text: Fallen
+              - <<: &LocalSeas.15
+                  roll: { min: 31, max: 32 }
+                text: Fool's
+              - <<: &LocalSeas.16
+                  roll: { min: 33, max: 34 }
+                text: Forged
+              - <<: &LocalSeas.17
+                  roll: { min: 35, max: 36 }
+                text: Forgotten
+              - <<: &LocalSeas.18
+                  roll: { min: 37, max: 38 }
+                text: Forsaken
+              - <<: &LocalSeas.19
+                  roll: { min: 39, max: 40 }
+                text: Freebooter's
+              - <<: &LocalSeas.20
+                  roll: { min: 41, max: 42 }
+                text: Gilded
+              - <<: &LocalSeas.21
+                  roll: { min: 43, max: 44 }
+                text: Golden
+              - <<: &LocalSeas.22
+                  roll: { min: 45, max: 46 }
+                text: Haunted
+              - <<: &LocalSeas.23
+                  roll: { min: 47, max: 48 }
+                text: Hidden
+              - <<: &LocalSeas.24
+                  roll: { min: 49, max: 50 }
+                text: Hollow
+              - <<: &LocalSeas.25
+                  roll: { min: 51, max: 52 }
+                text: Iron
+              - <<: &LocalSeas.26
+                  roll: { min: 53, max: 54 }
+                text: Jade
+              - <<: &LocalSeas.27
+                  roll: { min: 55, max: 56 }
+                text: Jeweled
+              - <<: &LocalSeas.28
+                  roll: { min: 57, max: 58 }
+                text: Lacuna
+              - <<: &LocalSeas.29
+                  roll: { min: 59, max: 60 }
+                text: Leviathan's
+              - <<: &LocalSeas.30
+                  roll: { min: 61, max: 62 }
+                text: Lost
+              - <<: &LocalSeas.31
+                  roll: { min: 63, max: 64 }
+                text: Morien
+              - <<: &LocalSeas.32
+                  roll: { min: 65, max: 66 }
+                text: Obsidian
+              - <<: &LocalSeas.33
+                  roll: { min: 67, max: 68 }
+                text: Outer
+              - <<: &LocalSeas.34
+                  roll: { min: 69, max: 70 }
+                text: Plunderer's
+              - <<: &LocalSeas.35
+                  roll: { min: 71, max: 72 }
+                text: Ruby
+              - <<: &LocalSeas.36
+                  roll: { min: 73, max: 74 }
+                text: Sargasso
+              - <<: &LocalSeas.37
+                  roll: { min: 75, max: 76 }
+                text: Scarred
+              - <<: &LocalSeas.38
+                  roll: { min: 77, max: 78 }
+                text: Scorched
+              - <<: &LocalSeas.39
+                  roll: { min: 79, max: 80 }
+                text: Shadow
+              - <<: &LocalSeas.40
+                  roll: { min: 81, max: 82 }
+                text: Shattered
+              - <<: &LocalSeas.41
+                  roll: { min: 83, max: 84 }
+                text: Shrouded
+              - <<: &LocalSeas.42
+                  roll: { min: 85, max: 86 }
+                text: Silent
+              - <<: &LocalSeas.43
+                  roll: { min: 87, max: 88 }
+                text: Silver
+              - <<: &LocalSeas.44
+                  roll: { min: 89, max: 90 }
+                text: Siren
+              - <<: &LocalSeas.45
+                  roll: { min: 91, max: 92 }
+                text: Stormy
+              - <<: &LocalSeas.46
+                  roll: { min: 93, max: 94 }
+                text: Stygian
+              - <<: &LocalSeas.47
+                  roll: { min: 95, max: 96 }
+                text: Sunken
+              - <<: &LocalSeas.48
+                  roll: { min: 97, max: 98 }
+                text: Veiled
+              - <<: &LocalSeas.49
+                  roll: { min: 99, max: 100 }
+                text: Whispering
+          suffix:
+            name: Suffix
+            type: oracle_rollable
+            oracle_type: column_text
+            rows:
+              - <<: *LocalSeas.0
+                text: Abyss
+              - <<: *LocalSeas.1
+                text: Anchorage
+              - <<: *LocalSeas.2
+                text: Atolls
+              - <<: *LocalSeas.3
+                text: Breach
+              - <<: *LocalSeas.4
+                text: Breakers
+              - <<: *LocalSeas.5
+                text: Brine
+              - <<: *LocalSeas.6
+                text: Cays
+              - <<: *LocalSeas.7
+                text: Channel
+              - <<: *LocalSeas.8
+                text: Chasm
+              - <<: *LocalSeas.9
+                text: Coves
+              - <<: *LocalSeas.10
+                text: Crossing
+              - <<: *LocalSeas.11
+                text: Currents
+              - <<: *LocalSeas.12
+                text: Deep
+              - <<: *LocalSeas.13
+                text: Depths
+              - <<: *LocalSeas.14
+                text: Desolation
+              - <<: *LocalSeas.15
+                text: Drift
+              - <<: *LocalSeas.16
+                text: Ebb
+              - <<: *LocalSeas.17
+                text: Expanse
+              - <<: *LocalSeas.18
+                text: Fathoms
+              - <<: *LocalSeas.19
+                text: Flow
+              - <<: *LocalSeas.20
+                text: Gate
+              - <<: *LocalSeas.21
+                text: Gulf
+              - <<: *LocalSeas.22
+                text: Gyre
+              - <<: *LocalSeas.23
+                text: Havens
+              - <<: *LocalSeas.24
+                text: Horizon
+              - <<: *LocalSeas.25
+                text: Isles
+              - <<: *LocalSeas.26
+                text: Limits
+              - <<: *LocalSeas.27
+                text: Maelstrom
+              - <<: *LocalSeas.28
+                text: Main
+              - <<: *LocalSeas.29
+                text: Maw
+              - <<: *LocalSeas.30
+                text: Morass
+              - <<: *LocalSeas.31
+                text: Oasis
+              - <<: *LocalSeas.32
+                text: Passage
+              - <<: *LocalSeas.33
+                text: Pit
+              - <<: *LocalSeas.34
+                text: Reefs
+              - <<: *LocalSeas.35
+                text: Remnants
+              - <<: *LocalSeas.36
+                text: Rift
+              - <<: *LocalSeas.37
+                text: Sanctum
+              - <<: *LocalSeas.38
+                text: Sea
+              - <<: *LocalSeas.39
+                text: Shallows
+              - <<: *LocalSeas.40
+                text: Shards
+              - <<: *LocalSeas.41
+                text: Shoals
+              - <<: *LocalSeas.42
+                text: Spine
+              - <<: *LocalSeas.43
+                text: Straits
+              - <<: *LocalSeas.44
+                text: Tempest
+              - <<: *LocalSeas.45
+                text: Threshold
+              - <<: *LocalSeas.46
+                text: Tides
+              - <<: *LocalSeas.47
+                text: Verge
+              - <<: *LocalSeas.48
+                text: Vigil
+              - <<: *LocalSeas.49
+                text: Waters
+      ship_damage:
+        name: Ship Damage
+        type: oracle_collection
+        oracle_type: table_shared_rolls
+        _source:
+          <<: *Source
+          page: 233
+        contents:
+          bothersome:
+            name: Bothersome Damage
+            type: oracle_rollable
+            oracle_type: column_text
+            rows:
+              - <<: &Damage.0
+                  roll: { min: 1, max: 10 }
+                text: Shaken morale
+              - <<: &Damage.1
+                  roll: { min: 11, max: 20 }
+                text: Minor casualties
+              - <<: &Damage.2
+                  roll: { min: 21, max: 30 }
+                text: Tangled rigging
+              - <<: &Damage.3
+                  roll: { min: 31, max: 40 }
+                text: Weakened mast
+              - <<: &Damage.4
+                  roll: { min: 41, max: 50 }
+                text: Fouled sail
+              - <<: &Damage.5
+                  roll: { min: 51, max: 55 }
+                text: Damaged rudder
+              - <<: &Damage.6
+                  roll: { min: 56, max: 65 }
+                text: Fire on deck
+              - <<: &Damage.7
+                  roll: { min: 66, max: 75 }
+                text: Swamped deck
+              - <<: &Damage.8
+                  roll: { min: 76, max: 80 }
+                text: Dismounted cannons
+              - <<: &Damage.9
+                  roll: { min: 81, max: 90 }
+                text: Battered hull
+              - <<: &Damage.10
+                  roll: { min: 91, max: 95 }
+                text: Damaged compartment,  module, or support vehicle
+              - <<: &Damage.11
+                  roll: { min: 96, max: 100 }
+                  text: Roll twice; if the same result, step up the severity
+                  oracle_rolls:
+                    - auto: true
+                      number_of_rolls: 2
+                      duplicates: make_it_worse
+          bad_damage:
+            name: Bad Damage
+            type: oracle_rollable
+            oracle_type: column_text
+            rows:
+              - <<: *Damage.0
+                text: Breaking morale
+              - <<: *Damage.1
+                text: Severe casualties
+              - <<: *Damage.2
+                text: Fraying rigging
+              - <<: *Damage.3
+                text: Splintering mast
+              - <<: *Damage.4
+                text: Torn sail
+              - <<: *Damage.5
+                text: Jammed rudder
+              - <<: *Damage.6
+                text: Fire below decks
+              - <<: *Damage.7
+                text: Flooded bilge
+              - <<: *Damage.8
+                text: Damaged cannons
+              - <<: *Damage.9
+                text: Buckling hull
+              - <<: *Damage.10
+                text: Failing compartment, module, or support vehicle
+              - *Damage.11
+          critical_damage:
+            name: Critical Damage
+            type: oracle_rollable
+            oracle_type: column_text
+            rows:
+              - <<: *Damage.0
+                text: Broken morale
+              - <<: *Damage.1
+                text: Horrible casualties
+              - <<: *Damage.2
+                text: Broken rigging
+              - <<: *Damage.3
+                text: Broken mast
+              - <<: *Damage.4
+                text: Mangled sail
+              - <<: *Damage.5
+                text: Broken rudder
+              - <<: *Damage.6
+                text: Burning magazine
+              - <<: *Damage.7
+                text: Keeling over
+              - <<: *Damage.8
+                text: Destroyed cannons
+              - <<: *Damage.9
+                text: Breached hull
+              - <<: *Damage.10
+                text: Broken compartment, module, or support vehicle
+              - *Damage.11

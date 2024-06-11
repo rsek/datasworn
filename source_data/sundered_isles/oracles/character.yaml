@@ -1,0 +1,2568 @@
+_id: sundered_isles
+datasworn_version: '0.1.0'
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-06-01
+  title: Sundered Isles
+  url: https://ironswornrpg.com
+  license: null
+  authors:
+    - name: Shawn Tomkin
+oracles:
+  character:
+    name: Character Oracles
+    type: oracle_collection
+    oracle_type: tables
+    summary: When encountering a character, focus on what you learn or perceive as a first impression using tables such as [First Look](id:sundered_isles/oracles/character/first_look) and [Initial Disposition](id:sundered_isles/oracles/character/initial_disposition). Then envision or generate additional details over time.
+    _source:
+      <<: *Source
+      page: 186
+    contents:
+      first_look:
+        name: Character First Look
+        type: oracle_rollable
+        oracle_type: table_text
+        recommended_rolls: { min: 1, max: 2 }
+        tags:
+          sundered_isles:
+            cursed_by: sundered_isles/oracles/character/first_look_cursed
+        _source:
+          <<: *Source
+          page: 186
+        rows:
+          - roll: { min: 1, max: 2 }
+            text: Accented
+          - roll: { min: 3, max: 5 }
+            text: Aged
+          - roll: { min: 6, max: 8 }
+            text: Alluring
+          - roll: { min: 9, max: 11 }
+            text: Attractive
+          - roll: { min: 12, max: 14 }
+            text: Brutish
+          - roll: { min: 15, max: 17 }
+            text: Commanding
+          - roll: { min: 18, max: 20 }
+            text: Concealed
+          - roll: { min: 21, max: 22 }
+            text: Distinguished
+          - roll: { min: 23, max: 25 }
+            text: Distressed
+          - roll: { min: 26, max: 28 }
+            text: Drunk
+          - roll: { min: 29, max: 30 }
+            text: Encumbered
+          - roll: { min: 31, max: 32 }
+            text: Fearsome
+          - roll: { min: 33, max: 34 }
+            text: Fit
+          - roll: { min: 35, max: 37 }
+            text: Flashy
+          - roll: { min: 38, max: 39 }
+            text: Furtive
+          - roll: { min: 40, max: 41 }
+            text: Graceful
+          - roll: { min: 42, max: 43 }
+            text: Grim
+          - roll: { min: 44, max: 45 }
+            text: Guarded
+          - roll: { min: 46, max: 47 }
+            text: Haggard
+          - roll: { min: 48, max: 49 }
+            text: Ill-equipped
+          - roll: { min: 50, max: 52 }
+            text: Imposing
+          - roll: { min: 53, max: 55 }
+            text: Mysterious
+          - roll: { min: 56, max: 57 }
+            text: Mystical
+          - roll: { min: 58, max: 59 }
+            text: Poised
+          - roll: { min: 60, max: 61 }
+            text: Purposeful
+          - roll: { min: 62, max: 63 }
+            text: Pursued
+          - roll: { min: 64, max: 66 }
+            text: Scarred
+          - roll: { min: 67, max: 68 }
+            text: Sickly
+          - roll: { min: 69, max: 70 }
+            text: Slight
+          - roll: { min: 71, max: 72 }
+            text: Stout
+          - roll: { min: 73, max: 74 }
+            text: Swaggering
+          - roll: { min: 75, max: 77 }
+            text: Tattooed
+          - roll: { min: 78, max: 80 }
+            text: Theatrical
+          - roll: { min: 81, max: 83 }
+            text: Threatened
+          - roll: { min: 84, max: 85 }
+            text: Unassuming
+          - roll: { min: 86, max: 88 }
+            text: Uniformed
+          - roll: { min: 89, max: 91 }
+            text: Visibly disabled
+          - roll: { min: 92, max: 94 }
+            text: Well-armed
+          - roll: { min: 95, max: 97 }
+            text: Wounded
+          - roll: { min: 98, max: 100 }
+            text: Youthful
+      first_look_cursed:
+        name: Cursed Character First Look
+        type: oracle_rollable
+        oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/character/first_look
+            curse_behavior: replace_result
+        _source:
+          <<: *Source
+          page: 186
+        rows:
+          - roll: { min: 1, max: 10 }
+            text: Abyssal
+          - roll: { min: 11, max: 15 }
+            text: Aflame
+          - roll: { min: 16, max: 20 }
+            text: Beastly
+          - roll: { min: 21, max: 30 }
+            text: Decaying
+          - roll: { min: 31, max: 45 }
+            text: Eerie
+          - roll: { min: 46, max: 55 }
+            text: Ghostly
+          - roll: { min: 56, max: 65 }
+            text: Grotesque
+          - roll: { min: 66, max: 75 }
+            text: Mechanical
+          - roll: { min: 76, max: 80 }
+            text: Shadowy
+          - roll: { min: 81, max: 85 }
+            text: Sinister
+          - roll: { min: 86, max: 95 }
+            text: Sorcerous
+          - roll: { min: 96, max: 100 }
+            text: Transforming
+      initial_disposition:
+        name: Character Disposition
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 187
+        rows:
+          - roll: { min: 1, max: 10 }
+            text: Helpful
+          - roll: { min: 11, max: 15 }
+            text: Friendly
+          - roll: { min: 16, max: 20 }
+            text: Persuadable
+          - roll: { min: 21, max: 30 }
+            text: Curious
+          - roll: { min: 31, max: 45 }
+            text: Indifferent
+          - roll: { min: 46, max: 55 }
+            text: Suspicious
+          - roll: { min: 56, max: 65 }
+            text: Wanting
+          - roll: { min: 66, max: 75 }
+            text: Desperate
+          - roll: { min: 76, max: 80 }
+            text: Demanding
+          - roll: { min: 81, max: 85 }
+            text: Unfriendly
+          - roll: { min: 86, max: 95 }
+            text: Threatening
+          - roll: { min: 96, max: 100 }
+            text: Hostile
+      roles:
+        name: Character Roles
+        type: oracle_rollable
+        oracle_type: table_text
+        summary: Envision a character’s background or occupation using the broad categories below. For more detail, check the related subtable.
+        _source:
+          <<: *Source
+          page: 187
+        rows:
+          - roll: { min: 1, max: 5 }
+            text: '[Academic](id:sundered_isles/oracles/character/role_details/academic)'
+          - roll: { min: 6, max: 10 }
+            text: '[Agent](id:sundered_isles/oracles/character/role_details/agent)'
+          - roll: { min: 11, max: 15 }
+            text: '[Caregiver](id:sundered_isles/oracles/character/role_details/caregiver)'
+          - roll: { min: 16, max: 20 }
+            text: '[Combatant](id:sundered_isles/oracles/character/role_details/combatant)'
+          - roll: { min: 21, max: 25 }
+            text: '[Devotant](id:sundered_isles/oracles/character/role_details/devotant)'
+          - roll: { min: 26, max: 30 }
+            text: '[Laborer](id:sundered_isles/oracles/character/role_details/laborer)'
+          - roll: { min: 31, max: 35 }
+            text: '[Merchant](id:sundered_isles/oracles/character/role_details/merchant)'
+          - roll: { min: 36, max: 40 }
+            text: '[Mystic](id:sundered_isles/oracles/character/role_details/mystic)'
+          - roll: { min: 41, max: 45 }
+            text: '[Outcast](id:sundered_isles/oracles/character/role_details/outcast)'
+          - roll: { min: 46, max: 50 }
+            text: '[Outlander](id:sundered_isles/oracles/character/role_details/outlander)'
+          - roll: { min: 51, max: 55 }
+            text: '[Outlaw](id:sundered_isles/oracles/character/role_details/outlaw)'
+          - roll: { min: 56, max: 60 }
+            text: '[Performer](id:sundered_isles/oracles/character/role_details/performer)'
+          - roll: { min: 61, max: 70 }
+            text: '[Sailor](id:sundered_isles/oracles/character/role_details/sailor)'
+          - roll: { min: 71, max: 75 }
+            text: '[Scavenger](id:sundered_isles/oracles/character/role_details/scavenger)'
+          - roll: { min: 76, max: 80 }
+            text: '[Statesperson](id:sundered_isles/oracles/character/role_details/statesperson)'
+          - roll: { min: 81, max: 85 }
+            text: '[Tradesperson](id:sundered_isles/oracles/character/role_details/tradesperson)'
+          - roll: { min: 86, max: 95 }
+            text: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
+            oracle_rolls:
+              - auto: true
+                oracle: sundered_isles/oracles/core/action
+              - auto: true
+                oracle: sundered_isles/oracles/core/theme
+          - roll: { min: 96, max: 100 }
+            text: Roll twice
+            oracle_rolls:
+              - auto: true
+                number_of_rolls: 2
+                duplicates: reroll
+      trademark_accessories:
+        name: Trademark Accessories
+        type: oracle_rollable
+        oracle_type: table_text
+        recommended_rolls: { min: 1, max: 2 }
+        summary: This table includes conspicuous gear, adornment, and clothing. Use it to help envision the look of a notable character, particularly one who is a seafarer or adventurer. To arm them with a favorite weapon, check [Trademark Weapons](id:sundered_isles/oracles/character/trademark_weapons).
+        _source:
+          <<: *Source
+          page: 190
+        rows:
+          - roll: { min: 1, max: 2 }
+            text: Animal claw necklace
+          - roll: { min: 3, max: 4 }
+            text: Array of colorful sashes
+          - roll: { min: 5, max: 6 }
+            text: Baldric with a buckle of a monstrous face
+          - roll: { min: 7, max: 8 }
+            text: Bandoleer stocked with vials and flasks
+          - roll: { min: 9, max: 10 }
+            text: Battle-scarred breastplate
+          - roll: { min: 11, max: 12 }
+            text: Bloodied tunic
+          - roll: { min: 13, max: 14 }
+            text: Braids strung with colorful beads
+          - roll: { min: 15, max: 16 }
+            text: Buckled corset
+          - roll: { min: 17, max: 18 }
+            text: Collection of keys hung from an iron ring
+          - roll: { min: 19, max: 20 }
+            text: Colorful skirt or kilt
+          - roll: { min: 21, max: 22 }
+            text: Cracked spectacles or goggles
+          - roll: { min: 23, max: 24 }
+            text: Dark hooded cloak
+          - roll: { min: 25, max: 26 }
+            text: Dramatic cape
+          - roll: { min: 27, max: 28 }
+            text: Ear pendant with a glimmering gem
+          - roll: { min: 29, max: 30 }
+            text: Elaborate masquerade mask
+          - roll: { min: 31, max: 32 }
+            text: Enormous shark tooth pendant
+          - roll: { min: 33, max: 34 }
+            text: Face-concealing veil or bandanna
+          - roll: { min: 35, max: 36 }
+            text: False eye carved from a gemstone
+          - roll: { min: 37, max: 38 }
+            text: Fancy wig
+          - roll: { min: 39, max: 40 }
+            text: Flamboyant feathered hat
+          - roll: { min: 41, max: 42 }
+            text: Frayed straw hat
+          - roll: { min: 43, max: 44 }
+            text: Grand signet ring
+          - roll: { min: 45, max: 46 }
+            text: Heirloom fiddle with brass gilding
+          - roll: { min: 47, max: 48 }
+            text: Hook hand
+          - roll: { min: 49, max: 50 }
+            text: Immaculate frilled shirt
+          - roll: { min: 51, max: 52 }
+            text: Inscrutable iron mask
+          - roll: { min: 53, max: 54 }
+            text: Intricate mechanical prosthetic
+          - roll: { min: 55, max: 56 }
+            text: Jewel-encrusted pendant
+          - roll: { min: 57, max: 58 }
+            text: Jeweled eye patch
+          - roll: { min: 59, max: 60 }
+            text: Knee-high leather boots
+          - roll: { min: 61, max: 62 }
+            text: Large tattoo of a legendary beast
+          - roll: { min: 63, max: 64 }
+            text: Leather long coat
+          - roll: { min: 65, max: 66 }
+            text: Length of coiled rope
+          - roll: { min: 67, max: 68 }
+            text: Loyal animal companion
+          - roll: { min: 69, max: 70 }
+            text: Metal teeth
+          - roll: { min: 71, max: 72 }
+            text: Old wounds patched with metal
+          - roll: { min: 73, max: 74 }
+            text: Ornately carved wooden pegleg
+          - roll: { min: 75, max: 76 }
+            text: Ostentatious cane
+          - roll: { min: 77, max: 78 }
+            text: Out of tune squeeze box
+          - roll: { min: 79, max: 80 }
+            text: Oversized spyglass
+          - roll: { min: 81, max: 82 }
+            text: Rakish, wide-brimmed hat
+          - roll: { min: 83, max: 84 }
+            text: Rows of military medals
+          - roll: { min: 85, max: 86 }
+            text: Satchel of tools
+          - roll: { min: 87, max: 88 }
+            text: Sharkhide cuirass
+          - roll: { min: 89, max: 90 }
+            text: Shoulder-slung map case
+          - roll: { min: 91, max: 92 }
+            text: Skull-like mask
+          - roll: { min: 93, max: 94 }
+            text: Tailcoat with gold trim and epaulets
+          - roll: { min: 95, max: 96 }
+            text: Tricorn hat with holes from near misses
+          - roll: { min: 97, max: 98 }
+            text: Wooden religious medallion
+          - roll: { min: 99, max: 100 }
+            text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+            oracle_rolls:
+              - auto: true
+                oracle: sundered_isles/oracles/core/descriptor
+              - auto: true
+                oracle: sundered_isles/oracles/core/focus
+      trademark_weapons:
+        name: Trademark Weapons
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 191
+        rows:
+          - roll: { min: 1, max: 3 }
+            text: Barbed gaff hook
+          - roll: { min: 4, max: 6 }
+            text: Battle-worn boarding axe
+          - roll: { min: 7, max: 9 }
+            text: Bloodied belaying pin
+          - roll: { min: 10, max: 12 }
+            text: Brace of pearl-handled pistols
+          - roll: { min: 13, max: 15 }
+            text: Brace of throwing knives
+          - roll: { min: 16, max: 17 }
+            text: Brass knuckle dusters
+          - roll: { min: 18, max: 19 }
+            text: Broad-bladed machete
+          - roll: { min: 20, max: 22 }
+            text: Cannon ball flail
+          - roll: { min: 23, max: 25 }
+            text: Cavalry saber
+          - roll: { min: 26, max: 27 }
+            text: Collapsible boarding pike
+          - roll: { min: 28, max: 30 }
+            text: Double-barreled pistol
+          - roll: { min: 31, max: 33 }
+            text: Fancy rapier with silver-etched hilt
+          - roll: { min: 34, max: 35 }
+            text: Gilded heirloom crossbow
+          - roll: { min: 36, max: 37 }
+            text: Grappling hook and frayed rope
+          - roll: { min: 38, max: 39 }
+            text: Handheld swivel cannon
+          - roll: { min: 40, max: 42 }
+            text: Harpoon notched with victory marks
+          - roll: { min: 43, max: 44 }
+            text: Hunting knife with antler handle
+          - roll: { min: 45, max: 47 }
+            text: Iron-shod staff
+          - roll: { min: 48, max: 50 }
+            text: Large bore blunderbuss
+          - roll: { min: 51, max: 52 }
+            text: Leather whip
+          - roll: { min: 53, max: 55 }
+            text: Military cutlass
+          - roll: { min: 56, max: 58 }
+            text: Musket with keen-edged bayonet
+          - roll: { min: 59, max: 61 }
+            text: Pair of hooked swords
+          - roll: { min: 62, max: 63 }
+            text: Pair of matching hatchets
+          - roll: { min: 64, max: 65 }
+            text: Paired rapier and dirk
+          - roll: { min: 66, max: 68 }
+            text: Poisoned dagger with obsidian handle
+          - roll: { min: 69, max: 70 }
+            text: Rusted iron chain
+          - roll: { min: 71, max: 72 }
+            text: Scrimshaw handle dirk
+          - roll: { min: 73, max: 75 }
+            text: Serrated, blade-breaking sword
+          - roll: { min: 76, max: 78 }
+            text: Shark tooth club
+          - roll: { min: 79, max: 81 }
+            text: Shipwright's hammer
+          - roll: { min: 82, max: 84 }
+            text: Shrapnel-filled iron grenades
+          - roll: { min: 85, max: 86 }
+            text: Spring-loaded gauntlet blade
+          - roll: { min: 87, max: 89 }
+            text: Sword cane
+          - roll: { min: 90, max: 92 }
+            text: Toxic stinkpot grenades
+          - roll: { min: 93, max: 95 }
+            text: Whale bone club
+          - roll: { min: 96, max: 97 }
+            text: Wooden bow
+          - roll: { min: 98, max: 100 }
+            text: Roll twice
+            oracle_rolls:
+              - auto: true
+                number_of_rolls: 2
+                duplicates: keep
+      weapon_detail_cursed:
+        name: Cursed Weapon Detail
+        type: oracle_rollable
+        oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/character/trademark_weapons
+            curse_behavior: add_result
+        summary: If you roll a [Trademark Weapon](id:sundered_isles/oracles/character/trademark_weapons) curse, take your result and give that weapon a cursed aspect from the table below.
+        _source:
+          <<: *Source
+          page: 191
+        rows:
+          - roll: { min: 1, max: 5 }
+            text: Adorned with bone or skull motifs
+          - roll: { min: 6, max: 15 }
+            text: Bound to a vengeful spirit
+          - roll: { min: 16, max: 20 }
+            text: Burning with intense flame
+          - roll: { min: 21, max: 25 }
+            text: Charged with arcane energy
+          - roll: { min: 26, max: 30 }
+            text: Consumes the souls of its victims
+          - roll: { min: 31, max: 35 }
+            text: Dripping with foul ichor
+          - roll: { min: 36, max: 40 }
+            text: Enveloped in icy frost
+          - roll: { min: 41, max: 45 }
+            text: Etched with sinister glyphs
+          - roll: { min: 46, max: 50 }
+            text: Feeding upon the lifeforce of its wielder
+          - roll: { min: 51, max: 55 }
+            text: Inflicts festering wounds
+          - roll: { min: 56, max: 60 }
+            text: Oozing with corrosive venom
+          - roll: { min: 61, max: 65 }
+            text: Powered by strange mechanisms
+          - roll: { min: 66, max: 70 }
+            text: Radiating a sickly light
+          - roll: { min: 71, max: 75 }
+            text: Summoned out of thin air
+          - roll: { min: 76, max: 80 }
+            text: Tarnished with unnatural decay
+          - roll: { min: 81, max: 85 }
+            text: Transforms its wielder
+          - roll: { min: 86, max: 95 }
+            text: Whispering irresistible commands
+          - roll: { min: 96, max: 100 }
+            text: Wreathed in smoke and ash
+      details:
+        name: Character Details
+        type: oracle_rollable
+        oracle_type: table_text
+        recommended_rolls: { min: 1, max: 2 }
+        summary: As you interact with a person to gain a deeper understanding of their nature and personality, roll on this table to reveal new characteristics. Feel free to ignore, reroll, or adjust contradictions. Or envision how those contradictions add interesting complexity to the character.
+        tags:
+          sundered_isles:
+            cursed_by: sundered_isles/oracles/character/details_cursed
+        _source:
+          <<: *Source
+          page: 192
+        rows:
+          - roll: { min: 1, max: 1 }
+            text: Adventurous
+          - roll: { min: 2, max: 2 }
+            text: Afflicted
+          - roll: { min: 3, max: 3 }
+            text: Aggressive
+          - roll: { min: 4, max: 4 }
+            text: Ambitious
+          - roll: { min: 5, max: 5 }
+            text: Anxious
+          - roll: { min: 6, max: 6 }
+            text: Apathetic
+          - roll: { min: 7, max: 7 }
+            text: Artistic
+          - roll: { min: 8, max: 8 }
+            text: Bitter
+          - roll: { min: 9, max: 9 }
+            text: Black-hearted
+          - roll: { min: 10, max: 10 }
+            text: Boastful
+          - roll: { min: 11, max: 11 }
+            text: Boisterous
+          - roll: { min: 12, max: 12 }
+            text: Bold
+          - roll: { min: 13, max: 13 }
+            text: Brave
+          - roll: { min: 14, max: 14 }
+            text: Cautious
+          - roll: { min: 15, max: 15 }
+            text: Charismatic
+          - roll: { min: 16, max: 16 }
+            text: Compassionate
+          - roll: { min: 17, max: 17 }
+            text: Conceited
+          - roll: { min: 18, max: 18 }
+            text: Confident
+          - roll: { min: 19, max: 19 }
+            text: Connected
+          - roll: { min: 20, max: 20 }
+            text: Cowardly
+          - roll: { min: 21, max: 21 }
+            text: Criminal
+          - roll: { min: 22, max: 22 }
+            text: Critical
+          - roll: { min: 23, max: 23 }
+            text: Cunning
+          - roll: { min: 24, max: 24 }
+            text: Curious
+          - roll: { min: 25, max: 25 }
+            text: Dangerous
+          - roll: { min: 26, max: 26 }
+            text: Deceitful
+          - roll: { min: 27, max: 27 }
+            text: Defiant
+          - roll: { min: 28, max: 28 }
+            text: Determined
+          - roll: { min: 29, max: 29 }
+            text: Disabled
+          - roll: { min: 30, max: 30 }
+            text: Disguised
+          - roll: { min: 31, max: 31 }
+            text: Driven
+          - roll: { min: 32, max: 32 }
+            text: Dying
+          - roll: { min: 33, max: 33 }
+            text: Envious
+          - roll: { min: 34, max: 34 }
+            text: Experienced
+          - roll: { min: 35, max: 35 }
+            text: Faithful
+          - roll: { min: 36, max: 36 }
+            text: Faithless
+          - roll: { min: 37, max: 37 }
+            text: Flirtatious
+          - roll: { min: 38, max: 38 }
+            text: Generous
+          - roll: { min: 39, max: 39 }
+            text: Gifted
+          - roll: { min: 40, max: 40 }
+            text: Greedy
+          - roll: { min: 41, max: 41 }
+            text: Grief-stricken
+          - roll: { min: 42, max: 42 }
+            text: Hardhearted
+          - roll: { min: 43, max: 43 }
+            text: Heartbroken
+          - roll: { min: 44, max: 44 }
+            text: Honorable
+          - roll: { min: 45, max: 45 }
+            text: Hot-tempered
+          - roll: { min: 46, max: 46 }
+            text: Hunted
+          - roll: { min: 47, max: 47 }
+            text: Impulsive
+          - roll: { min: 48, max: 48 }
+            text: Incompetent
+          - roll: { min: 49, max: 49 }
+            text: Indebted
+          - roll: { min: 50, max: 50 }
+            text: Independent
+          - roll: { min: 51, max: 51 }
+            text: Indulgent
+          - roll: { min: 52, max: 52 }
+            text: Infamous
+          - roll: { min: 53, max: 53 }
+            text: Influential
+          - roll: { min: 54, max: 54 }
+            text: Insensitive
+          - roll: { min: 55, max: 55 }
+            text: Insightful
+          - roll: { min: 56, max: 56 }
+            text: Intelligent
+          - roll: { min: 57, max: 57 }
+            text: Intolerant
+          - roll: { min: 58, max: 58 }
+            text: Ironsworn
+          - roll: { min: 59, max: 59 }
+            text: Kind
+          - roll: { min: 60, max: 60 }
+            text: Lonely
+          - roll: { min: 61, max: 61 }
+            text: Loving
+          - roll: { min: 62, max: 62 }
+            text: Loyal
+          - roll: { min: 63, max: 63 }
+            text: Manipulative
+          - roll: { min: 64, max: 64 }
+            text: Misled
+          - roll: { min: 65, max: 65 }
+            text: Oblivious
+          - roll: { min: 66, max: 66 }
+            text: Obsessed
+          - roll: { min: 67, max: 67 }
+            text: Oppressed
+          - roll: { min: 68, max: 68 }
+            text: Powerful
+          - roll: { min: 69, max: 69 }
+            text: Proud
+          - roll: { min: 70, max: 70 }
+            text: Quiet
+          - roll: { min: 71, max: 71 }
+            text: Quirky
+          - roll: { min: 72, max: 72 }
+            text: Rebellious
+          - roll: { min: 73, max: 73 }
+            text: Reclusive
+          - roll: { min: 74, max: 74 }
+            text: Relaxed
+          - roll: { min: 75, max: 75 }
+            text: Remorseful
+          - roll: { min: 76, max: 76 }
+            text: Resourceful
+          - roll: { min: 77, max: 77 }
+            text: Ruthless
+          - roll: { min: 78, max: 78 }
+            text: Secretive
+          - roll: { min: 79, max: 79 }
+            text: Selfish
+          - roll: { min: 80, max: 80 }
+            text: Sociable
+          - roll: { min: 81, max: 81 }
+            text: Stealthy
+          - roll: { min: 82, max: 82 }
+            text: Stern
+          - roll: { min: 83, max: 83 }
+            text: Stingy
+          - roll: { min: 84, max: 84 }
+            text: Stoic
+          - roll: { min: 85, max: 85 }
+            text: Strong
+          - roll: { min: 86, max: 86 }
+            text: Stubborn
+          - roll: { min: 87, max: 87 }
+            text: Successful
+          - roll: { min: 88, max: 88 }
+            text: Superstitious
+          - roll: { min: 89, max: 89 }
+            text: Suspicious
+          - roll: { min: 90, max: 90 }
+            text: Talented
+          - roll: { min: 91, max: 91 }
+            text: Tough
+          - roll: { min: 92, max: 92 }
+            text: Traitorous
+          - roll: { min: 93, max: 93 }
+            text: Vengeful
+          - roll: { min: 94, max: 94 }
+            text: Villainous
+          - roll: { min: 95, max: 95 }
+            text: Violent
+          - roll: { min: 96, max: 96 }
+            text: Wary
+          - roll: { min: 97, max: 97 }
+            text: Weak
+          - roll: { min: 98, max: 98 }
+            text: Weary
+          - roll: { min: 99, max: 99 }
+            text: Wild
+          - roll: { min: 100, max: 100 }
+            text: Wise
+      details_cursed:
+        name: Cursed Character Details
+        type: oracle_rollable
+        oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/character/details
+            curse_behavior: replace_result
+        _source:
+          <<: *Source
+          page: 192
+        rows:
+          - roll: { min: 1, max: 5 }
+            text: Bewitched
+          - roll: { min: 6, max: 10 }
+            text: Deep-dwelling
+          - roll: { min: 11, max: 15 }
+            text: Doomed
+          - roll: { min: 16, max: 25 }
+            text: Drowned
+          - roll: { min: 26, max: 30 }
+            text: Eldritch
+          - roll: { min: 31, max: 40 }
+            text: Haunted
+          - roll: { min: 41, max: 45 }
+            text: Illusory
+          - roll: { min: 46, max: 50 }
+            text: Inhuman
+          - roll: { min: 51, max: 55 }
+            text: Jinxed
+          - roll: { min: 56, max: 60 }
+            text: Lycanthropic
+          - roll: { min: 61, max: 65 }
+            text: Possessed
+          - roll: { min: 66, max: 70 }
+            text: Resurrected
+          - roll: { min: 71, max: 80 }
+            text: Sorcerous
+          - roll: { min: 81, max: 90 }
+            text: Tormented
+          - roll: { min: 91, max: 95 }
+            text: Undying
+          - roll: { min: 96, max: 100 }
+            text: Vampiric
+      goals:
+        name: Character Goals
+        type: oracle_rollable
+        oracle_type: table_text
+        recommended_rolls: { min: 1, max: 2 }
+        tags:
+          sundered_isles:
+            cursed_by: sundered_isles/oracles/character/goals_cursed
+        _source:
+          <<: *Source
+          page: 193
+        rows:
+          - roll: { min: 1, max: 2 }
+            text: Acquire knowledge or learning
+          - roll: { min: 3, max: 4 }
+            text: Acquire territory or dominion
+          - roll: { min: 5, max: 6 }
+            text: Amass wealth
+          - roll: { min: 7, max: 8 }
+            text: Avenge a betrayal
+          - roll: { min: 9, max: 10 }
+            text: Avenge a death
+          - roll: { min: 11, max: 12 }
+            text: Claim a lost or stolen treasure
+          - roll: { min: 13, max: 14 }
+            text: Claim a ship or command
+          - roll: { min: 15, max: 16 }
+            text: Collect a debt
+          - roll: { min: 17, max: 18 }
+            text: Complete a work of artistry or craft
+          - roll: { min: 19, max: 20 }
+            text: Conceal a true identity
+          - roll: { min: 21, max: 22 }
+            text: Cure a sickness
+          - roll: { min: 23, max: 24 }
+            text: Defeat a rival
+          - roll: { min: 25, max: 26 }
+            text: Defeat or undermine a faction
+          - roll: { min: 27, max: 28 }
+            text: Dismantle an unjust power
+          - roll: { min: 29, max: 30 }
+            text: Escape a captor or oppressor
+          - roll: { min: 31, max: 32 }
+            text: Escape or prevent a looming calamity
+          - roll: { min: 33, max: 34 }
+            text: Explore far and wide
+          - roll: { min: 35, max: 36 }
+            text: Find a lost or hidden treasure
+          - roll: { min: 37, max: 38 }
+            text: Find or build a home
+          - roll: { min: 39, max: 40 }
+            text: Find or rescue a person
+          - roll: { min: 41, max: 42 }
+            text: Follow the tenets of a faith
+          - roll: { min: 43, max: 44 }
+            text: Forge an alliance
+          - roll: { min: 45, max: 46 }
+            text: Gain glory or fame
+          - roll: { min: 47, max: 48 }
+            text: Gain power within a faction
+          - roll: { min: 49, max: 50 }
+            text: Incite conflict between factions
+          - roll: { min: 51, max: 52 }
+            text: Infiltrate a faction
+          - roll: { min: 53, max: 54 }
+            text: Master a skill or trade
+          - roll: { min: 55, max: 56 }
+            text: Preserve the legacy of a forebear
+          - roll: { min: 57, max: 58 }
+            text: Prevent conflict between factions
+          - roll: { min: 59, max: 60 }
+            text: Protect a secret
+          - roll: { min: 61, max: 62 }
+            text: Protect a threatened location
+          - roll: { min: 63, max: 64 }
+            text: Protect or support a family or community
+          - roll: { min: 65, max: 66 }
+            text: Protect or support a person
+          - roll: { min: 67, max: 68 }
+            text: Recover a stolen object
+          - roll: { min: 69, max: 70 }
+            text: Refute a falsehood
+          - roll: { min: 71, max: 72 }
+            text: Repay a debt
+          - roll: { min: 73, max: 74 }
+            text: Resist laws or authority
+          - roll: { min: 75, max: 76 }
+            text: Search out the truth of a legend
+          - roll: { min: 77, max: 78 }
+            text: Seek redemption for past wrongs
+          - roll: { min: 79, max: 80 }
+            text: Seek the favor of a person
+          - roll: { min: 81, max: 82 }
+            text: Serve the will of a leader
+          - roll: { min: 83, max: 84 }
+            text: Settle a dispute or rivalry
+          - roll: { min: 85, max: 86 }
+            text: Slay a creature
+          - roll: { min: 87, max: 88 }
+            text: Solve a mysterious murder
+          - roll: { min: 89, max: 90 }
+            text: Steal a valuable object
+          - roll: { min: 91, max: 92 }
+            text: Travel to a location
+          - roll: { min: 93, max: 94 }
+            text: Uphold or enforce laws
+          - roll: { min: 95, max: 100 }
+            text: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
+            oracle_rolls:
+              - auto: true
+                oracle: sundered_isles/oracles/core/action
+              - auto: true
+                oracle: sundered_isles/oracles/core/theme
+      goals_cursed:
+        name: Cursed Character Goals
+        type: oracle_rollable
+        oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/character/goals
+            curse_behavior: replace_result
+        _source:
+          <<: *Source
+          page: 193
+        rows:
+          - roll: { min: 1, max: 6 }
+            text: Avert a harrowing prophecy or vision
+          - roll: { min: 7, max: 12 }
+            text: Awaken an ancient evil
+          - roll: { min: 13, max: 18 }
+            text: Banish a restless spirit
+          - roll: { min: 19, max: 24 }
+            text: Bring about an unspeakable prophecy
+          - roll: { min: 25, max: 28 }
+            text: Control a monstrous beast
+          - roll: { min: 29, max: 32 }
+            text: Destroy an object of terrifying power
+          - roll: { min: 33, max: 38 }
+            text: Escape or undo a curse
+          - roll: { min: 39, max: 42 }
+            text: Find the truth of a nightmarish legend
+          - roll: { min: 43, max: 46 }
+            text: Gather components of a baleful ritual
+          - roll: { min: 47, max: 50 }
+            text: Gather supplicants for a dreadful faith
+          - roll: { min: 51, max: 56 }
+            text: Infiltrate a forsaken location
+          - roll: { min: 57, max: 62 }
+            text: Inflict a curse or corruption upon others
+          - roll: { min: 63, max: 66 }
+            text: Resist the call of a malevolent power
+          - roll: { min: 67, max: 72 }
+            text: Restore own humanity or mortality
+          - roll: { min: 73, max: 76 }
+            text: Return a lost loved one to life
+          - roll: { min: 77, max: 80 }
+            text: Serve a black-hearted overlord
+          - roll: { min: 81, max: 86 }
+            text: Slay a monstrous beast
+          - roll: { min: 87, max: 90 }
+            text: Unlock the secret of immortality
+          - roll: { min: 91, max: 94 }
+            text: Wield an object of terrifying power
+          - roll: { min: 95, max: 100 }
+            text: Wreak bloody vengeance
+    collections:
+      role_details:
+        name: Character Role Details
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: *Source
+          page: 188
+        contents:
+          academic:
+            name: Academic
+            type: oracle_rollable
+            oracle_type: table_text
+            _source:
+              <<: *Source
+              page: 188
+            rows:
+              - roll: { min: 1, max: 20 }
+                text: Archaeologist
+              - roll: { min: 21, max: 40 }
+                text: Cartographer
+              - roll: { min: 41, max: 60 }
+                text: Historian
+              - roll: { min: 61, max: 80 }
+                text: Naturalist
+              - roll: { min: 81, max: 100 }
+                text: Philosopher
+          agent:
+            name: Agent
+            type: oracle_rollable
+            oracle_type: table_text
+            _source:
+              <<: *Source
+              page: 188
+            rows:
+              - roll: { min: 1, max: 20 }
+                text: Assassin
+              - roll: { min: 21, max: 40 }
+                text: Bounty Hunter / Pirate hunter
+              - roll: { min: 41, max: 60 }
+                text: Courier
+              - roll: { min: 61, max: 80 }
+                text: Investigator
+              - roll: { min: 81, max: 100 }
+                text: Spy
+          caregiver:
+            name: Caregiver
+            type: oracle_rollable
+            oracle_type: table_text
+            _source:
+              <<: *Source
+              page: 188
+            rows:
+              - roll: { min: 1, max: 20 }
+                text: Apothecary
+              - roll: { min: 21, max: 40 }
+                text: Herbalist
+              - roll: { min: 41, max: 60 }
+                text: Surgeon
+              - roll: { min: 61, max: 80 }
+                text: Midwife
+              - roll: { min: 81, max: 100 }
+                text: Physician
+          combatant:
+            name: Combatant
+            type: oracle_rollable
+            oracle_type: table_text
+            _source:
+              <<: *Source
+              page: 188
+            rows:
+              - roll: { min: 1, max: 20 }
+                text: Duelist
+              - roll: { min: 21, max: 40 }
+                text: Guard / Militia
+              - roll: { min: 41, max: 60 }
+                text: Mercenary
+              - roll: { min: 61, max: 80 }
+                text: Soldier
+              - roll: { min: 81, max: 100 }
+                text: Vigilante
+          devotant:
+            name: Devotant
+            type: oracle_rollable
+            oracle_type: table_text
+            _source:
+              <<: *Source
+              page: 188
+            rows:
+              - roll: { min: 1, max: 20 }
+                text: Clergy
+              - roll: { min: 21, max: 40 }
+                text: Cultist
+              - roll: { min: 41, max: 60 }
+                text: Inquisitor
+              - roll: { min: 61, max: 80 }
+                text: Monk
+              - roll: { min: 81, max: 100 }
+                text: Pilgrim
+          laborer:
+            name: Laborer
+            type: oracle_rollable
+            oracle_type: table_text
+            _source:
+              <<: *Source
+              page: 188
+            rows:
+              - roll: { min: 1, max: 20 }
+                text: Bricklayer
+              - roll: { min: 21, max: 40 }
+                text: Farmer
+              - roll: { min: 41, max: 60 }
+                text: Lumberer
+              - roll: { min: 61, max: 80 }
+                text: Miner
+              - roll: { min: 81, max: 100 }
+                text: Servant
+          merchant:
+            name: Merchant
+            type: oracle_rollable
+            oracle_type: table_text
+            _source:
+              <<: *Source
+              page: 188
+            rows:
+              - roll: { min: 1, max: 20 }
+                text: Barkeep
+              - roll: { min: 21, max: 40 }
+                text: Fence
+              - roll: { min: 41, max: 60 }
+                text: Moneylender
+              - roll: { min: 61, max: 80 }
+                text: Shopkeeper
+              - roll: { min: 81, max: 100 }
+                text: Traveling merchant
+          mystic:
+            name: Mystic
+            type: oracle_rollable
+            oracle_type: table_text
+            _source:
+              <<: *Source
+              page: 188
+            rows:
+              - roll: { min: 1, max: 20 }
+                text: Alchemist
+              - roll: { min: 21, max: 40 }
+                text: Elementalist
+              - roll: { min: 41, max: 60 }
+                text: Necromancer
+              - roll: { min: 61, max: 80 }
+                text: Seer
+              - roll: { min: 81, max: 100 }
+                text: Sorcerer / Shaman
+          outcast:
+            name: Outcast
+            type: oracle_rollable
+            oracle_type: table_text
+            _source:
+              <<: *Source
+              page: 188
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Apostate
+              - roll: { min: 11, max: 20 }
+                text: Castaway
+              - roll: { min: 21, max: 30 }
+                text: Deserter / Mutineer
+              - roll: { min: 31, max: 40 }
+                text: Exile
+              - roll: { min: 41, max: 50 }
+                text: Fugitive
+              - roll: { min: 51, max: 60 }
+                text: Hermit
+              - roll: { min: 61, max: 70 }
+                text: Orphan
+              - roll: { min: 71, max: 80 }
+                text: Refugee
+              - roll: { min: 81, max: 90 }
+                text: Urchin
+              - roll: { min: 91, max: 100 }
+                text: Vagabond
+          outlander:
+            name: Outlander
+            type: oracle_rollable
+            oracle_type: table_text
+            _source:
+              <<: *Source
+              page: 189
+            rows:
+              - roll: { min: 1, max: 20 }
+                text: Beast Hunter
+              - roll: { min: 21, max: 40 }
+                text: Explorer
+              - roll: { min: 41, max: 60 }
+                text: Fisher / Hunter / Trapper
+              - roll: { min: 61, max: 80 }
+                text: Navigator / Guide
+              - roll: { min: 81, max: 100 }
+                text: Scout
+          outlaw:
+            name: Outlaw
+            type: oracle_rollable
+            oracle_type: table_text
+            _source:
+              <<: *Source
+              page: 189
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Burglar / Thief
+              - roll: { min: 11, max: 20 }
+                text: Charlatan
+              - roll: { min: 21, max: 30 }
+                text: Crime boss
+              - roll: { min: 31, max: 40 }
+                text: Forger
+              - roll: { min: 41, max: 50 }
+                text: Gambler
+              - roll: { min: 51, max: 60 }
+                text: Insurgent
+              - roll: { min: 61, max: 70 }
+                text: Pirate
+              - roll: { min: 71, max: 80 }
+                text: Raider
+              - roll: { min: 81, max: 90 }
+                text: Ruffian
+              - roll: { min: 91, max: 100 }
+                text: Smuggler
+          performer:
+            name: Performer
+            type: oracle_rollable
+            oracle_type: table_text
+            _source:
+              <<: *Source
+              page: 189
+            rows:
+              - roll: { min: 1, max: 20 }
+                text: Acrobat
+              - roll: { min: 21, max: 40 }
+                text: Actor
+              - roll: { min: 41, max: 60 }
+                text: Dancer
+              - roll: { min: 61, max: 80 }
+                text: Musician
+              - roll: { min: 81, max: 100 }
+                text: Singer
+          sailor:
+            name: Sailor
+            type: oracle_rollable
+            oracle_type: table_text
+            _source:
+              <<: *Source
+              page: 189
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Bosun
+              - roll: { min: 11, max: 20 }
+                text: Captain
+              - roll: { min: 21, max: 30 }
+                text: Carpenter
+              - roll: { min: 31, max: 40 }
+                text: Cook
+              - roll: { min: 41, max: 50 }
+                text: Deckhand
+              - roll: { min: 51, max: 60 }
+                text: First Mate
+              - roll: { min: 61, max: 70 }
+                text: Gunner
+              - roll: { min: 71, max: 80 }
+                text: Marine
+              - roll: { min: 81, max: 90 }
+                text: Master-at-arms
+              - roll: { min: 91, max: 100 }
+                text: Quartermaster
+          scavenger:
+            name: Scavenger
+            type: oracle_rollable
+            oracle_type: table_text
+            _source:
+              <<: *Source
+              page: 189
+            rows:
+              - roll: { min: 1, max: 20 }
+                text: Beachcomber
+              - roll: { min: 21, max: 40 }
+                text: Grave Robber
+              - roll: { min: 41, max: 60 }
+                text: Relic hunter
+              - roll: { min: 61, max: 80 }
+                text: Shipbreaker
+              - roll: { min: 81, max: 100 }
+                text: Wreck diver
+          statesperson:
+            name: Statesperson
+            type: oracle_rollable
+            oracle_type: table_text
+            _source:
+              <<: *Source
+              page: 189
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Aristocrat
+              - roll: { min: 11, max: 20 }
+                text: Bureaucrat
+              - roll: { min: 21, max: 30 }
+                text: Commander
+              - roll: { min: 31, max: 40 }
+                text: Courtesan
+              - roll: { min: 41, max: 50 }
+                text: Courtier
+              - roll: { min: 51, max: 60 }
+                text: Diplomat
+              - roll: { min: 61, max: 70 }
+                text: Interpreter
+              - roll: { min: 71, max: 80 }
+                text: Lawkeeper
+              - roll: { min: 81, max: 90 }
+                text: Politician
+              - roll: { min: 91, max: 100 }
+                text: Tax collector
+          tradesperson:
+            name: Tradesperson
+            type: oracle_rollable
+            oracle_type: table_text
+            _source:
+              <<: *Source
+              page: 189
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Baker
+              - roll: { min: 11, max: 20 }
+                text: Brewer / Winemaker
+              - roll: { min: 21, max: 30 }
+                text: Butcher
+              - roll: { min: 31, max: 40 }
+                text: Mason
+              - roll: { min: 41, max: 50 }
+                text: Metal worker
+              - roll: { min: 51, max: 60 }
+                text: Shipwright / boatwright
+              - roll: { min: 61, max: 70 }
+                text: Tattooist
+              - roll: { min: 71, max: 80 }
+                text: Tinker / Engineer
+              - roll: { min: 81, max: 90 }
+                text: Undertaker
+              - roll: { min: 91, max: 100 }
+                text: Woodworker
+      name:
+        name: Character Name
+        type: oracle_collection
+        oracle_type: tables
+        description: |-
+          This table provides pairs of given and family names. When choosing or rolling for a character name, select a pair or mix and match from among the options in a row. Given and family names can often be reversed, or used independently as stand-alone names.
+
+          This table also includes monikers, one to each row. Not all characters have monikers, but sailors are often given a nickname by their shipmates, or adopt one of their own. Monikers can be used as a stand-alone name (for example, “Redbeard” or “Stormcrow”) or paired with a given name or family name (“Crimson Jack” or “Hardtack Hobbs”). Roll or select an appropriate moniker as you like.
+        _source:
+          <<: *Source
+          page: 194
+        contents:
+          given_name:
+            # TODO: not canonical display, but the least onerous for digital use
+            name: Given Name
+            type: oracle_rollable
+            oracle_type: table_text
+            dice: 1d200
+            _source:
+              <<: *Source
+              page: 194
+            rows:
+              - roll: { min: 1, max: 1 }
+                text: Aisha
+              - roll: { min: 2, max: 2 }
+                text: Alexis
+              - roll: { min: 3, max: 3 }
+                text: Ali
+              - roll: { min: 4, max: 4 }
+                text: Alisa
+              - roll: { min: 5, max: 5 }
+                text: Althea
+              - roll: { min: 6, max: 6 }
+                text: Amar
+              - roll: { min: 7, max: 7 }
+                text: Amelia
+              - roll: { min: 8, max: 8 }
+                text: Amir
+              - roll: { min: 9, max: 9 }
+                text: Amity
+              - roll: { min: 10, max: 10 }
+                text: Anand
+              - roll: { min: 11, max: 11 }
+                text: Anne
+              - roll: { min: 12, max: 12 }
+                text: Aparna
+              - roll: { min: 13, max: 13 }
+                text: Aphra
+              - roll: { min: 14, max: 14 }
+                text: Ara
+              - roll: { min: 15, max: 15 }
+                text: Archer
+              - roll: { min: 16, max: 16 }
+                text: Asha
+              - roll: { min: 17, max: 17 }
+                text: Astrid
+              - roll: { min: 18, max: 18 }
+                text: Atticus
+              - roll: { min: 19, max: 19 }
+                text: Aubrey
+              - roll: { min: 20, max: 20 }
+                text: Aurora
+              - roll: { min: 21, max: 21 }
+                text: Azriel
+              - roll: { min: 22, max: 22 }
+                text: Barnabas
+              - roll: { min: 23, max: 23 }
+                text: Becca
+              - roll: { min: 24, max: 24 }
+                text: Bill
+              - roll: { min: 25, max: 25 }
+                text: Blythe
+              - roll: { min: 26, max: 26 }
+                text: Bonney
+              - roll: { min: 27, max: 27 }
+                text: Brianna
+              - roll: { min: 28, max: 28 }
+                text: Briar
+              - roll: { min: 29, max: 29 }
+                text: Bruna
+              - roll: { min: 30, max: 30 }
+                text: Cadigan
+              - roll: { min: 31, max: 31 }
+                text: Callum
+              - roll: { min: 32, max: 32 }
+                text: Calypso
+              - roll: { min: 33, max: 33 }
+                text: Carrington
+              - roll: { min: 34, max: 34 }
+                text: Caspian
+              - roll: { min: 35, max: 35 }
+                text: Cassidy
+              - roll: { min: 36, max: 36 }
+                text: Cassius
+              - roll: { min: 37, max: 37 }
+                text: Catalina
+              - roll: { min: 38, max: 38 }
+                text: Cheng
+              - roll: { min: 39, max: 39 }
+                text: Christa
+              - roll: { min: 40, max: 40 }
+                text: Corey
+              - roll: { min: 41, max: 41 }
+                text: Cormac
+              - roll: { min: 42, max: 42 }
+                text: Crassus
+              - roll: { min: 43, max: 43 }
+                text: Cyrus
+              - roll: { min: 44, max: 44 }
+                text: Damaris
+              - roll: { min: 45, max: 45 }
+                text: Darius
+              - roll: { min: 46, max: 46 }
+                text: Derya
+              - roll: { min: 47, max: 47 }
+                text: Dex
+              - roll: { min: 48, max: 48 }
+                text: Diana
+              - roll: { min: 49, max: 49 }
+                text: Diego
+              - roll: { min: 50, max: 50 }
+                text: Dorian
+              - roll: { min: 51, max: 51 }
+                text: Drake
+              - roll: { min: 52, max: 52 }
+                text: Duncan
+              - roll: { min: 53, max: 53 }
+                text: Echo
+              - roll: { min: 54, max: 54 }
+                text: Edda
+              - roll: { min: 55, max: 55 }
+                text: Edmund
+              - roll: { min: 56, max: 56 }
+                text: Edward
+              - roll: { min: 57, max: 57 }
+                text: Elara
+              - roll: { min: 58, max: 58 }
+                text: Elizabeth
+              - roll: { min: 59, max: 59 }
+                text: Elli
+              - roll: { min: 60, max: 60 }
+                text: Ember
+              - roll: { min: 61, max: 61 }
+                text: Erim
+              - roll: { min: 62, max: 62 }
+                text: Esana
+              - roll: { min: 63, max: 63 }
+                text: Esmeralda
+              - roll: { min: 64, max: 64 }
+                text: Felicity
+              - roll: { min: 65, max: 65 }
+                text: Fernando
+              - roll: { min: 66, max: 66 }
+                text: Fionn
+              - roll: { min: 67, max: 67 }
+                text: Fitz
+              - roll: { min: 68, max: 68 }
+                text: Florian
+              - roll: { min: 69, max: 69 }
+                text: Francisco
+              - roll: { min: 70, max: 70 }
+                text: Gideon
+              - roll: { min: 71, max: 71 }
+                text: Grace
+              - roll: { min: 72, max: 72 }
+                text: Gwen
+              - roll: { min: 73, max: 73 }
+                text: Hale
+              - roll: { min: 74, max: 74 }
+                text: Halia
+              - roll: { min: 75, max: 75 }
+                text: Hannah
+              - roll: { min: 76, max: 76 }
+                text: Hannibal
+              - roll: { min: 77, max: 77 }
+                text: Haruto
+              - roll: { min: 78, max: 78 }
+                text: Hina
+              - roll: { min: 79, max: 79 }
+                text: Horatio
+              - roll: { min: 80, max: 80 }
+                text: Icarus
+              - roll: { min: 81, max: 81 }
+                text: Idris
+              - roll: { min: 82, max: 82 }
+                text: Inigo
+              - roll: { min: 83, max: 83 }
+                text: Isabel
+              - roll: { min: 84, max: 84 }
+                text: Jack
+              - roll: { min: 85, max: 85 }
+                text: Jasper
+              - roll: { min: 86, max: 86 }
+                text: Jihun
+              - roll: { min: 87, max: 87 }
+                text: Jonas
+              - roll: { min: 88, max: 88 }
+                text: Jorunn
+              - roll: { min: 89, max: 89 }
+                text: Juliana
+              - roll: { min: 90, max: 90 }
+                text: Junho
+              - roll: { min: 91, max: 91 }
+                text: Juro
+              - roll: { min: 92, max: 92 }
+                text: Kahu
+              - roll: { min: 93, max: 93 }
+                text: Kaisa
+              - roll: { min: 94, max: 94 }
+                text: Kaito
+              - roll: { min: 95, max: 95 }
+                text: Kanoa
+              - roll: { min: 96, max: 96 }
+                text: Karthik
+              - roll: { min: 97, max: 97 }
+                text: Katarina
+              - roll: { min: 98, max: 98 }
+                text: Kauri
+              - roll: { min: 99, max: 99 }
+                text: Keelan
+              - roll: { min: 100, max: 100 }
+                text: Kei
+              - roll: { min: 101, max: 101 }
+                text: Khalid
+              - roll: { min: 102, max: 102 }
+                text: Kiana
+              - roll: { min: 103, max: 103 }
+                text: Kimora
+              - roll: { min: 104, max: 104 }
+                text: Kiri
+              - roll: { min: 105, max: 105 }
+                text: Kirsa
+              - roll: { min: 106, max: 106 }
+                text: Kwan
+              - roll: { min: 107, max: 107 }
+                text: Kylar
+              - roll: { min: 108, max: 108 }
+                text: Lazar
+              - roll: { min: 109, max: 109 }
+                text: Leonor
+              - roll: { min: 110, max: 110 }
+                text: Lucas
+              - roll: { min: 111, max: 111 }
+                text: Lucius
+              - roll: { min: 112, max: 112 }
+                text: Luna
+              - roll: { min: 113, max: 113 }
+                text: Lux
+              - roll: { min: 114, max: 114 }
+                text: Lyana
+              - roll: { min: 115, max: 115 }
+                text: Lydia
+              - roll: { min: 116, max: 116 }
+                text: Lyra
+              - roll: { min: 117, max: 117 }
+                text: Mae
+              - roll: { min: 118, max: 118 }
+                text: Malcolm
+              - roll: { min: 119, max: 119 }
+                text: Marama
+              - roll: { min: 120, max: 120 }
+                text: Margery
+              - roll: { min: 121, max: 121 }
+                text: Maria
+              - roll: { min: 122, max: 122 }
+                text: Mary
+              - roll: { min: 123, max: 123 }
+                text: Maura
+              - roll: { min: 124, max: 124 }
+                text: Maya
+              - roll: { min: 125, max: 125 }
+                text: Meera
+              - roll: { min: 126, max: 126 }
+                text: Mia
+              - roll: { min: 127, max: 127 }
+                text: Miguel
+              - roll: { min: 128, max: 128 }
+                text: Mina
+              - roll: { min: 129, max: 129 }
+                text: Ming
+              - roll: { min: 130, max: 130 }
+                text: Miranda
+              - roll: { min: 131, max: 131 }
+                text: Morien
+              - roll: { min: 132, max: 132 }
+                text: Nashida
+              - roll: { min: 133, max: 133 }
+                text: Nasra
+              - roll: { min: 134, max: 134 }
+                text: Nassar
+              - roll: { min: 135, max: 135 }
+                text: Ned
+              - roll: { min: 136, max: 136 }
+                text: Nerissa
+              - roll: { min: 137, max: 137 }
+                text: Nettie
+              - roll: { min: 138, max: 138 }
+                text: Nix
+              - roll: { min: 139, max: 139 }
+                text: Odysseus
+              - roll: { min: 140, max: 140 }
+                text: Olivia
+              - roll: { min: 141, max: 141 }
+                text: Opal
+              - roll: { min: 142, max: 142 }
+                text: Ostara
+              - roll: { min: 143, max: 143 }
+                text: Qasira
+              - roll: { min: 144, max: 144 }
+                text: Quentin
+              - roll: { min: 145, max: 145 }
+                text: Quincy
+              - roll: { min: 146, max: 146 }
+                text: Quinn
+              - roll: { min: 147, max: 147 }
+                text: Radha
+              - roll: { min: 148, max: 148 }
+                text: Rahul
+              - roll: { min: 149, max: 149 }
+                text: Ranna
+              - roll: { min: 150, max: 150 }
+                text: Raven
+              - roll: { min: 151, max: 151 }
+                text: Reginald
+              - roll: { min: 152, max: 152 }
+                text: Rei
+              - roll: { min: 153, max: 153 }
+                text: Ria
+              - roll: { min: 154, max: 154 }
+                text: Ricardo
+              - roll: { min: 155, max: 155 }
+                text: Roderick
+              - roll: { min: 156, max: 156 }
+                text: Rodrigo
+              - roll: { min: 157, max: 157 }
+                text: Rokuro
+              - roll: { min: 158, max: 158 }
+                text: Roland
+              - roll: { min: 159, max: 159 }
+                text: Rose
+              - roll: { min: 160, max: 160 }
+                text: Rowena
+              - roll: { min: 161, max: 161 }
+                text: Sabine
+              - roll: { min: 162, max: 162 }
+                text: Sabrina
+              - roll: { min: 163, max: 163 }
+                text: Sage
+              - roll: { min: 164, max: 164 }
+                text: Saida
+              - roll: { min: 165, max: 165 }
+                text: Sakura
+              - roll: { min: 166, max: 166 }
+                text: Salim
+              - roll: { min: 167, max: 167 }
+                text: Samira
+              - roll: { min: 168, max: 168 }
+                text: Seamus
+              - roll: { min: 169, max: 169 }
+                text: Seren
+              - roll: { min: 170, max: 170 }
+                text: Shannon
+              - roll: { min: 171, max: 171 }
+                text: Shen
+              - roll: { min: 172, max: 172 }
+                text: Silas
+              - roll: { min: 173, max: 173 }
+                text: Simon
+              - roll: { min: 174, max: 174 }
+                text: Solana
+              - roll: { min: 175, max: 175 }
+                text: Solomon
+              - roll: { min: 176, max: 176 }
+                text: Sophia
+              - roll: { min: 177, max: 177 }
+                text: Sora
+              - roll: { min: 178, max: 178 }
+                text: Sujin
+              - roll: { min: 179, max: 179 }
+                text: Talia
+              - roll: { min: 180, max: 180 }
+                text: Tama
+              - roll: { min: 181, max: 181 }
+                text: Tao
+              - roll: { min: 182, max: 182 }
+                text: Thaddeus
+              - roll: { min: 183, max: 183 }
+                text: Thalia
+              - roll: { min: 184, max: 184 }
+                text: Tobias
+              - roll: { min: 185, max: 185 }
+                text: Tom
+              - roll: { min: 186, max: 186 }
+                text: Ulan
+              - roll: { min: 187, max: 187 }
+                text: Uther
+              - roll: { min: 188, max: 188 }
+                text: Vasco
+              - roll: { min: 189, max: 189 }
+                text: Venri
+              - roll: { min: 190, max: 190 }
+                text: Verity
+              - roll: { min: 191, max: 191 }
+                text: Vesper
+              - roll: { min: 192, max: 192 }
+                text: Vuldar
+              - roll: { min: 193, max: 193 }
+                text: Will
+              - roll: { min: 194, max: 194 }
+                text: Winona
+              - roll: { min: 195, max: 195 }
+                text: Wynne
+              - roll: { min: 196, max: 196 }
+                text: Xin
+              - roll: { min: 197, max: 197 }
+                text: Yasmin
+              - roll: { min: 198, max: 198 }
+                text: Yuna
+              - roll: { min: 199, max: 199 }
+                text: Zakia
+              - roll: { min: 200, max: 200 }
+                text: Zura
+          family_name:
+            name: Family Name
+            type: oracle_rollable
+            oracle_type: table_text
+            dice: 1d200
+            _source:
+              <<: *Source
+              page: 194
+            rows:
+              - roll: { min: 1, max: 1 }
+                text: Qadir
+              - roll: { min: 2, max: 2 }
+                text: Whitlock
+              - roll: { min: 3, max: 3 }
+                text: Toprak
+              - roll: { min: 4, max: 4 }
+                text: Velez
+              - roll: { min: 5, max: 5 }
+                text: Tadena
+              - roll: { min: 6, max: 6 }
+                text: Shah
+              - roll: { min: 7, max: 7 }
+                text: Hammond
+              - roll: { min: 8, max: 8 }
+                text: Sharif
+              - roll: { min: 9, max: 9 }
+                text: Ambrose
+              - roll: { min: 10, max: 10 }
+                text: Verma
+              - roll: { min: 11, max: 11 }
+                text: Hunter
+              - roll: { min: 12, max: 12 }
+                text: Kade
+              - roll: { min: 13, max: 13 }
+                text: Sharpe
+              - roll: { min: 14, max: 14 }
+                text: Yoon
+              - roll: { min: 15, max: 15 }
+                text: Barlowe
+              - roll: { min: 16, max: 16 }
+                text: Okiro
+              - roll: { min: 17, max: 17 }
+                text: Ripley
+              - roll: { min: 18, max: 18 }
+                text: Gloom
+              - roll: { min: 19, max: 19 }
+                text: Blackwood
+              - roll: { min: 20, max: 20 }
+                text: Talin
+              - roll: { min: 21, max: 21 }
+                text: Devereux
+              - roll: { min: 22, max: 22 }
+                text: Silver
+              - roll: { min: 23, max: 23 }
+                text: Torgan
+              - roll: { min: 24, max: 24 }
+                text: Bennet
+              - roll: { min: 25, max: 25 }
+                text: Mattick
+              - roll: { min: 26, max: 26 }
+                text: Gray
+              - roll: { min: 27, max: 27 }
+                text: Fletcher
+              - roll: { min: 28, max: 28 }
+                text: Jamison
+              - roll: { min: 29, max: 29 }
+                text: Silva
+              - roll: { min: 30, max: 30 }
+                text: Hargrove
+              - roll: { min: 31, max: 31 }
+                text: McCabe
+              - roll: { min: 32, max: 32 }
+                text: Lorcan
+              - roll: { min: 33, max: 33 }
+                text: Egan
+              - roll: { min: 34, max: 34 }
+                text: Ashley
+              - roll: { min: 35, max: 35 }
+                text: Osborn
+              - roll: { min: 36, max: 36 }
+                text: Sutton
+              - roll: { min: 37, max: 37 }
+                text: Delgado
+              - roll: { min: 38, max: 38 }
+                text: Zhou
+              - roll: { min: 39, max: 39 }
+                text: Ruiz
+              - roll: { min: 40, max: 40 }
+                text: Mackenson
+              - roll: { min: 41, max: 41 }
+                text: O'Reilly
+              - roll: { min: 42, max: 42 }
+                text: Bane
+              - roll: { min: 43, max: 43 }
+                text: Dagon
+              - roll: { min: 44, max: 44 }
+                text: Hunt
+              - roll: { min: 45, max: 45 }
+                text: Booth
+              - roll: { min: 46, max: 46 }
+                text: Aktuna
+              - roll: { min: 47, max: 47 }
+                text: Tolari
+              - roll: { min: 48, max: 48 }
+                text: Ashby
+              - roll: { min: 49, max: 49 }
+                text: Morales
+              - roll: { min: 50, max: 50 }
+                text: Solace
+              - roll: { min: 51, max: 51 }
+                text: Thorn
+              - roll: { min: 52, max: 52 }
+                text: Cowley
+              - roll: { min: 53, max: 53 }
+                text: Carr
+              - roll: { min: 54, max: 54 }
+                text: Smith
+              - roll: { min: 55, max: 55 }
+                text: Pierce
+              - roll: { min: 56, max: 56 }
+                text: Quint
+              - roll: { min: 57, max: 57 }
+                text: Shaw
+              - roll: { min: 58, max: 58 }
+                text: Bond
+              - roll: { min: 59, max: 59 }
+                text: Granger
+              - roll: { min: 60, max: 60 }
+                text: Marlowe
+              - roll: { min: 61, max: 61 }
+                text: Kaan
+              - roll: { min: 62, max: 62 }
+                text: Taylan
+              - roll: { min: 63, max: 63 }
+                text: Blake
+              - roll: { min: 64, max: 64 }
+                text: Stanton
+              - roll: { min: 65, max: 65 }
+                text: Costa
+              - roll: { min: 66, max: 66 }
+                text: O'Rourke
+              - roll: { min: 67, max: 67 }
+                text: Burke
+              - roll: { min: 68, max: 68 }
+                text: Kai
+              - roll: { min: 69, max: 69 }
+                text: Ramos
+              - roll: { min: 70, max: 70 }
+                text: Brook
+              - roll: { min: 71, max: 71 }
+                text: Moreau
+              - roll: { min: 72, max: 72 }
+                text: Webb
+              - roll: { min: 73, max: 73 }
+                text: Shelton
+              - roll: { min: 74, max: 74 }
+                text: Edris
+              - roll: { min: 75, max: 75 }
+                text: Agosto
+              - roll: { min: 76, max: 76 }
+                text: Knight
+              - roll: { min: 77, max: 77 }
+                text: Sato
+              - roll: { min: 78, max: 78 }
+                text: Leota
+              - roll: { min: 79, max: 79 }
+                text: Hope
+              - roll: { min: 80, max: 80 }
+                text: Bates
+              - roll: { min: 81, max: 81 }
+                text: Dahir
+              - roll: { min: 82, max: 82 }
+                text: Dias
+              - roll: { min: 83, max: 83 }
+                text: Fernandes
+              - roll: { min: 84, max: 84 }
+                text: Braxton
+              - roll: { min: 85, max: 85 }
+                text: Fairchild
+              - roll: { min: 86, max: 86 }
+                text: Shin
+              - roll: { min: 87, max: 87 }
+                text: Fairweather
+              - roll: { min: 88, max: 88 }
+                text: Nadir
+              - roll: { min: 89, max: 89 }
+                text: Santos
+              - roll: { min: 90, max: 90 }
+                text: Lee
+              - roll: { min: 91, max: 91 }
+                text: Mihara
+              - roll: { min: 92, max: 92 }
+                text: Rangi
+              - roll: { min: 93, max: 93 }
+                text: Buhari
+              - roll: { min: 94, max: 94 }
+                text: Nishimura
+              - roll: { min: 95, max: 95 }
+                text: Tavita
+              - roll: { min: 96, max: 96 }
+                text: Salvi
+              - roll: { min: 97, max: 97 }
+                text: Volkov
+              - roll: { min: 98, max: 98 }
+                text: Ngata
+              - roll: { min: 99, max: 99 }
+                text: Sayer
+              - roll: { min: 100, max: 100 }
+                text: Takara
+              - roll: { min: 101, max: 101 }
+                text: Mahdi
+              - roll: { min: 102, max: 102 }
+                text: Barrow
+              - roll: { min: 103, max: 103 }
+                text: Merrick
+              - roll: { min: 104, max: 104 }
+                text: Morgan
+              - roll: { min: 105, max: 105 }
+                text: Hawking
+              - roll: { min: 106, max: 106 }
+                text: Jen
+              - roll: { min: 107, max: 107 }
+                text: Hobbs
+              - roll: { min: 108, max: 108 }
+                text: Frost
+              - roll: { min: 109, max: 109 }
+                text: Dias
+              - roll: { min: 110, max: 110 }
+                text: Barbosa
+              - roll: { min: 111, max: 111 }
+                text: Curry
+              - roll: { min: 112, max: 112 }
+                text: Zhang
+              - roll: { min: 113, max: 113 }
+                text: Sterling
+              - roll: { min: 114, max: 114 }
+                text: Vaaz
+              - roll: { min: 115, max: 115 }
+                text: Graves
+              - roll: { min: 116, max: 116 }
+                text: Griffin
+              - roll: { min: 117, max: 117 }
+                text: Ivers
+              - roll: { min: 118, max: 118 }
+                text: Edwards
+              - roll: { min: 119, max: 119 }
+                text: Roa
+              - roll: { min: 120, max: 120 }
+                text: Bolton
+              - roll: { min: 121, max: 121 }
+                text: Reyes
+              - roll: { min: 122, max: 122 }
+                text: Pearson
+              - roll: { min: 123, max: 123 }
+                text: Caldas
+              - roll: { min: 124, max: 124 }
+                text: Khosla
+              - roll: { min: 125, max: 125 }
+                text: Singh
+              - roll: { min: 126, max: 126 }
+                text: Drago
+              - roll: { min: 127, max: 127 }
+                text: Nuno
+              - roll: { min: 128, max: 128 }
+                text: Quon
+              - roll: { min: 129, max: 129 }
+                text: Chen
+              - roll: { min: 130, max: 130 }
+                text: Harrington
+              - roll: { min: 131, max: 131 }
+                text: Swann
+              - roll: { min: 132, max: 132 }
+                text: Malek
+              - roll: { min: 133, max: 133 }
+                text: Yusuf
+              - roll: { min: 134, max: 134 }
+                text: Murad
+              - roll: { min: 135, max: 135 }
+                text: Bannister
+              - roll: { min: 136, max: 136 }
+                text: Eaton
+              - roll: { min: 137, max: 137 }
+                text: Cromwell
+              - roll: { min: 138, max: 138 }
+                text: Brydon
+              - roll: { min: 139, max: 139 }
+                text: Carver
+              - roll: { min: 140, max: 140 }
+                text: Prescott
+              - roll: { min: 141, max: 141 }
+                text: Crowley
+              - roll: { min: 142, max: 142 }
+                text: Becker
+              - roll: { min: 143, max: 143 }
+                text: Ammar
+              - roll: { min: 144, max: 144 }
+                text: Durand
+              - roll: { min: 145, max: 145 }
+                text: Blackstone
+              - roll: { min: 146, max: 146 }
+                text: Braddock
+              - roll: { min: 147, max: 147 }
+                text: Kumar
+              - roll: { min: 148, max: 148 }
+                text: Patel
+              - roll: { min: 149, max: 149 }
+                text: Darwin
+              - roll: { min: 150, max: 150 }
+                text: Castillo
+              - roll: { min: 151, max: 151 }
+                text: Hughes
+              - roll: { min: 152, max: 152 }
+                text: Yoshida
+              - roll: { min: 153, max: 153 }
+                text: Farin
+              - roll: { min: 154, max: 154 }
+                text: Gaspar
+              - roll: { min: 155, max: 155 }
+                text: Capstone
+              - roll: { min: 156, max: 156 }
+                text: Torres
+              - roll: { min: 157, max: 157 }
+                text: Kobayashi
+              - roll: { min: 158, max: 158 }
+                text: Slater
+              - roll: { min: 159, max: 159 }
+                text: Dawson
+              - roll: { min: 160, max: 160 }
+                text: Sparke
+              - roll: { min: 161, max: 161 }
+                text: Delos
+              - roll: { min: 162, max: 162 }
+                text: Fitzpatrick
+              - roll: { min: 163, max: 163 }
+                text: Grimshaw
+              - roll: { min: 164, max: 164 }
+                text: Hassan
+              - roll: { min: 165, max: 165 }
+                text: Tanaka
+              - roll: { min: 166, max: 166 }
+                text: Hakim
+              - roll: { min: 167, max: 167 }
+                text: Osman
+              - roll: { min: 168, max: 168 }
+                text: Finn
+              - roll: { min: 169, max: 169 }
+                text: Vega
+              - roll: { min: 170, max: 170 }
+                text: O'Brien
+              - roll: { min: 171, max: 171 }
+                text: Bai
+              - roll: { min: 172, max: 172 }
+                text: Hayes
+              - roll: { min: 173, max: 173 }
+                text: Valk
+              - roll: { min: 174, max: 174 }
+                text: Russo
+              - roll: { min: 175, max: 175 }
+                text: Yarrow
+              - roll: { min: 176, max: 176 }
+                text: Hadley
+              - roll: { min: 177, max: 177 }
+                text: Kimura
+              - roll: { min: 178, max: 178 }
+                text: Kang
+              - roll: { min: 179, max: 179 }
+                text: Booker
+              - roll: { min: 180, max: 180 }
+                text: Ariki
+              - roll: { min: 181, max: 181 }
+                text: Lin
+              - roll: { min: 182, max: 182 }
+                text: Finch
+              - roll: { min: 183, max: 183 }
+                text: Beckett
+              - roll: { min: 184, max: 184 }
+                text: Cain
+              - roll: { min: 185, max: 185 }
+                text: Ashcroft
+              - roll: { min: 186, max: 186 }
+                text: Vayan
+              - roll: { min: 187, max: 187 }
+                text: Bastien
+              - roll: { min: 188, max: 188 }
+                text: Almeida
+              - roll: { min: 189, max: 189 }
+                text: Stark
+              - roll: { min: 190, max: 190 }
+                text: Cowell
+              - roll: { min: 191, max: 191 }
+                text: Stirling
+              - roll: { min: 192, max: 192 }
+                text: Wolfe
+              - roll: { min: 193, max: 193 }
+                text: Jones
+              - roll: { min: 194, max: 194 }
+                text: Lambert
+              - roll: { min: 195, max: 195 }
+                text: Khulan
+              - roll: { min: 196, max: 196 }
+                text: Wu
+              - roll: { min: 197, max: 197 }
+                text: Ahmed
+              - roll: { min: 198, max: 198 }
+                text: Han
+              - roll: { min: 199, max: 199 }
+                text: Nazari
+              - roll: { min: 200, max: 200 }
+                text: Winter
+          moniker:
+            name: Moniker
+            type: oracle_rollable
+            oracle_type: table_text
+            tags:
+              sundered_isles:
+                cursed_by: sundered_isles/oracles/character/name/moniker_cursed/category
+            _source:
+              <<: *Source
+              page: 194
+            rows:
+              - roll: { min: 1, max: 1 }
+                text: Albatross
+              - roll: { min: 2, max: 2 }
+                text: Angler
+              - roll: { min: 3, max: 3 }
+                text: Bailer
+              - roll: { min: 4, max: 4 }
+                text: Ballast
+              - roll: { min: 5, max: 5 }
+                text: Barnacle
+              - roll: { min: 6, max: 6 }
+                text: Bilge Rat
+              - roll: { min: 7, max: 7 }
+                text: Blackbeard
+              - roll: { min: 8, max: 8 }
+                text: Bluecoat
+              - roll: { min: 9, max: 9 }
+                text: Blunderbuss
+              - roll: { min: 10, max: 10 }
+                text: Bones
+              - roll: { min: 11, max: 11 }
+                text: Breakwater
+              - roll: { min: 12, max: 12 }
+                text: Brine
+              - roll: { min: 13, max: 13 }
+                text: Broadside
+              - roll: { min: 14, max: 14 }
+                text: Castoff
+              - roll: { min: 15, max: 15 }
+                text: Chum
+              - roll: { min: 16, max: 16 }
+                text: Crimson
+              - roll: { min: 17, max: 17 }
+                text: Croaker
+              - roll: { min: 18, max: 18 }
+                text: Crow
+              - roll: { min: 19, max: 19 }
+                text: Cutlass
+              - roll: { min: 20, max: 20 }
+                text: Cuttle
+              - roll: { min: 21, max: 21 }
+                text: Cyclone
+              - roll: { min: 22, max: 22 }
+                text: Deadeye
+              - roll: { min: 23, max: 23 }
+                text: Deadshot
+              - roll: { min: 24, max: 24 }
+                text: Derelict
+              - roll: { min: 25, max: 25 }
+                text: Dice
+              - roll: { min: 26, max: 26 }
+                text: Doldrum
+              - roll: { min: 27, max: 27 }
+                text: Dredge
+              - roll: { min: 28, max: 28 }
+                text: Drift
+              - roll: { min: 29, max: 29 }
+                text: Fetch
+              - roll: { min: 30, max: 30 }
+                text: Fiddle
+              - roll: { min: 31, max: 31 }
+                text: Fishbait
+              - roll: { min: 32, max: 32 }
+                text: Flintlock
+              - roll: { min: 33, max: 33 }
+                text: Flotsam
+              - roll: { min: 34, max: 34 }
+                text: Goldtooth
+              - roll: { min: 35, max: 35 }
+                text: Graybeard
+              - roll: { min: 36, max: 36 }
+                text: Greenhorn
+              - roll: { min: 37, max: 37 }
+                text: Groggy
+              - roll: { min: 38, max: 38 }
+                text: Half-hand
+              - roll: { min: 39, max: 39 }
+                text: Hardtack
+              - roll: { min: 40, max: 40 }
+                text: Havoc
+              - roll: { min: 41, max: 41 }
+                text: Hook
+              - roll: { min: 42, max: 42 }
+                text: Hound
+              - roll: { min: 43, max: 43 }
+                text: Lubber
+              - roll: { min: 44, max: 44 }
+                text: Lucky
+              - roll: { min: 45, max: 45 }
+                text: No-name
+              - roll: { min: 46, max: 46 }
+                text: One-eye
+              - roll: { min: 47, max: 47 }
+                text: One-hand
+              - roll: { min: 48, max: 48 }
+                text: Overboard
+              - roll: { min: 49, max: 49 }
+                text: Patch
+              - roll: { min: 50, max: 50 }
+                text: Pegleg
+              - roll: { min: 51, max: 51 }
+                text: Plank
+              - roll: { min: 52, max: 52 }
+                text: Powderkeg
+              - roll: { min: 53, max: 53 }
+                text: Quill
+              - roll: { min: 54, max: 54 }
+                text: Red-eye
+              - roll: { min: 55, max: 55 }
+                text: Redbeard
+              - roll: { min: 56, max: 56 }
+                text: Rigger
+              - roll: { min: 57, max: 57 }
+                text: Rotgut
+              - roll: { min: 58, max: 58 }
+                text: Rover
+              - roll: { min: 59, max: 59 }
+                text: Rudder
+              - roll: { min: 60, max: 60 }
+                text: Sabre
+              - roll: { min: 61, max: 61 }
+                text: Sage
+              - roll: { min: 62, max: 62 }
+                text: Salt
+              - roll: { min: 63, max: 63 }
+                text: Saltbeard
+              - roll: { min: 64, max: 64 }
+                text: Saltblood
+              - roll: { min: 65, max: 65 }
+                text: Saltbone
+              - roll: { min: 66, max: 66 }
+                text: Scratch
+              - roll: { min: 67, max: 67 }
+                text: Scupper
+              - roll: { min: 68, max: 68 }
+                text: Scurvy
+              - roll: { min: 69, max: 69 }
+                text: Scuttle
+              - roll: { min: 70, max: 70 }
+                text: Shark-slayer
+              - roll: { min: 71, max: 71 }
+                text: Sharkbite
+              - roll: { min: 72, max: 72 }
+                text: Sharktooth
+              - roll: { min: 73, max: 73 }
+                text: Shivers
+              - roll: { min: 74, max: 74 }
+                text: Silverblade
+              - roll: { min: 75, max: 75 }
+                text: Silvereye
+              - roll: { min: 76, max: 76 }
+                text: Silvertongue
+              - roll: { min: 77, max: 77 }
+                text: Six-finger
+              - roll: { min: 78, max: 78 }
+                text: Skipjack
+              - roll: { min: 79, max: 79 }
+                text: Snipe
+              - roll: { min: 80, max: 80 }
+                text: Sparrow
+              - roll: { min: 81, max: 81 }
+                text: Splinter
+              - roll: { min: 82, max: 82 }
+                text: Splitskull
+              - roll: { min: 83, max: 83 }
+                text: Squall
+              - roll: { min: 84, max: 84 }
+                text: Stingray
+              - roll: { min: 85, max: 85 }
+                text: Stormcrow
+              - roll: { min: 86, max: 86 }
+                text: Swab
+              - roll: { min: 87, max: 87 }
+                text: Swagger
+              - roll: { min: 88, max: 88 }
+                text: Swiftblade
+              - roll: { min: 89, max: 89 }
+                text: Tack
+              - roll: { min: 90, max: 90 }
+                text: Tall-tale
+              - roll: { min: 91, max: 91 }
+                text: Talon
+              - roll: { min: 92, max: 92 }
+                text: Three-sheets
+              - roll: { min: 93, max: 93 }
+                text: Timbers
+              - roll: { min: 94, max: 94 }
+                text: Tinker
+              - roll: { min: 95, max: 95 }
+                text: Turncoat
+              - roll: { min: 96, max: 96 }
+                text: Two-face
+              - roll: { min: 97, max: 97 }
+                text: Vixen
+              - roll: { min: 98, max: 98 }
+                text: Weather-eye
+              - roll: { min: 99, max: 99 }
+                text: Whisper
+              - roll: { min: 100, max: 100 }
+                text: Windward
+        collections:
+          moniker_cursed:
+            name: Cursed Moniker
+            type: oracle_collection
+            oracle_type: tables
+            summary: Use these tables to reveal an epitaph for a dreadful, eldritch, ill-fated, or mechanical character. For example, a pirate captain who adopts a much-feared identity would have a [Dreadful Persona](id:sundered_isles/oracles/character/name/moniker_cursed/dreadful_persona). A wretched, outcast mariner would have an [Ill-Fated Nature](id:sundered_isles/oracles/character/name/moniker_cursed/ill-fated_nature). Use the result alone, combine with a name, or pair results from two Cursed Moniker categories.
+            _source:
+              <<: *Source
+              page: 197
+            contents:
+              category:
+                name: Moniker Category
+                type: oracle_rollable
+                oracle_type: table_text
+                tags:
+                  sundered_isles:
+                    cursed_version_of:
+                      - sundered_isles/oracles/character/name/moniker
+                    curse_behavior: replace_result
+                _source:
+                  <<: *Source
+                rows:
+                  - roll: { min: 1, max: 40 }
+                    text: '[Dreadful Persona](id:sundered_isles/oracles/character/name/moniker_cursed/dreadful_persona)'
+                    oracle_rolls:
+                      - auto: false
+                        number_of_rolls: 1
+                        oracle: sundered_isles/oracles/character/name/moniker_cursed/dreadful_persona
+                  - roll: { min: 41, max: 60 }
+                    text: '[Eldritch Powers](id:sundered_isles/oracles/character/name/moniker_cursed/eldritch_powers)'
+                    oracle_rolls:
+                      - auto: false
+                        number_of_rolls: 1
+                        oracle: sundered_isles/oracles/character/name/moniker_cursed/eldritch_powers
+                  - roll: { min: 61, max: 90 }
+                    text: '[Ill-Fated Nature](id:sundered_isles/oracles/character/name/moniker_cursed/ill_fated_nature)'
+                    oracle_rolls:
+                      - auto: false
+                        number_of_rolls: 1
+                        oracle: sundered_isles/oracles/character/name/moniker_cursed/ill_fated_nature
+                  - roll: { min: 91, max: 100 }
+                    text: '[Mechanical Form](id:sundered_isles/oracles/character/name/moniker_cursed/mechanical_form)'
+                    oracle_rolls:
+                      - auto: false
+                        number_of_rolls: 1
+                        oracle: sundered_isles/oracles/character/name/moniker_cursed/mechanical_form
+              dreadful_persona:
+                name: Dreadful Persona
+                type: oracle_rollable
+                oracle_type: table_text
+                _source:
+                  <<: *Source
+                rows:
+                  - roll: { min: 1, max: 2 }
+                    text: Banshee
+                  - roll: { min: 3, max: 4 }
+                    text: Barracuda
+                  - roll: { min: 5, max: 7 }
+                    text: Blackheart
+                  - roll: { min: 8, max: 10 }
+                    text: Blackmask
+                  - roll: { min: 11, max: 13 }
+                    text: Blacksail
+                  - roll: { min: 14, max: 16 }
+                    text: Bloodbeard
+                  - roll: { min: 17, max: 19 }
+                    text: Bloodblade
+                  - roll: { min: 20, max: 22 }
+                    text: Bloodskull
+                  - roll: { min: 23, max: 25 }
+                    text: Bloodtide
+                  - roll: { min: 26, max: 28 }
+                    text: Bloody-hand
+                  - roll: { min: 29, max: 31 }
+                    text: Boneblade
+                  - roll: { min: 32, max: 34 }
+                    text: Bonerender
+                  - roll: { min: 35, max: 36 }
+                    text: Carrion Eater
+                  - roll: { min: 37, max: 39 }
+                    text: Chimera
+                  - roll: { min: 40, max: 41 }
+                    text: Corpsehand
+                  - roll: { min: 42, max: 44 }
+                    text: Darktide
+                  - roll: { min: 45, max: 47 }
+                    text: Deathmask
+                  - roll: { min: 48, max: 50 }
+                    text: Dreadskull
+                  - roll: { min: 51, max: 52 }
+                    text: Fleshcarver
+                  - roll: { min: 53, max: 55 }
+                    text: Gloamheart
+                  - roll: { min: 56, max: 58 }
+                    text: Hellhound
+                  - roll: { min: 59, max: 60 }
+                    text: Hellion
+                  - roll: { min: 61, max: 63 }
+                    text: Jackal
+                  - roll: { min: 64, max: 65 }
+                    text: Keelhaul
+                  - roll: { min: 66, max: 68 }
+                    text: Pyre
+                  - roll: { min: 69, max: 71 }
+                    text: Reaver
+                  - roll: { min: 72, max: 74 }
+                    text: Redpalm
+                  - roll: { min: 75, max: 77 }
+                    text: Redskull
+                  - roll: { min: 78, max: 80 }
+                    text: Seafang
+                  - roll: { min: 81, max: 83 }
+                    text: Skullcrusher
+                  - roll: { min: 84, max: 85 }
+                    text: Soulless
+                  - roll: { min: 86, max: 88 }
+                    text: Specter
+                  - roll: { min: 89, max: 91 }
+                    text: Spider
+                  - roll: { min: 92, max: 94 }
+                    text: Spinebreaker
+                  - roll: { min: 95, max: 97 }
+                    text: Stoneheart
+                  - roll: { min: 98, max: 100 }
+                    text: Vulture
+              eldritch_powers:
+                name: Eldritch Powers
+                type: oracle_rollable
+                oracle_type: table_text
+                _source:
+                  <<: *Source
+                rows:
+                  - roll: { min: 1, max: 4 }
+                    text: Acolyte
+                  - roll: { min: 5, max: 8 }
+                    text: Beastblood
+                  - roll: { min: 9, max: 12 }
+                    text: Bonebinder
+                  - roll: { min: 13, max: 16 }
+                    text: Darkshroud
+                  - roll: { min: 17, max: 20 }
+                    text: Deathtouch
+                  - roll: { min: 21, max: 24 }
+                    text: Enchanter
+                  - roll: { min: 25, max: 28 }
+                    text: Gravebreaker
+                  - roll: { min: 29, max: 32 }
+                    text: Harvester
+                  - roll: { min: 33, max: 36 }
+                    text: Herald
+                  - roll: { min: 37, max: 41 }
+                    text: Hex
+                  - roll: { min: 42, max: 45 }
+                    text: Hullcrusher
+                  - roll: { min: 46, max: 49 }
+                    text: Moonborn
+                  - roll: { min: 50, max: 53 }
+                    text: Oracle
+                  - roll: { min: 54, max: 57 }
+                    text: Prophet
+                  - roll: { min: 58, max: 62 }
+                    text: Seawitch
+                  - roll: { min: 63, max: 66 }
+                    text: Shadow
+                  - roll: { min: 67, max: 70 }
+                    text: Siren
+                  - roll: { min: 71, max: 74 }
+                    text: Soothsayer
+                  - roll: { min: 75, max: 78 }
+                    text: Soulbinder
+                  - roll: { min: 79, max: 83 }
+                    text: Tempest
+                  - roll: { min: 84, max: 87 }
+                    text: Tome
+                  - roll: { min: 88, max: 91 }
+                    text: Valkyrie
+                  - roll: { min: 92, max: 96 }
+                    text: Warlock
+                  - roll: { min: 97, max: 100 }
+                    text: Windcaller
+              ill_fated_nature:
+                name: Ill-Fated Nature
+                type: oracle_rollable
+                oracle_type: table_text
+                _source:
+                  <<: *Source
+                rows:
+                  - roll: { min: 1, max: 5 }
+                    text: Blackspot
+                  - roll: { min: 6, max: 10 }
+                    text: Blight
+                  - roll: { min: 11, max: 15 }
+                    text: Calamity
+                  - roll: { min: 16, max: 20 }
+                    text: Fluke
+                  - roll: { min: 21, max: 25 }
+                    text: Graves
+                  - roll: { min: 26, max: 30 }
+                    text: Grim
+                  - roll: { min: 31, max: 35 }
+                    text: Harbinger
+                  - roll: { min: 36, max: 40 }
+                    text: Harrow
+                  - roll: { min: 41, max: 45 }
+                    text: Husk
+                  - roll: { min: 46, max: 50 }
+                    text: Jinx
+                  - roll: { min: 51, max: 55 }
+                    text: Jonah
+                  - roll: { min: 56, max: 60 }
+                    text: Leech
+                  - roll: { min: 61, max: 65 }
+                    text: Luckless
+                  - roll: { min: 66, max: 70 }
+                    text: Maggot
+                  - roll: { min: 71, max: 75 }
+                    text: Pox
+                  - roll: { min: 76, max: 80 }
+                    text: Rot
+                  - roll: { min: 81, max: 85 }
+                    text: Scar
+                  - roll: { min: 86, max: 90 }
+                    text: Scourge
+                  - roll: { min: 91, max: 95 }
+                    text: Twice-drowned
+                  - roll: { min: 96, max: 100 }
+                    text: Wither
+              mechanical_form:
+                name: Mechanical Form
+                type: oracle_rollable
+                oracle_type: table_text
+                _source:
+                  <<: *Source
+                rows:
+                  - roll: { min: 1, max: 7 }
+                    text: Anvil
+                  - roll: { min: 8, max: 13 }
+                    text: Bladehand
+                  - roll: { min: 14, max: 20 }
+                    text: Brassbolt
+                  - roll: { min: 21, max: 26 }
+                    text: Clank
+                  - roll: { min: 27, max: 33 }
+                    text: Cog
+                  - roll: { min: 34, max: 40 }
+                    text: Forgeheart
+                  - roll: { min: 41, max: 46 }
+                    text: Gadget
+                  - roll: { min: 47, max: 52 }
+                    text: Gear
+                  - roll: { min: 53, max: 58 }
+                    text: Ironclaw
+                  - roll: { min: 59, max: 64 }
+                    text: Ironeye
+                  - roll: { min: 65, max: 70 }
+                    text: Ironshell
+                  - roll: { min: 71, max: 76 }
+                    text: Rattle
+                  - roll: { min: 77, max: 82 }
+                    text: Rig
+                  - roll: { min: 83, max: 88 }
+                    text: Rust
+                  - roll: { min: 89, max: 94 }
+                    text: Spark
+                  - roll: { min: 95, max: 100 }
+                    text: Tinker

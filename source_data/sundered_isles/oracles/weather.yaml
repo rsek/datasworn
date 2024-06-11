@@ -1,0 +1,183 @@
+_id: sundered_isles
+datasworn_version: '0.1.0'
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-06-01
+  title: Sundered Isles
+  url: https://ironswornrpg.com
+  license: null
+  authors:
+    - name: Shawn Tomkin
+oracles:
+  weather:
+    name: Weather Oracles
+    type: oracle_collection
+    oracle_type: tables
+    _source:
+      <<: *Source
+      page: 130
+    collections:
+      conditions:
+        name: Weather Conditions
+        _source:
+          <<: *Source
+          page: 130
+        type: oracle_collection
+        oracle_type: table_shared_text
+        contents:
+          myriads:
+            name: Myriads
+            summary: Central Seas
+            type: oracle_rollable
+            oracle_type: column_text
+            tags:
+              sundered_isles:
+                region: myriads
+            rows:
+              - roll: { min: 1, max: 70 }
+                <<: &Conditions.0
+                  text: Fair Weather
+              - roll: { min: 71, max: 100 }
+                <<: &Conditions.1
+                  text: '[Foul Weather](id:sundered_isles/oracles/weather/foul)'
+                  oracle_rolls:
+                    - auto: false
+                      number_of_rolls: 1
+                      oracle: sundered_isles/oracles/weather/foul
+          margins:
+            name: Margins
+            summary: Outer Seas
+            type: oracle_rollable
+            oracle_type: column_text
+            tags:
+              sundered_isles:
+                region: margins
+            rows:
+              - roll: { min: 1, max: 60 }
+                <<: *Conditions.0
+              - roll: { min: 61, max: 100 }
+                <<: *Conditions.1
+          reaches:
+            name: Reaches
+            summary: Remote Seas
+            type: oracle_rollable
+            oracle_type: column_text
+            tags:
+              sundered_isles:
+                region: reaches
+            rows:
+              - roll: { min: 1, max: 50 }
+                <<: *Conditions.0
+              - roll: { min: 51, max: 100 }
+                <<: *Conditions.1
+    contents:
+      foul:
+        name: Foul Weather
+        type: oracle_rollable
+        oracle_type: table_text2
+        column_labels:
+          roll: Roll
+          text: Result
+          text2: Details
+        tags:
+          sundered_isles:
+            cursed_by: sundered_isles/oracles/weather/cursed
+        _source:
+          <<: *Source
+          page: 130
+        rows:
+          - roll: { min: 1, max: 10 }
+            text: Stifling
+            text2: Windless, oppressive heat
+          - roll: { min: 11, max: 25 }
+            text: Listless
+            text2: Light winds and sweltering heat
+          - roll: { min: 26, max: 40 }
+            text: Misty
+            text2: Light winds and damp fog
+          - roll: { min: 41, max: 55 }
+            text: Foggy
+            text2: Light winds and dense fog
+          - roll: { min: 56, max: 75 }
+            text: Heavy
+            text2: High winds, steady rain, and rough waters
+          - roll: { min: 76, max: 90 }
+            text: Stormy
+            text2: Powerful winds, pelting rain, and high seas
+          - roll: { min: 91, max: 100 }
+            text: Raging
+            text2: Destructive winds, torrential rain, and monstrous waves
+      cursed:
+        name: Cursed Weather
+        type: oracle_rollable
+        oracle_type: table_text2
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/weather/foul
+            curse_behavior: replace_result
+        _source:
+          <<: *Source
+          page: 131
+        rows:
+          - roll: { min: 1, max: 5 }
+            text: Ash storm
+            text2: Churning, low-level clouds of gray ash
+          - roll: { min: 6, max: 10 }
+            text: Blighting muck
+            text2: Rain of corrosive, mucous-like ooze
+          - roll: { min: 11, max: 15 }
+            text: Blood rain
+            text2: Ghastly, crimson rain
+          - roll: { min: 16, max: 20 }
+            text: Cinder rain
+            text2: Storm of fiery rock and ash
+          - roll: { min: 21, max: 25 }
+            text: Creeping mist
+            text2: Slithering, grasping fog
+          - roll: { min: 26, max: 30 }
+            text: Crimson mist
+            text2: Slow-moving fog that burns like acid
+          - roll: { min: 31, max: 35 }
+            text: Dead calm
+            text2: Disquieting stillness
+          - roll: { min: 36, max: 40 }
+            text: Fisher's feast
+            text2: Shower of fish
+          - roll: { min: 41, max: 45 }
+            text: Forge's fury
+            text2: Fast-moving storm of scorching heat
+          - roll: { min: 46, max: 50 }
+            text: Gloam tide
+            text2: Unnatural darkness that moves with the tide
+          - roll: { min: 51, max: 55 }
+            text: Ice fall
+            text2: Uncanny cold that leaves surfaces enveloped in thick ice
+          - roll: { min: 56, max: 60 }
+            text: Iron wind
+            text2: Strong wind that sends ships along an inevitable, fatebound course
+          - roll: { min: 61, max: 65 }
+            text: Knowing mist
+            text2: Fog that manifests visions of dark secrets and painful memories
+          - roll: { min: 66, max: 70 }
+            text: Phantom mist
+            text2: Ghost-haunted fog
+          - roll: { min: 71, max: 75 }
+            text: Rot wind
+            text2: Wind that carries the foul stench of death
+          - roll: { min: 76, max: 80 }
+            text: Sand storm
+            text2: Clouds of pelting, stinging sand, ripped from a now-barren island
+          - roll: { min: 81, max: 85 }
+            text: Seeking spouts
+            text2: Waterspouts and tornadoes that move with dreadful purpose
+          - roll: { min: 86, max: 90 }
+            text: Tempest
+            text2: Undying storm that prowls the isles in search of prey
+          - roll: { min: 91, max: 95 }
+            text: Wailing wind
+            text2: Wind that carries the mournful keen of the lost and the drowned
+          - roll: { min: 96, max: 100 }
+            text: Witch fire
+            text2: Low clouds suffused with tendrils of chaotic, arcane energy

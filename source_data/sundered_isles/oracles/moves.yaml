@@ -1,0 +1,117 @@
+_id: sundered_isles
+datasworn_version: '0.1.0'
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-06-01
+  title: Sundered Isles
+  url: https://ironswornrpg.com
+  license: null
+  authors:
+    - name: Shawn Tomkin
+oracles:
+  moves:
+    name: Move Oracles
+    type: oracle_collection
+    oracle_type: tables
+    _source:
+      <<: *Source
+    contents:
+      make_a_discovery:
+        name: Make a Discovery
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+        rows:
+          - roll: { min: 1, max: 5 }
+            text: Abundant and unusual life
+          - roll: { min: 6, max: 10 }
+            text: Archive or map with revelatory details
+          - roll: { min: 11, max: 15 }
+            text: Awe-inspiring natural feature
+          - roll: { min: 16, max: 19 }
+            text: Beneficial enchantment or powers
+          - roll: { min: 20, max: 23 }
+            text: Benevolent spirit or apparition
+          - roll: { min: 24, max: 28 }
+            text: Clues to an enduring mystery
+          - roll: { min: 29, max: 33 }
+            text: Extraordinary natural phenomenon
+          - roll: { min: 34, max: 38 }
+            text: Majestic or remarkable creature
+          - roll: { min: 39, max: 42 }
+            text: Manifestation of a myth or legend
+          - roll: { min: 43, max: 47 }
+            text: Monumental architecture or artistry
+          - roll: { min: 48, max: 52 }
+            text: Otherworldly path or passage
+          - roll: { min: 53, max: 57 }
+            text: People with phenomenal abilities
+          - roll: { min: 58, max: 61 }
+            text: Prized natural resource
+          - roll: { min: 62, max: 65 }
+            text: Relic of legendary power
+          - roll: { min: 66, max: 70 }
+            text: Safeguarded or hidden location
+          - roll: { min: 71, max: 75 }
+            text: Sizable treasure
+          - roll: { min: 76, max: 80 }
+            text: Unique machine or technology
+          - roll: { min: 81, max: 85 }
+            text: Well-preserved artifact or specimen
+          - roll: { min: 86, max: 90 }
+            text: Wondrous visions or prophesies
+          - roll: { min: 91, max: 100 }
+            text: Roll twice
+            oracle_rolls:
+              - auto: true
+                number_of_rolls: 2
+                duplicates: reroll
+      confront_chaos:
+        name: Confront Chaos
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+        rows:
+          - roll: { min: 1, max: 5 }
+            text: Archive or map bearing a dire warning
+          - roll: { min: 6, max: 10 }
+            text: Baneful spells or wards
+          - roll: { min: 11, max: 15 }
+            text: Blighted or corrupted habitat
+          - roll: { min: 16, max: 20 }
+            text: Cataclysmic natural phenomenon
+          - roll: { min: 21, max: 25 }
+            text: Cursed treasure of irresistible lure
+          - roll: { min: 26, max: 30 }
+            text: Dead given unnatural life
+          - roll: { min: 31, max: 35 }
+            text: Fanatical followers of a dreadful power
+          - roll: { min: 36, max: 40 }
+            text: Fearsome creature of monstrous size
+          - roll: { min: 41, max: 45 }
+            text: Harrowing visions or prophesies
+          - roll: { min: 46, max: 50 }
+            text: Malevolent being of dreadful power
+          - roll: { min: 51, max: 55 }
+            text: Malignant affliction or parasite
+          - roll: { min: 56, max: 60 }
+            text: People of monstrous form
+          - roll: { min: 61, max: 65 }
+            text: Relic of accursed power
+          - roll: { min: 66, max: 70 }
+            text: Ruinous machine or technology
+          - roll: { min: 71, max: 75 }
+            text: Signs of an awakened evil
+          - roll: { min: 76, max: 80 }
+            text: Site of a baffling disappearance
+          - roll: { min: 81, max: 85 }
+            text: Site of great destruction
+          - roll: { min: 86, max: 90 }
+            text: Site of terrible carnage
+          - roll: { min: 91, max: 95 }
+            text: Swarming creatures of insatiable fury
+          - roll: { min: 96, max: 100 }
+            text: Wrathful spirit or apparition

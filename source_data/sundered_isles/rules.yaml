@@ -1,0 +1,147 @@
+_id: sundered_isles
+datasworn_version: "0.1.0"
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-06-01
+  title: Sundered Isles
+  url: https://ironswornrpg.com
+  license: null
+  authors:
+    - name: Shawn Tomkin
+rules:
+  # condition_meters:
+  #   supply:
+  #     label: supply (equipped)
+  #     max: 5
+  #     value: 5
+  #     shared: true
+  #     description: |-
+  #       Equipped supply represents readiness among you and your allies: gear, weapons and ammo, provisions when going ashore, and minor finances. Think of it as your personal supply—the things you and your allies count among your equipment, belongings, and coin at hand.
+  #   supply_hold:
+  #     label: supply (hold)
+  #     max: 5
+  #     value: 5
+  #     shared: true
+  #     optional: true
+  #     description: |-
+  #       Hold supply represents shipwide resources such as food and water, rum, gear and tools, weapons for the crew, ammo and powder for the cannons, oil for the lamps, wood and sailcloth for repairs, and minor trade goods. It measures your level of readiness for seagoing journeys and naval combat, and your ability to keep the crew provisioned and equipped. If you find yourself commanding multiple ships, the single hold supply value measures your fleetwide readiness.
+  # impacts:
+  #   misfortunes:
+  #     label: misfortunes
+  #     description: As with all impacts, misfortunes affect your max momentum and momentum reset. In addition, if you are wounded, shaken, or unprepared, you cannot increase the associated condition meter.
+  #     contents:
+  #       unprepared:
+  #         label: unprepared (equipped)
+  #         description: Unprepared is marked when you [Sacrifice Resources](id:starforged/moves/suffer/sacrifice_resources) and are reduced to 0 supply. You are not properly equipped for the dangers of the Sundered Isles. Because you and your allies share the same supply value, you mark unprepared together.
+  #         shared: true
+  #         prevents_recovery:
+  #           - supply
+  #       unprepared_hold:
+  #         label: unprepared (hold)
+  #         description: Unprepared is marked when you [Sacrifice Resources](id:starforged/moves/suffer/sacrifice_resources) and are reduced to 0 supply. You are not properly equipped for the dangers of the Sundered Isles. Because you and your allies share the same supply value, you mark unprepared together.
+  #         shared: true
+  #         prevents_recovery:
+  #           - supply_hold
+  tags:
+    cursed_version_of:
+      description: This oracle is the cursed version of one or more oracles. Note that any wildcard matches with their own `cursed_version_of` tag should be ignored (and can safely be be omitted from curse die behavior altogether).
+      applies_to: [oracle_rollable]
+      wildcard: true
+      value_type: oracle_rollable
+    curse_behavior:
+      description: |-
+        Only relevant if the `cursed_version_of` tag is present.
+          * `replace_result`: Replace the original table result with the cursed table result, using the original table roll value.
+          * `add_result`: Roll again on the cursed table, combining it with the original table result.
+      applies_to: [oracle_rollable]
+      value_type: enum
+      enum:
+        - add_result
+        - replace_result
+        # TODO: "see_text" for other behavior?
+        # ugh, should this be paired with cursed_by instead? a lot of this seems to be tied to original table
+    cursed_by:
+      description: This oracle has a cursed version.
+      applies_to: [oracle_rollable]
+      value_type: oracle_rollable
+    supernatural:
+      description: This asset is ideal for settings that feature supernatural or mythic powers.
+      value_type: boolean
+      applies_to: [asset]
+    technological:
+      description: This asset is ideal for settings that feature remarkable technologies.
+      value_type: boolean
+      applies_to: [asset]
+    starforged_friendly:
+      description: This asset is ideal for use in Starforged.
+      value_type: boolean
+      applies_to: [asset]
+    region:
+      description: This oracle table or row relates to a specific region of the Sundered Isles.
+      applies_to: [oracle_rollable, oracle_table_row]
+      value_type: enum
+      enum:
+        - myriads
+        - margins
+        - reaches
+    overland_region:
+      description: This oracle table or row relates to a specific overland region type.
+      value_type: enum
+      applies_to: [oracle_rollable, oracle_table_row]
+      # TODO: is there a way to make this extensible? seems likely to be expanded by 3rd-party content
+      enum:
+        - highlands
+        - jungle
+        - lava_field
+        - marsh
+        - river
+        - scrub
+        - shore
+        - swamp
+        - wastes
+        - woodland
+        - cursed
+    location:
+      value_type: enum
+      applies_to: [oracle_rollable, oracle_table_row]
+      description: This oracle table or row relates to a location type.
+      enum:
+        - shore
+        - inland
+        - waterside
+        - sea
+        - sea_cave # *within* a sea cave
+        - buried
+        - swamp
+        - river # shipwreck only -- described similarly to waterside, but this is a cleaner match for shipwreck oracle keys
+    faction_type:
+      value_type: enum
+      applies_to: [oracle_rollable, oracle_table_row]
+      description: This oracle table or row relates to a specific type of faction.
+      enum:
+        - society
+        - organization
+        - empire
+    ship_size:
+      value_type: enum
+      applies_to: [oracle_rollable, oracle_table_row]
+      description: This oracle table or row relates to a specific size of ship.
+      enum:
+        - small
+        - medium
+        - large
+        - colossal
+        - flotilla
+        - fleet
+        - armada
+    treasure_size:
+      value_type: enum
+      applies_to: [oracle_rollable, oracle_table_row]
+      description: This oracle table or row relates to a specific size of treasure.
+      enum:
+        - small
+        - medium
+        - large
+        - vast
+

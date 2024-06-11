@@ -1,0 +1,897 @@
+_id: sundered_isles
+datasworn_version: "0.1.0"
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-06-01
+  title: Sundered Isles
+  url: https://ironswornrpg.com
+  license: null
+  authors:
+    - name: Shawn Tomkin
+oracles:
+  ruin:
+    name: Ruin Oracles
+    type: oracle_collection
+    oracle_type: tables
+    _source:
+      <<: *Source
+      page: 212
+    contents:
+      location:
+        name: Ruin Location
+        type: oracle_rollable
+        oracle_type: table_text2
+        summary: When learning about a distant ruin, use this table to reveal its location. If you come upon a ruin in your travels, pick a location as appropriate to your surroundings.
+        _source:
+          <<: *Source
+          page: 212
+        rows:
+          - roll: { min: 1, max: 20 }
+            text: Sea
+            text2: Amid open waters
+            tags:
+              sundered_isles:
+                location: sea
+          - roll: { min: 21, max: 60 }
+            text: Shore
+            text2: Where land meets the sea
+            tags:
+              sundered_isles:
+                location: shore
+          - roll: { min: 61, max: 90 }
+            text: Inland
+            text2: Away from the sea
+            tags:
+              sundered_isles:
+                location: inland
+          - roll: { min: 91, max: 100 }
+            text: Buried
+            text2: Within cavernous depths
+            tags:
+              sundered_isles:
+                location: buried
+      condition:
+        name: Ruin Condition
+        type: oracle_rollable
+        oracle_type: table_text2
+        _source:
+          <<: *Source
+          page: 213
+        rows:
+        - roll: { min: 1, max: 10 }
+          text: Devastated
+          text2: Ravaged by calamity
+        - roll: { min: 11, max: 25 }
+          text: Unrecognizable
+          text2: Reclaimed by nature
+        - roll: { min: 26, max: 40 }
+          text: Collapsed
+          text2: Toppled or in pieces
+        - roll: { min: 41, max: 60 }
+          text: Unstable
+          text2: Actively crumbling or sinking
+        - roll: { min: 61, max: 80 }
+          text: Timeworn
+          text2: Marked by desolation
+        - roll: { min: 81, max: 90 }
+          text: Whole
+          text2: Standing the test of time
+        - roll: { min: 91, max: 95 }
+          text: Well-preserved
+          text2: In remarkable condition
+        - roll: { min: 96, max: 100 }
+          text: Rebuilding
+          text2: In the process or restoration
+      scope:
+        name: Ruin Scope
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 213
+        rows:
+          - roll: { min: 1, max: 5 }
+            text: Unimpressive structure
+          - roll: { min: 6, max: 10 }
+            text: Few minor structures
+          - roll: { min: 11, max: 25 }
+            text: Typical structure
+          - roll: { min: 26, max: 40 }
+            text: Several scattered structures
+          - roll: { min: 41, max: 60 }
+            text: Large, imposing structure
+          - roll: { min: 61, max: 80 }
+            text: Sizable sprawl of structures
+          - roll: { min: 81, max: 95 }
+            text: Colossal structure
+          - roll: { min: 96, max: 100 }
+            text: Vast sprawl of structures
+      first_look:
+        name: Ruin First Look
+        type: oracle_rollable
+        oracle_type: table_text
+        recommended_rolls: { min: 1, max: 2 }
+        tags:
+          sundered_isles:
+            cursed_by: sundered_isles/oracles/ruin/first_look_cursed
+        _source:
+          <<: *Source
+          page: 214
+        rows:
+          - roll: { min: 1, max: 2 }
+            text: Adorned with faded colors
+          - roll: { min: 3, max: 4 }
+            text: Adorned with murals
+          - roll: { min: 5, max: 6 }
+            text: Adorned with ornate pillars
+          - roll: { min: 7, max: 8 }
+            text: Adorned with rare metals
+          - roll: { min: 9, max: 10 }
+            text: Adorned with religious iconography
+          - roll: { min: 11, max: 13 }
+            text: Amid a waterfall or waterway
+          - roll: { min: 14, max: 16 }
+            text: Amid lush vegetation
+          - roll: { min: 17, max: 18 }
+            text: Blackened by fire
+          - roll: { min: 19, max: 21 }
+            text: Blocked or barricaded
+          - roll: { min: 22, max: 24 }
+            text: Breached entrance
+          - roll: { min: 25, max: 26 }
+            text: Built of unusual materials
+          - roll: { min: 27, max: 28 }
+            text: Carved into the terrain
+          - roll: { min: 29, max: 30 }
+            text: Concentric architecture
+          - roll: { min: 31, max: 33 }
+            text: Connected by lofty bridges
+          - roll: { min: 34, max: 35 }
+            text: Covered in inscrutable symbols
+          - roll: { min: 36, max: 37 }
+            text: Covered in moss, fungi, or algae
+          - roll: { min: 38, max: 39 }
+            text: Defiled by vandals
+          - roll: { min: 40, max: 42 }
+            text: Difficult or hidden access
+          - roll: { min: 43, max: 44 }
+            text: Divided by a sinkhole or chasm
+          - roll: { min: 45, max: 47 }
+            text: Domed architecture
+          - roll: { min: 48, max: 50 }
+            text: Encircled by a wall
+          - roll: { min: 51, max: 52 }
+            text: Fronted by grand stairs
+          - roll: { min: 53, max: 54 }
+            text: Generating light or energy
+          - roll: { min: 55, max: 56 }
+            text: Hung with tattered heraldry
+          - roll: { min: 57, max: 58 }
+            text: Imposing statues
+          - roll: { min: 59, max: 60 }
+            text: Inactive machinery
+          - roll: { min: 61, max: 63 }
+            text: Monolithic architecture
+          - roll: { min: 64, max: 65 }
+            text: Multi-tiered architecture
+          - roll: { min: 66, max: 67 }
+            text: Nearby ship or encampment
+          - roll: { min: 68, max: 69 }
+            text: Open-air structures
+          - roll: { min: 70, max: 71 }
+            text: Overrun by creatures
+          - roll: { min: 72, max: 74 }
+            text: Pyramid architecture
+          - roll: { min: 75, max: 76 }
+            text: Scarred by war
+          - roll: { min: 77, max: 78 }
+            text: Scattered remains of the dead
+          - roll: { min: 79, max: 80 }
+            text: Signs of lurking predators
+          - roll: { min: 81, max: 82 }
+            text: Signs of new inhabitants
+          - roll: { min: 83, max: 84 }
+            text: Signs of scavengers or looters
+          - roll: { min: 85, max: 87 }
+            text: Situated in a high place
+          - roll: { min: 88, max: 90 }
+            text: Sunken or flooded
+          - roll: { min: 91, max: 92 }
+            text: Surrounded by destruction
+          - roll: { min: 93, max: 95 }
+            text: Surrounded by rugged or dense terrain
+          - roll: { min: 96, max: 100 }
+            text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+            oracle_rolls:
+              - auto: true
+                oracle: sundered_isles/oracles/core/descriptor
+              - auto: true
+                oracle: sundered_isles/oracles/core/focus
+      first_look_cursed:
+        name: Cursed Ruin First Look
+        type: oracle_rollable
+        oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/ruin/first_look
+            curse_behavior: replace_result
+        _source:
+          <<: *Source
+        rows:
+          - roll: { min: 1, max: 3 }
+            text: Among titanic bones
+          - roll: { min: 4, max: 6 }
+            text: Cloaked by a grim darkness
+          - roll: { min: 7, max: 9 }
+            text: Corpses displayed as a warning
+          - roll: { min: 10, max: 12 }
+            text: Covered in mucus or slime
+          - roll: { min: 13, max: 15 }
+            text: Dreadful premonitions
+          - roll: { min: 16, max: 19 }
+            text: Echoing with beastly howls
+          - roll: { min: 20, max: 23 }
+            text: Engulfed in unnatural mist or murk
+          - roll: { min: 24, max: 26 }
+            text: Festooned with bones and skulls
+          - roll: { min: 27, max: 30 }
+            text: Frightful phantom whispers
+          - roll: { min: 31, max: 33 }
+            text: Floating structure
+          - roll: { min: 34, max: 36 }
+            text: Glimpses of ghostly forms
+          - roll: { min: 37, max: 40 }
+            text: Hordes of circling carrion birds or bats
+          - roll: { min: 41, max: 44 }
+            text: Hung with thick strands of webbing
+          - roll: { min: 45, max: 47 }
+            text: Incomprehensible architectural forms
+          - roll: { min: 48, max: 50 }
+            text: Marked with eldritch symbols
+          - roll: { min: 51, max: 53 }
+            text: Monstrous claw marks
+          - roll: { min: 54, max: 56 }
+            text: Overpowering stench of decay
+          - roll: { min: 57, max: 60 }
+            text: Overtaken by malignant plants
+          - roll: { min: 61, max: 63 }
+            text: Secrets revealed in moonlight
+          - roll: { min: 64, max: 66 }
+            text: Skull-shaped edifice
+          - roll: { min: 67, max: 69 }
+            text: Suffused with eerie light
+          - roll: { min: 70, max: 72 }
+            text: Surrounded by blighted terrain
+          - roll: { min: 73, max: 75 }
+            text: Surrounded by dead creatures
+          - roll: { min: 76, max: 78 }
+            text: Swarming insects or vermin
+          - roll: { min: 79, max: 81 }
+            text: Unnatural decay
+          - roll: { min: 82, max: 85 }
+            text: Unnerving stillness or quiet
+          - roll: { min: 86, max: 89 }
+            text: Visions of this place in its heyday
+          - roll: { min: 90, max: 93 }
+            text: Warded by arcane energies
+          - roll: { min: 94, max: 96 }
+            text: Wreathed in cold and ice
+          - roll: { min: 97, max: 100 }
+            text: "[Cursed Weather](id:sundered_isles/oracles/weather/cursed)"
+            oracle_rolls:
+              - auto: false
+                number_of_rolls: 1
+                oracle: sundered_isles/oracles/weather/cursed
+      mystery:
+        name: Ruin Mystery
+        type: oracle_rollable
+        oracle_type: table_text2
+        recommended_rolls: { min: 1, max: 2 }
+        tags:
+          sundered_isles:
+            cursed_by: sundered_isles/oracles/ruin/mystery_cursed
+        _source:
+          <<: *Source
+          page: 216
+        rows:
+          - roll: { min: 1, max: 10 }
+            text: Calamitous downfall
+            text2: What brought this place to ruin?
+          - roll: { min: 11, max: 20 }
+            text: Cultural legacy
+            text2: What unique beliefs or customs were practiced here?
+          - roll: { min: 21, max: 30 }
+            text: Enemy schemes
+            text2: What purpose does a foe or rival have in this place?
+          - roll: { min: 31, max: 40 }
+            text: Enigmatic waymarker
+            text2: What greater site or discovery does this place lead to?
+          - roll: { min: 41, max: 50 }
+            text: Fabled relic
+            text2: What legendary artifact or treasure is held here?
+          - roll: { min: 51, max: 60 }
+            text: Heroes' rest
+            text2: What legendary figure is entombed here?
+          - roll: { min: 61, max: 70 }
+            text: Lost people
+            text2: What became of the people who once inhabited this site?
+          - roll: { min: 71, max: 80 }
+            text: Personal heritage
+            text2: What connection does this place have to your culture or calling?
+          - roll: { min: 81, max: 90 }
+            text: Unfulfilled promise
+            text2: What forsaken vow or lost destiny hangs heavy over this place?
+          - roll: { min: 91, max: 100 }
+            text: Unusual purpose
+            text2: What unexpected function did this site serve?
+      mystery_cursed:
+        name: Cursed Ruin Mystery
+        type: oracle_rollable
+        oracle_type: table_text2
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/ruin/mystery
+            curse_behavior: replace_result
+        _source:
+          <<: *Source
+          page: 216
+        rows:
+          - roll: { min: 1, max: 10 }
+            text: Corrupted religion
+            text2: What does an eldritch cult seek to accomplish in this place?
+          - roll: { min: 11, max: 20 }
+            text: Cursed artifact
+            text2: What eldritch relic or treasure is held here?
+          - roll: { min: 21, max: 30 }
+            text: Eternal defenders
+            text2: What beings or creatures are cursed to forever guard this place?
+          - roll: { min: 31, max: 40 }
+            text: Grim portent
+            text2: What new calamity does this place forebode?
+          - roll: { min: 41, max: 50 }
+            text: Imprisoned entity
+            text2: What eldritch being or beast is bound to this site?
+          - roll: { min: 51, max: 60 }
+            text: Infernal machines
+            text2: What strange technology did these people unleash?
+          - roll: { min: 61, max: 70 }
+            text: Lingering curse
+            text2: What is the secret to breaking this site's curse?
+          - roll: { min: 71, max: 80 }
+            text: Mystic gateway
+            text2: What otherworldly realm does this place connect to?
+          - roll: { min: 81, max: 90 }
+            text: Sorcerous nexus
+            text2: What dangerous arcane powers are harnessed here?
+          - roll: { min: 91, max: 100 }
+            text: Tormented undead
+            text2: What is the key to putting these souls to rest?
+      cipher:
+        name: Ruin Cipher
+        type: oracle_rollable
+        oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_by: sundered_isles/oracles/ruin/cipher_cursed
+        _source:
+          <<: *Source
+          page: 216
+        rows:
+          - roll: { min: 1, max: 10 }
+            text: Carved glyphs
+          - roll: { min: 11, max: 20 }
+            text: Hastily written markings
+          - roll: { min: 21, max: 30 }
+            text: Hidden chamber or passage
+          - roll: { min: 31, max: 40 }
+            text: Map or document
+          - roll: { min: 41, max: 50 }
+            text: Murals, statues, or other artwork
+          - roll: { min: 51, max: 60 }
+            text: Personal memento
+          - roll: { min: 61, max: 70 }
+            text: Puzzle, key, or device
+          - roll: { min: 71, max: 80 }
+            text: Remains of the dead
+          - roll: { min: 81, max: 90 }
+            text: Signs of other explorers or guardians
+          - roll: { min: 91, max: 100 }
+            text: Unusual architecture
+      cipher_cursed:
+        name: Cursed Ruin Cipher
+        type: oracle_rollable
+        oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/ruin/cipher
+            curse_behavior: replace_result
+        _source:
+          <<: *Source
+          page: 216
+        rows:
+          - roll: { min: 1, max: 10 }
+            text: Deadly trap or infernal mechanism
+          - roll: { min: 11, max: 20 }
+            text: Dreadful document or book
+          - roll: { min: 21, max: 30 }
+            text: Ghostly reenactment
+          - roll: { min: 31, max: 40 }
+            text: Harrowing dreams or visions
+          - roll: { min: 41, max: 50 }
+            text: Messages or symbols written in blood
+          - roll: { min: 51, max: 60 }
+            text: Monstrous or beastly guardians
+          - roll: { min: 61, max: 70 }
+            text: Signs of horrific death or violence
+          - roll: { min: 71, max: 80 }
+            text: Sorcerous enchantment or artifact
+          - roll: { min: 81, max: 90 }
+            text: Spectral visitation or warning
+          - roll: { min: 91, max: 100 }
+            text: Warning from a dead or dying explorer
+      features:
+        name: Ruin Features
+        type: oracle_rollable
+        oracle_type: table_text
+        recommended_rolls: { min: 1, max: 2 }
+        tags:
+          sundered_isles:
+            cursed_by: sundered_isles/oracles/ruin/features_cursed
+        _source:
+          <<: *Source
+          page: 217
+        rows:
+          - roll: { min: 1, max: 1 }
+            text: Alchemical experiments or supplies
+          - roll: { min: 2, max: 2 }
+            text: Amphitheater or arena
+          - roll: { min: 3, max: 3 }
+            text: Balcony or overlook
+          - roll: { min: 4, max: 4 }
+            text: Banquet hall
+          - roll: { min: 5, max: 5 }
+            text: Barricaded or blocked path
+          - roll: { min: 6, max: 6 }
+            text: Blood trail
+          - roll: { min: 7, max: 7 }
+            text: Breached doorway or gate
+          - roll: { min: 8, max: 8 }
+            text: Bridge or elevated path
+          - roll: { min: 9, max: 9 }
+            text: Broken machinery
+          - roll: { min: 10, max: 10 }
+            text: Broken statues
+          - roll: { min: 11, max: 11 }
+            text: Burial chamber
+          - roll: { min: 12, max: 12 }
+            text: Carcass of an invasive creature
+          - roll: { min: 13, max: 13 }
+            text: Chamber of unusual material and form
+          - roll: { min: 14, max: 14 }
+            text: Chamber reclaimed by nature
+          - roll: { min: 15, max: 15 }
+            text: Claw marks
+          - roll: { min: 16, max: 16 }
+            text: Clinging webs
+          - roll: { min: 17, max: 17 }
+            text: Cluttered workshop
+          - roll: { min: 18, max: 18 }
+            text: Collapsed architecture
+          - roll: { min: 19, max: 19 }
+            text: Colony of infesting creatures
+          - roll: { min: 20, max: 20 }
+            text: Concealed mechanism or trap
+          - roll: { min: 21, max: 21 }
+            text: Crumbling architecture
+          - roll: { min: 22, max: 22 }
+            text: Deep well or pit
+          - roll: { min: 23, max: 23 }
+            text: Dormant smithy or forge
+          - roll: { min: 24, max: 24 }
+            text: Dried-up pool or fountain
+          - roll: { min: 25, max: 25 }
+            text: Dripping water
+          - roll: { min: 26, max: 26 }
+            text: Dusty or murky air
+          - roll: { min: 27, max: 27 }
+            text: Echoing noises
+          - roll: { min: 28, max: 28 }
+            text: Elaborate puzzle or cryptic device
+          - roll: { min: 29, max: 29 }
+            text: Elaborate stained glass or mosaics
+          - roll: { min: 30, max: 30 }
+            text: Evidence of past skirmishes
+          - roll: { min: 31, max: 31 }
+            text: Expansive courtyard
+          - roll: { min: 32, max: 32 }
+            text: Faded banners or flags
+          - roll: { min: 33, max: 33 }
+            text: Faded murals
+          - roll: { min: 34, max: 34 }
+            text: Faint sounds of footsteps or movement
+          - roll: { min: 35, max: 35 }
+            text: Flooded chamber or passage
+          - roll: { min: 36, max: 36 }
+            text: Fortification or strongpoint
+          - roll: { min: 37, max: 37 }
+            text: Foul stench
+          - roll: { min: 38, max: 38 }
+            text: Grand or palatial living chamber
+          - roll: { min: 39, max: 39 }
+            text: Great hall or ballroom
+          - roll: { min: 40, max: 40 }
+            text: Hidden compartment
+          - roll: { min: 41, max: 41 }
+            text: Hidden passage or chamber
+          - roll: { min: 42, max: 42 }
+            text: Imposing statues or idols
+          - roll: { min: 43, max: 43 }
+            text: Improvised memorial
+          - roll: { min: 44, max: 44 }
+            text: Insect nests or swarms
+          - roll: { min: 45, max: 45 }
+            text: Intact stairway
+          - roll: { min: 46, max: 46 }
+            text: Intricate symbols or pictographs
+          - roll: { min: 47, max: 47 }
+            text: Invasive roots or tree limbs
+          - roll: { min: 48, max: 48 }
+            text: Lair of a creature
+          - roll: { min: 49, max: 49 }
+            text: Library or archive
+          - roll: { min: 50, max: 50 }
+            text: Makeshift defenses
+          - roll: { min: 51, max: 51 }
+            text: Makeshift shelter
+          - roll: { min: 52, max: 52 }
+            text: Mechanical whirring
+          - roll: { min: 53, max: 53 }
+            text: Moldering tapestries
+          - roll: { min: 54, max: 54 }
+            text: Mummified or decayed corpses
+          - roll: { min: 55, max: 55 }
+            text: Mundane living chambers
+          - roll: { min: 56, max: 56 }
+            text: Mysterious locked container
+          - roll: { min: 57, max: 57 }
+            text: Narrow, maze-like passages
+          - roll: { min: 58, max: 58 }
+            text: Observatory or orrery
+          - roll: { min: 59, max: 59 }
+            text: Ornate burial urns
+          - roll: { min: 60, max: 60 }
+            text: Overgrown garden
+          - roll: { min: 61, max: 61 }
+            text: Painted or carved portraits
+          - roll: { min: 62, max: 62 }
+            text: Piled rubble
+          - roll: { min: 63, max: 63 }
+            text: Prison or cages
+          - roll: { min: 64, max: 64 }
+            text: Rampant molds and fungi
+          - roll: { min: 65, max: 65 }
+            text: Ransacked or looted chamber
+          - roll: { min: 66, max: 66 }
+            text: Reflective surfaces
+          - roll: { min: 67, max: 67 }
+            text: Remains of a careless intruder
+          - roll: { min: 68, max: 68 }
+            text: Rubble-strewn path
+          - roll: { min: 69, max: 69 }
+            text: Sacred space or religious idols
+          - roll: { min: 70, max: 70 }
+            text: Scattered animal bones and detritus
+          - roll: { min: 71, max: 71 }
+            text: Scattering of old coins
+          - roll: { min: 72, max: 72 }
+            text: Scrawled message or warning
+          - roll: { min: 73, max: 73 }
+            text: Scuttling vermin
+          - roll: { min: 74, max: 74 }
+            text: Sealed vault
+          - roll: { min: 75, max: 75 }
+            text: Sealed vault
+          - roll: { min: 76, max: 76 }
+            text: Signs of inhabitants or guardians
+          - roll: { min: 77, max: 77 }
+            text: Signs of repair or refurbishment
+          - roll: { min: 78, max: 78 }
+            text: Signs that others passed this way
+          - roll: { min: 79, max: 79 }
+            text: Skittering or scratching sounds
+          - roll: { min: 80, max: 80 }
+            text: Soot-stained surfaces and ashes
+          - roll: { min: 81, max: 81 }
+            text: Sound of voices
+          - roll: { min: 82, max: 82 }
+            text: Sounds of structural instability
+          - roll: { min: 83, max: 83 }
+            text: Stack of books or scrolls
+          - roll: { min: 84, max: 84 }
+            text: Standing water
+          - roll: { min: 85, max: 85 }
+            text: Storage or armory
+          - roll: { min: 86, max: 86 }
+            text: Throne room or audience chamber
+          - roll: { min: 87, max: 87 }
+            text: Toppled Pillars
+          - roll: { min: 88, max: 88 }
+            text: Tracks through dust or dirt
+          - roll: { min: 89, max: 89 }
+            text: Vaulted ceiling with intricate designs
+          - roll: { min: 90, max: 90 }
+            text: Vertical shaft or broken stairwell
+          - roll: { min: 91, max: 91 }
+            text: Wind whistling through gaps
+          - roll: { min: 92, max: 92 }
+            text: Winding staircase
+          - roll: { min: 93, max: 93 }
+            text: Abandoned [Token](id:sundered_isles/oracles/treasure/tokens)
+            oracle_rolls:
+              - auto: false
+                number_of_rolls: 1
+                oracle: sundered_isles/oracles/treasure/tokens
+          - roll: { min: 94, max: 94 }
+            text: Corpse clutching a [Token](id:sundered_isles/oracles/treasure/tokens)
+            oracle_rolls:
+              - auto: false
+                number_of_rolls: 1
+                oracle: sundered_isles/oracles/treasure/tokens
+          - roll: { min: 95, max: 95 }
+            text: Broken wall reveals a [Cave](id:sundered_isles/collections/oracles/cave)
+          - roll: { min: 96, max: 100 }
+            text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+            oracle_rolls:
+              - auto: true
+                oracle: sundered_isles/oracles/core/descriptor
+              - auto: true
+                oracle: sundered_isles/oracles/core/focus
+      features_cursed:
+        name: Cursed Ruin Features
+        type: oracle_rollable
+        oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/ruin/features
+            curse_behavior: replace_result
+        _source:
+          <<: *Source
+        rows:
+          - roll: { min: 1, max: 2 }
+            text: Animate statues or machines
+          - roll: { min: 3, max: 4 }
+            text: Arcane light or energies
+          - roll: { min: 5, max: 6 }
+            text: Arcane trigger or trap
+          - roll: { min: 7, max: 8 }
+            text: Artifact evokes unnerving power
+          - roll: { min: 9, max: 10 }
+            text: Artwork depicting disturbing scenes
+          - roll: { min: 11, max: 12 }
+            text: Bewitching illusion
+          - roll: { min: 13, max: 14 }
+            text: Bloodstained shrine or altar
+          - roll: { min: 15, max: 16 }
+            text: Colossal machinery
+          - roll: { min: 17, max: 18 }
+            text: Corpses come to life
+          - roll: { min: 19, max: 20 }
+            text: Corpses frozen in terror
+          - roll: { min: 21, max: 22 }
+            text: Creeping, entangling plant life
+          - roll: { min: 23, max: 24 }
+            text: Doors slam shut on their own
+          - roll: { min: 25, max: 26 }
+            text: Dreadful whispering
+          - roll: { min: 27, max: 28 }
+            text: Eerie echoes
+          - roll: { min: 29, max: 30 }
+            text: Eldritch symbols
+          - roll: { min: 31, max: 32 }
+            text: Faces and figures move within the walls
+          - roll: { min: 33, max: 34 }
+            text: Familiar voices call out from the dark
+          - roll: { min: 35, max: 36 }
+            text: Grasping, creeping shadows
+          - roll: { min: 37, max: 38 }
+            text: Gusts of phantom wind
+          - roll: { min: 39, max: 40 }
+            text: Haunting cries or weeping
+          - roll: { min: 41, max: 42 }
+            text: Haunting dreams or hallucinations
+          - roll: { min: 43, max: 44 }
+            text: Haunting music
+          - roll: { min: 45, max: 46 }
+            text: Impenetrable darkness
+          - roll: { min: 47, max: 48 }
+            text: Lair of a monstrous creature
+          - roll: { min: 49, max: 50 }
+            text: Monstrous swarm of creatures
+          - roll: { min: 51, max: 52 }
+            text: Message or symbols written in blood
+          - roll: { min: 53, max: 54 }
+            text: Monstrous swarm of creatures
+          - roll: { min: 55, max: 56 }
+            text: Monstrous tracks
+          - roll: { min: 57, max: 58 }
+            text: Moving or changing architecture
+          - roll: { min: 59, max: 60 }
+            text: Objects move of their own accord
+          - roll: { min: 61, max: 62 }
+            text: Ominous chanting
+          - roll: { min: 63, max: 64 }
+            text: Passages seem to stretch and distort
+          - roll: { min: 65, max: 66 }
+            text: Path that endlessly repeats
+          - roll: { min: 67, max: 68 }
+            text: Phantom voices or laughter
+          - roll: { min: 69, max: 70 }
+            text: Piles of broken skulls and bones
+          - roll: { min: 71, max: 72 }
+            text: Reflections reveal unseen aspects
+          - roll: { min: 73, max: 74 }
+            text: Remains of a monstrous beast
+          - roll: { min: 75, max: 76 }
+            text: Rotting stench
+          - roll: { min: 77, max: 78 }
+            text: Spectral reenactments of past events
+          - roll: { min: 79, max: 80 }
+            text: Strangely preserved feature or area
+          - roll: { min: 81, max: 82 }
+            text: Sudden ghostly manifestation
+          - roll: { min: 83, max: 84 }
+            text: Transforming murals or paintings
+          - roll: { min: 85, max: 86 }
+            text: Twisted or grotesque statues
+          - roll: { min: 87, max: 88 }
+            text: Unexplainable path of destruction
+          - roll: { min: 89, max: 90 }
+            text: Unnatural cold
+          - roll: { min: 91, max: 92 }
+            text: Unnatural corruption or decay
+          - roll: { min: 93, max: 94 }
+            text: Unnatural mists or darkness
+          - roll: { min: 95, max: 96 }
+            text: Unnaturally aggressive creatures
+          - roll: { min: 97, max: 98 }
+            text: Unnaturally thick webbing
+          - roll: { min: 99, max: 100 }
+            text: Unnerving sensation of being watched
+      peril:
+        name: Ruin Peril
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 219
+        rows:
+          - roll: { min: 1, max: 4 }
+            text: Confounding puzzle
+          - roll: { min: 5, max: 8 }
+            text: Crumbling terrain underfoot
+          - roll: { min: 9, max: 10 }
+            text: Dire warning left by other explorers
+          - roll: { min: 11, max: 12 }
+            text: Distressing written message
+          - roll: { min: 13, max: 16 }
+            text: Disturbing evidence of a dark history
+          - roll: { min: 17, max: 18 }
+            text: Disturbing remains or evidence of death
+          - roll: { min: 19, max: 20 }
+            text: Dreadful scenes weigh upon you
+          - roll: { min: 21, max: 22 }
+            text: Elaborate mechanical trap
+          - roll: { min: 23, max: 24 }
+            text: Enemies set an ambush
+          - roll: { min: 25, max: 28 }
+            text: Flooded or blocked space
+          - roll: { min: 29, max: 30 }
+            text: Gap or chasm stands in the way
+          - roll: { min: 31, max: 34 }
+            text: Glimpses of a lurking or trailing foe
+          - roll: { min: 35, max: 38 }
+            text: Guardians defend against intruders
+          - roll: { min: 39, max: 40 }
+            text: Hazardous or toxic environment
+          - roll: { min: 41, max: 44 }
+            text: Heartbreaking memento of lost lives
+          - roll: { min: 45, max: 46 }
+            text: Imminent catastrophic collapse
+          - roll: { min: 47, max: 50 }
+            text: Improvised booby trap
+          - roll: { min: 51, max: 54 }
+            text: Lair of an aggressive creature
+          - roll: { min: 55, max: 58 }
+            text: Locked or sealed path
+          - roll: { min: 59, max: 60 }
+            text: Lost gear or supplies
+          - roll: { min: 61, max: 64 }
+            text: Poor visibility conceals dangers
+          - roll: { min: 65, max: 68 }
+            text: Noise alerts others to your presence
+          - roll: { min: 69, max: 70 }
+            text: Ominous sounds of approaching danger
+          - roll: { min: 71, max: 72 }
+            text: Party member stumbles into harm's wa
+          - roll: { min: 73, max: 74 }
+            text: Precipitous climb or descent
+          - roll: { min: 75, max: 78 }
+            text: Rivals seek what lay within
+          - roll: { min: 79, max: 82 }
+            text: Sense of being watched
+          - roll: { min: 83, max: 84 }
+            text: Signs of infestation or disease
+          - roll: { min: 85, max: 86 }
+            text: Swarming creatures or insects
+          - roll: { min: 87, max: 88 }
+            text: Tempting relic hides a danger
+          - roll: { min: 89, max: 90 }
+            text: Volatile device or artifact
+          - roll: { min: 91, max: 94 }
+            text: Writing or symbols defy understanding
+          - roll: { min: 95, max: 97 }
+            text: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
+            oracle_rolls:
+              - auto: true
+                oracle: sundered_isles/oracles/core/action
+              - auto: true
+                oracle: sundered_isles/oracles/core/theme
+          - roll: { min: 98, max: 100 }
+            text: Roll twice
+            oracle_rolls:
+              - auto: true
+                number_of_rolls: 2
+                duplicates: reroll
+      opportunity:
+        name: Ruin Opportunity
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 219
+        rows:
+          - roll: { min: 1, max: 5 }
+            text: Access to an untouched area
+          - roll: { min: 6, max: 10 }
+            text: Advance warning of a danger
+          - roll: { min: 11, max: 15 }
+            text: Awe-inspiring architecture
+          - roll: { min: 16, max: 20 }
+            text: Clue reveals a new aspect of this place
+          - roll: { min: 21, max: 25 }
+            text: Cooperative fellow explorer
+          - roll: { min: 26, max: 30 }
+            text: Culturally significant object or artwork
+          - roll: { min: 31, max: 35 }
+            text: Evidence that others passed this way
+          - roll: { min: 36, max: 40 }
+            text: Friendly inhabitant
+          - roll: { min: 41, max: 45 }
+            text: Heartwarming glimpse of past lives
+          - roll: { min: 46, max: 50 }
+            text: Helpful archive of past events
+          - roll: { min: 51, max: 55 }
+            text: Key to access a hidden or sealed area
+          - roll: { min: 56, max: 60 }
+            text: Key to understand a cipher or language
+          - roll: { min: 61, max: 65 }
+            text: Map or markers point the way
+          - roll: { min: 66, max: 70 }
+            text: Moment of fellowship or inner peace
+          - roll: { min: 71, max: 75 }
+            text: Secure area offers a moment of peace
+          - roll: { min: 76, max: 80 }
+            text: Shortcut or detour along a safe path
+          - roll: { min: 81, max: 85 }
+            text: Source of fresh water
+          - roll: { min: 86, max: 90 }
+            text: Useful gear left by another explorer
+          - roll: { min: 91, max: 95 }
+            text: Useful or interesting artifact or device
+          - roll: { min: 96, max: 100 }
+            text: "[Treasure](id:sundered_isles/collections/oracles/treasure)"

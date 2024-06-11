@@ -1,0 +1,1054 @@
+_id: sundered_isles
+datasworn_version: "0.1.0"
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-06-01
+  title: Sundered Isles
+  url: https://ironswornrpg.com
+  license: null
+  authors:
+    - name: Shawn Tomkin
+oracles:
+  campaign:
+    name: Campaign Oracles
+    type: oracle_collection
+    _source: *Source
+    contents:
+      backstory:
+        name: Your Backstory
+        type: oracle_rollable
+        oracle_type: table_text
+        recommended_rolls: { min: 1, max: 2 }
+        tags:
+          sundered_isles:
+            cursed_by: sundered_isles/oracles/campaign/backstory_cursed
+        _source:
+          <<: *Source
+        rows:
+          - roll: { min: 1, max: 3 }
+            text: Abandoned a life of privilege or power
+          - roll: { min: 4, max: 7 }
+            text: Betrayed by a close friend, lover, or family member
+          - roll: { min: 8, max: 11 }
+            text: Caught up in a forbidden or unlikely romance
+          - roll: { min: 12, max: 14 }
+            text: Deserted the military
+          - roll: { min: 15, max: 18 }
+            text: Entrusted with a valuable secret
+          - roll: { min: 19, max: 22 }
+            text: Escaped unjust captivity
+          - roll: { min: 23, max: 26 }
+            text: Fled a cruel upbringing
+          - roll: { min: 27, max: 30 }
+            text: Following in the footsteps of famous or notorious kin
+          - roll: { min: 31, max: 34 }
+            text: Forcefully exiled from your land or people
+          - roll: { min: 35, max: 37 }
+            text: Found adrift with no memory of your former life
+          - roll: { min: 38, max: 40 }
+            text: Framed for a crime you didn't commit
+          - roll: { min: 41, max: 43 }
+            text: Guided by a dream or prophecy
+          - roll: { min: 44, max: 46 }
+            text: Home destroyed by disaster or war
+          - roll: { min: 47, max: 49 }
+            text: Home occupied by an enemy faction
+          - roll: { min: 50, max: 53 }
+            text: Joined a mutiny, uprising, or rebellion
+          - roll: { min: 54, max: 56 }
+            text: Joined a secret society
+          - roll: { min: 57, max: 59 }
+            text: Living under a stolen or assumed identity
+          - roll: { min: 60, max: 63 }
+            text: Loved one gone missing
+          - roll: { min: 64, max: 67 }
+            text: Marooned by former shipmates
+          - roll: { min: 68, max: 71 }
+            text: On the run with a stolen object of great value
+          - roll: { min: 72, max: 75 }
+            text: Raised by or fell in with criminals or pirates
+          - roll: { min: 76, max: 79 }
+            text: Refugee from a distant land
+          - roll: { min: 80, max: 83 }
+            text: Survived a disaster or battle at sea
+          - roll: { min: 84, max: 86 }
+            text: Took up a vendetta against a powerful figure or faction
+          - roll: { min: 87, max: 89 }
+            text: Trained in a rare or secret craft by a skilled mentor
+          - roll: { min: 90, max: 93 }
+            text: Trying to forget a disastrous love affair
+          - roll: { min: 94, max: 96 }
+            text: Undone by a personal vice
+          - roll: { min: 97, max: 100 }
+            text: Wronged a powerful figure or faction who seeks retribution
+      backstory_cursed:
+        name: Your Cursed Backstory
+        type: oracle_rollable
+        oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/campaign/backstory
+            curse_behavior: replace_result
+        _source:
+          <<: *Source
+        rows:
+          - roll: { min: 1, max: 7 }
+            text: Banished because of uncanny nature or abilities
+          - roll: { min: 8, max: 14 }
+            text: Bearing a relic of dreadful power
+          - roll: { min: 15, max: 20 }
+            text: Desperate to unlock the secrets of forbidden magic
+          - roll: { min: 21, max: 26 }
+            text: Forged and made animate by forbidden technologies
+          - roll: { min: 27, max: 33 }
+            text: Grievously wounded and given new life by forbidden magic or technology
+          - roll: { min: 34, max: 40 }
+            text: Haunted by the spirit of someone you failed or wronged
+          - roll: { min: 41, max: 47 }
+            text: Home destroyed by a monstrous beast
+          - roll: { min: 48, max: 54 }
+            text: Home destroyed by undead or inhuman foes
+          - roll: { min: 55, max: 61 }
+            text: Inherited a dreadful curse
+          - roll: { min: 62, max: 67 }
+            text: Killed an albatross; plagued by foul luck ever since
+          - roll: { min: 68, max: 73 }
+            text: Sole survivor of a string of unlikely disasters
+          - roll: { min: 74, max: 80 }
+            text: Suffered a vision of a horrible fate
+          - roll: { min: 81, max: 87 }
+            text: Survived an attack at sea by a cursed ship
+          - roll: { min: 88, max: 94 }
+            text: Survived an attack at sea by a monstrous sea beast
+          - roll: { min: 95, max: 100 }
+            text: Targeted or hunted by a dreadful being
+      persona:
+        name: Your Persona
+        type: oracle_rollable
+        oracle_type: table_text3
+        column_labels:
+        # this isn't the columns are presented in the table, but makes more semantic sense in a web context
+          roll: Roll
+        # TODO: figure out a way to represent these icons
+          text3: ""
+          text: Result
+          text2: Starting Paths
+        _source:
+          <<: *Source
+        rows:
+          - roll: { min: 1, max: 3 }
+            text: Apothecary
+            text2: "[Healer](id:starforged/assets/path/healer), [Peddler](id:sundered_isles/assets/path/peddler)"
+            text3: ""
+          - roll: { min: 4, max: 5 }
+            text: Apprentice
+            text2: "[Shipwright](id:sundered_isles/assets/path/shipwright), [Urchin](id:sundered_isles/assets/path/urchin)"
+            text3: ""
+          - roll: { min: 6, max: 7 }
+            text: Assassin
+            text2: "[Blademaster](id:starforged/assets/path/blademaster), [Bounty Hunter](id:starforged/assets/path/bounty_hunter)"
+            text3: ""
+          - roll: { min: 8, max: 9 }
+            text: Beast Hunter
+            text2: "[Harpooner](id:sundered_isles/assets/path/harpooner), [Slayer](id:starforged/assets/path/slayer)"
+            text3: ""
+          - roll: { min: 10, max: 12 }
+            text: Blockade Runner
+            text2: "[Courier](id:starforged/assets/path/courier), [Navigator](id:starforged/assets/path/navigator)"
+            text3: ""
+          - roll: { min: 13, max: 15 }
+            text: Brigand
+            text2: "[Pistoleer](id:sundered_isles/assets/path/pistoleer), [Scoundrel](id:starforged/assets/path/scoundrel)"
+            text3: ""
+          - roll: { min: 16, max: 17 }
+            text: Buccaneer
+            text2: "[Swashbuckler](id:sundered_isles/assets/path/swashbuckler), [Pirate Captain](id:sundered_isles/assets/path/pirate_captain)"
+            text3: ""
+          - roll: { min: 18, max: 20 }
+            text: Bulwark
+            text2: "[Brawler](id:starforged/assets/path/brawler), [Loyalist](id:starforged/assets/path/loyalist)"
+            <<: &CoOp
+              text3: "Co-op"
+          - roll: { min: 21, max: 23 }
+            text: Castaway
+            text2: "[Jinx](id:sundered_isles/assets/path/jinx), [Scavenger](id:starforged/assets/path/scavenger)"
+            text3: ""
+          - roll: { min: 24, max: 26 }
+            text: Charlatan
+            text2: "[Scoundrel](id:starforged/assets/path/scoundrel), [Socialite](id:sundered_isles/assets/path/socialite)"
+            text3: ""
+          - roll: { min: 27, max: 28 }
+            text: Cloak and Dagger
+            text2: "[Cutthroat](id:sundered_isles/assets/path/cutthroat), [Spy](id:sundered_isles/assets/path/spy)"
+            text3: ""
+          - roll: { min: 29, max: 30 }
+            text: Cultist
+            text2: "[Devotant](id:starforged/assets/path/devotant), [Necromancer](id:sundered_isles/assets/path/necromancer)"
+            <<: &Supernatural
+              text3: "Supernatural"
+          - roll: { min: 31, max: 32 }
+            text: Deathbound
+            text2: "[Fated](id:starforged/assets/path/fated), [Haunted](id:starforged/assets/path/haunted)"
+            <<: *Supernatural
+          - roll: { min: 33, max: 34 }
+            text: Deep One
+            text2: "[Vestige](id:starforged/assets/path/vestige), [Waterborn](id:sundered_isles/assets/path/waterborn)"
+            <<: *Supernatural
+          - roll: { min: 35, max: 37 }
+            text: Elementalist
+            text2: "[Firebrand](id:starforged/assets/path/firebrand), [Sorcerer](id:sundered_isles/assets/path/sorcerer)"
+            <<: *Supernatural
+          - roll: { min: 38, max: 40 }
+            text: Emissary
+            text2: "[Diplomat](id:starforged/assets/path/diplomat), [Spy](id:sundered_isles/assets/path/spy)"
+            text3: ""
+          - roll: { min: 41, max: 42 }
+            text: Gallant
+            text2: "[Duelist](id:sundered_isles/assets/path/duelist), [Socialite](id:sundered_isles/assets/path/socialite)"
+            text3: ""
+          - roll: { min: 43, max: 44 }
+            text: Guild Mage
+            text2: "[Bannersworn](id:starforged/assets/path/bannersworn), [Sorcerer](id:sundered_isles/assets/path/sorcerer)"
+            <<: *Supernatural
+          - roll: { min: 45, max: 46 }
+            text: Gunner
+            text2: "[Cannoneer](id:sundered_isles/assets/path/cannoneer), [Veteran](id:starforged/assets/path/veteran)"
+            text3: ""
+          - roll: { min: 47, max: 48 }
+            text: Hired Gun
+            text2: "[Mercenary](id:starforged/assets/path/mercenary), [Musketeer](id:sundered_isles/assets/path/musketeer)"
+            text3: ""
+          - roll: { min: 49, max: 50 }
+            text: Ironclad
+            text2: "[Armored](id:starforged/assets/path/armored), [Brawler](id:starforged/assets/path/brawler)"
+            <<: &Technology
+              text3: "Technology"
+          - roll: { min: 51, max: 52 }
+            text: Jury-Rig
+            text2: "[Construct](id:sundered_isles/assets/path/construct), [Scavenger](id:starforged/assets/path/scavenger)"
+            <<: *Technology
+          - roll: { min: 53, max: 54 }
+            text: Lycanthrope
+            text2: "[Outcast](id:starforged/assets/path/outcast), [Shapechanger](id:sundered_isles/assets/path/shapechanger)"
+            <<: *Supernatural
+          - roll: { min: 55, max: 57 }
+            text: Monster Hunter
+            text2: "[Blademaster](id:starforged/assets/path/blademaster), [Slayer](id:starforged/assets/path/slayer)"
+            <<: *Supernatural
+          - roll: { min: 58, max: 60 }
+            text: Naturalist
+            text2: "[Overlander](id:sundered_isles/assets/path/overlander), [Scholar](id:sundered_isles/assets/path/scholar) (Natural history)"
+            text3: ""
+          - roll: { min: 61, max: 62 }
+            text: Pilgrim
+            text2: "[Devotant](id:starforged/assets/path/devotant), [Navigator](id:starforged/assets/path/navigator)"
+            <<: *Supernatural
+          - roll: { min: 63, max: 64 }
+            text: Piper
+            text2: "[Musician](id:sundered_isles/assets/path/musician), [Loyalist](id:starforged/assets/path/loyalist)"
+            <<: *CoOp
+          - roll: { min: 65, max: 67 }
+            text: Renegade
+            text2: "[Fugitive](id:starforged/assets/path/fugitive), [Veteran](id:starforged/assets/path/veteran)"
+            text3: ""
+          - roll: { min: 68, max: 70 }
+            text: Saboteur
+            text2: "[Demolitionist](id:starforged/assets/path/demolitionist), [Spy](id:sundered_isles/assets/path/spy)"
+            <<: *Technology
+          - roll: { min: 71, max: 72 }
+            text: Sea Witch
+            text2: "[Seer](id:starforged/assets/path/seer), [Windbinder](id:sundered_isles/assets/path/windbinder)"
+            <<: *Supernatural
+          - roll: { min: 73, max: 74 }
+            text: Shadow Assassin
+            text2: "[Cutthroat](id:sundered_isles/assets/path/cutthroat), [Shade](id:starforged/assets/path/shade)"
+            <<: *Supernatural
+          - roll: { min: 75, max: 76 }
+            text: Shipbreaker
+            text2: "[Kinetic](id:starforged/assets/path/kinetic), [Scavenger](id:starforged/assets/path/scavenger)"
+            <<: *Supernatural
+          - roll: { min: 77, max: 78 }
+            text: Siren
+            text2: "[Empath](id:starforged/assets/path/empath), [Musician](id:sundered_isles/assets/path/musician)"
+            <<: *Supernatural
+          - roll: { min: 79, max: 80 }
+            text: Skipper
+            text2: "[Crew Commander](id:sundered_isles/assets/path/crew_commander), [Leader](id:starforged/assets/path/leader)"
+            <<: *CoOp
+          - roll: { min: 81, max: 83 }
+            text: Smuggler
+            text2: "[Fugitive](id:starforged/assets/path/fugitive), [Peddler](id:sundered_isles/assets/path/peddler)"
+            text3: ""
+          - roll: { min: 84, max: 86 }
+            text: Sole Survivor
+            text2: "[Haunted](id:starforged/assets/path/haunted), [Vestige](id:starforged/assets/path/vestige)"
+            <<: *Supernatural
+          - roll: { min: 87, max: 88 }
+            text: Spiritualist
+            text2: "[Seer](id:starforged/assets/path/seer), [Sleuth](id:starforged/assets/path/sleuth)"
+            <<: *Supernatural
+          - roll: { min: 89, max: 91 }
+            text: Stowaway
+            text2: "[Urchin](id:sundered_isles/assets/path/urchin), [Outcast](id:starforged/assets/path/outcast)"
+            text3: ""
+          - roll: { min: 92, max: 94 }
+            text: Surgeon
+            text2: "[Healer](id:starforged/assets/path/healer), [Scholar](id:sundered_isles/assets/path/scholar) (Medicine)"
+            text3: ""
+          - roll: { min: 95, max: 96 }
+            text: Tinker
+            text2: "[Augmented](id:starforged/assets/path/augmented), [Gearhead](id:starforged/assets/path/gearhead)"
+            <<: *Technology
+          - roll: { min: 97, max: 98 }
+            text: Vanguard
+            text2: "[Bannersworn](id:starforged/assets/path/bannersworn), [Scattershot](id:sundered_isles/assets/path/scattershot)"
+            text3: ""
+          - roll: { min: 99, max: 100 }
+            text: War Machine
+            text2: "[Construct](id:sundered_isles/assets/path/construct), [Mercenary](id:starforged/assets/path/mercenary)"
+            <<: *Technology
+      ship_history:
+        name: Ship History
+        type: oracle_rollable
+        oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_by: sundered_isles/oracles/campaign/ship_history_cursed
+        _source:
+          <<: *Source
+        rows:
+          - roll: { min: 1, max: 5 }
+            text: Acquired in a duel of honor
+          - roll: { min: 6, max: 10 }
+            text: Awarded by a vote of the crew, after the former captain died an untimely death
+          - roll: { min: 11, max: 15 }
+            text: Bestowed by an eccentric shipwright
+          - roll: { min: 16, max: 20 }
+            text: Built or refitted by a community, and granted to its captain as their emissary
+          - roll: { min: 21, max: 25 }
+            text: Captured in battle, and awarded by the former captain
+          - roll: { min: 26, max: 30 }
+            text: Earned in exchange for a perilous undertaking or heroic deed
+          - roll: { min: 31, max: 35 }
+            text: Entrusted by a faction, and commanded in their service
+          - roll: { min: 36, max: 40 }
+            text: Found as a wreck, and refitted to make it seaworthy
+          - roll: { min: 41, max: 45 }
+            text: Gifted by an anonymous benefactor
+          - roll: { min: 46, max: 50 }
+            text: Inherited from a dead or missing relative or mentor
+          - roll: { min: 51, max: 55 }
+            text: Leased under exorbitant terms
+          - roll: { min: 56, max: 60 }
+            text: Obtained in trade for a precious object
+          - roll: { min: 61, max: 65 }
+            text: Obtained through a false identity or counterfeit documents
+          - roll: { min: 66, max: 70 }
+            text: On grant from an underworld figure in exchange for completing unscrupulous missions
+          - roll: { min: 71, max: 75 }
+            text: Once a timeworn, unwanted ship, painstakingly refitted to its new role
+          - roll: { min: 76, max: 80 }
+            text: Purchased at a suspiciously cheap price
+          - roll: { min: 81, max: 85 }
+            text: Seized in a mutiny against its former captain
+          - roll: { min: 86, max: 90 }
+            text: Stolen from under the nose of a powerful faction
+          - roll: { min: 91, max: 95 }
+            text: Taken while fleeing an attack or disaster
+          - roll: { min: 96, max: 100 }
+            text: Won in a high-stakes bet
+      ship_history_cursed:
+        name: Cursed Ship
+        type: oracle_rollable
+        oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/campaign/ship_history
+            curse_behavior: replace_result
+        _source:
+          <<: *Source
+        rows:
+          - roll: { min: 1, max: 10 }
+            text: Awarded by its former—and now dead—captain, who still haunts its decks
+          - roll: { min: 11, max: 20 }
+            text: Bound to a role as its new commander by a beguiling curse
+          - roll: { min: 21, max: 30 }
+            text: Cobbled together from salvage found within a graveyard of forsaken ships
+          - roll: { min: 31, max: 40 }
+            text: Discovered within a hidden sea cave after calling to you in a dream
+          - roll: { min: 41, max: 50 }
+            text: Found adrift in perfect condition, with no sign of the crew
+          - roll: { min: 51, max: 60 }
+            text: Gifted by a dreadful entity in exchange for a dark favor; you reneged on their terms
+          - roll: { min: 61, max: 70 }
+            text: Granted in an accursed agreement, sealed in blood
+          - roll: { min: 71, max: 80 }
+            text: Improbably found as a derelict well inland; moved and refloated with much effort
+          - roll: { min: 81, max: 90 }
+            text: Raised from the sunken depths as a boon from the sea itself
+          - roll: { min: 91, max: 100 }
+            text: Taken in spite of its cursed reputation, when no one else would sail it
+      crew:
+        name: Crew Characteristics
+        type: oracle_rollable
+        oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_by: sundered_isles/oracles/campaign/crew_cursed
+        _source:
+          <<: *Source
+        rows:
+          - roll: { min: 1, max: 8 }
+            text: Eclectic mix of all sorts of folk
+          - roll: { min: 9, max: 14 }
+            text: Adventurers and trailblazers, seeking the far horizon
+          - roll: { min: 15, max: 18 }
+            text: Disciplined military force, doing their duty
+          - roll: { min: 19, max: 22 }
+            text: Experienced mariners, lending an able hand
+          - roll: { min: 23, max: 26 }
+            text: Glory hunters, looking to make a mark
+          - roll: { min: 27, max: 32 }
+            text: Kin of a seafaring people, honoring traditions
+          - roll: { min: 33, max: 38 }
+            text: Marauders and brigands, taking their share of the spoils
+          - roll: { min: 39, max: 44 }
+            text: Novice mariners, undertaking their first adventure
+          - roll: { min: 45, max: 48 }
+            text: Old salts brought out of retirement, undertaking a final adventure
+          - roll: { min: 49, max: 54 }
+            text: Outcasts and exiles, bound by their differences
+          - roll: { min: 55, max: 60 }
+            text: Rebels, fighting for freedom
+          - roll: { min: 61, max: 66 }
+            text: Refugees from a faraway land, finding a new home
+          - roll: { min: 67, max: 70 }
+            text: Religious zealots, serving their god
+          - roll: { min: 71, max: 74 }
+            text: Scoundrels and spies, always watching
+          - roll: { min: 75, max: 78 }
+            text: Survivors of a horrible cataclysm, preserving what remains
+          - roll: { min: 79, max: 82 }
+            text: Survivors of a terrible attack, seeking revenge
+          - roll: { min: 83, max: 86 }
+            text: Turncoat imperials, sworn against former compatriots
+          - roll: { min: 87, max: 90 }
+            text: Unprincipled mercenaries, earning blood money
+          - roll: { min: 91, max: 100 }
+            text: Roll twice; these groups are at odds
+            oracle_rolls:
+              - auto: true
+                number_of_rolls: 2
+                duplicates: keep
+      crew_cursed:
+        name: Cursed Crew
+        type: oracle_rollable
+        oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/campaign/crew
+            curse_behavior: replace_result
+        _source:
+          <<: *Source
+        rows:
+          - roll: { min: 1, max: 5 }
+            text: Bound to the ship, unable to sail another
+          - roll: { min: 6, max: 10 }
+            text: Bound to the will of a dreadful artifact
+          - roll: { min: 11, max: 15 }
+            text: Built or augmented with strange technologies
+          - roll: { min: 16, max: 20 }
+            text: Cursed with foreknowledge of a dreadful fate
+          - roll: { min: 21, max: 25 }
+            text: Hunted by a vengeful sea beast
+          - roll: { min: 26, max: 30 }
+            text: In the service of a malevolent god or entity
+          - roll: { min: 31, max: 40 }
+            text: Obsessed with superstitious routines and rituals
+          - roll: { min: 41, max: 45 }
+            text: Once dead, now cursed with unnatural life
+          - roll: { min: 46, max: 50 }
+            text: Plagued with unnatural sickness
+          - roll: { min: 51, max: 60 }
+            text: Suffers a jinxed reputation, and forsaken by others
+          - roll: { min: 61, max: 65 }
+            text: Suffers an insatiable need
+          - roll: { min: 66, max: 75 }
+            text: Survivors of an attack by a horrifying foe or monstrous beast
+          - roll: { min: 76, max: 85 }
+            text: Tattooed with elaborate mystical wards
+          - roll: { min: 86, max: 95 }
+            text: Tormented by unforgiving spirits
+          - roll: { min: 96, max: 100 }
+            text: True nature revealed under moonlight
+      location_details:
+        name: Location Details
+        type: oracle_rollable
+        oracle_type: table_text2
+        tags:
+          sundered_isles:
+            cursed_by: sundered_isles/oracles/campaign/location_details_cursed
+        _source:
+          <<: *Source
+        rows:
+          - roll: { min: 1, max: 4 }
+            text: Abyssal sinkhole
+            text2: What is rumored to lie at the bottom of these depths?
+          - roll: { min: 5, max: 8 }
+            text: Active volcano
+            text2: What important location does this eruption threaten?
+          - roll: { min: 9, max: 12 }
+            text: Ancient ruins
+            text2: Who or what defends this place against intruders?
+          - roll: { min: 13, max: 15 }
+            text: Colossal monument
+            text2: What legendary figure or god does this monument honor?
+          - roll: { min: 16, max: 19 }
+            text: Crucial trade route
+            text2: What is disrupting trade along this route?
+          - roll: { min: 20, max: 23 }
+            text: Deserted settlement
+            text2: Why was this place abandoned?
+          - roll: { min: 24, max: 27 }
+            text: Expansive cave
+            text2: What treasure is said to lie at the heart of this cave?
+          - roll: { min: 28, max: 30 }
+            text: Floating tradepost
+            text2: Who is hounding these traders, demanding tribute?
+          - roll: { min: 31, max: 34 }
+            text: Hull-breaching rocks
+            text2: Who or what preys upon careless ships in this area?
+          - roll: { min: 35, max: 38 }
+            text: Kelp-clogged waters
+            text2: What ship went missing here?
+          - roll: { min: 39, max: 41 }
+            text: Meteorite scar
+            text2: What prophecy foretold the meteorite's fall?
+          - roll: { min: 42, max: 45 }
+            text: Military encampment
+            text2: Who is this faction warring against?
+          - roll: { min: 46, max: 49 }
+            text: Military fort
+            text2: What notable prisoner is held here?
+          - roll: { min: 50, max: 52 }
+            text: Mining operation
+            text2: What danger have these miners unearthed?
+          - roll: { min: 53, max: 55 }
+            text: Mist-shrouded peak
+            text2: What is said to stand atop this mountain?
+          - roll: { min: 56, max: 58 }
+            text: Navigation beacon
+            text2: Why has this lighthouse fallen into disrepair?
+          - roll: { min: 59, max: 61 }
+            text: Ongoing naval blockade
+            text2: Who seeks an escort through or around this blockade?
+          - roll: { min: 62, max: 65 }
+            text: Palatial manor
+            text2: What lavish event is scheduled to take place here?
+          - roll: { min: 66, max: 69 }
+            text: Pirate conclave
+            text2: What opportunity or crisis brings the pirates together?
+          - roll: { min: 70, max: 73 }
+            text: Recently wrecked ship
+            text2: What prize was this ship rumored to carry?
+          - roll: { min: 74, max: 76 }
+            text: Refugee encampment
+            text2: What danger or crisis displaced these refugees?
+          - roll: { min: 77, max: 79 }
+            text: Religious commune
+            text2: Why are these adherents desperate for supplies?
+          - roll: { min: 80, max: 83 }
+            text: Sentinel tree
+            text2: What threatens this sacred site?
+          - roll: { min: 84, max: 87 }
+            text: Sheltered anchorage
+            text2: What infamous ship lies anchored here?
+          - roll: { min: 88, max: 91 }
+            text: Warship patrols
+            text2: What are these ships hunting?
+          - roll: { min: 92, max: 94 }
+            text: Whale graveyard
+            text2: Who seeks to harvest these bones?
+          - roll: { min: 95, max: 97 }
+            text: Whaling grounds
+            text2: Who or what is hunting these creatures to near-extinction?
+          - roll: { min: 98, max: 100 }
+            text: Wide, navigable river
+            text2: What important location lies upriver?
+      location_details_cursed:
+        name: Cursed Location Details
+        type: oracle_rollable
+        oracle_type: table_text2
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - sundered_isles/oracles/campaign/location_details
+            curse_behavior: replace_result
+        _source:
+          <<: *Source
+        rows:
+          - roll: { min: 1, max: 5 }
+            text: Area of endless dead calm
+            text2: What ship is trapped in these waters?
+          - roll: { min: 6, max: 10 }
+            text: Colossal bones
+            text2: Who lives in the shadow of this age-old corpse?
+          - roll: { min: 11, max: 15 }
+            text: Corrupted cave
+            text2: What cult is said to practice foul rites here?
+          - roll: { min: 16, max: 20 }
+            text: Eldritch monument
+            text2: What forsaken god or entity does this monument honor?
+          - roll: { min: 21, max: 25 }
+            text: Forsaken settlement
+            text2: What foul creatures now dwell here?
+          - roll: { min: 26, max: 30 }
+            text: Frozen wastes
+            text2: What long-lost ship lies trapped here?
+          - roll: { min: 31, max: 35 }
+            text: Ghost-haunted waters
+            text2: What infamous cursed ship sails these waters?
+          - roll: { min: 36, max: 40 }
+            text: Ghost-plagued ruins
+            text2: What sad fate befell these people?
+          - roll: { min: 41, max: 45 }
+            text: Haunted battlefield
+            text2: What force or faction was defeated in this battle?
+          - roll: { min: 46, max: 50 }
+            text: Hidden island
+            text2: On what rare event does this mystical island reappear?
+          - roll: { min: 51, max: 55 }
+            text: Inscrutable iron pillars
+            text2: What faction worships these mysterious relics?
+          - roll: { min: 56, max: 60 }
+            text: Lair of a beast
+            text2: What beast is reputed to dwell here?
+          - roll: { min: 61, max: 65 }
+            text: Perpetual fog bank
+            text2: What is said to lie on the other side of this mist?
+          - roll: { min: 66, max: 70 }
+            text: Powerful maelstrom
+            text2: Who do you know that was lost to this swirling vortex?
+          - roll: { min: 71, max: 75 }
+            text: Ship graveyard
+            text2: What monstrous creature lurks here?
+          - roll: { min: 76, max: 80 }
+            text: Shipwreck on high ground
+            text2: To which faction did this ship belong?
+          - roll: { min: 81, max: 85 }
+            text: Skull-shaped outcrop
+            text2: Why does this place haunt your dreams?
+          - roll: { min: 86, max: 90 }
+            text: Sorcerous nexus
+            text2: Who has gathered to reap the chaotic energy of this place?
+          - roll: { min: 91, max: 95 }
+            text: Titanic machinery
+            text2: Who seeks to reactivate this ancient machine?
+          - roll: { min: 96, max: 100 }
+            text: Unending cyclonic storm
+            text2: What is said to lie at this storm's center?
+    collections:
+      sample_factions:
+        name: Sample Factions
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: *Source
+        contents:
+          societies:
+            name: Societies
+            type: oracle_rollable
+            oracle_type: table_text2
+            summary: People who share traditions and a way of life.
+            tags:
+              sundered_isles:
+                faction_type: society
+            _source:
+              <<: *Source
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Akiya
+                text2: Coalition of clans known for their sleek and speedy ships. They gather each year to celebrate the ebb of the storm season, and hang rows of vibrantly colored flags from their rigging to honor the dead.
+              - roll: { min: 11, max: 20 }
+                text: Arsu / Azizos
+                text2: Once a single tribe, the loyalty of these people is divided between two rulers descended from rival heirs. They often war against one another, but now have a fragile alliance against a mutual foe.
+              - roll: { min: 21, max: 30 }
+                text: Kai
+                text2: Seagoing folk who build their homes and ships from luminous glimmerwood. This resource is harvested from the coastal swamps of their homeland, an environment under threat of destruction.
+              - roll: { min: 31, max: 40 }
+                text: Khazeera
+                text2: Warring people who inhabit an enduring city-state at the edge of an active volcano. Molten rock and slag from this sacred volcano is used in the heated shot for their destructive cannonry, and their soldiers wield blades forged in its fires.
+              - roll: { min: 41, max: 50 }
+                text: Morien
+                text2: Seafolk who forsake cannons and muskets. They sail low-profile catamarans and set upon their foes with stealthy ambushes.
+              - roll: { min: 51, max: 60 }
+                text: Otani
+                text2: People who dwell in island highlands. They largely forsake the sea, but send out seafaring envoys to build ties with other communities.
+              - roll: { min: 61, max: 70 }
+                text: Sularia
+                text2: Beast-bonded people who commune with magnificent elder rays. They are sworn to protect the seas from hunters and despoilers.
+              - roll: { min: 71, max: 80 }
+                text: Talan
+                text2: Scrappy seafolk who range far among the islands. They maintain a floating trade settlement open to any who visit with shuttered gunports.
+              - roll: { min: 81, max: 90 }
+                text: Thalassa
+                text2: Recent refugees of a cataclysmic war. They are desperate to gain allies against the enemy they believe will follow them to the isles.
+              - roll: { min: 91, max: 100 }
+                text: Uktanu
+                text2: Reclusive people who trace their lineage to the first inhabitants of the isles. They are sworn to protect the sacred sites and relics of their ancient forebears.
+          organizations:
+            name: Organizations
+            type: oracle_rollable
+            oracle_type: table_text2
+            summary: People joined in a collective trade, pursuit, or goal
+            tags:
+              sundered_isles:
+                faction_type: organization
+            _source:
+              <<: *Source
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Bloody Skulls
+                text2: Bands of scavenging shipbreakers who lie in wait along hazardous passages. They believe that painting their faces with a death-like visage protect against retribution by spirits of the dead.
+              - roll: { min: 11, max: 20 }
+                text: Cynosure League
+                text2: Guild of scientists and naturalists who record their findings in exhaustively-detailed journals. Their works are copied and recorded by archivists at a grand central library.
+              - roll: { min: 21, max: 30 }
+                text: Ebb Tide
+                text2: Covert insurgency of spies and saboteurs. They seek to cripple imperial ambitions from within, and use trained gulls to carry vital messages to collaborators.
+              - roll: { min: 31, max: 40 }
+                text: Faceless Accord
+                text2: Renegades sailing in defiance of imperial powers. They conceal their identities behind iron masks to protect kinfolk still under imperial rule.
+              - roll: { min: 41, max: 50 }
+                text: Forsaken Fleet
+                text2: Powerful clan of pirates led by a marauder known as the Raven Queen. They recently sacked and seized a major port town and made it a refuge for outlaws and outcasts.
+              - roll: { min: 51, max: 60 }
+                text: Ironmongers
+                text2: Guild of shipbuilders and arms manufacturers who supply their destructive wares to the highest bidder. They secretly incite wars to expand their fortune.
+              - roll: { min: 61, max: 70 }
+                text: Moonsingers
+                text2: Mystic coven that draw their powers from the dance of the moons and the rhythm of the tides. They recruit and train talented initiates from across the isles.
+              - roll: { min: 71, max: 80 }
+                text: Saltblood
+                text2: Mariners bound to an age-old seafaring fellowship. They recognize fellow saltbloods and communicate using complex hand signals.
+              - roll: { min: 81, max: 90 }
+                text: Tide Runners
+                text2: Smugglers who ferry their ill-gotten goods from island to island. They rely on speed, stealth, and the cover of foul weather or moonless nights.
+              - roll: { min: 91, max: 100 }
+                text: Wayfarers
+                text2: Peddlers who range across the isles and beyond. They transport rare and unusual cargo aboard their vibrantly painted ships.
+          empires:
+            name: Empires
+            type: oracle_rollable
+            oracle_type: table_text2
+            summary: People seeking dominion over the isles
+            tags:
+              sundered_isles:
+                faction_type: empire
+            _source:
+              <<: *Source
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Argosy Company
+                text2: Trade company that commands a fleet of beast-hunting ships and pays bounties on beasts to independent captains. Their unscrupulous merchants deal in trophies and resources gathered from slain creatures.
+              - roll: { min: 11, max: 20 }
+                text: Eldarian Remnants
+                text2: Loyalists of a fallen empire who seek to restore their former glory among the isles, guided by a charismatic and shrewd military leader. The sails of their ships are emblazoned with a burning phoenix.
+              - roll: { min: 21, max: 30 }
+                text: Empire of Solas
+                text2: Age-old dominion ruled by an immortal god-emperor. Their ostentatious ships are adorned with gold metalwork and filigreed sails.
+              - roll: { min: 31, max: 40 }
+                text: Firgovian Regency
+                text2: Fracturing empire facing a succession crisis in the aftermath of the monarch’s assassination. Rival claimants gather their armies and navies to take the crown by force.
+              - roll: { min: 41, max: 50 }
+                text: Hand of Theya
+                text2: Iron-fisted theocracy under the rule of a council of priests. Their mandates are enforced by red-robed inquisitors.
+              - roll: { min: 51, max: 60 }
+                text: Kyrody Dominion
+                text2: Expansive empire with far-flung territories. Their holdings within the isles are overseen by corrupt and squabbling governors, each vying for greater power and wealth.
+              - roll: { min: 61, max: 70 }
+                text: Meridian Company
+                text2: Powerful trade company with diverse holdings and boundless political influence. They function as a shadow government behind other powers.
+              - roll: { min: 71, max: 80 }
+                text: Norish Empire
+                text2: War-mongering clans newly united under a powerful warlord. Their warships are fitted with imposing rams and heavy boarding ramps.
+              - roll: { min: 81, max: 90 }
+                text: Skulde Alliance
+                text2: Ambitious empire that wields a powerful military. At the vanguard of their fleets are the dragon-riders of the Crimson Guard, who house their steeds and launch their attacks from colossal carrier ships.
+              - roll: { min: 91, max: 100 }
+                text: Sovereign States
+                text2: Industrialist power formed from the remnants of warring nations. They are governed by an oligarchical council whose members scheme and backstab to advance their own interests.
+          cursed:
+            name: The Cursed
+            type: oracle_rollable
+            oracle_type: table_text2
+            summary: People transformed or bound by dreadful curses
+            _source:
+              <<: *Source
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Acheron’s Armada
+                text2: Ghost ships under the command of an undead imperial admiral. This vengeful wraith seeks to carry on the war that cost them their life.
+              - roll: { min: 11, max: 20 }
+                text: Blighthulk
+                text2: Titanic ship cursed with incessant corrosion and rot. Its crew must constantly add wood, sails, and fittings from salvaged wrecks and defeated foes into this massive and unnerving chimera-craft.
+              - roll: { min: 21, max: 30 }
+                text: Bloodmarked League
+                text2: An order of occultists, each bearing a blood-red tattoo on their wrist, who are dedicated to hunting and banishing the restless dead.
+              - roll: { min: 31, max: 40 }
+                text: Brineblessed
+                text2: Cult of sailors cursed by a drowned god. Their bodies and ships are corrupted by horrible aspects of the sea—riddled with barnacles, rotting seaweed, and brackish slime.
+              - roll: { min: 41, max: 50 }
+                text: Carrion Fleet
+                text2: Fleet under the command of a necromancer. The dreadful ships are festooned with bones and bloodied sails, crewed by skeletal undead, and escorted by the risen corpse of a slain behemoth.
+              - roll: { min: 51, max: 60 }
+                text: Fireships
+                text2: Ships burning with unquenchable fire and crewed by bone-scorched undead. The flagship was set aflame by marauders in a port attack, and its cursed commander seeks to spread the fire to other vessels and expand the accursed fleet.
+              - roll: { min: 61, max: 70 }
+                text: Forgeborn
+                text2: Uncanny metal automatons who are said to embody the stolen souls of dead mariners. They cruise the isles in ironclad ships.
+              - roll: { min: 71, max: 80 }
+                text: Gilded Fleet
+                text2: Pirates who seized a forbidden treasure. They are cursed with a ceaseless, insatiable hunger to hoard riches from all corners of the isles.
+              - roll: { min: 81, max: 90 }
+                text: Nightships
+                text2: Dread ships of the vampire clans, shrouded in an eternal gloom. Their undead crews leave wrecks and blood-drained corpses in their wake.
+              - roll: { min: 91, max: 100 }
+                text: Tidebound
+                text2: Devout cultists who were granted eternal life in exchange for unending service to their patron sea god. They must not tarry on land or at anchor, lest death catches up with them to take its toll.
+      beasts:
+        name: Beasts of the Isles
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: *Source
+        contents:
+          sea:
+            name: Beasts of the Sea
+            type: oracle_rollable
+            oracle_type: table_text3
+            column_labels: &Beasts.column_labels
+              roll: Roll
+              text: Name
+              text2: Rank
+              text3: Description
+            _source:
+              <<: *Source
+            rows:
+              - roll: { min: 1, max: 15 }
+                text: Predatory Shark
+                text2: Various Ranks
+                text3: Most sharks offer little threat, but certain species of large, aggressive sharks are properly feared and respected by seagoing folk. Mariners also speak of ancient sharks, relentless hunters the size of whales whose teeth splinter hull and bone alike.
+              - roll: { min: 16, max: 30 }
+                text: Great Whale
+                text2: Various Ranks
+                text3: The seas teem with whales of all sorts. Even the largest of them, the great whales, are generally friendly and curious. They are nevertheless under threat by whalers and despoilers, and some islanders sail in defense of these gentle creatures.
+              - roll: { min: 31, max: 35 }
+                text: Leviathan
+                text2: Epic
+                text3: These ancient whales are far larger and more aggressive than their common kin. Their bone-white hide bears the scars of harpoon strikes and hard-won battles with other beasts. They are keenly intelligent, have long memories, and do not forgive or forget.
+              - roll: { min: 36, max: 40 }
+                text: Rothulk
+                text2: Extreme
+                text3: Circling carrion birds and the stench of death often forewarn the appearance of a rothulk, a cadaverous but still animate great whale. These unfortunate beasts are infested by a multitude of parasites that bind grasping tendrils to flesh and bone. The small creatures steal the life of their host and puppeteer what remains.
+              - roll: { min: 41, max: 45 }
+                text: Giant Squid
+                text2: Formidable
+                text3: The largest of these creatures can easily crush a longboat with their powerful tentacles, but they only reluctantly emerge from the lightless depths that is their preferred hunting grounds.
+              - roll: { min: 46, max: 50 }
+                text: The Kraken
+                text2: Epic
+                text3: The Kraken is the singular master of the seas, a beast of horrific scale, cunning, and ferocity. It has the sleek form and speed of a giant whale, but is armed with powerful tentacles and a gaping, toothy maw. Along its flank are rows of luminescent eyes; doom lights, mariners call them, for they are a presage of certain death.
+              - roll: { min: 51, max: 55 }
+                text: Sea Dragon
+                text2: Formidable
+                text3: These aquatic dragons have glittering scales, toothy jaws, and long, bladed tails. Their winglike fins propel them through the water at amazing speeds, and send them leaping and gliding over the waves.
+              - roll: { min: 56, max: 60 }
+                text: Elder Ray
+                text2: Extreme
+                text3: Like their lesser brethren, these creatures have flattened bodies and broad fins. They are inherently gentle, often traveling with seafolk who recognize individual rays by their luminescent markings.
+              - roll: { min: 61, max: 65 }
+                text: Whipneck
+                text2: Formidable
+                text3: These creatures are about the length of a sloop, with long necks, broad bodies, and turtle-like fins. They are not overly aggressive, but often hound fishing boats in hopes of stealing their catch.
+              - roll: { min: 66, max: 70 }
+                text: Eel Swarm
+                text2: Formidable
+                text3: These masses of black-eyed, sharp-toothed eels rely on sheer numbers to overwhelm larger prey. Some say they are capable of chewing through a ship’s hull, and pour into a breached vessel in a slithering, biting torrent.
+              - roll: { min: 71, max: 75 }
+                text: Sea Serpent
+                text2: Epic
+                text3: These titanic beasts have sinuous bodies, glittering scales, and spiny red fins larger than the greatest mainsail. They are largely ambivalent to the presence of most seagoing folk—all but the largest ship passes beneath their notice.
+              - roll: { min: 76, max: 80 }
+                text: Reefstrider
+                text2: Extreme
+                text3: The shells of these gigantic, squat crustaceans are encrusted with coral and sea life, camouflaging them among reef systems. They are territorial and protective of their habitats.
+              - roll: { min: 81, max: 85 }
+                text: Starlume
+                text2: Dangerous
+                text3: Hundreds of pinpoint lights shimmer within the translucent form of these gigantic jellyfish. According to legend, the lights of a starlume reveal complex celestial maps. Those who look deeply into those alluring lights may find themselves gifted—or cursed—with visions of lost seas and hidden places.
+              - roll: { min: 86, max: 90 }
+                text: Vortex Forge
+                text2: Epic
+                text3: From a distance, this titanic entity might be mistaken for a great whale, but it is a crewless metal construct that wanders the seas on an inscrutable mission. Its rotating maw generates powerful whirlpools to draw in prey, sending ship and sailor alike into an ever-burning furnace deep within its mechanical gullet.
+              - roll: { min: 91, max: 95 }
+                text: Herald
+                text2: Epic
+                text3: These colossal tortoise-like beings are the longest-lived creatures of the isles—perhaps as ancient as the world itself. Islanders interpret wondrous and grim portents from the sighting of a herald, but these creatures often go unseen; their craggy shell is easily mistaken for a small, rocky island.
+              - roll: { min: 96, max: 100 }
+                text: Abomination
+                text2: Various Ranks
+                text3: Generate this beast using the Starforged creature oracles (page 336 of the Starforged rulebook), giving it a water form.
+                # TODO
+          land:
+            name: Beasts of the Land
+            type: oracle_rollable
+            oracle_type: table_text3
+            column_labels: *Beasts.column_labels
+            _source:
+              <<: *Source
+            rows:
+              - roll: { min: 1, max: 25 }
+                text: Predatory Big Cat
+                text2: Various Ranks
+                text3: Big cats are the most common land predator in the isles. Some live among the high branches of jungle canopies, climbing and leaping with ease. Others dwell within the shadows of the forest floor or amid the rocks and crags of highland terrain, stalking their prey with deadly skill.
+              - roll: { min: 26, max: 35 }
+                text: Reaper
+                text2: Formidable
+                text3: Reapers are bipedal, cunning reptiles who move in packs, striking unseen from the shadows and chasing prey into flanking ambushes. They dispatch their quarry with wicked, sickle-shaped claws.
+              - roll: { min: 36, max: 40 }
+                text: Great Ape
+                text2: Epic
+                text3: The towering great apes of the isles live in the most rugged and remote jungles. They are reclusive creatures and do not abide rivals or trespassers. Their long lives are marked by the innumerable scars of fights with other beasts.
+              - roll: { min: 41, max: 45 }
+                text: Thundermaw
+                text2: Extreme
+                text3: This bipedal reptile is feared for its towering size, toothy maw, and dreadful roar. A small circlet of bone rings the beast’s skull, leading some to name the thundermaw a king among the isles. Despite its legendary reputation, the thundermaw prefers to scavenge its meals, and tires easily when giving chase.
+              - roll: { min: 46, max: 50 }
+                text: Primordial
+                text2: Epic
+                text3: This titanic, reptilian beast dwells within deep jungles and mountainous highlands. It is a creature of the ancient world, unconcerned with the petty affairs of island folk but protective of its mist-shrouded domain. It is taller than the highest jungle canopy, and leaves trails of splintered trees and sundered earth in its wake.
+              - roll: { min: 51, max: 55 }
+                text: Avithor
+                text2: Dangerous
+                text3: These person-sized, flightless birds are drawn to shiny things, and collect bits of stone, metal, and trinkets in their nests. They are jealously protective of this hoard. When a trespasser comes near, they use a chittering call and display of colorful plumage to warn them away. If that fails, their surprising jumping ability, razor-like claws, and sharp beak make quick work of any threat.
+              - roll: { min: 56, max: 60 }
+                text: Verdant Mammoth
+                text2: Extreme
+                text3: These majestic, nomadic creatures have prehensile trunks, long tusks, and spiraling horns. The largest and oldest of a herd, the matriarch, is covered in a layer of moss, lichen, and plant sprigs—it wears this lush garden like an elaborate, earthy cape. Birds roost along the matriarch’s back and circle above while the herd travels, providing a squawking alarm when danger is near.
+              - roll: { min: 61, max: 65 }
+                text: Serrabrus
+                text2: Formidable
+                text3: The serrabrus is a large boar-like beast. It is an industrious creature, felling trees, gathering deadwood, and building crude barriers with its sweeping, sawtooth tusks. To find oneself lost within the strange, meandering fences of the serrabrus is to incite the rage of the builder.
+              - roll: { min: 66, max: 70 }
+                text: Night Weaver
+                text2: Formidable
+                text3: These enormous spiders have a sleek, obsidian exoskeleton and slender legs tipped with razor-sharp hooks. They lurk in shadowy places—such as grounded shipwrecks, deep caves, and dense woodlands—building elaborate webs as traps for unwary prey.
+              - roll: { min: 71, max: 75 }
+                text: Sylvan Strider
+                text2: Extreme
+                text3: This gargantuan, insect-like creature moves through woodlands on multi-jointed legs the size of tree trunks. It often stands perfectly still while lying in wait for prey, indiscernible from the surrounding wilds.
+              - roll: { min: 76, max: 80 }
+                text: Mimic Serpent
+                text2: Extreme
+                text3: The scales of this massive, canopy-dwelling snake can shift in hue and texture, allowing it to blend invisibly within its surroundings. After grasping its unaware prey, the mimic serpent coils around its victim, stealing air and crushing bones.
+              - roll: { min: 81, max: 85 }
+                text: Ghost Rat
+                text2: Dangerous
+                text3: These pale rats of unusual size are accustomed to life within lightless caves. Ghost rats are blind, and use their keen sense of smell to navigate the depths. They pursue potential meals with hound-like persistence.
+              - roll: { min: 86, max: 90 }
+                text: Gangle
+                text2: Formidable
+                text3: This large, cave-dwelling insect contorts its long limbs with uncanny flexibility—the joints cracking like breaking bones—to navigate the smallest crevices. These limbs, equipped with delicate sensory organs, enable the creature to perceive the subtlest vibrations and detect prey or threats from afar. After unfolding itself from its hiding place, the gangle attacks with a spray of burning saliva.
+              - roll: { min: 91, max: 95 }
+                text: Deep Dragon
+                text2: Epic
+                text3: These ancient dragons lair in volcanic chambers, hibernating for centuries amid superheated steam and gases. They are flightless, with only vestigial wings, but their titanic scale and molten breath mark them as the greatest of dragon-kind. The rare emergence of a deep dragon from its burrow is a catastrophic reckoning for the surface world.
+              - roll: { min: 96, max: 100 }
+                text: Abomination
+                text2: Various Ranks
+                text3: Generate this beast using the Starforged creature oracles (page 336 of the Starforged rulebook), giving it a land form.
+          shore_and_river:
+            name: Beasts of the Shore and River
+            type: oracle_rollable
+            oracle_type: table_text3
+            column_labels: *Beasts.column_labels
+            _source:
+              <<: *Source
+            rows:
+              - roll: { min: 1, max: 20 }
+                text: Great Crocodile
+                text2: Various Ranks
+                text3: Large crocodiles dwell in waters throughout the isles, including coastal wetlands, rivers, and the depths of tidal caves. The greatest and fiercest of them are the size of a sloop­­ —armed with dagger-like teeth, impenetrable hides, and powerful tails capable of shattering stone.
+              - roll: { min: 21, max: 35 }
+                text: Tenebrous Squid
+                text2: Extreme
+                text3: This beast dwells within shoreline hollows and sea caves. It is a cunning and patient creature, slumbering for months or years until hapless prey wanders into its dark lair. As it awakens, its orb-like eyes glimmer with a foul, hungry light, and its barbed tentacles prepare to strike.
+              - roll: { min: 36, max: 50 }
+                text: Diving Spider
+                text2: Dangerous
+                text3: These semi-aquatic arachnids trap air with their silk, enabling them to hunt along riverbeds and coastal shallows, or lurk along the shore in wait of prey. They occasionally get caught up in nets, an unlucky catch for fisher folk.
+              - roll: { min: 51, max: 65 }
+                text: Muck Toad
+                text2: Formidable
+                text3: This creature lurks within the mire of swamps and muddy rivers. What the muck toad lacks in speed and agility, it makes up for in strength and scale, grasping prey with its prehensile tongue and swallowing it whole with its cavernous maw.
+              - roll: { min: 66, max: 75 }
+                text: Sand Dragon
+                text2: Formidable
+                text3: Sand dragons are the smallest of dragon-kind, but are still a fearsome foe. Burrowing beneath shoreline dunes, it stirs at the telltale vibrations of footfalls upon its lair. It attacks with dagger-like claws, teeth as long and wicked as cutlasses, and breath of scalding steam.
+              - roll: { min: 76, max: 85 }
+                text: Keelback Crab
+                text2: Extreme
+                text3: The keelback crab uses a scavenged ship as a protective shell for its soft exoskeleton. Reports of ghost ships can often be attributed to keelbacks, scuttling along coastal waters with wrecks on their backs. As it grows, a keelback must commandeer vessels of increasing size.
+              - roll: { min: 86, max: 95 }
+                text: Jade Crab
+                text2: Extreme
+                text3: The jade crab is the largest and most aggressive of the crustaceans, able to snap a longboat or even a small ship in two with its vice-like pincers. At rest, their shell is slate gray, easily mistaken for rocks or reefs. On the hunt, they shimmer with an iridescent blue-green. Fiercely territorial, these creatures often claim a waterway, cove, or sea cave as their lair.
+              - roll: { min: 96, max: 100 }
+                text: Abomination
+                text2: Various Ranks
+                text3: Generate this beast using the Starforged creature oracles (page 336 of the Starforged rulebook), giving it a land or water form.
+          sky:
+            name: Beasts of the Sky
+            type: oracle_rollable
+            oracle_type: table_text3
+            column_labels: *Beasts.column_labels
+            _source:
+              <<: *Source
+            rows:
+              - roll: { min: 1, max: 20 }
+                text: Great Hawk
+                text2: Various Ranks
+                text3: Various types of enormous hawks hunt among the isles, including the mangrove-dwelling ash hawk and the coastal wind reaver. The greatest of them, the fabled vastwing, is said to be capable of grasping and lifting a fully loaded longboat in its enormous talons.
+              - roll: { min: 21, max: 35 }
+                text: Iron Dragon
+                text2: Extreme
+                text3: The most common dragon of the isles, the iron dragon dwells in a variety of environments, from rocky coasts to deep inland jungles. They have a tough hide the color of weathered iron, dreadful claws, and a long, powerful tail. But their most potent weapon is their fiery breath, the bane of any wooden ship that earns their ire. Some island folk revere these creatures. But others harness them and ride into battle, launching from a seaside fort or a ship’s deck to lay waste to their enemies.
+              - roll: { min: 36, max: 50 }
+                text: Wave Skimmer
+                text2: Formidable
+                text3: These winged reptilian beasts nest along waterside cliffs, and are adept at diving to spear fish with barbed beaks. Fishing boats and cargo ships often fall prey to wave skimmer ambushes, as the cunning predators have learned of the great bounties hidden within those vessels.
+              - roll: { min: 51, max: 65 }
+                text: Goregull
+                text2: Dangerous
+                text3: Scavengers by nature, the vulture-sized goregulls feed primarily on dead sea life, but are known to harass the crews of floundering ships.
+              - roll: { min: 66, max: 75 }
+                text: Monarch Bat
+                text2: Formidable
+                text3: These oversized bats, large enough to carry off an unlucky islander, dwell in caves and amid jungle canopies. As the sun sets, they leave their roosts to hunt. They are particularly dangerous on moonless nights when their swift, silent approach goes unnoticed.
+              - roll: { min: 76, max: 85 }
+                text: Bloodmite
+                text2: Dangerous
+                text3: Bloodmites are hound-sized, flying insects. They primarily cling to the hide of titanic beasts, feeding through a blade-tipped proboscis, but are not averse to preying upon smaller targets.
+              - roll: { min: 86, max: 95 }
+                text: Thanatoi
+                text2: Dangerous
+                text3: These moth-like creatures are unsettlingly large but harmless. They are often seen on nights when Wraith is full—they shimmer with a strange, ethereal glow, as if reflecting the light of the moon. Many islanders believe they escort souls into the world beyond. Look too long into their alluring glow, they say, and you suffer a glimpse of your own death.
+              - roll: { min: 96, max: 100 }
+                text: Abomination
+                text2: Various Ranks
+                text3: Generate this beast using the Starforged creature oracles (page 336 of the Starforged rulebook), giving it an air form.

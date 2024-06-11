@@ -1,0 +1,275 @@
+_id: sundered_isles
+datasworn_version: "0.1.0"
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-06-01
+  title: Sundered Isles
+  url: https://ironswornrpg.com
+  license: null
+  authors:
+  - name: Shawn Tomkin
+assets:
+  command_vehicle:
+    name: Command Vehicle Assets
+    type: asset_collection
+    _source:
+      <<: *Source
+    contents:
+      flagship:
+        name: Flagship
+        type: asset
+        category: Command Vehicle
+        shared: true
+        options: &NameField
+          name:
+            field_type: text
+            label: name
+        abilities:
+        - enabled: true
+          text: |-
+            Your seagoing flagship is armed with cannons, transports crew, cargo, and passengers, and can equip support vehicle and module assets. In addition, it has up to 5 hold that acts as supply for you and your allies when taking action or suffering a cost related to shipwide gear and provisions.
+        - text: |-
+            When you [Finish an Expedition](id:starforged/moves/exploration/finish_an_expedition) (dangerous or greater) on a seagoing journey and score a hit, this expedition strengthened your ties to your ship and crew. You and your allies may mark 1 tick on your bonds legacy track.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/exploration/finish_an_expedition
+            roll_type: progress_roll
+            trigger:
+              conditions:
+              - text: When you [Finish an Expedition](id:starforged/moves/exploration/finish_an_expedition) (dangerous or greater) on a seagoing journey and score a hit
+        - text: |-
+            You fly a distinctive flag. Envision its design. Once per situation, when you hoist the colors in a dramatic moment, you and your allies take +1 momentum.
+        _source:
+          <<: *Source
+        controls:
+          integrity:
+            label: integrity
+            field_type: condition_meter
+            max: 5
+            value: 5
+            moves:
+              suffer:
+              - starforged/moves/suffer/withstand_damage
+              recover:
+              - starforged/moves/recover/repair
+            controls:
+              battered: &Vehicle.Battered
+                label: battered
+                field_type: checkbox
+                is_impact: true
+              cursed:
+                label: cursed
+                field_type: checkbox
+                is_impact: true
+                # TODO: flag so its associated with the impacts in rules? *should* it be?
+          supply:
+            label: supply (hold)
+            field_type: condition_meter
+            max: 5
+            value: 5
+            # TODO: substitute for player meter?
+            moves:
+              suffer:
+              - starforged/moves/suffer/sacrifice_resources
+              recover:
+              - starforged/moves/recover/resupply
+            controls:
+              unequipped:
+                field_type: checkbox
+                label: unequipped (hold)
+                is_impact: true
+  support_vehicle:
+    type: asset_collection
+    name: Support Vehicle Assets
+    _source:
+      <<: *Source
+    contents:
+      captains_boat:
+        name: Captain's Boat
+        type: asset
+        category: Support Vehicle
+        options: *NameField
+        _source:
+          <<: *Source
+        shared: true
+        abilities:
+        - enabled: true
+          text: |-
+            Your sleek and speedy personal transport can carry a small number of crew or passengers. When you make a move to outrun a danger, pursue a target, or race against a deadline, add +1 and take +1 momentum on a hit.
+          enhance_moves:
+          - enhances: null
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: When you make a move to outrun a danger, pursue a target, or race against a deadline (in the captain's boat)
+        - text: |-
+            Your boat is armed with light cannons. When you [Clash](id:starforged/moves/combat/clash) by firing the cannons, you may add +integrity. If you do, take +1 momentum on a hit, but mark one fewer progress.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/combat/clash
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: by firing the light cannons (of the captain's boat)
+        - text: |-
+            Your boat is fitted with impressive or imposing regalia. When you [Secure an Advantage](id:starforged/moves/adventure/secure_an_advantage) by seeking to make an impression as you arrive at a location or event, you may roll +integrity. If you do, take +1 momentum or +1 spirit on a hit.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/*/secure_an_advantage
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: by seeking to make an impression as you arrive at a location or event
+                roll_options:
+                - using: asset_control
+                  control: integrity
+        controls:
+          integrity:
+            max: 3
+            value: 3
+            <<: &SupportVehicle.integrity
+              label: integrity
+              field_type: condition_meter
+              min: 0
+              moves:
+                suffer:
+                  - starforged/moves/suffer/withstand_damage
+                recover:
+                  - starforged/moves/recover/repair
+              controls:
+                battered:
+                  label: battered
+                  field_type: checkbox
+                  is_impact: true
+      diving_bell:
+        name: Diving Bell
+        type: asset
+        _source:
+          <<: *Source
+        category: Support Vehicle
+        options: *NameField
+        shared: true
+        abilities:
+        - enabled: true
+          text: |-
+            Your diving bell carries passengers into the depths within an air-filled chamber. It offers a refuge when diving the seabed or while exploring underwater wrecks, ruins, or caves. When you set off from the bell on a perilous undersea dive, or return to the bell after a dive, take +1 momentum.
+          # TODO: nonmove trigger
+        - text: |-
+            Your diving bell is fitted with a rigid hull. When you [Face Danger](id:starforged/moves/adventure/face_danger) to test its strength against the crushing depths, roll +integrity and add +1. When you must [Withstand Damage](id:starforged/moves/suffer/withstand_damage) against pressure or impact, take +1 momentum or +1 integrity on a strong hit.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/*/face_danger
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: to test its strength against the crushing depths
+                roll_options:
+                - using: asset_control
+                  control: integrity
+          - enhances:
+            - starforged/moves/suffer/withstand_damage
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: against pressure or impact
+        - text: |-
+             When you use the diving bell to [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint), add +1.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/exploration/explore_a_waypoint
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: When you use the diving bell to [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint)
+        controls:
+          integrity:
+            <<: *SupportVehicle.integrity
+            max: 3
+            value: 3
+      flying_machine:
+        name: Flying Machine
+        type: asset
+        _source:
+          <<: *Source
+        category: Support Vehicle
+        options: *NameField
+        shared: true
+        abilities:
+        - enabled: true
+          text: |-
+            Your flying machine can carry you and a passenger on aerial missions. When you make a move to scout or survey from above, add +1 and take +1 momentum on a hit.
+          enhance_moves:
+            - roll_type: action_roll
+              trigger:
+                conditions:
+                  - text: When you make a move to scout or survey from above (in your flying machine)
+        - text: |-
+            When you perform a risky maneuver to overcome an obstacle or danger, you may add +integrity and take +2 momentum on a strong hit. If you do, count a weak hit as a miss.
+          enhance_moves:
+            - roll_type: action_roll
+              trigger:
+                conditions:
+                  - text: When you perform a risky maneuver to overcome an obstacle or danger (in your flying machine)
+        - text: |-
+            When you scout ahead as you [Set a Course](id:starforged/moves/exploration/set_a_course), add +1. On a strong hit with a match, you spot a remarkable location or opportunity en route. Mark 1 tick on your discoveries legacy track, envision what you find, and resolve the encounter. Then, continue to your destination.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/exploration/set_a_course
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: When you scout ahead as you [Set a Course](id:starforged/moves/exploration/set_a_course) (in your flying machine)
+        controls:
+          integrity:
+            <<: *SupportVehicle.integrity
+            max: 3
+            value: 3
+      longboat:
+        name: Longboat
+        type: asset
+        _source:
+          <<: *Source
+        category: Support Vehicle
+        options: *NameField
+        shared: true
+        abilities:
+        - text: |-
+            Your longboat transports crew, passengers, and cargo to and from your flagship. When you (or a landing party under your command) use the craft to haul provisions as you [Resupply](id:starforged/moves/recover/resupply), you may roll +integrity. If you do, take +1 supply or +1 momentum on a hit.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/recover/resupply
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: When you (or a landing party under your command) use the longboat to haul provisions as you [Resupply](id:starforged/moves/recover/resupply)
+                roll_options:
+                - using: asset_control
+                  control: integrity
+        - text: |-
+            Your longboat is reinforced to endure storms, shoals, and cannon fire. When you [Withstand Damage](id:starforged/moves/suffer/withstand_damage) and score a miss, reroll any dice. When you [Repair](id:starforged/moves/recover/repair) a battered longboat, clear the impact for 1 repair point (instead of 2).
+          enhance_moves:
+          - enhances:
+            - starforged/moves/suffer/withstand_damage
+            roll_type: action_roll
+          - enhances:
+            - starforged/moves/recover/repair
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: When you [Repair](id:starforged/moves/recover/repair) a battered longboat
+        - text: |-
+            Your crew is trained for a stealthy approach. When you [Face Danger](id:starforged/moves/adventure/face_danger) or [Gain Ground](id:starforged/moves/combat/gain_ground) using your longboat to board an enemy vessel or land on hostile shores, add +1 and take +1 momentum on a hit.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/*/face_danger
+            - starforged/moves/combat/gain_ground
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: using your longboat to board an enemy vessel or land on hostile shores
+        controls:
+          integrity:
+            <<: *SupportVehicle.integrity
+            max: 4
+            value: 4

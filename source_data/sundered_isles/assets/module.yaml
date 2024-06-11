@@ -1,0 +1,693 @@
+_id: sundered_isles
+datasworn_version: "0.1.0"
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-06-01
+  title: Sundered Isles
+  url: https://ironswornrpg.com
+  license: null
+  authors:
+  - name: Shawn Tomkin
+assets:
+  module:
+    name: Module Assets
+    type: asset_collection
+    _source:
+      <<: *Source
+    contents:
+      armored_prow:
+        name: Armored Prow
+        type: asset
+        _source:
+          <<: *Source
+        category: Module
+        shared: true
+        abilities:
+        - enabled: true
+          text: |-
+            When you [Face Danger](id:starforged/moves/adventure/face_danger) or [React Under Fire](id:starforged/moves/combat/react_under_fire) by sailing through an obstacle or barrier, add +1. If you [Withstand Damage](id:starforged/moves/suffer/withstand_damage) as an outcome of this action, also add +1.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/*/face_danger
+            - starforged/moves/combat/react_under_fire
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: by sailing through an obstacle or barrier
+          - enhances:
+            - starforged/moves/suffer/withstand_damage
+            roll_type: action_roll
+            trigger:
+              conditions:
+                - text: as an outcome of sailing through an obstacle or barrier
+        - text: |-
+            When you [Strike](id:starforged/moves/combat/strike) by ramming your foe, choose the force of the hit: 1, 2, or 3. Then, add +that amount. On a strong hit, mark progress. On a weak hit or miss, in addition to the outcome of the move, [Withstand Damage](id:starforged/moves/suffer/withstand_damage) and suffer damage equal to the force of the hit.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/combat/strike
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: by ramming your foe
+        - text: |-
+            When you [Secure an Advantage](id:starforged/moves/adventure/secure_an_advantage) or [Gain Ground](id:starforged/moves/combat/gain_ground) by bringing your ship to ramming speed and sailing headlong toward a threat, roll +integrity or +heart, whichever is higher. On a strong hit, take +1 momentum.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/*/secure_an_advantage
+            - starforged/moves/combat/gain_ground
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: by bringing your ship to ramming speed and sailing headlong toward a threat
+                method: highest
+                roll_options:
+                - using: asset_control
+                  control: integrity
+                - using: stat
+                  stat: heart
+        controls:
+          hull:
+            label: hull
+            field_type: condition_meter
+            max: 4
+            value: 4
+            moves:
+              recover:
+                - starforged/moves/recover/repair
+      chase_guns:
+        name: Chase Guns
+        type: asset
+        _source:
+          <<: *Source
+        category: Module
+        shared: true
+        abilities:
+        - enabled: true
+          text: |-
+            Your vessel is fitted fore and aft with powerful cannons. When you [Strike](id:starforged/moves/combat/strike) at a pursuing or fleeing target, take +1 momentum on a strong hit.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/combat/strike
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: When you [Strike](id:starforged/moves/combat/strike) at a pursuing or fleeing target
+        - text: |-
+            Once per fight, when you [Gain Ground](id:starforged/moves/combat/gain_ground) by firing your chase guns to find the range of your target, add +1. On a strong hit, add +1 if you immediately [Strike](id:starforged/moves/combat/strike), and continue to add +1 on each subsequent [Strike](id:starforged/moves/combat/strike) as long as you remain in control. If you score a strong hit with a match when using this ability, you damage a vital component; mark progress.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/combat/gain_ground
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: Once per fight, when you [Gain Ground](id:starforged/moves/combat/gain_ground) by firing your chase guns to find the range of your target
+        - text: |-
+            When you [Face Defeat](id:starforged/moves/combat/face_defeat) in a fight and set a new objective to escape, you may (one time only) immediately [Clash](id:starforged/moves/combat/clash) by firing your chase guns as you maneuver away from your foe; if you do, reroll any dice. On a strong hit, take +2 momentum.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/combat/face_defeat
+            roll_type: no_roll
+            trigger:
+              conditions:
+              - text: When you [Face Defeat](id:starforged/moves/combat/face_defeat) in a fight and set a new objective to escape
+      gilded_adornments:
+        name: Gilded Adornments
+        type: asset
+        tags: { sundered_isles: { starforged_friendly: true } }
+        _source:
+          <<: *Source
+        category: Module
+        shared: true
+        abilities:
+        - enabled: true
+          text: |-
+            When you [Secure an Advantage](id:starforged/moves/adventure/secure_an_advantage) by making a showy display of your ship, you may roll +integrity. If you do, take +1 momentum on a hit.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/*/secure_an_advantage
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: When you [Secure an
+                  Advantage](id:starforged/moves/adventure/secure_an_advantage)
+                  by making a showy display of your ship
+                roll_options:
+                - using: asset_control
+                  control: integrity
+        - text: |-
+            When you host a formal ceremony or reception aboard your ship, roll +heart or +integrity, whichever is higher. On a strong hit, the event goes as planned; you and any allies in attendance mark 2 ticks on your bonds legacy track. On a weak hit, as above, but you must first deal with an unfortunate conflict or interruption. On a miss, the event flops or is dramatically cut short; [Pay the Price](id:starforged/moves/fate/pay_the_price).
+          # TODO: new move
+        - text: |-
+            When you [Withstand Damage](id:starforged/moves/suffer/withstand_damage) and the ship’s finery bears the cost, you may mark this module as broken and ignore the damage. When you [Repair](id:starforged/moves/recover/repair) and fix this asset, take +2 momentum.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/suffer/withstand_damage
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: When you [Withstand Damage](id:starforged/moves/suffer/withstand_damage) and the ship’s finery bears the cost
+          - enhances:
+              - starforged/moves/recover/repair
+            roll_type: action_roll
+            trigger:
+              conditions:
+                - text: to fix the Gilded Adornments
+      harpoon_cannon:
+        name: Harpoon Cannon
+        type: asset
+        _source:
+          <<: *Source
+        category: Module
+        shared: true
+        abilities:
+        - enabled: true
+          text: |-
+            You may [Secure an Advantage](id:starforged/moves/adventure/secure_an_advantage) or [Gain Ground](id:starforged/moves/combat/gain_ground) by firing your harpoon cannon at a large foe or threat. On a hit, the target is grappled. For the duration of the situation, if you make a move to maneuver against, attack, or board a grappled target, add +1. If you roll a 1 on your action die while taking action against a grappled target, the line is cut, broken, or works against you; [Pay the Price](id:starforged/moves/fate/pay_the_price), and you no longer gain the bonus against that target.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/*/secure_an_advantage
+            - starforged/moves/combat/gain_ground
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: by firing your harpoon cannon at a large foe or threat
+        - text: |-
+            As above, and if you fire the cannon in close quarters, add +2. If at a distance, take +1 momentum on a hit.
+          # TODO
+        - text: |-
+            When you [Gain Ground](id:starforged/moves/combat/gain_ground) by maneuvering against a harpooned target to entangle or hinder, take +1 momentum on a strong hit and envision the ensuing chaos.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/combat/gain_ground
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: by maneuvering against a harpooned target to entangle or hinder
+      improved_armory:
+        name: Improved Armory
+        type: asset
+        tags: { sundered_isles: { starforged_friendly: true } }
+        _source:
+          <<: *Source
+        category: Module
+        shared: true
+        abilities:
+        - enabled: true
+          text: |-
+            When you [Enter the Fray](id:starforged/moves/combat/enter_the_fray) by rallying your crew to repel boarders or board an enemy ship, you may roll +supply; if you do, take +1 momentum on a hit. On a strong hit with a match, you are poised to overwhelm your foes; take +1 momentum more. In addition, any allies joining the effort may take the outcome and benefits of your move without rolling to [Enter the Fray](id:starforged/moves/combat/enter_the_fray).
+          enhance_moves:
+          - enhances:
+            - starforged/moves/combat/enter_the_fray
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: by rallying your crew to repel boarders or board an enemy ship
+                roll_options:
+                - using: condition_meter
+                  condition_meter: supply
+                - using: asset_control
+                  control: supply
+        - text: |-
+            When you [Resupply](id:starforged/moves/recover/resupply) by scavenging weapons or ammo from your foes after a fight, add +1.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/recover/resupply
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: by scavenging weapons or ammo from your foes after a fight
+        - text: |-
+            When you are out of options and set the fuse to self-destruct your command vehicle, activate this ability at no cost. If you do, envision how the sacrifice allows you to escape or overcome your foes amid the chaos. Then, mark 1 box on your quests legacy track and [Overcome Destruction](id:starforged/moves/threshold/overcome_destruction).
+          # TODO: "activate at no cost" ?
+      improved_galley:
+        name: Improved Galley
+        type: asset
+        tags: { sundered_isles: { starforged_friendly: true } }
+        _source:
+          <<: *Source
+        category: Module
+        shared: true
+        abilities:
+        - enabled: true
+          text: |-
+            You make the most of your provisions on a journey. When you [Set a Course](id:starforged/moves/exploration/set_a_course), you may reroll one challenge die.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/exploration/set_a_course
+            roll_type: action_roll
+        - text: |-
+            When you draw on your provisions to indulge yourself and others onboard, roll +supply and [Sacrifice Resources](id:starforged/moves/suffer/sacrifice_resources) (-2). On a strong hit, you and your allies each choose two. On a weak hit, you each choose one. On a miss, the event is ruined by a crisis, complication, or dispute.
+
+              * Bolster your ties: Mark 2 ticks on your bonds legacy track.
+              * Build resolve: Take +2 momentum.
+              * Take comfort: [Hearten](id:starforged/moves/recover/hearten) with an automatic strong hit.
+              * Gain strength: Take +2 health.
+          # TODO: move
+        - text: |-
+            When you [Sojourn](id:starforged/moves/recover/sojourn) and score a strong hit, take +1 supply as the galley is restocked.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/recover/sojourn
+            roll_type: action_roll
+      improved_gunnery:
+        name: Improved Gunnery
+        type: asset
+        _source:
+          <<: *Source
+        category: Module
+        shared: true
+        abilities:
+        - enabled: true
+          text: |-
+            Your gundecks house an intimidating array of heavy cannons. When you [Compel](id:starforged/moves/adventure/compel) or [Enter the Fray](id:starforged/moves/combat/enter_the_fray) by opening your gunports to send a promise of violence, add +1 and take +1 momentum on a hit. On a strong hit with a match, take another +1 momentum.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/adventure/compel
+            - starforged/moves/combat/enter_the_fray
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: by opening your gunports to send a promise of violence
+        - text: |-
+            Your well-drilled crew brings your cannons to bear with deadly efficiency. When you [Strike](id:starforged/moves/combat/strike), choose one.
+
+              * Coordinated fire: Add +1 and take +1 momentum on a hit.
+              * Unleash hell: Mark progress on a hit, but [Lose Momentum](id:starforged/moves/suffer/lose_momentum) (-1) or [Sacrifice Resources](id:starforged/moves/suffer/sacrifice_resources) (-1).
+          enhance_moves:
+          - enhances:
+            - starforged/moves/combat/strike
+            roll_type: action_roll
+        - text: |-
+            Once per fight, when you [Clash](id:starforged/moves/combat/clash) by committing to an all-or-nothing exchange of fire, add +1, count a weak hit as a strong hit, and mark progress on a hit. On a miss, you must suffer a dire outcome.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/combat/clash
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: Once per fight, when you [Clash](id:starforged/moves/combat/clash) by committing to an all-or-nothing exchange of fire
+      improved_hold:
+        name: Improved Hold
+        type: asset
+        _source:
+          <<: *Source
+        category: Module
+        shared: true
+        abilities:
+        - enabled: true
+          text: |-
+            When you [Resupply](id:starforged/moves/recover/resupply) to gain gear or provisions for your ship’s hold, you and your allies take +1 momentum for each +2 supply gained through this action.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/recover/resupply
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: to gain gear or provisions for your ship’s hold
+        - text: |-
+            Your ship’s hold is stocked with reserves. When you [Sacrifice Resources](id:starforged/moves/suffer/sacrifice_resources) and your hold supply is reduced to 0, first roll +integrity instead of marking unprepared. On a strong hit, take +1 supply. On a weak hit or miss, mark unprepared.
+          # TODO: new move
+        - text: |-
+            Your hold is fitted with secret compartments. When the ship undergoes an inspection or search, [Ask the Oracle](id:starforged/moves/fate/ask_the_oracle) if the compartments stay hidden, setting the odds as likely. If the answer is “no,” c, but you may [Face Danger](id:starforged/moves/adventure/face_danger) to distract or direct their attention elsewhere; if you do, reroll any dice.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/*/face_danger
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: to distract or direct searcher's attention away from your secret compartments (when the ship undergoes an inspection or search)
+      improved_lookout:
+        name: Improved Lookout
+        type: asset
+        _source:
+          <<: *Source
+        category: Module
+        shared: true
+        abilities:
+        - enabled: true
+          text: |-
+            While the lookout post is crewed, you are forewarned. When you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition) (+wits) to carefully navigate a perilous course, or if you [Face Danger](id:starforged/moves/adventure/face_danger) to spot a hidden or distant threat, you may reroll one challenge die.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/exploration/undertake_an_expedition
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: to carefully navigate a perilous course
+                roll_options:
+                - using: stat
+                  stat: wits
+          - enhances:
+            - starforged/moves/*/face_danger
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: to spot a hidden or distant threat
+        - text: |-
+            Once per situation, when you [Secure an Advantage](id:starforged/moves/adventure/secure_an_advantage) by studying a notable sighting or location from a distance, add +1 and take +1 momentum on a hit. On a strong hit with a match, envision an aspect of the situation or a vulnerability of your foe you can use to your advantage; take another +1 momentum.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/*/secure_an_advantage
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: Once per situation, when you [Secure an Advantage](id:starforged/moves/adventure/secure_an_advantage) by studying a notable sighting or location from a distance
+        - text: |-
+            When you come upon a rare and awe-inspiring sight, and use the lookout post for a better vantage point, choose one.
+
+              * Gain insight: take +1 momentum
+              * Gain inspiration: take +1 spirit
+      improved_sick_bay:
+        name: Improved Sick Bay
+        type: asset
+        _source:
+          <<: *Source
+        category: Module
+        shared: true
+        abilities:
+        - enabled: true
+          text: &ImprovedSickBayMoveText |-
+            When the wounded or stricken receive aid following a shipwide crisis, roll +supply. On a hit, the aid is effective; choose two on a strong hit, and one on a weak hit. On a miss, you must count the cost; [Pay the Price](id:starforged/moves/fate/pay_the_price).
+
+              * Build loyalty: Mark 1 tick on your bonds legacy track.
+              * Rally: You and your allies take +1 health or +2 momentum.
+              * Get to work: Take +1 integrity.
+          moves:
+          # TODO: rename?
+            tend_wounded:
+              type: move
+              name: Tend Wounded
+              roll_type: action_roll
+              trigger:
+                conditions:
+                - method: player_choice
+                  roll_options:
+                  - using: stat
+                    stat: supply
+                  - using: asset_control
+                    control: supply
+                text: When the wounded or stricken receive aid following a shipwide crisis...
+              text:  *ImprovedSickBayMoveText
+              outcomes:
+                strong_hit:
+                  text: |-
+                    On a __strong hit__, the aid is effective; choose two.
+
+                      * Build loyalty: Mark 1 tick on your bonds legacy track.
+                      * Rally: You and your allies take +1 health or +2 momentum.
+                      * Get to work: Take +1 integrity.
+                weak_hit:
+                  text: |-
+                    On a __weak hit__, the aid is effective; choose one.
+
+                      * Build loyalty: Mark 1 tick on your bonds legacy track.
+                      * Rally: You and your allies take +1 health or +2 momentum.
+                      * Get to work: Take +1 integrity.
+                miss:
+                  text: |-
+                    On a __miss__, you must count the cost; [Pay the Price](id:starforged/moves/fate/pay_the_price).
+              _source: *Source
+        - text: |-
+            When you [Heal](id:starforged/moves/recover/heal), make the cost of a weak hit -1 instead of -2.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/recover/heal
+            roll_type: action_roll
+        - text: |-
+            When you or an ally mark the permanently harmed impact, you have a chance to make things right. If you [Heal](id:starforged/moves/recover/heal) and score a strong hit, clear the impact (in addition to the other benefits of the move). Then, envision the scar that remains.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/recover/heal
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: After you or an ally mark the permanently harmed impact
+      ironclad_hull:
+        name: Ironclad Hull
+        type: asset
+        _source:
+          <<: *Source
+        category: Module
+        shared: true
+        abilities:
+        - enabled: true
+          text: |-
+            Your ship has 4 hull. When you [Withstand Damage](id:starforged/moves/suffer/withstand_damage), you may ignore damage up to the value of your hull. If you do, suffer -1 hull. At 0 hull, mark this module as broken. Spend 3 repair points as you [Repair](id:starforged/moves/recover/repair) to fix a broken ironclad hull, and 1 point to take +1 hull.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/suffer/withstand_damage
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: When you [Withstand
+                  Damage](id:starforged/moves/suffer/withstand_damage)
+          - enhances:
+            - starforged/moves/recover/repair
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: When you repair your ironclad hull
+        - text: |-
+            When you [Face Danger](id:starforged/moves/adventure/face_danger) or [React Under Fire](id:starforged/moves/combat/react_under_fire) by letting your ironclad hull take the hit, roll +hull and take +1 momentum on a strong hit. On a strong hit with a match, you are impervious; take another +2 momentum.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/*/face_danger
+            - starforged/moves/combat/react_under_fire
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: by letting your ironclad hull take the hit
+                roll_options:
+                - using: asset_control
+                  control: hull
+        - text: |-
+            When you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition) across an area of rough seas or dangerous shallows, you may rely on your ironclad hull. If you do, roll +hull. You may reroll your action die if its value is less than your hull.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/exploration/undertake_an_expedition
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: across an area of rough seas or dangerous shallows
+                roll_options:
+                - using: asset_control
+                  control: hull
+        controls:
+          hull:
+            label: hull
+            field_type: condition_meter
+            max: 4
+            moves:
+              recover:
+              - starforged/moves/recover/repair
+      lucky_figurehead:
+        name: Lucky Figurehead
+        type: asset
+        _source:
+          <<: *Source
+        category: Module
+        shared: true
+        options:
+          linked_stat:
+            label: linked stat
+            field_type: select_value
+            choices:
+              edge:
+                label: edge
+                using: stat
+                stat: edge
+                choice_type: choice
+              heart:
+                label: heart
+                using: stat
+                stat: heart
+                choice_type: choice
+              iron:
+                label: iron
+                using: stat
+                stat: iron
+                choice_type: choice
+              shadow:
+                label: shadow
+                using: stat
+                stat: shadow
+                choice_type: choice
+              wits:
+                label: wits
+                using: stat
+                stat: wits
+                choice_type: choice
+          form:
+            label: form
+            field_type: text
+        abilities:
+        - enabled: true
+          text: |-
+            Choose one of your stats to represent the figurehead’s theme. When you depart a port or anchorage, you may roll +linked stat. You cannot burn momentum on this roll. On a strong hit, the figurehead’s luck offers a boon; you and your allies take +2 momentum and +1 spirit. On a weak hit, you and your allies take +1 momentum. On a miss, the luck is foul; you and your allies [Lose Momentum](id:starforged/moves/suffer/lose_momentum) (-1), and the figurehead offers no benefits until you next check its luck.
+          # TODO: new move
+        - text: |-
+            When you make a move +linked stat while aboard ship, and score a miss with a match, you may reroll both challenge dice.
+          enhance_moves:
+          - roll_type: action_roll
+            enhances: null
+            trigger:
+              conditions:
+              - text: When you make a move +linked stat while aboard ship
+                roll_options:
+                - using: asset_option
+                  option: linked_stat
+        - text: |-
+            When you must [Withstand Damage](id:starforged/moves/suffer/withstand_damage), you may (before or after rolling) mark this module as broken, and ignore all damage.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/suffer/withstand_damage
+            roll_type: action_roll
+      map_room:
+        name: Map Room
+        type: asset
+        tags: { sundered_isles: { starforged_friendly: true } }
+        _source:
+          <<: *Source
+        category: Module
+        shared: true
+        abilities:
+        - enabled: true
+          text: |-
+            When you [Secure an Advantage](id:starforged/moves/adventure/secure_an_advantage) or [Gather Information](id:starforged/moves/adventure/gather_information) by studying or preparing your maps before setting off on an expedition, reroll any dice. On a hit, you may also reroll any dice for the first leg of the journey as you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition).
+          enhance_moves:
+          - enhances:
+            - starforged/moves/*/secure_an_advantage
+            - starforged/moves/adventure/gather_information
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: by studying or preparing your maps before setting off on an expedition
+        - text: |-
+            When you assemble others in the map room to formulate a plan or speculate on a mysterious aspect of the world, you and any participating allies take +1 momentum.
+        - text: |-
+            When you [Hearten](id:starforged/moves/recover/hearten) by working on or studying your maps in isolation, roll +wits instead of +heart. On a hit, take +1 spirit or +1 momentum. On a match, you uncover a previously unnoticed aspect of the world or make a dreadful realization; envision what you find, and mark 2 ticks on your discoveries legacy track.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/recover/hearten
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: by working on or studying your maps in isolation
+                roll_options:
+                - using: stat
+                  stat: wits
+      rigged_for_speed:
+        name: Rigged For Speed
+        type: asset
+        _source:
+          <<: *Source
+        category: Module
+        shared: true
+        abilities:
+        - enabled: true
+          text: |-
+            Your ship’s shallow draft, quality sails, and well-drilled crew make it fast and maneuverable. When you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition) (+edge) and score a strong hit, take +1 momentum; on a strong hit with a 6 on your action die take +2 momentum instead of +1.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/exploration/undertake_an_expedition
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - roll_options:
+                - using: stat
+                  stat: edge
+        - text: |-
+            When you [Enter the Fray](id:starforged/moves/combat/enter_the_fray), choose one (before rolling).
+
+              * Battle sails: Add +1 and take +1 momentum on a strong hit.
+              * Full sails: Take +2 momentum on a hit.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/combat/enter_the_fray
+            roll_type: action_roll
+        - text: |-
+            When you make a move to close the distance, escape a threat, or maneuver for advantage, you may push the crew and your ship to their limit. If you do (decide after rolling), reroll any dice and count a weak hit as a strong hit. Then, [Withstand Damage](id:starforged/moves/suffer/withstand_damage) (-2).
+          enhance_moves:
+          - roll_type: action_roll
+            trigger:
+              conditions:
+              - text: When you make a move to close the distance, escape a threat, or maneuver for advantage
+      submersible_mode:
+        name: Submersible Mode
+        type: asset
+        _source:
+          <<: *Source
+        category: Module
+        shared: true
+        abilities:
+        - enabled: true
+          text: |-
+            Your ship can cruise unseen below the surface. When you make a move against a foe or threat to avoid detection, add +1. If you [Enter the Fray](id:starforged/moves/combat/enter_the_fray) by ambushing an unaware foe, add +1 and mark progress on a strong hit.
+          enhance_moves:
+          - enhances: null
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: When you make a move against a foe or threat to avoid detection
+          - enhances:
+            - starforged/moves/combat/enter_the_fray
+            roll_type: action_roll
+            trigger:
+              conditions:
+                - text: by ambushing an unaware foe
+        - text: |-
+            When you travel submerged as you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition) (+shadow), you may reroll your action die. On a strong hit with a match, envision a remarkable underwater feature. If you then [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint), reroll any dice.
+          enhance_moves:
+          - enhances:
+            - starforged/moves/exploration/undertake_an_expedition
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: When you travel submerged
+                roll_options:
+                - using: stat
+                  stat: shadow
+        - text: |-
+            When you are poised to [Strike](id:starforged/moves/combat/strike) at a foe while submerged, you may roll +shadow. If you do, choose one (before rolling).
+
+              * [Strike](id:starforged/moves/combat/strike) true: Reroll any dice.
+              * [Strike](id:starforged/moves/combat/strike) hard: Mark progress on a hit.
+
+            On a strong hit with a match, you also remain undetected; take +2 momentum and add +1 on your next [Strike](id:starforged/moves/combat/strike).
+          enhance_moves:
+          - enhances:
+            - starforged/moves/combat/strike
+            roll_type: action_roll
+            trigger:
+              conditions:
+              - text: When you are poised to [Strike](id:starforged/moves/combat/strike) at a foe while submerged
+                roll_options:
+                - using: stat
+                  stat: shadow
+      trophy_vault:
+        name: Trophy Vault
+        type: asset
+        tags: { sundered_isles: { starforged_friendly: true } }
+        _source:
+          <<: *Source
+        category: Module
+        shared: true
+        abilities:
+        - enabled: true
+          text: |-
+            When you defeat a notable foe, envision the trophy you take. Then, add it to a list of trophies on display in your ship’s vault. When you make a move to overcome an obstacle or hazard aboard ship, you may use the imbued power of a trophy to reroll any dice. If you do, mark that trophy’s power as spent.
+          enhance_moves:
+            - roll_type: action_roll
+              trigger:
+                conditions:
+                  - text: When you make a move to overcome an obstacle or hazard aboard ship
+        - text: |-
+            As above, and if you use a trophy to reroll all dice and score a strong hit with a match, the legacy of that object favors you; mark 2 ticks on your bonds legacy track, and do not mark the trophy as spent. If you instead score a miss with a match, envision the cursed legacy that now haunts you.
+        - text: |-
+            When you give a tour of the vault and make a move in that space to impress or intimidate, add +2 and take +1 momentum on a hit.
+          enhance_moves:
+            - roll_type: action_roll
+              trigger:
+                conditions:
+                  - text: When you give a tour of the vault and make a move in that space to impress or intimidate

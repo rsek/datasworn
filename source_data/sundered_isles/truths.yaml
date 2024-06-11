@@ -1,0 +1,334 @@
+_id: sundered_isles
+datasworn_version: '0.1.0'
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-06-01
+  title: Sundered Isles
+  url: https://ironswornrpg.com
+  license: null
+  authors:
+    - name: Shawn Tomkin
+truths:
+  # TODO: devise a factions property. good case for making it an array, so that each suggested faction is its own string
+  sundering:
+    name: Sundering
+    type: truth
+    _source:
+      <<: *Source
+    summary: How did the isles earn their name?
+    options:
+      - roll: { min: 1, max: 33 }
+        summary: A great war left horrible scars upon the isles.
+        description: |-
+          A generations-old war is only recently ended, and the reminders of that fruitless conflict are all around us. Islands wracked by destruction, seas tainted, people displaced. The cost is immeasurable, but some still squabble over what remains.
+        quest_starter: |-
+          A people, displaced by war, live on a remote island. A recent illness left many sick or dead. Supplies are urgently needed. Why do you swear to give them aid? Who stands against you, and why?
+      - roll: { min: 34, max: 67 }
+        summary: Eons ago, a vast cataclysm shattered continents.
+        description: |-
+          Lands broke apart in an apocalyptic disaster. Powerful cities fell. Fire, lava, and ash scoured what remained. The isles, scattered like broken shards, are the vestiges of these once-great lands, the gravestones of a fallen dominion. Life eventually returned to this realm, but the wounds do not fully heal.
+        quest_starter: |-
+          You are haunted by dreams of this ancient cataclysm. In those dreams, you see a grand library of unfathomable scope, the collected knowledge of lost people and fallen dominions. What do you seek within this repository?
+      - roll: { min: 68, max: 100 }
+        summary: Strange technologies unleashed a reality-fracturing wave of cursed energy, forever reshaping the isles.
+        description: |-
+          An ambitious few dabbled in ancient secrets, and in doing so, broke the bonds of reality. Strange energies flowed into our world, allowing uncanny phenomena to take hold. Science and magic took new forms. People and creatures of other realms were cast into our own like jetsam in a turbulent tide. The isles are forever altered by the curse of these chaotic realities.
+        quest_starter: |-
+          An explorer brings news. They’ve located what they say is a nexus of chaotic energy. If it could be deactivated, the isles might find some measure of peace. Which power or foe seeks to harness this power to their own ends?
+    your_character: |-
+      If you are all that remains of a pre-Sundering people, culture, or tradition, you might be a [Vestige](id:starforged/assets/path/vestige). If the echoes of the cataclysm have left you with unnatural powers, you might be a [Sorcerer](id:sundered_isles/assets/path/sorcerer). If you embody the legacy of a deep-dwelling people, you might be [Waterborn](id:sundered_isles/assets/path/waterborn).
+    # factions: |-
+    #   A seafaring tribe seeks to locate and unite scattered people displaced during the Sundering. An order of sorcerers exploits the chaotic forces that caused the cataclysm.
+  relics:
+    name: Relics
+    type: truth
+    _source:
+      <<: *Source
+    summary: What remains of lost or fallen people?
+    options:
+      - roll: { min: 1, max: 33 }
+        summary: The long history of the isles is marked by disaster, war, and exodus. Abandoned and ruined sites are grim monuments to these events.
+        description: |-
+          Former communities—even entire islands—are sometimes forsaken by their people. Others are lost and forgotten through the ravages of time. These places echo with the memories of lost lives, but also remind us of the perseverance of those who survived to carry on their traditions elsewhere.
+        quest_starter: |-
+          An uninhabited island is marked by the ruins of a once- great city. Someone important to you led an expedition to that island months ago, but has not returned. What were they in search of?
+      - roll: { min: 34, max: 67 }
+        summary: Two centuries ago, a powerful empire dared to claim these isles as their own. Ruined places are all that remain to mark their hubris.
+        description: |-
+          The tattered banners of the fallen empire lie amid ravaged fortresses, wrecked ships, and abandoned cities. In some places, nature reclaimed these sites. In others, people return to build anew upon the graves of these former invaders. Meanwhile, scavengers—like gulls picking at the bones of dead fish—scour the remnants in search of plunder.
+        quest_starter: |-
+          The emperor wore a crown adorned with two gems of unsurpassed size and quality: a blue diamond to honor Wraith, and a fiery ruby to represent Cinder. The resting place of the emperor and this crown are a mystery—one you are determined to solve.
+      - roll: { min: 68, max: 100 }
+        summary: An ancient civilization of unfathomable power left its mark upon the isles.
+        description: |-
+          These people unlocked secrets beyond our understanding. The ruins marking their legacy are places of unnatural construction, confounding mechanisms, and cryptic relics. Some islanders revere the ancients. Others seek to understand them. A few have more selfish motives—pillaging the sites for treasure and artifacts. But some secrets are best left buried. Many ruins are cursed, corrupted by time, and haunted by malignant evil.
+        quest_starter: |-
+          Dozens of ancient towers have flared to life, sending up beacons of light visible from leagues away. These lodestars form a marked path that stretches well beyond the far horizon. Why do you set out to see where this path leads?
+    your_character: |-
+      If you are dedicated to searching out mysteries or preserving the legacy of lost relics, you might be a [Scholar](id:sundered_isles/assets/path/scholar). If you deal in recovered or stolen relics, you might be a [Peddler](id:sundered_isles/assets/path/peddler). If you delve wrecks and ruins to gather resources or riches, you might be a [Scavenger](id:starforged/assets/path/scavenger).
+    # factions: |-
+    #   A society of researchers and archaeologists works to understand lost people and relics. A sacred order of caretakers protects age-old sites from trespassers and grave robbers. An underground ring of fortune seekers supplies a black market trade of stolen treasures.
+  modern_era:
+    name: Modern Era
+    type: truth
+    _source:
+      <<: *Source
+    summary: What is the state of technology?
+    options:
+      - roll: { min: 1, max: 33 }
+        summary: It is an age of sail.
+        description: |-
+          Sailing ships navigate the farthest reaches and weather the fiercest storms. Their cannons unleash devastating barrages against rivals or raiders, and their crews wield muskets and blades to defend their decks. Some commanders plot a course through hazardous waters with chart and sextant, while others rely on a deeper understanding of sea and sky. But above all else, we trust in the loyalty of our shipmates and the strength of our vows.
+        quest_starter: |-
+          A famed shipwright, nearing the end of their life, seeks to build their magnum opus—a ship of uncompromising beauty and strength. What rare material do they require, and where is it found?
+      - roll: { min: 34, max: 67 }
+        summary: It is an age of industry.
+        description: |-
+          The winds of change are upon us. Some of these innovations inspire awe— flying machines that sail among the clouds, metal diving bells that plumb the greatest depths, and mechanical limbs of intricate design to replace what was lost. But industry is also an insatiable fire. Mines, smelters, and factories reshape our lands to feed those flames. Titanic ships seek dominance of the isles. Is it only a matter of time before our steadfast wooden ships and the simple ways of our communities are relics of a bygone age?
+        quest_starter: |-
+          An iron submersible stalks seagoing passages. Why do you seek vengeance against this vessel’s commander?
+      - roll: { min: 68, max: 100 }
+        summary: It is an age of wonders.
+        description: |-
+          Some have wielded ancient secrets and extraordinary science to power vessels, weapons, and other machines. Their ships are fitted with energized sails that augment the powers of wind and storm. Their cannons unleash volleys of infernal energies. A few commanders even count iron automatons, given life by improbable technologies, among their crew. Resisting these wonders is like casting a stone against a thunderstorm, and many see this new age as a portent of our doom.
+        quest_starter: |-
+          An enemy faction is building a colossal machine of fantastic destructive potential. What is the nature of this machine, and why are you sworn to see it destroyed?
+    your_character: |-
+      If you hew to the traditions of shipbuilding and repair, you might be a [Shipwright](id:sundered_isles/assets/path/shipwright). If you understand the intricacies of machines, you might be a [Gearhead](id:starforged/assets/path/gearhead). If you are fitted with a mechanical enhancement, you might be [Augmented](id:starforged/assets/path/augmented). If you are forged by ancient secrets or newfound technologies, you might be a [Construct](id:sundered_isles/assets/path/construct).
+    # factions: |-
+    #   A shipwright’s guild honors and develops the age-old craft of shipbuilding. An industrialized trade company is ever-hungrier for raw materials. An order of artificers crafts extraordinary machines. A fellowship of outcast automatons must find their way in a world that largely sees them as tools or abominations.
+  iron_vows:
+    name: Iron Vows
+    type: truth
+    _source:
+      <<: *Source
+    summary: What is the significance of iron and sworn vows?
+    options:
+      - roll: { min: 1, max: 33 }
+        summary: Some see iron vows as a vestige of a more superstitious age, but the tradition persists.
+        description: |-
+          Our forebears bound their promises to the strength and permanence of iron. Today, self-avowed Ironsworn respect this tradition by affirming their resolve with a time-honored phrase: “By iron, I vow.” Even those who forgo an iron totem say the words to lend solemnity to a promise, setting themselves on an honorbound course—wherever it may lead.
+        quest_starter: |-
+          The Iron Tide, a force of warships whose commanders and crews have taken up the vow of their fallen leader, is bound for local waters. What do they seek, and why do you swear your own vow to prevent it?
+      - roll: { min: 34, max: 67 }
+        summary: The Ironsworn bind their honor to iron blades.
+        description: |-
+          Even in this age of cannon and rifle, a finely-wrought blade—whether sword or dagger, dirk or bayonet—remains a mark of skill and resolve. When the Ironsworn swear a vow upon a blade, we bind our commitment to the metal. If we forsake a vow, that iron must be abandoned. To be Ironsworn without a blade is to be disgraced.
+        quest_starter: |-
+          You carry a broken sword. How was it broken, and what must you do to be worthy of a reforged blade?
+      - roll: { min: 68, max: 100 }
+        summary: Since the distant time when iron was first hammered into form, seafaring folk of this world carried iron bondstones as sacred keepsakes.
+        description: |-
+          Each bondstone is unique—a relic of kin and culture—passed from one generation to the next. They are said to connect the soul of its keeper to their homeland or loved ones as if by an invisible thread. Thus, if lost at sea, our spirit may return home rather than remain entombed in the remorseless depths. We swear our vows upon bondstones as promises that follow us to our death—and beyond. But bondstones can also embody the curses of lost lives and forsaken vows, and bearing that weight can make them feel as heavy as a ship’s anchor.
+        quest_starter: |-
+          A merciless and powerful raider wears the bondstones of their victims as trophies. One of those totems is rightfully yours. To whom did it previously belong?
+    your_character: |-
+      If you are sworn to a cause, you might be [Bannersworn](id:starforged/assets/path/bannersworn). If you carry an honorbound blade, you might be a [Blademaster](id:starforged/assets/path/blademaster). If you fight for personal honor, you might be a [Duelist](id:sundered_isles/assets/path/duelist). If your vows are shared with those in your charge, you might be a [Crew Commander](id:sundered_isles/assets/path/crew_commander).
+    # factions: |-
+    #   An order of Ironsworn wardens is dedicated to protecting the people of the isles. A band of iron privateers sells their vows—and their loyalty—to the highest bidder.
+  navigation:
+    name: Navigation
+    type: truth
+    _source:
+      <<: *Source
+    summary: How are people and places connected?
+
+    options:
+      - roll: { min: 1, max: 33 }
+        summary: We are scattered to the winds, but our connections persist.
+        description: |-
+          The people of the isles are often isolated. Trade and communication must overcome distance and the fickle nature of the surrounding waterways. Known passages are undone by tumultuous weather, capricious seas, or unforeseen conflicts. In spite of those challenges, skilled voyagers and their indomitable vessels are a tether that binds the people and places of remote seas into a greater community.
+        quest_starter: |-
+          The port city of Stormrest is a perennial center of community and trade within the isles. But this city is now cut-off by an invading or occupying force. Who threatens this longstanding refuge?
+      - roll: { min: 34, max: 67 }
+        summary: We rely on the ancient traditions and knowledge of the Starmarked to navigate these perilous seas.
+        description: |-
+          The Starmarked have an uncanny sense of wind and tide, and bear the history of their travels as beautiful and intricate tattoos—etched in phosphorescent ink. Some of the places and passages pioneered by the Starmarked are now common knowledge, inscribed in charts and traveled widely. Others are coveted secrets, or lost to time and strife. The skills of the Starmarked make them highly valued as ship navigators, and some seek to exploit them to their own ends.
+        quest_starter: |-
+          In recent years, many Starmarked have not returned from expeditions into a remote area of the isles. Is there someone—or something—that does not want to be found?
+      - roll: { min: 68, max: 100 }
+        summary: Bleakmists are a curse upon the isles, confounding navigation and severing connections between communities.
+        description: |-
+          Bleakmists are a damnable, seabound fog. Mariners tell of inexplicable sensations within the cursed waters of the mists—whispered voices, the ghostly clanging of ship bells, half-seen phantom shapes. Some bleakmists never dissipate, forming an enduring barrier that only the most foolhardy attempt to navigate. In other places, mists gather with little warning. Once you enter a bleakmist, it’s hard to predict where—or if—you’ll emerge.
+        quest_starter: |-
+          Someone will pay well for passage through an everlasting bleakmist. What do they seek on the other side?
+    your_character: |-
+      If you are skilled at finding your way among the isles, you might be a [Navigator](id:starforged/assets/path/navigator). If you trailblaze inland paths, you might be an [Overlander](id:sundered_isles/assets/path/overlander). If you carry precious items on your expeditions, you might be a [Courier](id:starforged/assets/path/courier). If you wield mystical powers over the wind to see a ship safely on its way, you might be a [Windbinder](id:sundered_isles/assets/path/windbinder).
+
+    # factions: |-
+    #   A guild of navigators collects and safeguards charts of the isles. A coven of sea witches guides ships through cursed waters.
+  empires:
+    name: Empires
+    type: truth
+    _source:
+      <<: *Source
+    summary: How great is the threat of colonization and conquest?
+    options:
+      - roll: { min: 1, max: 33 }
+        summary: The Sundered Isles are free from imperial control—for now.
+        description: |-
+          The empires have only a minor presence; their outposts are isolated and pose little threat. But there are resources and riches to be exploited, and freedom is a fragile thing. Even now, imperial agents are said to be among us, working in the shadows, planting the seeds of conquest.
+        quest_starter: |-
+          A conflict between two nations is raging. Some suggest the war was sparked by imperial agents, working behind the scenes to destabilize the region and open a path for colonization. Can you convince the leaders of these powers to abandon their fighting and focus on the true threat?
+      - roll: { min: 34, max: 67 }
+        summary: Imperial forces vie for dominion over the Sundered Isles.
+        description: |-
+          Imperial colonization and exploitation is a creeping tide that threatens to engulf the isles. Colonial governors oversee ever-expanding settlements, while powerful trade companies control key trade routes and resources. Imperial agents conduct missions of subterfuge and assassination. Treaties between the empires are forged and broken on a whim, and mariners can never be certain of what flag will fly over a port from one day to the next.
+        quest_starter: |-
+          Envoys and aristocrats gather for a gala at a governor’s manor house, where a priceless object will be on display as a demonstration of the governor’s power and wealth. If a clever thief were to abscond with that item, it would undermine the governor and foment suspicion among the attendees. What is this object?
+      - roll: { min: 68, max: 100 }
+        summary: In the wake of a tumultuous war, a powerful empire prevailed. This supreme power holds the fate of the Sundered Isles in an iron grasp.
+        description: |-
+          A time before the empire is a fading memory. Today, their armies and fleets control large swaths of territory in the isles, and their expeditionary forces use coercion and warfare to expand their dominion ever further. Other nations are little more than vassals, their puppet governments loyal to the empire. But there are whispers that the empire has grown complacent. Is this the day the once-freeborn people of the isles relight the fires of revolution and reclaim their legacy?
+        quest_starter: |-
+          A valuable prisoner is held in an imperial fortress. Who is this person, and why are they the best hope for rebellion?
+    your_character: |-
+      If you resolve disputes and secure anti-imperial alliances, you might be a [Diplomat](id:starforged/assets/path/diplomat). If you battle empires with blades and daring, you might be a [Swashbuckler](id:sundered_isles/assets/path/swashbuckler). If you work in the shadows, you might be a [Spy](id:sundered_isles/assets/path/spy). If you navigate court intrigues, you might be a [Socialite](id:sundered_isles/assets/path/socialite). If you are on the run from imperial forces, you might be a [Fugitive](id:starforged/assets/path/fugitive).
+    # factions: |-
+    #   A tyrannical empire seeks to expand its domain. A secret network of insurgents fights an empire from within. A rebel alliance fans the flames of freedom.
+  piracy:
+    name: Piracy
+    type: truth
+    _source:
+      <<: *Source
+    summary: What influence do pirates wield?
+    options:
+      - roll: { min: 1, max: 33 }
+        summary: Pirates are merciless raiders.
+        description: |-
+          Pirates give no quarter to seagoing targets and raze settlements on a whim. Their loyalty is only to crew and captain, but even that bond is fragile. Ritualized duels to decide the captaincy or settle disputes are common, and a long-lived marauder is a rare thing. If you come upon a gray-haired pirate, be wary; they have outwitted sailors better than you a thousand times over.
+        quest_starter: |-
+          You possess one-third of a coded map said to lead to a fabled pirate treasure. What infamous pirates hold the other pieces? Will you form an uneasy alliance to collect and divide the treasure, or take the other pieces of the map by force?
+      - roll: { min: 34, max: 67 }
+        summary: Pirates are fiercely independent, but bound by a shared code.
+        description: |-
+          A pirate crew is a power unto itself, a diverse band of fugitives, outcasts, and rebels who serve under a ship’s charter and have a say in the operation of the vessel. Pirates do not attack indiscriminately, and give quarter to those who ask for it. They are nevertheless vilified as barbarous murderers by trade guilds, imperial governors, and other powers in the isles. In some ways, this reputation serves them; fear is more powerful than the mightiest cannons or the sharpest swords.
+        quest_starter: |-
+          A former pirate, given a pardon and a letter of marque, has sent countless pirates to their doom. Who is this turncoat, and why do you plot to see their reign of the seas ended?
+      - roll: { min: 68, max: 100 }
+        summary: A burgeoning pirate nation wields great influence.
+        description: |-
+          The marauder clans sail under the command of the Dread Court, a conclave of eight veteran pirates whose shrewd tactics positioned this nation of cutthroats as a rising power. Once each year, the pirate fleets gather at a port called Flotsam—an artificial island built from the husks of captured and ruined ships—to pay homage to the Court and make plans.
+        quest_starter: |-
+          There are schisms within the Dread Court. An assassination has tipped the latest gathering into chaos and threatens the future of this burgeoning power. Will you work to restore the alliance, or use the mayhem to your own advantage?
+    your_character: |-
+      If you hunt marauding pirates, you might be a [Bounty Hunter](id:starforged/assets/path/bounty_hunter). If you serve among a band of pirates, you might be a [Cutthroat](id:sundered_isles/assets/path/cutthroat). If you are a young greenhorn or stowaway among a pirate crew, you might be an [Urchin](id:sundered_isles/assets/path/urchin). If you stand in command of a pirate ship, you might be a [Pirate Captain](id:sundered_isles/assets/path/pirate_captain).
+    # factions: |-
+    #   An alliance of pirates unites against a common enemy. A guild of pirate hunters collects bounties on wanted marauders. An imperial navy seeks to scour the seas of pirates and other enemies.
+  religion:
+    name: Religion
+    type: truth
+    _source:
+      <<: *Source
+    summary: What is the role of faith?
+    options:
+      - roll: { min: 1, max: 33 }
+        summary: Our faith is as diverse as the people.
+        description: |-
+          Many have no religion, or offer an occasional prayer out of habit. Others pay homage to the gods of our ancestors as a way of connecting to their roots. Some idolize the natural order of the world, and see the divine in the ebb and flow of the tides or the whirling dance of the stars. Then there are those who see this diversity as imperfection, who seek only to bend the world to their righteous will.
+        quest_starter: |-
+          A pilgrim seeks passage to remote and dangerous waters. What holy place do they seek?
+      - roll: { min: 34, max: 67 }
+        summary: The gods enact their will through manifestations and miracles.
+        description: |-
+          We chronicle the visitations of the gods in our histories, and decipher their enigmatic purpose through sacred rites. In times of crisis, their earthly avatars have guided us through the upheaval. For many, faith in these gods offers meaning and fulfillment. For others, belief is a cudgel used by tyrannical leaders to divide or control us. For this reason, some people and cultures disavow the gods to follow a different path.
+        quest_starter: |-
+          You bear the mark of a god. The priests declare this as a sign you are chosen to fulfill a destiny. Do you accept this fate, and swear to see it through, or are you determined to see it undone? What force opposes you?
+      - roll: { min: 68, max: 100 }
+        summary: The gods are dead.
+        description: |-
+          In a time before memory, the gods of the isles warred with each other. These seas were their battleground, and they ushered in an age of destruction that plunged all the lands into fire and darkness. In their death throes, they left behind areas of tainted seas and forsaken landscapes—a cursed corruption that lingers even today. The hubris of these fallen gods is a reminder of the empty promise of faith.
+        quest_starter: |-
+          A cult seeks to take control of a site reputed to hold an artifact of the fallen gods. What holy object do they seek? Why are you sworn to stop them?
+    your_character: |-
+      If you are an ardent follower of a religion or creed, you might be a [Devotant](id:starforged/assets/path/devotant). If you follow a prophesied path, you might be [Fated](id:starforged/assets/path/fated). If you are cursed by the gods with foul luck, you might be a [Jinx](id:sundered_isles/assets/path/jinx).
+    # factions: |-
+    #   A tribe of nature-worshipers is sworn to protect the Isles against despoilers. An order of zealous inquisitors hunts dissenters and heretics. A theocratic empire forces its oppressive beliefs upon others. An eldritch cult seeks to resurrect or awaken an ancient entity.
+  magic:
+    name: Magic
+    type: truth
+    _source:
+      <<: *Source
+    summary: What is the impact of supernatural forces?
+    options:
+      - roll: { min: 1, max: 33 }
+        summary: Magic does not exist.
+        description: |-
+          Some find comfort in the old ways. Mariners heed a thousand superstitions to help ensure a safe voyage. A few perform elaborate rituals to gain the favor of the wind or cast runes to divine one's future. But true magic—if it ever existed—is lost to us now.
+        quest_starter: |-
+          Someone close to you is accused of casting a curse upon a settlement. Will you defend this person and uncover the true cause of the settlement’s troubles?
+      - roll: { min: 34, max: 67 }
+        summary: Magic is rare and mysterious.
+        description: |-
+          The isles lie at the nexus of the new and the old, science and superstition, the known and the inexplicable. This collision of realities is a powerful but chaotic force, and rare folk can manipulate these unstable realities to cast spells and perform rites. In some cultures, mystics are respected; in others, they are feared or even outcast.
+        quest_starter: |-
+          A powerful but outcast sorcerer lives alone on a faraway island. Why do you have urgent need of their abilities? What enemy or rival is on the hunt for this person?
+      - roll: { min: 68, max: 100 }
+        summary: Magic is an ever-present, elemental force.
+        description: |-
+          Magic is as constant as the winds and tides. Talented mystics exploit these energies to shape natural forces, divine the past and the future, and cast boons and curses. A few can even breathe unnatural life into the dead. Many mystics join guilds or serve under mentors to hone their craft, while others make do with raw, untrained talent. In spite of their uncanny nature, mystics are often hired as aides for powerful leaders, or to help guide ships on perilous voyages. But as the winds and tides are fickle, so is magic, and some fall prey to the dark curse of these forces.
+        quest_starter: |-
+          Someone you love is corrupted by cursed powers, and is set on a destructive course of vengeance. What caused their fall? Do you seek to save them or defeat them?
+    your_character: |-
+      If you posses supernatural powers, you might be an [Empath](id:starforged/assets/path/empath), [Kinetic](id:starforged/assets/path/kinetic), [Necromancer](id:sundered_isles/assets/path/necromancer), [Seer](id:starforged/assets/path/seer), [Shade](id:starforged/assets/path/shade), [Sorcerer](id:sundered_isles/assets/path/sorcerer), or [Windbinder](id:sundered_isles/assets/path/windbinder). If your unnatural abilities have made you a pariah, you might be an [Outcast](id:starforged/assets/path/outcast).
+    # factions: |-
+    #   A circle of mystics protects ancient secrets and trains promising initiates. A sorcerous imperial guard uses its uncanny abilities to hunt down enemies of the empire. An order of witch hunters persecutes those with magical talents.
+  beasts:
+    name: Beasts
+    type: truth
+    _source:
+      <<: *Source
+    summary: What is the nature of extraordinary creatures?
+    options:
+      - roll: { min: 1, max: 33 }
+        summary: Beasts are lost to myth, but the tales persist.
+        description: |-
+          For most, monstrous beasts are the stuff of fables. But a few who journey across trackless isles and unknown seas claim otherwise. Some even bear the scars of those alleged encounters.
+        quest_starter: |-
+          In the highland jungles of a remote island, a settlement is plagued by attacks from an unknown creature. Five dead in these last few months, and fear and suspicion is rampant. What is your connection to this place?
+      - roll: { min: 34, max: 67 }
+        summary: Beasts lurk in watery depths and within the reaches of remote islands.
+        description: |-
+          All manner of creatures dwell among the isles—including rare and incredible beasts of legend. Among them are colossal great whales and elder rays, larger than our greatest ship, and blade-winged sea dragons. Some foolish souls hunt these creatures for riches or sport. Others revere and protect them. A few are beast-bonded, forming an enduring friendship with their beast-kin.
+        quest_starter: |-
+          The captain of a powerful ship lost something dear to them when battling a beast, and has sworn vengeance against the creature. What is the nature of this beast? Do you aid the captain in their ill-fated quest, or stand against them to protect the creature?
+      - roll: { min: 68, max: 100 }
+        summary: Here, there be monsters.
+        description: |-
+          We are trespassers in a cursed realm of beasts. Monstrous lizards stalk the inland wilds. Flying reptiles with wings the size of topsails dwell in cliffside nests. Giant sharks and serpents cruise the coastal waters in search of prey. The much-feared Kraken, larger than the greatest warship, lurks in fathomless depths. And some ancient beasts are too monstrous, too horrible, for even our worst imaginings.
+        quest_starter: |-
+          Tales tell of the means of forming a bond with the mightiest of the world’s beasts, the Kraken. Many have undertaken this quest, but none have succeeded. What must you accomplish to gain an accord with the Kraken, and why would you face this trial?
+    your_character: |-
+      If you are skilled at battling beasts, you might be a [Slayer](id:starforged/assets/path/slayer) or [Harpooner](id:sundered_isles/assets/path/harpooner). If you are bound to a beast, you might ride a [Dragon](id:sundered_isles/assets/companion/dragon) or summon [The Kraken](id:sundered_isles/assets/companion/kraken). If you transform into a beastly form, you might be a [Shapechanger](id:sundered_isles/assets/path/shapechanger).
+    # factions: |-
+    #   An order of beast slayers defends ships and settlements from beast attacks. A beast-hunting trade company deals in trophies and resources gathered from slain creatures. A clan of beast-bonded folk protects their sacred companions.
+  horrors:
+    name: Horrors
+    type: truth
+    _source:
+      <<: *Source
+    summary: What dreadful forces haunt the Sundered Isles?
+    options:
+      - roll: { min: 1, max: 33 }
+        summary: Put enough grog in a sailor, and they’ll tell you stories of doomed ships and ghostly visitations. It’s nonsense.
+        description: |-
+          There’s enough to fear amid the isles without worrying about fanciful tales of ghosts and ghouls. Nonetheless, sailors are a superstitious folk. On dark nights, when a dead calm falls over the sea, they keep a wary eye for ships that sail heedless of the wind.
+        quest_starter: |-
+          Years ago, a ship bearing a stolen treasure was sunk in a fierce storm. But mariners report seeing this vessel sailing under the light of the Wraith moon, its sails tattered, its weather decks empty. It is a cursed ship, folks say, doomed to carry its ill-gotten treasure for all eternity. Why do you intend to prove or disprove this tale?
+      - roll: { min: 34, max: 67 }
+        summary: The veil between life and death is as fragile as gossamer.
+        description: |-
+          In the darkest reaches of the isles, ghost ships stalk the seas, undead guardians protect ancient tombs, and drowned sailors emerge from the depths in search of absolution or vengeance. Others may scoff at these tales, but we know the truth—death waits for us all, but is not always an end.
+        quest_starter: |-
+          Your ship is haunted by its former captain. At night, they are sometimes seen on the quarterdeck, staring grimly at the distant horizon. What unfulfilled vow torments this restless spirit? Why do you swear to see it done?
+      - roll: { min: 68, max: 100 }
+        summary: The damned and the dead are a plague upon the isles.
+        description: |-
+          We live in accursed times. The drowned and the buried do not rest. Tortured spirits hunt for retribution. Uncounted islands are blighted by dark forces. Cities and villages lie abandoned and forsaken, lost to a malevolent tide. We keep watch, craft wards, and offer prayers to keep the horrors at bay, but it is no use. They are coming.
+        quest_starter: |-
+          For generations, an infamous ghost fleet has haunted these seas, sending countless mariners to their doom. Why do you now seek to form an alliance with the cursed commander of this fleet?
+    your_character: |-
+      If you are plagued by a ghost, you might be [Haunted](id:starforged/assets/path/haunted). If you dedicate yourself to battling undead or monstrous forces, you might be a [Slayer](id:starforged/assets/path/slayer). If you have unnatural powers over death, you might be a [Necromancer](id:sundered_isles/assets/path/necromancer).
+    # factions: |-
+    #   An order of ghost-hunting occultists is sworn to vanquish the woken dead. The vampire clans sail the islands in their dreaded nightships, preying upon ships and settlements. A cabal of necromancers commands an undead fleet.
