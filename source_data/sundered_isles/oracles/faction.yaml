@@ -23,25 +23,25 @@ oracles:
         type: oracle_rollable
         oracle_type: table_text2
         # TODO figure out a way to implement this. might only be possible with entity templates? or a more complex tags object
-        summary: "On a cursed result, choose one: Make the faction one of [The Cursed](id:sundered_isles/oracles/faction/cursed/role), or keep the result and give the faction [Cursed Aspects](id:sundered_isles/oracles/faction/cursed/aspects)."
+        summary: "On a cursed result, choose one: Make the faction one of [The Cursed](oracle_rollable:sundered_isles/faction/cursed/role), or keep the result and give the faction [Cursed Aspects](oracle_rollable:sundered_isles/faction/cursed/aspects)."
         _source:
           <<: *Source
           page: 176
         rows:
           - roll: { min: 1, max: 50 }
-            text: "[Society](id:sundered_isles/collections/oracles/faction/society)"
+            text: "[Society](oracle_collection:sundered_isles/faction/society)"
             text2: &Society.summary People who share traditions and a way of life
             tags:
               sundered_isles:
                 faction_type: society
           - roll: { min: 51, max: 80 }
-            text: "[Organization](id:sundered_isles/collections/oracles/faction/organization)"
+            text: "[Organization](oracle_collection:sundered_isles/faction/organization)"
             text2: &Organization.summary People joined in a collective trade, pursuit, or goal
             tags:
               sundered_isles:
                 faction_type: organization
           - roll: { min: 81, max: 100 }
-            text: "[Empire](id:sundered_isles/collections/oracles/faction/empire)"
+            text: "[Empire](oracle_collection:sundered_isles/faction/empire)"
             text2: &Empire.summary People seeking dominion over the isles
             tags:
               sundered_isles:
@@ -797,7 +797,7 @@ oracles:
         type: oracle_collection
         name: The Cursed
         oracle_type: tables
-        summary: For cursed factions that function as an organization, use the [Organization Methods](id:sundered_isles/oracles/faction/organization/methods) or [Organization Secrets](id:sundered_isles/oracles/faction/organization/secrets) tables for additional details. To reveal a current goal for a cursed faction or its leaders, use the [Cursed Character Goals](id:sundered_isles/oracles/character/goals_cursed) table. You can also give a cursed faction one or more [Cursed Aspects](id:sundered_isles/oracles/faction/cursed/aspects).
+        summary: For cursed factions that function as an organization, use the [Organization Methods](oracle_rollable:sundered_isles/faction/organization/methods) or [Organization Secrets](oracle_rollable:sundered_isles/faction/organization/secrets) tables for additional details. To reveal a current goal for a cursed faction or its leaders, use the [Cursed Character Goals](oracle_rollable:sundered_isles/character/goals_cursed) table. You can also give a cursed faction one or more [Cursed Aspects](oracle_rollable:sundered_isles/faction/cursed/aspects).
         _source:
           <<: *Source
           page: 182

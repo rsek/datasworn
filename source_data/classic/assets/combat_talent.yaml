@@ -15,7 +15,7 @@ assets:
         url: https://ironswornrpg.com
       page: 40
     description: |-
-      *Ironsworn* characters are assumed to be skilled fighters. Even without a combat talent, you can wield weapons and perform [combat moves](id:classic/move_category/combat). A combat talent reflects a particular area of expertise, and gives you additional options and bonuses.
+      *Ironsworn* characters are assumed to be skilled fighters. Even without a combat talent, you can wield weapons and perform [combat moves](move_category:classic/combat). A combat talent reflects a particular area of expertise, and gives you additional options and bonuses.
 
       Combat talent assets typically require you to wield a specific weapon, as noted in the asset text. For example, if you are a [Shield-Bearer](asset:classic/combat_talent/shield_bearer) and don’t have a shield at the ready, you can’t use the asset’s abilities.
     contents:

@@ -47,19 +47,19 @@ oracles:
                     <<: &Waypoint.1
                       text: |-
                         **Sails, ho!**
-                        [Ship](id:sundered_isles/collections/oracles/ship)
+                        [Ship](oracle_collection:sundered_isles/ship)
                   - roll: { min: 26, max: 35 }
                     <<: &Waypoint.2
                       text: |-
                         **Changing weather**
-                        [Weather](id:sundered_isles/collections/oracles/weather)
+                        [Weather](oracle_collection:sundered_isles/weather)
                   - roll: { min: 36, max: 55 }
                     <<: &Waypoint.3
                       text: |-
                         **Instance (choose one)**
 
-                          * [Seafaring Details](id:sundered_isles/oracles/seafaring/details)
-                          * [Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)
+                          * [Seafaring Details](oracle_rollable:sundered_isles/seafaring/details)
+                          * [Descriptor](oracle_rollable:sundered_isles/core/descriptor) + [Focus](oracle_rollable:sundered_isles/core/focus)
                       oracle_rolls:
                         - auto: false
                           oracle: sundered_isles/oracles/seafaring/details
@@ -71,17 +71,17 @@ oracles:
                     <<: &Waypoint.4
                       text: |-
                         **Lost souls**
-                        [Shipwreck](id:sundered_isles/collections/oracles/shipwreck)
+                        [Shipwreck](oracle_collection:sundered_isles/shipwreck)
                   - roll: { min: 66, max: 70 }
                     <<: &Waypoint.5
                       text: |-
                         **Relic of the past**
-                        [Ruin](id:sundered_isles/collections/oracles/ruin)
+                        [Ruin](oracle_collection:sundered_isles/ruin)
                   - roll: { min: 71, max: 85 }
                     <<: &Waypoint.6
                       text: |-
                         **Character focus**
-                        [Interlude Scene](id:sundered_isles/oracles/misc/interlude_scene)
+                        [Interlude Scene](oracle_rollable:sundered_isles/misc/interlude_scene)
                     oracle_rolls:
                       - auto: false
                         number_of_rolls: 1
@@ -160,7 +160,7 @@ oracles:
                     <<: &Waypoint.0
                       text: |-
                         **Land, ho!**
-                        [Island](id:sundered_isles/collections/oracles/island)
+                        [Island](oracle_collection:sundered_isles/island)
                   - roll: { min: 21, max: 35 }
                     <<: *Waypoint.1
                   - roll: { min: 36, max: 45 }
@@ -721,13 +721,13 @@ oracles:
           - roll: { min: 91, max: 93 }
             text: You are lost or off course
           - roll: { min: 94, max: 96 }
-            text: '[Foul Weather](id:sundered_isles/oracles/weather/foul)'
+            text: '[Foul Weather](oracle_rollable:sundered_isles/weather/foul)'
             oracle_rolls:
               - auto: false
                 number_of_rolls: 1
                 oracle: sundered_isles/oracles/weather/foul
           - roll: { min: 97, max: 99 }
-            text: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
+            text: '[Action](oracle_rollable:sundered_isles/core/action) + [Theme](oracle_rollable:sundered_isles/core/theme)'
             oracle_rolls:
               - auto: true
                 oracle: sundered_isles/oracles/core/action

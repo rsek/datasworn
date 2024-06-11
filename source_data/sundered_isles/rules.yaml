@@ -33,13 +33,13 @@ rules:
   #     contents:
   #       unprepared:
   #         label: unprepared (equipped)
-  #         description: Unprepared is marked when you [Sacrifice Resources](id:starforged/moves/suffer/sacrifice_resources) and are reduced to 0 supply. You are not properly equipped for the dangers of the Sundered Isles. Because you and your allies share the same supply value, you mark unprepared together.
+  #         description: Unprepared is marked when you [Sacrifice Resources](move:starforged/suffer/sacrifice_resources) and are reduced to 0 supply. You are not properly equipped for the dangers of the Sundered Isles. Because you and your allies share the same supply value, you mark unprepared together.
   #         shared: true
   #         prevents_recovery:
   #           - supply
   #       unprepared_hold:
   #         label: unprepared (hold)
-  #         description: Unprepared is marked when you [Sacrifice Resources](id:starforged/moves/suffer/sacrifice_resources) and are reduced to 0 supply. You are not properly equipped for the dangers of the Sundered Isles. Because you and your allies share the same supply value, you mark unprepared together.
+  #         description: Unprepared is marked when you [Sacrifice Resources](move:starforged/suffer/sacrifice_resources) and are reduced to 0 supply. You are not properly equipped for the dangers of the Sundered Isles. Because you and your allies share the same supply value, you mark unprepared together.
   #         shared: true
   #         prevents_recovery:
   #           - supply_hold

@@ -40,7 +40,7 @@ oracles:
                   text: Fair Weather
               - roll: { min: 71, max: 100 }
                 <<: &Conditions.1
-                  text: '[Foul Weather](id:sundered_isles/oracles/weather/foul)'
+                  text: '[Foul Weather](oracle_rollable:sundered_isles/weather/foul)'
                   oracle_rolls:
                     - auto: false
                       number_of_rolls: 1

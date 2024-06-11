@@ -27,23 +27,23 @@ oracles:
           page: 176
         rows:
           - roll: { min: 1, max: 12 }
-            text: '[Barrier Islands](id:classic/atlas_entry/ironlands/barrier_island)'
+            text: '[Barrier Islands](atlas_entry:classic/ironlands/barrier_island)'
           - roll: { min: 13, max: 24 }
-            text: '[Ragged Coast](id:classic/atlas_entry/ironlands/ragged_coas)'
+            text: '[Ragged Coast](atlas_entry:classic/ironlands/ragged_coas)'
           - roll: { min: 25, max: 34 }
-            text: '[Deep Wilds](id:classic/atlas_entry/ironlands/deep_wild)'
+            text: '[Deep Wilds](atlas_entry:classic/ironlands/deep_wild)'
           - roll: { min: 35, max: 46 }
-            text: '[Flooded Lands](id:classic/atlas_entry/ironlands/flooded_land)'
+            text: '[Flooded Lands](atlas_entry:classic/ironlands/flooded_land)'
           - roll: { min: 47, max: 60 }
-            text: '[Havens](id:classic/atlas_entry/ironlands/haven)'
+            text: '[Havens](atlas_entry:classic/ironlands/haven)'
           - roll: { min: 61, max: 72 }
-            text: '[Hinterlands](id:classic/atlas_entry/ironlands/hinterland)'
+            text: '[Hinterlands](atlas_entry:classic/ironlands/hinterland)'
           - roll: { min: 73, max: 84 }
-            text: '[Tempest Hills](id:classic/atlas_entry/ironlands/tempest_hill)'
+            text: '[Tempest Hills](atlas_entry:classic/ironlands/tempest_hill)'
           - roll: { min: 85, max: 94 }
-            text: '[Veiled Mountains](id:classic/atlas_entry/ironlands/veiled_mountain)'
+            text: '[Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountain)'
           - roll: { min: 95, max: 99 }
-            text: '[Shattered Wastes](id:classic/atlas_entry/ironlands/shattered_waste)'
+            text: '[Shattered Wastes](atlas_entry:classic/ironlands/shattered_waste)'
           - roll: { min: 100, max: 100 }
             text: Elsewhere
       location:

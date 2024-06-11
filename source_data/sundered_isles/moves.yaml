@@ -66,7 +66,7 @@ moves:
             * Suffer costs en route: Make a suffer move (-2), or two suffer moves (-1).
             * Face a peril at the waypoint: Envision what you encounter.
 
-          On a __miss__, you are waylaid by a crisis, or arrive at a waypoint to confront an immediate hardship or threat. Do not mark progress, and [Pay the Price](id:starforged/moves/fate/pay_the_price).
+          On a __miss__, you are waylaid by a crisis, or arrive at a waypoint to confront an immediate hardship or threat. Do not mark progress, and [Pay the Price](move:starforged/fate/pay_the_price).
         outcomes:
           strong_hit:
             text: On a __strong hit__, you reach a waypoint. Envision the location and mark progress per the rank of the expedition.
@@ -77,7 +77,7 @@ moves:
                 * Suffer costs en route: Make a suffer move (-2), or two suffer moves (-1).
                 * Face a peril at the waypoint: Envision what you encounter.
           miss:
-            text: On a __miss__, you are waylaid by a crisis, or arrive at a waypoint to confront an immediate hardship or threat. Do not mark progress, and [Pay the Price](id:starforged/moves/fate/pay_the_price).
+            text: On a __miss__, you are waylaid by a crisis, or arrive at a waypoint to confront an immediate hardship or threat. Do not mark progress, and [Pay the Price](move:starforged/fate/pay_the_price).
         _source:
           <<: *Source
           page: 242
@@ -141,7 +141,7 @@ moves:
             * Suffer costs en route: Make a suffer move (-2), or two suffer moves (-1).
             * Face a complication at the destination: Envision what you encounter.
 
-          On a __miss__, you are waylaid by a significant threat, and must [Pay the Price](id:starforged/moves/fate/pay_the_price). If you overcome this obstacle, you may push on safely to your destination.
+          On a __miss__, you are waylaid by a significant threat, and must [Pay the Price](move:starforged/fate/pay_the_price). If you overcome this obstacle, you may push on safely to your destination.
         outcomes:
           strong_hit:
             text: On a __strong hit__, you reach your destination and the situation there favors you. Take +1 momentum.
@@ -153,7 +153,7 @@ moves:
                 * Face a complication at the destination: Envision what you encounter.
           miss:
             text: |-
-              On a __miss__, you are waylaid by a significant threat, and must [Pay the Price](id:starforged/moves/fate/pay_the_price). If you overcome this obstacle, you may push on safely to your destination.
+              On a __miss__, you are waylaid by a significant threat, and must [Pay the Price](move:starforged/fate/pay_the_price). If you overcome this obstacle, you may push on safely to your destination.
         _source:
           <<: *Source
           page: 242
@@ -268,7 +268,7 @@ moves:
         oracles:
           - starforged/oracles/moves/withstand_damage
         text: |-
-          __When your vehicle faces a damaging situation or environment__, suffer -1 integrity for minor damage, -2 for serious damage, or -3 for major damage. If your integrity is 0, [Lose Momentum](id:starforged/moves/suffer/lose_momentum) equal to any remaining damage.
+          __When your vehicle faces a damaging situation or environment__, suffer -1 integrity for minor damage, -2 for serious damage, or -3 for major damage. If your integrity is 0, [Lose Momentum](move:starforged/suffer/lose_momentum) equal to any remaining damage.
 
           Then, if your integrity is 0 or you choose to resist the damage, roll +integrity.
 
@@ -277,11 +277,11 @@ moves:
             * Bypass: If your vehicle is not battered, take +1 integrity
             * Ride it out: Take +1 momentum
 
-          On a __weak hit__, if your vehicle is not battered, you may [Lose Momentum](id:starforged/moves/suffer/lose_momentum) (-1) in exchange for +1 integrity. Otherwise, carry on.
+          On a __weak hit__, if your vehicle is not battered, you may [Lose Momentum](move:starforged/suffer/lose_momentum) (-1) in exchange for +1 integrity. Otherwise, carry on.
 
-          On a __miss__, it's worse than you thought. Suffer an additional -1 integrity or [Lose Momentum](id:starforged/moves/suffer/lose_momentum) (-2). If your integrity is 0, also suffer a cost according to the vehicle type.
+          On a __miss__, it's worse than you thought. Suffer an additional -1 integrity or [Lose Momentum](move:starforged/suffer/lose_momentum) (-2). If your integrity is 0, also suffer a cost according to the vehicle type.
 
-            * __Command vehicle:__ Mark the vehicle as __battered__ or __cursed__, mark a module as __broken__, destroy a broken module by discarding it, or roll on the table below. If the command vehicle is destroyed or sunk, [Overcome Destruction](id:starforged/moves/threshold/overcome_destruction).
+            * __Command vehicle:__ Mark the vehicle as __battered__ or __cursed__, mark a module as __broken__, destroy a broken module by discarding it, or roll on the table below. If the command vehicle is destroyed or sunk, [Overcome Destruction](move:starforged/threshold/overcome_destruction).
             * __Support vehicle:__ Mark the vehicle as __battered__ or roll on the table below. If the vehicle is destroyed or sunk, discard the asset.
             * __Incidental vehicle:__ Roll on the table below.
 
@@ -294,12 +294,12 @@ moves:
                 * Bypass: If your vehicle is not battered, take +1 integrity
                 * Ride it out: Take +1 momentum
           weak_hit:
-            text: On a __weak hit__, if your vehicle is not battered, you may [Lose Momentum](id:starforged/moves/suffer/lose_momentum) (-1) in exchange for +1 integrity. Otherwise, carry on.
+            text: On a __weak hit__, if your vehicle is not battered, you may [Lose Momentum](move:starforged/suffer/lose_momentum) (-1) in exchange for +1 integrity. Otherwise, carry on.
           miss:
             text: |-
-              On a __miss__, it's worse than you thought. Suffer an additional -1 integrity or [Lose Momentum](id:starforged/moves/suffer/lose_momentum) (-2). If your integrity is 0, also suffer a cost according to the vehicle type.
+              On a __miss__, it's worse than you thought. Suffer an additional -1 integrity or [Lose Momentum](move:starforged/suffer/lose_momentum) (-2). If your integrity is 0, also suffer a cost according to the vehicle type.
 
-                * __Command vehicle:__ Mark the vehicle as __battered__ or __cursed__, mark a module as __broken__, destroy a broken module by discarding it, or roll on the table below. If the command vehicle is destroyed or sunk, [Overcome Destruction](id:starforged/moves/threshold/overcome_destruction).
+                * __Command vehicle:__ Mark the vehicle as __battered__ or __cursed__, mark a module as __broken__, destroy a broken module by discarding it, or roll on the table below. If the command vehicle is destroyed or sunk, [Overcome Destruction](move:starforged/threshold/overcome_destruction).
                 * __Support vehicle:__ Mark the vehicle as __battered__ or roll on the table below. If the vehicle is destroyed or sunk, discard the asset.
                 * __Incidental vehicle:__ Roll on the table below.
 
@@ -380,7 +380,7 @@ moves:
 
           On a __weak hit__, as above, but you must first deal with a cost, complication, or demand. Envision the nature of this obstacle.
 
-          On a __miss__, you encounter an unexpected peril. [Pay the Price](id:starforged/moves/fate/pay_the_price).
+          On a __miss__, you encounter an unexpected peril. [Pay the Price](move:starforged/fate/pay_the_price).
         outcomes:
           strong_hit:
             text: |-
@@ -397,7 +397,7 @@ moves:
                 * If you are unprepared, clear the impact and take +1 supply. Otherwise, take +2 supply.
                 * If you are in need of a specific item or resource that can reasonably be obtained, you acquire it. Take +1 momentum.
           miss:
-            text: On a __miss__, you encounter an unexpected peril. [Pay the Price](id:starforged/moves/fate/pay_the_price).
+            text: On a __miss__, you encounter an unexpected peril. [Pay the Price](move:starforged/fate/pay_the_price).
         _source:
           <<: *Source
           page: 248
@@ -425,7 +425,7 @@ moves:
             * Make your own repairs, or direct companions or crewmembers to make repairs: Roll +wits
             * Obtain repair services at a facility: Roll +heart
 
-          On a __hit__, you gain repair points as appropriate to the situation, per the table below. Additionally, if you make your own repairs, you may [Sacrifice Resources](id:starforged/moves/suffer/sacrifice_resources) (hold) and exchange each -1 of supply for 1 extra repair point (up to 3 points).
+          On a __hit__, you gain repair points as appropriate to the situation, per the table below. Additionally, if you make your own repairs, you may [Sacrifice Resources](move:starforged/suffer/sacrifice_resources) (hold) and exchange each -1 of supply for 1 extra repair point (up to 3 points).
 
           Situation     | Strong Hit | Weak Hit
           --------------|------------|---------
@@ -443,7 +443,7 @@ moves:
             * Repair any other component or device: 3 points
             * Repair any other equipment or device, but with a complication or malfunction: 2 points
 
-          On a __miss__, the repairs are not made and the situation worsens. [Pay the Price](id:starforged/moves/fate/pay_the_price).
+          On a __miss__, the repairs are not made and the situation worsens. [Pay the Price](move:starforged/fate/pay_the_price).
         outcomes:
           strong_hit:
             text: |-
@@ -456,7 +456,7 @@ moves:
               Underway 	    | 3 points 	 | 1 points
               Under fire 	  | 2 points 	 | 0 points
 
-              Additionally, you may [Sacrifice Resources](id:starforged/moves/suffer/sacrifice_resources) and exchange each -1 of supply for 1 extra repair point (up to 3 points).
+              Additionally, you may [Sacrifice Resources](move:starforged/suffer/sacrifice_resources) and exchange each -1 of supply for 1 extra repair point (up to 3 points).
 
               Spend repair points as follows. Unused points are discarded.
 
@@ -477,7 +477,7 @@ moves:
               Underway 	    | 3 points 	 | 1 points
               Under fire 	  | 2 points 	 | 0 points
 
-              Additionally, you may [Sacrifice Resources](id:starforged/moves/suffer/sacrifice_resources) and exchange each -1 of supply for 1 extra repair point (up to 3 points).
+              Additionally, you may [Sacrifice Resources](move:starforged/suffer/sacrifice_resources) and exchange each -1 of supply for 1 extra repair point (up to 3 points).
 
               Spend repair points as follows. Unused points are discarded.
 
@@ -488,7 +488,7 @@ moves:
                 * Repair any other device: 3 points
                 * Repair any other device, but with a complication or malfunction: 2 points
           miss:
-            text: On a __miss__, the repairs are not made and the situation worsens. [Pay the Price](id:starforged/moves/fate/pay_the_price).
+            text: On a __miss__, the repairs are not made and the situation worsens. [Pay the Price](move:starforged/fate/pay_the_price).
         _source:
           <<: *Source
           page: 249

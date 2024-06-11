@@ -182,7 +182,7 @@ oracles:
           - roll: { min: 94, max: 95 }
             text: Undergunned or unarmed
           - roll: { min: 96, max: 100 }
-            text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+            text: '[Descriptor](oracle_rollable:sundered_isles/core/descriptor) + [Focus](oracle_rollable:sundered_isles/core/focus)'
             oracle_rolls:
               - auto: true
                 oracle: sundered_isles/oracles/core/descriptor
@@ -280,7 +280,7 @@ oracles:
           - roll: { min: 95, max: 96 }
             text: Wreathed in misty cold
           - roll: { min: 97, max: 100 }
-            text: "Shadowed by [Cursed Weather](id:sundered_isles/oracles/weather/cursed)"
+            text: "Shadowed by [Cursed Weather](oracle_rollable:sundered_isles/weather/cursed)"
             oracle_rolls:
               - auto: false
                 number_of_rolls: 1
@@ -545,11 +545,11 @@ oracles:
           - roll: { min: 85, max: 87 }
             text: Without a commander
           - roll: { min: 88, max: 91 }
-            text: Unexpected [Ship Mission](id:sundered_isles/collections/oracles/ship/mission)
+            text: Unexpected [Ship Mission](oracle_collection:sundered_isles/ship/mission)
           - roll: { min: 92, max: 95 }
-            text: "[Ship Damage](id:sundered_isles/collections/oracles/misc/ship_damage)"
+            text: "[Ship Damage](oracle_collection:sundered_isles/misc/ship_damage)"
           - roll: { min: 96, max: 100 }
-            text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+            text: '[Descriptor](oracle_rollable:sundered_isles/core/descriptor) + [Focus](oracle_rollable:sundered_isles/core/focus)'
             oracle_rolls:
               - auto: true
                 oracle: sundered_isles/oracles/core/descriptor
@@ -715,14 +715,14 @@ oracles:
           - roll: { min: 93, max: 94 }
             text: Wine
           - roll: { min: 95, max: 98 }
-            text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+            text: '[Descriptor](oracle_rollable:sundered_isles/core/descriptor) + [Focus](oracle_rollable:sundered_isles/core/focus)'
             oracle_rolls:
               - auto: true
                 oracle: sundered_isles/oracles/core/descriptor
               - auto: true
                 oracle: sundered_isles/oracles/core/focus
           - roll: { min: 99, max: 100 }
-            text: "[Treasure](id:sundered_isles/collections/oracles/treasure)"
+            text: "[Treasure](oracle_collection:sundered_isles/treasure)"
       cargo_cursed:
         name: Cursed Cargo
         type: oracle_rollable
@@ -1368,7 +1368,7 @@ oracles:
                   text: Smuggle contraband
               - roll: { min: 85, max: 94 }
                 <<: &Mission.17
-                  text: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
+                  text: '[Action](oracle_rollable:sundered_isles/core/action) + [Theme](oracle_rollable:sundered_isles/core/theme)'
                   oracle_rolls:
                     - auto: true
                       oracle: sundered_isles/oracles/core/action

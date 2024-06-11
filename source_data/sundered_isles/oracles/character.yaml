@@ -14,7 +14,7 @@ oracles:
     name: Character Oracles
     type: oracle_collection
     oracle_type: tables
-    summary: When encountering a character, focus on what you learn or perceive as a first impression using tables such as [First Look](id:sundered_isles/oracles/character/first_look) and [Initial Disposition](id:sundered_isles/oracles/character/initial_disposition). Then envision or generate additional details over time.
+    summary: When encountering a character, focus on what you learn or perceive as a first impression using tables such as [First Look](oracle_rollable:sundered_isles/character/first_look) and [Initial Disposition](oracle_rollable:sundered_isles/character/initial_disposition). Then envision or generate additional details over time.
     _source:
       <<: *Source
       page: 186
@@ -190,39 +190,39 @@ oracles:
           page: 187
         rows:
           - roll: { min: 1, max: 5 }
-            text: '[Academic](id:sundered_isles/oracles/character/role_details/academic)'
+            text: '[Academic](oracle_rollable:sundered_isles/character/role_details/academic)'
           - roll: { min: 6, max: 10 }
-            text: '[Agent](id:sundered_isles/oracles/character/role_details/agent)'
+            text: '[Agent](oracle_rollable:sundered_isles/character/role_details/agent)'
           - roll: { min: 11, max: 15 }
-            text: '[Caregiver](id:sundered_isles/oracles/character/role_details/caregiver)'
+            text: '[Caregiver](oracle_rollable:sundered_isles/character/role_details/caregiver)'
           - roll: { min: 16, max: 20 }
-            text: '[Combatant](id:sundered_isles/oracles/character/role_details/combatant)'
+            text: '[Combatant](oracle_rollable:sundered_isles/character/role_details/combatant)'
           - roll: { min: 21, max: 25 }
-            text: '[Devotant](id:sundered_isles/oracles/character/role_details/devotant)'
+            text: '[Devotant](oracle_rollable:sundered_isles/character/role_details/devotant)'
           - roll: { min: 26, max: 30 }
-            text: '[Laborer](id:sundered_isles/oracles/character/role_details/laborer)'
+            text: '[Laborer](oracle_rollable:sundered_isles/character/role_details/laborer)'
           - roll: { min: 31, max: 35 }
-            text: '[Merchant](id:sundered_isles/oracles/character/role_details/merchant)'
+            text: '[Merchant](oracle_rollable:sundered_isles/character/role_details/merchant)'
           - roll: { min: 36, max: 40 }
-            text: '[Mystic](id:sundered_isles/oracles/character/role_details/mystic)'
+            text: '[Mystic](oracle_rollable:sundered_isles/character/role_details/mystic)'
           - roll: { min: 41, max: 45 }
-            text: '[Outcast](id:sundered_isles/oracles/character/role_details/outcast)'
+            text: '[Outcast](oracle_rollable:sundered_isles/character/role_details/outcast)'
           - roll: { min: 46, max: 50 }
-            text: '[Outlander](id:sundered_isles/oracles/character/role_details/outlander)'
+            text: '[Outlander](oracle_rollable:sundered_isles/character/role_details/outlander)'
           - roll: { min: 51, max: 55 }
-            text: '[Outlaw](id:sundered_isles/oracles/character/role_details/outlaw)'
+            text: '[Outlaw](oracle_rollable:sundered_isles/character/role_details/outlaw)'
           - roll: { min: 56, max: 60 }
-            text: '[Performer](id:sundered_isles/oracles/character/role_details/performer)'
+            text: '[Performer](oracle_rollable:sundered_isles/character/role_details/performer)'
           - roll: { min: 61, max: 70 }
-            text: '[Sailor](id:sundered_isles/oracles/character/role_details/sailor)'
+            text: '[Sailor](oracle_rollable:sundered_isles/character/role_details/sailor)'
           - roll: { min: 71, max: 75 }
-            text: '[Scavenger](id:sundered_isles/oracles/character/role_details/scavenger)'
+            text: '[Scavenger](oracle_rollable:sundered_isles/character/role_details/scavenger)'
           - roll: { min: 76, max: 80 }
-            text: '[Statesperson](id:sundered_isles/oracles/character/role_details/statesperson)'
+            text: '[Statesperson](oracle_rollable:sundered_isles/character/role_details/statesperson)'
           - roll: { min: 81, max: 85 }
-            text: '[Tradesperson](id:sundered_isles/oracles/character/role_details/tradesperson)'
+            text: '[Tradesperson](oracle_rollable:sundered_isles/character/role_details/tradesperson)'
           - roll: { min: 86, max: 95 }
-            text: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
+            text: '[Action](oracle_rollable:sundered_isles/core/action) + [Theme](oracle_rollable:sundered_isles/core/theme)'
             oracle_rolls:
               - auto: true
                 oracle: sundered_isles/oracles/core/action
@@ -239,7 +239,7 @@ oracles:
         type: oracle_rollable
         oracle_type: table_text
         recommended_rolls: { min: 1, max: 2 }
-        summary: This table includes conspicuous gear, adornment, and clothing. Use it to help envision the look of a notable character, particularly one who is a seafarer or adventurer. To arm them with a favorite weapon, check [Trademark Weapons](id:sundered_isles/oracles/character/trademark_weapons).
+        summary: This table includes conspicuous gear, adornment, and clothing. Use it to help envision the look of a notable character, particularly one who is a seafarer or adventurer. To arm them with a favorite weapon, check [Trademark Weapons](oracle_rollable:sundered_isles/character/trademark_weapons).
         _source:
           <<: *Source
           page: 190
@@ -343,7 +343,7 @@ oracles:
           - roll: { min: 97, max: 98 }
             text: Wooden religious medallion
           - roll: { min: 99, max: 100 }
-            text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+            text: '[Descriptor](oracle_rollable:sundered_isles/core/descriptor) + [Focus](oracle_rollable:sundered_isles/core/focus)'
             oracle_rolls:
               - auto: true
                 oracle: sundered_isles/oracles/core/descriptor
@@ -446,7 +446,7 @@ oracles:
             cursed_version_of:
               - sundered_isles/oracles/character/trademark_weapons
             curse_behavior: add_result
-        summary: If you roll a [Trademark Weapon](id:sundered_isles/oracles/character/trademark_weapons) curse, take your result and give that weapon a cursed aspect from the table below.
+        summary: If you roll a [Trademark Weapon](oracle_rollable:sundered_isles/character/trademark_weapons) curse, take your result and give that weapon a cursed aspect from the table below.
         _source:
           <<: *Source
           page: 191
@@ -852,7 +852,7 @@ oracles:
           - roll: { min: 93, max: 94 }
             text: Uphold or enforce laws
           - roll: { min: 95, max: 100 }
-            text: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
+            text: '[Action](oracle_rollable:sundered_isles/core/action) + [Theme](oracle_rollable:sundered_isles/core/theme)'
             oracle_rolls:
               - auto: true
                 oracle: sundered_isles/oracles/core/action
@@ -2305,7 +2305,7 @@ oracles:
             name: Cursed Moniker
             type: oracle_collection
             oracle_type: tables
-            summary: Use these tables to reveal an epitaph for a dreadful, eldritch, ill-fated, or mechanical character. For example, a pirate captain who adopts a much-feared identity would have a [Dreadful Persona](id:sundered_isles/oracles/character/name/moniker_cursed/dreadful_persona). A wretched, outcast mariner would have an [Ill-Fated Nature](id:sundered_isles/oracles/character/name/moniker_cursed/ill-fated_nature). Use the result alone, combine with a name, or pair results from two Cursed Moniker categories.
+            summary: Use these tables to reveal an epitaph for a dreadful, eldritch, ill-fated, or mechanical character. For example, a pirate captain who adopts a much-feared identity would have a [Dreadful Persona](oracle_rollable:sundered_isles/character/name/moniker_cursed/dreadful_persona). A wretched, outcast mariner would have an [Ill-Fated Nature](id:sundered_isles/oracles/character/name/moniker_cursed/ill-fated_nature). Use the result alone, combine with a name, or pair results from two Cursed Moniker categories.
             _source:
               <<: *Source
               page: 197
@@ -2323,25 +2323,25 @@ oracles:
                   <<: *Source
                 rows:
                   - roll: { min: 1, max: 40 }
-                    text: '[Dreadful Persona](id:sundered_isles/oracles/character/name/moniker_cursed/dreadful_persona)'
+                    text: '[Dreadful Persona](oracle_rollable:sundered_isles/character/name/moniker_cursed/dreadful_persona)'
                     oracle_rolls:
                       - auto: false
                         number_of_rolls: 1
                         oracle: sundered_isles/oracles/character/name/moniker_cursed/dreadful_persona
                   - roll: { min: 41, max: 60 }
-                    text: '[Eldritch Powers](id:sundered_isles/oracles/character/name/moniker_cursed/eldritch_powers)'
+                    text: '[Eldritch Powers](oracle_rollable:sundered_isles/character/name/moniker_cursed/eldritch_powers)'
                     oracle_rolls:
                       - auto: false
                         number_of_rolls: 1
                         oracle: sundered_isles/oracles/character/name/moniker_cursed/eldritch_powers
                   - roll: { min: 61, max: 90 }
-                    text: '[Ill-Fated Nature](id:sundered_isles/oracles/character/name/moniker_cursed/ill_fated_nature)'
+                    text: '[Ill-Fated Nature](oracle_rollable:sundered_isles/character/name/moniker_cursed/ill_fated_nature)'
                     oracle_rolls:
                       - auto: false
                         number_of_rolls: 1
                         oracle: sundered_isles/oracles/character/name/moniker_cursed/ill_fated_nature
                   - roll: { min: 91, max: 100 }
-                    text: '[Mechanical Form](id:sundered_isles/oracles/character/name/moniker_cursed/mechanical_form)'
+                    text: '[Mechanical Form](oracle_rollable:sundered_isles/character/name/moniker_cursed/mechanical_form)'
                     oracle_rolls:
                       - auto: false
                         number_of_rolls: 1

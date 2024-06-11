@@ -6,9 +6,9 @@ oracles:
   monstrosity:
     name: Monstrosity
     type: oracle_collection
-    summary: Discover the nature of a [nightspawn](id:delve/npc/horrors/nightspawn) or other frightful creature within your world.
+    summary: Discover the nature of a [nightspawn](npc:delve/horrors/nightspawn) or other frightful creature within your world.
     description: |-
-      Use the Monstrosity oracle to define the nature of a [Nightspawn](id:delve/npc/horrors/nightspawn), or to introduce a new type of [animal](id:classic/npc_collection/animal), [beast](id:classic/npc_collection/beast), or [horror](id:classic/npc_collection/horror) in your world.
+      Use the Monstrosity oracle to define the nature of a [Nightspawn](npc:delve/horrors/nightspawn), or to introduce a new type of [animal](npc_collection:classic/animal), [beast](npc_collection:classic/beast), or [horror](npc_collection:classic/horror) in your world.
 
       To create a monstrosity, start by rolling for its [Size](oracle_rollable:delve/monstrosity/size) and [Primary Form](oracle_rollable:delve/monstrosity/primary_form). Then, roll up to four times for [Characteristics](oracle_rollable:delve/monstrosity/characteristics) and keep up to three of those results. Do the same for [Abilities](oracle_rollable:delve/monstrosity/abilities).
 

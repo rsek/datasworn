@@ -39,12 +39,12 @@ oracles:
                 <<: &Waypoints.0
                   text: |-
                     **Feature of the landscape**
-                    [Region Landmark](id:sundered_isles/collections/oracles/overland/region_landmarks)
+                    [Region Landmark](oracle_collection:sundered_isles/overland/region_landmarks)
               - roll: { min: 21, max: 30 }
                 <<: &Waypoints.1
                   text: |-
                     **Changing landscape**
-                    [Overland Region](id:sundered_isles/oracles/overland/region)
+                    [Overland Region](oracle_rollable:sundered_isles/overland/region)
                   oracle_rolls:
                     - oracle: sundered_isles/oracles/overland/region
                       auto: false
@@ -52,14 +52,14 @@ oracles:
                 <<: &Waypoints.2
                   text: |-
                     **Changing weather**
-                    [Weather](id:sundered_isles/collections/oracles/weather)
+                    [Weather](oracle_collection:sundered_isles/weather)
               - roll: { min: 36, max: 55 }
                 <<: &Waypoints.3
                   text: |-
                     **Instance (choose one)**
 
-                      * [Overland Details](id:sundered_isles/oracles/overland/details)
-                      * [Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)
+                      * [Overland Details](oracle_rollable:sundered_isles/overland/details)
+                      * [Descriptor](oracle_rollable:sundered_isles/core/descriptor) + [Focus](oracle_rollable:sundered_isles/core/focus)
                   oracle_rolls:
                     - auto: false
                       oracle: sundered_isles/oracles/overland/details
@@ -71,17 +71,17 @@ oracles:
                 <<: &Waypoints.4
                   text: |-
                     **Inland community**
-                    [Settlement](id:sundered_isles/collections/oracles/settlement)
+                    [Settlement](oracle_collection:sundered_isles/settlement)
               - roll: { min: 71, max: 75 }
                 <<: &Waypoints.5
                   text: |-
                     **Relic of the past**
-                    [Ruin](id:sundered_isles/collections/oracles/ruin)
+                    [Ruin](oracle_collection:sundered_isles/ruin)
               - roll: { min: 76, max: 85 }
                 <<: &Waypoints.6
                   text: |-
                     **Character focus**
-                    [Interlude Scene](id:sundered_isles/oracles/misc/interlude_scene)
+                    [Interlude Scene](oracle_rollable:sundered_isles/misc/interlude_scene)
                 oracle_rolls:
                   - auto: false
                     number_of_rolls: 1
@@ -718,9 +718,9 @@ oracles:
               - roll: { min: 82, max: 84 }
                 text: Titanic machine
               - roll: { min: 85, max: 89 }
-                text: Foreboding [Cave](id:sundered_isles/collections/oracles/cave)
+                text: Foreboding [Cave](oracle_collection:sundered_isles/cave)
               - roll: { min: 90, max: 94 }
-                text: Grounded [Shipwreck](id:sundered_isles/collections/oracles/shipwreck)
+                text: Grounded [Shipwreck](oracle_collection:sundered_isles/shipwreck)
               - roll: { min: 95, max: 100 }
                 text: Roll twice
                 oracle_rolls:
@@ -737,7 +737,7 @@ oracles:
           page: 149
         rows:
           - roll: { min: 1, max: 20 }
-            text: '[Highlands](id:sundered_isles/oracles/overland/region_landmarks/highlands)'
+            text: '[Highlands](oracle_rollable:sundered_isles/overland/region_landmarks/highlands)'
             text2: *highlands.summary
             tags: *highlands.tags
             oracle_rolls:
@@ -745,7 +745,7 @@ oracles:
                 auto: false
             # text3: pg 150
           - roll: { min: 21, max: 45 }
-            text: '[Jungle](id:sundered_isles/oracles/overland/region_landmarks/jungle)'
+            text: '[Jungle](oracle_rollable:sundered_isles/overland/region_landmarks/jungle)'
             text2: *jungle.summary
             tags: *jungle.tags
             oracle_rolls:
@@ -753,7 +753,7 @@ oracles:
                 auto: false
             # text3: pg 150
           - roll: { min: 46, max: 50 }
-            text: '[Lava Field](id:sundered_isles/oracles/overland/region_landmarks/lava_field)'
+            text: '[Lava Field](oracle_rollable:sundered_isles/overland/region_landmarks/lava_field)'
             text2: *lava_field.summary
             tags: *lava_field.tags
             oracle_rolls:
@@ -761,7 +761,7 @@ oracles:
                 auto: false
             # text3: pg 151
           - roll: { min: 51, max: 55 }
-            text: '[Marsh](id:sundered_isles/oracles/overland/region_landmarks/marsh)'
+            text: '[Marsh](oracle_rollable:sundered_isles/overland/region_landmarks/marsh)'
             text2: *marsh.summary
             tags: *marsh.tags
             oracle_rolls:
@@ -769,7 +769,7 @@ oracles:
                 auto: false
             # text3: pg 151
           - roll: { min: 56, max: 60 }
-            text: '[River](id:sundered_isles/oracles/overland/region_landmarks/river)'
+            text: '[River](oracle_rollable:sundered_isles/overland/region_landmarks/river)'
             text2: *river.summary
             tags: *river.tags
             oracle_rolls:
@@ -777,7 +777,7 @@ oracles:
                 auto: false
             # text3: pg 152
           - roll: { min: 61, max: 65 }
-            text: '[Scrub](id:sundered_isles/oracles/overland/region_landmarks/scrub)'
+            text: '[Scrub](oracle_rollable:sundered_isles/overland/region_landmarks/scrub)'
             text2: *scrub.summary
             tags: *scrub.tags
             oracle_rolls:
@@ -785,7 +785,7 @@ oracles:
                 auto: false
             # text3: pg 152
           - roll: { min: 66, max: 75 }
-            text: '[Shore](id:sundered_isles/oracles/overland/region_landmarks/shore)'
+            text: '[Shore](oracle_rollable:sundered_isles/overland/region_landmarks/shore)'
             text2: *shore.summary
             tags: *shore.tags
             oracle_rolls:
@@ -793,7 +793,7 @@ oracles:
                 auto: false
             # text3: pg 153
           - roll: { min: 76, max: 85 }
-            text: '[Swamp](id:sundered_isles/oracles/overland/region_landmarks/swamp)'
+            text: '[Swamp](oracle_rollable:sundered_isles/overland/region_landmarks/swamp)'
             text2: *swamp.summary
             tags: *swamp.tags
             oracle_rolls:
@@ -801,7 +801,7 @@ oracles:
                 auto: false
             # text3: pg 153
           - roll: { min: 86, max: 90 }
-            text: '[Wastes](id:sundered_isles/oracles/overland/region_landmarks/wastes)'
+            text: '[Wastes](oracle_rollable:sundered_isles/overland/region_landmarks/wastes)'
             text2: *wastes.summary
             tags: *wastes.tags
             oracle_rolls:
@@ -809,7 +809,7 @@ oracles:
                 auto: false
             # text3: pg 154
           - roll: { min: 91, max: 100 }
-            text: '[Woodland](id:sundered_isles/oracles/overland/region_landmarks/woodland)'
+            text: '[Woodland](oracle_rollable:sundered_isles/overland/region_landmarks/woodland)'
             text2: *woodland.summary
             tags: *woodland.tags
             oracle_rolls:
@@ -1311,13 +1311,13 @@ oracles:
           - roll: { min: 91, max: 93 }
             text: Wander into or near the lair of a predator
           - roll: { min: 94, max: 96 }
-            text: '[Foul Weather](id:sundered_isles/oracles/weather/foul)'
+            text: '[Foul Weather](oracle_rollable:sundered_isles/weather/foul)'
             oracle_rolls:
               - auto: false
                 number_of_rolls: 1
                 oracle: sundered_isles/oracles/weather/foul
           - roll: { min: 97, max: 99 }
-            text: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
+            text: '[Action](oracle_rollable:sundered_isles/core/action) + [Theme](oracle_rollable:sundered_isles/core/theme)'
             oracle_rolls:
               - auto: true
                 oracle: sundered_isles/oracles/core/action

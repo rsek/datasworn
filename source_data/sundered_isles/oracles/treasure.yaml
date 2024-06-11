@@ -31,17 +31,17 @@ oracles:
           page: 220
         rows:
           - roll: { min: 1, max: 25 }
-            text: Borne on a [Ship](id:sundered_isles/collections/oracles/ship)
+            text: Borne on a [Ship](oracle_collection:sundered_isles/ship)
           - roll: { min: 26, max: 50 }
-            text: Lost with a [Shipwreck](id:sundered_isles/collections/oracles/shipwreck)
+            text: Lost with a [Shipwreck](oracle_collection:sundered_isles/shipwreck)
           - roll: { min: 51, max: 70 }
-            text: Hidden on an [Island](id:sundered_isles/collections/oracles/island)
+            text: Hidden on an [Island](oracle_collection:sundered_isles/island)
           - roll: { min: 71, max: 85 }
-            text: Sheltered in a [Cave](id:sundered_isles/collections/oracles/cave)
+            text: Sheltered in a [Cave](oracle_collection:sundered_isles/cave)
           - roll: { min: 86, max: 95 }
-            text: Secured in a [Settlement](id:sundered_isles/collections/oracles/settlement)
+            text: Secured in a [Settlement](oracle_collection:sundered_isles/settlement)
           - roll: { min: 96, max: 100 }
-            text: Preserved in a [Ruin](id:sundered_isles/collections/oracles/ruin)
+            text: Preserved in a [Ruin](oracle_collection:sundered_isles/ruin)
       location_cursed:
         name: Cursed Location
         type: oracle_rollable
@@ -214,7 +214,7 @@ oracles:
         name: Precious Items
         type: oracle_rollable
         oracle_type: table_text
-        summary: Roll or select a number of items on this table as set by the treasure’s [Value](id:sundered_isles/collections/oracles/treasure/value). Each result represents a quantity of that item, such as a strongbox filled with pearls, barrels of aged rum, or a stack of precious metal ingots. To instead reveal a specific item of intrinsic or personal worth, check the [Tokens](id:sundered_isles/oracles/treasure/tokens) table.
+        summary: Roll or select a number of items on this table as set by the treasure’s [Value](oracle_collection:sundered_isles/treasure/value). Each result represents a quantity of that item, such as a strongbox filled with pearls, barrels of aged rum, or a stack of precious metal ingots. To instead reveal a specific item of intrinsic or personal worth, check the [Tokens](oracle_rollable:sundered_isles/treasure/tokens) table.
         _source:
           <<: *Source
           page: 223
@@ -264,14 +264,14 @@ oracles:
           - roll: { min: 81, max: 84 }
             text: Unworked gemstones
           - roll: { min: 85, max: 88 }
-            text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+            text: '[Descriptor](oracle_rollable:sundered_isles/core/descriptor) + [Focus](oracle_rollable:sundered_isles/core/focus)'
             oracle_rolls:
               - auto: true
                 oracle: sundered_isles/oracles/core/descriptor
               - auto: true
                 oracle: sundered_isles/oracles/core/focus
           - roll: { min: 89, max: 100 }
-            text: '[Token](id:sundered_isles/oracles/treasure/tokens)'
+            text: '[Token](oracle_rollable:sundered_isles/treasure/tokens)'
             oracle_rolls:
               - auto: false
                 number_of_rolls: 1
@@ -280,7 +280,7 @@ oracles:
         name: Tokens
         type: oracle_rollable
         oracle_type: table_text
-        summary: A token is an item of personal significance—such as a memento, heirloom, or individual treasure. Use this table when prompted by the [Precious Items](id:sundered_isles/oracles/treasure/precious_items) table, or to add detail to a character. A token might have intrinsic value, but is often a thing of worth only to its owner. Not all treasures are silver and gold.
+        summary: A token is an item of personal significance—such as a memento, heirloom, or individual treasure. Use this table when prompted by the [Precious Items](oracle_rollable:sundered_isles/treasure/precious_items) table, or to add detail to a character. A token might have intrinsic value, but is often a thing of worth only to its owner. Not all treasures are silver and gold.
         tags:
           sundered_isles:
             cursed_by: sundered_isles/oracles/treasure/tokens_cursed
@@ -595,14 +595,14 @@ oracles:
               - roll: { min: 1, max: 80 }
                 <<: &Value.0
                   text: Trifle
-                  text2: One [Precious Item](id:sundered_isles/oracles/treasure/precious_items)
+                  text2: One [Precious Item](oracle_rollable:sundered_isles/treasure/precious_items)
                   oracle_rolls:
                     - oracle: sundered_isles/oracles/treasure/precious_items
                       auto: false
               - roll: { min: 81, max: 100 }
                 <<: &Value.1
                   text: Stash
-                  text2: Roll the action die and reveal that many [Precious Items](id:sundered_isles/oracles/treasure/precious_items)
+                  text2: Roll the action die and reveal that many [Precious Items](oracle_rollable:sundered_isles/treasure/precious_items)
                   oracle_rolls:
                     - oracle: sundered_isles/oracles/treasure/precious_items
                       auto: false

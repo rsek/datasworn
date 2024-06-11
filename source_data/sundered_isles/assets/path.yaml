@@ -25,7 +25,7 @@ assets:
         abilities:
           - enabled: true
             text: |-
-              When you [Strike](id:starforged/moves/combat/strike) using a vehicle’s weapons, and hold your fire for maximum effect, decide the amount of momentum you risk (1, 2, or 3) and add +that amount. On a strong hit, mark progress. On a weak hit or miss, [Lose Momentum](id:starforged/moves/suffer/lose_momentum) equal to 1 + the amount risked (in addition to any other cost).
+              When you [Strike](move:starforged/combat/strike) using a vehicle’s weapons, and hold your fire for maximum effect, decide the amount of momentum you risk (1, 2, or 3) and add +that amount. On a strong hit, mark progress. On a weak hit or miss, [Lose Momentum](move:starforged/suffer/lose_momentum) equal to 1 + the amount risked (in addition to any other cost).
             enhance_moves:
               - enhances:
                   - starforged/moves/combat/strike
@@ -33,13 +33,13 @@ assets:
                 trigger:
                   conditions:
                     - text:
-                        When you [Strike](id:starforged/moves/combat/strike) using a vehicle’s
+                        When you [Strike](move:starforged/combat/strike) using a vehicle’s
                         weapons, and hold your fire for maximum effect
           - text: |-
               When you make a move by firing or directing the fire of a vehicle’s weapons, and burn momentum to improve your result, roll your action die. On a 5 or 6, do not reset momentum. Otherwise, take +1 momentum after you reset.
             # TODO: momentum trigger?
           - text: |-
-              When you [Secure an Advantage](id:starforged/moves/adventure/secure_an_advantage) or [Gain Ground](id:starforged/moves/combat/gain_ground) by preparing or loading special ammunition for a vehicle’s weapons, roll +supply. On a hit, take +1 momentum. Then, when you first make a move to fire this ammunition, reroll any dice.
+              When you [Secure an Advantage](move:starforged/adventure/secure_an_advantage) or [Gain Ground](move:starforged/combat/gain_ground) by preparing or loading special ammunition for a vehicle’s weapons, roll +supply. On a hit, take +1 momentum. Then, when you first make a move to fire this ammunition, reroll any dice.
             enhance_moves:
               - enhances:
                   - starforged/moves/*/secure_an_advantage
@@ -63,7 +63,7 @@ assets:
         abilities:
           - enabled: true
             text: |-
-               You are a machine, and do not eat, drink, or breathe. You [Endure Harm](id:sundered_isles/moves/suffer/endure_harm) as normal, but restore health only when you [Repair](id:sundered_isles/moves/recover/repair) (spend 1 repair point to take +1 health, and 2 points to clear the wounded impact).
+               You are a machine, and do not eat, drink, or breathe. You [Endure Harm](move:sundered_isles/suffer/endure_harm) as normal, but restore health only when you [Repair](move:sundered_isles/recover/repair) (spend 1 repair point to take +1 health, and 2 points to clear the wounded impact).
             # TODO: enhance player? alter the moves used to recover
           - text: |-
               When you make a move to build, repair, or study another mechanical device, or question or convince a mechanical being, you may roll +spirit. On a match, you gain understanding or affinity; mark 1 tick on your bonds legacy track.
@@ -77,7 +77,7 @@ assets:
                         - using: condition_meter
                           condition_meter: spirit
           - text: |-
-               Gain one path asset (not [Augmented](id:sundered_isles/assets/path/augmented)) at no extra cost to represent a mechanical fitting or modification. Spend 1 experience to upgrade this asset, or 1 experience to swap for another path asset with an equal number of upgrades. You may suffer the cost of a move by marking the installed asset as broken, and spend 2 repair points to restore its function.
+               Gain one path asset (not [Augmented](asset:sundered_isles/path/augmented)) at no extra cost to represent a mechanical fitting or modification. Spend 1 experience to upgrade this asset, or 1 experience to swap for another path asset with an equal number of upgrades. You may suffer the cost of a move by marking the installed asset as broken, and spend 2 repair points to restore its function.
             # TODO: it doesn't like the wildcard pattern, what gives?
             # enhance_asset:
             #   attachments:
@@ -94,7 +94,7 @@ assets:
         abilities:
           - enabled: true
             text: |-
-              You have 2 command; your max is 4. When you or an ally make a move leading or aided by the crew, you may (after rolling) suffer -1 command to improve a miss to a weak hit, or a weak hit to a strong hit. When you [Pay the Price](id:starforged/moves/fate/pay_the_price), you may suffer the cost as -1 command. While at 0 command, this asset counts as an impact. To bolster your crew, provide a notable reward or respite, and roll +heart. On a strong hit, take +4 command. On a weak hit, take +2. On a miss, take +2 but envision a threat to your crew or leadership.
+              You have 2 command; your max is 4. When you or an ally make a move leading or aided by the crew, you may (after rolling) suffer -1 command to improve a miss to a weak hit, or a weak hit to a strong hit. When you [Pay the Price](move:starforged/fate/pay_the_price), you may suffer the cost as -1 command. While at 0 command, this asset counts as an impact. To bolster your crew, provide a notable reward or respite, and roll +heart. On a strong hit, take +4 command. On a weak hit, take +2. On a miss, take +2 but envision a threat to your crew or leadership.
           - text: |-
               Take +2 command; your max is now 6.
             enhance_asset:
@@ -103,7 +103,7 @@ assets:
                   field_type: condition_meter
                   max: 6
           - text: |-
-              When your command is 0 and the situation desperate, you may [Compel](id:starforged/moves/adventure/compel) your crew to action; if you do, take +2 command on a hit.
+              When your command is 0 and the situation desperate, you may [Compel](move:starforged/adventure/compel) your crew to action; if you do, take +2 command on a hit.
             enhance_moves:
               - enhances:
                   - starforged/moves/adventure/compel
@@ -128,7 +128,7 @@ assets:
         abilities:
           - enabled: true
             text: |-
-              When you [Strike](id:starforged/moves/combat/strike), add +1. When you make a move using a knife not as a weapon to attack or threaten, but as a tool to cut an object, gain leverage, or grab hold, add +1 and take +1 momentum on a hit.
+              When you [Strike](move:starforged/combat/strike), add +1. When you make a move using a knife not as a weapon to attack or threaten, but as a tool to cut an object, gain leverage, or grab hold, add +1 and take +1 momentum on a hit.
             enhance_moves:
               - enhances:
                   - starforged/moves/combat/strike
@@ -147,7 +147,7 @@ assets:
                   conditions:
                     - text: Once per situation, when you make a move to ambush an unaware foe, or perform a feint or misdirection to draw someone off their guard
           - text: |-
-              When you [Take Decisive Action](id:starforged/moves/combat/take_decisive_action) without mercy or restraint, you may reroll one challenge die. If you do, [Endure Stress](id:starforged/moves/suffer/endure_stress) (-2). If you then choose to resist the stress, roll +iron instead of +spirit or +heart.
+              When you [Take Decisive Action](move:starforged/combat/take_decisive_action) without mercy or restraint, you may reroll one challenge die. If you do, [Endure Stress](move:starforged/suffer/endure_stress) (-2). If you then choose to resist the stress, roll +iron instead of +spirit or +heart.
             enhance_moves:
               - enhances:
                   - starforged/moves/combat/take_decisive_action
@@ -155,7 +155,7 @@ assets:
                 trigger:
                   conditions:
                     - text: When you [Take Decisive
-                        Action](id:starforged/moves/combat/take_decisive_action)
+                        Action](move:starforged/combat/take_decisive_action)
                         without mercy or restraint
               - enhances:
                   - starforged/moves/suffer/endure_stress
@@ -163,7 +163,7 @@ assets:
                 trigger:
                   conditions:
                     - text: After you [Take Decisive
-                        Action](id:starforged/moves/combat/take_decisive_action)
+                        Action](move:starforged/combat/take_decisive_action)
                         without mercy or restraint (and choosing to reroll one challenge die), and you choose to resist the stress
                       roll_options:
                         - using: stat
@@ -178,7 +178,7 @@ assets:
         abilities:
           - enabled: true
             text: |-
-              When you [Enter the Fray](id:starforged/moves/combat/enter_the_fray) or [Battle](id:starforged/moves/combat/battle) against a single worthy foe, reroll any challenge dice. If you set a new objective in a fight by challenging a worthy foe, take +2 momentum.
+              When you [Enter the Fray](move:starforged/combat/enter_the_fray) or [Battle](move:starforged/combat/battle) against a single worthy foe, reroll any challenge dice. If you set a new objective in a fight by challenging a worthy foe, take +2 momentum.
             enhance_moves:
               - enhances:
                   - starforged/moves/combat/enter_the_fray
@@ -188,7 +188,7 @@ assets:
                   conditions:
                     - text: against a single worthy foe
           - text: |-
-              When you [Gain Ground](id:starforged/moves/combat/gain_ground) in personal combat using superficial attacks to probe your opponent’s defenses, or by drawing them off guard with verbal repartee, take +1 momentum on a hit. On a strong hit, also add +1 if you immediately [Strike](id:starforged/moves/combat/strike).
+              When you [Gain Ground](move:starforged/combat/gain_ground) in personal combat using superficial attacks to probe your opponent’s defenses, or by drawing them off guard with verbal repartee, take +1 momentum on a hit. On a strong hit, also add +1 if you immediately [Strike](move:starforged/combat/strike).
             enhance_moves:
               - enhances:
                   - starforged/moves/combat/gain_ground
@@ -221,7 +221,7 @@ assets:
                   conditions:
                     - text: When you make a move to attack person-sized foes, the harpoon is a powerful but ungainly weapon
           - text: |-
-              When you [Strike](id:starforged/moves/combat/strike) a large foe in close quarters, you may drive your harpoon home. If you do, mark progress on a hit. If the fight continues, and you choose to pull the harpoon free, you must [Gain Ground](id:starforged/moves/combat/gain_ground) (+iron), score a hit, and forgo one of the choices awarded by that move.
+              When you [Strike](move:starforged/combat/strike) a large foe in close quarters, you may drive your harpoon home. If you do, mark progress on a hit. If the fight continues, and you choose to pull the harpoon free, you must [Gain Ground](move:starforged/combat/gain_ground) (+iron), score a hit, and forgo one of the choices awarded by that move.
             enhance_moves:
               - enhances:
                   - starforged/moves/combat/strike
@@ -236,7 +236,7 @@ assets:
                   conditions:
                     - text: to pull your harpoon free (after you drive your harpoon home against a large foe in close quarters)
           - text: |-
-              When you [Resupply](id:starforged/moves/recover/resupply) by hunting large game, add +1 and take +1 supply on a hit. On a miss with a match, there’s always a bigger fish; you draw the attention of a notable threat.
+              When you [Resupply](move:starforged/recover/resupply) by hunting large game, add +1 and take +1 supply on a hit. On a miss with a match, there’s always a bigger fish; you draw the attention of a notable threat.
             enhance_moves:
               - enhances:
                   - starforged/moves/recover/resupply
@@ -273,7 +273,7 @@ assets:
         abilities:
           - enabled: true
             text: |-
-              When you [Hearten](id:starforged/moves/recover/hearten), [Secure an Advantage](id:starforged/moves/adventure/secure_an_advantage), or [Gain Ground](id:starforged/moves/combat/gain_ground) by encouraging yourself or others with a musical performance, add +1. On a strong hit with a match, also mark 1 tick on your bonds legacy track.
+              When you [Hearten](move:starforged/recover/hearten), [Secure an Advantage](move:starforged/adventure/secure_an_advantage), or [Gain Ground](move:starforged/combat/gain_ground) by encouraging yourself or others with a musical performance, add +1. On a strong hit with a match, also mark 1 tick on your bonds legacy track.
             enhance_moves:
               - enhances:
                   - starforged/moves/recover/hearten
@@ -284,16 +284,16 @@ assets:
                   conditions:
                     - text: by encouraging yourself or others with a musical performance
           - text: |-
-              When you score a hit as you [Sojourn](id:starforged/moves/recover/sojourn) during your first visit to a community, and [Hearten](id:starforged/moves/recover/hearten) by honoring them with a song, you may take an extra recovery move.
+              When you score a hit as you [Sojourn](move:starforged/recover/sojourn) during your first visit to a community, and [Hearten](move:starforged/recover/hearten) by honoring them with a song, you may take an extra recovery move.
             enhance_moves:
               - enhances:
                   - starforged/moves/recover/hearten
                 roll_type: action_roll
                 trigger:
                   conditions:
-                    - text: When you score a hit as you [Sojourn](id:starforged/moves/recover/sojourn) during your first visit to a community, and [Hearten](id:starforged/moves/recover/hearten) by honoring them with a song
+                    - text: When you score a hit as you [Sojourn](move:starforged/recover/sojourn) during your first visit to a community, and [Hearten](move:starforged/recover/hearten) by honoring them with a song
           - text: |-
-              When you suffer or encounter a tragic loss and perform a song to memorialize the dead, roll +heart. On a strong hit, take both. On a weak hit, choose one. On a miss, the performance leaves you or others troubled; [Pay the Price](id:starforged/moves/fate/pay_the_price).
+              When you suffer or encounter a tragic loss and perform a song to memorialize the dead, roll +heart. On a strong hit, take both. On a weak hit, choose one. On a miss, the performance leaves you or others troubled; [Pay the Price](move:starforged/fate/pay_the_price).
 
                 * Honor the lost: mark 2 ticks on your bonds legacy track.
                 * Offer comfort or inspiration: you and your allies take +2 spirit or +2 momentum.
@@ -315,16 +315,16 @@ assets:
                   conditions:
                     - text: When you make a move to shoot at a specific target from a distance
           - text: |-
-              When you [Clash](id:starforged/moves/combat/clash), you may attempt to turn the tide of the fight with a difficult but bold shot. If you do, roll an extra challenge die and keep the two highest. A weak hit then counts as a strong hit. On a strong hit with a match, mark progress.
+              When you [Clash](move:starforged/combat/clash), you may attempt to turn the tide of the fight with a difficult but bold shot. If you do, roll an extra challenge die and keep the two highest. A weak hit then counts as a strong hit. On a strong hit with a match, mark progress.
             enhance_moves:
               - enhances:
                   - starforged/moves/combat/clash
                 roll_type: action_roll
                 trigger:
                   conditions:
-                    - text: When you [Clash](id:starforged/moves/combat/clash), and attempt to turn the tide of the fight with a difficult but bold shot
+                    - text: When you [Clash](move:starforged/combat/clash), and attempt to turn the tide of the fight with a difficult but bold shot
           - text: |-
-              When you [Gain Ground](id:starforged/moves/combat/gain_ground) by charging into close quarters with a fixed bayonet, or if you [React Under Fire](id:starforged/moves/combat/react_under_fire) by holding foes at bay or parrying close quarter attacks with your rifle, add +1 and take +1 momentum on a hit.
+              When you [Gain Ground](move:starforged/combat/gain_ground) by charging into close quarters with a fixed bayonet, or if you [React Under Fire](move:starforged/combat/react_under_fire) by holding foes at bay or parrying close quarter attacks with your rifle, add +1 and take +1 momentum on a hit.
             enhance_moves:
               - enhances:
                   - starforged/moves/combat/gain_ground
@@ -348,7 +348,7 @@ assets:
         abilities:
           - enabled: true
             text: |-
-              While in the presence of the remains of an intelligent being, you may [Gather Information](id:starforged/moves/adventure/gather_information) by summoning their spirit to answer your questions. If you do, roll +heart and take +1 momentum on a hit.
+              While in the presence of the remains of an intelligent being, you may [Gather Information](move:starforged/adventure/gather_information) by summoning their spirit to answer your questions. If you do, roll +heart and take +1 momentum on a hit.
             enhance_moves:
               - enhances:
                   - starforged/moves/adventure/gather_information
@@ -360,7 +360,7 @@ assets:
                         - using: stat
                           stat: heart
           - text: |-
-              When you [Face Death](id:starforged/moves/threshold/face_death), or if you [Aid Your Ally](id:starforged/moves/adventure/aid_your_ally) by serving as their guide as they face death, mark 2 ticks on your bonds legacy track.
+              When you [Face Death](move:starforged/threshold/face_death), or if you [Aid Your Ally](move:starforged/adventure/aid_your_ally) by serving as their guide as they face death, mark 2 ticks on your bonds legacy track.
             enhance_moves:
               - enhances:
                   - starforged/moves/threshold/face_death
@@ -369,7 +369,7 @@ assets:
                   - starforged/moves/adventure/aid_your_ally
                 roll_type: no_roll
           - text: |-
-              You may [Face Danger](id:starforged/moves/adventure/face_danger) (+heart) to animate a corpse with soulless life. On a hit, it is under your control. When it aids you through force, threat, or fear as you make a move, add +2 and fill one segment of a 4-segment clock. You may also suffer the cost of a move by filling a segment. When the clock is full, the corpse crumbles to ash. You may control only a single corpse at a time.
+              You may [Face Danger](move:starforged/adventure/face_danger) (+heart) to animate a corpse with soulless life. On a hit, it is under your control. When it aids you through force, threat, or fear as you make a move, add +2 and fill one segment of a 4-segment clock. You may also suffer the cost of a move by filling a segment. When the clock is full, the corpse crumbles to ash. You may control only a single corpse at a time.
             enhance_moves:
               - enhances:
                   - starforged/moves/*/face_danger
@@ -395,7 +395,7 @@ assets:
         abilities:
           - enabled: true
             text: |-
-              When you [Undertake an Expedition](id:starforged/moves/exploration/undertake_an_expedition) through uncharted or unfamiliar overland territory, you may reroll one challenge die.
+              When you [Undertake an Expedition](move:starforged/exploration/undertake_an_expedition) through uncharted or unfamiliar overland territory, you may reroll one challenge die.
             enhance_moves:
               - enhances:
                   - starforged/moves/exploration/undertake_an_expedition
@@ -404,7 +404,7 @@ assets:
                   conditions:
                     - text: through uncharted or unfamiliar overland territory
           - text: &ShelterText |-
-              When you find or make shelter in the wilds, roll +wits. On a strong hit, you and your allies envision how you pass the time and each take +2 spirit or +2 health, or +1 to each. In addition, any companions in your company take +1 health. On a weak hit, the comfort is fleeting; you and your allies take +1 health or +1 spirit. On a miss, you encounter hardship or a new danger; [Pay the Price](id:starforged/moves/fate/pay_the_price).
+              When you find or make shelter in the wilds, roll +wits. On a strong hit, you and your allies envision how you pass the time and each take +2 spirit or +2 health, or +1 to each. In addition, any companions in your company take +1 health. On a weak hit, the comfort is fleeting; you and your allies take +1 health or +1 spirit. On a miss, you encounter hardship or a new danger; [Pay the Price](move:starforged/fate/pay_the_price).
             moves:
               shelter:
                 type: move
@@ -424,10 +424,10 @@ assets:
                   weak_hit:
                     text: On a __weak hit__, the comfort is fleeting; you and your allies take +1 health or +1 spirit.
                   miss:
-                    text: On a __miss__, you encounter hardship or a new danger; [Pay the Price](id:starforged/moves/fate/pay_the_price).
+                    text: On a __miss__, you encounter hardship or a new danger; [Pay the Price](move:starforged/fate/pay_the_price).
                 _source: *Source
           - text: |-
-              When you [Resupply](id:starforged/moves/recover/resupply) by searching out a source of food, water, or other natural resources in the wilds, add +1. On a strong hit with a match, you encounter an unusual or extraordinary location; you may [Explore a Waypoint](id:starforged/moves/exploration/explore_a_waypoint) (even if not on an expedition) and reroll any dice.
+              When you [Resupply](move:starforged/recover/resupply) by searching out a source of food, water, or other natural resources in the wilds, add +1. On a strong hit with a match, you encounter an unusual or extraordinary location; you may [Explore a Waypoint](move:starforged/exploration/explore_a_waypoint) (even if not on an expedition) and reroll any dice.
             enhance_moves:
               - enhances:
                   - starforged/moves/recover/resupply
@@ -445,7 +445,7 @@ assets:
         abilities:
           - enabled: true
             text: |-
-              Once per visit, when you offload valuable goods in a community, roll +wits. On a strong hit, choose two. On a weak hit, choose one. On a miss, you make a bad deal; [Pay the Price](id:starforged/moves/fate/pay_the_price).
+              Once per visit, when you offload valuable goods in a community, roll +wits. On a strong hit, choose two. On a weak hit, choose one. On a miss, you make a bad deal; [Pay the Price](move:starforged/fate/pay_the_price).
 
                 * Trade for services: Make one recovery move (not Sojourn) with an automatic strong hit
                 * Trade for clout or solidarity: Mark 1 tick on your bonds legacy track
@@ -455,7 +455,7 @@ assets:
               As above, and on a match, you uncover a chance to obtain a unique (if a strong hit) or problematic (if a miss) resource or item. Envision the opportunity. If you secure it, mark 2 ticks on your quests legacy track.
             # TODO: enhances new move
           - text: |-
-              When you [Develop Your Relationship](id:starforged/moves/connection/develop_your_relationship) with a connection through a mutually beneficial trade, mark progress twice on the relationship.
+              When you [Develop Your Relationship](move:starforged/connection/develop_your_relationship) with a connection through a mutually beneficial trade, mark progress twice on the relationship.
             enhance_moves:
               - enhances:
                   - starforged/moves/connection/develop_your_relationship
@@ -473,13 +473,13 @@ assets:
         abilities:
           - enabled: true
             text: |-
-              When you seize a notable ship or treasure, roll +wits. On a strong hit, take both, or choose one twice. On a weak hit, choose one. On a miss, choose one, but this prize also brings an unexpected danger; [Pay the Price](id:starforged/moves/fate/pay_the_price).
+              When you seize a notable ship or treasure, roll +wits. On a strong hit, take both, or choose one twice. On a weak hit, choose one. On a miss, choose one, but this prize also brings an unexpected danger; [Pay the Price](move:starforged/fate/pay_the_price).
 
                 * Build your fortune: Mark 1 tick on your quests legacy track.
                 * Share the spoils: Mark 1 tick on your bonds legacy track.
             # TODO: new move
           - text: |-
-              When you [Set a Course](id:starforged/moves/exploration/set_a_course) for familiar hunting grounds or to intercept a specific target, you may reroll your action die if its value is less than your ship’s integrity. When you [Face Danger](id:starforged/moves/adventure/face_danger) by sailing an area in search of prey, add +1 and take +1 momentum on a hit.
+              When you [Set a Course](move:starforged/exploration/set_a_course) for familiar hunting grounds or to intercept a specific target, you may reroll your action die if its value is less than your ship’s integrity. When you [Face Danger](move:starforged/adventure/face_danger) by sailing an area in search of prey, add +1 and take +1 momentum on a hit.
             enhance_moves:
               - enhances:
                   - starforged/moves/exploration/set_a_course
@@ -494,7 +494,7 @@ assets:
                   conditions:
                     - text: by sailing an area in search of prey
           - text: |-
-              You may spend 1 experience to [Sojourn](id:starforged/moves/recover/sojourn) with an automatic strong hit. If you do, you and your allies take one extra recovery move.
+              You may spend 1 experience to [Sojourn](move:starforged/recover/sojourn) with an automatic strong hit. If you do, you and your allies take one extra recovery move.
             enhance_moves:
               - enhances:
                   - starforged/moves/recover/sojourn
@@ -512,7 +512,7 @@ assets:
         abilities:
           - enabled: true
             text: |-
-              When you [Enter the Fray](id:starforged/moves/combat/enter_the_fray) with pistols in hand, or [Battle](id:starforged/moves/combat/battle) by unleashing a whirlwind of gunfire, add +1. On a hit, take +2 momentum.
+              When you [Enter the Fray](move:starforged/combat/enter_the_fray) with pistols in hand, or [Battle](move:starforged/combat/battle) by unleashing a whirlwind of gunfire, add +1. On a hit, take +2 momentum.
             enhance_moves:
               - enhances:
                   - starforged/moves/combat/enter_the_fray
@@ -527,7 +527,7 @@ assets:
                   conditions:
                     - text: by unleashing a whirlwind of gunfire
           - text: |-
-              When you [Strike](id:starforged/moves/combat/strike) or [Clash](id:starforged/moves/combat/clash) with a flurry of shots, you may roll your action die up to three times (or roll three action dice at once), keeping the highest. On a strong hit, mark progress. On a weak hit or miss, after resolving the outcome of the attack, immediately [Check Your Gear](id:starforged/moves/adventure/check_your_gear) to see if you have more pistols and ammo at the ready. If not, this asset is unusable for the remainder of the fight.
+              When you [Strike](move:starforged/combat/strike) or [Clash](move:starforged/combat/clash) with a flurry of shots, you may roll your action die up to three times (or roll three action dice at once), keeping the highest. On a strong hit, mark progress. On a weak hit or miss, after resolving the outcome of the attack, immediately [Check Your Gear](move:starforged/adventure/check_your_gear) to see if you have more pistols and ammo at the ready. If not, this asset is unusable for the remainder of the fight.
             enhance_moves:
               - enhances:
                   - starforged/moves/combat/strike
@@ -547,7 +547,7 @@ assets:
         abilities:
           - enabled: true
             text: |-
-              Your scattergun is loaded with a single shot, which you may use to [Strike](id:starforged/moves/combat/strike) or [Clash](id:starforged/moves/combat/clash) against a large target, a group of massed foes, or a close quarters enemy. When you do, reroll any dice. To use the scattergun more than once in the same fight, you must first score a hit as you [Gain Ground](id:starforged/moves/combat/gain_ground) (+edge), forgoing one of the choices awarded by that move to instead reload and ready your next shot.
+              Your scattergun is loaded with a single shot, which you may use to [Strike](move:starforged/combat/strike) or [Clash](move:starforged/combat/clash) against a large target, a group of massed foes, or a close quarters enemy. When you do, reroll any dice. To use the scattergun more than once in the same fight, you must first score a hit as you [Gain Ground](move:starforged/combat/gain_ground) (+edge), forgoing one of the choices awarded by that move to instead reload and ready your next shot.
             enhance_moves:
               - enhances:
                   - starforged/moves/combat/strike
@@ -573,7 +573,7 @@ assets:
                   conditions:
                     - text: When you make a move by firing your scattergun to damage or destroy an inanimate object, or to create a distraction
           - text: |-
-              When you [Take Decisive Action](id:starforged/moves/combat/take_decisive_action) with a devastating shot or by demanding surrender at the point of a readied scattergun, you may reroll one challenge die.
+              When you [Take Decisive Action](move:starforged/combat/take_decisive_action) with a devastating shot or by demanding surrender at the point of a readied scattergun, you may reroll one challenge die.
             enhance_moves:
               - enhances:
                   - starforged/moves/combat/take_decisive_action
@@ -599,7 +599,7 @@ assets:
         abilities:
           - enabled: true
             text: |-
-              Choose a field of study to represent your scholarly expertise. When you [Gather Information](id:starforged/moves/adventure/gather_information) by conducting extended research within your field of study, or when you [Hearten](id:starforged/moves/recover/hearten) through the comfort of dedicated learning, add +1 and take +1 momentum on a hit. On a match, you piece together an enlightening or harrowing theory; envision the nature of this revelation and mark 1 tick on your discoveries legacy track.
+              Choose a field of study to represent your scholarly expertise. When you [Gather Information](move:starforged/adventure/gather_information) by conducting extended research within your field of study, or when you [Hearten](move:starforged/recover/hearten) through the comfort of dedicated learning, add +1 and take +1 momentum on a hit. On a match, you piece together an enlightening or harrowing theory; envision the nature of this revelation and mark 1 tick on your discoveries legacy track.
             enhance_moves:
               - enhances:
                   - starforged/moves/adventure/gather_information
@@ -615,7 +615,7 @@ assets:
                   conditions:
                     - text: through the comfort of dedicated learning
           - text: |-
-              When you [Secure an Advantage](id:starforged/moves/adventure/secure_an_advantage) or [Gain Ground](id:starforged/moves/combat/gain_ground) through cursory observation of a situation that falls within your field of study, or when you [Compel](id:starforged/moves/adventure/compel) using your expertise to speak truth or logic, add +1.
+              When you [Secure an Advantage](move:starforged/adventure/secure_an_advantage) or [Gain Ground](move:starforged/combat/gain_ground) through cursory observation of a situation that falls within your field of study, or when you [Compel](move:starforged/adventure/compel) using your expertise to speak truth or logic, add +1.
             enhance_moves:
               - enhances:
                   - starforged/moves/*/secure_an_advantage
@@ -649,7 +649,7 @@ assets:
         abilities:
           - enabled: true
             text: |-
-              You have an alternate form and a trigger that sparks the transformation. If you encounter or activate the trigger, [Face Danger](id:starforged/moves/adventure/face_danger) (roll +health) to hasten, endure, or resist the transformation. When you make a move in your alternate form, roll an extra action die. If the move is true to your alternate form’s nature, keep the highest as your action die value. If it is contrary, keep the lowest. To willingly return to your normal form, [Lose Momentum](id:starforged/moves/suffer/lose_momentum) (-2).
+              You have an alternate form and a trigger that sparks the transformation. If you encounter or activate the trigger, [Face Danger](move:starforged/adventure/face_danger) (roll +health) to hasten, endure, or resist the transformation. When you make a move in your alternate form, roll an extra action die. If the move is true to your alternate form’s nature, keep the highest as your action die value. If it is contrary, keep the lowest. To willingly return to your normal form, [Lose Momentum](move:starforged/suffer/lose_momentum) (-2).
             # TODO: should there be a control for this? could the "enhances" trigger be tied to that somehow?
             enhance_moves:
               - enhances:
@@ -687,7 +687,7 @@ assets:
         abilities:
           - enabled: true
             text: |-
-              When you personally [Repair](id:starforged/moves/recover/repair) a vehicle, or direct those repairs, take 1 extra repair point or +1 momentum on a hit.
+              When you personally [Repair](move:starforged/recover/repair) a vehicle, or direct those repairs, take 1 extra repair point or +1 momentum on a hit.
             enhance_moves:
               - enhances:
                   - starforged/moves/recover/repair
@@ -695,10 +695,10 @@ assets:
                 trigger:
                   conditions:
                     - text:
-                        When you personally [Repair](id:starforged/moves/recover/repair) a
+                        When you personally [Repair](move:starforged/recover/repair) a
                         vehicle, or direct those repairs
           - text: |-
-              You may [Enter the Fray](id:starforged/moves/combat/enter_the_fray) (+wits) by studying the construction or configuration of an enemy vessel. On a strong hit, you spot a vulnerability or a means of overcoming its advantages; envision what you learn, and take +2 momentum. Then, one time only, you or an ally may reroll any dice when using this insight to make a move.
+              You may [Enter the Fray](move:starforged/combat/enter_the_fray) (+wits) by studying the construction or configuration of an enemy vessel. On a strong hit, you spot a vulnerability or a means of overcoming its advantages; envision what you learn, and take +2 momentum. Then, one time only, you or an ally may reroll any dice when using this insight to make a move.
             enhance_moves:
               - enhances:
                   - starforged/moves/combat/enter_the_fray
@@ -710,7 +710,7 @@ assets:
                         - using: stat
                           stat: wits
           - text: |-
-              When you [Resupply](id:starforged/moves/recover/resupply) by repurposing parts or materials from a ship or wreck, reroll any challenge dice. On a strong hit with a match, you may reclaim a capability of that ship. If you do, take a free module or support vehicle asset, or gain one free upgrade to an existing module or vehicle.
+              When you [Resupply](move:starforged/recover/resupply) by repurposing parts or materials from a ship or wreck, reroll any challenge dice. On a strong hit with a match, you may reclaim a capability of that ship. If you do, take a free module or support vehicle asset, or gain one free upgrade to an existing module or vehicle.
             enhance_moves:
               - enhances:
                   - starforged/moves/recover/resupply
@@ -736,14 +736,14 @@ assets:
                   conditions:
                     - text: When you make a move using charm, flattery, or seduction, or by navigating elite social circles
           - text: |-
-              When you first make an appearance at a social event, you may attempt a grand or memorable entrance. If you do, roll +heart. On a strong hit, mark 1 tick on your bonds legacy track and take +3 momentum. On a weak hit, take +2 momentum. On a miss, choose one and [Endure Stress](id:starforged/moves/suffer/endure_stress) (-2).
+              When you first make an appearance at a social event, you may attempt a grand or memorable entrance. If you do, roll +heart. On a strong hit, mark 1 tick on your bonds legacy track and take +3 momentum. On a weak hit, take +2 momentum. On a miss, choose one and [Endure Stress](move:starforged/suffer/endure_stress) (-2).
 
                 * You spot an unwelcome rival, authority, or former beau.
                 * You commit an embarrassing faux pas.
                 * You are upstaged by another’s entrance.
             # TODO: new move
           - text: |-
-              When you [Hearten](id:starforged/moves/recover/hearten) while attending an exclusive social event, reroll any dice. On a strong hit, you and any allies in your company take +1 momentum.
+              When you [Hearten](move:starforged/recover/hearten) while attending an exclusive social event, reroll any dice. On a strong hit, you and any allies in your company take +1 momentum.
             enhance_moves:
               - enhances:
                   - starforged/moves/recover/hearten
@@ -761,7 +761,7 @@ assets:
         abilities:
           - enabled: true
             text: |-
-              When you [Secure an Advantage](id:starforged/moves/adventure/secure_an_advantage) or [Gain Ground](id:starforged/moves/combat/gain_ground) by creating a minor mystical effect, roll +spirit. On a strong hit, take +1 momentum. On a weak hit, take the standard benefits of the move, but first [Endure Stress](id:starforged/moves/suffer/endure_stress) (-1). On a match, you learn something of magic’s nature through an unexpected boon or harrowing backlash; mark 1 tick on your discoveries legacy track.
+              When you [Secure an Advantage](move:starforged/adventure/secure_an_advantage) or [Gain Ground](move:starforged/combat/gain_ground) by creating a minor mystical effect, roll +spirit. On a strong hit, take +1 momentum. On a weak hit, take the standard benefits of the move, but first [Endure Stress](move:starforged/suffer/endure_stress) (-1). On a match, you learn something of magic’s nature through an unexpected boon or harrowing backlash; mark 1 tick on your discoveries legacy track.
             enhance_moves:
               - enhances:
                   - starforged/moves/*/secure_an_advantage
@@ -776,7 +776,7 @@ assets:
           - text: |-
               You may purchase assets of a supernatural nature for 1 experience (instead of 3).
           - text: |-
-              When you [Swear an Iron Vow](id:starforged/moves/quest/swear_an_iron_vow) (extreme or greater) to gather the components and lore of a complex and powerful ritual, reroll any dice. When you [Reach a Milestone](id:starforged/moves/quest/reach_a_milestone) on this quest, take +2 momentum. When you enact the ritual to [Fulfill Your Vow](id:starforged/moves/quest/fulfill_your_vow), you may reroll any challenge dice to draw on unknowable powers at the risk of your soul. If you do, [Face Desolation](id:starforged/moves/threshold/face_desolation).
+              When you [Swear an Iron Vow](move:starforged/quest/swear_an_iron_vow) (extreme or greater) to gather the components and lore of a complex and powerful ritual, reroll any dice. When you [Reach a Milestone](move:starforged/quest/reach_a_milestone) on this quest, take +2 momentum. When you enact the ritual to [Fulfill Your Vow](move:starforged/quest/fulfill_your_vow), you may reroll any challenge dice to draw on unknowable powers at the risk of your soul. If you do, [Face Desolation](move:starforged/threshold/face_desolation).
             enhance_moves:
               - enhances:
                   - starforged/moves/quest/swear_an_iron_vow
@@ -808,7 +808,7 @@ assets:
               When you infiltrate a location or event, increase your momentum reset by 1 for the duration of the mission.
             # TODO: momentum reset conditional
           - text: |-
-              When you [Face Danger](id:starforged/moves/adventure/face_danger) or [Secure an Advantage](id:starforged/moves/adventure/secure_an_advantage) to adopt a disguise or establish a false identity, add +1. On a hit, add +1 when using that identity to deceive or influence others. If you score a miss with a match when using a false identity, your deception is completely and dramatically undone.
+              When you [Face Danger](move:starforged/adventure/face_danger) or [Secure an Advantage](move:starforged/adventure/secure_an_advantage) to adopt a disguise or establish a false identity, add +1. On a hit, add +1 when using that identity to deceive or influence others. If you score a miss with a match when using a false identity, your deception is completely and dramatically undone.
             enhance_moves:
               - enhances:
                   - starforged/moves/*/face_danger
@@ -823,7 +823,7 @@ assets:
                   conditions:
                     - text: when using your false identity to deceive or influence others
           - text: |-
-              When you lie to [Make a Connection](id:starforged/moves/connection/make_a_connection), you may reroll one challenge die. If you [Forge a Bond](id:starforged/moves/connection/forge_a_bond) in a relationship built on lies, choose one.
+              When you lie to [Make a Connection](move:starforged/connection/make_a_connection), you may reroll one challenge die. If you [Forge a Bond](move:starforged/connection/forge_a_bond) in a relationship built on lies, choose one.
 
                 * Maintain the deception: You may reroll one challenge die.
                 * Reveal the truth: On a strong hit, make the legacy reward one rank higher (1 extra box if already epic).
@@ -833,13 +833,13 @@ assets:
                 roll_type: action_roll
                 trigger:
                   conditions:
-                    - text: When you lie to [Make a Connection](id:starforged/moves/connection/make_a_connection)
+                    - text: When you lie to [Make a Connection](move:starforged/connection/make_a_connection)
               - enhances:
                   - starforged/moves/connection/forge_a_bond
                 roll_type: progress_roll
                 trigger:
                   conditions:
-                    - text: If you [Forge a Bond](id:starforged/moves/connection/forge_a_bond) in a relationship built on lies
+                    - text: If you [Forge a Bond](move:starforged/connection/forge_a_bond) in a relationship built on lies
       swashbuckler:
         name: Swashbuckler
         type: asset
@@ -857,7 +857,7 @@ assets:
                   conditions:
                     - text: When you make a move with outrageous style
           - text: |-
-              When you [Enter the Fray](id:starforged/moves/combat/enter_the_fray) in personal combat, or when an ongoing fight transitions to personal combat, you may envision up to three useful aspects of your surroundings. Take +1 momentum for each. Then, when you make a daring or unexpected move incorporating one of those aspects (once per aspect), add +1.
+              When you [Enter the Fray](move:starforged/combat/enter_the_fray) in personal combat, or when an ongoing fight transitions to personal combat, you may envision up to three useful aspects of your surroundings. Take +1 momentum for each. Then, when you make a daring or unexpected move incorporating one of those aspects (once per aspect), add +1.
             enhance_moves:
               - enhances:
                   - starforged/moves/combat/enter_the_fray
@@ -866,7 +866,7 @@ assets:
                   conditions:
                     - text: in personal combat, or when an ongoing fight transitions to personal combat
           - text: |-
-              When you [React Under Fire](id:starforged/moves/combat/react_under_fire) in close quarters by parrying, and score a strong hit, you counter or turn your foe’s attack against them; mark progress.
+              When you [React Under Fire](move:starforged/combat/react_under_fire) in close quarters by parrying, and score a strong hit, you counter or turn your foe’s attack against them; mark progress.
             enhance_moves:
               - enhances:
                   - starforged/moves/combat/react_under_fire
@@ -897,7 +897,7 @@ assets:
                   conditions:
                     - text: When you make a move to defy expectations (decide before rolling)
           - text: |-
-              Name a connection as your mentor. When you [Develop Your Relationship](id:starforged/moves/connection/develop_your_relationship) with them, take +2 momentum. When you successfully [Fulfill Your Vow](id:starforged/moves/quest/fulfill_your_vow) in their service or to their benefit, also mark 2 ticks on your bonds legacy track. When you [Forge a Bond](id:starforged/moves/connection/forge_a_bond) with them and score a hit, make the legacy reward one rank higher (1 extra box if already epic).
+              Name a connection as your mentor. When you [Develop Your Relationship](move:starforged/connection/develop_your_relationship) with them, take +2 momentum. When you successfully [Fulfill Your Vow](move:starforged/quest/fulfill_your_vow) in their service or to their benefit, also mark 2 ticks on your bonds legacy track. When you [Forge a Bond](move:starforged/connection/forge_a_bond) with them and score a hit, make the legacy reward one rank higher (1 extra box if already epic).
             enhance_moves:
               - enhances:
                   - starforged/moves/connection/develop_your_relationship
@@ -928,14 +928,14 @@ assets:
         abilities:
           - enabled: true
             text: |-
-              You have an affinity for the depths. You can spend extended time underwater without need of a breath, and have 5 air. When you exert yourself to make a move underwater, you may suffer -1 air and add +1. When your air is 0, you must [Endure Harm](id:starforged/moves/suffer/endure_harm) (-2) before making any move involving physical action. When you return to the surface or an air-filled environment, set your air to 5.
+              You have an affinity for the depths. You can spend extended time underwater without need of a breath, and have 5 air. When you exert yourself to make a move underwater, you may suffer -1 air and add +1. When your air is 0, you must [Endure Harm](move:starforged/suffer/endure_harm) (-2) before making any move involving physical action. When you return to the surface or an air-filled environment, set your air to 5.
             enhance_moves:
               - roll_type: action_roll
                 trigger:
                   conditions:
                     - text: When you exert yourself to make a move underwater
           - text: |-
-              Once per foray into underwater environs, you may trade air for momentum, or vice-versa. Suffer -2 air and take +2 momentum, or [Lose Momentum](id:starforged/moves/suffer/lose_momentum) (-2) and take +2 air.
+              Once per foray into underwater environs, you may trade air for momentum, or vice-versa. Suffer -2 air and take +2 momentum, or [Lose Momentum](move:starforged/suffer/lose_momentum) (-2) and take +2 air.
           - text: |-
               When you make a move to maneuver while diving or swimming, take +1 momentum on a strong hit.
             enhance_moves:
@@ -958,7 +958,7 @@ assets:
         abilities:
           - enabled: true
             text: &BindWindsText |-
-              When you bind the winds to your will, roll +edge. On a strong hit, the winds are fine; you and your allies take +2 momentum now, and add +1 when you make a move to navigate or maneuver. On a weak hit, the winds are fair; take +2 momentum. On a miss, the capricious winds are foul; you and your allies [Lose Momentum](id:starforged/moves/suffer/lose_momentum) (-2), and face weather-related hazards as appropriate. No matter the outcome, the winds are fair after a few hours.
+              When you bind the winds to your will, roll +edge. On a strong hit, the winds are fine; you and your allies take +2 momentum now, and add +1 when you make a move to navigate or maneuver. On a weak hit, the winds are fair; take +2 momentum. On a miss, the capricious winds are foul; you and your allies [Lose Momentum](move:starforged/suffer/lose_momentum) (-2), and face weather-related hazards as appropriate. No matter the outcome, the winds are fair after a few hours.
             moves:
               bind_winds:
                 type: move
@@ -985,7 +985,7 @@ assets:
                       No matter the outcome, the winds are fair after a few hours.
                   miss:
                     text: |-
-                      On a __miss__, the capricious winds are foul; you and your allies [Lose Momentum](id:starforged/moves/suffer/lose_momentum) (-2), and face weather-related hazards as appropriate.
+                      On a __miss__, the capricious winds are foul; you and your allies [Lose Momentum](move:starforged/suffer/lose_momentum) (-2), and face weather-related hazards as appropriate.
 
                       No matter the outcome, the winds are fair after a few hours.
                 _source: *Source

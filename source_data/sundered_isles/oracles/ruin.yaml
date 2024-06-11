@@ -202,7 +202,7 @@ oracles:
           - roll: { min: 93, max: 95 }
             text: Surrounded by rugged or dense terrain
           - roll: { min: 96, max: 100 }
-            text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+            text: '[Descriptor](oracle_rollable:sundered_isles/core/descriptor) + [Focus](oracle_rollable:sundered_isles/core/focus)'
             oracle_rolls:
               - auto: true
                 oracle: sundered_isles/oracles/core/descriptor
@@ -279,7 +279,7 @@ oracles:
           - roll: { min: 94, max: 96 }
             text: Wreathed in cold and ice
           - roll: { min: 97, max: 100 }
-            text: "[Cursed Weather](id:sundered_isles/oracles/weather/cursed)"
+            text: "[Cursed Weather](oracle_rollable:sundered_isles/weather/cursed)"
             oracle_rolls:
               - auto: false
                 number_of_rolls: 1
@@ -630,21 +630,21 @@ oracles:
           - roll: { min: 92, max: 92 }
             text: Winding staircase
           - roll: { min: 93, max: 93 }
-            text: Abandoned [Token](id:sundered_isles/oracles/treasure/tokens)
+            text: Abandoned [Token](oracle_rollable:sundered_isles/treasure/tokens)
             oracle_rolls:
               - auto: false
                 number_of_rolls: 1
                 oracle: sundered_isles/oracles/treasure/tokens
           - roll: { min: 94, max: 94 }
-            text: Corpse clutching a [Token](id:sundered_isles/oracles/treasure/tokens)
+            text: Corpse clutching a [Token](oracle_rollable:sundered_isles/treasure/tokens)
             oracle_rolls:
               - auto: false
                 number_of_rolls: 1
                 oracle: sundered_isles/oracles/treasure/tokens
           - roll: { min: 95, max: 95 }
-            text: Broken wall reveals a [Cave](id:sundered_isles/collections/oracles/cave)
+            text: Broken wall reveals a [Cave](oracle_collection:sundered_isles/cave)
           - roll: { min: 96, max: 100 }
-            text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+            text: '[Descriptor](oracle_rollable:sundered_isles/core/descriptor) + [Focus](oracle_rollable:sundered_isles/core/focus)'
             oracle_rolls:
               - auto: true
                 oracle: sundered_isles/oracles/core/descriptor
@@ -835,7 +835,7 @@ oracles:
           - roll: { min: 91, max: 94 }
             text: Writing or symbols defy understanding
           - roll: { min: 95, max: 97 }
-            text: '[Action](id:sundered_isles/oracles/core/action) + [Theme](id:sundered_isles/oracles/core/theme)'
+            text: '[Action](oracle_rollable:sundered_isles/core/action) + [Theme](oracle_rollable:sundered_isles/core/theme)'
             oracle_rolls:
               - auto: true
                 oracle: sundered_isles/oracles/core/action
@@ -894,4 +894,4 @@ oracles:
           - roll: { min: 91, max: 95 }
             text: Useful or interesting artifact or device
           - roll: { min: 96, max: 100 }
-            text: "[Treasure](id:sundered_isles/collections/oracles/treasure)"
+            text: "[Treasure](oracle_collection:sundered_isles/treasure)"

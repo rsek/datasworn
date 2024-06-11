@@ -140,174 +140,174 @@ oracles:
         rows:
           - roll: { min: 1, max: 3 }
             text: Apothecary
-            text2: "[Healer](id:starforged/assets/path/healer), [Peddler](id:sundered_isles/assets/path/peddler)"
+            text2: "[Healer](asset:starforged/path/healer), [Peddler](asset:sundered_isles/path/peddler)"
             text3: ""
           - roll: { min: 4, max: 5 }
             text: Apprentice
-            text2: "[Shipwright](id:sundered_isles/assets/path/shipwright), [Urchin](id:sundered_isles/assets/path/urchin)"
+            text2: "[Shipwright](asset:sundered_isles/path/shipwright), [Urchin](asset:sundered_isles/path/urchin)"
             text3: ""
           - roll: { min: 6, max: 7 }
             text: Assassin
-            text2: "[Blademaster](id:starforged/assets/path/blademaster), [Bounty Hunter](id:starforged/assets/path/bounty_hunter)"
+            text2: "[Blademaster](asset:starforged/path/blademaster), [Bounty Hunter](asset:starforged/path/bounty_hunter)"
             text3: ""
           - roll: { min: 8, max: 9 }
             text: Beast Hunter
-            text2: "[Harpooner](id:sundered_isles/assets/path/harpooner), [Slayer](id:starforged/assets/path/slayer)"
+            text2: "[Harpooner](asset:sundered_isles/path/harpooner), [Slayer](asset:starforged/path/slayer)"
             text3: ""
           - roll: { min: 10, max: 12 }
             text: Blockade Runner
-            text2: "[Courier](id:starforged/assets/path/courier), [Navigator](id:starforged/assets/path/navigator)"
+            text2: "[Courier](asset:starforged/path/courier), [Navigator](asset:starforged/path/navigator)"
             text3: ""
           - roll: { min: 13, max: 15 }
             text: Brigand
-            text2: "[Pistoleer](id:sundered_isles/assets/path/pistoleer), [Scoundrel](id:starforged/assets/path/scoundrel)"
+            text2: "[Pistoleer](asset:sundered_isles/path/pistoleer), [Scoundrel](asset:starforged/path/scoundrel)"
             text3: ""
           - roll: { min: 16, max: 17 }
             text: Buccaneer
-            text2: "[Swashbuckler](id:sundered_isles/assets/path/swashbuckler), [Pirate Captain](id:sundered_isles/assets/path/pirate_captain)"
+            text2: "[Swashbuckler](asset:sundered_isles/path/swashbuckler), [Pirate Captain](asset:sundered_isles/path/pirate_captain)"
             text3: ""
           - roll: { min: 18, max: 20 }
             text: Bulwark
-            text2: "[Brawler](id:starforged/assets/path/brawler), [Loyalist](id:starforged/assets/path/loyalist)"
+            text2: "[Brawler](asset:starforged/path/brawler), [Loyalist](asset:starforged/path/loyalist)"
             <<: &CoOp
               text3: "Co-op"
           - roll: { min: 21, max: 23 }
             text: Castaway
-            text2: "[Jinx](id:sundered_isles/assets/path/jinx), [Scavenger](id:starforged/assets/path/scavenger)"
+            text2: "[Jinx](asset:sundered_isles/path/jinx), [Scavenger](asset:starforged/path/scavenger)"
             text3: ""
           - roll: { min: 24, max: 26 }
             text: Charlatan
-            text2: "[Scoundrel](id:starforged/assets/path/scoundrel), [Socialite](id:sundered_isles/assets/path/socialite)"
+            text2: "[Scoundrel](asset:starforged/path/scoundrel), [Socialite](asset:sundered_isles/path/socialite)"
             text3: ""
           - roll: { min: 27, max: 28 }
             text: Cloak and Dagger
-            text2: "[Cutthroat](id:sundered_isles/assets/path/cutthroat), [Spy](id:sundered_isles/assets/path/spy)"
+            text2: "[Cutthroat](asset:sundered_isles/path/cutthroat), [Spy](asset:sundered_isles/path/spy)"
             text3: ""
           - roll: { min: 29, max: 30 }
             text: Cultist
-            text2: "[Devotant](id:starforged/assets/path/devotant), [Necromancer](id:sundered_isles/assets/path/necromancer)"
+            text2: "[Devotant](asset:starforged/path/devotant), [Necromancer](asset:sundered_isles/path/necromancer)"
             <<: &Supernatural
               text3: "Supernatural"
           - roll: { min: 31, max: 32 }
             text: Deathbound
-            text2: "[Fated](id:starforged/assets/path/fated), [Haunted](id:starforged/assets/path/haunted)"
+            text2: "[Fated](asset:starforged/path/fated), [Haunted](asset:starforged/path/haunted)"
             <<: *Supernatural
           - roll: { min: 33, max: 34 }
             text: Deep One
-            text2: "[Vestige](id:starforged/assets/path/vestige), [Waterborn](id:sundered_isles/assets/path/waterborn)"
+            text2: "[Vestige](asset:starforged/path/vestige), [Waterborn](asset:sundered_isles/path/waterborn)"
             <<: *Supernatural
           - roll: { min: 35, max: 37 }
             text: Elementalist
-            text2: "[Firebrand](id:starforged/assets/path/firebrand), [Sorcerer](id:sundered_isles/assets/path/sorcerer)"
+            text2: "[Firebrand](asset:starforged/path/firebrand), [Sorcerer](asset:sundered_isles/path/sorcerer)"
             <<: *Supernatural
           - roll: { min: 38, max: 40 }
             text: Emissary
-            text2: "[Diplomat](id:starforged/assets/path/diplomat), [Spy](id:sundered_isles/assets/path/spy)"
+            text2: "[Diplomat](asset:starforged/path/diplomat), [Spy](asset:sundered_isles/path/spy)"
             text3: ""
           - roll: { min: 41, max: 42 }
             text: Gallant
-            text2: "[Duelist](id:sundered_isles/assets/path/duelist), [Socialite](id:sundered_isles/assets/path/socialite)"
+            text2: "[Duelist](asset:sundered_isles/path/duelist), [Socialite](asset:sundered_isles/path/socialite)"
             text3: ""
           - roll: { min: 43, max: 44 }
             text: Guild Mage
-            text2: "[Bannersworn](id:starforged/assets/path/bannersworn), [Sorcerer](id:sundered_isles/assets/path/sorcerer)"
+            text2: "[Bannersworn](asset:starforged/path/bannersworn), [Sorcerer](asset:sundered_isles/path/sorcerer)"
             <<: *Supernatural
           - roll: { min: 45, max: 46 }
             text: Gunner
-            text2: "[Cannoneer](id:sundered_isles/assets/path/cannoneer), [Veteran](id:starforged/assets/path/veteran)"
+            text2: "[Cannoneer](asset:sundered_isles/path/cannoneer), [Veteran](asset:starforged/path/veteran)"
             text3: ""
           - roll: { min: 47, max: 48 }
             text: Hired Gun
-            text2: "[Mercenary](id:starforged/assets/path/mercenary), [Musketeer](id:sundered_isles/assets/path/musketeer)"
+            text2: "[Mercenary](asset:starforged/path/mercenary), [Musketeer](asset:sundered_isles/path/musketeer)"
             text3: ""
           - roll: { min: 49, max: 50 }
             text: Ironclad
-            text2: "[Armored](id:starforged/assets/path/armored), [Brawler](id:starforged/assets/path/brawler)"
+            text2: "[Armored](asset:starforged/path/armored), [Brawler](asset:starforged/path/brawler)"
             <<: &Technology
               text3: "Technology"
           - roll: { min: 51, max: 52 }
             text: Jury-Rig
-            text2: "[Construct](id:sundered_isles/assets/path/construct), [Scavenger](id:starforged/assets/path/scavenger)"
+            text2: "[Construct](asset:sundered_isles/path/construct), [Scavenger](asset:starforged/path/scavenger)"
             <<: *Technology
           - roll: { min: 53, max: 54 }
             text: Lycanthrope
-            text2: "[Outcast](id:starforged/assets/path/outcast), [Shapechanger](id:sundered_isles/assets/path/shapechanger)"
+            text2: "[Outcast](asset:starforged/path/outcast), [Shapechanger](asset:sundered_isles/path/shapechanger)"
             <<: *Supernatural
           - roll: { min: 55, max: 57 }
             text: Monster Hunter
-            text2: "[Blademaster](id:starforged/assets/path/blademaster), [Slayer](id:starforged/assets/path/slayer)"
+            text2: "[Blademaster](asset:starforged/path/blademaster), [Slayer](asset:starforged/path/slayer)"
             <<: *Supernatural
           - roll: { min: 58, max: 60 }
             text: Naturalist
-            text2: "[Overlander](id:sundered_isles/assets/path/overlander), [Scholar](id:sundered_isles/assets/path/scholar) (Natural history)"
+            text2: "[Overlander](asset:sundered_isles/path/overlander), [Scholar](asset:sundered_isles/path/scholar) (Natural history)"
             text3: ""
           - roll: { min: 61, max: 62 }
             text: Pilgrim
-            text2: "[Devotant](id:starforged/assets/path/devotant), [Navigator](id:starforged/assets/path/navigator)"
+            text2: "[Devotant](asset:starforged/path/devotant), [Navigator](asset:starforged/path/navigator)"
             <<: *Supernatural
           - roll: { min: 63, max: 64 }
             text: Piper
-            text2: "[Musician](id:sundered_isles/assets/path/musician), [Loyalist](id:starforged/assets/path/loyalist)"
+            text2: "[Musician](asset:sundered_isles/path/musician), [Loyalist](asset:starforged/path/loyalist)"
             <<: *CoOp
           - roll: { min: 65, max: 67 }
             text: Renegade
-            text2: "[Fugitive](id:starforged/assets/path/fugitive), [Veteran](id:starforged/assets/path/veteran)"
+            text2: "[Fugitive](asset:starforged/path/fugitive), [Veteran](asset:starforged/path/veteran)"
             text3: ""
           - roll: { min: 68, max: 70 }
             text: Saboteur
-            text2: "[Demolitionist](id:starforged/assets/path/demolitionist), [Spy](id:sundered_isles/assets/path/spy)"
+            text2: "[Demolitionist](asset:starforged/path/demolitionist), [Spy](asset:sundered_isles/path/spy)"
             <<: *Technology
           - roll: { min: 71, max: 72 }
             text: Sea Witch
-            text2: "[Seer](id:starforged/assets/path/seer), [Windbinder](id:sundered_isles/assets/path/windbinder)"
+            text2: "[Seer](asset:starforged/path/seer), [Windbinder](asset:sundered_isles/path/windbinder)"
             <<: *Supernatural
           - roll: { min: 73, max: 74 }
             text: Shadow Assassin
-            text2: "[Cutthroat](id:sundered_isles/assets/path/cutthroat), [Shade](id:starforged/assets/path/shade)"
+            text2: "[Cutthroat](asset:sundered_isles/path/cutthroat), [Shade](asset:starforged/path/shade)"
             <<: *Supernatural
           - roll: { min: 75, max: 76 }
             text: Shipbreaker
-            text2: "[Kinetic](id:starforged/assets/path/kinetic), [Scavenger](id:starforged/assets/path/scavenger)"
+            text2: "[Kinetic](asset:starforged/path/kinetic), [Scavenger](asset:starforged/path/scavenger)"
             <<: *Supernatural
           - roll: { min: 77, max: 78 }
             text: Siren
-            text2: "[Empath](id:starforged/assets/path/empath), [Musician](id:sundered_isles/assets/path/musician)"
+            text2: "[Empath](asset:starforged/path/empath), [Musician](asset:sundered_isles/path/musician)"
             <<: *Supernatural
           - roll: { min: 79, max: 80 }
             text: Skipper
-            text2: "[Crew Commander](id:sundered_isles/assets/path/crew_commander), [Leader](id:starforged/assets/path/leader)"
+            text2: "[Crew Commander](asset:sundered_isles/path/crew_commander), [Leader](asset:starforged/path/leader)"
             <<: *CoOp
           - roll: { min: 81, max: 83 }
             text: Smuggler
-            text2: "[Fugitive](id:starforged/assets/path/fugitive), [Peddler](id:sundered_isles/assets/path/peddler)"
+            text2: "[Fugitive](asset:starforged/path/fugitive), [Peddler](asset:sundered_isles/path/peddler)"
             text3: ""
           - roll: { min: 84, max: 86 }
             text: Sole Survivor
-            text2: "[Haunted](id:starforged/assets/path/haunted), [Vestige](id:starforged/assets/path/vestige)"
+            text2: "[Haunted](asset:starforged/path/haunted), [Vestige](asset:starforged/path/vestige)"
             <<: *Supernatural
           - roll: { min: 87, max: 88 }
             text: Spiritualist
-            text2: "[Seer](id:starforged/assets/path/seer), [Sleuth](id:starforged/assets/path/sleuth)"
+            text2: "[Seer](asset:starforged/path/seer), [Sleuth](asset:starforged/path/sleuth)"
             <<: *Supernatural
           - roll: { min: 89, max: 91 }
             text: Stowaway
-            text2: "[Urchin](id:sundered_isles/assets/path/urchin), [Outcast](id:starforged/assets/path/outcast)"
+            text2: "[Urchin](asset:sundered_isles/path/urchin), [Outcast](asset:starforged/path/outcast)"
             text3: ""
           - roll: { min: 92, max: 94 }
             text: Surgeon
-            text2: "[Healer](id:starforged/assets/path/healer), [Scholar](id:sundered_isles/assets/path/scholar) (Medicine)"
+            text2: "[Healer](asset:starforged/path/healer), [Scholar](asset:sundered_isles/path/scholar) (Medicine)"
             text3: ""
           - roll: { min: 95, max: 96 }
             text: Tinker
-            text2: "[Augmented](id:starforged/assets/path/augmented), [Gearhead](id:starforged/assets/path/gearhead)"
+            text2: "[Augmented](asset:starforged/path/augmented), [Gearhead](asset:starforged/path/gearhead)"
             <<: *Technology
           - roll: { min: 97, max: 98 }
             text: Vanguard
-            text2: "[Bannersworn](id:starforged/assets/path/bannersworn), [Scattershot](id:sundered_isles/assets/path/scattershot)"
+            text2: "[Bannersworn](asset:starforged/path/bannersworn), [Scattershot](asset:sundered_isles/path/scattershot)"
             text3: ""
           - roll: { min: 99, max: 100 }
             text: War Machine
-            text2: "[Construct](id:sundered_isles/assets/path/construct), [Mercenary](id:starforged/assets/path/mercenary)"
+            text2: "[Construct](asset:sundered_isles/path/construct), [Mercenary](asset:starforged/path/mercenary)"
             <<: *Technology
       ship_history:
         name: Ship History

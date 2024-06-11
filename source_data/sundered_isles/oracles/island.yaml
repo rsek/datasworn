@@ -168,13 +168,13 @@ oracles:
         - roll: { min: 75, max: 76 }
           text: Whales congregate in coastal waters
         - roll: { min: 77, max: 80 }
-          text: "[Ship](id:sundered_isles/collections/oracles/ship) (at anchor)"
+          text: "[Ship](oracle_collection:sundered_isles/ship) (at anchor)"
         - roll: { min: 81, max: 86 }
-          text: "[Shipwreck](id:sundered_isles/collections/oracles/shipwreck)"
+          text: "[Shipwreck](oracle_collection:sundered_isles/shipwreck)"
         - roll: { min: 87, max: 90 }
-          text: "[Ruin](id:sundered_isles/collections/oracles/ruin)"
+          text: "[Ruin](oracle_collection:sundered_isles/ruin)"
         - roll: { min: 91, max: 100 }
-          text: '[Descriptor](id:sundered_isles/oracles/core/descriptor) + [Focus](id:sundered_isles/oracles/core/focus)'
+          text: '[Descriptor](oracle_rollable:sundered_isles/core/descriptor) + [Focus](oracle_rollable:sundered_isles/core/focus)'
           oracle_rolls:
             - auto: true
               oracle: sundered_isles/oracles/core/descriptor
@@ -272,7 +272,7 @@ oracles:
           - roll: { min: 94, max: 95 }
             text: Washed-up corpses
           - roll: { min: 96, max: 100 }
-            text: "[Cursed Weather](id:sundered_isles/oracles/weather/cursed)"
+            text: "[Cursed Weather](oracle_rollable:sundered_isles/weather/cursed)"
             oracle_rolls:
               - auto: false
                 number_of_rolls: 1
