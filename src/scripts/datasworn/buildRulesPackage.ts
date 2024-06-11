@@ -1,10 +1,6 @@
-import { TypeGuard } from '@sinclair/typebox'
 import fastGlob from 'fast-glob'
 import fs from 'fs-extra'
-import { type Draft07 } from 'json-schema-library'
-import { forEach } from 'lodash-es'
 import path from 'path'
-import { RulesExpansion } from '../../schema/Rules.js'
 import { type DataPackageConfig } from '../../schema/tools/build/index.js'
 import { formatPath } from '../../utils.js'
 import { ROOT_OUTPUT } from '../const.js'
@@ -12,63 +8,47 @@ import Log from '../utils/Log.js'
 import type AJV from '../validation/ajv.js'
 import { RulesPackageBuilder } from './RulesPackageBuilder.js'
 import { readSourceData, writeJSON } from '../utils/readWrite.js'
-
-const metadataKeys: string[] = []
-
-forEach(RulesExpansion.properties, (v, k) => {
-	if (!TypeGuard.IsRecord(v)) metadataKeys.push(k)
-})
+import { cwd } from 'process'
 
 /** Builds all YAML files for a given package configuration */
 export async function buildRulesPackage(
 	{ id, paths, type, pkg }: DataPackageConfig,
-	ajv: typeof AJV,
-	jsl: Draft07
+	ajv: typeof AJV
 ) {
-	Log.info(`⚙️  Building rules package: ${id}`)
+	Log.info(`⚙️  Building ${type}: ${id}`)
 
 	const destDir = path.join(ROOT_OUTPUT, id)
 
-	const sourceFilesGlob = `${paths.source}/**/*.yaml`
-	const oldErrorFilesGlob = `${paths.source}/**/*.error.json`
-
-	const oldJsonFilesGlob = `${destDir}/*.json`
-
 	const [sourceFiles, oldJsonFiles, oldErrorFiles] = await Promise.all([
-		fastGlob(sourceFilesGlob),
-		fastGlob(oldJsonFilesGlob),
-		fastGlob(oldErrorFilesGlob)
+		getSourceFiles(paths.source),
+		getOldJsonFiles(destDir),
+		getOldErrorFiles(paths.source)
 	])
+
+	// flush old error files; hold off on flushing old built files for now, as the build can fail
+
+	const errorCleanup = oldErrorFiles.map(async (filePath) => {
+		await fs.unlink(filePath)
+	})
 
 	Log.info(
 		`🔍 Found ${
-			sourceFiles?.length ?? 0
-		} YAML files for "${id}" in ${formatPath(paths.source)}`
-	)
-
-	if (sourceFiles?.length === 0)
-		throw new Error(
-			`Could not find any YAML files with the glob ${sourceFilesGlob}`
-		)
-
-	// flush old files from outdir
-	const cleanup = Promise.all(
-		[...oldJsonFiles, ...oldErrorFiles].map(async (filePath) => {
-			await fs.unlink(filePath)
-		})
+			sourceFiles.length
+		} source files for "${id}" in ${formatPath(paths.source)}`
 	)
 
 	RulesPackageBuilder.setup(Log, ajv)
 
 	const builder = new RulesPackageBuilder(id)
 
+	// begin loading and adding files
 	await Promise.all(
-		sourceFiles.map(async (fileName) => {
-			Log.info(`📖 Reading ${formatPath(fileName)}`)
+		sourceFiles.map(async (filePath) => {
+			Log.verbose(`📖 Reading ${formatPath(filePath)}`)
 			try {
-				const data = await readSourceData(fileName)
+				const data = await readSourceData(filePath)
 				builder.addFiles({
-					fileName,
+					name: path.relative(cwd(), filePath),
 					data
 				})
 			} catch (error) {
@@ -79,16 +59,24 @@ export async function buildRulesPackage(
 
 	const data = builder.build()
 
-	const outPath = path.join(destDir, `${data._id}.json`)
+	// now that it's been succesfully built + validated, clean up old files.
 
-	if (oldJsonFiles?.length > 0) {
+	if (oldJsonFiles.length > 0) {
 		Log.info(
-			`🧹 Deleting ${oldJsonFiles?.length} old JSON files in ${formatPath(
+			`🧹 Deleting ${oldJsonFiles?.length} old JSON file(s) in ${formatPath(
 				destDir
 			)}`
 		)
-		await cleanup
+		await Promise.all(
+			oldJsonFiles.map(async (filePath) => {
+				await fs.unlink(filePath)
+			})
+		)
 	}
+
+	await Promise.all(errorCleanup)
+
+	const outPath = path.join(destDir, `${data._id}.json`)
 
 	await fs.ensureFile(outPath)
 
@@ -99,4 +87,23 @@ export async function buildRulesPackage(
 	} catch (e) {
 		Log.error(`Failed to write ${formatPath(outPath)}:`, e)
 	}
+}
+
+async function getSourceFiles(path: string) {
+	const glob = `${path}/**/*.(yaml|yml|json)`
+	const files = await fastGlob(glob)
+	if (files?.length === 0)
+		throw new Error(`Could not find any source files with the glob ${glob}`)
+
+	return files
+}
+
+async function getOldJsonFiles(path: string) {
+	const glob = `${path}/*.json`
+	return fastGlob(glob)
+}
+
+async function getOldErrorFiles(path: string) {
+	const glob = `${path}/**/*.error.json`
+	return fastGlob(glob)
 }

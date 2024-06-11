@@ -1,16 +1,13 @@
-import path from 'path'
+import CONST from '../../pkg-core/IdElements/CONST.js'
 import type TypeNode from '../../pkg-core/TypeNode.js'
 import {
 	IdParser,
 	type Datasworn,
 	type DataswornSource
 } from '../../pkg-core/index.js'
-import Log from '../utils/Log.js'
+import type Log from '../utils/Log.js'
 import type AJV from '../validation/ajv.js'
 import { dataSwornKeyOrder, sortDataswornKeys, sortObjectKeys } from './sort.js'
-import { cwd } from 'process'
-import { pascalCase } from '../../schema/utils/string.js'
-import { formatPath } from '../../utils.js'
 
 /** Merges and validates JSON data from multiple DataswornSource files. */
 export class RulesPackageBuilder<
@@ -34,18 +31,42 @@ export class RulesPackageBuilder<
 		data: unknown
 	) => data is T
 
-	readonly files = new Map<string, RulesPackageFile<TSource>>()
+	readonly files = new Map<string, RulesPackagePart<TSource>>()
 	readonly fileIds = new Map<string, Set<string>>()
+	readonly index = new Map<string, TypeNode.Any>()
 
-	merged: TTarget = {} as TTarget
+	#merged: TTarget = {} as TTarget
+
+	#isSorted = false
+	#isMergeComplete = false
+
+	get merged() {
+		return this.#merged
+	}
+
+	#countTypes() {
+		const types = {} as Record<string, number>
+
+		for (const [id, _] of this.index) {
+			const [fullTypeId, ..._path] = id.split(CONST.PrefixSep)
+			types[fullTypeId] ||= 0
+			types[fullTypeId]++
+		}
+
+		return types
+	}
 
 	mergeFiles() {
 		const sortedEntries = Array.from(this.files)
 			// sort by file name so that they merge in the same order every time (prevents JSON diff noise). the order itself is arbitrary, but must be the same no matter who runs it -- this is why localeCompare specifies a static locale
 			.sort(([a], [b]) => a.localeCompare(b, 'en-US'))
 
-		for (const [_, file] of sortedEntries)
-			RulesPackageBuilder.merge(this.merged, file.data)
+		for (const [_, part] of sortedEntries) {
+			this.#merge(this.#merged, part.data)
+			// for (const [k, v] of part.index) this.index.set(k, v)
+		}
+
+		this.#isMergeComplete = true
 
 		return this
 	}
@@ -78,7 +99,7 @@ export class RulesPackageBuilder<
 			// const bProfiler = Log.startTimer()
 			const result = this.#build()
 			// bProfiler.done({
-			// 	message: `🧩 Assembled "${this.id}" in ${Date.now() - bProfiler.start.valueOf()}ms`
+			// 	message: `🧩 Assembled "${this.id}" in ${Date.now() - bProfiler.start.valueOf()}ms`,
 			// })
 
 			// const vProfiler = Log.startTimer()
@@ -87,14 +108,19 @@ export class RulesPackageBuilder<
 			// 	message: `✅ Validated "${this.id}" in ${Date.now() - vProfiler.start.valueOf()}ms`
 			// })
 
+			// RulesPackageBuilder.logger.info(
+			// 	JSON.stringify(this.#countTypes(), undefined, '\t')
+			// )
+
 			return result
 		} catch (e) {
 			throw new Error(`Couldn't build <${this.id}>. ${String(e)}`)
 		}
 	}
 
-	sortKeys() {
-		this.merged = sortDataswornKeys(this.merged)
+	sortKeys(force = false) {
+		if (!this.#isSorted || force) this.#merged = sortDataswornKeys(this.#merged)
+		this.#isSorted = true
 		return this
 	}
 
@@ -118,11 +144,11 @@ export class RulesPackageBuilder<
 	/** Hash character that prepends generated JSON pointers. */
 	static readonly hashChar = '#' as const
 
-	constructor(id: string, ...files: RulesPackageFile<TSource>[])
-	constructor(id: string, ...files: RulesPackageFileData<TSource>[])
+	constructor(id: string, ...files: RulesPackagePart<TSource>[])
+	constructor(id: string, ...files: RulesPackagePartData<TSource>[])
 	constructor(
 		id: string,
-		...files: (RulesPackageFileData<TSource> | RulesPackageFile<TSource>)[]
+		...files: (RulesPackagePartData<TSource> | RulesPackagePart<TSource>)[]
 	) {
 		this.id = id
 		this.addFiles(...files)
@@ -130,21 +156,21 @@ export class RulesPackageBuilder<
 
 	id: string
 
-	#addFile(file: RulesPackageFileData<TSource> | RulesPackageFile<TSource>) {
+	#addFile(file: RulesPackagePartData<TSource> | RulesPackagePart<TSource>) {
 		const fileToAdd =
-			file instanceof RulesPackageFile ? file : new RulesPackageFile(file)
-		this.files.set(fileToAdd.fileName, fileToAdd)
+			file instanceof RulesPackagePart ? file : new RulesPackagePart(file)
+		this.files.set(fileToAdd.name, fileToAdd)
 		return this
 	}
 
 	addFiles(
-		...files: (RulesPackageFileData<TSource> | RulesPackageFile<TSource>)[]
+		...files: (RulesPackagePartData<TSource> | RulesPackagePart<TSource>)[]
 	) {
 		for (const file of files)
 			try {
 				void this.#addFile(file)
 			} catch (e) {
-				throw new Error(`Failed to add "${file.fileName}"! ${String(e)}`)
+				throw new Error(`Failed to add "${file.name}"! ${String(e)}`)
 			}
 
 		return this
@@ -154,47 +180,47 @@ export class RulesPackageBuilder<
 		return value != null && typeof value === 'object' && !Array.isArray(value)
 	}
 
-	static merge(target: unknown, ...sources: unknown[]): unknown {
-		if (!sources.length) return target
+	#merge(target: unknown, ...sources: unknown[]): unknown {
+		if (!sources.length) {
+			// nothing left to add, so index it
+			if (RulesPackageBuilder.#isObject(target) && '_id' in target)
+				this.index.set(target._id as string, target)
+			return target
+		}
 		const source = sources.shift()
 
-		if (this.#isObject(target) && this.#isObject(source)) {
+		if (
+			RulesPackageBuilder.#isObject(target) &&
+			RulesPackageBuilder.#isObject(source)
+		) {
 			for (const k in source) {
 				const key = k as keyof typeof source
-				if (this.#isObject(source[key])) {
-					if (!target[key]) Object.assign(target, { [key]: {} })
-					this.merge(target[key], source[key])
+				if (RulesPackageBuilder.#isObject(source[key])) {
+					if (typeof target[key] === 'undefined')
+						Object.assign(target, { [key]: {} })
+					this.#merge(target[key], source[key])
 				} else {
 					Object.assign(target, { [key]: source[key] })
 				}
 			}
 		}
 
-		return this.merge(target, ...sources)
+		return this.#merge(target, ...sources)
 	}
 
-	// TODO: move the ID duplication check here?
-
-	createIndex() {
-		const index = new Map()
-
-		for (const [_, file] of this.files)
-			for (const [k, v] of file.index) index.set(k, v)
-
-		return index
-	}
+	// TODO: reimplement ID duplication check
 }
 
-interface RulesPackageFileData<
+interface RulesPackagePartData<
 	TSource extends DataswornSource.RulesPackage = DataswornSource.RulesPackage
 > {
-	fileName: string
+	name: string
 	data: TSource
 }
 
-class RulesPackageFile<
+class RulesPackagePart<
 	TSource extends DataswornSource.RulesPackage = DataswornSource.RulesPackage
-> implements RulesPackageFileData<TSource>
+> implements RulesPackagePartData<TSource>
 {
 	static get logger() {
 		return RulesPackageBuilder.logger
@@ -204,7 +230,7 @@ class RulesPackageFile<
 		return RulesPackageBuilder.ajv
 	}
 
-	fileName: string
+	name: string
 
 	index = new Map<string, TypeNode.AnyPrimary>()
 
@@ -235,15 +261,13 @@ class RulesPackageFile<
 		return true
 	}
 
-	constructor({ data, fileName }: RulesPackageFileData<TSource>) {
-		this.fileName = fileName
+	constructor({ data, name }: RulesPackagePartData<TSource>) {
+		this.name = name
 
 		try {
-			RulesPackageFile.validateSource(data)
+			RulesPackagePart.validateSource(data)
 		} catch (e) {
-			throw new Error(
-				`${path.relative(cwd(), fileName)} doesn't match DataswornSource\n${String(e)}`
-			)
+			throw new Error(`${name} doesn't match DataswornSource\n${String(e)}`)
 		}
 
 		this.#data = data
@@ -254,9 +278,7 @@ class RulesPackageFile<
 	init() {
 		// ensure IdParser logs to the same place
 		// @ts-expect-error
-		IdParser.logger = RulesPackageFile.logger
-
-		RulesPackageBuilder.logger.debug(`RulesPackageFile#init > ${this.fileName}`)
+		IdParser.logger = RulesPackagePart.logger
 
 		void IdParser.assignIdsInRulesPackage(this.data, this.index)
 	}

@@ -12,17 +12,17 @@ Log.info('📖 Reading schema...')
 AJV.removeSchema()
 
 await loadSourceSchema()
-const { JSL } = await loadSchema()
+await loadSchema()
 
 Log.info('⚙️  Building rules packages...')
 
 const toBuild: Promise<void>[] = []
 
 for (const k in pkgs)
-	toBuild.push(buildRulesPackage(pkgs[k as keyof typeof pkgs], AJV, JSL))
+	toBuild.push(buildRulesPackage(pkgs[k as keyof typeof pkgs], AJV))
 
 await Promise.all(toBuild)
 
 profiler.done({
-	message: `Finished building ${toBuild.length} package(s) in ${Date.now() - profiler.start.valueOf()}ms`
+	message: `Finished building ${toBuild.length} rules package(s) in ${Date.now() - profiler.start.valueOf()}ms`
 })
