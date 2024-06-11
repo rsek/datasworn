@@ -1,21 +1,37 @@
-import { forEach, mapValues } from 'lodash-es'
-import type { Datasworn } from '../../pkg-core/index.js'
-import Log from '../utils/Log.js'
+import Pattern from '../../pkg-core/IdElements/Pattern.js'
 
-// TODO: these should be interpolated from constants.ts
-const linkSymbolPattern =
-	/(?<=\[\w.+?\]\)((?<type>[a-z_]+):(?<target>[a-z][a-z_]+(\/[a-z_0-9]+){2,}?)\)/g
+const typePattern = '[a-z][a-z_](?:.[a-z][a-z_]){0,2}+'
+const dictKeyOrIndexPattern = `[\\/\\.][a-z_0-9]+`
+const pathPattern = `${Pattern.RulesPackageElement.source}(?:${dictKeyOrIndexPattern})+?`
 
-const macroSymbolPattern =
-	/\{\{(?<type>[a-z_]+):(?<target>[a-z][a-z_]+(\/[a-z_0-9]+){2,}?)\}\}/g
+const idPattern = `(?<type>${typePattern}):(?<path>${pathPattern})`
 
-const idPointerPattern = /^[a-z][a-z_]+(\/[a-z_0-9]+){2,}$/
+const idPointerPattern = new RegExp(`^${idPattern}$`)
+
+const linkSymbolPattern = new RegExp(
+	[
+		`(?<=\\[\\w.+?\\]\\()`, // lookbehind for markdown text in square brackets, plus left paren
+		`(?<id>${idPattern})`,
+		`(?=\\))` // lookafter for right paren
+	].join('')
+)
+
+const macroSymbolPattern = new RegExp(
+	[
+		`(?<=\\{\\{)`, // lookbehind for left curly braces
+		`(?<directive>[a-z][a-z_]+>)`,
+		`(?<id>${idPattern})`,
+		`(?=\\}\\})` // lookafter for right curly braces
+	].join('')
+)
 
 export function validateText(
 	data: unknown,
 	key: string,
 	idTracker: Set<string>
 ) {
+	const errors: unknown[] = []
+
 	forEachValue(data, key, (v, k) => {
 		if (typeof v !== 'string') return
 		// skip non-string values
@@ -28,19 +44,19 @@ export function validateText(
 		} else {
 			try {
 				validateMarkdownIdPointers(v, idTracker)
-			} catch (e) {
-				Log.error(e)
+			} catch (e: any) {
+				errors.push(e)
 			}
 			try {
 				validateMacroIdPointers(v, idTracker)
-			} catch (e) {
-				Log.error(e)
+			} catch (e: any) {
+				errors.push(e)
 			}
 		}
 	})
-}
 
-export const IdsToValidate = new Set<string>()
+	if (errors.length > 0) throw new Error(errors.map(String).join('\n'))
+}
 
 export function validateMacroIdPointers(text: string, validIds: Set<string>) {
 	const macros = text.matchAll(macroSymbolPattern)
@@ -48,16 +64,16 @@ export function validateMacroIdPointers(text: string, validIds: Set<string>) {
 	const errors = []
 	for (const macro of macros) {
 		if (macro.groups == null) continue
-		const { type, target } = macro.groups
+		const { directive, path } = macro.groups
 
-		switch (type) {
+		switch (directive) {
 			case 'table':
 			case 'text':
-				return validateIdPointer(target, validIds)
+				return validateIdPointer(path, validIds)
 
 			default:
 				errors.push(
-					`Unknown Datasworn macro type "${String(type)}": ${macro[0]}`
+					`Unknown Datasworn macro directive "${String(directive)}": ${macro[0]}`
 				)
 		}
 	}
@@ -75,18 +91,16 @@ export function validateMarkdownIdPointers(
 
 	const errors = []
 
-	// const ids = []
-
 	for (const link of links) {
 		if (link.groups == null) continue
-		const { type, target } = link.groups
+		const { type, path } = link.groups
 
-		// ids.push(target)
+		// ids.push(path)
 
 		switch (type) {
 			case 'id':
 				try {
-					validateIdPointer(target, validIds)
+					validateIdPointer(path, validIds)
 				} catch (e) {
 					errors.push(e)
 				}
@@ -102,13 +116,16 @@ export function validateMarkdownIdPointers(
 	return true
 }
 
-export function validateIdPointer(dataswornId: string, idTracker: Set<string>) {
+export function validateIdPointer(
+	dataswornId: string,
+	idTracker: Set<string> | Map<string, unknown>
+) {
 	if (idTracker.has(dataswornId)) return true
 
 	throw Error(`Bad Datasworn ID pointer: ${dataswornId}`)
 }
 
-/** Recursively iterates over JSON values, applying a function to every boolean, number, string, and null value. */
+/** Recursively iterates over JSON values, applying a function to every primitive boolean, number, string, and null value. */
 export function forEachValue<T = unknown>(
 	value: T,
 	key: string | number,
@@ -124,10 +141,11 @@ export function forEachValue<T = unknown>(
 			break
 		case 'object':
 			if (value === null) fn(value, key)
-			else
-				forEach(value, (v, k) => {
+			else if (Array.isArray(value))
+				value.forEach((v, k) => {
 					forEachValue(v, k, fn)
 				})
+			else for (const k in value) forEachValue(value[k], k, fn)
 			break
 		default:
 			throw Error('Unrecognized type')
