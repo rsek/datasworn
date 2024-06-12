@@ -150,7 +150,7 @@
 		"scope": "yaml",
 		"prefix": "rows",
 		"body": [
-			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*(?<text>[A-Z].+|> [A-Z].+)\\s*\\n/  - min: $1\n    max: $2\n    text: $3\n/g}"
+			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*(?<text>[A-Z].+|> [A-Z].+)\\s*\\n/  - roll: { min: $1, max: $2 }\n    text: $3\n/g}"
 		],
 		"description": "Formats table rows from copied from Okular as YAML data"
 	},
@@ -158,7 +158,7 @@
 		"scope": "yaml",
 		"prefix": "rows2",
 		"body": [
-			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*(?<text>[A-Z].+)\\s+?(?<text2>[A-Z].+)\\s*\\n/- min: $1\n  max: $2\n  text: $3\n  text2: $4\n/g}"
+			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*(?<text>[A-Z].+)\\s+?(?<text2>[A-Z].+)\\s*\\n/- roll: { min: $1, max: $2 }\n  text: $3\n  text2: $4\n/g}"
 		],
 		"description": "Formats table rows from copied from Okular as YAML data"
 	},
@@ -166,7 +166,7 @@
 		"scope": "yaml",
 		"prefix": "rows3",
 		"body": [
-			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*(?<text>[A-Z].+)\\s+?(?<text2>[A-Z].+)\\s+?(?<text3>[A-Z].+)\\s*\\n/- min: $1\n  max: $2\n  text: $3\n  text2: $4\n  text3: $5\n/g}"
+			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*(?<text>[A-Z].+)\\s+?(?<text2>[A-Z].+)\\s+?(?<text3>[A-Z].+)\\s*\\n/- roll: { min: $1, max: $2 }\n  text: $3\n  text2: $4\n  text3: $5\n/g}"
 		],
 		"description": "Formats table rows from copied from Okular as YAML data"
 	},
@@ -174,7 +174,7 @@
 		"scope": "yaml",
 		"prefix": "brows",
 		"body": [
-			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*\\n/- min: $1\n  max: $2\n/g}"
+			"${CLIPBOARD/\\s*(?<min>[0-9]+)[-–]?(?<max>[0-9]+)?\\s*\\n/- roll: { min: $1, max: $2 }\n/g}"
 		],
 		"description": "Formats table rows (number range only) from copied from Okular as YAML data"
 	},
@@ -183,7 +183,7 @@
 		"scope": "yaml",
 		"prefix": "d%rows",
 		"body": [
-			"${CLIPBOARD/\\s*(?<min>[0-9]+)-?(?<max>[0-9]+)?\\s*(?<text>[A-Z].+)\\s*\\n/- min: $1\n  max: $1\n  text: $3\n/g}"
+			"${CLIPBOARD/\\s*(?<min>[0-9]+)-?(?<max>[0-9]+)?\\s*(?<text>[A-Z].+)\\s*\\n/- roll: { min: $1, max: $1 }\n  text: $3\n/g}"
 		],
 		"description": "Formats table rows from copied from Okular as YAML data"
 	},
