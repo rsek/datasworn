@@ -529,7 +529,7 @@ oracles:
               - roll: { min: 42, max: 60 }
                 <<: &BasicForm.8
                   text: Jellyfish / gasbag
-                  icon: icons/creature/basic_form/jellyish_gasbag.svg
+                  icon: icons/creature/basic_form/jellyfish_gasbag.svg
               - roll: { min: 61, max: 62 }
                 <<: &BasicForm.9
                   text: Lizard / reptilian
