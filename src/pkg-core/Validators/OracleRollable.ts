@@ -5,8 +5,6 @@ const diceExpressionPattern =
 	/^(?<numberOfDice>[1-9][0-9]*)d(?<sides>[1-9][0-9]*)(?<modifier>[+-]([1-9][0-9]*))?$/
 
 export function validate<T extends Datasworn.OracleRollable>(object: T) {
-	for (const row of object.rows) OracleTableRow.validate(row)
-
 	if (!validateTableRollRanges(object)) throw new Error()
 
 	return true
@@ -32,15 +30,10 @@ function validateTableRollRanges(
 
 		const { min, max } = row.roll
 
+		// basic validation of a single row's contents
+		OracleTableRow.validate(row)
+
 		// min and max must both be null or both be integers
-		if (
-			min === null ||
-			max === null ||
-			!(Number.isInteger(min) && Number.isInteger(max))
-		)
-			throw new Error(
-				`Row (${i}) min and max must both be integers, or both be null`
-			)
 
 		if (min < rollMin)
 			throw new Error(`Row (${i}) min is less than the minimum possible roll.`)
@@ -70,33 +63,6 @@ function validateTableRollRanges(
 	return true
 }
 
-const rowTextKeys = [
-	'text',
-	'text2',
-	'text3'
-] as const satisfies (keyof Datasworn.OracleTableRowText3)[]
-
-/**
- *
- * @param a The first row to compare.
- * @param b The second row to compare.
- * @returns `true` if the rows have the same text content.
- * @throws if the rows don't have the same text content.
- */
-function rowsHaveSameText(
-	a: Datasworn.OracleTableRow,
-	b: Datasworn.OracleTableRow
-) {
-	for (const key of rowTextKeys) {
-		const k = key as keyof typeof a & keyof typeof b
-		if (a[k] !== b[k])
-			throw new Error(
-				`Expected string "${String(a[k])}" but got "${String(b[k])}"`
-			)
-	}
-
-	return true
-}
 
 function getDiceRange(diceExpression: Datasworn.DiceExpression) {
 	const parsed = diceExpressionPattern.exec(diceExpression)
