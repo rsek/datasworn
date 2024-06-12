@@ -1,6 +1,6 @@
 /** Utilties to assist in migration of Datasworn data across versions. */
 import type TypeId from './IdElements/TypeId.js';
-declare const MinorNodeTypes: readonly ["asset_ability_move", "asset_ability"];
+declare const MinorNodeTypes: readonly ["asset.ability.move", "asset.ability"];
 type MinorNodeType = (typeof MinorNodeTypes)[number];
 export type IdReplacer = {
     /** A regular expression matching the old ID. */
@@ -73,11 +73,11 @@ export declare const IdReplacementMap: {
         readonly old: RegExp;
         readonly new: "truth:$1/$2";
     }];
-    readonly asset_ability_move: [{
+    readonly 'asset.ability.move': [{
         readonly old: RegExp;
         readonly new: "asset.ability.move:$1/$2.$3.$4";
     }];
-    readonly asset_ability: [{
+    readonly 'asset.ability': [{
         readonly old: RegExp;
         readonly new: "asset.ability:$1/$2.$3";
     }];

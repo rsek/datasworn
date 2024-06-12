@@ -9,8 +9,8 @@
 		}
 	],
 	"date": "2019-06-05",
-	"url": "https://ironswornrpg.com",
 	"license": "https://creativecommons.org/licenses/by/4.0",
+	"url": "https://ironswornrpg.com",
 	"rules": {
 		"stats": {
 			"edge": {
@@ -8650,63 +8650,63 @@
 								"min": 1,
 								"max": 12
 							},
-							"text": "[Barrier Islands](id:classic/atlas_entry/ironlands/barrier_island)"
+							"text": "[Barrier Islands](atlas_entry:classic/ironlands/barrier_island)"
 						},
 						{
 							"roll": {
 								"min": 13,
 								"max": 24
 							},
-							"text": "[Ragged Coast](id:classic/atlas_entry/ironlands/ragged_coas)"
+							"text": "[Ragged Coast](atlas_entry:classic/ironlands/ragged_coas)"
 						},
 						{
 							"roll": {
 								"min": 25,
 								"max": 34
 							},
-							"text": "[Deep Wilds](id:classic/atlas_entry/ironlands/deep_wild)"
+							"text": "[Deep Wilds](atlas_entry:classic/ironlands/deep_wild)"
 						},
 						{
 							"roll": {
 								"min": 35,
 								"max": 46
 							},
-							"text": "[Flooded Lands](id:classic/atlas_entry/ironlands/flooded_land)"
+							"text": "[Flooded Lands](atlas_entry:classic/ironlands/flooded_land)"
 						},
 						{
 							"roll": {
 								"min": 47,
 								"max": 60
 							},
-							"text": "[Havens](id:classic/atlas_entry/ironlands/haven)"
+							"text": "[Havens](atlas_entry:classic/ironlands/haven)"
 						},
 						{
 							"roll": {
 								"min": 61,
 								"max": 72
 							},
-							"text": "[Hinterlands](id:classic/atlas_entry/ironlands/hinterland)"
+							"text": "[Hinterlands](atlas_entry:classic/ironlands/hinterland)"
 						},
 						{
 							"roll": {
 								"min": 73,
 								"max": 84
 							},
-							"text": "[Tempest Hills](id:classic/atlas_entry/ironlands/tempest_hill)"
+							"text": "[Tempest Hills](atlas_entry:classic/ironlands/tempest_hill)"
 						},
 						{
 							"roll": {
 								"min": 85,
 								"max": 94
 							},
-							"text": "[Veiled Mountains](id:classic/atlas_entry/ironlands/veiled_mountain)"
+							"text": "[Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountain)"
 						},
 						{
 							"roll": {
 								"min": 95,
 								"max": 99
 							},
-							"text": "[Shattered Wastes](id:classic/atlas_entry/ironlands/shattered_waste)"
+							"text": "[Shattered Wastes](atlas_entry:classic/ironlands/shattered_waste)"
 						},
 						{
 							"roll": {
@@ -13030,7 +13030,7 @@
 				"url": "https://ironswornrpg.com",
 				"page": 40
 			},
-			"description": "*Ironsworn* characters are assumed to be skilled fighters. Even without a combat talent, you can wield weapons and perform [combat moves](id:classic/move_category/combat). A combat talent reflects a particular area of expertise, and gives you additional options and bonuses.\n\nCombat talent assets typically require you to wield a specific weapon, as noted in the asset text. For example, if you are a [Shield-Bearer](asset:classic/combat_talent/shield_bearer) and don’t have a shield at the ready, you can’t use the asset’s abilities.",
+			"description": "*Ironsworn* characters are assumed to be skilled fighters. Even without a combat talent, you can wield weapons and perform [combat moves](move_category:classic/combat). A combat talent reflects a particular area of expertise, and gives you additional options and bonuses.\n\nCombat talent assets typically require you to wield a specific weapon, as noted in the asset text. For example, if you are a [Shield-Bearer](asset:classic/combat_talent/shield_bearer) and don’t have a shield at the ready, you can’t use the asset’s abilities.",
 			"contents": {
 				"archer": {
 					"type": "asset",
@@ -20576,7 +20576,7 @@
 					"name": "Ward",
 					"abilities": [
 						{
-							"text": "When you walk a wide circle, sprinkling the ground with salt, roll +wits. On a strong hit, choose two. On a weak hit, choose one.\n\n  * When a foe first crosses the boundary, take +1 momentum.\n  * When you first inflict harm against a foe within the boundary, inflict +1 harm.\n  * Your ward is ‘likely’ ([Ask the Oracle](id:classic/oracle_rollable/move/ask_the_oracle/likely)) to trap a foe within the boundary.",
+							"text": "When you walk a wide circle, sprinkling the ground with salt, roll +wits. On a strong hit, choose two. On a weak hit, choose one.\n\n  * When a foe first crosses the boundary, take +1 momentum.\n  * When you first inflict harm against a foe within the boundary, inflict +1 harm.\n  * Your ward is ‘likely’ ([Ask the Oracle](move.oracle_rollable:classic/fate/ask_the_oracle.likely)) to trap a foe within the boundary.",
 							"enabled": true,
 							"moves": {
 								"ward": {
@@ -20597,13 +20597,13 @@
 											}
 										]
 									},
-									"text": "When you walk a wide circle, sprinkling the ground with salt, roll +wits. On a strong hit, choose two. On a weak hit, choose one.\n\n  * When a foe first crosses the boundary, take +1 momentum.\n  * When you first inflict harm against a foe within the boundary, inflict +1 harm.\n  * Your ward is ‘likely’ ([Ask the Oracle](id:classic/oracle_rollable/move/ask_the_oracle/likely)) to trap a foe within the boundary.",
+									"text": "When you walk a wide circle, sprinkling the ground with salt, roll +wits. On a strong hit, choose two. On a weak hit, choose one.\n\n  * When a foe first crosses the boundary, take +1 momentum.\n  * When you first inflict harm against a foe within the boundary, inflict +1 harm.\n  * Your ward is ‘likely’ ([Ask the Oracle](move.oracle_rollable:classic/fate/ask_the_oracle.likely)) to trap a foe within the boundary.",
 									"outcomes": {
 										"strong_hit": {
-											"text": "On a __strong hit__, choose two.\n\n  * When a foe first crosses the boundary, take +1 momentum.\n  * When you first inflict harm against a foe within the boundary, inflict +1 harm.\n  * Your ward is ‘likely’ ([Ask the Oracle](id:classic/oracle_rollable/move/ask_the_oracle/likely)) to trap a foe within the boundary."
+											"text": "On a __strong hit__, choose two.\n\n  * When a foe first crosses the boundary, take +1 momentum.\n  * When you first inflict harm against a foe within the boundary, inflict +1 harm.\n  * Your ward is ‘likely’ ([Ask the Oracle](move.oracle_rollable:classic/fate/ask_the_oracle.likely)) to trap a foe within the boundary."
 										},
 										"weak_hit": {
-											"text": "On a __weak hit__, choose one.\n\n  * When a foe first crosses the boundary, take +1 momentum.\n  * When you first inflict harm against a foe within the boundary, inflict +1 harm.\n  * Your ward is ‘likely’ ([Ask the Oracle](id:classic/oracle_rollable/move/ask_the_oracle/likely)) to trap a foe within the boundary."
+											"text": "On a __weak hit__, choose one.\n\n  * When a foe first crosses the boundary, take +1 momentum.\n  * When you first inflict harm against a foe within the boundary, inflict +1 harm.\n  * Your ward is ‘likely’ ([Ask the Oracle](move.oracle_rollable:classic/fate/ask_the_oracle.likely)) to trap a foe within the boundary."
 										},
 										"miss": {
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
@@ -20665,7 +20665,7 @@
 				"barrier_islands": {
 					"name": "Barrier Islands",
 					"type": "atlas_entry",
-					"summary": "This long chain of bleak islands parallels the [Ragged Coast](id:classic/atlas_entry/ironlands/ragged_coast). The islands are sparsely populated by [Ironlanders](id:classic/npc_collection/ironlanders), mostly fisher-folk who brave the surrounding waters.",
+					"summary": "This long chain of bleak islands parallels the [Ragged Coast](atlas_entry:classic/ironlands/ragged_coast). The islands are sparsely populated by [Ironlanders](npc_collection:classic/ironlanders), mostly fisher-folk who brave the surrounding waters.",
 					"_source": {
 						"license": "https://creativecommons.org/licenses/by-nc-sa/4.0",
 						"url": "https://ironswornrpg.com",
@@ -20687,16 +20687,16 @@
 						"Gliding seabirds",
 						"Decaying wrecks of wooden ships",
 						"Fisher-folk braving the wild sea",
-						"Lurking seaborne [raiders](id:classic/npc/ironlanders/raider)"
+						"Lurking seaborne [raiders](npc:classic/ironlanders/raider)"
 					],
-					"description": "This long string of islands parallels the [Ragged Coast](id:classic/atlas_entry/ironlands/ragged_coast). They are beautiful, but imposing. The slate-gray cliffs rise dramatically out of the water, topped by treeless moors. Waterfalls, fed by persistent rains, plunge over these cliffs into the raging sea. The winds are fierce and ever-present. In the winter, sleet, snow, and ocean mist can cut visibility to the length of one’s arm.\n\nThe islands are sparsely populated by [Ironlanders](id:classic/npc_collection/ironlanders), mostly fisher-folk who brave the surrounding waters. Their settlements cling to narrow, rock-strewn shores or lie on high overlooks. At night, the dim lights of their fires and torches glimmer pitifully against the wild, storm-tossed sea.",
+					"description": "This long string of islands parallels the [Ragged Coast](atlas_entry:classic/ironlands/ragged_coast). They are beautiful, but imposing. The slate-gray cliffs rise dramatically out of the water, topped by treeless moors. Waterfalls, fed by persistent rains, plunge over these cliffs into the raging sea. The winds are fierce and ever-present. In the winter, sleet, snow, and ocean mist can cut visibility to the length of one’s arm.\n\nThe islands are sparsely populated by [Ironlanders](npc_collection:classic/ironlanders), mostly fisher-folk who brave the surrounding waters. Their settlements cling to narrow, rock-strewn shores or lie on high overlooks. At night, the dim lights of their fires and torches glimmer pitifully against the wild, storm-tossed sea.",
 					"quest_starter": "The spectral maiden appears at the bow of your ship, offering to guide you safely through the storm—for a price. What does she demand of you?",
 					"_id": "atlas_entry:classic/ironlands/barrier_islands"
 				},
 				"ragged_coast": {
 					"name": "Ragged Coast",
 					"type": "atlas_entry",
-					"summary": "This is a rugged land of snow-capped cliffs overlooking blue waters. [Ironlander](id:classic/npc_collection/ironlanders) settlements are located at the head of the fjords in the shelter of narrow valleys.",
+					"summary": "This is a rugged land of snow-capped cliffs overlooking blue waters. [Ironlander](npc_collection:classic/ironlanders) settlements are located at the head of the fjords in the shelter of narrow valleys.",
 					"_source": {
 						"license": "https://creativecommons.org/licenses/by-nc-sa/4.0",
 						"url": "https://ironswornrpg.com",
@@ -20714,18 +20714,18 @@
 						"Settlements built on rocky shores",
 						"Trade ships flying colorful sails",
 						"Shipbuilders hammering at wooden hulls",
-						"[Raiders](id:classic/npc/ironlanders/raider) sounding the drums of war",
+						"[Raiders](npc:classic/ironlanders/raider) sounding the drums of war",
 						"Schools of orca gliding through the waves",
 						"Monstrous serpents rising from unfathomable depths"
 					],
-					"description": "This coast is marked by massive fjords. It is a rugged land of snow-capped cliffs overlooking blue waters.\n\n[Ironlander](id:classic/npc_collection/ironlanders) settlements are located at the head of the fjords in the shelter of narrow valleys. From there, both fisher-folk and [raiders](id:classic/npc/ironlanders/raider) set sail. Their kin gather to see them off, laying wreaths of spruce in their wake.\n\nIn the center of each settlement, at the front of the longhouse, a stack of rune-marked river stones memorialize those who did not return—one stone for each of the lost.",
+					"description": "This coast is marked by massive fjords. It is a rugged land of snow-capped cliffs overlooking blue waters.\n\n[Ironlander](npc_collection:classic/ironlanders) settlements are located at the head of the fjords in the shelter of narrow valleys. From there, both fisher-folk and [raiders](npc:classic/ironlanders/raider) set sail. Their kin gather to see them off, laying wreaths of spruce in their wake.\n\nIn the center of each settlement, at the front of the longhouse, a stack of rune-marked river stones memorialize those who did not return—one stone for each of the lost.",
 					"quest_starter": "A ship which set off from a coastal settlement is found washed up on shore. It is empty. This ship carried something of great importance, now lost. What was it, and why do you swear to recover it?",
 					"_id": "atlas_entry:classic/ironlands/ragged_coast"
 				},
 				"deep_wilds": {
 					"name": "Deep Wilds",
 					"type": "atlas_entry",
-					"summary": "This vast swath of ancient forest is largely uninhabited and unexplored by [Ironlanders](id:classic/npc_collection/ironlanders). Most avoid this region.",
+					"summary": "This vast swath of ancient forest is largely uninhabited and unexplored by [Ironlanders](npc_collection:classic/ironlanders). Most avoid this region.",
 					"_source": {
 						"license": "https://creativecommons.org/licenses/by-nc-sa/4.0",
 						"url": "https://ironswornrpg.com",
@@ -20743,19 +20743,19 @@
 						"A thick canopy casts the forest floor in shadow",
 						"Lingering fog",
 						"Constant rains",
-						"[Elves](id:classic/npc/firstborn/elf), ever watchful",
+						"[Elves](npc:classic/firstborn/elf), ever watchful",
 						"Ancient trees hung with moss",
 						"Streams winding their way through rough terrain",
 						"Skittering and growls from out of the mist"
 					],
-					"description": "The Deep Wilds are a vast swath of ancient forest. The ground is a lush carpet of ferns and lichens. The gnarled branches are cloaked in hanging moss. The air is almost perpetually misty and wet. Unlike the bordering regions, heavy snow is rare here. Instead, there is the ceaseless patter of rain dripping from high boughs and the rush of river over rock. The air carries the earthy smells of damp and decay.\n\nA few [Ironlanders](id:classic/npc_collection/ironlanders) live along the fringes of the Deep Wilds, taking advantage of the relatively temperate climate and abundant game. However, most avoid this region. This is a land of the [firstborn](id:classic/npc_collection/firstborn), of monstrous [beasts](id:classic/npc_collection/beasts), of [horrors](id:classic/npc_collection/horrors) that defy description. This is the world before humans.",
-					"quest_starter": "An [Ironlander](id:classic/npc_collection/ironlanders) has sided with an enemy in the heart of the Wilds, and is leading attacks against Ironlander settlements. Who is this person? Who have they joined forces with? What will you do to stop these attacks?",
+					"description": "The Deep Wilds are a vast swath of ancient forest. The ground is a lush carpet of ferns and lichens. The gnarled branches are cloaked in hanging moss. The air is almost perpetually misty and wet. Unlike the bordering regions, heavy snow is rare here. Instead, there is the ceaseless patter of rain dripping from high boughs and the rush of river over rock. The air carries the earthy smells of damp and decay.\n\nA few [Ironlanders](npc_collection:classic/ironlanders) live along the fringes of the Deep Wilds, taking advantage of the relatively temperate climate and abundant game. However, most avoid this region. This is a land of the [firstborn](npc_collection:classic/firstborn), of monstrous [beasts](npc_collection:classic/beasts), of [horrors](npc_collection:classic/horrors) that defy description. This is the world before humans.",
+					"quest_starter": "An [Ironlander](npc_collection:classic/ironlanders) has sided with an enemy in the heart of the Wilds, and is leading attacks against Ironlander settlements. Who is this person? Who have they joined forces with? What will you do to stop these attacks?",
 					"_id": "atlas_entry:classic/ironlands/deep_wilds"
 				},
 				"flooded_lands": {
 					"name": "Flooded Lands",
 					"type": "atlas_entry",
-					"summary": "This is a low-lying region of bogs, swamps, lakes, and slow-moving rivers. A few hardy [Ironlanders](id:classic/npc_collection/ironlanders) live here in small settlements built atop hillocks, or in homes standing on stilts over the wetlands.",
+					"summary": "This is a low-lying region of bogs, swamps, lakes, and slow-moving rivers. A few hardy [Ironlanders](npc_collection:classic/ironlanders) live here in small settlements built atop hillocks, or in homes standing on stilts over the wetlands.",
 					"_source": {
 						"license": "https://creativecommons.org/licenses/by-nc-sa/4.0",
 						"url": "https://ironswornrpg.com",
@@ -20777,7 +20777,7 @@
 						"Biting insects",
 						"Creatures, just beneath the surface, laying in wait"
 					],
-					"description": "This is a low-lying region of bogs, swamps, lakes, and slow-moving rivers. Near the coast, the water is salty and riddled with dead trees. Further north, the morass of forested wetlands and bogs is interspersed with rare patches of higher ground. Through it all, twisting rivers make their sluggish journey to the sea. The smell of these lands is rotten and dank. It is the smell of slow death.\n\nA few hardy [Ironlanders](id:classic/npc_collection/ironlanders) live here in small settlements built atop hillocks, or in homes standing on stilts over the wetlands. Most fish and forage, making their way among the waterways on flat-bottomed boats propelled by long poles. Some dig through peat for bog iron—a cold, wet, grueling task.\n\nTravel is precarious here. One step has you on solid ground. The next sends you plunging through a thin layer of peat into a murky bog. Then, bony hands reach out to you, grasping, pulling. “Stay with me,” a voice whispers. “Stay with me here in the dark.”",
+					"description": "This is a low-lying region of bogs, swamps, lakes, and slow-moving rivers. Near the coast, the water is salty and riddled with dead trees. Further north, the morass of forested wetlands and bogs is interspersed with rare patches of higher ground. Through it all, twisting rivers make their sluggish journey to the sea. The smell of these lands is rotten and dank. It is the smell of slow death.\n\nA few hardy [Ironlanders](npc_collection:classic/ironlanders) live here in small settlements built atop hillocks, or in homes standing on stilts over the wetlands. Most fish and forage, making their way among the waterways on flat-bottomed boats propelled by long poles. Some dig through peat for bog iron—a cold, wet, grueling task.\n\nTravel is precarious here. One step has you on solid ground. The next sends you plunging through a thin layer of peat into a murky bog. Then, bony hands reach out to you, grasping, pulling. “Stay with me,” a voice whispers. “Stay with me here in the dark.”",
 					"quest_starter": "Rising flood waters threaten to overwhelm an Ironlander settlement. Escape by boat is the only option, but there are few boats and many people. What’s more, there is something hungry in the water, waiting to feed.",
 					"_id": "atlas_entry:classic/ironlands/flooded_lands"
 				},
@@ -20805,7 +20805,7 @@
 						"Wide rivers navigated by wary boatmen",
 						"Long, harsh winters"
 					],
-					"description": "This is an expansive region of forests, rivers, shrubland, and low hills. After an arduous journey, after untold losses, the first Ironlander settlers looked upon the Havens as a fresh start—a relative oasis in a fierce, uncaring land. It gave them hope.\n\nYears later, that hope is fading. Even within the Havens, there is little rest or safety. The winters are long. The harvests are never enough. [Raiders](id:classic/npc/ironlanders/raider) strike without mercy. The thick woods, deep rivers and dark nights hold secrets and lurking [horrors](id:classic/npc_collection/horrors). Some say the Ironlands is a living thing, a malevolent spirit, intent on ridding itself of the human invaders. Slowly, season by season, year by year, it is succeeding.\n\nThe [Ironlander](id:classic/npc_collection/ironlanders) settlements in this region typically stand on hills or at the confluence of rivers. The buildings are made of wood, or sometimes stone, with roofs covered in turf. The central homes and communal structures are protected by an outer palisade fashioned from earth and wood. Outside these walls, from spring through autumn, farmers work the meager fields. In winter, the settlements are smothered by deep snow and oppressive gray clouds.",
+					"description": "This is an expansive region of forests, rivers, shrubland, and low hills. After an arduous journey, after untold losses, the first Ironlander settlers looked upon the Havens as a fresh start—a relative oasis in a fierce, uncaring land. It gave them hope.\n\nYears later, that hope is fading. Even within the Havens, there is little rest or safety. The winters are long. The harvests are never enough. [Raiders](npc:classic/ironlanders/raider) strike without mercy. The thick woods, deep rivers and dark nights hold secrets and lurking [horrors](npc_collection:classic/horrors). Some say the Ironlands is a living thing, a malevolent spirit, intent on ridding itself of the human invaders. Slowly, season by season, year by year, it is succeeding.\n\nThe [Ironlander](npc_collection:classic/ironlanders) settlements in this region typically stand on hills or at the confluence of rivers. The buildings are made of wood, or sometimes stone, with roofs covered in turf. The central homes and communal structures are protected by an outer palisade fashioned from earth and wood. Outside these walls, from spring through autumn, farmers work the meager fields. In winter, the settlements are smothered by deep snow and oppressive gray clouds.",
 					"quest_starter": "A settlement has fallen under the unjust rule of a cruel leader. What leverage do they hold over these people? What is your connection to the community? What can be done to overthrow this tyrant?",
 					"_id": "atlas_entry:classic/ironlands/havens"
 				},
@@ -20827,20 +20827,20 @@
 					},
 					"features": [
 						"Dense forests nestled against rugged terrain",
-						"[Hunter](id:classic/npc/ironlanders/hunter) camps and remote settlements",
+						"[Hunter](npc:classic/ironlanders/hunter) camps and remote settlements",
 						"Birdsong interspersed with sudden, unsettling stillness",
-						"[Ironlanders](id:classic/npc_collection/ironlanders), foraging and hunting game",
-						"Hungry [beasts](id:classic/npc_collection/beasts), stalking",
-						"[Varou](id:classic/npc/firstborn/varou) bands, howling their war song"
+						"[Ironlanders](npc_collection:classic/ironlanders), foraging and hunting game",
+						"Hungry [beasts](npc_collection:classic/beasts), stalking",
+						"[Varou](npc:classic/firstborn/varou) bands, howling their war song"
 					],
-					"description": "This high terrain consists of a long string of forested hills.\n\nIsolated [Ironlander](id:classic/npc_collection/ironlanders) settlements in this region serve primarily as bases for [hunters](id:classic/npc/ironlanders/hunter) and trappers. A few farmers do the best they can with the rocky soil, but the people depend mostly on meat, mushrooms, berries, and other bounties from the forest to sustain them during the long winters.\n\nThose winters are bitter and harsh. Snow gathers as deep as an Ironlander is tall, or more. Hunters, cloaked in heavy furs, wear snowshoes to navigate across the rough terrain. At night, they make camp. They drink and tell stories. They try to ward away the encroaching darkness with a blazing fire. They cast nervous glances at sounds just beyond the light.\n\nIn the spring and summer, the melting snow feeds tumultuous rivers. The forests burst with rich life. But, always there is a chill in the air. Always there is a reminder of the coming winter.",
-					"quest_starter": "A group of [Ironlanders](id:classic/npc_collection/ironlanders) have been forced out of their Hinterland settlement. What caused them to leave? With winter coming, and food in short supply, will you attempt to reclaim their settlement or convince someone to take them in?",
+					"description": "This high terrain consists of a long string of forested hills.\n\nIsolated [Ironlander](npc_collection:classic/ironlanders) settlements in this region serve primarily as bases for [hunters](npc:classic/ironlanders/hunter) and trappers. A few farmers do the best they can with the rocky soil, but the people depend mostly on meat, mushrooms, berries, and other bounties from the forest to sustain them during the long winters.\n\nThose winters are bitter and harsh. Snow gathers as deep as an Ironlander is tall, or more. Hunters, cloaked in heavy furs, wear snowshoes to navigate across the rough terrain. At night, they make camp. They drink and tell stories. They try to ward away the encroaching darkness with a blazing fire. They cast nervous glances at sounds just beyond the light.\n\nIn the spring and summer, the melting snow feeds tumultuous rivers. The forests burst with rich life. But, always there is a chill in the air. Always there is a reminder of the coming winter.",
+					"quest_starter": "A group of [Ironlanders](npc_collection:classic/ironlanders) have been forced out of their Hinterland settlement. What caused them to leave? With winter coming, and food in short supply, will you attempt to reclaim their settlement or convince someone to take them in?",
 					"_id": "atlas_entry:classic/ironlands/hinterlands"
 				},
 				"tempest_hills": {
 					"name": "Tempest Hills",
 					"type": "atlas_entry",
-					"summary": "These highlands are defined by rugged hills, low mountains, thin woods, and grassy plateaus. [Ironlanders](id:classic/npc_collection/ironlanders) live here in nomadic camps or mining settlements.",
+					"summary": "These highlands are defined by rugged hills, low mountains, thin woods, and grassy plateaus. [Ironlanders](npc_collection:classic/ironlanders) live here in nomadic camps or mining settlements.",
 					"_source": {
 						"license": "https://creativecommons.org/licenses/by-nc-sa/4.0",
 						"url": "https://ironswornrpg.com",
@@ -20859,18 +20859,18 @@
 						"Mist-shrouded waterfalls",
 						"Mining settlements",
 						"Nomad encampments on high plateaus",
-						"[Ironlander](id:classic/npc_collection/ironlanders) caravans hauling bounties of ore",
-						"Wary [giants](id:classic/npc/firstborn/giant) keeping their distance",
-						"[Mammoths](id:classic/npc/beasts/mammoth) grazing in alpine meadows"
+						"[Ironlander](npc_collection:classic/ironlanders) caravans hauling bounties of ore",
+						"Wary [giants](npc:classic/firstborn/giant) keeping their distance",
+						"[Mammoths](npc:classic/beasts/mammoth) grazing in alpine meadows"
 					],
-					"description": "These highlands are defined by rugged hills and low mountains, thin conifer woods, and wide, grassy plateaus, leading up to the heights of the [Veiled Mountains](id:classic/atlas_entry/ironlands/veiled_mountain). Through most seasons, the constant ill-winds break against the sides of the hills, screeching and moaning. In the dead of winter, some say these winds carry the names of those fated to die during the long cold season.\n\nNomadic [Ironlanders](id:classic/npc_collection/ironlanders) live among the hills, herding livestock. In the spring and summer they move among high pastures. In the winter, they find some relief from the brutal weather in sheltered valleys.\n\nOthers live in mining settlements, drawing iron ore from riverbeds and shallow digs. Their furnaces, sending up plumes of black smoke, convert the ore into wrought iron, which is sent south for trade with the [Havens](id:classic/atlas_entry/ironlands/haven).",
+					"description": "These highlands are defined by rugged hills and low mountains, thin conifer woods, and wide, grassy plateaus, leading up to the heights of the [Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountain). Through most seasons, the constant ill-winds break against the sides of the hills, screeching and moaning. In the dead of winter, some say these winds carry the names of those fated to die during the long cold season.\n\nNomadic [Ironlanders](npc_collection:classic/ironlanders) live among the hills, herding livestock. In the spring and summer they move among high pastures. In the winter, they find some relief from the brutal weather in sheltered valleys.\n\nOthers live in mining settlements, drawing iron ore from riverbeds and shallow digs. Their furnaces, sending up plumes of black smoke, convert the ore into wrought iron, which is sent south for trade with the [Havens](atlas_entry:classic/ironlands/haven).",
 					"quest_starter": "You have come across or learned of a rich source of unclaimed iron and silver among these hills. What hazards must be overcome before a mine can be established? What force opposes you or attempts to establish its own claim?",
 					"_id": "atlas_entry:classic/ironlands/tempest_hills"
 				},
 				"veiled_mountains": {
 					"name": "Veiled Mountains",
 					"type": "atlas_entry",
-					"summary": "These great peaks mark the northern bounds of the settled lands. A few hardy [Ironlanders](id:classic/npc_collection/ironlanders) dwell here in small mining communities. Most of them head south before the long, brutal winter takes hold.",
+					"summary": "These great peaks mark the northern bounds of the settled lands. A few hardy [Ironlanders](npc_collection:classic/ironlanders) dwell here in small mining communities. Most of them head south before the long, brutal winter takes hold.",
 					"_source": {
 						"license": "https://creativecommons.org/licenses/by-nc-sa/4.0",
 						"url": "https://ironswornrpg.com",
@@ -20885,21 +20885,21 @@
 					},
 					"features": [
 						"Massive peaks shrouded in roiling clouds",
-						"Howling [beasts](id:classic/npc_collection/beasts)",
+						"Howling [beasts](npc_collection:classic/beasts)",
 						"Endless snows",
 						"Precarious mountain trails",
 						"Stone cairns, marking the dead",
 						"Abandoned settlements",
-						"Circling [wyverns](id:classic/npc/beasts/wyvern)"
+						"Circling [wyverns](npc:classic/beasts/wyvern)"
 					],
-					"description": "Commonly referred to as the Veils, these great mountains mark the northern bounds of the settled lands. They are almost perpetually shrouded in cloud, snow, and mist. On the rare day they are visible to those [Ironlanders](id:classic/npc_collection/ironlanders) far south in the [Havens](id:classic/atlas_entry/ironlands/haven), the sight of the towering peaks is enough to inspire a mix of fear and awe.\n\nFor a few, that feeling is a call rather than a warning. The Ironlanders who dwell here are mostly members of small mining communities. They seek fortunes in iron or silver, but often find only death in the endless, brutal cold. Even those who manage to eke out some sort of life among the Veils are sure to head south before the onset of winter. Before the long dark takes hold.",
-					"quest_starter": "As winter fast approaches, there is no sign of the [Ironlanders](id:classic/npc_collection/ironlanders) who live in a small mining community on the flanks of the Veils. They should have been off the mountain weeks ago. Time is running out.",
+					"description": "Commonly referred to as the Veils, these great mountains mark the northern bounds of the settled lands. They are almost perpetually shrouded in cloud, snow, and mist. On the rare day they are visible to those [Ironlanders](npc_collection:classic/ironlanders) far south in the [Havens](atlas_entry:classic/ironlands/haven), the sight of the towering peaks is enough to inspire a mix of fear and awe.\n\nFor a few, that feeling is a call rather than a warning. The Ironlanders who dwell here are mostly members of small mining communities. They seek fortunes in iron or silver, but often find only death in the endless, brutal cold. Even those who manage to eke out some sort of life among the Veils are sure to head south before the onset of winter. Before the long dark takes hold.",
+					"quest_starter": "As winter fast approaches, there is no sign of the [Ironlanders](npc_collection:classic/ironlanders) who live in a small mining community on the flanks of the Veils. They should have been off the mountain weeks ago. Time is running out.",
 					"_id": "atlas_entry:classic/ironlands/veiled_mountains"
 				},
 				"shattered_wastes": {
 					"name": "Shattered Wastes",
 					"type": "atlas_entry",
-					"summary": "This plain of jagged, broken ice is uninhabited by [Ironlanders](id:classic/npc_collection/ironlanders). No one knows the bounds of this land or what lies beyond.",
+					"summary": "This plain of jagged, broken ice is uninhabited by [Ironlanders](npc_collection:classic/ironlanders). No one knows the bounds of this land or what lies beyond.",
 					"_source": {
 						"license": "https://creativecommons.org/licenses/by-nc-sa/4.0",
 						"url": "https://ironswornrpg.com",
@@ -20917,9 +20917,9 @@
 						"Discomforting stillness",
 						"Deep crevasses, plunging into darkness",
 						"Piercing cold",
-						"Unnatural [horrors](id:classic/npc_collection/horrors) breaking through the ice"
+						"Unnatural [horrors](npc_collection:classic/horrors) breaking through the ice"
 					],
-					"description": "To the north of the [Veiled Mountains](id:classic/atlas_entry/ironlands/veiled_mountain) lies the Shattered Wastes, a plain of jagged, broken ice.\n\nNo one knows the bounds of this land or what lies beyond. No [Ironlanders](id:classic/npc_collection/ironlanders) dwell here, and only a handful have explored the passage into the Wastes through the Veils. Those who survived the journey returned with stories of unimaginable cold and things moving beneath the ice.",
+					"description": "To the north of the [Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountain) lies the Shattered Wastes, a plain of jagged, broken ice.\n\nNo one knows the bounds of this land or what lies beyond. No [Ironlanders](npc_collection:classic/ironlanders) dwell here, and only a handful have explored the passage into the Wastes through the Veils. Those who survived the journey returned with stories of unimaginable cold and things moving beneath the ice.",
 					"quest_starter": "The traveler returned from his journey into the Shattered Wastes with dead, frostbitten hands and extraordinary stories. The others scoff at him, but you believe. Why? What does he tell you? What compels you to see for yourself?",
 					"_id": "atlas_entry:classic/ironlands/shattered_wastes"
 				}
@@ -23034,7 +23034,7 @@
 					],
 					"drives": ["Show my power", "Share my pain"],
 					"tactics": ["Spring from hiding", "Ferocious attacks"],
-					"description": "Another people sailed to the Ironlands from the [Old World](id:classic/truths/old_world) long before our kin settled here. Something happened. Something changed them.\n\nWhether it was the long struggle in a harsh land, the ravages of war, or the corruption of some dark force, they left their humanity behind and became what we call the broken. Now, they exist only to kill, to destroy.\n\nWe fear the broken for their savagery. But, more than this, we fear them as a dark portent of what we might one day become.",
+					"description": "Another people sailed to the Ironlands from the [Old World](truth:classic/old_world) long before our kin settled here. Something happened. Something changed them.\n\nWhether it was the long struggle in a harsh land, the ravages of war, or the corruption of some dark force, they left their humanity behind and became what we call the broken. Now, they exist only to kill, to destroy.\n\nWe fear the broken for their savagery. But, more than this, we fear them as a dark portent of what we might one day become.",
 					"quest_starter": "Years ago, an Ironlander child was taken by a broken tribe. Now they are seen living among them. What is your connection to this person? Can they be brought home, or are they forever lost?",
 					"_id": "npc:classic/ironlanders/broken"
 				},
@@ -23090,7 +23090,7 @@
 					],
 					"drives": ["A clean kill", "Survive the hunt"],
 					"tactics": ["Set traps", "Keep to the shadows", "Deadly shot"],
-					"description": "Hunters face brutal weather, difficult terrain, dangerous [animals](id:classic/npc_collection/animals), and worse. Many never return from their hunts. Others return, but are forever changed.",
+					"description": "Hunters face brutal weather, difficult terrain, dangerous [animals](npc_collection:classic/animals), and worse. Many never return from their hunts. Others return, but are forever changed.",
 					"quest_starter": "A hunter returns to her village, panic-stricken and pleading for help. The rest of her party is still out there. What happened to them?",
 					"_id": "npc:classic/ironlanders/hunter"
 				},
@@ -23177,7 +23177,7 @@
 					"tactics": ["Maneuver for advantage", "Find an opening"],
 					"description": "Some Ironlanders, through strength of arms, set themselves apart from the common rabble. They are trained to fight, or simply born to it. For them, a sword, spear or axe is as natural a tool as any hammer or spade.",
 					"quest_starter": "A legendary warrior, now well past their prime, swears to face a daunting foe in one final battle. What help do they ask of you and why? Who is their enemy?",
-					"your_truth": "Warrior’s shields are often emblazoned with meaningful symbols. What are they? Family crests? Animal totems? Mystical sigils? Motifs honoring the nations of the [Old World](id:classic/truths/old_world)? If you carry a shield, what is painted on yours?",
+					"your_truth": "Warrior’s shields are often emblazoned with meaningful symbols. What are they? Family crests? Animal totems? Mystical sigils? Motifs honoring the nations of the [Old World](truth:classic/old_world)? If you carry a shield, what is painted on yours?",
 					"_id": "npc:classic/ironlanders/warrior"
 				}
 			},
@@ -23233,7 +23233,7 @@
 						"Force their surrender",
 						"Turn the forest against them"
 					],
-					"description": "Elves are strange beings of the forest, seldom seen beyond the ancient woods of the [Deep Wilds](id:classic/atlas_entry/ironlands/deep_wild). They are fiercely protective of their lands and suspicious of humans. Their scouts patrol the borderlands, riding the fearsome mounts we call [gaunts](id:classic/npc/animals/gaunt). Others of their kind watch us from the shadow of the deep woods, spears and bow at the ready. Some say elven mystics can bind the animals and beasts of the forest to aid in the defense of the Wilds.\n\nA few warn that the elves are biding their time, readying the attack which will drive us from these lands.",
+					"description": "Elves are strange beings of the forest, seldom seen beyond the ancient woods of the [Deep Wilds](atlas_entry:classic/ironlands/deep_wild). They are fiercely protective of their lands and suspicious of humans. Their scouts patrol the borderlands, riding the fearsome mounts we call [gaunts](npc:classic/animals/gaunt). Others of their kind watch us from the shadow of the deep woods, spears and bow at the ready. Some say elven mystics can bind the animals and beasts of the forest to aid in the defense of the Wilds.\n\nA few warn that the elves are biding their time, readying the attack which will drive us from these lands.",
 					"quest_starter": "The leader of an Ironlander community seeks an audience with the elves. For what purpose? Why are you compelled to help?",
 					"your_truth": "Elves conceal their faces behind ornate wooden masks. What do these masks signify?",
 					"_id": "npc:classic/firstborn/elf"
@@ -23267,7 +23267,7 @@
 						"Sweeping strike",
 						"Make them flee"
 					],
-					"description": "Giants dwell in the [Tempest Hills](id:classic/atlas_entry/ironlands/tempest_hill) and [Veiled Mountains](id:classic/atlas_entry/ironlands/veiled_mountain). They live a nomadic life alone or in small family units, herding oxen, mountain goats, and sheep. In their own language they are called the Jokul.\n\nMany Ironlanders misinterpret their quiet nature for dullness, but giants are keenly intelligent and observant. They have a great respect for life, even for our kind, and will use trickery and negotiation to avoid a fight. When they are left without other options, an enraged giant is a devastating, relentless force.",
+					"description": "Giants dwell in the [Tempest Hills](atlas_entry:classic/ironlands/tempest_hill) and [Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountain). They live a nomadic life alone or in small family units, herding oxen, mountain goats, and sheep. In their own language they are called the Jokul.\n\nMany Ironlanders misinterpret their quiet nature for dullness, but giants are keenly intelligent and observant. They have a great respect for life, even for our kind, and will use trickery and negotiation to avoid a fight. When they are left without other options, an enraged giant is a devastating, relentless force.",
 					"quest_starter": "A pair of giants are raiding human settlements, stealing supplies and livestock. With winter coming, the survival of those settlements is threatened. What is driving the giants down from the hills?",
 					"your_truth": "Every fifth spring, the giant clans meet for a gathering. There, the memory-keepers sing of a great giant hero, revered by all. Who is this hero?",
 					"_id": "npc:classic/firstborn/giant"
@@ -23296,7 +23296,7 @@
 					],
 					"drives": ["Embody chaos", "Cling to vestiges of power"],
 					"tactics": ["Control the elements", "Destroy with primal rage"],
-					"description": "The primordials, said to be the vestigial spirits of long-forgotten gods, are the most ancient of the firstborn. Each embodies some aspect of the natural world, bound in a form which is a crude mimicry of a human or large animal. A river primordial is a mass of rock, gravel, and flowing water. A forest primordial is comprised of wood, earth, rocks, and plants. A mountain primordial is a lumbering being of glacier stone and ice. A fire primordial, depending on its mood, might take form as embers, ash and smoke—or as a raging pyre.\n\nThey range in size from the height of an Ironlander to half-again as tall as a [giant](id:classic/npc/firstborn/giant). Rumors persist of primordials who dwell in the deepest parts of the Wilds, or high in the ranges of the [Veiled Mountains](id:classic/atlas_entry/ironlands/veiled_mountain), who are as tall as an ancient tree. Beyond, some suggest, in the [Shattered Wastes](id:classic/atlas_entry/ironlands/shattered_waste), live primordials who tower into the clouds. Is the sound of distant thunder sometimes the footfalls of mountain-sized primordials who dwell beyond the edges of the known world?\n\nPrimordials are solitary beings and as unpredictable as the natural forces they personify. They might ignore you. They might lurk at a distance, as if observing you. Or, they might attack. They do not speak in any language we can understand. Some suggest they have no intelligence, and are merely a manifestation of the natural world, no different than a winter storm.\n\nHow do you kill an primordial? Most scoff at the idea. You are just as likely to kill the rain or the sea. A mystic might tell you to use a weapon imbued with elemental power. Don’t trust them. If you see a primordial, keep your distance. Better yet, run.",
+					"description": "The primordials, said to be the vestigial spirits of long-forgotten gods, are the most ancient of the firstborn. Each embodies some aspect of the natural world, bound in a form which is a crude mimicry of a human or large animal. A river primordial is a mass of rock, gravel, and flowing water. A forest primordial is comprised of wood, earth, rocks, and plants. A mountain primordial is a lumbering being of glacier stone and ice. A fire primordial, depending on its mood, might take form as embers, ash and smoke—or as a raging pyre.\n\nThey range in size from the height of an Ironlander to half-again as tall as a [giant](npc:classic/firstborn/giant). Rumors persist of primordials who dwell in the deepest parts of the Wilds, or high in the ranges of the [Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountain), who are as tall as an ancient tree. Beyond, some suggest, in the [Shattered Wastes](atlas_entry:classic/ironlands/shattered_waste), live primordials who tower into the clouds. Is the sound of distant thunder sometimes the footfalls of mountain-sized primordials who dwell beyond the edges of the known world?\n\nPrimordials are solitary beings and as unpredictable as the natural forces they personify. They might ignore you. They might lurk at a distance, as if observing you. Or, they might attack. They do not speak in any language we can understand. Some suggest they have no intelligence, and are merely a manifestation of the natural world, no different than a winter storm.\n\nHow do you kill an primordial? Most scoff at the idea. You are just as likely to kill the rain or the sea. A mystic might tell you to use a weapon imbued with elemental power. Don’t trust them. If you see a primordial, keep your distance. Better yet, run.",
 					"quest_starter": "In the dead of winter, a fire primordial is razing homes and burning a nearby wood. At night, orange flames light the sky. What can be done to stop this destruction?",
 					"_id": "npc:classic/firstborn/primordial"
 				},
@@ -23326,7 +23326,7 @@
 					],
 					"drives": ["Find pretty things", "Keep it secret"],
 					"tactics": ["Be sneaky", "Bite and claw", "Run and hide"],
-					"description": "Trolls mostly live in the [Flooded Land](id:classic/atlas_entry/ironlands/flooded_land), but it’s not unusual to encounter one in the [Hinterlands](id:classic/atlas_entry/ironlands/hinterland) or even in the southern reaches of the [Havens](id:classic/atlas_entry/ironlands/haven). They are solitary creatures, wary of contact with Ironlanders but likely to attack if scared or provoked.\n\nThey move with their back hunched, often skulking on all four gangly limbs. When they stand straight they are much taller than humans—nearly as tall as a giant. Their skin is a sickly pale gray, but they can camouflage themselves by changing it to match their environment.\n\nTrolls collect objects of all sorts, and particularly value Ironlander trinkets. They are tormented by the fear of others stealing their hoard, and are constantly seeking out new, better hiding places. The items are mostly junk to anyone but a troll, but occasionally an object of real value finds its way into the dregs.",
+					"description": "Trolls mostly live in the [Flooded Land](atlas_entry:classic/ironlands/flooded_land), but it’s not unusual to encounter one in the [Hinterlands](atlas_entry:classic/ironlands/hinterland) or even in the southern reaches of the [Havens](atlas_entry:classic/ironlands/haven). They are solitary creatures, wary of contact with Ironlanders but likely to attack if scared or provoked.\n\nThey move with their back hunched, often skulking on all four gangly limbs. When they stand straight they are much taller than humans—nearly as tall as a giant. Their skin is a sickly pale gray, but they can camouflage themselves by changing it to match their environment.\n\nTrolls collect objects of all sorts, and particularly value Ironlander trinkets. They are tormented by the fear of others stealing their hoard, and are constantly seeking out new, better hiding places. The items are mostly junk to anyone but a troll, but occasionally an object of real value finds its way into the dregs.",
 					"quest_starter": "The villagers tolerate the troll who lives nearby because its presence serves to dissuade a greater threat. They even donate items for its hoard, and put up with its occasional thievery. But now, the troll is missing. What is the looming threat the troll helped avert?",
 					"_id": "npc:classic/firstborn/troll"
 				},
@@ -23361,7 +23361,7 @@
 						"Leap into combat",
 						"Let loose the bloodcall"
 					],
-					"description": "The varou are humanoid beings who dwell within the [Deep Wilds](id:classic/atlas_entry/ironlands/deep_wild) and in the woods of the [Hinterlands](id:classic/atlas_entry/ironlands/hinterland). They have fierce, wolf-like features and are broad-shouldered and a head taller than the average Ironlander. Their long hair is ornately groomed and decorated with beads and other trinkets.\n\nThe varou value territory above all things. They often war amongst themselves and against the [elves](id:classic/npc/firstborn/elf) to gain or defend holdings. They mark their claims by carving clan symbols into trees. Only the foolish ignore the warning of these border signs. Several of our settlements—built too close to varou territory—are now abandoned ruins bearing the mark of a victorious varou clan.",
+					"description": "The varou are humanoid beings who dwell within the [Deep Wilds](atlas_entry:classic/ironlands/deep_wild) and in the woods of the [Hinterlands](atlas_entry:classic/ironlands/hinterland). They have fierce, wolf-like features and are broad-shouldered and a head taller than the average Ironlander. Their long hair is ornately groomed and decorated with beads and other trinkets.\n\nThe varou value territory above all things. They often war amongst themselves and against the [elves](npc:classic/firstborn/elf) to gain or defend holdings. They mark their claims by carving clan symbols into trees. Only the foolish ignore the warning of these border signs. Several of our settlements—built too close to varou territory—are now abandoned ruins bearing the mark of a victorious varou clan.",
 					"quest_starter": "A varou clan has carved their mark into the trees surrounding an Ironlander community, claiming it as their territory. An attack is surely imminent. What will you do to prevent it?",
 					"your_truth": "A young varou receives their keth—a curved dagger—before undergoing a rite of passage. What must they do to take their place among the adults of the clan?",
 					"_id": "npc:classic/firstborn/varou"
@@ -23385,7 +23385,7 @@
 				"page": 147
 			},
 			"summary": "__Animals__ are common creatures.",
-			"description": "animals are the mundane creatures which dwell in the Ironlands. Some animals are native to these lands; others were also common in the [Old World](id:classic/truths/old_world).\n\nMost wild animals are skittish and do not pose a threat to humans. Those creatures have no rank, and can be attacked or interacted with using appropriate moves. For example, [Resupply](move:classic/adventure/resupply) can represent hunting for deer or small game.\n\nA few notable exceptions—predators, aggressive creatures, and animals trained to fight—are noted here.",
+			"description": "animals are the mundane creatures which dwell in the Ironlands. Some animals are native to these lands; others were also common in the [Old World](truth:classic/old_world).\n\nMost wild animals are skittish and do not pose a threat to humans. Those creatures have no rank, and can be attacked or interacted with using appropriate moves. For example, [Resupply](move:classic/adventure/resupply) can represent hunting for deer or small game.\n\nA few notable exceptions—predators, aggressive creatures, and animals trained to fight—are noted here.",
 			"contents": {
 				"bear": {
 					"name": "Bear",
@@ -23407,7 +23407,7 @@
 					"features": ["Fearsome teeth and claws", "Thick hide"],
 					"drives": ["Find food", "Defend cubs"],
 					"tactics": ["Roar", "Pin down", "Maul with savage force"],
-					"description": "Most bears are not aggressive. They avoid Ironlanders and are unlikely to attack unless they see you as a threat.\n\nThere are exceptions. The silver bears of the [Veiled Mountains](id:classic/atlas_entry/ironlands/veiled_mountain), which sometimes range as far south as the [Tempest Hills](id:classic/atlas_entry/ironlands/tempest_hill), are territorial, powerful, and aggressive. Likewise, the ash bear, encountered in woodlands through the Ironlands, is known for its ferocity and cunning. If either catch the scent of you on the wind, they are likely to hunt you down and attack.",
+					"description": "Most bears are not aggressive. They avoid Ironlanders and are unlikely to attack unless they see you as a threat.\n\nThere are exceptions. The silver bears of the [Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountain), which sometimes range as far south as the [Tempest Hills](atlas_entry:classic/ironlands/tempest_hill), are territorial, powerful, and aggressive. Likewise, the ash bear, encountered in woodlands through the Ironlands, is known for its ferocity and cunning. If either catch the scent of you on the wind, they are likely to hunt you down and attack.",
 					"quest_starter": "A group of hunters felled a large ash bear with several arrows. It tumbled into a river and was swept away. Unfortunately, the bear they thought dead is now stalking the group as they make their way back home.",
 					"_id": "npc:classic/animals/bear"
 				},
@@ -23431,7 +23431,7 @@
 					"features": ["Wiry coats", "Long tusks", "Vicious"],
 					"drives": ["Forage", "Protect territory", "Defend sows"],
 					"tactics": ["Charge and gore", "Circle and attack again"],
-					"description": "In the [Old World](id:classic/truths/old_world), wild boars were belligerent and dangerous animals. Here in the Ironlands? They are even bigger and meaner. They will attack without warning or provocation. They will run you down, gore you, bite you, and circle around to do it all again. And again. And again.",
+					"description": "In the [Old World](truth:classic/old_world), wild boars were belligerent and dangerous animals. Here in the Ironlands? They are even bigger and meaner. They will attack without warning or provocation. They will run you down, gore you, bite you, and circle around to do it all again. And again. And again.",
 					"quest_starter": "A boar hunt ends in tragedy when an Ironlander is gored and grievously\nwounded. How do you know this person? What terrible truth do they\nreveal as they lay dying?",
 					"_id": "npc:classic/animals/boar"
 				},
@@ -23459,8 +23459,8 @@
 					],
 					"drives": ["Run like the wind"],
 					"tactics": ["Rear up", "Charge", "Trample"],
-					"description": "A gaunt is a creature unique to the Ironlands. They maneuver across the rough, dense terrain of the [Deep Wilds](id:classic/atlas_entry/ironlands/deep_wild) and [Hinterlands](id:classic/atlas_entry/ironlands/hinterland) with uncanny speed and grace. This makes them ideal as mounts for the [elves](id:classic/npc/firstborn/elf), who breed and train them.\n\nA gaunt will not usually act aggressively without provocation, but they are as deadly as the fiercest warhorse under the command of a talented rider.",
-					"quest_starter": "Villages in the [Hinterlands](id:classic/atlas_entry/ironlands/hinterland) have fallen prey to a large band of gaunt-riding elves. They attack with sudden and violent force, and are gone before any sort of defense can be mustered. Their leader, a warrior of unmatched skill, rides a distinctive white gaunt. What has driven these elves to strike out against the Ironlanders?",
+					"description": "A gaunt is a creature unique to the Ironlands. They maneuver across the rough, dense terrain of the [Deep Wilds](atlas_entry:classic/ironlands/deep_wild) and [Hinterlands](atlas_entry:classic/ironlands/hinterland) with uncanny speed and grace. This makes them ideal as mounts for the [elves](npc:classic/firstborn/elf), who breed and train them.\n\nA gaunt will not usually act aggressively without provocation, but they are as deadly as the fiercest warhorse under the command of a talented rider.",
+					"quest_starter": "Villages in the [Hinterlands](atlas_entry:classic/ironlands/hinterland) have fallen prey to a large band of gaunt-riding elves. They attack with sudden and violent force, and are gone before any sort of defense can be mustered. Their leader, a warrior of unmatched skill, rides a distinctive white gaunt. What has driven these elves to strike out against the Ironlanders?",
 					"your_truth": "Some gaunts live in wild herds. They once roamed the wilds in countless numbers, but few now remain. What has happened to thin these herds so dramatically?",
 					"_id": "npc:classic/animals/gaunt"
 				},
@@ -23484,7 +23484,7 @@
 					"features": ["Beady eyes", "Long tails"],
 					"drives": ["Eat everything", "Breed"],
 					"tactics": ["Swarm and bite"],
-					"description": "The marsh rat is a rodent of unusual size. They are all-too-common in the [Flooded Lands](id:classic/atlas_entry/ironlands/flooded_land) or in wetlands within the [Hinterlands](id:classic/atlas_entry/ironlands/hinterland) and [Deep Wilds](id:classic/atlas_entry/ironlands/deep_wild).\n\nThey will eat almost anything, including carrion and waste. Our grain stores and pantries are an easy target for a hungry pack, who will dig tunnels or chew through walls to get at the food. They will also try to make a meal out of living prey—deer, cattle, or even an unlucky Ironlander. It is said that a swarm of marsh rats can kill a horse and reduce it to bone in a matter of hours.",
+					"description": "The marsh rat is a rodent of unusual size. They are all-too-common in the [Flooded Lands](atlas_entry:classic/ironlands/flooded_land) or in wetlands within the [Hinterlands](atlas_entry:classic/ironlands/hinterland) and [Deep Wilds](atlas_entry:classic/ironlands/deep_wild).\n\nThey will eat almost anything, including carrion and waste. Our grain stores and pantries are an easy target for a hungry pack, who will dig tunnels or chew through walls to get at the food. They will also try to make a meal out of living prey—deer, cattle, or even an unlucky Ironlander. It is said that a swarm of marsh rats can kill a horse and reduce it to bone in a matter of hours.",
 					"quest_starter": "Marsh rats raided the stores of an isolated settlement. How will you ensure the Ironlanders have enough food to survive the coming winter?",
 					"_id": "npc:classic/animals/marsh_rat"
 				},
@@ -23531,7 +23531,7 @@
 				"page": 151
 			},
 			"summary": "__Beasts__ are monstrous creatures of unusual size and cunning.",
-			"description": "Beasts are monstrous creatures of great size and power. They are natural beings—not supernatural entities—but were unknown in the [Old World](id:classic/truths/old_world).",
+			"description": "Beasts are monstrous creatures of great size and power. They are natural beings—not supernatural entities—but were unknown in the [Old World](truth:classic/old_world).",
 			"contents": {
 				"basilisk": {
 					"name": "Basilisk",
@@ -23562,7 +23562,7 @@
 						"Sudden bite",
 						"Crush"
 					],
-					"description": "Basilisks dwell in the [Flooded Lands](id:classic/atlas_entry/ironlands/flooded_land), lurking in the murky waters of the swamps or within marshy thickets. There, they wait patiently for prey. They regularly feed on marsh rats or deer, but will eagerly make a meal out of a passing Ironlander.",
+					"description": "Basilisks dwell in the [Flooded Lands](atlas_entry:classic/ironlands/flooded_land), lurking in the murky waters of the swamps or within marshy thickets. There, they wait patiently for prey. They regularly feed on marsh rats or deer, but will eagerly make a meal out of a passing Ironlander.",
 					"quest_starter": "The adventurer set out to slay a basilisk, only to become its next meal. Because the serpent digests its prey slowly, the remains of the adventurer are still undoubtedly within the beast—along with the heirloom sword he wielded. What is your relationship to this person? Why is recovering the sword so important to you?",
 					"your_truth": "Some piece of a basilisk anatomy is prized by the Ironlanders. What is it? How is it used?",
 					"_id": "npc:classic/beasts/basilisk"
@@ -23652,8 +23652,8 @@
 						"Ram and swamp ships",
 						"Devour prey whole"
 					],
-					"description": "These massive sea beasts lurk in the darkness of the deepest fjords and in the abyssal depths beyond the [Barrier Islands](id:classic/atlas_entry/ironlands/barrier_island). They sometimes surface to hunt within shallower waters. They will indiscriminately destroy any Ironlander craft which stray to close to their hunting grounds.\n\nWatchful sailors might catch sight of a leviathan circling their boat, studying them, in the moments before it attacks. Their dagger-shaped head is as tough and destructive as any battering ram, able to shatter a ship in a single blow.",
-					"quest_starter": "A leviathan lurks off the coast, preying on fishing boats and trade ships. Among the dead is someone important to you. Who is it? You have vowed to send this beast back to the depths, but doing so will require a mythic weapon—The Abyssal Harpoon, an [Old World](id:classic/truths/old_world) artifact said to be carved from the bones of a long-dead sea god. Where is this weapon rumored to be held?",
+					"description": "These massive sea beasts lurk in the darkness of the deepest fjords and in the abyssal depths beyond the [Barrier Islands](atlas_entry:classic/ironlands/barrier_island). They sometimes surface to hunt within shallower waters. They will indiscriminately destroy any Ironlander craft which stray to close to their hunting grounds.\n\nWatchful sailors might catch sight of a leviathan circling their boat, studying them, in the moments before it attacks. Their dagger-shaped head is as tough and destructive as any battering ram, able to shatter a ship in a single blow.",
+					"quest_starter": "A leviathan lurks off the coast, preying on fishing boats and trade ships. Among the dead is someone important to you. Who is it? You have vowed to send this beast back to the depths, but doing so will require a mythic weapon—The Abyssal Harpoon, an [Old World](truth:classic/old_world) artifact said to be carved from the bones of a long-dead sea god. Where is this weapon rumored to be held?",
 					"your_truth": "Some coastal people believe leviathans are a manifestation of an ancient spirit. What is it?",
 					"_id": "npc:classic/beasts/leviathan"
 				},
@@ -23685,7 +23685,7 @@
 						"Protect the young of the herd"
 					],
 					"tactics": ["Form a protective circle", "Charge", "Trample", "Gore"],
-					"description": "These beasts resemble the elephants of the [Old World](id:classic/truths/old_world)’s southern realms, but are larger and covered in a coat of thick fur. They travel in herds among the [Tempest Hills](id:classic/atlas_entry/ironlands/tempest_hill), migrating south with the winter and north with the spring. They are not aggressive creatures, but are fearless and will fight to the death to protect their young.\n\nA herd of mammoths is an amazing and humbling sight, but smart Ironlanders keep their distance and stay upwind.",
+					"description": "These beasts resemble the elephants of the [Old World](truth:classic/old_world)’s southern realms, but are larger and covered in a coat of thick fur. They travel in herds among the [Tempest Hills](atlas_entry:classic/ironlands/tempest_hill), migrating south with the winter and north with the spring. They are not aggressive creatures, but are fearless and will fight to the death to protect their young.\n\nA herd of mammoths is an amazing and humbling sight, but smart Ironlanders keep their distance and stay upwind.",
 					"quest_starter": "A mammoth calf wanders alone into an Ironlander settlement. Why do you swear to reunite it with its herd?",
 					"_id": "npc:classic/beasts/mammoth"
 				},
@@ -23719,8 +23719,8 @@
 						"Fearsome roar",
 						"Bash with tail"
 					],
-					"description": "There are several breeds of wyverns in the Ironlands. To the west, tawny wyverns nest in the cliffs of the [Barrier Islands](id:classic/atlas_entry/ironlands/barrier_island) and [Ragged Coast](id:classic/atlas_entry/ironlands/ragged_coas), diving for fish in the surrounding waters. Inland, the verdant wyverns dwell in forested regions. The largest and most fearsome breed, the iron wyverns, hunt among the [Tempest Hills](id:classic/atlas_entry/ironlands/tempest_hill) and along the flanks of the [Veiled Mountains](classic/atlas_entry/ironlands/veiled_mountain).\n\nAll wyverns have wolfish heads with wide jaws, thick bodies, and sinuous tails. They have short hind limbs and elongated forelimbs which extend along their wings. In flight, they are a terrifying but awe-inspiring creature. On the ground, they lumber heavily on all four limbs, their wings folded back, jaws agape, gaze fixed on their prey. They are the grim cruelty of the Ironlands given form. They are death.",
-					"quest_starter": "Ancient cave paintings in the [Tempest Hills](id:classic/atlas_entry/ironlands/tempest_hill) show humanoids riding atop wyverns. Perhaps these beasts can be tamed. Why are you obsessed with this possibility?",
+					"description": "There are several breeds of wyverns in the Ironlands. To the west, tawny wyverns nest in the cliffs of the [Barrier Islands](atlas_entry:classic/ironlands/barrier_island) and [Ragged Coast](atlas_entry:classic/ironlands/ragged_coas), diving for fish in the surrounding waters. Inland, the verdant wyverns dwell in forested regions. The largest and most fearsome breed, the iron wyverns, hunt among the [Tempest Hills](atlas_entry:classic/ironlands/tempest_hill) and along the flanks of the [Veiled Mountains](classic/atlas_entry/ironlands/veiled_mountain).\n\nAll wyverns have wolfish heads with wide jaws, thick bodies, and sinuous tails. They have short hind limbs and elongated forelimbs which extend along their wings. In flight, they are a terrifying but awe-inspiring creature. On the ground, they lumber heavily on all four limbs, their wings folded back, jaws agape, gaze fixed on their prey. They are the grim cruelty of the Ironlands given form. They are death.",
+					"quest_starter": "Ancient cave paintings in the [Tempest Hills](atlas_entry:classic/ironlands/tempest_hill) show humanoids riding atop wyverns. Perhaps these beasts can be tamed. Why are you obsessed with this possibility?",
 					"your_truth": "Rumors persist of a wyvern graveyard where wyverns instinctively go when their death is near. Where is this supposedly located? In what way do Ironlanders make use of wyvern bones?",
 					"_id": "npc:classic/beasts/wyvern"
 				}
@@ -23743,7 +23743,7 @@
 				"page": 157
 			},
 			"summary": "__Horrors__ are supernatural beings.",
-			"description": "Horrors are supernatural entities. In the [Old World](id:classic/truths/old_world), they were superstition and legend. Here, they are nightmares made real. The Ironlands is fertile ground for darkness and evil to take hold, spawning these undead beings of pure vengeance or mindless hate.\n\nMany horrors can be temporarily defeated through physical attacks, but cannot be killed. They are beyond death.",
+			"description": "Horrors are supernatural entities. In the [Old World](truth:classic/old_world), they were superstition and legend. Here, they are nightmares made real. The Ironlands is fertile ground for darkness and evil to take hold, spawning these undead beings of pure vengeance or mindless hate.\n\nMany horrors can be temporarily defeated through physical attacks, but cannot be killed. They are beyond death.",
 			"contents": {
 				"bonewalker": {
 					"name": "Bonewalker",
@@ -23774,7 +23774,7 @@
 						"Grasp and claw"
 					],
 					"description": "Bonewalkers are human remains given unnatural life. The source of the dark energy that animates them is a mystery. Some say it is the will of dark gods. Some say an ancient evil permeates this land and seeps into porous bones of the dead. Or, perhaps it is the work of corrupt mystics.\n\nBonewalkers usually roam the location of their final resting place—a burial site, a cursed battlefield, or a settlement blighted by disease or violence. Nothing remains of their previous selves. They are soulless monsters driven only to destroy the living.",
-					"quest_starter": "A horde of bonewalkers marches relentlessly towards the [Havens](id:classic/atlas_entry/ironlands/haven). What dark force has gathered this army of the undead? How will you stop them?",
+					"quest_starter": "A horde of bonewalkers marches relentlessly towards the [Havens](atlas_entry:classic/ironlands/haven). What dark force has gathered this army of the undead? How will you stop them?",
 					"_id": "npc:classic/horrors/bonewalker"
 				},
 				"frostbound": {
@@ -23899,7 +23899,7 @@
 						"Draw in a whirlwind of materials to reform and enlarge",
 						"Envelop and suffocate"
 					],
-					"description": "It is said that [elves](id:classic/npc/firstborn/elf) who die an unjust death or have cause to seek retribution can rise as a hollow. Their form is a rippling mass of dead leaves, plants, soil, carrion, and insects. They move with a nightmarish, shambling gait. Their face is the wooden mask they wore in life. Their voice is the rattle of the wind through dry leaves.\n\nAs with [haunts](id:classic/npc/horrors/haunt), they can be temporarily defeated but cannot be killed by physical means. They are a relentless force. They will not stop until they enact their vengeance.",
+					"description": "It is said that [elves](npc:classic/firstborn/elf) who die an unjust death or have cause to seek retribution can rise as a hollow. Their form is a rippling mass of dead leaves, plants, soil, carrion, and insects. They move with a nightmarish, shambling gait. Their face is the wooden mask they wore in life. Their voice is the rattle of the wind through dry leaves.\n\nAs with [haunts](npc:classic/horrors/haunt), they can be temporarily defeated but cannot be killed by physical means. They are a relentless force. They will not stop until they enact their vengeance.",
 					"quest_starter": "A hollow terrorizes an Ironlander village. What does it seek? What will you do to stop it?",
 					"your_truth": "How do elven communities view a risen hollow? Are they seen as spirits of righteous vengeance or as dangerous aberrations?",
 					"_id": "npc:classic/horrors/hollow"

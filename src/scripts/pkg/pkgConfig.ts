@@ -1,12 +1,12 @@
 import path from 'path'
-import { type DataPackageConfig } from '../../schema/tools/build/index.js'
+import { type RulesPackageConfig } from '../../schema/tools/build/index.js'
 import {
 	PKG_SCOPE_OFFICIAL,
 	PKG_SCOPE_COMMUNITY,
 	ROOT_SOURCE_DATA
 } from '../const.js'
 
-export const IronswornClassic: DataPackageConfig = {
+export const IronswornClassic: RulesPackageConfig = {
 	type: 'ruleset',
 	paths: {
 		source: path.join(ROOT_SOURCE_DATA, 'classic')
@@ -14,6 +14,7 @@ export const IronswornClassic: DataPackageConfig = {
 	id: 'classic',
 	pkg: {
 		name: 'ironsworn-classic',
+		private: false,
 		scope: PKG_SCOPE_OFFICIAL,
 		keywords: ['ironsworn', 'datasworn', 'TTRPG'],
 		authors: [
@@ -27,7 +28,7 @@ export const IronswornClassic: DataPackageConfig = {
 	}
 }
 
-export const IronswornClassicDelve: DataPackageConfig = {
+export const IronswornClassicDelve: RulesPackageConfig = {
 	type: 'expansion',
 	paths: {
 		source: path.join(ROOT_SOURCE_DATA, 'delve')
@@ -35,6 +36,7 @@ export const IronswornClassicDelve: DataPackageConfig = {
 	id: 'delve',
 	pkg: {
 		name: 'ironsworn-classic-delve',
+		private: false,
 		scope: PKG_SCOPE_OFFICIAL,
 		description: 'Datasworn JSON data for the Ironsworn: Delve expansion.',
 		keywords: ['ironsworn', 'datasworn', 'TTRPG', 'delve', 'ironsworn-delve'],
@@ -48,7 +50,7 @@ export const IronswornClassicDelve: DataPackageConfig = {
 	}
 }
 
-export const Starforged: DataPackageConfig = {
+export const Starforged: RulesPackageConfig = {
 	id: 'starforged',
 	type: 'ruleset',
 	paths: {
@@ -60,6 +62,7 @@ export const Starforged: DataPackageConfig = {
 	},
 	pkg: {
 		name: 'starforged',
+		private: false,
 		scope: PKG_SCOPE_OFFICIAL,
 		description: 'Datasworn JSON data for Ironsworn: Starforged.',
 		keywords: ['ironsworn', 'datasworn', 'starforged', 'TTRPG'],
@@ -73,15 +76,15 @@ export const Starforged: DataPackageConfig = {
 	}
 }
 
-export const SunderedIsles: DataPackageConfig = {
+export const SunderedIsles: RulesPackageConfig = {
 	type: 'expansion',
-
 	paths: {
-		source: path.join(ROOT_SOURCE_DATA, 'sundered_isles')
+		source: path.join(ROOT_SOURCE_DATA, 'sundered-isles')
 	},
 	id: 'sundered_isles',
 	pkg: {
 		name: 'sundered-isles',
+		private: true,
 		scope: PKG_SCOPE_OFFICIAL,
 		description:
 			'Datasworn JSON data for the Starforged: Sundered Isles expansion.',
@@ -104,7 +107,7 @@ export const SunderedIsles: DataPackageConfig = {
 
 // // currently these just exist for testing purposes
 
-// export const Rsek: DataPackageConfig = {
+// export const Rsek: RulesPackageConfig = {
 // 	type: 'expansion',
 // 	paths: {
 // 		source: path.join(ROOT_SOURCE_DATA, 'rsek')
@@ -113,7 +116,7 @@ export const SunderedIsles: DataPackageConfig = {
 // 	pkg: { name: 'rsek', scope: PKG_SCOPE_COMMUNITY }
 // }
 
-// export const Starsmith: DataPackageConfig = {
+// export const Starsmith: RulesPackageConfig = {
 // 	type: 'expansion',
 // 	paths: {
 // 		source: path.join(ROOT_SOURCE_DATA, 'starsmith')

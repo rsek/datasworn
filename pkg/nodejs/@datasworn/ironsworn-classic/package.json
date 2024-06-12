@@ -21,7 +21,7 @@
 		"url": "https://github.com/rsek/datasworn/issues"
 	},
 	"dependencies": {
-		"@datasworn/core": "0.0.10"
+		"@datasworn/core": "0.1.0"
 	},
 	"authors": [
 		{
@@ -29,5 +29,6 @@
 			"email": "r.sekouri@gmail.com",
 			"url": "https://github.com/rsek"
 		}
-	]
+	],
+	"private": false
 }

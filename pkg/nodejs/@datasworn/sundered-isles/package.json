@@ -1,14 +1,21 @@
 {
-	"name": "@datasworn/ironsworn-classic-delve",
+	"name": "@datasworn/sundered_isles",
 	"version": "0.1.0",
-	"description": "Datasworn JSON data for the Ironsworn: Delve expansion.",
+	"private": true,
+	"description": "Datasworn JSON data for the Starforged: Sundered Isles expansion.",
 	"files": ["json"],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/rsek/datasworn.git",
-		"directory": "pkg/nodejs/@datasworn/ironsworn-classic-delve"
+		"directory": "pkg/nodejs/@datasworn/sundered_isles"
 	},
-	"keywords": ["ironsworn", "datasworn", "TTRPG", "delve", "ironsworn-delve"],
+	"keywords": [
+		"ironsworn",
+		"datasworn",
+		"TTRPG",
+		"starforged",
+		"sundered-isles"
+	],
 	"contributors": [
 		{
 			"name": "rsek",
@@ -21,8 +28,7 @@
 		"url": "https://github.com/rsek/datasworn/issues"
 	},
 	"dependencies": {
-		"@datasworn/core": "0.1.0",
-		"@datasworn/ironsworn-classic": "0.1.0"
+		"@datasworn/core": "0.1.0"
 	},
 	"authors": [
 		{
@@ -30,6 +36,5 @@
 			"email": "r.sekouri@gmail.com",
 			"url": "https://github.com/rsek"
 		}
-	],
-	"private": false
+	]
 }

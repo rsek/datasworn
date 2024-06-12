@@ -6,7 +6,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.applyReplacements = exports.updateId = exports.updateIdsInMarkdown = exports.updateIdsInString = exports.IdReplacementMap = void 0;
 const CONST_js_1 = __importDefault(require("./IdElements/CONST.js"));
-const MinorNodeTypes = ['asset_ability_move', 'asset_ability'];
+const MinorNodeTypes = ['asset.ability.move', 'asset.ability'];
 /**
  * Provides an array of {@link IdReplacer} objects for each Datasworn ID type.
  */
@@ -102,13 +102,13 @@ exports.IdReplacementMap = {
             new: 'truth:$1/$2'
         }
     ],
-    asset_ability_move: [
+    'asset.ability.move': [
         {
             old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/assets\/(?<path>(?:\*|[a-z][a-z_]*)\/(?:\*|[a-z][a-z_]*))\/abilities\/(?<index>\*|\d+)\/moves\/(?<key>\*|[a-z][a-z_]*)$/,
             new: 'asset.ability.move:$1/$2.$3.$4'
         }
     ],
-    asset_ability: [
+    'asset.ability': [
         {
             old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/assets\/(?<path>(?:\*|[a-z][a-z_]*)\/(?:\*|[a-z][a-z_]*))\/abilities\/(?<index>\*|\d+)$/,
             new: 'asset.ability:$1/$2.$3'
@@ -139,7 +139,7 @@ function updateIdsInString(key, value) {
         // won't match a RulesPackageId, but we don't
         // care about them.
         case typeof value !== 'string':
-        case !str.includes(CONST_js_1.default.PathSep):
+        case !str.includes(CONST_js_1.default.PathKeySep):
             return value;
         // implies a markdown ID reference.
         case str.includes('['):

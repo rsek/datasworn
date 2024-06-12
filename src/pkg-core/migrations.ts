@@ -113,13 +113,13 @@ export const IdReplacementMap = {
 			new: 'truth:$1/$2'
 		}
 	],
-	asset_ability_move: [
+	'asset.ability.move': [
 		{
 			old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/assets\/(?<path>(?:\*|[a-z][a-z_]*)\/(?:\*|[a-z][a-z_]*))\/abilities\/(?<index>\*|\d+)\/moves\/(?<key>\*|[a-z][a-z_]*)$/,
 			new: 'asset.ability.move:$1/$2.$3.$4'
 		}
 	],
-	asset_ability: [
+	'asset.ability': [
 		{
 			old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/assets\/(?<path>(?:\*|[a-z][a-z_]*)\/(?:\*|[a-z][a-z_]*))\/abilities\/(?<index>\*|\d+)$/,
 			new: 'asset.ability:$1/$2.$3'

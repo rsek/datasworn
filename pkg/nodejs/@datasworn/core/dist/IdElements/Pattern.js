@@ -16,7 +16,7 @@ var Pattern;
     Pattern.RulesPackageElement = RulesPackageBase;
     Pattern.RulesPackageId = new RegExp(`^${RulesPackageBase.source}$`);
     Pattern.IndexElement = /\d+/;
-    const RecursiveDictKeysBase = new RegExp(`${DictKeyBase.source}(?:\\${CONST_js_1.default.PathSep}${DictKeyBase.source}){${CONST_js_1.default.RECURSIVE_PATH_ELEMENTS_MIN - 1},${CONST_js_1.default.RECURSIVE_PATH_ELEMENTS_MAX - 1}}`);
+    const RecursiveDictKeysBase = new RegExp(`${DictKeyBase.source}(?:\\${CONST_js_1.default.PathKeySep}${DictKeyBase.source}){${CONST_js_1.default.RECURSIVE_PATH_ELEMENTS_MIN - 1},${CONST_js_1.default.RECURSIVE_PATH_ELEMENTS_MAX - 1}}`);
     Pattern.RecursiveDictKeysElement = RecursiveDictKeysBase;
 })(Pattern || (Pattern = {}));
 exports.default = Pattern;

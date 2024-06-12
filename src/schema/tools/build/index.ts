@@ -6,7 +6,7 @@ import {
 import { UnionEnumFromRecord } from '../../utils/UnionEnumFromRecord.js'
 import { RulesPackage } from '../../RulesPackages.js'
 
-export const DataPackageConfig = Type.Object({
+export const RulesPackageConfig = Type.Object({
 	id: Type.String({
 		description:
 			'The namespace ID for this data set. This is the first path element of all its object IDs.'
@@ -17,6 +17,7 @@ export const DataPackageConfig = Type.Object({
 		name: Type.String({
 			description: 'The package ID, not including its scope (see `scope`).'
 		}),
+		private: Type.Boolean({ default: false }),
 		description: Type.String(),
 		keywords: Type.Array(Type.String()),
 		authors: Type.Array(
@@ -45,4 +46,4 @@ export const DataPackageConfig = Type.Object({
 
 	// TODO: configure more of package construction from here, e.g. content of package.json
 })
-export type DataPackageConfig = Static<typeof DataPackageConfig>
+export type RulesPackageConfig = Static<typeof RulesPackageConfig>

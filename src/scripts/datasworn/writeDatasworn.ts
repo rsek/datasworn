@@ -3,7 +3,7 @@ import fs from 'fs-extra'
 import path from 'path'
 import { cwd } from 'process'
 import type { Datasworn, DataswornSource } from '../../pkg-core/index.js'
-import { type DataPackageConfig } from '../../schema/tools/build/index.js'
+import { type RulesPackageConfig } from '../../schema/tools/build/index.js'
 import { formatPath } from '../../utils.js'
 import { ROOT_OUTPUT } from '../const.js'
 import { loadSchema, loadSourceSchema } from '../schema/loadSchema.js'
@@ -26,9 +26,7 @@ const sourceSchemaValidator = <SchemaValidator<DataswornSource.RulesPackage>>(
 
 await buildRulesPackages(PkgConfig)
 
-export async function buildRulesPackages(
-	pkgs: Record<string, DataPackageConfig>
-) {
+export async function buildRulesPackages(pkgs: Record<string, RulesPackageConfig>) {
 	const profiler = Log.startTimer()
 
 	Log.info('📖 Reading schema...')
@@ -84,7 +82,7 @@ export async function buildRulesPackages(
 
 /** Loads files for a given Datasworn package configuration and assembles them with RulesPackageBuilder. */
 async function assemblePkgFiles(
-	{ id, paths }: DataPackageConfig,
+	{ id, paths }: RulesPackageConfig,
 	filesToDelete: string[],
 	index: Map<string, unknown>
 ) {

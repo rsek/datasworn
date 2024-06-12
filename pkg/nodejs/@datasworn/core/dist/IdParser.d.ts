@@ -25,7 +25,7 @@ declare abstract class IdParser<TypeIds extends StringId.TypeIdParts = StringId.
     get pathSegments(): PathSegments;
     set pathSegments(value: PathSegments);
     constructor(options: IdParser.Options<TypeIds, PathSegments>);
-    createdEmbeddedId<TypeId extends TypeId.EmbeddableTypes, Key extends string | number>(typeId: TypeId, key: Key): EmbeddedId<this, TypeId, Key>;
+    createEmbeddedId<TypeId extends TypeId.EmbeddableTypes, Key extends string | number>(typeId: TypeId, key: Key): EmbeddedId<this, TypeId, Key>;
     /**
      * Returns a string representation of the ID.
      */
@@ -100,7 +100,7 @@ declare namespace IdParser {
 declare class NonCollectableId<TypeId extends TypeId.NonCollectable = TypeId.NonCollectable, RulesPackage extends string = string, Key extends string = string> extends IdParser<[TypeId], [Join<[RulesPackage, Key]>]> {
     constructor(typeId: TypeId, rulesPackage: RulesPackage, key: Key);
 }
-interface NonCollectableId<TypeId extends TypeId.NonCollectable = TypeId.NonCollectable, RulesPackage extends string = string, Key extends string = string> extends IdParser<[TypeId], [`${RulesPackage}${CONST.PathSep}${Key}`]> {
+interface NonCollectableId<TypeId extends TypeId.NonCollectable = TypeId.NonCollectable, RulesPackage extends string = string, Key extends string = string> extends IdParser<[TypeId], [`${RulesPackage}${CONST.PathKeySep}${Key}`]> {
     get id(): StringId.NonCollectableId<TypeId, RulesPackage, Key>;
 }
 declare namespace NonCollectableId {
@@ -173,15 +173,15 @@ interface CollectionId<TypeId extends TypeId.Collection = TypeId.Collection, Rul
 }
 declare namespace CollectionId {
     type FromString<T extends StringId.CollectionId> = CollectionId<ExtractTypeId<T>, ExtractRulesPackage<T>, ExtractAncestorKeys<T>, ExtractKey<T>>;
-    type ChildOf<T extends CollectionId, K extends string = string> = CollectableId<TypeId.CollectableOf<T['typeId']>, T['rulesPackage'], T['pathKeys'], K>;
-    type ChildCollectionOf<T extends CollectionId, K extends string = string> = T['pathKeys'] extends PathKeys.CollectionAncestorKeys ? CollectionId<T['typeId'], T['rulesPackage'], T['pathKeys'], K> : never;
-    type ParentCollectionOf<T extends CollectionId> = T['collectionAncestorKeys'] extends [infer K extends string] ? CollectionId<T['typeId'], T['rulesPackage'], [], K> : T['collectionAncestorKeys'] extends [
+    type ChildOf<T extends CollectionId, K extends string = string> = CollectableId<TypeId.CollectableOf<T['primaryTypeId']>, T['rulesPackage'], T['primaryDictKeyElements'], K>;
+    type ChildCollectionOf<T extends CollectionId, K extends string = string> = T['primaryDictKeyElements'] extends PathKeys.CollectionAncestorKeys ? CollectionId<T['primaryTypeId'], T['rulesPackage'], T['primaryDictKeyElements'], K> : never;
+    type ParentCollectionOf<T extends CollectionId> = T['collectionAncestorKeys'] extends [infer K extends string] ? CollectionId<T['primaryTypeId'], T['rulesPackage'], [], K> : T['collectionAncestorKeys'] extends [
         infer U extends string,
         infer K extends string
-    ] ? CollectionId<T['typeId'], T['rulesPackage'], [U], K> : T['collectionAncestorKeys'] extends [
+    ] ? CollectionId<T['primaryTypeId'], T['rulesPackage'], [U], K> : T['collectionAncestorKeys'] extends [
         ...infer U extends PathKeys.CollectionAncestorKeys,
         infer K extends string
-    ] ? CollectionId<T['typeId'], T['rulesPackage'], U, K> : never;
+    ] ? CollectionId<T['primaryTypeId'], T['rulesPackage'], U, K> : never;
 }
 declare class EmbeddedId<Parent extends IdParser.Options = IdParser.Options, TypeId extends TypeId.EmbeddableTypes = TypeId.EmbeddableTypes, Key extends string | number = string | number> extends IdParser {
     constructor(parent: Parent, typeId: TypeId, key: string);
