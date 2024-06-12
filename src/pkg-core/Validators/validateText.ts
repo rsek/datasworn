@@ -1,4 +1,4 @@
-import Pattern from '../../pkg-core/IdElements/Pattern.js'
+import Pattern from '../IdElements/Pattern.js'
 
 const typeIdPattern = '[a-z][a-z_](?:.[a-z][a-z_]){0,2}+'
 const dictKeyOrIndexPattern = `[\\/\\.][a-z_0-9]+`
@@ -12,7 +12,7 @@ const linkSymbolPattern = new RegExp(
 	[
 		`(?<=\\[\\w.+?\\]\\()`, // lookbehind for markdown text in square brackets, plus left paren
 		`(?<id>${idPattern})`,
-		`(?=\\))` // lookafter for right paren
+		`(?=\\))` // lookahead for right paren
 	].join('')
 )
 
@@ -21,7 +21,7 @@ const macroSymbolPattern = new RegExp(
 		`(?<=\\{\\{)`, // lookbehind for left curly braces
 		`(?<directive>[a-z][a-z_]+>)`,
 		`(?<id>${idPattern})`,
-		`(?=\\}\\})` // lookafter for right curly braces
+		`(?=\\}\\})` // lookahead for right curly braces
 	].join('')
 )
 
@@ -131,7 +131,7 @@ export function forEachPrimitiveValue<T = unknown>(
 			fn(value, key)
 			break
 		case 'object':
-			if (value === null) fn(value, key)
+			if (value === null) fn(value as null, key)
 			else if (Array.isArray(value))
 				value.forEach((v, k) => {
 					forEachPrimitiveValue(v, k, fn)

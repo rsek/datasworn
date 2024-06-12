@@ -1,17 +1,9 @@
-import type { OracleColumnText } from '../../schema/index.js'
 import type {
 	DiceExpression,
-	ObjectType,
-	OracleColumnText2,
-	OracleColumnText3,
 	OracleRollable,
 	OracleTableRow,
-	OracleTableRowText3,
-	OracleTableSharedRolls,
-	OracleTableSharedText,
-	OracleTableSharedText2,
-	OracleTableSharedText3
-} from '../../types/Datasworn.js'
+	OracleTableRowText3
+} from '../Datasworn.js'
 
 // TODO
 
@@ -30,7 +22,6 @@ function compareRowRanges(a: RowLike, b: RowLike) {
 
 	if (a.roll != null && b.roll == null) return 1
 
-	// @ts-expect-error
 	return a.roll.min < b.roll.min ? -1 : b.roll.min > a.roll.min ? 1 : 0
 }
 
@@ -141,8 +132,6 @@ export function validateTableRollRanges(
 
 	return true
 }
-
-type TextColumn = OracleColumnText | OracleColumnText2 | OracleColumnText3
 
 // TODO
 // export function validateSharedRollColumn(oracle: OracleTableSharedRolls) {
