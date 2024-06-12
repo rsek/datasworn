@@ -14,647 +14,9 @@ oracles:
     name: Campaign Oracles
     type: oracle_collection
     _source: *Source
-    contents:
-      backstory:
-        name: Your Backstory
-        type: oracle_rollable
-        oracle_type: table_text
-        recommended_rolls: { min: 1, max: 2 }
-        tags:
-          sundered_isles:
-            cursed_by: oracle_rollable:sundered_isles/campaign/backstory_cursed
-        _source:
-          <<: *Source
-        rows:
-          - roll: { min: 1, max: 3 }
-            text: Abandoned a life of privilege or power
-          - roll: { min: 4, max: 7 }
-            text: Betrayed by a close friend, lover, or family member
-          - roll: { min: 8, max: 11 }
-            text: Caught up in a forbidden or unlikely romance
-          - roll: { min: 12, max: 14 }
-            text: Deserted the military
-          - roll: { min: 15, max: 18 }
-            text: Entrusted with a valuable secret
-          - roll: { min: 19, max: 22 }
-            text: Escaped unjust captivity
-          - roll: { min: 23, max: 26 }
-            text: Fled a cruel upbringing
-          - roll: { min: 27, max: 30 }
-            text: Following in the footsteps of famous or notorious kin
-          - roll: { min: 31, max: 34 }
-            text: Forcefully exiled from your land or people
-          - roll: { min: 35, max: 37 }
-            text: Found adrift with no memory of your former life
-          - roll: { min: 38, max: 40 }
-            text: Framed for a crime you didn't commit
-          - roll: { min: 41, max: 43 }
-            text: Guided by a dream or prophecy
-          - roll: { min: 44, max: 46 }
-            text: Home destroyed by disaster or war
-          - roll: { min: 47, max: 49 }
-            text: Home occupied by an enemy faction
-          - roll: { min: 50, max: 53 }
-            text: Joined a mutiny, uprising, or rebellion
-          - roll: { min: 54, max: 56 }
-            text: Joined a secret society
-          - roll: { min: 57, max: 59 }
-            text: Living under a stolen or assumed identity
-          - roll: { min: 60, max: 63 }
-            text: Loved one gone missing
-          - roll: { min: 64, max: 67 }
-            text: Marooned by former shipmates
-          - roll: { min: 68, max: 71 }
-            text: On the run with a stolen object of great value
-          - roll: { min: 72, max: 75 }
-            text: Raised by or fell in with criminals or pirates
-          - roll: { min: 76, max: 79 }
-            text: Refugee from a distant land
-          - roll: { min: 80, max: 83 }
-            text: Survived a disaster or battle at sea
-          - roll: { min: 84, max: 86 }
-            text: Took up a vendetta against a powerful figure or faction
-          - roll: { min: 87, max: 89 }
-            text: Trained in a rare or secret craft by a skilled mentor
-          - roll: { min: 90, max: 93 }
-            text: Trying to forget a disastrous love affair
-          - roll: { min: 94, max: 96 }
-            text: Undone by a personal vice
-          - roll: { min: 97, max: 100 }
-            text: Wronged a powerful figure or faction who seeks retribution
-      backstory_cursed:
-        name: Your Cursed Backstory
-        type: oracle_rollable
-        oracle_type: table_text
-        tags:
-          sundered_isles:
-            cursed_version_of:
-              - oracle_rollable:sundered_isles/campaign/backstory
-            curse_behavior: replace_result
-        _source:
-          <<: *Source
-        rows:
-          - roll: { min: 1, max: 7 }
-            text: Banished because of uncanny nature or abilities
-          - roll: { min: 8, max: 14 }
-            text: Bearing a relic of dreadful power
-          - roll: { min: 15, max: 20 }
-            text: Desperate to unlock the secrets of forbidden magic
-          - roll: { min: 21, max: 26 }
-            text: Forged and made animate by forbidden technologies
-          - roll: { min: 27, max: 33 }
-            text: Grievously wounded and given new life by forbidden magic or technology
-          - roll: { min: 34, max: 40 }
-            text: Haunted by the spirit of someone you failed or wronged
-          - roll: { min: 41, max: 47 }
-            text: Home destroyed by a monstrous beast
-          - roll: { min: 48, max: 54 }
-            text: Home destroyed by undead or inhuman foes
-          - roll: { min: 55, max: 61 }
-            text: Inherited a dreadful curse
-          - roll: { min: 62, max: 67 }
-            text: Killed an albatross; plagued by foul luck ever since
-          - roll: { min: 68, max: 73 }
-            text: Sole survivor of a string of unlikely disasters
-          - roll: { min: 74, max: 80 }
-            text: Suffered a vision of a horrible fate
-          - roll: { min: 81, max: 87 }
-            text: Survived an attack at sea by a cursed ship
-          - roll: { min: 88, max: 94 }
-            text: Survived an attack at sea by a monstrous sea beast
-          - roll: { min: 95, max: 100 }
-            text: Targeted or hunted by a dreadful being
-      persona:
-        name: Your Persona
-        type: oracle_rollable
-        _comment: Formatting on this one is tricky to express in Datasworn!
-        oracle_type: table_text3
-        column_labels:
-        # this isn't the columns are presented in the table, but makes more semantic sense in a web context
-          roll: Roll
-        # TODO: figure out a way to represent these icons
-          text3: ""
-          text: Result
-          text2: Starting Paths
-        _source:
-          <<: *Source
-        rows:
-          - roll: { min: 1, max: 3 }
-            text: Apothecary
-            text2: "[Healer](asset:starforged/path/healer), [Peddler](asset:sundered_isles/path/peddler)"
-            text3: ""
-          - roll: { min: 4, max: 5 }
-            text: Apprentice
-            text2: "[Shipwright](asset:sundered_isles/path/shipwright), [Urchin](asset:sundered_isles/path/urchin)"
-            text3: ""
-          - roll: { min: 6, max: 7 }
-            text: Assassin
-            text2: "[Blademaster](asset:starforged/path/blademaster), [Bounty Hunter](asset:starforged/path/bounty_hunter)"
-            text3: ""
-          - roll: { min: 8, max: 9 }
-            text: Beast Hunter
-            text2: "[Harpooner](asset:sundered_isles/path/harpooner), [Slayer](asset:starforged/path/slayer)"
-            text3: ""
-          - roll: { min: 10, max: 12 }
-            text: Blockade Runner
-            text2: "[Courier](asset:starforged/path/courier), [Navigator](asset:starforged/path/navigator)"
-            text3: ""
-          - roll: { min: 13, max: 15 }
-            text: Brigand
-            text2: "[Pistoleer](asset:sundered_isles/path/pistoleer), [Scoundrel](asset:starforged/path/scoundrel)"
-            text3: ""
-          - roll: { min: 16, max: 17 }
-            text: Buccaneer
-            text2: "[Swashbuckler](asset:sundered_isles/path/swashbuckler), [Pirate Captain](asset:sundered_isles/path/pirate_captain)"
-            text3: ""
-          - roll: { min: 18, max: 20 }
-            text: Bulwark
-            text2: "[Brawler](asset:starforged/path/brawler), [Loyalist](asset:starforged/path/loyalist)"
-            <<: &CoOp
-              text3: "Co-op"
-          - roll: { min: 21, max: 23 }
-            text: Castaway
-            text2: "[Jinx](asset:sundered_isles/path/jinx), [Scavenger](asset:starforged/path/scavenger)"
-            text3: ""
-          - roll: { min: 24, max: 26 }
-            text: Charlatan
-            text2: "[Scoundrel](asset:starforged/path/scoundrel), [Socialite](asset:sundered_isles/path/socialite)"
-            text3: ""
-          - roll: { min: 27, max: 28 }
-            text: Cloak and Dagger
-            text2: "[Cutthroat](asset:sundered_isles/path/cutthroat), [Spy](asset:sundered_isles/path/spy)"
-            text3: ""
-          - roll: { min: 29, max: 30 }
-            text: Cultist
-            text2: "[Devotant](asset:starforged/path/devotant), [Necromancer](asset:sundered_isles/path/necromancer)"
-            <<: &Supernatural
-              text3: "Supernatural"
-          - roll: { min: 31, max: 32 }
-            text: Deathbound
-            text2: "[Fated](asset:starforged/path/fated), [Haunted](asset:starforged/path/haunted)"
-            <<: *Supernatural
-          - roll: { min: 33, max: 34 }
-            text: Deep One
-            text2: "[Vestige](asset:starforged/path/vestige), [Waterborn](asset:sundered_isles/path/waterborn)"
-            <<: *Supernatural
-          - roll: { min: 35, max: 37 }
-            text: Elementalist
-            text2: "[Firebrand](asset:starforged/path/firebrand), [Sorcerer](asset:sundered_isles/path/sorcerer)"
-            <<: *Supernatural
-          - roll: { min: 38, max: 40 }
-            text: Emissary
-            text2: "[Diplomat](asset:starforged/path/diplomat), [Spy](asset:sundered_isles/path/spy)"
-            text3: ""
-          - roll: { min: 41, max: 42 }
-            text: Gallant
-            text2: "[Duelist](asset:sundered_isles/path/duelist), [Socialite](asset:sundered_isles/path/socialite)"
-            text3: ""
-          - roll: { min: 43, max: 44 }
-            text: Guild Mage
-            text2: "[Bannersworn](asset:starforged/path/bannersworn), [Sorcerer](asset:sundered_isles/path/sorcerer)"
-            <<: *Supernatural
-          - roll: { min: 45, max: 46 }
-            text: Gunner
-            text2: "[Cannoneer](asset:sundered_isles/path/cannoneer), [Veteran](asset:starforged/path/veteran)"
-            text3: ""
-          - roll: { min: 47, max: 48 }
-            text: Hired Gun
-            text2: "[Mercenary](asset:starforged/path/mercenary), [Musketeer](asset:sundered_isles/path/musketeer)"
-            text3: ""
-          - roll: { min: 49, max: 50 }
-            text: Ironclad
-            text2: "[Armored](asset:starforged/path/armored), [Brawler](asset:starforged/path/brawler)"
-            <<: &Technology
-              text3: "Technology"
-          - roll: { min: 51, max: 52 }
-            text: Jury-Rig
-            text2: "[Construct](asset:sundered_isles/path/construct), [Scavenger](asset:starforged/path/scavenger)"
-            <<: *Technology
-          - roll: { min: 53, max: 54 }
-            text: Lycanthrope
-            text2: "[Outcast](asset:starforged/path/outcast), [Shapechanger](asset:sundered_isles/path/shapechanger)"
-            <<: *Supernatural
-          - roll: { min: 55, max: 57 }
-            text: Monster Hunter
-            text2: "[Blademaster](asset:starforged/path/blademaster), [Slayer](asset:starforged/path/slayer)"
-            <<: *Supernatural
-          - roll: { min: 58, max: 60 }
-            text: Naturalist
-            text2: "[Overlander](asset:sundered_isles/path/overlander), [Scholar](asset:sundered_isles/path/scholar) (Natural history)"
-            text3: ""
-          - roll: { min: 61, max: 62 }
-            text: Pilgrim
-            text2: "[Devotant](asset:starforged/path/devotant), [Navigator](asset:starforged/path/navigator)"
-            <<: *Supernatural
-          - roll: { min: 63, max: 64 }
-            text: Piper
-            text2: "[Musician](asset:sundered_isles/path/musician), [Loyalist](asset:starforged/path/loyalist)"
-            <<: *CoOp
-          - roll: { min: 65, max: 67 }
-            text: Renegade
-            text2: "[Fugitive](asset:starforged/path/fugitive), [Veteran](asset:starforged/path/veteran)"
-            text3: ""
-          - roll: { min: 68, max: 70 }
-            text: Saboteur
-            text2: "[Demolitionist](asset:starforged/path/demolitionist), [Spy](asset:sundered_isles/path/spy)"
-            <<: *Technology
-          - roll: { min: 71, max: 72 }
-            text: Sea Witch
-            text2: "[Seer](asset:starforged/path/seer), [Windbinder](asset:sundered_isles/path/windbinder)"
-            <<: *Supernatural
-          - roll: { min: 73, max: 74 }
-            text: Shadow Assassin
-            text2: "[Cutthroat](asset:sundered_isles/path/cutthroat), [Shade](asset:starforged/path/shade)"
-            <<: *Supernatural
-          - roll: { min: 75, max: 76 }
-            text: Shipbreaker
-            text2: "[Kinetic](asset:starforged/path/kinetic), [Scavenger](asset:starforged/path/scavenger)"
-            <<: *Supernatural
-          - roll: { min: 77, max: 78 }
-            text: Siren
-            text2: "[Empath](asset:starforged/path/empath), [Musician](asset:sundered_isles/path/musician)"
-            <<: *Supernatural
-          - roll: { min: 79, max: 80 }
-            text: Skipper
-            text2: "[Crew Commander](asset:sundered_isles/path/crew_commander), [Leader](asset:starforged/path/leader)"
-            <<: *CoOp
-          - roll: { min: 81, max: 83 }
-            text: Smuggler
-            text2: "[Fugitive](asset:starforged/path/fugitive), [Peddler](asset:sundered_isles/path/peddler)"
-            text3: ""
-          - roll: { min: 84, max: 86 }
-            text: Sole Survivor
-            text2: "[Haunted](asset:starforged/path/haunted), [Vestige](asset:starforged/path/vestige)"
-            <<: *Supernatural
-          - roll: { min: 87, max: 88 }
-            text: Spiritualist
-            text2: "[Seer](asset:starforged/path/seer), [Sleuth](asset:starforged/path/sleuth)"
-            <<: *Supernatural
-          - roll: { min: 89, max: 91 }
-            text: Stowaway
-            text2: "[Urchin](asset:sundered_isles/path/urchin), [Outcast](asset:starforged/path/outcast)"
-            text3: ""
-          - roll: { min: 92, max: 94 }
-            text: Surgeon
-            text2: "[Healer](asset:starforged/path/healer), [Scholar](asset:sundered_isles/path/scholar) (Medicine)"
-            text3: ""
-          - roll: { min: 95, max: 96 }
-            text: Tinker
-            text2: "[Augmented](asset:starforged/path/augmented), [Gearhead](asset:starforged/path/gearhead)"
-            <<: *Technology
-          - roll: { min: 97, max: 98 }
-            text: Vanguard
-            text2: "[Bannersworn](asset:starforged/path/bannersworn), [Scattershot](asset:sundered_isles/path/scattershot)"
-            text3: ""
-          - roll: { min: 99, max: 100 }
-            text: War Machine
-            text2: "[Construct](asset:sundered_isles/path/construct), [Mercenary](asset:starforged/path/mercenary)"
-            <<: *Technology
-      ship_history:
-        name: Ship History
-        type: oracle_rollable
-        oracle_type: table_text
-        tags:
-          sundered_isles:
-            cursed_by: oracle_rollable:sundered_isles/campaign/ship_history_cursed
-        _source:
-          <<: *Source
-        rows:
-          - roll: { min: 1, max: 5 }
-            text: Acquired in a duel of honor
-          - roll: { min: 6, max: 10 }
-            text: Awarded by a vote of the crew, after the former captain died an untimely death
-          - roll: { min: 11, max: 15 }
-            text: Bestowed by an eccentric shipwright
-          - roll: { min: 16, max: 20 }
-            text: Built or refitted by a community, and granted to its captain as their emissary
-          - roll: { min: 21, max: 25 }
-            text: Captured in battle, and awarded by the former captain
-          - roll: { min: 26, max: 30 }
-            text: Earned in exchange for a perilous undertaking or heroic deed
-          - roll: { min: 31, max: 35 }
-            text: Entrusted by a faction, and commanded in their service
-          - roll: { min: 36, max: 40 }
-            text: Found as a wreck, and refitted to make it seaworthy
-          - roll: { min: 41, max: 45 }
-            text: Gifted by an anonymous benefactor
-          - roll: { min: 46, max: 50 }
-            text: Inherited from a dead or missing relative or mentor
-          - roll: { min: 51, max: 55 }
-            text: Leased under exorbitant terms
-          - roll: { min: 56, max: 60 }
-            text: Obtained in trade for a precious object
-          - roll: { min: 61, max: 65 }
-            text: Obtained through a false identity or counterfeit documents
-          - roll: { min: 66, max: 70 }
-            text: On grant from an underworld figure in exchange for completing unscrupulous missions
-          - roll: { min: 71, max: 75 }
-            text: Once a timeworn, unwanted ship, painstakingly refitted to its new role
-          - roll: { min: 76, max: 80 }
-            text: Purchased at a suspiciously cheap price
-          - roll: { min: 81, max: 85 }
-            text: Seized in a mutiny against its former captain
-          - roll: { min: 86, max: 90 }
-            text: Stolen from under the nose of a powerful faction
-          - roll: { min: 91, max: 95 }
-            text: Taken while fleeing an attack or disaster
-          - roll: { min: 96, max: 100 }
-            text: Won in a high-stakes bet
-      ship_history_cursed:
-        name: Cursed Ship
-        type: oracle_rollable
-        oracle_type: table_text
-        tags:
-          sundered_isles:
-            cursed_version_of:
-              - oracle_rollable:sundered_isles/campaign/ship_history
-            curse_behavior: replace_result
-        _source:
-          <<: *Source
-        rows:
-          - roll: { min: 1, max: 10 }
-            text: Awarded by its former—and now dead—captain, who still haunts its decks
-          - roll: { min: 11, max: 20 }
-            text: Bound to a role as its new commander by a beguiling curse
-          - roll: { min: 21, max: 30 }
-            text: Cobbled together from salvage found within a graveyard of forsaken ships
-          - roll: { min: 31, max: 40 }
-            text: Discovered within a hidden sea cave after calling to you in a dream
-          - roll: { min: 41, max: 50 }
-            text: Found adrift in perfect condition, with no sign of the crew
-          - roll: { min: 51, max: 60 }
-            text: Gifted by a dreadful entity in exchange for a dark favor; you reneged on their terms
-          - roll: { min: 61, max: 70 }
-            text: Granted in an accursed agreement, sealed in blood
-          - roll: { min: 71, max: 80 }
-            text: Improbably found as a derelict well inland; moved and refloated with much effort
-          - roll: { min: 81, max: 90 }
-            text: Raised from the sunken depths as a boon from the sea itself
-          - roll: { min: 91, max: 100 }
-            text: Taken in spite of its cursed reputation, when no one else would sail it
-      crew:
-        name: Crew Characteristics
-        type: oracle_rollable
-        oracle_type: table_text
-        tags:
-          sundered_isles:
-            cursed_by: oracle_rollable:sundered_isles/campaign/crew_cursed
-        _source:
-          <<: *Source
-        rows:
-          - roll: { min: 1, max: 8 }
-            text: Eclectic mix of all sorts of folk
-          - roll: { min: 9, max: 14 }
-            text: Adventurers and trailblazers, seeking the far horizon
-          - roll: { min: 15, max: 18 }
-            text: Disciplined military force, doing their duty
-          - roll: { min: 19, max: 22 }
-            text: Experienced mariners, lending an able hand
-          - roll: { min: 23, max: 26 }
-            text: Glory hunters, looking to make a mark
-          - roll: { min: 27, max: 32 }
-            text: Kin of a seafaring people, honoring traditions
-          - roll: { min: 33, max: 38 }
-            text: Marauders and brigands, taking their share of the spoils
-          - roll: { min: 39, max: 44 }
-            text: Novice mariners, undertaking their first adventure
-          - roll: { min: 45, max: 48 }
-            text: Old salts brought out of retirement, undertaking a final adventure
-          - roll: { min: 49, max: 54 }
-            text: Outcasts and exiles, bound by their differences
-          - roll: { min: 55, max: 60 }
-            text: Rebels, fighting for freedom
-          - roll: { min: 61, max: 66 }
-            text: Refugees from a faraway land, finding a new home
-          - roll: { min: 67, max: 70 }
-            text: Religious zealots, serving their god
-          - roll: { min: 71, max: 74 }
-            text: Scoundrels and spies, always watching
-          - roll: { min: 75, max: 78 }
-            text: Survivors of a horrible cataclysm, preserving what remains
-          - roll: { min: 79, max: 82 }
-            text: Survivors of a terrible attack, seeking revenge
-          - roll: { min: 83, max: 86 }
-            text: Turncoat imperials, sworn against former compatriots
-          - roll: { min: 87, max: 90 }
-            text: Unprincipled mercenaries, earning blood money
-          - roll: { min: 91, max: 100 }
-            text: Roll twice; these groups are at odds
-            oracle_rolls:
-              - auto: true
-                number_of_rolls: 2
-                duplicates: keep
-      crew_cursed:
-        name: Cursed Crew
-        type: oracle_rollable
-        oracle_type: table_text
-        tags:
-          sundered_isles:
-            cursed_version_of:
-              - oracle_rollable:sundered_isles/campaign/crew
-            curse_behavior: replace_result
-        _source:
-          <<: *Source
-        rows:
-          - roll: { min: 1, max: 5 }
-            text: Bound to the ship, unable to sail another
-          - roll: { min: 6, max: 10 }
-            text: Bound to the will of a dreadful artifact
-          - roll: { min: 11, max: 15 }
-            text: Built or augmented with strange technologies
-          - roll: { min: 16, max: 20 }
-            text: Cursed with foreknowledge of a dreadful fate
-          - roll: { min: 21, max: 25 }
-            text: Hunted by a vengeful sea beast
-          - roll: { min: 26, max: 30 }
-            text: In the service of a malevolent god or entity
-          - roll: { min: 31, max: 40 }
-            text: Obsessed with superstitious routines and rituals
-          - roll: { min: 41, max: 45 }
-            text: Once dead, now cursed with unnatural life
-          - roll: { min: 46, max: 50 }
-            text: Plagued with unnatural sickness
-          - roll: { min: 51, max: 60 }
-            text: Suffers a jinxed reputation, and forsaken by others
-          - roll: { min: 61, max: 65 }
-            text: Suffers an insatiable need
-          - roll: { min: 66, max: 75 }
-            text: Survivors of an attack by a horrifying foe or monstrous beast
-          - roll: { min: 76, max: 85 }
-            text: Tattooed with elaborate mystical wards
-          - roll: { min: 86, max: 95 }
-            text: Tormented by unforgiving spirits
-          - roll: { min: 96, max: 100 }
-            text: True nature revealed under moonlight
-      location_details:
-        name: Location Details
-        type: oracle_rollable
-        oracle_type: table_text2
-        tags:
-          sundered_isles:
-            cursed_by: oracle_rollable:sundered_isles/campaign/location_details_cursed
-        _source:
-          <<: *Source
-        rows:
-          - roll: { min: 1, max: 4 }
-            text: Abyssal sinkhole
-            text2: What is rumored to lie at the bottom of these depths?
-          - roll: { min: 5, max: 8 }
-            text: Active volcano
-            text2: What important location does this eruption threaten?
-          - roll: { min: 9, max: 12 }
-            text: Ancient ruins
-            text2: Who or what defends this place against intruders?
-          - roll: { min: 13, max: 15 }
-            text: Colossal monument
-            text2: What legendary figure or god does this monument honor?
-          - roll: { min: 16, max: 19 }
-            text: Crucial trade route
-            text2: What is disrupting trade along this route?
-          - roll: { min: 20, max: 23 }
-            text: Deserted settlement
-            text2: Why was this place abandoned?
-          - roll: { min: 24, max: 27 }
-            text: Expansive cave
-            text2: What treasure is said to lie at the heart of this cave?
-          - roll: { min: 28, max: 30 }
-            text: Floating tradepost
-            text2: Who is hounding these traders, demanding tribute?
-          - roll: { min: 31, max: 34 }
-            text: Hull-breaching rocks
-            text2: Who or what preys upon careless ships in this area?
-          - roll: { min: 35, max: 38 }
-            text: Kelp-clogged waters
-            text2: What ship went missing here?
-          - roll: { min: 39, max: 41 }
-            text: Meteorite scar
-            text2: What prophecy foretold the meteorite's fall?
-          - roll: { min: 42, max: 45 }
-            text: Military encampment
-            text2: Who is this faction warring against?
-          - roll: { min: 46, max: 49 }
-            text: Military fort
-            text2: What notable prisoner is held here?
-          - roll: { min: 50, max: 52 }
-            text: Mining operation
-            text2: What danger have these miners unearthed?
-          - roll: { min: 53, max: 55 }
-            text: Mist-shrouded peak
-            text2: What is said to stand atop this mountain?
-          - roll: { min: 56, max: 58 }
-            text: Navigation beacon
-            text2: Why has this lighthouse fallen into disrepair?
-          - roll: { min: 59, max: 61 }
-            text: Ongoing naval blockade
-            text2: Who seeks an escort through or around this blockade?
-          - roll: { min: 62, max: 65 }
-            text: Palatial manor
-            text2: What lavish event is scheduled to take place here?
-          - roll: { min: 66, max: 69 }
-            text: Pirate conclave
-            text2: What opportunity or crisis brings the pirates together?
-          - roll: { min: 70, max: 73 }
-            text: Recently wrecked ship
-            text2: What prize was this ship rumored to carry?
-          - roll: { min: 74, max: 76 }
-            text: Refugee encampment
-            text2: What danger or crisis displaced these refugees?
-          - roll: { min: 77, max: 79 }
-            text: Religious commune
-            text2: Why are these adherents desperate for supplies?
-          - roll: { min: 80, max: 83 }
-            text: Sentinel tree
-            text2: What threatens this sacred site?
-          - roll: { min: 84, max: 87 }
-            text: Sheltered anchorage
-            text2: What infamous ship lies anchored here?
-          - roll: { min: 88, max: 91 }
-            text: Warship patrols
-            text2: What are these ships hunting?
-          - roll: { min: 92, max: 94 }
-            text: Whale graveyard
-            text2: Who seeks to harvest these bones?
-          - roll: { min: 95, max: 97 }
-            text: Whaling grounds
-            text2: Who or what is hunting these creatures to near-extinction?
-          - roll: { min: 98, max: 100 }
-            text: Wide, navigable river
-            text2: What important location lies upriver?
-      location_details_cursed:
-        name: Cursed Location Details
-        type: oracle_rollable
-        oracle_type: table_text2
-        tags:
-          sundered_isles:
-            cursed_version_of:
-              - oracle_rollable:sundered_isles/campaign/location_details
-            curse_behavior: replace_result
-        _source:
-          <<: *Source
-        rows:
-          - roll: { min: 1, max: 5 }
-            text: Area of endless dead calm
-            text2: What ship is trapped in these waters?
-          - roll: { min: 6, max: 10 }
-            text: Colossal bones
-            text2: Who lives in the shadow of this age-old corpse?
-          - roll: { min: 11, max: 15 }
-            text: Corrupted cave
-            text2: What cult is said to practice foul rites here?
-          - roll: { min: 16, max: 20 }
-            text: Eldritch monument
-            text2: What forsaken god or entity does this monument honor?
-          - roll: { min: 21, max: 25 }
-            text: Forsaken settlement
-            text2: What foul creatures now dwell here?
-          - roll: { min: 26, max: 30 }
-            text: Frozen wastes
-            text2: What long-lost ship lies trapped here?
-          - roll: { min: 31, max: 35 }
-            text: Ghost-haunted waters
-            text2: What infamous cursed ship sails these waters?
-          - roll: { min: 36, max: 40 }
-            text: Ghost-plagued ruins
-            text2: What sad fate befell these people?
-          - roll: { min: 41, max: 45 }
-            text: Haunted battlefield
-            text2: What force or faction was defeated in this battle?
-          - roll: { min: 46, max: 50 }
-            text: Hidden island
-            text2: On what rare event does this mystical island reappear?
-          - roll: { min: 51, max: 55 }
-            text: Inscrutable iron pillars
-            text2: What faction worships these mysterious relics?
-          - roll: { min: 56, max: 60 }
-            text: Lair of a beast
-            text2: What beast is reputed to dwell here?
-          - roll: { min: 61, max: 65 }
-            text: Perpetual fog bank
-            text2: What is said to lie on the other side of this mist?
-          - roll: { min: 66, max: 70 }
-            text: Powerful maelstrom
-            text2: Who do you know that was lost to this swirling vortex?
-          - roll: { min: 71, max: 75 }
-            text: Ship graveyard
-            text2: What monstrous creature lurks here?
-          - roll: { min: 76, max: 80 }
-            text: Shipwreck on high ground
-            text2: To which faction did this ship belong?
-          - roll: { min: 81, max: 85 }
-            text: Skull-shaped outcrop
-            text2: Why does this place haunt your dreams?
-          - roll: { min: 86, max: 90 }
-            text: Sorcerous nexus
-            text2: Who has gathered to reap the chaotic energy of this place?
-          - roll: { min: 91, max: 95 }
-            text: Titanic machinery
-            text2: Who seeks to reactivate this ancient machine?
-          - roll: { min: 96, max: 100 }
-            text: Unending cyclonic storm
-            text2: What is said to lie at this storm's center?
     collections:
-      sample_factions:
-        name: Sample Factions
+      faction_inspiration:
+        name: Faction Inspiration
         type: oracle_collection
         oracle_type: tables
         _source:
@@ -821,6 +183,482 @@ oracles:
               - roll: { min: 91, max: 100 }
                 text: Tidebound
                 text2: Devout cultists who were granted eternal life in exchange for unending service to their patron sea god. They must not tarry on land or at anchor, lest death catches up with them to take its toll.
+      character:
+        name: Your Character
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: *Source
+        contents:
+          backstory:
+            name: Your Backstory
+            type: oracle_rollable
+            oracle_type: table_text
+            recommended_rolls: { min: 1, max: 2 }
+            tags:
+              sundered_isles:
+                cursed_by: oracle_rollable:sundered_isles/campaign/backstory_cursed
+            _source:
+              <<: *Source
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Abandoned a life of privilege or power
+              - roll: { min: 4, max: 7 }
+                text: Betrayed by a close friend, lover, or family member
+              - roll: { min: 8, max: 11 }
+                text: Caught up in a forbidden or unlikely romance
+              - roll: { min: 12, max: 14 }
+                text: Deserted the military
+              - roll: { min: 15, max: 18 }
+                text: Entrusted with a valuable secret
+              - roll: { min: 19, max: 22 }
+                text: Escaped unjust captivity
+              - roll: { min: 23, max: 26 }
+                text: Fled a cruel upbringing
+              - roll: { min: 27, max: 30 }
+                text: Following in the footsteps of famous or notorious kin
+              - roll: { min: 31, max: 34 }
+                text: Forcefully exiled from your land or people
+              - roll: { min: 35, max: 37 }
+                text: Found adrift with no memory of your former life
+              - roll: { min: 38, max: 40 }
+                text: Framed for a crime you didn't commit
+              - roll: { min: 41, max: 43 }
+                text: Guided by a dream or prophecy
+              - roll: { min: 44, max: 46 }
+                text: Home destroyed by disaster or war
+              - roll: { min: 47, max: 49 }
+                text: Home occupied by an enemy faction
+              - roll: { min: 50, max: 53 }
+                text: Joined a mutiny, uprising, or rebellion
+              - roll: { min: 54, max: 56 }
+                text: Joined a secret society
+              - roll: { min: 57, max: 59 }
+                text: Living under a stolen or assumed identity
+              - roll: { min: 60, max: 63 }
+                text: Loved one gone missing
+              - roll: { min: 64, max: 67 }
+                text: Marooned by former shipmates
+              - roll: { min: 68, max: 71 }
+                text: On the run with a stolen object of great value
+              - roll: { min: 72, max: 75 }
+                text: Raised by or fell in with criminals or pirates
+              - roll: { min: 76, max: 79 }
+                text: Refugee from a distant land
+              - roll: { min: 80, max: 83 }
+                text: Survived a disaster or battle at sea
+              - roll: { min: 84, max: 86 }
+                text: Took up a vendetta against a powerful figure or faction
+              - roll: { min: 87, max: 89 }
+                text: Trained in a rare or secret craft by a skilled mentor
+              - roll: { min: 90, max: 93 }
+                text: Trying to forget a disastrous love affair
+              - roll: { min: 94, max: 96 }
+                text: Undone by a personal vice
+              - roll: { min: 97, max: 100 }
+                text: Wronged a powerful figure or faction who seeks retribution
+          backstory_cursed:
+            name: Your Cursed Backstory
+            type: oracle_rollable
+            oracle_type: table_text
+            tags:
+              sundered_isles:
+                cursed_version_of:
+                  - oracle_rollable:sundered_isles/campaign/backstory
+                curse_behavior: replace_result
+            _source:
+              <<: *Source
+            rows:
+              - roll: { min: 1, max: 7 }
+                text: Banished because of uncanny nature or abilities
+              - roll: { min: 8, max: 14 }
+                text: Bearing a relic of dreadful power
+              - roll: { min: 15, max: 20 }
+                text: Desperate to unlock the secrets of forbidden magic
+              - roll: { min: 21, max: 26 }
+                text: Forged and made animate by forbidden technologies
+              - roll: { min: 27, max: 33 }
+                text: Grievously wounded and given new life by forbidden magic or technology
+              - roll: { min: 34, max: 40 }
+                text: Haunted by the spirit of someone you failed or wronged
+              - roll: { min: 41, max: 47 }
+                text: Home destroyed by a monstrous beast
+              - roll: { min: 48, max: 54 }
+                text: Home destroyed by undead or inhuman foes
+              - roll: { min: 55, max: 61 }
+                text: Inherited a dreadful curse
+              - roll: { min: 62, max: 67 }
+                text: Killed an albatross; plagued by foul luck ever since
+              - roll: { min: 68, max: 73 }
+                text: Sole survivor of a string of unlikely disasters
+              - roll: { min: 74, max: 80 }
+                text: Suffered a vision of a horrible fate
+              - roll: { min: 81, max: 87 }
+                text: Survived an attack at sea by a cursed ship
+              - roll: { min: 88, max: 94 }
+                text: Survived an attack at sea by a monstrous sea beast
+              - roll: { min: 95, max: 100 }
+                text: Targeted or hunted by a dreadful being
+          persona:
+            name: Your Persona
+            type: oracle_rollable
+            oracle_type: table_text2
+            summary: Your two starting path assets help define your character’s core abilities, skills, and experience. If you need inspiration, use the table below as a pick-list for a persona and a pair of recommended assets. Or roll for it and let the Fates decide.
+            column_labels:
+            # this isn't the columns are presented in the table, but makes more semantic sense in a web context
+              roll: Roll
+            # TODO: figure out a way to represent these icons
+              text: Result
+              text2: Starting Paths
+            _source:
+              <<: *Source
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Apothecary
+                text2: "[Healer](asset:starforged/path/healer), [Peddler](asset:sundered_isles/path/peddler)"
+              - roll: { min: 4, max: 5 }
+                text: Apprentice
+                text2: "[Shipwright](asset:sundered_isles/path/shipwright), [Urchin](asset:sundered_isles/path/urchin)"
+              - roll: { min: 6, max: 7 }
+                text: Assassin
+                text2: "[Blademaster](asset:starforged/path/blademaster), [Bounty Hunter](asset:starforged/path/bounty_hunter)"
+              - roll: { min: 8, max: 9 }
+                text: Beast Hunter
+                text2: "[Harpooner](asset:sundered_isles/path/harpooner), [Slayer](asset:starforged/path/slayer)"
+              - roll: { min: 10, max: 12 }
+                text: Blockade Runner
+                text2: "[Courier](asset:starforged/path/courier), [Navigator](asset:starforged/path/navigator)"
+              - roll: { min: 13, max: 15 }
+                text: Brigand
+                text2: "[Pistoleer](asset:sundered_isles/path/pistoleer), [Scoundrel](asset:starforged/path/scoundrel)"
+              - roll: { min: 16, max: 17 }
+                text: Buccaneer
+                text2: "[Swashbuckler](asset:sundered_isles/path/swashbuckler), [Pirate Captain](asset:sundered_isles/path/pirate_captain)"
+              - roll: { min: 18, max: 20 }
+                text: Bulwark
+                text2: "[Brawler](asset:starforged/path/brawler), [Loyalist](asset:starforged/path/loyalist)"
+                <<: &CoOp
+                  tags:
+                    sundered_isles:
+                      requires_allies: true
+              - roll: { min: 21, max: 23 }
+                text: Castaway
+                text2: "[Jinx](asset:sundered_isles/path/jinx), [Scavenger](asset:starforged/path/scavenger)"
+              - roll: { min: 24, max: 26 }
+                text: Charlatan
+                text2: "[Scoundrel](asset:starforged/path/scoundrel), [Socialite](asset:sundered_isles/path/socialite)"
+              - roll: { min: 27, max: 28 }
+                text: Cloak and Dagger
+                text2: "[Cutthroat](asset:sundered_isles/path/cutthroat), [Spy](asset:sundered_isles/path/spy)"
+              - roll: { min: 29, max: 30 }
+                text: Cultist
+                text2: "[Devotant](asset:starforged/path/devotant), [Necromancer](asset:sundered_isles/path/necromancer)"
+                <<: &Supernatural
+                  tags:
+                    sundered_isles:
+                      supernatural: true
+              - roll: { min: 31, max: 32 }
+                text: Deathbound
+                text2: "[Fated](asset:starforged/path/fated), [Haunted](asset:starforged/path/haunted)"
+                <<: *Supernatural
+              - roll: { min: 33, max: 34 }
+                text: Deep One
+                text2: "[Vestige](asset:starforged/path/vestige), [Waterborn](asset:sundered_isles/path/waterborn)"
+                <<: *Supernatural
+              - roll: { min: 35, max: 37 }
+                text: Elementalist
+                text2: "[Firebrand](asset:starforged/path/firebrand), [Sorcerer](asset:sundered_isles/path/sorcerer)"
+                <<: *Supernatural
+              - roll: { min: 38, max: 40 }
+                text: Emissary
+                text2: "[Diplomat](asset:starforged/path/diplomat), [Spy](asset:sundered_isles/path/spy)"
+              - roll: { min: 41, max: 42 }
+                text: Gallant
+                text2: "[Duelist](asset:sundered_isles/path/duelist), [Socialite](asset:sundered_isles/path/socialite)"
+              - roll: { min: 43, max: 44 }
+                text: Guild Mage
+                text2: "[Bannersworn](asset:starforged/path/bannersworn), [Sorcerer](asset:sundered_isles/path/sorcerer)"
+                <<: *Supernatural
+              - roll: { min: 45, max: 46 }
+                text: Gunner
+                text2: "[Cannoneer](asset:sundered_isles/path/cannoneer), [Veteran](asset:starforged/path/veteran)"
+              - roll: { min: 47, max: 48 }
+                text: Hired Gun
+                text2: "[Mercenary](asset:starforged/path/mercenary), [Musketeer](asset:sundered_isles/path/musketeer)"
+              - roll: { min: 49, max: 50 }
+                text: Ironclad
+                text2: "[Armored](asset:starforged/path/armored), [Brawler](asset:starforged/path/brawler)"
+                <<: &Technology
+                  tags:
+                    sundered_isles:
+                      technological: true
+              - roll: { min: 51, max: 52 }
+                text: Jury-Rig
+                text2: "[Construct](asset:sundered_isles/path/construct), [Scavenger](asset:starforged/path/scavenger)"
+                <<: *Technology
+              - roll: { min: 53, max: 54 }
+                text: Lycanthrope
+                text2: "[Outcast](asset:starforged/path/outcast), [Shapechanger](asset:sundered_isles/path/shapechanger)"
+                <<: *Supernatural
+              - roll: { min: 55, max: 57 }
+                text: Monster Hunter
+                text2: "[Blademaster](asset:starforged/path/blademaster), [Slayer](asset:starforged/path/slayer)"
+                <<: *Supernatural
+              - roll: { min: 58, max: 60 }
+                text: Naturalist
+                text2: "[Overlander](asset:sundered_isles/path/overlander), [Scholar](asset:sundered_isles/path/scholar) (Natural history)"
+              - roll: { min: 61, max: 62 }
+                text: Pilgrim
+                text2: "[Devotant](asset:starforged/path/devotant), [Navigator](asset:starforged/path/navigator)"
+                <<: *Supernatural
+              - roll: { min: 63, max: 64 }
+                text: Piper
+                text2: "[Musician](asset:sundered_isles/path/musician), [Loyalist](asset:starforged/path/loyalist)"
+                <<: *CoOp
+              - roll: { min: 65, max: 67 }
+                text: Renegade
+                text2: "[Fugitive](asset:starforged/path/fugitive), [Veteran](asset:starforged/path/veteran)"
+              - roll: { min: 68, max: 70 }
+                text: Saboteur
+                text2: "[Demolitionist](asset:starforged/path/demolitionist), [Spy](asset:sundered_isles/path/spy)"
+                <<: *Technology
+              - roll: { min: 71, max: 72 }
+                text: Sea Witch
+                text2: "[Seer](asset:starforged/path/seer), [Windbinder](asset:sundered_isles/path/windbinder)"
+                <<: *Supernatural
+              - roll: { min: 73, max: 74 }
+                text: Shadow Assassin
+                text2: "[Cutthroat](asset:sundered_isles/path/cutthroat), [Shade](asset:starforged/path/shade)"
+                <<: *Supernatural
+              - roll: { min: 75, max: 76 }
+                text: Shipbreaker
+                text2: "[Kinetic](asset:starforged/path/kinetic), [Scavenger](asset:starforged/path/scavenger)"
+                <<: *Supernatural
+              - roll: { min: 77, max: 78 }
+                text: Siren
+                text2: "[Empath](asset:starforged/path/empath), [Musician](asset:sundered_isles/path/musician)"
+                <<: *Supernatural
+              - roll: { min: 79, max: 80 }
+                text: Skipper
+                text2: "[Crew Commander](asset:sundered_isles/path/crew_commander), [Leader](asset:starforged/path/leader)"
+                <<: *CoOp
+              - roll: { min: 81, max: 83 }
+                text: Smuggler
+                text2: "[Fugitive](asset:starforged/path/fugitive), [Peddler](asset:sundered_isles/path/peddler)"
+              - roll: { min: 84, max: 86 }
+                text: Sole Survivor
+                text2: "[Haunted](asset:starforged/path/haunted), [Vestige](asset:starforged/path/vestige)"
+                <<: *Supernatural
+              - roll: { min: 87, max: 88 }
+                text: Spiritualist
+                text2: "[Seer](asset:starforged/path/seer), [Sleuth](asset:starforged/path/sleuth)"
+                <<: *Supernatural
+              - roll: { min: 89, max: 91 }
+                text: Stowaway
+                text2: "[Urchin](asset:sundered_isles/path/urchin), [Outcast](asset:starforged/path/outcast)"
+              - roll: { min: 92, max: 94 }
+                text: Surgeon
+                text2: "[Healer](asset:starforged/path/healer), [Scholar](asset:sundered_isles/path/scholar) (Medicine)"
+              - roll: { min: 95, max: 96 }
+                text: Tinker
+                text2: "[Augmented](asset:starforged/path/augmented), [Gearhead](asset:starforged/path/gearhead)"
+                <<: *Technology
+              - roll: { min: 97, max: 98 }
+                text: Vanguard
+                text2: "[Bannersworn](asset:starforged/path/bannersworn), [Scattershot](asset:sundered_isles/path/scattershot)"
+              - roll: { min: 99, max: 100 }
+                text: War Machine
+                text2: "[Construct](asset:sundered_isles/path/construct), [Mercenary](asset:starforged/path/mercenary)"
+                <<: *Technology
+      command:
+        name: Your Command
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: *Source
+          page: 96
+        contents:
+          ship_history:
+            name: Ship History
+            type: oracle_rollable
+            oracle_type: table_text
+            summary: If you have a command, envision how you claimed or earned the vessel. For inspiration, use the table below. If you sail under the command of a non-player character, you can use this table to give their ship a backstory.
+            tags:
+              sundered_isles:
+                cursed_by: oracle_rollable:sundered_isles/campaign/command/ship_history_cursed
+            _source:
+              <<: *Source
+            rows:
+              - roll: { min: 1, max: 5 }
+                text: Acquired in a duel of honor
+              - roll: { min: 6, max: 10 }
+                text: Awarded by a vote of the crew, after the former captain died an untimely death
+              - roll: { min: 11, max: 15 }
+                text: Bestowed by an eccentric shipwright
+              - roll: { min: 16, max: 20 }
+                text: Built or refitted by a community, and granted to its captain as their emissary
+              - roll: { min: 21, max: 25 }
+                text: Captured in battle, and awarded by the former captain
+              - roll: { min: 26, max: 30 }
+                text: Earned in exchange for a perilous undertaking or heroic deed
+              - roll: { min: 31, max: 35 }
+                text: Entrusted by a faction, and commanded in their service
+              - roll: { min: 36, max: 40 }
+                text: Found as a wreck, and refitted to make it seaworthy
+              - roll: { min: 41, max: 45 }
+                text: Gifted by an anonymous benefactor
+              - roll: { min: 46, max: 50 }
+                text: Inherited from a dead or missing relative or mentor
+              - roll: { min: 51, max: 55 }
+                text: Leased under exorbitant terms
+              - roll: { min: 56, max: 60 }
+                text: Obtained in trade for a precious object
+              - roll: { min: 61, max: 65 }
+                text: Obtained through a false identity or counterfeit documents
+              - roll: { min: 66, max: 70 }
+                text: On grant from an underworld figure in exchange for completing unscrupulous missions
+              - roll: { min: 71, max: 75 }
+                text: Once a timeworn, unwanted ship, painstakingly refitted to its new role
+              - roll: { min: 76, max: 80 }
+                text: Purchased at a suspiciously cheap price
+              - roll: { min: 81, max: 85 }
+                text: Seized in a mutiny against its former captain
+              - roll: { min: 86, max: 90 }
+                text: Stolen from under the nose of a powerful faction
+              - roll: { min: 91, max: 95 }
+                text: Taken while fleeing an attack or disaster
+              - roll: { min: 96, max: 100 }
+                text: Won in a high-stakes bet
+          ship_history_cursed:
+            name: Cursed Ship
+            type: oracle_rollable
+            oracle_type: table_text
+            tags:
+              sundered_isles:
+                cursed_version_of:
+                  - oracle_rollable:sundered_isles/campaign/command/ship_history
+                curse_behavior: replace_result
+            _source:
+              <<: *Source
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Awarded by its former—and now dead—captain, who still haunts its decks
+              - roll: { min: 11, max: 20 }
+                text: Bound to a role as its new commander by a beguiling curse
+              - roll: { min: 21, max: 30 }
+                text: Cobbled together from salvage found within a graveyard of forsaken ships
+              - roll: { min: 31, max: 40 }
+                text: Discovered within a hidden sea cave after calling to you in a dream
+              - roll: { min: 41, max: 50 }
+                text: Found adrift in perfect condition, with no sign of the crew
+              - roll: { min: 51, max: 60 }
+                text: Gifted by a dreadful entity in exchange for a dark favor; you reneged on their terms
+              - roll: { min: 61, max: 70 }
+                text: Granted in an accursed agreement, sealed in blood
+              - roll: { min: 71, max: 80 }
+                text: Improbably found as a derelict well inland; moved and refloated with much effort
+              - roll: { min: 81, max: 90 }
+                text: Raised from the sunken depths as a boon from the sea itself
+              - roll: { min: 91, max: 100 }
+                text: Taken in spite of its cursed reputation, when no one else would sail it
+          crew:
+            name: Crew Characteristics
+            type: oracle_rollable
+            oracle_type: table_text
+            summary: Envision the makeup of the ship’s crew, using the table below for inspiration. Rolling for a result can inspire details for your own background and potential quests—or it may put you at odds with a crew that is contrary to your nature and goals.
+            tags:
+              sundered_isles:
+                cursed_by: oracle_rollable:sundered_isles/campaign/command/crew_cursed
+            _source:
+              <<: *Source
+              page: 98
+            rows:
+              - roll: { min: 1, max: 8 }
+                text: Eclectic mix of all sorts of folk
+              - roll: { min: 9, max: 14 }
+                text: Adventurers and trailblazers, seeking the far horizon
+              - roll: { min: 15, max: 18 }
+                text: Disciplined military force, doing their duty
+              - roll: { min: 19, max: 22 }
+                text: Experienced mariners, lending an able hand
+              - roll: { min: 23, max: 26 }
+                text: Glory hunters, looking to make a mark
+              - roll: { min: 27, max: 32 }
+                text: Kin of a seafaring people, honoring traditions
+              - roll: { min: 33, max: 38 }
+                text: Marauders and brigands, taking their share of the spoils
+              - roll: { min: 39, max: 44 }
+                text: Novice mariners, undertaking their first adventure
+              - roll: { min: 45, max: 48 }
+                text: Old salts brought out of retirement, undertaking a final adventure
+              - roll: { min: 49, max: 54 }
+                text: Outcasts and exiles, bound by their differences
+              - roll: { min: 55, max: 60 }
+                text: Rebels, fighting for freedom
+              - roll: { min: 61, max: 66 }
+                text: Refugees from a faraway land, finding a new home
+              - roll: { min: 67, max: 70 }
+                text: Religious zealots, serving their god
+              - roll: { min: 71, max: 74 }
+                text: Scoundrels and spies, always watching
+              - roll: { min: 75, max: 78 }
+                text: Survivors of a horrible cataclysm, preserving what remains
+              - roll: { min: 79, max: 82 }
+                text: Survivors of a terrible attack, seeking revenge
+              - roll: { min: 83, max: 86 }
+                text: Turncoat imperials, sworn against former compatriots
+              - roll: { min: 87, max: 90 }
+                text: Unprincipled mercenaries, earning blood money
+              - roll: { min: 91, max: 100 }
+                text: Roll twice; these groups are at odds
+                oracle_rolls:
+                  - auto: true
+                    number_of_rolls: 2
+                    duplicates: keep
+          crew_cursed:
+            name: Cursed Crew
+            type: oracle_rollable
+            oracle_type: table_text
+            summary: If you roll a curse for Crew Characteristics, take your result on that table and give them an eerie, supernatural, or dreadful aspect. Use the table below for inspiration.
+            tags:
+              sundered_isles:
+                cursed_version_of:
+                  - oracle_rollable:sundered_isles/campaign/crew
+                curse_behavior: add_result
+            _source:
+              <<: *Source
+              page: 99
+            rows:
+              - roll: { min: 1, max: 5 }
+                text: Bound to the ship, unable to sail another
+              - roll: { min: 6, max: 10 }
+                text: Bound to the will of a dreadful artifact
+              - roll: { min: 11, max: 15 }
+                text: Built or augmented with strange technologies
+              - roll: { min: 16, max: 20 }
+                text: Cursed with foreknowledge of a dreadful fate
+              - roll: { min: 21, max: 25 }
+                text: Hunted by a vengeful sea beast
+              - roll: { min: 26, max: 30 }
+                text: In the service of a malevolent god or entity
+              - roll: { min: 31, max: 40 }
+                text: Obsessed with superstitious routines and rituals
+              - roll: { min: 41, max: 45 }
+                text: Once dead, now cursed with unnatural life
+              - roll: { min: 46, max: 50 }
+                text: Plagued with unnatural sickness
+              - roll: { min: 51, max: 60 }
+                text: Suffers a jinxed reputation, and forsaken by others
+              - roll: { min: 61, max: 65 }
+                text: Suffers an insatiable need
+              - roll: { min: 66, max: 75 }
+                text: Survivors of an attack by a horrifying foe or monstrous beast
+              - roll: { min: 76, max: 85 }
+                text: Tattooed with elaborate mystical wards
+              - roll: { min: 86, max: 95 }
+                text: Tormented by unforgiving spirits
+              - roll: { min: 96, max: 100 }
+                text: True nature revealed under moonlight
       beasts:
         name: Beasts of the Isles
         type: oracle_collection
@@ -1053,3 +891,187 @@ oracles:
                 text: Abomination
                 text2: Various Ranks
                 text3: Generate this beast using the Starforged creature oracles (page 336 of the Starforged rulebook), giving it an air form.
+      notable_locations:
+        name: Notable Locations
+        oracle_type: tables
+        type: oracle_collection
+        _source:
+          <<: *Source
+        contents:
+          details:
+            name: Location Details
+            type: oracle_rollable
+            oracle_type: table_text2
+            column_labels:
+              roll: Roll
+              text: Location
+              text2: Question
+            recommended_rolls:
+              min: 1
+              max: 3
+            tags:
+              sundered_isles:
+                cursed_by: oracle_rollable:sundered_isles/campaign/notable_locations/details_cursed
+            _source:
+              <<: *Source
+            rows:
+              - roll: { min: 1, max: 4 }
+                text: Abyssal sinkhole
+                text2: What is rumored to lie at the bottom of these depths?
+              - roll: { min: 5, max: 8 }
+                text: Active volcano
+                text2: What important location does this eruption threaten?
+              - roll: { min: 9, max: 12 }
+                text: Ancient ruins
+                text2: Who or what defends this place against intruders?
+              - roll: { min: 13, max: 15 }
+                text: Colossal monument
+                text2: What legendary figure or god does this monument honor?
+              - roll: { min: 16, max: 19 }
+                text: Crucial trade route
+                text2: What is disrupting trade along this route?
+              - roll: { min: 20, max: 23 }
+                text: Deserted settlement
+                text2: Why was this place abandoned?
+              - roll: { min: 24, max: 27 }
+                text: Expansive cave
+                text2: What treasure is said to lie at the heart of this cave?
+              - roll: { min: 28, max: 30 }
+                text: Floating tradepost
+                text2: Who is hounding these traders, demanding tribute?
+              - roll: { min: 31, max: 34 }
+                text: Hull-breaching rocks
+                text2: Who or what preys upon careless ships in this area?
+              - roll: { min: 35, max: 38 }
+                text: Kelp-clogged waters
+                text2: What ship went missing here?
+              - roll: { min: 39, max: 41 }
+                text: Meteorite scar
+                text2: What prophecy foretold the meteorite's fall?
+              - roll: { min: 42, max: 45 }
+                text: Military encampment
+                text2: Who is this faction warring against?
+              - roll: { min: 46, max: 49 }
+                text: Military fort
+                text2: What notable prisoner is held here?
+              - roll: { min: 50, max: 52 }
+                text: Mining operation
+                text2: What danger have these miners unearthed?
+              - roll: { min: 53, max: 55 }
+                text: Mist-shrouded peak
+                text2: What is said to stand atop this mountain?
+              - roll: { min: 56, max: 58 }
+                text: Navigation beacon
+                text2: Why has this lighthouse fallen into disrepair?
+              - roll: { min: 59, max: 61 }
+                text: Ongoing naval blockade
+                text2: Who seeks an escort through or around this blockade?
+              - roll: { min: 62, max: 65 }
+                text: Palatial manor
+                text2: What lavish event is scheduled to take place here?
+              - roll: { min: 66, max: 69 }
+                text: Pirate conclave
+                text2: What opportunity or crisis brings the pirates together?
+              - roll: { min: 70, max: 73 }
+                text: Recently wrecked ship
+                text2: What prize was this ship rumored to carry?
+              - roll: { min: 74, max: 76 }
+                text: Refugee encampment
+                text2: What danger or crisis displaced these refugees?
+              - roll: { min: 77, max: 79 }
+                text: Religious commune
+                text2: Why are these adherents desperate for supplies?
+              - roll: { min: 80, max: 83 }
+                text: Sentinel tree
+                text2: What threatens this sacred site?
+              - roll: { min: 84, max: 87 }
+                text: Sheltered anchorage
+                text2: What infamous ship lies anchored here?
+              - roll: { min: 88, max: 91 }
+                text: Warship patrols
+                text2: What are these ships hunting?
+              - roll: { min: 92, max: 94 }
+                text: Whale graveyard
+                text2: Who seeks to harvest these bones?
+              - roll: { min: 95, max: 97 }
+                text: Whaling grounds
+                text2: Who or what is hunting these creatures to near-extinction?
+              - roll: { min: 98, max: 100 }
+                text: Wide, navigable river
+                text2: What important location lies upriver?
+          location_details_cursed:
+            name: Cursed Location Details
+            type: oracle_rollable
+            oracle_type: table_text2
+            column_labels:
+              roll: Roll
+              text: Location
+              text2: Question
+            tags:
+              sundered_isles:
+                cursed_version_of:
+                  - oracle_rollable:sundered_isles/campaign/notable_locations/details
+                curse_behavior: replace_result
+            _source:
+              <<: *Source
+            rows:
+              - roll: { min: 1, max: 5 }
+                text: Area of endless dead calm
+                text2: What ship is trapped in these waters?
+              - roll: { min: 6, max: 10 }
+                text: Colossal bones
+                text2: Who lives in the shadow of this age-old corpse?
+              - roll: { min: 11, max: 15 }
+                text: Corrupted cave
+                text2: What cult is said to practice foul rites here?
+              - roll: { min: 16, max: 20 }
+                text: Eldritch monument
+                text2: What forsaken god or entity does this monument honor?
+              - roll: { min: 21, max: 25 }
+                text: Forsaken settlement
+                text2: What foul creatures now dwell here?
+              - roll: { min: 26, max: 30 }
+                text: Frozen wastes
+                text2: What long-lost ship lies trapped here?
+              - roll: { min: 31, max: 35 }
+                text: Ghost-haunted waters
+                text2: What infamous cursed ship sails these waters?
+              - roll: { min: 36, max: 40 }
+                text: Ghost-plagued ruins
+                text2: What sad fate befell these people?
+              - roll: { min: 41, max: 45 }
+                text: Haunted battlefield
+                text2: What force or faction was defeated in this battle?
+              - roll: { min: 46, max: 50 }
+                text: Hidden island
+                text2: On what rare event does this mystical island reappear?
+              - roll: { min: 51, max: 55 }
+                text: Inscrutable iron pillars
+                text2: What faction worships these mysterious relics?
+              - roll: { min: 56, max: 60 }
+                text: Lair of a beast
+                text2: What beast is reputed to dwell here?
+              - roll: { min: 61, max: 65 }
+                text: Perpetual fog bank
+                text2: What is said to lie on the other side of this mist?
+              - roll: { min: 66, max: 70 }
+                text: Powerful maelstrom
+                text2: Who do you know that was lost to this swirling vortex?
+              - roll: { min: 71, max: 75 }
+                text: Ship graveyard
+                text2: What monstrous creature lurks here?
+              - roll: { min: 76, max: 80 }
+                text: Shipwreck on high ground
+                text2: To which faction did this ship belong?
+              - roll: { min: 81, max: 85 }
+                text: Skull-shaped outcrop
+                text2: Why does this place haunt your dreams?
+              - roll: { min: 86, max: 90 }
+                text: Sorcerous nexus
+                text2: Who has gathered to reap the chaotic energy of this place?
+              - roll: { min: 91, max: 95 }
+                text: Titanic machinery
+                text2: Who seeks to reactivate this ancient machine?
+              - roll: { min: 96, max: 100 }
+                text: Unending cyclonic storm
+                text2: What is said to lie at this storm's center?
