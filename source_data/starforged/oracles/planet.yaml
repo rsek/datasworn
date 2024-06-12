@@ -2,7 +2,7 @@ _id: starforged
 datasworn_version: "0.1.0"
 type: ruleset
 oracles:
-  planets:
+  planet:
     name: Planet Oracles
     canonical_name: Planets
     type: oracle_collection
@@ -30,47 +30,47 @@ oracles:
         summary: This oracle provides a simple method of generating a planetary class. If this is enough information, stop there and envision the world as appropriate to its type. For a bit more detail, make a roll on the Descriptor oracle and envision how that aspect defines the nature of the planet or a specific planetside location.
         rows:
           - roll: { min: 1, max: 15 }
-            text: '[Desert World](oracle_collection:starforged/planets/desert)'
+            text: '[Desert World](oracle_collection:starforged/planet/desert)'
             # game_objects: *obj:Planet.Desert
             # images: *images:DesertWorld
           - roll: { min: 16, max: 30 }
-            text: '[Furnace World](oracle_collection:starforged/planets/furnace)'
+            text: '[Furnace World](oracle_collection:starforged/planet/furnace)'
             # game_objects: *obj:Planet.Furnace
             # images: *images:FurnaceWorld
           - roll: { min: 31, max: 35 }
-            text: '[Grave World](oracle_collection:starforged/planets/grave)'
+            text: '[Grave World](oracle_collection:starforged/planet/grave)'
             # game_objects: *obj:Planet.Grave
             # images: *images:GraveWorld
           - roll: { min: 36, max: 50 }
-            text: '[Ice World](oracle_collection:starforged/planets/ice)'
+            text: '[Ice World](oracle_collection:starforged/planet/ice)'
             # game_objects: *obj:Planet.Ice
             # images: *images:IceWorld
           - roll: { min: 51, max: 65 }
-            text: '[Jovian World](oracle_collection:starforged/planets/jovian)'
+            text: '[Jovian World](oracle_collection:starforged/planet/jovian)'
             # game_objects: *obj:Planet.Jovian
             # images: *images:JovianWorld
           - roll: { min: 66, max: 70 }
-            text: '[Jungle World](oracle_collection:starforged/planets/jungle)'
+            text: '[Jungle World](oracle_collection:starforged/planet/jungle)'
             # game_objects: *obj:Planet.Jungle
             # images: *images:JungleWorld
           - roll: { min: 71, max: 75 }
-            text: '[Ocean World](oracle_collection:starforged/planets/ocean)'
+            text: '[Ocean World](oracle_collection:starforged/planet/ocean)'
             # game_objects: *obj:Planet.Ocean
             # images: *images:OceanWorld
           - roll: { min: 76, max: 90 }
-            text: '[Rocky World](oracle_collection:starforged/planets/rocky)'
+            text: '[Rocky World](oracle_collection:starforged/planet/rocky)'
             # game_objects: *obj:Planet.Rocky
             # images: *images:RockyWorld
           - roll: { min: 91, max: 92 }
-            text: '[Shattered World](oracle_collection:starforged/planets/shattered)'
+            text: '[Shattered World](oracle_collection:starforged/planet/shattered)'
             # game_objects: *obj:Planet.Shattered
             # images: *images:ShatteredWorld
           - roll: { min: 93, max: 98 }
-            text: '[Tainted World](oracle_collection:starforged/planets/tainted)'
+            text: '[Tainted World](oracle_collection:starforged/planet/tainted)'
             # game_objects: *obj:Planet.Tainted
             # images: *images:TaintedWorld
           - roll: { min: 99, max: 100 }
-            text: '[Vital World](oracle_collection:starforged/planets/vital)'
+            text: '[Vital World](oracle_collection:starforged/planet/vital)'
             # game_objects: *obj:Planet.Vital
             # images: *images:VitalWorld
     collections:

@@ -2,7 +2,7 @@ _id: starforged
 datasworn_version: "0.1.0"
 type: ruleset
 oracles:
-  vaults:
+  precursor_vault:
     name: Precursor Vault Oracles
     canonical_name: Precursor Vaults
     type: oracle_collection
@@ -308,8 +308,8 @@ oracles:
         _source: &CollectionSource
           <<: *Source
           page: 364
-        summary: If you enter the site, check the [Inner First Look](oracle_rollable:starforged/vaults/interior/first_look) table for initial impressions of what lies within. If you explore further, use the [Interior Feature](oracle_rollable:starforged/vaults/interior/feature) table to define what you find or encounter. If you [Undertake an Expedition](move:starforged/exploration/undertake_an_expedition) within a vault, check this table if you want help setting the scene for a waypoint.
-        icon: icons/vaults/interior.svg
+        summary: If you enter the site, check the [Inner First Look](oracle_rollable:starforged/precursor_vault/interior/first_look) table for initial impressions of what lies within. If you explore further, use the [Interior Feature](oracle_rollable:starforged/precursor_vault/interior/feature) table to define what you find or encounter. If you [Undertake an Expedition](move:starforged/exploration/undertake_an_expedition) within a vault, check this table if you want help setting the scene for a waypoint.
+        icon: icons/precursor_vault/interior.svg
         contents:
           first_look:
             oracle_type: table_text
@@ -465,7 +465,7 @@ oracles:
               - roll: { min: 83, max: 85 }
                 text: Vertical shaft
               - roll: { min: 86, max: 90 }
-                text: 'Transition into the [Sanctum](oracle_rollable:starforged/vaults/sanctum)'
+                text: 'Transition into the [Sanctum](oracle_rollable:starforged/precursor_vault/sanctum)'
               - roll: { min: 91, max: 95 }
                 <<: *DescriptorFocus
               - roll: { min: 96, max: 100 }
@@ -577,7 +577,7 @@ oracles:
         oracle_type: tables
         type: oracle_collection
         summary: As you delve deeper into a vault, the corruption and strangeness of the place takes hold. Use the Sanctum Feature table to represent the aberrant nature of a vault’s depths.
-        icon: icons/vaults/sanctum.svg
+        icon: icons/precursor_vault/sanctum.svg
         _source:
           <<: *Source
           page: 368

@@ -2,7 +2,7 @@ _id: starforged
 datasworn_version: "0.1.0"
 type: ruleset
 oracles:
-  derelicts:
+  derelict:
     name: Derelicts
     type: oracle_collection
     _source:
@@ -45,12 +45,12 @@ oracles:
               - roll: { min: 1, max: 25 }
                 text: Starship
                 suggestions:
-                    - oracle_rollable:starforged/derelicts/zones/starship
+                    - oracle_rollable:starforged/derelict/derelict/starship
                 # *attr:DerelictType.Starship
               - roll: { min: 26, max: 100 }
                 text: Settlement
                 suggestions:
-                    - oracle_rollable:starforged/derelicts/zones/settlement
+                    - oracle_rollable:starforged/derelict/derelict/settlement
                 # *attr:DerelictType.Settlement
           orbital:
             name: Orbital
@@ -67,11 +67,11 @@ oracles:
               - roll: { min: 1, max: 40 }
                 text: Starship
                 suggestions:
-                    - oracle_rollable:starforged/derelicts/zones/starship
+                    - oracle_rollable:starforged/derelict/derelict/starship
               - roll: { min: 41, max: 100 }
                 text: Settlement
                 suggestions:
-                    - oracle_rollable:starforged/derelicts/zones/settlement
+                    - oracle_rollable:starforged/derelict/derelict/settlement
           deep_space:
             name: Deep Space
             tags:
@@ -87,12 +87,12 @@ oracles:
               - roll: { min: 1, max: 75 }
                 text: Starship
                 suggestions:
-                    - oracle_rollable:starforged/derelicts/zones/starship
+                    - oracle_rollable:starforged/derelict/derelict/starship
               - roll: { min: 76, max: 100 }
                 text: Settlement
                 suggestions:
-                    - oracle_rollable:starforged/derelicts/zones/settlement
-      zones:
+                    - oracle_rollable:starforged/derelict/derelict/settlement
+      zone:
         name: Derelict Zones
         _source: &CollectionSource
           <<: *Source
@@ -113,43 +113,43 @@ oracles:
             #       derelict_type: [starship]
             rows:
               - <<: &ZoneRow.0
-                  text: '[Access](oracle_collection:starforged/derelicts/access)'
-                  icon: icons/derelicts/access.svg
+                  text: '[Access](oracle_collection:starforged/derelict/access)'
+                  icon: icons/derelict/access.svg
                 # game_objects: *obj:DerelictZone.Access
               - <<: &ZoneRow.1
-                  text: '[Community](oracle_collection:starforged/derelicts/community)'
-                  icon: icons/derelicts/community.svg
+                  text: '[Community](oracle_collection:starforged/derelict/community)'
+                  icon: icons/derelict/community.svg
                 roll: { min: 1, max: 5 }
                 # game_objects: *obj:DerelictZone.Community
               - roll: { min: 6, max: 30 }
                 <<: &ZoneRow.2
-                  text: '[Engineering](oracle_collection:starforged/derelicts/engineering)'
-                  icon: icons/derelicts/engineering.svg
+                  text: '[Engineering](oracle_collection:starforged/derelict/engineering)'
+                  icon: icons/derelict/engineering.svg
                 # game_objects: *obj:DerelictZone.Engineering
               - roll: { min: 31, max: 55 }
                 <<: &ZoneRow.3
-                  text: '[Living](oracle_collection:starforged/derelicts/living)'
-                  icon: icons/derelicts/living.svg
+                  text: '[Living](oracle_collection:starforged/derelict/living)'
+                  icon: icons/derelict/living.svg
                   # game_objects: *obj:DerelictZone.Living
               - roll: { min: 56, max: 65 }
                 <<: &ZoneRow.4
-                  text: '[Medical](oracle_collection:starforged/derelicts/medical)'
-                  icon: icons/derelicts/medical.svg
+                  text: '[Medical](oracle_collection:starforged/derelict/medical)'
+                  icon: icons/derelict/medical.svg
                 # game_objects: *obj:DerelictZone.Medical
               - roll: { min: 66, max: 85 }
                 <<: &ZoneRow.5
-                  text: '[Operations](oracle_collection:starforged/derelicts/operations)'
-                  icon: icons/derelicts/operations.svg
+                  text: '[Operations](oracle_collection:starforged/derelict/operations)'
+                  icon: icons/derelict/operations.svg
                 # game_objects: *obj:DerelictZone.Operations
               - roll: { min: 86, max: 90 }
                 <<: &ZoneRow.6
-                  text: '[Production](oracle_collection:starforged/derelicts/production)'
-                  icon: icons/derelicts/production.svg
+                  text: '[Production](oracle_collection:starforged/derelict/production)'
+                  icon: icons/derelict/production.svg
                 # game_objects: *obj:DerelictZone.Production
               - roll: { min: 91, max: 100 }
                 <<: &ZoneRow.7
-                  text: '[Research](oracle_collection:starforged/derelicts/research)'
-                  icon: icons/derelicts/research.svg
+                  text: '[Research](oracle_collection:starforged/derelict/research)'
+                  icon: icons/derelict/research.svg
                 # game_objects: *obj:DerelictZone.Research
           settlement:
             name: Settlement
@@ -190,17 +190,17 @@ oracles:
             text: Planetside
             icon: icon/oracle_rollable/location/planetside.svg
             suggestions:
-                - oracle_rollable:starforged/derelicts/type/planetside
+                - oracle_rollable:starforged/derelict/type/planetside
           - roll: { min: 41, max: 60 }
             text: Orbital
             icon: icon/oracle_rollable/location/orbital.svg
             suggestions:
-                - oracle_rollable:starforged/derelicts/type/orbital
+                - oracle_rollable:starforged/derelict/type/orbital
           - roll: { min: 61, max: 100 }
             text: Deep Space
             icon: icon/oracle_rollable/location/deep_space.svg
             suggestions:
-                - oracle_rollable:starforged/derelicts/type/deep_space
+                - oracle_rollable:starforged/derelict/type/deep_space
       condition:
         name: Condition
         oracle_type: table_text

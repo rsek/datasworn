@@ -2,7 +2,7 @@ _id: starforged
 datasworn_version: "0.1.0"
 type: ruleset
 oracles:
-  planets:
+  planet:
     name: Planet Oracles
     canonical_name: Planets
     type: oracle_collection
@@ -20,14 +20,14 @@ oracles:
         oracle_type: tables
         type: oracle_collection
         images:
-          - images/planets/desert-01.webp
-          - images/planets/desert-02.webp
+          - images/planet/desert-01.webp
+          - images/planet/desert-02.webp
         _source: &CollectionSource
           <<: *Source
           page: 308
         summary: A pitiless planet of searing heat, blowing sand, and sunbaked rock.
         collections:
-          settlements:
+          settlement:
             <<: &Settlements
               name: Settlements
               oracle_type: table_shared_text
@@ -299,14 +299,14 @@ oracles:
         oracle_type: tables
         type: oracle_collection
         images:
-          - images/planets/furnace-01.webp
-          - images/planets/furnace-02.webp
+          - images/planet/furnace-01.webp
+          - images/planet/furnace-02.webp
         _source: &CollectionSource
           <<: *Source
           page: 309
         summary: A planet with relentless volcanic activity, wreathed in fire and ash.
         collections:
-          settlements:
+          settlement:
             <<: *Settlements
             _source: *CollectionSource
             contents:
@@ -486,14 +486,14 @@ oracles:
         oracle_type: tables
         type: oracle_collection
         images:
-          - images/planets/grave-01.webp
-          - images/planets/grave-02.webp
+          - images/planet/grave-01.webp
+          - images/planet/grave-02.webp
         _source: &CollectionSource
           <<: *Source
           page: 310
         summary: A once-thriving world—now a grim monument to a fallen civilization.
         collections:
-          settlements:
+          settlement:
             <<: *Settlements
             _source: *CollectionSource
             contents:
@@ -669,14 +669,14 @@ oracles:
         oracle_type: tables
         type: oracle_collection
         images:
-          - images/planets/ice-01.webp
-          - images/planets/ice-02.webp
+          - images/planet/ice-01.webp
+          - images/planet/ice-02.webp
         _source: &CollectionSource
           <<: *Source
           page: 311
         summary: A rugged, frozen world—locked in an unending winter.
         collections:
-          settlements:
+          settlement:
             <<: *Settlements
             _source: *CollectionSource
             contents:
@@ -857,14 +857,14 @@ oracles:
         oracle_type: tables
         type: oracle_collection
         images:
-          - images/planets/jovian-01.webp
-          - images/planets/jovian-02.webp
+          - images/planet/jovian-01.webp
+          - images/planet/jovian-02.webp
         _source: &CollectionSource
           <<: *Source
           page: 312
         summary: A massive planet with vast layers of dense gases surrounding a rocky core.
         collections:
-          settlements:
+          settlement:
             <<: *Settlements
             _source: *CollectionSource
             contents:
@@ -1043,14 +1043,14 @@ oracles:
         oracle_type: tables
         type: oracle_collection
         images:
-          - images/planets/jungle-01.webp
-          - images/planets/jungle-02.webp
+          - images/planet/jungle-01.webp
+          - images/planet/jungle-02.webp
         _source: &CollectionSource
           <<: *Source
           page: 313
         summary: A humid, rain-soaked planet that keeps its secrets under a thick canopy of vegetation.
         collections:
-          settlements:
+          settlement:
             <<: *Settlements
             _source: *CollectionSource
             contents:
@@ -1230,14 +1230,14 @@ oracles:
         oracle_type: tables
         type: oracle_collection
         images:
-          - images/planets/ocean-01.webp
-          - images/planets/ocean-02.webp
+          - images/planet/ocean-01.webp
+          - images/planet/ocean-02.webp
         _source: &CollectionSource
           <<: *Source
           page: 314
         summary: A planet completely or almost entirely covered by a boundless ocean.
         collections:
-          settlements:
+          settlement:
             <<: *Settlements
             _source: *CollectionSource
             contents:
@@ -1420,14 +1420,14 @@ oracles:
         oracle_type: tables
         type: oracle_collection
         images:
-          - images/planets/rocky-01.webp
-          - images/planets/rocky-02.webp
+          - images/planet/rocky-01.webp
+          - images/planet/rocky-02.webp
         _source: &CollectionSource
           <<: *Source
           page: 315
         summary: A rugged planet scarred by eons of destructive asteroid impacts.
         collections:
-          settlements:
+          settlement:
             <<: *Settlements
             _source: *CollectionSource
             contents:
@@ -1606,14 +1606,14 @@ oracles:
         oracle_type: tables
         type: oracle_collection
         images:
-          - images/planets/shattered-01.webp
-          - images/planets/shattered-02.webp
+          - images/planet/shattered-01.webp
+          - images/planet/shattered-02.webp
         _source: &CollectionSource
           <<: *Source
           page: 316
         summary: A planet sundered by cataclysmic destruction.
         collections:
-          settlements:
+          settlement:
             <<: *Settlements
             _source: *CollectionSource
             contents:
@@ -1790,14 +1790,14 @@ oracles:
         oracle_type: tables
         type: oracle_collection
         images:
-          - images/planets/tainted-01.webp
-          - images/planets/tainted-02.webp
+          - images/planet/tainted-01.webp
+          - images/planet/tainted-02.webp
         _source: &CollectionSource
           <<: *Source
           page: 317
         summary: A foul planet wracked by a poisonous climate and virulent growths.
         collections:
-          settlements:
+          settlement:
             <<: *Settlements
             _source: *CollectionSource
             contents:
@@ -1979,14 +1979,14 @@ oracles:
         oracle_type: tables
         type: oracle_collection
         images:
-          - images/planets/vital-01.webp
-          - images/planets/vital-02.webp
+          - images/planet/vital-01.webp
+          - images/planet/vital-02.webp
         _source: &CollectionSource
           <<: *Source
           page: 318
         summary: This diverse, life-bearing planet might provide some small measure of hope.
         collections:
-          settlements:
+          settlement:
             <<: *Settlements
             _source: *CollectionSource
             contents:
@@ -2180,7 +2180,7 @@ oracles:
                     part_of_speech: adjective
                 oracle_rolls:
                   - number_of_rolls: 2
-                    oracle: &biome oracle_rollable:starforged/planets/vital/biomes
+                    oracle: &biome oracle_rollable:starforged/planet/vital/biomes
               - roll: { min: 21, max: 70 }
                 text: Diverse (three biomes)
                 _i18n: *i18n.result.adjective

@@ -59,6 +59,7 @@ declare namespace TypeId {
         readonly delve_site_theme: "site_themes";
         readonly rarity: "rarities";
     };
+    type RootKeys<T extends AnyPrimary = AnyPrimary> = (typeof RootKeys)[T];
     const EmbeddedPropertyKeys: {
         readonly ability: "abilities";
         readonly option: "options";

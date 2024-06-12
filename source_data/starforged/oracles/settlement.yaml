@@ -2,7 +2,7 @@ _id: starforged
 datasworn_version: "0.1.0"
 type: ruleset
 oracles:
-  settlements:
+  settlement:
     name: Settlement Oracles
     canonical_name: Settlements
     type: oracle_collection

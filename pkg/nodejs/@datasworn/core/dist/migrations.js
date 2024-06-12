@@ -4,117 +4,187 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.applyReplacements = exports.updateId = exports.updateIdsInMarkdown = exports.updateIdsInString = exports.IdReplacementMap = void 0;
+exports.applyReplacements = exports.updateId = exports.updateIdsInMarkdown = exports.updateIdsInString = void 0;
 const CONST_js_1 = __importDefault(require("./IdElements/CONST.js"));
+const TypeId_js_1 = __importDefault(require("./IdElements/TypeId.js"));
+const index_js_1 = require("./IdElements/index.js");
 const MinorNodeTypes = ['asset.ability.move', 'asset.ability'];
+const legacyTypeMap = {
+    // new_type: 'old_type'
+    asset: 'assets',
+    move: 'moves',
+    atlas_entry: 'atlas',
+    npc: 'npcs',
+    oracle_rollable: 'oracles',
+    delve_site: 'delve_sites',
+    truth: 'truths',
+    delve_site_domain: 'site_domains',
+    delve_site_theme: 'site_themes',
+    rarity: 'rarities',
+    oracle_collection: 'collections/oracles',
+    npc_collection: 'collections/npcs',
+    asset_collection: 'collections/assets',
+    move_category: 'collections/moves',
+    atlas_collection: 'collections/atlas'
+};
+const keyRenamesByPkgAndType = {
+    starforged: {
+        // these will cascade down to any child collectables, too
+        oracle_collection: {
+            // new_key: 'old_key'
+            faction: 'factions',
+            derelict: 'derelicts',
+            location_theme: 'location_themes',
+            planet: 'planets',
+            settlement: 'settlements',
+            starship: 'starships',
+            precursor_vault: 'vaults',
+            character: 'characters',
+            creature: 'creatures',
+            'derelict/zone': 'derelicts/zones'
+        }
+    },
+    classic: {},
+    delve: {}
+};
+function createKeyRenamersForType(typeId) {
+    var _a;
+    const oldType = ((_a = legacyTypeMap[typeId]) !== null && _a !== void 0 ? _a : legacyTypeMap[typeId]);
+    const renamers = [];
+    for (const pkgId in keyRenamesByPkgAndType) {
+        const pkgKeyRenames = keyRenamesByPkgAndType[pkgId];
+        if (typeId in pkgKeyRenames) {
+            const typeRenames = pkgKeyRenames[typeId];
+            for (const newKey in typeRenames) {
+                const oldKey = typeRenames[newKey];
+                renamers.push({
+                    old: RegExp(`^${pkgId}/${oldType}/${oldKey}((?:\\/[a-z_/*\\d]+){0,})$`),
+                    new: `${typeId}${CONST_js_1.default.PrefixSep}${pkgId}${CONST_js_1.default.PathKeySep}${newKey}$1`
+                });
+            }
+        }
+        const collectionTypeId = index_js_1.TypeGuard.CollectableType(pkgId)
+            ? TypeId_js_1.default.getCollectionOf(pkgId)
+            : null;
+        if (collectionTypeId != null && collectionTypeId in pkgKeyRenames) {
+            const collectionTypeRenames = pkgKeyRenames[collectionTypeId];
+            for (const newKey in collectionTypeRenames) {
+                const oldKey = collectionTypeRenames[newKey];
+                renamers.push({
+                    old: RegExp(
+                    // minimum tail repeat of 1 because a child collectable would always have its own key
+                    `^${pkgId}/${oldType}/${oldKey}((?:\\/[a-z_/*\\d]+){1,})$`),
+                    new: `${typeId}${CONST_js_1.default.PrefixSep}${pkgId}${CONST_js_1.default.PathKeySep}${newKey}$1`
+                });
+            }
+        }
+    }
+    return renamers;
+}
+function createIdMappers(typeId) {
+    var _a;
+    const oldType = ((_a = legacyTypeMap[typeId]) !== null && _a !== void 0 ? _a : legacyTypeMap[typeId]);
+    const mappers = [
+        // these mappers are more specific, so they go first
+        ...createKeyRenamersForType(typeId),
+        // generic mapper to apply if none of the others match
+        {
+            old: new RegExp(`^(\\*|[a-z][a-z0-9_]{3,})/${oldType}((?:\\/[a-z_/*\\d]+){1,})$`),
+            new: `${typeId}${CONST_js_1.default.PrefixSep}$1${CONST_js_1.default.PathKeySep}$2`
+        }
+    ];
+    return mappers;
+}
+function createMoveOracleIdMapper(rulesPackage, moveCategoryKey, moveKey, newOracleKey = moveKey, oldOracleKey) {
+    const newTypeId = ['move', 'oracle_rollable'].join(CONST_js_1.default.PathTypeSep);
+    const newMovePath = [rulesPackage, moveCategoryKey, moveKey].join(CONST_js_1.default.PathKeySep);
+    const newFullPath = [newMovePath, newOracleKey].join(CONST_js_1.default.PathTypeSep);
+    return {
+        old: new RegExp(`^${rulesPackage}/oracles/moves/${moveKey}${oldOracleKey ? '/' + oldOracleKey : ''}$`),
+        new: [newTypeId, newFullPath].join(CONST_js_1.default.PrefixSep)
+    };
+}
 /**
  * Provides an array of {@link IdReplacer} objects for each Datasworn ID type.
  */
-exports.IdReplacementMap = {
-    asset_collection: [
-        {
-            old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/collections\/assets\/(?<path>[a-z_/*]+)$/,
-            new: 'asset_collection:$1/$2'
-        }
+const IdReplacementMap = {
+    // set highest priority replacments first
+    oracle_rollable: [
+        ...['starforged', 'classic'].flatMap((pkg) => [
+            createMoveOracleIdMapper(pkg, 'suffer', 'endure_harm'),
+            createMoveOracleIdMapper(pkg, 'suffer', 'endure_stress'),
+            createMoveOracleIdMapper(pkg, 'fate', 'pay_the_price'),
+            ...[
+                'almost_certain',
+                'likely',
+                'fifty_fifty',
+                'unlikely',
+                'small_chance'
+            ].map((k) => createMoveOracleIdMapper(pkg, 'fate', 'ask_the_oracle', k, k))
+        ]),
+        ...['edge', 'wits', 'shadow'].map((k) => createMoveOracleIdMapper('delve', 'delve', 'delve_the_depths', k)),
+        createMoveOracleIdMapper('delve', 'delve', 'find_an_opportunity'),
+        createMoveOracleIdMapper('delve', 'delve', 'reveal_a_danger'),
+        createMoveOracleIdMapper('delve', 'delve', 'reveal_a_danger_alt'),
+        createMoveOracleIdMapper('delve', 'threat', 'advance_a_threat'),
+        createMoveOracleIdMapper('starforged', 'session', 'begin_a_session'),
+        createMoveOracleIdMapper('starforged', 'exploration', 'make_a_discovery'),
+        createMoveOracleIdMapper('starforged', 'exploration', 'confront_chaos'),
+        createMoveOracleIdMapper('starforged', 'combat', 'take_decisive_action'),
+        createMoveOracleIdMapper('starforged', 'suffer', 'withstand_damage')
     ],
-    asset: [
+    ability: [
         {
-            old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/assets\/(?<path>[a-z_/*]+)$/,
-            new: 'asset:$1/$2'
-        }
-    ],
-    atlas_collection: [
-        {
-            old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/collections\/atlas\/(?<path>[a-z_/*]+)$/,
-            new: 'atlas_collection:$1/$2'
-        }
-    ],
-    atlas_entry: [
-        {
-            old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/atlas\/(?<path>[a-z_/*]+)$/,
-            new: 'atlas_entry:$1/$2'
-        }
-    ],
-    delve_site_domain: [
-        {
-            old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/site_domains\/(?<path>[a-z_/*]+)$/,
-            new: 'delve_site_domain:$1/$2'
-        }
-    ],
-    delve_site_theme: [
-        {
-            old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/site_themes\/(?<path>[a-z_/*]+)$/,
-            new: 'delve_site_theme:$1/$2'
-        }
-    ],
-    delve_site: [
-        {
-            old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/delve_sites\/(?<path>[a-z_/*]+)$/,
-            new: 'delve_site:$1/$2'
-        }
-    ],
-    move_category: [
-        {
-            old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/collections\/moves\/(?<path>[a-z_/*]+)$/,
-            new: 'move_category:$1/$2'
+            // asset abilities
+            old: /^(\*|[a-z][a-z0-9_]{3,})\/assets\/((?:\*|[a-z][a-z_]*)\/(?:\*|[a-z][a-z_]*))\/abilities\/(\*|\d+)$/,
+            new: 'asset.ability:$1/$2.$3'
         }
     ],
     move: [
         {
-            old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/moves\/(?<path>(?:\*|[a-z][a-z_]*)\/(?:\*|[a-z][a-z_]*))$/,
-            new: 'move:$1/$2'
-        }
-    ],
-    npc_collection: [
-        {
-            old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/collections\/npcs\/(?<path>[a-z_/*]+)$/,
-            new: 'npc_collection:$1/$2'
-        }
-    ],
-    npc: [
-        {
-            old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/npcs\/(?<path>[a-z_/*]+)$/,
-            new: 'npc:$1/$2'
-        }
-    ],
-    oracle_collection: [
-        {
-            old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/collections\/oracles\/(?<path>[a-z_/*]+)$/,
-            new: 'oracle_collection:$1/$2'
-        }
-    ],
-    oracle_rollable: [
-        // TODO: add specific overrides for move oracles
-        {
-            old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/oracles\/(?<path>[a-z_/*]+)$/,
-            new: 'oracle_rollable:$1/$2'
-        }
-    ],
-    rarity: [
-        {
-            old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/rarities\/(?<path>[a-z_/*]+)$/,
-            new: 'rarity:$1/$2'
-        }
-    ],
-    truth: [
-        {
-            old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/truths\/(?<path>[a-z_/*]+)$/,
-            new: 'truth:$1/$2'
-        }
-    ],
-    'asset.ability.move': [
-        {
-            old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/assets\/(?<path>(?:\*|[a-z][a-z_]*)\/(?:\*|[a-z][a-z_]*))\/abilities\/(?<index>\*|\d+)\/moves\/(?<key>\*|[a-z][a-z_]*)$/,
+            // asset ability moves
+            old: /^(\*|[a-z][a-z0-9_]{3,})\/assets\/((?:\*|[a-z][a-z_]*)\/(?:\*|[a-z][a-z_]*))\/abilities\/(\*|\d+)\/moves\/(\*|[a-z][a-z_]*)$/,
             new: 'asset.ability.move:$1/$2.$3.$4'
-        }
-    ],
-    'asset.ability': [
-        {
-            old: /^(?<pkg>\*|[a-z][a-z0-9_]{3,})\/assets\/(?<path>(?:\*|[a-z][a-z_]*)\/(?:\*|[a-z][a-z_]*))\/abilities\/(?<index>\*|\d+)$/,
-            new: 'asset.ability:$1/$2.$3'
         }
     ]
 };
+for (const typeId in legacyTypeMap) {
+    IdReplacementMap[typeId] || (IdReplacementMap[typeId] = []);
+    IdReplacementMap[typeId].push(...createIdMappers(typeId));
+}
+// sort all by the number of '.' chars in the replacement, or length otherwise
+console.log(Object.fromEntries(Object.entries(IdReplacementMap)
+    .flatMap(([k, v]) => v.map((e) => [e.old.source, e.new]))
+    .sort(([patternA, replacementA], [patternB, replacementB]) => {
+    const initialWildcard = '(\\*';
+    const anyPipe = '|';
+    const anyCapture = '$';
+    switch (true) {
+        case replacementA.includes(anyCapture) &&
+            !replacementB.includes(anyCapture):
+        case patternA.startsWith(initialWildcard) &&
+            !patternB.startsWith(initialWildcard):
+        case patternA.includes(anyPipe) && !patternB.includes(anyPipe):
+            return 1;
+        case !replacementA.includes(anyCapture) &&
+            replacementB.includes(anyCapture):
+        case !patternA.startsWith(initialWildcard) &&
+            patternB.startsWith(initialWildcard):
+        case !patternA.includes(anyPipe) && patternB.includes(anyPipe):
+            return -1;
+        default: {
+            // use number of captures as proxy for variability. more variable => lower on list
+            const captureCountDifference = patternB.split(anyCapture).length -
+                patternA.split(anyCapture).length;
+            if (captureCountDifference !== 0)
+                return captureCountDifference;
+            // use number of path separators as a proxy for specificity. more specific => higher on list
+            const slashCountDifference = patternA.split(CONST_js_1.default.PathKeySep).length -
+                patternB.split(CONST_js_1.default.PathKeySep).length;
+            return slashCountDifference;
+        }
+    }
+})));
 /**
  * Updates old (pre-0.1.0) Datasworn IDs (and pointers that reference them in markdown strings) for use with v0.1.0.
  * Intended for use as the `replacer` in {@link JSON.stringify} or the `reviver` in {@link JSON.parse}; this way, it will iterate over every string value so you can update all the IDs in one go.
@@ -188,15 +258,15 @@ exports.updateIdsInMarkdown = updateIdsInMarkdown;
  */
 function updateId(oldId, typeHint) {
     var _a;
-    if (typeHint != null && typeHint in exports.IdReplacementMap) {
+    if (typeHint != null && typeHint in IdReplacementMap) {
         // type is already known, so we can skip straight to running the replacements
-        const replacers = exports.IdReplacementMap[typeHint];
+        const replacers = IdReplacementMap[typeHint];
         return (_a = applyReplacements(oldId, replacers)) !== null && _a !== void 0 ? _a : oldId;
     }
     else {
         // unknown type, run all of them until one sticks
-        for (const typeId in exports.IdReplacementMap) {
-            const replacers = exports.IdReplacementMap[typeId];
+        for (const typeId in IdReplacementMap) {
+            const replacers = IdReplacementMap[typeId];
             const newId = applyReplacements(oldId, replacers);
             if (newId == null)
                 continue;

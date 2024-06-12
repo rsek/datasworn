@@ -2,7 +2,7 @@ _id: starforged
 datasworn_version: "0.1.0"
 type: ruleset
 oracles:
-  factions:
+  faction:
     name: Faction Oracles
     canonical_name: Factions
     type: oracle_collection
@@ -31,23 +31,23 @@ oracles:
         #   initial: true
         rows:
           - roll: { min: 1, max: 40 }
-            text: '[Dominion](oracle_rollable:starforged/factions/dominion)'
+            text: '[Dominion](oracle_rollable:starforged/faction/dominion)'
             text2: 'Governing power'
             oracle_rolls:
-              - oracle: oracle_rollable:starforged/factions/dominion
-              - oracle: oracle_rollable:starforged/factions/dominion_leadership
+              - oracle: oracle_rollable:starforged/faction/dominion
+              - oracle: oracle_rollable:starforged/faction/dominion_leadership
             # set_attributes: {faction_type: [dominion]}
           - roll: { min: 41, max: 70 }
-            text: '[Guild](oracle_rollable:starforged/factions/guild)'
+            text: '[Guild](oracle_rollable:starforged/faction/guild)'
             text2: 'Organization of specialists'
             oracle_rolls:
-              - oracle: oracle_rollable:starforged/factions/guild
+              - oracle: oracle_rollable:starforged/faction/guild
             # set_attributes: {faction_type: [guild]}
           - roll: { min: 71, max: 100 }
-            text: '[Fringe Group](oracle_rollable:starforged/factions/fringe_group)'
+            text: '[Fringe Group](oracle_rollable:starforged/faction/fringe_group)'
             text2: 'Band of outlaws, outcasts, or rogues'
             oracle_rolls:
-              - oracle: oracle_rollable:starforged/factions/fringe_group
+              - oracle: oracle_rollable:starforged/faction/fringe_group
             # set_attributes: {faction_type: [fringe_group]}
       influence:
         name: Influence
@@ -102,7 +102,7 @@ oracles:
         name: Dominion
         oracle_type: table_text
         type: oracle_rollable
-        icon: icons/factions/dominion.svg
+        icon: icons/faction/dominion.svg
         _source:
           <<: *Source
           page: 341
@@ -263,7 +263,7 @@ oracles:
         name: Guild
         oracle_type: table_text
         type: oracle_rollable
-        icon: icons/factions/guild.svg
+        icon: icons/faction/guild.svg
         _source:
           <<: *Source
           page: 341
@@ -341,7 +341,7 @@ oracles:
         name: Fringe Group
         oracle_type: table_text
         type: oracle_rollable
-        icon: icons/factions/fringe_group.svg
+        icon: icons/faction/fringe_group.svg
         _source:
           <<: *Source
           page: 341
@@ -749,24 +749,24 @@ oracles:
                       text:
                         part_of_speech: proper_noun
                 roll: { min: 1, max: 40 }
-                text: '[Legacy](oracle_rollable:starforged/factions/name/legacy) [Affiliation](oracle_rollable:starforged/factions/name/affiliation)'
+                text: '[Legacy](oracle_rollable:starforged/faction/name/legacy) [Affiliation](oracle_rollable:starforged/faction/name/affiliation)'
                 template:
-                  text: '{{text>oracle_rollable:starforged/factions/name/legacy}} {{text>oracle_rollable:starforged/factions/name/affiliation}}'
+                  text: '{{text>oracle_rollable:starforged/faction/name/legacy}} {{text>oracle_rollable:starforged/faction/name/affiliation}}'
               - <<: *i18n.template.result.proper_noun
                 roll: { min: 41, max: 55 }
-                text: '[Legacy](oracle_rollable:starforged/factions/name/legacy) [Identity](oracle_rollable:starforged/factions/name/identity)'
+                text: '[Legacy](oracle_rollable:starforged/faction/name/legacy) [Identity](oracle_rollable:starforged/faction/name/identity)'
                 template:
-                  text: '{{text>oracle_rollable:starforged/factions/name/legacy}} {{text>oracle_rollable:starforged/factions/name/identity}}'
+                  text: '{{text>oracle_rollable:starforged/faction/name/legacy}} {{text>oracle_rollable:starforged/faction/name/identity}}'
               - <<: *i18n.template.result.proper_noun
                 roll: { min: 56, max: 70 }
-                text: '[Identity](oracle_rollable:starforged/factions/name/identity) *of the* [Legacy](oracle_rollable:starforged/factions/name/legacy) [Affiliation](oracle_rollable:starforged/factions/name/affiliation)'
+                text: '[Identity](oracle_rollable:starforged/faction/name/identity) *of the* [Legacy](oracle_rollable:starforged/faction/name/legacy) [Affiliation](oracle_rollable:starforged/faction/name/affiliation)'
                 template:
-                  text: '{{text>oracle_rollable:starforged/factions/name/identity}} of the {{text>oracle_rollable:starforged/factions/name/legacy}} {{text>oracle_rollable:starforged/factions/name/affiliation}}'
+                  text: '{{text>oracle_rollable:starforged/faction/name/identity}} of the {{text>oracle_rollable:starforged/faction/name/legacy}} {{text>oracle_rollable:starforged/faction/name/affiliation}}'
               - <<: *i18n.template.result.proper_noun
                 roll: { min: 71, max: 100 }
-                text: '[Affiliation](oracle_rollable:starforged/factions/name/affiliation) *of the* [Legacy](oracle_rollable:starforged/factions/name/legacy) [Identity](oracle_rollable:starforged/factions/name/identity)'
+                text: '[Affiliation](oracle_rollable:starforged/faction/name/affiliation) *of the* [Legacy](oracle_rollable:starforged/faction/name/legacy) [Identity](oracle_rollable:starforged/faction/name/identity)'
                 template:
-                  text: '{{text>oracle_rollable:starforged/factions/name/affiliation}} of the {{text>oracle_rollable:starforged/factions/name/legacy}} {{text>oracle_rollable:starforged/factions/name/identity}}'
+                  text: '{{text>oracle_rollable:starforged/faction/name/affiliation}} of the {{text>oracle_rollable:starforged/faction/name/legacy}} {{text>oracle_rollable:starforged/faction/name/identity}}'
           legacy:
             name: Legacy
             _source: *CollectionSource

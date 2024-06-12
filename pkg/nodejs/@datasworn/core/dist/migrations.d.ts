@@ -1,87 +1,12 @@
 /** Utilties to assist in migration of Datasworn data across versions. */
-import type TypeId from './IdElements/TypeId.js';
-declare const MinorNodeTypes: readonly ["asset.ability.move", "asset.ability"];
-type MinorNodeType = (typeof MinorNodeTypes)[number];
+import TypeId from './IdElements/TypeId.js';
 export type IdReplacer = {
     /** A regular expression matching the old ID. */
     old: RegExp;
     /** A replacement template string to replace the old ID with. */
     new: string;
 };
-export type IdReplacementMap = Record<TypeId.AnyPrimary | MinorNodeType, IdReplacer[]>;
-/**
- * Provides an array of {@link IdReplacer} objects for each Datasworn ID type.
- */
-export declare const IdReplacementMap: {
-    readonly asset_collection: [{
-        readonly old: RegExp;
-        readonly new: "asset_collection:$1/$2";
-    }];
-    readonly asset: [{
-        readonly old: RegExp;
-        readonly new: "asset:$1/$2";
-    }];
-    readonly atlas_collection: [{
-        readonly old: RegExp;
-        readonly new: "atlas_collection:$1/$2";
-    }];
-    readonly atlas_entry: [{
-        readonly old: RegExp;
-        readonly new: "atlas_entry:$1/$2";
-    }];
-    readonly delve_site_domain: [{
-        readonly old: RegExp;
-        readonly new: "delve_site_domain:$1/$2";
-    }];
-    readonly delve_site_theme: [{
-        readonly old: RegExp;
-        readonly new: "delve_site_theme:$1/$2";
-    }];
-    readonly delve_site: [{
-        readonly old: RegExp;
-        readonly new: "delve_site:$1/$2";
-    }];
-    readonly move_category: [{
-        readonly old: RegExp;
-        readonly new: "move_category:$1/$2";
-    }];
-    readonly move: [{
-        readonly old: RegExp;
-        readonly new: "move:$1/$2";
-    }];
-    readonly npc_collection: [{
-        readonly old: RegExp;
-        readonly new: "npc_collection:$1/$2";
-    }];
-    readonly npc: [{
-        readonly old: RegExp;
-        readonly new: "npc:$1/$2";
-    }];
-    readonly oracle_collection: [{
-        readonly old: RegExp;
-        readonly new: "oracle_collection:$1/$2";
-    }];
-    readonly oracle_rollable: [{
-        readonly old: RegExp;
-        readonly new: "oracle_rollable:$1/$2";
-    }];
-    readonly rarity: [{
-        readonly old: RegExp;
-        readonly new: "rarity:$1/$2";
-    }];
-    readonly truth: [{
-        readonly old: RegExp;
-        readonly new: "truth:$1/$2";
-    }];
-    readonly 'asset.ability.move': [{
-        readonly old: RegExp;
-        readonly new: "asset.ability.move:$1/$2.$3.$4";
-    }];
-    readonly 'asset.ability': [{
-        readonly old: RegExp;
-        readonly new: "asset.ability:$1/$2.$3";
-    }];
-};
+export type IdReplacementMap = Record<TypeId.AnyPrimary | TypeId.EmbedOnlyTypes, IdReplacer[]>;
 /**
  * Updates old (pre-0.1.0) Datasworn IDs (and pointers that reference them in markdown strings) for use with v0.1.0.
  * Intended for use as the `replacer` in {@link JSON.stringify} or the `reviver` in {@link JSON.parse}; this way, it will iterate over every string value so you can update all the IDs in one go.
@@ -115,4 +40,3 @@ export declare function updateIdsInMarkdown(md: string): string;
 export declare function updateId(oldId: string, typeHint?: keyof IdReplacementMap): string;
 /** Applies a replacement from an array of replacer objects to a string; the first matching replacer is used. If no matching replacer is found, returns `null` instead. */
 export declare function applyReplacements(str: string, replacers: IdReplacer[]): string;
-export {};

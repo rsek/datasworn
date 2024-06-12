@@ -2,7 +2,7 @@ _id: starforged
 datasworn_version: "0.1.0"
 type: ruleset
 oracles:
-  starships:
+  starship:
     name: Starship Oracles
     canonical_name: Starships
     type: oracle_collection
@@ -401,9 +401,9 @@ oracles:
             _i18n: *CommonNoun
           - roll: { min: 68, max: 82 }
             text: Multipurpose
-            text2: '[Starship Mission](oracle_rollable:starforged/starships/mission)'
+            text2: '[Starship Mission](oracle_rollable:starforged/starship/mission)'
             oracle_rolls:
-              - oracle: oracle_rollable:starforged/starships/mission
+              - oracle: oracle_rollable:starforged/starship/mission
             _i18n: &Adjective
               text:
                 part_of_speech: adjective
@@ -412,10 +412,10 @@ oracles:
             text2: null
             _i18n: *Adjective
           - roll: { min: 85, max: 94 }
-            text: '[Fleet](oracle_rollable:starforged/starships/fleet)'
+            text: '[Fleet](oracle_rollable:starforged/starship/fleet)'
             text2: null
             oracle_rolls:
-              - oracle: oracle_rollable:starforged/starships/fleet
+              - oracle: oracle_rollable:starforged/starship/fleet
           - roll: { min: 95, max: 100 }
             text: Ships in conflict (roll twice)
             text2: null
@@ -454,9 +454,9 @@ oracles:
             text: Transport and escorts
             _i18n: *CommonNoun
           - roll: { min: 91, max: 100 }
-            text: '[Starship Mission](oracle_rollable:starforged/starships/mission)'
+            text: '[Starship Mission](oracle_rollable:starforged/starship/mission)'
             oracle_rolls:
-              - oracle: oracle_rollable:starforged/starships/mission
+              - oracle: oracle_rollable:starforged/starship/mission
       initial_contact:
         name: Initial Contact
         oracle_type: table_text

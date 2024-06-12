@@ -2,7 +2,7 @@ _id: starforged
 datasworn_version: "0.1.0"
 type: ruleset
 oracles:
-  derelicts:
+  derelict:
     name: Derelict Oracles
     canonical_name: Derelicts
     type: oracle_collection
@@ -20,7 +20,7 @@ oracles:
         name: Access
         oracle_type: tables
         type: oracle_collection
-        icon: icons/derelicts/access.svg
+        icon: icons/derelict/access.svg
         _source: &CollectionSource
           <<: *Source
           page: 352
@@ -183,7 +183,7 @@ oracles:
         name: Community
         oracle_type: tables
         type: oracle_collection
-        icon: icons/derelicts/community.svg
+        icon: icons/derelict/community.svg
         _source: &CollectionSource
           <<: *Source
           page: 353
@@ -227,7 +227,7 @@ oracles:
                 text: New zone
               - &Area.11
                 roll: { min: 86, max: 100 }
-                text: New zone via [Access](oracle_collection:starforged/derelicts/access)
+                text: New zone via [Access](oracle_collection:starforged/derelict/access)
           feature:
             <<: *Feature
             _source: *CollectionSource
@@ -310,7 +310,7 @@ oracles:
         name: Engineering
         oracle_type: tables
         type: oracle_collection
-        icon: icons/derelicts/engineering.svg
+        icon: icons/derelict/engineering.svg
         _source: &CollectionSource
           <<: *Source
           page: 354
@@ -410,7 +410,7 @@ oracles:
         name: Living
         oracle_type: tables
         type: oracle_collection
-        icon: icons/derelicts/living.svg
+        icon: icons/derelict/living.svg
         _source: &CollectionSource
           <<: *Source
           page: 355
@@ -510,7 +510,7 @@ oracles:
         name: Medical
         oracle_type: tables
         type: oracle_collection
-        icon: icons/derelicts/medical.svg
+        icon: icons/derelict/medical.svg
         _source: &CollectionSource
           <<: *Source
           page: 356
@@ -610,7 +610,7 @@ oracles:
         name: Operations
         oracle_type: tables
         type: oracle_collection
-        icon: icons/derelicts/operations.svg
+        icon: icons/derelict/operations.svg
         _source: &CollectionSource
           <<: *Source
           page: 357
@@ -710,7 +710,7 @@ oracles:
         name: Production
         oracle_type: tables
         type: oracle_collection
-        icon: icons/derelicts/production.svg
+        icon: icons/derelict/production.svg
         _source: &CollectionSource
           <<: *Source
           page: 358
@@ -810,7 +810,7 @@ oracles:
         name: Research
         oracle_type: tables
         type: oracle_collection
-        icon: icons/derelicts/research.svg
+        icon: icons/derelict/research.svg
         _source: &CollectionSource
           <<: *Source
           page: 359

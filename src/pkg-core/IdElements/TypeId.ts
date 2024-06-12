@@ -123,6 +123,7 @@ namespace TypeId {
 		delve_site_theme: 'site_themes',
 		rarity: 'rarities'
 	} as const satisfies Record<AnyPrimary, keyof Datasworn.RulesPackage>
+  export type RootKeys<T extends AnyPrimary = AnyPrimary> = (typeof RootKeys)[T]
 
 	export const EmbeddedPropertyKeys = {
 		ability: 'abilities',

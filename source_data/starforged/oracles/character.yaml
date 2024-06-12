@@ -2,7 +2,7 @@ _id: starforged
 datasworn_version: "0.1.0"
 type: ruleset
 oracles:
-  characters:
+  character:
     name: Character Oracles
     canonical_name: Characters
     oracle_type: tables
@@ -18,7 +18,7 @@ oracles:
       page: 330
     # Aliases: [NPC]
     summary: |-
-      Don’t try to build a fully formed understanding character when you first encounter them; instead, focus on what your character learns or perceives as a first impression using oracles such as [First Look](oracle_rollable:starforged/characters/first_look) and [Initial Disposition](oracle_rollable:starforged/characters/initial_disposition). Then envision or generate additional details over time.
+      Don’t try to build a fully formed understanding character when you first encounter them; instead, focus on what your character learns or perceives as a first impression using oracles such as [First Look](oracle_rollable:starforged/character/first_look) and [Initial Disposition](oracle_rollable:starforged/character/initial_disposition). Then envision or generate additional details over time.
     collections:
       name:
         name: Character Name
@@ -37,8 +37,8 @@ oracles:
             summary: |-
               Given and family names can be used independently as standalone names. In many cases you can reverse the order.
             suggestions:
-                - oracle_rollable:starforged/characters/name/callsign
-                - oracle_rollable:starforged/characters/name/family_name
+                - oracle_rollable:starforged/character/name/callsign
+                - oracle_rollable:starforged/character/name/family_name
             oracle_type: column_text
             type: oracle_rollable
             rows:
@@ -349,8 +349,8 @@ oracles:
             summary: |-
               Spacers are often known only by their callsigns, with their “dirtside names” reserved for family and close friends.
             suggestions:
-                - oracle_rollable:starforged/characters/name/given_name
-                - oracle_rollable:starforged/characters/name/family_name
+                - oracle_rollable:starforged/character/name/given_name
+                - oracle_rollable:starforged/character/name/family_name
             oracle_type: column_text
             type: oracle_rollable
             rows:
@@ -659,8 +659,8 @@ oracles:
             summary: |-
               Given and family names can be used independently as standalone names. In many cases you can reverse the order.
             suggestions:
-                - oracle_rollable:starforged/characters/name/given_name
-                - oracle_rollable:starforged/characters/name/callsign
+                - oracle_rollable:starforged/character/name/given_name
+                - oracle_rollable:starforged/character/name/callsign
             oracle_type: column_text
             type: oracle_rollable
             rows:
