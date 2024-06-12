@@ -33,6 +33,11 @@ namespace TypeNode {
 		move: Datasworn.EmbeddedMove
 	}
 
+  export type CollectableOf<T extends Collection> = ByType<
+		TypeId.CollectableOf<T['type']>
+	> &
+		Collectable
+
 	/** Gets the node type(s) corresponding to a given TypeId. */
 	export type ByType<T extends keyof PrimaryTypeMap | keyof EmbeddedTypeMap> =
 		T extends keyof PrimaryTypeMap
