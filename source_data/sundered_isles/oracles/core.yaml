@@ -14,11 +14,15 @@ oracles:
     name: Core
     type: oracle_collection
     oracle_type: tables
+    replaces:
+      - "oracle_collection:starforged/core"
     _source:
       <<: *Source
     contents:
       action:
         name: Action
+        replaces:
+          - "oracle_rollable:starforged/core/action"
         type: oracle_rollable
         oracle_type: table_text
         _source:
@@ -226,6 +230,8 @@ oracles:
             text: Withdraw
       theme:
         name: Theme
+        replaces:
+          - "oracle_rollable:starforged/core/theme"
         type: oracle_rollable
         oracle_type: table_text
         _source:
@@ -433,6 +439,8 @@ oracles:
             text: Weapon
       descriptor:
         name: Descriptor
+        replaces:
+          - "oracle_rollable:starforged/core/descriptor"
         type: oracle_rollable
         oracle_type: table_text
         _source:
@@ -640,6 +648,8 @@ oracles:
             text: Wrecked
       focus:
         name: Focus
+        replaces:
+          - "oracle_rollable:starforged/core/focus"
         type: oracle_rollable
         oracle_type: table_text
         _source:

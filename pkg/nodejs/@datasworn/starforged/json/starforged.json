@@ -48956,6 +48956,7 @@
 											"text": "On a __miss__, you are drawn into a bad situation and must [Pay the Price](move:starforged/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": false,
 									"_id": "asset.ability.move:starforged/deed/vanguard.0.seek_safe_haven"
 								}
 							},
@@ -49292,6 +49293,7 @@
 											"text": "On a __miss__, charging fails and you must [Withstand Damage](move:starforged/suffer/withstand_damage) (-2)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:starforged/module/grappler.0.ready_grappler"
 								}
 							},
@@ -49511,6 +49513,7 @@
 											"text": "On a __miss__, mark unprepared as normal."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:starforged/module/internal_refit.1.draw_reserves"
 								}
 							},
@@ -50278,6 +50281,7 @@
 											"text": "On a __miss__, set your vehicle's shields to 2, but [Lose Momentum](move:starforged/suffer/lose_momentum) (-1).\n\nThen, if you [Withstand Damage](move:starforged/suffer/withstand_damage), ignore damage up to the value of your shields and suffer -1 shields. Raised shields last for a few minutes. If reduced to 0, they cannot be raised again for an hour or so."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:starforged/module/shields.0.raise_shields"
 								}
 							},
@@ -50847,6 +50851,7 @@
 											"text": "On a __miss__, [Sacrifice Resources](move:starforged/suffer/sacrifice_resources) (-1)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:starforged/path/archer.0.craft_projectiles"
 								}
 							},
@@ -51095,6 +51100,7 @@
 											"text": "On a __miss__, the work is ignored, misunderstood, or co-opted, and you must [Pay the Price](move:starforged/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:starforged/path/artist.2.commemorate"
 								}
 							},
@@ -52091,6 +52097,7 @@
 											"text": "On a __miss__, you reveal a troubling motive or secret; [Pay the Price](move:starforged/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:starforged/path/empath.0.read_heart"
 								}
 							},
@@ -52341,6 +52348,7 @@
 											"text": "On a __miss__, take up to +2 fire but [Endure Harm](move:starforged/suffer/endure_harm) (-2).\n\nWhen you make moves aided by this energy to attack or overcome obstacles, add +2 and suffer -1 fire."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:starforged/path/firebrand.0.gather_energy"
 								}
 							},
@@ -53233,6 +53241,7 @@
 											"text": "On a __miss__, you and your allies return to the linked point, retain any progress, and set condition meters (except for spirit) to their original values.\n\nHowever, you find the timeline corrupted! [Pay the Price](move:starforged/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:starforged/path/looper.1.loop_back"
 								}
 							},
@@ -53793,6 +53802,7 @@
 											"text": "On a __miss__, your supply remains at 0 and you [Lose Momentum](move:starforged/suffer/lose_momentum) (-1)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:starforged/path/outcast.1.scrape_by"
 								}
 							},
@@ -54166,6 +54176,7 @@
 											"text": "On a __miss__, you fail and draw unwanted attention."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:starforged/path/shade.1.shroud_in_darkness"
 								}
 							},
@@ -54411,6 +54422,7 @@
 											"text": "On a __miss__, you draw attention or face a reprisal; [Pay the Price](move:starforged/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:starforged/path/sniper.0.snipe_minor_foe"
 								}
 							},
@@ -55963,6 +55975,7 @@
 						"page": 141
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/session/begin_a_session"
 				},
 				"set_a_flag": {
@@ -55987,6 +56000,7 @@
 						"page": 142
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/session/set_a_flag"
 				},
 				"change_your_fate": {
@@ -56011,6 +56025,7 @@
 						"page": 143
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/session/change_your_fate"
 				},
 				"take_a_break": {
@@ -56035,6 +56050,7 @@
 						"page": 144
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/session/take_a_break"
 				},
 				"end_a_session": {
@@ -56059,6 +56075,7 @@
 						"page": 145
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/session/end_a_session"
 				}
 			},
@@ -56166,6 +56183,7 @@
 						],
 						"page": 147
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/adventure/face_danger"
 				},
 				"secure_an_advantage": {
@@ -56251,6 +56269,7 @@
 						],
 						"page": 148
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/adventure/secure_an_advantage"
 				},
 				"gather_information": {
@@ -56296,6 +56315,7 @@
 						],
 						"page": 149
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/adventure/gather_information"
 				},
 				"compel": {
@@ -56361,6 +56381,7 @@
 						],
 						"page": 150
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/adventure/compel"
 				},
 				"aid_your_ally": {
@@ -56385,6 +56406,7 @@
 						"page": 152
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/adventure/aid_your_ally"
 				},
 				"check_your_gear": {
@@ -56429,6 +56451,7 @@
 						],
 						"page": 153
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/adventure/check_your_gear"
 				}
 			},
@@ -56495,6 +56518,7 @@
 						],
 						"page": 156
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/quest/swear_an_iron_vow"
 				},
 				"reach_a_milestone": {
@@ -56519,6 +56543,7 @@
 						"page": 157
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/quest/reach_a_milestone"
 				},
 				"fulfill_your_vow": {
@@ -56565,6 +56590,7 @@
 						],
 						"page": 158
 					},
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/quest/fulfill_your_vow"
 				},
 				"forsake_your_vow": {
@@ -56589,6 +56615,7 @@
 						"page": 160
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/quest/forsake_your_vow"
 				}
 			},
@@ -56655,6 +56682,7 @@
 						],
 						"page": 163
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/connection/make_a_connection"
 				},
 				"develop_your_relationship": {
@@ -56721,6 +56749,7 @@
 						],
 						"page": 164
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/connection/develop_your_relationship"
 				},
 				"test_your_relationship": {
@@ -56765,6 +56794,7 @@
 						],
 						"page": 165
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/connection/test_your_relationship"
 				},
 				"forge_a_bond": {
@@ -56811,6 +56841,7 @@
 						],
 						"page": 166
 					},
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/connection/forge_a_bond"
 				}
 			},
@@ -56898,6 +56929,7 @@
 						],
 						"page": 169
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/exploration/undertake_an_expedition"
 				},
 				"explore_a_waypoint": {
@@ -56942,6 +56974,7 @@
 						],
 						"page": 174
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/exploration/explore_a_waypoint"
 				},
 				"make_a_discovery": {
@@ -57151,6 +57184,7 @@
 						"page": 176
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/exploration/make_a_discovery"
 				},
 				"confront_chaos": {
@@ -57351,6 +57385,7 @@
 						"page": 177
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/exploration/confront_chaos"
 				},
 				"finish_an_expedition": {
@@ -57397,6 +57432,7 @@
 						],
 						"page": 178
 					},
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/exploration/finish_an_expedition"
 				},
 				"set_a_course": {
@@ -57441,6 +57477,7 @@
 						],
 						"page": 180
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/exploration/set_a_course"
 				}
 			},
@@ -57548,6 +57585,7 @@
 						],
 						"page": 188
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/combat/enter_the_fray"
 				},
 				"gain_ground": {
@@ -57633,6 +57671,7 @@
 						],
 						"page": 190
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/combat/gain_ground"
 				},
 				"react_under_fire": {
@@ -57718,6 +57757,7 @@
 						],
 						"page": 191
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/combat/react_under_fire"
 				},
 				"strike": {
@@ -57773,6 +57813,7 @@
 						],
 						"page": 192
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/combat/strike"
 				},
 				"clash": {
@@ -57828,6 +57869,7 @@
 						],
 						"page": 193
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/combat/clash"
 				},
 				"take_decisive_action": {
@@ -57931,6 +57973,7 @@
 						],
 						"page": 194
 					},
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/combat/take_decisive_action"
 				},
 				"face_defeat": {
@@ -57955,6 +57998,7 @@
 						"page": 196
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/combat/face_defeat"
 				},
 				"battle": {
@@ -58040,6 +58084,7 @@
 						],
 						"page": 197
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/combat/battle"
 				}
 			},
@@ -58086,6 +58131,7 @@
 						"page": 199
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/suffer/lose_momentum"
 				},
 				"endure_harm": {
@@ -58184,6 +58230,7 @@
 						],
 						"page": 200
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/suffer/endure_harm"
 				},
 				"endure_stress": {
@@ -58275,6 +58322,7 @@
 						],
 						"page": 202
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/suffer/endure_stress"
 				},
 				"companion_takes_a_hit": {
@@ -58320,6 +58368,7 @@
 						],
 						"page": 204
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/suffer/companion_takes_a_hit"
 				},
 				"sacrifice_resources": {
@@ -58344,6 +58393,7 @@
 						"page": 205
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/suffer/sacrifice_resources"
 				},
 				"withstand_damage": {
@@ -58463,6 +58513,7 @@
 						],
 						"page": 206
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/suffer/withstand_damage"
 				}
 			},
@@ -58529,6 +58580,7 @@
 						],
 						"page": 209
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/recover/sojourn"
 				},
 				"heal": {
@@ -58608,6 +58660,7 @@
 						],
 						"page": 210
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/recover/heal"
 				},
 				"hearten": {
@@ -58652,6 +58705,7 @@
 						],
 						"page": 211
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/recover/hearten"
 				},
 				"resupply": {
@@ -58727,6 +58781,7 @@
 						],
 						"page": 212
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/recover/resupply"
 				},
 				"repair": {
@@ -58782,6 +58837,7 @@
 						],
 						"page": 214
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/recover/repair"
 				}
 			},
@@ -58848,6 +58904,7 @@
 						],
 						"page": 217
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/threshold/face_death"
 				},
 				"face_desolation": {
@@ -58892,6 +58949,7 @@
 						],
 						"page": 218
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/threshold/face_desolation"
 				},
 				"overcome_destruction": {
@@ -58935,6 +58993,7 @@
 						],
 						"page": 220
 					},
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/threshold/overcome_destruction"
 				}
 			},
@@ -58981,6 +59040,7 @@
 						"page": 224
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/legacy/earn_experience"
 				},
 				"advance": {
@@ -59005,6 +59065,7 @@
 						"page": 225
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/legacy/advance"
 				},
 				"continue_a_legacy": {
@@ -59054,6 +59115,7 @@
 						],
 						"page": 226
 					},
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/legacy/continue_a_legacy"
 				}
 			},
@@ -59232,6 +59294,7 @@
 						"page": 229
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/fate/ask_the_oracle"
 				},
 				"pay_the_price": {
@@ -59425,6 +59488,7 @@
 						"page": 232
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/fate/pay_the_price"
 				}
 			},
@@ -59471,6 +59535,7 @@
 						"page": 239
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/scene_challenge/begin_the_scene"
 				},
 				"face_danger": {
@@ -59556,6 +59621,7 @@
 						],
 						"page": 240
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/scene_challenge/face_danger"
 				},
 				"secure_an_advantage": {
@@ -59641,6 +59707,7 @@
 						],
 						"page": 240
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:starforged/scene_challenge/secure_an_advantage"
 				},
 				"finish_the_scene": {
@@ -59687,6 +59754,7 @@
 						],
 						"page": 241
 					},
+					"allow_momentum_burn": false,
 					"_id": "move:starforged/scene_challenge/finish_the_scene"
 				}
 			},

@@ -55,9 +55,9 @@ const CollectionMeta = Type.Object({
 		})
 	),
 	replaces: Type.Optional(
-		Type.Ref(Id.OracleCollectionId, {
+		Type.Array(Type.Ref(Id.OracleCollectionIdWildcard), {
 			description:
-				'Indicates that this object replaces the identified OracleCollection. References to the replaced object can be considered equivalent to this object.'
+				'Indicates that this object replaces the identified OracleCollections. References to the replaced objects can be considered equivalent to this object.'
 		})
 	)
 })

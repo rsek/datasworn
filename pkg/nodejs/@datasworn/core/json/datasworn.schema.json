@@ -57,8 +57,8 @@
 				"title",
 				"authors",
 				"date",
-				"url",
 				"license",
+				"url",
 				"rules",
 				"oracles",
 				"assets",
@@ -93,13 +93,13 @@
 					"$ref": "#/definitions/Date",
 					"description": "The date of the source documents's last update, formatted YYYY-MM-DD. Required because it's used to determine whether the data needs updating."
 				},
+				"license": {
+					"$ref": "#/definitions/License"
+				},
 				"url": {
 					"$ref": "#/definitions/WebUrl",
 					"description": "A URL where the source document is available.",
 					"examples": ["https://ironswornrpg.com"]
-				},
-				"license": {
-					"$ref": "#/definitions/License"
 				},
 				"rules": {
 					"$ref": "#/definitions/Rules"
@@ -247,13 +247,13 @@
 					"$ref": "#/definitions/Date",
 					"description": "The date of the source documents's last update, formatted YYYY-MM-DD. Required because it's used to determine whether the data needs updating."
 				},
+				"license": {
+					"$ref": "#/definitions/License"
+				},
 				"url": {
 					"$ref": "#/definitions/WebUrl",
 					"description": "A URL where the source document is available.",
 					"examples": ["https://ironswornrpg.com"]
-				},
-				"license": {
-					"$ref": "#/definitions/License"
 				},
 				"rules": {
 					"$ref": "#/definitions/RulesExpansion"
@@ -882,16 +882,16 @@
 					"type": "string",
 					"examples": ["Shawn Tomkin"]
 				},
-				"url": {
-					"type": "string",
-					"description": "An optional URL for the author's website.",
-					"format": "uri"
-				},
 				"email": {
 					"title": "Email",
 					"type": "string",
 					"description": "An optional email contact for the author",
 					"format": "email"
+				},
+				"url": {
+					"type": "string",
+					"description": "An optional URL for the author's website.",
+					"format": "uri"
 				}
 			}
 		},
@@ -935,14 +935,10 @@
 			"title": "SourceInfo",
 			"type": "object",
 			"description": "Metadata describing the original source of this item",
-			"required": ["title", "authors", "date", "url", "license"],
+			"required": ["title", "authors", "date", "license", "url"],
 			"properties": {
 				"title": {
 					"$ref": "#/definitions/SourceTitle"
-				},
-				"page": {
-					"$ref": "#/definitions/PageNumber",
-					"description": "The page number where this item is described in full."
 				},
 				"authors": {
 					"type": "array",
@@ -956,13 +952,17 @@
 					"$ref": "#/definitions/Date",
 					"description": "The date of the source documents's last update, formatted YYYY-MM-DD. Required because it's used to determine whether the data needs updating."
 				},
+				"license": {
+					"$ref": "#/definitions/License"
+				},
+				"page": {
+					"$ref": "#/definitions/PageNumber",
+					"description": "The page number where this item is described in full."
+				},
 				"url": {
 					"$ref": "#/definitions/WebUrl",
 					"description": "A URL where the source document is available.",
 					"examples": ["https://ironswornrpg.com"]
-				},
-				"license": {
-					"$ref": "#/definitions/License"
 				}
 			}
 		},
@@ -2814,12 +2814,18 @@
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"replaces": {
-					"$ref": "#/definitions/NpcCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+					"type": "array",
+					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"items": {
+						"$ref": "#/definitions/NpcCollectionIdWildcard"
+					}
 				},
 				"enhances": {
-					"$ref": "#/definitions/NpcCollectionId",
-					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+					"type": "array",
+					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"items": {
+						"$ref": "#/definitions/NpcCollectionIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -3747,8 +3753,11 @@
 					"const": "column_text"
 				},
 				"replaces": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+					"type": "array",
+					"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.",
+					"items": {
+						"$ref": "#/definitions/OracleRollableIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -3813,8 +3822,11 @@
 					"const": "column_text2"
 				},
 				"replaces": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+					"type": "array",
+					"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.",
+					"items": {
+						"$ref": "#/definitions/OracleRollableIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -3879,8 +3891,11 @@
 					"const": "column_text3"
 				},
 				"replaces": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+					"type": "array",
+					"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.",
+					"items": {
+						"$ref": "#/definitions/OracleRollableIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -4318,12 +4333,18 @@
 					"const": "table_shared_rolls"
 				},
 				"replaces": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+					"type": "array",
+					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"items": {
+						"$ref": "#/definitions/OracleCollectionIdWildcard"
+					}
 				},
 				"enhances": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+					"type": "array",
+					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"items": {
+						"$ref": "#/definitions/OracleCollectionIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -4423,12 +4444,18 @@
 					"const": "table_shared_text"
 				},
 				"replaces": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+					"type": "array",
+					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"items": {
+						"$ref": "#/definitions/OracleCollectionIdWildcard"
+					}
 				},
 				"enhances": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+					"type": "array",
+					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"items": {
+						"$ref": "#/definitions/OracleCollectionIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -4528,12 +4555,18 @@
 					"const": "table_shared_text2"
 				},
 				"replaces": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+					"type": "array",
+					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"items": {
+						"$ref": "#/definitions/OracleCollectionIdWildcard"
+					}
 				},
 				"enhances": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+					"type": "array",
+					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"items": {
+						"$ref": "#/definitions/OracleCollectionIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -4638,12 +4671,18 @@
 					"const": "table_shared_text3"
 				},
 				"replaces": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+					"type": "array",
+					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"items": {
+						"$ref": "#/definitions/OracleCollectionIdWildcard"
+					}
 				},
 				"enhances": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+					"type": "array",
+					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"items": {
+						"$ref": "#/definitions/OracleCollectionIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -4744,8 +4783,11 @@
 					"const": "table_text"
 				},
 				"replaces": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+					"type": "array",
+					"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.",
+					"items": {
+						"$ref": "#/definitions/OracleRollableIdWildcard"
+					}
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
@@ -4862,8 +4904,11 @@
 					"const": "table_text2"
 				},
 				"replaces": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+					"type": "array",
+					"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.",
+					"items": {
+						"$ref": "#/definitions/OracleRollableIdWildcard"
+					}
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
@@ -4985,8 +5030,11 @@
 					"const": "table_text3"
 				},
 				"replaces": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+					"type": "array",
+					"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.",
+					"items": {
+						"$ref": "#/definitions/OracleRollableIdWildcard"
+					}
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
@@ -5097,12 +5145,18 @@
 					"const": "tables"
 				},
 				"replaces": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+					"type": "array",
+					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"items": {
+						"$ref": "#/definitions/OracleCollectionIdWildcard"
+					}
 				},
 				"enhances": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+					"type": "array",
+					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"items": {
+						"$ref": "#/definitions/OracleCollectionIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -5184,7 +5238,8 @@
 				"roll_type",
 				"trigger",
 				"text",
-				"outcomes"
+				"outcomes",
+				"allow_momentum_burn"
 			],
 			"properties": {
 				"_id": {
@@ -5229,6 +5284,11 @@
 				"_comment": {
 					"type": "string",
 					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"description": "Is burning momentum allowed for this move?",
+					"default": true
 				}
 			}
 		},
@@ -5308,7 +5368,8 @@
 				"roll_type",
 				"trigger",
 				"text",
-				"outcomes"
+				"outcomes",
+				"allow_momentum_burn"
 			],
 			"properties": {
 				"_id": {
@@ -5354,6 +5415,12 @@
 				"_comment": {
 					"type": "string",
 					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"description": "Is burning momentum allowed for this move?",
+					"default": false,
+					"const": false
 				}
 			}
 		},
@@ -5368,7 +5435,8 @@
 				"tracks",
 				"trigger",
 				"text",
-				"outcomes"
+				"outcomes",
+				"allow_momentum_burn"
 			],
 			"properties": {
 				"_id": {
@@ -5417,6 +5485,12 @@
 				"_comment": {
 					"type": "string",
 					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"description": "Is burning momentum allowed for this move?",
+					"default": false,
+					"const": false
 				}
 			}
 		},
@@ -5430,7 +5504,8 @@
 				"roll_type",
 				"trigger",
 				"text",
-				"outcomes"
+				"outcomes",
+				"allow_momentum_burn"
 			],
 			"properties": {
 				"_id": {
@@ -5475,6 +5550,12 @@
 				"_comment": {
 					"type": "string",
 					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"description": "Is burning momentum allowed for this move?",
+					"default": false,
+					"const": false
 				}
 			}
 		},
@@ -5556,7 +5637,8 @@
 				"trigger",
 				"text",
 				"outcomes",
-				"_source"
+				"_source",
+				"allow_momentum_burn"
 			],
 			"properties": {
 				"_id": {
@@ -5581,8 +5663,11 @@
 					"const": "action_roll"
 				},
 				"replaces": {
-					"$ref": "#/definitions/MoveId",
-					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
+					"type": "array",
+					"description": "Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move.",
+					"items": {
+						"$ref": "#/definitions/MoveIdWildcard"
+					}
 				},
 				"trigger": {
 					"$ref": "#/definitions/TriggerActionRoll",
@@ -5621,6 +5706,11 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"description": "Is burning momentum allowed for this move?",
+					"default": true
 				}
 			}
 		},
@@ -5677,12 +5767,18 @@
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"replaces": {
-					"$ref": "#/definitions/MoveCategoryId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+					"type": "array",
+					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"items": {
+						"$ref": "#/definitions/MoveCategoryIdWildcard"
+					}
 				},
 				"enhances": {
-					"$ref": "#/definitions/MoveCategoryId",
-					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+					"type": "array",
+					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"items": {
+						"$ref": "#/definitions/MoveCategoryIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -5810,7 +5906,8 @@
 				"trigger",
 				"text",
 				"outcomes",
-				"_source"
+				"_source",
+				"allow_momentum_burn"
 			],
 			"properties": {
 				"_id": {
@@ -5835,8 +5932,11 @@
 					"const": "no_roll"
 				},
 				"replaces": {
-					"$ref": "#/definitions/MoveId",
-					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
+					"type": "array",
+					"description": "Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move.",
+					"items": {
+						"$ref": "#/definitions/MoveIdWildcard"
+					}
 				},
 				"trigger": {
 					"$ref": "#/definitions/TriggerNoRoll",
@@ -5876,6 +5976,12 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"description": "Is burning momentum allowed for this move?",
+					"default": false,
+					"const": false
 				}
 			}
 		},
@@ -5958,7 +6064,8 @@
 				"trigger",
 				"text",
 				"outcomes",
-				"_source"
+				"_source",
+				"allow_momentum_burn"
 			],
 			"properties": {
 				"_id": {
@@ -5987,8 +6094,11 @@
 					"description": "Describes the common features of progress tracks associated with this move."
 				},
 				"replaces": {
-					"$ref": "#/definitions/MoveId",
-					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
+					"type": "array",
+					"description": "Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move.",
+					"items": {
+						"$ref": "#/definitions/MoveIdWildcard"
+					}
 				},
 				"trigger": {
 					"$ref": "#/definitions/TriggerProgressRoll",
@@ -6027,6 +6137,12 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"description": "Is burning momentum allowed for this move?",
+					"default": false,
+					"const": false
 				}
 			}
 		},
@@ -6078,7 +6194,8 @@
 				"trigger",
 				"text",
 				"outcomes",
-				"_source"
+				"_source",
+				"allow_momentum_burn"
 			],
 			"properties": {
 				"_id": {
@@ -6103,8 +6220,11 @@
 					"const": "special_track"
 				},
 				"replaces": {
-					"$ref": "#/definitions/MoveId",
-					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
+					"type": "array",
+					"description": "Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move.",
+					"items": {
+						"$ref": "#/definitions/MoveIdWildcard"
+					}
 				},
 				"trigger": {
 					"$ref": "#/definitions/TriggerSpecialTrack",
@@ -6143,6 +6263,12 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"description": "Is burning momentum allowed for this move?",
+					"default": false,
+					"const": false
 				}
 			}
 		},
@@ -7024,12 +7150,18 @@
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"replaces": {
-					"$ref": "#/definitions/AssetCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+					"type": "array",
+					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"items": {
+						"$ref": "#/definitions/AssetCollectionIdWildcard"
+					}
 				},
 				"enhances": {
-					"$ref": "#/definitions/AssetCollectionId",
-					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+					"type": "array",
+					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"items": {
+						"$ref": "#/definitions/AssetCollectionIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -8145,12 +8277,18 @@
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"replaces": {
-					"$ref": "#/definitions/AtlasCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+					"type": "array",
+					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"items": {
+						"$ref": "#/definitions/AtlasCollectionIdWildcard"
+					}
 				},
 				"enhances": {
-					"$ref": "#/definitions/AtlasCollectionId",
-					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+					"type": "array",
+					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"items": {
+						"$ref": "#/definitions/AtlasCollectionIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",

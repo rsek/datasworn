@@ -2967,12 +2967,18 @@
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"replaces": {
-					"$ref": "#/definitions/NpcCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+					"type": "array",
+					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"items": {
+						"$ref": "#/definitions/NpcCollectionIdWildcard"
+					}
 				},
 				"enhances": {
-					"$ref": "#/definitions/NpcCollectionId",
-					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+					"type": "array",
+					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"items": {
+						"$ref": "#/definitions/NpcCollectionIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -3888,8 +3894,11 @@
 					"const": "column_text"
 				},
 				"replaces": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+					"type": "array",
+					"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.",
+					"items": {
+						"$ref": "#/definitions/OracleRollableIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -3955,8 +3964,11 @@
 					"const": "column_text2"
 				},
 				"replaces": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+					"type": "array",
+					"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.",
+					"items": {
+						"$ref": "#/definitions/OracleRollableIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -4022,8 +4034,11 @@
 					"const": "column_text3"
 				},
 				"replaces": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+					"type": "array",
+					"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.",
+					"items": {
+						"$ref": "#/definitions/OracleRollableIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -4458,12 +4473,18 @@
 					"const": "table_shared_rolls"
 				},
 				"replaces": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+					"type": "array",
+					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"items": {
+						"$ref": "#/definitions/OracleCollectionIdWildcard"
+					}
 				},
 				"enhances": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+					"type": "array",
+					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"items": {
+						"$ref": "#/definitions/OracleCollectionIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -4557,12 +4578,18 @@
 					"const": "table_shared_text"
 				},
 				"replaces": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+					"type": "array",
+					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"items": {
+						"$ref": "#/definitions/OracleCollectionIdWildcard"
+					}
 				},
 				"enhances": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+					"type": "array",
+					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"items": {
+						"$ref": "#/definitions/OracleCollectionIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -4656,12 +4683,18 @@
 					"const": "table_shared_text2"
 				},
 				"replaces": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+					"type": "array",
+					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"items": {
+						"$ref": "#/definitions/OracleCollectionIdWildcard"
+					}
 				},
 				"enhances": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+					"type": "array",
+					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"items": {
+						"$ref": "#/definitions/OracleCollectionIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -4760,12 +4793,18 @@
 					"const": "table_shared_text3"
 				},
 				"replaces": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+					"type": "array",
+					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"items": {
+						"$ref": "#/definitions/OracleCollectionIdWildcard"
+					}
 				},
 				"enhances": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+					"type": "array",
+					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"items": {
+						"$ref": "#/definitions/OracleCollectionIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -4858,8 +4897,11 @@
 					"const": "table_text"
 				},
 				"replaces": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+					"type": "array",
+					"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.",
+					"items": {
+						"$ref": "#/definitions/OracleRollableIdWildcard"
+					}
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
@@ -4968,8 +5010,11 @@
 					"const": "table_text2"
 				},
 				"replaces": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+					"type": "array",
+					"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.",
+					"items": {
+						"$ref": "#/definitions/OracleRollableIdWildcard"
+					}
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
@@ -5083,8 +5128,11 @@
 					"const": "table_text3"
 				},
 				"replaces": {
-					"$ref": "#/definitions/OracleRollableId",
-					"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+					"type": "array",
+					"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.",
+					"items": {
+						"$ref": "#/definitions/OracleRollableIdWildcard"
+					}
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
@@ -5196,12 +5244,18 @@
 					"const": "tables"
 				},
 				"replaces": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+					"type": "array",
+					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"items": {
+						"$ref": "#/definitions/OracleCollectionIdWildcard"
+					}
 				},
 				"enhances": {
-					"$ref": "#/definitions/OracleCollectionId",
-					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+					"type": "array",
+					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"items": {
+						"$ref": "#/definitions/OracleCollectionIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -5682,8 +5736,11 @@
 					"const": "action_roll"
 				},
 				"replaces": {
-					"$ref": "#/definitions/MoveId",
-					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
+					"type": "array",
+					"description": "Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move.",
+					"items": {
+						"$ref": "#/definitions/MoveIdWildcard"
+					}
 				},
 				"trigger": {
 					"$ref": "#/definitions/TriggerActionRoll",
@@ -5785,12 +5842,18 @@
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"replaces": {
-					"$ref": "#/definitions/MoveCategoryId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+					"type": "array",
+					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"items": {
+						"$ref": "#/definitions/MoveCategoryIdWildcard"
+					}
 				},
 				"enhances": {
-					"$ref": "#/definitions/MoveCategoryId",
-					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+					"type": "array",
+					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"items": {
+						"$ref": "#/definitions/MoveCategoryIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -5935,8 +5998,11 @@
 					"const": "no_roll"
 				},
 				"replaces": {
-					"$ref": "#/definitions/MoveId",
-					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
+					"type": "array",
+					"description": "Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move.",
+					"items": {
+						"$ref": "#/definitions/MoveIdWildcard"
+					}
 				},
 				"trigger": {
 					"$ref": "#/definitions/TriggerNoRoll",
@@ -6096,8 +6162,11 @@
 					"description": "Describes the common features of progress tracks associated with this move."
 				},
 				"replaces": {
-					"$ref": "#/definitions/MoveId",
-					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
+					"type": "array",
+					"description": "Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move.",
+					"items": {
+						"$ref": "#/definitions/MoveIdWildcard"
+					}
 				},
 				"trigger": {
 					"$ref": "#/definitions/TriggerProgressRoll",
@@ -6219,8 +6288,11 @@
 					"const": "special_track"
 				},
 				"replaces": {
-					"$ref": "#/definitions/MoveId",
-					"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
+					"type": "array",
+					"description": "Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move.",
+					"items": {
+						"$ref": "#/definitions/MoveIdWildcard"
+					}
 				},
 				"trigger": {
 					"$ref": "#/definitions/TriggerSpecialTrack",
@@ -7145,12 +7217,18 @@
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"replaces": {
-					"$ref": "#/definitions/AssetCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+					"type": "array",
+					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"items": {
+						"$ref": "#/definitions/AssetCollectionIdWildcard"
+					}
 				},
 				"enhances": {
-					"$ref": "#/definitions/AssetCollectionId",
-					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+					"type": "array",
+					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"items": {
+						"$ref": "#/definitions/AssetCollectionIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
@@ -8287,12 +8365,18 @@
 					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 				},
 				"replaces": {
-					"$ref": "#/definitions/AtlasCollectionId",
-					"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+					"type": "array",
+					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"items": {
+						"$ref": "#/definitions/AtlasCollectionIdWildcard"
+					}
 				},
 				"enhances": {
-					"$ref": "#/definitions/AtlasCollectionId",
-					"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+					"type": "array",
+					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"items": {
+						"$ref": "#/definitions/AtlasCollectionIdWildcard"
+					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",

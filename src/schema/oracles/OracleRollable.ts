@@ -28,9 +28,9 @@ import { FlatIntersect } from '../utils/FlatIntersect.js'
 // metadata necessary to generate a roll result from an OracleRollable
 const RollableMeta = Type.Object({
 	replaces: Type.Optional(
-		Type.Ref(Id.OracleRollableId, {
+		Type.Array(Type.Ref(Id.OracleRollableIdWildcard), {
 			description:
-				'Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.'
+				'Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.'
 		})
 	),
 	dice: Type.Ref(Rolls.DiceExpression, {

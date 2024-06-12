@@ -28,7 +28,8 @@ moves:
     contents:
       undertake_an_expedition:
         name: Undertake an Expedition
-        replaces: move:starforged/exploration/undertake_an_expedition
+        replaces:
+          - move:starforged/exploration/undertake_an_expedition
         roll_type: action_roll
         type: move
         trigger:
@@ -82,7 +83,8 @@ moves:
       # explore a waypoint: no changes
       make_a_discovery:
         name: Make a Discovery
-        replaces: move:starforged/exploration/make_a_discovery
+        replaces:
+          - move:starforged/exploration/make_a_discovery
         roll_type: no_roll
         type: move
         trigger:
@@ -145,7 +147,8 @@ moves:
           <<: *Source
       confront_chaos:
         name: Confront Chaos
-        replaces: move:starforged/exploration/confront_chaos
+        replaces:
+          - move:starforged/exploration/confront_chaos
         roll_type: no_roll
         type: move
         trigger:
@@ -208,7 +211,8 @@ moves:
       # finish an expedition: no changes
       set_a_course:
         name: Set a Course
-        replaces: move:starforged/exploration/set_a_course
+        replaces:
+          - move:starforged/exploration/set_a_course
         roll_type: action_roll
         type: move
         trigger:
@@ -248,13 +252,15 @@ moves:
   combat:
     name: Combat Moves
     type: move_category
-    enhances: move_category:starforged/combat
+    enhances:
+      - move_category:starforged/combat
     _source:
       <<: *Source
     contents:
       enter_the_fray:
         name: Enter the Fray
-        replaces: move:starforged/combat/enter_the_fray
+        replaces:
+          - move:starforged/combat/enter_the_fray
         roll_type: action_roll
         type: move
         trigger:
@@ -325,7 +331,8 @@ moves:
   suffer:
     name: Suffer Moves
     type: move_category
-    enhances: move_category:starforged/suffer
+    enhances:
+      - move_category:starforged/suffer
     _source:
       <<: *Source
     contents:
@@ -336,7 +343,8 @@ moves:
       # sacrifice resource: no changes
       withstand_damage:
         name: Withstand Damage
-        replaces: move:starforged/suffer/withstand_damage
+        replaces:
+          - move:starforged/suffer/withstand_damage
         roll_type: action_roll
         type: move
         trigger:
@@ -414,7 +422,8 @@ moves:
   recover:
     name: Recover Moves
     type: move_category
-    enhances: move_category:starforged/recover
+    enhances:
+      - move_category:starforged/recover
 
     # When you Repair and score a hit, you gain repair points. This is a limited resource used only within the scope of the move to prioritize and make repairs. The amount of repair points you earn varies according to the situation and the outcome of the move, per the included table. Here's a summary of those situations.
 
@@ -436,7 +445,8 @@ moves:
       # hearten
       resupply:
         name: Resupply
-        replaces: move:starforged/recover/resupply
+        replaces:
+          - move:starforged/recover/resupply
         roll_type: action_roll
         type: move
         trigger:
@@ -505,7 +515,8 @@ moves:
           <<: *Source
       repair:
         name: Repair
-        replaces: move:starforged/recover/repair
+        replaces:
+          - move:starforged/recover/repair
         roll_type: action_roll
         type: move
         trigger:

@@ -14,6 +14,8 @@ oracles:
     name: Faction Oracles
     type: oracle_collection
     oracle_type: tables
+    replaces:
+      - oracle_collection:starforged/faction
     _source:
       <<: *Source
     contents:

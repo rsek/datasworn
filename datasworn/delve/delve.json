@@ -25,7 +25,7 @@
 	},
 	"oracles": {
 		"character": {
-			"enhances": "oracle_collection:classic/character",
+			"enhances": ["oracle_collection:classic/character"],
 			"type": "oracle_collection",
 			"name": "Character",
 			"summary": "Set the initial disposition for a character, or reveal what activity they are focused on when you first encounter them.",
@@ -10781,7 +10781,7 @@
 					"roll_type": "no_roll",
 					"type": "move",
 					"name": "Reveal a Danger (alternate version)",
-					"replaces": "move:delve/delve/reveal_a_danger",
+					"replaces": ["move:delve/delve/reveal_a_danger"],
 					"oracles": {
 						"reveal_a_danger_alt": {
 							"name": "Reveal a Danger (alternate version)",
@@ -11150,7 +11150,7 @@
 		"ironlanders": {
 			"type": "npc_collection",
 			"name": "Ironlanders",
-			"enhances": "npc_collection:classic/ironlanders",
+			"enhances": ["npc_collection:classic/ironlanders"],
 			"_source": {
 				"authors": [
 					{
@@ -11239,7 +11239,7 @@
 		"firstborn": {
 			"type": "npc_collection",
 			"name": "Firstborn",
-			"enhances": "npc_collection:classic/firstborn",
+			"enhances": ["npc_collection:classic/firstborn"],
 			"_source": {
 				"authors": [
 					{
@@ -11320,7 +11320,7 @@
 		"animals": {
 			"type": "npc_collection",
 			"name": "Animals",
-			"enhances": "npc_collection:classic/animals",
+			"enhances": ["npc_collection:classic/animals"],
 			"_source": {
 				"authors": [
 					{
@@ -11560,7 +11560,7 @@
 		"beasts": {
 			"type": "npc_collection",
 			"name": "Beasts",
-			"enhances": "npc_collection:classic/beasts",
+			"enhances": ["npc_collection:classic/beasts"],
 			"_source": {
 				"authors": [
 					{
@@ -11801,7 +11801,7 @@
 		"horrors": {
 			"type": "npc_collection",
 			"name": "Horrors",
-			"enhances": "npc_collection:classic/horrors",
+			"enhances": ["npc_collection:classic/horrors"],
 			"_source": {
 				"authors": [
 					{

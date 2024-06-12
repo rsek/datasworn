@@ -14,6 +14,8 @@ oracles:
     name: Character Oracles
     type: oracle_collection
     oracle_type: tables
+    replaces:
+      - oracle_collection:starforged/character
     summary: When encountering a character, focus on what you learn or perceive as a first impression using tables such as [First Look](oracle_rollable:sundered_isles/character/first_look) and [Initial Disposition](oracle_rollable:sundered_isles/character/initial_disposition). Then envision or generate additional details over time.
     _source:
       <<: *Source
@@ -23,6 +25,8 @@ oracles:
         type: oracle_rollable
         oracle_type: table_text
         recommended_rolls: { min: 1, max: 2 }
+        replaces:
+          - oracle_rollable:starforged/character/first_look
         tags:
           sundered_isles:
             cursed_by: oracle_rollable:sundered_isles/character/first_look_cursed
@@ -149,6 +153,8 @@ oracles:
         name: Character Disposition
         type: oracle_rollable
         oracle_type: table_text
+        replaces:
+          - oracle_rollable:starforged/character/initial_disposition
         _source:
           <<: *Source
         rows:
@@ -181,6 +187,8 @@ oracles:
         type: oracle_rollable
         oracle_type: table_text
         summary: Envision a character’s background or occupation using the broad categories below. For more detail, check the related subtable.
+        replaces:
+          - oracle_rollable:starforged/character/roles
         _source:
           <<: *Source
         rows:
@@ -485,6 +493,8 @@ oracles:
         oracle_type: table_text
         recommended_rolls: { min: 1, max: 2 }
         summary: As you interact with a person to gain a deeper understanding of their nature and personality, roll on this table to reveal new characteristics. Feel free to ignore, reroll, or adjust contradictions. Or envision how those contradictions add interesting complexity to the character.
+        replaces:
+          - oracle_rollable:starforged/character/revealed_aspect
         tags:
           sundered_isles:
             cursed_by: oracle_rollable:sundered_isles/character/details_cursed
@@ -740,6 +750,8 @@ oracles:
         type: oracle_rollable
         oracle_type: table_text
         recommended_rolls: { min: 1, max: 2 }
+        replaces:
+          - oracle_rollable:starforged/character/goals
         tags:
           sundered_isles:
             cursed_by: oracle_rollable:sundered_isles/character/goals_cursed
@@ -1239,6 +1251,8 @@ oracles:
           This table also includes monikers, one to each row. Not all characters have monikers, but sailors are often given a nickname by their shipmates, or adopt one of their own. Monikers can be used as a stand-alone name (for example, “Redbeard” or “Stormcrow”) or paired with a given name or family name (“Crimson Jack” or “Hardtack Hobbs”). Roll or select an appropriate moniker as you like.
         _source:
           <<: *Source
+        replaces:
+          - oracle_collection:starforged/character/name
         contents:
           given_name:
             # TODO: not canonical display, but the least onerous for digital use
@@ -1246,6 +1260,8 @@ oracles:
             type: oracle_rollable
             oracle_type: table_text
             dice: 1d200
+            replaces:
+              - oracle_rollable:starforged/character/name/given_name
             _source:
               <<: *Source
             rows:
@@ -1654,6 +1670,8 @@ oracles:
             type: oracle_rollable
             oracle_type: table_text
             dice: 1d200
+            replaces:
+              - oracle_rollable:starforged/character/name/family_name
             _source:
               <<: *Source
             rows:
@@ -2061,6 +2079,8 @@ oracles:
             name: Moniker
             type: oracle_rollable
             oracle_type: table_text
+            replaces:
+              - oracle_rollable:starforged/character/name/callsign
             tags:
               sundered_isles:
                 cursed_by: oracle_rollable:sundered_isles/character/name/moniker_cursed/category

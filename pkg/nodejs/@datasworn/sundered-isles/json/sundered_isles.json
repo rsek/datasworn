@@ -6144,6 +6144,7 @@
 			"name": "Character Oracles",
 			"type": "oracle_collection",
 			"oracle_type": "tables",
+			"replaces": ["oracle_collection:starforged/character"],
 			"summary": "When encountering a character, focus on what you learn or perceive as a first impression using tables such as [First Look](oracle_rollable:sundered_isles/character/first_look) and [Initial Disposition](oracle_rollable:sundered_isles/character/initial_disposition). Then envision or generate additional details over time.",
 			"_source": {
 				"date": "2024-06-11",
@@ -6165,6 +6166,7 @@
 						"min": 1,
 						"max": 2
 					},
+					"replaces": ["oracle_rollable:starforged/character/first_look"],
 					"tags": {
 						"sundered_isles": {
 							"cursed_by": "oracle_rollable:sundered_isles/character/first_look_cursed"
@@ -6590,6 +6592,9 @@
 					"name": "Character Disposition",
 					"type": "oracle_rollable",
 					"oracle_type": "table_text",
+					"replaces": [
+						"oracle_rollable:starforged/character/initial_disposition"
+					],
 					"_source": {
 						"date": "2024-06-11",
 						"title": "Sundered Isles",
@@ -6699,6 +6704,7 @@
 					"type": "oracle_rollable",
 					"oracle_type": "table_text",
 					"summary": "Envision a character’s background or occupation using the broad categories below. For more detail, check the related subtable.",
+					"replaces": ["oracle_rollable:starforged/character/roles"],
 					"_source": {
 						"date": "2024-06-11",
 						"title": "Sundered Isles",
@@ -7732,6 +7738,7 @@
 						"max": 2
 					},
 					"summary": "As you interact with a person to gain a deeper understanding of their nature and personality, roll on this table to reveal new characteristics. Feel free to ignore, reroll, or adjust contradictions. Or envision how those contradictions add interesting complexity to the character.",
+					"replaces": ["oracle_rollable:starforged/character/revealed_aspect"],
 					"tags": {
 						"sundered_isles": {
 							"cursed_by": "oracle_rollable:sundered_isles/character/details_cursed"
@@ -8609,6 +8616,7 @@
 						"min": 1,
 						"max": 2
 					},
+					"replaces": ["oracle_rollable:starforged/character/goals"],
 					"tags": {
 						"sundered_isles": {
 							"cursed_by": "oracle_rollable:sundered_isles/character/goals_cursed"
@@ -10314,12 +10322,16 @@
 							}
 						]
 					},
+					"replaces": ["oracle_collection:starforged/character/name"],
 					"contents": {
 						"given_name": {
 							"name": "Given Name",
 							"type": "oracle_rollable",
 							"oracle_type": "table_text",
 							"dice": "1d200",
+							"replaces": [
+								"oracle_rollable:starforged/character/name/given_name"
+							],
 							"_source": {
 								"date": "2024-06-11",
 								"title": "Sundered Isles",
@@ -11744,6 +11756,9 @@
 							"type": "oracle_rollable",
 							"oracle_type": "table_text",
 							"dice": "1d200",
+							"replaces": [
+								"oracle_rollable:starforged/character/name/family_name"
+							],
 							"_source": {
 								"date": "2024-06-11",
 								"title": "Sundered Isles",
@@ -13167,6 +13182,9 @@
 							"name": "Moniker",
 							"type": "oracle_rollable",
 							"oracle_type": "table_text",
+							"replaces": [
+								"oracle_rollable:starforged/character/name/callsign"
+							],
 							"tags": {
 								"sundered_isles": {
 									"cursed_by": "oracle_rollable:sundered_isles/character/name/moniker_cursed/category"
@@ -14788,6 +14806,7 @@
 			"name": "Core",
 			"type": "oracle_collection",
 			"oracle_type": "tables",
+			"replaces": ["oracle_collection:starforged/core"],
 			"_source": {
 				"date": "2024-06-11",
 				"title": "Sundered Isles",
@@ -14802,6 +14821,7 @@
 			"contents": {
 				"action": {
 					"name": "Action",
+					"replaces": ["oracle_rollable:starforged/core/action"],
 					"type": "oracle_rollable",
 					"oracle_type": "table_text",
 					"_source": {
@@ -15526,6 +15546,7 @@
 				},
 				"theme": {
 					"name": "Theme",
+					"replaces": ["oracle_rollable:starforged/core/theme"],
 					"type": "oracle_rollable",
 					"oracle_type": "table_text",
 					"_source": {
@@ -16250,6 +16271,7 @@
 				},
 				"descriptor": {
 					"name": "Descriptor",
+					"replaces": ["oracle_rollable:starforged/core/descriptor"],
 					"type": "oracle_rollable",
 					"oracle_type": "table_text",
 					"_source": {
@@ -16974,6 +16996,7 @@
 				},
 				"focus": {
 					"name": "Focus",
+					"replaces": ["oracle_rollable:starforged/core/focus"],
 					"type": "oracle_rollable",
 					"oracle_type": "table_text",
 					"_source": {
@@ -17703,6 +17726,7 @@
 			"name": "Faction Oracles",
 			"type": "oracle_collection",
 			"oracle_type": "tables",
+			"replaces": ["oracle_collection:starforged/faction"],
 			"_source": {
 				"date": "2024-06-11",
 				"title": "Sundered Isles",
@@ -26338,6 +26362,7 @@
 			"name": "Miscellaneous Oracles",
 			"type": "oracle_collection",
 			"oracle_type": "tables",
+			"replaces": ["oracle_collection:starforged/misc"],
 			"_source": {
 				"date": "2024-06-11",
 				"title": "Sundered Isles",
@@ -26766,6 +26791,7 @@
 					"type": "oracle_rollable",
 					"oracle_type": "table_text",
 					"summary": "This oracle will introduce narrative turns, troubles, and revelations. It can be used as an alternative to the [Pay the Price](oracle_rollable:move:starforged/pay_the_price) table when you encounter a negative outcome at a crucial moment. In particular, you might use this table after rolling matched 10s on the challenge dice.",
+					"replaces": ["oracle_rollable:starforged/misc/story_complication"],
 					"_source": {
 						"date": "2024-06-11",
 						"title": "Sundered Isles",
@@ -27003,6 +27029,7 @@
 					"type": "oracle_rollable",
 					"oracle_type": "table_text",
 					"summary": "When you [Gather Information](move:starforged/adventure/gather_information) to investigate a mystery, you might uncover clues in the form of messages, records, rumors, eyewitness reports, or physical evidence. You can use this oracle to help reveal what this evidence connects to or implicates. Then, use the outcome of the [Gather Information](move:starforged/adventure/gather_information) roll—strong hit, weak hit, or miss—to guide whether the clue brings clarity or complications.",
+					"replaces": ["oracle_rollable:starforged/misc/story_clue"],
 					"_source": {
 						"date": "2024-06-11",
 						"title": "Sundered Isles",
@@ -27261,6 +27288,7 @@
 					"type": "oracle_rollable",
 					"oracle_type": "table_text",
 					"summary": "Use this oracle to help inspire an action for a foe in a fight. When you’re not sure what an enemy does next, particularly when they have you in a bad spot, roll on this table and interpret the result as appropriate to the nature of the enemy and battleground.",
+					"replaces": ["oracle_rollable:starforged/misc/combat_action"],
 					"_source": {
 						"date": "2024-06-11",
 						"title": "Sundered Isles",
@@ -27705,6 +27733,149 @@
 						"text": "Result"
 					},
 					"_id": "oracle_rollable:sundered_isles/misc/sea_battle_features"
+				},
+				"ship_damage": {
+					"name": "Ship Damage",
+					"type": "oracle_rollable",
+					"oracle_type": "table_text3",
+					"column_labels": {
+						"roll": "Roll",
+						"text": "Bothersome Damage",
+						"text2": "Bad Damage",
+						"text3": "Critical Damage"
+					},
+					"_source": {
+						"date": "2024-06-11",
+						"title": "Sundered Isles",
+						"url": "https://ironswornrpg.com",
+						"license": null,
+						"authors": [
+							{
+								"name": "Shawn Tomkin"
+							}
+						]
+					},
+					"rows": [
+						{
+							"roll": {
+								"min": 1,
+								"max": 10
+							},
+							"text": "Shaken morale",
+							"text2": "Breaking morale",
+							"text3": "Broken morale"
+						},
+						{
+							"roll": {
+								"min": 11,
+								"max": 20
+							},
+							"text": "Minor casualties",
+							"text2": "Severe casualties",
+							"text3": "Horrible casualties"
+						},
+						{
+							"roll": {
+								"min": 21,
+								"max": 30
+							},
+							"text": "Tangled rigging",
+							"text2": "Fraying rigging",
+							"text3": "Broken rigging"
+						},
+						{
+							"roll": {
+								"min": 31,
+								"max": 40
+							},
+							"text": "Weakened mast",
+							"text2": "Splintering mast",
+							"text3": "Broken mast"
+						},
+						{
+							"roll": {
+								"min": 41,
+								"max": 50
+							},
+							"text": "Fouled sail",
+							"text2": "Torn sail",
+							"text3": "Mangled sail"
+						},
+						{
+							"roll": {
+								"min": 51,
+								"max": 55
+							},
+							"text": "Damaged rudder",
+							"text2": "Jammed rudder",
+							"text3": "Broken rudder"
+						},
+						{
+							"roll": {
+								"min": 56,
+								"max": 65
+							},
+							"text": "Fire on deck",
+							"text2": "Fire below decks",
+							"text3": "Burning magazine"
+						},
+						{
+							"roll": {
+								"min": 66,
+								"max": 75
+							},
+							"text": "Swamped deck",
+							"text2": "Flooded bilge",
+							"text3": "Keeling over"
+						},
+						{
+							"roll": {
+								"min": 76,
+								"max": 80
+							},
+							"text": "Dismounted cannons",
+							"text2": "Damaged cannons",
+							"text3": "Destroyed cannons"
+						},
+						{
+							"roll": {
+								"min": 81,
+								"max": 90
+							},
+							"text": "Battered hull",
+							"text2": "Buckling hull",
+							"text3": "Breached hull"
+						},
+						{
+							"roll": {
+								"min": 91,
+								"max": 95
+							},
+							"text": "Damaged compartment,  module, or support vehicle",
+							"text2": "Failing compartment, module, or support vehicle",
+							"text3": "Broken compartment, module, or support vehicle"
+						},
+						{
+							"roll": {
+								"min": 96,
+								"max": 100
+							},
+							"text": "Roll twice; if the same result, step up the severity",
+							"text2": "",
+							"text3": "",
+							"oracle_rolls": [
+								{
+									"auto": true,
+									"number_of_rolls": 2,
+									"duplicates": "make_it_worse",
+									"oracle": null,
+									"dice": null
+								}
+							]
+						}
+					],
+					"dice": "1d100",
+					"_id": "oracle_rollable:sundered_isles/misc/ship_damage"
 				}
 			},
 			"collections": {
@@ -28909,334 +29080,6 @@
 						"roll": "Roll"
 					},
 					"_id": "oracle_collection:sundered_isles/misc/local_seas"
-				},
-				"ship_damage": {
-					"name": "Ship Damage",
-					"type": "oracle_collection",
-					"oracle_type": "table_shared_rolls",
-					"_source": {
-						"date": "2024-06-11",
-						"title": "Sundered Isles",
-						"url": "https://ironswornrpg.com",
-						"license": null,
-						"authors": [
-							{
-								"name": "Shawn Tomkin"
-							}
-						]
-					},
-					"contents": {
-						"bothersome": {
-							"name": "Bothersome Damage",
-							"type": "oracle_rollable",
-							"oracle_type": "column_text",
-							"rows": [
-								{
-									"roll": {
-										"min": 1,
-										"max": 10
-									},
-									"text": "Shaken morale"
-								},
-								{
-									"roll": {
-										"min": 11,
-										"max": 20
-									},
-									"text": "Minor casualties"
-								},
-								{
-									"roll": {
-										"min": 21,
-										"max": 30
-									},
-									"text": "Tangled rigging"
-								},
-								{
-									"roll": {
-										"min": 31,
-										"max": 40
-									},
-									"text": "Weakened mast"
-								},
-								{
-									"roll": {
-										"min": 41,
-										"max": 50
-									},
-									"text": "Fouled sail"
-								},
-								{
-									"roll": {
-										"min": 51,
-										"max": 55
-									},
-									"text": "Damaged rudder"
-								},
-								{
-									"roll": {
-										"min": 56,
-										"max": 65
-									},
-									"text": "Fire on deck"
-								},
-								{
-									"roll": {
-										"min": 66,
-										"max": 75
-									},
-									"text": "Swamped deck"
-								},
-								{
-									"roll": {
-										"min": 76,
-										"max": 80
-									},
-									"text": "Dismounted cannons"
-								},
-								{
-									"roll": {
-										"min": 81,
-										"max": 90
-									},
-									"text": "Battered hull"
-								},
-								{
-									"roll": {
-										"min": 91,
-										"max": 95
-									},
-									"text": "Damaged compartment,  module, or support vehicle"
-								},
-								{
-									"roll": {
-										"min": 96,
-										"max": 100
-									},
-									"text": "Roll twice; if the same result, step up the severity",
-									"oracle_rolls": [
-										{
-											"auto": true,
-											"number_of_rolls": 2,
-											"duplicates": "make_it_worse",
-											"oracle": null,
-											"dice": null
-										}
-									]
-								}
-							],
-							"dice": "1d100",
-							"_id": "oracle_rollable:sundered_isles/misc/ship_damage/bothersome"
-						},
-						"bad_damage": {
-							"name": "Bad Damage",
-							"type": "oracle_rollable",
-							"oracle_type": "column_text",
-							"rows": [
-								{
-									"roll": {
-										"min": 1,
-										"max": 10
-									},
-									"text": "Breaking morale"
-								},
-								{
-									"roll": {
-										"min": 11,
-										"max": 20
-									},
-									"text": "Severe casualties"
-								},
-								{
-									"roll": {
-										"min": 21,
-										"max": 30
-									},
-									"text": "Fraying rigging"
-								},
-								{
-									"roll": {
-										"min": 31,
-										"max": 40
-									},
-									"text": "Splintering mast"
-								},
-								{
-									"roll": {
-										"min": 41,
-										"max": 50
-									},
-									"text": "Torn sail"
-								},
-								{
-									"roll": {
-										"min": 51,
-										"max": 55
-									},
-									"text": "Jammed rudder"
-								},
-								{
-									"roll": {
-										"min": 56,
-										"max": 65
-									},
-									"text": "Fire below decks"
-								},
-								{
-									"roll": {
-										"min": 66,
-										"max": 75
-									},
-									"text": "Flooded bilge"
-								},
-								{
-									"roll": {
-										"min": 76,
-										"max": 80
-									},
-									"text": "Damaged cannons"
-								},
-								{
-									"roll": {
-										"min": 81,
-										"max": 90
-									},
-									"text": "Buckling hull"
-								},
-								{
-									"roll": {
-										"min": 91,
-										"max": 95
-									},
-									"text": "Failing compartment, module, or support vehicle"
-								},
-								{
-									"roll": {
-										"min": 96,
-										"max": 100
-									},
-									"text": "Roll twice; if the same result, step up the severity",
-									"oracle_rolls": [
-										{
-											"auto": true,
-											"number_of_rolls": 2,
-											"duplicates": "make_it_worse",
-											"oracle": null,
-											"dice": null
-										}
-									]
-								}
-							],
-							"dice": "1d100",
-							"_id": "oracle_rollable:sundered_isles/misc/ship_damage/bad_damage"
-						},
-						"critical_damage": {
-							"name": "Critical Damage",
-							"type": "oracle_rollable",
-							"oracle_type": "column_text",
-							"rows": [
-								{
-									"roll": {
-										"min": 1,
-										"max": 10
-									},
-									"text": "Broken morale"
-								},
-								{
-									"roll": {
-										"min": 11,
-										"max": 20
-									},
-									"text": "Horrible casualties"
-								},
-								{
-									"roll": {
-										"min": 21,
-										"max": 30
-									},
-									"text": "Broken rigging"
-								},
-								{
-									"roll": {
-										"min": 31,
-										"max": 40
-									},
-									"text": "Broken mast"
-								},
-								{
-									"roll": {
-										"min": 41,
-										"max": 50
-									},
-									"text": "Mangled sail"
-								},
-								{
-									"roll": {
-										"min": 51,
-										"max": 55
-									},
-									"text": "Broken rudder"
-								},
-								{
-									"roll": {
-										"min": 56,
-										"max": 65
-									},
-									"text": "Burning magazine"
-								},
-								{
-									"roll": {
-										"min": 66,
-										"max": 75
-									},
-									"text": "Keeling over"
-								},
-								{
-									"roll": {
-										"min": 76,
-										"max": 80
-									},
-									"text": "Destroyed cannons"
-								},
-								{
-									"roll": {
-										"min": 81,
-										"max": 90
-									},
-									"text": "Breached hull"
-								},
-								{
-									"roll": {
-										"min": 91,
-										"max": 95
-									},
-									"text": "Broken compartment, module, or support vehicle"
-								},
-								{
-									"roll": {
-										"min": 96,
-										"max": 100
-									},
-									"text": "Roll twice; if the same result, step up the severity",
-									"oracle_rolls": [
-										{
-											"auto": true,
-											"number_of_rolls": 2,
-											"duplicates": "make_it_worse",
-											"oracle": null,
-											"dice": null
-										}
-									]
-								}
-							],
-							"dice": "1d100",
-							"_id": "oracle_rollable:sundered_isles/misc/ship_damage/critical_damage"
-						}
-					},
-					"column_labels": {
-						"roll": "Roll"
-					},
-					"_id": "oracle_collection:sundered_isles/misc/ship_damage"
 				}
 			},
 			"_id": "oracle_collection:sundered_isles/misc"
@@ -54057,6 +53900,7 @@
 											"text": "On a __miss__, it is away or unable to respond; [Pay the Price](move:starforged/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/companion/dolphin.0.call_dolphin"
 								}
 							},
@@ -54442,6 +54286,7 @@
 											"text": "On a __miss__, the monkey faces its own cost or makes the situation worse."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/companion/monkey.0.monkey_business"
 								}
 							},
@@ -55646,6 +55491,7 @@
 											"text": "On a __miss__, the event flops or is dramatically cut short; [Pay the Price](move:starforged/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/module/gilded_adornments.1.host_reception"
 								}
 							},
@@ -55933,6 +55779,7 @@
 											"text": "On a __miss__, the event is ruined by a crisis, complication, or dispute."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/module/improved_galley.1.indulge_with_provisions"
 								}
 							},
@@ -56099,6 +55946,7 @@
 											"text": "On a __miss__, mark unprepared as normal."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/module/improved_hold.1.draw_reserves"
 								}
 							},
@@ -56271,6 +56119,7 @@
 											"text": "On a __miss__, you must count the cost; [Pay the Price](move:starforged/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/module/improved_sick_bay.0.aid_wounded"
 								}
 							},
@@ -56501,6 +56350,7 @@
 							"text": "Choose one of your stats to represent the figurehead’s theme. When you depart a port or anchorage, you may roll +linked stat. You cannot burn momentum on this roll. On a strong hit, the figurehead’s luck offers a boon; you and your allies take +2 momentum and +1 spirit. On a weak hit, you and your allies take +1 momentum. On a miss, the luck is foul; you and your allies [Lose Momentum](move:starforged/suffer/lose_momentum) (-1), and the figurehead offers no benefits until you next check its luck.",
 							"moves": {
 								"depart_port": {
+									"allow_momentum_burn": false,
 									"type": "move",
 									"name": "Depart Port",
 									"roll_type": "action_roll",
@@ -57588,6 +57438,7 @@
 											"text": "On a __miss__, the performance leaves you or others troubled; [Pay the Price](move:starforged/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/path/musician.2.memorialize_in_song"
 								}
 							},
@@ -57873,6 +57724,7 @@
 											"text": "On a __miss__, you encounter hardship or a new danger; [Pay the Price](move:starforged/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/path/overlander.1.shelter"
 								}
 							},
@@ -57954,6 +57806,7 @@
 											"text": "On a __miss__, you make a bad deal; [Pay the Price](move:starforged/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/path/peddler.0.peddle_your_wares"
 								}
 							},
@@ -58054,6 +57907,7 @@
 											"text": "On a __miss__, choose one, but this prize also brings an unexpected danger; [Pay the Price](move:starforged/fate/pay_the_price).\n\n  * Build your fortune: Mark 1 tick on your quests legacy track.\n  * Share the spoils: Mark 1 tick on your bonds legacy track."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/path/pirate_captain.0.seize_your_prize"
 								}
 							},
@@ -58671,6 +58525,7 @@
 											"text": "On a __miss__, choose one and [Endure Stress](move:starforged/suffer/endure_stress) (-2).\n\n  * You spot an unwelcome rival, authority, or former beau.\n  * You commit an embarrassing faux pas.\n  * You are upstaged by another’s entrance."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/path/socialite.1.make_a_grand_entrance"
 								}
 							},
@@ -59226,6 +59081,7 @@
 											"text": "On a __miss__, the capricious winds are foul; you and your allies [Lose Momentum](move:starforged/suffer/lose_momentum) (-2), and face weather-related hazards as appropriate.\n\nNo matter the outcome, the winds are fair after a few hours."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/path/windbinder.0.bind_the_winds"
 								}
 							},
@@ -60039,7 +59895,7 @@
 			"contents": {
 				"undertake_an_expedition": {
 					"name": "Undertake an Expedition",
-					"replaces": "move:starforged/exploration/undertake_an_expedition",
+					"replaces": ["move:starforged/exploration/undertake_an_expedition"],
 					"roll_type": "action_roll",
 					"type": "move",
 					"trigger": {
@@ -60100,11 +59956,12 @@
 							}
 						]
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:sundered_isles/exploration/undertake_an_expedition"
 				},
 				"make_a_discovery": {
 					"name": "Make a Discovery",
-					"replaces": "move:starforged/exploration/make_a_discovery",
+					"replaces": ["move:starforged/exploration/make_a_discovery"],
 					"roll_type": "no_roll",
 					"type": "move",
 					"trigger": {
@@ -60288,11 +60145,12 @@
 						]
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:sundered_isles/exploration/make_a_discovery"
 				},
 				"confront_chaos": {
 					"name": "Confront Chaos",
-					"replaces": "move:starforged/exploration/confront_chaos",
+					"replaces": ["move:starforged/exploration/confront_chaos"],
 					"roll_type": "no_roll",
 					"type": "move",
 					"trigger": {
@@ -60467,11 +60325,12 @@
 						]
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:sundered_isles/exploration/confront_chaos"
 				},
 				"set_a_course": {
 					"name": "Set a Course",
-					"replaces": "move:starforged/exploration/set_a_course",
+					"replaces": ["move:starforged/exploration/set_a_course"],
 					"roll_type": "action_roll",
 					"type": "move",
 					"trigger": {
@@ -60516,6 +60375,7 @@
 							}
 						]
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:sundered_isles/exploration/set_a_course"
 				}
 			},
@@ -60524,7 +60384,7 @@
 		"combat": {
 			"name": "Combat Moves",
 			"type": "move_category",
-			"enhances": "move_category:starforged/combat",
+			"enhances": ["move_category:starforged/combat"],
 			"_source": {
 				"date": "2024-06-11",
 				"title": "Sundered Isles",
@@ -60539,7 +60399,7 @@
 			"contents": {
 				"enter_the_fray": {
 					"name": "Enter the Fray",
-					"replaces": "move:starforged/combat/enter_the_fray",
+					"replaces": ["move:starforged/combat/enter_the_fray"],
 					"roll_type": "action_roll",
 					"type": "move",
 					"trigger": {
@@ -60620,6 +60480,7 @@
 							}
 						]
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:sundered_isles/combat/enter_the_fray"
 				}
 			},
@@ -60628,7 +60489,7 @@
 		"suffer": {
 			"name": "Suffer Moves",
 			"type": "move_category",
-			"enhances": "move_category:starforged/suffer",
+			"enhances": ["move_category:starforged/suffer"],
 			"_source": {
 				"date": "2024-06-11",
 				"title": "Sundered Isles",
@@ -60643,7 +60504,7 @@
 			"contents": {
 				"withstand_damage": {
 					"name": "Withstand Damage",
-					"replaces": "move:starforged/suffer/withstand_damage",
+					"replaces": ["move:starforged/suffer/withstand_damage"],
 					"roll_type": "action_roll",
 					"type": "move",
 					"trigger": {
@@ -60758,6 +60619,7 @@
 							}
 						]
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:sundered_isles/suffer/withstand_damage"
 				}
 			},
@@ -60766,7 +60628,7 @@
 		"recover": {
 			"name": "Recover Moves",
 			"type": "move_category",
-			"enhances": "move_category:starforged/recover",
+			"enhances": ["move_category:starforged/recover"],
 			"_source": {
 				"date": "2024-06-11",
 				"title": "Sundered Isles",
@@ -60781,7 +60643,7 @@
 			"contents": {
 				"resupply": {
 					"name": "Resupply",
-					"replaces": "move:starforged/recover/resupply",
+					"replaces": ["move:starforged/recover/resupply"],
 					"roll_type": "action_roll",
 					"type": "move",
 					"trigger": {
@@ -60863,11 +60725,12 @@
 							}
 						]
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:sundered_isles/recover/resupply"
 				},
 				"repair": {
 					"name": "Repair",
-					"replaces": "move:starforged/recover/repair",
+					"replaces": ["move:starforged/recover/repair"],
 					"roll_type": "action_roll",
 					"type": "move",
 					"trigger": {
@@ -60918,6 +60781,7 @@
 							}
 						]
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:sundered_isles/recover/repair"
 				}
 			},

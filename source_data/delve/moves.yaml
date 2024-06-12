@@ -367,7 +367,8 @@ moves:
         roll_type: no_roll
         type: move
         name: Reveal a Danger (alternate version)
-        replaces: move:delve/delve/reveal_a_danger
+        replaces:
+          - move:delve/delve/reveal_a_danger
         oracles:
           reveal_a_danger_alt:
             name: Reveal a Danger (alternate version)

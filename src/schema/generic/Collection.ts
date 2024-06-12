@@ -80,15 +80,15 @@ export function Collection<
 	const generic = {
 		type: Type.Literal(type),
 		enhances: Type.Optional(
-			CloneType(_id, {
+			Type.Array(Type.Ref(_id.$ref + 'Wildcard'), {
 				description:
-					"This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+					"This collection's content enhances the identified collections, rather than being a standalone collection of its own."
 			})
 		),
 		replaces: Type.Optional(
-			CloneType(_id, {
+			Type.Array(Type.Ref(_id.$ref + 'Wildcard'), {
 				description:
-					'This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection.'
+					'This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.'
 			})
 		),
 		contents: Type.Optional(Dictionary(collectable))

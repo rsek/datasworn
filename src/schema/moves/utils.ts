@@ -30,9 +30,9 @@ export const moveDiscriminator = 'roll_type'
 
 const MoveBase = Type.Object({
 	replaces: Type.Optional(
-		Type.Ref(Id.MoveId, {
+		Type.Array(Type.Ref(Id.MoveIdWildcard), {
 			description:
-				'Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.'
+				'Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move.'
 		})
 	),
 	text: Type.Ref(Localize.MarkdownString, {

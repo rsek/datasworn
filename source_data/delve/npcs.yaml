@@ -6,7 +6,8 @@ npcs:
   ironlanders:
     type: npc_collection
     name: Ironlanders
-    enhances: npc_collection:classic/ironlanders
+    enhances:
+      - npc_collection:classic/ironlanders
     _source:
       <<: &Source
         authors:
@@ -96,7 +97,8 @@ npcs:
   firstborn:
     type: npc_collection
     name: Firstborn
-    enhances: npc_collection:classic/firstborn
+    enhances:
+      - npc_collection:classic/firstborn
     _source:
       <<: *Source
       page: 112
@@ -169,7 +171,8 @@ npcs:
   animals:
     type: npc_collection
     name: Animals
-    enhances: npc_collection:classic/animals
+    enhances:
+      - npc_collection:classic/animals
     _source:
       <<: *Source
       page: 114
@@ -402,7 +405,8 @@ npcs:
   beasts:
     type: npc_collection
     name: Beasts
-    enhances: npc_collection:classic/beasts
+    enhances:
+      - npc_collection:classic/beasts
     _source:
       <<: *Source
       page: 121
@@ -639,7 +643,8 @@ npcs:
   horrors:
     type: npc_collection
     name: Horrors
-    enhances: npc_collection:classic/horrors
+    enhances:
+      - npc_collection:classic/horrors
     _source:
       <<: *Source
       page: 128

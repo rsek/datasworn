@@ -4,7 +4,8 @@ type: expansion
 ruleset: classic
 oracles:
   character:
-    enhances: oracle_collection:classic/character
+    enhances:
+      - oracle_collection:classic/character
     type: oracle_collection
     name: Character
     summary: Set the initial disposition for a character, or reveal what activity they are focused on when you first encounter them.
