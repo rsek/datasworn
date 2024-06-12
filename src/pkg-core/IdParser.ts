@@ -76,10 +76,10 @@ abstract class IdParser<
 		if (errors.length > 0) throw new ParseError(id, errors.join('\n'))
 	}
 
-	createEmbeddedId<
-		TypeId extends TypeId.EmbeddableTypes,
-		Key extends string | number
-	>(typeId: TypeId, key: Key) {
+	createEmbeddedId<TypeId extends TypeId.EmbeddableTypes, Key extends string>(
+		typeId: TypeId,
+		key: Key
+	) {
 		// IdParser.logger.debug(`[createdEmbeddedId] ${this.id} > ${typeId}, ${key}`)
 		return new EmbeddedId<this, TypeId, Key>(this, typeId, key.toString())
 	}
@@ -196,7 +196,7 @@ abstract class IdParser<
 	 * Returns a string representation of the ID.
 	 */
 	get id() {
-		return IdParser.#toString(this) as StringId.IdBase<TypeIds, PathSegments>
+		return IdParser.#toString(this)
 	}
 
 	toString() {
@@ -228,17 +228,11 @@ abstract class IdParser<
 	}
 
 	get fullTypeId() {
-		return this.typeIds.join(CONST.PathTypeSep) as Join<
-			TypeIds,
-			CONST.PathTypeSep
-		>
+		return this.typeIds.join(CONST.PathTypeSep)
 	}
 
 	get fullPath() {
-		return this.pathSegments.join(CONST.PathTypeSep) as Join<
-			PathSegments,
-			CONST.PathTypeSep
-		>
+		return this.pathSegments.join(CONST.PathTypeSep)
 	}
 
 	get targetTypeId() {
@@ -340,7 +334,7 @@ abstract class IdParser<
 		// IdParser.logger.debug('[#assignIdsInArray]')
 		for (let i = 0; i < childNodes.length; i++) {
 			const childNode = childNodes[i]
-			const childParser = this.createEmbeddedId(nextTypeId, i)
+			const childParser = this.createEmbeddedId(nextTypeId, i.toString())
 			childParser.assignIdsIn(childNode, recursive, index)
 		}
 	}
@@ -496,24 +490,24 @@ abstract class IdParser<
 		}
 	}
 
-	static #getClassForPrimaryTypeId<T extends TypeId.NonCollectable>(
+	static #getClassForPrimaryTypeId<T extends TypeId.AnyPrimary>(
 		typeId: T
-	): typeof NonCollectableId
-	static #getClassForPrimaryTypeId<T extends TypeId.Collection>(
-		typeId: T
-	): typeof CollectionId
-	static #getClassForPrimaryTypeId<T extends TypeId.Collectable>(
-		typeId: T
-	): typeof CollectableId
-	static #getClassForPrimaryTypeId(
-		typeId: TypeId.AnyPrimary
-	): typeof NonCollectableId | typeof CollectionId | typeof CollectableId {
+	): T extends TypeId.NonCollectable
+		? typeof NonCollectableId
+		: T extends TypeId.Collection
+			? typeof CollectionId
+			: T extends TypeId.Collectable
+				? typeof CollectionId
+				: never {
 		switch (true) {
 			case TypeGuard.CollectionType(typeId):
+				// @ts-expect-error
 				return CollectionId
 			case TypeGuard.CollectableType(typeId):
+				// @ts-expect-error
 				return CollectableId
 			case TypeGuard.NonCollectableType(typeId):
+				// @ts-expect-error
 				return NonCollectableId
 			default:
 				throw new Error(
@@ -537,7 +531,9 @@ abstract class IdParser<
 		const [primaryPath, ...embeddedPaths] = pathSegments
 		const [rulesPackage, ...pathKeys] = primaryPath.split(CONST.PathKeySep)
 
-		const Ctor = IdParser.#getClassForPrimaryTypeId(primaryTypeId)
+		const Ctor = IdParser.#getClassForPrimaryTypeId(
+			primaryTypeId as TypeId.AnyPrimary
+		)
 		// @ts-expect-error
 		const base = new Ctor(primaryTypeId, rulesPackage, ...pathKeys)
 
@@ -676,12 +672,9 @@ interface NonCollectableId<
 > extends IdParser<[TypeId], [`${RulesPackage}${CONST.PathKeySep}${Key}`]> {
 	get id(): StringId.NonCollectableId<TypeId, RulesPackage, Key>
 }
-namespace NonCollectableId {
-	export type FromString<T extends StringId.NonCollectableId> =
-		NonCollectableId<ExtractTypeId<T>, ExtractRulesPackage<T>, ExtractKey<T>>
-}
+namespace NonCollectableId {}
 
-interface RecursiveId extends IdParser {
+interface RecursiveId {
 	/** The current collection recursion depth. */
 	get recursionDepth(): number
 	get isRecursive(): true
@@ -746,15 +739,9 @@ interface CollectableId<
 	get isRecursive(): true
 	get isCollection(): false
 	get isCollectable(): true
+	get fullTypeId(): TypeId
 }
-namespace CollectableId {
-	export type FromString<T extends StringId.CollectableId> = CollectableId<
-		ExtractTypeId<T>,
-		ExtractRulesPackage<T>,
-		ExtractPrimaryAncestorKeys<T>,
-		ExtractKey<T>
-	>
-}
+namespace CollectableId {}
 
 class CollectionId<
 		TypeId extends TypeId.Collection = TypeId.Collection,
@@ -890,6 +877,8 @@ interface CollectionId<
 			[Join<[RulesPackage, ...CollectionAncestorKeys, Key]>]
 		>,
 		RecursiveId {
+	get fullTypeId(): TypeId
+
 	get isCollectable(): false
 	get isCollection(): true
 	get isRecursive(): true
@@ -905,12 +894,6 @@ interface CollectionId<
 }
 
 namespace CollectionId {
-	export type FromString<T extends StringId.CollectionId> = CollectionId<
-		ExtractTypeId<T>,
-		ExtractRulesPackage<T>,
-		ExtractAncestorKeys<T>,
-		ExtractKey<T>
-	>
 	export type ChildOf<
 		T extends CollectionId,
 		K extends string = string
@@ -949,9 +932,9 @@ namespace CollectionId {
 }
 
 class EmbeddedId<
-	Parent extends IdParser.Options = IdParser.Options,
+	Parent extends IdParser = IdParser,
 	TypeId extends TypeId.EmbeddableTypes = TypeId.EmbeddableTypes,
-	Key extends string | number = string | number
+	Key extends string = string
 > extends IdParser {
 	constructor(parent: Parent, typeId: TypeId, key: string)
 	constructor(parent: Parent, typeId: TypeId, index: number)
@@ -965,10 +948,23 @@ class EmbeddedId<
 	}
 }
 interface EmbeddedId<
-	Parent extends IdParser.Options = IdParser.Options,
+	Parent extends IdParser,
 	TypeId extends TypeId.EmbeddableTypes = TypeId.EmbeddableTypes,
-	Key extends string | number = string | number
-> extends IdParser {}
+	Key extends string = string
+> extends IdParser {
+	get id(): `${this['fullTypeId']}${CONST.PrefixSep}${Join<this['pathSegments'], CONST.PathTypeSep>}`
+
+	get typeIds(): [...Parent['typeIds'], TypeId]
+	get pathSegments(): [...Parent['pathSegments'], Key]
+
+	get primaryTypeId(): Parent['primaryTypeId']
+	get primaryPathElements(): Parent['primaryPathElements']
+	get primaryDictKeyElements(): Parent['primaryDictKeyElements']
+	get isRecursive(): Parent['isRecursive']
+	get isCollection(): Parent['isCollection']
+	get isCollectable(): Parent['isCollectable']
+	get fullTypeId(): `${Parent['fullTypeId']}${CONST.PathTypeSep}${TypeId}`
+}
 
 export { IdParser, NonCollectableId, CollectableId, EmbeddedId, CollectionId }
 
