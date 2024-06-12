@@ -4,18 +4,23 @@ import path from 'path'
 import { type DataPackageConfig } from '../../schema/tools/build/index.js'
 import { formatPath } from '../../utils.js'
 import { ROOT_OUTPUT } from '../const.js'
-import Log from '../utils/Log.js'
-import type AJV from '../validation/ajv.js'
-import { RulesPackageBuilder } from './RulesPackageBuilder.js'
+import {
+	RulesPackageBuilder,
+	type Logger,
+	type Validator
+} from '../../pkg-core/RulesPackageBuilder.js'
 import { readSourceData, writeJSON } from '../utils/readWrite.js'
 import { cwd } from 'process'
+import type { Datasworn, DataswornSource } from '../../pkg-core/index.js'
 
 /** Builds all YAML files for a given package configuration */
 export async function buildRulesPackage(
 	{ id, paths, type, pkg }: DataPackageConfig,
-	ajv: typeof AJV
+	schemaValidator: Validator<Datasworn.RulesPackage>,
+	sourceSchemaValidator: Validator<DataswornSource.RulesPackage>,
+	logger: Logger
 ) {
-	Log.info(`⚙️  Building ${type}: ${id}`)
+	logger.info(`⚙️  Building ${type}: ${id}`)
 
 	const destDir = path.join(ROOT_OUTPUT, id)
 
@@ -31,20 +36,23 @@ export async function buildRulesPackage(
 		await fs.unlink(filePath)
 	})
 
-	Log.info(
+	logger.info(
 		`🔍 Found ${
 			sourceFiles.length
 		} source files for "${id}" in ${formatPath(paths.source)}`
 	)
 
-	RulesPackageBuilder.setup(Log, ajv)
-
-	const builder = new RulesPackageBuilder(id)
+	const builder = new RulesPackageBuilder(
+		id,
+		schemaValidator,
+		sourceSchemaValidator,
+		logger
+	)
 
 	// begin loading and adding files
 	await Promise.all(
 		sourceFiles.map(async (filePath) => {
-			Log.verbose(`📖 Reading ${formatPath(filePath)}`)
+			logger.debug(`📖 Reading ${formatPath(filePath)}`)
 			try {
 				const data = await readSourceData(filePath)
 				builder.addFiles({
@@ -52,7 +60,7 @@ export async function buildRulesPackage(
 					data
 				})
 			} catch (error) {
-				Log.error(error)
+				logger.error(error)
 			}
 		})
 	)
@@ -62,7 +70,7 @@ export async function buildRulesPackage(
 	// now that it's been succesfully built + validated, clean up old files.
 
 	if (oldJsonFiles.length > 0) {
-		Log.info(
+		logger.info(
 			`🧹 Deleting ${oldJsonFiles?.length} old JSON file(s) in ${formatPath(
 				destDir
 			)}`
@@ -80,12 +88,12 @@ export async function buildRulesPackage(
 
 	await fs.ensureFile(outPath)
 
-	Log.info(`✏️  Writing to ${formatPath(outPath)}`)
+	logger.info(`✏️  Writing to ${formatPath(outPath)}`)
 
 	try {
 		await writeJSON(outPath, data)
 	} catch (e) {
-		Log.error(`Failed to write ${formatPath(outPath)}:`, e)
+		logger.error(`Failed to write ${formatPath(outPath)}:`, e)
 	}
 }
 

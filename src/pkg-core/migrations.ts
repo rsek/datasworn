@@ -3,7 +3,7 @@
 import CONST from './IdElements/CONST.js'
 import type TypeId from './IdElements/TypeId.js'
 
-const MinorNodeTypes = ['asset_ability_move', 'asset_ability'] as const
+const MinorNodeTypes = ['asset.ability.move', 'asset.ability'] as const
 type MinorNodeType = (typeof MinorNodeTypes)[number]
 
 export type IdReplacer = {

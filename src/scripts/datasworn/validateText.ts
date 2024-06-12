@@ -32,7 +32,7 @@ export function validateText(
 ) {
 	const errors: unknown[] = []
 
-	forEachValue(data, key, (v, k) => {
+	forEachPrimitiveValue(data, key, (v, k) => {
 		if (typeof v !== 'string') return
 		// skip non-string values
 		// skip underscore keys
@@ -117,7 +117,7 @@ export function validateIdPointer(
 }
 
 /** Recursively iterates over JSON values, applying a function to every primitive boolean, number, string, and null value. */
-export function forEachValue<T = unknown>(
+export function forEachPrimitiveValue<T = unknown>(
 	value: T,
 	key: string | number,
 	fn: (v: boolean | number | string | null, k: unknown) => void
@@ -134,9 +134,9 @@ export function forEachValue<T = unknown>(
 			if (value === null) fn(value, key)
 			else if (Array.isArray(value))
 				value.forEach((v, k) => {
-					forEachValue(v, k, fn)
+					forEachPrimitiveValue(v, k, fn)
 				})
-			else for (const k in value) forEachValue(value[k], k, fn)
+			else for (const k in value) forEachPrimitiveValue(value[k], k, fn)
 			break
 		default:
 			throw Error('Unrecognized type')
