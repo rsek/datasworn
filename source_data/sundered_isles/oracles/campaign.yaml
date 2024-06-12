@@ -476,7 +476,6 @@ oracles:
         oracle_type: tables
         _source:
           <<: *Source
-          page: 96
         contents:
           ship_history:
             name: Ship History
@@ -571,7 +570,6 @@ oracles:
                 cursed_by: oracle_rollable:sundered_isles/campaign/command/crew_cursed
             _source:
               <<: *Source
-              page: 98
             rows:
               - roll: { min: 1, max: 8 }
                 text: Eclectic mix of all sorts of folk
@@ -627,7 +625,6 @@ oracles:
                 curse_behavior: add_result
             _source:
               <<: *Source
-              page: 99
             rows:
               - roll: { min: 1, max: 5 }
                 text: Bound to the ship, unable to sail another
@@ -926,7 +923,7 @@ oracles:
                 text2: Who or what defends this place against intruders?
               - roll: { min: 13, max: 15 }
                 text: Colossal monument
-                text2: What legendary figure or god does this monument honor?
+                text2: What legendary figure does this monument honor?
               - roll: { min: 16, max: 19 }
                 text: Crucial trade route
                 text2: What is disrupting trade along this route?

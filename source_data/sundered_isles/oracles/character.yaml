@@ -17,7 +17,6 @@ oracles:
     summary: When encountering a character, focus on what you learn or perceive as a first impression using tables such as [First Look](oracle_rollable:sundered_isles/character/first_look) and [Initial Disposition](oracle_rollable:sundered_isles/character/initial_disposition). Then envision or generate additional details over time.
     _source:
       <<: *Source
-      page: 186
     contents:
       first_look:
         name: Character First Look
@@ -29,7 +28,6 @@ oracles:
             cursed_by: oracle_rollable:sundered_isles/character/first_look_cursed
         _source:
           <<: *Source
-          page: 186
         rows:
           - roll: { min: 1, max: 2 }
             text: Accented
@@ -122,7 +120,6 @@ oracles:
             curse_behavior: replace_result
         _source:
           <<: *Source
-          page: 186
         rows:
           - roll: { min: 1, max: 10 }
             text: Abyssal
@@ -154,7 +151,6 @@ oracles:
         oracle_type: table_text
         _source:
           <<: *Source
-          page: 187
         rows:
           - roll: { min: 1, max: 10 }
             text: Helpful
@@ -187,7 +183,6 @@ oracles:
         summary: Envision a character’s background or occupation using the broad categories below. For more detail, check the related subtable.
         _source:
           <<: *Source
-          page: 187
         rows:
           - roll: { min: 1, max: 5 }
             text: '[Academic](oracle_rollable:sundered_isles/character/role_details/academic)'
@@ -242,7 +237,6 @@ oracles:
         summary: This table includes conspicuous gear, adornment, and clothing. Use it to help envision the look of a notable character, particularly one who is a seafarer or adventurer. To arm them with a favorite weapon, check [Trademark Weapons](oracle_rollable:sundered_isles/character/trademark_weapons).
         _source:
           <<: *Source
-          page: 190
         rows:
           - roll: { min: 1, max: 2 }
             text: Animal claw necklace
@@ -355,7 +349,6 @@ oracles:
         oracle_type: table_text
         _source:
           <<: *Source
-          page: 191
         rows:
           - roll: { min: 1, max: 3 }
             text: Barbed gaff hook
@@ -449,7 +442,6 @@ oracles:
         summary: If you roll a [Trademark Weapon](oracle_rollable:sundered_isles/character/trademark_weapons) curse, take your result and give that weapon a cursed aspect from the table below.
         _source:
           <<: *Source
-          page: 191
         rows:
           - roll: { min: 1, max: 5 }
             text: Adorned with bone or skull motifs
@@ -498,7 +490,6 @@ oracles:
             cursed_by: oracle_rollable:sundered_isles/character/details_cursed
         _source:
           <<: *Source
-          page: 192
         rows:
           - roll: { min: 1, max: 1 }
             text: Adventurous
@@ -711,7 +702,6 @@ oracles:
             curse_behavior: replace_result
         _source:
           <<: *Source
-          page: 192
         rows:
           - roll: { min: 1, max: 5 }
             text: Bewitched
@@ -755,7 +745,6 @@ oracles:
             cursed_by: oracle_rollable:sundered_isles/character/goals_cursed
         _source:
           <<: *Source
-          page: 193
         rows:
           - roll: { min: 1, max: 2 }
             text: Acquire knowledge or learning
@@ -869,7 +858,6 @@ oracles:
             curse_behavior: replace_result
         _source:
           <<: *Source
-          page: 193
         rows:
           - roll: { min: 1, max: 6 }
             text: Avert a harrowing prophecy or vision
@@ -918,7 +906,6 @@ oracles:
         oracle_type: tables
         _source:
           <<: *Source
-          page: 188
         contents:
           academic:
             name: Academic
@@ -926,7 +913,6 @@ oracles:
             oracle_type: table_text
             _source:
               <<: *Source
-              page: 188
             rows:
               - roll: { min: 1, max: 20 }
                 text: Archaeologist
@@ -944,7 +930,6 @@ oracles:
             oracle_type: table_text
             _source:
               <<: *Source
-              page: 188
             rows:
               - roll: { min: 1, max: 20 }
                 text: Assassin
@@ -962,7 +947,6 @@ oracles:
             oracle_type: table_text
             _source:
               <<: *Source
-              page: 188
             rows:
               - roll: { min: 1, max: 20 }
                 text: Apothecary
@@ -980,7 +964,6 @@ oracles:
             oracle_type: table_text
             _source:
               <<: *Source
-              page: 188
             rows:
               - roll: { min: 1, max: 20 }
                 text: Duelist
@@ -998,7 +981,6 @@ oracles:
             oracle_type: table_text
             _source:
               <<: *Source
-              page: 188
             rows:
               - roll: { min: 1, max: 20 }
                 text: Clergy
@@ -1016,7 +998,6 @@ oracles:
             oracle_type: table_text
             _source:
               <<: *Source
-              page: 188
             rows:
               - roll: { min: 1, max: 20 }
                 text: Bricklayer
@@ -1034,7 +1015,6 @@ oracles:
             oracle_type: table_text
             _source:
               <<: *Source
-              page: 188
             rows:
               - roll: { min: 1, max: 20 }
                 text: Barkeep
@@ -1052,7 +1032,6 @@ oracles:
             oracle_type: table_text
             _source:
               <<: *Source
-              page: 188
             rows:
               - roll: { min: 1, max: 20 }
                 text: Alchemist
@@ -1070,7 +1049,6 @@ oracles:
             oracle_type: table_text
             _source:
               <<: *Source
-              page: 188
             rows:
               - roll: { min: 1, max: 10 }
                 text: Apostate
@@ -1098,7 +1076,6 @@ oracles:
             oracle_type: table_text
             _source:
               <<: *Source
-              page: 189
             rows:
               - roll: { min: 1, max: 20 }
                 text: Beast Hunter
@@ -1116,7 +1093,6 @@ oracles:
             oracle_type: table_text
             _source:
               <<: *Source
-              page: 189
             rows:
               - roll: { min: 1, max: 10 }
                 text: Burglar / Thief
@@ -1144,7 +1120,6 @@ oracles:
             oracle_type: table_text
             _source:
               <<: *Source
-              page: 189
             rows:
               - roll: { min: 1, max: 20 }
                 text: Acrobat
@@ -1162,7 +1137,6 @@ oracles:
             oracle_type: table_text
             _source:
               <<: *Source
-              page: 189
             rows:
               - roll: { min: 1, max: 10 }
                 text: Bosun
@@ -1190,7 +1164,6 @@ oracles:
             oracle_type: table_text
             _source:
               <<: *Source
-              page: 189
             rows:
               - roll: { min: 1, max: 20 }
                 text: Beachcomber
@@ -1208,7 +1181,6 @@ oracles:
             oracle_type: table_text
             _source:
               <<: *Source
-              page: 189
             rows:
               - roll: { min: 1, max: 10 }
                 text: Aristocrat
@@ -1236,7 +1208,6 @@ oracles:
             oracle_type: table_text
             _source:
               <<: *Source
-              page: 189
             rows:
               - roll: { min: 1, max: 10 }
                 text: Baker
@@ -1268,7 +1239,6 @@ oracles:
           This table also includes monikers, one to each row. Not all characters have monikers, but sailors are often given a nickname by their shipmates, or adopt one of their own. Monikers can be used as a stand-alone name (for example, “Redbeard” or “Stormcrow”) or paired with a given name or family name (“Crimson Jack” or “Hardtack Hobbs”). Roll or select an appropriate moniker as you like.
         _source:
           <<: *Source
-          page: 194
         contents:
           given_name:
             # TODO: not canonical display, but the least onerous for digital use
@@ -1278,7 +1248,6 @@ oracles:
             dice: 1d200
             _source:
               <<: *Source
-              page: 194
             rows:
               - roll: { min: 1, max: 1 }
                 text: Aisha
@@ -1687,7 +1656,6 @@ oracles:
             dice: 1d200
             _source:
               <<: *Source
-              page: 194
             rows:
               - roll: { min: 1, max: 1 }
                 text: Qadir
@@ -2098,7 +2066,6 @@ oracles:
                 cursed_by: oracle_rollable:sundered_isles/character/name/moniker_cursed/category
             _source:
               <<: *Source
-              page: 194
             rows:
               - roll: { min: 1, max: 1 }
                 text: Albatross
@@ -2308,7 +2275,6 @@ oracles:
             summary: Use these tables to reveal an epitaph for a dreadful, eldritch, ill-fated, or mechanical character. For example, a pirate captain who adopts a much-feared identity would have a [Dreadful Persona](oracle_rollable:sundered_isles/character/name/moniker_cursed/dreadful_persona). A wretched, outcast mariner would have an [Ill-Fated Nature](oracle_rollable:sundered_isles/character/name/moniker_cursed/ill_fated_nature). Use the result alone, combine with a name, or pair results from two Cursed Moniker categories.
             _source:
               <<: *Source
-              page: 197
             contents:
               category:
                 name: Moniker Category

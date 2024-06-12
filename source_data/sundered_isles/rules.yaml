@@ -61,18 +61,22 @@ rules:
         - replace_result
         # TODO: "see_text" for other behavior?
         # ugh, should this be paired with cursed_by instead? a lot of this seems to be tied to original table
+
+    requires_allies:
+      description: This object requires allies to function, and is intended only for co-op play, or guided play with allies. It is not appropriate for solo play.
+      value_type: boolean
     cursed_by:
       description: This oracle has a cursed version.
       applies_to: [oracle_rollable]
       value_type: oracle_rollable
     supernatural:
-      description: This asset is ideal for settings that feature supernatural or mythic powers.
+      description: This object is supernatural in nature, and is ideal for settings that feature supernatural or mythic powers.
       value_type: boolean
-      applies_to: [asset]
+      applies_to: [asset,oracle_table_row]
     technological:
-      description: This asset is ideal for settings that feature remarkable technologies.
+      description: This object is technological in nature, and is ideal for settings that feature remarkable technologies.
       value_type: boolean
-      applies_to: [asset]
+      applies_to: [asset,oracle_table_row]
     starforged_friendly:
       description: This asset is ideal for use in Starforged.
       value_type: boolean

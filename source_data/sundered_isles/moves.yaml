@@ -25,7 +25,6 @@ moves:
     #   Will you survive these expeditions? What will they cost you? What wonders and horrors will you face? Use the __exploration moves__ to find out.
     _source:
       <<: *Source
-      page: 242
     contents:
       undertake_an_expedition:
         name: Undertake an Expedition
@@ -80,7 +79,6 @@ moves:
             text: On a __miss__, you are waylaid by a crisis, or arrive at a waypoint to confront an immediate hardship or threat. Do not mark progress, and [Pay the Price](move:starforged/fate/pay_the_price).
         _source:
           <<: *Source
-          page: 242
       # explore a waypoint: no changes
       make_a_discovery:
         name: Make a Discovery
@@ -145,7 +143,6 @@ moves:
           {{table>move.oracle_rollable:sundered_isles/exploration/make_a_discovery.make_a_discovery}}
         _source:
           <<: *Source
-          page: 243
       confront_chaos:
         name: Confront Chaos
         replaces: move:starforged/exploration/confront_chaos
@@ -208,7 +205,6 @@ moves:
           {{table>move.oracle_rollable:sundered_isles/exploration/confront_chaos.confront_chaos}}
         _source:
           <<: *Source
-          page: 243
       # finish an expedition: no changes
       set_a_course:
         name: Set a Course
@@ -249,14 +245,12 @@ moves:
               On a __miss__, you are waylaid by a significant threat, and must [Pay the Price](move:starforged/fate/pay_the_price). If you overcome this obstacle, you may push on safely to your destination.
         _source:
           <<: *Source
-          page: 242
   combat:
     name: Combat Moves
     type: move_category
     enhances: move_category:starforged/combat
     _source:
       <<: *Source
-      page: 244
     contents:
       enter_the_fray:
         name: Enter the Fray
@@ -321,7 +315,6 @@ moves:
             text: On a __miss__, the fight begins with you in a bad spot.
         _source:
           <<: *Source
-          page: 244
       # gain ground: no changes
       # react under fire: no changes
       # strike: no changes
@@ -335,7 +328,6 @@ moves:
     enhances: move_category:starforged/suffer
     _source:
       <<: *Source
-      page: 246
     contents:
       # lose momentum: no changes
       # endure harm: no changes
@@ -419,7 +411,6 @@ moves:
               {{table>starforged/oracles/moves/withstand_damage}}
         _source:
           <<: *Source
-          page: 247
   recover:
     name: Recover Moves
     type: move_category
@@ -439,7 +430,6 @@ moves:
 
     _source:
       <<: *Source
-      page: 248
     contents:
       # sojourn
       # heal
@@ -513,7 +503,6 @@ moves:
             text: On a __miss__, you encounter an unexpected peril. [Pay the Price](move:starforged/fate/pay_the_price).
         _source:
           <<: *Source
-          page: 248
       repair:
         name: Repair
         replaces: move:starforged/recover/repair
@@ -604,7 +593,6 @@ moves:
             text: On a __miss__, the repairs are not made and the situation worsens. [Pay the Price](move:starforged/fate/pay_the_price).
         _source:
           <<: *Source
-          page: 249
   # threshold moves: no changes
   # legacy moves: no changes
   # fate moves: no changes

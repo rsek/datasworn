@@ -16,7 +16,6 @@ oracles:
     oracle_type: tables
     _source:
       <<: *Source
-      page: 226
     contents:
       prompts:
         name: Prompts
@@ -24,7 +23,6 @@ oracles:
         oracle_type: table_text
         _source:
           <<: *Source
-          page: 226
         rows:
           - roll: { min: 1, max: 20 }
             text: '[Action](oracle_rollable:sundered_isles/core/action) + [Theme](oracle_rollable:sundered_isles/core/theme)'
@@ -73,7 +71,6 @@ oracles:
           text2: Questions to Consider
         _source:
           <<: *Source
-          page: 228
         rows:
           - roll: { min: 1, max: 4 }
             text: Chronicle your adventures
@@ -172,7 +169,6 @@ oracles:
         summary: This oracle will introduce narrative turns, troubles, and revelations. It can be used as an alternative to the [Pay the Price](oracle_rollable:move:starforged/pay_the_price) table when you encounter a negative outcome at a crucial moment. In particular, you might use this table after rolling matched 10s on the challenge dice.
         _source:
           <<: *Source
-          page: 230
         rows:
           - roll: { min: 1, max: 4 }
             text: Crucial resource or equipment fails
@@ -243,7 +239,6 @@ oracles:
         summary: When you [Gather Information](move:starforged/adventure/gather_information) to investigate a mystery, you might uncover clues in the form of messages, records, rumors, eyewitness reports, or physical evidence. You can use this oracle to help reveal what this evidence connects to or implicates. Then, use the outcome of the [Gather Information](move:starforged/adventure/gather_information) roll—strong hit, weak hit, or miss—to guide whether the clue brings clarity or complications.
         _source:
           <<: *Source
-          page: 231
         rows:
           - roll: { min: 1, max: 3 }
             text: Affirms a previously understood fact or clue
@@ -319,7 +314,6 @@ oracles:
         summary: Use this oracle to help inspire an action for a foe in a fight. When you’re not sure what an enemy does next, particularly when they have you in a bad spot, roll on this table and interpret the result as appropriate to the nature of the enemy and battleground.
         _source:
           <<: *Source
-          page: 232
         rows:
           - roll: { min: 1, max: 3 }
             text: Back away or stand off
@@ -399,7 +393,6 @@ oracles:
         summary: Use this table to introduce terrain and environment features for a sea battle. This can help enliven the battle with obstacles and opportunities.
         _source:
           <<: *Source
-          page: 233
         rows:
           - roll: { min: 1, max: 2 }
             text: Adrift mariners
@@ -454,7 +447,6 @@ oracles:
         oracle_type: table_shared_rolls
         _source:
           <<: *Source
-          page: 226
         contents:
           size:
             name: Size
@@ -617,7 +609,6 @@ oracles:
         oracle_type: table_shared_rolls
         _source:
           <<: *Source
-          page: 227
         contents:
           prefix:
             name: Prefix
@@ -885,7 +876,6 @@ oracles:
         oracle_type: table_shared_rolls
         _source:
           <<: *Source
-          page: 233
         contents:
           bothersome:
             name: Bothersome Damage

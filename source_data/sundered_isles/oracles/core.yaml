@@ -16,7 +16,6 @@ oracles:
     oracle_type: tables
     _source:
       <<: *Source
-      page: 186
     contents:
       action:
         name: Action
@@ -24,7 +23,6 @@ oracles:
         oracle_type: table_text
         _source:
           <<: *Source
-          page: 116
         rows:
           - roll: { min: 1, max: 1 }
             text: Abandon
@@ -232,7 +230,6 @@ oracles:
         oracle_type: table_text
         _source:
           <<: *Source
-          page: 117
         rows:
           - roll: { min: 1, max: 1 }
             text: Ability
@@ -440,7 +437,6 @@ oracles:
         oracle_type: table_text
         _source:
           <<: *Source
-          page: 118
         rows:
           - roll: { min: 1, max: 1 }
             text: Abandoned
@@ -648,7 +644,6 @@ oracles:
         oracle_type: table_text
         _source:
           <<: *Source
-          page: 119
         rows:
           - roll: { min: 1, max: 1 }
             text: Ammunition

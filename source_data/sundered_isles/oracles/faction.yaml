@@ -16,7 +16,6 @@ oracles:
     oracle_type: tables
     _source:
       <<: *Source
-      page: 176
     contents:
       type:
         name: Faction Type
@@ -26,7 +25,6 @@ oracles:
         summary: "On a cursed result, choose one: Make the faction one of [The Cursed](oracle_rollable:sundered_isles/faction/cursed/role), or keep the result and give the faction [Cursed Aspects](oracle_rollable:sundered_isles/faction/cursed/aspects)."
         _source:
           <<: *Source
-          page: 176
         rows:
           - roll: { min: 1, max: 50 }
             text: "[Society](oracle_collection:sundered_isles/faction/society)"
@@ -52,7 +50,6 @@ oracles:
         oracle_type: table_text2
         _source:
           <<: *Source
-          page: 176
         rows:
           - roll: { min: 1, max: 10 }
             text: Forsaken
@@ -82,7 +79,6 @@ oracles:
         summary: When you have a question about the relationship of one faction to another—or how an individual relates to a faction—use this table. The result is the commonly understood connection, but might not tell the whole story.
         _source:
           <<: *Source
-          page: 176
         rows:
           - roll: { min: 1, max: 4 }
             text: Allied with
@@ -152,7 +148,6 @@ oracles:
         oracle_type: tables
         _source:
           <<: *Source
-          page: 178
         contents:
           chronicles:
             name: Society Chronicles
@@ -166,7 +161,6 @@ oracles:
                 faction_type: society
             _source:
               <<: *Source
-              page: 178
             rows:
               - roll: { min: 1, max: 2 }
                 text: Betrayed by a longtime ally
@@ -266,7 +260,6 @@ oracles:
                 faction_type: society
             _source:
               <<: *Source
-              page: 178
             rows:
               - roll: { min: 1, max: 5 }
                 text: Appointed local leaders
@@ -308,7 +301,6 @@ oracles:
                 faction_type: society
             _source:
               <<: *Source
-              page: 179
             rows:
               - roll: { min: 1, max: 1 }
                 text: Affinity for celestial objects and motifs
@@ -445,7 +437,6 @@ oracles:
         summary: *Organization.summary
         _source:
           <<: *Source
-          page: 180
         contents:
           type:
             name: Organization Type
@@ -456,7 +447,6 @@ oracles:
                 faction_type: organization
             _source:
               <<: *Source
-              page: 180
             rows:
               - roll: { min: 1, max: 2 }
                 text: Artisans
@@ -510,7 +500,6 @@ oracles:
                 faction_type: organization
             _source:
               <<: *Source
-              page: 180
             rows:
               - roll: { min: 1, max: 4 }
                 text: Evaluates recruits with elaborate tests
@@ -581,7 +570,6 @@ oracles:
               sundered_isles:
                 faction_type: organization
             _source:
-              page: 180
               <<: *Source
             rows:
               - roll: { min: 1, max: 5 }
@@ -631,7 +619,6 @@ oracles:
         summary: *Empire.summary
         _source:
           <<: *Source
-          page: 181
         contents:
           leadership:
             name: Imperial Leadership
@@ -642,7 +629,6 @@ oracles:
                 faction_type: empire
             _source:
               <<: *Source
-              page: 181
             rows:
               - roll: { min: 1, max: 10 }
                 text: Assembly or council
@@ -679,7 +665,6 @@ oracles:
                 faction_type: empire
             _source:
               <<: *Source
-              page: 181
             rows:
               - roll: { min: 1, max: 3 }
                 text: Assassination
@@ -747,7 +732,6 @@ oracles:
                 faction_type: empire
             _source:
               <<: *Source
-              page: 181
             rows:
               - roll: { min: 1, max: 4 }
                 text: Catastrophic military defeat
@@ -800,7 +784,6 @@ oracles:
         summary: For cursed factions that function as an organization, use the [Organization Methods](oracle_rollable:sundered_isles/faction/organization/methods) or [Organization Secrets](oracle_rollable:sundered_isles/faction/organization/secrets) tables for additional details. To reveal a current goal for a cursed faction or its leaders, use the [Cursed Character Goals](oracle_rollable:sundered_isles/character/goals_cursed) table. You can also give a cursed faction one or more [Cursed Aspects](oracle_rollable:sundered_isles/faction/cursed/aspects).
         _source:
           <<: *Source
-          page: 182
         contents:
           role:
             name: Role
@@ -809,7 +792,6 @@ oracles:
             summary: Cursed factions include people and beings of a strange, supernatural, or dreadful nature, as well as factions dedicated to opposing those entities. Use the table below to reveal the role of a cursed faction.
             _source:
               <<: *Source
-              page: 182
             rows:
               - roll: { min: 1, max: 10 }
                 text: Artificers
@@ -851,7 +833,6 @@ oracles:
             recommended_rolls: { min: 1, max: 2 }
             _source:
               <<: *Source
-              page: 182
             rows:
               - roll: { min: 1, max: 3 }
                 text: Adopts multiple identities or forms
@@ -927,7 +908,6 @@ oracles:
         oracle_type: tables
         _source:
           <<: *Source
-          page: 183
         contents:
           culture:
             name: "Faction Name: Culture"
@@ -935,7 +915,6 @@ oracles:
             oracle_type: table_text
             _source:
               <<: *Source
-              page: 183
             rows:
               - roll: { min: 1, max: 2 }
                 text: Akani
@@ -1046,7 +1025,6 @@ oracles:
                 faction_type: society
             _source:
               <<: *Source
-              page: 183
             rows:
               - roll: { min: 1, max: 15 }
                 text: Alliance
@@ -1081,7 +1059,6 @@ oracles:
                 faction_type: empire
             _source:
               <<: *Source
-              page: 183
             rows:
               - roll: { min: 1, max: 4 }
                 text: Alliance
@@ -1156,7 +1133,6 @@ oracles:
                 faction_type: organization
             _source:
               <<: *Source
-              page: 185
             rows:
               - roll: { min: 1, max: 2 }
                 text: Academy
@@ -1245,7 +1221,6 @@ oracles:
             oracle_type: tables
             _source:
               <<: *Source
-              page: 184
             contents:
               type:
                 name: Theme Type
@@ -1254,7 +1229,6 @@ oracles:
                 oracle_type: table_text
                 _source:
                   <<: *Source
-                  page: 184
                 rows:
                   - roll: { min: 1, max: 10 }
                     text: "[Affluence](oracle_collection:sundered_isles/faction/name/themes/affluence)"
@@ -1283,7 +1257,6 @@ oracles:
                 oracle_type: table_shared_rolls
                 _source:
                   <<: *Source
-                  page: 184
                 contents:
                   aspect:
                     name: Aspect
@@ -1341,7 +1314,6 @@ oracles:
                 oracle_type: table_shared_rolls
                 _source:
                   <<: *Source
-                  page: 184
                 contents:
                   aspect:
                     name: Aspect
@@ -1399,7 +1371,6 @@ oracles:
                 oracle_type: table_shared_rolls
                 _source:
                   <<: *Source
-                  page: 184
                 contents:
                   aspect:
                     name: Aspect
@@ -1457,7 +1428,6 @@ oracles:
                 oracle_type: table_shared_rolls
                 _source:
                   <<: *Source
-                  page: 184
                 contents:
                   aspect:
                     name: Aspect
@@ -1515,7 +1485,6 @@ oracles:
                 oracle_type: table_shared_rolls
                 _source:
                   <<: *Source
-                  page: 184
                 contents:
                   aspect:
                     name: Aspect
@@ -1573,7 +1542,6 @@ oracles:
                 oracle_type: table_shared_rolls
                 _source:
                   <<: *Source
-                  page: 184
                 contents:
                   aspect:
                     name: Aspect
@@ -1631,7 +1599,6 @@ oracles:
                 oracle_type: table_shared_rolls
                 _source:
                   <<: *Source
-                  page: 185
                 contents:
                   aspect:
                     name: Aspect
@@ -1689,7 +1656,6 @@ oracles:
                 oracle_type: table_shared_rolls
                 _source:
                   <<: *Source
-                  page: 185
                 contents:
                   aspect:
                     name: Aspect
@@ -1747,7 +1713,6 @@ oracles:
                 oracle_type: table_shared_rolls
                 _source:
                   <<: *Source
-                  page: 185
                 contents:
                   aspect:
                     name: Aspect
@@ -1805,7 +1770,6 @@ oracles:
                 oracle_type: table_shared_rolls
                 _source:
                   <<: *Source
-                  page: 185
                 contents:
                   aspect:
                     name: Aspect

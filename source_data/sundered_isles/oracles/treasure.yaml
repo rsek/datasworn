@@ -16,7 +16,6 @@ oracles:
     oracle_type: tables
     _source:
       <<: *Source
-      page: 220
     contents:
       location:
         name: Treasure Location
@@ -28,7 +27,6 @@ oracles:
             cursed_by: oracle_rollable:sundered_isles/treasure/location_cursed
         _source:
           <<: *Source
-          page: 220
         rows:
           - roll: { min: 1, max: 25 }
             text: Borne on a [Ship](oracle_collection:sundered_isles/ship)
@@ -53,7 +51,6 @@ oracles:
             curse_behavior: replace_result
         _source:
           <<: *Source
-          page: 220
         rows:
           - roll: { min: 1, max: 5 }
             text: Banished to the realm of the dead
@@ -86,7 +83,6 @@ oracles:
           text2: Examples
         _source:
           <<: *Source
-          page: 221
         rows:
           - roll: { min: 1, max: 25 }
             text: Small
@@ -123,7 +119,6 @@ oracles:
             cursed_by: oracle_rollable:sundered_isles/treasure/aspects_cursed
         _source:
           <<: *Source
-          page: 222
         rows:
           - roll: { min: 1, max: 8 }
             text: Bears the mark of a notorious figure
@@ -168,7 +163,6 @@ oracles:
             curse_behavior: replace_result
         _source:
           <<: *Source
-          page: 222
         rows:
           - roll: { min: 1, max: 4 }
             text: Attracts foul creatures or vermin
@@ -217,7 +211,6 @@ oracles:
         summary: Roll or select a number of items on this table as set by the treasure’s [Value](oracle_collection:sundered_isles/treasure/value). Each result represents a quantity of that item, such as a strongbox filled with pearls, barrels of aged rum, or a stack of precious metal ingots. To instead reveal a specific item of intrinsic or personal worth, check the [Tokens](oracle_rollable:sundered_isles/treasure/tokens) table.
         _source:
           <<: *Source
-          page: 223
         rows:
           - roll: { min: 1, max: 20 }
             text: Cache of coins, gems, and jewels
@@ -286,7 +279,6 @@ oracles:
             cursed_by: oracle_rollable:sundered_isles/treasure/tokens_cursed
         _source:
           <<: *Source
-          page: 223
         rows:
           - roll: { min: 1, max: 1 }
             text: Ancestral ring with a missing gemstone
@@ -499,7 +491,6 @@ oracles:
             curse_behavior: replace_result
         _source:
           <<: *Source
-          page: 225
         rows:
           - roll: { min: 1, max: 2 }
             text: Astrolabe with complex workings that signal a portentous cosmic event
@@ -582,7 +573,6 @@ oracles:
         oracle_type: table_shared_text2
         _source:
           <<: *Source
-          page: 221
         contents:
           small:
             name: Small

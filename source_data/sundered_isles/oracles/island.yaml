@@ -16,7 +16,6 @@ oracles:
     oracle_type: tables
     _source:
       <<: *Source
-      page: 142
     contents:
       coastline_aspects:
         name: Coastline Aspects
@@ -25,7 +24,6 @@ oracles:
         recommended_rolls: { min: 1, max: 2 }
         _source:
           <<: *Source
-          page: 144
         rows:
           - roll: { min: 1, max: 2 }
             text: Broad bay protected by offshore islet
@@ -89,7 +87,6 @@ oracles:
             cursed_by: oracle_rollable:sundered_isles/island/offshore_observations_cursed
         _source:
           <<: *Source
-          page: 145
         rows:
         - roll: { min: 1, max: 2 }
           text: Active lava flow
@@ -191,7 +188,6 @@ oracles:
             curse_behavior: replace_result
         _source:
           <<: *Source
-          page: 146
         rows:
           - roll: { min: 1, max: 3 }
             text: Alluring illusion
@@ -286,7 +282,6 @@ oracles:
             cursed_by: oracle_rollable:sundered_isles/island/name_cursed
         _source:
           <<: *Source
-          page: 147
         rows:
           - roll: { min: 1, max: 1 }
             text: Aegis
@@ -499,7 +494,6 @@ oracles:
             curse_behavior: replace_result
         _source:
           <<: *Source
-          page: 147
         rows:
           - roll: { min: 1, max: 2 }
             text: Ash
@@ -604,7 +598,6 @@ oracles:
         oracle_type: tables
         _source:
           <<: *Source
-          page: 142
         contents:
           size:
             name: Size
@@ -612,7 +605,6 @@ oracles:
             oracle_type: table_text2
             _source:
               <<: *Source
-              page: 142
             column_labels:
               roll: Roll
               text: Result
@@ -640,7 +632,6 @@ oracles:
               text2: Detail
             _source:
               <<: *Source
-              page: 142
             rows:
               - roll: { min: 1, max: 10 }
                 text: Sodden
@@ -671,7 +662,6 @@ oracles:
             name: Vitality
             _source:
               <<: *Source
-              page: 142
             type: oracle_collection
             oracle_type: table_shared_text2
             contents:
@@ -754,7 +744,6 @@ oracles:
         name: Visible Habitation
         _source:
           <<: *Source
-          page: 143
         type: oracle_collection
         oracle_type: table_shared_text
         contents:
@@ -831,7 +820,6 @@ oracles:
         name: Nearby Islands
         _source:
           <<: *Source
-          page: 143
         type: oracle_collection
         oracle_type: table_shared_text2
         contents:

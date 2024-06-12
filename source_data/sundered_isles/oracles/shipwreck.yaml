@@ -16,7 +16,6 @@ oracles:
     oracle_type: tables
     _source:
       <<: *Source
-      page: 198
     contents:
       location:
         name: Shipwreck Location
@@ -24,7 +23,6 @@ oracles:
         oracle_type: table_text2
         _source:
           <<: *Source
-          page: 198
         rows:
           - roll: { min: 1, max: 25 }
             text: Sea
@@ -72,7 +70,6 @@ oracles:
         recommended_rolls: { min: 1, max: 2 }
         _source:
           <<: *Source
-          page: 200
         rows:
           - roll: { min: 1, max: 2 }
             text: Archaic construction
@@ -162,7 +159,6 @@ oracles:
             curse_behavior: replace_result
         _source:
           <<: *Source
-          page: 200
         rows:
           - roll: { min: 1, max: 3 }
             text: Alight with unnatural flames
@@ -229,7 +225,6 @@ oracles:
             cursed_by: oracle_rollable:sundered_isles/shipwreck/details_cursed
         _source:
           <<: *Source
-          page: 202
         rows:
           - roll: { min: 1, max: 3 }
             text: Abandoned pet or mascot
@@ -311,7 +306,6 @@ oracles:
             curse_behavior: replace_result
         _source:
           <<: *Source
-          page: 202
         rows:
           - roll: { min: 1, max: 2 }
             text: Arcane energies
@@ -391,7 +385,6 @@ oracles:
         oracle_type: table_text
         _source:
           <<: *Source
-          page: 203
         rows:
           - roll: { min: 1, max: 5 }
             text: Booby-trapped passage or container
@@ -443,7 +436,6 @@ oracles:
           oracle_type: table_text
           _source:
             <<: *Source
-            page: 203
           rows:
             - roll: { min: 1, max: 25 }
               text: Useful provisions or salvage
@@ -484,7 +476,6 @@ oracles:
         oracle_type: tables
         _source:
           <<: *Source
-          page: 199
         contents:
           scale:
             name: Scale
@@ -492,7 +483,6 @@ oracles:
             oracle_type: table_text
             _source:
               <<: *Source
-              page: 199
             rows:
               - roll: { min: 1, max: 30 }
                 text: Small (cutter, sloop)
@@ -512,7 +502,6 @@ oracles:
             oracle_type: table_text
             _source:
               <<: *Source
-              page: 199
             rows:
               - roll: { min: 1, max: 10 }
                 text: Broken and missing large sections
@@ -533,7 +522,6 @@ oracles:
             oracle_type: table_shared_text
             _source:
               <<: *Source
-              page: 199
             contents:
               sea:
                 name: Sea

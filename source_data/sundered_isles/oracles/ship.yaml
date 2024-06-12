@@ -16,7 +16,6 @@ oracles:
     oracle_type: tables
     _source:
       <<: *Source
-      page: 132
     contents:
       size:
         name: Ship Size
@@ -24,7 +23,6 @@ oracles:
         oracle_type: table_text2
         _source:
           <<: *Source
-          page: 132
         rows:
           - roll: { min: 1, max: 30 }
             text: Small
@@ -101,7 +99,6 @@ oracles:
             cursed_by: oracle_rollable:sundered_isles/ship/first_look_cursed
         _source:
           <<: *Source
-          page: 134
         rows:
           - roll: { min: 1, max: 2 }
             text: Accompanied by creatures
@@ -199,7 +196,6 @@ oracles:
             curse_behavior: replace_result
         _source:
           <<: *Source
-          page: 135
         rows:
           - roll: { min: 1, max: 3 }
             text: Accompanied by a monstrous beast
@@ -294,7 +290,6 @@ oracles:
             cursed_by: oracle_rollable:sundered_isles/ship/symbol_cursed
         _source:
           <<: *Source
-          page: 136
         rows:
           - roll: { min: 1, max: 2 }
             text: Albatross or gull
@@ -407,7 +402,6 @@ oracles:
             curse_behavior: replace_result
         _source:
           <<: *Source
-          page: 136
         rows:
           - roll: { min: 1, max: 10 }
             text: Demonic figure
@@ -444,7 +438,6 @@ oracles:
             curse_behavior: replace_result
         _source:
           <<: *Source
-          page: 137
         rows:
           - roll: { min: 1, max: 15 }
             text: Acting to fulfill a dreadful bargain
@@ -472,7 +465,6 @@ oracles:
             cursed_by: oracle_rollable:sundered_isles/ship/details_cursed
         _source:
           <<: *Source
-          page: 138
         rows:
           - roll: { min: 1, max: 3 }
             text: Animal mascot
@@ -564,7 +556,6 @@ oracles:
             cursed_by: oracle_rollable:sundered_isles/ship/details_cursed
         _source:
           <<: *Source
-          page: 138
         rows:
           - roll: { min: 1, max: 5 }
             text: Arcane trap
@@ -579,7 +570,7 @@ oracles:
           - roll: { min: 24, max: 26 }
             text: Dreadful phantom whispers
           - roll: { min: 27, max: 29 }
-            text: Fearsome creatures among the shadow
+            text: Fearsome creatures among the shadows
           - roll: { min: 30, max: 32 }
             text: Illusionary facade
           - roll: { min: 33, max: 35 }
@@ -627,7 +618,6 @@ oracles:
             cursed_by: oracle_rollable:sundered_isles/ship/cargo_cursed
         _source:
           <<: *Source
-          page: 139
         recommended_rolls: { min: 1, max: 4 }
         rows:
           - roll: { min: 1, max: 2 }
@@ -734,7 +724,6 @@ oracles:
             curse_behavior: replace_result
         _source:
           <<: *Source
-          page: 139
         rows:
           - roll: { min: 1, max: 5 }
             text: Ancient sarcophagi
@@ -777,7 +766,6 @@ oracles:
             cursed_by: oracle_rollable:sundered_isles/ship/name_cursed
         _source:
           <<: *Source
-          page: 140
         rows:
           - roll: { min: 1, max: 1 }
             text: Aegis
@@ -988,7 +976,6 @@ oracles:
             curse_behavior: replace_result
         _source:
           <<: *Source
-          page: 141
         rows:
           - roll: { min: 1, max: 1 }
             text: Acheron
@@ -1195,7 +1182,6 @@ oracles:
         oracle_type: tables
         _source:
           <<: *Source
-          page: 134
         contents:
           range:
             name: Range
@@ -1203,7 +1189,6 @@ oracles:
             oracle_type: table_text2
             _source:
               <<: *Source
-              page: 134
             rows:
               - roll: { min: 1, max: 40 }
                 text: Distant
@@ -1223,7 +1208,6 @@ oracles:
             oracle_type: table_text
             _source:
               <<: *Source
-              page: 134
             rows:
               - roll: { min: 1, max: 10 }
                 text: In Battle
@@ -1247,7 +1231,6 @@ oracles:
         name: Ship Controlling Faction
         _source:
           <<: *Source
-          page: 136
         type: oracle_collection
         oracle_type: table_shared_text
         contents:
@@ -1308,7 +1291,6 @@ oracles:
           text: Current Activity
         _source:
           <<: *Source
-          page: 137
         contents:
           small:
             name: Small
