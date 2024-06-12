@@ -14,6 +14,8 @@ oracles:
     name: Miscellaneous Oracles
     type: oracle_collection
     oracle_type: tables
+    replaces:
+      - oracle_collection:starforged/misc
     _source:
       <<: *Source
     contents:
@@ -167,6 +169,8 @@ oracles:
         type: oracle_rollable
         oracle_type: table_text
         summary: This oracle will introduce narrative turns, troubles, and revelations. It can be used as an alternative to the [Pay the Price](oracle_rollable:move:starforged/pay_the_price) table when you encounter a negative outcome at a crucial moment. In particular, you might use this table after rolling matched 10s on the challenge dice.
+        replaces:
+          - oracle_rollable:starforged/misc/story_complication
         _source:
           <<: *Source
         rows:
@@ -237,6 +241,8 @@ oracles:
         type: oracle_rollable
         oracle_type: table_text
         summary: When you [Gather Information](move:starforged/adventure/gather_information) to investigate a mystery, you might uncover clues in the form of messages, records, rumors, eyewitness reports, or physical evidence. You can use this oracle to help reveal what this evidence connects to or implicates. Then, use the outcome of the [Gather Information](move:starforged/adventure/gather_information) roll—strong hit, weak hit, or miss—to guide whether the clue brings clarity or complications.
+        replaces:
+          - oracle_rollable:starforged/misc/story_clue
         _source:
           <<: *Source
         rows:
@@ -312,6 +318,8 @@ oracles:
         type: oracle_rollable
         oracle_type: table_text
         summary: Use this oracle to help inspire an action for a foe in a fight. When you’re not sure what an enemy does next, particularly when they have you in a bad spot, roll on this table and interpret the result as appropriate to the nature of the enemy and battleground.
+        replaces:
+          - oracle_rollable:starforged/misc/combat_action
         _source:
           <<: *Source
         rows:
@@ -440,6 +448,70 @@ oracles:
             text: '[Shipwreck](oracle_collection:sundered_isles/shipwreck)'
           - roll: { min: 97, max: 100 }
             text: '[Ruin](oracle_collection:sundered_isles/ruin)'
+      ship_damage:
+        name: Ship Damage
+        type: oracle_rollable
+        oracle_type: table_text3
+        column_labels:
+          roll: Roll
+          text: Bothersome Damage
+          text2: Bad Damage
+          text3: Critical Damage
+        _source:
+          <<: *Source
+        rows:
+          - roll: { min: 1, max: 10 }
+            text: Shaken morale
+            text2: Breaking morale
+            text3: Broken morale
+          - roll: { min: 11, max: 20 }
+            text: Minor casualties
+            text2: Severe casualties
+            text3: Horrible casualties
+          - roll: { min: 21, max: 30 }
+            text: Tangled rigging
+            text2: Fraying rigging
+            text3: Broken rigging
+          - roll: { min: 31, max: 40 }
+            text: Weakened mast
+            text2: Splintering mast
+            text3: Broken mast
+          - roll: { min: 41, max: 50 }
+            text: Fouled sail
+            text2: Torn sail
+            text3: Mangled sail
+          - roll: { min: 51, max: 55 }
+            text: Damaged rudder
+            text2: Jammed rudder
+            text3: Broken rudder
+          - roll: { min: 56, max: 65 }
+            text: Fire on deck
+            text2: Fire below decks
+            text3: Burning magazine
+          - roll: { min: 66, max: 75 }
+            text: Swamped deck
+            text2: Flooded bilge
+            text3: Keeling over
+          - roll: { min: 76, max: 80 }
+            text: Dismounted cannons
+            text2: Damaged cannons
+            text3: Destroyed cannons
+          - roll: { min: 81, max: 90 }
+            text: Battered hull
+            text2: Buckling hull
+            text3: Breached hull
+          - roll: { min: 91, max: 95 }
+            text: Damaged compartment,  module, or support vehicle
+            text2: Failing compartment, module, or support vehicle
+            text3: Broken compartment, module, or support vehicle
+          - roll: { min: 96, max: 100 }
+            text: Roll twice; if the same result, step up the severity
+            text2: ''
+            text3: ''
+            oracle_rolls:
+              - auto: true
+                number_of_rolls: 2
+                duplicates: make_it_worse
     collections:
       magnitude:
         name: Magnitude
@@ -870,111 +942,3 @@ oracles:
                 text: Vigil
               - <<: *LocalSeas.49
                 text: Waters
-      ship_damage:
-        name: Ship Damage
-        type: oracle_collection
-        oracle_type: table_shared_rolls
-        _source:
-          <<: *Source
-        contents:
-          bothersome:
-            name: Bothersome Damage
-            type: oracle_rollable
-            oracle_type: column_text
-            rows:
-              - <<: &Damage.0
-                  roll: { min: 1, max: 10 }
-                text: Shaken morale
-              - <<: &Damage.1
-                  roll: { min: 11, max: 20 }
-                text: Minor casualties
-              - <<: &Damage.2
-                  roll: { min: 21, max: 30 }
-                text: Tangled rigging
-              - <<: &Damage.3
-                  roll: { min: 31, max: 40 }
-                text: Weakened mast
-              - <<: &Damage.4
-                  roll: { min: 41, max: 50 }
-                text: Fouled sail
-              - <<: &Damage.5
-                  roll: { min: 51, max: 55 }
-                text: Damaged rudder
-              - <<: &Damage.6
-                  roll: { min: 56, max: 65 }
-                text: Fire on deck
-              - <<: &Damage.7
-                  roll: { min: 66, max: 75 }
-                text: Swamped deck
-              - <<: &Damage.8
-                  roll: { min: 76, max: 80 }
-                text: Dismounted cannons
-              - <<: &Damage.9
-                  roll: { min: 81, max: 90 }
-                text: Battered hull
-              - <<: &Damage.10
-                  roll: { min: 91, max: 95 }
-                text: Damaged compartment,  module, or support vehicle
-              - <<: &Damage.11
-                  roll: { min: 96, max: 100 }
-                  text: Roll twice; if the same result, step up the severity
-                  oracle_rolls:
-                    - auto: true
-                      number_of_rolls: 2
-                      duplicates: make_it_worse
-          bad_damage:
-            name: Bad Damage
-            type: oracle_rollable
-            oracle_type: column_text
-            rows:
-              - <<: *Damage.0
-                text: Breaking morale
-              - <<: *Damage.1
-                text: Severe casualties
-              - <<: *Damage.2
-                text: Fraying rigging
-              - <<: *Damage.3
-                text: Splintering mast
-              - <<: *Damage.4
-                text: Torn sail
-              - <<: *Damage.5
-                text: Jammed rudder
-              - <<: *Damage.6
-                text: Fire below decks
-              - <<: *Damage.7
-                text: Flooded bilge
-              - <<: *Damage.8
-                text: Damaged cannons
-              - <<: *Damage.9
-                text: Buckling hull
-              - <<: *Damage.10
-                text: Failing compartment, module, or support vehicle
-              - *Damage.11
-          critical_damage:
-            name: Critical Damage
-            type: oracle_rollable
-            oracle_type: column_text
-            rows:
-              - <<: *Damage.0
-                text: Broken morale
-              - <<: *Damage.1
-                text: Horrible casualties
-              - <<: *Damage.2
-                text: Broken rigging
-              - <<: *Damage.3
-                text: Broken mast
-              - <<: *Damage.4
-                text: Mangled sail
-              - <<: *Damage.5
-                text: Broken rudder
-              - <<: *Damage.6
-                text: Burning magazine
-              - <<: *Damage.7
-                text: Keeling over
-              - <<: *Damage.8
-                text: Destroyed cannons
-              - <<: *Damage.9
-                text: Breached hull
-              - <<: *Damage.10
-                text: Broken compartment, module, or support vehicle
-              - *Damage.11
