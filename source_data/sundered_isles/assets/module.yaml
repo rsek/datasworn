@@ -606,8 +606,7 @@ assets:
             Choose one of your stats to represent the figurehead’s theme. When you depart a port or anchorage, you may roll +linked stat. You cannot burn momentum on this roll. On a strong hit, the figurehead’s luck offers a boon; you and your allies take +2 momentum and +1 spirit. On a weak hit, you and your allies take +1 momentum. On a miss, the luck is foul; you and your allies [Lose Momentum](move:starforged/suffer/lose_momentum) (-1), and the figurehead offers no benefits until you next check its luck.
           moves:
             depart_port:
-            # TODO
-            # allow_momentum_burn: false
+              allow_momentum_burn: false
               type: move
               name: Depart Port
               roll_type: action_roll

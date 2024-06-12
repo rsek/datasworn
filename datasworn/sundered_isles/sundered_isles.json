@@ -54057,6 +54057,7 @@
 											"text": "On a __miss__, it is away or unable to respond; [Pay the Price](move:starforged/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/companion/dolphin.0.call_dolphin"
 								}
 							},
@@ -54442,6 +54443,7 @@
 											"text": "On a __miss__, the monkey faces its own cost or makes the situation worse."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/companion/monkey.0.monkey_business"
 								}
 							},
@@ -55646,6 +55648,7 @@
 											"text": "On a __miss__, the event flops or is dramatically cut short; [Pay the Price](move:starforged/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/module/gilded_adornments.1.host_reception"
 								}
 							},
@@ -55933,6 +55936,7 @@
 											"text": "On a __miss__, the event is ruined by a crisis, complication, or dispute."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/module/improved_galley.1.indulge_with_provisions"
 								}
 							},
@@ -56099,6 +56103,7 @@
 											"text": "On a __miss__, mark unprepared as normal."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/module/improved_hold.1.draw_reserves"
 								}
 							},
@@ -56271,6 +56276,7 @@
 											"text": "On a __miss__, you must count the cost; [Pay the Price](move:starforged/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/module/improved_sick_bay.0.aid_wounded"
 								}
 							},
@@ -56501,6 +56507,7 @@
 							"text": "Choose one of your stats to represent the figurehead’s theme. When you depart a port or anchorage, you may roll +linked stat. You cannot burn momentum on this roll. On a strong hit, the figurehead’s luck offers a boon; you and your allies take +2 momentum and +1 spirit. On a weak hit, you and your allies take +1 momentum. On a miss, the luck is foul; you and your allies [Lose Momentum](move:starforged/suffer/lose_momentum) (-1), and the figurehead offers no benefits until you next check its luck.",
 							"moves": {
 								"depart_port": {
+									"allow_momentum_burn": false,
 									"type": "move",
 									"name": "Depart Port",
 									"roll_type": "action_roll",
@@ -57588,6 +57595,7 @@
 											"text": "On a __miss__, the performance leaves you or others troubled; [Pay the Price](move:starforged/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/path/musician.2.memorialize_in_song"
 								}
 							},
@@ -57873,6 +57881,7 @@
 											"text": "On a __miss__, you encounter hardship or a new danger; [Pay the Price](move:starforged/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/path/overlander.1.shelter"
 								}
 							},
@@ -57954,6 +57963,7 @@
 											"text": "On a __miss__, you make a bad deal; [Pay the Price](move:starforged/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/path/peddler.0.peddle_your_wares"
 								}
 							},
@@ -58054,6 +58064,7 @@
 											"text": "On a __miss__, choose one, but this prize also brings an unexpected danger; [Pay the Price](move:starforged/fate/pay_the_price).\n\n  * Build your fortune: Mark 1 tick on your quests legacy track.\n  * Share the spoils: Mark 1 tick on your bonds legacy track."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/path/pirate_captain.0.seize_your_prize"
 								}
 							},
@@ -58671,6 +58682,7 @@
 											"text": "On a __miss__, choose one and [Endure Stress](move:starforged/suffer/endure_stress) (-2).\n\n  * You spot an unwelcome rival, authority, or former beau.\n  * You commit an embarrassing faux pas.\n  * You are upstaged by another’s entrance."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/path/socialite.1.make_a_grand_entrance"
 								}
 							},
@@ -59226,6 +59238,7 @@
 											"text": "On a __miss__, the capricious winds are foul; you and your allies [Lose Momentum](move:starforged/suffer/lose_momentum) (-2), and face weather-related hazards as appropriate.\n\nNo matter the outcome, the winds are fair after a few hours."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:sundered_isles/path/windbinder.0.bind_the_winds"
 								}
 							},
@@ -60100,6 +60113,7 @@
 							}
 						]
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:sundered_isles/exploration/undertake_an_expedition"
 				},
 				"make_a_discovery": {
@@ -60288,6 +60302,7 @@
 						]
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:sundered_isles/exploration/make_a_discovery"
 				},
 				"confront_chaos": {
@@ -60467,6 +60482,7 @@
 						]
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:sundered_isles/exploration/confront_chaos"
 				},
 				"set_a_course": {
@@ -60516,6 +60532,7 @@
 							}
 						]
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:sundered_isles/exploration/set_a_course"
 				}
 			},
@@ -60620,6 +60637,7 @@
 							}
 						]
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:sundered_isles/combat/enter_the_fray"
 				}
 			},
@@ -60758,6 +60776,7 @@
 							}
 						]
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:sundered_isles/suffer/withstand_damage"
 				}
 			},
@@ -60863,6 +60882,7 @@
 							}
 						]
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:sundered_isles/recover/resupply"
 				},
 				"repair": {
@@ -60918,6 +60938,7 @@
 							}
 						]
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:sundered_isles/recover/repair"
 				}
 			},

@@ -57,8 +57,8 @@
 				"title",
 				"authors",
 				"date",
-				"url",
 				"license",
+				"url",
 				"rules",
 				"oracles",
 				"assets",
@@ -93,13 +93,13 @@
 					"$ref": "#/definitions/Date",
 					"description": "The date of the source documents's last update, formatted YYYY-MM-DD. Required because it's used to determine whether the data needs updating."
 				},
+				"license": {
+					"$ref": "#/definitions/License"
+				},
 				"url": {
 					"$ref": "#/definitions/WebUrl",
 					"description": "A URL where the source document is available.",
 					"examples": ["https://ironswornrpg.com"]
-				},
-				"license": {
-					"$ref": "#/definitions/License"
 				},
 				"rules": {
 					"$ref": "#/definitions/Rules"
@@ -247,13 +247,13 @@
 					"$ref": "#/definitions/Date",
 					"description": "The date of the source documents's last update, formatted YYYY-MM-DD. Required because it's used to determine whether the data needs updating."
 				},
+				"license": {
+					"$ref": "#/definitions/License"
+				},
 				"url": {
 					"$ref": "#/definitions/WebUrl",
 					"description": "A URL where the source document is available.",
 					"examples": ["https://ironswornrpg.com"]
-				},
-				"license": {
-					"$ref": "#/definitions/License"
 				},
 				"rules": {
 					"$ref": "#/definitions/RulesExpansion"
@@ -882,16 +882,16 @@
 					"type": "string",
 					"examples": ["Shawn Tomkin"]
 				},
-				"url": {
-					"type": "string",
-					"description": "An optional URL for the author's website.",
-					"format": "uri"
-				},
 				"email": {
 					"title": "Email",
 					"type": "string",
 					"description": "An optional email contact for the author",
 					"format": "email"
+				},
+				"url": {
+					"type": "string",
+					"description": "An optional URL for the author's website.",
+					"format": "uri"
 				}
 			}
 		},
@@ -935,14 +935,10 @@
 			"title": "SourceInfo",
 			"type": "object",
 			"description": "Metadata describing the original source of this item",
-			"required": ["title", "authors", "date", "url", "license"],
+			"required": ["title", "authors", "date", "license", "url"],
 			"properties": {
 				"title": {
 					"$ref": "#/definitions/SourceTitle"
-				},
-				"page": {
-					"$ref": "#/definitions/PageNumber",
-					"description": "The page number where this item is described in full."
 				},
 				"authors": {
 					"type": "array",
@@ -956,13 +952,17 @@
 					"$ref": "#/definitions/Date",
 					"description": "The date of the source documents's last update, formatted YYYY-MM-DD. Required because it's used to determine whether the data needs updating."
 				},
+				"license": {
+					"$ref": "#/definitions/License"
+				},
+				"page": {
+					"$ref": "#/definitions/PageNumber",
+					"description": "The page number where this item is described in full."
+				},
 				"url": {
 					"$ref": "#/definitions/WebUrl",
 					"description": "A URL where the source document is available.",
 					"examples": ["https://ironswornrpg.com"]
-				},
-				"license": {
-					"$ref": "#/definitions/License"
 				}
 			}
 		},
@@ -5184,7 +5184,8 @@
 				"roll_type",
 				"trigger",
 				"text",
-				"outcomes"
+				"outcomes",
+				"allow_momentum_burn"
 			],
 			"properties": {
 				"_id": {
@@ -5229,6 +5230,11 @@
 				"_comment": {
 					"type": "string",
 					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"description": "Is burning momentum allowed for this move?",
+					"default": true
 				}
 			}
 		},
@@ -5308,7 +5314,8 @@
 				"roll_type",
 				"trigger",
 				"text",
-				"outcomes"
+				"outcomes",
+				"allow_momentum_burn"
 			],
 			"properties": {
 				"_id": {
@@ -5354,6 +5361,12 @@
 				"_comment": {
 					"type": "string",
 					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"description": "Is burning momentum allowed for this move?",
+					"default": false,
+					"const": false
 				}
 			}
 		},
@@ -5368,7 +5381,8 @@
 				"tracks",
 				"trigger",
 				"text",
-				"outcomes"
+				"outcomes",
+				"allow_momentum_burn"
 			],
 			"properties": {
 				"_id": {
@@ -5417,6 +5431,12 @@
 				"_comment": {
 					"type": "string",
 					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"description": "Is burning momentum allowed for this move?",
+					"default": false,
+					"const": false
 				}
 			}
 		},
@@ -5430,7 +5450,8 @@
 				"roll_type",
 				"trigger",
 				"text",
-				"outcomes"
+				"outcomes",
+				"allow_momentum_burn"
 			],
 			"properties": {
 				"_id": {
@@ -5475,6 +5496,12 @@
 				"_comment": {
 					"type": "string",
 					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"description": "Is burning momentum allowed for this move?",
+					"default": false,
+					"const": false
 				}
 			}
 		},
@@ -5556,7 +5583,8 @@
 				"trigger",
 				"text",
 				"outcomes",
-				"_source"
+				"_source",
+				"allow_momentum_burn"
 			],
 			"properties": {
 				"_id": {
@@ -5621,6 +5649,11 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"description": "Is burning momentum allowed for this move?",
+					"default": true
 				}
 			}
 		},
@@ -5810,7 +5843,8 @@
 				"trigger",
 				"text",
 				"outcomes",
-				"_source"
+				"_source",
+				"allow_momentum_burn"
 			],
 			"properties": {
 				"_id": {
@@ -5876,6 +5910,12 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"description": "Is burning momentum allowed for this move?",
+					"default": false,
+					"const": false
 				}
 			}
 		},
@@ -5958,7 +5998,8 @@
 				"trigger",
 				"text",
 				"outcomes",
-				"_source"
+				"_source",
+				"allow_momentum_burn"
 			],
 			"properties": {
 				"_id": {
@@ -6027,6 +6068,12 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"description": "Is burning momentum allowed for this move?",
+					"default": false,
+					"const": false
 				}
 			}
 		},
@@ -6078,7 +6125,8 @@
 				"trigger",
 				"text",
 				"outcomes",
-				"_source"
+				"_source",
+				"allow_momentum_burn"
 			],
 			"properties": {
 				"_id": {
@@ -6143,6 +6191,12 @@
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
 					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"description": "Is burning momentum allowed for this move?",
+					"default": false,
+					"const": false
 				}
 			}
 		},

@@ -13585,6 +13585,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/combat_talent/fletcher.2.craft_arrow"
 								}
 							},
@@ -14173,6 +14174,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/combat_talent/sunderer.2.carve_rune"
 								}
 							},
@@ -15659,6 +15661,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/path/alchemist.0.create_elixir"
 								}
 							},
@@ -16310,6 +16313,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/path/dancer.2.commemorate"
 								}
 							},
@@ -17583,6 +17587,7 @@
 											"text": "On a __miss__, you are [Out of Supply](move:classic/suffer/out_of_supply)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/path/outcast.0.scrape_by"
 								}
 							},
@@ -17666,6 +17671,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/path/pretender.0.establish_false_identity"
 								}
 							},
@@ -19108,6 +19114,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/ritual/augur.0.augur"
 								}
 							},
@@ -19195,6 +19202,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/ritual/awakening.0.awaken_simulacrum"
 								}
 							},
@@ -19292,6 +19300,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/ritual/bind.0.bind"
 								}
 							},
@@ -19375,6 +19384,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/ritual/communion.0.commune"
 								}
 							},
@@ -19462,6 +19472,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/ritual/divination.0.cast_runes"
 								}
 							},
@@ -19549,6 +19560,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/ritual/invoke.0.invoke"
 								}
 							},
@@ -19683,6 +19695,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/ritual/keen.0.keen"
 								}
 							},
@@ -19766,6 +19779,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/ritual/leech.0.draw_blood_rune"
 								}
 							},
@@ -19868,6 +19882,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/ritual/lightbearer.0.capture_light"
 								}
 							},
@@ -19971,6 +19986,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/ritual/scry.0.scry"
 								}
 							},
@@ -20054,6 +20070,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/ritual/shadow_walk.0.shadow_walk"
 								}
 							},
@@ -20141,6 +20158,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/ritual/sway.0.sway"
 								}
 							},
@@ -20226,6 +20244,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/ritual/talisman.0.fashion_talisman"
 								}
 							},
@@ -20313,6 +20332,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/ritual/tether.0.tether"
 								}
 							},
@@ -20435,6 +20455,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/ritual/totem.0.focus_totem"
 								}
 							},
@@ -20522,6 +20543,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/ritual/visage.0.paint_visage"
 								}
 							},
@@ -20609,6 +20631,7 @@
 											"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 										}
 									},
+									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:classic/ritual/ward.0.ward"
 								}
 							},
@@ -21028,6 +21051,7 @@
 							"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:classic/adventure/face_danger"
 				},
 				"secure_an_advantage": {
@@ -21113,6 +21137,7 @@
 							"text": "On a __miss__, you fail or your assumptions betray you. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:classic/adventure/secure_an_advantage"
 				},
 				"gather_information": {
@@ -21157,6 +21182,7 @@
 							"text": "On a __miss__, your investigation unearths a dire threat or reveals an unwelcome truth that undermines your quest. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:classic/adventure/gather_information"
 				},
 				"heal": {
@@ -21215,6 +21241,7 @@
 							"text": "On a __miss__, your aid is ineffective. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:classic/adventure/heal"
 				},
 				"resupply": {
@@ -21259,6 +21286,7 @@
 							"text": "On a __miss__, you find nothing helpful. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:classic/adventure/resupply"
 				},
 				"make_camp": {
@@ -21303,6 +21331,7 @@
 							"text": "On a __miss__, you take no comfort. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:classic/adventure/make_camp"
 				},
 				"undertake_a_journey": {
@@ -21347,6 +21376,7 @@
 							"text": "On a __miss__, you are waylaid by a perilous event. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:classic/adventure/undertake_a_journey"
 				},
 				"reach_your_destination": {
@@ -21393,6 +21423,7 @@
 							"text": "On a __strong hit__, the situation at your destination favors you. Choose one.\n\n  * Make another move now (not a progress move), and add +1.\n  * Take +1 momentum."
 						}
 					},
+					"allow_momentum_burn": false,
 					"_id": "move:classic/adventure/reach_your_destination"
 				}
 			},
@@ -21478,6 +21509,7 @@
 							"text": "On a __miss__, they refuse or make a demand which costs you greatly. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:classic/relationship/compel"
 				},
 				"sojourn": {
@@ -21522,6 +21554,7 @@
 							"text": "On a __miss__, you find no help here. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:classic/relationship/sojourn"
 				},
 				"draw_the_circle": {
@@ -21566,6 +21599,7 @@
 							"text": "On a __miss__, you begin the duel at a disadvantage. Your foe has initiative. [Pay the Price](move:classic/fate/pay_the_price).\n\nThen, make moves to resolve the fight. If you are the victor, you may make a lawful demand, and your opponent must comply or forfeit their honor and standing. If you refuse the challenge, surrender, or are defeated, they make a demand of you."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:classic/relationship/draw_the_circle"
 				},
 				"forge_a_bond": {
@@ -21610,6 +21644,7 @@
 							"text": "On a __miss__, they reject you. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:classic/relationship/forge_a_bond"
 				},
 				"test_your_bond": {
@@ -21654,6 +21689,7 @@
 							"text": "On a __miss__, clear the bond and [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:classic/relationship/test_your_bond"
 				},
 				"aid_your_ally": {
@@ -21678,6 +21714,7 @@
 					},
 					"text": "When __you [Secure an Advantage](move:classic/adventure/secure_an_advantage) in direct support of an ally__, and score a hit, they (instead of you) can take the benefits of the move. If you are in combat and score a strong hit, you and your ally have initiative.",
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:classic/relationship/aid_your_ally"
 				},
 				"write_your_epilogue": {
@@ -21721,6 +21758,7 @@
 							"text": "On a __miss__, your fears are realized."
 						}
 					},
+					"allow_momentum_burn": false,
 					"_id": "move:classic/relationship/write_your_epilogue"
 				}
 			},
@@ -21806,6 +21844,7 @@
 							"text": "On a __miss__, combat begins with you at a disadvantage. [Pay the Price](move:classic/fate/pay_the_price). Your foe has initiative."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:classic/combat/enter_the_fray"
 				},
 				"strike": {
@@ -21861,6 +21900,7 @@
 							"text": "On a __miss__, your attack fails and you must [Pay the Price](move:classic/fate/pay_the_price). Your foe has initiative."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:classic/combat/strike"
 				},
 				"clash": {
@@ -21916,6 +21956,7 @@
 							"text": "On a __miss__, you are outmatched and must [Pay the Price](move:classic/fate/pay_the_price). Your foe has initiative."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:classic/combat/clash"
 				},
 				"turn_the_tide": {
@@ -21940,6 +21981,7 @@
 					},
 					"text": "Once per fight, when you __risk it all__, you may steal initiative from your foe to make a move (not a progress move). When you do, add +1 and take +1 momentum on a hit. If you fail to score a hit on that move, you must suffer a dire outcome. [Pay the Price](move:classic/fate/pay_the_price).",
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:classic/combat/turn_the_tide"
 				},
 				"end_the_fight": {
@@ -21986,6 +22028,7 @@
 							"text": "On a __miss__, you have lost this fight. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"allow_momentum_burn": false,
 					"_id": "move:classic/combat/end_the_fight"
 				},
 				"battle": {
@@ -22071,6 +22114,7 @@
 							"text": "On a __miss__, you are defeated and the objective is lost to you. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:classic/combat/battle"
 				}
 			},
@@ -22189,6 +22233,7 @@
 							"text": "On a __miss__, also suffer -1 momentum. If you are at 0 health, you must mark wounded or maimed (if currently unmarked) or roll on the following table.\n\n{{table>oracle_rollable:classic/moves/endure_harm}}"
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:classic/suffer/endure_harm"
 				},
 				"face_death": {
@@ -22233,6 +22278,7 @@
 							"text": "On a __miss__, you are dead."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:classic/suffer/face_death"
 				},
 				"companion_endure_harm": {
@@ -22282,6 +22328,7 @@
 							"text": "On a __miss__, also suffer -1 momentum. If your companion’s health is 0, they are gravely wounded and out of action. Without aid, they die in an hour or two.\n\nIf you roll a miss with a 1 on your action die, and your companion’s health is 0, they are now dead. Take 1 experience for each marked ability on your companion asset, and remove it."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:classic/suffer/companion_endure_harm"
 				},
 				"endure_stress": {
@@ -22373,6 +22420,7 @@
 							"text": "On a __miss__, also suffer -1 momentum. If you are at 0 spirit, you must mark shaken or corrupted (if currently unmarked) or roll on the following table.\n\n{{table>oracle_rollable:classic/moves/endure_stress}}"
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:classic/suffer/endure_stress"
 				},
 				"face_desolation": {
@@ -22417,6 +22465,7 @@
 							"text": "On a __miss__, you succumb to despair or horror and are lost."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:classic/suffer/face_desolation"
 				},
 				"out_of_supply": {
@@ -22441,6 +22490,7 @@
 					},
 					"text": "When __your supply is exhausted__ (reduced to 0), mark unprepared. If you suffer additional -supply while unprepared, you must exchange each additional -supply for any combination of -health, -spirit or -momentum as appropriate to the circumstances.",
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:classic/suffer/out_of_supply"
 				},
 				"face_a_setback": {
@@ -22465,6 +22515,7 @@
 					},
 					"text": "When __your momentum is at its minimum__ (-6), and you suffer additional -momentum, choose one.\n\n  * Exchange each additional -momentum for any combination of -health, -spirit, or -supply as appropriate to the circumstances.\n  * Envision an event or discovery ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure) which undermines your progress in a current quest, journey or fight. Then, for each additional _momentum, clear 1 unit of progress on that track per its rank (troublesome=clear 3 progress; dangerous=clear 2 progress; formidable=clear 1 progress; extreme=clear 2 ticks; epic=clear 1 tick).",
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:classic/suffer/face_a_setback"
 				}
 			},
@@ -22529,6 +22580,7 @@
 							"text": "On a __miss__, you face a significant obstacle before you can begin your quest. Envision what stands in your way ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure), and choose one.\n\n  * You press on: Suffer -2 momentum, and do what you must to overcome this obstacle.\n  * You give up: [Forsake Your Vow](move:classic/quest/forsake_your_vow)."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:classic/quest/swear_an_iron_vow"
 				},
 				"reach_a_milestone": {
@@ -22553,6 +22605,7 @@
 					},
 					"text": "When __you make significant progress in your quest by overcoming a critical obstacle, completing a perilous journey, solving a complex mystery, defeating a powerful threat, gaining vital support, or acquiring a crucial item__, you may mark progress.\n\n  * Troublesome quest: Mark 3 progress.\n  * Dangerous quest: Mark 2 progress.\n  * Formidable quest: Mark 1 progress.\n  * Extreme quest: Mark 2 ticks.\n  * Epic quest: Mark 1 tick.",
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:classic/quest/reach_a_milestone"
 				},
 				"fulfill_your_vow": {
@@ -22599,6 +22652,7 @@
 							"text": "On a __miss__, your quest is undone. Envision what happens ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure), and choose one.\n\n  * You recommit: Clear all but one filled progress, and raise the quest’s rank by one (if not already epic).\n  * You give up: [Forsake Your Vow](move:classic/quest/forsake_your_vow)."
 						}
 					},
+					"allow_momentum_burn": false,
 					"_id": "move:classic/quest/fulfill_your_vow"
 				},
 				"forsake_your_vow": {
@@ -22623,6 +22677,7 @@
 					},
 					"text": "When __you renounce your quest, betray your promise, or the goal is lost to you__, clear the vow and [Endure Stress](move:classic/suffer/endure_stress). You suffer _spirit equal to the rank of your quest (troublesome=1; dangerous=2; formidable=3; extreme=4; epic=5). If the vow was made to a person or community with whom you share a bond, Test Your Bond when you next meet.",
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:classic/quest/forsake_your_vow"
 				},
 				"advance": {
@@ -22647,6 +22702,7 @@
 					},
 					"text": "When __you focus on your skills, receive training, find inspiration, earn a reward, or gain a companion__, you may spend 3 experience to add a new asset, or 2 experience to upgrade an asset.",
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:classic/quest/advance"
 				}
 			},
@@ -22828,6 +22884,7 @@
 						}
 					},
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:classic/fate/pay_the_price"
 				},
 				"ask_the_oracle": {
@@ -22984,6 +23041,7 @@
 					},
 					"text": "When __you seek to resolve questions, discover details in the world, determine how other characters respond, or trigger encounters or events__, you may...\n\n  * Draw a conclusion: Decide the answer based on the most interesting and obvious result.\n  * Ask a yes/no question: Decide the odds of a ‘yes’, and roll on the table below to check the answer.\n  * Pick two: Envision two options. Rate one as ‘likely’, and roll on the table below to see if it is true. If not, it is the other.\n  * Spark an idea: Brainstorm or use a random prompt.\n\nOdds           | The answer is ‘yes’ if you roll...\n---------------|-----------------------------------\nAlmost Certain | 11 or greater\nLikely         | 26 or greater\n50/50          | 51 or greater\nUnlikely       | 76 or greater\nSmall Chance   | 91 or greater\n\nOn a match, an extreme result or twist has occurred.",
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:classic/fate/ask_the_oracle"
 				}
 			},

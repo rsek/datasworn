@@ -10153,6 +10153,7 @@
 					},
 					"text": "When __you resolve to enter a perilous site in pursuit of an objective__, choose the theme and domain which best represent its nature ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure), and give it a rank.\n\n  * Troublesome site: 3 progress per area.\n  * Dangerous site: 2 progress per area.\n  * Formidable site: 1 progress per area.\n  * Extreme site: 2 ticks per area.\n  * Epic site: 1 tick per area.\n\nIf you are returning to a previously explored site, roll both challenge dice, take the lowest value, and clear that number of progress boxes.\n\nThen, [Delve the Depths](move:delve/delve/delve_the_depths) to explore this place.",
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:delve/delve/discover_a_site"
 				},
 				"delve_the_depths": {
@@ -10352,6 +10353,7 @@
 							"text": "On a __miss__, [Reveal a Danger](move:delve/delve/reveal_a_danger)."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:delve/delve/delve_the_depths"
 				},
 				"find_an_opportunity": {
@@ -10461,6 +10463,7 @@
 					},
 					"text": "When __you encounter a helpful situation or feature within a site__, roll on the following table. If you are making this move as a result of a strong hit on [Delve the Depths](move:delve/delve/delve_the_depths), you may pick or envision an opportunity instead of rolling.\n\nThen, choose one.\n\n  * Gain insight or prepare: Take +1 momentum.\n  * Take action now: You and any allies may make a move (not a progress move) which directly leverages the opportunity. When you do, add +1 and take +1 momentum on a hit.\n\n{{table>oracle_rollable:delve/moves/find_an_opportunity}}",
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:delve/delve/find_an_opportunity"
 				},
 				"reveal_a_danger": {
@@ -10593,6 +10596,7 @@
 					},
 					"text": "When __you encounter a risky situation within a site__, envision the danger or roll on the following table.\n\n{{table>oracle_rollable:delve/moves/reveal_a_danger}}",
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:delve/delve/reveal_a_danger"
 				},
 				"check_your_gear": {
@@ -10637,6 +10641,7 @@
 							"text": "On a __miss__, you don’t have it and the situation grows more perilous. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:delve/delve/check_your_gear"
 				},
 				"locate_your_objective": {
@@ -10683,6 +10688,7 @@
 							"text": "On a __miss__, your objective falls out of reach, you have been misled about the nature of your objective, or you discover that this site holds unexpected depths. If you continue your exploration, clear all but one filled progress and raise the site’s rank by one (if not already epic)."
 						}
 					},
+					"allow_momentum_burn": false,
 					"_id": "move:delve/delve/locate_your_objective"
 				},
 				"escape_the_depths": {
@@ -10768,6 +10774,7 @@
 							"text": "On a __miss__, a dire threat or imposing obstacle stands in your way. [Reveal a Danger](move:delve/delve/reveal_a_danger). If you survive, you may make your escape."
 						}
 					},
+					"allow_momentum_burn": true,
 					"_id": "move:delve/delve/escape_the_depths"
 				},
 				"reveal_a_danger_alt": {
@@ -10887,6 +10894,7 @@
 					},
 					"text": "When __you encounter a risky situation within a site__, envision the danger or roll on the following table.\n\n{{table>oracle_rollable:delve/moves/reveal_a_danger_alt}}",
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:delve/delve/reveal_a_danger_alt"
 				}
 			},
@@ -10931,6 +10939,7 @@
 					},
 					"text": "When __you make a move and score a miss__, mark a tick on your failure track. If __you score a miss when making a progress move__, mark two ticks.",
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:delve/failure/mark_your_failure"
 				},
 				"learn_from_your_failures": {
@@ -10974,6 +10983,7 @@
 							"text": "On a __miss__, you’ve learned the wrong lessons. Take 1 experience and clear all progress. Then, envision how you set off on an ill-fated path."
 						}
 					},
+					"allow_momentum_burn": false,
 					"_id": "move:delve/failure/learn_from_your_failures"
 				}
 			},
@@ -11058,6 +11068,7 @@
 					},
 					"text": "When __you give ground to a threat through inaction, failure, or delay__, roll on the table below and envision how the change manifests in your world ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure).\n\n{{table>oracle_rollable:delve/moves/advance_a_threat}}\n\nOn a match, this development also exposes a surprising aspect of the threat’s plan or nature.\n\nIf __you mark the last box on the threat’s menace track__, the threat achieves its goal, or the final dire outcome occurs. You must [Forsake Your Vow](move:classic/quest/forsake_your_vow).",
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:delve/threat/advance_a_threat"
 				},
 				"take_a_hiatus": {
@@ -11082,6 +11093,7 @@
 					},
 					"text": "When __you spend an extended time recovering in a safe place while a threat is active__, do any of the following.\n\n  * Clear any marked conditions.\n  * Set your health, spirit, supply, and companion health to their maximum values.\n  * Set your momentum to its reset value.\n\nThen, for each active threat, [Advance a Threat](move:delve/legacy/advance_a_threat).",
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:delve/threat/take_a_hiatus"
 				}
 			},
@@ -11127,6 +11139,7 @@
 					},
 					"text": "When __you make a move aided by an augmented asset__, roll your rarity die in place of your action die.\n\nOn __any result__ with 6 showing on the rarity die, the power of the rarity manifests in a dramatic and obvious way. You score an automatic __strong hit__ and take +1 momentum.\n\nOn a __hit__ with 5 showing on the rarity die, the power of the rarity manifests in a subtle way. Take +1 momentum.\n\nOn a __miss__ with 1 showing on the rarity die, the rarity’s power fails or works against you.",
 					"outcomes": null,
+					"allow_momentum_burn": false,
 					"_id": "move:delve/rarity/wield_a_rarity"
 				}
 			},

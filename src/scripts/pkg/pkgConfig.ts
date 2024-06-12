@@ -79,7 +79,7 @@ export const Starforged: RulesPackageConfig = {
 export const SunderedIsles: RulesPackageConfig = {
 	type: 'expansion',
 	paths: {
-		source: path.join(ROOT_SOURCE_DATA, 'sundered-isles')
+		source: path.join(ROOT_SOURCE_DATA, 'sundered_isles')
 	},
 	id: 'sundered_isles',
 	pkg: {

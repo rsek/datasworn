@@ -5,7 +5,8 @@ import {
 	type TNull,
 	type TRef,
 	type TObject,
-	type TLiteral
+	type TLiteral,
+	type TBoolean
 } from '@sinclair/typebox'
 import { ExtractLiteralFromEnum } from '../utils/ExtractLiteralFromEnum.js'
 import { Id, Localize } from '../common/index.js'
@@ -50,6 +51,22 @@ export function Move<
 	Trigger extends TRef<TTrigger>,
 	Outcomes extends TRef<TMoveOutcomes> | TNull
 >(rollType: RollType, trigger: Trigger, outcomes: Outcomes, options = {}) {
+	let allow_momentum_burn: TLiteral<boolean> | TBoolean
+
+	const description = 'Is burning momentum allowed for this move?'
+
+	switch (rollType) {
+		case 'action_roll':
+			allow_momentum_burn = Type.Boolean({
+				default: true,
+				description
+			})
+			break
+		default:
+			allow_momentum_burn = Type.Literal(false, { default: false, description })
+			break
+	}
+
 	const base = Utils.Assign([
 		MoveBase,
 		Type.Object({
@@ -59,6 +76,7 @@ export function Move<
 				description: 'Trigger conditions for this move.',
 				...trigger
 			} as Trigger,
+			allow_momentum_burn,
 			outcomes: { title: 'MoveOutcomes', ...outcomes } as Outcomes
 		})
 	]) as TObject<
@@ -66,6 +84,7 @@ export function Move<
 			[moveDiscriminator]: TLiteral<RollType>
 			trigger: Trigger
 			outcomes: Outcomes
+			allow_momentum_burn: TLiteral<boolean> | TBoolean
 		}
 	>
 	return Generic.Collectable(Type.Ref(Id.MoveId), 'move', base, options)
@@ -85,6 +104,7 @@ export type Move<
 		[moveDiscriminator]: RollType
 		trigger: MoveTrigger
 		outcomes: Outcomes
+		allow_momentum_burn: TLiteral<boolean> | TBoolean
 	}
 >
 
