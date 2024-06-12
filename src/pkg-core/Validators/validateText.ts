@@ -1,6 +1,6 @@
 import Pattern from '../IdElements/Pattern.js'
 
-const typeIdPattern = '[a-z][a-z_](?:.[a-z][a-z_]){0,2}+'
+const typeIdPattern = '[a-z][a-z_](?:.[a-z][a-z_]){0,2}'
 const dictKeyOrIndexPattern = `[\\/\\.][a-z_0-9]+`
 const pathPattern = `${Pattern.RulesPackageElement.source}(?:${dictKeyOrIndexPattern})+?`
 
@@ -13,7 +13,8 @@ const linkSymbolPattern = new RegExp(
 		`(?<=\\[\\w.+?\\]\\()`, // lookbehind for markdown text in square brackets, plus left paren
 		`(?<id>${idPattern})`,
 		`(?=\\))` // lookahead for right paren
-	].join('')
+	].join(''),
+	'g'
 )
 
 const macroSymbolPattern = new RegExp(
@@ -22,33 +23,33 @@ const macroSymbolPattern = new RegExp(
 		`(?<directive>[a-z][a-z_]+>)`,
 		`(?<id>${idPattern})`,
 		`(?=\\}\\})` // lookahead for right curly braces
-	].join('')
+	].join(''),
+	'g'
 )
 
-export function validateText(
+export function validateIdsInStrings(
 	data: unknown,
-	key: string,
-	idTracker: Set<string>
+	validIds: Map<string, unknown> | Set<string>
 ) {
 	const errors: unknown[] = []
 
-	forEachPrimitiveValue(data, key, (v, k) => {
+	forEachPrimitiveValue(data, undefined, (v, k) => {
 		if (typeof v !== 'string') return
 		// skip non-string values
 		// skip underscore keys
 		if (typeof k === 'string' && k.startsWith('_')) return
 
 		if (idPointerPattern.test(v)) {
-			validateIdPointer(v, idTracker)
+			validateIdPointer(v, validIds)
 			// if it's a standalone pointer, markdown checks can be skipped
 		} else {
 			try {
-				validateMarkdownIdPointers(v, idTracker)
+				validateMarkdownIdPointers(v, validIds)
 			} catch (e: any) {
 				errors.push(e)
 			}
 			try {
-				validateMacroIdPointers(v, idTracker)
+				validateMacroIdPointers(v, validIds)
 			} catch (e: any) {
 				errors.push(e)
 			}
@@ -56,9 +57,14 @@ export function validateText(
 	})
 
 	if (errors.length > 0) throw new Error(errors.map(String).join('\n'))
+
+	return true
 }
 
-export function validateMacroIdPointers(text: string, validIds: Set<string>) {
+export function validateMacroIdPointers(
+	text: string,
+	validIds: Map<string, unknown> | Set<string>
+) {
 	const macros = text.matchAll(macroSymbolPattern)
 
 	const errors = []
@@ -85,7 +91,7 @@ export function validateMacroIdPointers(text: string, validIds: Set<string>) {
 
 export function validateMarkdownIdPointers(
 	text: string,
-	validIds: Set<string>
+	validIds: Map<string, unknown> | Set<string>
 ) {
 	const links = text.matchAll(linkSymbolPattern)
 
@@ -119,7 +125,7 @@ export function validateIdPointer(
 /** Recursively iterates over JSON values, applying a function to every primitive boolean, number, string, and null value. */
 export function forEachPrimitiveValue<T = unknown>(
 	value: T,
-	key: string | number,
+	key: string | number | undefined,
 	fn: (v: boolean | number | string | null, k: unknown) => void
 ): void {
 	switch (typeof value) {

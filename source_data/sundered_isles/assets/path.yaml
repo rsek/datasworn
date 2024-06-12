@@ -77,7 +77,7 @@ assets:
                         - using: condition_meter
                           condition_meter: spirit
           - text: |-
-               Gain one path asset (not [Augmented](asset:sundered_isles/path/augmented)) at no extra cost to represent a mechanical fitting or modification. Spend 1 experience to upgrade this asset, or 1 experience to swap for another path asset with an equal number of upgrades. You may suffer the cost of a move by marking the installed asset as broken, and spend 2 repair points to restore its function.
+               Gain one path asset (not [Augmented](asset:starforged/path/augmented)) at no extra cost to represent a mechanical fitting or modification. Spend 1 experience to upgrade this asset, or 1 experience to swap for another path asset with an equal number of upgrades. You may suffer the cost of a move by marking the installed asset as broken, and spend 2 repair points to restore its function.
             enhance_asset:
               attachments:
                 assets:

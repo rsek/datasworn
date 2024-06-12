@@ -493,7 +493,7 @@ oracles:
           - roll: { min: 91, max: 95 }
             text: Destroyed
           - roll: { min: 96, max: 100 }
-            text: '[Derelict](id:starforged/oracle_collection/derelicts)'
+            text: '[Derelict](oracle_collection:starforged/derelicts)'
       first_look:
         name: First Look
         oracle_type: table_text

@@ -76,11 +76,11 @@ abstract class IdParser<
 		if (errors.length > 0) throw new ParseError(id, errors.join('\n'))
 	}
 
-	createdEmbeddedId<
+	createEmbeddedId<
 		TypeId extends TypeId.EmbeddableTypes,
 		Key extends string | number
 	>(typeId: TypeId, key: Key) {
-		IdParser.logger.debug(`[createdEmbeddedId] ${this.id} > ${typeId}, ${key}`)
+		// IdParser.logger.debug(`[createdEmbeddedId] ${this.id} > ${typeId}, ${key}`)
 		return new EmbeddedId<this, TypeId, Key>(this, typeId, key.toString())
 	}
 
@@ -285,9 +285,9 @@ abstract class IdParser<
 			)
 		else {
 			node._id = this.id
-			IdParser.logger.debug(
-				`[assignIdsIn] Assigned ${this.constructor.name} @ <${this.id}>`
-			)
+			// IdParser.logger.debug(
+			// 	`[assignIdsIn] Assigned ${this.constructor.name} @ <${this.id}>`
+			// )
 		}
 
 		if (recursive) {
@@ -322,11 +322,11 @@ abstract class IdParser<
 		recursive?: boolean,
 		index?: Map<string, TypeNode.Any>
 	) {
-		IdParser.logger.debug('[#assignIdsInDictionary]')
+		// IdParser.logger.debug('[#assignIdsInDictionary]')
 		for (const k in childNodes) {
 			const childNode = childNodes[k]
 			if (childNode == null) continue
-			const childParser = this.createdEmbeddedId(nextTypeId, k)
+			const childParser = this.createEmbeddedId(nextTypeId, k)
 			childParser.assignIdsIn(childNode, recursive, index)
 		}
 	}
@@ -337,10 +337,10 @@ abstract class IdParser<
 		recursive?: boolean,
 		index?: Map<string, TypeNode.Any>
 	) {
-		IdParser.logger.debug('[#assignIdsInArray]')
+		// IdParser.logger.debug('[#assignIdsInArray]')
 		for (let i = 0; i < childNodes.length; i++) {
 			const childNode = childNodes[i]
-			const childParser = this.createdEmbeddedId(nextTypeId, i)
+			const childParser = this.createEmbeddedId(nextTypeId, i)
 			childParser.assignIdsIn(childNode, recursive, index)
 		}
 	}
@@ -552,7 +552,7 @@ abstract class IdParser<
 		for (let i = 0; i < embeddedTypeIds.length; i++) {
 			const typeId = embeddedTypeIds[i] as TypeId.EmbeddableTypes
 			const pathKey = embeddedPaths[i]
-			lastParser = lastParser.createdEmbeddedId(typeId, pathKey)
+			lastParser = lastParser.createEmbeddedId(typeId, pathKey)
 		}
 
 		return lastParser

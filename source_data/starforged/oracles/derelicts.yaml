@@ -16,7 +16,7 @@ oracles:
       page: 348
     summary: Derelicts are the forsaken relics of human endeavors.
     description: |-
-      Derelicts are the forsaken relics of human endeavors. Use these First Look tables for your initial survey of the derelict. To reveal more about the look and original function or nature of the site, roll on appropriate tables in the [Starship](id:starforged/oracle_collection/starships) or [Settlement](id:starforged/oracle_collection/settlements) oracles. If you explore the depths of a derelict, you may use the zone oracles on the following pages to help envision what you find.
+      Derelicts are the forsaken relics of human endeavors. Use these First Look tables for your initial survey of the derelict. To reveal more about the look and original function or nature of the site, roll on appropriate tables in the [Starship](oracle_collection:starforged/starships) or [Settlement](oracle_collection:starforged/settlements) oracles. If you explore the depths of a derelict, you may use the zone oracles on the following pages to help envision what you find.
     collections:
       type:
         name: Derelict Type (by location)
@@ -113,42 +113,42 @@ oracles:
             #       derelict_type: [starship]
             rows:
               - <<: &ZoneRow.0
-                  text: '[Access](id:starforged/oracle_collection/derelicts/access)'
+                  text: '[Access](oracle_collection:starforged/derelicts/access)'
                   icon: icons/derelicts/access.svg
                 # game_objects: *obj:DerelictZone.Access
               - <<: &ZoneRow.1
-                  text: '[Community](id:starforged/oracle_collection/derelicts/community)'
+                  text: '[Community](oracle_collection:starforged/derelicts/community)'
                   icon: icons/derelicts/community.svg
                 roll: { min: 1, max: 5 }
                 # game_objects: *obj:DerelictZone.Community
               - roll: { min: 6, max: 30 }
                 <<: &ZoneRow.2
-                  text: '[Engineering](id:starforged/oracle_collection/derelicts/engineering)'
+                  text: '[Engineering](oracle_collection:starforged/derelicts/engineering)'
                   icon: icons/derelicts/engineering.svg
                 # game_objects: *obj:DerelictZone.Engineering
               - roll: { min: 31, max: 55 }
                 <<: &ZoneRow.3
-                  text: '[Living](id:starforged/oracle_collection/derelicts/living)'
+                  text: '[Living](oracle_collection:starforged/derelicts/living)'
                   icon: icons/derelicts/living.svg
                   # game_objects: *obj:DerelictZone.Living
               - roll: { min: 56, max: 65 }
                 <<: &ZoneRow.4
-                  text: '[Medical](id:starforged/oracle_collection/derelicts/medical)'
+                  text: '[Medical](oracle_collection:starforged/derelicts/medical)'
                   icon: icons/derelicts/medical.svg
                 # game_objects: *obj:DerelictZone.Medical
               - roll: { min: 66, max: 85 }
                 <<: &ZoneRow.5
-                  text: '[Operations](id:starforged/oracle_collection/derelicts/operations)'
+                  text: '[Operations](oracle_collection:starforged/derelicts/operations)'
                   icon: icons/derelicts/operations.svg
                 # game_objects: *obj:DerelictZone.Operations
               - roll: { min: 86, max: 90 }
                 <<: &ZoneRow.6
-                  text: '[Production](id:starforged/oracle_collection/derelicts/production)'
+                  text: '[Production](oracle_collection:starforged/derelicts/production)'
                   icon: icons/derelicts/production.svg
                 # game_objects: *obj:DerelictZone.Production
               - roll: { min: 91, max: 100 }
                 <<: &ZoneRow.7
-                  text: '[Research](id:starforged/oracle_collection/derelicts/research)'
+                  text: '[Research](oracle_collection:starforged/derelicts/research)'
                   icon: icons/derelicts/research.svg
                 # game_objects: *obj:DerelictZone.Research
           settlement:

@@ -865,7 +865,7 @@ assets:
 
                 * When a foe first crosses the boundary, take +1 momentum.
                 * When you first inflict harm against a foe within the boundary, inflict +1 harm.
-                * Your ward is ‘likely’ ([Ask the Oracle](id:classic/oracle_rollable/move/ask_the_oracle/likely)) to trap a foe within the boundary.
+                * Your ward is ‘likely’ ([Ask the Oracle](move.oracle_rollable:classic/fate/ask_the_oracle.likely)) to trap a foe within the boundary.
             enabled: true
             moves:
               ward:
@@ -887,14 +887,14 @@ assets:
 
                         * When a foe first crosses the boundary, take +1 momentum.
                         * When you first inflict harm against a foe within the boundary, inflict +1 harm.
-                        * Your ward is ‘likely’ ([Ask the Oracle](id:classic/oracle_rollable/move/ask_the_oracle/likely)) to trap a foe within the boundary.
+                        * Your ward is ‘likely’ ([Ask the Oracle](move.oracle_rollable:classic/fate/ask_the_oracle.likely)) to trap a foe within the boundary.
                   weak_hit:
                     text: |-
                       On a __weak hit__, choose one.
 
                         * When a foe first crosses the boundary, take +1 momentum.
                         * When you first inflict harm against a foe within the boundary, inflict +1 harm.
-                        * Your ward is ‘likely’ ([Ask the Oracle](id:classic/oracle_rollable/move/ask_the_oracle/likely)) to trap a foe within the boundary.
+                        * Your ward is ‘likely’ ([Ask the Oracle](move.oracle_rollable:classic/fate/ask_the_oracle.likely)) to trap a foe within the boundary.
                   miss: *MoveOutcome.Miss.Generic
           - text: |-
               As above, and improve the effect of your ward (+2 momentum, +2 harm, and [‘almost certain’](move.oracle_rollable:classic/fate/ask_the_oracle.almost_certain)).

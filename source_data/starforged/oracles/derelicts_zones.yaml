@@ -227,7 +227,7 @@ oracles:
                 text: New zone
               - &Area.11
                 roll: { min: 86, max: 100 }
-                text: New zone via [Access](id:starforged/oracle_collection/derelicts/access)
+                text: New zone via [Access](oracle_collection:starforged/derelicts/access)
           feature:
             <<: *Feature
             _source: *CollectionSource

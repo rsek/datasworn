@@ -9,8 +9,8 @@
 		}
 	],
 	"date": "2022-10-01",
-	"url": "https://ironswornrpg.com",
 	"license": "https://creativecommons.org/licenses/by/4.0",
+	"url": "https://ironswornrpg.com",
 	"rules": {
 		"condition_meters": {
 			"health": {
@@ -15535,7 +15535,7 @@
 										"min": 86,
 										"max": 100
 									},
-									"text": "New zone via [Access](id:starforged/oracle_collection/derelicts/access)"
+									"text": "New zone via [Access](oracle_collection:starforged/derelicts/access)"
 								}
 							],
 							"dice": "1d100",
@@ -15981,7 +15981,7 @@
 										"min": 86,
 										"max": 100
 									},
-									"text": "New zone via [Access](id:starforged/oracle_collection/derelicts/access)"
+									"text": "New zone via [Access](oracle_collection:starforged/derelicts/access)"
 								}
 							],
 							"dice": "1d100",
@@ -16427,7 +16427,7 @@
 										"min": 86,
 										"max": 100
 									},
-									"text": "New zone via [Access](id:starforged/oracle_collection/derelicts/access)"
+									"text": "New zone via [Access](oracle_collection:starforged/derelicts/access)"
 								}
 							],
 							"dice": "1d100",
@@ -16873,7 +16873,7 @@
 										"min": 86,
 										"max": 100
 									},
-									"text": "New zone via [Access](id:starforged/oracle_collection/derelicts/access)"
+									"text": "New zone via [Access](oracle_collection:starforged/derelicts/access)"
 								}
 							],
 							"dice": "1d100",
@@ -17319,7 +17319,7 @@
 										"min": 86,
 										"max": 100
 									},
-									"text": "New zone via [Access](id:starforged/oracle_collection/derelicts/access)"
+									"text": "New zone via [Access](oracle_collection:starforged/derelicts/access)"
 								}
 							],
 							"dice": "1d100",
@@ -17765,7 +17765,7 @@
 										"min": 86,
 										"max": 100
 									},
-									"text": "New zone via [Access](id:starforged/oracle_collection/derelicts/access)"
+									"text": "New zone via [Access](oracle_collection:starforged/derelicts/access)"
 								}
 							],
 							"dice": "1d100",
@@ -18211,7 +18211,7 @@
 										"min": 86,
 										"max": 100
 									},
-									"text": "New zone via [Access](id:starforged/oracle_collection/derelicts/access)"
+									"text": "New zone via [Access](oracle_collection:starforged/derelicts/access)"
 								}
 							],
 							"dice": "1d100",
@@ -18693,12 +18693,12 @@
 							"type": "oracle_rollable",
 							"rows": [
 								{
-									"text": "[Access](id:starforged/oracle_collection/derelicts/access)",
+									"text": "[Access](oracle_collection:starforged/derelicts/access)",
 									"icon": "icons/derelicts/access.svg",
 									"roll": null
 								},
 								{
-									"text": "[Community](id:starforged/oracle_collection/derelicts/community)",
+									"text": "[Community](oracle_collection:starforged/derelicts/community)",
 									"icon": "icons/derelicts/community.svg",
 									"roll": {
 										"min": 1,
@@ -18710,7 +18710,7 @@
 										"min": 6,
 										"max": 30
 									},
-									"text": "[Engineering](id:starforged/oracle_collection/derelicts/engineering)",
+									"text": "[Engineering](oracle_collection:starforged/derelicts/engineering)",
 									"icon": "icons/derelicts/engineering.svg"
 								},
 								{
@@ -18718,7 +18718,7 @@
 										"min": 31,
 										"max": 55
 									},
-									"text": "[Living](id:starforged/oracle_collection/derelicts/living)",
+									"text": "[Living](oracle_collection:starforged/derelicts/living)",
 									"icon": "icons/derelicts/living.svg"
 								},
 								{
@@ -18726,7 +18726,7 @@
 										"min": 56,
 										"max": 65
 									},
-									"text": "[Medical](id:starforged/oracle_collection/derelicts/medical)",
+									"text": "[Medical](oracle_collection:starforged/derelicts/medical)",
 									"icon": "icons/derelicts/medical.svg"
 								},
 								{
@@ -18734,7 +18734,7 @@
 										"min": 66,
 										"max": 85
 									},
-									"text": "[Operations](id:starforged/oracle_collection/derelicts/operations)",
+									"text": "[Operations](oracle_collection:starforged/derelicts/operations)",
 									"icon": "icons/derelicts/operations.svg"
 								},
 								{
@@ -18742,7 +18742,7 @@
 										"min": 86,
 										"max": 90
 									},
-									"text": "[Production](id:starforged/oracle_collection/derelicts/production)",
+									"text": "[Production](oracle_collection:starforged/derelicts/production)",
 									"icon": "icons/derelicts/production.svg"
 								},
 								{
@@ -18750,7 +18750,7 @@
 										"min": 91,
 										"max": 100
 									},
-									"text": "[Research](id:starforged/oracle_collection/derelicts/research)",
+									"text": "[Research](oracle_collection:starforged/derelicts/research)",
 									"icon": "icons/derelicts/research.svg"
 								}
 							],
@@ -18764,7 +18764,7 @@
 							"type": "oracle_rollable",
 							"rows": [
 								{
-									"text": "[Access](id:starforged/oracle_collection/derelicts/access)",
+									"text": "[Access](oracle_collection:starforged/derelicts/access)",
 									"icon": "icons/derelicts/access.svg",
 									"roll": null
 								},
@@ -18773,7 +18773,7 @@
 										"min": 1,
 										"max": 20
 									},
-									"text": "[Community](id:starforged/oracle_collection/derelicts/community)",
+									"text": "[Community](oracle_collection:starforged/derelicts/community)",
 									"icon": "icons/derelicts/community.svg"
 								},
 								{
@@ -18781,7 +18781,7 @@
 										"min": 21,
 										"max": 30
 									},
-									"text": "[Engineering](id:starforged/oracle_collection/derelicts/engineering)",
+									"text": "[Engineering](oracle_collection:starforged/derelicts/engineering)",
 									"icon": "icons/derelicts/engineering.svg"
 								},
 								{
@@ -18789,7 +18789,7 @@
 										"min": 31,
 										"max": 50
 									},
-									"text": "[Living](id:starforged/oracle_collection/derelicts/living)",
+									"text": "[Living](oracle_collection:starforged/derelicts/living)",
 									"icon": "icons/derelicts/living.svg"
 								},
 								{
@@ -18797,7 +18797,7 @@
 										"min": 51,
 										"max": 60
 									},
-									"text": "[Medical](id:starforged/oracle_collection/derelicts/medical)",
+									"text": "[Medical](oracle_collection:starforged/derelicts/medical)",
 									"icon": "icons/derelicts/medical.svg"
 								},
 								{
@@ -18805,7 +18805,7 @@
 										"min": 61,
 										"max": 70
 									},
-									"text": "[Operations](id:starforged/oracle_collection/derelicts/operations)",
+									"text": "[Operations](oracle_collection:starforged/derelicts/operations)",
 									"icon": "icons/derelicts/operations.svg"
 								},
 								{
@@ -18813,7 +18813,7 @@
 										"min": 71,
 										"max": 90
 									},
-									"text": "[Production](id:starforged/oracle_collection/derelicts/production)",
+									"text": "[Production](oracle_collection:starforged/derelicts/production)",
 									"icon": "icons/derelicts/production.svg"
 								},
 								{
@@ -18821,7 +18821,7 @@
 										"min": 91,
 										"max": 100
 									},
-									"text": "[Research](id:starforged/oracle_collection/derelicts/research)",
+									"text": "[Research](oracle_collection:starforged/derelicts/research)",
 									"icon": "icons/derelicts/research.svg"
 								}
 							],
@@ -18838,7 +18838,7 @@
 			"oracle_type": "tables",
 			"_id": "oracle_collection:starforged/derelicts",
 			"summary": "Derelicts are the forsaken relics of human endeavors.",
-			"description": "Derelicts are the forsaken relics of human endeavors. Use these First Look tables for your initial survey of the derelict. To reveal more about the look and original function or nature of the site, roll on appropriate tables in the [Starship](id:starforged/oracle_collection/starships) or [Settlement](id:starforged/oracle_collection/settlements) oracles. If you explore the depths of a derelict, you may use the zone oracles on the following pages to help envision what you find.",
+			"description": "Derelicts are the forsaken relics of human endeavors. Use these First Look tables for your initial survey of the derelict. To reveal more about the look and original function or nature of the site, roll on appropriate tables in the [Starship](oracle_collection:starforged/starships) or [Settlement](oracle_collection:starforged/settlements) oracles. If you explore the depths of a derelict, you may use the zone oracles on the following pages to help envision what you find.",
 			"contents": {
 				"location": {
 					"name": "Location",
@@ -21471,7 +21471,7 @@
 									},
 									"text": "[Legacy](oracle_rollable:starforged/factions/name/legacy) [Affiliation](oracle_rollable:starforged/factions/name/affiliation)",
 									"template": {
-										"text": "{{text:oracle_rollable:starforged/factions/name/legacy}} {{text:oracle_rollable:starforged/factions/name/affiliation}}"
+										"text": "{{text>oracle_rollable:starforged/factions/name/legacy}} {{text>oracle_rollable:starforged/factions/name/affiliation}}"
 									}
 								},
 								{
@@ -21488,7 +21488,7 @@
 									},
 									"text": "[Legacy](oracle_rollable:starforged/factions/name/legacy) [Identity](oracle_rollable:starforged/factions/name/identity)",
 									"template": {
-										"text": "{{text:oracle_rollable:starforged/factions/name/legacy}} {{text:oracle_rollable:starforged/factions/name/identity}}"
+										"text": "{{text>oracle_rollable:starforged/factions/name/legacy}} {{text>oracle_rollable:starforged/factions/name/identity}}"
 									}
 								},
 								{
@@ -21505,7 +21505,7 @@
 									},
 									"text": "[Identity](oracle_rollable:starforged/factions/name/identity) *of the* [Legacy](oracle_rollable:starforged/factions/name/legacy) [Affiliation](oracle_rollable:starforged/factions/name/affiliation)",
 									"template": {
-										"text": "{{text:oracle_rollable:starforged/factions/name/identity}} of the {{text:oracle_rollable:starforged/factions/name/legacy}} {{text:oracle_rollable:starforged/factions/name/affiliation}}"
+										"text": "{{text>oracle_rollable:starforged/factions/name/identity}} of the {{text>oracle_rollable:starforged/factions/name/legacy}} {{text>oracle_rollable:starforged/factions/name/affiliation}}"
 									}
 								},
 								{
@@ -21522,7 +21522,7 @@
 									},
 									"text": "[Affiliation](oracle_rollable:starforged/factions/name/affiliation) *of the* [Legacy](oracle_rollable:starforged/factions/name/legacy) [Identity](oracle_rollable:starforged/factions/name/identity)",
 									"template": {
-										"text": "{{text:oracle_rollable:starforged/factions/name/affiliation}} of the {{text:oracle_rollable:starforged/factions/name/legacy}} {{text:oracle_rollable:starforged/factions/name/identity}}"
+										"text": "{{text>oracle_rollable:starforged/factions/name/affiliation}} of the {{text>oracle_rollable:starforged/factions/name/legacy}} {{text>oracle_rollable:starforged/factions/name/identity}}"
 									}
 								}
 							],
@@ -23132,7 +23132,7 @@
 				"page": 370
 			},
 			"summary": "Themes help you envision atmosphere, features, and encounters within an unusual, aberrant, or important location.",
-			"description": "Themes help you envision atmosphere, features, and encounters within an unusual, aberrant, or important location.\n\nEach theme on the following pages includes a set of oracles.\n\n  * __Feature:__ Use this table to reveal a new aspect of the location.\n  * __Peril:__ Use this table to help envision a complication or hazard.\n  * __Opportunity:__ Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.\n\nYou can answer questions about a place using only the tables provided for a theme, such as when delving into an [Infested](id:starforged/oracle_collection/location_themes/infested) cave. Or pair a theme with other location oracles for more flavor and variety; for example, you might explore a [Haunted](id:starforged/oracle_collection/location_themes/haunted) [Grave World](id:starforged/oracle_collection/planets/grave), a [Ruined](id:starforged/oracle_collection/location_themes/ruined) [Derelict](id:starforged/oracle_collection/derelicts), a [Sacred](id:starforged/oracle_collection/location_themes/sacred) [Precursor Vault](id:starforged/oracle_collection/vaults), or an [Inhabited](id:starforged/oracle_collection/location_themes/inhabited) [Settlement](id:starforged/oracle_collection/settlements).\n\nWhen mixing-and-matching a theme with another set of tables, use the techniques described for an __oracle array__ (page 384) to determine which oracle you reference for that question or phase of your exploration.",
+			"description": "Themes help you envision atmosphere, features, and encounters within an unusual, aberrant, or important location.\n\nEach theme on the following pages includes a set of oracles.\n\n  * __Feature:__ Use this table to reveal a new aspect of the location.\n  * __Peril:__ Use this table to help envision a complication or hazard.\n  * __Opportunity:__ Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.\n\nYou can answer questions about a place using only the tables provided for a theme, such as when delving into an [Infested](oracle_collection:starforged/location_themes/infested) cave. Or pair a theme with other location oracles for more flavor and variety; for example, you might explore a [Haunted](oracle_collection:starforged/location_themes/haunted) [Grave World](oracle_collection:starforged/planets/grave), a [Ruined](oracle_collection:starforged/location_themes/ruined) [Derelict](oracle_collection:starforged/derelicts), a [Sacred](oracle_collection:starforged/location_themes/sacred) [Precursor Vault](oracle_collection:starforged/vaults), or an [Inhabited](oracle_collection:starforged/location_themes/inhabited) [Settlement](oracle_collection:starforged/settlements).\n\nWhen mixing-and-matching a theme with another set of tables, use the techniques described for an __oracle array__ (page 384) to determine which oracle you reference for that question or phase of your exploration.",
 			"contents": {
 				"type": {
 					"name": "Theme Type",
@@ -23162,7 +23162,7 @@
 								"min": 1,
 								"max": 15
 							},
-							"text": "[Chaotic](id:starforged/oracle_collection/location_themes/chaotic)",
+							"text": "[Chaotic](oracle_collection:starforged/location_themes/chaotic)",
 							"text2": "Reality is corrupted or warped in this place.",
 							"icon": "icons/location_theme/chaotic.svg"
 						},
@@ -23171,7 +23171,7 @@
 								"min": 16,
 								"max": 25
 							},
-							"text": "[Fortified](id:starforged/oracle_collection/location_themes/fortified)",
+							"text": "[Fortified](oracle_collection:starforged/location_themes/fortified)",
 							"text2": "Enemies defend this place against intruders.",
 							"icon": "icons/location_theme/fortified.svg"
 						},
@@ -23180,7 +23180,7 @@
 								"min": 26,
 								"max": 35
 							},
-							"text": "[Haunted](id:starforged/oracle_collection/location_themes/haunted)",
+							"text": "[Haunted](oracle_collection:starforged/location_themes/haunted)",
 							"text2": "Restless spirits are bound to this place.",
 							"icon": "icons/location_theme/haunted.svg"
 						},
@@ -23189,7 +23189,7 @@
 								"min": 36,
 								"max": 50
 							},
-							"text": "[Infested](id:starforged/oracle_collection/location_themes/infested)",
+							"text": "[Infested](oracle_collection:starforged/location_themes/infested)",
 							"text2": "Foul creatures have overrun this place.",
 							"icon": "icons/location_theme/infested.svg"
 						},
@@ -23198,7 +23198,7 @@
 								"min": 51,
 								"max": 60
 							},
-							"text": "[Inhabited](id:starforged/oracle_collection/location_themes/inhabited)",
+							"text": "[Inhabited](oracle_collection:starforged/location_themes/inhabited)",
 							"text2": "People have built a community in this place.",
 							"icon": "icons/location_theme/inhabited.svg"
 						},
@@ -23207,7 +23207,7 @@
 								"min": 61,
 								"max": 75
 							},
-							"text": "[Mechanical](id:starforged/oracle_collection/location_themes/mechanical)",
+							"text": "[Mechanical](oracle_collection:starforged/location_themes/mechanical)",
 							"text2": "Machines and technology hold sway in this place.",
 							"icon": "icons/location_theme/mechanical.svg"
 						},
@@ -23216,7 +23216,7 @@
 								"min": 76,
 								"max": 90
 							},
-							"text": "[Ruined](id:starforged/oracle_collection/location_themes/ruined)",
+							"text": "[Ruined](oracle_collection:starforged/location_themes/ruined)",
 							"text2": "Time, disaster, or war have ravaged this place.",
 							"icon": "icons/location_theme/ruined.svg"
 						},
@@ -23225,7 +23225,7 @@
 								"min": 91,
 								"max": 100
 							},
-							"text": "[Sacred](id:starforged/oracle_collection/location_themes/sacred)",
+							"text": "[Sacred](oracle_collection:starforged/location_themes/sacred)",
 							"text2": "Worshipers glorify strange powers in this place.",
 							"icon": "icons/location_theme/sacred.svg"
 						}
@@ -27642,7 +27642,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults) (orbital)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (orbital)"
 								}
 							],
 							"dice": "1d100",
@@ -27792,7 +27792,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults) (planetside)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (planetside)"
 								}
 							],
 							"dice": "1d100",
@@ -28394,7 +28394,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults) (orbital)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (orbital)"
 								}
 							],
 							"dice": "1d100",
@@ -28544,7 +28544,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults) (planetside)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (planetside)"
 								}
 							],
 							"dice": "1d100",
@@ -29140,7 +29140,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults) (orbital)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (orbital)"
 								}
 							],
 							"dice": "1d100",
@@ -29290,7 +29290,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults) (planetside)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (planetside)"
 								}
 							],
 							"dice": "1d100",
@@ -29889,7 +29889,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults) (orbital)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (orbital)"
 								}
 							],
 							"dice": "1d100",
@@ -30039,7 +30039,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults) (planetside)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (planetside)"
 								}
 							],
 							"dice": "1d100",
@@ -30638,7 +30638,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults) (orbital)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (orbital)"
 								}
 							],
 							"dice": "1d100",
@@ -30788,7 +30788,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults) (planetside)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (planetside)"
 								}
 							],
 							"dice": "1d100",
@@ -31396,7 +31396,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults) (orbital)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (orbital)"
 								}
 							],
 							"dice": "1d100",
@@ -31546,7 +31546,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults) (planetside)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (planetside)"
 								}
 							],
 							"dice": "1d100",
@@ -32151,7 +32151,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults) (orbital)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (orbital)"
 								}
 							],
 							"dice": "1d100",
@@ -32301,7 +32301,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults) (planetside)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (planetside)"
 								}
 							],
 							"dice": "1d100",
@@ -32900,7 +32900,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults) (orbital)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (orbital)"
 								}
 							],
 							"dice": "1d100",
@@ -33050,7 +33050,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults) (planetside)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (planetside)"
 								}
 							],
 							"dice": "1d100",
@@ -33649,7 +33649,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults) (orbital)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (orbital)"
 								}
 							],
 							"dice": "1d100",
@@ -33799,7 +33799,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults) (planetside)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (planetside)"
 								}
 							],
 							"dice": "1d100",
@@ -34386,7 +34386,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults) (orbital)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (orbital)"
 								}
 							],
 							"dice": "1d100",
@@ -34536,7 +34536,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults) (planetside)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (planetside)"
 								}
 							],
 							"dice": "1d100",
@@ -35132,7 +35132,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults) (orbital)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (orbital)"
 								}
 							],
 							"dice": "1d100",
@@ -35282,7 +35282,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults) (planetside)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (planetside)"
 								}
 							],
 							"dice": "1d100",
@@ -36680,77 +36680,77 @@
 								"min": 1,
 								"max": 15
 							},
-							"text": "[Desert World](id:starforged/oracle_collection/planets/desert)"
+							"text": "[Desert World](oracle_collection:starforged/planets/desert)"
 						},
 						{
 							"roll": {
 								"min": 16,
 								"max": 30
 							},
-							"text": "[Furnace World](id:starforged/oracle_collection/planets/furnace)"
+							"text": "[Furnace World](oracle_collection:starforged/planets/furnace)"
 						},
 						{
 							"roll": {
 								"min": 31,
 								"max": 35
 							},
-							"text": "[Grave World](id:starforged/oracle_collection/planets/grave)"
+							"text": "[Grave World](oracle_collection:starforged/planets/grave)"
 						},
 						{
 							"roll": {
 								"min": 36,
 								"max": 50
 							},
-							"text": "[Ice World](id:starforged/oracle_collection/planets/ice)"
+							"text": "[Ice World](oracle_collection:starforged/planets/ice)"
 						},
 						{
 							"roll": {
 								"min": 51,
 								"max": 65
 							},
-							"text": "[Jovian World](id:starforged/oracle_collection/planets/jovian)"
+							"text": "[Jovian World](oracle_collection:starforged/planets/jovian)"
 						},
 						{
 							"roll": {
 								"min": 66,
 								"max": 70
 							},
-							"text": "[Jungle World](id:starforged/oracle_collection/planets/jungle)"
+							"text": "[Jungle World](oracle_collection:starforged/planets/jungle)"
 						},
 						{
 							"roll": {
 								"min": 71,
 								"max": 75
 							},
-							"text": "[Ocean World](id:starforged/oracle_collection/planets/ocean)"
+							"text": "[Ocean World](oracle_collection:starforged/planets/ocean)"
 						},
 						{
 							"roll": {
 								"min": 76,
 								"max": 90
 							},
-							"text": "[Rocky World](id:starforged/oracle_collection/planets/rocky)"
+							"text": "[Rocky World](oracle_collection:starforged/planets/rocky)"
 						},
 						{
 							"roll": {
 								"min": 91,
 								"max": 92
 							},
-							"text": "[Shattered World](id:starforged/oracle_collection/planets/shattered)"
+							"text": "[Shattered World](oracle_collection:starforged/planets/shattered)"
 						},
 						{
 							"roll": {
 								"min": 93,
 								"max": 98
 							},
-							"text": "[Tainted World](id:starforged/oracle_collection/planets/tainted)"
+							"text": "[Tainted World](oracle_collection:starforged/planets/tainted)"
 						},
 						{
 							"roll": {
 								"min": 99,
 								"max": 100
 							},
-							"text": "[Vital World](id:starforged/oracle_collection/planets/vital)"
+							"text": "[Vital World](oracle_collection:starforged/planets/vital)"
 						}
 					],
 					"dice": "1d100",
@@ -37159,7 +37159,7 @@
 								"min": 88,
 								"max": 90
 							},
-							"text": "Within or near [Precursor Vault](id:starforged/oracle_collection/vaults)"
+							"text": "Within or near [Precursor Vault](oracle_collection:starforged/vaults)"
 						},
 						{
 							"roll": {
@@ -37284,7 +37284,7 @@
 								"min": 96,
 								"max": 100
 							},
-							"text": "[Derelict](id:starforged/oracle_collection/derelicts)"
+							"text": "[Derelict](oracle_collection:starforged/derelicts)"
 						}
 					],
 					"dice": "1d100",
@@ -39501,42 +39501,42 @@
 										"min": 16,
 										"max": 35
 									},
-									"text": "[Planet](id:starforged/oracle_collection/planets)"
+									"text": "[Planet](oracle_collection:starforged/planets)"
 								},
 								{
 									"roll": {
 										"min": 36,
 										"max": 40
 									},
-									"text": "[Settlement](id:starforged/oracle_collection/settlements)"
+									"text": "[Settlement](oracle_collection:starforged/settlements)"
 								},
 								{
 									"roll": {
 										"min": 41,
 										"max": 47
 									},
-									"text": "[Starship](id:starforged/oracle_collection/starships)"
+									"text": "[Starship](oracle_collection:starforged/starships)"
 								},
 								{
 									"roll": {
 										"min": 48,
 										"max": 51
 									},
-									"text": "[Derelict](id:starforged/oracle_collection/derelicts)"
+									"text": "[Derelict](oracle_collection:starforged/derelicts)"
 								},
 								{
 									"roll": {
 										"min": 52,
 										"max": 53
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults)"
 								},
 								{
 									"roll": {
 										"min": 54,
 										"max": 55
 									},
-									"text": "[Creature](id:starforged/oracle_collection/creatures)"
+									"text": "[Creature](oracle_collection:starforged/creatures)"
 								},
 								{
 									"roll": {
@@ -39705,42 +39705,42 @@
 										"min": 16,
 										"max": 35
 									},
-									"text": "[Planet](id:starforged/oracle_collection/planets)"
+									"text": "[Planet](oracle_collection:starforged/planets)"
 								},
 								{
 									"roll": {
 										"min": 36,
 										"max": 38
 									},
-									"text": "[Settlement](id:starforged/oracle_collection/settlements)"
+									"text": "[Settlement](oracle_collection:starforged/settlements)"
 								},
 								{
 									"roll": {
 										"min": 39,
 										"max": 43
 									},
-									"text": "[Starship](id:starforged/oracle_collection/starships)"
+									"text": "[Starship](oracle_collection:starforged/starships)"
 								},
 								{
 									"roll": {
 										"min": 44,
 										"max": 46
 									},
-									"text": "[Derelict](id:starforged/oracle_collection/derelicts)"
+									"text": "[Derelict](oracle_collection:starforged/derelicts)"
 								},
 								{
 									"roll": {
 										"min": 47,
 										"max": 49
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults)"
 								},
 								{
 									"roll": {
 										"min": 50,
 										"max": 52
 									},
-									"text": "[Creature](id:starforged/oracle_collection/creatures)"
+									"text": "[Creature](oracle_collection:starforged/creatures)"
 								},
 								{
 									"roll": {
@@ -39909,42 +39909,42 @@
 										"min": 16,
 										"max": 35
 									},
-									"text": "[Planet](id:starforged/oracle_collection/planets)"
+									"text": "[Planet](oracle_collection:starforged/planets)"
 								},
 								{
 									"roll": {
 										"min": 36,
 										"max": 37
 									},
-									"text": "[Settlement](id:starforged/oracle_collection/settlements)"
+									"text": "[Settlement](oracle_collection:starforged/settlements)"
 								},
 								{
 									"roll": {
 										"min": 38,
 										"max": 39
 									},
-									"text": "[Starship](id:starforged/oracle_collection/starships)"
+									"text": "[Starship](oracle_collection:starforged/starships)"
 								},
 								{
 									"roll": {
 										"min": 40,
 										"max": 41
 									},
-									"text": "[Derelict](id:starforged/oracle_collection/derelicts)"
+									"text": "[Derelict](oracle_collection:starforged/derelicts)"
 								},
 								{
 									"roll": {
 										"min": 42,
 										"max": 45
 									},
-									"text": "[Precursor Vault](id:starforged/oracle_collection/vaults)"
+									"text": "[Precursor Vault](oracle_collection:starforged/vaults)"
 								},
 								{
 									"roll": {
 										"min": 46,
 										"max": 49
 									},
-									"text": "[Creature](id:starforged/oracle_collection/creatures)"
+									"text": "[Creature](oracle_collection:starforged/creatures)"
 								},
 								{
 									"roll": {
@@ -43322,7 +43322,7 @@
 								"min": 96,
 								"max": 100
 							},
-							"text": "[Derelict](id:starforged/oracle_collection/derelicts)"
+							"text": "[Derelict](oracle_collection:starforged/derelicts)"
 						}
 					],
 					"dice": "1d100",

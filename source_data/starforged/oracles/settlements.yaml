@@ -183,7 +183,7 @@ oracles:
           - roll: { min: 84, max: 87 }
             text: Toxic or polluted habitat
           - roll: { min: 88, max: 90 }
-            text: 'Within or near [Precursor Vault](id:starforged/oracle_collection/vaults)'
+            text: 'Within or near [Precursor Vault](oracle_collection:starforged/vaults)'
             # suggestions: [*obj:Vault]
           - roll: { min: 91, max: 100 }
             text: '[Descriptor](oracle_rollable:starforged/core/descriptor) + [Focus](oracle_rollable:starforged/core/focus)'
@@ -227,7 +227,7 @@ oracles:
           - roll: { min: 93, max: 95 }
             text: Destroyed
           - roll: { min: 96, max: 100 }
-            text: '[Derelict](id:starforged/oracle_collection/derelicts)'
+            text: '[Derelict](oracle_collection:starforged/derelicts)'
       authority:
         name: Authority
         oracle_type: table_text

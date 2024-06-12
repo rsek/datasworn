@@ -437,7 +437,7 @@ oracles:
         type: oracle_rollable
         name: Namesake
         summary: |-
-          You may also use your preferred name randomizer to generate a Namesake for your site. If you want to add details for the Namesake, use the [Character oracles](id:classic/oracle_collection/character) in *Ironsworn Core*. This may help inspire a deeper understanding of the history of the site.
+          You may also use your preferred name randomizer to generate a Namesake for your site. If you want to add details for the Namesake, use the [Character oracles](classic:oracle_collection/character) in *Ironsworn Core*. This may help inspire a deeper understanding of the history of the site.
         _source:
           <<: *Source
           page: 209
@@ -605,73 +605,73 @@ oracles:
           page: 210
         rows:
           - roll: { min: 1, max: 6 }
-            text: '[Barrow](id:delve/delve_site_domain/barrow)'
+            text: '[Barrow](delve_site_domain:delve/barrow)'
             oracle_rolls:
               - oracle: &barrowTableID 'oracle_rollable:delve/site_name/place/barrow'
                 auto: true
             embed_table: *barrowTableID
           - roll: { min: 7, max: 18 }
-            text: '[Cavern](id:delve/delve_site_domain/cavern)'
+            text: '[Cavern](delve_site_domain:delve/cavern)'
             oracle_rolls:
               - oracle: &cavernTableID 'oracle_rollable:delve/site_name/place/cavern'
                 auto: true
             embed_table: *cavernTableID
           - roll: { min: 19, max: 28 }
-            text: '[Frozen Cavern](id:delve/delve_site_domain/frozen_cavern)'
+            text: '[Frozen Cavern](delve_site_domain:delve/frozen_cavern)'
             oracle_rolls:
               - oracle: &frozen_cavernTableID 'oracle_rollable:delve/site_name/place/frozen_cavern'
                 auto: true
             embed_table: *frozen_cavernTableID
           - roll: { min: 29, max: 32 }
-            text: '[Icereach](id:delve/delve_site_domain/icereach)'
+            text: '[Icereach](delve_site_domain:delve/icereach)'
             oracle_rolls:
               - oracle: &icereachTableID 'oracle_rollable:delve/site_name/place/icereach'
                 auto: true
             embed_table: *icereachTableID
           - roll: { min: 33, max: 38 }
-            text: '[Mine](id:delve/delve_site_domain/mine)'
+            text: '[Mine](delve_site_domain:delve/mine)'
             oracle_rolls:
               - oracle: &mineTableID 'oracle_rollable:delve/site_name/place/mine'
                 auto: true
             embed_table: *mineTableID
           - roll: { min: 39, max: 48 }
-            text: '[Pass](id:delve/delve_site_domain/pass)'
+            text: '[Pass](delve_site_domain:delve/pass)'
             oracle_rolls:
               - oracle: &passTableID 'oracle_rollable:delve/site_name/place/pass'
                 auto: true
             embed_table: *passTableID
           - roll: { min: 49, max: 58 }
-            text: '[Ruin](id:delve/delve_site_domain/ruin)'
+            text: '[Ruin](delve_site_domain:delve/ruin)'
             oracle_rolls:
               - oracle: &ruinTableID 'oracle_rollable:delve/site_name/place/ruin'
                 auto: true
             embed_table: *ruinTableID
           - roll: { min: 59, max: 68 }
-            text: '[Sea Cave](id:delve/delve_site_domain/sea_cave)'
+            text: '[Sea Cave](delve_site_domain:delve/sea_cave)'
             oracle_rolls:
               - oracle: &sea_caveTableID 'oracle_rollable:delve/site_name/place/sea_cave'
                 auto: true
             embed_table: *sea_caveTableID
           - roll: { min: 69, max: 78 }
-            text: '[Shadowfen](id:delve/delve_site_domain/shadowfen)'
+            text: '[Shadowfen](delve_site_domain:delve/shadowfen)'
             oracle_rolls:
               - oracle: &shadowfenTableID 'oracle_rollable:delve/site_name/place/shadowfen'
                 auto: true
             embed_table: *shadowfenTableID
           - roll: { min: 79, max: 83 }
-            text: '[Stronghold](id:delve/delve_site_domain/stronghold)'
+            text: '[Stronghold](delve_site_domain:delve/stronghold)'
             oracle_rolls:
               - oracle: &strongholdTableID 'oracle_rollable:delve/site_name/place/stronghold'
                 auto: true
             embed_table: *strongholdTableID
           - roll: { min: 84, max: 95 }
-            text: '[Tanglewood](id:delve/delve_site_domain/tanglewood)'
+            text: '[Tanglewood](delve_site_domain:delve/tanglewood)'
             oracle_rolls:
               - oracle: &tanglewoodTableID 'oracle_rollable:delve/site_name/place/tanglewood'
                 auto: true
             embed_table: *tanglewoodTableID
           - roll: { min: 96, max: 100 }
-            text: '[Underkeep](id:delve/delve_site_domain/underkeep)'
+            text: '[Underkeep](delve_site_domain:delve/underkeep)'
             oracle_rolls:
               - oracle: &underkeepTableID 'oracle_rollable:delve/site_name/place/underkeep'
                 auto: true

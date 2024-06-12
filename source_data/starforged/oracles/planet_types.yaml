@@ -215,7 +215,7 @@ oracles:
                       auto: true
               - &ObservedFromSpace.9
                 roll: { min: 99, max: 100 }
-                text: '[Precursor Vault](id:starforged/oracle_collection/vaults) (orbital)'
+                text: '[Precursor Vault](oracle_collection:starforged/vaults) (orbital)'
           feature:
             <<: &Feature
               name: Planetside Feature
@@ -268,7 +268,7 @@ oracles:
                 <<: *DescriptorFocus
               - &Feature.14
                 roll: { min: 99, max: 100 }
-                text: '[Precursor Vault](id:starforged/oracle_collection/vaults) (planetside)'
+                text: '[Precursor Vault](oracle_collection:starforged/vaults) (planetside)'
           life:
             <<: &Life
               name: Life

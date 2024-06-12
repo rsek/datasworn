@@ -55,7 +55,7 @@ npcs:
         #   - sentient
         #   - squatter
         description: |-
-          Another people sailed to the Ironlands from the [Old World](id:classic/truths/old_world) long before our kin settled here. Something happened. Something changed them.
+          Another people sailed to the Ironlands from the [Old World](truth:classic/old_world) long before our kin settled here. Something happened. Something changed them.
 
           Whether it was the long struggle in a harsh land, the ravages of war, or the corruption of some dark force, they left their humanity behind and became what we call the broken. Now, they exist only to kill, to destroy.
 
@@ -215,7 +215,7 @@ npcs:
         quest_starter: |-
           A legendary warrior, now well past their prime, swears to face a daunting foe in one final battle. What help do they ask of you and why? Who is their enemy?
         your_truth: |-
-          Warrior’s shields are often emblazoned with meaningful symbols. What are they? Family crests? Animal totems? Mystical sigils? Motifs honoring the nations of the [Old World](id:classic/truths/old_world)? If you carry a shield, what is painted on yours?
+          Warrior’s shields are often emblazoned with meaningful symbols. What are they? Family crests? Animal totems? Mystical sigils? Motifs honoring the nations of the [Old World](truth:classic/old_world)? If you carry a shield, what is painted on yours?
   firstborn:
     name: Firstborn
     type: npc_collection
@@ -400,7 +400,7 @@ npcs:
       page: 147
     summary: '__Animals__ are common creatures.'
     description: |-
-      animals are the mundane creatures which dwell in the Ironlands. Some animals are native to these lands; others were also common in the [Old World](id:classic/truths/old_world).
+      animals are the mundane creatures which dwell in the Ironlands. Some animals are native to these lands; others were also common in the [Old World](truth:classic/old_world).
 
       Most wild animals are skittish and do not pose a threat to humans. Those creatures have no rank, and can be attacked or interacted with using appropriate moves. For example, [Resupply](move:classic/adventure/resupply) can represent hunting for deer or small game.
 
@@ -463,7 +463,7 @@ npcs:
         #   - wild
         #   - squatter
         description: |-
-          In the [Old World](id:classic/truths/old_world), wild boars were belligerent and dangerous animals. Here in the Ironlands? They are even bigger and meaner. They will attack without warning or provocation. They will run you down, gore you, bite you, and circle around to do it all again. And again. And again.
+          In the [Old World](truth:classic/old_world), wild boars were belligerent and dangerous animals. Here in the Ironlands? They are even bigger and meaner. They will attack without warning or provocation. They will run you down, gore you, bite you, and circle around to do it all again. And again. And again.
         quest_starter: |-
           A boar hunt ends in tragedy when an Ironlander is gored and grievously
           wounded. How do you know this person? What terrible truth do they
@@ -562,7 +562,7 @@ npcs:
       page: 151
     summary: '__Beasts__ are monstrous creatures of unusual size and cunning.'
     description: |-
-      Beasts are monstrous creatures of great size and power. They are natural beings—not supernatural entities—but were unknown in the [Old World](id:classic/truths/old_world).
+      Beasts are monstrous creatures of great size and power. They are natural beings—not supernatural entities—but were unknown in the [Old World](truth:classic/old_world).
     contents:
       basilisk:
         name: Basilisk
@@ -678,7 +678,7 @@ npcs:
 
           Watchful sailors might catch sight of a leviathan circling their boat, studying them, in the moments before it attacks. Their dagger-shaped head is as tough and destructive as any battering ram, able to shatter a ship in a single blow.
         quest_starter: |-
-          A leviathan lurks off the coast, preying on fishing boats and trade ships. Among the dead is someone important to you. Who is it? You have vowed to send this beast back to the depths, but doing so will require a mythic weapon—The Abyssal Harpoon, an [Old World](id:classic/truths/old_world) artifact said to be carved from the bones of a long-dead sea god. Where is this weapon rumored to be held?
+          A leviathan lurks off the coast, preying on fishing boats and trade ships. Among the dead is someone important to you. Who is it? You have vowed to send this beast back to the depths, but doing so will require a mythic weapon—The Abyssal Harpoon, an [Old World](truth:classic/old_world) artifact said to be carved from the bones of a long-dead sea god. Where is this weapon rumored to be held?
         your_truth: |-
           Some coastal people believe leviathans are a manifestation of an ancient spirit. What is it?
       mammoth:
@@ -705,7 +705,7 @@ npcs:
         # tags:
         #   - wild
         description: |-
-          These beasts resemble the elephants of the [Old World](id:classic/truths/old_world)’s southern realms, but are larger and covered in a coat of thick fur. They travel in herds among the [Tempest Hills](atlas_entry:classic/ironlands/tempest_hill), migrating south with the winter and north with the spring. They are not aggressive creatures, but are fearless and will fight to the death to protect their young.
+          These beasts resemble the elephants of the [Old World](truth:classic/old_world)’s southern realms, but are larger and covered in a coat of thick fur. They travel in herds among the [Tempest Hills](atlas_entry:classic/ironlands/tempest_hill), migrating south with the winter and north with the spring. They are not aggressive creatures, but are fearless and will fight to the death to protect their young.
 
           A herd of mammoths is an amazing and humbling sight, but smart Ironlanders keep their distance and stay upwind.
         quest_starter: |-
@@ -754,7 +754,7 @@ npcs:
       page: 157
     summary: '__Horrors__ are supernatural beings.'
     description: |-
-      Horrors are supernatural entities. In the [Old World](id:classic/truths/old_world), they were superstition and legend. Here, they are nightmares made real. The Ironlands is fertile ground for darkness and evil to take hold, spawning these undead beings of pure vengeance or mindless hate.
+      Horrors are supernatural entities. In the [Old World](truth:classic/old_world), they were superstition and legend. Here, they are nightmares made real. The Ironlands is fertile ground for darkness and evil to take hold, spawning these undead beings of pure vengeance or mindless hate.
 
       Many horrors can be temporarily defeated through physical attacks, but cannot be killed. They are beyond death.
     contents:

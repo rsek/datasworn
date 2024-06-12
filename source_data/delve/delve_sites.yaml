@@ -65,7 +65,7 @@ delve_sites:
       <<: *Source
       page: 96
     rank: 3
-    region: atlas_entry:classic/ironlands/tempest_hils
+    region: atlas_entry:classic/ironlands/tempest_hills
     theme: delve_site_theme:delve/wild
     domain: delve_site_domain:delve/frozen_cavern
     denizens:
@@ -102,7 +102,7 @@ delve_sites:
         roll: { min: 100, max: 100 }
         npc: npc:classic/firstborn/primordial
     description: |-
-      The roots of the trees run deep into the veins of the earth, tangling amid the frozen tunnels of Bleakroot Depths. The site is perilous, but provides the only passage between the remote villages of Idleburrow and Lora’s Rise. Those settlements depend on each other for trade and protection amid the perilous heights of the [Tempest Hills](id:atlas_entry:classic/ironlands/tempest_hill).
+      The roots of the trees run deep into the veins of the earth, tangling amid the frozen tunnels of Bleakroot Depths. The site is perilous, but provides the only passage between the remote villages of Idleburrow and Lora’s Rise. Those settlements depend on each other for trade and protection amid the perilous heights of the [Tempest Hills](atlas_entry:classic/ironlands/tempest_hill).
 
       Recently, the beasts of the hills have taken to the tunnels, drawn there inexplicably. Within, they become frenzied and wild. They ambush all who dare enter Bleakroot Depths, cutting off this critical route. What primal force is at work here?
   bonewilds:
@@ -112,7 +112,7 @@ delve_sites:
       <<: *Source
       page: 97
     rank: 3
-    region: atlas_entry:classic/ironlands/deep_wils
+    region: atlas_entry:classic/ironlands/deep_wilds
     theme: delve_site_theme:delve/haunted
     domain: delve_site_domain:delve/tanglewood
     denizens:
@@ -158,7 +158,7 @@ delve_sites:
       <<: *Source
       page: 97
     rank: 5
-    region: atlas_entry:classic/ironlands/hinterlans
+    region: atlas_entry:classic/ironlands/hinterlands
     theme: delve_site_theme:delve/ancient
     domain: delve_site_domain:delve/cavern
     denizens:
@@ -206,7 +206,7 @@ delve_sites:
       <<: *Source
       page: 98
     rank: 2
-    region: atlas_entry:classic/ironlands/flooded_lans
+    region: atlas_entry:classic/ironlands/flooded_lands
     theme: delve_site_theme:delve/hallowed
     domain: delve_site_domain:delve/shadowfen
     denizens:
@@ -337,7 +337,7 @@ delve_sites:
         roll: { min: 100, max: 100 }
         npc: npc:delve/anomalies/maelstrom
     description: |-
-      On the [Ragged Coast](id:atlas_entry:classic/ironlands/ragged_coas), countless caves riddle the fjords, carved over eons by the relentless tides. One such cave hosts a misshapen beast of unknown origin: a nightspawn, birthed from hellish depths to prey on the fishers and sailors of the coast. The monster’s presence taints the waters of the cave, blackening them, tinging them with an acrid odor. Moreover, nearby aquatic life takes on qualities of the nightspawn, reshaped into aberrant forms by its creeping vileness. These monstrosities drift farther and farther from the cave, spreading the corruption to ships and settlements.
+      On the [Ragged Coast](atlas_entry:classic/ironlands/ragged_coast), countless caves riddle the fjords, carved over eons by the relentless tides. One such cave hosts a misshapen beast of unknown origin: a nightspawn, birthed from hellish depths to prey on the fishers and sailors of the coast. The monster’s presence taints the waters of the cave, blackening them, tinging them with an acrid odor. Moreover, nearby aquatic life takes on qualities of the nightspawn, reshaped into aberrant forms by its creeping vileness. These monstrosities drift farther and farther from the cave, spreading the corruption to ships and settlements.
 
       Recently, folk have undertaken pilgrimages to this sea cave. They say the nightspawn calls to them, like a mother to its children. What has become of them in that vile place?
   frostmark:
@@ -432,7 +432,7 @@ delve_sites:
         roll: { min: 100, max: 100 }
         npc: npc:delve/beasts/wyrm
     description: |-
-      In ancient days, a lineage of giants lived beyond the [Veiled Mountains](id:atlas_entry:classic/ironlands/veiled_mountain) in the great expanse we now call the [Shattered Wastes](id:atlas_entry:classic/ironlands/shattered_waste). The cavernous entrance to this abandoned mine sits at the summit of an icy mount. In the frozen depths, the giants once mined for ore and fashioned great weapons. Today, their abandoned tools and preserved corpses are all that remain of their legacy.
+      In ancient days, a lineage of giants lived beyond the [Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountain) in the great expanse we now call the [Shattered Wastes](atlas_entry:classic/ironlands/shattered_waste). The cavernous entrance to this abandoned mine sits at the summit of an icy mount. In the frozen depths, the giants once mined for ore and fashioned great weapons. Today, their abandoned tools and preserved corpses are all that remain of their legacy.
 
       Exploration of this place is treacherous. The mine is shaken by frequent earthquakes, causing cave-ins and pitfalls. The cold is as piercing and deadly as the sharpest blade. Horrid things lurk amid the echoing shadows.
 
@@ -854,7 +854,7 @@ delve_sites:
       - frequency: unforeseen
         roll: { min: 100, max: 100 }
     description: |-
-      Visions of a once-great fortress drew Kord the Stonewright to a deep lake in the northern [Havens](id:atlas_entry:classic/ironlands/haven). There, he discovered the stones scattered in shallow waters and buried in mud near the shore—all that was left of the ancient place which haunted his dreams. Piece by piece, he recovered the remains of the fortress, transplanting the stones laboriously to an island at the lake’s center.
+      Visions of a once-great fortress drew Kord the Stonewright to a deep lake in the northern [Havens](atlas_entry:classic/ironlands/haven). There, he discovered the stones scattered in shallow waters and buried in mud near the shore—all that was left of the ancient place which haunted his dreams. Piece by piece, he recovered the remains of the fortress, transplanting the stones laboriously to an island at the lake’s center.
 
       Most laughed at this crazy venture. But some joined Kord, drawn to this place by a compulsion they can’t understand or explain. Guided by the stonewright’s unwavering vision, they rebuilt the vaults of the fortress and its tall central spire. Today, nearly two decades later, the workforce numbers in the hundreds. They live in ramshackle camps encircling the fortress and on the lakeshore. Many protect the place with spear and shield. The stones sing to them, they say, and with each block mortared in place the words become clearer. Folk of this area call them the builders.
 
@@ -866,7 +866,7 @@ delve_sites:
       <<: *Source
       page: 105
     rank: 2
-    region: atlas_entry:classic/ironlands/flooded_lans
+    region: atlas_entry:classic/ironlands/flooded_lands
     theme: delve_site_theme:delve/infested
     domain: delve_site_domain:delve/ruin
     denizens:
@@ -947,6 +947,6 @@ delve_sites:
         roll: { min: 100, max: 100 }
         npc: npc:classic/firstborn/primordial
     description: |-
-      A long-dead civilization once used this path through the [Veiled Mountains](id:atlas_entry:classic/ironlands/veiled_mountain) as a trade road. Their crumbling outposts, forts, and waystones, half-buried in snow and fallen glacial stones, mark the way. Some say you can still hear their voices and songs carried on the wind; echoes of lives long lost.
+      A long-dead civilization once used this path through the [Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountain) as a trade road. Their crumbling outposts, forts, and waystones, half-buried in snow and fallen glacial stones, mark the way. Some say you can still hear their voices and songs carried on the wind; echoes of lives long lost.
 
       A clan of [giants](id:npc:classic/firstborn/giant) now live here, drawn to the remains of this once-powerful place like travelers huddling close to a dying fire. They defend the pass against a massive tribe of [broken](id:npc:classic/ironlanders/broken) who lurk within the caves and ruins of this frozen land. What purpose do the giants have here, and what can be done to aid their defense against the broken?

@@ -46,22 +46,22 @@ oracles:
                   - oracle: oracle_rollable:starforged/space/stellar_object
               - &Sighting.1
                 roll: { min: 16, max: 35 }
-                text: '[Planet](id:starforged/oracle_collection/planets)'
+                text: '[Planet](oracle_collection:starforged/planets)'
               - roll: { min: 36, max: 40 }
                 <<: &Sighting.2
-                  text: '[Settlement](id:starforged/oracle_collection/settlements)'
+                  text: '[Settlement](oracle_collection:starforged/settlements)'
               - roll: { min: 41, max: 47 }
                 <<: &Sighting.3
-                  text: '[Starship](id:starforged/oracle_collection/starships)'
+                  text: '[Starship](oracle_collection:starforged/starships)'
               - roll: { min: 48, max: 51 }
                 <<: &Sighting.4
-                  text: '[Derelict](id:starforged/oracle_collection/derelicts)'
+                  text: '[Derelict](oracle_collection:starforged/derelicts)'
               - roll: { min: 52, max: 53 }
                 <<: &Sighting.5
-                  text: '[Precursor Vault](id:starforged/oracle_collection/vaults)'
+                  text: '[Precursor Vault](oracle_collection:starforged/vaults)'
               - roll: { min: 54, max: 55 }
                 <<: &Sighting.6
-                  text: '[Creature](id:starforged/oracle_collection/creatures)'
+                  text: '[Creature](oracle_collection:starforged/creatures)'
               - roll: { min: 56, max: 60 }
                 <<: &Sighting.7
                   text: '[Descriptor](oracle_rollable:starforged/core/descriptor) + [Focus](oracle_rollable:starforged/core/focus)'
