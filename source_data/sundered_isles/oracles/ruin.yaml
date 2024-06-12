@@ -3,7 +3,7 @@ datasworn_version: "0.1.0"
 type: expansion
 ruleset: starforged
 <<: &Source
-  date: 2024-06-01
+  date: 2024-06-11
   title: Sundered Isles
   url: https://ironswornrpg.com
   license: null
@@ -16,7 +16,6 @@ oracles:
     oracle_type: tables
     _source:
       <<: *Source
-      page: 212
     contents:
       location:
         name: Ruin Location
@@ -25,7 +24,6 @@ oracles:
         summary: When learning about a distant ruin, use this table to reveal its location. If you come upon a ruin in your travels, pick a location as appropriate to your surroundings.
         _source:
           <<: *Source
-          page: 212
         rows:
           - roll: { min: 1, max: 20 }
             text: Sea
@@ -57,7 +55,6 @@ oracles:
         oracle_type: table_text2
         _source:
           <<: *Source
-          page: 213
         rows:
         - roll: { min: 1, max: 10 }
           text: Devastated
@@ -89,7 +86,6 @@ oracles:
         oracle_type: table_text
         _source:
           <<: *Source
-          page: 213
         rows:
           - roll: { min: 1, max: 5 }
             text: Unimpressive structure
@@ -117,7 +113,6 @@ oracles:
             cursed_by: oracle_rollable:sundered_isles/ruin/first_look_cursed
         _source:
           <<: *Source
-          page: 214
         rows:
           - roll: { min: 1, max: 2 }
             text: Adorned with faded colors
@@ -294,7 +289,6 @@ oracles:
             cursed_by: oracle_rollable:sundered_isles/ruin/mystery_cursed
         _source:
           <<: *Source
-          page: 216
         rows:
           - roll: { min: 1, max: 10 }
             text: Calamitous downfall
@@ -337,7 +331,6 @@ oracles:
             curse_behavior: replace_result
         _source:
           <<: *Source
-          page: 216
         rows:
           - roll: { min: 1, max: 10 }
             text: Corrupted religion
@@ -378,7 +371,6 @@ oracles:
             cursed_by: oracle_rollable:sundered_isles/ruin/cipher_cursed
         _source:
           <<: *Source
-          page: 216
         rows:
           - roll: { min: 1, max: 10 }
             text: Carved glyphs
@@ -411,7 +403,6 @@ oracles:
             curse_behavior: replace_result
         _source:
           <<: *Source
-          page: 216
         rows:
           - roll: { min: 1, max: 10 }
             text: Deadly trap or infernal mechanism
@@ -443,7 +434,6 @@ oracles:
             cursed_by: oracle_rollable:sundered_isles/ruin/features_cursed
         _source:
           <<: *Source
-          page: 217
         rows:
           - roll: { min: 1, max: 1 }
             text: Alchemical experiments or supplies
@@ -685,33 +675,33 @@ oracles:
           - roll: { min: 21, max: 22 }
             text: Creeping, entangling plant life
           - roll: { min: 23, max: 24 }
-            text: Doors slam shut on their own
+            text: Distorted flow of time
           - roll: { min: 25, max: 26 }
-            text: Dreadful whispering
+            text: Doors slam shut on their own
           - roll: { min: 27, max: 28 }
-            text: Eerie echoes
+            text: Dreadful whispering
           - roll: { min: 29, max: 30 }
-            text: Eldritch symbols
+            text: Eerie echoes
           - roll: { min: 31, max: 32 }
-            text: Faces and figures move within the walls
+            text: Eldritch symbols
           - roll: { min: 33, max: 34 }
-            text: Familiar voices call out from the dark
+            text: Faces and figures move within the walls
           - roll: { min: 35, max: 36 }
-            text: Grasping, creeping shadows
+            text: Familiar voices call out from the dark
           - roll: { min: 37, max: 38 }
-            text: Gusts of phantom wind
+            text: Grasping, creeping shadows
           - roll: { min: 39, max: 40 }
-            text: Haunting cries or weeping
+            text: Gusts of phantom wind
           - roll: { min: 41, max: 42 }
-            text: Haunting dreams or hallucinations
+            text: Haunting cries or weeping
           - roll: { min: 43, max: 44 }
-            text: Haunting music
+            text: Haunting dreams or hallucinations
           - roll: { min: 45, max: 46 }
-            text: Impenetrable darkness
+            text: Haunting music
           - roll: { min: 47, max: 48 }
-            text: Lair of a monstrous creature
+            text: Impenetrable darkness
           - roll: { min: 49, max: 50 }
-            text: Monstrous swarm of creatures
+            text: Lair of a monstrous creature
           - roll: { min: 51, max: 52 }
             text: Message or symbols written in blood
           - roll: { min: 53, max: 54 }
@@ -768,7 +758,6 @@ oracles:
         oracle_type: table_text
         _source:
           <<: *Source
-          page: 219
         rows:
           - roll: { min: 1, max: 4 }
             text: Confounding puzzle
@@ -853,7 +842,6 @@ oracles:
         oracle_type: table_text
         _source:
           <<: *Source
-          page: 219
         rows:
           - roll: { min: 1, max: 5 }
             text: Access to an untouched area

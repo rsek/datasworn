@@ -3,7 +3,7 @@ datasworn_version: '0.1.0'
 type: expansion
 ruleset: starforged
 <<: &Source
-  date: 2024-06-01
+  date: 2024-06-11
   title: Sundered Isles
   url: https://ironswornrpg.com
   license: null
@@ -16,7 +16,6 @@ oracles:
     oracle_type: tables
     _source:
       <<: *Source
-      page: 120
     collections:
       waypoints:
         name: Waypoints
@@ -24,13 +23,11 @@ oracles:
         oracle_type: tables
         _source:
           <<: *Source
-          page: 120
         collections:
           known_waters:
             name: Known Waters
             _source:
               <<: *Source
-              page: 120
             type: oracle_collection
             oracle_type: table_shared_text
             contents:
@@ -143,7 +140,6 @@ oracles:
             name: Unknown Waters
             _source:
               <<: *Source
-              page: 121
             type: oracle_collection
             oracle_type: table_shared_text
             contents:
@@ -235,7 +231,6 @@ oracles:
             cursed_by: oracle_rollable:sundered_isles/seafaring/details_cursed
         _source:
           <<: *Source
-          page: 122
         rows:
           - roll: { min: 1, max: 1 }
             text: A plume of smoke rises on the horizon
@@ -257,8 +252,8 @@ oracles:
             text: Dagger-like rocks rise out of the sea
           - roll: { min: 10, max: 10 }
             text: Flags of unknown heraldry fly from a partially collapsed fort
-          - roll: { min: 11, max: 11 }
-            text: A massive storm wall gathers in the distance, lighting flashing
+          - roll: {min: 11, max: 11}
+            text: A massive storm wall gathers in the distance, lightning flashing
           - roll: { min: 12, max: 12 }
             text: Waves surge against an exposed reef
           - roll: { min: 13, max: 13 }
@@ -448,7 +443,6 @@ oracles:
             curse_behavior: replace_result
         _source:
           <<: *Source
-          page: 125
         rows:
           - roll: { min: 1, max: 1 }
             text: An exodus of panicked birds darken the sky
@@ -656,7 +650,6 @@ oracles:
         oracle_type: table_text
         _source:
           <<: *Source
-          page: 128
         rows:
           - roll: { min: 1, max: 3 }
             text: Boarders strike without warning
@@ -745,7 +738,6 @@ oracles:
         oracle_type: table_text
         _source:
           <<: *Source
-          page: 129
         rows:
           - roll: { min: 1, max: 4 }
             text: Cache of cargo or supplies

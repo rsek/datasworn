@@ -3,7 +3,7 @@ datasworn_version: '0.1.0'
 type: expansion
 ruleset: starforged
 <<: &Source
-  date: 2024-06-01
+  date: 2024-06-11
   title: Sundered Isles
   url: https://ironswornrpg.com
   license: null
@@ -16,13 +16,11 @@ oracles:
     oracle_type: tables
     _source:
       <<: *Source
-      page: 148
     collections:
       waypoints:
         name: Overland Waypoints
         _source:
           <<: *Source
-          page: 148
         type: oracle_collection
         oracle_type: table_shared_text
         contents:
@@ -149,7 +147,6 @@ oracles:
         oracle_type: tables
         _source:
           <<: *Source
-          page: 150
         contents:
           highlands:
             name: Highlands
@@ -163,7 +160,6 @@ oracles:
                   cursed_by: oracle_rollable:sundered_isles/overland/region_landmarks/cursed
             _source:
               <<: *Source
-              page: 150
             rows:
               - roll: { min: 1, max: 5 }
                 text: Bubbling mountain spring
@@ -196,7 +192,6 @@ oracles:
                 <<: *LandmarkCurse
             _source:
               <<: *Source
-              page: 150
             rows:
               - roll: { min: 1, max: 5 }
                 text: Ancient tree with a vast canopy
@@ -209,7 +204,7 @@ oracles:
               - roll: { min: 21, max: 25 }
                 text: Curtains of hanging vines
               - roll: { min: 26, max: 30 }
-                text: Fallen tree bridges a ravine
+                text: Fallen tree spans a ravine
               - roll: { min: 31, max: 35 }
                 text: Fragrant fruit trees abuzz with insects
               - roll: { min: 36, max: 40 }
@@ -249,7 +244,6 @@ oracles:
                 <<: *LandmarkCurse
             _source:
               <<: *Source
-              page: 151
             rows:
               - roll: { min: 1, max: 5 }
                 text: Boiling lake
@@ -302,7 +296,6 @@ oracles:
                 <<: *LandmarkCurse
             _source:
               <<: *Source
-              page: 151
             rows:
               - roll: { min: 1, max: 5 }
                 text: Bursts of flaming marsh gas
@@ -355,7 +348,6 @@ oracles:
                 <<: *LandmarkCurse
             _source:
               <<: *Source
-              page: 152
             rows:
               - roll: { min: 1, max: 5 }
                 text: Branching watercourse
@@ -408,7 +400,6 @@ oracles:
                 <<: *LandmarkCurse
             _source:
               <<: *Source
-              page: 152
             rows:
               - roll: { min: 1, max: 5 }
                 text: Abandoned homestead
@@ -461,7 +452,6 @@ oracles:
                 <<: *LandmarkCurse
             _source:
               <<: *Source
-              page: 153
             rows:
               - roll: { min: 1, max: 5 }
                 text: Approaching or anchored ship
@@ -514,7 +504,6 @@ oracles:
                 <<: *LandmarkCurse
             _source:
               <<: *Source
-              page: 153
             rows:
               - roll: { min: 1, max: 5 }
                 text: Abandoned boat or raft
@@ -567,7 +556,6 @@ oracles:
                 <<: *LandmarkCurse
             _source:
               <<: *Source
-              page: 154
             rows:
               - roll: { min: 1, max: 5 }
                 text: Abandoned mineshaft
@@ -620,7 +608,6 @@ oracles:
                 <<: *LandmarkCurse
             _source:
               <<: *Source
-              page: 154
             rows:
               - roll: { min: 1, max: 5 }
                 text: Cave tucked behind a misty waterfall
@@ -673,7 +660,6 @@ oracles:
                   - oracle_rollable:sundered_isles/overland/regional_landmark/*
             _source:
               <<: *Source
-              page: 155
             rows:
               - roll: { min: 1, max: 5 }
                 text: Colossal bones
@@ -727,6 +713,7 @@ oracles:
                   - auto: true
                     number_of_rolls: 2
                     duplicates: keep
+
     contents:
       region:
         name: Overland Region
@@ -734,7 +721,6 @@ oracles:
         oracle_type: table_text2
         _source:
           <<: *Source
-          page: 149
         rows:
           - roll: { min: 1, max: 20 }
             text: '[Highlands](oracle_rollable:sundered_isles/overland/region_landmarks/highlands)'
@@ -743,7 +729,6 @@ oracles:
             oracle_rolls:
               - oracle: oracle_rollable:sundered_isles/overland/region_landmarks/highlands
                 auto: false
-            # text3: pg 150
           - roll: { min: 21, max: 45 }
             text: '[Jungle](oracle_rollable:sundered_isles/overland/region_landmarks/jungle)'
             text2: *jungle.summary
@@ -751,7 +736,6 @@ oracles:
             oracle_rolls:
               - oracle: oracle_rollable:sundered_isles/overland/region_landmarks/jungle
                 auto: false
-            # text3: pg 150
           - roll: { min: 46, max: 50 }
             text: '[Lava Field](oracle_rollable:sundered_isles/overland/region_landmarks/lava_field)'
             text2: *lava_field.summary
@@ -759,7 +743,6 @@ oracles:
             oracle_rolls:
               - oracle: oracle_rollable:sundered_isles/overland/region_landmarks/lava_field
                 auto: false
-            # text3: pg 151
           - roll: { min: 51, max: 55 }
             text: '[Marsh](oracle_rollable:sundered_isles/overland/region_landmarks/marsh)'
             text2: *marsh.summary
@@ -767,7 +750,6 @@ oracles:
             oracle_rolls:
               - oracle: oracle_rollable:sundered_isles/overland/region_landmarks/marsh
                 auto: false
-            # text3: pg 151
           - roll: { min: 56, max: 60 }
             text: '[River](oracle_rollable:sundered_isles/overland/region_landmarks/river)'
             text2: *river.summary
@@ -775,7 +757,6 @@ oracles:
             oracle_rolls:
               - oracle: oracle_rollable:sundered_isles/overland/region_landmarks/river
                 auto: false
-            # text3: pg 152
           - roll: { min: 61, max: 65 }
             text: '[Scrub](oracle_rollable:sundered_isles/overland/region_landmarks/scrub)'
             text2: *scrub.summary
@@ -783,7 +764,6 @@ oracles:
             oracle_rolls:
               - oracle: oracle_rollable:sundered_isles/overland/region_landmarks/scrub
                 auto: false
-            # text3: pg 152
           - roll: { min: 66, max: 75 }
             text: '[Shore](oracle_rollable:sundered_isles/overland/region_landmarks/shore)'
             text2: *shore.summary
@@ -791,7 +771,6 @@ oracles:
             oracle_rolls:
               - oracle: oracle_rollable:sundered_isles/overland/region_landmarks/shore
                 auto: false
-            # text3: pg 153
           - roll: { min: 76, max: 85 }
             text: '[Swamp](oracle_rollable:sundered_isles/overland/region_landmarks/swamp)'
             text2: *swamp.summary
@@ -799,7 +778,6 @@ oracles:
             oracle_rolls:
               - oracle: oracle_rollable:sundered_isles/overland/region_landmarks/swamp
                 auto: false
-            # text3: pg 153
           - roll: { min: 86, max: 90 }
             text: '[Wastes](oracle_rollable:sundered_isles/overland/region_landmarks/wastes)'
             text2: *wastes.summary
@@ -807,7 +785,6 @@ oracles:
             oracle_rolls:
               - oracle: oracle_rollable:sundered_isles/overland/region_landmarks/wastes
                 auto: false
-            # text3: pg 154
           - roll: { min: 91, max: 100 }
             text: '[Woodland](oracle_rollable:sundered_isles/overland/region_landmarks/woodland)'
             text2: *woodland.summary
@@ -815,14 +792,12 @@ oracles:
             oracle_rolls:
               - oracle: oracle_rollable:sundered_isles/overland/region_landmarks/woodland
                 auto: false
-            # text3: pg 154
       details:
         name: Overland Details
         type: oracle_rollable
         oracle_type: table_text
         _source:
           <<: *Source
-          page: 156
         tags:
           sundered_isles:
             cursed_by: oracle_rollable:sundered_isles/overland/details_cursed
@@ -1038,7 +1013,6 @@ oracles:
               - oracle_rollable:sundered_isles/overland/details
         _source:
           <<: *Source
-          page: 159
         rows:
           - roll: { min: 1, max: 1 }
             text: Your breath escapes in wisps of fog as an uncanny chill takes hold
@@ -1246,7 +1220,6 @@ oracles:
         oracle_type: table_text
         _source:
           <<: *Source
-          page: 162
         rows:
           - roll: { min: 1, max: 3 }
             text: Caught in a flood or forced to navigate a perilous waterway
@@ -1335,7 +1308,6 @@ oracles:
         oracle_type: table_text
         _source:
           <<: *Source
-          page: 163
         rows:
           - roll: { min: 1, max: 4 }
             text: Advance warning of an ambush or lurking foe

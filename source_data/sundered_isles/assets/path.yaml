@@ -3,7 +3,7 @@ datasworn_version: '0.1.0'
 type: expansion
 ruleset: starforged
 <<: &Source
-  date: 2024-06-01
+  date: 2024-06-11
   title: Sundered Isles
   url: https://ironswornrpg.com
   license: null
@@ -207,7 +207,7 @@ assets:
         abilities:
           - enabled: true
             text: |-
-              When you make a move to throw or stab your harpoon at a large target, add +1 and take +1 momentum on a hit. When you make a move to attack person-sized foes, the harpoon is a powerful but ungainly weapon; add +2, but suffer -1 momentum on a weak hit or miss (in addition to any other cost of the outcome).
+               When you make a move to throw or stab your harpoon at a large target, add +1 and take +1 momentum on a hit. When you make a move to attack person-sized foes, the harpoon is a powerful but ungainly weapon; add +2, but suffer -1 momentum on a weak hit or miss (in addition to any other cost).
             enhance_moves:
               - roll_type: action_roll
                 enhances: null
@@ -218,7 +218,7 @@ assets:
                 enhances: null
                 trigger:
                   conditions:
-                    - text: When you make a move to attack person-sized foes, the harpoon is a powerful but ungainly weapon
+                    - text: When you make a move to attack person-sized foes
           - text: |-
               When you [Strike](move:starforged/combat/strike) a large foe in close quarters, you may drive your harpoon home. If you do, mark progress on a hit. If the fight continues, and you choose to pull the harpoon free, you must [Gain Ground](move:starforged/combat/gain_ground) (+iron), score a hit, and forgo one of the choices awarded by that move.
             enhance_moves:
@@ -234,6 +234,9 @@ assets:
                 trigger:
                   conditions:
                     - text: to pull your harpoon free (after you drive your harpoon home against a large foe in close quarters)
+                      roll_options:
+                        - using: stat
+                          stat: iron
           - text: |-
               When you [Resupply](move:starforged/recover/resupply) by hunting large game, add +1 and take +1 supply on a hit. On a miss with a match, there’s always a bigger fish; you draw the attention of a notable threat.
             enhance_moves:
