@@ -1,7 +1,7 @@
 import { type JSONSchema } from 'json-schema-to-typescript'
 import {
 	compareObjectKeys,
-	dataSwornKeyOrder,
+	dataswornKeyOrder,
 	sortDataswornKeys,
 	sortObjectKeys
 } from '../../pkg-core/Utils/Sort.js'
@@ -71,7 +71,7 @@ export function sortSchemaKeys<T extends JSONSchema>(schema: T) {
 		sortedSchema.properties = sortDataswornKeys(sortedSchema.properties)
 	if (Array.isArray(sortedSchema.required)) {
 		sortedSchema.required = sortedSchema.required.sort((a, b) =>
-			compareObjectKeys(a, b, dataSwornKeyOrder)
+			compareObjectKeys(a, b, dataswornKeyOrder)
 		)
 	}
 

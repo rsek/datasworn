@@ -109,7 +109,7 @@ export const sourceMetadataKeys = [
 	| keyof Omit<Datasworn.AuthorInfo, 'name'>
 )[]
 
-export const dataSwornKeyOrder = [
+export const dataswornKeyOrder = [
 	...idKeys,
 	'datasworn_version',
 	'type',
@@ -214,7 +214,7 @@ export function compareObjectKeys(
 }
 export function sortDataswornKeys<T extends object>(
 	object: T,
-	sortOrder = dataSwornKeyOrder
+	sortOrder = dataswornKeyOrder
 ) {
 	return sortObjectKeys(object, sortOrder)
 }

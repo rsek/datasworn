@@ -1,7 +1,7 @@
 import CONST from '../IdElements/CONST.js'
 import type TypeNode from '../TypeNode.js'
 import {
-	dataSwornKeyOrder,
+	dataswornKeyOrder,
 	sortDataswornKeys,
 	sortObjectKeys
 } from '../Utils/Sort.js'
@@ -15,7 +15,9 @@ export type Logger = Record<
 	(message?: any, ...optionalParams: any[]) => any
 >
 
-/** Merges and validates JSON data from multiple DataswornSource files. */
+/**
+ * Merges, assigns IDs to, and validates multiple {@link DataswornSource.RulesPackage}s to create a complete {@link Datasworn.RulesPackage} object.
+ * */
 export class RulesPackageBuilder<
 	TSource extends DataswornSource.RulesPackage = DataswornSource.RulesPackage,
 	TTarget extends Datasworn.RulesPackage = Datasworn.RulesPackage
@@ -31,15 +33,11 @@ export class RulesPackageBuilder<
 	readonly files = new Map<string, RulesPackagePart<TSource>>()
 	readonly index = new Map<string, unknown>()
 
-	#mergedSource: TTarget = {} as TTarget
+	#result: TTarget = {} as TTarget
 
 	#isSorted = false
 	#isMergeComplete = false
 	#isValidated = false
-
-	get mergedSource() {
-		return this.#mergedSource
-	}
 
 	#countTypes() {
 		const types = {} as Record<string, number>
@@ -61,8 +59,7 @@ export class RulesPackageBuilder<
 			// sort by file name so that they merge in the same order every time (prevents JSON diff noise). the order itself is arbitrary, but must be the same no matter who runs it -- this is why localeCompare specifies a static locale
 			.sort(([a], [b]) => a.localeCompare(b, 'en-US'))
 
-		for (const [_, part] of sortedEntries)
-			this.#merge(this.#mergedSource, part.data)
+		for (const [_, part] of sortedEntries) this.#merge(this.#result, part.data)
 
 		this.#isMergeComplete = true
 		this.#isValidated = false
@@ -72,20 +69,20 @@ export class RulesPackageBuilder<
 	}
 
 	toJSON() {
-		return this.mergedSource
+		return this.#result
 	}
 
 	#build(force = false) {
 		this.mergeFiles(force)
 		this.#sortKeys(force)
 		this.#isValidated = false
-		return this.mergedSource
+		return this.#result
 	}
 
 	validate(force = false) {
 		if (!force && this.#isValidated) return this
 
-		this.schemaValidator(this.mergedSource)
+		this.schemaValidator(this.#result)
 
 		const validatedIds = new Set<string>()
 
@@ -114,7 +111,7 @@ export class RulesPackageBuilder<
 	}
 
 	validateIdPointers(index: Map<string, unknown> | Set<string>) {
-		return validateIdsInStrings(this.mergedSource, index)
+		return validateIdsInStrings(this.#result, index)
 	}
 
 	build(force = false) {
@@ -132,19 +129,17 @@ export class RulesPackageBuilder<
 	#sortKeys(force = false) {
 		if (this.#isSorted && !force) return this
 
-		this.#mergedSource = sortDataswornKeys(this.#mergedSource)
+		this.#result = sortDataswornKeys(this.#result)
 		this.#isSorted = true
 		return this
 	}
 
 	static sortDataswornKeys<T extends object>(
 		object: T,
-		sortOrder = dataSwornKeyOrder
+		sortOrder = dataswornKeyOrder
 	) {
 		return sortObjectKeys(object, sortOrder)
 	}
-
-	// could unwrap all values to json pointers, then set them in order? hm.
 
 	/** Top-level RulesPackage properties to omit from key sorting. */
 	static readonly topLevelKeysBlackList = [
@@ -157,6 +152,13 @@ export class RulesPackageBuilder<
 	/** Hash character that prepends generated JSON pointers. */
 	static readonly hashChar = '#' as const
 
+	/**
+	 *
+	 * @param id The `_id` of the RulesPackage to be constructed.
+	 * @param validator A function that validates the completed RulesPackage against the Datasworn JSON schema.
+	 * @param sourceValidator A function that validates the individual package file contents against the DataswornSource JSON schema.
+	 * @param logger The destination for logging build messages.
+	 */
 	constructor(
 		id: string,
 		validator: SchemaValidator<TTarget>,
