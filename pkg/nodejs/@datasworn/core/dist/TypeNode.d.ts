@@ -32,6 +32,7 @@ declare namespace TypeNode {
         oracle_rollable: Datasworn.EmbeddedOracleRollable;
         move: Datasworn.EmbeddedMove;
     };
+    export type CollectableOf<T extends Collection> = ByType<TypeId.CollectableOf<T['type']>> & Collectable;
     /** Gets the node type(s) corresponding to a given TypeId. */
     export type ByType<T extends keyof PrimaryTypeMap | keyof EmbeddedTypeMap> = T extends keyof PrimaryTypeMap ? T extends keyof EmbeddedTypeMap ? PrimaryTypeMap[T] | EmbeddedTypeMap[T] : PrimaryTypeMap[T] : T extends keyof EmbeddedTypeMap ? EmbeddedTypeMap[T] : never;
     /** Any Datasworn primary node type. */

@@ -5,7 +5,7 @@ const diceExpressionPattern =
 	/^(?<numberOfDice>[1-9][0-9]*)d(?<sides>[1-9][0-9]*)(?<modifier>[+-]([1-9][0-9]*))?$/
 
 export function validate<T extends Datasworn.OracleRollable>(object: T) {
-	if (!validateTableRollRanges(object)) throw new Error()
+	validateTableRollRanges(object, false)
 
 	return true
 }
@@ -14,13 +14,13 @@ export function validate<T extends Datasworn.OracleRollable>(object: T) {
 
 function validateTableRollRanges(
 	oracleRollable: Datasworn.OracleRollable,
-	noSort = false
+	sort = false
 ) {
 	const { min: rollMin, max: rollMax } = getDiceRange(oracleRollable.dice)
 
-	const rows = noSort
-		? oracleRollable.rows
-		: oracleRollable.rows.sort(compareRanges)
+	const rows = sort
+		? oracleRollable.rows.sort(compareRanges)
+		: oracleRollable.rows
 
 	for (let i = 0; i < rows.length; i++) {
 		const row = rows[i]
@@ -31,19 +31,22 @@ function validateTableRollRanges(
 		const { min, max } = row.roll
 
 		// basic validation of a single row's contents
-		OracleTableRow.validate(row)
+		try {
+			OracleTableRow.validate(row)
+		} catch (e) {
+			throw new Error(`@ index ${i}: ${String(e)}`)
+		}
 
 		// min and max must both be null or both be integers
 
 		if (min < rollMin)
-			throw new Error(`Row (${i}) min is less than the minimum possible roll.`)
+			throw new Error(
+				`@ index ${i}: roll.min (${min}) is less than the minimum possible roll of ${oracleRollable.dice} (${rollMin})`
+			)
 		if (max > rollMax)
 			throw new Error(
-				`Row (${i}) max is greater than the maximum possible roll.`
+				`@ index ${i}: roll.max (${max}) is greater than the maximum possible roll of ${oracleRollable.dice} (${rollMax})`
 			)
-
-		// min must be less than or equal to max
-		if (min > max) throw new Error(`Row (${i}) min is greater than row max`)
 
 		// what happens if there's blank rows intermixed, rather than a block at the start?
 		// would this be easier if we compared the next row instead?
@@ -53,32 +56,32 @@ function validateTableRollRanges(
 
 		if (previousRow?.roll == null) continue
 
-		// if there's a previous row, its max must be 1 lower than this row's min
-		if (previousRow.roll.max !== min + 1)
+		if (min !== previousRow.roll.max + 1)
 			throw new Error(
-				`Row (${i}) roll range is not sequential with previous row.`
+				`@ index ${i}: Roll range (${min}-${max}) is not sequential with previous row (${previousRow.roll.min}-${previousRow.roll.max}).`
 			)
 	}
 
 	return true
 }
 
-
 function getDiceRange(diceExpression: Datasworn.DiceExpression) {
-	const parsed = diceExpressionPattern.exec(diceExpression)
+	const parsed = diceExpressionPattern.exec(diceExpression).groups
 
 	if (parsed == null)
 		throw new Error(
 			`Could not parse ${String(diceExpression)} as a dice expression.`
 		)
 
-	const [numberOfDice, sides, modifier] = parsed.map((numberString) => {
-		const n = Number(numberString)
-		if (Number.isNaN(n)) return 0
-		if (!Number.isInteger(n))
-			throw new Error(`Dice expression elements must be an integer value`)
-		return n
-	})
+	const [numberOfDice, sides, modifier] = Object.values(parsed).map(
+		(numberString, i) => {
+			const n = Number(numberString)
+			if (Number.isNaN(n)) return 0
+			if (!Number.isInteger(n))
+				throw new Error(`Dice expression elements must be an integer value`)
+			return n
+		}
+	)
 
 	const min = numberOfDice + modifier
 	const max = numberOfDice * sides + modifier

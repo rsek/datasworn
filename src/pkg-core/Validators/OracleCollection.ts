@@ -2,36 +2,40 @@ import type { Datasworn } from '../index.js'
 import * as Collection from './Collection.js'
 import * as OracleRollable from './OracleRollable.js'
 
-export function validate<T extends Datasworn.OracleCollection>(object: T) {
-	const badIndices: number[] = []
+export function validate<T extends Datasworn.OracleCollection>(collection: T) {
+	const errors = []
 
-	switch (object.oracle_type) {
+	const { oracle_type } = collection
+
+	switch (oracle_type) {
 		case 'table_shared_rolls':
-			badIndices.push(
-				...oracleRowsEqualBy(rowHasSameRolls, ...Object.values(object.contents))
-			)
-			if (badIndices.length)
+			try {
+				oracleRowsEqualBy(rowHasSameRolls, collection.contents)
+			} catch (e) {
+				console.table(renderMultiTable(collection.contents, ['roll']))
 				throw new Error(
-					`${this.oracle_type} child OracleRollables must have the same roll ranges in their rows, in the same order. The following array indices don't match: ${badIndices.join(', ')}`
+					`${oracle_type} child OracleRollables must have the same roll ranges in their rows, in the same order. The following rows array indices don't match:\n${e.toString()}`
 				)
+			}
 			break
 		case 'table_shared_text':
 		case 'table_shared_text2':
 		case 'table_shared_text3':
-			badIndices.push(
-				...oracleRowsEqualBy(rowHasSameText, ...Object.values(object.contents))
-			)
-			if (badIndices.length)
+			try {
+				oracleRowsEqualBy(rowHasSameText, collection.contents)
+			} catch (e) {
+				console.table(renderMultiTable(collection.contents, ['text']))
 				throw new Error(
-					`${this.oracle_type} child OracleRollables must have the same text content in their rows, in the same order. The following array indices don't match: ${badIndices.join(', ')}`
+					`${oracle_type} child OracleRollables must have the same text content in their rows, in the same order. The following rows array indices don't match:\n${e.toString()}`
 				)
+			}
 			break
 		case 'tables':
 		default:
 			break
 	}
 
-	return Collection.validate(object, validate, OracleRollable.validate)
+	return true
 }
 
 /**
@@ -40,33 +44,47 @@ export function validate<T extends Datasworn.OracleCollection>(object: T) {
  * @param oracleRollables The OracleRollables to be compared.
  * @return An array of row indices; the rows with index fail at least one equality test.
  */
-function oracleRowsEqualBy<T extends Datasworn.OracleRollable>(
+function oracleRowsEqualBy(
 	equalityFn: (
 		a: Datasworn.OracleTableRow,
 		b: Datasworn.OracleTableRow
 	) => boolean,
-	...oracleRollables: T[]
+	oracleRollables: Record<string, Datasworn.OracleRollable>
 ) {
-	const [primary, ...secondaries] = oracleRollables
-	const badRowIndices = new Set<number>()
+	const [[primaryKey, primary], ...secondaries] =
+		Object.entries(oracleRollables)
+	const badRowMessages: Record<number, string[]> = {}
 
-	for (let i = 0; i < primary.rows.length; i++) {
-		const primaryRow = primary.rows[i]
+	for (let rowIndex = 0; rowIndex < primary.rows.length; rowIndex++) {
+		const rowA = primary.rows[rowIndex]
 
-		for (const secondary of secondaries) {
-			const secondaryRow = secondary.rows[i]
-			if (!equalityFn(primaryRow, secondaryRow)) badRowIndices.add(i)
+		for (const [secondaryKey, secondary] of secondaries) {
+			const rowB = secondary.rows[rowIndex]
+			try {
+				equalityFn(rowA, rowB)
+			} catch (e) {
+				badRowMessages[rowIndex] ||= []
+				badRowMessages[rowIndex].push(`<${secondaryKey}> ${e.toString()}`)
+			}
 		}
 	}
 
-	return Array.from(badRowIndices)
+	const entries = Object.entries(badRowMessages)
+
+	if (entries.length)
+		throw new Error(entries.map(([k, v]) => `${k}: ${String(v)}`).join('\n'))
+
+	return true
 }
 
 function rowHasSameRolls(
 	a: Datasworn.OracleTableRow,
 	b: Datasworn.OracleTableRow
 ) {
-	return a.roll.max === b.roll.max && a.roll.min === a.roll.max
+	if (a.roll.min === b.roll.min && a.roll.max === b.roll.max) return true
+	throw new Error(
+		`Expected roll range of ${JSON.stringify(a.roll)} but got ${JSON.stringify(b.roll)}`
+	)
 }
 const textProperties = [
 	'text',
@@ -79,8 +97,55 @@ function rowHasSameText(
 	b: Datasworn.OracleTableRow
 ) {
 	for (const k of textProperties) {
-		if (a[k] !== b[k]) return false
+		// neither has key -- skip it
+		if (!(k in a) && !(k in b)) continue
+
+		if (a[k] !== b[k])
+			throw new Error(
+				`expected "${k}" to be ${JSON.stringify(a[k])}, but got ${JSON.stringify(b[k])}`
+			)
 	}
 
 	return true
+}
+
+function renderMultiTable<
+	T extends Record<string, Datasworn.OracleRollable>,
+	K extends (keyof Datasworn.OracleTableRowText3)[]
+>(oracleRollables: T, showContent: K) {
+	const tabularData: Record<keyof T, string>[] = []
+
+	const rollableEntries = Object.entries(oracleRollables)
+	const [[_, primary]] = rollableEntries
+
+	for (let rowIndex = 0; rowIndex < primary.rows.length; rowIndex++) {
+		const rowData = {} as Record<keyof T, string>
+		for (const [dictKey, oracleRollable] of rollableEntries) {
+			const row = oracleRollable.rows[rowIndex]
+			let content = ''
+			for (const contentKey of showContent) {
+				const contentValue = row[contentKey]
+				switch (typeof contentValue) {
+					case 'object':
+						if (contentValue === null) content += '(none): '
+						else if ('max' in contentValue && 'min' in contentValue)
+							content += `${contentValue.min}-${contentValue.max}: `
+						break
+					case 'string':
+						content += contentValue.replaceAll(
+							/\[([A-z -]+)\]\([a-z_]+:.+?\)/g,
+							'[$1]'
+						)
+						break
+					default:
+						break
+				}
+			}
+
+			rowData[dictKey as keyof T] = content
+		}
+		tabularData.push(rowData)
+	}
+
+	return tabularData
 }

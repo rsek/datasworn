@@ -705,17 +705,17 @@ oracles:
                 roll: { min: 1, max: 16 }
                 text: Sepulcher
               - <<: *i18n.common_noun
-                roll: { min: 50, max: 66 }
-                text: Mound
-              - <<: *i18n.common_noun
                 roll: { min: 17, max: 32 }
                 text: Grave
               - <<: *i18n.common_noun
-                roll: { min: 67, max: 83 }
-                text: Tomb
-              - <<: *i18n.common_noun
                 roll: { min: 33, max: 49 }
                 text: Crypt
+              - <<: *i18n.common_noun
+                roll: { min: 50, max: 66 }
+                text: Mound
+              - <<: *i18n.common_noun
+                roll: { min: 67, max: 83 }
+                text: Tomb
               - <<: *i18n.common_noun
                 roll: { min: 84, max: 100 }
                 text: Barrow

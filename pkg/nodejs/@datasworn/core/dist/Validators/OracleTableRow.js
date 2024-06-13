@@ -15,9 +15,6 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-};
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
@@ -25,14 +22,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Validators = exports.Migrations = exports.DataswornTree = void 0;
-__exportStar(require("./IdParser.js"), exports);
-var DataswornTree_js_1 = require("./DataswornTree.js");
-Object.defineProperty(exports, "DataswornTree", { enumerable: true, get: function () { return DataswornTree_js_1.DataswornTree; } });
-exports.Migrations = __importStar(require("./migrations.js"));
-var index_js_1 = require("./Validators/index.js");
-Object.defineProperty(exports, "Validators", { enumerable: true, get: function () { return __importDefault(index_js_1).default; } });
+exports.validate = void 0;
+const DiceRange = __importStar(require("./DiceRange.js"));
+function validate(object) {
+    DiceRange.validate(object.roll);
+    return true;
+}
+exports.validate = validate;

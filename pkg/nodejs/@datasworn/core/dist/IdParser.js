@@ -334,7 +334,7 @@ _a = IdParser, _IdParser_pathSegments = new WeakMap(), _IdParser_typeIds = new W
     // IdParser.logger.debug('[#assignIdsInArray]')
     for (let i = 0; i < childNodes.length; i++) {
         const childNode = childNodes[i];
-        const childParser = this.createEmbeddedId(nextTypeId, i);
+        const childParser = this.createEmbeddedId(nextTypeId, i.toString());
         childParser.assignIdsIn(childNode, recursive, index);
     }
 }, _IdParser_parseOptions = function _IdParser_parseOptions(id) {
@@ -348,10 +348,13 @@ _a = IdParser, _IdParser_pathSegments = new WeakMap(), _IdParser_typeIds = new W
 }, _IdParser_getClassForPrimaryTypeId = function _IdParser_getClassForPrimaryTypeId(typeId) {
     switch (true) {
         case TypeGuard_js_1.default.CollectionType(typeId):
+            // @ts-expect-error
             return CollectionId;
         case TypeGuard_js_1.default.CollectableType(typeId):
+            // @ts-expect-error
             return CollectableId;
         case TypeGuard_js_1.default.NonCollectableType(typeId):
+            // @ts-expect-error
             return NonCollectableId;
         default:
             throw new Error(`Expected TypeId.AnyPrimary, but got ${JSON.stringify(typeId)}`);

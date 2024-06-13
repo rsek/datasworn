@@ -230,12 +230,12 @@ exports.updateIdsInString = updateIdsInString;
  * Matches *only* the actual ID.
  * @example "{{text:starforged/oracle_rollable/factions/name/legacy}}"
  */
-const markdownMacroPattern = /(?<=\{\{[a-z_]+:)[a-z_\/\.\d]+?(?=\}\})/g;
+const markdownMacroPattern = /(?<=\{\{[a-z_]+:)[a-z_\\/\\.\d]+?(?=\}\})/g;
 /**
  * Matches *only* the actual ID.
  * @example "[Legacy](id:starforged/oracle_rollable/factions/name/legacy)"
  */
-const markdownLinkPattern = /(?<=\[\w.+\]\(id:)[a-z_\/\.\d]+?(?=\))/g;
+const markdownLinkPattern = /(?<=\[\w.+\]\(id:)[a-z_\\/\\.\d]+?(?=\))/g;
 const markdownIdPatterns = [markdownMacroPattern, markdownLinkPattern];
 /**
  *

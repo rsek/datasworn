@@ -1,12 +1,13 @@
-import CONST from './IdElements/CONST.js'
-import type TypeNode from './TypeNode.js'
+import CONST from '../IdElements/CONST.js'
+import type TypeNode from '../TypeNode.js'
 import {
 	dataSwornKeyOrder,
 	sortDataswornKeys,
 	sortObjectKeys
-} from './Utils/Sort.js'
-import { validateIdsInStrings } from './Validators/validateText.js'
-import { IdParser, type Datasworn, type DataswornSource } from './index.js'
+} from '../Utils/Sort.js'
+import { validateIdsInStrings } from '../Validators/Text.js'
+import Validators from '../Validators/index.js'
+import { IdParser, type Datasworn, type DataswornSource } from '../index.js'
 
 export type SchemaValidator<TTarget> = (data: unknown) => data is TTarget
 export type Logger = Record<
@@ -20,6 +21,8 @@ export class RulesPackageBuilder<
 	TTarget extends Datasworn.RulesPackage = Datasworn.RulesPackage
 > {
 	id: string
+
+	static readonly postSchemaValidators = Validators
 
 	readonly schemaValidator: SchemaValidator<TTarget>
 	readonly sourceSchemaValidator: SchemaValidator<TSource>
@@ -83,6 +86,28 @@ export class RulesPackageBuilder<
 		if (!force && this.#isValidated) return this
 
 		this.schemaValidator(this.mergedSource)
+
+		const validatedIds = new Set<string>()
+
+		for (const [id, typeNode] of this.index) {
+			if (typeNode == null) continue
+			if (validatedIds.has(id)) continue
+			if (!RulesPackageBuilder.#isObject(typeNode)) continue
+			if (!('type' in typeNode)) continue
+			if (typeNode.type == null || typeof typeNode.type !== 'string') continue
+			const typeValidation =
+				RulesPackageBuilder.postSchemaValidators[typeNode.type]
+			if (typeof typeValidation !== 'function') continue
+			try {
+				typeValidation(typeNode)
+				validatedIds.add(id)
+			} catch (e) {
+				throw new Error(
+					`<${id}> ${String(e)}\n\n${JSON.stringify(typeNode, undefined, '\t')}`
+				)
+			}
+		}
+
 		this.#isValidated = true
 
 		return this
@@ -100,7 +125,7 @@ export class RulesPackageBuilder<
 
 			return this
 		} catch (e) {
-			throw new Error(`Couldn't build <${this.id}>. ${String(e)}`)
+			throw new Error(`Couldn't build "${this.id}". ${String(e)}`)
 		}
 	}
 

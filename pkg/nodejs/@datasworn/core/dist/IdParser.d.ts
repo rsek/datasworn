@@ -3,7 +3,7 @@ import CONST from './IdElements/CONST.js';
 import TypeId from './IdElements/TypeId.js';
 import GlobberPath from './ObjectGlobber.js';
 import type * as StringId from './StringId.js';
-import type { ExtractTypeId, ExtractAncestorKeys, ExtractKey, ExtractRulesPackage, ExtractPrimaryAncestorKeys } from './Utils/Id.js';
+import type { ExtractTypeId } from './Utils/Id.js';
 import type { Datasworn, DataswornSource } from './index.js';
 import { type PathKeys } from './IdElements/index.js';
 import type TypeNode from './TypeNode.js';
@@ -25,19 +25,19 @@ declare abstract class IdParser<TypeIds extends StringId.TypeIdParts = StringId.
     get pathSegments(): PathSegments;
     set pathSegments(value: PathSegments);
     constructor(options: IdParser.Options<TypeIds, PathSegments>);
-    createEmbeddedId<TypeId extends TypeId.EmbeddableTypes, Key extends string | number>(typeId: TypeId, key: Key): EmbeddedId<this, TypeId, Key>;
+    createEmbeddedId<TypeId extends TypeId.EmbeddableTypes, Key extends string>(typeId: TypeId, key: Key): EmbeddedId<this, TypeId, Key>;
     /**
      * Returns a string representation of the ID.
      */
-    get id(): `${Join<TypeIds, ".">}:${Join<PathSegments, ".">}`;
-    toString(): `${Join<TypeIds, ".">}:${Join<PathSegments, ".">}`;
+    get id(): string;
+    toString(): string;
     get primaryTypeId(): string;
     get primaryPath(): string;
     get primaryPathElements(): string[];
     get rulesPackage(): string;
     get primaryDictKeyElements(): string[];
-    get fullTypeId(): Join<TypeIds, ".">;
-    get fullPath(): Join<PathSegments, ".">;
+    get fullTypeId(): string;
+    get fullPath(): string;
     get targetTypeId(): string;
     get lastProperty(): TypeId.RootKey<TypeId.AnyPrimary>;
     /** Does this ID contain any wildcard ("*") or globstar ("**") elements? */
@@ -103,10 +103,8 @@ declare class NonCollectableId<TypeId extends TypeId.NonCollectable = TypeId.Non
 interface NonCollectableId<TypeId extends TypeId.NonCollectable = TypeId.NonCollectable, RulesPackage extends string = string, Key extends string = string> extends IdParser<[TypeId], [`${RulesPackage}${CONST.PathKeySep}${Key}`]> {
     get id(): StringId.NonCollectableId<TypeId, RulesPackage, Key>;
 }
-declare namespace NonCollectableId {
-    type FromString<T extends StringId.NonCollectableId> = NonCollectableId<ExtractTypeId<T>, ExtractRulesPackage<T>, ExtractKey<T>>;
-}
-interface RecursiveId extends IdParser {
+declare namespace NonCollectableId { }
+interface RecursiveId {
     /** The current collection recursion depth. */
     get recursionDepth(): number;
     get isRecursive(): true;
@@ -131,10 +129,9 @@ interface CollectableId<TypeId extends TypeId.Collectable = TypeId.Collectable, 
     get isRecursive(): true;
     get isCollection(): false;
     get isCollectable(): true;
+    get fullTypeId(): TypeId;
 }
-declare namespace CollectableId {
-    type FromString<T extends StringId.CollectableId> = CollectableId<ExtractTypeId<T>, ExtractRulesPackage<T>, ExtractPrimaryAncestorKeys<T>, ExtractKey<T>>;
-}
+declare namespace CollectableId { }
 declare class CollectionId<TypeId extends TypeId.Collection = TypeId.Collection, RulesPackage extends string = string, CollectionAncestorKeys extends PathKeys.CollectionAncestorKeys = PathKeys.CollectionAncestorKeys, Key extends string = string> extends IdParser<[
     TypeId
 ], [
@@ -163,6 +160,7 @@ interface CollectionId<TypeId extends TypeId.Collection = TypeId.Collection, Rul
 ], [
     Join<[RulesPackage, ...CollectionAncestorKeys, Key]>
 ]>, RecursiveId {
+    get fullTypeId(): TypeId;
     get isCollectable(): false;
     get isCollection(): true;
     get isRecursive(): true;
@@ -172,7 +170,6 @@ interface CollectionId<TypeId extends TypeId.Collection = TypeId.Collection, Rul
     get primaryDictKeyElements(): [...CollectionAncestorKeys, Key];
 }
 declare namespace CollectionId {
-    type FromString<T extends StringId.CollectionId> = CollectionId<ExtractTypeId<T>, ExtractRulesPackage<T>, ExtractAncestorKeys<T>, ExtractKey<T>>;
     type ChildOf<T extends CollectionId, K extends string = string> = CollectableId<TypeId.CollectableOf<T['primaryTypeId']>, T['rulesPackage'], T['primaryDictKeyElements'], K>;
     type ChildCollectionOf<T extends CollectionId, K extends string = string> = T['primaryDictKeyElements'] extends PathKeys.CollectionAncestorKeys ? CollectionId<T['primaryTypeId'], T['rulesPackage'], T['primaryDictKeyElements'], K> : never;
     type ParentCollectionOf<T extends CollectionId> = T['collectionAncestorKeys'] extends [infer K extends string] ? CollectionId<T['primaryTypeId'], T['rulesPackage'], [], K> : T['collectionAncestorKeys'] extends [
@@ -183,10 +180,20 @@ declare namespace CollectionId {
         infer K extends string
     ] ? CollectionId<T['primaryTypeId'], T['rulesPackage'], U, K> : never;
 }
-declare class EmbeddedId<Parent extends IdParser.Options = IdParser.Options, TypeId extends TypeId.EmbeddableTypes = TypeId.EmbeddableTypes, Key extends string | number = string | number> extends IdParser {
+declare class EmbeddedId<Parent extends IdParser = IdParser, TypeId extends TypeId.EmbeddableTypes = TypeId.EmbeddableTypes, Key extends string = string> extends IdParser {
     constructor(parent: Parent, typeId: TypeId, key: string);
     constructor(parent: Parent, typeId: TypeId, index: number);
 }
-interface EmbeddedId<Parent extends IdParser.Options = IdParser.Options, TypeId extends TypeId.EmbeddableTypes = TypeId.EmbeddableTypes, Key extends string | number = string | number> extends IdParser {
+interface EmbeddedId<Parent extends IdParser, TypeId extends TypeId.EmbeddableTypes = TypeId.EmbeddableTypes, Key extends string = string> extends IdParser {
+    get id(): `${this['fullTypeId']}${CONST.PrefixSep}${Join<this['pathSegments'], CONST.PathTypeSep>}`;
+    get typeIds(): [...Parent['typeIds'], TypeId];
+    get pathSegments(): [...Parent['pathSegments'], Key];
+    get primaryTypeId(): Parent['primaryTypeId'];
+    get primaryPathElements(): Parent['primaryPathElements'];
+    get primaryDictKeyElements(): Parent['primaryDictKeyElements'];
+    get isRecursive(): Parent['isRecursive'];
+    get isCollection(): Parent['isCollection'];
+    get isCollectable(): Parent['isCollectable'];
+    get fullTypeId(): `${Parent['fullTypeId']}${CONST.PathTypeSep}${TypeId}`;
 }
 export { IdParser, NonCollectableId, CollectableId, EmbeddedId, CollectionId };

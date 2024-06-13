@@ -16,10 +16,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 var _RulesPackageBuilder_instances, _a, _RulesPackageBuilder_mergedSource, _RulesPackageBuilder_isSorted, _RulesPackageBuilder_isMergeComplete, _RulesPackageBuilder_isValidated, _RulesPackageBuilder_countTypes, _RulesPackageBuilder_build, _RulesPackageBuilder_sortKeys, _RulesPackageBuilder_addFile, _RulesPackageBuilder_isObject, _RulesPackageBuilder_merge, _RulesPackagePart_data, _RulesPackagePart_isValidated;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RulesPackageBuilder = void 0;
-const CONST_js_1 = __importDefault(require("./IdElements/CONST.js"));
-const Sort_js_1 = require("./Utils/Sort.js");
-const validateText_js_1 = require("./Validators/validateText.js");
-const index_js_1 = require("./index.js");
+const CONST_js_1 = __importDefault(require("../IdElements/CONST.js"));
+const Sort_js_1 = require("../Utils/Sort.js");
+const Text_js_1 = require("../Validators/Text.js");
+const index_js_1 = __importDefault(require("../Validators/index.js"));
+const index_js_2 = require("../index.js");
 /** Merges and validates JSON data from multiple DataswornSource files. */
 class RulesPackageBuilder {
     get mergedSource() {
@@ -45,11 +46,34 @@ class RulesPackageBuilder {
         if (!force && __classPrivateFieldGet(this, _RulesPackageBuilder_isValidated, "f"))
             return this;
         this.schemaValidator(this.mergedSource);
+        const validatedIds = new Set();
+        for (const [id, typeNode] of this.index) {
+            if (typeNode == null)
+                continue;
+            if (validatedIds.has(id))
+                continue;
+            if (!__classPrivateFieldGet(_a, _a, "m", _RulesPackageBuilder_isObject).call(_a, typeNode))
+                continue;
+            if (!('type' in typeNode))
+                continue;
+            if (typeNode.type == null || typeof typeNode.type !== 'string')
+                continue;
+            const typeValidation = _a.postSchemaValidators[typeNode.type];
+            if (typeof typeValidation !== 'function')
+                continue;
+            try {
+                typeValidation(typeNode);
+                validatedIds.add(id);
+            }
+            catch (e) {
+                throw new Error(`<${id}> ${String(e)}\n\n${JSON.stringify(typeNode, undefined, '\t')}`);
+            }
+        }
         __classPrivateFieldSet(this, _RulesPackageBuilder_isValidated, true, "f");
         return this;
     }
     validateIdPointers(index) {
-        return (0, validateText_js_1.validateIdsInStrings)(this.mergedSource, index);
+        return (0, Text_js_1.validateIdsInStrings)(this.mergedSource, index);
     }
     build(force = false) {
         try {
@@ -58,7 +82,7 @@ class RulesPackageBuilder {
             return this;
         }
         catch (e) {
-            throw new Error(`Couldn't build <${this.id}>. ${String(e)}`);
+            throw new Error(`Couldn't build "${this.id}". ${String(e)}`);
         }
     }
     static sortDataswornKeys(object, sortOrder = Sort_js_1.dataSwornKeyOrder) {
@@ -141,6 +165,7 @@ _a = RulesPackageBuilder, _RulesPackageBuilder_mergedSource = new WeakMap(), _Ru
     }
     return __classPrivateFieldGet(this, _RulesPackageBuilder_instances, "m", _RulesPackageBuilder_merge).call(this, target, ...sources);
 };
+RulesPackageBuilder.postSchemaValidators = index_js_1.default;
 // could unwrap all values to json pointers, then set them in order? hm.
 /** Top-level RulesPackage properties to omit from key sorting. */
 RulesPackageBuilder.topLevelKeysBlackList = [
@@ -183,7 +208,7 @@ class RulesPackagePart {
         catch (e) {
             throw new Error(`${this.name} doesn't match DataswornSource\n${String(e)}`);
         }
-        void index_js_1.IdParser.assignIdsInRulesPackage(this.data, this.index);
+        void index_js_2.IdParser.assignIdsInRulesPackage(this.data, this.index);
     }
 }
 _RulesPackagePart_data = new WeakMap(), _RulesPackagePart_isValidated = new WeakMap();

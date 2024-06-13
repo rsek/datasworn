@@ -6736,18 +6736,6 @@
 										}
 									},
 									"roll": {
-										"min": 50,
-										"max": 66
-									},
-									"text": "Mound"
-								},
-								{
-									"_i18n": {
-										"text": {
-											"part_of_speech": "common_noun"
-										}
-									},
-									"roll": {
 										"min": 17,
 										"max": 32
 									},
@@ -6760,10 +6748,10 @@
 										}
 									},
 									"roll": {
-										"min": 67,
-										"max": 83
+										"min": 33,
+										"max": 49
 									},
-									"text": "Tomb"
+									"text": "Crypt"
 								},
 								{
 									"_i18n": {
@@ -6772,10 +6760,22 @@
 										}
 									},
 									"roll": {
-										"min": 33,
-										"max": 49
+										"min": 50,
+										"max": 66
 									},
-									"text": "Crypt"
+									"text": "Mound"
+								},
+								{
+									"_i18n": {
+										"text": {
+											"part_of_speech": "common_noun"
+										}
+									},
+									"roll": {
+										"min": 67,
+										"max": 83
+									},
+									"text": "Tomb"
 								},
 								{
 									"_i18n": {

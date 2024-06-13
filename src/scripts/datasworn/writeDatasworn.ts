@@ -13,7 +13,7 @@ import AJV from '../validation/ajv.js'
 import {
 	RulesPackageBuilder,
 	type SchemaValidator
-} from '../../pkg-core/RulesPackageBuilder.js'
+} from '../../pkg-core/Builders/RulesPackageBuilder.js'
 import * as PkgConfig from '../pkg/pkgConfig.js'
 
 const schemaValidator = <SchemaValidator<Datasworn.RulesPackage>>(

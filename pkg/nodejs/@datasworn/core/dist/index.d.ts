@@ -3,3 +3,4 @@ export type * as DataswornSource from './DataswornSource.js';
 export * from './IdParser.js';
 export { DataswornTree } from './DataswornTree.js';
 export * as Migrations from './migrations.js';
+export { default as Validators } from './Validators/index.js';

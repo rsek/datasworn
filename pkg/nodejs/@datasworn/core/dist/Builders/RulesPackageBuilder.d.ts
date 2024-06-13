@@ -1,11 +1,15 @@
-import type TypeNode from './TypeNode.js';
-import { type Datasworn, type DataswornSource } from './index.js';
+import type TypeNode from '../TypeNode.js';
+import { type Datasworn, type DataswornSource } from '../index.js';
 export type SchemaValidator<TTarget> = (data: unknown) => data is TTarget;
 export type Logger = Record<'warn' | 'info' | 'debug' | 'error', (message?: any, ...optionalParams: any[]) => any>;
 /** Merges and validates JSON data from multiple DataswornSource files. */
 export declare class RulesPackageBuilder<TSource extends DataswornSource.RulesPackage = DataswornSource.RulesPackage, TTarget extends Datasworn.RulesPackage = Datasworn.RulesPackage> {
     #private;
     id: string;
+    static readonly postSchemaValidators: {
+        readonly oracle_rollable: typeof import("../Validators/OracleRollable.js").validate;
+        readonly oracle_collection: typeof import("../Validators/OracleCollection.js").validate;
+    };
     readonly schemaValidator: SchemaValidator<TTarget>;
     readonly sourceSchemaValidator: SchemaValidator<TSource>;
     readonly logger: Logger;
