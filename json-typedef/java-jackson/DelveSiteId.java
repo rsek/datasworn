@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * A unique ID for a DelveSite.
+ * A unique ID representing a DelveSite object.
  */
 public class DelveSiteId {
     @JsonValue

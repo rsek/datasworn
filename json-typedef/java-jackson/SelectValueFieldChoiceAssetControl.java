@@ -21,7 +21,7 @@ public class SelectValueFieldChoiceAssetControl extends SelectValueFieldChoice {
     private DictKey control;
 
     @JsonProperty("label")
-    private InputLabel label;
+    private Label label;
 
     public SelectValueFieldChoiceAssetControl() {
     }
@@ -73,14 +73,14 @@ public class SelectValueFieldChoiceAssetControl extends SelectValueFieldChoice {
     /**
      * Getter for label.<p>
      */
-    public InputLabel getLabel() {
+    public Label getLabel() {
         return label;
     }
 
     /**
      * Setter for label.<p>
      */
-    public void setLabel(InputLabel label) {
+    public void setLabel(Label label) {
         this.label = label;
     }
 }

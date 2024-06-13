@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * A unique ID for an AssetAbility.
+ * A unique ID representing an AssetAbility object.
  */
 public class AssetAbilityId {
     @JsonValue

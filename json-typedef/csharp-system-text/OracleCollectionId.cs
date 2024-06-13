@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// A unique ID for an OracleCollection.
+    /// A unique ID representing an OracleCollection object.
     /// </summary>
     [JsonConverter(typeof(OracleCollectionIdJsonConverter))]
     public class OracleCollectionId

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * A unique ID for a MoveCategory.
+ * A unique ID representing a MoveCategory object.
  */
 public class MoveCategoryId {
     @JsonValue

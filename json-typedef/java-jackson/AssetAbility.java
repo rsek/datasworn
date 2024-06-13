@@ -41,7 +41,7 @@ public class AssetAbility {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("moves")
-    private Map<String, Move> moves;
+    private Map<String, EmbeddedMove> moves;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("name")
@@ -50,6 +50,10 @@ public class AssetAbility {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("options")
     private Map<String, AssetAbilityOptionField> options;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("oracles")
+    private Map<String, EmbeddedOracleRollable> oracles;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("tags")
@@ -108,8 +112,8 @@ public class AssetAbility {
 
     /**
      * Getter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object.
+     * These should be omitted when presenting the object for gameplay.
      */
     public String getComment() {
         return comment;
@@ -117,8 +121,8 @@ public class AssetAbility {
 
     /**
      * Setter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object.
+     * These should be omitted when presenting the object for gameplay.
      */
     public void setComment(String comment) {
         this.comment = comment;
@@ -178,7 +182,7 @@ public class AssetAbility {
      * Getter for moves.<p>
      * Unique moves added by this asset ability.
      */
-    public Map<String, Move> getMoves() {
+    public Map<String, EmbeddedMove> getMoves() {
         return moves;
     }
 
@@ -186,7 +190,7 @@ public class AssetAbility {
      * Setter for moves.<p>
      * Unique moves added by this asset ability.
      */
-    public void setMoves(Map<String, Move> moves) {
+    public void setMoves(Map<String, EmbeddedMove> moves) {
         this.moves = moves;
     }
 
@@ -224,6 +228,20 @@ public class AssetAbility {
      */
     public void setOptions(Map<String, AssetAbilityOptionField> options) {
         this.options = options;
+    }
+
+    /**
+     * Getter for oracles.<p>
+     */
+    public Map<String, EmbeddedOracleRollable> getOracles() {
+        return oracles;
+    }
+
+    /**
+     * Setter for oracles.<p>
+     */
+    public void setOracles(Map<String, EmbeddedOracleRollable> oracles) {
+        this.oracles = oracles;
     }
 
     /**

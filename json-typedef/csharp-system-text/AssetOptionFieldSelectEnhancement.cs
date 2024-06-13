@@ -19,7 +19,7 @@ namespace Datasworn
         public IDictionary<string, AssetOptionFieldSelectEnhancementChoice> Choices { get; set; }
 
         [JsonPropertyName("label")]
-        public InputLabel Label { get; set; }
+        public Label Label { get; set; }
 
         /// <summary>
         /// The key of the currently selected choice from the `choices`

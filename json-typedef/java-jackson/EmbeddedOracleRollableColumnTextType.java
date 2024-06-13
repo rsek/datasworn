@@ -4,7 +4,7 @@ package Datasworn;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public enum TruthOptionTableOracleType {
-    @JsonProperty("table_text")
-    TABLE_TEXT,
+public enum EmbeddedOracleRollableColumnTextType {
+    @JsonProperty("oracle_rollable")
+    ORACLE_ROLLABLE,
 }

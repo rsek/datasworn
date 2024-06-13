@@ -23,7 +23,7 @@ namespace Datasworn
         public bool IsImpact { get; set; }
 
         [JsonPropertyName("label")]
-        public InputLabel Label { get; set; }
+        public Label Label { get; set; }
 
         /// <summary>
         /// Is the card flipped over?

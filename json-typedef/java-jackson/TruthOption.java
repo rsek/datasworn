@@ -5,9 +5,13 @@ package Datasworn;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.Map;
 
 @JsonSerialize
 public class TruthOption {
+    @JsonProperty("_id")
+    private TruthOptionId id;
+
     @JsonProperty("description")
     private MarkdownString description;
 
@@ -18,14 +22,28 @@ public class TruthOption {
     private DiceRange roll;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("oracles")
+    private Map<String, EmbeddedOracleRollable> oracles;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("summary")
     private MarkdownString summary;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("table")
-    private TruthOptionTable table;
-
     public TruthOption() {
+    }
+
+    /**
+     * Getter for id.<p>
+     */
+    public TruthOptionId getId() {
+        return id;
+    }
+
+    /**
+     * Setter for id.<p>
+     */
+    public void setId(TruthOptionId id) {
+        this.id = id;
     }
 
     /**
@@ -71,6 +89,20 @@ public class TruthOption {
     }
 
     /**
+     * Getter for oracles.<p>
+     */
+    public Map<String, EmbeddedOracleRollable> getOracles() {
+        return oracles;
+    }
+
+    /**
+     * Setter for oracles.<p>
+     */
+    public void setOracles(Map<String, EmbeddedOracleRollable> oracles) {
+        this.oracles = oracles;
+    }
+
+    /**
      * Getter for summary.<p>
      */
     public MarkdownString getSummary() {
@@ -82,23 +114,5 @@ public class TruthOption {
      */
     public void setSummary(MarkdownString summary) {
         this.summary = summary;
-    }
-
-    /**
-     * Getter for table.<p>
-     * Represents a basic rollable oracle table with one roll column and one
-     * text result column.
-     */
-    public TruthOptionTable getTable() {
-        return table;
-    }
-
-    /**
-     * Setter for table.<p>
-     * Represents a basic rollable oracle table with one roll column and one
-     * text result column.
-     */
-    public void setTable(TruthOptionTable table) {
-        this.table = table;
     }
 }

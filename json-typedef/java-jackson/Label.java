@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * A localized plain text name or label.
+ * A localized, player-facing name or label, formatted as plain text. In some
+ * contexts it may be undesirable to render this text, but it should always be
+ * exposed to assistive technology (e.g. with `aria-label` in HTML).
  */
 public class Label {
     @JsonValue

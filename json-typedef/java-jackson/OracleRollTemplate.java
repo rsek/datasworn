@@ -12,9 +12,9 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
  * `OracleTableRow#text3`.
  * 
  *   These strings are formatted in Markdown, but use a special syntax for their
- * placeholders: `{{text:some_oracle_table_id}}`. The placeholder should be
+ * placeholders: `{{text>some_oracle_rollable_id}}`. The placeholder should be
  * replaced with the value of a rolled (or selected) `OracleTableRow#text` from
- * the target oracle table ID.
+ * the target oracle rollable ID.
  */
 @JsonSerialize
 public class OracleRollTemplate {

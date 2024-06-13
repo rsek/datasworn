@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * A move ID, for a standard move or a unique asset move
+ * A unique ID representing a Move object.
  */
 public class MoveId {
     @JsonValue

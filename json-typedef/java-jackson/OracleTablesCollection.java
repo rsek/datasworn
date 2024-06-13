@@ -55,7 +55,7 @@ public class OracleTablesCollection {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("enhances")
-    private OracleCollectionId enhances;
+    private List<OracleCollectionIdWildcard> enhances;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("icon")
@@ -67,7 +67,7 @@ public class OracleTablesCollection {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("replaces")
-    private OracleCollectionId replaces;
+    private List<OracleCollectionIdWildcard> replaces;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("suggestions")
@@ -166,8 +166,8 @@ public class OracleTablesCollection {
 
     /**
      * Getter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object.
+     * These should be omitted when presenting the object for gameplay.
      */
     public String getComment() {
         return comment;
@@ -175,8 +175,8 @@ public class OracleTablesCollection {
 
     /**
      * Setter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object.
+     * These should be omitted when presenting the object for gameplay.
      */
     public void setComment(String comment) {
         this.comment = comment;
@@ -266,19 +266,19 @@ public class OracleTablesCollection {
 
     /**
      * Getter for enhances.<p>
-     * This collection's content enhances the identified collection, rather than
-     * being a standalone collection of its own.
+     * This collection's content enhances the identified collections, rather
+     * than being a standalone collection of its own.
      */
-    public OracleCollectionId getEnhances() {
+    public List<OracleCollectionIdWildcard> getEnhances() {
         return enhances;
     }
 
     /**
      * Setter for enhances.<p>
-     * This collection's content enhances the identified collection, rather than
-     * being a standalone collection of its own.
+     * This collection's content enhances the identified collections, rather
+     * than being a standalone collection of its own.
      */
-    public void setEnhances(OracleCollectionId enhances) {
+    public void setEnhances(List<OracleCollectionIdWildcard> enhances) {
         this.enhances = enhances;
     }
 
@@ -314,19 +314,19 @@ public class OracleTablesCollection {
 
     /**
      * Getter for replaces.<p>
-     * This collection replaces the identified collection. References to the
-     * replaced collection can be considered equivalent to this collection.
+     * This collection replaces the identified collections. References to the
+     * replaced collections can be considered equivalent to this collection.
      */
-    public OracleCollectionId getReplaces() {
+    public List<OracleCollectionIdWildcard> getReplaces() {
         return replaces;
     }
 
     /**
      * Setter for replaces.<p>
-     * This collection replaces the identified collection. References to the
-     * replaced collection can be considered equivalent to this collection.
+     * This collection replaces the identified collections. References to the
+     * replaced collections can be considered equivalent to this collection.
      */
-    public void setReplaces(OracleCollectionId replaces) {
+    public void setReplaces(List<OracleCollectionIdWildcard> replaces) {
         this.replaces = replaces;
     }
 

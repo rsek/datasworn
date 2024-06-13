@@ -26,6 +26,6 @@ namespace Datasworn
         /// A label for this impact category.
         /// </summary>
         [JsonPropertyName("label")]
-        public InputLabel Label { get; set; }
+        public Label Label { get; set; }
     }
 }

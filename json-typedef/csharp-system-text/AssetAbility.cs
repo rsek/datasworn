@@ -30,9 +30,9 @@ namespace Datasworn
         public MarkdownString Text { get; set; }
 
         /// <summary>
-        /// Any implementation hints or other developer-facing comments on
-        /// this object. These should be omitted when presenting the object
-        /// for gameplay.
+        /// Implementation hints or other developer-facing comments on this
+        /// object. These should be omitted when presenting the object for
+        /// gameplay.
         /// </summary>
         [JsonPropertyName("_comment")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
@@ -66,7 +66,7 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("moves")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IDictionary<string, Move> Moves { get; set; }
+        public IDictionary<string, EmbeddedMove> Moves { get; set; }
 
         /// <summary>
         /// A handful of asset abilities have a label/name, for instance
@@ -84,6 +84,10 @@ namespace Datasworn
         [JsonPropertyName("options")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public IDictionary<string, AssetAbilityOptionField> Options { get; set; }
+
+        [JsonPropertyName("oracles")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public IDictionary<string, EmbeddedOracleRollable> Oracles { get; set; }
 
         [JsonPropertyName("tags")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

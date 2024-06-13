@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * A unique ID for a Npc.
+ * A unique ID representing a Npc object.
  */
 public class NpcId {
     @JsonValue

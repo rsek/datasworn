@@ -16,7 +16,7 @@ namespace Datasworn
         public SelectValueFieldChoiceAttachedAssetOptionChoiceType ChoiceType { get; set; }
 
         [JsonPropertyName("label")]
-        public InputLabel Label { get; set; }
+        public Label Label { get; set; }
 
         /// <summary>
         /// The dictionary key of the asset option field.

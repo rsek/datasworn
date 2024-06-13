@@ -11,7 +11,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 @JsonSerialize
 public class RollableValueCustom extends RollableValue {
     @JsonProperty("label")
-    private InputLabel label;
+    private Label label;
 
     @JsonProperty("value")
     private Short value;
@@ -22,14 +22,14 @@ public class RollableValueCustom extends RollableValue {
     /**
      * Getter for label.<p>
      */
-    public InputLabel getLabel() {
+    public Label getLabel() {
         return label;
     }
 
     /**
      * Setter for label.<p>
      */
-    public void setLabel(InputLabel label) {
+    public void setLabel(Label label) {
         this.label = label;
     }
 

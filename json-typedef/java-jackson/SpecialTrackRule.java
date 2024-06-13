@@ -15,7 +15,7 @@ public class SpecialTrackRule {
     private MarkdownString description;
 
     @JsonProperty("label")
-    private InputLabel label;
+    private Label label;
 
     @JsonProperty("optional")
     private Boolean optional;
@@ -46,7 +46,7 @@ public class SpecialTrackRule {
      * Getter for label.<p>
      * A label for this special track.
      */
-    public InputLabel getLabel() {
+    public Label getLabel() {
         return label;
     }
 
@@ -54,7 +54,7 @@ public class SpecialTrackRule {
      * Setter for label.<p>
      * A label for this special track.
      */
-    public void setLabel(InputLabel label) {
+    public void setLabel(Label label) {
         this.label = label;
     }
 

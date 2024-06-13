@@ -57,9 +57,9 @@ namespace Datasworn
         public OracleTableRollableTableTextType Type_ { get; set; }
 
         /// <summary>
-        /// Any implementation hints or other developer-facing comments on
-        /// this object. These should be omitted when presenting the object
-        /// for gameplay.
+        /// Implementation hints or other developer-facing comments on this
+        /// object. These should be omitted when presenting the object for
+        /// gameplay.
         /// </summary>
         [JsonPropertyName("_comment")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
@@ -102,13 +102,13 @@ namespace Datasworn
         public OracleTableRollableTableTextRecommendedRolls RecommendedRolls { get; set; }
 
         /// <summary>
-        /// Indicates that this object replaces the identified OracleRollable.
-        /// References to the replaced object can be considered equivalent to
+        /// Indicates that this object replaces the identified OracleRollables.
+        /// References to the replaced objects can be considered equivalent to
         /// this object.
         /// </summary>
         [JsonPropertyName("replaces")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public OracleRollableId? Replaces { get; set; }
+        public IList<OracleRollableIdWildcard> Replaces { get; set; }
 
         [JsonPropertyName("suggestions")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

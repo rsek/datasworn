@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// A unique ID for a Truth.
+    /// A unique ID representing a Truth object.
     /// </summary>
     [JsonConverter(typeof(TruthIdJsonConverter))]
     public class TruthId

@@ -15,7 +15,7 @@ public class AssetOptionFieldSelectEnhancementChoiceChoiceGroup extends AssetOpt
     private Map<String, SelectEnhancementFieldChoice> choices;
 
     @JsonProperty("name")
-    private InputLabel name;
+    private Label name;
 
     public AssetOptionFieldSelectEnhancementChoiceChoiceGroup() {
     }
@@ -38,7 +38,7 @@ public class AssetOptionFieldSelectEnhancementChoiceChoiceGroup extends AssetOpt
      * Getter for name.<p>
      * A label for this option group.
      */
-    public InputLabel getName() {
+    public Label getName() {
         return name;
     }
 
@@ -46,7 +46,7 @@ public class AssetOptionFieldSelectEnhancementChoiceChoiceGroup extends AssetOpt
      * Setter for name.<p>
      * A label for this option group.
      */
-    public void setName(InputLabel name) {
+    public void setName(Label name) {
         this.name = name;
     }
 }

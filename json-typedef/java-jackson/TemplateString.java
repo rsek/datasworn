@@ -8,9 +8,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * A rich text string in Markdown with replaced values from oracle roll results.
  * 
- * The custom syntax `{{some_row_key:some_oracle_table_id}}` should be replaced
+ * The custom syntax `{{some_row_key>some_oracle_table_id}}` should be replaced
  * by the `some_row_key` string of a rolled oracle table. This is usually the
- * `result` key, for example `{{result:starforged/oracles/core/action}}`
+ * `text` key, for example `{{text>oracle_rollable:starforged/core/action}}`
  */
 public class TemplateString {
     @JsonValue

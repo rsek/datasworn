@@ -14,7 +14,7 @@ namespace Datasworn
         public string FieldType { get => "counter"; }
 
         [JsonPropertyName("label")]
-        public InputLabel Label { get; set; }
+        public Label Label { get; set; }
 
         [JsonPropertyName("max")]
         public short Max { get; set; }

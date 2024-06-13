@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// A unique ID for an AtlasEntry.
+    /// A unique ID representing an AtlasEntry object.
     /// </summary>
     [JsonConverter(typeof(AtlasEntryIdJsonConverter))]
     public class AtlasEntryId

@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// A unique ID for a Npc.
+    /// A unique ID representing a Npc object.
     /// </summary>
     [JsonConverter(typeof(NpcIdJsonConverter))]
     public class NpcId

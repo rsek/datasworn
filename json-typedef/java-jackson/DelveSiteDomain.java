@@ -168,8 +168,8 @@ public class DelveSiteDomain {
 
     /**
      * Getter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object.
+     * These should be omitted when presenting the object for gameplay.
      */
     public String getComment() {
         return comment;
@@ -177,8 +177,8 @@ public class DelveSiteDomain {
 
     /**
      * Setter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object.
+     * These should be omitted when presenting the object for gameplay.
      */
     public void setComment(String comment) {
         this.comment = comment;
@@ -219,10 +219,11 @@ public class DelveSiteDomain {
     /**
      * Getter for nameOracle.<p>
      * An oracle table ID containing place name elements. For examples, see
-     * oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in
-     * oracle collection ID `delve/collections/oracles/site_name/place`. These
-     * oracles are used by the site name oracle from Ironsworn: Delve (ID:
-     * delve/oracles/site_name/format) to create random names for delve sites.
+     * oracle ID `oracle_rollable:delve/site_name/place/barrow`, and its siblings
+     * in oracle collection ID `oracle_collection:delve/site_name/place`.
+     * These oracles are used by the site name oracle from Ironsworn: Delve
+     * (`oracle_rollable:delve/site_name/format`) to create random names for
+     * delve sites.
      */
     public OracleRollableId getNameOracle() {
         return nameOracle;
@@ -231,10 +232,11 @@ public class DelveSiteDomain {
     /**
      * Setter for nameOracle.<p>
      * An oracle table ID containing place name elements. For examples, see
-     * oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in
-     * oracle collection ID `delve/collections/oracles/site_name/place`. These
-     * oracles are used by the site name oracle from Ironsworn: Delve (ID:
-     * delve/oracles/site_name/format) to create random names for delve sites.
+     * oracle ID `oracle_rollable:delve/site_name/place/barrow`, and its siblings
+     * in oracle collection ID `oracle_collection:delve/site_name/place`.
+     * These oracles are used by the site name oracle from Ironsworn: Delve
+     * (`oracle_rollable:delve/site_name/format`) to create random names for
+     * delve sites.
      */
     public void setNameOracle(OracleRollableId nameOracle) {
         this.nameOracle = nameOracle;

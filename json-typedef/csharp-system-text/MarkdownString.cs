@@ -7,11 +7,17 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// Localized text, formatted in Markdown.
+    /// Localized, player-facing text, formatted in Markdown. It is *not*
+    /// formatted for use "out of the box"; it uses some custom syntax,
+    /// intended to be replaced in whatever way is most appropriate for your
+    /// implementation.
     /// 
-    /// It uses some custom syntax; e.g. `{{table:some_oracle_table_id}}`
-    /// indicates that the referenced oracle table is rendered there in the
-    /// source material.
+    /// * `[Link text](move:starforged/suffer/pay_the_price)`: A link to the
+    /// identified object. The ID must conform to the `AnyId` type; no wildcards
+    /// allowed.
+    /// * `{{table>oracle_rollable:starforged/core/action}}`: the referenced
+    /// oracle is rendered here in the source material. The ID must conform to
+    /// the `AnyOracleRollableId` type; no wildcards allowed.
     /// </summary>
     [JsonConverter(typeof(MarkdownStringJsonConverter))]
     public class MarkdownString

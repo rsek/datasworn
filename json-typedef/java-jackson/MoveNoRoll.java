@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
+import java.util.Map;
 
 /**
  * A move that makes no progress rolls or action rolls.
@@ -17,6 +18,9 @@ public class MoveNoRoll extends Move {
 
     @JsonProperty("_source")
     private SourceInfo source;
+
+    @JsonProperty("allow_momentum_burn")
+    private Boolean allowMomentumBurn;
 
     @JsonProperty("name")
     private Label name;
@@ -40,11 +44,11 @@ public class MoveNoRoll extends Move {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("oracles")
-    private List<OracleRollableId> oracles;
+    private Map<String, EmbeddedOracleRollable> oracles;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("replaces")
-    private MoveId replaces;
+    private List<MoveIdWildcard> replaces;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("suggestions")
@@ -89,6 +93,22 @@ public class MoveNoRoll extends Move {
      */
     public void setSource(SourceInfo source) {
         this.source = source;
+    }
+
+    /**
+     * Getter for allowMomentumBurn.<p>
+     * Is burning momentum allowed for this move?
+     */
+    public Boolean getAllowMomentumBurn() {
+        return allowMomentumBurn;
+    }
+
+    /**
+     * Setter for allowMomentumBurn.<p>
+     * Is burning momentum allowed for this move?
+     */
+    public void setAllowMomentumBurn(Boolean allowMomentumBurn) {
+        this.allowMomentumBurn = allowMomentumBurn;
     }
 
     /**
@@ -155,8 +175,8 @@ public class MoveNoRoll extends Move {
 
     /**
      * Getter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object.
+     * These should be omitted when presenting the object for gameplay.
      */
     public String getComment() {
         return comment;
@@ -164,8 +184,8 @@ public class MoveNoRoll extends Move {
 
     /**
      * Setter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object.
+     * These should be omitted when presenting the object for gameplay.
      */
     public void setComment(String comment) {
         this.comment = comment;
@@ -191,39 +211,33 @@ public class MoveNoRoll extends Move {
 
     /**
      * Getter for oracles.<p>
-     * Oracles associated with this move. It's not recommended to roll these
-     * automatically, as almost all moves present them as an option, not a
-     * requirement.
      */
-    public List<OracleRollableId> getOracles() {
+    public Map<String, EmbeddedOracleRollable> getOracles() {
         return oracles;
     }
 
     /**
      * Setter for oracles.<p>
-     * Oracles associated with this move. It's not recommended to roll these
-     * automatically, as almost all moves present them as an option, not a
-     * requirement.
      */
-    public void setOracles(List<OracleRollableId> oracles) {
+    public void setOracles(Map<String, EmbeddedOracleRollable> oracles) {
         this.oracles = oracles;
     }
 
     /**
      * Getter for replaces.<p>
-     * Indicates that this move replaces the identified move. References to the
-     * replaced move can be considered equivalent to this move.
+     * Indicates that this move replaces the identified moves. References to the
+     * replaced moves can be considered equivalent to this move.
      */
-    public MoveId getReplaces() {
+    public List<MoveIdWildcard> getReplaces() {
         return replaces;
     }
 
     /**
      * Setter for replaces.<p>
-     * Indicates that this move replaces the identified move. References to the
-     * replaced move can be considered equivalent to this move.
+     * Indicates that this move replaces the identified moves. References to the
+     * replaced moves can be considered equivalent to this move.
      */
-    public void setReplaces(MoveId replaces) {
+    public void setReplaces(List<MoveIdWildcard> replaces) {
         this.replaces = replaces;
     }
 

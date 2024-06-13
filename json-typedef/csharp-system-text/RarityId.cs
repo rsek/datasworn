@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// A unique ID for a Rarity.
+    /// A unique ID representing a Rarity object.
     /// </summary>
     [JsonConverter(typeof(RarityIdJsonConverter))]
     public class RarityId

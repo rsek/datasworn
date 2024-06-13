@@ -42,9 +42,9 @@ namespace Datasworn
         public DelveSiteDomainType Type_ { get; set; }
 
         /// <summary>
-        /// Any implementation hints or other developer-facing comments on
-        /// this object. These should be omitted when presenting the object
-        /// for gameplay.
+        /// Implementation hints or other developer-facing comments on this
+        /// object. These should be omitted when presenting the object for
+        /// gameplay.
         /// </summary>
         [JsonPropertyName("_comment")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
@@ -63,12 +63,13 @@ namespace Datasworn
         public MarkdownString? Description { get; set; }
 
         /// <summary>
-        /// An oracle table ID containing place name elements. For examples, see
-        /// oracle ID `delve/oracles/site_name/place/barrow`, and its siblings
-        /// in oracle collection ID `delve/collections/oracles/site_name/place`.
-        /// These oracles are used by the site name oracle from Ironsworn: Delve
-        /// (ID: delve/oracles/site_name/format) to create random names for
-        /// delve sites.
+        /// An oracle table ID containing place name elements. For examples,
+        /// see oracle ID `oracle_rollable:delve/site_name/place/barrow`,
+        /// and its siblings in oracle collection ID
+        /// `oracle_collection:delve/site_name/place`. These oracles
+        /// are used by the site name oracle from Ironsworn: Delve
+        /// (`oracle_rollable:delve/site_name/format`) to create random names
+        /// for delve sites.
         /// </summary>
         [JsonPropertyName("name_oracle")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

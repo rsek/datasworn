@@ -7,7 +7,10 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// A localized plain text name or label.
+    /// A localized, player-facing name or label, formatted as plain text. In
+    /// some contexts it may be undesirable to render this text, but it should
+    /// always be exposed to assistive technology (e.g. with `aria-label` in
+    /// HTML).
     /// </summary>
     [JsonConverter(typeof(LabelJsonConverter))]
     public class Label

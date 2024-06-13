@@ -15,7 +15,7 @@ import java.util.List;
 @JsonSerialize
 public class MoveEnhancementActionRoll extends MoveEnhancement {
     @JsonProperty("enhances")
-    private List<MoveIdWildcard> enhances;
+    private List<AnyMoveIdWildcard> enhances;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("trigger")
@@ -27,14 +27,14 @@ public class MoveEnhancementActionRoll extends MoveEnhancement {
     /**
      * Getter for enhances.<p>
      */
-    public List<MoveIdWildcard> getEnhances() {
+    public List<AnyMoveIdWildcard> getEnhances() {
         return enhances;
     }
 
     /**
      * Setter for enhances.<p>
      */
-    public void setEnhances(List<MoveIdWildcard> enhances) {
+    public void setEnhances(List<AnyMoveIdWildcard> enhances) {
         this.enhances = enhances;
     }
 

@@ -16,7 +16,7 @@ namespace Datasworn
         public MarkdownString Description { get; set; }
 
         [JsonPropertyName("label")]
-        public InputLabel Label { get; set; }
+        public Label Label { get; set; }
 
         /// <summary>
         /// The maximum value of this meter.

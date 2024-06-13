@@ -13,7 +13,7 @@ namespace Datasworn
         public string FieldType { get => "clock"; }
 
         [JsonPropertyName("label")]
-        public InputLabel Label { get; set; }
+        public Label Label { get; set; }
 
         /// <summary>
         /// The size of the clock -- in other words, the maximum number of

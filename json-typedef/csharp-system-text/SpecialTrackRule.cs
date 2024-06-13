@@ -20,7 +20,7 @@ namespace Datasworn
         /// A label for this special track.
         /// </summary>
         [JsonPropertyName("label")]
-        public InputLabel Label { get; set; }
+        public Label Label { get; set; }
 
         /// <summary>
         /// Is this track an optional rule?

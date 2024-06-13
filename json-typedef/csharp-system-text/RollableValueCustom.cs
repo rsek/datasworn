@@ -13,7 +13,7 @@ namespace Datasworn
         public string Using { get => "custom"; }
 
         [JsonPropertyName("label")]
-        public InputLabel Label { get; set; }
+        public Label Label { get; set; }
 
         [JsonPropertyName("value")]
         public short Value { get; set; }

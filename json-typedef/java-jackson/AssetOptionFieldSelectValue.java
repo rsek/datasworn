@@ -16,7 +16,7 @@ public class AssetOptionFieldSelectValue extends AssetOptionField {
     private Map<String, SelectValueFieldChoice> choices;
 
     @JsonProperty("label")
-    private InputLabel label;
+    private Label label;
 
     @JsonProperty("value")
     private DictKey value;
@@ -45,14 +45,14 @@ public class AssetOptionFieldSelectValue extends AssetOptionField {
     /**
      * Getter for label.<p>
      */
-    public InputLabel getLabel() {
+    public Label getLabel() {
         return label;
     }
 
     /**
      * Setter for label.<p>
      */
-    public void setLabel(InputLabel label) {
+    public void setLabel(Label label) {
         this.label = label;
     }
 

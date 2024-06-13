@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// A move ID, for a standard move or a unique asset move
+    /// A unique ID representing a Move object.
     /// </summary>
     [JsonConverter(typeof(MoveIdJsonConverter))]
     public class MoveId

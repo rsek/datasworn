@@ -17,7 +17,7 @@ public class SelectValueFieldChoiceConditionMeter extends SelectValueFieldChoice
     private ConditionMeterKey conditionMeter;
 
     @JsonProperty("label")
-    private InputLabel label;
+    private Label label;
 
     public SelectValueFieldChoiceConditionMeter() {
     }
@@ -53,14 +53,14 @@ public class SelectValueFieldChoiceConditionMeter extends SelectValueFieldChoice
     /**
      * Getter for label.<p>
      */
-    public InputLabel getLabel() {
+    public Label getLabel() {
         return label;
     }
 
     /**
      * Setter for label.<p>
      */
-    public void setLabel(InputLabel label) {
+    public void setLabel(Label label) {
         this.label = label;
     }
 }

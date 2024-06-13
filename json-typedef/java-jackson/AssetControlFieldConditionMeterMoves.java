@@ -15,11 +15,11 @@ import java.util.List;
 public class AssetControlFieldConditionMeterMoves {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("recover")
-    private List<MoveIdWildcard> recover;
+    private List<AnyMoveIdWildcard> recover;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("suffer")
-    private List<MoveIdWildcard> suffer;
+    private List<AnyMoveIdWildcard> suffer;
 
     public AssetControlFieldConditionMeterMoves() {
     }
@@ -28,7 +28,7 @@ public class AssetControlFieldConditionMeterMoves {
      * Getter for recover.<p>
      * The ID(s) of recovery moves associated with this meter.
      */
-    public List<MoveIdWildcard> getRecover() {
+    public List<AnyMoveIdWildcard> getRecover() {
         return recover;
     }
 
@@ -36,7 +36,7 @@ public class AssetControlFieldConditionMeterMoves {
      * Setter for recover.<p>
      * The ID(s) of recovery moves associated with this meter.
      */
-    public void setRecover(List<MoveIdWildcard> recover) {
+    public void setRecover(List<AnyMoveIdWildcard> recover) {
         this.recover = recover;
     }
 
@@ -46,7 +46,7 @@ public class AssetControlFieldConditionMeterMoves {
      * suffer move makes an action roll, this condition meter value should be
      * made available as a roll option.
      */
-    public List<MoveIdWildcard> getSuffer() {
+    public List<AnyMoveIdWildcard> getSuffer() {
         return suffer;
     }
 
@@ -56,7 +56,7 @@ public class AssetControlFieldConditionMeterMoves {
      * suffer move makes an action roll, this condition meter value should be
      * made available as a roll option.
      */
-    public void setSuffer(List<MoveIdWildcard> suffer) {
+    public void setSuffer(List<AnyMoveIdWildcard> suffer) {
         this.suffer = suffer;
     }
 }

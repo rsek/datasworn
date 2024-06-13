@@ -20,6 +20,6 @@ namespace Datasworn
         /// A label for this option group.
         /// </summary>
         [JsonPropertyName("name")]
-        public InputLabel Name { get; set; }
+        public Label Name { get; set; }
     }
 }

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * A unique ID for an OracleCollection.
+ * A unique ID representing an OracleCollection object.
  */
 public class OracleCollectionId {
     @JsonValue

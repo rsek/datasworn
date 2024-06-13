@@ -12,7 +12,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 @JsonSerialize
 public class AssetAbilityOptionFieldText extends AssetAbilityOptionField {
     @JsonProperty("label")
-    private InputLabel label;
+    private Label label;
 
     @JsonProperty("value")
     private String value;
@@ -27,14 +27,14 @@ public class AssetAbilityOptionFieldText extends AssetAbilityOptionField {
     /**
      * Getter for label.<p>
      */
-    public InputLabel getLabel() {
+    public Label getLabel() {
         return label;
     }
 
     /**
      * Setter for label.<p>
      */
-    public void setLabel(InputLabel label) {
+    public void setLabel(Label label) {
         this.label = label;
     }
 

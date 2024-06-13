@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// A unique ID for an AssetAbility.
+    /// A unique ID representing an AssetAbility object.
     /// </summary>
     [JsonConverter(typeof(AssetAbilityIdJsonConverter))]
     public class AssetAbilityId

@@ -18,7 +18,7 @@ public class AssetControlFieldSelectEnhancement extends AssetControlField {
     private Map<String, AssetControlFieldSelectEnhancementChoice> choices;
 
     @JsonProperty("label")
-    private InputLabel label;
+    private Label label;
 
     @JsonProperty("value")
     private DictKey value;
@@ -47,14 +47,14 @@ public class AssetControlFieldSelectEnhancement extends AssetControlField {
     /**
      * Getter for label.<p>
      */
-    public InputLabel getLabel() {
+    public Label getLabel() {
         return label;
     }
 
     /**
      * Setter for label.<p>
      */
-    public void setLabel(InputLabel label) {
+    public void setLabel(Label label) {
         this.label = label;
     }
 

@@ -17,7 +17,7 @@ namespace Datasworn
         public string FieldType { get => "condition_meter"; }
 
         [JsonPropertyName("label")]
-        public InputLabel Label { get; set; }
+        public Label Label { get; set; }
 
         /// <summary>
         /// The maximum value of this meter.

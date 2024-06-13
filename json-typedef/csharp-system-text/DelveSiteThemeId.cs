@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// A unique ID for a DelveSiteTheme.
+    /// A unique ID representing a DelveSiteTheme object.
     /// </summary>
     [JsonConverter(typeof(DelveSiteThemeIdJsonConverter))]
     public class DelveSiteThemeId

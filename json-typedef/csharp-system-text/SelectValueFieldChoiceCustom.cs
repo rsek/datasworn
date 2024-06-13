@@ -16,7 +16,7 @@ namespace Datasworn
         public SelectValueFieldChoiceCustomChoiceType ChoiceType { get; set; }
 
         [JsonPropertyName("label")]
-        public InputLabel Label { get; set; }
+        public Label Label { get; set; }
 
         [JsonPropertyName("value")]
         public short Value { get; set; }

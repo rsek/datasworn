@@ -93,6 +93,20 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class AnyIDWildcard
+    attr_accessor value: String
+
+    def self.from_json_data: (untyped) -> AnyIDWildcard
+    def to_json_data: () -> untyped
+  end
+
+  class AnyMoveIDWildcard
+    attr_accessor value: String
+
+    def self.from_json_data: (untyped) -> AnyMoveIDWildcard
+    def to_json_data: () -> untyped
+  end
+
   class AssetType
     attr_accessor value: String
 
@@ -134,9 +148,10 @@ module Datasworn
     attr_accessor controls: Hash[String, AssetAbilityControlField]?
     attr_accessor enhance_asset: AssetEnhancement?
     attr_accessor enhance_moves: Array[MoveEnhancement]?
-    attr_accessor moves: Hash[String, Move]?
+    attr_accessor moves: Hash[String, EmbeddedMove]?
     attr_accessor name: Label?
     attr_accessor options: Hash[String, AssetAbilityOptionField]?
+    attr_accessor oracles: Hash[String, EmbeddedOracleRollable]?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> AssetAbility
@@ -153,7 +168,7 @@ module Datasworn
   class AssetAbilityControlFieldCheckbox < AssetAbilityControlField
     attr_accessor disables_asset: bool
     attr_accessor is_impact: bool
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor value: bool
     attr_accessor icon: SvgImageURL?
 
@@ -162,7 +177,7 @@ module Datasworn
   end
 
   class AssetAbilityControlFieldClock < AssetAbilityControlField
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor max: Integer
     attr_accessor min: Integer
     attr_accessor rollable: bool
@@ -174,7 +189,7 @@ module Datasworn
   end
 
   class AssetAbilityControlFieldCounter < AssetAbilityControlField
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor max: Integer
     attr_accessor min: Integer
     attr_accessor rollable: bool
@@ -186,7 +201,7 @@ module Datasworn
   end
 
   class AssetAbilityControlFieldText < AssetAbilityControlField
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor value: String
     attr_accessor icon: SvgImageURL?
 
@@ -209,7 +224,7 @@ module Datasworn
   end
 
   class AssetAbilityOptionFieldText < AssetAbilityOptionField
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor value: String
     attr_accessor icon: SvgImageURL?
 
@@ -244,10 +259,10 @@ module Datasworn
     attr_accessor color: CSSColor?
     attr_accessor contents: Hash[String, Asset]?
     attr_accessor description: MarkdownString?
-    attr_accessor enhances: AssetCollectionID?
+    attr_accessor enhances: Array[AssetCollectionIDWildcard]?
     attr_accessor icon: SvgImageURL?
     attr_accessor images: Array[WebpImageURL]?
-    attr_accessor replaces: AssetCollectionID?
+    attr_accessor replaces: Array[AssetCollectionIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
@@ -263,6 +278,13 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class AssetCollectionIDWildcard
+    attr_accessor value: String
+
+    def self.from_json_data: (untyped) -> AssetCollectionIDWildcard
+    def to_json_data: () -> untyped
+  end
+
   class AssetConditionMeterControlField
     attr_accessor field_type: String
 
@@ -273,7 +295,7 @@ module Datasworn
   class AssetConditionMeterControlFieldCardFlip < AssetConditionMeterControlField
     attr_accessor disables_asset: bool
     attr_accessor is_impact: bool
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor value: bool
     attr_accessor icon: SvgImageURL?
 
@@ -284,7 +306,7 @@ module Datasworn
   class AssetConditionMeterControlFieldCheckbox < AssetConditionMeterControlField
     attr_accessor disables_asset: bool
     attr_accessor is_impact: bool
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor value: bool
     attr_accessor icon: SvgImageURL?
 
@@ -302,7 +324,7 @@ module Datasworn
   class AssetControlFieldCardFlip < AssetControlField
     attr_accessor disables_asset: bool
     attr_accessor is_impact: bool
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor value: bool
     attr_accessor icon: SvgImageURL?
 
@@ -313,7 +335,7 @@ module Datasworn
   class AssetControlFieldCheckbox < AssetControlField
     attr_accessor disables_asset: bool
     attr_accessor is_impact: bool
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor value: bool
     attr_accessor icon: SvgImageURL?
 
@@ -322,15 +344,15 @@ module Datasworn
   end
 
   class AssetControlFieldConditionMeterMoves
-    attr_accessor recover: Array[MoveIDWildcard]?
-    attr_accessor suffer: Array[MoveIDWildcard]?
+    attr_accessor recover: Array[AnyMoveIDWildcard]?
+    attr_accessor suffer: Array[AnyMoveIDWildcard]?
 
     def self.from_json_data: (untyped) -> AssetControlFieldConditionMeterMoves
     def to_json_data: () -> untyped
   end
 
   class AssetControlFieldConditionMeter < AssetControlField
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor max: Integer
     attr_accessor min: Integer
     attr_accessor rollable: bool
@@ -351,7 +373,7 @@ module Datasworn
   end
 
   class AssetControlFieldSelectEnhancementChoiceChoice < AssetControlFieldSelectEnhancementChoice
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor enhance_asset: AssetEnhancement?
     attr_accessor enhance_moves: Array[MoveEnhancement]?
 
@@ -361,7 +383,7 @@ module Datasworn
 
   class AssetControlFieldSelectEnhancementChoiceChoiceGroup < AssetControlFieldSelectEnhancementChoice
     attr_accessor choices: Hash[String, SelectEnhancementFieldChoice]
-    attr_accessor name: InputLabel
+    attr_accessor name: Label
 
     def self.from_json_data: (untyped) -> AssetControlFieldSelectEnhancementChoiceChoiceGroup
     def to_json_data: () -> untyped
@@ -369,7 +391,7 @@ module Datasworn
 
   class AssetControlFieldSelectEnhancement < AssetControlField
     attr_accessor choices: Hash[String, AssetControlFieldSelectEnhancementChoice]
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor value: DictKey
     attr_accessor icon: SvgImageURL?
 
@@ -431,7 +453,7 @@ module Datasworn
   end
 
   class AssetOptionFieldSelectEnhancementChoiceChoice < AssetOptionFieldSelectEnhancementChoice
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor enhance_asset: AssetEnhancement?
     attr_accessor enhance_moves: Array[MoveEnhancement]?
 
@@ -441,7 +463,7 @@ module Datasworn
 
   class AssetOptionFieldSelectEnhancementChoiceChoiceGroup < AssetOptionFieldSelectEnhancementChoice
     attr_accessor choices: Hash[String, SelectEnhancementFieldChoice]
-    attr_accessor name: InputLabel
+    attr_accessor name: Label
 
     def self.from_json_data: (untyped) -> AssetOptionFieldSelectEnhancementChoiceChoiceGroup
     def to_json_data: () -> untyped
@@ -449,7 +471,7 @@ module Datasworn
 
   class AssetOptionFieldSelectEnhancement < AssetOptionField
     attr_accessor choices: Hash[String, AssetOptionFieldSelectEnhancementChoice]
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor value: DictKey
     attr_accessor icon: SvgImageURL?
 
@@ -459,7 +481,7 @@ module Datasworn
 
   class AssetOptionFieldSelectValue < AssetOptionField
     attr_accessor choices: Hash[String, SelectValueFieldChoice]
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor value: DictKey
     attr_accessor icon: SvgImageURL?
 
@@ -468,7 +490,7 @@ module Datasworn
   end
 
   class AssetOptionFieldText < AssetOptionField
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor value: String
     attr_accessor icon: SvgImageURL?
 
@@ -496,10 +518,10 @@ module Datasworn
     attr_accessor color: CSSColor?
     attr_accessor contents: Hash[String, AtlasEntry]?
     attr_accessor description: MarkdownString?
-    attr_accessor enhances: AtlasCollectionID?
+    attr_accessor enhances: Array[AtlasCollectionIDWildcard]?
     attr_accessor icon: SvgImageURL?
     attr_accessor images: Array[WebpImageURL]?
-    attr_accessor replaces: AtlasCollectionID?
+    attr_accessor replaces: Array[AtlasCollectionIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
@@ -512,6 +534,13 @@ module Datasworn
     attr_accessor value: String
 
     def self.from_json_data: (untyped) -> AtlasCollectionID
+    def to_json_data: () -> untyped
+  end
+
+  class AtlasCollectionIDWildcard
+    attr_accessor value: String
+
+    def self.from_json_data: (untyped) -> AtlasCollectionIDWildcard
     def to_json_data: () -> untyped
   end
 
@@ -575,7 +604,7 @@ module Datasworn
 
   class ConditionMeterRule
     attr_accessor description: MarkdownString
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor max: Integer
     attr_accessor min: Integer
     attr_accessor rollable: bool
@@ -746,6 +775,367 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class EmbeddedMove
+    attr_accessor roll_type: String
+
+    def self.from_json_data: (untyped) -> EmbeddedMove
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedMoveActionRollType
+    attr_accessor value: String
+
+    MOVE: EmbeddedMoveActionRollType
+
+    def self.from_json_data: (untyped) -> EmbeddedMoveActionRollType
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedMoveActionRoll < EmbeddedMove
+    attr_accessor id: EmbeddedMoveID
+    attr_accessor allow_momentum_burn: bool
+    attr_accessor name: Label
+    attr_accessor outcomes: MoveOutcomes
+    attr_accessor text: MarkdownString
+    attr_accessor trigger: TriggerActionRoll
+    attr_accessor type: EmbeddedMoveActionRollType
+    attr_accessor comment: String?
+    attr_accessor canonical_name: Label?
+    attr_accessor suggestions: Suggestions?
+    attr_accessor tags: Tags?
+
+    def self.from_json_data: (untyped) -> EmbeddedMoveActionRoll
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedMoveNoRollType
+    attr_accessor value: String
+
+    MOVE: EmbeddedMoveNoRollType
+
+    def self.from_json_data: (untyped) -> EmbeddedMoveNoRollType
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedMoveNoRoll < EmbeddedMove
+    attr_accessor id: EmbeddedMoveID
+    attr_accessor allow_momentum_burn: bool
+    attr_accessor name: Label
+    attr_accessor text: MarkdownString
+    attr_accessor trigger: TriggerNoRoll
+    attr_accessor type: EmbeddedMoveNoRollType
+    attr_accessor comment: String?
+    attr_accessor canonical_name: Label?
+    attr_accessor suggestions: Suggestions?
+    attr_accessor tags: Tags?
+
+    def self.from_json_data: (untyped) -> EmbeddedMoveNoRoll
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedMoveProgressRollType
+    attr_accessor value: String
+
+    MOVE: EmbeddedMoveProgressRollType
+
+    def self.from_json_data: (untyped) -> EmbeddedMoveProgressRollType
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedMoveProgressRoll < EmbeddedMove
+    attr_accessor id: EmbeddedMoveID
+    attr_accessor allow_momentum_burn: bool
+    attr_accessor name: Label
+    attr_accessor outcomes: MoveOutcomes
+    attr_accessor text: MarkdownString
+    attr_accessor tracks: ProgressTrackTypeInfo
+    attr_accessor trigger: TriggerProgressRoll
+    attr_accessor type: EmbeddedMoveProgressRollType
+    attr_accessor comment: String?
+    attr_accessor canonical_name: Label?
+    attr_accessor suggestions: Suggestions?
+    attr_accessor tags: Tags?
+
+    def self.from_json_data: (untyped) -> EmbeddedMoveProgressRoll
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedMoveSpecialTrackType
+    attr_accessor value: String
+
+    MOVE: EmbeddedMoveSpecialTrackType
+
+    def self.from_json_data: (untyped) -> EmbeddedMoveSpecialTrackType
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedMoveSpecialTrack < EmbeddedMove
+    attr_accessor id: EmbeddedMoveID
+    attr_accessor allow_momentum_burn: bool
+    attr_accessor name: Label
+    attr_accessor outcomes: MoveOutcomes
+    attr_accessor text: MarkdownString
+    attr_accessor trigger: TriggerSpecialTrack
+    attr_accessor type: EmbeddedMoveSpecialTrackType
+    attr_accessor comment: String?
+    attr_accessor canonical_name: Label?
+    attr_accessor suggestions: Suggestions?
+    attr_accessor tags: Tags?
+
+    def self.from_json_data: (untyped) -> EmbeddedMoveSpecialTrack
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedMoveID
+    attr_accessor value: String
+
+    def self.from_json_data: (untyped) -> EmbeddedMoveID
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedOracleRollable
+    attr_accessor oracle_type: String
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollable
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedOracleRollableColumnTextType
+    attr_accessor value: String
+
+    ORACLE_ROLLABLE: EmbeddedOracleRollableColumnTextType
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollableColumnTextType
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedOracleRollableColumnText < EmbeddedOracleRollable
+    attr_accessor id: EmbeddedOracleRollableID
+    attr_accessor dice: DiceExpression
+    attr_accessor name: Label
+    attr_accessor rows: Array[OracleTableRowText]
+    attr_accessor type: EmbeddedOracleRollableColumnTextType
+    attr_accessor comment: String?
+    attr_accessor color: CSSColor?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor match: OracleMatchBehavior?
+    attr_accessor suggestions: Suggestions?
+    attr_accessor summary: MarkdownString?
+    attr_accessor tags: Tags?
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollableColumnText
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedOracleRollableColumnText2Type
+    attr_accessor value: String
+
+    ORACLE_ROLLABLE: EmbeddedOracleRollableColumnText2Type
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollableColumnText2Type
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedOracleRollableColumnText2 < EmbeddedOracleRollable
+    attr_accessor id: EmbeddedOracleRollableID
+    attr_accessor dice: DiceExpression
+    attr_accessor name: Label
+    attr_accessor rows: Array[OracleTableRowText2]
+    attr_accessor type: EmbeddedOracleRollableColumnText2Type
+    attr_accessor comment: String?
+    attr_accessor color: CSSColor?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor match: OracleMatchBehavior?
+    attr_accessor suggestions: Suggestions?
+    attr_accessor summary: MarkdownString?
+    attr_accessor tags: Tags?
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollableColumnText2
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedOracleRollableColumnText3Type
+    attr_accessor value: String
+
+    ORACLE_ROLLABLE: EmbeddedOracleRollableColumnText3Type
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollableColumnText3Type
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedOracleRollableColumnText3 < EmbeddedOracleRollable
+    attr_accessor id: EmbeddedOracleRollableID
+    attr_accessor dice: DiceExpression
+    attr_accessor name: Label
+    attr_accessor rows: Array[OracleTableRowText3]
+    attr_accessor type: EmbeddedOracleRollableColumnText3Type
+    attr_accessor comment: String?
+    attr_accessor color: CSSColor?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor match: OracleMatchBehavior?
+    attr_accessor suggestions: Suggestions?
+    attr_accessor summary: MarkdownString?
+    attr_accessor tags: Tags?
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollableColumnText3
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedOracleRollableTableTextColumnLabels
+    attr_accessor roll: Label
+    attr_accessor text: Label
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollableTableTextColumnLabels
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedOracleRollableTableTextType
+    attr_accessor value: String
+
+    ORACLE_ROLLABLE: EmbeddedOracleRollableTableTextType
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollableTableTextType
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedOracleRollableTableTextRecommendedRolls
+    attr_accessor max: Integer
+    attr_accessor min: Integer
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollableTableTextRecommendedRolls
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedOracleRollableTableText < EmbeddedOracleRollable
+    attr_accessor id: EmbeddedOracleRollableID
+    attr_accessor column_labels: EmbeddedOracleRollableTableTextColumnLabels
+    attr_accessor dice: DiceExpression
+    attr_accessor name: Label
+    attr_accessor rows: Array[OracleTableRowText]
+    attr_accessor type: EmbeddedOracleRollableTableTextType
+    attr_accessor comment: String?
+    attr_accessor canonical_name: Label?
+    attr_accessor description: MarkdownString?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor match: OracleMatchBehavior?
+    attr_accessor recommended_rolls: EmbeddedOracleRollableTableTextRecommendedRolls?
+    attr_accessor suggestions: Suggestions?
+    attr_accessor summary: MarkdownString?
+    attr_accessor tags: Tags?
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollableTableText
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedOracleRollableTableText2ColumnLabels
+    attr_accessor roll: Label
+    attr_accessor text: Label
+    attr_accessor text2: Label
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollableTableText2ColumnLabels
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedOracleRollableTableText2Type
+    attr_accessor value: String
+
+    ORACLE_ROLLABLE: EmbeddedOracleRollableTableText2Type
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollableTableText2Type
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedOracleRollableTableText2RecommendedRolls
+    attr_accessor max: Integer
+    attr_accessor min: Integer
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollableTableText2RecommendedRolls
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedOracleRollableTableText2 < EmbeddedOracleRollable
+    attr_accessor id: EmbeddedOracleRollableID
+    attr_accessor column_labels: EmbeddedOracleRollableTableText2ColumnLabels
+    attr_accessor dice: DiceExpression
+    attr_accessor name: Label
+    attr_accessor rows: Array[OracleTableRowText2]
+    attr_accessor type: EmbeddedOracleRollableTableText2Type
+    attr_accessor comment: String?
+    attr_accessor canonical_name: Label?
+    attr_accessor description: MarkdownString?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor match: OracleMatchBehavior?
+    attr_accessor recommended_rolls: EmbeddedOracleRollableTableText2RecommendedRolls?
+    attr_accessor suggestions: Suggestions?
+    attr_accessor summary: MarkdownString?
+    attr_accessor tags: Tags?
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollableTableText2
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedOracleRollableTableText3ColumnLabels
+    attr_accessor roll: Label
+    attr_accessor text: Label
+    attr_accessor text2: Label
+    attr_accessor text3: Label
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollableTableText3ColumnLabels
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedOracleRollableTableText3Type
+    attr_accessor value: String
+
+    ORACLE_ROLLABLE: EmbeddedOracleRollableTableText3Type
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollableTableText3Type
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedOracleRollableTableText3RecommendedRolls
+    attr_accessor max: Integer
+    attr_accessor min: Integer
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollableTableText3RecommendedRolls
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedOracleRollableTableText3 < EmbeddedOracleRollable
+    attr_accessor id: EmbeddedOracleRollableID
+    attr_accessor column_labels: EmbeddedOracleRollableTableText3ColumnLabels
+    attr_accessor dice: DiceExpression
+    attr_accessor name: Label
+    attr_accessor rows: Array[OracleTableRowText3]
+    attr_accessor type: EmbeddedOracleRollableTableText3Type
+    attr_accessor comment: String?
+    attr_accessor canonical_name: Label?
+    attr_accessor description: MarkdownString?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor match: OracleMatchBehavior?
+    attr_accessor recommended_rolls: EmbeddedOracleRollableTableText3RecommendedRolls?
+    attr_accessor suggestions: Suggestions?
+    attr_accessor summary: MarkdownString?
+    attr_accessor tags: Tags?
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollableTableText3
+    def to_json_data: () -> untyped
+  end
+
+  class EmbeddedOracleRollableID
+    attr_accessor value: String
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollableID
+    def to_json_data: () -> untyped
+  end
+
+  class EntityPrompt
+    attr_accessor text: MarkdownString
+
+    def self.from_json_data: (untyped) -> EntityPrompt
+    def to_json_data: () -> untyped
+  end
+
   class ExpansionID
     attr_accessor value: String
 
@@ -782,7 +1172,7 @@ module Datasworn
   class ImpactCategory
     attr_accessor contents: Hash[String, ImpactRule]
     attr_accessor description: MarkdownString
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
 
     def self.from_json_data: (untyped) -> ImpactCategory
     def to_json_data: () -> untyped
@@ -790,19 +1180,12 @@ module Datasworn
 
   class ImpactRule
     attr_accessor description: MarkdownString
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor permanent: bool
     attr_accessor prevents_recovery: Array[ConditionMeterKey]
     attr_accessor shared: bool
 
     def self.from_json_data: (untyped) -> ImpactRule
-    def to_json_data: () -> untyped
-  end
-
-  class InputLabel
-    attr_accessor value: String
-
-    def self.from_json_data: (untyped) -> InputLabel
     def to_json_data: () -> untyped
   end
 
@@ -846,6 +1229,7 @@ module Datasworn
   class MoveActionRoll < Move
     attr_accessor id: MoveID
     attr_accessor source: SourceInfo
+    attr_accessor allow_momentum_burn: bool
     attr_accessor name: Label
     attr_accessor outcomes: MoveOutcomes
     attr_accessor text: MarkdownString
@@ -853,8 +1237,8 @@ module Datasworn
     attr_accessor type: MoveActionRollType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor oracles: Array[OracleRollableID]?
-    attr_accessor replaces: MoveID?
+    attr_accessor oracles: Hash[String, EmbeddedOracleRollable]?
+    attr_accessor replaces: Array[MoveIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor tags: Tags?
 
@@ -874,14 +1258,15 @@ module Datasworn
   class MoveNoRoll < Move
     attr_accessor id: MoveID
     attr_accessor source: SourceInfo
+    attr_accessor allow_momentum_burn: bool
     attr_accessor name: Label
     attr_accessor text: MarkdownString
     attr_accessor trigger: TriggerNoRoll
     attr_accessor type: MoveNoRollType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor oracles: Array[OracleRollableID]?
-    attr_accessor replaces: MoveID?
+    attr_accessor oracles: Hash[String, EmbeddedOracleRollable]?
+    attr_accessor replaces: Array[MoveIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor tags: Tags?
 
@@ -901,6 +1286,7 @@ module Datasworn
   class MoveProgressRoll < Move
     attr_accessor id: MoveID
     attr_accessor source: SourceInfo
+    attr_accessor allow_momentum_burn: bool
     attr_accessor name: Label
     attr_accessor outcomes: MoveOutcomes
     attr_accessor text: MarkdownString
@@ -909,8 +1295,8 @@ module Datasworn
     attr_accessor type: MoveProgressRollType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor oracles: Array[OracleRollableID]?
-    attr_accessor replaces: MoveID?
+    attr_accessor oracles: Hash[String, EmbeddedOracleRollable]?
+    attr_accessor replaces: Array[MoveIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor tags: Tags?
 
@@ -930,6 +1316,7 @@ module Datasworn
   class MoveSpecialTrack < Move
     attr_accessor id: MoveID
     attr_accessor source: SourceInfo
+    attr_accessor allow_momentum_burn: bool
     attr_accessor name: Label
     attr_accessor outcomes: MoveOutcomes
     attr_accessor text: MarkdownString
@@ -937,8 +1324,8 @@ module Datasworn
     attr_accessor type: MoveSpecialTrackType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor oracles: Array[OracleRollableID]?
-    attr_accessor replaces: MoveID?
+    attr_accessor oracles: Hash[String, EmbeddedOracleRollable]?
+    attr_accessor replaces: Array[MoveIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor tags: Tags?
 
@@ -965,10 +1352,10 @@ module Datasworn
     attr_accessor color: CSSColor?
     attr_accessor contents: Hash[String, Move]?
     attr_accessor description: MarkdownString?
-    attr_accessor enhances: MoveCategoryID?
+    attr_accessor enhances: Array[MoveCategoryIDWildcard]?
     attr_accessor icon: SvgImageURL?
     attr_accessor images: Array[WebpImageURL]?
-    attr_accessor replaces: MoveCategoryID?
+    attr_accessor replaces: Array[MoveCategoryIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
@@ -984,6 +1371,13 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class MoveCategoryIDWildcard
+    attr_accessor value: String
+
+    def self.from_json_data: (untyped) -> MoveCategoryIDWildcard
+    def to_json_data: () -> untyped
+  end
+
   class MoveEnhancement
     attr_accessor roll_type: String
 
@@ -992,7 +1386,7 @@ module Datasworn
   end
 
   class MoveEnhancementActionRoll < MoveEnhancement
-    attr_accessor enhances: Array[MoveIDWildcard]
+    attr_accessor enhances: Array[AnyMoveIDWildcard]
     attr_accessor trigger: TriggerActionRollEnhancement?
 
     def self.from_json_data: (untyped) -> MoveEnhancementActionRoll
@@ -1000,7 +1394,7 @@ module Datasworn
   end
 
   class MoveEnhancementNoRoll < MoveEnhancement
-    attr_accessor enhances: Array[MoveIDWildcard]
+    attr_accessor enhances: Array[AnyMoveIDWildcard]
     attr_accessor trigger: TriggerNoRollEnhancement?
 
     def self.from_json_data: (untyped) -> MoveEnhancementNoRoll
@@ -1008,7 +1402,7 @@ module Datasworn
   end
 
   class MoveEnhancementProgressRoll < MoveEnhancement
-    attr_accessor enhances: Array[MoveIDWildcard]
+    attr_accessor enhances: Array[AnyMoveIDWildcard]
     attr_accessor trigger: TriggerProgressRollEnhancement?
 
     def self.from_json_data: (untyped) -> MoveEnhancementProgressRoll
@@ -1016,7 +1410,7 @@ module Datasworn
   end
 
   class MoveEnhancementSpecialTrack < MoveEnhancement
-    attr_accessor enhances: Array[MoveIDWildcard]
+    attr_accessor enhances: Array[AnyMoveIDWildcard]
     attr_accessor trigger: TriggerSpecialTrackEnhancement?
 
     def self.from_json_data: (untyped) -> MoveEnhancementSpecialTrack
@@ -1106,10 +1500,10 @@ module Datasworn
     attr_accessor color: CSSColor?
     attr_accessor contents: Hash[String, Npc]?
     attr_accessor description: MarkdownString?
-    attr_accessor enhances: NpcCollectionID?
+    attr_accessor enhances: Array[NpcCollectionIDWildcard]?
     attr_accessor icon: SvgImageURL?
     attr_accessor images: Array[WebpImageURL]?
-    attr_accessor replaces: NpcCollectionID?
+    attr_accessor replaces: Array[NpcCollectionIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
@@ -1122,6 +1516,13 @@ module Datasworn
     attr_accessor value: String
 
     def self.from_json_data: (untyped) -> NpcCollectionID
+    def to_json_data: () -> untyped
+  end
+
+  class NpcCollectionIDWildcard
+    attr_accessor value: String
+
+    def self.from_json_data: (untyped) -> NpcCollectionIDWildcard
     def to_json_data: () -> untyped
   end
 
@@ -1209,10 +1610,10 @@ module Datasworn
     attr_accessor color: CSSColor?
     attr_accessor contents: Hash[String, OracleColumnText3]?
     attr_accessor description: MarkdownString?
-    attr_accessor enhances: OracleCollectionID?
+    attr_accessor enhances: Array[OracleCollectionIDWildcard]?
     attr_accessor icon: SvgImageURL?
     attr_accessor images: Array[WebpImageURL]?
-    attr_accessor replaces: OracleCollectionID?
+    attr_accessor replaces: Array[OracleCollectionIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
@@ -1248,10 +1649,10 @@ module Datasworn
     attr_accessor color: CSSColor?
     attr_accessor contents: Hash[String, OracleColumnText]?
     attr_accessor description: MarkdownString?
-    attr_accessor enhances: OracleCollectionID?
+    attr_accessor enhances: Array[OracleCollectionIDWildcard]?
     attr_accessor icon: SvgImageURL?
     attr_accessor images: Array[WebpImageURL]?
-    attr_accessor replaces: OracleCollectionID?
+    attr_accessor replaces: Array[OracleCollectionIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
@@ -1287,10 +1688,10 @@ module Datasworn
     attr_accessor color: CSSColor?
     attr_accessor contents: Hash[String, OracleColumnText]?
     attr_accessor description: MarkdownString?
-    attr_accessor enhances: OracleCollectionID?
+    attr_accessor enhances: Array[OracleCollectionIDWildcard]?
     attr_accessor icon: SvgImageURL?
     attr_accessor images: Array[WebpImageURL]?
-    attr_accessor replaces: OracleCollectionID?
+    attr_accessor replaces: Array[OracleCollectionIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
@@ -1327,10 +1728,10 @@ module Datasworn
     attr_accessor color: CSSColor?
     attr_accessor contents: Hash[String, OracleColumnText2]?
     attr_accessor description: MarkdownString?
-    attr_accessor enhances: OracleCollectionID?
+    attr_accessor enhances: Array[OracleCollectionIDWildcard]?
     attr_accessor icon: SvgImageURL?
     attr_accessor images: Array[WebpImageURL]?
-    attr_accessor replaces: OracleCollectionID?
+    attr_accessor replaces: Array[OracleCollectionIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
@@ -1359,10 +1760,10 @@ module Datasworn
     attr_accessor color: CSSColor?
     attr_accessor contents: Hash[String, OracleTableRollable]?
     attr_accessor description: MarkdownString?
-    attr_accessor enhances: OracleCollectionID?
+    attr_accessor enhances: Array[OracleCollectionIDWildcard]?
     attr_accessor icon: SvgImageURL?
     attr_accessor images: Array[WebpImageURL]?
-    attr_accessor replaces: OracleCollectionID?
+    attr_accessor replaces: Array[OracleCollectionIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
@@ -1375,6 +1776,13 @@ module Datasworn
     attr_accessor value: String
 
     def self.from_json_data: (untyped) -> OracleCollectionID
+    def to_json_data: () -> untyped
+  end
+
+  class OracleCollectionIDWildcard
+    attr_accessor value: String
+
+    def self.from_json_data: (untyped) -> OracleCollectionIDWildcard
     def to_json_data: () -> untyped
   end
 
@@ -1407,7 +1815,7 @@ module Datasworn
     attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
     attr_accessor match: OracleMatchBehavior?
-    attr_accessor replaces: OracleRollableID?
+    attr_accessor replaces: Array[OracleRollableIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
@@ -1445,7 +1853,7 @@ module Datasworn
     attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
     attr_accessor match: OracleMatchBehavior?
-    attr_accessor replaces: OracleRollableID?
+    attr_accessor replaces: Array[OracleRollableIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
@@ -1483,7 +1891,7 @@ module Datasworn
     attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
     attr_accessor match: OracleMatchBehavior?
-    attr_accessor replaces: OracleRollableID?
+    attr_accessor replaces: Array[OracleRollableIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
@@ -1537,6 +1945,13 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class OracleRollableIDWildcard
+    attr_accessor value: String
+
+    def self.from_json_data: (untyped) -> OracleRollableIDWildcard
+    def to_json_data: () -> untyped
+  end
+
   class OracleTableRollable
     attr_accessor oracle_type: String
 
@@ -1583,7 +1998,7 @@ module Datasworn
     attr_accessor icon: SvgImageURL?
     attr_accessor match: OracleMatchBehavior?
     attr_accessor recommended_rolls: OracleTableRollableTableTextRecommendedRolls?
-    attr_accessor replaces: OracleRollableID?
+    attr_accessor replaces: Array[OracleRollableIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
@@ -1632,7 +2047,7 @@ module Datasworn
     attr_accessor icon: SvgImageURL?
     attr_accessor match: OracleMatchBehavior?
     attr_accessor recommended_rolls: OracleTableRollableTableText2RecommendedRolls?
-    attr_accessor replaces: OracleRollableID?
+    attr_accessor replaces: Array[OracleRollableIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
@@ -1682,7 +2097,7 @@ module Datasworn
     attr_accessor icon: SvgImageURL?
     attr_accessor match: OracleMatchBehavior?
     attr_accessor recommended_rolls: OracleTableRollableTableText3RecommendedRolls?
-    attr_accessor replaces: OracleRollableID?
+    attr_accessor replaces: Array[OracleRollableIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
@@ -1769,10 +2184,10 @@ module Datasworn
     attr_accessor color: CSSColor?
     attr_accessor contents: Hash[String, OracleTableRollable]?
     attr_accessor description: MarkdownString?
-    attr_accessor enhances: OracleCollectionID?
+    attr_accessor enhances: Array[OracleCollectionIDWildcard]?
     attr_accessor icon: SvgImageURL?
     attr_accessor images: Array[WebpImageURL]?
-    attr_accessor replaces: OracleCollectionID?
+    attr_accessor replaces: Array[OracleCollectionIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
@@ -1914,7 +2329,7 @@ module Datasworn
   end
 
   class RollableValueCustom < RollableValue
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor value: Integer
 
     def self.from_json_data: (untyped) -> RollableValueCustom
@@ -1968,7 +2383,7 @@ module Datasworn
 
   class SelectEnhancementFieldChoice
     attr_accessor choice_type: SelectEnhancementFieldChoiceChoiceType
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor enhance_asset: AssetEnhancement?
     attr_accessor enhance_moves: Array[MoveEnhancement]?
 
@@ -1996,7 +2411,7 @@ module Datasworn
     attr_accessor assets: Array[AssetIDWildcard]
     attr_accessor choice_type: SelectValueFieldChoiceAssetControlChoiceType
     attr_accessor control: DictKey
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
 
     def self.from_json_data: (untyped) -> SelectValueFieldChoiceAssetControl
     def to_json_data: () -> untyped
@@ -2014,7 +2429,7 @@ module Datasworn
   class SelectValueFieldChoiceAssetOption < SelectValueFieldChoice
     attr_accessor assets: Array[AssetIDWildcard]
     attr_accessor choice_type: SelectValueFieldChoiceAssetOptionChoiceType
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor option: DictKey
 
     def self.from_json_data: (untyped) -> SelectValueFieldChoiceAssetOption
@@ -2033,7 +2448,7 @@ module Datasworn
   class SelectValueFieldChoiceAttachedAssetControl < SelectValueFieldChoice
     attr_accessor choice_type: SelectValueFieldChoiceAttachedAssetControlChoiceType
     attr_accessor control: DictKey
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
 
     def self.from_json_data: (untyped) -> SelectValueFieldChoiceAttachedAssetControl
     def to_json_data: () -> untyped
@@ -2050,7 +2465,7 @@ module Datasworn
 
   class SelectValueFieldChoiceAttachedAssetOption < SelectValueFieldChoice
     attr_accessor choice_type: SelectValueFieldChoiceAttachedAssetOptionChoiceType
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor option: DictKey
 
     def self.from_json_data: (untyped) -> SelectValueFieldChoiceAttachedAssetOption
@@ -2069,7 +2484,7 @@ module Datasworn
   class SelectValueFieldChoiceConditionMeter < SelectValueFieldChoice
     attr_accessor choice_type: SelectValueFieldChoiceConditionMeterChoiceType
     attr_accessor condition_meter: ConditionMeterKey
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
 
     def self.from_json_data: (untyped) -> SelectValueFieldChoiceConditionMeter
     def to_json_data: () -> untyped
@@ -2086,7 +2501,7 @@ module Datasworn
 
   class SelectValueFieldChoiceCustom < SelectValueFieldChoice
     attr_accessor choice_type: SelectValueFieldChoiceCustomChoiceType
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor value: Integer
 
     def self.from_json_data: (untyped) -> SelectValueFieldChoiceCustom
@@ -2104,7 +2519,7 @@ module Datasworn
 
   class SelectValueFieldChoiceStat < SelectValueFieldChoice
     attr_accessor choice_type: SelectValueFieldChoiceStatChoiceType
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor stat: StatKey
 
     def self.from_json_data: (untyped) -> SelectValueFieldChoiceStat
@@ -2140,7 +2555,7 @@ module Datasworn
 
   class SpecialTrackRule
     attr_accessor description: MarkdownString
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
     attr_accessor optional: bool
     attr_accessor shared: bool
 
@@ -2164,21 +2579,14 @@ module Datasworn
 
   class StatRule
     attr_accessor description: MarkdownString
-    attr_accessor label: InputLabel
+    attr_accessor label: Label
 
     def self.from_json_data: (untyped) -> StatRule
     def to_json_data: () -> untyped
   end
 
   class Suggestions
-    attr_accessor assets: Array[AssetID]?
-    attr_accessor atlas: Array[AtlasEntryID]?
-    attr_accessor moves: Array[MoveID]?
-    attr_accessor npcs: Array[NpcID]?
-    attr_accessor oracles: Array[OracleRollableID]?
-    attr_accessor rarities: Array[RarityID]?
-    attr_accessor site_domains: Array[DelveSiteDomainID]?
-    attr_accessor site_themes: Array[DelveSiteThemeID]?
+    attr_accessor value: Array[AnyIDWildcard]
 
     def self.from_json_data: (untyped) -> Suggestions
     def to_json_data: () -> untyped
@@ -2543,6 +2951,7 @@ module Datasworn
     attr_accessor type: TruthType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
+    attr_accessor factions: Array[EntityPrompt]?
     attr_accessor icon: SvgImageURL?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
@@ -2560,32 +2969,22 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
-  class TruthOptionTableOracleType
-    attr_accessor value: String
-
-    TABLE_TEXT: TruthOptionTableOracleType
-
-    def self.from_json_data: (untyped) -> TruthOptionTableOracleType
-    def to_json_data: () -> untyped
-  end
-
-  class TruthOptionTable
-    attr_accessor dice: DiceExpression
-    attr_accessor oracle_type: TruthOptionTableOracleType
-    attr_accessor rows: Array[OracleTableRowText]
-
-    def self.from_json_data: (untyped) -> TruthOptionTable
-    def to_json_data: () -> untyped
-  end
-
   class TruthOption
+    attr_accessor id: TruthOptionID
     attr_accessor description: MarkdownString
     attr_accessor quest_starter: MarkdownString
     attr_accessor roll: DiceRange
+    attr_accessor oracles: Hash[String, EmbeddedOracleRollable]?
     attr_accessor summary: MarkdownString?
-    attr_accessor table: TruthOptionTable?
 
     def self.from_json_data: (untyped) -> TruthOption
+    def to_json_data: () -> untyped
+  end
+
+  class TruthOptionID
+    attr_accessor value: String
+
+    def self.from_json_data: (untyped) -> TruthOptionID
     def to_json_data: () -> untyped
   end
 

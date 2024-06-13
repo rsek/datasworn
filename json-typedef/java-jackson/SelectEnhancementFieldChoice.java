@@ -16,7 +16,7 @@ public class SelectEnhancementFieldChoice {
     private SelectEnhancementFieldChoiceChoiceType choiceType;
 
     @JsonProperty("label")
-    private InputLabel label;
+    private Label label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("enhance_asset")
@@ -46,14 +46,14 @@ public class SelectEnhancementFieldChoice {
     /**
      * Getter for label.<p>
      */
-    public InputLabel getLabel() {
+    public Label getLabel() {
         return label;
     }
 
     /**
      * Setter for label.<p>
      */
-    public void setLabel(InputLabel label) {
+    public void setLabel(Label label) {
         this.label = label;
     }
 

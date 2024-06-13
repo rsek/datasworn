@@ -16,7 +16,7 @@ namespace Datasworn
         public string RollType { get => "special_track"; }
 
         [JsonPropertyName("enhances")]
-        public IList<MoveIdWildcard> Enhances { get; set; }
+        public IList<AnyMoveIdWildcard> Enhances { get; set; }
 
         [JsonPropertyName("trigger")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

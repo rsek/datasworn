@@ -39,6 +39,10 @@ public class Truth {
     private Label canonicalName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("factions")
+    private List<EntityPrompt> factions;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("icon")
     private SvgImageUrl icon;
 
@@ -155,8 +159,8 @@ public class Truth {
 
     /**
      * Getter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object.
+     * These should be omitted when presenting the object for gameplay.
      */
     public String getComment() {
         return comment;
@@ -164,8 +168,8 @@ public class Truth {
 
     /**
      * Setter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object.
+     * These should be omitted when presenting the object for gameplay.
      */
     public void setComment(String comment) {
         this.comment = comment;
@@ -187,6 +191,32 @@ public class Truth {
      */
     public void setCanonicalName(Label canonicalName) {
         this.canonicalName = canonicalName;
+    }
+
+    /**
+     * Getter for factions.<p>
+     * Prompts for factions related to this truth, like those presented in
+     * standard isles. This is presented as a single paragraph in the original
+     * text; Datasworn uses an array (one faction prompt per string) to
+     * represent them in order to make them more suitable for programmatic use.
+     * 
+     * This property is a placeholder and may see signficant changes in v0.2.0.
+     */
+    public List<EntityPrompt> getFactions() {
+        return factions;
+    }
+
+    /**
+     * Setter for factions.<p>
+     * Prompts for factions related to this truth, like those presented in
+     * standard isles. This is presented as a single paragraph in the original
+     * text; Datasworn uses an array (one faction prompt per string) to
+     * represent them in order to make them more suitable for programmatic use.
+     * 
+     * This property is a placeholder and may see signficant changes in v0.2.0.
+     */
+    public void setFactions(List<EntityPrompt> factions) {
+        this.factions = factions;
     }
 
     /**

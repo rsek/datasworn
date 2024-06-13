@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * A unique ID for a Rarity.
+ * A unique ID representing a Rarity object.
  */
 public class RarityId {
     @JsonValue

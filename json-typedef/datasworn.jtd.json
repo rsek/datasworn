@@ -323,82 +323,26 @@
 		"description": "Describes game rules compatible with the Ironsworn tabletop role-playing game by Shawn Tomkin."
 	},
 	"definitions": {
-		"AssetAbilityId": {
+		"RulesetId": {
 			"type": "string",
 			"metadata": {
-				"description": "A unique ID for an AssetAbility.",
-				"pattern": "^[a-z][a-z0-9_]{3,}\\/asset\\/[a-z][a-z_]*\\/[a-z][a-z_]*\\.abilities\\/\\d+$"
-			}
-		},
-		"AssetCollectionId": {
-			"type": "string",
-			"metadata": {
-				"description": "A unique ID for an AssetCollection.",
-				"pattern": "^[a-z][a-z0-9_]{3,}\\/asset_collection\\/[a-z][a-z_]*$"
-			}
-		},
-		"AssetId": {
-			"type": "string",
-			"metadata": {
-				"description": "A unique ID for an Asset.",
-				"pattern": "^[a-z][a-z0-9_]{3,}\\/asset\\/[a-z][a-z_]*\\/[a-z][a-z_]*$"
-			}
-		},
-		"AssetIdWildcard": {
-			"type": "string",
-			"metadata": {
-				"description": "A wildcarded ID that can be used to match multiple Assets.",
-				"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/asset\\/(\\*|[a-z][a-z_]*)\\/(\\*|[a-z][a-z_]*)$"
-			}
-		},
-		"AtlasCollectionId": {
-			"type": "string",
-			"metadata": {
-				"description": "A unique ID for an AtlasCollection.",
+				"description": "The ID of standalone Datasworn package that describes its own ruleset.",
 				"examples": [
-					"classic/atlas_collection/ironlands"
+					"classic",
+					"starforged"
 				],
-				"pattern": "^[a-z][a-z0-9_]{3,}\\/atlas_entry\\/[a-z][a-z_]*$"
+				"pattern": "^[a-z][a-z0-9_]{3,}$"
 			}
 		},
-		"AtlasEntryId": {
+		"ExpansionId": {
 			"type": "string",
 			"metadata": {
-				"description": "A unique ID for an AtlasEntry.",
+				"description": "The ID of a Datasworn package that relies on an external package to provide its ruleset.",
 				"examples": [
-					"classic/atlas_entry/ironlands/hinterlands"
+					"delve",
+					"sundered_isles"
 				],
-				"pattern": "^[a-z][a-z0-9_]{3,}\\/atlas_entry(\\/[a-z][a-z_]*){1,3}\\/[a-z][a-z_]*$"
-			}
-		},
-		"DelveSiteDomainId": {
-			"type": "string",
-			"metadata": {
-				"description": "A unique ID for a DelveSiteDomain.",
-				"examples": [
-					"delve/delve_site_domain/shadowfen"
-				],
-				"pattern": "^[a-z][a-z0-9_]{3,}\\/delve_site_domain\\/[a-z][a-z_]*$"
-			}
-		},
-		"DelveSiteId": {
-			"type": "string",
-			"metadata": {
-				"description": "A unique ID for a DelveSite.",
-				"examples": [
-					"delve/delve_site/alvas_rest"
-				],
-				"pattern": "^[a-z][a-z0-9_]{3,}\\/delve_site\\/[a-z][a-z_]*$"
-			}
-		},
-		"DelveSiteThemeId": {
-			"type": "string",
-			"metadata": {
-				"description": "A unique ID for a DelveSiteTheme.",
-				"examples": [
-					"delve/delve_site_theme/hallowed"
-				],
-				"pattern": "^[a-z][a-z0-9_]{3,}\\/delve_site_theme\\/[a-z][a-z_]*$"
+				"pattern": "^[a-z][a-z0-9_]{3,}$"
 			}
 		},
 		"DictKey": {
@@ -408,125 +352,194 @@
 				"pattern": "^[a-z][a-z_]*$"
 			}
 		},
-		"ExpansionId": {
+		"AssetId": {
 			"type": "string",
 			"metadata": {
-				"description": "The ID of a Datasworn package that relies on an external package to provide its ruleset.",
-				"examples": [
-					"delve"
-				],
-				"pattern": "^[a-z][a-z0-9_]{3,}$"
+				"description": "A unique ID representing an Asset object.",
+				"pattern": "^asset:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
 			}
 		},
-		"MoveCategoryId": {
+		"AssetIdWildcard": {
 			"type": "string",
 			"metadata": {
-				"description": "A unique ID for a MoveCategory.",
-				"examples": [
-					"starforged/move_category/adventure"
-				],
-				"pattern": "^[a-z][a-z0-9_]{3,}\\/move_category\\/[a-z][a-z_]*$"
+				"description": "A wildcarded AssetId that can be used to match multiple Asset objects.",
+				"pattern": "^asset:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
+			}
+		},
+		"AssetCollectionId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing an AssetCollection object.",
+				"pattern": "^asset_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
+			}
+		},
+		"AssetCollectionIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded AssetCollectionId that can be used to match multiple AssetCollection objects.",
+				"pattern": "^asset_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
+			}
+		},
+		"AssetAbilityId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing an AssetAbility object.",
+				"pattern": "^asset\\.ability:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.(\\d+)$"
+			}
+		},
+		"AtlasCollectionId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing an AtlasCollection object.",
+				"pattern": "^atlas_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
+			}
+		},
+		"AtlasCollectionIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded AtlasCollectionId that can be used to match multiple AtlasCollection objects.",
+				"pattern": "^atlas_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
+			}
+		},
+		"AtlasEntryId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing an AtlasEntry object.",
+				"pattern": "^atlas_entry:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
+			}
+		},
+		"DelveSiteId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing a DelveSite object.",
+				"pattern": "^delve_site:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
+			}
+		},
+		"DelveSiteDomainId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing a DelveSiteDomain object.",
+				"pattern": "^delve_site_domain:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
+			}
+		},
+		"DelveSiteThemeId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing a DelveSiteTheme object.",
+				"pattern": "^delve_site_theme:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
 			}
 		},
 		"MoveId": {
 			"type": "string",
 			"metadata": {
-				"pattern": "^[a-z][a-z0-9_]{3,}\\/move\\/[a-z][a-z_]*\\/[a-z][a-z_]*$|^([a-z][a-z0-9_]{3,})\\/asset\\/([a-z][a-z_]*)\\/([a-z][a-z_]*)\\.abilities\\/(\\d+)\\.moves\\/([a-z][a-z_]*)$",
-				"description": "A move ID, for a standard move or a unique asset move",
-				"examples": [
-					"classic/move/combat/strike",
-					"starforged/asset/module/grappler.abilities/0.moves/ready_grappler"
-				]
+				"description": "A unique ID representing a Move object.",
+				"pattern": "^move:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
 			}
 		},
 		"MoveIdWildcard": {
 			"type": "string",
 			"metadata": {
-				"pattern": "^(\\*|[a-z][a-z0-9_]{3,})\\/move\\/(\\*|[a-z][a-z_]*)\\/(\\*|[a-z][a-z_]*)$|^(\\*|[a-z][a-z0-9_]{3,})\\/asset\\/(\\*|[a-z][a-z_]*)\\/(\\*|[a-z][a-z_]*)\\.abilities\\/(\\*|\\d+)\\.moves\\/(\\*|[a-z][a-z_]*)$",
-				"description": "A move ID with wildcards.",
-				"examples": [
-					"*/move/*/face_danger",
-					"*/asset/ritual/*.abilities/*.moves/*"
-				]
+				"description": "A wildcarded MoveId that can be used to match multiple Move objects.",
+				"pattern": "^move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
 			}
 		},
-		"NpcCollectionId": {
+		"MoveCategoryId": {
 			"type": "string",
 			"metadata": {
-				"description": "A unique ID for a NpcCollection.",
-				"examples": [
-					"classic/npc_collection/firstborn",
-					"starforged/npc_collection/sample_npcs"
-				],
-				"pattern": "^[a-z][a-z0-9_]{3,}\\/npc_collection\\/[a-z][a-z_]*$"
+				"description": "A unique ID representing a MoveCategory object.",
+				"pattern": "^move_category:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
+			}
+		},
+		"MoveCategoryIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded MoveCategoryId that can be used to match multiple MoveCategory objects.",
+				"pattern": "^move_category:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
 			}
 		},
 		"NpcId": {
 			"type": "string",
 			"metadata": {
-				"description": "A unique ID for a Npc.",
-				"examples": [
-					"classic/npc/firstborn/elf",
-					"starforged/npc/sample_npcs/chiton"
-				],
-				"pattern": "^[a-z][a-z0-9_]{3,}\\/npc(\\/[a-z][a-z_]*){1,3}\\/[a-z][a-z_]*$"
+				"description": "A unique ID representing a Npc object.",
+				"pattern": "^npc:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
+			}
+		},
+		"NpcCollectionId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing a NpcCollection object.",
+				"pattern": "^npc_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
+			}
+		},
+		"NpcCollectionIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded NpcCollectionId that can be used to match multiple NpcCollection objects.",
+				"pattern": "^npc_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
 			}
 		},
 		"OracleCollectionId": {
 			"type": "string",
 			"metadata": {
-				"description": "A unique ID for an OracleCollection.",
-				"examples": [
-					"starforged/oracle_collection/core",
-					"starforged/oracle_collection/character/names",
-					"starforged/oracle_collection/planets/furnace/settlements"
-				],
-				"pattern": "^[a-z][a-z0-9_]{3,}\\/oracle_collection(\\/[a-z][a-z_]*){1,3}$"
+				"description": "A unique ID representing an OracleCollection object.",
+				"pattern": "^oracle_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
+			}
+		},
+		"OracleCollectionIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded OracleCollectionId that can be used to match multiple OracleCollection objects.",
+				"pattern": "^oracle_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
 			}
 		},
 		"OracleRollableId": {
 			"type": "string",
 			"metadata": {
-				"description": "A unique ID for an OracleRollable.",
-				"examples": [
-					"starforged/oracle_rollable/core/action",
-					"starforged/oracle_rollable/character/names/given",
-					"starforged/oracle_rollable/planets/furnace/settlements/terminus"
-				],
-				"pattern": "^[a-z][a-z0-9_]{3,}\\/oracle_rollable(\\/[a-z][a-z_]*){1,3}\\/[a-z][a-z_]*$"
+				"description": "A unique ID representing an OracleRollable object.",
+				"pattern": "^oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
+			}
+		},
+		"OracleRollableIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded OracleRollableId that can be used to match multiple OracleRollable objects.",
+				"pattern": "^oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
 			}
 		},
 		"RarityId": {
 			"type": "string",
 			"metadata": {
-				"description": "A unique ID for a Rarity.",
-				"examples": [
-					"classic/rarities/ayethins_journal"
-				],
-				"pattern": "^[a-z][a-z0-9_]{3,}\\/rarity\\/[a-z][a-z_]*$"
-			}
-		},
-		"RulesetId": {
-			"type": "string",
-			"metadata": {
-				"description": "The ID of standalone Datasworn package that describes its own ruleset.",
-				"examples": [
-					"classic",
-					"starforged",
-					"sundered_isles"
-				],
-				"pattern": "^[a-z][a-z0-9_]{3,}$"
+				"description": "A unique ID representing a Rarity object.",
+				"pattern": "^rarity:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
 			}
 		},
 		"TruthId": {
 			"type": "string",
 			"metadata": {
-				"description": "A unique ID for a Truth.",
-				"examples": [
-					"classic/truth/iron",
-					"starforged/truth/iron"
-				],
-				"pattern": "^[a-z][a-z0-9_]{3,}\\/truth\\/[a-z][a-z_]*$"
+				"description": "A unique ID representing a Truth object.",
+				"pattern": "^truth:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
+			}
+		},
+		"TruthOptionId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing a TruthOption object.",
+				"pattern": "^truth\\.option:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)$"
+			}
+		},
+		"EmbeddedMoveId": {
+			"type": "string"
+		},
+		"AnyMoveIdWildcard": {
+			"type": "string"
+		},
+		"EmbeddedOracleRollableId": {
+			"type": "string"
+		},
+		"AnyIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "Represents any kind of wildcard ID, including IDs of embedded objects."
 			}
 		},
 		"AuthorInfo": {
@@ -638,47 +651,8 @@
 			}
 		},
 		"Suggestions": {
-			"optionalProperties": {
-				"oracles": {
-					"elements": {
-						"ref": "OracleRollableId"
-					}
-				},
-				"assets": {
-					"elements": {
-						"ref": "AssetId"
-					}
-				},
-				"moves": {
-					"elements": {
-						"ref": "MoveId"
-					}
-				},
-				"site_domains": {
-					"elements": {
-						"ref": "DelveSiteDomainId"
-					}
-				},
-				"site_themes": {
-					"elements": {
-						"ref": "DelveSiteThemeId"
-					}
-				},
-				"npcs": {
-					"elements": {
-						"ref": "NpcId"
-					}
-				},
-				"atlas": {
-					"elements": {
-						"ref": "AtlasEntryId"
-					}
-				},
-				"rarities": {
-					"elements": {
-						"ref": "RarityId"
-					}
-				}
+			"elements": {
+				"ref": "AnyIdWildcard"
 			}
 		},
 		"SvgImageUrl": {
@@ -743,23 +717,16 @@
 				"description": "Internationalization/localization hints for the text content of this object."
 			}
 		},
-		"InputLabel": {
-			"type": "string",
-			"metadata": {
-				"description": "A localized label for an input. In some contexts it may be undesirable to render this text, but it should always be exposed to assistive technology (e.g. with `aria-label` in HTML).",
-				"pattern": "^[^A-Z]+$"
-			}
-		},
 		"Label": {
 			"type": "string",
 			"metadata": {
-				"description": "A localized plain text name or label."
+				"description": "A localized, player-facing name or label, formatted as plain text. In some contexts it may be undesirable to render this text, but it should always be exposed to assistive technology (e.g. with `aria-label` in HTML)."
 			}
 		},
 		"MarkdownString": {
 			"type": "string",
 			"metadata": {
-				"description": "Localized text, formatted in Markdown.\n\nIt uses some custom syntax; e.g. `{{table:some_oracle_table_id}}` indicates that the referenced oracle table is rendered there in the source material.",
+				"description": "Localized, player-facing text, formatted in Markdown. It is *not* formatted for use \"out of the box\"; it uses some custom syntax, intended to be replaced in whatever way is most appropriate for your implementation.\n\n* `[Link text](move:starforged/suffer/pay_the_price)`: A link to the identified object. The ID must conform to the `AnyId` type; no wildcards allowed.\n* `{{table>oracle_rollable:starforged/core/action}}`: the referenced oracle is rendered here in the source material. The ID must conform to the `AnyOracleRollableId` type; no wildcards allowed.\n",
 				"format": "markdown"
 			}
 		},
@@ -794,7 +761,7 @@
 		"TemplateString": {
 			"type": "string",
 			"metadata": {
-				"description": "A rich text string in Markdown with replaced values from oracle roll results.\n\nThe custom syntax `{{some_row_key:some_oracle_table_id}}` should be replaced by the `some_row_key` string of a rolled oracle table. This is usually the `result` key, for example `{{result:starforged/oracles/core/action}}`\n",
+				"description": "A rich text string in Markdown with replaced values from oracle roll results.\n\nThe custom syntax `{{some_row_key>some_oracle_table_id}}` should be replaced by the `some_row_key` string of a rolled oracle table. This is usually the `text` key, for example `{{text>oracle_rollable:starforged/core/action}}`\n",
 				"format": "markdown"
 			}
 		},
@@ -813,7 +780,7 @@
 					}
 				},
 				"label": {
-					"ref": "InputLabel"
+					"ref": "Label"
 				},
 				"value": {
 					"type": "int8",
@@ -847,7 +814,7 @@
 		"ImpactCategory": {
 			"properties": {
 				"label": {
-					"ref": "InputLabel",
+					"ref": "Label",
 					"metadata": {
 						"description": "A label for this impact category."
 					}
@@ -875,7 +842,7 @@
 		"ImpactRule": {
 			"properties": {
 				"label": {
-					"ref": "InputLabel",
+					"ref": "Label",
 					"metadata": {
 						"description": "The label for this impact."
 					}
@@ -1037,7 +1004,7 @@
 		"SpecialTrackRule": {
 			"properties": {
 				"label": {
-					"ref": "InputLabel",
+					"ref": "Label",
 					"metadata": {
 						"description": "A label for this special track."
 					}
@@ -1068,7 +1035,7 @@
 		"StatRule": {
 			"properties": {
 				"label": {
-					"ref": "InputLabel",
+					"ref": "Label",
 					"metadata": {
 						"description": "A label for this stat.",
 						"examples": [
@@ -1582,7 +1549,7 @@
 				"custom": {
 					"properties": {
 						"label": {
-							"ref": "InputLabel"
+							"ref": "Label"
 						},
 						"value": {
 							"type": "int16"
@@ -1654,7 +1621,7 @@
 				"_comment": {
 					"type": "string",
 					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 					}
 				},
 				"canonical_name": {
@@ -1721,7 +1688,7 @@
 				"_comment": {
 					"type": "string",
 					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 					}
 				},
 				"canonical_name": {
@@ -1769,15 +1736,19 @@
 					}
 				},
 				"enhances": {
-					"ref": "NpcCollectionId",
+					"elements": {
+						"ref": "NpcCollectionIdWildcard"
+					},
 					"metadata": {
-						"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+						"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own."
 					}
 				},
 				"replaces": {
-					"ref": "NpcCollectionId",
+					"elements": {
+						"ref": "NpcCollectionIdWildcard"
+					},
 					"metadata": {
-						"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+						"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection."
 					}
 				},
 				"contents": {
@@ -1920,7 +1891,7 @@
 				}
 			},
 			"metadata": {
-				"description": "Provides string templates that may be used in place of the static row text from `OracleTableRow#text`, `OracleTableRow#text2`, and `OracleTableRow#text3`.\n\n  These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text:some_oracle_table_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#text` from the target oracle table ID."
+				"description": "Provides string templates that may be used in place of the static row text from `OracleTableRow#text`, `OracleTableRow#text2`, and `OracleTableRow#text3`.\n\n  These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text>some_oracle_rollable_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#text` from the target oracle rollable ID."
 			}
 		},
 		"DiceRange": {
@@ -1940,6 +1911,537 @@
 			},
 			"metadata": {
 				"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive)."
+			}
+		},
+		"EntityPrompt": {
+			"properties": {
+				"text": {
+					"ref": "MarkdownString"
+				}
+			},
+			"metadata": {
+				"description": "This type is a placeholder and may see signficant changes in v0.2.0."
+			}
+		},
+		"EmbeddedOracleRollable": {
+			"discriminator": "oracle_type",
+			"mapping": {
+				"table_text": {
+					"properties": {
+						"_id": {
+							"ref": "EmbeddedOracleRollableId"
+						},
+						"name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The primary name/label for this item."
+							}
+						},
+						"dice": {
+							"ref": "DiceExpression",
+							"metadata": {
+								"description": "The roll used to select a result on this oracle."
+							}
+						},
+						"type": {
+							"enum": [
+								"oracle_rollable"
+							]
+						},
+						"rows": {
+							"elements": {
+								"ref": "OracleTableRowText"
+							},
+							"metadata": {
+								"description": "An array of objects, each representing a single row of the table."
+							}
+						},
+						"column_labels": {
+							"properties": {
+								"roll": {
+									"ref": "Label"
+								},
+								"text": {
+									"ref": "Label"
+								}
+							},
+							"metadata": {
+								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
+							}
+						}
+					},
+					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
+						"canonical_name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+							}
+						},
+						"suggestions": {
+							"ref": "Suggestions"
+						},
+						"tags": {
+							"ref": "Tags"
+						},
+						"match": {
+							"ref": "OracleMatchBehavior",
+							"metadata": {
+								"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+							}
+						},
+						"recommended_rolls": {
+							"properties": {
+								"min": {
+									"type": "int16"
+								},
+								"max": {
+									"type": "int16"
+								}
+							}
+						},
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An icon that represents this table."
+							}
+						},
+						"summary": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+							}
+						},
+						"description": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+							}
+						}
+					}
+				},
+				"table_text2": {
+					"properties": {
+						"_id": {
+							"ref": "EmbeddedOracleRollableId"
+						},
+						"name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The primary name/label for this item."
+							}
+						},
+						"dice": {
+							"ref": "DiceExpression",
+							"metadata": {
+								"description": "The roll used to select a result on this oracle."
+							}
+						},
+						"type": {
+							"enum": [
+								"oracle_rollable"
+							]
+						},
+						"rows": {
+							"elements": {
+								"ref": "OracleTableRowText2"
+							},
+							"metadata": {
+								"description": "An array of objects, each representing a single row of the table."
+							}
+						},
+						"column_labels": {
+							"properties": {
+								"roll": {
+									"ref": "Label"
+								},
+								"text": {
+									"ref": "Label"
+								},
+								"text2": {
+									"ref": "Label"
+								}
+							},
+							"metadata": {
+								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
+							}
+						}
+					},
+					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
+						"canonical_name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+							}
+						},
+						"suggestions": {
+							"ref": "Suggestions"
+						},
+						"tags": {
+							"ref": "Tags"
+						},
+						"match": {
+							"ref": "OracleMatchBehavior",
+							"metadata": {
+								"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+							}
+						},
+						"recommended_rolls": {
+							"properties": {
+								"min": {
+									"type": "int16"
+								},
+								"max": {
+									"type": "int16"
+								}
+							}
+						},
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An icon that represents this table."
+							}
+						},
+						"summary": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+							}
+						},
+						"description": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+							}
+						}
+					}
+				},
+				"table_text3": {
+					"properties": {
+						"_id": {
+							"ref": "EmbeddedOracleRollableId"
+						},
+						"name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The primary name/label for this item."
+							}
+						},
+						"dice": {
+							"ref": "DiceExpression",
+							"metadata": {
+								"description": "The roll used to select a result on this oracle."
+							}
+						},
+						"type": {
+							"enum": [
+								"oracle_rollable"
+							]
+						},
+						"rows": {
+							"elements": {
+								"ref": "OracleTableRowText3"
+							},
+							"metadata": {
+								"description": "An array of objects, each representing a single row of the table."
+							}
+						},
+						"column_labels": {
+							"properties": {
+								"roll": {
+									"ref": "Label"
+								},
+								"text": {
+									"ref": "Label"
+								},
+								"text2": {
+									"ref": "Label"
+								},
+								"text3": {
+									"ref": "Label"
+								}
+							},
+							"metadata": {
+								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
+							}
+						}
+					},
+					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
+						"canonical_name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+							}
+						},
+						"suggestions": {
+							"ref": "Suggestions"
+						},
+						"tags": {
+							"ref": "Tags"
+						},
+						"match": {
+							"ref": "OracleMatchBehavior",
+							"metadata": {
+								"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+							}
+						},
+						"recommended_rolls": {
+							"properties": {
+								"min": {
+									"type": "int16"
+								},
+								"max": {
+									"type": "int16"
+								}
+							}
+						},
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An icon that represents this table."
+							}
+						},
+						"summary": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+							}
+						},
+						"description": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+							}
+						}
+					}
+				},
+				"column_text": {
+					"properties": {
+						"_id": {
+							"ref": "EmbeddedOracleRollableId"
+						},
+						"name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The primary label at the head of this column."
+							}
+						},
+						"dice": {
+							"ref": "DiceExpression",
+							"metadata": {
+								"description": "The roll used to select a result on this oracle."
+							}
+						},
+						"type": {
+							"enum": [
+								"oracle_rollable"
+							]
+						},
+						"rows": {
+							"elements": {
+								"ref": "OracleTableRowText"
+							},
+							"metadata": {
+								"description": "An array of objects, each representing a single row of the table."
+							}
+						}
+					},
+					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
+						"summary": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
+							}
+						},
+						"color": {
+							"ref": "CssColor",
+							"metadata": {
+								"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
+							}
+						},
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An optional icon for this column."
+							}
+						},
+						"match": {
+							"ref": "OracleMatchBehavior",
+							"metadata": {
+								"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+							}
+						},
+						"tags": {
+							"ref": "Tags"
+						},
+						"suggestions": {
+							"ref": "Suggestions"
+						}
+					}
+				},
+				"column_text2": {
+					"properties": {
+						"_id": {
+							"ref": "EmbeddedOracleRollableId"
+						},
+						"name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The primary label at the head of this column."
+							}
+						},
+						"dice": {
+							"ref": "DiceExpression",
+							"metadata": {
+								"description": "The roll used to select a result on this oracle."
+							}
+						},
+						"type": {
+							"enum": [
+								"oracle_rollable"
+							]
+						},
+						"rows": {
+							"elements": {
+								"ref": "OracleTableRowText2"
+							},
+							"metadata": {
+								"description": "An array of objects, each representing a single row of the table."
+							}
+						}
+					},
+					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
+						"summary": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
+							}
+						},
+						"color": {
+							"ref": "CssColor",
+							"metadata": {
+								"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
+							}
+						},
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An optional icon for this column."
+							}
+						},
+						"match": {
+							"ref": "OracleMatchBehavior",
+							"metadata": {
+								"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+							}
+						},
+						"tags": {
+							"ref": "Tags"
+						},
+						"suggestions": {
+							"ref": "Suggestions"
+						}
+					}
+				},
+				"column_text3": {
+					"properties": {
+						"_id": {
+							"ref": "EmbeddedOracleRollableId"
+						},
+						"name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The primary label at the head of this column."
+							}
+						},
+						"dice": {
+							"ref": "DiceExpression",
+							"metadata": {
+								"description": "The roll used to select a result on this oracle."
+							}
+						},
+						"type": {
+							"enum": [
+								"oracle_rollable"
+							]
+						},
+						"rows": {
+							"elements": {
+								"ref": "OracleTableRowText3"
+							},
+							"metadata": {
+								"description": "An array of objects, each representing a single row of the table."
+							}
+						}
+					},
+					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
+						"summary": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
+							}
+						},
+						"color": {
+							"ref": "CssColor",
+							"metadata": {
+								"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
+							}
+						},
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An optional icon for this column."
+							}
+						},
+						"match": {
+							"ref": "OracleMatchBehavior",
+							"metadata": {
+								"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+							}
+						},
+						"tags": {
+							"ref": "Tags"
+						},
+						"suggestions": {
+							"ref": "Suggestions"
+						}
+					}
+				}
 			}
 		},
 		"OracleCollection": {
@@ -1975,7 +2477,7 @@
 						"_comment": {
 							"type": "string",
 							"metadata": {
-								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 							}
 						},
 						"canonical_name": {
@@ -2023,15 +2525,19 @@
 							}
 						},
 						"enhances": {
-							"ref": "OracleCollectionId",
+							"elements": {
+								"ref": "OracleCollectionIdWildcard"
+							},
 							"metadata": {
-								"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+								"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own."
 							}
 						},
 						"replaces": {
-							"ref": "OracleCollectionId",
+							"elements": {
+								"ref": "OracleCollectionIdWildcard"
+							},
 							"metadata": {
-								"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+								"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection."
 							}
 						},
 						"contents": {
@@ -2095,7 +2601,7 @@
 						"_comment": {
 							"type": "string",
 							"metadata": {
-								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 							}
 						},
 						"canonical_name": {
@@ -2143,15 +2649,19 @@
 							}
 						},
 						"enhances": {
-							"ref": "OracleCollectionId",
+							"elements": {
+								"ref": "OracleCollectionIdWildcard"
+							},
 							"metadata": {
-								"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+								"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own."
 							}
 						},
 						"replaces": {
-							"ref": "OracleCollectionId",
+							"elements": {
+								"ref": "OracleCollectionIdWildcard"
+							},
 							"metadata": {
-								"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+								"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection."
 							}
 						},
 						"contents": {
@@ -2207,7 +2717,7 @@
 						"_comment": {
 							"type": "string",
 							"metadata": {
-								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 							}
 						},
 						"canonical_name": {
@@ -2255,15 +2765,19 @@
 							}
 						},
 						"enhances": {
-							"ref": "OracleCollectionId",
+							"elements": {
+								"ref": "OracleCollectionIdWildcard"
+							},
 							"metadata": {
-								"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+								"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own."
 							}
 						},
 						"replaces": {
-							"ref": "OracleCollectionId",
+							"elements": {
+								"ref": "OracleCollectionIdWildcard"
+							},
 							"metadata": {
-								"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+								"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection."
 							}
 						},
 						"contents": {
@@ -2322,7 +2836,7 @@
 						"_comment": {
 							"type": "string",
 							"metadata": {
-								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 							}
 						},
 						"canonical_name": {
@@ -2370,15 +2884,19 @@
 							}
 						},
 						"enhances": {
-							"ref": "OracleCollectionId",
+							"elements": {
+								"ref": "OracleCollectionIdWildcard"
+							},
 							"metadata": {
-								"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+								"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own."
 							}
 						},
 						"replaces": {
-							"ref": "OracleCollectionId",
+							"elements": {
+								"ref": "OracleCollectionIdWildcard"
+							},
 							"metadata": {
-								"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+								"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection."
 							}
 						},
 						"contents": {
@@ -2434,7 +2952,7 @@
 						"_comment": {
 							"type": "string",
 							"metadata": {
-								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 							}
 						},
 						"canonical_name": {
@@ -2482,15 +3000,19 @@
 							}
 						},
 						"enhances": {
-							"ref": "OracleCollectionId",
+							"elements": {
+								"ref": "OracleCollectionIdWildcard"
+							},
 							"metadata": {
-								"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+								"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own."
 							}
 						},
 						"replaces": {
-							"ref": "OracleCollectionId",
+							"elements": {
+								"ref": "OracleCollectionIdWildcard"
+							},
 							"metadata": {
-								"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+								"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection."
 							}
 						},
 						"contents": {
@@ -2551,7 +3073,7 @@
 				"_comment": {
 					"type": "string",
 					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 					}
 				},
 				"summary": {
@@ -2573,9 +3095,11 @@
 					}
 				},
 				"replaces": {
-					"ref": "OracleRollableId",
+					"elements": {
+						"ref": "OracleRollableIdWildcard"
+					},
 					"metadata": {
-						"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+						"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object."
 					}
 				},
 				"match": {
@@ -2638,7 +3162,7 @@
 				"_comment": {
 					"type": "string",
 					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 					}
 				},
 				"summary": {
@@ -2660,9 +3184,11 @@
 					}
 				},
 				"replaces": {
-					"ref": "OracleRollableId",
+					"elements": {
+						"ref": "OracleRollableIdWildcard"
+					},
 					"metadata": {
-						"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+						"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object."
 					}
 				},
 				"match": {
@@ -2723,7 +3249,7 @@
 				"_comment": {
 					"type": "string",
 					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 					}
 				},
 				"summary": {
@@ -2745,9 +3271,11 @@
 					}
 				},
 				"replaces": {
-					"ref": "OracleRollableId",
+					"elements": {
+						"ref": "OracleRollableIdWildcard"
+					},
 					"metadata": {
-						"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+						"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object."
 					}
 				},
 				"match": {
@@ -2825,7 +3353,7 @@
 						"_comment": {
 							"type": "string",
 							"metadata": {
-								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 							}
 						},
 						"canonical_name": {
@@ -2841,9 +3369,11 @@
 							"ref": "Tags"
 						},
 						"replaces": {
-							"ref": "OracleRollableId",
+							"elements": {
+								"ref": "OracleRollableIdWildcard"
+							},
 							"metadata": {
-								"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+								"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object."
 							}
 						},
 						"match": {
@@ -2945,7 +3475,7 @@
 						"_comment": {
 							"type": "string",
 							"metadata": {
-								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 							}
 						},
 						"canonical_name": {
@@ -2961,9 +3491,11 @@
 							"ref": "Tags"
 						},
 						"replaces": {
-							"ref": "OracleRollableId",
+							"elements": {
+								"ref": "OracleRollableIdWildcard"
+							},
 							"metadata": {
-								"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+								"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object."
 							}
 						},
 						"match": {
@@ -3068,7 +3600,7 @@
 						"_comment": {
 							"type": "string",
 							"metadata": {
-								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 							}
 						},
 						"canonical_name": {
@@ -3084,9 +3616,11 @@
 							"ref": "Tags"
 						},
 						"replaces": {
-							"ref": "OracleRollableId",
+							"elements": {
+								"ref": "OracleRollableIdWildcard"
+							},
 							"metadata": {
-								"description": "Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object."
+								"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object."
 							}
 						},
 						"match": {
@@ -3318,7 +3852,7 @@
 				"_comment": {
 					"type": "string",
 					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 					}
 				},
 				"canonical_name": {
@@ -3366,15 +3900,19 @@
 					}
 				},
 				"enhances": {
-					"ref": "OracleCollectionId",
+					"elements": {
+						"ref": "OracleCollectionIdWildcard"
+					},
 					"metadata": {
-						"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+						"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own."
 					}
 				},
 				"replaces": {
-					"ref": "OracleCollectionId",
+					"elements": {
+						"ref": "OracleCollectionIdWildcard"
+					},
 					"metadata": {
-						"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+						"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection."
 					}
 				},
 				"contents": {
@@ -3420,6 +3958,250 @@
 				}
 			}
 		},
+		"EmbeddedMove": {
+			"discriminator": "roll_type",
+			"mapping": {
+				"action_roll": {
+					"properties": {
+						"_id": {
+							"ref": "EmbeddedMoveId"
+						},
+						"name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The primary name/label for this item."
+							}
+						},
+						"text": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "The complete rules text of the move."
+							}
+						},
+						"trigger": {
+							"ref": "TriggerActionRoll",
+							"metadata": {
+								"description": "Trigger conditions for this move."
+							}
+						},
+						"allow_momentum_burn": {
+							"type": "boolean",
+							"metadata": {
+								"description": "Is burning momentum allowed for this move?"
+							}
+						},
+						"outcomes": {
+							"ref": "MoveOutcomes"
+						},
+						"type": {
+							"enum": [
+								"move"
+							]
+						}
+					},
+					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
+						"canonical_name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+							}
+						},
+						"suggestions": {
+							"ref": "Suggestions"
+						},
+						"tags": {
+							"ref": "Tags"
+						}
+					}
+				},
+				"no_roll": {
+					"properties": {
+						"_id": {
+							"ref": "EmbeddedMoveId"
+						},
+						"name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The primary name/label for this item."
+							}
+						},
+						"text": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "The complete rules text of the move."
+							}
+						},
+						"trigger": {
+							"ref": "TriggerNoRoll",
+							"metadata": {
+								"description": "Trigger conditions for this move."
+							}
+						},
+						"allow_momentum_burn": {
+							"type": "boolean",
+							"metadata": {
+								"description": "Is burning momentum allowed for this move?"
+							}
+						},
+						"type": {
+							"enum": [
+								"move"
+							]
+						}
+					},
+					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
+						"canonical_name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+							}
+						},
+						"suggestions": {
+							"ref": "Suggestions"
+						},
+						"tags": {
+							"ref": "Tags"
+						}
+					}
+				},
+				"progress_roll": {
+					"properties": {
+						"_id": {
+							"ref": "EmbeddedMoveId"
+						},
+						"name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The primary name/label for this item."
+							}
+						},
+						"text": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "The complete rules text of the move."
+							}
+						},
+						"trigger": {
+							"ref": "TriggerProgressRoll",
+							"metadata": {
+								"description": "Trigger conditions for this move."
+							}
+						},
+						"allow_momentum_burn": {
+							"type": "boolean",
+							"metadata": {
+								"description": "Is burning momentum allowed for this move?"
+							}
+						},
+						"outcomes": {
+							"ref": "MoveOutcomes"
+						},
+						"type": {
+							"enum": [
+								"move"
+							]
+						},
+						"tracks": {
+							"ref": "ProgressTrackTypeInfo",
+							"metadata": {
+								"description": "Describes the common features of progress tracks associated with this move."
+							}
+						}
+					},
+					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
+						"canonical_name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+							}
+						},
+						"suggestions": {
+							"ref": "Suggestions"
+						},
+						"tags": {
+							"ref": "Tags"
+						}
+					}
+				},
+				"special_track": {
+					"properties": {
+						"_id": {
+							"ref": "EmbeddedMoveId"
+						},
+						"name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The primary name/label for this item."
+							}
+						},
+						"text": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "The complete rules text of the move."
+							}
+						},
+						"trigger": {
+							"ref": "TriggerSpecialTrack",
+							"metadata": {
+								"description": "Trigger conditions for this move."
+							}
+						},
+						"allow_momentum_burn": {
+							"type": "boolean",
+							"metadata": {
+								"description": "Is burning momentum allowed for this move?"
+							}
+						},
+						"outcomes": {
+							"ref": "MoveOutcomes"
+						},
+						"type": {
+							"enum": [
+								"move"
+							]
+						}
+					},
+					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
+						"canonical_name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+							}
+						},
+						"suggestions": {
+							"ref": "Suggestions"
+						},
+						"tags": {
+							"ref": "Tags"
+						}
+					}
+				}
+			}
+		},
 		"Move": {
 			"discriminator": "roll_type",
 			"mapping": {
@@ -3455,6 +4237,12 @@
 								"description": "Trigger conditions for this move."
 							}
 						},
+						"allow_momentum_burn": {
+							"type": "boolean",
+							"metadata": {
+								"description": "Is burning momentum allowed for this move?"
+							}
+						},
 						"outcomes": {
 							"ref": "MoveOutcomes"
 						},
@@ -3468,7 +4256,7 @@
 						"_comment": {
 							"type": "string",
 							"metadata": {
-								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 							}
 						},
 						"canonical_name": {
@@ -3484,17 +4272,19 @@
 							"ref": "Tags"
 						},
 						"replaces": {
-							"ref": "MoveId",
+							"elements": {
+								"ref": "MoveIdWildcard"
+							},
 							"metadata": {
-								"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
+								"description": "Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move."
 							}
 						},
 						"oracles": {
-							"elements": {
-								"ref": "OracleRollableId"
+							"values": {
+								"ref": "EmbeddedOracleRollable"
 							},
 							"metadata": {
-								"description": "Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement."
+								"propertyPattern": "^[a-z][a-z_]*$"
 							}
 						}
 					},
@@ -3534,6 +4324,12 @@
 								"description": "Trigger conditions for this move."
 							}
 						},
+						"allow_momentum_burn": {
+							"type": "boolean",
+							"metadata": {
+								"description": "Is burning momentum allowed for this move?"
+							}
+						},
 						"type": {
 							"enum": [
 								"move"
@@ -3544,7 +4340,7 @@
 						"_comment": {
 							"type": "string",
 							"metadata": {
-								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 							}
 						},
 						"canonical_name": {
@@ -3560,17 +4356,19 @@
 							"ref": "Tags"
 						},
 						"replaces": {
-							"ref": "MoveId",
+							"elements": {
+								"ref": "MoveIdWildcard"
+							},
 							"metadata": {
-								"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
+								"description": "Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move."
 							}
 						},
 						"oracles": {
-							"elements": {
-								"ref": "OracleRollableId"
+							"values": {
+								"ref": "EmbeddedOracleRollable"
 							},
 							"metadata": {
-								"description": "Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement."
+								"propertyPattern": "^[a-z][a-z_]*$"
 							}
 						}
 					},
@@ -3610,6 +4408,12 @@
 								"description": "Trigger conditions for this move."
 							}
 						},
+						"allow_momentum_burn": {
+							"type": "boolean",
+							"metadata": {
+								"description": "Is burning momentum allowed for this move?"
+							}
+						},
 						"outcomes": {
 							"ref": "MoveOutcomes"
 						},
@@ -3629,7 +4433,7 @@
 						"_comment": {
 							"type": "string",
 							"metadata": {
-								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 							}
 						},
 						"canonical_name": {
@@ -3645,17 +4449,19 @@
 							"ref": "Tags"
 						},
 						"replaces": {
-							"ref": "MoveId",
+							"elements": {
+								"ref": "MoveIdWildcard"
+							},
 							"metadata": {
-								"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
+								"description": "Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move."
 							}
 						},
 						"oracles": {
-							"elements": {
-								"ref": "OracleRollableId"
+							"values": {
+								"ref": "EmbeddedOracleRollable"
 							},
 							"metadata": {
-								"description": "Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement."
+								"propertyPattern": "^[a-z][a-z_]*$"
 							}
 						}
 					},
@@ -3695,6 +4501,12 @@
 								"description": "Trigger conditions for this move."
 							}
 						},
+						"allow_momentum_burn": {
+							"type": "boolean",
+							"metadata": {
+								"description": "Is burning momentum allowed for this move?"
+							}
+						},
 						"outcomes": {
 							"ref": "MoveOutcomes"
 						},
@@ -3708,7 +4520,7 @@
 						"_comment": {
 							"type": "string",
 							"metadata": {
-								"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 							}
 						},
 						"canonical_name": {
@@ -3724,17 +4536,19 @@
 							"ref": "Tags"
 						},
 						"replaces": {
-							"ref": "MoveId",
+							"elements": {
+								"ref": "MoveIdWildcard"
+							},
 							"metadata": {
-								"description": "Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move."
+								"description": "Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move."
 							}
 						},
 						"oracles": {
-							"elements": {
-								"ref": "OracleRollableId"
+							"values": {
+								"ref": "EmbeddedOracleRollable"
 							},
 							"metadata": {
-								"description": "Oracles associated with this move. It's not recommended to roll these automatically, as almost all moves present them as an option, not a requirement."
+								"propertyPattern": "^[a-z][a-z_]*$"
 							}
 						}
 					},
@@ -3774,7 +4588,7 @@
 				"_comment": {
 					"type": "string",
 					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 					}
 				},
 				"canonical_name": {
@@ -3822,15 +4636,19 @@
 					}
 				},
 				"enhances": {
-					"ref": "MoveCategoryId",
+					"elements": {
+						"ref": "MoveCategoryIdWildcard"
+					},
 					"metadata": {
-						"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+						"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own."
 					}
 				},
 				"replaces": {
-					"ref": "MoveCategoryId",
+					"elements": {
+						"ref": "MoveCategoryIdWildcard"
+					},
 					"metadata": {
-						"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+						"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection."
 					}
 				},
 				"contents": {
@@ -3851,7 +4669,7 @@
 					"properties": {
 						"enhances": {
 							"elements": {
-								"ref": "MoveIdWildcard"
+								"ref": "AnyMoveIdWildcard"
 							}
 						}
 					},
@@ -3868,7 +4686,7 @@
 					"properties": {
 						"enhances": {
 							"elements": {
-								"ref": "MoveIdWildcard"
+								"ref": "AnyMoveIdWildcard"
 							}
 						}
 					},
@@ -3885,7 +4703,7 @@
 					"properties": {
 						"enhances": {
 							"elements": {
-								"ref": "MoveIdWildcard"
+								"ref": "AnyMoveIdWildcard"
 							}
 						}
 					},
@@ -3902,7 +4720,7 @@
 					"properties": {
 						"enhances": {
 							"elements": {
-								"ref": "MoveIdWildcard"
+								"ref": "AnyMoveIdWildcard"
 							}
 						}
 					},
@@ -4401,7 +5219,7 @@
 				"_comment": {
 					"type": "string",
 					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 					}
 				},
 				"canonical_name": {
@@ -4483,7 +5301,7 @@
 				"_comment": {
 					"type": "string",
 					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 					}
 				},
 				"name": {
@@ -4494,11 +5312,19 @@
 				},
 				"moves": {
 					"values": {
-						"ref": "Move"
+						"ref": "EmbeddedMove"
 					},
 					"metadata": {
 						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "Unique moves added by this asset ability."
+					}
+				},
+				"oracles": {
+					"values": {
+						"ref": "EmbeddedOracleRollable"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$"
 					}
 				},
 				"options": {
@@ -4547,7 +5373,7 @@
 				"clock": {
 					"properties": {
 						"label": {
-							"ref": "InputLabel"
+							"ref": "Label"
 						},
 						"value": {
 							"type": "int8",
@@ -4586,7 +5412,7 @@
 				"counter": {
 					"properties": {
 						"label": {
-							"ref": "InputLabel"
+							"ref": "Label"
 						},
 						"value": {
 							"type": "int8",
@@ -4622,7 +5448,7 @@
 				"checkbox": {
 					"properties": {
 						"label": {
-							"ref": "InputLabel"
+							"ref": "Label"
 						},
 						"value": {
 							"type": "boolean",
@@ -4655,7 +5481,7 @@
 				"text": {
 					"properties": {
 						"label": {
-							"ref": "InputLabel"
+							"ref": "Label"
 						},
 						"value": {
 							"type": "string"
@@ -4681,7 +5507,7 @@
 				"text": {
 					"properties": {
 						"label": {
-							"ref": "InputLabel"
+							"ref": "Label"
 						},
 						"value": {
 							"type": "string"
@@ -4750,7 +5576,7 @@
 				"_comment": {
 					"type": "string",
 					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 					}
 				},
 				"canonical_name": {
@@ -4798,15 +5624,19 @@
 					}
 				},
 				"enhances": {
-					"ref": "AssetCollectionId",
+					"elements": {
+						"ref": "AssetCollectionIdWildcard"
+					},
 					"metadata": {
-						"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+						"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own."
 					}
 				},
 				"replaces": {
-					"ref": "AssetCollectionId",
+					"elements": {
+						"ref": "AssetCollectionIdWildcard"
+					},
 					"metadata": {
-						"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+						"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection."
 					}
 				},
 				"contents": {
@@ -4826,7 +5656,7 @@
 				"checkbox": {
 					"properties": {
 						"label": {
-							"ref": "InputLabel"
+							"ref": "Label"
 						},
 						"value": {
 							"type": "boolean",
@@ -4859,7 +5689,7 @@
 				"card_flip": {
 					"properties": {
 						"label": {
-							"ref": "InputLabel"
+							"ref": "Label"
 						},
 						"value": {
 							"type": "boolean",
@@ -4900,7 +5730,7 @@
 				"condition_meter": {
 					"properties": {
 						"label": {
-							"ref": "InputLabel"
+							"ref": "Label"
 						},
 						"value": {
 							"type": "int8",
@@ -4938,12 +5768,12 @@
 							"optionalProperties": {
 								"suffer": {
 									"elements": {
-										"ref": "MoveIdWildcard",
+										"ref": "AnyMoveIdWildcard",
 										"metadata": {
 											"examples": [
-												"classic/moves/suffer/companion_endure_harm",
-												"starforged/moves/suffer/companion_takes_a_hit",
-												"starforged/moves/suffer/withstand_damage"
+												"move:classic/suffer/companion_endure_harm",
+												"move:starforged/suffer/companion_takes_a_hit",
+												"move:starforged/suffer/withstand_damage"
 											]
 										}
 									},
@@ -4953,14 +5783,14 @@
 								},
 								"recover": {
 									"elements": {
-										"ref": "MoveIdWildcard",
+										"ref": "AnyMoveIdWildcard",
 										"metadata": {
 											"examples": [
-												"classic/moves/adventure/heal",
-												"classic/moves/adventure/make_camp",
-												"classic/moves/relationship/sojourn",
-												"starforged/moves/recover/heal",
-												"starforged/moves/recover/repair"
+												"move:classic/adventure/heal",
+												"move:classic/adventure/make_camp",
+												"move:classic/relationship/sojourn",
+												"move:starforged/recover/heal",
+												"move:starforged/recover/repair"
 											]
 										}
 									},
@@ -4990,7 +5820,7 @@
 				"select_enhancement": {
 					"properties": {
 						"label": {
-							"ref": "InputLabel"
+							"ref": "Label"
 						},
 						"value": {
 							"ref": "DictKey",
@@ -5005,7 +5835,7 @@
 									"choice": {
 										"properties": {
 											"label": {
-												"ref": "InputLabel"
+												"ref": "Label"
 											}
 										},
 										"optionalProperties": {
@@ -5025,7 +5855,7 @@
 									"choice_group": {
 										"properties": {
 											"name": {
-												"ref": "InputLabel",
+												"ref": "Label",
 												"metadata": {
 													"description": "A label for this option group."
 												}
@@ -5065,7 +5895,7 @@
 				"checkbox": {
 					"properties": {
 						"label": {
-							"ref": "InputLabel"
+							"ref": "Label"
 						},
 						"value": {
 							"type": "boolean",
@@ -5098,7 +5928,7 @@
 				"card_flip": {
 					"properties": {
 						"label": {
-							"ref": "InputLabel"
+							"ref": "Label"
 						},
 						"value": {
 							"type": "boolean",
@@ -5188,7 +6018,7 @@
 				"select_value": {
 					"properties": {
 						"label": {
-							"ref": "InputLabel"
+							"ref": "Label"
 						},
 						"value": {
 							"ref": "DictKey",
@@ -5220,7 +6050,7 @@
 				"select_enhancement": {
 					"properties": {
 						"label": {
-							"ref": "InputLabel"
+							"ref": "Label"
 						},
 						"value": {
 							"ref": "DictKey",
@@ -5235,7 +6065,7 @@
 									"choice": {
 										"properties": {
 											"label": {
-												"ref": "InputLabel"
+												"ref": "Label"
 											}
 										},
 										"optionalProperties": {
@@ -5255,7 +6085,7 @@
 									"choice_group": {
 										"properties": {
 											"name": {
-												"ref": "InputLabel",
+												"ref": "Label",
 												"metadata": {
 													"description": "A label for this option group."
 												}
@@ -5295,7 +6125,7 @@
 				"text": {
 					"properties": {
 						"label": {
-							"ref": "InputLabel"
+							"ref": "Label"
 						},
 						"value": {
 							"type": "string"
@@ -5321,7 +6151,7 @@
 		"SelectEnhancementFieldChoice": {
 			"properties": {
 				"label": {
-					"ref": "InputLabel"
+					"ref": "Label"
 				},
 				"choice_type": {
 					"enum": [
@@ -5349,7 +6179,7 @@
 				"stat": {
 					"properties": {
 						"label": {
-							"ref": "InputLabel"
+							"ref": "Label"
 						},
 						"choice_type": {
 							"enum": [
@@ -5367,7 +6197,7 @@
 				"condition_meter": {
 					"properties": {
 						"label": {
-							"ref": "InputLabel"
+							"ref": "Label"
 						},
 						"choice_type": {
 							"enum": [
@@ -5385,7 +6215,7 @@
 				"asset_control": {
 					"properties": {
 						"label": {
-							"ref": "InputLabel"
+							"ref": "Label"
 						},
 						"choice_type": {
 							"enum": [
@@ -5415,7 +6245,7 @@
 				"asset_option": {
 					"properties": {
 						"label": {
-							"ref": "InputLabel"
+							"ref": "Label"
 						},
 						"choice_type": {
 							"enum": [
@@ -5441,7 +6271,7 @@
 				"attached_asset_control": {
 					"properties": {
 						"label": {
-							"ref": "InputLabel"
+							"ref": "Label"
 						},
 						"choice_type": {
 							"enum": [
@@ -5466,7 +6296,7 @@
 				"attached_asset_option": {
 					"properties": {
 						"label": {
-							"ref": "InputLabel"
+							"ref": "Label"
 						},
 						"choice_type": {
 							"enum": [
@@ -5487,7 +6317,7 @@
 				"custom": {
 					"properties": {
 						"label": {
-							"ref": "InputLabel"
+							"ref": "Label"
 						},
 						"choice_type": {
 							"enum": [
@@ -5542,7 +6372,7 @@
 				"_comment": {
 					"type": "string",
 					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 					}
 				},
 				"canonical_name": {
@@ -5565,6 +6395,14 @@
 				},
 				"your_character": {
 					"ref": "MarkdownString"
+				},
+				"factions": {
+					"elements": {
+						"ref": "EntityPrompt"
+					},
+					"metadata": {
+						"description": "Prompts for factions related to this truth, like those presented in standard isles. This is presented as a single paragraph in the original text; Datasworn uses an array (one faction prompt per string) to represent them in order to make them more suitable for programmatic use.\n\nThis property is a placeholder and may see signficant changes in v0.2.0."
+					}
 				}
 			},
 			"metadata": {
@@ -5573,6 +6411,9 @@
 		},
 		"TruthOption": {
 			"properties": {
+				"_id": {
+					"ref": "TruthOptionId"
+				},
 				"roll": {
 					"ref": "DiceRange"
 				},
@@ -5587,30 +6428,12 @@
 				"summary": {
 					"ref": "MarkdownString"
 				},
-				"table": {
-					"properties": {
-						"oracle_type": {
-							"enum": [
-								"table_text"
-							]
-						},
-						"dice": {
-							"ref": "DiceExpression",
-							"metadata": {
-								"description": "The roll used to select a result on this oracle."
-							}
-						},
-						"rows": {
-							"elements": {
-								"ref": "OracleTableRowText"
-							},
-							"metadata": {
-								"description": "An array of objects, each representing a single row of the table."
-							}
-						}
+				"oracles": {
+					"values": {
+						"ref": "EmbeddedOracleRollable"
 					},
 					"metadata": {
-						"description": "Represents a basic rollable oracle table with one roll column and one text result column."
+						"propertyPattern": "^[a-z][a-z_]*$"
 					}
 				}
 			}
@@ -5645,7 +6468,7 @@
 				"_comment": {
 					"type": "string",
 					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 					}
 				},
 				"canonical_name": {
@@ -5693,15 +6516,19 @@
 					}
 				},
 				"enhances": {
-					"ref": "AtlasCollectionId",
+					"elements": {
+						"ref": "AtlasCollectionIdWildcard"
+					},
 					"metadata": {
-						"description": "This collection's content enhances the identified collection, rather than being a standalone collection of its own."
+						"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own."
 					}
 				},
 				"replaces": {
-					"ref": "AtlasCollectionId",
+					"elements": {
+						"ref": "AtlasCollectionIdWildcard"
+					},
 					"metadata": {
-						"description": "This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection."
+						"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection."
 					}
 				},
 				"contents": {
@@ -5760,7 +6587,7 @@
 				"_comment": {
 					"type": "string",
 					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 					}
 				},
 				"canonical_name": {
@@ -5858,7 +6685,7 @@
 				"_comment": {
 					"type": "string",
 					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 					}
 				},
 				"canonical_name": {
@@ -5937,7 +6764,7 @@
 				"_comment": {
 					"type": "string",
 					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 					}
 				},
 				"canonical_name": {
@@ -6051,7 +6878,7 @@
 				"_comment": {
 					"type": "string",
 					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 					}
 				},
 				"canonical_name": {
@@ -6072,7 +6899,7 @@
 				"name_oracle": {
 					"ref": "OracleRollableId",
 					"metadata": {
-						"description": "An oracle table ID containing place name elements. For examples, see oracle ID `delve/oracles/site_name/place/barrow`, and its siblings in oracle collection ID `delve/collections/oracles/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (ID: delve/oracles/site_name/format) to create random names for delve sites."
+						"description": "An oracle table ID containing place name elements. For examples, see oracle ID `oracle_rollable:delve/site_name/place/barrow`, and its siblings in oracle collection ID `oracle_collection:delve/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (`oracle_rollable:delve/site_name/format`) to create random names for delve sites."
 					}
 				}
 			},
@@ -6123,7 +6950,7 @@
 				"_comment": {
 					"type": "string",
 					"metadata": {
-						"description": "Any implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
 					}
 				},
 				"canonical_name": {

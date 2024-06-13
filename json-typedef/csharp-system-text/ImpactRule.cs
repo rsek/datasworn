@@ -20,7 +20,7 @@ namespace Datasworn
         /// The label for this impact.
         /// </summary>
         [JsonPropertyName("label")]
-        public InputLabel Label { get; set; }
+        public Label Label { get; set; }
 
         /// <summary>
         /// Is this impact permanent?

@@ -29,6 +29,12 @@ namespace Datasworn
         public SourceInfo Source { get; set; }
 
         /// <summary>
+        /// Is burning momentum allowed for this move?
+        /// </summary>
+        [JsonPropertyName("allow_momentum_burn")]
+        public bool AllowMomentumBurn { get; set; }
+
+        /// <summary>
         /// The primary name/label for this item.
         /// </summary>
         [JsonPropertyName("name")]
@@ -60,9 +66,9 @@ namespace Datasworn
         public MoveProgressRollType Type_ { get; set; }
 
         /// <summary>
-        /// Any implementation hints or other developer-facing comments on
-        /// this object. These should be omitted when presenting the object
-        /// for gameplay.
+        /// Implementation hints or other developer-facing comments on this
+        /// object. These should be omitted when presenting the object for
+        /// gameplay.
         /// </summary>
         [JsonPropertyName("_comment")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
@@ -76,22 +82,17 @@ namespace Datasworn
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public Label? CanonicalName { get; set; }
 
-        /// <summary>
-        /// Oracles associated with this move. It's not recommended to roll
-        /// these automatically, as almost all moves present them as an option,
-        /// not a requirement.
-        /// </summary>
         [JsonPropertyName("oracles")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IList<OracleRollableId> Oracles { get; set; }
+        public IDictionary<string, EmbeddedOracleRollable> Oracles { get; set; }
 
         /// <summary>
-        /// Indicates that this move replaces the identified move. References to
-        /// the replaced move can be considered equivalent to this move.
+        /// Indicates that this move replaces the identified moves. References
+        /// to the replaced moves can be considered equivalent to this move.
         /// </summary>
         [JsonPropertyName("replaces")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public MoveId? Replaces { get; set; }
+        public IList<MoveIdWildcard> Replaces { get; set; }
 
         [JsonPropertyName("suggestions")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

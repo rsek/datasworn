@@ -26,6 +26,6 @@ namespace Datasworn
         public DictKey Control { get; set; }
 
         [JsonPropertyName("label")]
-        public InputLabel Label { get; set; }
+        public Label Label { get; set; }
     }
 }

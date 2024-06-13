@@ -6,19 +6,18 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * A localized label for an input. In some contexts it may be undesirable to
- * render this text, but it should always be exposed to assistive technology
- * (e.g. with `aria-label` in HTML).
+ * A wildcarded OracleCollectionId that can be used to match multiple
+ * OracleCollection objects.
  */
-public class InputLabel {
+public class OracleCollectionIdWildcard {
     @JsonValue
     private String value;
 
-    public InputLabel() {
+    public OracleCollectionIdWildcard() {
     }
 
     @JsonCreator
-    public InputLabel(String value) {
+    public OracleCollectionIdWildcard(String value) {
         this.value = value;
     }
 

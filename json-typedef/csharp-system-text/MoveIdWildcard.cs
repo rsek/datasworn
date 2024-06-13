@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// A move ID with wildcards.
+    /// A wildcarded MoveId that can be used to match multiple Move objects.
     /// </summary>
     [JsonConverter(typeof(MoveIdWildcardJsonConverter))]
     public class MoveIdWildcard

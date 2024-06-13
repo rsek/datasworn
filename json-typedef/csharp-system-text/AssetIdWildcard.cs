@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// A wildcarded ID that can be used to match multiple Assets.
+    /// A wildcarded AssetId that can be used to match multiple Asset objects.
     /// </summary>
     [JsonConverter(typeof(AssetIdWildcardJsonConverter))]
     public class AssetIdWildcard

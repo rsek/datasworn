@@ -13,7 +13,7 @@ import java.util.List;
 @JsonSerialize
 public class AssetControlFieldSelectEnhancementChoiceChoice extends AssetControlFieldSelectEnhancementChoice {
     @JsonProperty("label")
-    private InputLabel label;
+    private Label label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("enhance_asset")
@@ -29,14 +29,14 @@ public class AssetControlFieldSelectEnhancementChoiceChoice extends AssetControl
     /**
      * Getter for label.<p>
      */
-    public InputLabel getLabel() {
+    public Label getLabel() {
         return label;
     }
 
     /**
      * Setter for label.<p>
      */
-    public void setLabel(InputLabel label) {
+    public void setLabel(Label label) {
         this.label = label;
     }
 

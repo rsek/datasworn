@@ -13,7 +13,7 @@ namespace Datasworn
         public string FieldType { get => "text"; }
 
         [JsonPropertyName("label")]
-        public InputLabel Label { get; set; }
+        public Label Label { get; set; }
 
         [JsonPropertyName("value")]
         public string Value { get; set; }

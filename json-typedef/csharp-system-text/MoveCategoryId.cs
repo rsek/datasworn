@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// A unique ID for a MoveCategory.
+    /// A unique ID representing a MoveCategory object.
     /// </summary>
     [JsonConverter(typeof(MoveCategoryIdJsonConverter))]
     public class MoveCategoryId

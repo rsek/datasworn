@@ -18,7 +18,7 @@ public class ImpactCategory {
     private MarkdownString description;
 
     @JsonProperty("label")
-    private InputLabel label;
+    private Label label;
 
     public ImpactCategory() {
     }
@@ -59,7 +59,7 @@ public class ImpactCategory {
      * Getter for label.<p>
      * A label for this impact category.
      */
-    public InputLabel getLabel() {
+    public Label getLabel() {
         return label;
     }
 
@@ -67,7 +67,7 @@ public class ImpactCategory {
      * Setter for label.<p>
      * A label for this impact category.
      */
-    public void setLabel(InputLabel label) {
+    public void setLabel(Label label) {
         this.label = label;
     }
 }

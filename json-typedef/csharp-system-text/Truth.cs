@@ -39,9 +39,9 @@ namespace Datasworn
         public TruthType Type_ { get; set; }
 
         /// <summary>
-        /// Any implementation hints or other developer-facing comments on
-        /// this object. These should be omitted when presenting the object
-        /// for gameplay.
+        /// Implementation hints or other developer-facing comments on this
+        /// object. These should be omitted when presenting the object for
+        /// gameplay.
         /// </summary>
         [JsonPropertyName("_comment")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
@@ -54,6 +54,20 @@ namespace Datasworn
         [JsonPropertyName("canonical_name")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public Label? CanonicalName { get; set; }
+
+        /// <summary>
+        /// Prompts for factions related to this truth, like those presented
+        /// in standard isles. This is presented as a single paragraph in the
+        /// original text; Datasworn uses an array (one faction prompt per
+        /// string) to represent them in order to make them more suitable for
+        /// programmatic use.
+        /// 
+        /// This property is a placeholder and may see signficant changes in
+        /// v0.2.0.
+        /// </summary>
+        [JsonPropertyName("factions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public IList<EntityPrompt> Factions { get; set; }
 
         [JsonPropertyName("icon")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

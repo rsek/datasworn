@@ -46,9 +46,9 @@ namespace Datasworn
         public OracleCollectionTableSharedRollsType Type_ { get; set; }
 
         /// <summary>
-        /// Any implementation hints or other developer-facing comments on
-        /// this object. These should be omitted when presenting the object
-        /// for gameplay.
+        /// Implementation hints or other developer-facing comments on this
+        /// object. These should be omitted when presenting the object for
+        /// gameplay.
         /// </summary>
         [JsonPropertyName("_comment")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
@@ -83,12 +83,12 @@ namespace Datasworn
         public MarkdownString? Description { get; set; }
 
         /// <summary>
-        /// This collection's content enhances the identified collection, rather
-        /// than being a standalone collection of its own.
+        /// This collection's content enhances the identified collections,
+        /// rather than being a standalone collection of its own.
         /// </summary>
         [JsonPropertyName("enhances")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public OracleCollectionId? Enhances { get; set; }
+        public IList<OracleCollectionIdWildcard> Enhances { get; set; }
 
         /// <summary>
         /// An SVG icon associated with this collection.
@@ -102,13 +102,13 @@ namespace Datasworn
         public IList<WebpImageUrl> Images { get; set; }
 
         /// <summary>
-        /// This collection replaces the identified collection. References
-        /// to the replaced collection can be considered equivalent to this
+        /// This collection replaces the identified collections. References
+        /// to the replaced collections can be considered equivalent to this
         /// collection.
         /// </summary>
         [JsonPropertyName("replaces")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public OracleCollectionId? Replaces { get; set; }
+        public IList<OracleCollectionIdWildcard> Replaces { get; set; }
 
         [JsonPropertyName("suggestions")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

@@ -59,7 +59,7 @@ public class OracleTableRollableTableText3 extends OracleTableRollable {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("replaces")
-    private OracleRollableId replaces;
+    private List<OracleRollableIdWildcard> replaces;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("suggestions")
@@ -192,8 +192,8 @@ public class OracleTableRollableTableText3 extends OracleTableRollable {
 
     /**
      * Getter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object.
+     * These should be omitted when presenting the object for gameplay.
      */
     public String getComment() {
         return comment;
@@ -201,8 +201,8 @@ public class OracleTableRollableTableText3 extends OracleTableRollable {
 
     /**
      * Setter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object.
+     * These should be omitted when presenting the object for gameplay.
      */
     public void setComment(String comment) {
         this.comment = comment;
@@ -296,21 +296,21 @@ public class OracleTableRollableTableText3 extends OracleTableRollable {
 
     /**
      * Getter for replaces.<p>
-     * Indicates that this object replaces the identified OracleRollable.
-     * References to the replaced object can be considered equivalent to this
+     * Indicates that this object replaces the identified OracleRollables.
+     * References to the replaced objects can be considered equivalent to this
      * object.
      */
-    public OracleRollableId getReplaces() {
+    public List<OracleRollableIdWildcard> getReplaces() {
         return replaces;
     }
 
     /**
      * Setter for replaces.<p>
-     * Indicates that this object replaces the identified OracleRollable.
-     * References to the replaced object can be considered equivalent to this
+     * Indicates that this object replaces the identified OracleRollables.
+     * References to the replaced objects can be considered equivalent to this
      * object.
      */
-    public void setReplaces(OracleRollableId replaces) {
+    public void setReplaces(List<OracleRollableIdWildcard> replaces) {
         this.replaces = replaces;
     }
 

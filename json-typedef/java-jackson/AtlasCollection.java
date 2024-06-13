@@ -48,7 +48,7 @@ public class AtlasCollection {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("enhances")
-    private AtlasCollectionId enhances;
+    private List<AtlasCollectionIdWildcard> enhances;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("icon")
@@ -60,7 +60,7 @@ public class AtlasCollection {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("replaces")
-    private AtlasCollectionId replaces;
+    private List<AtlasCollectionIdWildcard> replaces;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("suggestions")
@@ -143,8 +143,8 @@ public class AtlasCollection {
 
     /**
      * Getter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object.
+     * These should be omitted when presenting the object for gameplay.
      */
     public String getComment() {
         return comment;
@@ -152,8 +152,8 @@ public class AtlasCollection {
 
     /**
      * Setter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object.
+     * These should be omitted when presenting the object for gameplay.
      */
     public void setComment(String comment) {
         this.comment = comment;
@@ -243,19 +243,19 @@ public class AtlasCollection {
 
     /**
      * Getter for enhances.<p>
-     * This collection's content enhances the identified collection, rather than
-     * being a standalone collection of its own.
+     * This collection's content enhances the identified collections, rather
+     * than being a standalone collection of its own.
      */
-    public AtlasCollectionId getEnhances() {
+    public List<AtlasCollectionIdWildcard> getEnhances() {
         return enhances;
     }
 
     /**
      * Setter for enhances.<p>
-     * This collection's content enhances the identified collection, rather than
-     * being a standalone collection of its own.
+     * This collection's content enhances the identified collections, rather
+     * than being a standalone collection of its own.
      */
-    public void setEnhances(AtlasCollectionId enhances) {
+    public void setEnhances(List<AtlasCollectionIdWildcard> enhances) {
         this.enhances = enhances;
     }
 
@@ -291,19 +291,19 @@ public class AtlasCollection {
 
     /**
      * Getter for replaces.<p>
-     * This collection replaces the identified collection. References to the
-     * replaced collection can be considered equivalent to this collection.
+     * This collection replaces the identified collections. References to the
+     * replaced collections can be considered equivalent to this collection.
      */
-    public AtlasCollectionId getReplaces() {
+    public List<AtlasCollectionIdWildcard> getReplaces() {
         return replaces;
     }
 
     /**
      * Setter for replaces.<p>
-     * This collection replaces the identified collection. References to the
-     * replaced collection can be considered equivalent to this collection.
+     * This collection replaces the identified collections. References to the
+     * replaced collections can be considered equivalent to this collection.
      */
-    public void setReplaces(AtlasCollectionId replaces) {
+    public void setReplaces(List<AtlasCollectionIdWildcard> replaces) {
         this.replaces = replaces;
     }
 

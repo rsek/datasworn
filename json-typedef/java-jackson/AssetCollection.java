@@ -44,7 +44,7 @@ public class AssetCollection {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("enhances")
-    private AssetCollectionId enhances;
+    private List<AssetCollectionIdWildcard> enhances;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("icon")
@@ -56,7 +56,7 @@ public class AssetCollection {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("replaces")
-    private AssetCollectionId replaces;
+    private List<AssetCollectionIdWildcard> replaces;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("suggestions")
@@ -139,8 +139,8 @@ public class AssetCollection {
 
     /**
      * Getter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object.
+     * These should be omitted when presenting the object for gameplay.
      */
     public String getComment() {
         return comment;
@@ -148,8 +148,8 @@ public class AssetCollection {
 
     /**
      * Setter for comment.<p>
-     * Any implementation hints or other developer-facing comments on this
-     * object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this object.
+     * These should be omitted when presenting the object for gameplay.
      */
     public void setComment(String comment) {
         this.comment = comment;
@@ -225,19 +225,19 @@ public class AssetCollection {
 
     /**
      * Getter for enhances.<p>
-     * This collection's content enhances the identified collection, rather than
-     * being a standalone collection of its own.
+     * This collection's content enhances the identified collections, rather
+     * than being a standalone collection of its own.
      */
-    public AssetCollectionId getEnhances() {
+    public List<AssetCollectionIdWildcard> getEnhances() {
         return enhances;
     }
 
     /**
      * Setter for enhances.<p>
-     * This collection's content enhances the identified collection, rather than
-     * being a standalone collection of its own.
+     * This collection's content enhances the identified collections, rather
+     * than being a standalone collection of its own.
      */
-    public void setEnhances(AssetCollectionId enhances) {
+    public void setEnhances(List<AssetCollectionIdWildcard> enhances) {
         this.enhances = enhances;
     }
 
@@ -273,19 +273,19 @@ public class AssetCollection {
 
     /**
      * Getter for replaces.<p>
-     * This collection replaces the identified collection. References to the
-     * replaced collection can be considered equivalent to this collection.
+     * This collection replaces the identified collections. References to the
+     * replaced collections can be considered equivalent to this collection.
      */
-    public AssetCollectionId getReplaces() {
+    public List<AssetCollectionIdWildcard> getReplaces() {
         return replaces;
     }
 
     /**
      * Setter for replaces.<p>
-     * This collection replaces the identified collection. References to the
-     * replaced collection can be considered equivalent to this collection.
+     * This collection replaces the identified collections. References to the
+     * replaced collections can be considered equivalent to this collection.
      */
-    public void setReplaces(AssetCollectionId replaces) {
+    public void setReplaces(List<AssetCollectionIdWildcard> replaces) {
         this.replaces = replaces;
     }
 

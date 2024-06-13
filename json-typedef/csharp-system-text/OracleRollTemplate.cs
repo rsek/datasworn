@@ -9,10 +9,10 @@ namespace Datasworn
     /// row text from `OracleTableRow#text`, `OracleTableRow#text2`, and
     /// `OracleTableRow#text3`.
     /// 
-    ///   These strings are formatted in Markdown, but use a special
-    /// syntax for their placeholders: `{{text:some_oracle_table_id}}`. The
+    ///   These strings are formatted in Markdown, but use a special syntax
+    /// for their placeholders: `{{text>some_oracle_rollable_id}}`. The
     /// placeholder should be replaced with the value of a rolled (or selected)
-    /// `OracleTableRow#text` from the target oracle table ID.
+    /// `OracleTableRow#text` from the target oracle rollable ID.
     /// </summary>
     public class OracleRollTemplate
     {

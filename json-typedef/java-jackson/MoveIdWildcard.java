@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * A move ID with wildcards.
+ * A wildcarded MoveId that can be used to match multiple Move objects.
  */
 public class MoveIdWildcard {
     @JsonValue

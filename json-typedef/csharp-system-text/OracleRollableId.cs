@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// A unique ID for an OracleRollable.
+    /// A unique ID representing an OracleRollable object.
     /// </summary>
     [JsonConverter(typeof(OracleRollableIdJsonConverter))]
     public class OracleRollableId

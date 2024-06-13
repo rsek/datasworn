@@ -14,7 +14,7 @@ public class StatRule {
     private MarkdownString description;
 
     @JsonProperty("label")
-    private InputLabel label;
+    private Label label;
 
     public StatRule() {
     }
@@ -39,7 +39,7 @@ public class StatRule {
      * Getter for label.<p>
      * A label for this stat.
      */
-    public InputLabel getLabel() {
+    public Label getLabel() {
         return label;
     }
 
@@ -47,7 +47,7 @@ public class StatRule {
      * Setter for label.<p>
      * A label for this stat.
      */
-    public void setLabel(InputLabel label) {
+    public void setLabel(Label label) {
         this.label = label;
     }
 }

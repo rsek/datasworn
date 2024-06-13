@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// A unique ID for a DelveSite.
+    /// A unique ID representing a DelveSite object.
     /// </summary>
     [JsonConverter(typeof(DelveSiteIdJsonConverter))]
     public class DelveSiteId

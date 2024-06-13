@@ -15,7 +15,7 @@ public class ImpactRule {
     private MarkdownString description;
 
     @JsonProperty("label")
-    private InputLabel label;
+    private Label label;
 
     @JsonProperty("permanent")
     private Boolean permanent;
@@ -49,7 +49,7 @@ public class ImpactRule {
      * Getter for label.<p>
      * The label for this impact.
      */
-    public InputLabel getLabel() {
+    public Label getLabel() {
         return label;
     }
 
@@ -57,7 +57,7 @@ public class ImpactRule {
      * Setter for label.<p>
      * The label for this impact.
      */
-    public void setLabel(InputLabel label) {
+    public void setLabel(Label label) {
         this.label = label;
     }
 

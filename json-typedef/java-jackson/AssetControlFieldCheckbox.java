@@ -15,7 +15,7 @@ public class AssetControlFieldCheckbox extends AssetControlField {
     private Boolean isImpact;
 
     @JsonProperty("label")
-    private InputLabel label;
+    private Label label;
 
     @JsonProperty("value")
     private Boolean value;
@@ -64,14 +64,14 @@ public class AssetControlFieldCheckbox extends AssetControlField {
     /**
      * Getter for label.<p>
      */
-    public InputLabel getLabel() {
+    public Label getLabel() {
         return label;
     }
 
     /**
      * Setter for label.<p>
      */
-    public void setLabel(InputLabel label) {
+    public void setLabel(Label label) {
         this.label = label;
     }
 

@@ -16,7 +16,7 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("recover")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IList<MoveIdWildcard> Recover { get; set; }
+        public IList<AnyMoveIdWildcard> Recover { get; set; }
 
         /// <summary>
         /// The ID(s) of suffer moves associated with the condition meter. If
@@ -25,6 +25,6 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("suffer")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IList<MoveIdWildcard> Suffer { get; set; }
+        public IList<AnyMoveIdWildcard> Suffer { get; set; }
     }
 }

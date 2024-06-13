@@ -11,6 +11,8 @@ import Pattern from '../pkg-core/IdElements/Pattern.js'
 import type { Datasworn } from '../pkg-core/index.js'
 import { pascalCase } from '../schema/utils/string.js'
 import type { Join, PascalCase, Split } from 'type-fest'
+import { JsonTypeDef } from '../schema/Symbols.js'
+import JtdType from '../scripts/json-typedef/typedef.js'
 
 type RegexGroupType =
 	| 'none'
@@ -75,10 +77,10 @@ namespace PathSymbol {
 		}
 	}
 
-	export class DictKey<Origin, Prop extends DictPropKeyIn<Origin>> extends PathSymbol<
+	export class DictKey<
 		Origin,
-		Prop
-	> {
+		Prop extends DictPropKeyIn<Origin>
+	> extends PathSymbol<Origin, Prop> {
 		static readonly PATTERN = Pattern.DictKeyElement
 		static readonly WILDCARD = new RegExp(
 			`${DictKey.PATTERN.source}|\\${CONST.PathKeySep}\\${CONST.WildcardString}|\\${CONST.PathKeySep}\\${CONST.WildcardString}\\${CONST.WildcardString}`
@@ -650,7 +652,8 @@ for (const typeId in embeddedIdNames) {
 	ids[embeddedTypeId] = Type.Union(
 		unionTypes.map((parentType) => Type.Ref(parentType + baseTypeId)),
 		{
-			$id: embeddedTypeId
+			$id: embeddedTypeId,
+			[JsonTypeDef]: { schema: JtdType.String() }
 		}
 	)
 	ids[embeddedTypeId + 'Wildcard'] = Type.Union(
@@ -658,17 +661,18 @@ for (const typeId in embeddedIdNames) {
 			Type.Ref(parentType + baseTypeId + 'Wildcard')
 		),
 		{
-			$id: embeddedTypeId + 'Wildcard'
+			$id: embeddedTypeId + 'Wildcard',
+			[JsonTypeDef]: { schema: JtdType.String() }
 		}
 	)
 
 	ids[anyTypeId] = Type.Union(
 		[Type.Ref(embeddedTypeId), Type.Ref(baseTypeId)],
-		{ $id: anyTypeId }
+		{ $id: anyTypeId, [JsonTypeDef]: { schema: JtdType.String() } }
 	)
 	ids[anyTypeId + 'Wildcard'] = Type.Union(
 		[Type.Ref(embeddedTypeId + 'Wildcard'), Type.Ref(baseTypeId + 'Wildcard')],
-		{ $id: anyTypeId + 'Wildcard' }
+		{ $id: anyTypeId + 'Wildcard', [JsonTypeDef]: { schema: JtdType.String() } }
 	)
 }
 
@@ -689,7 +693,8 @@ ids['AnyId'] = Type.Union(
 	{
 		$id: 'AnyId',
 		description:
-			'Represents any kind of non-wildcard ID, including IDs of embedded objects.'
+			'Represents any kind of non-wildcard ID, including IDs of embedded objects.',
+		[JsonTypeDef]: { schema: JtdType.String() }
 	}
 )
 ids['AnyIdWildcard'] = Type.Union(
@@ -697,7 +702,8 @@ ids['AnyIdWildcard'] = Type.Union(
 	{
 		$id: 'AnyIdWildcard',
 		description:
-			'Represents any kind of wildcard ID, including IDs of embedded objects.'
+			'Represents any kind of wildcard ID, including IDs of embedded objects.',
+		[JsonTypeDef]: { schema: JtdType.String() }
 	}
 )
 

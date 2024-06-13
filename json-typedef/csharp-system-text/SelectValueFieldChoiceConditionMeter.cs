@@ -19,6 +19,6 @@ namespace Datasworn
         public ConditionMeterKey ConditionMeter { get; set; }
 
         [JsonPropertyName("label")]
-        public InputLabel Label { get; set; }
+        public Label Label { get; set; }
     }
 }

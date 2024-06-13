@@ -16,7 +16,7 @@ namespace Datasworn
         public SelectValueFieldChoiceStatChoiceType ChoiceType { get; set; }
 
         [JsonPropertyName("label")]
-        public InputLabel Label { get; set; }
+        public Label Label { get; set; }
 
         [JsonPropertyName("stat")]
         public StatKey Stat { get; set; }
