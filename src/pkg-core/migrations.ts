@@ -157,7 +157,7 @@ export type IdReplacementMap = Record<
  * Provides an array of {@link IdReplacer} objects for each Datasworn ID type.
  */
 
-const IdReplacementMap = {
+let IdReplacementMap = {
 	// set highest priority replacments first
 	oracle_rollable: [
 		...['starforged', 'classic'].flatMap((pkg) => [
@@ -210,46 +210,43 @@ for (const typeId in legacyTypeMap) {
 	)
 }
 
-// sort all by the number of '.' chars in the replacement, or length otherwise
+IdReplacementMap = Object.fromEntries(
+	Object.entries(IdReplacementMap)
+		.flatMap(([k, v]) => v.map((e) => [e.old.source, e.new]))
+		.sort(([patternA, replacementA], [patternB, replacementB]) => {
+			const initialWildcard = '(\\*'
+			const anyPipe = '|'
+			const anyCapture = '$'
+			switch (true) {
+				case replacementA.includes(anyCapture) &&
+					!replacementB.includes(anyCapture):
+				case patternA.startsWith(initialWildcard) &&
+					!patternB.startsWith(initialWildcard):
+				case patternA.includes(anyPipe) && !patternB.includes(anyPipe):
+					return 1
 
-console.log(
-	Object.fromEntries(
-		Object.entries(IdReplacementMap)
-			.flatMap(([k, v]) => v.map((e) => [e.old.source, e.new]))
-			.sort(([patternA, replacementA], [patternB, replacementB]) => {
-				const initialWildcard = '(\\*'
-				const anyPipe = '|'
-				const anyCapture = '$'
-				switch (true) {
-					case replacementA.includes(anyCapture) &&
-						!replacementB.includes(anyCapture):
-					case patternA.startsWith(initialWildcard) &&
-						!patternB.startsWith(initialWildcard):
-					case patternA.includes(anyPipe) && !patternB.includes(anyPipe):
-						return 1
-
-					case !replacementA.includes(anyCapture) &&
-						replacementB.includes(anyCapture):
-					case !patternA.startsWith(initialWildcard) &&
-						patternB.startsWith(initialWildcard):
-					case !patternA.includes(anyPipe) && patternB.includes(anyPipe):
-						return -1
-					default: {
-						// use number of captures as proxy for variability. more variable => lower on list
-						const captureCountDifference =
-							patternB.split(anyCapture).length -
-							patternA.split(anyCapture).length
-						if (captureCountDifference !== 0) return captureCountDifference
-						// use number of path separators as a proxy for specificity. more specific => higher on list
-						const slashCountDifference =
-							patternA.split(CONST.PathKeySep).length -
-							patternB.split(CONST.PathKeySep).length
-						return slashCountDifference
-					}
+				case !replacementA.includes(anyCapture) &&
+					replacementB.includes(anyCapture):
+				case !patternA.startsWith(initialWildcard) &&
+					patternB.startsWith(initialWildcard):
+				case !patternA.includes(anyPipe) && patternB.includes(anyPipe):
+					return -1
+				default: {
+					// use number of captures as proxy for variability. more variable => lower on list
+					const captureCountDifference =
+						patternB.split(anyCapture).length -
+						patternA.split(anyCapture).length
+					if (captureCountDifference !== 0) return captureCountDifference
+					// use number of path separators as a proxy for specificity. more specific => higher on list
+					const slashCountDifference =
+						patternA.split(CONST.PathKeySep).length -
+						patternB.split(CONST.PathKeySep).length
+					return slashCountDifference
 				}
-			})
-	)
+			}
+		})
 )
+
 /**
  * Updates old (pre-0.1.0) Datasworn IDs (and pointers that reference them in markdown strings) for use with v0.1.0.
  * Intended for use as the `replacer` in {@link JSON.stringify} or the `reviver` in {@link JSON.parse}; this way, it will iterate over every string value so you can update all the IDs in one go.

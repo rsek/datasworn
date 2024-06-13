@@ -107,7 +107,7 @@ function createMoveOracleIdMapper(rulesPackage, moveCategoryKey, moveKey, newOra
 /**
  * Provides an array of {@link IdReplacer} objects for each Datasworn ID type.
  */
-const IdReplacementMap = {
+let IdReplacementMap = {
     // set highest priority replacments first
     oracle_rollable: [
         ...['starforged', 'classic'].flatMap((pkg) => [
@@ -152,8 +152,7 @@ for (const typeId in legacyTypeMap) {
     IdReplacementMap[typeId] || (IdReplacementMap[typeId] = []);
     IdReplacementMap[typeId].push(...createIdMappers(typeId));
 }
-// sort all by the number of '.' chars in the replacement, or length otherwise
-console.log(Object.fromEntries(Object.entries(IdReplacementMap)
+IdReplacementMap = Object.fromEntries(Object.entries(IdReplacementMap)
     .flatMap(([k, v]) => v.map((e) => [e.old.source, e.new]))
     .sort(([patternA, replacementA], [patternB, replacementB]) => {
     const initialWildcard = '(\\*';
@@ -184,7 +183,7 @@ console.log(Object.fromEntries(Object.entries(IdReplacementMap)
             return slashCountDifference;
         }
     }
-})));
+}));
 /**
  * Updates old (pre-0.1.0) Datasworn IDs (and pointers that reference them in markdown strings) for use with v0.1.0.
  * Intended for use as the `replacer` in {@link JSON.stringify} or the `reviver` in {@link JSON.parse}; this way, it will iterate over every string value so you can update all the IDs in one go.
