@@ -53654,6 +53654,8 @@
 		"companion": {
 			"name": "Companion Assets",
 			"type": "asset_collection",
+			"color": "#3d8b8a",
+			"enhances": ["asset_collection:starforged/companion"],
 			"_source": {
 				"date": "2024-06-11",
 				"title": "Sundered Isles",
@@ -53680,6 +53682,12 @@
 							}
 						]
 					},
+					"tags": {
+						"core": {
+							"supernatural": true
+						}
+					},
+					"color": "#3d8b8a",
 					"category": "Companion",
 					"options": {
 						"name": {
@@ -53773,11 +53781,9 @@
 				"chattering_skull": {
 					"name": "Chattering Skull",
 					"type": "asset",
-					"options": {
-						"name": {
-							"label": "name",
-							"field_type": "text",
-							"value": null
+					"tags": {
+						"core": {
+							"supernatural": true
 						}
 					},
 					"_source": {
@@ -53791,7 +53797,15 @@
 							}
 						]
 					},
+					"color": "#3d8b8a",
 					"category": "Companion",
+					"options": {
+						"name": {
+							"label": "name",
+							"field_type": "text",
+							"value": null
+						}
+					},
 					"abilities": [
 						{
 							"enabled": true,
@@ -53846,6 +53860,8 @@
 				"dolphin": {
 					"name": "Dolphin",
 					"type": "asset",
+					"color": "#3d8b8a",
+					"category": "Companion",
 					"options": {
 						"name": {
 							"label": "name",
@@ -53864,7 +53880,6 @@
 							}
 						]
 					},
-					"category": "Companion",
 					"abilities": [
 						{
 							"enabled": true,
@@ -53976,11 +53991,9 @@
 				"dragon": {
 					"name": "Dragon",
 					"type": "asset",
-					"options": {
-						"name": {
-							"label": "name",
-							"field_type": "text",
-							"value": null
+					"tags": {
+						"core": {
+							"supernatural": true
 						}
 					},
 					"_source": {
@@ -53994,7 +54007,15 @@
 							}
 						]
 					},
+					"color": "#3d8b8a",
 					"category": "Companion",
+					"options": {
+						"name": {
+							"label": "name",
+							"field_type": "text",
+							"value": null
+						}
+					},
 					"abilities": [
 						{
 							"enabled": true,
@@ -54083,13 +54104,6 @@
 				"jungle_cat": {
 					"name": "Jungle Cat",
 					"type": "asset",
-					"options": {
-						"name": {
-							"label": "name",
-							"field_type": "text",
-							"value": null
-						}
-					},
 					"_source": {
 						"date": "2024-06-11",
 						"title": "Sundered Isles",
@@ -54101,7 +54115,15 @@
 							}
 						]
 					},
+					"color": "#3d8b8a",
 					"category": "Companion",
+					"options": {
+						"name": {
+							"label": "name",
+							"field_type": "text",
+							"value": null
+						}
+					},
 					"abilities": [
 						{
 							"enabled": true,
@@ -54225,13 +54247,6 @@
 				"monkey": {
 					"name": "Monkey",
 					"type": "asset",
-					"options": {
-						"name": {
-							"label": "name",
-							"field_type": "text",
-							"value": null
-						}
-					},
 					"_source": {
 						"date": "2024-06-11",
 						"title": "Sundered Isles",
@@ -54243,7 +54258,15 @@
 							}
 						]
 					},
+					"color": "#3d8b8a",
 					"category": "Companion",
+					"options": {
+						"name": {
+							"label": "name",
+							"field_type": "text",
+							"value": null
+						}
+					},
 					"abilities": [
 						{
 							"enabled": true,
@@ -54255,7 +54278,7 @@
 								}
 							],
 							"moves": {
-								"monkey_business": {
+								"suffer_monkey_business": {
 									"type": "move",
 									"name": "Suffer Monkey Business",
 									"roll_type": "action_roll",
@@ -54287,7 +54310,7 @@
 										}
 									},
 									"allow_momentum_burn": true,
-									"_id": "asset.ability.move:sundered_isles/companion/monkey.0.monkey_business"
+									"_id": "asset.ability.move:sundered_isles/companion/monkey.0.suffer_monkey_business"
 								}
 							},
 							"_id": "asset.ability:sundered_isles/companion/monkey.0"
@@ -54363,13 +54386,6 @@
 				"parrot": {
 					"name": "Parrot",
 					"type": "asset",
-					"options": {
-						"name": {
-							"label": "name",
-							"field_type": "text",
-							"value": null
-						}
-					},
 					"_source": {
 						"date": "2024-06-11",
 						"title": "Sundered Isles",
@@ -54381,7 +54397,15 @@
 							}
 						]
 					},
+					"color": "#3d8b8a",
 					"category": "Companion",
+					"options": {
+						"name": {
+							"label": "name",
+							"field_type": "text",
+							"value": null
+						}
+					},
 					"abilities": [
 						{
 							"enabled": true,
@@ -54536,13 +54560,6 @@
 				"rat": {
 					"name": "Rat",
 					"type": "asset",
-					"options": {
-						"name": {
-							"label": "name",
-							"field_type": "text",
-							"value": null
-						}
-					},
 					"_source": {
 						"date": "2024-06-11",
 						"title": "Sundered Isles",
@@ -54554,7 +54571,15 @@
 							}
 						]
 					},
+					"color": "#3d8b8a",
 					"category": "Companion",
+					"options": {
+						"name": {
+							"label": "name",
+							"field_type": "text",
+							"value": null
+						}
+					},
 					"abilities": [
 						{
 							"enabled": true,
@@ -54655,6 +54680,11 @@
 				"kraken": {
 					"name": "The Kraken",
 					"type": "asset",
+					"tags": {
+						"core": {
+							"supernatural": true
+						}
+					},
 					"_source": {
 						"date": "2024-06-11",
 						"title": "Sundered Isles",
@@ -54666,7 +54696,8 @@
 							}
 						]
 					},
-					"category": "Module",
+					"category": "Companion",
+					"color": "#3d8b8a",
 					"requirement": "While it is your companion, the Kraken cannot be harmed.",
 					"abilities": [
 						{
@@ -54750,6 +54781,8 @@
 		"deed": {
 			"name": "Deed Assets",
 			"type": "asset_collection",
+			"color": "#40834f",
+			"enhances": ["asset_collection:starforged/deed"],
 			"_source": {
 				"date": "2024-06-11",
 				"title": "Sundered Isles",
@@ -54776,10 +54809,11 @@
 							}
 						]
 					},
+					"color": "#40834f",
 					"category": "Deed",
 					"tags": {
-						"sundered_isles": {
-							"starforged_friendly": true
+						"starforged": {
+							"recommended": true
 						}
 					},
 					"requirement": "Once you accept a connection as a crewmate...",
@@ -54843,10 +54877,14 @@
 							}
 						]
 					},
+					"color": "#40834f",
 					"category": "Deed",
 					"tags": {
-						"sundered_isles": {
-							"starforged_friendly": true
+						"starforged": {
+							"recommended": true
+						},
+						"core": {
+							"supernatural": true
 						}
 					},
 					"requirement": "Once you mark tormented or doomed...",
@@ -54915,10 +54953,11 @@
 							}
 						]
 					},
+					"color": "#40834f",
 					"category": "Deed",
 					"tags": {
-						"sundered_isles": {
-							"starforged_friendly": true
+						"starforged": {
+							"recommended": true
 						}
 					},
 					"requirement": "Once you fill 16 legacy track boxes and take command of a mighty fleet...",
@@ -55016,6 +55055,7 @@
 							}
 						]
 					},
+					"color": "#40834f",
 					"category": "Deed",
 					"requirement": "Once you fill 4 boxes each on your discovery and bonds legacy tracks...",
 					"abilities": [
@@ -55096,10 +55136,14 @@
 							}
 						]
 					},
+					"color": "#40834f",
 					"category": "Deed",
 					"tags": {
-						"sundered_isles": {
-							"starforged_friendly": true
+						"starforged": {
+							"recommended": true
+						},
+						"core": {
+							"supernatural": true
 						}
 					},
 					"requirement": "Once you die or are cursed with undeath...",
@@ -55190,6 +55234,8 @@
 		"module": {
 			"name": "Module Assets",
 			"type": "asset_collection",
+			"enhances": ["asset_collection:starforged/module"],
+			"color": "#7f5a90",
 			"_source": {
 				"date": "2024-06-11",
 				"title": "Sundered Isles",
@@ -55216,6 +55262,7 @@
 							}
 						]
 					},
+					"color": "#7f5a90",
 					"category": "Module",
 					"shared": true,
 					"abilities": [
@@ -55310,6 +55357,13 @@
 						}
 					],
 					"controls": {
+						"broken": {
+							"label": "broken",
+							"field_type": "card_flip",
+							"disables_asset": true,
+							"value": false,
+							"is_impact": false
+						},
 						"hull": {
 							"label": "hull",
 							"field_type": "condition_meter",
@@ -55339,8 +55393,14 @@
 							}
 						]
 					},
+					"color": "#7f5a90",
 					"category": "Module",
 					"shared": true,
+					"broken": {
+						"label": "broken",
+						"field_type": "card_flip",
+						"disables_asset": true
+					},
 					"abilities": [
 						{
 							"enabled": true,
@@ -55410,8 +55470,8 @@
 					"name": "Gilded Adornments",
 					"type": "asset",
 					"tags": {
-						"sundered_isles": {
-							"starforged_friendly": true
+						"starforged": {
+							"recommended": true
 						}
 					},
 					"_source": {
@@ -55425,8 +55485,14 @@
 							}
 						]
 					},
+					"color": "#7f5a90",
 					"category": "Module",
 					"shared": true,
+					"broken": {
+						"label": "broken",
+						"field_type": "card_flip",
+						"disables_asset": true
+					},
 					"abilities": [
 						{
 							"enabled": true,
@@ -55538,6 +55604,11 @@
 				"harpoon_cannon": {
 					"name": "Harpoon Cannon",
 					"type": "asset",
+					"tags": {
+						"core": {
+							"technological": true
+						}
+					},
 					"_source": {
 						"date": "2024-06-11",
 						"title": "Sundered Isles",
@@ -55549,8 +55620,14 @@
 							}
 						]
 					},
+					"color": "#7f5a90",
 					"category": "Module",
 					"shared": true,
+					"broken": {
+						"label": "broken",
+						"field_type": "card_flip",
+						"disables_asset": true
+					},
 					"abilities": [
 						{
 							"enabled": true,
@@ -55631,8 +55708,8 @@
 					"name": "Improved Armory",
 					"type": "asset",
 					"tags": {
-						"sundered_isles": {
-							"starforged_friendly": true
+						"starforged": {
+							"recommended": true
 						}
 					},
 					"_source": {
@@ -55646,8 +55723,14 @@
 							}
 						]
 					},
+					"color": "#7f5a90",
 					"category": "Module",
 					"shared": true,
+					"broken": {
+						"label": "broken",
+						"field_type": "card_flip",
+						"disables_asset": true
+					},
 					"abilities": [
 						{
 							"enabled": true,
@@ -55712,8 +55795,8 @@
 					"name": "Improved Galley",
 					"type": "asset",
 					"tags": {
-						"sundered_isles": {
-							"starforged_friendly": true
+						"starforged": {
+							"recommended": true
 						}
 					},
 					"_source": {
@@ -55727,8 +55810,14 @@
 							}
 						]
 					},
+					"color": "#7f5a90",
 					"category": "Module",
 					"shared": true,
+					"broken": {
+						"label": "broken",
+						"field_type": "card_flip",
+						"disables_asset": true
+					},
 					"abilities": [
 						{
 							"enabled": true,
@@ -55755,7 +55844,7 @@
 												"roll_options": [
 													{
 														"using": "asset_control",
-														"control": "supply_hold",
+														"control": "supply",
 														"assets": null
 													},
 													{
@@ -55815,8 +55904,14 @@
 							}
 						]
 					},
+					"color": "#7f5a90",
 					"category": "Module",
 					"shared": true,
+					"broken": {
+						"label": "broken",
+						"field_type": "card_flip",
+						"disables_asset": true
+					},
 					"abilities": [
 						{
 							"enabled": true,
@@ -55890,8 +55985,14 @@
 							}
 						]
 					},
+					"color": "#7f5a90",
 					"category": "Module",
 					"shared": true,
+					"broken": {
+						"label": "broken",
+						"field_type": "card_flip",
+						"disables_asset": true
+					},
 					"abilities": [
 						{
 							"enabled": true,
@@ -55991,8 +56092,14 @@
 							}
 						]
 					},
+					"color": "#7f5a90",
 					"category": "Module",
 					"shared": true,
+					"broken": {
+						"label": "broken",
+						"field_type": "card_flip",
+						"disables_asset": true
+					},
 					"abilities": [
 						{
 							"enabled": true,
@@ -56077,8 +56184,14 @@
 							}
 						]
 					},
+					"color": "#7f5a90",
 					"category": "Module",
 					"shared": true,
+					"broken": {
+						"label": "broken",
+						"field_type": "card_flip",
+						"disables_asset": true
+					},
 					"abilities": [
 						{
 							"enabled": true,
@@ -56163,6 +56276,11 @@
 				"ironclad_hull": {
 					"name": "Ironclad Hull",
 					"type": "asset",
+					"tags": {
+						"core": {
+							"technological": true
+						}
+					},
 					"_source": {
 						"date": "2024-06-11",
 						"title": "Sundered Isles",
@@ -56174,8 +56292,14 @@
 							}
 						]
 					},
+					"color": "#7f5a90",
 					"category": "Module",
 					"shared": true,
+					"broken": {
+						"label": "broken",
+						"field_type": "card_flip",
+						"disables_asset": true
+					},
 					"abilities": [
 						{
 							"enabled": true,
@@ -56287,6 +56411,11 @@
 				"lucky_figurehead": {
 					"name": "Lucky Figurehead",
 					"type": "asset",
+					"tags": {
+						"core": {
+							"supernatural": true
+						}
+					},
 					"_source": {
 						"date": "2024-06-11",
 						"title": "Sundered Isles",
@@ -56298,8 +56427,14 @@
 							}
 						]
 					},
+					"color": "#7f5a90",
 					"category": "Module",
 					"shared": true,
+					"broken": {
+						"label": "broken",
+						"field_type": "card_flip",
+						"disables_asset": true
+					},
 					"options": {
 						"linked_stat": {
 							"label": "linked stat",
@@ -56431,8 +56566,8 @@
 					"name": "Map Room",
 					"type": "asset",
 					"tags": {
-						"sundered_isles": {
-							"starforged_friendly": true
+						"starforged": {
+							"recommended": true
 						}
 					},
 					"_source": {
@@ -56446,8 +56581,14 @@
 							}
 						]
 					},
+					"color": "#7f5a90",
 					"category": "Module",
 					"shared": true,
+					"broken": {
+						"label": "broken",
+						"field_type": "card_flip",
+						"disables_asset": true
+					},
 					"abilities": [
 						{
 							"enabled": true,
@@ -56520,8 +56661,14 @@
 							}
 						]
 					},
+					"color": "#7f5a90",
 					"category": "Module",
 					"shared": true,
+					"broken": {
+						"label": "broken",
+						"field_type": "card_flip",
+						"disables_asset": true
+					},
 					"abilities": [
 						{
 							"enabled": true,
@@ -56587,6 +56734,11 @@
 				"submersible_mode": {
 					"name": "Submersible Mode",
 					"type": "asset",
+					"tags": {
+						"core": {
+							"technological": true
+						}
+					},
 					"_source": {
 						"date": "2024-06-11",
 						"title": "Sundered Isles",
@@ -56598,8 +56750,14 @@
 							}
 						]
 					},
+					"color": "#7f5a90",
 					"category": "Module",
 					"shared": true,
+					"broken": {
+						"label": "broken",
+						"field_type": "card_flip",
+						"disables_asset": true
+					},
 					"abilities": [
 						{
 							"enabled": true,
@@ -56694,8 +56852,11 @@
 					"name": "Trophy Vault",
 					"type": "asset",
 					"tags": {
-						"sundered_isles": {
-							"starforged_friendly": true
+						"starforged": {
+							"recommended": true
+						},
+						"core": {
+							"supernatural": true
 						}
 					},
 					"_source": {
@@ -56709,8 +56870,14 @@
 							}
 						]
 					},
+					"color": "#7f5a90",
 					"category": "Module",
 					"shared": true,
+					"broken": {
+						"label": "broken",
+						"field_type": "card_flip",
+						"disables_asset": true
+					},
 					"abilities": [
 						{
 							"enabled": true,
@@ -56767,6 +56934,8 @@
 		"path": {
 			"name": "Path Assets",
 			"type": "asset_collection",
+			"color": "#3f7faa",
+			"enhances": ["asset_collection:starforged/path"],
 			"_source": {
 				"date": "2024-06-11",
 				"title": "Sundered Isles",
@@ -56793,6 +56962,7 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"abilities": [
 						{
@@ -56872,10 +57042,14 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"tags": {
-						"sundered_isles": {
-							"starforged_friendly": true
+						"starforged": {
+							"recommended": true
+						},
+						"core": {
+							"supernatural": true
 						}
 					},
 					"abilities": [
@@ -56939,10 +57113,11 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"tags": {
-						"sundered_isles": {
-							"starforged_friendly": true
+						"starforged": {
+							"recommended": true
 						}
 					},
 					"abilities": [
@@ -57013,10 +57188,11 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"tags": {
-						"sundered_isles": {
-							"starforged_friendly": true
+						"starforged": {
+							"recommended": true
 						}
 					},
 					"requirement": "If you wield knives...",
@@ -57122,10 +57298,11 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"tags": {
-						"sundered_isles": {
-							"starforged_friendly": true
+						"starforged": {
+							"recommended": true
 						}
 					},
 					"abilities": [
@@ -57196,6 +57373,7 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"requirement": "If you wield a handheld harpoon...",
 					"abilities": [
@@ -57309,10 +57487,14 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"tags": {
-						"sundered_isles": {
-							"starforged_friendly": true
+						"starforged": {
+							"recommended": true
+						},
+						"core": {
+							"supernatural": true
 						}
 					},
 					"abilities": [
@@ -57359,6 +57541,7 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"abilities": [
 						{
@@ -57464,6 +57647,7 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"abilities": [
 						{
@@ -57558,10 +57742,14 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"tags": {
-						"sundered_isles": {
-							"starforged_friendly": true
+						"starforged": {
+							"recommended": true
+						},
+						"core": {
+							"supernatural": true
 						}
 					},
 					"abilities": [
@@ -57662,10 +57850,11 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"tags": {
-						"sundered_isles": {
-							"starforged_friendly": true
+						"starforged": {
+							"recommended": true
 						}
 					},
 					"abilities": [
@@ -57770,6 +57959,7 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"abilities": [
 						{
@@ -57866,10 +58056,11 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"tags": {
-						"sundered_isles": {
-							"starforged_friendly": true
+						"starforged": {
+							"recommended": true
 						}
 					},
 					"abilities": [
@@ -57985,6 +58176,7 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"requirement": "If you wield a brace of pistols...",
 					"abilities": [
@@ -58068,6 +58260,7 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"abilities": [
 						{
@@ -58170,6 +58363,7 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"options": {
 						"field_one": {
@@ -58280,10 +58474,14 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"tags": {
-						"sundered_isles": {
-							"starforged_friendly": true
+						"starforged": {
+							"recommended": true
+						},
+						"core": {
+							"supernatural": true
 						}
 					},
 					"options": {
@@ -58379,6 +58577,7 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"abilities": [
 						{
@@ -58465,10 +58664,11 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"tags": {
-						"sundered_isles": {
-							"starforged_friendly": true
+						"starforged": {
+							"recommended": true
 						}
 					},
 					"abilities": [
@@ -58571,10 +58771,14 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"tags": {
-						"sundered_isles": {
-							"starforged_friendly": true
+						"starforged": {
+							"recommended": true
+						},
+						"core": {
+							"supernatural": true
 						}
 					},
 					"abilities": [
@@ -58676,6 +58880,7 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"abilities": [
 						{
@@ -58771,10 +58976,11 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"tags": {
-						"sundered_isles": {
-							"starforged_friendly": true
+						"starforged": {
+							"recommended": true
 						}
 					},
 					"abilities": [
@@ -58857,10 +59063,11 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"tags": {
-						"sundered_isles": {
-							"starforged_friendly": true
+						"starforged": {
+							"recommended": true
 						}
 					},
 					"abilities": [
@@ -58969,6 +59176,7 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"abilities": [
 						{
@@ -59034,6 +59242,11 @@
 				"windbinder": {
 					"name": "Windbinder",
 					"type": "asset",
+					"tags": {
+						"core": {
+							"supernatural": true
+						}
+					},
 					"_source": {
 						"date": "2024-06-11",
 						"title": "Sundered Isles",
@@ -59045,6 +59258,7 @@
 							}
 						]
 					},
+					"color": "#3f7faa",
 					"category": "Path",
 					"abilities": [
 						{
@@ -59153,7 +59367,9 @@
 		},
 		"command_vehicle": {
 			"name": "Command Vehicle Assets",
+			"color": "#9aa3ad",
 			"type": "asset_collection",
+			"enhances": ["asset_collection:starforged/command_vehicle"],
 			"_source": {
 				"date": "2024-06-11",
 				"title": "Sundered Isles",
@@ -59170,6 +59386,7 @@
 					"name": "Flagship",
 					"type": "asset",
 					"category": "Command Vehicle",
+					"color": "#9aa3ad",
 					"shared": true,
 					"options": {
 						"name": {
@@ -59283,6 +59500,8 @@
 		"support_vehicle": {
 			"type": "asset_collection",
 			"name": "Support Vehicle Assets",
+			"color": "#495790",
+			"enhances": ["asset_collection:starforged/support_vehicle"],
 			"_source": {
 				"date": "2024-06-11",
 				"title": "Sundered Isles",
@@ -59298,7 +59517,7 @@
 				"captains_boat": {
 					"name": "Captain's Boat",
 					"type": "asset",
-					"category": "Support Vehicle",
+					"shared": true,
 					"options": {
 						"name": {
 							"field_type": "text",
@@ -59306,6 +59525,8 @@
 							"value": null
 						}
 					},
+					"category": "Support Vehicle",
+					"color": "#495790",
 					"_source": {
 						"date": "2024-06-11",
 						"title": "Sundered Isles",
@@ -59317,7 +59538,6 @@
 							}
 						]
 					},
-					"shared": true,
 					"abilities": [
 						{
 							"enabled": true,
@@ -59415,6 +59635,11 @@
 				"diving_bell": {
 					"name": "Diving Bell",
 					"type": "asset",
+					"tags": {
+						"core": {
+							"technological": true
+						}
+					},
 					"_source": {
 						"date": "2024-06-11",
 						"title": "Sundered Isles",
@@ -59426,7 +59651,7 @@
 							}
 						]
 					},
-					"category": "Support Vehicle",
+					"shared": true,
 					"options": {
 						"name": {
 							"field_type": "text",
@@ -59434,7 +59659,8 @@
 							"value": null
 						}
 					},
-					"shared": true,
+					"category": "Support Vehicle",
+					"color": "#495790",
 					"abilities": [
 						{
 							"enabled": true,
@@ -59532,6 +59758,11 @@
 				"flying_machine": {
 					"name": "Flying Machine",
 					"type": "asset",
+					"tags": {
+						"core": {
+							"technological": true
+						}
+					},
 					"_source": {
 						"date": "2024-06-11",
 						"title": "Sundered Isles",
@@ -59543,7 +59774,7 @@
 							}
 						]
 					},
-					"category": "Support Vehicle",
+					"shared": true,
 					"options": {
 						"name": {
 							"field_type": "text",
@@ -59551,7 +59782,8 @@
 							"value": null
 						}
 					},
-					"shared": true,
+					"category": "Support Vehicle",
+					"color": "#495790",
 					"abilities": [
 						{
 							"enabled": true,
@@ -59654,7 +59886,7 @@
 							}
 						]
 					},
-					"category": "Support Vehicle",
+					"shared": true,
 					"options": {
 						"name": {
 							"field_type": "text",
@@ -59662,7 +59894,8 @@
 							"value": null
 						}
 					},
-					"shared": true,
+					"category": "Support Vehicle",
+					"color": "#495790",
 					"abilities": [
 						{
 							"text": "Your longboat transports crew, passengers, and cargo to and from your flagship. When you (or a landing party under your command) use the craft to haul provisions as you [Resupply](move:starforged/recover/resupply), you may roll +integrity. If you do, take +1 supply or +1 momentum on a hit.",

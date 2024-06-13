@@ -13,6 +13,9 @@ assets:
   companion:
     name: Companion Assets
     type: asset_collection
+    color: &CompanionAsset.color '#3d8b8a'
+    enhances:
+      - asset_collection:starforged/companion
     _source:
       <<: *Source
     contents:
@@ -21,11 +24,16 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Companion
-        options: &NameField
-          name:
-            label: name
-            field_type: text
+        tags:
+          core:
+            supernatural: true
+        <<: &CompanionAsset
+          color: *CompanionAsset.color
+          category: Companion
+          options:
+            name:
+              label: name
+              field_type: text
         abilities:
         - enabled: true
           text: |-
@@ -73,10 +81,12 @@ assets:
       chattering_skull:
         name: Chattering Skull
         type: asset
-        options: *NameField
+        tags:
+          core:
+            supernatural: true
         _source:
           <<: *Source
-        category: Companion
+        <<: *CompanionAsset
         abilities:
         - enabled: true
           text: |-
@@ -103,10 +113,9 @@ assets:
       dolphin:
         name: Dolphin
         type: asset
-        options: *NameField
+        <<: *CompanionAsset
         _source:
           <<: *Source
-        category: Companion
         abilities:
         - enabled: true
           text: &CallDolphin |-
@@ -155,10 +164,12 @@ assets:
       dragon:
         name: Dragon
         type: asset
-        options: *NameField
+        tags:
+          core:
+            supernatural: true
         _source:
           <<: *Source
-        category: Companion
+        <<: *CompanionAsset
         abilities:
         - enabled: true
           text: |-
@@ -196,10 +207,9 @@ assets:
       jungle_cat:
         name: Jungle Cat
         type: asset
-        options: *NameField
         _source:
           <<: *Source
-        category: Companion
+        <<: *CompanionAsset
         abilities:
         - enabled: true
           text: |-
@@ -249,10 +259,9 @@ assets:
       monkey:
         name: Monkey
         type: asset
-        options: *NameField
         _source:
           <<: *Source
-        category: Companion
+        <<: *CompanionAsset
         abilities:
         - enabled: true
           text: &MonkeyBusinessText |-
@@ -262,7 +271,7 @@ assets:
               enhances:
                 - "move:*/fate/pay_the_price"
           moves:
-            monkey_business:
+            suffer_monkey_business:
               type: move
               name: Suffer Monkey Business
               roll_type: action_roll
@@ -307,10 +316,9 @@ assets:
       parrot:
         name: Parrot
         type: asset
-        options: *NameField
         _source:
           <<: *Source
-        category: Companion
+        <<: *CompanionAsset
         abilities:
         - enabled: true
           text: |-
@@ -366,10 +374,9 @@ assets:
       rat:
         name: Rat
         type: asset
-        options: *NameField
         _source:
           <<: *Source
-        category: Companion
+        <<: *CompanionAsset
         abilities:
         - enabled: true
           text: |-
@@ -409,9 +416,13 @@ assets:
       kraken:
         name: The Kraken
         type: asset
+        tags:
+          core:
+            supernatural: true
         _source:
           <<: *Source
-        category: Module
+        category: Companion
+        color: *CompanionAsset.color
         requirement: While it is your companion, the Kraken cannot be harmed.
         abilities:
         - enabled: true

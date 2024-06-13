@@ -203,7 +203,7 @@ export type DictKey = string
 /**
  * A unique ID representing an Asset object.
  * @pattern ```javascript
- * /^asset:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})$/
+ * /^asset:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})$/
  * ```
  */
 export type AssetId = string
@@ -211,7 +211,7 @@ export type AssetId = string
 /**
  * A wildcarded AssetId that can be used to match multiple Asset objects.
  * @pattern ```javascript
- * /^asset:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})$/
+ * /^asset:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})$/
  * ```
  */
 export type AssetIdWildcard = string
@@ -219,7 +219,7 @@ export type AssetIdWildcard = string
 /**
  * A unique ID representing an AssetCollection object.
  * @pattern ```javascript
- * /^asset_collection:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,3})$/
+ * /^asset_collection:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,4})$/
  * ```
  */
 export type AssetCollectionId = string
@@ -227,7 +227,7 @@ export type AssetCollectionId = string
 /**
  * A wildcarded AssetCollectionId that can be used to match multiple AssetCollection objects.
  * @pattern ```javascript
- * /^asset_collection:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,3})$/
+ * /^asset_collection:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,4})$/
  * ```
  */
 export type AssetCollectionIdWildcard = string
@@ -235,7 +235,7 @@ export type AssetCollectionIdWildcard = string
 /**
  * A unique ID representing an AssetAbility object.
  * @pattern ```javascript
- * /^asset\.ability:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})\.(\d+)$/
+ * /^asset\.ability:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})\.(\d+)$/
  * ```
  */
 export type AssetAbilityId = string
@@ -243,7 +243,7 @@ export type AssetAbilityId = string
 /**
  * A wildcarded AssetAbilityId that can be used to match multiple AssetAbility objects.
  * @pattern ```javascript
- * /^asset\.ability:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})\.(\d+|\*)$/
+ * /^asset\.ability:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})\.(\d+|\*)$/
  * ```
  */
 export type AssetAbilityIdWildcard = string
@@ -251,7 +251,7 @@ export type AssetAbilityIdWildcard = string
 /**
  * A unique ID representing an AssetAbilityMove object.
  * @pattern ```javascript
- * /^asset\.ability\.move:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})\.(\d+)\.([a-z][a-z_]*|\*)$/
+ * /^asset\.ability\.move:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})\.(\d+)\.([a-z][a-z_]*|\*)$/
  * ```
  */
 export type AssetAbilityMoveId = string
@@ -259,7 +259,7 @@ export type AssetAbilityMoveId = string
 /**
  * A wildcarded AssetAbilityMoveId that can be used to match multiple AssetAbilityMove objects.
  * @pattern ```javascript
- * /^asset\.ability\.move:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})\.(\d+|\*)\.([a-z][a-z_]*|\*)$/
+ * /^asset\.ability\.move:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})\.(\d+|\*)\.([a-z][a-z_]*|\*)$/
  * ```
  */
 export type AssetAbilityMoveIdWildcard = string
@@ -267,7 +267,7 @@ export type AssetAbilityMoveIdWildcard = string
 /**
  * A unique ID representing an AssetAbilityOracleRollable object.
  * @pattern ```javascript
- * /^asset\.ability\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})\.(\d+)\.([a-z][a-z_]*|\*)$/
+ * /^asset\.ability\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})\.(\d+)\.([a-z][a-z_]*|\*)$/
  * ```
  */
 export type AssetAbilityOracleRollableId = string
@@ -275,7 +275,7 @@ export type AssetAbilityOracleRollableId = string
 /**
  * A wildcarded AssetAbilityOracleRollableId that can be used to match multiple AssetAbilityOracleRollable objects.
  * @pattern ```javascript
- * /^asset\.ability\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})\.(\d+|\*)\.([a-z][a-z_]*|\*)$/
+ * /^asset\.ability\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})\.(\d+|\*)\.([a-z][a-z_]*|\*)$/
  * ```
  */
 export type AssetAbilityOracleRollableIdWildcard = string
@@ -283,7 +283,7 @@ export type AssetAbilityOracleRollableIdWildcard = string
 /**
  * A unique ID representing an AtlasCollection object.
  * @pattern ```javascript
- * /^atlas_collection:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,3})$/
+ * /^atlas_collection:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,4})$/
  * ```
  */
 export type AtlasCollectionId = string
@@ -291,7 +291,7 @@ export type AtlasCollectionId = string
 /**
  * A wildcarded AtlasCollectionId that can be used to match multiple AtlasCollection objects.
  * @pattern ```javascript
- * /^atlas_collection:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,3})$/
+ * /^atlas_collection:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,4})$/
  * ```
  */
 export type AtlasCollectionIdWildcard = string
@@ -299,7 +299,7 @@ export type AtlasCollectionIdWildcard = string
 /**
  * A unique ID representing an AtlasEntry object.
  * @pattern ```javascript
- * /^atlas_entry:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})$/
+ * /^atlas_entry:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})$/
  * ```
  */
 export type AtlasEntryId = string
@@ -307,7 +307,7 @@ export type AtlasEntryId = string
 /**
  * A wildcarded AtlasEntryId that can be used to match multiple AtlasEntry objects.
  * @pattern ```javascript
- * /^atlas_entry:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})$/
+ * /^atlas_entry:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})$/
  * ```
  */
 export type AtlasEntryIdWildcard = string
@@ -363,7 +363,7 @@ export type DelveSiteThemeIdWildcard = string
 /**
  * A unique ID representing a Move object.
  * @pattern ```javascript
- * /^move:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})$/
+ * /^move:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})$/
  * ```
  */
 export type MoveId = string
@@ -371,7 +371,7 @@ export type MoveId = string
 /**
  * A wildcarded MoveId that can be used to match multiple Move objects.
  * @pattern ```javascript
- * /^move:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})$/
+ * /^move:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})$/
  * ```
  */
 export type MoveIdWildcard = string
@@ -379,7 +379,7 @@ export type MoveIdWildcard = string
 /**
  * A unique ID representing a MoveCategory object.
  * @pattern ```javascript
- * /^move_category:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,3})$/
+ * /^move_category:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,4})$/
  * ```
  */
 export type MoveCategoryId = string
@@ -387,7 +387,7 @@ export type MoveCategoryId = string
 /**
  * A wildcarded MoveCategoryId that can be used to match multiple MoveCategory objects.
  * @pattern ```javascript
- * /^move_category:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,3})$/
+ * /^move_category:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,4})$/
  * ```
  */
 export type MoveCategoryIdWildcard = string
@@ -395,7 +395,7 @@ export type MoveCategoryIdWildcard = string
 /**
  * A unique ID representing a MoveOracleRollable object.
  * @pattern ```javascript
- * /^move\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})\.([a-z][a-z_]*|\*)$/
+ * /^move\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})\.([a-z][a-z_]*|\*)$/
  * ```
  */
 export type MoveOracleRollableId = string
@@ -403,7 +403,7 @@ export type MoveOracleRollableId = string
 /**
  * A wildcarded MoveOracleRollableId that can be used to match multiple MoveOracleRollable objects.
  * @pattern ```javascript
- * /^move\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})\.([a-z][a-z_]*|\*)$/
+ * /^move\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})\.([a-z][a-z_]*|\*)$/
  * ```
  */
 export type MoveOracleRollableIdWildcard = string
@@ -411,7 +411,7 @@ export type MoveOracleRollableIdWildcard = string
 /**
  * A unique ID representing a Npc object.
  * @pattern ```javascript
- * /^npc:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})$/
+ * /^npc:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})$/
  * ```
  */
 export type NpcId = string
@@ -419,7 +419,7 @@ export type NpcId = string
 /**
  * A wildcarded NpcId that can be used to match multiple Npc objects.
  * @pattern ```javascript
- * /^npc:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})$/
+ * /^npc:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})$/
  * ```
  */
 export type NpcIdWildcard = string
@@ -427,7 +427,7 @@ export type NpcIdWildcard = string
 /**
  * A unique ID representing a NpcCollection object.
  * @pattern ```javascript
- * /^npc_collection:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,3})$/
+ * /^npc_collection:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,4})$/
  * ```
  */
 export type NpcCollectionId = string
@@ -435,7 +435,7 @@ export type NpcCollectionId = string
 /**
  * A wildcarded NpcCollectionId that can be used to match multiple NpcCollection objects.
  * @pattern ```javascript
- * /^npc_collection:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,3})$/
+ * /^npc_collection:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,4})$/
  * ```
  */
 export type NpcCollectionIdWildcard = string
@@ -443,7 +443,7 @@ export type NpcCollectionIdWildcard = string
 /**
  * A unique ID representing an OracleCollection object.
  * @pattern ```javascript
- * /^oracle_collection:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,3})$/
+ * /^oracle_collection:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,4})$/
  * ```
  */
 export type OracleCollectionId = string
@@ -451,7 +451,7 @@ export type OracleCollectionId = string
 /**
  * A wildcarded OracleCollectionId that can be used to match multiple OracleCollection objects.
  * @pattern ```javascript
- * /^oracle_collection:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,3})$/
+ * /^oracle_collection:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,4})$/
  * ```
  */
 export type OracleCollectionIdWildcard = string
@@ -459,7 +459,7 @@ export type OracleCollectionIdWildcard = string
 /**
  * A unique ID representing an OracleRollable object.
  * @pattern ```javascript
- * /^oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,4})$/
+ * /^oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})$/
  * ```
  */
 export type OracleRollableId = string
@@ -467,7 +467,7 @@ export type OracleRollableId = string
 /**
  * A wildcarded OracleRollableId that can be used to match multiple OracleRollable objects.
  * @pattern ```javascript
- * /^oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,4})$/
+ * /^oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})$/
  * ```
  */
 export type OracleRollableIdWildcard = string
@@ -1578,13 +1578,13 @@ export interface NpcCollection {
 	icon?: SvgImageUrl
 	type: 'npc_collection'
 	/**
-	 * This collection's content enhances the identified collection, rather than being a standalone collection of its own.
+	 * This collection's content enhances the identified collections, rather than being a standalone collection of its own.
 	 */
-	enhances?: NpcCollectionId
+	enhances?: NpcCollectionIdWildcard[]
 	/**
-	 * This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection.
+	 * This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.
 	 */
-	replaces?: NpcCollectionId
+	replaces?: NpcCollectionIdWildcard[]
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
@@ -1708,6 +1708,14 @@ export interface DiceRange {
 	 * High end of the dice range.
 	 */
 	max: number
+}
+
+/**
+ * This type is a placeholder and may see signficant changes in v0.2.0.
+ * @experimental
+ */
+export interface EntityPrompt {
+	text: MarkdownString
 }
 
 export interface EmbeddedOracleColumnText {
@@ -2090,9 +2098,9 @@ export interface OracleColumnText {
 	 */
 	icon?: SvgImageUrl
 	/**
-	 * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
+	 * Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.
 	 */
-	replaces?: OracleRollableId
+	replaces?: OracleRollableIdWildcard[]
 	/**
 	 * The roll used to select a result on this oracle.
 	 * @default "1d100"
@@ -2138,9 +2146,9 @@ export interface OracleColumnText2 {
 	 */
 	icon?: SvgImageUrl
 	/**
-	 * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
+	 * Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.
 	 */
-	replaces?: OracleRollableId
+	replaces?: OracleRollableIdWildcard[]
 	/**
 	 * The roll used to select a result on this oracle.
 	 * @default "1d100"
@@ -2186,9 +2194,9 @@ export interface OracleColumnText3 {
 	 */
 	icon?: SvgImageUrl
 	/**
-	 * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
+	 * Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.
 	 */
-	replaces?: OracleRollableId
+	replaces?: OracleRollableIdWildcard[]
 	/**
 	 * The roll used to select a result on this oracle.
 	 * @default "1d100"
@@ -2395,13 +2403,13 @@ export interface OracleTableSharedRolls {
 	icon?: SvgImageUrl
 	type: 'oracle_collection'
 	/**
-	 * This collection's content enhances the identified collection, rather than being a standalone collection of its own.
+	 * This collection's content enhances the identified collections, rather than being a standalone collection of its own.
 	 */
-	enhances?: OracleCollectionId
+	enhances?: OracleCollectionIdWildcard[]
 	/**
-	 * This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection.
+	 * This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.
 	 */
-	replaces?: OracleCollectionId
+	replaces?: OracleCollectionIdWildcard[]
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
@@ -2467,13 +2475,13 @@ export interface OracleTableSharedText {
 	icon?: SvgImageUrl
 	type: 'oracle_collection'
 	/**
-	 * This collection's content enhances the identified collection, rather than being a standalone collection of its own.
+	 * This collection's content enhances the identified collections, rather than being a standalone collection of its own.
 	 */
-	enhances?: OracleCollectionId
+	enhances?: OracleCollectionIdWildcard[]
 	/**
-	 * This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection.
+	 * This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.
 	 */
-	replaces?: OracleCollectionId
+	replaces?: OracleCollectionIdWildcard[]
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
@@ -2539,13 +2547,13 @@ export interface OracleTableSharedText2 {
 	icon?: SvgImageUrl
 	type: 'oracle_collection'
 	/**
-	 * This collection's content enhances the identified collection, rather than being a standalone collection of its own.
+	 * This collection's content enhances the identified collections, rather than being a standalone collection of its own.
 	 */
-	enhances?: OracleCollectionId
+	enhances?: OracleCollectionIdWildcard[]
 	/**
-	 * This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection.
+	 * This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.
 	 */
-	replaces?: OracleCollectionId
+	replaces?: OracleCollectionIdWildcard[]
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
@@ -2615,13 +2623,13 @@ export interface OracleTableSharedText3 {
 	icon?: SvgImageUrl
 	type: 'oracle_collection'
 	/**
-	 * This collection's content enhances the identified collection, rather than being a standalone collection of its own.
+	 * This collection's content enhances the identified collections, rather than being a standalone collection of its own.
 	 */
-	enhances?: OracleCollectionId
+	enhances?: OracleCollectionIdWildcard[]
 	/**
-	 * This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection.
+	 * This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.
 	 */
-	replaces?: OracleCollectionId
+	replaces?: OracleCollectionIdWildcard[]
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
@@ -2670,9 +2678,9 @@ export interface OracleTableText {
 	tags?: Tags
 	oracle_type: 'table_text'
 	/**
-	 * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
+	 * Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.
 	 */
-	replaces?: OracleRollableId
+	replaces?: OracleRollableIdWildcard[]
 	/**
 	 * The roll used to select a result on this oracle.
 	 * @default "1d100"
@@ -2753,9 +2761,9 @@ export interface OracleTableText2 {
 	tags?: Tags
 	oracle_type: 'table_text2'
 	/**
-	 * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
+	 * Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.
 	 */
-	replaces?: OracleRollableId
+	replaces?: OracleRollableIdWildcard[]
 	/**
 	 * The roll used to select a result on this oracle.
 	 * @default "1d100"
@@ -2840,9 +2848,9 @@ export interface OracleTableText3 {
 	tags?: Tags
 	oracle_type: 'table_text3'
 	/**
-	 * Indicates that this object replaces the identified OracleRollable. References to the replaced object can be considered equivalent to this object.
+	 * Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.
 	 */
-	replaces?: OracleRollableId
+	replaces?: OracleRollableIdWildcard[]
 	/**
 	 * The roll used to select a result on this oracle.
 	 * @default "1d100"
@@ -2936,13 +2944,13 @@ export interface OracleTablesCollection {
 	icon?: SvgImageUrl
 	type: 'oracle_collection'
 	/**
-	 * This collection's content enhances the identified collection, rather than being a standalone collection of its own.
+	 * This collection's content enhances the identified collections, rather than being a standalone collection of its own.
 	 */
-	enhances?: OracleCollectionId
+	enhances?: OracleCollectionIdWildcard[]
 	/**
-	 * This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection.
+	 * This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.
 	 */
-	replaces?: OracleCollectionId
+	replaces?: OracleCollectionIdWildcard[]
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
@@ -3003,6 +3011,11 @@ export interface EmbeddedActionRollMove {
 	 * Trigger conditions for this move.
 	 */
 	trigger: TriggerActionRoll
+	/**
+	 * Is burning momentum allowed for this move?
+	 * @default true
+	 */
+	allow_momentum_burn: boolean
 	outcomes: MoveOutcomes
 	type: 'move'
 }
@@ -3045,6 +3058,10 @@ export interface EmbeddedNoRollMove {
 	 */
 	trigger: TriggerNoRoll
 	/**
+	 * Is burning momentum allowed for this move?
+	 */
+	allow_momentum_burn: false
+	/**
 	 * @default null
 	 */
 	outcomes: null
@@ -3079,6 +3096,10 @@ export interface EmbeddedProgressRollMove {
 	 * Trigger conditions for this move.
 	 */
 	trigger: TriggerProgressRoll
+	/**
+	 * Is burning momentum allowed for this move?
+	 */
+	allow_momentum_burn: false
 	outcomes: MoveOutcomes
 	type: 'move'
 	/**
@@ -3115,6 +3136,10 @@ export interface EmbeddedSpecialTrackMove {
 	 * Trigger conditions for this move.
 	 */
 	trigger: TriggerSpecialTrack
+	/**
+	 * Is burning momentum allowed for this move?
+	 */
+	allow_momentum_burn: false
 	outcomes: MoveOutcomes
 	type: 'move'
 }
@@ -3155,9 +3180,9 @@ export interface MoveActionRoll {
 	suggestions?: Suggestions
 	tags?: Tags
 	/**
-	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
+	 * Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move.
 	 */
-	replaces?: MoveId
+	replaces?: MoveIdWildcard[]
 	/**
 	 * The complete rules text of the move.
 	 */
@@ -3174,6 +3199,11 @@ export interface MoveActionRoll {
 	 * Trigger conditions for this move.
 	 */
 	trigger: TriggerActionRoll
+	/**
+	 * Is burning momentum allowed for this move?
+	 * @default true
+	 */
+	allow_momentum_burn: boolean
 	outcomes: MoveOutcomes
 	type: 'move'
 }
@@ -3236,13 +3266,13 @@ export interface MoveCategory {
 	icon?: SvgImageUrl
 	type: 'move_category'
 	/**
-	 * This collection's content enhances the identified collection, rather than being a standalone collection of its own.
+	 * This collection's content enhances the identified collections, rather than being a standalone collection of its own.
 	 */
-	enhances?: MoveCategoryId
+	enhances?: MoveCategoryIdWildcard[]
 	/**
-	 * This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection.
+	 * This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.
 	 */
-	replaces?: MoveCategoryId
+	replaces?: MoveCategoryIdWildcard[]
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
@@ -3285,9 +3315,9 @@ export interface MoveNoRoll {
 	suggestions?: Suggestions
 	tags?: Tags
 	/**
-	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
+	 * Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move.
 	 */
-	replaces?: MoveId
+	replaces?: MoveIdWildcard[]
 	/**
 	 * The complete rules text of the move.
 	 */
@@ -3304,6 +3334,10 @@ export interface MoveNoRoll {
 	 * Trigger conditions for this move.
 	 */
 	trigger: TriggerNoRoll
+	/**
+	 * Is burning momentum allowed for this move?
+	 */
+	allow_momentum_burn: false
 	/**
 	 * @default null
 	 */
@@ -3375,9 +3409,9 @@ export interface MoveProgressRoll {
 	suggestions?: Suggestions
 	tags?: Tags
 	/**
-	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
+	 * Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move.
 	 */
-	replaces?: MoveId
+	replaces?: MoveIdWildcard[]
 	/**
 	 * The complete rules text of the move.
 	 */
@@ -3394,6 +3428,10 @@ export interface MoveProgressRoll {
 	 * Trigger conditions for this move.
 	 */
 	trigger: TriggerProgressRoll
+	/**
+	 * Is burning momentum allowed for this move?
+	 */
+	allow_momentum_burn: false
 	outcomes: MoveOutcomes
 	type: 'move'
 	/**
@@ -3457,9 +3495,9 @@ export interface MoveSpecialTrack {
 	suggestions?: Suggestions
 	tags?: Tags
 	/**
-	 * Indicates that this move replaces the identified move. References to the replaced move can be considered equivalent to this move.
+	 * Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move.
 	 */
-	replaces?: MoveId
+	replaces?: MoveIdWildcard[]
 	/**
 	 * The complete rules text of the move.
 	 */
@@ -3476,6 +3514,10 @@ export interface MoveSpecialTrack {
 	 * Trigger conditions for this move.
 	 */
 	trigger: TriggerSpecialTrack
+	/**
+	 * Is burning momentum allowed for this move?
+	 */
+	allow_momentum_burn: false
 	outcomes: MoveOutcomes
 	type: 'move'
 }
@@ -4020,13 +4062,13 @@ export interface AssetCollection {
 	icon?: SvgImageUrl
 	type: 'asset_collection'
 	/**
-	 * This collection's content enhances the identified collection, rather than being a standalone collection of its own.
+	 * This collection's content enhances the identified collections, rather than being a standalone collection of its own.
 	 */
-	enhances?: AssetCollectionId
+	enhances?: AssetCollectionIdWildcard[]
 	/**
-	 * This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection.
+	 * This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.
 	 */
-	replaces?: AssetCollectionId
+	replaces?: AssetCollectionIdWildcard[]
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */
@@ -4452,6 +4494,13 @@ export interface Truth {
 	summary?: MarkdownString
 	options: TruthOption[]
 	your_character?: MarkdownString
+	/**
+	 * Prompts for factions related to this truth, like those presented in standard isles. This is presented as a single paragraph in the original text; Datasworn uses an array (one faction prompt per string) to represent them in order to make them more suitable for programmatic use.
+	 *
+	 * This property is a placeholder and may see signficant changes in v0.2.0.
+	 * @experimental
+	 */
+	factions?: EntityPrompt[]
 	type: 'truth'
 }
 
@@ -4509,13 +4558,13 @@ export interface AtlasCollection {
 	icon?: SvgImageUrl
 	type: 'atlas_collection'
 	/**
-	 * This collection's content enhances the identified collection, rather than being a standalone collection of its own.
+	 * This collection's content enhances the identified collections, rather than being a standalone collection of its own.
 	 */
-	enhances?: AtlasCollectionId
+	enhances?: AtlasCollectionIdWildcard[]
 	/**
-	 * This collection replaces the identified collection. References to the replaced collection can be considered equivalent to this collection.
+	 * This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.
 	 */
-	replaces?: AtlasCollectionId
+	replaces?: AtlasCollectionIdWildcard[]
 	/**
 	 * @remarks Deserialize as a dictionary object.
 	 */

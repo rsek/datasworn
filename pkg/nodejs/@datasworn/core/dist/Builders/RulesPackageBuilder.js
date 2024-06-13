@@ -13,7 +13,7 @@ var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _RulesPackageBuilder_instances, _a, _RulesPackageBuilder_mergedSource, _RulesPackageBuilder_isSorted, _RulesPackageBuilder_isMergeComplete, _RulesPackageBuilder_isValidated, _RulesPackageBuilder_countTypes, _RulesPackageBuilder_build, _RulesPackageBuilder_sortKeys, _RulesPackageBuilder_addFile, _RulesPackageBuilder_isObject, _RulesPackageBuilder_merge, _RulesPackagePart_data, _RulesPackagePart_isValidated;
+var _RulesPackageBuilder_instances, _a, _RulesPackageBuilder_result, _RulesPackageBuilder_isSorted, _RulesPackageBuilder_isMergeComplete, _RulesPackageBuilder_isValidated, _RulesPackageBuilder_countTypes, _RulesPackageBuilder_build, _RulesPackageBuilder_sortKeys, _RulesPackageBuilder_addFile, _RulesPackageBuilder_isObject, _RulesPackageBuilder_merge, _RulesPackagePart_data, _RulesPackagePart_isValidated;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RulesPackageBuilder = void 0;
 const CONST_js_1 = __importDefault(require("../IdElements/CONST.js"));
@@ -21,11 +21,10 @@ const Sort_js_1 = require("../Utils/Sort.js");
 const Text_js_1 = require("../Validators/Text.js");
 const index_js_1 = __importDefault(require("../Validators/index.js"));
 const index_js_2 = require("../index.js");
-/** Merges and validates JSON data from multiple DataswornSource files. */
+/**
+ * Merges, assigns IDs to, and validates multiple {@link DataswornSource.RulesPackage}s to create a complete {@link Datasworn.RulesPackage} object.
+ * */
 class RulesPackageBuilder {
-    get mergedSource() {
-        return __classPrivateFieldGet(this, _RulesPackageBuilder_mergedSource, "f");
-    }
     mergeFiles(force = false) {
         if (!force && __classPrivateFieldGet(this, _RulesPackageBuilder_isMergeComplete, "f"))
             return this;
@@ -33,19 +32,19 @@ class RulesPackageBuilder {
             // sort by file name so that they merge in the same order every time (prevents JSON diff noise). the order itself is arbitrary, but must be the same no matter who runs it -- this is why localeCompare specifies a static locale
             .sort(([a], [b]) => a.localeCompare(b, 'en-US'));
         for (const [_, part] of sortedEntries)
-            __classPrivateFieldGet(this, _RulesPackageBuilder_instances, "m", _RulesPackageBuilder_merge).call(this, __classPrivateFieldGet(this, _RulesPackageBuilder_mergedSource, "f"), part.data);
+            __classPrivateFieldGet(this, _RulesPackageBuilder_instances, "m", _RulesPackageBuilder_merge).call(this, __classPrivateFieldGet(this, _RulesPackageBuilder_result, "f"), part.data);
         __classPrivateFieldSet(this, _RulesPackageBuilder_isMergeComplete, true, "f");
         __classPrivateFieldSet(this, _RulesPackageBuilder_isValidated, false, "f");
         __classPrivateFieldSet(this, _RulesPackageBuilder_isSorted, false, "f");
         return this;
     }
     toJSON() {
-        return this.mergedSource;
+        return __classPrivateFieldGet(this, _RulesPackageBuilder_result, "f");
     }
     validate(force = false) {
         if (!force && __classPrivateFieldGet(this, _RulesPackageBuilder_isValidated, "f"))
             return this;
-        this.schemaValidator(this.mergedSource);
+        this.schemaValidator(__classPrivateFieldGet(this, _RulesPackageBuilder_result, "f"));
         const validatedIds = new Set();
         for (const [id, typeNode] of this.index) {
             if (typeNode == null)
@@ -73,7 +72,7 @@ class RulesPackageBuilder {
         return this;
     }
     validateIdPointers(index) {
-        return (0, Text_js_1.validateIdsInStrings)(this.mergedSource, index);
+        return (0, Text_js_1.validateIdsInStrings)(__classPrivateFieldGet(this, _RulesPackageBuilder_result, "f"), index);
     }
     build(force = false) {
         try {
@@ -85,14 +84,21 @@ class RulesPackageBuilder {
             throw new Error(`Couldn't build "${this.id}". ${String(e)}`);
         }
     }
-    static sortDataswornKeys(object, sortOrder = Sort_js_1.dataSwornKeyOrder) {
+    static sortDataswornKeys(object, sortOrder = Sort_js_1.dataswornKeyOrder) {
         return (0, Sort_js_1.sortObjectKeys)(object, sortOrder);
     }
+    /**
+     *
+     * @param id The `_id` of the RulesPackage to be constructed.
+     * @param validator A function that validates the completed RulesPackage against the Datasworn JSON schema.
+     * @param sourceValidator A function that validates the individual package file contents against the DataswornSource JSON schema.
+     * @param logger The destination for logging build messages.
+     */
     constructor(id, validator, sourceValidator, logger) {
         _RulesPackageBuilder_instances.add(this);
         this.files = new Map();
         this.index = new Map();
-        _RulesPackageBuilder_mergedSource.set(this, {});
+        _RulesPackageBuilder_result.set(this, {});
         _RulesPackageBuilder_isSorted.set(this, false);
         _RulesPackageBuilder_isMergeComplete.set(this, false);
         _RulesPackageBuilder_isValidated.set(this, false);
@@ -113,7 +119,7 @@ class RulesPackageBuilder {
     }
 }
 exports.RulesPackageBuilder = RulesPackageBuilder;
-_a = RulesPackageBuilder, _RulesPackageBuilder_mergedSource = new WeakMap(), _RulesPackageBuilder_isSorted = new WeakMap(), _RulesPackageBuilder_isMergeComplete = new WeakMap(), _RulesPackageBuilder_isValidated = new WeakMap(), _RulesPackageBuilder_instances = new WeakSet(), _RulesPackageBuilder_countTypes = function _RulesPackageBuilder_countTypes() {
+_a = RulesPackageBuilder, _RulesPackageBuilder_result = new WeakMap(), _RulesPackageBuilder_isSorted = new WeakMap(), _RulesPackageBuilder_isMergeComplete = new WeakMap(), _RulesPackageBuilder_isValidated = new WeakMap(), _RulesPackageBuilder_instances = new WeakSet(), _RulesPackageBuilder_countTypes = function _RulesPackageBuilder_countTypes() {
     const types = {};
     for (const [id, _] of this.index) {
         const [fullTypeId, ..._path] = id.split(CONST_js_1.default.PrefixSep);
@@ -126,11 +132,11 @@ _a = RulesPackageBuilder, _RulesPackageBuilder_mergedSource = new WeakMap(), _Ru
     this.mergeFiles(force);
     __classPrivateFieldGet(this, _RulesPackageBuilder_instances, "m", _RulesPackageBuilder_sortKeys).call(this, force);
     __classPrivateFieldSet(this, _RulesPackageBuilder_isValidated, false, "f");
-    return this.mergedSource;
+    return __classPrivateFieldGet(this, _RulesPackageBuilder_result, "f");
 }, _RulesPackageBuilder_sortKeys = function _RulesPackageBuilder_sortKeys(force = false) {
     if (__classPrivateFieldGet(this, _RulesPackageBuilder_isSorted, "f") && !force)
         return this;
-    __classPrivateFieldSet(this, _RulesPackageBuilder_mergedSource, (0, Sort_js_1.sortDataswornKeys)(__classPrivateFieldGet(this, _RulesPackageBuilder_mergedSource, "f")), "f");
+    __classPrivateFieldSet(this, _RulesPackageBuilder_result, (0, Sort_js_1.sortDataswornKeys)(__classPrivateFieldGet(this, _RulesPackageBuilder_result, "f")), "f");
     __classPrivateFieldSet(this, _RulesPackageBuilder_isSorted, true, "f");
     return this;
 }, _RulesPackageBuilder_addFile = function _RulesPackageBuilder_addFile(file) {
@@ -166,7 +172,6 @@ _a = RulesPackageBuilder, _RulesPackageBuilder_mergedSource = new WeakMap(), _Ru
     return __classPrivateFieldGet(this, _RulesPackageBuilder_instances, "m", _RulesPackageBuilder_merge).call(this, target, ...sources);
 };
 RulesPackageBuilder.postSchemaValidators = index_js_1.default;
-// could unwrap all values to json pointers, then set them in order? hm.
 /** Top-level RulesPackage properties to omit from key sorting. */
 RulesPackageBuilder.topLevelKeysBlackList = [
     'rules'

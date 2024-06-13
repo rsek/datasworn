@@ -13,6 +13,9 @@ assets:
   path:
     name: Path Assets
     type: asset_collection
+    color: &PathAsset.color '#3f7faa'
+    enhances:
+      - asset_collection:starforged/path
     _source:
       <<: *Source
     contents:
@@ -21,7 +24,9 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
+        <<: &PathAsset
+          color: *PathAsset.color
+          category: Path
         abilities:
           - enabled: true
             text: |-
@@ -58,8 +63,12 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
-        tags: { sundered_isles: { starforged_friendly: true } }
+        <<: *PathAsset
+        tags:
+          starforged:
+            recommended: true
+          core:
+            supernatural: true
         abilities:
           - enabled: true
             text: |-
@@ -88,8 +97,10 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
-        tags: { sundered_isles: { starforged_friendly: true } }
+        <<: *PathAsset
+        tags:
+          starforged:
+            recommended: true
         abilities:
           - enabled: true
             text: |-
@@ -121,8 +132,10 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
-        tags: { sundered_isles: { starforged_friendly: true } }
+        <<: *PathAsset
+        tags:
+          starforged:
+            recommended: true
         requirement: If you wield knives...
         abilities:
           - enabled: true
@@ -172,8 +185,10 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
-        tags: { sundered_isles: { starforged_friendly: true } }
+        <<: *PathAsset
+        tags:
+          starforged:
+            recommended: true
         abilities:
           - enabled: true
             text: |-
@@ -202,7 +217,7 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
+        <<: *PathAsset
         requirement: If you wield a handheld harpoon...
         abilities:
           - enabled: true
@@ -251,8 +266,12 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
-        tags: { sundered_isles: { starforged_friendly: true } }
+        <<: *PathAsset
+        tags:
+          starforged:
+            recommended: true
+          core:
+            supernatural: true
         abilities:
           - enabled: true
             text: |-
@@ -271,7 +290,7 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
+        <<: *PathAsset
         abilities:
           - enabled: true
             text: |-
@@ -333,7 +352,7 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
+        <<: *PathAsset
         abilities:
           - enabled: true
             text: |-
@@ -373,8 +392,12 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
-        tags: { sundered_isles: { starforged_friendly: true } }
+        <<: *PathAsset
+        tags:
+          starforged:
+            recommended: true
+          core:
+            supernatural: true
         abilities:
           - enabled: true
             text: |-
@@ -420,8 +443,10 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
-        tags: { sundered_isles: { starforged_friendly: true } }
+        <<: *PathAsset
+        tags:
+          starforged:
+            recommended: true
         abilities:
           - enabled: true
             text: |-
@@ -470,7 +495,7 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
+        <<: *PathAsset
         abilities:
           - enabled: true
             text: &PeddleGoods |-
@@ -530,8 +555,10 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
-        tags: { sundered_isles: { starforged_friendly: true } }
+        <<: *PathAsset
+        tags:
+          starforged:
+            recommended: true
         abilities:
           - enabled: true
             text: &SeizeYourPrize |-
@@ -601,7 +628,7 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
+        <<: *PathAsset
         requirement: If you wield a brace of pistols...
         abilities:
           - enabled: true
@@ -637,7 +664,7 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
+        <<: *PathAsset
         abilities:
           - enabled: true
             text: |-
@@ -682,7 +709,7 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
+        <<: *PathAsset
         options:
           field_one:
             label: field
@@ -731,8 +758,12 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
-        tags: { sundered_isles: { starforged_friendly: true } }
+        <<: *PathAsset
+        tags:
+          starforged:
+            recommended: true
+          core:
+            supernatural: true
         options:
           form:
             label: form
@@ -777,7 +808,7 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
+        <<: *PathAsset
         abilities:
           - enabled: true
             text: |-
@@ -817,8 +848,10 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
-        tags: { sundered_isles: { starforged_friendly: true } }
+        <<: *PathAsset
+        tags:
+          starforged:
+            recommended: true
         abilities:
           - enabled: true
             text: |-
@@ -874,8 +907,12 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
-        tags: { sundered_isles: { starforged_friendly: true } }
+        <<: *PathAsset
+        tags:
+          starforged:
+            recommended: true
+          core:
+            supernatural: true
         abilities:
           - enabled: true
             text: |-
@@ -919,7 +956,7 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
+        <<: *PathAsset
         abilities:
           - enabled: true
             text: |-
@@ -963,8 +1000,10 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
-        tags: { sundered_isles: { starforged_friendly: true } }
+        <<: *PathAsset
+        tags:
+          starforged:
+            recommended: true
         abilities:
           - enabled: true
             text: |-
@@ -997,8 +1036,10 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
-        tags: { sundered_isles: { starforged_friendly: true } }
+        <<: *PathAsset
+        tags:
+          starforged:
+            recommended: true
         abilities:
           - enabled: true
             text: |-
@@ -1042,7 +1083,7 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Path
+        <<: *PathAsset
         abilities:
           - enabled: true
             text: |-
@@ -1070,9 +1111,12 @@ assets:
       windbinder:
         name: Windbinder
         type: asset
+        tags:
+          core:
+            supernatural: true
         _source:
           <<: *Source
-        category: Path
+        <<: *PathAsset
         abilities:
           - enabled: true
             text: &BindWindsText |-
@@ -1137,245 +1181,3 @@ assets:
               foul:
                 label: foul
                 choice_type: choice
-# TODO: make "asset_enhancement" or sth similar legal in asset files?
-
-# doesn't look like there's much to override w/r/t assets and supply, TBH
-
-# armored:
-#   name: Armored
-#   _enhances: starforged/assets/path/armored
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#     sundered_isles:
-#       technological: true
-# augmented:
-#   name: Augmented
-#   _enhances: starforged/assets/path/augmented
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#     sundered_isles:
-#       technological: true
-#
-# bannersworn:
-#   name: Bannersworn
-#   _enhances: starforged/assets/path/bannersworn
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#
-# blademaster:
-#   name: Blademaster
-#   _enhances: starforged/assets/path/blademaster
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#
-# bounty_hunter:
-#   name: Bounty Hunter
-#   _enhances: starforged/assets/path/bounty_hunter
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#
-# brawler:
-#   name: Brawler
-#   _enhances: starforged/assets/path/brawler
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#
-# courier:
-#   name: Courier
-#   _enhances: starforged/assets/path/courier
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#
-# demolitionist:
-#   name: Demolitionist
-#   _enhances: starforged/assets/path/demolitionist
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#     sundered_isles:
-#       technological: true
-#
-# devotant:
-#   name: Devotant
-#   _enhances: starforged/assets/path/devotant
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#     sundered_isles:
-#       supernatural: true
-#
-# diplomat:
-#   name: Diplomat
-#   _enhances: starforged/assets/path/diplomat
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#
-# empath:
-#   name: Empath
-#   _enhances: starforged/assets/path/empath
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#     sundered_isles:
-#       supernatural: true
-#
-# fated:
-#   name: Fated
-#   _enhances: starforged/assets/path/fated
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#
-# firebrand:
-#   name: Firebrand
-#   _enhances: starforged/assets/path/firebrand
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#     sundered_isles:
-#       supernatural: true
-#
-# fugitive:
-#   name: Fugitive
-#   _enhances: starforged/assets/path/fugitive
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#
-# gearhead:
-#   name: Gearhead
-#   _enhances: starforged/assets/path/gearhead
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#     sundered_isles:
-#       technological: true
-#
-# haunted:
-#   name: Haunted
-#   _enhances: starforged/assets/path/haunted
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#     sundered_isles:
-#       supernatural: true
-#
-# healer:
-#   name: Healer
-#   _enhances: starforged/assets/path/healer
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#
-# kinetic:
-#   name: Kinetic
-#   _enhances: starforged/assets/path/kinetic
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#     sundered_isles:
-#       supernatural: true
-#
-# leader:
-#   name: Leader
-#   _enhances: starforged/assets/path/leader
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#
-# loyalist:
-#   name: Loyalist
-#   _enhances: starforged/assets/path/loyalist
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#
-# mercenary:
-#   name: Mercenary
-#   _enhances: starforged/assets/path/mercenary
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#
-# navigator:
-#   name: Navigator
-#   _enhances: starforged/assets/path/navigator
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#
-# outcast:
-#   name: Outcast
-#   _enhances: starforged/assets/path/outcast
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#
-# scavenger:
-#   name: Scavenger
-#   _enhances: starforged/assets/path/scavenger
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#   abilities
-#   - {}
-#   - {}
-#   - enhance_moves: # supply changes
-#
-# scoundrel:
-#   name: Scoundrel
-#   _enhances: starforged/assets/path/scoundrel
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#
-# seer:
-#   name: Seer
-#   _enhances: starforged/assets/path/seer
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#
-# shade:
-#   name: Shade
-#   _enhances: starforged/assets/path/shade
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#
-# slayer:
-#   name: Slayer
-#   _enhances: starforged/assets/path/slayer
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#
-# sleuth:
-#   name: Sleuth
-#   _enhances: starforged/assets/path/sleuth
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#
-# vestige:
-#   name: Vestige
-#   _enhances: starforged/assets/path/vestige
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#
-# veteran:
-#   name: Veteran
-#   _enhances: starforged/assets/path/veteran
-#   tags:
-#     starforged:
-#       sundered_isles_friendly: true
-#

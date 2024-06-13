@@ -14928,6 +14928,7 @@
 		},
 		"derelict": {
 			"name": "Derelict Oracles",
+			"canonical_name": "Derelicts",
 			"type": "oracle_collection",
 			"_source": {
 				"title": "Ironsworn: Starforged Rulebook",
@@ -14941,304 +14942,7 @@
 				],
 				"page": 348
 			},
-			"summary": "Derelicts are the forsaken relics of human endeavors.",
-			"description": "Derelicts are the forsaken relics of human endeavors. Use these First Look tables for your initial survey of the derelict. To reveal more about the look and original function or nature of the site, roll on appropriate tables in the [Starship](oracle_collection:starforged/starships) or [Settlement](oracle_collection:starforged/settlements) oracles. If you explore the depths of a derelict, you may use the zone oracles on the following pages to help envision what you find.",
 			"collections": {
-				"type": {
-					"name": "Derelict Type (by location)",
-					"canonical_name": "Type (by location)",
-					"_source": {
-						"title": "Ironsworn: Starforged Rulebook",
-						"license": "https://creativecommons.org/licenses/by/4.0",
-						"url": "https://ironswornrpg.com",
-						"date": "2022-05-06",
-						"authors": [
-							{
-								"name": "Shawn Tomkin"
-							}
-						],
-						"page": 348
-					},
-					"oracle_type": "table_shared_text",
-					"type": "oracle_collection",
-					"contents": {
-						"planetside": {
-							"name": "Planetside",
-							"tags": {
-								"starforged": {
-									"location": "planetside"
-								}
-							},
-							"icon": "icon/oracle_rollable/location/planetside.svg",
-							"oracle_type": "column_text",
-							"type": "oracle_rollable",
-							"rows": [
-								{
-									"roll": {
-										"min": 1,
-										"max": 25
-									},
-									"text": "Starship",
-									"suggestions": [
-										"oracle_rollable:starforged/derelict/derelict/starship"
-									]
-								},
-								{
-									"roll": {
-										"min": 26,
-										"max": 100
-									},
-									"text": "Settlement",
-									"suggestions": [
-										"oracle_rollable:starforged/derelict/derelict/settlement"
-									]
-								}
-							],
-							"dice": "1d100",
-							"_id": "oracle_rollable:starforged/derelict/type/planetside"
-						},
-						"orbital": {
-							"name": "Orbital",
-							"tags": {
-								"starforged": {
-									"location": "orbital"
-								}
-							},
-							"icon": "icon/oracle_rollable/location/orbital.svg",
-							"oracle_type": "column_text",
-							"type": "oracle_rollable",
-							"rows": [
-								{
-									"roll": {
-										"min": 1,
-										"max": 40
-									},
-									"text": "Starship",
-									"suggestions": [
-										"oracle_rollable:starforged/derelict/derelict/starship"
-									]
-								},
-								{
-									"roll": {
-										"min": 41,
-										"max": 100
-									},
-									"text": "Settlement",
-									"suggestions": [
-										"oracle_rollable:starforged/derelict/derelict/settlement"
-									]
-								}
-							],
-							"dice": "1d100",
-							"_id": "oracle_rollable:starforged/derelict/type/orbital"
-						},
-						"deep_space": {
-							"name": "Deep Space",
-							"tags": {
-								"starforged": {
-									"location": "deep_space"
-								}
-							},
-							"icon": "icon/oracle_rollable/location/deep_space.svg",
-							"oracle_type": "column_text",
-							"type": "oracle_rollable",
-							"rows": [
-								{
-									"roll": {
-										"min": 1,
-										"max": 75
-									},
-									"text": "Starship",
-									"suggestions": [
-										"oracle_rollable:starforged/derelict/derelict/starship"
-									]
-								},
-								{
-									"roll": {
-										"min": 76,
-										"max": 100
-									},
-									"text": "Settlement",
-									"suggestions": [
-										"oracle_rollable:starforged/derelict/derelict/settlement"
-									]
-								}
-							],
-							"dice": "1d100",
-							"_id": "oracle_rollable:starforged/derelict/type/deep_space"
-						}
-					},
-					"column_labels": {
-						"text": "Result"
-					},
-					"_id": "oracle_collection:starforged/derelict/type"
-				},
-				"zone": {
-					"name": "Derelict Zones",
-					"_source": {
-						"title": "Ironsworn: Starforged Rulebook",
-						"license": "https://creativecommons.org/licenses/by/4.0",
-						"url": "https://ironswornrpg.com",
-						"date": "2022-05-06",
-						"authors": [
-							{
-								"name": "Shawn Tomkin"
-							}
-						],
-						"page": 351
-					},
-					"summary": "If you explore the depths of a derelict, you may use the zone oracles to help envision what you find.",
-					"oracle_type": "table_shared_text",
-					"type": "oracle_collection",
-					"contents": {
-						"starship": {
-							"name": "Starship",
-							"summary": "If you explore the depths of a derelict, you may use the zone oracles to help envision what you find.",
-							"oracle_type": "column_text",
-							"type": "oracle_rollable",
-							"rows": [
-								{
-									"text": "[Access](oracle_collection:starforged/derelict/access)",
-									"icon": "icons/derelict/access.svg",
-									"roll": null
-								},
-								{
-									"text": "[Community](oracle_collection:starforged/derelict/community)",
-									"icon": "icons/derelict/community.svg",
-									"roll": {
-										"min": 1,
-										"max": 5
-									}
-								},
-								{
-									"roll": {
-										"min": 6,
-										"max": 30
-									},
-									"text": "[Engineering](oracle_collection:starforged/derelict/engineering)",
-									"icon": "icons/derelict/engineering.svg"
-								},
-								{
-									"roll": {
-										"min": 31,
-										"max": 55
-									},
-									"text": "[Living](oracle_collection:starforged/derelict/living)",
-									"icon": "icons/derelict/living.svg"
-								},
-								{
-									"roll": {
-										"min": 56,
-										"max": 65
-									},
-									"text": "[Medical](oracle_collection:starforged/derelict/medical)",
-									"icon": "icons/derelict/medical.svg"
-								},
-								{
-									"roll": {
-										"min": 66,
-										"max": 85
-									},
-									"text": "[Operations](oracle_collection:starforged/derelict/operations)",
-									"icon": "icons/derelict/operations.svg"
-								},
-								{
-									"roll": {
-										"min": 86,
-										"max": 90
-									},
-									"text": "[Production](oracle_collection:starforged/derelict/production)",
-									"icon": "icons/derelict/production.svg"
-								},
-								{
-									"roll": {
-										"min": 91,
-										"max": 100
-									},
-									"text": "[Research](oracle_collection:starforged/derelict/research)",
-									"icon": "icons/derelict/research.svg"
-								}
-							],
-							"dice": "1d100",
-							"_id": "oracle_rollable:starforged/derelict/zone/starship"
-						},
-						"settlement": {
-							"name": "Settlement",
-							"summary": "If you explore the depths of a derelict, you may use the zone oracles to help envision what you find.",
-							"oracle_type": "column_text",
-							"type": "oracle_rollable",
-							"rows": [
-								{
-									"text": "[Access](oracle_collection:starforged/derelict/access)",
-									"icon": "icons/derelict/access.svg",
-									"roll": null
-								},
-								{
-									"roll": {
-										"min": 1,
-										"max": 20
-									},
-									"text": "[Community](oracle_collection:starforged/derelict/community)",
-									"icon": "icons/derelict/community.svg"
-								},
-								{
-									"roll": {
-										"min": 21,
-										"max": 30
-									},
-									"text": "[Engineering](oracle_collection:starforged/derelict/engineering)",
-									"icon": "icons/derelict/engineering.svg"
-								},
-								{
-									"roll": {
-										"min": 31,
-										"max": 50
-									},
-									"text": "[Living](oracle_collection:starforged/derelict/living)",
-									"icon": "icons/derelict/living.svg"
-								},
-								{
-									"roll": {
-										"min": 51,
-										"max": 60
-									},
-									"text": "[Medical](oracle_collection:starforged/derelict/medical)",
-									"icon": "icons/derelict/medical.svg"
-								},
-								{
-									"roll": {
-										"min": 61,
-										"max": 70
-									},
-									"text": "[Operations](oracle_collection:starforged/derelict/operations)",
-									"icon": "icons/derelict/operations.svg"
-								},
-								{
-									"roll": {
-										"min": 71,
-										"max": 90
-									},
-									"text": "[Production](oracle_collection:starforged/derelict/production)",
-									"icon": "icons/derelict/production.svg"
-								},
-								{
-									"roll": {
-										"min": 91,
-										"max": 100
-									},
-									"text": "[Research](oracle_collection:starforged/derelict/research)",
-									"icon": "icons/derelict/research.svg"
-								}
-							],
-							"dice": "1d100",
-							"_id": "oracle_rollable:starforged/derelict/zone/settlement"
-						}
-					},
-					"column_labels": {
-						"text": "Result"
-					},
-					"_id": "oracle_collection:starforged/derelict/zone"
-				},
 				"access": {
 					"name": "Access",
 					"oracle_type": "tables",
@@ -18834,8 +18538,307 @@
 						}
 					},
 					"_id": "oracle_collection:starforged/derelict/research"
+				},
+				"type": {
+					"name": "Derelict Type (by location)",
+					"canonical_name": "Type (by location)",
+					"_source": {
+						"title": "Ironsworn: Starforged Rulebook",
+						"license": "https://creativecommons.org/licenses/by/4.0",
+						"url": "https://ironswornrpg.com",
+						"date": "2022-05-06",
+						"authors": [
+							{
+								"name": "Shawn Tomkin"
+							}
+						],
+						"page": 348
+					},
+					"oracle_type": "table_shared_text",
+					"type": "oracle_collection",
+					"contents": {
+						"planetside": {
+							"name": "Planetside",
+							"tags": {
+								"starforged": {
+									"location": "planetside"
+								}
+							},
+							"icon": "icon/oracle_rollable/location/planetside.svg",
+							"oracle_type": "column_text",
+							"type": "oracle_rollable",
+							"rows": [
+								{
+									"roll": {
+										"min": 1,
+										"max": 25
+									},
+									"text": "Starship",
+									"suggestions": [
+										"oracle_rollable:starforged/derelict/derelict/starship"
+									]
+								},
+								{
+									"roll": {
+										"min": 26,
+										"max": 100
+									},
+									"text": "Settlement",
+									"suggestions": [
+										"oracle_rollable:starforged/derelict/derelict/settlement"
+									]
+								}
+							],
+							"dice": "1d100",
+							"_id": "oracle_rollable:starforged/derelict/type/planetside"
+						},
+						"orbital": {
+							"name": "Orbital",
+							"tags": {
+								"starforged": {
+									"location": "orbital"
+								}
+							},
+							"icon": "icon/oracle_rollable/location/orbital.svg",
+							"oracle_type": "column_text",
+							"type": "oracle_rollable",
+							"rows": [
+								{
+									"roll": {
+										"min": 1,
+										"max": 40
+									},
+									"text": "Starship",
+									"suggestions": [
+										"oracle_rollable:starforged/derelict/derelict/starship"
+									]
+								},
+								{
+									"roll": {
+										"min": 41,
+										"max": 100
+									},
+									"text": "Settlement",
+									"suggestions": [
+										"oracle_rollable:starforged/derelict/derelict/settlement"
+									]
+								}
+							],
+							"dice": "1d100",
+							"_id": "oracle_rollable:starforged/derelict/type/orbital"
+						},
+						"deep_space": {
+							"name": "Deep Space",
+							"tags": {
+								"starforged": {
+									"location": "deep_space"
+								}
+							},
+							"icon": "icon/oracle_rollable/location/deep_space.svg",
+							"oracle_type": "column_text",
+							"type": "oracle_rollable",
+							"rows": [
+								{
+									"roll": {
+										"min": 1,
+										"max": 75
+									},
+									"text": "Starship",
+									"suggestions": [
+										"oracle_rollable:starforged/derelict/derelict/starship"
+									]
+								},
+								{
+									"roll": {
+										"min": 76,
+										"max": 100
+									},
+									"text": "Settlement",
+									"suggestions": [
+										"oracle_rollable:starforged/derelict/derelict/settlement"
+									]
+								}
+							],
+							"dice": "1d100",
+							"_id": "oracle_rollable:starforged/derelict/type/deep_space"
+						}
+					},
+					"column_labels": {
+						"text": "Result"
+					},
+					"_id": "oracle_collection:starforged/derelict/type"
+				},
+				"zone": {
+					"name": "Derelict Zones",
+					"_source": {
+						"title": "Ironsworn: Starforged Rulebook",
+						"license": "https://creativecommons.org/licenses/by/4.0",
+						"url": "https://ironswornrpg.com",
+						"date": "2022-05-06",
+						"authors": [
+							{
+								"name": "Shawn Tomkin"
+							}
+						],
+						"page": 351
+					},
+					"summary": "If you explore the depths of a derelict, you may use the zone oracles to help envision what you find.",
+					"oracle_type": "table_shared_text",
+					"type": "oracle_collection",
+					"contents": {
+						"starship": {
+							"name": "Starship",
+							"summary": "If you explore the depths of a derelict, you may use the zone oracles to help envision what you find.",
+							"oracle_type": "column_text",
+							"type": "oracle_rollable",
+							"rows": [
+								{
+									"text": "[Access](oracle_collection:starforged/derelict/access)",
+									"icon": "icons/derelict/access.svg",
+									"roll": null
+								},
+								{
+									"text": "[Community](oracle_collection:starforged/derelict/community)",
+									"icon": "icons/derelict/community.svg",
+									"roll": {
+										"min": 1,
+										"max": 5
+									}
+								},
+								{
+									"roll": {
+										"min": 6,
+										"max": 30
+									},
+									"text": "[Engineering](oracle_collection:starforged/derelict/engineering)",
+									"icon": "icons/derelict/engineering.svg"
+								},
+								{
+									"roll": {
+										"min": 31,
+										"max": 55
+									},
+									"text": "[Living](oracle_collection:starforged/derelict/living)",
+									"icon": "icons/derelict/living.svg"
+								},
+								{
+									"roll": {
+										"min": 56,
+										"max": 65
+									},
+									"text": "[Medical](oracle_collection:starforged/derelict/medical)",
+									"icon": "icons/derelict/medical.svg"
+								},
+								{
+									"roll": {
+										"min": 66,
+										"max": 85
+									},
+									"text": "[Operations](oracle_collection:starforged/derelict/operations)",
+									"icon": "icons/derelict/operations.svg"
+								},
+								{
+									"roll": {
+										"min": 86,
+										"max": 90
+									},
+									"text": "[Production](oracle_collection:starforged/derelict/production)",
+									"icon": "icons/derelict/production.svg"
+								},
+								{
+									"roll": {
+										"min": 91,
+										"max": 100
+									},
+									"text": "[Research](oracle_collection:starforged/derelict/research)",
+									"icon": "icons/derelict/research.svg"
+								}
+							],
+							"dice": "1d100",
+							"_id": "oracle_rollable:starforged/derelict/zone/starship"
+						},
+						"settlement": {
+							"name": "Settlement",
+							"summary": "If you explore the depths of a derelict, you may use the zone oracles to help envision what you find.",
+							"oracle_type": "column_text",
+							"type": "oracle_rollable",
+							"rows": [
+								{
+									"text": "[Access](oracle_collection:starforged/derelict/access)",
+									"icon": "icons/derelict/access.svg",
+									"roll": null
+								},
+								{
+									"roll": {
+										"min": 1,
+										"max": 20
+									},
+									"text": "[Community](oracle_collection:starforged/derelict/community)",
+									"icon": "icons/derelict/community.svg"
+								},
+								{
+									"roll": {
+										"min": 21,
+										"max": 30
+									},
+									"text": "[Engineering](oracle_collection:starforged/derelict/engineering)",
+									"icon": "icons/derelict/engineering.svg"
+								},
+								{
+									"roll": {
+										"min": 31,
+										"max": 50
+									},
+									"text": "[Living](oracle_collection:starforged/derelict/living)",
+									"icon": "icons/derelict/living.svg"
+								},
+								{
+									"roll": {
+										"min": 51,
+										"max": 60
+									},
+									"text": "[Medical](oracle_collection:starforged/derelict/medical)",
+									"icon": "icons/derelict/medical.svg"
+								},
+								{
+									"roll": {
+										"min": 61,
+										"max": 70
+									},
+									"text": "[Operations](oracle_collection:starforged/derelict/operations)",
+									"icon": "icons/derelict/operations.svg"
+								},
+								{
+									"roll": {
+										"min": 71,
+										"max": 90
+									},
+									"text": "[Production](oracle_collection:starforged/derelict/production)",
+									"icon": "icons/derelict/production.svg"
+								},
+								{
+									"roll": {
+										"min": 91,
+										"max": 100
+									},
+									"text": "[Research](oracle_collection:starforged/derelict/research)",
+									"icon": "icons/derelict/research.svg"
+								}
+							],
+							"dice": "1d100",
+							"_id": "oracle_rollable:starforged/derelict/zone/settlement"
+						}
+					},
+					"column_labels": {
+						"text": "Result"
+					},
+					"_id": "oracle_collection:starforged/derelict/zone"
 				}
 			},
+			"oracle_type": "tables",
+			"_id": "oracle_collection:starforged/derelict",
+			"summary": "Derelicts are the forsaken relics of human endeavors.",
+			"description": "Derelicts are the forsaken relics of human endeavors. Use these First Look tables for your initial survey of the derelict. To reveal more about the look and original function or nature of the site, roll on appropriate tables in the [Starship](oracle_collection:starforged/starships) or [Settlement](oracle_collection:starforged/settlements) oracles. If you explore the depths of a derelict, you may use the zone oracles on the following pages to help envision what you find.",
 			"contents": {
 				"location": {
 					"name": "Location",
@@ -19328,10 +19331,7 @@
 					},
 					"_id": "oracle_rollable:starforged/derelict/inner_first_look"
 				}
-			},
-			"oracle_type": "tables",
-			"_id": "oracle_collection:starforged/derelict",
-			"canonical_name": "Derelicts"
+			}
 		},
 		"faction": {
 			"name": "Faction Oracles",
@@ -48363,6 +48363,11 @@
 						]
 					},
 					"name": "Bonded",
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
+					},
 					"type": "asset",
 					"options": {
 						"bond_mate": {
@@ -48473,6 +48478,11 @@
 						]
 					},
 					"name": "Homesteader",
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
+					},
 					"type": "asset",
 					"options": {
 						"name": {
@@ -48670,6 +48680,11 @@
 				},
 				"oathbreaker": {
 					"name": "Oathbreaker",
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
+					},
 					"type": "asset",
 					"category": "Deed",
 					"color": "#40834f",
@@ -48760,6 +48775,11 @@
 				},
 				"revenant": {
 					"name": "Revenant",
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
+					},
 					"type": "asset",
 					"category": "Deed",
 					"color": "#40834f",
@@ -48851,6 +48871,11 @@
 				},
 				"survivor": {
 					"name": "Survivor",
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
+					},
 					"type": "asset",
 					"category": "Deed",
 					"color": "#40834f",
@@ -48904,6 +48929,11 @@
 				},
 				"vanguard": {
 					"name": "Vanguard",
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
+					},
 					"type": "asset",
 					"category": "Deed",
 					"color": "#40834f",
@@ -50923,6 +50953,14 @@
 						]
 					},
 					"requirement": "If you wear your finely crafted set of personal armor...",
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						},
+						"core": {
+							"technological": true
+						}
+					},
 					"controls": {
 						"broken": {
 							"label": "broken",
@@ -51125,6 +51163,14 @@
 							}
 						]
 					},
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						},
+						"core": {
+							"technological": true
+						}
+					},
 					"options": {
 						"one": {
 							"label": "one",
@@ -51197,6 +51243,11 @@
 								"name": "Shawn Tomkin"
 							}
 						]
+					},
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
 					},
 					"options": {
 						"ideology": {
@@ -51290,6 +51341,11 @@
 				"blademaster": {
 					"name": "Blademaster",
 					"type": "asset",
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
+					},
 					"category": "Path",
 					"color": "#3f7faa",
 					"_source": {
@@ -51415,6 +51471,11 @@
 				"bounty_hunter": {
 					"name": "Bounty Hunter",
 					"type": "asset",
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
+					},
 					"category": "Path",
 					"color": "#3f7faa",
 					"_source": {
@@ -51510,6 +51571,11 @@
 				"brawler": {
 					"name": "Brawler",
 					"type": "asset",
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
+					},
 					"category": "Path",
 					"color": "#3f7faa",
 					"_source": {
@@ -51606,6 +51672,11 @@
 				"courier": {
 					"name": "Courier",
 					"type": "asset",
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
+					},
 					"category": "Path",
 					"color": "#3f7faa",
 					"_source": {
@@ -51724,6 +51795,14 @@
 							}
 						]
 					},
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						},
+						"core": {
+							"technological": true
+						}
+					},
 					"abilities": [
 						{
 							"text": "When you make a move to attack, destroy, or sabotage by deploying or triggering an explosive device, choose the value of your charge before rolling: normal=1, high=2, or overcharged=3. If either challenge die is equal to or less than the charge, count a weak hit as a strong hit. If not, and your action die is equal to or less than the charge, you are caught up in the destruction or set off an unintended effect; count a weak hit as a miss.",
@@ -51805,6 +51884,14 @@
 								"name": "Shawn Tomkin"
 							}
 						]
+					},
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						},
+						"core": {
+							"supernatural": true
+						}
 					},
 					"options": {
 						"name": {
@@ -51966,6 +52053,11 @@
 							}
 						]
 					},
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
+					},
 					"abilities": [
 						{
 							"text": "When you [Swear an Iron Vow](move:starforged/quest/swear_an_iron_vow) to resolve a dispute, negotiate an agreement, or gather support, add +1. On a strong hit, mark progress on the quest. When you [Fulfill Your Vow](move:starforged/quest/fulfill_your_vow) on a diplomatic mission (formidable or greater) and score a hit, also mark 2 ticks on your bonds legacy track.",
@@ -52058,6 +52150,14 @@
 								"name": "Shawn Tomkin"
 							}
 						]
+					},
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						},
+						"core": {
+							"supernatural": true
+						}
 					},
 					"abilities": [
 						{
@@ -52225,6 +52325,11 @@
 							}
 						]
 					},
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
+					},
 					"abilities": [
 						{
 							"text": "When you fill a box on your background vow progress track, also mark 1 tick on your quests legacy track. When you [Fulfill Your Vow](move:starforged/quest/fulfill_your_vow) on the background vow, your fate is at hand; take an automatic strong hit and envision the final sacrifice that brings your story to an end.",
@@ -52309,6 +52414,14 @@
 								"name": "Shawn Tomkin"
 							}
 						]
+					},
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						},
+						"core": {
+							"supernatural": true
+						}
 					},
 					"abilities": [
 						{
@@ -52403,6 +52516,11 @@
 				"fugitive": {
 					"name": "Fugitive",
 					"type": "asset",
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
+					},
 					"category": "Path",
 					"color": "#3f7faa",
 					"_source": {
@@ -52465,6 +52583,14 @@
 				"gearhead": {
 					"name": "Gearhead",
 					"type": "asset",
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						},
+						"core": {
+							"technological": true
+						}
+					},
 					"category": "Path",
 					"color": "#3f7faa",
 					"_source": {
@@ -52783,6 +52909,14 @@
 							}
 						]
 					},
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						},
+						"core": {
+							"supernatural": true
+						}
+					},
 					"abilities": [
 						{
 							"text": "You are haunted by the spirit of someone whose death you caused or mourn (or both). When you make a move to call upon their insight, add +1. On a weak hit, also [Endure Stress](move:starforged/suffer/endure_stress) (-1). On a strong hit with a match, mark 1 tick on your bonds legacy track.",
@@ -52849,6 +52983,11 @@
 								"name": "Shawn Tomkin"
 							}
 						]
+					},
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
 					},
 					"abilities": [
 						{
@@ -53015,6 +53154,14 @@
 							}
 						]
 					},
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						},
+						"core": {
+							"supernatural": true
+						}
+					},
 					"abilities": [
 						{
 							"text": "You wield kinetic powers. By focusing, you may remotely push, pull, lift, or constrict objects and beings that are about your size or smaller. When you are in a risky situation and draw on your powers to make a move, add +2 and [Lose Momentum](move:starforged/suffer/lose_momentum) (-2).",
@@ -53069,6 +53216,11 @@
 				"leader": {
 					"name": "Leader",
 					"type": "asset",
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
+					},
 					"category": "Path",
 					"color": "#3f7faa",
 					"_source": {
@@ -53373,6 +53525,11 @@
 							}
 						]
 					},
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
+					},
 					"abilities": [
 						{
 							"text": "When you [Aid Your Ally](move:starforged/adventure/aid_your_ally), add +1 and take +1 momentum on a hit. This is in addition to the benefits taken by your ally. On a strong hit with a match, envision how this moment marks a breakthrough or milestone in your relationship; both of you may mark 1 tick on your bonds legacy track.",
@@ -53434,6 +53591,11 @@
 								"name": "Shawn Tomkin"
 							}
 						]
+					},
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
 					},
 					"abilities": [
 						{
@@ -53628,6 +53790,11 @@
 				"navigator": {
 					"name": "Navigator",
 					"type": "asset",
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
+					},
 					"category": "Path",
 					"color": "#3f7faa",
 					"_source": {
@@ -53850,6 +54017,11 @@
 							}
 						]
 					},
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
+					},
 					"abilities": [
 						{
 							"text": "When you [Gather Information](move:starforged/adventure/gather_information) or [Resupply](move:starforged/recover/resupply) by scavenging a wreck, ruin, or abandoned site, add +1 and take +1 momentum on a hit. On a strong hit with a match, you also find something of unique value, significance, or function; envision the nature of this discovery, take +2 momentum, and mark 2 ticks on your discoveries legacy track.",
@@ -53911,6 +54083,20 @@
 														"condition_meter": "supply"
 													}
 												]
+											},
+											{
+												"method": "highest",
+												"roll_options": [
+													{
+														"using": "stat",
+														"stat": "wits"
+													},
+													{
+														"using": "asset_control",
+														"control": "supply",
+														"assets": null
+													}
+												]
 											}
 										]
 									}
@@ -53927,6 +54113,11 @@
 				"scoundrel": {
 					"name": "Scoundrel",
 					"type": "asset",
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
+					},
 					"category": "Path",
 					"color": "#3f7faa",
 					"_source": {
@@ -53999,6 +54190,14 @@
 				"seer": {
 					"name": "Seer",
 					"type": "asset",
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						},
+						"core": {
+							"supernatural": true
+						}
+					},
 					"category": "Path",
 					"color": "#3f7faa",
 					"_source": {
@@ -54093,6 +54292,14 @@
 				"shade": {
 					"name": "Shade",
 					"type": "asset",
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						},
+						"core": {
+							"supernatural": true
+						}
+					},
 					"category": "Path",
 					"color": "#3f7faa",
 					"_source": {
@@ -54206,6 +54413,11 @@
 							}
 						]
 					},
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
+					},
 					"abilities": [
 						{
 							"text": "When you make a move to investigate, track, or stalk an inhuman foe, add +1 and take +1 momentum on a hit.",
@@ -54300,6 +54512,11 @@
 								"name": "Shawn Tomkin"
 							}
 						]
+					},
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
 					},
 					"abilities": [
 						{
@@ -54777,6 +54994,11 @@
 								"name": "Shawn Tomkin"
 							}
 						]
+					},
+					"tags": {
+						"sundered_isles": {
+							"recommended": true
+						}
 					},
 					"abilities": [
 						{

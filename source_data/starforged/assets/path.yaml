@@ -144,6 +144,11 @@ assets:
         type: asset
         <<: *PathAsset
         requirement: If you wear your finely crafted set of personal armor...
+        tags:
+          sundered_isles:
+            recommended: true
+          core:
+            technological: true
         controls:
           # TODO: would this be better included with the asset ability?
           broken: &BrokenControl
@@ -243,6 +248,11 @@ assets:
         name: Augmented
         type: asset
         <<: *PathAsset
+        tags:
+          sundered_isles:
+            recommended: true
+          core:
+            technological: true
         options:
           one:
             label: one
@@ -279,6 +289,9 @@ assets:
         name: Bannersworn
         type: asset
         <<: *PathAsset
+        tags:
+          sundered_isles:
+            recommended: true
         options:
           ideology:
             label: ideology
@@ -329,6 +342,9 @@ assets:
       blademaster:
         name: Blademaster
         type: asset
+        tags:
+          sundered_isles:
+            recommended: true
         <<: *PathAsset
         requirement: If you wield a bladed weapon...
         abilities:
@@ -394,6 +410,9 @@ assets:
       bounty_hunter:
         name: Bounty Hunter
         type: asset
+        tags:
+          sundered_isles:
+            recommended: true
         <<: *PathAsset
         abilities:
           - text: |-
@@ -444,6 +463,9 @@ assets:
       brawler:
         name: Brawler
         type: asset
+        tags:
+          sundered_isles:
+            recommended: true
         <<: *PathAsset
         requirement: If you fight unarmed or with a close quarters weapon...
         abilities:
@@ -496,6 +518,9 @@ assets:
       courier:
         name: Courier
         type: asset
+        tags:
+          sundered_isles:
+            recommended: true
         <<: *PathAsset
         abilities:
           - text: |-
@@ -558,6 +583,11 @@ assets:
         name: Demolitionist
         type: asset
         <<: *PathAsset
+        tags:
+          sundered_isles:
+            recommended: true
+          core:
+            technological: true
         abilities:
           - text: |-
               When you make a move to attack, destroy, or sabotage by deploying or triggering an explosive device, choose the value of your charge before rolling: normal=1, high=2, or overcharged=3. If either challenge die is equal to or less than the charge, count a weak hit as a strong hit. If not, and your action die is equal to or less than the charge, you are caught up in the destruction or set off an unintended effect; count a weak hit as a miss.
@@ -594,6 +624,11 @@ assets:
         name: Devotant
         type: asset
         <<: *PathAsset
+        tags:
+          sundered_isles:
+            recommended: true
+          core:
+            supernatural: true
         options:
           name:
             label: name
@@ -689,6 +724,9 @@ assets:
         name: Diplomat
         type: asset
         <<: *PathAsset
+        tags:
+          sundered_isles:
+            recommended: true
         abilities:
           - text: |-
               When you [Swear an Iron Vow](move:starforged/quest/swear_an_iron_vow) to resolve a dispute, negotiate an agreement, or gather support, add +1. On a strong hit, mark progress on the quest. When you [Fulfill Your Vow](move:starforged/quest/fulfill_your_vow) on a diplomatic mission (formidable or greater) and score a hit, also mark 2 ticks on your bonds legacy track.
@@ -734,6 +772,11 @@ assets:
         name: Empath
         type: asset
         <<: *PathAsset
+        tags:
+          sundered_isles:
+            recommended: true
+          core:
+            supernatural: true
         abilities:
           - text: &EmpathMove |-
               When you read the intent, emotions, or memories of a nearby being, roll +heart. On a strong hit, you glimpse a helpful aspect of their inner self. Envision what you learn, take +2 momentum, and add +1 when you make moves to interact with them in this scene. On a weak hit, the visions are murky; take +1 momentum. On a miss, you reveal a troubling motive or secret; [Pay the Price](move:starforged/fate/pay_the_price).
@@ -816,6 +859,9 @@ assets:
         name: Fated
         type: asset
         <<: *PathAsset
+        tags:
+          sundered_isles:
+            recommended: true
         abilities:
           - text: |-
               When you fill a box on your background vow progress track, also mark 1 tick on your quests legacy track. When you [Fulfill Your Vow](move:starforged/quest/fulfill_your_vow) on the background vow, your fate is at hand; take an automatic strong hit and envision the final sacrifice that brings your story to an end.
@@ -856,6 +902,11 @@ assets:
         name: Firebrand
         type: asset
         <<: *PathAsset
+        tags:
+          sundered_isles:
+            recommended: true
+          core:
+            supernatural: true
         abilities:
           - text: &FirebrandMove |-
               You wield fiery energy. When you rest and meditate to gather this energy, roll +spirit. On a strong hit, take up to +3 fire. On a weak hit, take +2. On a miss, take +2 fire but [Endure Harm](move:starforged/suffer/endure_harm) (-2). Your max fire is +5. When you make moves aided by this energy to attack or overcome obstacles, add +2 and suffer -1 fire.
@@ -917,6 +968,9 @@ assets:
       fugitive:
         name: Fugitive
         type: asset
+        tags:
+          sundered_isles:
+            recommended: true
         <<: *PathAsset
         abilities:
           - text: |-
@@ -955,6 +1009,11 @@ assets:
       gearhead:
         name: Gearhead
         type: asset
+        tags:
+          sundered_isles:
+            recommended: true
+          core:
+            technological: true
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1111,6 +1170,11 @@ assets:
         name: Haunted
         type: asset
         <<: *PathAsset
+        tags:
+          sundered_isles:
+            recommended: true
+          core:
+            supernatural: true
         abilities:
           - text: |-
               You are haunted by the spirit of someone whose death you caused or mourn (or both). When you make a move to call upon their insight, add +1. On a weak hit, also [Endure Stress](move:starforged/suffer/endure_stress) (-1). On a strong hit with a match, mark 1 tick on your bonds legacy track.
@@ -1149,6 +1213,9 @@ assets:
         name: Healer
         type: asset
         <<: *PathAsset
+        tags:
+          sundered_isles:
+            recommended: true
         abilities:
           - text: |-
               When you give medical care to [Heal](move:starforged/recover/heal) yourself or another character, add +1. If you are treating someone other than yourself, take +1 spirit or +1 momentum on a hit.
@@ -1227,6 +1294,11 @@ assets:
         name: Kinetic
         type: asset
         <<: *PathAsset
+        tags:
+          sundered_isles:
+            recommended: true
+          core:
+            supernatural: true
         abilities:
           - text: |-
               You wield kinetic powers. By focusing, you may remotely push, pull, lift, or constrict objects and beings that are about your size or smaller. When you are in a risky situation and draw on your powers to make a move, add +2 and [Lose Momentum](move:starforged/suffer/lose_momentum) (-2).
@@ -1255,6 +1327,9 @@ assets:
       leader:
         name: Leader
         type: asset
+        tags:
+          sundered_isles:
+            recommended: true
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1405,6 +1480,9 @@ assets:
         name: Loyalist
         type: asset
         <<: *PathAsset
+        tags:
+          sundered_isles:
+            recommended: true
         abilities:
           - text: |-
               When you [Aid Your Ally](move:starforged/adventure/aid_your_ally), add +1 and take +1 momentum on a hit. This is in addition to the benefits taken by your ally. On a strong hit with a match, envision how this moment marks a breakthrough or milestone in your relationship; both of you may mark 1 tick on your bonds legacy track.
@@ -1431,6 +1509,9 @@ assets:
         name: Mercenary
         type: asset
         <<: *PathAsset
+        tags:
+          sundered_isles:
+            recommended: true
         abilities:
           - text: |-
               When you agree to wage war or defend others from war in exchange for payment or promises, you may [Swear an Iron Vow](move:starforged/quest/swear_an_iron_vow) to see the mission done. If you do, reroll any dice. When you [Fulfill Your Vow](move:starforged/quest/fulfill_your_vow), make the legacy reward one rank higher (1 extra box if already epic).
@@ -1528,6 +1609,9 @@ assets:
       navigator:
         name: Navigator
         type: asset
+        tags:
+          sundered_isles:
+            recommended: true
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1647,6 +1731,9 @@ assets:
         name: Scavenger
         type: asset
         <<: *PathAsset
+        tags:
+          sundered_isles:
+            recommended: true
         abilities:
           - text: |-
               When you [Gather Information](move:starforged/adventure/gather_information) or [Resupply](move:starforged/recover/resupply) by scavenging a wreck, ruin, or abandoned site, add +1 and take +1 momentum on a hit. On a strong hit with a match, you also find something of unique value, significance, or function; envision the nature of this discovery, take +2 momentum, and mark 2 ticks on your discoveries legacy track.
@@ -1685,9 +1772,19 @@ assets:
                           stat: wits
                         - using: condition_meter
                           condition_meter: supply
+                    # this is to cover use in SI
+                    - method: highest
+                      roll_options:
+                        - using: stat
+                          stat: wits
+                        - using: asset_control
+                          control: supply
       scoundrel:
         name: Scoundrel
         type: asset
+        tags:
+          sundered_isles:
+            recommended: true
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1725,6 +1822,11 @@ assets:
       seer:
         name: Seer
         type: asset
+        tags:
+          sundered_isles:
+            recommended: true
+          core:
+            supernatural: true
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1771,6 +1873,11 @@ assets:
       shade:
         name: Shade
         type: asset
+        tags:
+          sundered_isles:
+            recommended: true
+          core:
+            supernatural: true
         <<: *PathAsset
         abilities:
           - text: |-
@@ -1824,6 +1931,9 @@ assets:
         name: Slayer
         type: asset
         <<: *PathAsset
+        tags:
+          sundered_isles:
+            recommended: true
         abilities:
           - text: |-
               When you make a move to investigate, track, or stalk an inhuman foe, add +1 and take +1 momentum on a hit.
@@ -1866,6 +1976,9 @@ assets:
         name: Sleuth
         type: asset
         <<: *PathAsset
+        tags:
+          sundered_isles:
+            recommended: true
         abilities:
           - text: |-
               When you [Swear an Iron Vow](move:starforged/quest/swear_an_iron_vow) to solve a murder, disappearance, theft, or other mystery, make the rank of the quest no greater than formidable. Then, when you [Gather Information](move:starforged/adventure/gather_information) in the course of the investigation, roll three challenge dice and choose two. If any challenge dice match, you must use those values. On a miss with a match, envision what you learn of a deepening conspiracy or betrayal, make the rank of your quest one higher (no greater than epic), and use the new rank when marking future progress.
@@ -2098,6 +2211,9 @@ assets:
         name: Veteran
         type: asset
         <<: *PathAsset
+        tags:
+          sundered_isles:
+            recommended: true
         abilities:
           - text: |-
               When you are in a fight, increase your momentum reset by 1. Then, if you burn momentum to improve your result, add +1 on your next move.

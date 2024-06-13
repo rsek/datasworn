@@ -13,6 +13,9 @@ assets:
   deed:
     name: Deed Assets
     type: asset_collection
+    color: &DeedAsset.color '#40834f'
+    enhances:
+      - asset_collection:starforged/deed
     _source:
       <<: *Source
     contents:
@@ -21,10 +24,12 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Deed
+        <<: &DeedAsset
+          color: *DeedAsset.color
+          category: Deed
         tags:
-          sundered_isles:
-            starforged_friendly: true
+          starforged:
+            recommended: true
         requirement: Once you accept a connection as a crewmate...
         abilities:
           - enabled: true
@@ -53,10 +58,12 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Deed
+        <<: *DeedAsset
         tags:
-          sundered_isles:
-            starforged_friendly: true
+          starforged:
+            recommended: true
+          core:
+            supernatural: true
         requirement: Once you mark tormented or doomed...
         abilities:
           - enabled: true
@@ -85,10 +92,10 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Deed
+        <<: *DeedAsset
         tags:
-          sundered_isles:
-            starforged_friendly: true
+          starforged:
+            recommended: true
         requirement:
           Once you fill 16 legacy track boxes and take command of a mighty
           fleet...
@@ -138,7 +145,7 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Deed
+        <<: *DeedAsset
         requirement: Once you fill 4 boxes each on your discovery and bonds legacy tracks...
         abilities:
           - enabled: true
@@ -171,10 +178,12 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Deed
+        <<: *DeedAsset
         tags:
-          sundered_isles:
-            starforged_friendly: true
+          starforged:
+            recommended: true
+          core:
+            supernatural: true
         requirement: Once you die or are cursed with undeath...
         abilities:
           - enabled: true

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.sortObjectKeys = exports.sortDataswornKeys = exports.compareObjectKeys = exports.dataSwornKeyOrder = exports.sourceMetadataKeys = exports.rulesKeys = exports.numericKeys = exports.longArrayKeys = exports.longDescriptionKeys = exports.shortDescriptionKeys = exports.usageKeys = exports.discriminatorKeys = exports.relationshipKeys = exports.idKeys = exports.unsortableKeys = void 0;
+exports.sortObjectKeys = exports.sortDataswornKeys = exports.compareObjectKeys = exports.dataswornKeyOrder = exports.sourceMetadataKeys = exports.rulesKeys = exports.numericKeys = exports.longArrayKeys = exports.longDescriptionKeys = exports.shortDescriptionKeys = exports.usageKeys = exports.discriminatorKeys = exports.relationshipKeys = exports.idKeys = exports.unsortableKeys = void 0;
 exports.unsortableKeys = [
     'columns',
     'controls',
@@ -100,7 +100,7 @@ exports.sourceMetadataKeys = [
     'title',
     'url'
 ];
-exports.dataSwornKeyOrder = [
+exports.dataswornKeyOrder = [
     ...exports.idKeys,
     'datasworn_version',
     'type',
@@ -194,7 +194,7 @@ function compareObjectKeys(a, b, keyOrder = [], unsortableKeys) {
     return indexA - indexB;
 }
 exports.compareObjectKeys = compareObjectKeys;
-function sortDataswornKeys(object, sortOrder = exports.dataSwornKeyOrder) {
+function sortDataswornKeys(object, sortOrder = exports.dataswornKeyOrder) {
     return sortObjectKeys(object, sortOrder);
 }
 exports.sortDataswornKeys = sortDataswornKeys;

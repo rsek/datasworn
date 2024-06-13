@@ -13,6 +13,9 @@ assets:
   module:
     name: Module Assets
     type: asset_collection
+    enhances:
+      - asset_collection:starforged/module
+    color: &ModuleAsset.color '#7f5a90'
     _source:
       <<: *Source
     contents:
@@ -21,8 +24,10 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Module
-        shared: true
+        <<: &ModuleAssetBase
+          color: *ModuleAsset.color
+          category: Module
+          shared: true
         abilities:
         - enabled: true
           text: |-
@@ -67,6 +72,10 @@ assets:
                 - using: stat
                   stat: heart
         controls:
+          broken: &Broken
+            label: broken
+            field_type: card_flip
+            disables_asset: true
           hull:
             label: hull
             field_type: condition_meter
@@ -80,8 +89,12 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Module
-        shared: true
+        <<: &ModuleAsset
+          <<: *ModuleAssetBase
+          broken: &Broken
+            label: broken
+            field_type: card_flip
+            disables_asset: true
         abilities:
         - enabled: true
           text: |-
@@ -114,11 +127,12 @@ assets:
       gilded_adornments:
         name: Gilded Adornments
         type: asset
-        tags: { sundered_isles: { starforged_friendly: true } }
+        tags:
+          starforged:
+            recommended: true
         _source:
           <<: *Source
-        category: Module
-        shared: true
+        <<: *ModuleAsset
         abilities:
         - enabled: true
           text: |-
@@ -177,10 +191,12 @@ assets:
       harpoon_cannon:
         name: Harpoon Cannon
         type: asset
+        tags:
+          core:
+            technological: true
         _source:
           <<: *Source
-        category: Module
-        shared: true
+        <<: *ModuleAsset
         abilities:
         - enabled: true
           text: |-
@@ -216,11 +232,12 @@ assets:
       improved_armory:
         name: Improved Armory
         type: asset
-        tags: { sundered_isles: { starforged_friendly: true } }
+        tags:
+          starforged:
+            recommended: true
         _source:
           <<: *Source
-        category: Module
-        shared: true
+        <<: *ModuleAsset
         abilities:
         - enabled: true
           text: |-
@@ -252,11 +269,12 @@ assets:
       improved_galley:
         name: Improved Galley
         type: asset
-        tags: { sundered_isles: { starforged_friendly: true } }
+        tags:
+          starforged:
+            recommended: true
         _source:
           <<: *Source
-        category: Module
-        shared: true
+        <<: *ModuleAsset
         abilities:
         - enabled: true
           text: |-
@@ -282,7 +300,7 @@ assets:
                   - method: player_choice
                     roll_options:
                       - using: asset_control
-                        control: supply_hold
+                        control: supply
                       - using: condition_meter
                         condition_meter: supply
                 text: When you draw on your provisions to indulge yourself and others onboard...
@@ -317,8 +335,7 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Module
-        shared: true
+        <<: *ModuleAsset
         abilities:
         - enabled: true
           text: |-
@@ -354,8 +371,7 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Module
-        shared: true
+        <<: *ModuleAsset
         abilities:
         - enabled: true
           text: |-
@@ -403,8 +419,7 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Module
-        shared: true
+        <<: *ModuleAsset
         abilities:
         - enabled: true
           text: |-
@@ -444,8 +459,7 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Module
-        shared: true
+        <<: *ModuleAsset
         abilities:
         - enabled: true
           text: &ImprovedSickBayMoveText |-
@@ -505,10 +519,12 @@ assets:
       ironclad_hull:
         name: Ironclad Hull
         type: asset
+        tags:
+          core:
+            technological: true
         _source:
           <<: *Source
-        category: Module
-        shared: true
+        <<: *ModuleAsset
         abilities:
         - enabled: true
           text: |-
@@ -563,10 +579,12 @@ assets:
       lucky_figurehead:
         name: Lucky Figurehead
         type: asset
+        tags:
+          core:
+            supernatural: true
         _source:
           <<: *Source
-        category: Module
-        shared: true
+        <<: *ModuleAsset
         options:
           linked_stat:
             label: linked stat
@@ -646,11 +664,12 @@ assets:
       map_room:
         name: Map Room
         type: asset
-        tags: { sundered_isles: { starforged_friendly: true } }
+        tags:
+          starforged:
+            recommended: true
         _source:
           <<: *Source
-        category: Module
-        shared: true
+        <<: *ModuleAsset
         abilities:
         - enabled: true
           text: |-
@@ -682,8 +701,7 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Module
-        shared: true
+        <<: *ModuleAsset
         abilities:
         - enabled: true
           text: |-
@@ -716,10 +734,12 @@ assets:
       submersible_mode:
         name: Submersible Mode
         type: asset
+        tags:
+          core:
+            technological: true
         _source:
           <<: *Source
-        category: Module
-        shared: true
+        <<: *ModuleAsset
         abilities:
         - enabled: true
           text: |-
@@ -768,11 +788,14 @@ assets:
       trophy_vault:
         name: Trophy Vault
         type: asset
-        tags: { sundered_isles: { starforged_friendly: true } }
+        tags:
+          starforged:
+            recommended: true
+          core:
+            supernatural: true
         _source:
           <<: *Source
-        category: Module
-        shared: true
+        <<: *ModuleAsset
         abilities:
         - enabled: true
           text: |-

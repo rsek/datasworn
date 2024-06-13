@@ -29,6 +29,9 @@ assets:
             <<: *Source
             title: 'Ironsworn: Starforged Assets'
         name: Bonded
+        tags:
+          sundered_isles:
+            recommended: true
         type: asset
         options:
           bond_mate:
@@ -83,6 +86,9 @@ assets:
       homesteader:
         <<: *DeedAsset
         name: Homesteader
+        tags:
+          sundered_isles:
+            recommended: true
         type: asset
         options: &Options_Name
           name:
@@ -191,6 +197,9 @@ assets:
                       method: null
       oathbreaker:
         name: Oathbreaker
+        tags:
+          sundered_isles:
+            recommended: true
         type: asset
         <<: *DeedAsset
         requirement: Once you [Forsake Your Vow](move:starforged/quest/forsake_your_vow)...
@@ -237,6 +246,9 @@ assets:
                       roll_options: null
       revenant:
         name: Revenant
+        tags:
+          sundered_isles:
+            recommended: true
         type: asset
         <<: *DeedAsset
         requirement: Once you [Face Death](move:starforged/threshold/face_death)...
@@ -280,6 +292,9 @@ assets:
                       method: player_choice
       survivor:
         name: Survivor
+        tags:
+          sundered_isles:
+            recommended: true
         type: asset
         <<: *DeedAsset
         requirement: Once you mark traumatized or permanently harmed...
@@ -304,6 +319,9 @@ assets:
             # TODO: modify impacts interface?
       vanguard:
         name: Vanguard
+        tags:
+          sundered_isles:
+            recommended: true
         type: asset
         <<: *DeedAsset
         requirement: Once you fill 6 boxes on your discoveries legacy track...

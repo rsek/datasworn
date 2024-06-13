@@ -12,7 +12,10 @@ ruleset: starforged
 assets:
   command_vehicle:
     name: Command Vehicle Assets
+    color: &CommandVehicle.color '#9aa3ad'
     type: asset_collection
+    enhances:
+      - asset_collection:starforged/command_vehicle
     _source:
       <<: *Source
     contents:
@@ -20,11 +23,13 @@ assets:
         name: Flagship
         type: asset
         category: Command Vehicle
-        shared: true
-        options: &NameField
-          name:
-            field_type: text
-            label: name
+        color: *CommandVehicle.color
+        <<: &VehicleAsset
+          shared: true
+          options: &NameField
+            name:
+              field_type: text
+              label: name
         abilities:
         - enabled: true
           text: |-
@@ -82,17 +87,21 @@ assets:
   support_vehicle:
     type: asset_collection
     name: Support Vehicle Assets
+    color: &SupportVehicleAsset.color '#495790'
+    enhances:
+      - asset_collection:starforged/support_vehicle
     _source:
       <<: *Source
     contents:
       captains_boat:
         name: Captain's Boat
         type: asset
-        category: Support Vehicle
-        options: *NameField
+        <<: &SupportVehicleAsset
+          <<: *VehicleAsset
+          category: Support Vehicle
+          color: *SupportVehicleAsset.color
         _source:
           <<: *Source
-        shared: true
         abilities:
         - enabled: true
           text: |-
@@ -145,11 +154,12 @@ assets:
       diving_bell:
         name: Diving Bell
         type: asset
+        tags:
+          core:
+            technological: true
         _source:
           <<: *Source
-        category: Support Vehicle
-        options: *NameField
-        shared: true
+        <<: *SupportVehicleAsset
         abilities:
         - enabled: true
           text: |-
@@ -190,11 +200,12 @@ assets:
       flying_machine:
         name: Flying Machine
         type: asset
+        tags:
+          core:
+            technological: true
         _source:
           <<: *Source
-        category: Support Vehicle
-        options: *NameField
-        shared: true
+        <<: *SupportVehicleAsset
         abilities:
         - enabled: true
           text: |-
@@ -230,9 +241,7 @@ assets:
         type: asset
         _source:
           <<: *Source
-        category: Support Vehicle
-        options: *NameField
-        shared: true
+        <<: *SupportVehicleAsset
         abilities:
         - text: |-
             Your longboat transports crew, passengers, and cargo to and from your flagship. When you (or a landing party under your command) use the craft to haul provisions as you [Resupply](move:starforged/recover/resupply), you may roll +integrity. If you do, take +1 supply or +1 momentum on a hit.
