@@ -11,7 +11,7 @@ namespace Datasworn
         public string ValueType_ { get => "enum"; }
 
         [JsonPropertyName("applies_to")]
-        public IList<ObjectType> AppliesTo { get; set; }
+        public IList<TaggableNodeType> AppliesTo { get; set; }
 
         [JsonPropertyName("array")]
         public bool Array_ { get; set; }

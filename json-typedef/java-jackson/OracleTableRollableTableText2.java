@@ -28,7 +28,7 @@ public class OracleTableRollableTableText2 extends OracleTableRollable {
     private Label name;
 
     @JsonProperty("rows")
-    private List<OracleTableRowText2> rows;
+    private List<OracleRollableRowText2> rows;
 
     @JsonProperty("type")
     private OracleTableRollableTableText2Type type;
@@ -164,7 +164,7 @@ public class OracleTableRollableTableText2 extends OracleTableRollable {
      * Getter for rows.<p>
      * An array of objects, each representing a single row of the table.
      */
-    public List<OracleTableRowText2> getRows() {
+    public List<OracleRollableRowText2> getRows() {
         return rows;
     }
 
@@ -172,7 +172,7 @@ public class OracleTableRollableTableText2 extends OracleTableRollable {
      * Setter for rows.<p>
      * An array of objects, each representing a single row of the table.
      */
-    public void setRows(List<OracleTableRowText2> rows) {
+    public void setRows(List<OracleRollableRowText2> rows) {
         this.rows = rows;
     }
 

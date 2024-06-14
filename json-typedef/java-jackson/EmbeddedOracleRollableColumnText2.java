@@ -19,7 +19,7 @@ public class EmbeddedOracleRollableColumnText2 extends EmbeddedOracleRollable {
     private Label name;
 
     @JsonProperty("rows")
-    private List<OracleTableRowText2> rows;
+    private List<OracleRollableRowText2> rows;
 
     @JsonProperty("type")
     private EmbeddedOracleRollableColumnText2Type type;
@@ -105,7 +105,7 @@ public class EmbeddedOracleRollableColumnText2 extends EmbeddedOracleRollable {
      * Getter for rows.<p>
      * An array of objects, each representing a single row of the table.
      */
-    public List<OracleTableRowText2> getRows() {
+    public List<OracleRollableRowText2> getRows() {
         return rows;
     }
 
@@ -113,7 +113,7 @@ public class EmbeddedOracleRollableColumnText2 extends EmbeddedOracleRollable {
      * Setter for rows.<p>
      * An array of objects, each representing a single row of the table.
      */
-    public void setRows(List<OracleTableRowText2> rows) {
+    public void setRows(List<OracleRollableRowText2> rows) {
         this.rows = rows;
     }
 

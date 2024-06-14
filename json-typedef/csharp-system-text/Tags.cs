@@ -8,7 +8,8 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// A dictionary of tags, keyed by the RulesetID that the tags are from.
+    /// A dictionary of tags, keyed by the RulesPackageId that the tags are
+    /// from.
     /// </summary>
     [JsonConverter(typeof(TagsJsonConverter))]
     public class Tags

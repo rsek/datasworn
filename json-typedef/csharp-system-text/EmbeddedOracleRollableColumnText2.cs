@@ -29,7 +29,7 @@ namespace Datasworn
         /// An array of objects, each representing a single row of the table.
         /// </summary>
         [JsonPropertyName("rows")]
-        public IList<OracleTableRowText2> Rows { get; set; }
+        public IList<OracleRollableRowText2> Rows { get; set; }
 
         [JsonPropertyName("type")]
         public EmbeddedOracleRollableColumnText2Type Type_ { get; set; }

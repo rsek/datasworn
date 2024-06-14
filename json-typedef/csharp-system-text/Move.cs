@@ -21,13 +21,13 @@ namespace Datasworn
             switch (tagValue)
             {
                 case "action_roll":
-                    return JsonSerializer.Deserialize<MoveActionRoll>(ref readerCopy, options);
+                    return JsonSerializer.Deserialize<MoveActionRoll0>(ref readerCopy, options);
                 case "no_roll":
-                    return JsonSerializer.Deserialize<MoveNoRoll>(ref readerCopy, options);
+                    return JsonSerializer.Deserialize<MoveNoRoll0>(ref readerCopy, options);
                 case "progress_roll":
-                    return JsonSerializer.Deserialize<MoveProgressRoll>(ref readerCopy, options);
+                    return JsonSerializer.Deserialize<MoveProgressRoll0>(ref readerCopy, options);
                 case "special_track":
-                    return JsonSerializer.Deserialize<MoveSpecialTrack>(ref readerCopy, options);
+                    return JsonSerializer.Deserialize<MoveSpecialTrack0>(ref readerCopy, options);
                 default:
                     throw new ArgumentException(String.Format("Bad RollType value: {0}", tagValue));
             }

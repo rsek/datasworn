@@ -5,11 +5,14 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// Represents an entry in a site denizen matrix. Denizen matrices are
+    /// Represents an entry in a delve site denizen matrix. Denizen matrices are
     /// described in Ironsworn: Delve.
     /// </summary>
     public class DelveSiteDenizen
     {
+        [JsonPropertyName("_id")]
+        public DelveSiteDenizenId Id { get; set; }
+
         [JsonPropertyName("frequency")]
         public DelveSiteDenizenFrequency Frequency { get; set; }
 

@@ -14,7 +14,7 @@ import java.util.Map;
  * see MoveSpecialTrack.
  */
 @JsonSerialize
-public class MoveProgressRoll extends Move {
+public class MoveProgressRoll {
     @JsonProperty("_id")
     private MoveId id;
 
@@ -30,6 +30,9 @@ public class MoveProgressRoll extends Move {
     @JsonProperty("outcomes")
     private MoveOutcomes outcomes;
 
+    @JsonProperty("roll_type")
+    private MoveProgressRollRollType rollType;
+
     @JsonProperty("text")
     private MarkdownString text;
 
@@ -40,7 +43,7 @@ public class MoveProgressRoll extends Move {
     private TriggerProgressRoll trigger;
 
     @JsonProperty("type")
-    private MoveProgressRollType type;
+    private MoveProgressRollType0 type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
@@ -150,6 +153,24 @@ public class MoveProgressRoll extends Move {
     }
 
     /**
+     * Getter for rollType.<p>
+     * A progress move that rolls on a standard progress track type (defined by
+     * this move).
+     */
+    public MoveProgressRollRollType getRollType() {
+        return rollType;
+    }
+
+    /**
+     * Setter for rollType.<p>
+     * A progress move that rolls on a standard progress track type (defined by
+     * this move).
+     */
+    public void setRollType(MoveProgressRollRollType rollType) {
+        this.rollType = rollType;
+    }
+
+    /**
      * Getter for text.<p>
      * The complete rules text of the move.
      */
@@ -202,14 +223,14 @@ public class MoveProgressRoll extends Move {
     /**
      * Getter for type.<p>
      */
-    public MoveProgressRollType getType() {
+    public MoveProgressRollType0 getType() {
         return type;
     }
 
     /**
      * Setter for type.<p>
      */
-    public void setType(MoveProgressRollType type) {
+    public void setType(MoveProgressRollType0 type) {
         this.type = type;
     }
 

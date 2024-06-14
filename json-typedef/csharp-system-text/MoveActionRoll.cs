@@ -8,11 +8,8 @@ namespace Datasworn
     /// <summary>
     /// A move that makes an action roll.
     /// </summary>
-    public class MoveActionRoll : Move
+    public class MoveActionRoll
     {
-        [JsonPropertyName("roll_type")]
-        public string RollType { get => "action_roll"; }
-
         /// <summary>
         /// The unique Datasworn ID for this item.
         /// </summary>
@@ -42,6 +39,12 @@ namespace Datasworn
         public MoveOutcomes Outcomes { get; set; }
 
         /// <summary>
+        /// A move that makes an action roll.
+        /// </summary>
+        [JsonPropertyName("roll_type")]
+        public MoveActionRollRollType RollType { get; set; }
+
+        /// <summary>
         /// The complete rules text of the move.
         /// </summary>
         [JsonPropertyName("text")]
@@ -54,7 +57,7 @@ namespace Datasworn
         public TriggerActionRoll Trigger { get; set; }
 
         [JsonPropertyName("type")]
-        public MoveActionRollType Type_ { get; set; }
+        public MoveActionRollType0 Type_ { get; set; }
 
         /// <summary>
         /// Implementation hints or other developer-facing comments on this

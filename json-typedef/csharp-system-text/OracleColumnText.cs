@@ -35,7 +35,7 @@ namespace Datasworn
         /// An array of objects, each representing a single row of the table.
         /// </summary>
         [JsonPropertyName("rows")]
-        public IList<OracleTableRowText> Rows { get; set; }
+        public IList<OracleRollableRowText> Rows { get; set; }
 
         [JsonPropertyName("type")]
         public OracleColumnTextType Type_ { get; set; }

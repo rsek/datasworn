@@ -5,33 +5,36 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// Provides string templates that may be used in place of the static
-    /// row text from `OracleTableRow#text`, `OracleTableRow#text2`, and
-    /// `OracleTableRow#text3`.
+    /// Provides string templates that may be used in place of the static row
+    /// text from `OracleRollableRow#text`, `OracleRollableRow#text2`, and
+    /// `OracleRollableRow#text3`.
     /// 
     ///   These strings are formatted in Markdown, but use a special syntax
     /// for their placeholders: `{{text>some_oracle_rollable_id}}`. The
     /// placeholder should be replaced with the value of a rolled (or selected)
-    /// `OracleTableRow#text` from the target oracle rollable ID.
+    /// `OracleRollableRow#text` from the target oracle rollable ID.
     /// </summary>
     public class OracleRollTemplate
     {
         /// <summary>
-        /// A string template that may be used in place of OracleTableRow#text.
+        /// A string template that may be used in place of
+        /// OracleRollableRow#text.
         /// </summary>
         [JsonPropertyName("text")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public TemplateString? Text { get; set; }
 
         /// <summary>
-        /// A string template that may be used in place of OracleTableRow#text2.
+        /// A string template that may be used in place of
+        /// OracleRollableRow#text2.
         /// </summary>
         [JsonPropertyName("text2")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public TemplateString? Text2 { get; set; }
 
         /// <summary>
-        /// A string template that may be used in place of OracleTableRow#text3.
+        /// A string template that may be used in place of
+        /// OracleRollableRow#text3.
         /// </summary>
         [JsonPropertyName("text3")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

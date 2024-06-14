@@ -12,7 +12,7 @@ import java.util.Map;
  * A move that makes no progress rolls or action rolls.
  */
 @JsonSerialize
-public class MoveNoRoll extends Move {
+public class MoveNoRoll {
     @JsonProperty("_id")
     private MoveId id;
 
@@ -25,6 +25,9 @@ public class MoveNoRoll extends Move {
     @JsonProperty("name")
     private Label name;
 
+    @JsonProperty("roll_type")
+    private MoveNoRollRollType rollType;
+
     @JsonProperty("text")
     private MarkdownString text;
 
@@ -32,7 +35,7 @@ public class MoveNoRoll extends Move {
     private TriggerNoRoll trigger;
 
     @JsonProperty("type")
-    private MoveNoRollType type;
+    private MoveNoRollType0 type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
@@ -128,6 +131,22 @@ public class MoveNoRoll extends Move {
     }
 
     /**
+     * Getter for rollType.<p>
+     * A move that makes no action rolls or progress rolls.
+     */
+    public MoveNoRollRollType getRollType() {
+        return rollType;
+    }
+
+    /**
+     * Setter for rollType.<p>
+     * A move that makes no action rolls or progress rolls.
+     */
+    public void setRollType(MoveNoRollRollType rollType) {
+        this.rollType = rollType;
+    }
+
+    /**
      * Getter for text.<p>
      * The complete rules text of the move.
      */
@@ -162,14 +181,14 @@ public class MoveNoRoll extends Move {
     /**
      * Getter for type.<p>
      */
-    public MoveNoRollType getType() {
+    public MoveNoRollType0 getType() {
         return type;
     }
 
     /**
      * Setter for type.<p>
      */
-    public void setType(MoveNoRollType type) {
+    public void setType(MoveNoRollType0 type) {
         this.type = type;
     }
 

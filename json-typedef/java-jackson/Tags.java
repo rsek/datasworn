@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Map;
 
 /**
- * A dictionary of tags, keyed by the RulesetID that the tags are from.
+ * A dictionary of tags, keyed by the RulesPackageId that the tags are from.
  */
 public class Tags {
     @JsonValue

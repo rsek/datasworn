@@ -9,7 +9,7 @@ import java.util.List;
 @JsonSerialize
 public class TagRuleEnum extends TagRule {
     @JsonProperty("applies_to")
-    private List<ObjectType> appliesTo;
+    private List<TaggableNodeType> appliesTo;
 
     @JsonProperty("array")
     private Boolean array;
@@ -26,14 +26,14 @@ public class TagRuleEnum extends TagRule {
     /**
      * Getter for appliesTo.<p>
      */
-    public List<ObjectType> getAppliesTo() {
+    public List<TaggableNodeType> getAppliesTo() {
         return appliesTo;
     }
 
     /**
      * Setter for appliesTo.<p>
      */
-    public void setAppliesTo(List<ObjectType> appliesTo) {
+    public void setAppliesTo(List<TaggableNodeType> appliesTo) {
         this.appliesTo = appliesTo;
     }
 

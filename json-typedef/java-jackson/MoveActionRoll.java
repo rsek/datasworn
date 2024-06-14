@@ -12,7 +12,7 @@ import java.util.Map;
  * A move that makes an action roll.
  */
 @JsonSerialize
-public class MoveActionRoll extends Move {
+public class MoveActionRoll {
     @JsonProperty("_id")
     private MoveId id;
 
@@ -28,6 +28,9 @@ public class MoveActionRoll extends Move {
     @JsonProperty("outcomes")
     private MoveOutcomes outcomes;
 
+    @JsonProperty("roll_type")
+    private MoveActionRollRollType rollType;
+
     @JsonProperty("text")
     private MarkdownString text;
 
@@ -35,7 +38,7 @@ public class MoveActionRoll extends Move {
     private TriggerActionRoll trigger;
 
     @JsonProperty("type")
-    private MoveActionRollType type;
+    private MoveActionRollType0 type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
@@ -145,6 +148,22 @@ public class MoveActionRoll extends Move {
     }
 
     /**
+     * Getter for rollType.<p>
+     * A move that makes an action roll.
+     */
+    public MoveActionRollRollType getRollType() {
+        return rollType;
+    }
+
+    /**
+     * Setter for rollType.<p>
+     * A move that makes an action roll.
+     */
+    public void setRollType(MoveActionRollRollType rollType) {
+        this.rollType = rollType;
+    }
+
+    /**
      * Getter for text.<p>
      * The complete rules text of the move.
      */
@@ -179,14 +198,14 @@ public class MoveActionRoll extends Move {
     /**
      * Getter for type.<p>
      */
-    public MoveActionRollType getType() {
+    public MoveActionRollType0 getType() {
         return type;
     }
 
     /**
      * Setter for type.<p>
      */
-    public void setType(MoveActionRollType type) {
+    public void setType(MoveActionRollType0 type) {
         this.type = type;
     }
 

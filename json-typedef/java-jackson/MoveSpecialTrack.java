@@ -14,7 +14,7 @@ import java.util.Map;
  * tracks, see MoveProgressRoll instead.
  */
 @JsonSerialize
-public class MoveSpecialTrack extends Move {
+public class MoveSpecialTrack {
     @JsonProperty("_id")
     private MoveId id;
 
@@ -30,6 +30,9 @@ public class MoveSpecialTrack extends Move {
     @JsonProperty("outcomes")
     private MoveOutcomes outcomes;
 
+    @JsonProperty("roll_type")
+    private MoveSpecialTrackRollType rollType;
+
     @JsonProperty("text")
     private MarkdownString text;
 
@@ -37,7 +40,7 @@ public class MoveSpecialTrack extends Move {
     private TriggerSpecialTrack trigger;
 
     @JsonProperty("type")
-    private MoveSpecialTrackType type;
+    private MoveSpecialTrackType0 type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
@@ -147,6 +150,24 @@ public class MoveSpecialTrack extends Move {
     }
 
     /**
+     * Getter for rollType.<p>
+     * A progress move that rolls on one or more special tracks, like Bonds
+     * (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
+     */
+    public MoveSpecialTrackRollType getRollType() {
+        return rollType;
+    }
+
+    /**
+     * Setter for rollType.<p>
+     * A progress move that rolls on one or more special tracks, like Bonds
+     * (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
+     */
+    public void setRollType(MoveSpecialTrackRollType rollType) {
+        this.rollType = rollType;
+    }
+
+    /**
      * Getter for text.<p>
      * The complete rules text of the move.
      */
@@ -181,14 +202,14 @@ public class MoveSpecialTrack extends Move {
     /**
      * Getter for type.<p>
      */
-    public MoveSpecialTrackType getType() {
+    public MoveSpecialTrackType0 getType() {
         return type;
     }
 
     /**
      * Setter for type.<p>
      */
-    public void setType(MoveSpecialTrackType type) {
+    public void setType(MoveSpecialTrackType0 type) {
         this.type = type;
     }
 

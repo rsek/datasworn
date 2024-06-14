@@ -323,6 +323,333 @@
 		"description": "Describes game rules compatible with the Ironsworn tabletop role-playing game by Shawn Tomkin."
 	},
 	"definitions": {
+		"Ruleset": {
+			"properties": {
+				"_id": {
+					"ref": "RulesetId"
+				},
+				"type": {
+					"enum": [
+						"ruleset"
+					]
+				},
+				"datasworn_version": {
+					"enum": [
+						"0.1.0"
+					],
+					"metadata": {
+						"description": "The version of the Datasworn format used by this data.",
+						"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+					}
+				},
+				"title": {
+					"type": "string",
+					"metadata": {
+						"description": "The title of the source document.",
+						"examples": [
+							"Ironsworn Rulebook",
+							"Ironsworn Assets Master Set",
+							"Ironsworn: Delve",
+							"Ironsworn: Starforged Rulebook",
+							"Ironsworn: Starforged Assets",
+							"Sundered Isles"
+						]
+					}
+				},
+				"authors": {
+					"elements": {
+						"ref": "AuthorInfo"
+					},
+					"metadata": {
+						"description": "Lists authors credited by the source material."
+					}
+				},
+				"date": {
+					"type": "timestamp",
+					"metadata": {
+						"description": "The date of the source documents's last update, formatted YYYY-MM-DD. Required because it's used to determine whether the data needs updating."
+					}
+				},
+				"url": {
+					"ref": "WebUrl",
+					"metadata": {
+						"description": "A URL where the source document is available.",
+						"examples": [
+							"https://ironswornrpg.com"
+						]
+					}
+				},
+				"license": {
+					"ref": "License"
+				},
+				"rules": {
+					"ref": "Rules"
+				},
+				"oracles": {
+					"values": {
+						"ref": "OracleTablesCollection"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections."
+					}
+				},
+				"moves": {
+					"values": {
+						"ref": "MoveCategory"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "A dictionary object containing move categories, which contain moves."
+					}
+				},
+				"assets": {
+					"values": {
+						"ref": "AssetCollection"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "A dictionary object containing asset collections, which contain assets."
+					}
+				}
+			},
+			"optionalProperties": {
+				"description": {
+					"ref": "MarkdownString"
+				},
+				"atlas": {
+					"values": {
+						"ref": "AtlasCollection"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "A dictionary object containing atlas collections, which contain atlas entries."
+					}
+				},
+				"npcs": {
+					"values": {
+						"ref": "NpcCollection"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "A dictionary object containing NPC collections, which contain NPCs."
+					}
+				},
+				"truths": {
+					"values": {
+						"ref": "Truth"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "A dictionary object of truth categories."
+					}
+				},
+				"rarities": {
+					"values": {
+						"ref": "Rarity"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "A dictionary object containing rarities, like those presented in Ironsworn: Delve."
+					}
+				},
+				"delve_sites": {
+					"values": {
+						"ref": "DelveSite"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "A dictionary object of delve sites, like the premade delve sites presented in Ironsworn: Delve"
+					}
+				},
+				"site_themes": {
+					"values": {
+						"ref": "DelveSiteTheme"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "A dictionary object containing delve site themes."
+					}
+				},
+				"site_domains": {
+					"values": {
+						"ref": "DelveSiteDomain"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "A dictionary object containing delve site domains."
+					}
+				}
+			},
+			"metadata": {
+				"description": "A standalone Datasworn package that describes its own ruleset."
+			}
+		},
+		"Expansion": {
+			"properties": {
+				"_id": {
+					"ref": "ExpansionId"
+				},
+				"type": {
+					"enum": [
+						"expansion"
+					]
+				},
+				"datasworn_version": {
+					"enum": [
+						"0.1.0"
+					],
+					"metadata": {
+						"description": "The version of the Datasworn format used by this data.",
+						"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+					}
+				},
+				"ruleset": {
+					"ref": "RulesetId"
+				}
+			},
+			"optionalProperties": {
+				"description": {
+					"ref": "MarkdownString"
+				},
+				"title": {
+					"type": "string",
+					"metadata": {
+						"description": "The title of the source document.",
+						"examples": [
+							"Ironsworn Rulebook",
+							"Ironsworn Assets Master Set",
+							"Ironsworn: Delve",
+							"Ironsworn: Starforged Rulebook",
+							"Ironsworn: Starforged Assets",
+							"Sundered Isles"
+						]
+					}
+				},
+				"authors": {
+					"elements": {
+						"ref": "AuthorInfo"
+					},
+					"metadata": {
+						"description": "Lists authors credited by the source material."
+					}
+				},
+				"date": {
+					"type": "timestamp",
+					"metadata": {
+						"description": "The date of the source documents's last update, formatted YYYY-MM-DD. Required because it's used to determine whether the data needs updating."
+					}
+				},
+				"url": {
+					"ref": "WebUrl",
+					"metadata": {
+						"description": "A URL where the source document is available.",
+						"examples": [
+							"https://ironswornrpg.com"
+						]
+					}
+				},
+				"license": {
+					"ref": "License"
+				},
+				"oracles": {
+					"values": {
+						"ref": "OracleTablesCollection"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections."
+					}
+				},
+				"moves": {
+					"values": {
+						"ref": "MoveCategory"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "A dictionary object containing move categories, which contain moves."
+					}
+				},
+				"assets": {
+					"values": {
+						"ref": "AssetCollection"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "A dictionary object containing asset collections, which contain assets."
+					}
+				},
+				"atlas": {
+					"values": {
+						"ref": "AtlasCollection"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "A dictionary object containing atlas collections, which contain atlas entries."
+					}
+				},
+				"npcs": {
+					"values": {
+						"ref": "NpcCollection"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "A dictionary object containing NPC collections, which contain NPCs."
+					}
+				},
+				"truths": {
+					"values": {
+						"ref": "Truth"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "A dictionary object of truth categories."
+					}
+				},
+				"rarities": {
+					"values": {
+						"ref": "Rarity"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "A dictionary object containing rarities, like those presented in Ironsworn: Delve."
+					}
+				},
+				"delve_sites": {
+					"values": {
+						"ref": "DelveSite"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "A dictionary object of delve sites, like the premade delve sites presented in Ironsworn: Delve"
+					}
+				},
+				"site_themes": {
+					"values": {
+						"ref": "DelveSiteTheme"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "A dictionary object containing delve site themes."
+					}
+				},
+				"site_domains": {
+					"values": {
+						"ref": "DelveSiteDomain"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "A dictionary object containing delve site domains."
+					}
+				},
+				"rules": {
+					"ref": "RulesExpansion"
+				}
+			},
+			"metadata": {
+				"description": "A Datasworn package that relies on an external package to provide its ruleset."
+			}
+		},
 		"RulesetId": {
 			"type": "string",
 			"metadata": {
@@ -352,6 +679,146 @@
 				"pattern": "^[a-z][a-z_]*$"
 			}
 		},
+		"AtlasEntryId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing an AtlasEntry object.",
+				"pattern": "^atlas_entry:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
+			}
+		},
+		"AtlasEntryIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded AtlasEntryId that can be used to match multiple AtlasEntry objects.",
+				"pattern": "^atlas_entry:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
+			}
+		},
+		"NpcId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing a Npc object.",
+				"pattern": "^npc:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
+			}
+		},
+		"NpcIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded NpcId that can be used to match multiple Npc objects.",
+				"pattern": "^npc:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
+			}
+		},
+		"OracleRollableId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing an OracleRollable object.",
+				"pattern": "^oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
+			}
+		},
+		"OracleRollableIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded OracleRollableId that can be used to match multiple OracleRollable objects.",
+				"pattern": "^oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
+			}
+		},
+		"AssetAbilityOracleRollableId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing an AssetAbilityOracleRollable object.",
+				"pattern": "^asset\\.ability\\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
+			}
+		},
+		"AssetAbilityOracleRollableIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded AssetAbilityOracleRollableId that can be used to match multiple AssetAbilityOracleRollable objects.",
+				"pattern": "^asset\\.ability\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
+			}
+		},
+		"MoveOracleRollableId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing a MoveOracleRollable object.",
+				"pattern": "^move\\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.([a-z][a-z_]*|\\*)$"
+			}
+		},
+		"MoveOracleRollableIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded MoveOracleRollableId that can be used to match multiple MoveOracleRollable objects.",
+				"pattern": "^move\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.([a-z][a-z_]*|\\*)$"
+			}
+		},
+		"TruthOptionOracleRollableId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing a TruthOptionOracleRollable object.",
+				"pattern": "^truth\\.option\\.oracle_rollable:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
+			}
+		},
+		"TruthOptionOracleRollableIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded TruthOptionOracleRollableId that can be used to match multiple TruthOptionOracleRollable objects.",
+				"pattern": "^truth\\.option\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
+			}
+		},
+		"OracleRollableRowId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing an OracleRollableRow object.",
+				"pattern": "^oracle_rollable\\.row:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.(\\d+)$"
+			}
+		},
+		"OracleRollableRowIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded OracleRollableRowId that can be used to match multiple OracleRollableRow objects.",
+				"pattern": "^oracle_rollable\\.row:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.(\\d+|\\*)$"
+			}
+		},
+		"AssetAbilityOracleRollableRowId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing an AssetAbilityOracleRollableRow object.",
+				"pattern": "^asset\\.ability\\.oracle_rollable\\.row:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.(\\d+)\\.([a-z][a-z_]*|\\*)\\.(\\d+)$"
+			}
+		},
+		"AssetAbilityOracleRollableRowIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded AssetAbilityOracleRollableRowId that can be used to match multiple AssetAbilityOracleRollableRow objects.",
+				"pattern": "^asset\\.ability\\.oracle_rollable\\.row:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)\\.(\\d+|\\*)$"
+			}
+		},
+		"MoveOracleRollableRowId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing a MoveOracleRollableRow object.",
+				"pattern": "^move\\.oracle_rollable\\.row:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.([a-z][a-z_]*|\\*)\\.(\\d+)$"
+			}
+		},
+		"MoveOracleRollableRowIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded MoveOracleRollableRowId that can be used to match multiple MoveOracleRollableRow objects.",
+				"pattern": "^move\\.oracle_rollable\\.row:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.([a-z][a-z_]*|\\*)\\.(\\d+|\\*)$"
+			}
+		},
+		"TruthOptionOracleRollableRowId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing a TruthOptionOracleRollableRow object.",
+				"pattern": "^truth\\.option\\.oracle_rollable\\.row:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)\\.([a-z][a-z_]*|\\*)\\.(\\d+)$"
+			}
+		},
+		"TruthOptionOracleRollableRowIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded TruthOptionOracleRollableRowId that can be used to match multiple TruthOptionOracleRollableRow objects.",
+				"pattern": "^truth\\.option\\.oracle_rollable\\.row:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)\\.(\\d+|\\*)$"
+			}
+		},
 		"AssetId": {
 			"type": "string",
 			"metadata": {
@@ -366,20 +833,6 @@
 				"pattern": "^asset:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
 			}
 		},
-		"AssetCollectionId": {
-			"type": "string",
-			"metadata": {
-				"description": "A unique ID representing an AssetCollection object.",
-				"pattern": "^asset_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
-			}
-		},
-		"AssetCollectionIdWildcard": {
-			"type": "string",
-			"metadata": {
-				"description": "A wildcarded AssetCollectionId that can be used to match multiple AssetCollection objects.",
-				"pattern": "^asset_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
-			}
-		},
 		"AssetAbilityId": {
 			"type": "string",
 			"metadata": {
@@ -387,46 +840,25 @@
 				"pattern": "^asset\\.ability:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.(\\d+)$"
 			}
 		},
-		"AtlasCollectionId": {
+		"AssetAbilityIdWildcard": {
 			"type": "string",
 			"metadata": {
-				"description": "A unique ID representing an AtlasCollection object.",
-				"pattern": "^atlas_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
+				"description": "A wildcarded AssetAbilityId that can be used to match multiple AssetAbility objects.",
+				"pattern": "^asset\\.ability:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.(\\d+|\\*)$"
 			}
 		},
-		"AtlasCollectionIdWildcard": {
+		"AssetAbilityMoveId": {
 			"type": "string",
 			"metadata": {
-				"description": "A wildcarded AtlasCollectionId that can be used to match multiple AtlasCollection objects.",
-				"pattern": "^atlas_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
+				"description": "A unique ID representing an AssetAbilityMove object.",
+				"pattern": "^asset\\.ability\\.move:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
 			}
 		},
-		"AtlasEntryId": {
+		"AssetAbilityMoveIdWildcard": {
 			"type": "string",
 			"metadata": {
-				"description": "A unique ID representing an AtlasEntry object.",
-				"pattern": "^atlas_entry:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
-			}
-		},
-		"DelveSiteId": {
-			"type": "string",
-			"metadata": {
-				"description": "A unique ID representing a DelveSite object.",
-				"pattern": "^delve_site:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
-			}
-		},
-		"DelveSiteDomainId": {
-			"type": "string",
-			"metadata": {
-				"description": "A unique ID representing a DelveSiteDomain object.",
-				"pattern": "^delve_site_domain:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
-			}
-		},
-		"DelveSiteThemeId": {
-			"type": "string",
-			"metadata": {
-				"description": "A unique ID representing a DelveSiteTheme object.",
-				"pattern": "^delve_site_theme:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
+				"description": "A wildcarded AssetAbilityMoveId that can be used to match multiple AssetAbilityMove objects.",
+				"pattern": "^asset\\.ability\\.move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
 			}
 		},
 		"MoveId": {
@@ -443,25 +875,18 @@
 				"pattern": "^move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
 			}
 		},
-		"MoveCategoryId": {
+		"AtlasCollectionId": {
 			"type": "string",
 			"metadata": {
-				"description": "A unique ID representing a MoveCategory object.",
-				"pattern": "^move_category:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
+				"description": "A unique ID representing an AtlasCollection object.",
+				"pattern": "^atlas_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
 			}
 		},
-		"MoveCategoryIdWildcard": {
+		"AtlasCollectionIdWildcard": {
 			"type": "string",
 			"metadata": {
-				"description": "A wildcarded MoveCategoryId that can be used to match multiple MoveCategory objects.",
-				"pattern": "^move_category:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
-			}
-		},
-		"NpcId": {
-			"type": "string",
-			"metadata": {
-				"description": "A unique ID representing a Npc object.",
-				"pattern": "^npc:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
+				"description": "A wildcarded AtlasCollectionId that can be used to match multiple AtlasCollection objects.",
+				"pattern": "^atlas_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
 			}
 		},
 		"NpcCollectionId": {
@@ -492,18 +917,144 @@
 				"pattern": "^oracle_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
 			}
 		},
-		"OracleRollableId": {
+		"AssetCollectionId": {
 			"type": "string",
 			"metadata": {
-				"description": "A unique ID representing an OracleRollable object.",
-				"pattern": "^oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
+				"description": "A unique ID representing an AssetCollection object.",
+				"pattern": "^asset_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
 			}
 		},
-		"OracleRollableIdWildcard": {
+		"AssetCollectionIdWildcard": {
 			"type": "string",
 			"metadata": {
-				"description": "A wildcarded OracleRollableId that can be used to match multiple OracleRollable objects.",
-				"pattern": "^oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
+				"description": "A wildcarded AssetCollectionId that can be used to match multiple AssetCollection objects.",
+				"pattern": "^asset_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
+			}
+		},
+		"MoveCategoryId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing a MoveCategory object.",
+				"pattern": "^move_category:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
+			}
+		},
+		"MoveCategoryIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded MoveCategoryId that can be used to match multiple MoveCategory objects.",
+				"pattern": "^move_category:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
+			}
+		},
+		"DelveSiteId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing a DelveSite object.",
+				"pattern": "^delve_site:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
+			}
+		},
+		"DelveSiteIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded DelveSiteId that can be used to match multiple DelveSite objects.",
+				"pattern": "^delve_site:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
+			}
+		},
+		"DelveSiteDenizenId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing a DelveSiteDenizen object.",
+				"pattern": "^delve_site\\.denizen:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)$"
+			}
+		},
+		"DelveSiteDenizenIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded DelveSiteDenizenId that can be used to match multiple DelveSiteDenizen objects.",
+				"pattern": "^delve_site\\.denizen:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)$"
+			}
+		},
+		"DelveSiteDomainId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing a DelveSiteDomain object.",
+				"pattern": "^delve_site_domain:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
+			}
+		},
+		"DelveSiteDomainIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded DelveSiteDomainId that can be used to match multiple DelveSiteDomain objects.",
+				"pattern": "^delve_site_domain:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
+			}
+		},
+		"DelveSiteDomainFeatureId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing a DelveSiteDomainFeature object.",
+				"pattern": "^delve_site_domain\\.feature:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)$"
+			}
+		},
+		"DelveSiteDomainFeatureIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded DelveSiteDomainFeatureId that can be used to match multiple DelveSiteDomainFeature objects.",
+				"pattern": "^delve_site_domain\\.feature:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)$"
+			}
+		},
+		"DelveSiteThemeFeatureId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing a DelveSiteThemeFeature object.",
+				"pattern": "^delve_site_theme\\.feature:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)$"
+			}
+		},
+		"DelveSiteThemeFeatureIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded DelveSiteThemeFeatureId that can be used to match multiple DelveSiteThemeFeature objects.",
+				"pattern": "^delve_site_theme\\.feature:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)$"
+			}
+		},
+		"DelveSiteDomainDangerId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing a DelveSiteDomainDanger object.",
+				"pattern": "^delve_site_domain\\.danger:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)$"
+			}
+		},
+		"DelveSiteDomainDangerIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded DelveSiteDomainDangerId that can be used to match multiple DelveSiteDomainDanger objects.",
+				"pattern": "^delve_site_domain\\.danger:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)$"
+			}
+		},
+		"DelveSiteThemeDangerId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing a DelveSiteThemeDanger object.",
+				"pattern": "^delve_site_theme\\.danger:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)$"
+			}
+		},
+		"DelveSiteThemeDangerIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded DelveSiteThemeDangerId that can be used to match multiple DelveSiteThemeDanger objects.",
+				"pattern": "^delve_site_theme\\.danger:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)$"
+			}
+		},
+		"DelveSiteThemeId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing a DelveSiteTheme object.",
+				"pattern": "^delve_site_theme:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
+			}
+		},
+		"DelveSiteThemeIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded DelveSiteThemeId that can be used to match multiple DelveSiteTheme objects.",
+				"pattern": "^delve_site_theme:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
 			}
 		},
 		"RarityId": {
@@ -513,11 +1064,25 @@
 				"pattern": "^rarity:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
 			}
 		},
+		"RarityIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded RarityId that can be used to match multiple Rarity objects.",
+				"pattern": "^rarity:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
+			}
+		},
 		"TruthId": {
 			"type": "string",
 			"metadata": {
 				"description": "A unique ID representing a Truth object.",
 				"pattern": "^truth:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
+			}
+		},
+		"TruthIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded TruthId that can be used to match multiple Truth objects.",
+				"pattern": "^truth:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
 			}
 		},
 		"TruthOptionId": {
@@ -527,14 +1092,48 @@
 				"pattern": "^truth\\.option:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)$"
 			}
 		},
+		"TruthOptionIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded TruthOptionId that can be used to match multiple TruthOption objects.",
+				"pattern": "^truth\\.option:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)$"
+			}
+		},
+		"AnyOracleRollableId": {
+			"type": "string"
+		},
+		"EmbeddedOracleRollableIdWildcard": {
+			"type": "string"
+		},
+		"EmbeddedOracleRollableId": {
+			"type": "string"
+		},
+		"AnyOracleRollableIdWildcard": {
+			"type": "string"
+		},
+		"AnyMoveId": {
+			"type": "string"
+		},
+		"EmbeddedMoveIdWildcard": {
+			"type": "string"
+		},
 		"EmbeddedMoveId": {
 			"type": "string"
 		},
 		"AnyMoveIdWildcard": {
 			"type": "string"
 		},
-		"EmbeddedOracleRollableId": {
+		"AnyOracleRollableRowId": {
 			"type": "string"
+		},
+		"AnyOracleRollableRowIdWildcard": {
+			"type": "string"
+		},
+		"AnyId": {
+			"type": "string",
+			"metadata": {
+				"description": "Represents any kind of non-wildcard ID, including IDs of embedded objects."
+			}
 		},
 		"AnyIdWildcard": {
 			"type": "string",
@@ -585,6 +1184,14 @@
 				"description": "A CSS color value."
 			}
 		},
+		"Date": {
+			"type": "string",
+			"metadata": {
+				"description": "A date formatted YYYY-MM-DD.",
+				"pattern": "[0-9]{4}-((0[0-9])|(1[0-2]))-(([0-2][0-9])|(3[0-1]))",
+				"format": "date"
+			}
+		},
 		"License": {
 			"ref": "WebUrl",
 			"metadata": {
@@ -593,6 +1200,12 @@
 					"https://creativecommons.org/licenses/by/4.0",
 					"https://creativecommons.org/licenses/by-nc-sa/4.0"
 				]
+			}
+		},
+		"PageNumber": {
+			"type": "int16",
+			"metadata": {
+				"description": "Represents a page number in a book."
 			}
 		},
 		"SourceInfo": {
@@ -648,6 +1261,20 @@
 			},
 			"metadata": {
 				"description": "Metadata describing the original source of this item"
+			}
+		},
+		"SourceTitle": {
+			"type": "string",
+			"metadata": {
+				"description": "The title of the source document.",
+				"examples": [
+					"Ironsworn Rulebook",
+					"Ironsworn Assets Master Set",
+					"Ironsworn: Delve",
+					"Ironsworn: Starforged Rulebook",
+					"Ironsworn: Starforged Assets",
+					"Sundered Isles"
+				]
 			}
 		},
 		"Suggestions": {
@@ -765,6 +1392,24 @@
 				"format": "markdown"
 			}
 		},
+		"CollectableType": {
+			"enum": [
+				"atlas_entry",
+				"npc",
+				"oracle_rollable",
+				"asset",
+				"move"
+			]
+		},
+		"CollectionType": {
+			"enum": [
+				"atlas_collection",
+				"npc_collection",
+				"oracle_collection",
+				"asset_collection",
+				"move_category"
+			]
+		},
 		"ConditionMeterRule": {
 			"properties": {
 				"description": {
@@ -810,6 +1455,16 @@
 			"metadata": {
 				"description": "Describes a standard player character condition meter."
 			}
+		},
+		"EmbedOnlyType": {
+			"enum": [
+				"ability",
+				"option",
+				"row",
+				"feature",
+				"danger",
+				"denizen"
+			]
 		},
 		"ImpactCategory": {
 			"properties": {
@@ -878,25 +1533,13 @@
 				"description": "Describes a standard impact/debility."
 			}
 		},
-		"ObjectType": {
+		"NonCollectableType": {
 			"enum": [
-				"oracle_rollable",
-				"move",
-				"asset",
-				"atlas_entry",
-				"npc",
-				"oracle_collection",
-				"move_category",
-				"asset_collection",
-				"atlas_collection",
-				"npc_collection",
 				"delve_site",
-				"delve_site_theme",
 				"delve_site_domain",
-				"truth",
+				"delve_site_theme",
 				"rarity",
-				"asset_ability",
-				"oracle_table_row"
+				"truth"
 			]
 		},
 		"Rules": {
@@ -1065,7 +1708,7 @@
 					"properties": {
 						"applies_to": {
 							"elements": {
-								"ref": "ObjectType"
+								"ref": "TaggableNodeType"
 							}
 						},
 						"description": {
@@ -1080,7 +1723,7 @@
 					"properties": {
 						"applies_to": {
 							"elements": {
-								"ref": "ObjectType"
+								"ref": "TaggableNodeType"
 							}
 						},
 						"description": {
@@ -1091,65 +1734,11 @@
 						}
 					}
 				},
-				"oracle_rollable": {
-					"properties": {
-						"applies_to": {
-							"elements": {
-								"ref": "ObjectType"
-							}
-						},
-						"description": {
-							"ref": "MarkdownString"
-						},
-						"wildcard": {
-							"type": "boolean",
-							"metadata": {
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID."
-							}
-						}
-					}
-				},
-				"move": {
-					"properties": {
-						"applies_to": {
-							"elements": {
-								"ref": "ObjectType"
-							}
-						},
-						"description": {
-							"ref": "MarkdownString"
-						},
-						"wildcard": {
-							"type": "boolean",
-							"metadata": {
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID."
-							}
-						}
-					}
-				},
-				"asset": {
-					"properties": {
-						"applies_to": {
-							"elements": {
-								"ref": "ObjectType"
-							}
-						},
-						"description": {
-							"ref": "MarkdownString"
-						},
-						"wildcard": {
-							"type": "boolean",
-							"metadata": {
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID."
-							}
-						}
-					}
-				},
 				"atlas_entry": {
 					"properties": {
 						"applies_to": {
 							"elements": {
-								"ref": "ObjectType"
+								"ref": "TaggableNodeType"
 							}
 						},
 						"description": {
@@ -1158,7 +1747,7 @@
 						"wildcard": {
 							"type": "boolean",
 							"metadata": {
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID."
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string."
 							}
 						}
 					}
@@ -1167,7 +1756,7 @@
 					"properties": {
 						"applies_to": {
 							"elements": {
-								"ref": "ObjectType"
+								"ref": "TaggableNodeType"
 							}
 						},
 						"description": {
@@ -1176,16 +1765,16 @@
 						"wildcard": {
 							"type": "boolean",
 							"metadata": {
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID."
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string."
 							}
 						}
 					}
 				},
-				"oracle_collection": {
+				"oracle_rollable": {
 					"properties": {
 						"applies_to": {
 							"elements": {
-								"ref": "ObjectType"
+								"ref": "TaggableNodeType"
 							}
 						},
 						"description": {
@@ -1194,16 +1783,16 @@
 						"wildcard": {
 							"type": "boolean",
 							"metadata": {
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID."
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string."
 							}
 						}
 					}
 				},
-				"move_category": {
+				"asset": {
 					"properties": {
 						"applies_to": {
 							"elements": {
-								"ref": "ObjectType"
+								"ref": "TaggableNodeType"
 							}
 						},
 						"description": {
@@ -1212,16 +1801,16 @@
 						"wildcard": {
 							"type": "boolean",
 							"metadata": {
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID."
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string."
 							}
 						}
 					}
 				},
-				"asset_collection": {
+				"move": {
 					"properties": {
 						"applies_to": {
 							"elements": {
-								"ref": "ObjectType"
+								"ref": "TaggableNodeType"
 							}
 						},
 						"description": {
@@ -1230,7 +1819,7 @@
 						"wildcard": {
 							"type": "boolean",
 							"metadata": {
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID."
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string."
 							}
 						}
 					}
@@ -1239,7 +1828,7 @@
 					"properties": {
 						"applies_to": {
 							"elements": {
-								"ref": "ObjectType"
+								"ref": "TaggableNodeType"
 							}
 						},
 						"description": {
@@ -1248,7 +1837,7 @@
 						"wildcard": {
 							"type": "boolean",
 							"metadata": {
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID."
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string."
 							}
 						}
 					}
@@ -1257,7 +1846,7 @@
 					"properties": {
 						"applies_to": {
 							"elements": {
-								"ref": "ObjectType"
+								"ref": "TaggableNodeType"
 							}
 						},
 						"description": {
@@ -1266,7 +1855,61 @@
 						"wildcard": {
 							"type": "boolean",
 							"metadata": {
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID."
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string."
+							}
+						}
+					}
+				},
+				"oracle_collection": {
+					"properties": {
+						"applies_to": {
+							"elements": {
+								"ref": "TaggableNodeType"
+							}
+						},
+						"description": {
+							"ref": "MarkdownString"
+						},
+						"wildcard": {
+							"type": "boolean",
+							"metadata": {
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string."
+							}
+						}
+					}
+				},
+				"asset_collection": {
+					"properties": {
+						"applies_to": {
+							"elements": {
+								"ref": "TaggableNodeType"
+							}
+						},
+						"description": {
+							"ref": "MarkdownString"
+						},
+						"wildcard": {
+							"type": "boolean",
+							"metadata": {
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string."
+							}
+						}
+					}
+				},
+				"move_category": {
+					"properties": {
+						"applies_to": {
+							"elements": {
+								"ref": "TaggableNodeType"
+							}
+						},
+						"description": {
+							"ref": "MarkdownString"
+						},
+						"wildcard": {
+							"type": "boolean",
+							"metadata": {
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string."
 							}
 						}
 					}
@@ -1275,7 +1918,7 @@
 					"properties": {
 						"applies_to": {
 							"elements": {
-								"ref": "ObjectType"
+								"ref": "TaggableNodeType"
 							}
 						},
 						"description": {
@@ -1284,25 +1927,7 @@
 						"wildcard": {
 							"type": "boolean",
 							"metadata": {
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID."
-							}
-						}
-					}
-				},
-				"delve_site_theme": {
-					"properties": {
-						"applies_to": {
-							"elements": {
-								"ref": "ObjectType"
-							}
-						},
-						"description": {
-							"ref": "MarkdownString"
-						},
-						"wildcard": {
-							"type": "boolean",
-							"metadata": {
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID."
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string."
 							}
 						}
 					}
@@ -1311,7 +1936,7 @@
 					"properties": {
 						"applies_to": {
 							"elements": {
-								"ref": "ObjectType"
+								"ref": "TaggableNodeType"
 							}
 						},
 						"description": {
@@ -1320,16 +1945,16 @@
 						"wildcard": {
 							"type": "boolean",
 							"metadata": {
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID."
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string."
 							}
 						}
 					}
 				},
-				"truth": {
+				"delve_site_theme": {
 					"properties": {
 						"applies_to": {
 							"elements": {
-								"ref": "ObjectType"
+								"ref": "TaggableNodeType"
 							}
 						},
 						"description": {
@@ -1338,7 +1963,7 @@
 						"wildcard": {
 							"type": "boolean",
 							"metadata": {
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID."
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string."
 							}
 						}
 					}
@@ -1347,7 +1972,7 @@
 					"properties": {
 						"applies_to": {
 							"elements": {
-								"ref": "ObjectType"
+								"ref": "TaggableNodeType"
 							}
 						},
 						"description": {
@@ -1356,7 +1981,25 @@
 						"wildcard": {
 							"type": "boolean",
 							"metadata": {
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID."
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string."
+							}
+						}
+					}
+				},
+				"truth": {
+					"properties": {
+						"applies_to": {
+							"elements": {
+								"ref": "TaggableNodeType"
+							}
+						},
+						"description": {
+							"ref": "MarkdownString"
+						},
+						"wildcard": {
+							"type": "boolean",
+							"metadata": {
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string."
 							}
 						}
 					}
@@ -1365,7 +2008,7 @@
 					"properties": {
 						"applies_to": {
 							"elements": {
-								"ref": "ObjectType"
+								"ref": "TaggableNodeType"
 							}
 						},
 						"description": {
@@ -1383,6 +2026,31 @@
 				}
 			}
 		},
+		"TaggableNodeType": {
+			"enum": [
+				"atlas_entry",
+				"npc",
+				"oracle_rollable",
+				"asset",
+				"move",
+				"atlas_collection",
+				"npc_collection",
+				"oracle_collection",
+				"asset_collection",
+				"move_category",
+				"delve_site",
+				"delve_site_domain",
+				"delve_site_theme",
+				"rarity",
+				"truth",
+				"ability",
+				"option",
+				"row",
+				"feature",
+				"danger",
+				"denizen"
+			]
+		},
 		"Tags": {
 			"values": {
 				"values": {
@@ -1394,7 +2062,29 @@
 			},
 			"metadata": {
 				"propertyPattern": "^[a-z][a-z0-9_]{3,}$",
-				"description": "A dictionary of tags, keyed by the RulesetID that the tags are from."
+				"description": "A dictionary of tags, keyed by the RulesPackageId that the tags are from."
+			}
+		},
+		"TagsCore": {
+			"optionalProperties": {
+				"supernatural": {
+					"type": "boolean",
+					"metadata": {
+						"description": "This object is supernatural in nature, and is ideal for settings that feature supernatural or mythic powers."
+					}
+				},
+				"technological": {
+					"type": "boolean",
+					"metadata": {
+						"description": "This object is technological in nature, and is ideal for settings that feature remarkable technologies."
+					}
+				},
+				"requires_allies": {
+					"type": "boolean",
+					"metadata": {
+						"description": "This object requires allies to function, and is intended for co-op play, or guided play with allies. It is not appropriate for solo play."
+					}
+				}
 			}
 		},
 		"ChallengeRank": {
@@ -1451,6 +2141,147 @@
 					"bonds_legacy",
 					"discoveries_legacy"
 				]
+			}
+		},
+		"AssetControlValueRef": {
+			"properties": {
+				"assets": {
+					"elements": {
+						"ref": "AssetIdWildcard"
+					}
+				},
+				"control": {
+					"ref": "DictKey",
+					"metadata": {
+						"description": "The dictionary key of the asset control field.",
+						"examples": [
+							"health",
+							"integrity"
+						]
+					}
+				},
+				"using": {
+					"enum": [
+						"asset_control"
+					],
+					"metadata": {
+						"description": "A reference to the value of an asset control."
+					}
+				}
+			},
+			"metadata": {
+				"description": "A reference to the value of an asset control."
+			}
+		},
+		"AssetOptionValueRef": {
+			"properties": {
+				"assets": {
+					"elements": {
+						"ref": "AssetIdWildcard"
+					}
+				},
+				"option": {
+					"ref": "DictKey",
+					"metadata": {
+						"description": "The dictionary key of the asset option field."
+					}
+				},
+				"using": {
+					"enum": [
+						"asset_option"
+					],
+					"metadata": {
+						"description": "A reference to the value of an asset option."
+					}
+				}
+			},
+			"metadata": {
+				"description": "A reference to the value of an asset option."
+			}
+		},
+		"AttachedAssetControlValueRef": {
+			"properties": {
+				"control": {
+					"ref": "DictKey",
+					"metadata": {
+						"description": "The dictionary key of the asset control field.",
+						"examples": [
+							"health",
+							"integrity"
+						]
+					}
+				},
+				"using": {
+					"enum": [
+						"attached_asset_control"
+					],
+					"metadata": {
+						"description": "A reference to the value of an attached asset control. For example, a Module asset could use this to roll using the `integrity` control of an attached Vehicle."
+					}
+				}
+			},
+			"metadata": {
+				"description": "A reference to the value of an attached asset control. For example, a Module asset could use this to roll using the `integrity` control of an attached Vehicle."
+			}
+		},
+		"AttachedAssetOptionValueRef": {
+			"properties": {
+				"option": {
+					"ref": "DictKey",
+					"metadata": {
+						"description": "The dictionary key of the asset option field."
+					}
+				},
+				"using": {
+					"enum": [
+						"attached_asset_option"
+					],
+					"metadata": {
+						"description": "A reference to the value of an attached asset option."
+					}
+				}
+			},
+			"metadata": {
+				"description": "A reference to the value of an attached asset option."
+			}
+		},
+		"ConditionMeterValueRef": {
+			"properties": {
+				"condition_meter": {
+					"ref": "ConditionMeterKey"
+				},
+				"using": {
+					"enum": [
+						"condition_meter"
+					],
+					"metadata": {
+						"description": "A reference to the value of a standard player condition meter."
+					}
+				}
+			},
+			"metadata": {
+				"description": "A reference to the value of a standard player condition meter."
+			}
+		},
+		"CustomValue": {
+			"properties": {
+				"label": {
+					"ref": "Label"
+				},
+				"value": {
+					"type": "int16"
+				},
+				"using": {
+					"enum": [
+						"custom"
+					],
+					"metadata": {
+						"description": "An arbitrary static integer value with a label."
+					}
+				}
+			},
+			"metadata": {
+				"description": "An arbitrary static integer value with a label."
 			}
 		},
 		"RollableValue": {
@@ -1562,6 +2393,24 @@
 			},
 			"metadata": {
 				"description": "Provides a value like a stat, condition meter, or other number (usually for use in an action roll). The expected value is an integer, or null."
+			}
+		},
+		"StatValueRef": {
+			"properties": {
+				"stat": {
+					"ref": "StatKey"
+				},
+				"using": {
+					"enum": [
+						"stat"
+					],
+					"metadata": {
+						"description": "A reference to the value of a standard player character stat."
+					}
+				}
+			},
+			"metadata": {
+				"description": "A reference to the value of a standard player character stat."
 			}
 		},
 		"Npc": {
@@ -1871,7 +2720,7 @@
 				"text": {
 					"ref": "TemplateString",
 					"metadata": {
-						"description": "A string template that may be used in place of OracleTableRow#text.",
+						"description": "A string template that may be used in place of OracleRollableRow#text.",
 						"examples": [
 							"{{text:starforged/oracles/factions/affiliation}} of the {{text:starforged/oracles/factions/legacy}} {{text:starforged/oracles/factions/identity}}"
 						]
@@ -1880,18 +2729,18 @@
 				"text2": {
 					"ref": "TemplateString",
 					"metadata": {
-						"description": "A string template that may be used in place of OracleTableRow#text2."
+						"description": "A string template that may be used in place of OracleRollableRow#text2."
 					}
 				},
 				"text3": {
 					"ref": "TemplateString",
 					"metadata": {
-						"description": "A string template that may be used in place of OracleTableRow#text3."
+						"description": "A string template that may be used in place of OracleRollableRow#text3."
 					}
 				}
 			},
 			"metadata": {
-				"description": "Provides string templates that may be used in place of the static row text from `OracleTableRow#text`, `OracleTableRow#text2`, and `OracleTableRow#text3`.\n\n  These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text>some_oracle_rollable_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#text` from the target oracle rollable ID."
+				"description": "Provides string templates that may be used in place of the static row text from `OracleRollableRow#text`, `OracleRollableRow#text2`, and `OracleRollableRow#text3`.\n\n  These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text>some_oracle_rollable_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleRollableRow#text` from the target oracle rollable ID."
 			}
 		},
 		"DiceRange": {
@@ -1923,6 +2772,231 @@
 				"description": "This type is a placeholder and may see signficant changes in v0.2.0."
 			}
 		},
+		"EmbeddedOracleColumnText": {
+			"properties": {
+				"_id": {
+					"ref": "EmbeddedOracleRollableId"
+				},
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary label at the head of this column."
+					}
+				},
+				"dice": {
+					"ref": "DiceExpression",
+					"metadata": {
+						"description": "The roll used to select a result on this oracle."
+					}
+				},
+				"type": {
+					"enum": [
+						"oracle_rollable"
+					]
+				},
+				"rows": {
+					"elements": {
+						"ref": "OracleRollableRowText"
+					},
+					"metadata": {
+						"description": "An array of objects, each representing a single row of the table."
+					}
+				},
+				"oracle_type": {
+					"enum": [
+						"column_text"
+					]
+				}
+			},
+			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
+				"summary": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
+					}
+				},
+				"color": {
+					"ref": "CssColor",
+					"metadata": {
+						"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
+					}
+				},
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An optional icon for this column."
+					}
+				},
+				"match": {
+					"ref": "OracleMatchBehavior",
+					"metadata": {
+						"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+					}
+				},
+				"tags": {
+					"ref": "Tags"
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				}
+			}
+		},
+		"EmbeddedOracleColumnText2": {
+			"properties": {
+				"_id": {
+					"ref": "EmbeddedOracleRollableId"
+				},
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary label at the head of this column."
+					}
+				},
+				"dice": {
+					"ref": "DiceExpression",
+					"metadata": {
+						"description": "The roll used to select a result on this oracle."
+					}
+				},
+				"type": {
+					"enum": [
+						"oracle_rollable"
+					]
+				},
+				"rows": {
+					"elements": {
+						"ref": "OracleRollableRowText2"
+					},
+					"metadata": {
+						"description": "An array of objects, each representing a single row of the table."
+					}
+				},
+				"oracle_type": {
+					"enum": [
+						"column_text2"
+					]
+				}
+			},
+			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
+				"summary": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
+					}
+				},
+				"color": {
+					"ref": "CssColor",
+					"metadata": {
+						"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
+					}
+				},
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An optional icon for this column."
+					}
+				},
+				"match": {
+					"ref": "OracleMatchBehavior",
+					"metadata": {
+						"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+					}
+				},
+				"tags": {
+					"ref": "Tags"
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				}
+			}
+		},
+		"EmbeddedOracleColumnText3": {
+			"properties": {
+				"_id": {
+					"ref": "EmbeddedOracleRollableId"
+				},
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary label at the head of this column."
+					}
+				},
+				"dice": {
+					"ref": "DiceExpression",
+					"metadata": {
+						"description": "The roll used to select a result on this oracle."
+					}
+				},
+				"type": {
+					"enum": [
+						"oracle_rollable"
+					]
+				},
+				"rows": {
+					"elements": {
+						"ref": "OracleRollableRowText3"
+					},
+					"metadata": {
+						"description": "An array of objects, each representing a single row of the table."
+					}
+				},
+				"oracle_type": {
+					"enum": [
+						"column_text3"
+					]
+				}
+			},
+			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
+				"summary": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
+					}
+				},
+				"color": {
+					"ref": "CssColor",
+					"metadata": {
+						"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
+					}
+				},
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An optional icon for this column."
+					}
+				},
+				"match": {
+					"ref": "OracleMatchBehavior",
+					"metadata": {
+						"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+					}
+				},
+				"tags": {
+					"ref": "Tags"
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				}
+			}
+		},
 		"EmbeddedOracleRollable": {
 			"discriminator": "oracle_type",
 			"mapping": {
@@ -1950,7 +3024,7 @@
 						},
 						"rows": {
 							"elements": {
-								"ref": "OracleTableRowText"
+								"ref": "OracleRollableRowText"
 							},
 							"metadata": {
 								"description": "An array of objects, each representing a single row of the table."
@@ -2049,7 +3123,7 @@
 						},
 						"rows": {
 							"elements": {
-								"ref": "OracleTableRowText2"
+								"ref": "OracleRollableRowText2"
 							},
 							"metadata": {
 								"description": "An array of objects, each representing a single row of the table."
@@ -2151,7 +3225,7 @@
 						},
 						"rows": {
 							"elements": {
-								"ref": "OracleTableRowText3"
+								"ref": "OracleRollableRowText3"
 							},
 							"metadata": {
 								"description": "An array of objects, each representing a single row of the table."
@@ -2256,7 +3330,7 @@
 						},
 						"rows": {
 							"elements": {
-								"ref": "OracleTableRowText"
+								"ref": "OracleRollableRowText"
 							},
 							"metadata": {
 								"description": "An array of objects, each representing a single row of the table."
@@ -2326,7 +3400,7 @@
 						},
 						"rows": {
 							"elements": {
-								"ref": "OracleTableRowText2"
+								"ref": "OracleRollableRowText2"
 							},
 							"metadata": {
 								"description": "An array of objects, each representing a single row of the table."
@@ -2396,7 +3470,7 @@
 						},
 						"rows": {
 							"elements": {
-								"ref": "OracleTableRowText3"
+								"ref": "OracleRollableRowText3"
 							},
 							"metadata": {
 								"description": "An array of objects, each representing a single row of the table."
@@ -2440,6 +3514,327 @@
 						"suggestions": {
 							"ref": "Suggestions"
 						}
+					}
+				}
+			}
+		},
+		"EmbeddedOracleTableText": {
+			"properties": {
+				"_id": {
+					"ref": "EmbeddedOracleRollableId"
+				},
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary name/label for this item."
+					}
+				},
+				"oracle_type": {
+					"enum": [
+						"table_text"
+					]
+				},
+				"dice": {
+					"ref": "DiceExpression",
+					"metadata": {
+						"description": "The roll used to select a result on this oracle."
+					}
+				},
+				"type": {
+					"enum": [
+						"oracle_rollable"
+					]
+				},
+				"rows": {
+					"elements": {
+						"ref": "OracleRollableRowText"
+					},
+					"metadata": {
+						"description": "An array of objects, each representing a single row of the table."
+					}
+				},
+				"column_labels": {
+					"properties": {
+						"roll": {
+							"ref": "Label"
+						},
+						"text": {
+							"ref": "Label"
+						}
+					},
+					"metadata": {
+						"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
+					}
+				}
+			},
+			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
+				"canonical_name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"tags": {
+					"ref": "Tags"
+				},
+				"match": {
+					"ref": "OracleMatchBehavior",
+					"metadata": {
+						"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+					}
+				},
+				"recommended_rolls": {
+					"properties": {
+						"min": {
+							"type": "int16"
+						},
+						"max": {
+							"type": "int16"
+						}
+					}
+				},
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An icon that represents this table."
+					}
+				},
+				"summary": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+					}
+				},
+				"description": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+					}
+				}
+			}
+		},
+		"EmbeddedOracleTableText2": {
+			"properties": {
+				"_id": {
+					"ref": "EmbeddedOracleRollableId"
+				},
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary name/label for this item."
+					}
+				},
+				"oracle_type": {
+					"enum": [
+						"table_text2"
+					]
+				},
+				"dice": {
+					"ref": "DiceExpression",
+					"metadata": {
+						"description": "The roll used to select a result on this oracle."
+					}
+				},
+				"type": {
+					"enum": [
+						"oracle_rollable"
+					]
+				},
+				"rows": {
+					"elements": {
+						"ref": "OracleRollableRowText2"
+					},
+					"metadata": {
+						"description": "An array of objects, each representing a single row of the table."
+					}
+				},
+				"column_labels": {
+					"properties": {
+						"roll": {
+							"ref": "Label"
+						},
+						"text": {
+							"ref": "Label"
+						},
+						"text2": {
+							"ref": "Label"
+						}
+					},
+					"metadata": {
+						"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
+					}
+				}
+			},
+			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
+				"canonical_name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"tags": {
+					"ref": "Tags"
+				},
+				"match": {
+					"ref": "OracleMatchBehavior",
+					"metadata": {
+						"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+					}
+				},
+				"recommended_rolls": {
+					"properties": {
+						"min": {
+							"type": "int16"
+						},
+						"max": {
+							"type": "int16"
+						}
+					}
+				},
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An icon that represents this table."
+					}
+				},
+				"summary": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+					}
+				},
+				"description": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+					}
+				}
+			}
+		},
+		"EmbeddedOracleTableText3": {
+			"properties": {
+				"_id": {
+					"ref": "EmbeddedOracleRollableId"
+				},
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary name/label for this item."
+					}
+				},
+				"oracle_type": {
+					"enum": [
+						"table_text3"
+					]
+				},
+				"dice": {
+					"ref": "DiceExpression",
+					"metadata": {
+						"description": "The roll used to select a result on this oracle."
+					}
+				},
+				"type": {
+					"enum": [
+						"oracle_rollable"
+					]
+				},
+				"rows": {
+					"elements": {
+						"ref": "OracleRollableRowText3"
+					},
+					"metadata": {
+						"description": "An array of objects, each representing a single row of the table."
+					}
+				},
+				"column_labels": {
+					"properties": {
+						"roll": {
+							"ref": "Label"
+						},
+						"text": {
+							"ref": "Label"
+						},
+						"text2": {
+							"ref": "Label"
+						},
+						"text3": {
+							"ref": "Label"
+						}
+					},
+					"metadata": {
+						"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
+					}
+				}
+			},
+			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
+				"canonical_name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"tags": {
+					"ref": "Tags"
+				},
+				"match": {
+					"ref": "OracleMatchBehavior",
+					"metadata": {
+						"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+					}
+				},
+				"recommended_rolls": {
+					"properties": {
+						"min": {
+							"type": "int16"
+						},
+						"max": {
+							"type": "int16"
+						}
+					}
+				},
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An icon that represents this table."
+					}
+				},
+				"summary": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+					}
+				},
+				"description": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
 					}
 				}
 			}
@@ -3057,7 +4452,7 @@
 				},
 				"rows": {
 					"elements": {
-						"ref": "OracleTableRowText"
+						"ref": "OracleRollableRowText"
 					},
 					"metadata": {
 						"description": "An array of objects, each representing a single row of the table."
@@ -3146,7 +4541,7 @@
 				},
 				"rows": {
 					"elements": {
-						"ref": "OracleTableRowText2"
+						"ref": "OracleRollableRowText2"
 					},
 					"metadata": {
 						"description": "An array of objects, each representing a single row of the table."
@@ -3233,7 +4628,7 @@
 				},
 				"rows": {
 					"elements": {
-						"ref": "OracleTableRowText3"
+						"ref": "OracleRollableRowText3"
 					},
 					"metadata": {
 						"description": "An array of objects, each representing a single row of the table."
@@ -3293,7 +4688,7 @@
 			},
 			"metadata": {}
 		},
-		"OracleTableRollable": {
+		"OracleRollable": {
 			"discriminator": "oracle_type",
 			"mapping": {
 				"table_text": {
@@ -3329,7 +4724,7 @@
 						},
 						"rows": {
 							"elements": {
-								"ref": "OracleTableRowText"
+								"ref": "OracleRollableRowText"
 							},
 							"metadata": {
 								"description": "An array of objects, each representing a single row of the table."
@@ -3448,7 +4843,7 @@
 						},
 						"rows": {
 							"elements": {
-								"ref": "OracleTableRowText2"
+								"ref": "OracleRollableRowText2"
 							},
 							"metadata": {
 								"description": "An array of objects, each representing a single row of the table."
@@ -3570,7 +4965,788 @@
 						},
 						"rows": {
 							"elements": {
-								"ref": "OracleTableRowText3"
+								"ref": "OracleRollableRowText3"
+							},
+							"metadata": {
+								"description": "An array of objects, each representing a single row of the table."
+							}
+						},
+						"column_labels": {
+							"properties": {
+								"roll": {
+									"ref": "Label"
+								},
+								"text": {
+									"ref": "Label"
+								},
+								"text2": {
+									"ref": "Label"
+								},
+								"text3": {
+									"ref": "Label"
+								}
+							},
+							"metadata": {
+								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
+							}
+						}
+					},
+					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
+						"canonical_name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+							}
+						},
+						"suggestions": {
+							"ref": "Suggestions"
+						},
+						"tags": {
+							"ref": "Tags"
+						},
+						"replaces": {
+							"elements": {
+								"ref": "OracleRollableIdWildcard"
+							},
+							"metadata": {
+								"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object."
+							}
+						},
+						"match": {
+							"ref": "OracleMatchBehavior",
+							"metadata": {
+								"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+							}
+						},
+						"recommended_rolls": {
+							"properties": {
+								"min": {
+									"type": "int16"
+								},
+								"max": {
+									"type": "int16"
+								}
+							}
+						},
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An icon that represents this table."
+							}
+						},
+						"summary": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+							}
+						},
+						"description": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+							}
+						}
+					},
+					"metadata": {
+						"description": "A rollable oracle table with one roll column and 3 text columns."
+					}
+				},
+				"column_text": {
+					"properties": {
+						"_id": {
+							"ref": "OracleRollableId",
+							"metadata": {
+								"description": "The unique Datasworn ID for this item."
+							}
+						},
+						"name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The primary label at the head of this column."
+							}
+						},
+						"dice": {
+							"ref": "DiceExpression",
+							"metadata": {
+								"description": "The roll used to select a result on this oracle."
+							}
+						},
+						"type": {
+							"enum": [
+								"oracle_rollable"
+							]
+						},
+						"rows": {
+							"elements": {
+								"ref": "OracleRollableRowText"
+							},
+							"metadata": {
+								"description": "An array of objects, each representing a single row of the table."
+							}
+						}
+					},
+					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
+						"summary": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
+							}
+						},
+						"color": {
+							"ref": "CssColor",
+							"metadata": {
+								"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
+							}
+						},
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An optional icon for this column."
+							}
+						},
+						"replaces": {
+							"elements": {
+								"ref": "OracleRollableIdWildcard"
+							},
+							"metadata": {
+								"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object."
+							}
+						},
+						"match": {
+							"ref": "OracleMatchBehavior",
+							"metadata": {
+								"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+							}
+						},
+						"tags": {
+							"ref": "Tags"
+						},
+						"suggestions": {
+							"ref": "Suggestions"
+						}
+					},
+					"metadata": {
+						"description": "Represents a single column in an OracleCollection."
+					}
+				},
+				"column_text2": {
+					"properties": {
+						"_id": {
+							"ref": "OracleRollableId",
+							"metadata": {
+								"description": "The unique Datasworn ID for this item."
+							}
+						},
+						"name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The primary label at the head of this column."
+							}
+						},
+						"dice": {
+							"ref": "DiceExpression",
+							"metadata": {
+								"description": "The roll used to select a result on this oracle."
+							}
+						},
+						"type": {
+							"enum": [
+								"oracle_rollable"
+							]
+						},
+						"rows": {
+							"elements": {
+								"ref": "OracleRollableRowText2"
+							},
+							"metadata": {
+								"description": "An array of objects, each representing a single row of the table."
+							}
+						}
+					},
+					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
+						"summary": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
+							}
+						},
+						"color": {
+							"ref": "CssColor",
+							"metadata": {
+								"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
+							}
+						},
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An optional icon for this column."
+							}
+						},
+						"replaces": {
+							"elements": {
+								"ref": "OracleRollableIdWildcard"
+							},
+							"metadata": {
+								"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object."
+							}
+						},
+						"match": {
+							"ref": "OracleMatchBehavior",
+							"metadata": {
+								"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+							}
+						},
+						"tags": {
+							"ref": "Tags"
+						},
+						"suggestions": {
+							"ref": "Suggestions"
+						}
+					},
+					"metadata": {}
+				},
+				"column_text3": {
+					"properties": {
+						"_id": {
+							"ref": "OracleRollableId",
+							"metadata": {
+								"description": "The unique Datasworn ID for this item."
+							}
+						},
+						"name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The primary label at the head of this column."
+							}
+						},
+						"dice": {
+							"ref": "DiceExpression",
+							"metadata": {
+								"description": "The roll used to select a result on this oracle."
+							}
+						},
+						"type": {
+							"enum": [
+								"oracle_rollable"
+							]
+						},
+						"rows": {
+							"elements": {
+								"ref": "OracleRollableRowText3"
+							},
+							"metadata": {
+								"description": "An array of objects, each representing a single row of the table."
+							}
+						}
+					},
+					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
+						"summary": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
+							}
+						},
+						"color": {
+							"ref": "CssColor",
+							"metadata": {
+								"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
+							}
+						},
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An optional icon for this column."
+							}
+						},
+						"replaces": {
+							"elements": {
+								"ref": "OracleRollableIdWildcard"
+							},
+							"metadata": {
+								"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object."
+							}
+						},
+						"match": {
+							"ref": "OracleMatchBehavior",
+							"metadata": {
+								"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+							}
+						},
+						"tags": {
+							"ref": "Tags"
+						},
+						"suggestions": {
+							"ref": "Suggestions"
+						}
+					},
+					"metadata": {}
+				}
+			},
+			"metadata": {
+				"description": "A collection of table rows from which random results may be rolled. This may represent a standalone table, or a column in a larger table."
+			}
+		},
+		"OracleRollableRowText": {
+			"properties": {
+				"text": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "The primary text content of this row."
+					}
+				},
+				"roll": {
+					"ref": "DiceRange"
+				},
+				"_id": {
+					"ref": "AnyOracleRollableRowId"
+				}
+			},
+			"optionalProperties": {
+				"icon": {
+					"ref": "SvgImageUrl"
+				},
+				"oracle_rolls": {
+					"elements": {
+						"ref": "OracleRoll"
+					},
+					"metadata": {
+						"description": "Further oracle rolls prompted by this table row."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"embed_table": {
+					"ref": "OracleRollableId",
+					"metadata": {
+						"description": "Hints that the identified table should be rendered inside this table row."
+					}
+				},
+				"template": {
+					"ref": "OracleRollTemplate"
+				},
+				"_i18n": {
+					"ref": "I18nHints"
+				},
+				"tags": {
+					"ref": "Tags"
+				}
+			},
+			"metadata": {
+				"description": "Represents a row in an oracle table, with a single text cell."
+			}
+		},
+		"OracleRollableRowText2": {
+			"properties": {
+				"text": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "The primary text content of this row."
+					}
+				},
+				"roll": {
+					"ref": "DiceRange"
+				},
+				"_id": {
+					"ref": "AnyOracleRollableRowId"
+				},
+				"text2": {
+					"ref": "MarkdownString"
+				}
+			},
+			"optionalProperties": {
+				"icon": {
+					"ref": "SvgImageUrl"
+				},
+				"oracle_rolls": {
+					"elements": {
+						"ref": "OracleRoll"
+					},
+					"metadata": {
+						"description": "Further oracle rolls prompted by this table row."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"embed_table": {
+					"ref": "OracleRollableId",
+					"metadata": {
+						"description": "Hints that the identified table should be rendered inside this table row."
+					}
+				},
+				"template": {
+					"ref": "OracleRollTemplate"
+				},
+				"_i18n": {
+					"ref": "I18nHints"
+				},
+				"tags": {
+					"ref": "Tags"
+				}
+			},
+			"metadata": {
+				"description": "Represents a row in an oracle table that provides a secondary text field."
+			}
+		},
+		"OracleRollableRowText3": {
+			"properties": {
+				"text": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "The primary text content of this row."
+					}
+				},
+				"roll": {
+					"ref": "DiceRange"
+				},
+				"_id": {
+					"ref": "AnyOracleRollableRowId"
+				},
+				"text2": {
+					"ref": "MarkdownString"
+				},
+				"text3": {
+					"ref": "MarkdownString"
+				}
+			},
+			"optionalProperties": {
+				"icon": {
+					"ref": "SvgImageUrl"
+				},
+				"oracle_rolls": {
+					"elements": {
+						"ref": "OracleRoll"
+					},
+					"metadata": {
+						"description": "Further oracle rolls prompted by this table row."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"embed_table": {
+					"ref": "OracleRollableId",
+					"metadata": {
+						"description": "Hints that the identified table should be rendered inside this table row."
+					}
+				},
+				"template": {
+					"ref": "OracleRollTemplate"
+				},
+				"_i18n": {
+					"ref": "I18nHints"
+				},
+				"tags": {
+					"ref": "Tags"
+				}
+			},
+			"metadata": {
+				"description": "Represents a row in an oracle table with 3 text cells."
+			}
+		},
+		"OracleTableRollable": {
+			"discriminator": "oracle_type",
+			"mapping": {
+				"table_text": {
+					"properties": {
+						"_id": {
+							"ref": "OracleRollableId",
+							"metadata": {
+								"description": "The unique Datasworn ID for this item."
+							}
+						},
+						"name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The primary name/label for this item."
+							}
+						},
+						"_source": {
+							"ref": "SourceInfo",
+							"metadata": {
+								"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+							}
+						},
+						"dice": {
+							"ref": "DiceExpression",
+							"metadata": {
+								"description": "The roll used to select a result on this oracle."
+							}
+						},
+						"type": {
+							"enum": [
+								"oracle_rollable"
+							]
+						},
+						"rows": {
+							"elements": {
+								"ref": "OracleRollableRowText"
+							},
+							"metadata": {
+								"description": "An array of objects, each representing a single row of the table."
+							}
+						},
+						"column_labels": {
+							"properties": {
+								"roll": {
+									"ref": "Label"
+								},
+								"text": {
+									"ref": "Label"
+								}
+							},
+							"metadata": {
+								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
+							}
+						}
+					},
+					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
+						"canonical_name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+							}
+						},
+						"suggestions": {
+							"ref": "Suggestions"
+						},
+						"tags": {
+							"ref": "Tags"
+						},
+						"replaces": {
+							"elements": {
+								"ref": "OracleRollableIdWildcard"
+							},
+							"metadata": {
+								"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object."
+							}
+						},
+						"match": {
+							"ref": "OracleMatchBehavior",
+							"metadata": {
+								"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+							}
+						},
+						"recommended_rolls": {
+							"properties": {
+								"min": {
+									"type": "int16"
+								},
+								"max": {
+									"type": "int16"
+								}
+							}
+						},
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An icon that represents this table."
+							}
+						},
+						"summary": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+							}
+						},
+						"description": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+							}
+						}
+					},
+					"metadata": {
+						"description": "Represents a basic rollable oracle table with one roll column and one text result column."
+					}
+				},
+				"table_text2": {
+					"properties": {
+						"_id": {
+							"ref": "OracleRollableId",
+							"metadata": {
+								"description": "The unique Datasworn ID for this item."
+							}
+						},
+						"name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The primary name/label for this item."
+							}
+						},
+						"_source": {
+							"ref": "SourceInfo",
+							"metadata": {
+								"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+							}
+						},
+						"dice": {
+							"ref": "DiceExpression",
+							"metadata": {
+								"description": "The roll used to select a result on this oracle."
+							}
+						},
+						"type": {
+							"enum": [
+								"oracle_rollable"
+							]
+						},
+						"rows": {
+							"elements": {
+								"ref": "OracleRollableRowText2"
+							},
+							"metadata": {
+								"description": "An array of objects, each representing a single row of the table."
+							}
+						},
+						"column_labels": {
+							"properties": {
+								"roll": {
+									"ref": "Label"
+								},
+								"text": {
+									"ref": "Label"
+								},
+								"text2": {
+									"ref": "Label"
+								}
+							},
+							"metadata": {
+								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
+							}
+						}
+					},
+					"optionalProperties": {
+						"_comment": {
+							"type": "string",
+							"metadata": {
+								"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+							}
+						},
+						"canonical_name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+							}
+						},
+						"suggestions": {
+							"ref": "Suggestions"
+						},
+						"tags": {
+							"ref": "Tags"
+						},
+						"replaces": {
+							"elements": {
+								"ref": "OracleRollableIdWildcard"
+							},
+							"metadata": {
+								"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object."
+							}
+						},
+						"match": {
+							"ref": "OracleMatchBehavior",
+							"metadata": {
+								"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+							}
+						},
+						"recommended_rolls": {
+							"properties": {
+								"min": {
+									"type": "int16"
+								},
+								"max": {
+									"type": "int16"
+								}
+							}
+						},
+						"icon": {
+							"ref": "SvgImageUrl",
+							"metadata": {
+								"description": "An icon that represents this table."
+							}
+						},
+						"summary": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+							}
+						},
+						"description": {
+							"ref": "MarkdownString",
+							"metadata": {
+								"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+							}
+						}
+					},
+					"metadata": {
+						"description": "A rollable oracle table with one roll column and two text columns."
+					}
+				},
+				"table_text3": {
+					"properties": {
+						"_id": {
+							"ref": "OracleRollableId",
+							"metadata": {
+								"description": "The unique Datasworn ID for this item."
+							}
+						},
+						"name": {
+							"ref": "Label",
+							"metadata": {
+								"description": "The primary name/label for this item."
+							}
+						},
+						"_source": {
+							"ref": "SourceInfo",
+							"metadata": {
+								"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+							}
+						},
+						"dice": {
+							"ref": "DiceExpression",
+							"metadata": {
+								"description": "The roll used to select a result on this oracle."
+							}
+						},
+						"type": {
+							"enum": [
+								"oracle_rollable"
+							]
+						},
+						"rows": {
+							"elements": {
+								"ref": "OracleRollableRowText3"
 							},
 							"metadata": {
 								"description": "An array of objects, each representing a single row of the table."
@@ -3664,154 +5840,884 @@
 				}
 			}
 		},
-		"OracleTableRowText": {
+		"OracleTableSharedRolls": {
 			"properties": {
-				"text": {
-					"ref": "MarkdownString",
+				"_id": {
+					"ref": "OracleCollectionId",
 					"metadata": {
-						"description": "The primary text content of this row."
+						"description": "The unique Datasworn ID for this item."
 					}
 				},
-				"roll": {
-					"ref": "DiceRange"
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary name/label for this item."
+					}
+				},
+				"_source": {
+					"ref": "SourceInfo",
+					"metadata": {
+						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					}
+				},
+				"type": {
+					"enum": [
+						"oracle_collection"
+					]
+				},
+				"column_labels": {
+					"properties": {
+						"roll": {
+							"ref": "Label"
+						}
+					},
+					"metadata": {
+						"description": "Provides column labels for this table. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row). For all other column labels, see the `name` property of each child `OracleColumn`."
+					}
+				},
+				"oracle_type": {
+					"enum": [
+						"table_shared_rolls"
+					],
+					"metadata": {
+						"description": "A table with one shared roll column, and multiple unique text columns."
+					}
 				}
 			},
 			"optionalProperties": {
-				"icon": {
-					"ref": "SvgImageUrl"
-				},
-				"oracle_rolls": {
-					"elements": {
-						"ref": "OracleRoll"
-					},
+				"_comment": {
+					"type": "string",
 					"metadata": {
-						"description": "Further oracle rolls prompted by this table row."
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
+				"canonical_name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 					}
 				},
 				"suggestions": {
 					"ref": "Suggestions"
 				},
-				"embed_table": {
-					"ref": "OracleRollableId",
-					"metadata": {
-						"description": "Hints that the identified table should be rendered inside this table row."
-					}
-				},
-				"template": {
-					"ref": "OracleRollTemplate"
-				},
-				"_i18n": {
-					"ref": "I18nHints"
-				},
 				"tags": {
 					"ref": "Tags"
+				},
+				"color": {
+					"ref": "CssColor",
+					"metadata": {
+						"description": "A thematic color associated with this collection."
+					}
+				},
+				"summary": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+					}
+				},
+				"description": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+					}
+				},
+				"images": {
+					"elements": {
+						"ref": "WebpImageUrl",
+						"metadata": {
+							"description": "Extra images associated with this collection."
+						}
+					}
+				},
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An SVG icon associated with this collection."
+					}
+				},
+				"enhances": {
+					"elements": {
+						"ref": "OracleCollectionIdWildcard"
+					},
+					"metadata": {
+						"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own."
+					}
+				},
+				"replaces": {
+					"elements": {
+						"ref": "OracleCollectionIdWildcard"
+					},
+					"metadata": {
+						"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection."
+					}
+				},
+				"contents": {
+					"values": {
+						"ref": "OracleColumnText"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$"
+					}
 				}
 			},
 			"metadata": {
-				"description": "Represents a row in an oracle table, with a single text cell."
+				"description": "An OracleCollection representing a single table with one roll column and multiple `result` columns."
 			}
 		},
-		"OracleTableRowText2": {
+		"OracleTableSharedText": {
 			"properties": {
-				"text": {
-					"ref": "MarkdownString",
+				"_id": {
+					"ref": "OracleCollectionId",
 					"metadata": {
-						"description": "The primary text content of this row."
+						"description": "The unique Datasworn ID for this item."
 					}
 				},
-				"roll": {
-					"ref": "DiceRange"
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary name/label for this item."
+					}
 				},
-				"text2": {
-					"ref": "MarkdownString"
+				"_source": {
+					"ref": "SourceInfo",
+					"metadata": {
+						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					}
+				},
+				"type": {
+					"enum": [
+						"oracle_collection"
+					]
+				},
+				"column_labels": {
+					"properties": {
+						"text": {
+							"ref": "Label"
+						}
+					},
+					"metadata": {
+						"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
+					}
+				},
+				"oracle_type": {
+					"enum": [
+						"table_shared_text"
+					],
+					"metadata": {
+						"description": "A table with multiple unique roll columns, and one shared text column."
+					}
 				}
 			},
 			"optionalProperties": {
-				"icon": {
-					"ref": "SvgImageUrl"
-				},
-				"oracle_rolls": {
-					"elements": {
-						"ref": "OracleRoll"
-					},
+				"_comment": {
+					"type": "string",
 					"metadata": {
-						"description": "Further oracle rolls prompted by this table row."
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
+				"canonical_name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 					}
 				},
 				"suggestions": {
 					"ref": "Suggestions"
 				},
-				"embed_table": {
-					"ref": "OracleRollableId",
-					"metadata": {
-						"description": "Hints that the identified table should be rendered inside this table row."
-					}
-				},
-				"template": {
-					"ref": "OracleRollTemplate"
-				},
-				"_i18n": {
-					"ref": "I18nHints"
-				},
 				"tags": {
 					"ref": "Tags"
+				},
+				"color": {
+					"ref": "CssColor",
+					"metadata": {
+						"description": "A thematic color associated with this collection."
+					}
+				},
+				"summary": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+					}
+				},
+				"description": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+					}
+				},
+				"images": {
+					"elements": {
+						"ref": "WebpImageUrl",
+						"metadata": {
+							"description": "Extra images associated with this collection."
+						}
+					}
+				},
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An SVG icon associated with this collection."
+					}
+				},
+				"enhances": {
+					"elements": {
+						"ref": "OracleCollectionIdWildcard"
+					},
+					"metadata": {
+						"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own."
+					}
+				},
+				"replaces": {
+					"elements": {
+						"ref": "OracleCollectionIdWildcard"
+					},
+					"metadata": {
+						"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection."
+					}
+				},
+				"contents": {
+					"values": {
+						"ref": "OracleColumnText"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$"
+					}
 				}
 			},
 			"metadata": {
-				"description": "Represents a row in an oracle table that provides a secondary text field."
+				"description": "An OracleCollection representing a single table with multiple roll columns and one `result` column."
 			}
 		},
-		"OracleTableRowText3": {
+		"OracleTableSharedText2": {
 			"properties": {
-				"text": {
-					"ref": "MarkdownString",
+				"_id": {
+					"ref": "OracleCollectionId",
 					"metadata": {
-						"description": "The primary text content of this row."
+						"description": "The unique Datasworn ID for this item."
 					}
 				},
-				"roll": {
-					"ref": "DiceRange"
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary name/label for this item."
+					}
 				},
-				"text2": {
-					"ref": "MarkdownString"
+				"_source": {
+					"ref": "SourceInfo",
+					"metadata": {
+						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					}
 				},
-				"text3": {
-					"ref": "MarkdownString"
+				"type": {
+					"enum": [
+						"oracle_collection"
+					]
+				},
+				"column_labels": {
+					"properties": {
+						"text": {
+							"ref": "Label"
+						},
+						"text2": {
+							"ref": "Label"
+						}
+					},
+					"metadata": {
+						"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
+					}
+				},
+				"oracle_type": {
+					"enum": [
+						"table_shared_text2"
+					],
+					"metadata": {
+						"description": "A table with multiple unique roll columns, and 2 shared text columns."
+					}
 				}
 			},
 			"optionalProperties": {
-				"icon": {
-					"ref": "SvgImageUrl"
-				},
-				"oracle_rolls": {
-					"elements": {
-						"ref": "OracleRoll"
-					},
+				"_comment": {
+					"type": "string",
 					"metadata": {
-						"description": "Further oracle rolls prompted by this table row."
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
+				"canonical_name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
 					}
 				},
 				"suggestions": {
 					"ref": "Suggestions"
 				},
-				"embed_table": {
-					"ref": "OracleRollableId",
-					"metadata": {
-						"description": "Hints that the identified table should be rendered inside this table row."
-					}
-				},
-				"template": {
-					"ref": "OracleRollTemplate"
-				},
-				"_i18n": {
-					"ref": "I18nHints"
-				},
 				"tags": {
 					"ref": "Tags"
+				},
+				"color": {
+					"ref": "CssColor",
+					"metadata": {
+						"description": "A thematic color associated with this collection."
+					}
+				},
+				"summary": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+					}
+				},
+				"description": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+					}
+				},
+				"images": {
+					"elements": {
+						"ref": "WebpImageUrl",
+						"metadata": {
+							"description": "Extra images associated with this collection."
+						}
+					}
+				},
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An SVG icon associated with this collection."
+					}
+				},
+				"enhances": {
+					"elements": {
+						"ref": "OracleCollectionIdWildcard"
+					},
+					"metadata": {
+						"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own."
+					}
+				},
+				"replaces": {
+					"elements": {
+						"ref": "OracleCollectionIdWildcard"
+					},
+					"metadata": {
+						"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection."
+					}
+				},
+				"contents": {
+					"values": {
+						"ref": "OracleColumnText2"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$"
+					}
 				}
 			},
 			"metadata": {
-				"description": "Represents a row in an oracle table with 3 text cells."
+				"description": "An OracleCollection representing a single table with multiple roll columns, and 2 shared text columns."
+			}
+		},
+		"OracleTableSharedText3": {
+			"properties": {
+				"_id": {
+					"ref": "OracleCollectionId",
+					"metadata": {
+						"description": "The unique Datasworn ID for this item."
+					}
+				},
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary name/label for this item."
+					}
+				},
+				"_source": {
+					"ref": "SourceInfo",
+					"metadata": {
+						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					}
+				},
+				"type": {
+					"enum": [
+						"oracle_collection"
+					]
+				},
+				"column_labels": {
+					"properties": {
+						"text": {
+							"ref": "Label"
+						}
+					},
+					"metadata": {
+						"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
+					}
+				},
+				"oracle_type": {
+					"enum": [
+						"table_shared_text3"
+					],
+					"metadata": {
+						"description": "A table with multiple unique roll columns, and 3 shared text columns."
+					}
+				}
+			},
+			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
+				"canonical_name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"tags": {
+					"ref": "Tags"
+				},
+				"color": {
+					"ref": "CssColor",
+					"metadata": {
+						"description": "A thematic color associated with this collection."
+					}
+				},
+				"summary": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+					}
+				},
+				"description": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+					}
+				},
+				"images": {
+					"elements": {
+						"ref": "WebpImageUrl",
+						"metadata": {
+							"description": "Extra images associated with this collection."
+						}
+					}
+				},
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An SVG icon associated with this collection."
+					}
+				},
+				"enhances": {
+					"elements": {
+						"ref": "OracleCollectionIdWildcard"
+					},
+					"metadata": {
+						"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own."
+					}
+				},
+				"replaces": {
+					"elements": {
+						"ref": "OracleCollectionIdWildcard"
+					},
+					"metadata": {
+						"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection."
+					}
+				},
+				"contents": {
+					"values": {
+						"ref": "OracleColumnText3"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$"
+					}
+				}
+			},
+			"metadata": {
+				"description": "An OracleCollection representing a single table with multiple roll columns, and 2 shared text columns."
+			}
+		},
+		"OracleTableText": {
+			"properties": {
+				"_id": {
+					"ref": "OracleRollableId",
+					"metadata": {
+						"description": "The unique Datasworn ID for this item."
+					}
+				},
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary name/label for this item."
+					}
+				},
+				"_source": {
+					"ref": "SourceInfo",
+					"metadata": {
+						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					}
+				},
+				"oracle_type": {
+					"enum": [
+						"table_text"
+					]
+				},
+				"dice": {
+					"ref": "DiceExpression",
+					"metadata": {
+						"description": "The roll used to select a result on this oracle."
+					}
+				},
+				"type": {
+					"enum": [
+						"oracle_rollable"
+					]
+				},
+				"rows": {
+					"elements": {
+						"ref": "OracleRollableRowText"
+					},
+					"metadata": {
+						"description": "An array of objects, each representing a single row of the table."
+					}
+				},
+				"column_labels": {
+					"properties": {
+						"roll": {
+							"ref": "Label"
+						},
+						"text": {
+							"ref": "Label"
+						}
+					},
+					"metadata": {
+						"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
+					}
+				}
+			},
+			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
+				"canonical_name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"tags": {
+					"ref": "Tags"
+				},
+				"replaces": {
+					"elements": {
+						"ref": "OracleRollableIdWildcard"
+					},
+					"metadata": {
+						"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object."
+					}
+				},
+				"match": {
+					"ref": "OracleMatchBehavior",
+					"metadata": {
+						"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+					}
+				},
+				"recommended_rolls": {
+					"properties": {
+						"min": {
+							"type": "int16"
+						},
+						"max": {
+							"type": "int16"
+						}
+					}
+				},
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An icon that represents this table."
+					}
+				},
+				"summary": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+					}
+				},
+				"description": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+					}
+				}
+			},
+			"metadata": {
+				"description": "Represents a basic rollable oracle table with one roll column and one text result column."
+			}
+		},
+		"OracleTableText2": {
+			"properties": {
+				"_id": {
+					"ref": "OracleRollableId",
+					"metadata": {
+						"description": "The unique Datasworn ID for this item."
+					}
+				},
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary name/label for this item."
+					}
+				},
+				"_source": {
+					"ref": "SourceInfo",
+					"metadata": {
+						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					}
+				},
+				"oracle_type": {
+					"enum": [
+						"table_text2"
+					]
+				},
+				"dice": {
+					"ref": "DiceExpression",
+					"metadata": {
+						"description": "The roll used to select a result on this oracle."
+					}
+				},
+				"type": {
+					"enum": [
+						"oracle_rollable"
+					]
+				},
+				"rows": {
+					"elements": {
+						"ref": "OracleRollableRowText2"
+					},
+					"metadata": {
+						"description": "An array of objects, each representing a single row of the table."
+					}
+				},
+				"column_labels": {
+					"properties": {
+						"roll": {
+							"ref": "Label"
+						},
+						"text": {
+							"ref": "Label"
+						},
+						"text2": {
+							"ref": "Label"
+						}
+					},
+					"metadata": {
+						"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
+					}
+				}
+			},
+			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
+				"canonical_name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"tags": {
+					"ref": "Tags"
+				},
+				"replaces": {
+					"elements": {
+						"ref": "OracleRollableIdWildcard"
+					},
+					"metadata": {
+						"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object."
+					}
+				},
+				"match": {
+					"ref": "OracleMatchBehavior",
+					"metadata": {
+						"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+					}
+				},
+				"recommended_rolls": {
+					"properties": {
+						"min": {
+							"type": "int16"
+						},
+						"max": {
+							"type": "int16"
+						}
+					}
+				},
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An icon that represents this table."
+					}
+				},
+				"summary": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+					}
+				},
+				"description": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+					}
+				}
+			},
+			"metadata": {
+				"description": "A rollable oracle table with one roll column and two text columns."
+			}
+		},
+		"OracleTableText3": {
+			"properties": {
+				"_id": {
+					"ref": "OracleRollableId",
+					"metadata": {
+						"description": "The unique Datasworn ID for this item."
+					}
+				},
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary name/label for this item."
+					}
+				},
+				"_source": {
+					"ref": "SourceInfo",
+					"metadata": {
+						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					}
+				},
+				"oracle_type": {
+					"enum": [
+						"table_text3"
+					]
+				},
+				"dice": {
+					"ref": "DiceExpression",
+					"metadata": {
+						"description": "The roll used to select a result on this oracle."
+					}
+				},
+				"type": {
+					"enum": [
+						"oracle_rollable"
+					]
+				},
+				"rows": {
+					"elements": {
+						"ref": "OracleRollableRowText3"
+					},
+					"metadata": {
+						"description": "An array of objects, each representing a single row of the table."
+					}
+				},
+				"column_labels": {
+					"properties": {
+						"roll": {
+							"ref": "Label"
+						},
+						"text": {
+							"ref": "Label"
+						},
+						"text2": {
+							"ref": "Label"
+						},
+						"text3": {
+							"ref": "Label"
+						}
+					},
+					"metadata": {
+						"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
+					}
+				}
+			},
+			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
+				"canonical_name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"tags": {
+					"ref": "Tags"
+				},
+				"replaces": {
+					"elements": {
+						"ref": "OracleRollableIdWildcard"
+					},
+					"metadata": {
+						"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object."
+					}
+				},
+				"match": {
+					"ref": "OracleMatchBehavior",
+					"metadata": {
+						"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+					}
+				},
+				"recommended_rolls": {
+					"properties": {
+						"min": {
+							"type": "int16"
+						},
+						"max": {
+							"type": "int16"
+						}
+					}
+				},
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An icon that represents this table."
+					}
+				},
+				"summary": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
+					}
+				},
+				"description": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
+					}
+				}
+			},
+			"metadata": {
+				"description": "A rollable oracle table with one roll column and 3 text columns."
 			}
 		},
 		"OracleTablesCollection": {
@@ -3955,6 +6861,73 @@
 					"highest": "Use the roll option with the best/highest value.",
 					"lowest": "Use the roll option with the worst/lowest value.",
 					"all": "Use _every_ roll option at once."
+				}
+			}
+		},
+		"EmbeddedActionRollMove": {
+			"properties": {
+				"_id": {
+					"ref": "EmbeddedMoveId"
+				},
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary name/label for this item."
+					}
+				},
+				"text": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "The complete rules text of the move."
+					}
+				},
+				"roll_type": {
+					"enum": [
+						"action_roll"
+					],
+					"metadata": {
+						"description": "A move that makes an action roll."
+					}
+				},
+				"trigger": {
+					"ref": "TriggerActionRoll",
+					"metadata": {
+						"description": "Trigger conditions for this move."
+					}
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"metadata": {
+						"description": "Is burning momentum allowed for this move?"
+					}
+				},
+				"outcomes": {
+					"ref": "MoveOutcomes"
+				},
+				"type": {
+					"enum": [
+						"move"
+					]
+				}
+			},
+			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
+				"canonical_name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"tags": {
+					"ref": "Tags"
 				}
 			}
 		},
@@ -4199,6 +7172,210 @@
 							"ref": "Tags"
 						}
 					}
+				}
+			}
+		},
+		"EmbeddedNoRollMove": {
+			"properties": {
+				"_id": {
+					"ref": "EmbeddedMoveId"
+				},
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary name/label for this item."
+					}
+				},
+				"text": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "The complete rules text of the move."
+					}
+				},
+				"roll_type": {
+					"enum": [
+						"no_roll"
+					],
+					"metadata": {
+						"description": "A move that makes no action rolls or progress rolls."
+					}
+				},
+				"trigger": {
+					"ref": "TriggerNoRoll",
+					"metadata": {
+						"description": "Trigger conditions for this move."
+					}
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"metadata": {
+						"description": "Is burning momentum allowed for this move?"
+					}
+				},
+				"type": {
+					"enum": [
+						"move"
+					]
+				}
+			},
+			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
+				"canonical_name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"tags": {
+					"ref": "Tags"
+				}
+			}
+		},
+		"EmbeddedProgressRollMove": {
+			"properties": {
+				"_id": {
+					"ref": "EmbeddedMoveId"
+				},
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary name/label for this item."
+					}
+				},
+				"text": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "The complete rules text of the move."
+					}
+				},
+				"roll_type": {
+					"enum": [
+						"progress_roll"
+					],
+					"metadata": {
+						"description": "A progress move that rolls on a standard progress track type (defined by this move)."
+					}
+				},
+				"trigger": {
+					"ref": "TriggerProgressRoll",
+					"metadata": {
+						"description": "Trigger conditions for this move."
+					}
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"metadata": {
+						"description": "Is burning momentum allowed for this move?"
+					}
+				},
+				"outcomes": {
+					"ref": "MoveOutcomes"
+				},
+				"type": {
+					"enum": [
+						"move"
+					]
+				},
+				"tracks": {
+					"ref": "ProgressTrackTypeInfo",
+					"metadata": {
+						"description": "Describes the common features of progress tracks associated with this move."
+					}
+				}
+			},
+			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
+				"canonical_name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"tags": {
+					"ref": "Tags"
+				}
+			}
+		},
+		"EmbeddedSpecialTrackMove": {
+			"properties": {
+				"_id": {
+					"ref": "EmbeddedMoveId"
+				},
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary name/label for this item."
+					}
+				},
+				"text": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "The complete rules text of the move."
+					}
+				},
+				"roll_type": {
+					"enum": [
+						"special_track"
+					],
+					"metadata": {
+						"description": "A progress move that rolls on one or more special tracks, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged)."
+					}
+				},
+				"trigger": {
+					"ref": "TriggerSpecialTrack",
+					"metadata": {
+						"description": "Trigger conditions for this move."
+					}
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"metadata": {
+						"description": "Is burning momentum allowed for this move?"
+					}
+				},
+				"outcomes": {
+					"ref": "MoveOutcomes"
+				},
+				"type": {
+					"enum": [
+						"move"
+					]
+				}
+			},
+			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
+				"canonical_name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"tags": {
+					"ref": "Tags"
 				}
 			}
 		},
@@ -4558,6 +7735,126 @@
 				}
 			}
 		},
+		"MoveActionRoll": {
+			"properties": {
+				"_id": {
+					"ref": "MoveId",
+					"metadata": {
+						"description": "The unique Datasworn ID for this item."
+					}
+				},
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary name/label for this item."
+					}
+				},
+				"_source": {
+					"ref": "SourceInfo",
+					"metadata": {
+						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					}
+				},
+				"text": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "The complete rules text of the move."
+					}
+				},
+				"roll_type": {
+					"enum": [
+						"action_roll"
+					],
+					"metadata": {
+						"description": "A move that makes an action roll."
+					}
+				},
+				"trigger": {
+					"ref": "TriggerActionRoll",
+					"metadata": {
+						"description": "Trigger conditions for this move."
+					}
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"metadata": {
+						"description": "Is burning momentum allowed for this move?"
+					}
+				},
+				"outcomes": {
+					"ref": "MoveOutcomes"
+				},
+				"type": {
+					"enum": [
+						"move"
+					]
+				}
+			},
+			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
+				"canonical_name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"tags": {
+					"ref": "Tags"
+				},
+				"replaces": {
+					"elements": {
+						"ref": "MoveIdWildcard"
+					},
+					"metadata": {
+						"description": "Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move."
+					}
+				},
+				"oracles": {
+					"values": {
+						"ref": "EmbeddedOracleRollable"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$"
+					}
+				}
+			},
+			"metadata": {
+				"description": "A move that makes an action roll."
+			}
+		},
+		"MoveActionRollEnhancement": {
+			"properties": {
+				"enhances": {
+					"elements": {
+						"ref": "AnyMoveIdWildcard"
+					}
+				},
+				"roll_type": {
+					"enum": [
+						"action_roll"
+					],
+					"metadata": {
+						"description": "A move must have this `roll_type` to receive this enhancement. This is in addition to any other restrictions made by other properties."
+					}
+				}
+			},
+			"optionalProperties": {
+				"trigger": {
+					"ref": "TriggerActionRollEnhancement"
+				}
+			},
+			"metadata": {
+				"description": "An object that describes changes to a move. These changes should be applied recursively, altering only the specified properties; enhanced arrays should be concatencated with the original array value."
+			}
+		},
 		"MoveCategory": {
 			"properties": {
 				"_id": {
@@ -4735,6 +8032,123 @@
 				}
 			}
 		},
+		"MoveNoRoll": {
+			"properties": {
+				"_id": {
+					"ref": "MoveId",
+					"metadata": {
+						"description": "The unique Datasworn ID for this item."
+					}
+				},
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary name/label for this item."
+					}
+				},
+				"_source": {
+					"ref": "SourceInfo",
+					"metadata": {
+						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					}
+				},
+				"text": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "The complete rules text of the move."
+					}
+				},
+				"roll_type": {
+					"enum": [
+						"no_roll"
+					],
+					"metadata": {
+						"description": "A move that makes no action rolls or progress rolls."
+					}
+				},
+				"trigger": {
+					"ref": "TriggerNoRoll",
+					"metadata": {
+						"description": "Trigger conditions for this move."
+					}
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"metadata": {
+						"description": "Is burning momentum allowed for this move?"
+					}
+				},
+				"type": {
+					"enum": [
+						"move"
+					]
+				}
+			},
+			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
+				"canonical_name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"tags": {
+					"ref": "Tags"
+				},
+				"replaces": {
+					"elements": {
+						"ref": "MoveIdWildcard"
+					},
+					"metadata": {
+						"description": "Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move."
+					}
+				},
+				"oracles": {
+					"values": {
+						"ref": "EmbeddedOracleRollable"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$"
+					}
+				}
+			},
+			"metadata": {
+				"description": "A move that makes no progress rolls or action rolls."
+			}
+		},
+		"MoveNoRollEnhancement": {
+			"properties": {
+				"enhances": {
+					"elements": {
+						"ref": "AnyMoveIdWildcard"
+					}
+				},
+				"roll_type": {
+					"enum": [
+						"no_roll"
+					],
+					"metadata": {
+						"description": "A move must have this `roll_type` to receive this enhancement. This is in addition to any other restrictions made by other properties."
+					}
+				}
+			},
+			"optionalProperties": {
+				"trigger": {
+					"ref": "TriggerNoRollEnhancement"
+				}
+			},
+			"metadata": {
+				"description": "An object that describes changes to a move. These changes should be applied recursively, altering only the specified properties; enhanced arrays should be concatencated with the original array value."
+			}
+		},
 		"MoveOutcome": {
 			"properties": {
 				"text": {
@@ -4766,6 +8180,268 @@
 			},
 			"metadata": {
 				"description": "A standalone localized description for each move outcome (miss, weak hit, or strong hit). This is for for e.g. VTT implementations, where it's often useful to display only the rules text relevant to a roll result.\n\n  This often requires light editorialization to create text that can stand alone without reference to the rest of the move. For example, 'as above' (in reference to another move outcome) shouldn't be used here; instead, the relevant text should be repeated."
+			}
+		},
+		"MoveProgressRoll": {
+			"properties": {
+				"_id": {
+					"ref": "MoveId",
+					"metadata": {
+						"description": "The unique Datasworn ID for this item."
+					}
+				},
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary name/label for this item."
+					}
+				},
+				"_source": {
+					"ref": "SourceInfo",
+					"metadata": {
+						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					}
+				},
+				"text": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "The complete rules text of the move."
+					}
+				},
+				"roll_type": {
+					"enum": [
+						"progress_roll"
+					],
+					"metadata": {
+						"description": "A progress move that rolls on a standard progress track type (defined by this move)."
+					}
+				},
+				"trigger": {
+					"ref": "TriggerProgressRoll",
+					"metadata": {
+						"description": "Trigger conditions for this move."
+					}
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"metadata": {
+						"description": "Is burning momentum allowed for this move?"
+					}
+				},
+				"outcomes": {
+					"ref": "MoveOutcomes"
+				},
+				"type": {
+					"enum": [
+						"move"
+					]
+				},
+				"tracks": {
+					"ref": "ProgressTrackTypeInfo",
+					"metadata": {
+						"description": "Describes the common features of progress tracks associated with this move."
+					}
+				}
+			},
+			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
+				"canonical_name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"tags": {
+					"ref": "Tags"
+				},
+				"replaces": {
+					"elements": {
+						"ref": "MoveIdWildcard"
+					},
+					"metadata": {
+						"description": "Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move."
+					}
+				},
+				"oracles": {
+					"values": {
+						"ref": "EmbeddedOracleRollable"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$"
+					}
+				}
+			},
+			"metadata": {
+				"description": "A progress move that rolls on a standard progress track type (whose features are defined by this move object). For progress rolls that use special tracks, see MoveSpecialTrack."
+			}
+		},
+		"MoveProgressRollEnhancement": {
+			"properties": {
+				"enhances": {
+					"elements": {
+						"ref": "AnyMoveIdWildcard"
+					}
+				},
+				"roll_type": {
+					"enum": [
+						"progress_roll"
+					],
+					"metadata": {
+						"description": "A move must have this `roll_type` to receive this enhancement. This is in addition to any other restrictions made by other properties."
+					}
+				}
+			},
+			"optionalProperties": {
+				"trigger": {
+					"ref": "TriggerProgressRollEnhancement"
+				}
+			},
+			"metadata": {
+				"description": "An object that describes changes to a move. These changes should be applied recursively, altering only the specified properties; enhanced arrays should be concatencated with the original array value."
+			}
+		},
+		"MoveRollType": {
+			"enum": [
+				"no_roll",
+				"action_roll",
+				"progress_roll",
+				"special_track"
+			],
+			"metadata": {
+				"enumDescription": {
+					"no_roll": "A move that makes no action rolls or progress rolls.",
+					"action_roll": "A move that makes an action roll.",
+					"progress_roll": "A progress move that rolls on a standard progress track type (defined by this move).",
+					"special_track": "A progress move that rolls on one or more special tracks, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged)."
+				}
+			}
+		},
+		"MoveSpecialTrack": {
+			"properties": {
+				"_id": {
+					"ref": "MoveId",
+					"metadata": {
+						"description": "The unique Datasworn ID for this item."
+					}
+				},
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The primary name/label for this item."
+					}
+				},
+				"_source": {
+					"ref": "SourceInfo",
+					"metadata": {
+						"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					}
+				},
+				"text": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "The complete rules text of the move."
+					}
+				},
+				"roll_type": {
+					"enum": [
+						"special_track"
+					],
+					"metadata": {
+						"description": "A progress move that rolls on one or more special tracks, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged)."
+					}
+				},
+				"trigger": {
+					"ref": "TriggerSpecialTrack",
+					"metadata": {
+						"description": "Trigger conditions for this move."
+					}
+				},
+				"allow_momentum_burn": {
+					"type": "boolean",
+					"metadata": {
+						"description": "Is burning momentum allowed for this move?"
+					}
+				},
+				"outcomes": {
+					"ref": "MoveOutcomes"
+				},
+				"type": {
+					"enum": [
+						"move"
+					]
+				}
+			},
+			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					}
+				},
+				"canonical_name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"tags": {
+					"ref": "Tags"
+				},
+				"replaces": {
+					"elements": {
+						"ref": "MoveIdWildcard"
+					},
+					"metadata": {
+						"description": "Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move."
+					}
+				},
+				"oracles": {
+					"values": {
+						"ref": "EmbeddedOracleRollable"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$"
+					}
+				}
+			},
+			"metadata": {
+				"description": "A progress move that rolls on a special track, such as Legacies (Starforged) or Bonds (classic Ironsworn). For progress moves that use standard progress tracks, see MoveProgressRoll instead."
+			}
+		},
+		"MoveSpecialTrackEnhancement": {
+			"properties": {
+				"enhances": {
+					"elements": {
+						"ref": "AnyMoveIdWildcard"
+					}
+				},
+				"roll_type": {
+					"enum": [
+						"special_track"
+					],
+					"metadata": {
+						"description": "A move must have this `roll_type` to receive this enhancement. This is in addition to any other restrictions made by other properties."
+					}
+				}
+			},
+			"optionalProperties": {
+				"trigger": {
+					"ref": "TriggerSpecialTrackEnhancement"
+				}
+			},
+			"metadata": {
+				"description": "An object that describes changes to a move. These changes should be applied recursively, altering only the specified properties; enhanced arrays should be concatencated with the original array value."
 			}
 		},
 		"ProgressRollMethod": {
@@ -5546,6 +9222,82 @@
 				"description": "Describes which assets can be attached to this asset. Example: Starforged's Module assets, which can be equipped by Command Vehicle assets. See p. 55 of Starforged for more info."
 			}
 		},
+		"AssetCardFlipField": {
+			"properties": {
+				"label": {
+					"ref": "Label"
+				},
+				"value": {
+					"type": "boolean",
+					"metadata": {
+						"description": "Is the card flipped over?"
+					}
+				},
+				"field_type": {
+					"enum": [
+						"card_flip"
+					]
+				},
+				"is_impact": {
+					"type": "boolean",
+					"metadata": {
+						"description": "Does this field count as an impact (Starforged) or debility (Ironsworn classic) when its value is set to `true`?"
+					}
+				},
+				"disables_asset": {
+					"type": "boolean",
+					"metadata": {
+						"description": "Does this field disable the asset when its value is set to `true`?"
+					}
+				}
+			},
+			"optionalProperties": {
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An icon associated with this input."
+					}
+				}
+			}
+		},
+		"AssetCheckboxField": {
+			"properties": {
+				"label": {
+					"ref": "Label"
+				},
+				"value": {
+					"type": "boolean",
+					"metadata": {
+						"description": "Is the box checked?"
+					}
+				},
+				"field_type": {
+					"enum": [
+						"checkbox"
+					]
+				},
+				"is_impact": {
+					"type": "boolean",
+					"metadata": {
+						"description": "Does this field count as an impact (Starforged) or debility (Ironsworn classic) when its value is set to `true`?"
+					}
+				},
+				"disables_asset": {
+					"type": "boolean",
+					"metadata": {
+						"description": "Does this field disable the asset when its value is set to `true`?"
+					}
+				}
+			},
+			"optionalProperties": {
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An icon associated with this input."
+					}
+				}
+			}
+		},
 		"AssetCollection": {
 			"properties": {
 				"_id": {
@@ -5650,6 +9402,101 @@
 			},
 			"metadata": {}
 		},
+		"AssetConditionMeter": {
+			"properties": {
+				"label": {
+					"ref": "Label"
+				},
+				"value": {
+					"type": "int8",
+					"metadata": {
+						"description": "The current value of this meter."
+					}
+				},
+				"min": {
+					"type": "int8",
+					"metadata": {
+						"description": "The minimum value of this meter."
+					}
+				},
+				"max": {
+					"type": "int8",
+					"metadata": {
+						"description": "The maximum value of this meter."
+					}
+				},
+				"rollable": {
+					"type": "boolean",
+					"metadata": {
+						"description": "Is this meter's `value` usable as a stat in an action roll?"
+					}
+				},
+				"field_type": {
+					"enum": [
+						"condition_meter"
+					]
+				}
+			},
+			"optionalProperties": {
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An icon associated with this input."
+					}
+				},
+				"moves": {
+					"optionalProperties": {
+						"suffer": {
+							"elements": {
+								"ref": "AnyMoveIdWildcard",
+								"metadata": {
+									"examples": [
+										"move:classic/suffer/companion_endure_harm",
+										"move:starforged/suffer/companion_takes_a_hit",
+										"move:starforged/suffer/withstand_damage"
+									]
+								}
+							},
+							"metadata": {
+								"description": "The ID(s) of suffer moves associated with the condition meter. If the suffer move makes an action roll, this condition meter value should be made available as a roll option."
+							}
+						},
+						"recover": {
+							"elements": {
+								"ref": "AnyMoveIdWildcard",
+								"metadata": {
+									"examples": [
+										"move:classic/adventure/heal",
+										"move:classic/adventure/make_camp",
+										"move:classic/relationship/sojourn",
+										"move:starforged/recover/heal",
+										"move:starforged/recover/repair"
+									]
+								}
+							},
+							"metadata": {
+								"description": "The ID(s) of recovery moves associated with this meter."
+							}
+						}
+					},
+					"metadata": {
+						"description": "Provides hints for moves that interact with this condition meter, such as suffer and recovery moves."
+					}
+				},
+				"controls": {
+					"values": {
+						"ref": "AssetConditionMeterControlField"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "Checkbox controls rendered as part of the condition meter."
+					}
+				}
+			},
+			"metadata": {
+				"description": "Some assets provide a special condition meter of their own. The most common example is the health meters on companion assets. Asset condition meters may also include their own controls, such as the checkboxes that Starforged companion assets use to indicate they are \"out of action\"."
+			}
+		},
 		"AssetConditionMeterControlField": {
 			"discriminator": "field_type",
 			"mapping": {
@@ -5722,6 +9569,24 @@
 			},
 			"metadata": {
 				"description": "A checkbox control field, rendered as part of an asset condition meter."
+			}
+		},
+		"AssetConditionMeterEnhancement": {
+			"properties": {
+				"field_type": {
+					"enum": [
+						"condition_meter"
+					]
+				},
+				"max": {
+					"type": "int8",
+					"metadata": {
+						"description": "The maximum value of this meter."
+					}
+				}
+			},
+			"metadata": {
+				"description": "Some assets provide a special condition meter of their own. The most common example is the health meters on companion assets. Asset condition meters may also include their own controls, such as the checkboxes that Starforged companion assets use to indicate they are \"out of action\"."
 			}
 		},
 		"AssetControlField": {
@@ -6148,6 +10013,218 @@
 				"description": "Options are asset input fields which are set once, usually when the character takes the asset. The most common example is the \"name\" field on companion assets. A more complex example is the choice of a god's stat for the Devotant asset."
 			}
 		},
+		"ClockField": {
+			"properties": {
+				"label": {
+					"ref": "Label"
+				},
+				"value": {
+					"type": "int8",
+					"metadata": {
+						"description": "The current value of this input."
+					}
+				},
+				"min": {
+					"type": "int8",
+					"metadata": {
+						"description": "The minimum number of filled clock segments. This is always 0."
+					}
+				},
+				"max": {
+					"type": "int8",
+					"metadata": {
+						"description": "The size of the clock -- in other words, the maximum number of filled clock segments. Standard clocks have 4, 6, 8, or 10 segments."
+					}
+				},
+				"rollable": {
+					"type": "boolean"
+				},
+				"field_type": {
+					"enum": [
+						"clock"
+					]
+				}
+			},
+			"optionalProperties": {
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An icon associated with this input."
+					}
+				}
+			},
+			"metadata": {
+				"description": "A clock with 4 or more segments."
+			}
+		},
+		"ConditionMeterField": {
+			"properties": {
+				"label": {
+					"ref": "Label"
+				},
+				"value": {
+					"type": "int8",
+					"metadata": {
+						"description": "The current value of this meter."
+					}
+				},
+				"min": {
+					"type": "int8",
+					"metadata": {
+						"description": "The minimum value of this meter."
+					}
+				},
+				"max": {
+					"type": "int8",
+					"metadata": {
+						"description": "The maximum value of this meter."
+					}
+				},
+				"rollable": {
+					"type": "boolean",
+					"metadata": {
+						"description": "Is this meter's `value` usable as a stat in an action roll?"
+					}
+				},
+				"field_type": {
+					"enum": [
+						"condition_meter"
+					]
+				}
+			},
+			"optionalProperties": {
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An icon associated with this input."
+					}
+				}
+			},
+			"metadata": {
+				"description": "A meter with an integer value, bounded by a minimum and maximum."
+			}
+		},
+		"CounterField": {
+			"properties": {
+				"label": {
+					"ref": "Label"
+				},
+				"value": {
+					"type": "int8",
+					"metadata": {
+						"description": "The current value of this input."
+					}
+				},
+				"min": {
+					"type": "int8",
+					"metadata": {
+						"description": "The (inclusive) minimum value."
+					}
+				},
+				"max": {
+					"type": "int16"
+				},
+				"rollable": {
+					"type": "boolean"
+				},
+				"field_type": {
+					"enum": [
+						"counter"
+					]
+				}
+			},
+			"optionalProperties": {
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An icon associated with this input."
+					}
+				}
+			},
+			"metadata": {
+				"description": "A basic counter representing a non-rollable integer value. They usually start at 0, and may or may not have a maximum."
+			}
+		},
+		"SelectEnhancementField": {
+			"properties": {
+				"label": {
+					"ref": "Label"
+				},
+				"value": {
+					"ref": "DictKey",
+					"metadata": {
+						"description": "The key of the currently selected choice from the `choices` property, or `null` if none is selected."
+					}
+				},
+				"choices": {
+					"values": {
+						"discriminator": "choice_type",
+						"mapping": {
+							"choice": {
+								"properties": {
+									"label": {
+										"ref": "Label"
+									}
+								},
+								"optionalProperties": {
+									"enhance_asset": {
+										"ref": "AssetEnhancement"
+									},
+									"enhance_moves": {
+										"elements": {
+											"ref": "MoveEnhancement"
+										}
+									}
+								},
+								"metadata": {
+									"description": "Represents an option in a list of choices."
+								}
+							},
+							"choice_group": {
+								"properties": {
+									"name": {
+										"ref": "Label",
+										"metadata": {
+											"description": "A label for this option group."
+										}
+									},
+									"choices": {
+										"values": {
+											"ref": "SelectEnhancementFieldChoice"
+										},
+										"metadata": {
+											"propertyPattern": "^[a-z][a-z_]*$"
+										}
+									}
+								},
+								"metadata": {
+									"description": "Represents a grouping of options in a list of choices."
+								}
+							}
+						}
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$"
+					}
+				},
+				"field_type": {
+					"enum": [
+						"select_enhancement"
+					]
+				}
+			},
+			"optionalProperties": {
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An icon associated with this input."
+					}
+				}
+			},
+			"metadata": {
+				"description": "Select from player and/or asset enhancements. Use it to describe modal abilities. For examples, see Ironclad (classic Ironsworn) and Windbinder (Sundered Isles)."
+			}
+		},
 		"SelectEnhancementFieldChoice": {
 			"properties": {
 				"label": {
@@ -6171,6 +10248,69 @@
 			},
 			"metadata": {
 				"description": "Represents an option in a list of choices."
+			}
+		},
+		"SelectEnhancementFieldChoiceGroup": {
+			"properties": {
+				"name": {
+					"ref": "Label",
+					"metadata": {
+						"description": "A label for this option group."
+					}
+				},
+				"choice_type": {
+					"enum": [
+						"choice_group"
+					]
+				},
+				"choices": {
+					"values": {
+						"ref": "SelectEnhancementFieldChoice"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$"
+					}
+				}
+			},
+			"metadata": {
+				"description": "Represents a grouping of options in a list of choices."
+			}
+		},
+		"SelectValueField": {
+			"properties": {
+				"label": {
+					"ref": "Label"
+				},
+				"value": {
+					"ref": "DictKey",
+					"metadata": {
+						"description": "The key of the currently selected choice from the `choices` property, or `null` if none is selected."
+					}
+				},
+				"choices": {
+					"values": {
+						"ref": "SelectValueFieldChoice"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$"
+					}
+				},
+				"field_type": {
+					"enum": [
+						"select_value"
+					]
+				}
+			},
+			"optionalProperties": {
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An icon associated with this input."
+					}
+				}
+			},
+			"metadata": {
+				"description": "Represents a list of mutually exclusive choices."
 			}
 		},
 		"SelectValueFieldChoice": {
@@ -6332,6 +10472,32 @@
 						"description": "Represents an option in a list of choices."
 					}
 				}
+			}
+		},
+		"TextField": {
+			"properties": {
+				"label": {
+					"ref": "Label"
+				},
+				"value": {
+					"type": "string"
+				},
+				"field_type": {
+					"enum": [
+						"text"
+					]
+				}
+			},
+			"optionalProperties": {
+				"icon": {
+					"ref": "SvgImageUrl",
+					"metadata": {
+						"description": "An icon associated with this input."
+					}
+				}
+			},
+			"metadata": {
+				"description": "Represents an input that accepts plain text."
 			}
 		},
 		"Truth": {
@@ -6806,6 +10972,9 @@
 				},
 				"roll": {
 					"ref": "DiceRange"
+				},
+				"_id": {
+					"ref": "DelveSiteDenizenId"
 				}
 			},
 			"optionalProperties": {
@@ -6823,7 +10992,7 @@
 				}
 			},
 			"metadata": {
-				"description": "Represents an entry in a site denizen matrix. Denizen matrices are described in Ironsworn: Delve."
+				"description": "Represents an entry in a delve site denizen matrix. Denizen matrices are described in Ironsworn: Delve."
 			}
 		},
 		"DelveSiteDenizenFrequency": {
@@ -6865,12 +11034,12 @@
 				},
 				"features": {
 					"elements": {
-						"ref": "OracleTableRowText"
+						"ref": "DelveSiteDomainFeature"
 					}
 				},
 				"dangers": {
 					"elements": {
-						"ref": "OracleTableRowText"
+						"ref": "DelveSiteDomainDanger"
 					}
 				}
 			},
@@ -6907,6 +11076,106 @@
 				"description": "A delve site Domain card."
 			}
 		},
+		"DelveSiteDomainDanger": {
+			"properties": {
+				"text": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "The primary text content of this row."
+					}
+				},
+				"roll": {
+					"ref": "DiceRange"
+				},
+				"_id": {
+					"ref": "DelveSiteDomainDangerId"
+				}
+			},
+			"optionalProperties": {
+				"icon": {
+					"ref": "SvgImageUrl"
+				},
+				"oracle_rolls": {
+					"elements": {
+						"ref": "OracleRoll"
+					},
+					"metadata": {
+						"description": "Further oracle rolls prompted by this table row."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"embed_table": {
+					"ref": "OracleRollableId",
+					"metadata": {
+						"description": "Hints that the identified table should be rendered inside this table row."
+					}
+				},
+				"template": {
+					"ref": "OracleRollTemplate"
+				},
+				"_i18n": {
+					"ref": "I18nHints"
+				},
+				"tags": {
+					"ref": "Tags"
+				}
+			},
+			"metadata": {
+				"description": "Represents a single Danger entry from a delve site Domain card."
+			}
+		},
+		"DelveSiteDomainFeature": {
+			"properties": {
+				"text": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "The primary text content of this row."
+					}
+				},
+				"roll": {
+					"ref": "DiceRange"
+				},
+				"_id": {
+					"ref": "DelveSiteDomainFeatureId"
+				}
+			},
+			"optionalProperties": {
+				"icon": {
+					"ref": "SvgImageUrl"
+				},
+				"oracle_rolls": {
+					"elements": {
+						"ref": "OracleRoll"
+					},
+					"metadata": {
+						"description": "Further oracle rolls prompted by this table row."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"embed_table": {
+					"ref": "OracleRollableId",
+					"metadata": {
+						"description": "Hints that the identified table should be rendered inside this table row."
+					}
+				},
+				"template": {
+					"ref": "OracleRollTemplate"
+				},
+				"_i18n": {
+					"ref": "I18nHints"
+				},
+				"tags": {
+					"ref": "Tags"
+				}
+			},
+			"metadata": {
+				"description": "Represents a single Feature entry from a delve site Domain card."
+			}
+		},
 		"DelveSiteTheme": {
 			"properties": {
 				"_id": {
@@ -6937,12 +11206,12 @@
 				},
 				"features": {
 					"elements": {
-						"ref": "OracleTableRowText"
+						"ref": "DelveSiteThemeFeature"
 					}
 				},
 				"dangers": {
 					"elements": {
-						"ref": "OracleTableRowText"
+						"ref": "DelveSiteThemeFeature"
 					}
 				}
 			},
@@ -6974,6 +11243,106 @@
 			},
 			"metadata": {
 				"description": "A delve site theme card."
+			}
+		},
+		"DelveSiteThemeDanger": {
+			"properties": {
+				"text": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "The primary text content of this row."
+					}
+				},
+				"roll": {
+					"ref": "DiceRange"
+				},
+				"_id": {
+					"ref": "DelveSiteThemeDangerId"
+				}
+			},
+			"optionalProperties": {
+				"icon": {
+					"ref": "SvgImageUrl"
+				},
+				"oracle_rolls": {
+					"elements": {
+						"ref": "OracleRoll"
+					},
+					"metadata": {
+						"description": "Further oracle rolls prompted by this table row."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"embed_table": {
+					"ref": "OracleRollableId",
+					"metadata": {
+						"description": "Hints that the identified table should be rendered inside this table row."
+					}
+				},
+				"template": {
+					"ref": "OracleRollTemplate"
+				},
+				"_i18n": {
+					"ref": "I18nHints"
+				},
+				"tags": {
+					"ref": "Tags"
+				}
+			},
+			"metadata": {
+				"description": "Represents a single Danger entry from a delve site Theme card."
+			}
+		},
+		"DelveSiteThemeFeature": {
+			"properties": {
+				"text": {
+					"ref": "MarkdownString",
+					"metadata": {
+						"description": "The primary text content of this row."
+					}
+				},
+				"roll": {
+					"ref": "DiceRange"
+				},
+				"_id": {
+					"ref": "DelveSiteThemeFeatureId"
+				}
+			},
+			"optionalProperties": {
+				"icon": {
+					"ref": "SvgImageUrl"
+				},
+				"oracle_rolls": {
+					"elements": {
+						"ref": "OracleRoll"
+					},
+					"metadata": {
+						"description": "Further oracle rolls prompted by this table row."
+					}
+				},
+				"suggestions": {
+					"ref": "Suggestions"
+				},
+				"embed_table": {
+					"ref": "OracleRollableId",
+					"metadata": {
+						"description": "Hints that the identified table should be rendered inside this table row."
+					}
+				},
+				"template": {
+					"ref": "OracleRollTemplate"
+				},
+				"_i18n": {
+					"ref": "I18nHints"
+				},
+				"tags": {
+					"ref": "Tags"
+				}
+			},
+			"metadata": {
+				"description": "Represents a single Feature entry from a delve site Theme card."
 			}
 		}
 	}

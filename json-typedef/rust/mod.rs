@@ -253,10 +253,23 @@ pub enum ActionRollMethod {
     WeakHit,
 }
 
+/// Represents any kind of non-wildcard ID, including IDs of embedded objects.
+pub type AnyId = String;
+
 /// Represents any kind of wildcard ID, including IDs of embedded objects.
 pub type AnyIdWildcard = String;
 
+pub type AnyMoveId = String;
+
 pub type AnyMoveIdWildcard = String;
+
+pub type AnyOracleRollableId = String;
+
+pub type AnyOracleRollableIdWildcard = String;
+
+pub type AnyOracleRollableRowId = String;
+
+pub type AnyOracleRollableRowIdWildcard = String;
 
 #[derive(Serialize, Deserialize)]
 pub enum AssetType {
@@ -532,6 +545,17 @@ pub struct AssetAbilityControlFieldText {
 /// A unique ID representing an AssetAbility object.
 pub type AssetAbilityId = String;
 
+/// A wildcarded AssetAbilityId that can be used to match multiple AssetAbility
+/// objects.
+pub type AssetAbilityIdWildcard = String;
+
+/// A unique ID representing an AssetAbilityMove object.
+pub type AssetAbilityMoveId = String;
+
+/// A wildcarded AssetAbilityMoveId that can be used to match multiple
+/// AssetAbilityMove objects.
+pub type AssetAbilityMoveIdWildcard = String;
+
 #[derive(Serialize, Deserialize)]
 #[serde(tag = "field_type")]
 pub enum AssetAbilityOptionField {
@@ -554,6 +578,20 @@ pub struct AssetAbilityOptionFieldText {
     pub icon: Option<Box<SvgImageUrl>>,
 }
 
+/// A unique ID representing an AssetAbilityOracleRollable object.
+pub type AssetAbilityOracleRollableId = String;
+
+/// A wildcarded AssetAbilityOracleRollableId that can be used to match multiple
+/// AssetAbilityOracleRollable objects.
+pub type AssetAbilityOracleRollableIdWildcard = String;
+
+/// A unique ID representing an AssetAbilityOracleRollableRow object.
+pub type AssetAbilityOracleRollableRowId = String;
+
+/// A wildcarded AssetAbilityOracleRollableRowId that can be used to match
+/// multiple AssetAbilityOracleRollableRow objects.
+pub type AssetAbilityOracleRollableRowIdWildcard = String;
+
 /// Describes which assets can be attached to this asset. Example: Starforged's
 /// Module assets, which can be equipped by Command Vehicle assets. See p. 55 of
 /// Starforged for more info.
@@ -565,6 +603,72 @@ pub struct AssetAttachment {
 
     #[serde(rename = "max")]
     pub max: i16,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum AssetCardFlipFieldFieldType {
+    #[serde(rename = "card_flip")]
+    CardFlip,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct AssetCardFlipField {
+    /// Does this field disable the asset when its value is set to `true`?
+    #[serde(rename = "disables_asset")]
+    pub disablesAsset: bool,
+
+    #[serde(rename = "field_type")]
+    pub fieldType: AssetCardFlipFieldFieldType,
+
+    /// Does this field count as an impact (Starforged) or debility (Ironsworn
+    /// classic) when its value is set to `true`?
+    #[serde(rename = "is_impact")]
+    pub isImpact: bool,
+
+    #[serde(rename = "label")]
+    pub label: Label,
+
+    /// Is the card flipped over?
+    #[serde(rename = "value")]
+    pub value: bool,
+
+    /// An icon associated with this input.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum AssetCheckboxFieldFieldType {
+    #[serde(rename = "checkbox")]
+    Checkbox,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct AssetCheckboxField {
+    /// Does this field disable the asset when its value is set to `true`?
+    #[serde(rename = "disables_asset")]
+    pub disablesAsset: bool,
+
+    #[serde(rename = "field_type")]
+    pub fieldType: AssetCheckboxFieldFieldType,
+
+    /// Does this field count as an impact (Starforged) or debility (Ironsworn
+    /// classic) when its value is set to `true`?
+    #[serde(rename = "is_impact")]
+    pub isImpact: bool,
+
+    #[serde(rename = "label")]
+    pub label: Label,
+
+    /// Is the box checked?
+    #[serde(rename = "value")]
+    pub value: bool,
+
+    /// An icon associated with this input.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -663,6 +767,74 @@ pub type AssetCollectionId = String;
 /// AssetCollection objects.
 pub type AssetCollectionIdWildcard = String;
 
+#[derive(Serialize, Deserialize)]
+pub enum AssetConditionMeterFieldType {
+    #[serde(rename = "condition_meter")]
+    ConditionMeter,
+}
+
+/// Provides hints for moves that interact with this condition meter, such as
+/// suffer and recovery moves.
+#[derive(Serialize, Deserialize)]
+pub struct AssetConditionMeterMoves {
+    /// The ID(s) of recovery moves associated with this meter.
+    #[serde(rename = "recover")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub recover: Option<Box<Vec<AnyMoveIdWildcard>>>,
+
+    /// The ID(s) of suffer moves associated with the condition meter. If the
+    /// suffer move makes an action roll, this condition meter value should be
+    /// made available as a roll option.
+    #[serde(rename = "suffer")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suffer: Option<Box<Vec<AnyMoveIdWildcard>>>,
+}
+
+/// Some assets provide a special condition meter of their own. The most common
+/// example is the health meters on companion assets. Asset condition meters
+/// may also include their own controls, such as the checkboxes that Starforged
+/// companion assets use to indicate they are "out of action".
+#[derive(Serialize, Deserialize)]
+pub struct AssetConditionMeter {
+    #[serde(rename = "field_type")]
+    pub fieldType: AssetConditionMeterFieldType,
+
+    #[serde(rename = "label")]
+    pub label: Label,
+
+    /// The maximum value of this meter.
+    #[serde(rename = "max")]
+    pub max: i8,
+
+    /// The minimum value of this meter.
+    #[serde(rename = "min")]
+    pub min: i8,
+
+    /// Is this meter's `value` usable as a stat in an action roll?
+    #[serde(rename = "rollable")]
+    pub rollable: bool,
+
+    /// The current value of this meter.
+    #[serde(rename = "value")]
+    pub value: i8,
+
+    /// Checkbox controls rendered as part of the condition meter.
+    #[serde(rename = "controls")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub controls: Option<Box<HashMap<String, AssetConditionMeterControlField>>>,
+
+    /// An icon associated with this input.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Provides hints for moves that interact with this condition meter, such
+    /// as suffer and recovery moves.
+    #[serde(rename = "moves")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub moves: Option<Box<AssetConditionMeterMoves>>,
+}
+
 /// A checkbox control field, rendered as part of an asset condition meter.
 #[derive(Serialize, Deserialize)]
 #[serde(tag = "field_type")]
@@ -720,6 +892,26 @@ pub struct AssetConditionMeterControlFieldCheckbox {
     #[serde(rename = "icon")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub icon: Option<Box<SvgImageUrl>>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum AssetConditionMeterEnhancementFieldType {
+    #[serde(rename = "condition_meter")]
+    ConditionMeter,
+}
+
+/// Some assets provide a special condition meter of their own. The most common
+/// example is the health meters on companion assets. Asset condition meters
+/// may also include their own controls, such as the checkboxes that Starforged
+/// companion assets use to indicate they are "out of action".
+#[derive(Serialize, Deserialize)]
+pub struct AssetConditionMeterEnhancement {
+    #[serde(rename = "field_type")]
+    pub fieldType: AssetConditionMeterEnhancementFieldType,
+
+    /// The maximum value of this meter.
+    #[serde(rename = "max")]
+    pub max: i8,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -921,6 +1113,28 @@ pub struct AssetControlFieldEnhancementConditionMeter {
     pub max: i8,
 }
 
+/// A reference to the value of an asset control.
+#[derive(Serialize, Deserialize)]
+pub enum AssetControlValueRefUsing {
+    #[serde(rename = "asset_control")]
+    AssetControl,
+}
+
+/// A reference to the value of an asset control.
+#[derive(Serialize, Deserialize)]
+pub struct AssetControlValueRef {
+    #[serde(rename = "assets")]
+    pub assets: Vec<AssetIdWildcard>,
+
+    /// The dictionary key of the asset control field.
+    #[serde(rename = "control")]
+    pub control: DictKey,
+
+    /// A reference to the value of an asset control.
+    #[serde(rename = "using")]
+    pub using: AssetControlValueRefUsing,
+}
+
 /// Describes enhancements made to this asset in a partial asset object. The
 /// changes should be applied recursively; only the values that are specified
 /// should be changed.
@@ -1069,6 +1283,28 @@ pub struct AssetOptionFieldText {
     #[serde(rename = "icon")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub icon: Option<Box<SvgImageUrl>>,
+}
+
+/// A reference to the value of an asset option.
+#[derive(Serialize, Deserialize)]
+pub enum AssetOptionValueRefUsing {
+    #[serde(rename = "asset_option")]
+    AssetOption,
+}
+
+/// A reference to the value of an asset option.
+#[derive(Serialize, Deserialize)]
+pub struct AssetOptionValueRef {
+    #[serde(rename = "assets")]
+    pub assets: Vec<AssetIdWildcard>,
+
+    /// The dictionary key of the asset option field.
+    #[serde(rename = "option")]
+    pub option: DictKey,
+
+    /// A reference to the value of an asset option.
+    #[serde(rename = "using")]
+    pub using: AssetOptionValueRefUsing,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1239,6 +1475,54 @@ pub struct AtlasEntry {
 /// A unique ID representing an AtlasEntry object.
 pub type AtlasEntryId = String;
 
+/// A wildcarded AtlasEntryId that can be used to match multiple AtlasEntry
+/// objects.
+pub type AtlasEntryIdWildcard = String;
+
+/// A reference to the value of an attached asset control. For example, a Module
+/// asset could use this to roll using the `integrity` control of an attached
+/// Vehicle.
+#[derive(Serialize, Deserialize)]
+pub enum AttachedAssetControlValueRefUsing {
+    #[serde(rename = "attached_asset_control")]
+    AttachedAssetControl,
+}
+
+/// A reference to the value of an attached asset control. For example, a Module
+/// asset could use this to roll using the `integrity` control of an attached
+/// Vehicle.
+#[derive(Serialize, Deserialize)]
+pub struct AttachedAssetControlValueRef {
+    /// The dictionary key of the asset control field.
+    #[serde(rename = "control")]
+    pub control: DictKey,
+
+    /// A reference to the value of an attached asset control. For example, a
+    /// Module asset could use this to roll using the `integrity` control of an
+    /// attached Vehicle.
+    #[serde(rename = "using")]
+    pub using: AttachedAssetControlValueRefUsing,
+}
+
+/// A reference to the value of an attached asset option.
+#[derive(Serialize, Deserialize)]
+pub enum AttachedAssetOptionValueRefUsing {
+    #[serde(rename = "attached_asset_option")]
+    AttachedAssetOption,
+}
+
+/// A reference to the value of an attached asset option.
+#[derive(Serialize, Deserialize)]
+pub struct AttachedAssetOptionValueRef {
+    /// The dictionary key of the asset option field.
+    #[serde(rename = "option")]
+    pub option: DictKey,
+
+    /// A reference to the value of an attached asset option.
+    #[serde(rename = "using")]
+    pub using: AttachedAssetOptionValueRefUsing,
+}
+
 /// Information on the original creator of this material.
 #[derive(Serialize, Deserialize)]
 pub struct AuthorInfo {
@@ -1258,6 +1542,116 @@ pub struct AuthorInfo {
 
 /// Challenge rank, represented as an integer from 1 (troublesome) to 5 (epic).
 pub type ChallengeRank = u8;
+
+#[derive(Serialize, Deserialize)]
+pub enum ClockFieldFieldType {
+    #[serde(rename = "clock")]
+    Clock,
+}
+
+/// A clock with 4 or more segments.
+#[derive(Serialize, Deserialize)]
+pub struct ClockField {
+    #[serde(rename = "field_type")]
+    pub fieldType: ClockFieldFieldType,
+
+    #[serde(rename = "label")]
+    pub label: Label,
+
+    /// The size of the clock -- in other words, the maximum number of filled
+    /// clock segments. Standard clocks have 4, 6, 8, or 10 segments.
+    #[serde(rename = "max")]
+    pub max: i8,
+
+    /// The minimum number of filled clock segments. This is always 0.
+    #[serde(rename = "min")]
+    pub min: i8,
+
+    #[serde(rename = "rollable")]
+    pub rollable: bool,
+
+    /// The current value of this input.
+    #[serde(rename = "value")]
+    pub value: i8,
+
+    /// An icon associated with this input.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum CollectableType {
+    #[serde(rename = "asset")]
+    Asset,
+
+    #[serde(rename = "atlas_entry")]
+    AtlasEntry,
+
+    #[serde(rename = "move")]
+    Move,
+
+    #[serde(rename = "npc")]
+    Npc,
+
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum CollectionType {
+    #[serde(rename = "asset_collection")]
+    AssetCollection,
+
+    #[serde(rename = "atlas_collection")]
+    AtlasCollection,
+
+    #[serde(rename = "move_category")]
+    MoveCategory,
+
+    #[serde(rename = "npc_collection")]
+    NpcCollection,
+
+    #[serde(rename = "oracle_collection")]
+    OracleCollection,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum ConditionMeterFieldFieldType {
+    #[serde(rename = "condition_meter")]
+    ConditionMeter,
+}
+
+/// A meter with an integer value, bounded by a minimum and maximum.
+#[derive(Serialize, Deserialize)]
+pub struct ConditionMeterField {
+    #[serde(rename = "field_type")]
+    pub fieldType: ConditionMeterFieldFieldType,
+
+    #[serde(rename = "label")]
+    pub label: Label,
+
+    /// The maximum value of this meter.
+    #[serde(rename = "max")]
+    pub max: i8,
+
+    /// The minimum value of this meter.
+    #[serde(rename = "min")]
+    pub min: i8,
+
+    /// Is this meter's `value` usable as a stat in an action roll?
+    #[serde(rename = "rollable")]
+    pub rollable: bool,
+
+    /// The current value of this meter.
+    #[serde(rename = "value")]
+    pub value: i8,
+
+    /// An icon associated with this input.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+}
 
 /// A basic, rollable player character resource specified by the ruleset.
 pub type ConditionMeterKey = DictKey;
@@ -1293,8 +1687,86 @@ pub struct ConditionMeterRule {
     pub value: i8,
 }
 
+/// A reference to the value of a standard player condition meter.
+#[derive(Serialize, Deserialize)]
+pub enum ConditionMeterValueRefUsing {
+    #[serde(rename = "condition_meter")]
+    ConditionMeter,
+}
+
+/// A reference to the value of a standard player condition meter.
+#[derive(Serialize, Deserialize)]
+pub struct ConditionMeterValueRef {
+    #[serde(rename = "condition_meter")]
+    pub conditionMeter: ConditionMeterKey,
+
+    /// A reference to the value of a standard player condition meter.
+    #[serde(rename = "using")]
+    pub using: ConditionMeterValueRefUsing,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum CounterFieldFieldType {
+    #[serde(rename = "counter")]
+    Counter,
+}
+
+/// A basic counter representing a non-rollable integer value. They usually
+/// start at 0, and may or may not have a maximum.
+#[derive(Serialize, Deserialize)]
+pub struct CounterField {
+    #[serde(rename = "field_type")]
+    pub fieldType: CounterFieldFieldType,
+
+    #[serde(rename = "label")]
+    pub label: Label,
+
+    #[serde(rename = "max")]
+    pub max: i16,
+
+    /// The (inclusive) minimum value.
+    #[serde(rename = "min")]
+    pub min: i8,
+
+    #[serde(rename = "rollable")]
+    pub rollable: bool,
+
+    /// The current value of this input.
+    #[serde(rename = "value")]
+    pub value: i8,
+
+    /// An icon associated with this input.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+}
+
 /// A CSS color value.
 pub type CssColor = String;
+
+/// An arbitrary static integer value with a label.
+#[derive(Serialize, Deserialize)]
+pub enum CustomValueUsing {
+    #[serde(rename = "custom")]
+    Custom,
+}
+
+/// An arbitrary static integer value with a label.
+#[derive(Serialize, Deserialize)]
+pub struct CustomValue {
+    #[serde(rename = "label")]
+    pub label: Label,
+
+    /// An arbitrary static integer value with a label.
+    #[serde(rename = "using")]
+    pub using: CustomValueUsing,
+
+    #[serde(rename = "value")]
+    pub value: i16,
+}
+
+/// A date formatted YYYY-MM-DD.
+pub type Date = String;
 
 #[derive(Serialize, Deserialize)]
 pub enum DelveSiteType {
@@ -1376,10 +1848,13 @@ pub struct DelveSite {
     pub tags: Option<Box<Tags>>,
 }
 
-/// Represents an entry in a site denizen matrix. Denizen matrices are described
-/// in Ironsworn: Delve.
+/// Represents an entry in a delve site denizen matrix. Denizen matrices are
+/// described in Ironsworn: Delve.
 #[derive(Serialize, Deserialize)]
 pub struct DelveSiteDenizen {
+    #[serde(rename = "_id")]
+    pub id: DelveSiteDenizenId,
+
     #[serde(rename = "frequency")]
     pub frequency: DelveSiteDenizenFrequency,
 
@@ -1416,6 +1891,13 @@ pub enum DelveSiteDenizenFrequency {
     VeryCommon,
 }
 
+/// A unique ID representing a DelveSiteDenizen object.
+pub type DelveSiteDenizenId = String;
+
+/// A wildcarded DelveSiteDenizenId that can be used to match multiple
+/// DelveSiteDenizen objects.
+pub type DelveSiteDenizenIdWildcard = String;
+
 #[derive(Serialize, Deserialize)]
 pub enum DelveSiteDomainType {
     #[serde(rename = "delve_site_domain")]
@@ -1435,10 +1917,10 @@ pub struct DelveSiteDomain {
     pub source: SourceInfo,
 
     #[serde(rename = "dangers")]
-    pub dangers: Vec<OracleTableRowText>,
+    pub dangers: Vec<DelveSiteDomainDanger>,
 
     #[serde(rename = "features")]
-    pub features: Vec<OracleTableRowText>,
+    pub features: Vec<DelveSiteDomainFeature>,
 
     /// The primary name/label for this item.
     #[serde(rename = "name")]
@@ -1486,11 +1968,123 @@ pub struct DelveSiteDomain {
     pub tags: Option<Box<Tags>>,
 }
 
+/// Represents a single Danger entry from a delve site Domain card.
+#[derive(Serialize, Deserialize)]
+pub struct DelveSiteDomainDanger {
+    #[serde(rename = "_id")]
+    pub id: DelveSiteDomainDangerId,
+
+    #[serde(rename = "roll")]
+    pub roll: DiceRange,
+
+    /// The primary text content of this row.
+    #[serde(rename = "text")]
+    pub text: MarkdownString,
+
+    #[serde(rename = "_i18n")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub i18n: Option<Box<I18nHints>>,
+
+    /// Hints that the identified table should be rendered inside this table
+    /// row.
+    #[serde(rename = "embed_table")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub embedTable: Option<Box<OracleRollableId>>,
+
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Further oracle rolls prompted by this table row.
+    #[serde(rename = "oracle_rolls")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub oracleRolls: Option<Box<Vec<OracleRoll>>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+
+    #[serde(rename = "template")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub template: Option<Box<OracleRollTemplate>>,
+}
+
+/// A unique ID representing a DelveSiteDomainDanger object.
+pub type DelveSiteDomainDangerId = String;
+
+/// A wildcarded DelveSiteDomainDangerId that can be used to match multiple
+/// DelveSiteDomainDanger objects.
+pub type DelveSiteDomainDangerIdWildcard = String;
+
+/// Represents a single Feature entry from a delve site Domain card.
+#[derive(Serialize, Deserialize)]
+pub struct DelveSiteDomainFeature {
+    #[serde(rename = "_id")]
+    pub id: DelveSiteDomainFeatureId,
+
+    #[serde(rename = "roll")]
+    pub roll: DiceRange,
+
+    /// The primary text content of this row.
+    #[serde(rename = "text")]
+    pub text: MarkdownString,
+
+    #[serde(rename = "_i18n")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub i18n: Option<Box<I18nHints>>,
+
+    /// Hints that the identified table should be rendered inside this table
+    /// row.
+    #[serde(rename = "embed_table")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub embedTable: Option<Box<OracleRollableId>>,
+
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Further oracle rolls prompted by this table row.
+    #[serde(rename = "oracle_rolls")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub oracleRolls: Option<Box<Vec<OracleRoll>>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+
+    #[serde(rename = "template")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub template: Option<Box<OracleRollTemplate>>,
+}
+
+/// A unique ID representing a DelveSiteDomainFeature object.
+pub type DelveSiteDomainFeatureId = String;
+
+/// A wildcarded DelveSiteDomainFeatureId that can be used to match multiple
+/// DelveSiteDomainFeature objects.
+pub type DelveSiteDomainFeatureIdWildcard = String;
+
 /// A unique ID representing a DelveSiteDomain object.
 pub type DelveSiteDomainId = String;
 
+/// A wildcarded DelveSiteDomainId that can be used to match multiple
+/// DelveSiteDomain objects.
+pub type DelveSiteDomainIdWildcard = String;
+
 /// A unique ID representing a DelveSite object.
 pub type DelveSiteId = String;
+
+/// A wildcarded DelveSiteId that can be used to match multiple DelveSite
+/// objects.
+pub type DelveSiteIdWildcard = String;
 
 #[derive(Serialize, Deserialize)]
 pub enum DelveSiteThemeType {
@@ -1511,10 +2105,10 @@ pub struct DelveSiteTheme {
     pub source: SourceInfo,
 
     #[serde(rename = "dangers")]
-    pub dangers: Vec<OracleTableRowText>,
+    pub dangers: Vec<DelveSiteThemeFeature>,
 
     #[serde(rename = "features")]
-    pub features: Vec<OracleTableRowText>,
+    pub features: Vec<DelveSiteThemeFeature>,
 
     /// The primary name/label for this item.
     #[serde(rename = "name")]
@@ -1555,8 +2149,116 @@ pub struct DelveSiteTheme {
     pub tags: Option<Box<Tags>>,
 }
 
+/// Represents a single Danger entry from a delve site Theme card.
+#[derive(Serialize, Deserialize)]
+pub struct DelveSiteThemeDanger {
+    #[serde(rename = "_id")]
+    pub id: DelveSiteThemeDangerId,
+
+    #[serde(rename = "roll")]
+    pub roll: DiceRange,
+
+    /// The primary text content of this row.
+    #[serde(rename = "text")]
+    pub text: MarkdownString,
+
+    #[serde(rename = "_i18n")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub i18n: Option<Box<I18nHints>>,
+
+    /// Hints that the identified table should be rendered inside this table
+    /// row.
+    #[serde(rename = "embed_table")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub embedTable: Option<Box<OracleRollableId>>,
+
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Further oracle rolls prompted by this table row.
+    #[serde(rename = "oracle_rolls")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub oracleRolls: Option<Box<Vec<OracleRoll>>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+
+    #[serde(rename = "template")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub template: Option<Box<OracleRollTemplate>>,
+}
+
+/// A unique ID representing a DelveSiteThemeDanger object.
+pub type DelveSiteThemeDangerId = String;
+
+/// A wildcarded DelveSiteThemeDangerId that can be used to match multiple
+/// DelveSiteThemeDanger objects.
+pub type DelveSiteThemeDangerIdWildcard = String;
+
+/// Represents a single Feature entry from a delve site Theme card.
+#[derive(Serialize, Deserialize)]
+pub struct DelveSiteThemeFeature {
+    #[serde(rename = "_id")]
+    pub id: DelveSiteThemeFeatureId,
+
+    #[serde(rename = "roll")]
+    pub roll: DiceRange,
+
+    /// The primary text content of this row.
+    #[serde(rename = "text")]
+    pub text: MarkdownString,
+
+    #[serde(rename = "_i18n")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub i18n: Option<Box<I18nHints>>,
+
+    /// Hints that the identified table should be rendered inside this table
+    /// row.
+    #[serde(rename = "embed_table")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub embedTable: Option<Box<OracleRollableId>>,
+
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Further oracle rolls prompted by this table row.
+    #[serde(rename = "oracle_rolls")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub oracleRolls: Option<Box<Vec<OracleRoll>>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+
+    #[serde(rename = "template")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub template: Option<Box<OracleRollTemplate>>,
+}
+
+/// A unique ID representing a DelveSiteThemeFeature object.
+pub type DelveSiteThemeFeatureId = String;
+
+/// A wildcarded DelveSiteThemeFeatureId that can be used to match multiple
+/// DelveSiteThemeFeature objects.
+pub type DelveSiteThemeFeatureIdWildcard = String;
+
 /// A unique ID representing a DelveSiteTheme object.
 pub type DelveSiteThemeId = String;
+
+/// A wildcarded DelveSiteThemeId that can be used to match multiple
+/// DelveSiteTheme objects.
+pub type DelveSiteThemeIdWildcard = String;
 
 /// A simple dice roll expression with an optional modifer.
 pub type DiceExpression = String;
@@ -1576,6 +2278,92 @@ pub struct DiceRange {
 
 /// A `snake_case` key used in a Datasworn dictionary object.
 pub type DictKey = String;
+
+#[derive(Serialize, Deserialize)]
+pub enum EmbedOnlyType {
+    #[serde(rename = "ability")]
+    Ability,
+
+    #[serde(rename = "danger")]
+    Danger,
+
+    #[serde(rename = "denizen")]
+    Denizen,
+
+    #[serde(rename = "feature")]
+    Feature,
+
+    #[serde(rename = "option")]
+    Option,
+
+    #[serde(rename = "row")]
+    Row,
+}
+
+/// A move that makes an action roll.
+#[derive(Serialize, Deserialize)]
+pub enum EmbeddedActionRollMoveRollType {
+    #[serde(rename = "action_roll")]
+    ActionRoll,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum EmbeddedActionRollMoveType {
+    #[serde(rename = "move")]
+    Move,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct EmbeddedActionRollMove {
+    #[serde(rename = "_id")]
+    pub id: EmbeddedMoveId,
+
+    /// Is burning momentum allowed for this move?
+    #[serde(rename = "allow_momentum_burn")]
+    pub allowMomentumBurn: bool,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    #[serde(rename = "outcomes")]
+    pub outcomes: MoveOutcomes,
+
+    /// A move that makes an action roll.
+    #[serde(rename = "roll_type")]
+    pub rollType: EmbeddedActionRollMoveRollType,
+
+    /// The complete rules text of the move.
+    #[serde(rename = "text")]
+    pub text: MarkdownString,
+
+    /// Trigger conditions for this move.
+    #[serde(rename = "trigger")]
+    pub trigger: TriggerActionRoll,
+
+    #[serde(rename = "type")]
+    pub type_: EmbeddedActionRollMoveType,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub canonicalName: Option<Box<Label>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
 
 #[derive(Serialize, Deserialize)]
 #[serde(tag = "roll_type")]
@@ -1813,6 +2601,289 @@ pub struct EmbeddedMoveSpecialTrack {
 
 pub type EmbeddedMoveId = String;
 
+pub type EmbeddedMoveIdWildcard = String;
+
+/// A move that makes no action rolls or progress rolls.
+#[derive(Serialize, Deserialize)]
+pub enum EmbeddedNoRollMoveRollType {
+    #[serde(rename = "no_roll")]
+    NoRoll,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum EmbeddedNoRollMoveType {
+    #[serde(rename = "move")]
+    Move,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct EmbeddedNoRollMove {
+    #[serde(rename = "_id")]
+    pub id: EmbeddedMoveId,
+
+    /// Is burning momentum allowed for this move?
+    #[serde(rename = "allow_momentum_burn")]
+    pub allowMomentumBurn: bool,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    /// A move that makes no action rolls or progress rolls.
+    #[serde(rename = "roll_type")]
+    pub rollType: EmbeddedNoRollMoveRollType,
+
+    /// The complete rules text of the move.
+    #[serde(rename = "text")]
+    pub text: MarkdownString,
+
+    /// Trigger conditions for this move.
+    #[serde(rename = "trigger")]
+    pub trigger: TriggerNoRoll,
+
+    #[serde(rename = "type")]
+    pub type_: EmbeddedNoRollMoveType,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub canonicalName: Option<Box<Label>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum EmbeddedOracleColumnTextOracleType {
+    #[serde(rename = "column_text")]
+    ColumnText,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum EmbeddedOracleColumnTextType {
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct EmbeddedOracleColumnText {
+    #[serde(rename = "_id")]
+    pub id: EmbeddedOracleRollableId,
+
+    /// The roll used to select a result on this oracle.
+    #[serde(rename = "dice")]
+    pub dice: DiceExpression,
+
+    /// The primary label at the head of this column.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    #[serde(rename = "oracle_type")]
+    pub oracleType: EmbeddedOracleColumnTextOracleType,
+
+    /// An array of objects, each representing a single row of the table.
+    #[serde(rename = "rows")]
+    pub rows: Vec<OracleRollableRowText>,
+
+    #[serde(rename = "type")]
+    pub type_: EmbeddedOracleColumnTextType,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// An optional thematic color for this column. For an example, see "Basic
+    /// Creature Form" (Starforged p. 337)
+    #[serde(rename = "color")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub color: Option<Box<CssColor>>,
+
+    /// An optional icon for this column.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Most oracle tables are insensitive to matches, but a few define special
+    /// match behavior.
+    #[serde(rename = "match")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub match_: Option<Box<OracleMatchBehavior>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    /// Optional secondary text at the head of this column. For best results,
+    /// this should be no more than a few words in length.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum EmbeddedOracleColumnText2OracleType {
+    #[serde(rename = "column_text2")]
+    ColumnText2,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum EmbeddedOracleColumnText2Type {
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct EmbeddedOracleColumnText2 {
+    #[serde(rename = "_id")]
+    pub id: EmbeddedOracleRollableId,
+
+    /// The roll used to select a result on this oracle.
+    #[serde(rename = "dice")]
+    pub dice: DiceExpression,
+
+    /// The primary label at the head of this column.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    #[serde(rename = "oracle_type")]
+    pub oracleType: EmbeddedOracleColumnText2OracleType,
+
+    /// An array of objects, each representing a single row of the table.
+    #[serde(rename = "rows")]
+    pub rows: Vec<OracleRollableRowText2>,
+
+    #[serde(rename = "type")]
+    pub type_: EmbeddedOracleColumnText2Type,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// An optional thematic color for this column. For an example, see "Basic
+    /// Creature Form" (Starforged p. 337)
+    #[serde(rename = "color")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub color: Option<Box<CssColor>>,
+
+    /// An optional icon for this column.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Most oracle tables are insensitive to matches, but a few define special
+    /// match behavior.
+    #[serde(rename = "match")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub match_: Option<Box<OracleMatchBehavior>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    /// Optional secondary text at the head of this column. For best results,
+    /// this should be no more than a few words in length.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum EmbeddedOracleColumnText3OracleType {
+    #[serde(rename = "column_text3")]
+    ColumnText3,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum EmbeddedOracleColumnText3Type {
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct EmbeddedOracleColumnText3 {
+    #[serde(rename = "_id")]
+    pub id: EmbeddedOracleRollableId,
+
+    /// The roll used to select a result on this oracle.
+    #[serde(rename = "dice")]
+    pub dice: DiceExpression,
+
+    /// The primary label at the head of this column.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    #[serde(rename = "oracle_type")]
+    pub oracleType: EmbeddedOracleColumnText3OracleType,
+
+    /// An array of objects, each representing a single row of the table.
+    #[serde(rename = "rows")]
+    pub rows: Vec<OracleRollableRowText3>,
+
+    #[serde(rename = "type")]
+    pub type_: EmbeddedOracleColumnText3Type,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// An optional thematic color for this column. For an example, see "Basic
+    /// Creature Form" (Starforged p. 337)
+    #[serde(rename = "color")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub color: Option<Box<CssColor>>,
+
+    /// An optional icon for this column.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Most oracle tables are insensitive to matches, but a few define special
+    /// match behavior.
+    #[serde(rename = "match")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub match_: Option<Box<OracleMatchBehavior>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    /// Optional secondary text at the head of this column. For best results,
+    /// this should be no more than a few words in length.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
+
 #[derive(Serialize, Deserialize)]
 #[serde(tag = "oracle_type")]
 pub enum EmbeddedOracleRollable {
@@ -1856,7 +2927,7 @@ pub struct EmbeddedOracleRollableColumnText {
 
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
-    pub rows: Vec<OracleTableRowText>,
+    pub rows: Vec<OracleRollableRowText>,
 
     #[serde(rename = "type")]
     pub type_: EmbeddedOracleRollableColumnTextType,
@@ -1920,7 +2991,7 @@ pub struct EmbeddedOracleRollableColumnText2 {
 
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
-    pub rows: Vec<OracleTableRowText2>,
+    pub rows: Vec<OracleRollableRowText2>,
 
     #[serde(rename = "type")]
     pub type_: EmbeddedOracleRollableColumnText2Type,
@@ -1984,7 +3055,7 @@ pub struct EmbeddedOracleRollableColumnText3 {
 
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
-    pub rows: Vec<OracleTableRowText3>,
+    pub rows: Vec<OracleRollableRowText3>,
 
     #[serde(rename = "type")]
     pub type_: EmbeddedOracleRollableColumnText3Type,
@@ -2073,7 +3144,7 @@ pub struct EmbeddedOracleRollableTableText {
 
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
-    pub rows: Vec<OracleTableRowText>,
+    pub rows: Vec<OracleRollableRowText>,
 
     #[serde(rename = "type")]
     pub type_: EmbeddedOracleRollableTableTextType,
@@ -2178,7 +3249,7 @@ pub struct EmbeddedOracleRollableTableText2 {
 
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
-    pub rows: Vec<OracleTableRowText2>,
+    pub rows: Vec<OracleRollableRowText2>,
 
     #[serde(rename = "type")]
     pub type_: EmbeddedOracleRollableTableText2Type,
@@ -2286,7 +3357,7 @@ pub struct EmbeddedOracleRollableTableText3 {
 
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
-    pub rows: Vec<OracleTableRowText3>,
+    pub rows: Vec<OracleRollableRowText3>,
 
     #[serde(rename = "type")]
     pub type_: EmbeddedOracleRollableTableText3Type,
@@ -2344,11 +3415,612 @@ pub struct EmbeddedOracleRollableTableText3 {
 
 pub type EmbeddedOracleRollableId = String;
 
+pub type EmbeddedOracleRollableIdWildcard = String;
+
+/// The label at the head of each table column. The `roll` key refers to the
+/// roll column showing the dice range (`min` and `max` on each table row).
+#[derive(Serialize, Deserialize)]
+pub struct EmbeddedOracleTableTextColumnLabels {
+    #[serde(rename = "roll")]
+    pub roll: Label,
+
+    #[serde(rename = "text")]
+    pub text: Label,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum EmbeddedOracleTableTextOracleType {
+    #[serde(rename = "table_text")]
+    TableText,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum EmbeddedOracleTableTextType {
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct EmbeddedOracleTableTextRecommendedRolls {
+    #[serde(rename = "max")]
+    pub max: i16,
+
+    #[serde(rename = "min")]
+    pub min: i16,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct EmbeddedOracleTableText {
+    #[serde(rename = "_id")]
+    pub id: EmbeddedOracleRollableId,
+
+    /// The label at the head of each table column. The `roll` key refers to the
+    /// roll column showing the dice range (`min` and `max` on each table row).
+    #[serde(rename = "column_labels")]
+    pub columnLabels: EmbeddedOracleTableTextColumnLabels,
+
+    /// The roll used to select a result on this oracle.
+    #[serde(rename = "dice")]
+    pub dice: DiceExpression,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    #[serde(rename = "oracle_type")]
+    pub oracleType: EmbeddedOracleTableTextOracleType,
+
+    /// An array of objects, each representing a single row of the table.
+    #[serde(rename = "rows")]
+    pub rows: Vec<OracleRollableRowText>,
+
+    #[serde(rename = "type")]
+    pub type_: EmbeddedOracleTableTextType,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub canonicalName: Option<Box<Label>>,
+
+    /// A longer description of the oracle table's intended usage, which might
+    /// include multiple paragraphs. If it's only a couple sentences, use the
+    /// `summary` key instead.
+    #[serde(rename = "description")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<Box<MarkdownString>>,
+
+    /// An icon that represents this table.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Most oracle tables are insensitive to matches, but a few define special
+    /// match behavior.
+    #[serde(rename = "match")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub match_: Option<Box<OracleMatchBehavior>>,
+
+    #[serde(rename = "recommended_rolls")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub recommendedRolls: Option<Box<EmbeddedOracleTableTextRecommendedRolls>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    /// A brief summary of the oracle table's intended usage, no more than a few
+    /// sentences in length. This is intended for use in application tooltips
+    /// and similar sorts of hints. Longer text should use the "description"
+    /// key instead.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
+
+/// The label at the head of each table column. The `roll` key refers to the
+/// roll column showing the dice range (`min` and `max` on each table row).
+#[derive(Serialize, Deserialize)]
+pub struct EmbeddedOracleTableText2ColumnLabels {
+    #[serde(rename = "roll")]
+    pub roll: Label,
+
+    #[serde(rename = "text")]
+    pub text: Label,
+
+    #[serde(rename = "text2")]
+    pub text2: Label,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum EmbeddedOracleTableText2OracleType {
+    #[serde(rename = "table_text2")]
+    TableText2,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum EmbeddedOracleTableText2Type {
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct EmbeddedOracleTableText2RecommendedRolls {
+    #[serde(rename = "max")]
+    pub max: i16,
+
+    #[serde(rename = "min")]
+    pub min: i16,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct EmbeddedOracleTableText2 {
+    #[serde(rename = "_id")]
+    pub id: EmbeddedOracleRollableId,
+
+    /// The label at the head of each table column. The `roll` key refers to the
+    /// roll column showing the dice range (`min` and `max` on each table row).
+    #[serde(rename = "column_labels")]
+    pub columnLabels: EmbeddedOracleTableText2ColumnLabels,
+
+    /// The roll used to select a result on this oracle.
+    #[serde(rename = "dice")]
+    pub dice: DiceExpression,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    #[serde(rename = "oracle_type")]
+    pub oracleType: EmbeddedOracleTableText2OracleType,
+
+    /// An array of objects, each representing a single row of the table.
+    #[serde(rename = "rows")]
+    pub rows: Vec<OracleRollableRowText2>,
+
+    #[serde(rename = "type")]
+    pub type_: EmbeddedOracleTableText2Type,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub canonicalName: Option<Box<Label>>,
+
+    /// A longer description of the oracle table's intended usage, which might
+    /// include multiple paragraphs. If it's only a couple sentences, use the
+    /// `summary` key instead.
+    #[serde(rename = "description")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<Box<MarkdownString>>,
+
+    /// An icon that represents this table.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Most oracle tables are insensitive to matches, but a few define special
+    /// match behavior.
+    #[serde(rename = "match")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub match_: Option<Box<OracleMatchBehavior>>,
+
+    #[serde(rename = "recommended_rolls")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub recommendedRolls: Option<Box<EmbeddedOracleTableText2RecommendedRolls>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    /// A brief summary of the oracle table's intended usage, no more than a few
+    /// sentences in length. This is intended for use in application tooltips
+    /// and similar sorts of hints. Longer text should use the "description"
+    /// key instead.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
+
+/// The label at the head of each table column. The `roll` key refers to the
+/// roll column showing the dice range (`min` and `max` on each table row).
+#[derive(Serialize, Deserialize)]
+pub struct EmbeddedOracleTableText3ColumnLabels {
+    #[serde(rename = "roll")]
+    pub roll: Label,
+
+    #[serde(rename = "text")]
+    pub text: Label,
+
+    #[serde(rename = "text2")]
+    pub text2: Label,
+
+    #[serde(rename = "text3")]
+    pub text3: Label,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum EmbeddedOracleTableText3OracleType {
+    #[serde(rename = "table_text3")]
+    TableText3,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum EmbeddedOracleTableText3Type {
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct EmbeddedOracleTableText3RecommendedRolls {
+    #[serde(rename = "max")]
+    pub max: i16,
+
+    #[serde(rename = "min")]
+    pub min: i16,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct EmbeddedOracleTableText3 {
+    #[serde(rename = "_id")]
+    pub id: EmbeddedOracleRollableId,
+
+    /// The label at the head of each table column. The `roll` key refers to the
+    /// roll column showing the dice range (`min` and `max` on each table row).
+    #[serde(rename = "column_labels")]
+    pub columnLabels: EmbeddedOracleTableText3ColumnLabels,
+
+    /// The roll used to select a result on this oracle.
+    #[serde(rename = "dice")]
+    pub dice: DiceExpression,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    #[serde(rename = "oracle_type")]
+    pub oracleType: EmbeddedOracleTableText3OracleType,
+
+    /// An array of objects, each representing a single row of the table.
+    #[serde(rename = "rows")]
+    pub rows: Vec<OracleRollableRowText3>,
+
+    #[serde(rename = "type")]
+    pub type_: EmbeddedOracleTableText3Type,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub canonicalName: Option<Box<Label>>,
+
+    /// A longer description of the oracle table's intended usage, which might
+    /// include multiple paragraphs. If it's only a couple sentences, use the
+    /// `summary` key instead.
+    #[serde(rename = "description")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<Box<MarkdownString>>,
+
+    /// An icon that represents this table.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Most oracle tables are insensitive to matches, but a few define special
+    /// match behavior.
+    #[serde(rename = "match")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub match_: Option<Box<OracleMatchBehavior>>,
+
+    #[serde(rename = "recommended_rolls")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub recommendedRolls: Option<Box<EmbeddedOracleTableText3RecommendedRolls>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    /// A brief summary of the oracle table's intended usage, no more than a few
+    /// sentences in length. This is intended for use in application tooltips
+    /// and similar sorts of hints. Longer text should use the "description"
+    /// key instead.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
+
+/// A progress move that rolls on a standard progress track type (defined by
+/// this move).
+#[derive(Serialize, Deserialize)]
+pub enum EmbeddedProgressRollMoveRollType {
+    #[serde(rename = "progress_roll")]
+    ProgressRoll,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum EmbeddedProgressRollMoveType {
+    #[serde(rename = "move")]
+    Move,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct EmbeddedProgressRollMove {
+    #[serde(rename = "_id")]
+    pub id: EmbeddedMoveId,
+
+    /// Is burning momentum allowed for this move?
+    #[serde(rename = "allow_momentum_burn")]
+    pub allowMomentumBurn: bool,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    #[serde(rename = "outcomes")]
+    pub outcomes: MoveOutcomes,
+
+    /// A progress move that rolls on a standard progress track type (defined by
+    /// this move).
+    #[serde(rename = "roll_type")]
+    pub rollType: EmbeddedProgressRollMoveRollType,
+
+    /// The complete rules text of the move.
+    #[serde(rename = "text")]
+    pub text: MarkdownString,
+
+    /// Describes the common features of progress tracks associated with this
+    /// move.
+    #[serde(rename = "tracks")]
+    pub tracks: ProgressTrackTypeInfo,
+
+    /// Trigger conditions for this move.
+    #[serde(rename = "trigger")]
+    pub trigger: TriggerProgressRoll,
+
+    #[serde(rename = "type")]
+    pub type_: EmbeddedProgressRollMoveType,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub canonicalName: Option<Box<Label>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
+
+/// A progress move that rolls on one or more special tracks, like Bonds
+/// (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
+#[derive(Serialize, Deserialize)]
+pub enum EmbeddedSpecialTrackMoveRollType {
+    #[serde(rename = "special_track")]
+    SpecialTrack,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum EmbeddedSpecialTrackMoveType {
+    #[serde(rename = "move")]
+    Move,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct EmbeddedSpecialTrackMove {
+    #[serde(rename = "_id")]
+    pub id: EmbeddedMoveId,
+
+    /// Is burning momentum allowed for this move?
+    #[serde(rename = "allow_momentum_burn")]
+    pub allowMomentumBurn: bool,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    #[serde(rename = "outcomes")]
+    pub outcomes: MoveOutcomes,
+
+    /// A progress move that rolls on one or more special tracks, like Bonds
+    /// (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
+    #[serde(rename = "roll_type")]
+    pub rollType: EmbeddedSpecialTrackMoveRollType,
+
+    /// The complete rules text of the move.
+    #[serde(rename = "text")]
+    pub text: MarkdownString,
+
+    /// Trigger conditions for this move.
+    #[serde(rename = "trigger")]
+    pub trigger: TriggerSpecialTrack,
+
+    #[serde(rename = "type")]
+    pub type_: EmbeddedSpecialTrackMoveType,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub canonicalName: Option<Box<Label>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
+
 /// This type is a placeholder and may see signficant changes in v0.2.0.
 #[derive(Serialize, Deserialize)]
 pub struct EntityPrompt {
     #[serde(rename = "text")]
     pub text: MarkdownString,
+}
+
+/// The version of the Datasworn format used by this data.
+#[derive(Serialize, Deserialize)]
+pub enum ExpansionDataswornVersion {
+    #[serde(rename = "0.1.0")]
+    DefaultName,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum ExpansionType {
+    #[serde(rename = "expansion")]
+    Expansion,
+}
+
+/// A Datasworn package that relies on an external package to provide its
+/// ruleset.
+#[derive(Serialize, Deserialize)]
+pub struct Expansion {
+    #[serde(rename = "_id")]
+    pub id: ExpansionId,
+
+    /// The version of the Datasworn format used by this data.
+    #[serde(rename = "datasworn_version")]
+    pub dataswornVersion: ExpansionDataswornVersion,
+
+    #[serde(rename = "ruleset")]
+    pub ruleset: RulesetId,
+
+    #[serde(rename = "type")]
+    pub type_: ExpansionType,
+
+    /// A dictionary object containing asset collections, which contain assets.
+    #[serde(rename = "assets")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub assets: Option<Box<HashMap<String, AssetCollection>>>,
+
+    /// A dictionary object containing atlas collections, which contain atlas
+    /// entries.
+    #[serde(rename = "atlas")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub atlas: Option<Box<HashMap<String, AtlasCollection>>>,
+
+    /// Lists authors credited by the source material.
+    #[serde(rename = "authors")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub authors: Option<Box<Vec<AuthorInfo>>>,
+
+    /// The date of the source documents's last update, formatted YYYY-MM-DD.
+    /// Required because it's used to determine whether the data needs updating.
+    #[serde(rename = "date")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub date: Option<Box<DateTime<FixedOffset>>>,
+
+    /// A dictionary object of delve sites, like the premade delve sites
+    /// presented in Ironsworn: Delve
+    #[serde(rename = "delve_sites")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub delveSites: Option<Box<HashMap<String, DelveSite>>>,
+
+    #[serde(rename = "description")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "license")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub license: Option<Box<License>>,
+
+    /// A dictionary object containing move categories, which contain moves.
+    #[serde(rename = "moves")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub moves: Option<Box<HashMap<String, MoveCategory>>>,
+
+    /// A dictionary object containing NPC collections, which contain NPCs.
+    #[serde(rename = "npcs")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub npcs: Option<Box<HashMap<String, NpcCollection>>>,
+
+    /// A dictionary object containing oracle collections, which may contain
+    /// oracle tables and/or oracle collections.
+    #[serde(rename = "oracles")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub oracles: Option<Box<HashMap<String, OracleTablesCollection>>>,
+
+    /// A dictionary object containing rarities, like those presented in
+    /// Ironsworn: Delve.
+    #[serde(rename = "rarities")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub rarities: Option<Box<HashMap<String, Rarity>>>,
+
+    #[serde(rename = "rules")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub rules: Option<Box<RulesExpansion>>,
+
+    /// A dictionary object containing delve site domains.
+    #[serde(rename = "site_domains")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub siteDomains: Option<Box<HashMap<String, DelveSiteDomain>>>,
+
+    /// A dictionary object containing delve site themes.
+    #[serde(rename = "site_themes")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub siteThemes: Option<Box<HashMap<String, DelveSiteTheme>>>,
+
+    /// The title of the source document.
+    #[serde(rename = "title")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub title: Option<Box<String>>,
+
+    /// A dictionary object of truth categories.
+    #[serde(rename = "truths")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub truths: Option<Box<HashMap<String, Truth>>>,
+
+    /// A URL where the source document is available.
+    #[serde(rename = "url")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub url: Option<Box<WebUrl>>,
 }
 
 /// The ID of a Datasworn package that relies on an external package to provide
@@ -2466,16 +4138,16 @@ pub type MarkdownString = String;
 #[serde(tag = "roll_type")]
 pub enum Move {
     #[serde(rename = "action_roll")]
-    ActionRoll(MoveActionRoll),
+    ActionRoll(MoveActionRoll0),
 
     #[serde(rename = "no_roll")]
-    NoRoll(MoveNoRoll),
+    NoRoll(MoveNoRoll0),
 
     #[serde(rename = "progress_roll")]
-    ProgressRoll(MoveProgressRoll),
+    ProgressRoll(MoveProgressRoll0),
 
     #[serde(rename = "special_track")]
-    SpecialTrack(MoveSpecialTrack),
+    SpecialTrack(MoveSpecialTrack0),
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2486,7 +4158,7 @@ pub enum MoveActionRollType {
 
 /// A move that makes an action roll.
 #[derive(Serialize, Deserialize)]
-pub struct MoveActionRoll {
+pub struct MoveActionRoll0 {
     /// The unique Datasworn ID for this item.
     #[serde(rename = "_id")]
     pub id: MoveId,
@@ -2557,7 +4229,7 @@ pub enum MoveNoRollType {
 
 /// A move that makes no progress rolls or action rolls.
 #[derive(Serialize, Deserialize)]
-pub struct MoveNoRoll {
+pub struct MoveNoRoll0 {
     /// The unique Datasworn ID for this item.
     #[serde(rename = "_id")]
     pub id: MoveId,
@@ -2627,7 +4299,7 @@ pub enum MoveProgressRollType {
 /// are defined by this move object). For progress rolls that use special
 /// tracks, see MoveSpecialTrack.
 #[derive(Serialize, Deserialize)]
-pub struct MoveProgressRoll {
+pub struct MoveProgressRoll0 {
     /// The unique Datasworn ID for this item.
     #[serde(rename = "_id")]
     pub id: MoveId,
@@ -2705,7 +4377,7 @@ pub enum MoveSpecialTrackType {
 /// or Bonds (classic Ironsworn). For progress moves that use standard progress
 /// tracks, see MoveProgressRoll instead.
 #[derive(Serialize, Deserialize)]
-pub struct MoveSpecialTrack {
+pub struct MoveSpecialTrack0 {
     /// The unique Datasworn ID for this item.
     #[serde(rename = "_id")]
     pub id: MoveId,
@@ -2766,6 +4438,114 @@ pub struct MoveSpecialTrack {
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub tags: Option<Box<Tags>>,
+}
+
+/// A move that makes an action roll.
+#[derive(Serialize, Deserialize)]
+pub enum MoveActionRollRollType {
+    #[serde(rename = "action_roll")]
+    ActionRoll,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum MoveActionRollType0 {
+    #[serde(rename = "move")]
+    Move,
+}
+
+/// A move that makes an action roll.
+#[derive(Serialize, Deserialize)]
+pub struct MoveActionRoll {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: MoveId,
+
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
+    /// Is burning momentum allowed for this move?
+    #[serde(rename = "allow_momentum_burn")]
+    pub allowMomentumBurn: bool,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    #[serde(rename = "outcomes")]
+    pub outcomes: MoveOutcomes,
+
+    /// A move that makes an action roll.
+    #[serde(rename = "roll_type")]
+    pub rollType: MoveActionRollRollType,
+
+    /// The complete rules text of the move.
+    #[serde(rename = "text")]
+    pub text: MarkdownString,
+
+    /// Trigger conditions for this move.
+    #[serde(rename = "trigger")]
+    pub trigger: TriggerActionRoll,
+
+    #[serde(rename = "type")]
+    pub type_: MoveActionRollType0,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub canonicalName: Option<Box<Label>>,
+
+    #[serde(rename = "oracles")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub oracles: Option<Box<HashMap<String, EmbeddedOracleRollable>>>,
+
+    /// Indicates that this move replaces the identified moves. References to
+    /// the replaced moves can be considered equivalent to this move.
+    #[serde(rename = "replaces")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub replaces: Option<Box<Vec<MoveIdWildcard>>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
+
+/// A move must have this `roll_type` to receive this enhancement. This is in
+/// addition to any other restrictions made by other properties.
+#[derive(Serialize, Deserialize)]
+pub enum MoveActionRollEnhancementRollType {
+    #[serde(rename = "action_roll")]
+    ActionRoll,
+}
+
+/// An object that describes changes to a move. These changes should be applied
+/// recursively, altering only the specified properties; enhanced arrays should
+/// be concatencated with the original array value.
+#[derive(Serialize, Deserialize)]
+pub struct MoveActionRollEnhancement {
+    #[serde(rename = "enhances")]
+    pub enhances: Vec<AnyMoveIdWildcard>,
+
+    /// A move must have this `roll_type` to receive this enhancement. This is
+    /// in addition to any other restrictions made by other properties.
+    #[serde(rename = "roll_type")]
+    pub rollType: MoveActionRollEnhancementRollType,
+
+    #[serde(rename = "trigger")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub trigger: Option<Box<TriggerActionRollEnhancement>>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2938,6 +4718,125 @@ pub type MoveId = String;
 /// A wildcarded MoveId that can be used to match multiple Move objects.
 pub type MoveIdWildcard = String;
 
+/// A move that makes no action rolls or progress rolls.
+#[derive(Serialize, Deserialize)]
+pub enum MoveNoRollRollType {
+    #[serde(rename = "no_roll")]
+    NoRoll,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum MoveNoRollType0 {
+    #[serde(rename = "move")]
+    Move,
+}
+
+/// A move that makes no progress rolls or action rolls.
+#[derive(Serialize, Deserialize)]
+pub struct MoveNoRoll {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: MoveId,
+
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
+    /// Is burning momentum allowed for this move?
+    #[serde(rename = "allow_momentum_burn")]
+    pub allowMomentumBurn: bool,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    /// A move that makes no action rolls or progress rolls.
+    #[serde(rename = "roll_type")]
+    pub rollType: MoveNoRollRollType,
+
+    /// The complete rules text of the move.
+    #[serde(rename = "text")]
+    pub text: MarkdownString,
+
+    /// Trigger conditions for this move.
+    #[serde(rename = "trigger")]
+    pub trigger: TriggerNoRoll,
+
+    #[serde(rename = "type")]
+    pub type_: MoveNoRollType0,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub canonicalName: Option<Box<Label>>,
+
+    #[serde(rename = "oracles")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub oracles: Option<Box<HashMap<String, EmbeddedOracleRollable>>>,
+
+    /// Indicates that this move replaces the identified moves. References to
+    /// the replaced moves can be considered equivalent to this move.
+    #[serde(rename = "replaces")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub replaces: Option<Box<Vec<MoveIdWildcard>>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
+
+/// A move must have this `roll_type` to receive this enhancement. This is in
+/// addition to any other restrictions made by other properties.
+#[derive(Serialize, Deserialize)]
+pub enum MoveNoRollEnhancementRollType {
+    #[serde(rename = "no_roll")]
+    NoRoll,
+}
+
+/// An object that describes changes to a move. These changes should be applied
+/// recursively, altering only the specified properties; enhanced arrays should
+/// be concatencated with the original array value.
+#[derive(Serialize, Deserialize)]
+pub struct MoveNoRollEnhancement {
+    #[serde(rename = "enhances")]
+    pub enhances: Vec<AnyMoveIdWildcard>,
+
+    /// A move must have this `roll_type` to receive this enhancement. This is
+    /// in addition to any other restrictions made by other properties.
+    #[serde(rename = "roll_type")]
+    pub rollType: MoveNoRollEnhancementRollType,
+
+    #[serde(rename = "trigger")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub trigger: Option<Box<TriggerNoRollEnhancement>>,
+}
+
+/// A unique ID representing a MoveOracleRollable object.
+pub type MoveOracleRollableId = String;
+
+/// A wildcarded MoveOracleRollableId that can be used to match multiple
+/// MoveOracleRollable objects.
+pub type MoveOracleRollableIdWildcard = String;
+
+/// A unique ID representing a MoveOracleRollableRow object.
+pub type MoveOracleRollableRowId = String;
+
+/// A wildcarded MoveOracleRollableRowId that can be used to match multiple
+/// MoveOracleRollableRow objects.
+pub type MoveOracleRollableRowIdWildcard = String;
+
 #[derive(Serialize, Deserialize)]
 pub struct MoveOutcome {
     #[serde(rename = "text")]
@@ -2966,6 +4865,274 @@ pub struct MoveOutcomes {
 
     #[serde(rename = "weak_hit")]
     pub weakHit: MoveOutcome,
+}
+
+/// A progress move that rolls on a standard progress track type (defined by
+/// this move).
+#[derive(Serialize, Deserialize)]
+pub enum MoveProgressRollRollType {
+    #[serde(rename = "progress_roll")]
+    ProgressRoll,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum MoveProgressRollType0 {
+    #[serde(rename = "move")]
+    Move,
+}
+
+/// A progress move that rolls on a standard progress track type (whose features
+/// are defined by this move object). For progress rolls that use special
+/// tracks, see MoveSpecialTrack.
+#[derive(Serialize, Deserialize)]
+pub struct MoveProgressRoll {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: MoveId,
+
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
+    /// Is burning momentum allowed for this move?
+    #[serde(rename = "allow_momentum_burn")]
+    pub allowMomentumBurn: bool,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    #[serde(rename = "outcomes")]
+    pub outcomes: MoveOutcomes,
+
+    /// A progress move that rolls on a standard progress track type (defined by
+    /// this move).
+    #[serde(rename = "roll_type")]
+    pub rollType: MoveProgressRollRollType,
+
+    /// The complete rules text of the move.
+    #[serde(rename = "text")]
+    pub text: MarkdownString,
+
+    /// Describes the common features of progress tracks associated with this
+    /// move.
+    #[serde(rename = "tracks")]
+    pub tracks: ProgressTrackTypeInfo,
+
+    /// Trigger conditions for this move.
+    #[serde(rename = "trigger")]
+    pub trigger: TriggerProgressRoll,
+
+    #[serde(rename = "type")]
+    pub type_: MoveProgressRollType0,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub canonicalName: Option<Box<Label>>,
+
+    #[serde(rename = "oracles")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub oracles: Option<Box<HashMap<String, EmbeddedOracleRollable>>>,
+
+    /// Indicates that this move replaces the identified moves. References to
+    /// the replaced moves can be considered equivalent to this move.
+    #[serde(rename = "replaces")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub replaces: Option<Box<Vec<MoveIdWildcard>>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
+
+/// A move must have this `roll_type` to receive this enhancement. This is in
+/// addition to any other restrictions made by other properties.
+#[derive(Serialize, Deserialize)]
+pub enum MoveProgressRollEnhancementRollType {
+    #[serde(rename = "progress_roll")]
+    ProgressRoll,
+}
+
+/// An object that describes changes to a move. These changes should be applied
+/// recursively, altering only the specified properties; enhanced arrays should
+/// be concatencated with the original array value.
+#[derive(Serialize, Deserialize)]
+pub struct MoveProgressRollEnhancement {
+    #[serde(rename = "enhances")]
+    pub enhances: Vec<AnyMoveIdWildcard>,
+
+    /// A move must have this `roll_type` to receive this enhancement. This is
+    /// in addition to any other restrictions made by other properties.
+    #[serde(rename = "roll_type")]
+    pub rollType: MoveProgressRollEnhancementRollType,
+
+    #[serde(rename = "trigger")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub trigger: Option<Box<TriggerProgressRollEnhancement>>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum MoveRollType {
+    /// A move that makes an action roll.
+    #[serde(rename = "action_roll")]
+    ActionRoll,
+
+    /// A move that makes no action rolls or progress rolls.
+    #[serde(rename = "no_roll")]
+    NoRoll,
+
+    /// A progress move that rolls on a standard progress track type (defined by
+    /// this move).
+    #[serde(rename = "progress_roll")]
+    ProgressRoll,
+
+    /// A progress move that rolls on one or more special tracks, like Bonds
+    /// (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
+    #[serde(rename = "special_track")]
+    SpecialTrack,
+}
+
+/// A progress move that rolls on one or more special tracks, like Bonds
+/// (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
+#[derive(Serialize, Deserialize)]
+pub enum MoveSpecialTrackRollType {
+    #[serde(rename = "special_track")]
+    SpecialTrack,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum MoveSpecialTrackType0 {
+    #[serde(rename = "move")]
+    Move,
+}
+
+/// A progress move that rolls on a special track, such as Legacies (Starforged)
+/// or Bonds (classic Ironsworn). For progress moves that use standard progress
+/// tracks, see MoveProgressRoll instead.
+#[derive(Serialize, Deserialize)]
+pub struct MoveSpecialTrack {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: MoveId,
+
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
+    /// Is burning momentum allowed for this move?
+    #[serde(rename = "allow_momentum_burn")]
+    pub allowMomentumBurn: bool,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    #[serde(rename = "outcomes")]
+    pub outcomes: MoveOutcomes,
+
+    /// A progress move that rolls on one or more special tracks, like Bonds
+    /// (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
+    #[serde(rename = "roll_type")]
+    pub rollType: MoveSpecialTrackRollType,
+
+    /// The complete rules text of the move.
+    #[serde(rename = "text")]
+    pub text: MarkdownString,
+
+    /// Trigger conditions for this move.
+    #[serde(rename = "trigger")]
+    pub trigger: TriggerSpecialTrack,
+
+    #[serde(rename = "type")]
+    pub type_: MoveSpecialTrackType0,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub canonicalName: Option<Box<Label>>,
+
+    #[serde(rename = "oracles")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub oracles: Option<Box<HashMap<String, EmbeddedOracleRollable>>>,
+
+    /// Indicates that this move replaces the identified moves. References to
+    /// the replaced moves can be considered equivalent to this move.
+    #[serde(rename = "replaces")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub replaces: Option<Box<Vec<MoveIdWildcard>>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
+
+/// A move must have this `roll_type` to receive this enhancement. This is in
+/// addition to any other restrictions made by other properties.
+#[derive(Serialize, Deserialize)]
+pub enum MoveSpecialTrackEnhancementRollType {
+    #[serde(rename = "special_track")]
+    SpecialTrack,
+}
+
+/// An object that describes changes to a move. These changes should be applied
+/// recursively, altering only the specified properties; enhanced arrays should
+/// be concatencated with the original array value.
+#[derive(Serialize, Deserialize)]
+pub struct MoveSpecialTrackEnhancement {
+    #[serde(rename = "enhances")]
+    pub enhances: Vec<AnyMoveIdWildcard>,
+
+    /// A move must have this `roll_type` to receive this enhancement. This is
+    /// in addition to any other restrictions made by other properties.
+    #[serde(rename = "roll_type")]
+    pub rollType: MoveSpecialTrackEnhancementRollType,
+
+    #[serde(rename = "trigger")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub trigger: Option<Box<TriggerSpecialTrackEnhancement>>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum NonCollectableType {
+    #[serde(rename = "delve_site")]
+    DelveSite,
+
+    #[serde(rename = "delve_site_domain")]
+    DelveSiteDomain,
+
+    #[serde(rename = "delve_site_theme")]
+    DelveSiteTheme,
+
+    #[serde(rename = "rarity")]
+    Rarity,
+
+    #[serde(rename = "truth")]
+    Truth,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -3149,6 +5316,9 @@ pub type NpcCollectionIdWildcard = String;
 /// A unique ID representing a Npc object.
 pub type NpcId = String;
 
+/// A wildcarded NpcId that can be used to match multiple Npc objects.
+pub type NpcIdWildcard = String;
+
 /// A localized category label describing the nature of this NPC.
 /// 
 /// In Ironsworn classic, this is probably the singular form of the parent
@@ -3175,60 +5345,6 @@ pub struct NpcVariant {
     #[serde(rename = "summary")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Box<MarkdownString>>,
-}
-
-#[derive(Serialize, Deserialize)]
-pub enum ObjectType {
-    #[serde(rename = "asset")]
-    Asset,
-
-    #[serde(rename = "asset_ability")]
-    AssetAbility,
-
-    #[serde(rename = "asset_collection")]
-    AssetCollection,
-
-    #[serde(rename = "atlas_collection")]
-    AtlasCollection,
-
-    #[serde(rename = "atlas_entry")]
-    AtlasEntry,
-
-    #[serde(rename = "delve_site")]
-    DelveSite,
-
-    #[serde(rename = "delve_site_domain")]
-    DelveSiteDomain,
-
-    #[serde(rename = "delve_site_theme")]
-    DelveSiteTheme,
-
-    #[serde(rename = "move")]
-    Move,
-
-    #[serde(rename = "move_category")]
-    MoveCategory,
-
-    #[serde(rename = "npc")]
-    Npc,
-
-    #[serde(rename = "npc_collection")]
-    NpcCollection,
-
-    #[serde(rename = "oracle_collection")]
-    OracleCollection,
-
-    #[serde(rename = "oracle_rollable")]
-    OracleRollable,
-
-    #[serde(rename = "oracle_table_row")]
-    OracleTableRow,
-
-    #[serde(rename = "rarity")]
-    Rarity,
-
-    #[serde(rename = "truth")]
-    Truth,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -3806,7 +5922,7 @@ pub struct OracleColumnText {
 
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
-    pub rows: Vec<OracleTableRowText>,
+    pub rows: Vec<OracleRollableRowText>,
 
     #[serde(rename = "type")]
     pub type_: OracleColumnTextType,
@@ -3887,7 +6003,7 @@ pub struct OracleColumnText2 {
 
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
-    pub rows: Vec<OracleTableRowText2>,
+    pub rows: Vec<OracleRollableRowText2>,
 
     #[serde(rename = "type")]
     pub type_: OracleColumnText2Type,
@@ -3968,7 +6084,7 @@ pub struct OracleColumnText3 {
 
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
-    pub rows: Vec<OracleTableRowText3>,
+    pub rows: Vec<OracleRollableRowText3>,
 
     #[serde(rename = "type")]
     pub type_: OracleColumnText3Type,
@@ -4067,30 +6183,629 @@ pub struct OracleRoll {
     pub oracle: OracleRollableId,
 }
 
-/// Provides string templates that may be used in place of the static
-/// row text from `OracleTableRow#text`, `OracleTableRow#text2`, and
-/// `OracleTableRow#text3`.
+/// Provides string templates that may be used in place of the static row
+/// text from `OracleRollableRow#text`, `OracleRollableRow#text2`, and
+/// `OracleRollableRow#text3`.
 /// 
 ///   These strings are formatted in Markdown, but use a special syntax
 /// for their placeholders: `{{text>some_oracle_rollable_id}}`. The
 /// placeholder should be replaced with the value of a rolled (or selected)
-/// `OracleTableRow#text` from the target oracle rollable ID.
+/// `OracleRollableRow#text` from the target oracle rollable ID.
 #[derive(Serialize, Deserialize)]
 pub struct OracleRollTemplate {
-    /// A string template that may be used in place of OracleTableRow#text.
+    /// A string template that may be used in place of OracleRollableRow#text.
     #[serde(rename = "text")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub text: Option<Box<TemplateString>>,
 
-    /// A string template that may be used in place of OracleTableRow#text2.
+    /// A string template that may be used in place of OracleRollableRow#text2.
     #[serde(rename = "text2")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub text2: Option<Box<TemplateString>>,
 
-    /// A string template that may be used in place of OracleTableRow#text3.
+    /// A string template that may be used in place of OracleRollableRow#text3.
     #[serde(rename = "text3")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub text3: Option<Box<TemplateString>>,
+}
+
+/// A collection of table rows from which random results may be rolled. This may
+/// represent a standalone table, or a column in a larger table.
+#[derive(Serialize, Deserialize)]
+#[serde(tag = "oracle_type")]
+pub enum OracleRollable {
+    #[serde(rename = "column_text")]
+    ColumnText(OracleRollableColumnText),
+
+    #[serde(rename = "column_text2")]
+    ColumnText2(OracleRollableColumnText2),
+
+    #[serde(rename = "column_text3")]
+    ColumnText3(OracleRollableColumnText3),
+
+    #[serde(rename = "table_text")]
+    TableText(OracleRollableTableText),
+
+    #[serde(rename = "table_text2")]
+    TableText2(OracleRollableTableText2),
+
+    #[serde(rename = "table_text3")]
+    TableText3(OracleRollableTableText3),
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum OracleRollableColumnTextType {
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+}
+
+/// Represents a single column in an OracleCollection.
+#[derive(Serialize, Deserialize)]
+pub struct OracleRollableColumnText {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleRollableId,
+
+    /// The roll used to select a result on this oracle.
+    #[serde(rename = "dice")]
+    pub dice: DiceExpression,
+
+    /// The primary label at the head of this column.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    /// An array of objects, each representing a single row of the table.
+    #[serde(rename = "rows")]
+    pub rows: Vec<OracleRollableRowText>,
+
+    #[serde(rename = "type")]
+    pub type_: OracleRollableColumnTextType,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// An optional thematic color for this column. For an example, see "Basic
+    /// Creature Form" (Starforged p. 337)
+    #[serde(rename = "color")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub color: Option<Box<CssColor>>,
+
+    /// An optional icon for this column.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Most oracle tables are insensitive to matches, but a few define special
+    /// match behavior.
+    #[serde(rename = "match")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub match_: Option<Box<OracleMatchBehavior>>,
+
+    /// Indicates that this object replaces the identified OracleRollables.
+    /// References to the replaced objects can be considered equivalent to this
+    /// object.
+    #[serde(rename = "replaces")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub replaces: Option<Box<Vec<OracleRollableIdWildcard>>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    /// Optional secondary text at the head of this column. For best results,
+    /// this should be no more than a few words in length.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum OracleRollableColumnText2Type {
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct OracleRollableColumnText2 {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleRollableId,
+
+    /// The roll used to select a result on this oracle.
+    #[serde(rename = "dice")]
+    pub dice: DiceExpression,
+
+    /// The primary label at the head of this column.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    /// An array of objects, each representing a single row of the table.
+    #[serde(rename = "rows")]
+    pub rows: Vec<OracleRollableRowText2>,
+
+    #[serde(rename = "type")]
+    pub type_: OracleRollableColumnText2Type,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// An optional thematic color for this column. For an example, see "Basic
+    /// Creature Form" (Starforged p. 337)
+    #[serde(rename = "color")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub color: Option<Box<CssColor>>,
+
+    /// An optional icon for this column.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Most oracle tables are insensitive to matches, but a few define special
+    /// match behavior.
+    #[serde(rename = "match")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub match_: Option<Box<OracleMatchBehavior>>,
+
+    /// Indicates that this object replaces the identified OracleRollables.
+    /// References to the replaced objects can be considered equivalent to this
+    /// object.
+    #[serde(rename = "replaces")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub replaces: Option<Box<Vec<OracleRollableIdWildcard>>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    /// Optional secondary text at the head of this column. For best results,
+    /// this should be no more than a few words in length.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum OracleRollableColumnText3Type {
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct OracleRollableColumnText3 {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleRollableId,
+
+    /// The roll used to select a result on this oracle.
+    #[serde(rename = "dice")]
+    pub dice: DiceExpression,
+
+    /// The primary label at the head of this column.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    /// An array of objects, each representing a single row of the table.
+    #[serde(rename = "rows")]
+    pub rows: Vec<OracleRollableRowText3>,
+
+    #[serde(rename = "type")]
+    pub type_: OracleRollableColumnText3Type,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// An optional thematic color for this column. For an example, see "Basic
+    /// Creature Form" (Starforged p. 337)
+    #[serde(rename = "color")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub color: Option<Box<CssColor>>,
+
+    /// An optional icon for this column.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Most oracle tables are insensitive to matches, but a few define special
+    /// match behavior.
+    #[serde(rename = "match")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub match_: Option<Box<OracleMatchBehavior>>,
+
+    /// Indicates that this object replaces the identified OracleRollables.
+    /// References to the replaced objects can be considered equivalent to this
+    /// object.
+    #[serde(rename = "replaces")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub replaces: Option<Box<Vec<OracleRollableIdWildcard>>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    /// Optional secondary text at the head of this column. For best results,
+    /// this should be no more than a few words in length.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
+
+/// The label at the head of each table column. The `roll` key refers to the
+/// roll column showing the dice range (`min` and `max` on each table row).
+#[derive(Serialize, Deserialize)]
+pub struct OracleRollableTableTextColumnLabels {
+    #[serde(rename = "roll")]
+    pub roll: Label,
+
+    #[serde(rename = "text")]
+    pub text: Label,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum OracleRollableTableTextType {
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct OracleRollableTableTextRecommendedRolls {
+    #[serde(rename = "max")]
+    pub max: i16,
+
+    #[serde(rename = "min")]
+    pub min: i16,
+}
+
+/// Represents a basic rollable oracle table with one roll column and one text
+/// result column.
+#[derive(Serialize, Deserialize)]
+pub struct OracleRollableTableText {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleRollableId,
+
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
+    /// The label at the head of each table column. The `roll` key refers to the
+    /// roll column showing the dice range (`min` and `max` on each table row).
+    #[serde(rename = "column_labels")]
+    pub columnLabels: OracleRollableTableTextColumnLabels,
+
+    /// The roll used to select a result on this oracle.
+    #[serde(rename = "dice")]
+    pub dice: DiceExpression,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    /// An array of objects, each representing a single row of the table.
+    #[serde(rename = "rows")]
+    pub rows: Vec<OracleRollableRowText>,
+
+    #[serde(rename = "type")]
+    pub type_: OracleRollableTableTextType,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub canonicalName: Option<Box<Label>>,
+
+    /// A longer description of the oracle table's intended usage, which might
+    /// include multiple paragraphs. If it's only a couple sentences, use the
+    /// `summary` key instead.
+    #[serde(rename = "description")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<Box<MarkdownString>>,
+
+    /// An icon that represents this table.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Most oracle tables are insensitive to matches, but a few define special
+    /// match behavior.
+    #[serde(rename = "match")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub match_: Option<Box<OracleMatchBehavior>>,
+
+    #[serde(rename = "recommended_rolls")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub recommendedRolls: Option<Box<OracleRollableTableTextRecommendedRolls>>,
+
+    /// Indicates that this object replaces the identified OracleRollables.
+    /// References to the replaced objects can be considered equivalent to this
+    /// object.
+    #[serde(rename = "replaces")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub replaces: Option<Box<Vec<OracleRollableIdWildcard>>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    /// A brief summary of the oracle table's intended usage, no more than a few
+    /// sentences in length. This is intended for use in application tooltips
+    /// and similar sorts of hints. Longer text should use the "description"
+    /// key instead.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
+
+/// The label at the head of each table column. The `roll` key refers to the
+/// roll column showing the dice range (`min` and `max` on each table row).
+#[derive(Serialize, Deserialize)]
+pub struct OracleRollableTableText2ColumnLabels {
+    #[serde(rename = "roll")]
+    pub roll: Label,
+
+    #[serde(rename = "text")]
+    pub text: Label,
+
+    #[serde(rename = "text2")]
+    pub text2: Label,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum OracleRollableTableText2Type {
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct OracleRollableTableText2RecommendedRolls {
+    #[serde(rename = "max")]
+    pub max: i16,
+
+    #[serde(rename = "min")]
+    pub min: i16,
+}
+
+/// A rollable oracle table with one roll column and two text columns.
+#[derive(Serialize, Deserialize)]
+pub struct OracleRollableTableText2 {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleRollableId,
+
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
+    /// The label at the head of each table column. The `roll` key refers to the
+    /// roll column showing the dice range (`min` and `max` on each table row).
+    #[serde(rename = "column_labels")]
+    pub columnLabels: OracleRollableTableText2ColumnLabels,
+
+    /// The roll used to select a result on this oracle.
+    #[serde(rename = "dice")]
+    pub dice: DiceExpression,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    /// An array of objects, each representing a single row of the table.
+    #[serde(rename = "rows")]
+    pub rows: Vec<OracleRollableRowText2>,
+
+    #[serde(rename = "type")]
+    pub type_: OracleRollableTableText2Type,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub canonicalName: Option<Box<Label>>,
+
+    /// A longer description of the oracle table's intended usage, which might
+    /// include multiple paragraphs. If it's only a couple sentences, use the
+    /// `summary` key instead.
+    #[serde(rename = "description")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<Box<MarkdownString>>,
+
+    /// An icon that represents this table.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Most oracle tables are insensitive to matches, but a few define special
+    /// match behavior.
+    #[serde(rename = "match")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub match_: Option<Box<OracleMatchBehavior>>,
+
+    #[serde(rename = "recommended_rolls")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub recommendedRolls: Option<Box<OracleRollableTableText2RecommendedRolls>>,
+
+    /// Indicates that this object replaces the identified OracleRollables.
+    /// References to the replaced objects can be considered equivalent to this
+    /// object.
+    #[serde(rename = "replaces")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub replaces: Option<Box<Vec<OracleRollableIdWildcard>>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    /// A brief summary of the oracle table's intended usage, no more than a few
+    /// sentences in length. This is intended for use in application tooltips
+    /// and similar sorts of hints. Longer text should use the "description"
+    /// key instead.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
+
+/// The label at the head of each table column. The `roll` key refers to the
+/// roll column showing the dice range (`min` and `max` on each table row).
+#[derive(Serialize, Deserialize)]
+pub struct OracleRollableTableText3ColumnLabels {
+    #[serde(rename = "roll")]
+    pub roll: Label,
+
+    #[serde(rename = "text")]
+    pub text: Label,
+
+    #[serde(rename = "text2")]
+    pub text2: Label,
+
+    #[serde(rename = "text3")]
+    pub text3: Label,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum OracleRollableTableText3Type {
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct OracleRollableTableText3RecommendedRolls {
+    #[serde(rename = "max")]
+    pub max: i16,
+
+    #[serde(rename = "min")]
+    pub min: i16,
+}
+
+/// A rollable oracle table with one roll column and 3 text columns.
+#[derive(Serialize, Deserialize)]
+pub struct OracleRollableTableText3 {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleRollableId,
+
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
+    /// The label at the head of each table column. The `roll` key refers to the
+    /// roll column showing the dice range (`min` and `max` on each table row).
+    #[serde(rename = "column_labels")]
+    pub columnLabels: OracleRollableTableText3ColumnLabels,
+
+    /// The roll used to select a result on this oracle.
+    #[serde(rename = "dice")]
+    pub dice: DiceExpression,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    /// An array of objects, each representing a single row of the table.
+    #[serde(rename = "rows")]
+    pub rows: Vec<OracleRollableRowText3>,
+
+    #[serde(rename = "type")]
+    pub type_: OracleRollableTableText3Type,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub canonicalName: Option<Box<Label>>,
+
+    /// A longer description of the oracle table's intended usage, which might
+    /// include multiple paragraphs. If it's only a couple sentences, use the
+    /// `summary` key instead.
+    #[serde(rename = "description")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<Box<MarkdownString>>,
+
+    /// An icon that represents this table.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Most oracle tables are insensitive to matches, but a few define special
+    /// match behavior.
+    #[serde(rename = "match")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub match_: Option<Box<OracleMatchBehavior>>,
+
+    #[serde(rename = "recommended_rolls")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub recommendedRolls: Option<Box<OracleRollableTableText3RecommendedRolls>>,
+
+    /// Indicates that this object replaces the identified OracleRollables.
+    /// References to the replaced objects can be considered equivalent to this
+    /// object.
+    #[serde(rename = "replaces")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub replaces: Option<Box<Vec<OracleRollableIdWildcard>>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    /// A brief summary of the oracle table's intended usage, no more than a few
+    /// sentences in length. This is intended for use in application tooltips
+    /// and similar sorts of hints. Longer text should use the "description"
+    /// key instead.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
 }
 
 /// A unique ID representing an OracleRollable object.
@@ -4099,6 +6814,157 @@ pub type OracleRollableId = String;
 /// A wildcarded OracleRollableId that can be used to match multiple
 /// OracleRollable objects.
 pub type OracleRollableIdWildcard = String;
+
+/// A unique ID representing an OracleRollableRow object.
+pub type OracleRollableRowId = String;
+
+/// A wildcarded OracleRollableRowId that can be used to match multiple
+/// OracleRollableRow objects.
+pub type OracleRollableRowIdWildcard = String;
+
+/// Represents a row in an oracle table, with a single text cell.
+#[derive(Serialize, Deserialize)]
+pub struct OracleRollableRowText {
+    #[serde(rename = "_id")]
+    pub id: AnyOracleRollableRowId,
+
+    #[serde(rename = "roll")]
+    pub roll: DiceRange,
+
+    /// The primary text content of this row.
+    #[serde(rename = "text")]
+    pub text: MarkdownString,
+
+    #[serde(rename = "_i18n")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub i18n: Option<Box<I18nHints>>,
+
+    /// Hints that the identified table should be rendered inside this table
+    /// row.
+    #[serde(rename = "embed_table")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub embedTable: Option<Box<OracleRollableId>>,
+
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Further oracle rolls prompted by this table row.
+    #[serde(rename = "oracle_rolls")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub oracleRolls: Option<Box<Vec<OracleRoll>>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+
+    #[serde(rename = "template")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub template: Option<Box<OracleRollTemplate>>,
+}
+
+/// Represents a row in an oracle table that provides a secondary text field.
+#[derive(Serialize, Deserialize)]
+pub struct OracleRollableRowText2 {
+    #[serde(rename = "_id")]
+    pub id: AnyOracleRollableRowId,
+
+    #[serde(rename = "roll")]
+    pub roll: DiceRange,
+
+    /// The primary text content of this row.
+    #[serde(rename = "text")]
+    pub text: MarkdownString,
+
+    #[serde(rename = "text2")]
+    pub text2: MarkdownString,
+
+    #[serde(rename = "_i18n")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub i18n: Option<Box<I18nHints>>,
+
+    /// Hints that the identified table should be rendered inside this table
+    /// row.
+    #[serde(rename = "embed_table")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub embedTable: Option<Box<OracleRollableId>>,
+
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Further oracle rolls prompted by this table row.
+    #[serde(rename = "oracle_rolls")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub oracleRolls: Option<Box<Vec<OracleRoll>>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+
+    #[serde(rename = "template")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub template: Option<Box<OracleRollTemplate>>,
+}
+
+/// Represents a row in an oracle table with 3 text cells.
+#[derive(Serialize, Deserialize)]
+pub struct OracleRollableRowText3 {
+    #[serde(rename = "_id")]
+    pub id: AnyOracleRollableRowId,
+
+    #[serde(rename = "roll")]
+    pub roll: DiceRange,
+
+    /// The primary text content of this row.
+    #[serde(rename = "text")]
+    pub text: MarkdownString,
+
+    #[serde(rename = "text2")]
+    pub text2: MarkdownString,
+
+    #[serde(rename = "text3")]
+    pub text3: MarkdownString,
+
+    #[serde(rename = "_i18n")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub i18n: Option<Box<I18nHints>>,
+
+    /// Hints that the identified table should be rendered inside this table
+    /// row.
+    #[serde(rename = "embed_table")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub embedTable: Option<Box<OracleRollableId>>,
+
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Further oracle rolls prompted by this table row.
+    #[serde(rename = "oracle_rolls")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub oracleRolls: Option<Box<Vec<OracleRoll>>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+
+    #[serde(rename = "template")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub template: Option<Box<OracleRollTemplate>>,
+}
 
 #[derive(Serialize, Deserialize)]
 #[serde(tag = "oracle_type")]
@@ -4167,7 +7033,7 @@ pub struct OracleTableRollableTableText {
 
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
-    pub rows: Vec<OracleTableRowText>,
+    pub rows: Vec<OracleRollableRowText>,
 
     #[serde(rename = "type")]
     pub type_: OracleTableRollableTableTextType,
@@ -4286,7 +7152,7 @@ pub struct OracleTableRollableTableText2 {
 
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
-    pub rows: Vec<OracleTableRowText2>,
+    pub rows: Vec<OracleRollableRowText2>,
 
     #[serde(rename = "type")]
     pub type_: OracleTableRollableTableText2Type,
@@ -4408,7 +7274,7 @@ pub struct OracleTableRollableTableText3 {
 
     /// An array of objects, each representing a single row of the table.
     #[serde(rename = "rows")]
-    pub rows: Vec<OracleTableRowText3>,
+    pub rows: Vec<OracleRollableRowText3>,
 
     #[serde(rename = "type")]
     pub type_: OracleTableRollableTableText3Type,
@@ -4471,139 +7337,855 @@ pub struct OracleTableRollableTableText3 {
     pub tags: Option<Box<Tags>>,
 }
 
-/// Represents a row in an oracle table, with a single text cell.
+/// Provides column labels for this table. The `roll` key refers to the roll
+/// column showing the dice range (`min` and `max` on each table row). For all
+/// other column labels, see the `name` property of each child `OracleColumn`.
 #[derive(Serialize, Deserialize)]
-pub struct OracleTableRowText {
+pub struct OracleTableSharedRollsColumnLabels {
     #[serde(rename = "roll")]
-    pub roll: DiceRange,
+    pub roll: Label,
+}
 
-    /// The primary text content of this row.
-    #[serde(rename = "text")]
-    pub text: MarkdownString,
+/// A table with one shared roll column, and multiple unique text columns.
+#[derive(Serialize, Deserialize)]
+pub enum OracleTableSharedRollsOracleType {
+    #[serde(rename = "table_shared_rolls")]
+    TableSharedRolls,
+}
 
-    #[serde(rename = "_i18n")]
+#[derive(Serialize, Deserialize)]
+pub enum OracleTableSharedRollsType {
+    #[serde(rename = "oracle_collection")]
+    OracleCollection,
+}
+
+/// An OracleCollection representing a single table with one roll column and
+/// multiple `result` columns.
+#[derive(Serialize, Deserialize)]
+pub struct OracleTableSharedRolls {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleCollectionId,
+
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
+    /// Provides column labels for this table. The `roll` key refers to the
+    /// roll column showing the dice range (`min` and `max` on each table row).
+    /// For all other column labels, see the `name` property of each child
+    /// `OracleColumn`.
+    #[serde(rename = "column_labels")]
+    pub columnLabels: OracleTableSharedRollsColumnLabels,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    /// A table with one shared roll column, and multiple unique text columns.
+    #[serde(rename = "oracle_type")]
+    pub oracleType: OracleTableSharedRollsOracleType,
+
+    #[serde(rename = "type")]
+    pub type_: OracleTableSharedRollsType,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub i18n: Option<Box<I18nHints>>,
+    pub comment: Option<Box<String>>,
 
-    /// Hints that the identified table should be rendered inside this table
-    /// row.
-    #[serde(rename = "embed_table")]
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub embedTable: Option<Box<OracleRollableId>>,
+    pub canonicalName: Option<Box<Label>>,
 
+    /// A thematic color associated with this collection.
+    #[serde(rename = "color")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub color: Option<Box<CssColor>>,
+
+    #[serde(rename = "contents")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub contents: Option<Box<HashMap<String, OracleColumnText>>>,
+
+    /// A longer description of this collection, which might include multiple
+    /// paragraphs. If it's only a couple sentences, use the `summary` key
+    /// instead.
+    #[serde(rename = "description")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<Box<MarkdownString>>,
+
+    /// This collection's content enhances the identified collections, rather
+    /// than being a standalone collection of its own.
+    #[serde(rename = "enhances")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub enhances: Option<Box<Vec<OracleCollectionIdWildcard>>>,
+
+    /// An SVG icon associated with this collection.
     #[serde(rename = "icon")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub icon: Option<Box<SvgImageUrl>>,
 
-    /// Further oracle rolls prompted by this table row.
-    #[serde(rename = "oracle_rolls")]
+    #[serde(rename = "images")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub oracleRolls: Option<Box<Vec<OracleRoll>>>,
+    pub images: Option<Box<Vec<WebpImageUrl>>>,
+
+    /// This collection replaces the identified collections. References to the
+    /// replaced collections can be considered equivalent to this collection.
+    #[serde(rename = "replaces")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub replaces: Option<Box<Vec<OracleCollectionIdWildcard>>>,
 
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub suggestions: Option<Box<Suggestions>>,
 
+    /// A brief summary of this collection, no more than a few sentences in
+    /// length. This is intended for use in application tooltips and similar
+    /// sorts of hints. Longer text should use the "description" key instead.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub tags: Option<Box<Tags>>,
-
-    #[serde(rename = "template")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub template: Option<Box<OracleRollTemplate>>,
 }
 
-/// Represents a row in an oracle table that provides a secondary text field.
+/// The label at the head of each table column. The `roll` key refers to the
+/// roll column showing the dice range (`min` and `max` on each table row).
 #[derive(Serialize, Deserialize)]
-pub struct OracleTableRowText2 {
-    #[serde(rename = "roll")]
-    pub roll: DiceRange,
-
-    /// The primary text content of this row.
+pub struct OracleTableSharedTextColumnLabels {
     #[serde(rename = "text")]
-    pub text: MarkdownString,
+    pub text: Label,
+}
 
-    #[serde(rename = "text2")]
-    pub text2: MarkdownString,
+/// A table with multiple unique roll columns, and one shared text column.
+#[derive(Serialize, Deserialize)]
+pub enum OracleTableSharedTextOracleType {
+    #[serde(rename = "table_shared_text")]
+    TableSharedText,
+}
 
-    #[serde(rename = "_i18n")]
+#[derive(Serialize, Deserialize)]
+pub enum OracleTableSharedTextType {
+    #[serde(rename = "oracle_collection")]
+    OracleCollection,
+}
+
+/// An OracleCollection representing a single table with multiple roll columns
+/// and one `result` column.
+#[derive(Serialize, Deserialize)]
+pub struct OracleTableSharedText {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleCollectionId,
+
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
+    /// The label at the head of each table column. The `roll` key refers to the
+    /// roll column showing the dice range (`min` and `max` on each table row).
+    #[serde(rename = "column_labels")]
+    pub columnLabels: OracleTableSharedTextColumnLabels,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    /// A table with multiple unique roll columns, and one shared text column.
+    #[serde(rename = "oracle_type")]
+    pub oracleType: OracleTableSharedTextOracleType,
+
+    #[serde(rename = "type")]
+    pub type_: OracleTableSharedTextType,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub i18n: Option<Box<I18nHints>>,
+    pub comment: Option<Box<String>>,
 
-    /// Hints that the identified table should be rendered inside this table
-    /// row.
-    #[serde(rename = "embed_table")]
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub embedTable: Option<Box<OracleRollableId>>,
+    pub canonicalName: Option<Box<Label>>,
 
+    /// A thematic color associated with this collection.
+    #[serde(rename = "color")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub color: Option<Box<CssColor>>,
+
+    #[serde(rename = "contents")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub contents: Option<Box<HashMap<String, OracleColumnText>>>,
+
+    /// A longer description of this collection, which might include multiple
+    /// paragraphs. If it's only a couple sentences, use the `summary` key
+    /// instead.
+    #[serde(rename = "description")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<Box<MarkdownString>>,
+
+    /// This collection's content enhances the identified collections, rather
+    /// than being a standalone collection of its own.
+    #[serde(rename = "enhances")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub enhances: Option<Box<Vec<OracleCollectionIdWildcard>>>,
+
+    /// An SVG icon associated with this collection.
     #[serde(rename = "icon")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub icon: Option<Box<SvgImageUrl>>,
 
-    /// Further oracle rolls prompted by this table row.
-    #[serde(rename = "oracle_rolls")]
+    #[serde(rename = "images")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub oracleRolls: Option<Box<Vec<OracleRoll>>>,
+    pub images: Option<Box<Vec<WebpImageUrl>>>,
+
+    /// This collection replaces the identified collections. References to the
+    /// replaced collections can be considered equivalent to this collection.
+    #[serde(rename = "replaces")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub replaces: Option<Box<Vec<OracleCollectionIdWildcard>>>,
 
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub suggestions: Option<Box<Suggestions>>,
 
+    /// A brief summary of this collection, no more than a few sentences in
+    /// length. This is intended for use in application tooltips and similar
+    /// sorts of hints. Longer text should use the "description" key instead.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub tags: Option<Box<Tags>>,
-
-    #[serde(rename = "template")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub template: Option<Box<OracleRollTemplate>>,
 }
 
-/// Represents a row in an oracle table with 3 text cells.
+/// The label at the head of each table column. The `roll` key refers to the
+/// roll column showing the dice range (`min` and `max` on each table row).
 #[derive(Serialize, Deserialize)]
-pub struct OracleTableRowText3 {
-    #[serde(rename = "roll")]
-    pub roll: DiceRange,
-
-    /// The primary text content of this row.
+pub struct OracleTableSharedText2ColumnLabels {
     #[serde(rename = "text")]
-    pub text: MarkdownString,
+    pub text: Label,
 
     #[serde(rename = "text2")]
-    pub text2: MarkdownString,
+    pub text2: Label,
+}
+
+/// A table with multiple unique roll columns, and 2 shared text columns.
+#[derive(Serialize, Deserialize)]
+pub enum OracleTableSharedText2OracleType {
+    #[serde(rename = "table_shared_text2")]
+    TableSharedText2,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum OracleTableSharedText2Type {
+    #[serde(rename = "oracle_collection")]
+    OracleCollection,
+}
+
+/// An OracleCollection representing a single table with multiple roll columns,
+/// and 2 shared text columns.
+#[derive(Serialize, Deserialize)]
+pub struct OracleTableSharedText2 {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleCollectionId,
+
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
+    /// The label at the head of each table column. The `roll` key refers to the
+    /// roll column showing the dice range (`min` and `max` on each table row).
+    #[serde(rename = "column_labels")]
+    pub columnLabels: OracleTableSharedText2ColumnLabels,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    /// A table with multiple unique roll columns, and 2 shared text columns.
+    #[serde(rename = "oracle_type")]
+    pub oracleType: OracleTableSharedText2OracleType,
+
+    #[serde(rename = "type")]
+    pub type_: OracleTableSharedText2Type,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub canonicalName: Option<Box<Label>>,
+
+    /// A thematic color associated with this collection.
+    #[serde(rename = "color")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub color: Option<Box<CssColor>>,
+
+    #[serde(rename = "contents")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub contents: Option<Box<HashMap<String, OracleColumnText2>>>,
+
+    /// A longer description of this collection, which might include multiple
+    /// paragraphs. If it's only a couple sentences, use the `summary` key
+    /// instead.
+    #[serde(rename = "description")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<Box<MarkdownString>>,
+
+    /// This collection's content enhances the identified collections, rather
+    /// than being a standalone collection of its own.
+    #[serde(rename = "enhances")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub enhances: Option<Box<Vec<OracleCollectionIdWildcard>>>,
+
+    /// An SVG icon associated with this collection.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    #[serde(rename = "images")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub images: Option<Box<Vec<WebpImageUrl>>>,
+
+    /// This collection replaces the identified collections. References to the
+    /// replaced collections can be considered equivalent to this collection.
+    #[serde(rename = "replaces")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub replaces: Option<Box<Vec<OracleCollectionIdWildcard>>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    /// A brief summary of this collection, no more than a few sentences in
+    /// length. This is intended for use in application tooltips and similar
+    /// sorts of hints. Longer text should use the "description" key instead.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
+
+/// The label at the head of each table column. The `roll` key refers to the
+/// roll column showing the dice range (`min` and `max` on each table row).
+#[derive(Serialize, Deserialize)]
+pub struct OracleTableSharedText3ColumnLabels {
+    #[serde(rename = "text")]
+    pub text: Label,
+}
+
+/// A table with multiple unique roll columns, and 3 shared text columns.
+#[derive(Serialize, Deserialize)]
+pub enum OracleTableSharedText3OracleType {
+    #[serde(rename = "table_shared_text3")]
+    TableSharedText3,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum OracleTableSharedText3Type {
+    #[serde(rename = "oracle_collection")]
+    OracleCollection,
+}
+
+/// An OracleCollection representing a single table with multiple roll columns,
+/// and 2 shared text columns.
+#[derive(Serialize, Deserialize)]
+pub struct OracleTableSharedText3 {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleCollectionId,
+
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
+    /// The label at the head of each table column. The `roll` key refers to the
+    /// roll column showing the dice range (`min` and `max` on each table row).
+    #[serde(rename = "column_labels")]
+    pub columnLabels: OracleTableSharedText3ColumnLabels,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    /// A table with multiple unique roll columns, and 3 shared text columns.
+    #[serde(rename = "oracle_type")]
+    pub oracleType: OracleTableSharedText3OracleType,
+
+    #[serde(rename = "type")]
+    pub type_: OracleTableSharedText3Type,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub canonicalName: Option<Box<Label>>,
+
+    /// A thematic color associated with this collection.
+    #[serde(rename = "color")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub color: Option<Box<CssColor>>,
+
+    #[serde(rename = "contents")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub contents: Option<Box<HashMap<String, OracleColumnText3>>>,
+
+    /// A longer description of this collection, which might include multiple
+    /// paragraphs. If it's only a couple sentences, use the `summary` key
+    /// instead.
+    #[serde(rename = "description")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<Box<MarkdownString>>,
+
+    /// This collection's content enhances the identified collections, rather
+    /// than being a standalone collection of its own.
+    #[serde(rename = "enhances")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub enhances: Option<Box<Vec<OracleCollectionIdWildcard>>>,
+
+    /// An SVG icon associated with this collection.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    #[serde(rename = "images")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub images: Option<Box<Vec<WebpImageUrl>>>,
+
+    /// This collection replaces the identified collections. References to the
+    /// replaced collections can be considered equivalent to this collection.
+    #[serde(rename = "replaces")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub replaces: Option<Box<Vec<OracleCollectionIdWildcard>>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    /// A brief summary of this collection, no more than a few sentences in
+    /// length. This is intended for use in application tooltips and similar
+    /// sorts of hints. Longer text should use the "description" key instead.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
+
+/// The label at the head of each table column. The `roll` key refers to the
+/// roll column showing the dice range (`min` and `max` on each table row).
+#[derive(Serialize, Deserialize)]
+pub struct OracleTableTextColumnLabels {
+    #[serde(rename = "roll")]
+    pub roll: Label,
+
+    #[serde(rename = "text")]
+    pub text: Label,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum OracleTableTextOracleType {
+    #[serde(rename = "table_text")]
+    TableText,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum OracleTableTextType {
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct OracleTableTextRecommendedRolls {
+    #[serde(rename = "max")]
+    pub max: i16,
+
+    #[serde(rename = "min")]
+    pub min: i16,
+}
+
+/// Represents a basic rollable oracle table with one roll column and one text
+/// result column.
+#[derive(Serialize, Deserialize)]
+pub struct OracleTableText {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleRollableId,
+
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
+    /// The label at the head of each table column. The `roll` key refers to the
+    /// roll column showing the dice range (`min` and `max` on each table row).
+    #[serde(rename = "column_labels")]
+    pub columnLabels: OracleTableTextColumnLabels,
+
+    /// The roll used to select a result on this oracle.
+    #[serde(rename = "dice")]
+    pub dice: DiceExpression,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    #[serde(rename = "oracle_type")]
+    pub oracleType: OracleTableTextOracleType,
+
+    /// An array of objects, each representing a single row of the table.
+    #[serde(rename = "rows")]
+    pub rows: Vec<OracleRollableRowText>,
+
+    #[serde(rename = "type")]
+    pub type_: OracleTableTextType,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub canonicalName: Option<Box<Label>>,
+
+    /// A longer description of the oracle table's intended usage, which might
+    /// include multiple paragraphs. If it's only a couple sentences, use the
+    /// `summary` key instead.
+    #[serde(rename = "description")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<Box<MarkdownString>>,
+
+    /// An icon that represents this table.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Most oracle tables are insensitive to matches, but a few define special
+    /// match behavior.
+    #[serde(rename = "match")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub match_: Option<Box<OracleMatchBehavior>>,
+
+    #[serde(rename = "recommended_rolls")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub recommendedRolls: Option<Box<OracleTableTextRecommendedRolls>>,
+
+    /// Indicates that this object replaces the identified OracleRollables.
+    /// References to the replaced objects can be considered equivalent to this
+    /// object.
+    #[serde(rename = "replaces")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub replaces: Option<Box<Vec<OracleRollableIdWildcard>>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    /// A brief summary of the oracle table's intended usage, no more than a few
+    /// sentences in length. This is intended for use in application tooltips
+    /// and similar sorts of hints. Longer text should use the "description"
+    /// key instead.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
+
+/// The label at the head of each table column. The `roll` key refers to the
+/// roll column showing the dice range (`min` and `max` on each table row).
+#[derive(Serialize, Deserialize)]
+pub struct OracleTableText2ColumnLabels {
+    #[serde(rename = "roll")]
+    pub roll: Label,
+
+    #[serde(rename = "text")]
+    pub text: Label,
+
+    #[serde(rename = "text2")]
+    pub text2: Label,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum OracleTableText2OracleType {
+    #[serde(rename = "table_text2")]
+    TableText2,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum OracleTableText2Type {
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct OracleTableText2RecommendedRolls {
+    #[serde(rename = "max")]
+    pub max: i16,
+
+    #[serde(rename = "min")]
+    pub min: i16,
+}
+
+/// A rollable oracle table with one roll column and two text columns.
+#[derive(Serialize, Deserialize)]
+pub struct OracleTableText2 {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleRollableId,
+
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
+    /// The label at the head of each table column. The `roll` key refers to the
+    /// roll column showing the dice range (`min` and `max` on each table row).
+    #[serde(rename = "column_labels")]
+    pub columnLabels: OracleTableText2ColumnLabels,
+
+    /// The roll used to select a result on this oracle.
+    #[serde(rename = "dice")]
+    pub dice: DiceExpression,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    #[serde(rename = "oracle_type")]
+    pub oracleType: OracleTableText2OracleType,
+
+    /// An array of objects, each representing a single row of the table.
+    #[serde(rename = "rows")]
+    pub rows: Vec<OracleRollableRowText2>,
+
+    #[serde(rename = "type")]
+    pub type_: OracleTableText2Type,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub canonicalName: Option<Box<Label>>,
+
+    /// A longer description of the oracle table's intended usage, which might
+    /// include multiple paragraphs. If it's only a couple sentences, use the
+    /// `summary` key instead.
+    #[serde(rename = "description")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<Box<MarkdownString>>,
+
+    /// An icon that represents this table.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+
+    /// Most oracle tables are insensitive to matches, but a few define special
+    /// match behavior.
+    #[serde(rename = "match")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub match_: Option<Box<OracleMatchBehavior>>,
+
+    #[serde(rename = "recommended_rolls")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub recommendedRolls: Option<Box<OracleTableText2RecommendedRolls>>,
+
+    /// Indicates that this object replaces the identified OracleRollables.
+    /// References to the replaced objects can be considered equivalent to this
+    /// object.
+    #[serde(rename = "replaces")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub replaces: Option<Box<Vec<OracleRollableIdWildcard>>>,
+
+    #[serde(rename = "suggestions")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub suggestions: Option<Box<Suggestions>>,
+
+    /// A brief summary of the oracle table's intended usage, no more than a few
+    /// sentences in length. This is intended for use in application tooltips
+    /// and similar sorts of hints. Longer text should use the "description"
+    /// key instead.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
+    #[serde(rename = "tags")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Box<Tags>>,
+}
+
+/// The label at the head of each table column. The `roll` key refers to the
+/// roll column showing the dice range (`min` and `max` on each table row).
+#[derive(Serialize, Deserialize)]
+pub struct OracleTableText3ColumnLabels {
+    #[serde(rename = "roll")]
+    pub roll: Label,
+
+    #[serde(rename = "text")]
+    pub text: Label,
+
+    #[serde(rename = "text2")]
+    pub text2: Label,
 
     #[serde(rename = "text3")]
-    pub text3: MarkdownString,
+    pub text3: Label,
+}
 
-    #[serde(rename = "_i18n")]
+#[derive(Serialize, Deserialize)]
+pub enum OracleTableText3OracleType {
+    #[serde(rename = "table_text3")]
+    TableText3,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum OracleTableText3Type {
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct OracleTableText3RecommendedRolls {
+    #[serde(rename = "max")]
+    pub max: i16,
+
+    #[serde(rename = "min")]
+    pub min: i16,
+}
+
+/// A rollable oracle table with one roll column and 3 text columns.
+#[derive(Serialize, Deserialize)]
+pub struct OracleTableText3 {
+    /// The unique Datasworn ID for this item.
+    #[serde(rename = "_id")]
+    pub id: OracleRollableId,
+
+    /// Attribution for the original source (such as a book or website) of this
+    /// item, including the author and licensing information.
+    #[serde(rename = "_source")]
+    pub source: SourceInfo,
+
+    /// The label at the head of each table column. The `roll` key refers to the
+    /// roll column showing the dice range (`min` and `max` on each table row).
+    #[serde(rename = "column_labels")]
+    pub columnLabels: OracleTableText3ColumnLabels,
+
+    /// The roll used to select a result on this oracle.
+    #[serde(rename = "dice")]
+    pub dice: DiceExpression,
+
+    /// The primary name/label for this item.
+    #[serde(rename = "name")]
+    pub name: Label,
+
+    #[serde(rename = "oracle_type")]
+    pub oracleType: OracleTableText3OracleType,
+
+    /// An array of objects, each representing a single row of the table.
+    #[serde(rename = "rows")]
+    pub rows: Vec<OracleRollableRowText3>,
+
+    #[serde(rename = "type")]
+    pub type_: OracleTableText3Type,
+
+    /// Implementation hints or other developer-facing comments on this object.
+    /// These should be omitted when presenting the object for gameplay.
+    #[serde(rename = "_comment")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub i18n: Option<Box<I18nHints>>,
+    pub comment: Option<Box<String>>,
 
-    /// Hints that the identified table should be rendered inside this table
-    /// row.
-    #[serde(rename = "embed_table")]
+    /// The name of this item as it appears on the page in the book, if it's
+    /// different from `name`.
+    #[serde(rename = "canonical_name")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub embedTable: Option<Box<OracleRollableId>>,
+    pub canonicalName: Option<Box<Label>>,
 
+    /// A longer description of the oracle table's intended usage, which might
+    /// include multiple paragraphs. If it's only a couple sentences, use the
+    /// `summary` key instead.
+    #[serde(rename = "description")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<Box<MarkdownString>>,
+
+    /// An icon that represents this table.
     #[serde(rename = "icon")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub icon: Option<Box<SvgImageUrl>>,
 
-    /// Further oracle rolls prompted by this table row.
-    #[serde(rename = "oracle_rolls")]
+    /// Most oracle tables are insensitive to matches, but a few define special
+    /// match behavior.
+    #[serde(rename = "match")]
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub oracleRolls: Option<Box<Vec<OracleRoll>>>,
+    pub match_: Option<Box<OracleMatchBehavior>>,
+
+    #[serde(rename = "recommended_rolls")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub recommendedRolls: Option<Box<OracleTableText3RecommendedRolls>>,
+
+    /// Indicates that this object replaces the identified OracleRollables.
+    /// References to the replaced objects can be considered equivalent to this
+    /// object.
+    #[serde(rename = "replaces")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub replaces: Option<Box<Vec<OracleRollableIdWildcard>>>,
 
     #[serde(rename = "suggestions")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub suggestions: Option<Box<Suggestions>>,
 
+    /// A brief summary of the oracle table's intended usage, no more than a few
+    /// sentences in length. This is intended for use in application tooltips
+    /// and similar sorts of hints. Longer text should use the "description"
+    /// key instead.
+    #[serde(rename = "summary")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub summary: Option<Box<MarkdownString>>,
+
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub tags: Option<Box<Tags>>,
-
-    #[serde(rename = "template")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub template: Option<Box<OracleRollTemplate>>,
 }
 
 /// A grouping of separate tables.
@@ -4711,6 +8293,9 @@ pub struct OracleTablesCollection {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub tags: Option<Box<Tags>>,
 }
+
+/// Represents a page number in a book.
+pub type PageNumber = i16;
 
 #[derive(Serialize, Deserialize)]
 pub enum PartOfSpeech {
@@ -4871,6 +8456,9 @@ pub struct Rarity {
 /// A unique ID representing a Rarity object.
 pub type RarityId = String;
 
+/// A wildcarded RarityId that can be used to match multiple Rarity objects.
+pub type RarityIdWildcard = String;
+
 /// Provides a value like a stat, condition meter, or other number (usually for
 /// use in an action roll). The expected value is an integer, or null.
 #[derive(Serialize, Deserialize)]
@@ -5023,8 +8611,180 @@ pub struct RulesExpansion {
     pub tags: Option<Box<HashMap<String, TagRule>>>,
 }
 
+/// The version of the Datasworn format used by this data.
+#[derive(Serialize, Deserialize)]
+pub enum RulesetDataswornVersion {
+    #[serde(rename = "0.1.0")]
+    DefaultName,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum RulesetType {
+    #[serde(rename = "ruleset")]
+    Ruleset,
+}
+
+/// A standalone Datasworn package that describes its own ruleset.
+#[derive(Serialize, Deserialize)]
+pub struct Ruleset {
+    #[serde(rename = "_id")]
+    pub id: RulesetId,
+
+    /// A dictionary object containing asset collections, which contain assets.
+    #[serde(rename = "assets")]
+    pub assets: HashMap<String, AssetCollection>,
+
+    /// Lists authors credited by the source material.
+    #[serde(rename = "authors")]
+    pub authors: Vec<AuthorInfo>,
+
+    /// The version of the Datasworn format used by this data.
+    #[serde(rename = "datasworn_version")]
+    pub dataswornVersion: RulesetDataswornVersion,
+
+    /// The date of the source documents's last update, formatted YYYY-MM-DD.
+    /// Required because it's used to determine whether the data needs updating.
+    #[serde(rename = "date")]
+    pub date: DateTime<FixedOffset>,
+
+    #[serde(rename = "license")]
+    pub license: License,
+
+    /// A dictionary object containing move categories, which contain moves.
+    #[serde(rename = "moves")]
+    pub moves: HashMap<String, MoveCategory>,
+
+    /// A dictionary object containing oracle collections, which may contain
+    /// oracle tables and/or oracle collections.
+    #[serde(rename = "oracles")]
+    pub oracles: HashMap<String, OracleTablesCollection>,
+
+    #[serde(rename = "rules")]
+    pub rules: Rules,
+
+    /// The title of the source document.
+    #[serde(rename = "title")]
+    pub title: String,
+
+    #[serde(rename = "type")]
+    pub type_: RulesetType,
+
+    /// A URL where the source document is available.
+    #[serde(rename = "url")]
+    pub url: WebUrl,
+
+    /// A dictionary object containing atlas collections, which contain atlas
+    /// entries.
+    #[serde(rename = "atlas")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub atlas: Option<Box<HashMap<String, AtlasCollection>>>,
+
+    /// A dictionary object of delve sites, like the premade delve sites
+    /// presented in Ironsworn: Delve
+    #[serde(rename = "delve_sites")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub delveSites: Option<Box<HashMap<String, DelveSite>>>,
+
+    #[serde(rename = "description")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<Box<MarkdownString>>,
+
+    /// A dictionary object containing NPC collections, which contain NPCs.
+    #[serde(rename = "npcs")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub npcs: Option<Box<HashMap<String, NpcCollection>>>,
+
+    /// A dictionary object containing rarities, like those presented in
+    /// Ironsworn: Delve.
+    #[serde(rename = "rarities")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub rarities: Option<Box<HashMap<String, Rarity>>>,
+
+    /// A dictionary object containing delve site domains.
+    #[serde(rename = "site_domains")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub siteDomains: Option<Box<HashMap<String, DelveSiteDomain>>>,
+
+    /// A dictionary object containing delve site themes.
+    #[serde(rename = "site_themes")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub siteThemes: Option<Box<HashMap<String, DelveSiteTheme>>>,
+
+    /// A dictionary object of truth categories.
+    #[serde(rename = "truths")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub truths: Option<Box<HashMap<String, Truth>>>,
+}
+
 /// The ID of standalone Datasworn package that describes its own ruleset.
 pub type RulesetId = String;
+
+#[derive(Serialize, Deserialize)]
+#[serde(tag = "choice_type")]
+pub enum SelectEnhancementFieldChoice0 {
+    #[serde(rename = "choice")]
+    Choice(SelectEnhancementFieldChoiceChoice),
+
+    #[serde(rename = "choice_group")]
+    ChoiceGroup(SelectEnhancementFieldChoiceChoiceGroup),
+}
+
+/// Represents an option in a list of choices.
+#[derive(Serialize, Deserialize)]
+pub struct SelectEnhancementFieldChoiceChoice {
+    #[serde(rename = "label")]
+    pub label: Label,
+
+    #[serde(rename = "enhance_asset")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub enhanceAsset: Option<Box<AssetEnhancement>>,
+
+    #[serde(rename = "enhance_moves")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub enhanceMoves: Option<Box<Vec<MoveEnhancement>>>,
+}
+
+/// Represents a grouping of options in a list of choices.
+#[derive(Serialize, Deserialize)]
+pub struct SelectEnhancementFieldChoiceChoiceGroup {
+    #[serde(rename = "choices")]
+    pub choices: HashMap<String, SelectEnhancementFieldChoice>,
+
+    /// A label for this option group.
+    #[serde(rename = "name")]
+    pub name: Label,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum SelectEnhancementFieldFieldType {
+    #[serde(rename = "select_enhancement")]
+    SelectEnhancement,
+}
+
+/// Select from player and/or asset enhancements. Use it to describe modal
+/// abilities. For examples, see Ironclad (classic Ironsworn) and Windbinder
+/// (Sundered Isles).
+#[derive(Serialize, Deserialize)]
+pub struct SelectEnhancementField {
+    #[serde(rename = "choices")]
+    pub choices: HashMap<String, SelectEnhancementFieldChoice0>,
+
+    #[serde(rename = "field_type")]
+    pub fieldType: SelectEnhancementFieldFieldType,
+
+    #[serde(rename = "label")]
+    pub label: Label,
+
+    /// The key of the currently selected choice from the `choices` property, or
+    /// `null` if none is selected.
+    #[serde(rename = "value")]
+    pub value: DictKey,
+
+    /// An icon associated with this input.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+}
 
 #[derive(Serialize, Deserialize)]
 pub enum SelectEnhancementFieldChoiceChoiceType {
@@ -5048,6 +8808,55 @@ pub struct SelectEnhancementFieldChoice {
     #[serde(rename = "enhance_moves")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub enhanceMoves: Option<Box<Vec<MoveEnhancement>>>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum SelectEnhancementFieldChoiceGroupChoiceType {
+    #[serde(rename = "choice_group")]
+    ChoiceGroup,
+}
+
+/// Represents a grouping of options in a list of choices.
+#[derive(Serialize, Deserialize)]
+pub struct SelectEnhancementFieldChoiceGroup {
+    #[serde(rename = "choice_type")]
+    pub choiceType: SelectEnhancementFieldChoiceGroupChoiceType,
+
+    #[serde(rename = "choices")]
+    pub choices: HashMap<String, SelectEnhancementFieldChoice>,
+
+    /// A label for this option group.
+    #[serde(rename = "name")]
+    pub name: Label,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum SelectValueFieldFieldType {
+    #[serde(rename = "select_value")]
+    SelectValue,
+}
+
+/// Represents a list of mutually exclusive choices.
+#[derive(Serialize, Deserialize)]
+pub struct SelectValueField {
+    #[serde(rename = "choices")]
+    pub choices: HashMap<String, SelectValueFieldChoice>,
+
+    #[serde(rename = "field_type")]
+    pub fieldType: SelectValueFieldFieldType,
+
+    #[serde(rename = "label")]
+    pub label: Label,
+
+    /// The key of the currently selected choice from the `choices` property, or
+    /// `null` if none is selected.
+    #[serde(rename = "value")]
+    pub value: DictKey,
+
+    /// An icon associated with this input.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -5247,6 +9056,9 @@ pub struct SourceInfo {
     pub page: Option<Box<u16>>,
 }
 
+/// The title of the source document.
+pub type SourceTitle = String;
+
 #[derive(Serialize, Deserialize)]
 pub enum SpecialTrackRollMethod {
     /// Use _every_ roll option at once.
@@ -5325,6 +9137,24 @@ pub struct StatRule {
     pub label: Label,
 }
 
+/// A reference to the value of a standard player character stat.
+#[derive(Serialize, Deserialize)]
+pub enum StatValueRefUsing {
+    #[serde(rename = "stat")]
+    Stat,
+}
+
+/// A reference to the value of a standard player character stat.
+#[derive(Serialize, Deserialize)]
+pub struct StatValueRef {
+    #[serde(rename = "stat")]
+    pub stat: StatKey,
+
+    /// A reference to the value of a standard player character stat.
+    #[serde(rename = "using")]
+    pub using: StatValueRefUsing,
+}
+
 pub type Suggestions = Vec<AnyIdWildcard>;
 
 /// A relative (local) URL pointing to a vector image in the SVG format.
@@ -5393,13 +9223,13 @@ pub enum TagRule {
 #[derive(Serialize, Deserialize)]
 pub struct TagRuleAsset {
     #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
+    pub appliesTo: Vec<TaggableNodeType>,
 
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
-    /// If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    /// field accepts a single non-wildcard ID.
+    /// If `true`, this field accepts an array of wildcard ID strings. If
+    /// `false`, this field accepts a single non-wildcard ID string.
     #[serde(rename = "wildcard")]
     pub wildcard: bool,
 }
@@ -5407,13 +9237,13 @@ pub struct TagRuleAsset {
 #[derive(Serialize, Deserialize)]
 pub struct TagRuleAssetCollection {
     #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
+    pub appliesTo: Vec<TaggableNodeType>,
 
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
-    /// If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    /// field accepts a single non-wildcard ID.
+    /// If `true`, this field accepts an array of wildcard ID strings. If
+    /// `false`, this field accepts a single non-wildcard ID string.
     #[serde(rename = "wildcard")]
     pub wildcard: bool,
 }
@@ -5421,13 +9251,13 @@ pub struct TagRuleAssetCollection {
 #[derive(Serialize, Deserialize)]
 pub struct TagRuleAtlasCollection {
     #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
+    pub appliesTo: Vec<TaggableNodeType>,
 
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
-    /// If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    /// field accepts a single non-wildcard ID.
+    /// If `true`, this field accepts an array of wildcard ID strings. If
+    /// `false`, this field accepts a single non-wildcard ID string.
     #[serde(rename = "wildcard")]
     pub wildcard: bool,
 }
@@ -5435,13 +9265,13 @@ pub struct TagRuleAtlasCollection {
 #[derive(Serialize, Deserialize)]
 pub struct TagRuleAtlasEntry {
     #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
+    pub appliesTo: Vec<TaggableNodeType>,
 
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
-    /// If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    /// field accepts a single non-wildcard ID.
+    /// If `true`, this field accepts an array of wildcard ID strings. If
+    /// `false`, this field accepts a single non-wildcard ID string.
     #[serde(rename = "wildcard")]
     pub wildcard: bool,
 }
@@ -5449,7 +9279,7 @@ pub struct TagRuleAtlasEntry {
 #[derive(Serialize, Deserialize)]
 pub struct TagRuleBoolean {
     #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
+    pub appliesTo: Vec<TaggableNodeType>,
 
     #[serde(rename = "array")]
     pub array: bool,
@@ -5461,13 +9291,13 @@ pub struct TagRuleBoolean {
 #[derive(Serialize, Deserialize)]
 pub struct TagRuleDelveSite {
     #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
+    pub appliesTo: Vec<TaggableNodeType>,
 
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
-    /// If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    /// field accepts a single non-wildcard ID.
+    /// If `true`, this field accepts an array of wildcard ID strings. If
+    /// `false`, this field accepts a single non-wildcard ID string.
     #[serde(rename = "wildcard")]
     pub wildcard: bool,
 }
@@ -5475,13 +9305,13 @@ pub struct TagRuleDelveSite {
 #[derive(Serialize, Deserialize)]
 pub struct TagRuleDelveSiteDomain {
     #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
+    pub appliesTo: Vec<TaggableNodeType>,
 
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
-    /// If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    /// field accepts a single non-wildcard ID.
+    /// If `true`, this field accepts an array of wildcard ID strings. If
+    /// `false`, this field accepts a single non-wildcard ID string.
     #[serde(rename = "wildcard")]
     pub wildcard: bool,
 }
@@ -5489,13 +9319,13 @@ pub struct TagRuleDelveSiteDomain {
 #[derive(Serialize, Deserialize)]
 pub struct TagRuleDelveSiteTheme {
     #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
+    pub appliesTo: Vec<TaggableNodeType>,
 
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
-    /// If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    /// field accepts a single non-wildcard ID.
+    /// If `true`, this field accepts an array of wildcard ID strings. If
+    /// `false`, this field accepts a single non-wildcard ID string.
     #[serde(rename = "wildcard")]
     pub wildcard: bool,
 }
@@ -5503,7 +9333,7 @@ pub struct TagRuleDelveSiteTheme {
 #[derive(Serialize, Deserialize)]
 pub struct TagRuleEnum {
     #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
+    pub appliesTo: Vec<TaggableNodeType>,
 
     #[serde(rename = "array")]
     pub array: bool,
@@ -5518,7 +9348,7 @@ pub struct TagRuleEnum {
 #[derive(Serialize, Deserialize)]
 pub struct TagRuleInteger {
     #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
+    pub appliesTo: Vec<TaggableNodeType>,
 
     #[serde(rename = "array")]
     pub array: bool,
@@ -5530,13 +9360,13 @@ pub struct TagRuleInteger {
 #[derive(Serialize, Deserialize)]
 pub struct TagRuleMove {
     #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
+    pub appliesTo: Vec<TaggableNodeType>,
 
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
-    /// If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    /// field accepts a single non-wildcard ID.
+    /// If `true`, this field accepts an array of wildcard ID strings. If
+    /// `false`, this field accepts a single non-wildcard ID string.
     #[serde(rename = "wildcard")]
     pub wildcard: bool,
 }
@@ -5544,13 +9374,13 @@ pub struct TagRuleMove {
 #[derive(Serialize, Deserialize)]
 pub struct TagRuleMoveCategory {
     #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
+    pub appliesTo: Vec<TaggableNodeType>,
 
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
-    /// If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    /// field accepts a single non-wildcard ID.
+    /// If `true`, this field accepts an array of wildcard ID strings. If
+    /// `false`, this field accepts a single non-wildcard ID string.
     #[serde(rename = "wildcard")]
     pub wildcard: bool,
 }
@@ -5558,13 +9388,13 @@ pub struct TagRuleMoveCategory {
 #[derive(Serialize, Deserialize)]
 pub struct TagRuleNpc {
     #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
+    pub appliesTo: Vec<TaggableNodeType>,
 
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
-    /// If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    /// field accepts a single non-wildcard ID.
+    /// If `true`, this field accepts an array of wildcard ID strings. If
+    /// `false`, this field accepts a single non-wildcard ID string.
     #[serde(rename = "wildcard")]
     pub wildcard: bool,
 }
@@ -5572,13 +9402,13 @@ pub struct TagRuleNpc {
 #[derive(Serialize, Deserialize)]
 pub struct TagRuleNpcCollection {
     #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
+    pub appliesTo: Vec<TaggableNodeType>,
 
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
-    /// If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    /// field accepts a single non-wildcard ID.
+    /// If `true`, this field accepts an array of wildcard ID strings. If
+    /// `false`, this field accepts a single non-wildcard ID string.
     #[serde(rename = "wildcard")]
     pub wildcard: bool,
 }
@@ -5586,13 +9416,13 @@ pub struct TagRuleNpcCollection {
 #[derive(Serialize, Deserialize)]
 pub struct TagRuleOracleCollection {
     #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
+    pub appliesTo: Vec<TaggableNodeType>,
 
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
-    /// If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    /// field accepts a single non-wildcard ID.
+    /// If `true`, this field accepts an array of wildcard ID strings. If
+    /// `false`, this field accepts a single non-wildcard ID string.
     #[serde(rename = "wildcard")]
     pub wildcard: bool,
 }
@@ -5600,13 +9430,13 @@ pub struct TagRuleOracleCollection {
 #[derive(Serialize, Deserialize)]
 pub struct TagRuleOracleRollable {
     #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
+    pub appliesTo: Vec<TaggableNodeType>,
 
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
-    /// If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    /// field accepts a single non-wildcard ID.
+    /// If `true`, this field accepts an array of wildcard ID strings. If
+    /// `false`, this field accepts a single non-wildcard ID string.
     #[serde(rename = "wildcard")]
     pub wildcard: bool,
 }
@@ -5614,13 +9444,13 @@ pub struct TagRuleOracleRollable {
 #[derive(Serialize, Deserialize)]
 pub struct TagRuleRarity {
     #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
+    pub appliesTo: Vec<TaggableNodeType>,
 
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
-    /// If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    /// field accepts a single non-wildcard ID.
+    /// If `true`, this field accepts an array of wildcard ID strings. If
+    /// `false`, this field accepts a single non-wildcard ID string.
     #[serde(rename = "wildcard")]
     pub wildcard: bool,
 }
@@ -5628,19 +9458,106 @@ pub struct TagRuleRarity {
 #[derive(Serialize, Deserialize)]
 pub struct TagRuleTruth {
     #[serde(rename = "applies_to")]
-    pub appliesTo: Vec<ObjectType>,
+    pub appliesTo: Vec<TaggableNodeType>,
 
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
-    /// If `true`, this field accepts an array of wildcard IDs. If `false`, this
-    /// field accepts a single non-wildcard ID.
+    /// If `true`, this field accepts an array of wildcard ID strings. If
+    /// `false`, this field accepts a single non-wildcard ID string.
     #[serde(rename = "wildcard")]
     pub wildcard: bool,
 }
 
-/// A dictionary of tags, keyed by the RulesetID that the tags are from.
+#[derive(Serialize, Deserialize)]
+pub enum TaggableNodeType {
+    #[serde(rename = "ability")]
+    Ability,
+
+    #[serde(rename = "asset")]
+    Asset,
+
+    #[serde(rename = "asset_collection")]
+    AssetCollection,
+
+    #[serde(rename = "atlas_collection")]
+    AtlasCollection,
+
+    #[serde(rename = "atlas_entry")]
+    AtlasEntry,
+
+    #[serde(rename = "danger")]
+    Danger,
+
+    #[serde(rename = "delve_site")]
+    DelveSite,
+
+    #[serde(rename = "delve_site_domain")]
+    DelveSiteDomain,
+
+    #[serde(rename = "delve_site_theme")]
+    DelveSiteTheme,
+
+    #[serde(rename = "denizen")]
+    Denizen,
+
+    #[serde(rename = "feature")]
+    Feature,
+
+    #[serde(rename = "move")]
+    Move,
+
+    #[serde(rename = "move_category")]
+    MoveCategory,
+
+    #[serde(rename = "npc")]
+    Npc,
+
+    #[serde(rename = "npc_collection")]
+    NpcCollection,
+
+    #[serde(rename = "option")]
+    Option,
+
+    #[serde(rename = "oracle_collection")]
+    OracleCollection,
+
+    #[serde(rename = "oracle_rollable")]
+    OracleRollable,
+
+    #[serde(rename = "rarity")]
+    Rarity,
+
+    #[serde(rename = "row")]
+    Row,
+
+    #[serde(rename = "truth")]
+    Truth,
+}
+
+/// A dictionary of tags, keyed by the RulesPackageId that the tags are from.
 pub type Tags = HashMap<String, HashMap<String, Tag>>;
+
+#[derive(Serialize, Deserialize)]
+pub struct TagsCore {
+    /// This object requires allies to function, and is intended for co-op play,
+    /// or guided play with allies. It is not appropriate for solo play.
+    #[serde(rename = "requires_allies")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub requiresAllies: Option<Box<bool>>,
+
+    /// This object is supernatural in nature, and is ideal for settings that
+    /// feature supernatural or mythic powers.
+    #[serde(rename = "supernatural")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub supernatural: Option<Box<bool>>,
+
+    /// This object is technological in nature, and is ideal for settings that
+    /// feature remarkable technologies.
+    #[serde(rename = "technological")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub technological: Option<Box<bool>>,
+}
 
 /// A rich text string in Markdown with replaced values from oracle roll
 /// results.
@@ -5649,6 +9566,30 @@ pub type Tags = HashMap<String, HashMap<String, Tag>>;
 /// by the `some_row_key` string of a rolled oracle table. This is usually the
 /// `text` key, for example `{{text>oracle_rollable:starforged/core/action}}`
 pub type TemplateString = String;
+
+#[derive(Serialize, Deserialize)]
+pub enum TextFieldFieldType {
+    #[serde(rename = "text")]
+    Text,
+}
+
+/// Represents an input that accepts plain text.
+#[derive(Serialize, Deserialize)]
+pub struct TextField {
+    #[serde(rename = "field_type")]
+    pub fieldType: TextFieldFieldType,
+
+    #[serde(rename = "label")]
+    pub label: Label,
+
+    #[serde(rename = "value")]
+    pub value: String,
+
+    /// An icon associated with this input.
+    #[serde(rename = "icon")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub icon: Option<Box<SvgImageUrl>>,
+}
 
 /// Describes trigger conditions for a move that makes an action roll.
 #[derive(Serialize, Deserialize)]
@@ -5970,6 +9911,9 @@ pub struct Truth {
 /// A unique ID representing a Truth object.
 pub type TruthId = String;
 
+/// A wildcarded TruthId that can be used to match multiple Truth objects.
+pub type TruthIdWildcard = String;
+
 #[derive(Serialize, Deserialize)]
 pub struct TruthOption {
     #[serde(rename = "_id")]
@@ -5995,6 +9939,24 @@ pub struct TruthOption {
 
 /// A unique ID representing a TruthOption object.
 pub type TruthOptionId = String;
+
+/// A wildcarded TruthOptionId that can be used to match multiple TruthOption
+/// objects.
+pub type TruthOptionIdWildcard = String;
+
+/// A unique ID representing a TruthOptionOracleRollable object.
+pub type TruthOptionOracleRollableId = String;
+
+/// A wildcarded TruthOptionOracleRollableId that can be used to match multiple
+/// TruthOptionOracleRollable objects.
+pub type TruthOptionOracleRollableIdWildcard = String;
+
+/// A unique ID representing a TruthOptionOracleRollableRow object.
+pub type TruthOptionOracleRollableRowId = String;
+
+/// A wildcarded TruthOptionOracleRollableRowId that can be used to match
+/// multiple TruthOptionOracleRollableRow objects.
+pub type TruthOptionOracleRollableRowIdWildcard = String;
 
 /// An absolute URL pointing to a website.
 pub type WebUrl = String;

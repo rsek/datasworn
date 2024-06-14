@@ -8,11 +8,8 @@ namespace Datasworn
     /// <summary>
     /// A move that makes no progress rolls or action rolls.
     /// </summary>
-    public class MoveNoRoll : Move
+    public class MoveNoRoll
     {
-        [JsonPropertyName("roll_type")]
-        public string RollType { get => "no_roll"; }
-
         /// <summary>
         /// The unique Datasworn ID for this item.
         /// </summary>
@@ -39,6 +36,12 @@ namespace Datasworn
         public Label Name { get; set; }
 
         /// <summary>
+        /// A move that makes no action rolls or progress rolls.
+        /// </summary>
+        [JsonPropertyName("roll_type")]
+        public MoveNoRollRollType RollType { get; set; }
+
+        /// <summary>
         /// The complete rules text of the move.
         /// </summary>
         [JsonPropertyName("text")]
@@ -51,7 +54,7 @@ namespace Datasworn
         public TriggerNoRoll Trigger { get; set; }
 
         [JsonPropertyName("type")]
-        public MoveNoRollType Type_ { get; set; }
+        public MoveNoRollType0 Type_ { get; set; }
 
         /// <summary>
         /// Implementation hints or other developer-facing comments on this

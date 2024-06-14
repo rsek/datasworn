@@ -259,6 +259,21 @@ module Datasworn
     end
   end
 
+  # Represents any kind of non-wildcard ID, including IDs of embedded objects.
+  class AnyID
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = AnyID.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
   # Represents any kind of wildcard ID, including IDs of embedded objects.
   class AnyIDWildcard
     attr_accessor :value
@@ -274,11 +289,81 @@ module Datasworn
     end
   end
 
+  class AnyMoveID
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = AnyMoveID.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
   class AnyMoveIDWildcard
     attr_accessor :value
 
     def self.from_json_data(data)
       out = AnyMoveIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  class AnyOracleRollableID
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = AnyOracleRollableID.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  class AnyOracleRollableIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = AnyOracleRollableIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  class AnyOracleRollableRowID
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = AnyOracleRollableRowID.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  class AnyOracleRollableRowIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = AnyOracleRollableRowIDWildcard.new
       out.value = Datasworn.from_json_data(String, data)
       out
     end
@@ -635,6 +720,53 @@ module Datasworn
     end
   end
 
+  # A wildcarded AssetAbilityId that can be used to match multiple AssetAbility
+  # objects.
+  class AssetAbilityIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = AssetAbilityIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A unique ID representing an AssetAbilityMove object.
+  class AssetAbilityMoveID
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = AssetAbilityMoveID.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A wildcarded AssetAbilityMoveId that can be used to match multiple
+  # AssetAbilityMove objects.
+  class AssetAbilityMoveIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = AssetAbilityMoveIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
   class AssetAbilityOptionField
     attr_accessor :field_type
 
@@ -669,6 +801,68 @@ module Datasworn
     end
   end
 
+  # A unique ID representing an AssetAbilityOracleRollable object.
+  class AssetAbilityOracleRollableID
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = AssetAbilityOracleRollableID.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A wildcarded AssetAbilityOracleRollableId that can be used to match multiple
+  # AssetAbilityOracleRollable objects.
+  class AssetAbilityOracleRollableIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = AssetAbilityOracleRollableIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A unique ID representing an AssetAbilityOracleRollableRow object.
+  class AssetAbilityOracleRollableRowID
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = AssetAbilityOracleRollableRowID.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A wildcarded AssetAbilityOracleRollableRowId that can be used to match
+  # multiple AssetAbilityOracleRollableRow objects.
+  class AssetAbilityOracleRollableRowIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = AssetAbilityOracleRollableRowIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
   # Describes which assets can be attached to this asset. Example: Starforged's
   # Module assets, which can be equipped by Command Vehicle assets. See p. 55 of
   # Starforged for more info.
@@ -688,6 +882,128 @@ module Datasworn
       data = {}
       data["assets"] = Datasworn::to_json_data(assets)
       data["max"] = Datasworn::to_json_data(max)
+      data
+    end
+  end
+
+  class AssetCardFlipFieldFieldType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    CARD_FLIP = new("card_flip")
+
+    def self.from_json_data(data)
+      {
+        "card_flip" => CARD_FLIP,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class AssetCardFlipField
+    # Does this field disable the asset when its value is set to `true`?
+    attr_accessor :disables_asset
+    attr_accessor :field_type
+
+    # Does this field count as an impact (Starforged) or debility (Ironsworn
+    # classic) when its value is set to `true`?
+    attr_accessor :is_impact
+    attr_accessor :label
+
+    # Is the card flipped over?
+    attr_accessor :value
+
+    # An icon associated with this input.
+    attr_accessor :icon
+
+    def self.from_json_data(data)
+      out = AssetCardFlipField.new
+      out.disables_asset = Datasworn::from_json_data(TrueClass, data["disables_asset"])
+      out.field_type = Datasworn::from_json_data(AssetCardFlipFieldFieldType, data["field_type"])
+      out.is_impact = Datasworn::from_json_data(TrueClass, data["is_impact"])
+      out.label = Datasworn::from_json_data(Label, data["label"])
+      out.value = Datasworn::from_json_data(TrueClass, data["value"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["disables_asset"] = Datasworn::to_json_data(disables_asset)
+      data["field_type"] = Datasworn::to_json_data(field_type)
+      data["is_impact"] = Datasworn::to_json_data(is_impact)
+      data["label"] = Datasworn::to_json_data(label)
+      data["value"] = Datasworn::to_json_data(value)
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data
+    end
+  end
+
+  class AssetCheckboxFieldFieldType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    CHECKBOX = new("checkbox")
+
+    def self.from_json_data(data)
+      {
+        "checkbox" => CHECKBOX,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class AssetCheckboxField
+    # Does this field disable the asset when its value is set to `true`?
+    attr_accessor :disables_asset
+    attr_accessor :field_type
+
+    # Does this field count as an impact (Starforged) or debility (Ironsworn
+    # classic) when its value is set to `true`?
+    attr_accessor :is_impact
+    attr_accessor :label
+
+    # Is the box checked?
+    attr_accessor :value
+
+    # An icon associated with this input.
+    attr_accessor :icon
+
+    def self.from_json_data(data)
+      out = AssetCheckboxField.new
+      out.disables_asset = Datasworn::from_json_data(TrueClass, data["disables_asset"])
+      out.field_type = Datasworn::from_json_data(AssetCheckboxFieldFieldType, data["field_type"])
+      out.is_impact = Datasworn::from_json_data(TrueClass, data["is_impact"])
+      out.label = Datasworn::from_json_data(Label, data["label"])
+      out.value = Datasworn::from_json_data(TrueClass, data["value"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["disables_asset"] = Datasworn::to_json_data(disables_asset)
+      data["field_type"] = Datasworn::to_json_data(field_type)
+      data["is_impact"] = Datasworn::to_json_data(is_impact)
+      data["label"] = Datasworn::to_json_data(label)
+      data["value"] = Datasworn::to_json_data(value)
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
       data
     end
   end
@@ -836,6 +1152,113 @@ module Datasworn
     end
   end
 
+  class AssetConditionMeterFieldType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    CONDITION_METER = new("condition_meter")
+
+    def self.from_json_data(data)
+      {
+        "condition_meter" => CONDITION_METER,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # Provides hints for moves that interact with this condition meter, such as
+  # suffer and recovery moves.
+  class AssetConditionMeterMoves
+    # The ID(s) of recovery moves associated with this meter.
+    attr_accessor :recover
+
+    # The ID(s) of suffer moves associated with the condition meter. If the
+    # suffer move makes an action roll, this condition meter value should be
+    # made available as a roll option.
+    attr_accessor :suffer
+
+    def self.from_json_data(data)
+      out = AssetConditionMeterMoves.new
+      out.recover = Datasworn::from_json_data(Array[AnyMoveIDWildcard], data["recover"])
+      out.suffer = Datasworn::from_json_data(Array[AnyMoveIDWildcard], data["suffer"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["recover"] = Datasworn::to_json_data(recover) unless recover.nil?
+      data["suffer"] = Datasworn::to_json_data(suffer) unless suffer.nil?
+      data
+    end
+  end
+
+  # Some assets provide a special condition meter of their own. The most common
+  # example is the health meters on companion assets. Asset condition meters
+  # may also include their own controls, such as the checkboxes that Starforged
+  # companion assets use to indicate they are "out of action".
+  class AssetConditionMeter
+    attr_accessor :field_type
+    attr_accessor :label
+
+    # The maximum value of this meter.
+    attr_accessor :max
+
+    # The minimum value of this meter.
+    attr_accessor :min
+
+    # Is this meter's `value` usable as a stat in an action roll?
+    attr_accessor :rollable
+
+    # The current value of this meter.
+    attr_accessor :value
+
+    # Checkbox controls rendered as part of the condition meter.
+    attr_accessor :controls
+
+    # An icon associated with this input.
+    attr_accessor :icon
+
+    # Provides hints for moves that interact with this condition meter, such as
+    # suffer and recovery moves.
+    attr_accessor :moves
+
+    def self.from_json_data(data)
+      out = AssetConditionMeter.new
+      out.field_type = Datasworn::from_json_data(AssetConditionMeterFieldType, data["field_type"])
+      out.label = Datasworn::from_json_data(Label, data["label"])
+      out.max = Datasworn::from_json_data(Integer, data["max"])
+      out.min = Datasworn::from_json_data(Integer, data["min"])
+      out.rollable = Datasworn::from_json_data(TrueClass, data["rollable"])
+      out.value = Datasworn::from_json_data(Integer, data["value"])
+      out.controls = Datasworn::from_json_data(Hash[String, AssetConditionMeterControlField], data["controls"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.moves = Datasworn::from_json_data(AssetConditionMeterMoves, data["moves"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["field_type"] = Datasworn::to_json_data(field_type)
+      data["label"] = Datasworn::to_json_data(label)
+      data["max"] = Datasworn::to_json_data(max)
+      data["min"] = Datasworn::to_json_data(min)
+      data["rollable"] = Datasworn::to_json_data(rollable)
+      data["value"] = Datasworn::to_json_data(value)
+      data["controls"] = Datasworn::to_json_data(controls) unless controls.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["moves"] = Datasworn::to_json_data(moves) unless moves.nil?
+      data
+    end
+  end
+
   # A checkbox control field, rendered as part of an asset condition meter.
   class AssetConditionMeterControlField
     attr_accessor :field_type
@@ -902,6 +1325,53 @@ module Datasworn
       data["label"] = Datasworn::to_json_data(label)
       data["value"] = Datasworn::to_json_data(value)
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data
+    end
+  end
+
+  class AssetConditionMeterEnhancementFieldType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    CONDITION_METER = new("condition_meter")
+
+    def self.from_json_data(data)
+      {
+        "condition_meter" => CONDITION_METER,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # Some assets provide a special condition meter of their own. The most common
+  # example is the health meters on companion assets. Asset condition meters
+  # may also include their own controls, such as the checkboxes that Starforged
+  # companion assets use to indicate they are "out of action".
+  class AssetConditionMeterEnhancement
+    attr_accessor :field_type
+
+    # The maximum value of this meter.
+    attr_accessor :max
+
+    def self.from_json_data(data)
+      out = AssetConditionMeterEnhancement.new
+      out.field_type = Datasworn::from_json_data(AssetConditionMeterEnhancementFieldType, data["field_type"])
+      out.max = Datasworn::from_json_data(Integer, data["max"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["field_type"] = Datasworn::to_json_data(field_type)
+      data["max"] = Datasworn::to_json_data(max)
       data
     end
   end
@@ -1161,6 +1631,56 @@ module Datasworn
     end
   end
 
+  # A reference to the value of an asset control.
+  class AssetControlValueRefUsing
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ASSET_CONTROL = new("asset_control")
+
+    def self.from_json_data(data)
+      {
+        "asset_control" => ASSET_CONTROL,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # A reference to the value of an asset control.
+  class AssetControlValueRef
+    attr_accessor :assets
+
+    # The dictionary key of the asset control field.
+    attr_accessor :control
+
+    # A reference to the value of an asset control.
+    attr_accessor :using
+
+    def self.from_json_data(data)
+      out = AssetControlValueRef.new
+      out.assets = Datasworn::from_json_data(Array[AssetIDWildcard], data["assets"])
+      out.control = Datasworn::from_json_data(DictKey, data["control"])
+      out.using = Datasworn::from_json_data(AssetControlValueRefUsing, data["using"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["assets"] = Datasworn::to_json_data(assets)
+      data["control"] = Datasworn::to_json_data(control)
+      data["using"] = Datasworn::to_json_data(using)
+      data
+    end
+  end
+
   # Describes enhancements made to this asset in a partial asset object. The
   # changes should be applied recursively; only the values that are specified
   # should be changed.
@@ -1381,6 +1901,56 @@ module Datasworn
       data["label"] = Datasworn::to_json_data(label)
       data["value"] = Datasworn::to_json_data(value)
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data
+    end
+  end
+
+  # A reference to the value of an asset option.
+  class AssetOptionValueRefUsing
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ASSET_OPTION = new("asset_option")
+
+    def self.from_json_data(data)
+      {
+        "asset_option" => ASSET_OPTION,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # A reference to the value of an asset option.
+  class AssetOptionValueRef
+    attr_accessor :assets
+
+    # The dictionary key of the asset option field.
+    attr_accessor :option
+
+    # A reference to the value of an asset option.
+    attr_accessor :using
+
+    def self.from_json_data(data)
+      out = AssetOptionValueRef.new
+      out.assets = Datasworn::from_json_data(Array[AssetIDWildcard], data["assets"])
+      out.option = Datasworn::from_json_data(DictKey, data["option"])
+      out.using = Datasworn::from_json_data(AssetOptionValueRefUsing, data["using"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["assets"] = Datasworn::to_json_data(assets)
+      data["option"] = Datasworn::to_json_data(option)
+      data["using"] = Datasworn::to_json_data(using)
       data
     end
   end
@@ -1635,6 +2205,120 @@ module Datasworn
     end
   end
 
+  # A wildcarded AtlasEntryId that can be used to match multiple AtlasEntry
+  # objects.
+  class AtlasEntryIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = AtlasEntryIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A reference to the value of an attached asset control. For example, a Module
+  # asset could use this to roll using the `integrity` control of an attached
+  # Vehicle.
+  class AttachedAssetControlValueRefUsing
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ATTACHED_ASSET_CONTROL = new("attached_asset_control")
+
+    def self.from_json_data(data)
+      {
+        "attached_asset_control" => ATTACHED_ASSET_CONTROL,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # A reference to the value of an attached asset control. For example, a Module
+  # asset could use this to roll using the `integrity` control of an attached
+  # Vehicle.
+  class AttachedAssetControlValueRef
+    # The dictionary key of the asset control field.
+    attr_accessor :control
+
+    # A reference to the value of an attached asset control. For example, a
+    # Module asset could use this to roll using the `integrity` control of an
+    # attached Vehicle.
+    attr_accessor :using
+
+    def self.from_json_data(data)
+      out = AttachedAssetControlValueRef.new
+      out.control = Datasworn::from_json_data(DictKey, data["control"])
+      out.using = Datasworn::from_json_data(AttachedAssetControlValueRefUsing, data["using"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["control"] = Datasworn::to_json_data(control)
+      data["using"] = Datasworn::to_json_data(using)
+      data
+    end
+  end
+
+  # A reference to the value of an attached asset option.
+  class AttachedAssetOptionValueRefUsing
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ATTACHED_ASSET_OPTION = new("attached_asset_option")
+
+    def self.from_json_data(data)
+      {
+        "attached_asset_option" => ATTACHED_ASSET_OPTION,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # A reference to the value of an attached asset option.
+  class AttachedAssetOptionValueRef
+    # The dictionary key of the asset option field.
+    attr_accessor :option
+
+    # A reference to the value of an attached asset option.
+    attr_accessor :using
+
+    def self.from_json_data(data)
+      out = AttachedAssetOptionValueRef.new
+      out.option = Datasworn::from_json_data(DictKey, data["option"])
+      out.using = Datasworn::from_json_data(AttachedAssetOptionValueRefUsing, data["using"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["option"] = Datasworn::to_json_data(option)
+      data["using"] = Datasworn::to_json_data(using)
+      data
+    end
+  end
+
   # Information on the original creator of this material.
   class AuthorInfo
     attr_accessor :name
@@ -1674,6 +2358,199 @@ module Datasworn
 
     def to_json_data
       Datasworn.to_json_data(value)
+    end
+  end
+
+  class ClockFieldFieldType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    CLOCK = new("clock")
+
+    def self.from_json_data(data)
+      {
+        "clock" => CLOCK,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # A clock with 4 or more segments.
+  class ClockField
+    attr_accessor :field_type
+    attr_accessor :label
+
+    # The size of the clock -- in other words, the maximum number of filled
+    # clock segments. Standard clocks have 4, 6, 8, or 10 segments.
+    attr_accessor :max
+
+    # The minimum number of filled clock segments. This is always 0.
+    attr_accessor :min
+    attr_accessor :rollable
+
+    # The current value of this input.
+    attr_accessor :value
+
+    # An icon associated with this input.
+    attr_accessor :icon
+
+    def self.from_json_data(data)
+      out = ClockField.new
+      out.field_type = Datasworn::from_json_data(ClockFieldFieldType, data["field_type"])
+      out.label = Datasworn::from_json_data(Label, data["label"])
+      out.max = Datasworn::from_json_data(Integer, data["max"])
+      out.min = Datasworn::from_json_data(Integer, data["min"])
+      out.rollable = Datasworn::from_json_data(TrueClass, data["rollable"])
+      out.value = Datasworn::from_json_data(Integer, data["value"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["field_type"] = Datasworn::to_json_data(field_type)
+      data["label"] = Datasworn::to_json_data(label)
+      data["max"] = Datasworn::to_json_data(max)
+      data["min"] = Datasworn::to_json_data(min)
+      data["rollable"] = Datasworn::to_json_data(rollable)
+      data["value"] = Datasworn::to_json_data(value)
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data
+    end
+  end
+
+  class CollectableType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ASSET = new("asset")
+    ATLAS_ENTRY = new("atlas_entry")
+    MOVE = new("move")
+    NPC = new("npc")
+    ORACLE_ROLLABLE = new("oracle_rollable")
+
+    def self.from_json_data(data)
+      {
+        "asset" => ASSET,
+        "atlas_entry" => ATLAS_ENTRY,
+        "move" => MOVE,
+        "npc" => NPC,
+        "oracle_rollable" => ORACLE_ROLLABLE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class CollectionType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ASSET_COLLECTION = new("asset_collection")
+    ATLAS_COLLECTION = new("atlas_collection")
+    MOVE_CATEGORY = new("move_category")
+    NPC_COLLECTION = new("npc_collection")
+    ORACLE_COLLECTION = new("oracle_collection")
+
+    def self.from_json_data(data)
+      {
+        "asset_collection" => ASSET_COLLECTION,
+        "atlas_collection" => ATLAS_COLLECTION,
+        "move_category" => MOVE_CATEGORY,
+        "npc_collection" => NPC_COLLECTION,
+        "oracle_collection" => ORACLE_COLLECTION,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class ConditionMeterFieldFieldType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    CONDITION_METER = new("condition_meter")
+
+    def self.from_json_data(data)
+      {
+        "condition_meter" => CONDITION_METER,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # A meter with an integer value, bounded by a minimum and maximum.
+  class ConditionMeterField
+    attr_accessor :field_type
+    attr_accessor :label
+
+    # The maximum value of this meter.
+    attr_accessor :max
+
+    # The minimum value of this meter.
+    attr_accessor :min
+
+    # Is this meter's `value` usable as a stat in an action roll?
+    attr_accessor :rollable
+
+    # The current value of this meter.
+    attr_accessor :value
+
+    # An icon associated with this input.
+    attr_accessor :icon
+
+    def self.from_json_data(data)
+      out = ConditionMeterField.new
+      out.field_type = Datasworn::from_json_data(ConditionMeterFieldFieldType, data["field_type"])
+      out.label = Datasworn::from_json_data(Label, data["label"])
+      out.max = Datasworn::from_json_data(Integer, data["max"])
+      out.min = Datasworn::from_json_data(Integer, data["min"])
+      out.rollable = Datasworn::from_json_data(TrueClass, data["rollable"])
+      out.value = Datasworn::from_json_data(Integer, data["value"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["field_type"] = Datasworn::to_json_data(field_type)
+      data["label"] = Datasworn::to_json_data(label)
+      data["max"] = Datasworn::to_json_data(max)
+      data["min"] = Datasworn::to_json_data(min)
+      data["rollable"] = Datasworn::to_json_data(rollable)
+      data["value"] = Datasworn::to_json_data(value)
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data
     end
   end
 
@@ -1738,12 +2615,184 @@ module Datasworn
     end
   end
 
+  # A reference to the value of a standard player condition meter.
+  class ConditionMeterValueRefUsing
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    CONDITION_METER = new("condition_meter")
+
+    def self.from_json_data(data)
+      {
+        "condition_meter" => CONDITION_METER,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # A reference to the value of a standard player condition meter.
+  class ConditionMeterValueRef
+    attr_accessor :condition_meter
+
+    # A reference to the value of a standard player condition meter.
+    attr_accessor :using
+
+    def self.from_json_data(data)
+      out = ConditionMeterValueRef.new
+      out.condition_meter = Datasworn::from_json_data(ConditionMeterKey, data["condition_meter"])
+      out.using = Datasworn::from_json_data(ConditionMeterValueRefUsing, data["using"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["condition_meter"] = Datasworn::to_json_data(condition_meter)
+      data["using"] = Datasworn::to_json_data(using)
+      data
+    end
+  end
+
+  class CounterFieldFieldType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    COUNTER = new("counter")
+
+    def self.from_json_data(data)
+      {
+        "counter" => COUNTER,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # A basic counter representing a non-rollable integer value. They usually
+  # start at 0, and may or may not have a maximum.
+  class CounterField
+    attr_accessor :field_type
+    attr_accessor :label
+    attr_accessor :max
+
+    # The (inclusive) minimum value.
+    attr_accessor :min
+    attr_accessor :rollable
+
+    # The current value of this input.
+    attr_accessor :value
+
+    # An icon associated with this input.
+    attr_accessor :icon
+
+    def self.from_json_data(data)
+      out = CounterField.new
+      out.field_type = Datasworn::from_json_data(CounterFieldFieldType, data["field_type"])
+      out.label = Datasworn::from_json_data(Label, data["label"])
+      out.max = Datasworn::from_json_data(Integer, data["max"])
+      out.min = Datasworn::from_json_data(Integer, data["min"])
+      out.rollable = Datasworn::from_json_data(TrueClass, data["rollable"])
+      out.value = Datasworn::from_json_data(Integer, data["value"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["field_type"] = Datasworn::to_json_data(field_type)
+      data["label"] = Datasworn::to_json_data(label)
+      data["max"] = Datasworn::to_json_data(max)
+      data["min"] = Datasworn::to_json_data(min)
+      data["rollable"] = Datasworn::to_json_data(rollable)
+      data["value"] = Datasworn::to_json_data(value)
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data
+    end
+  end
+
   # A CSS color value.
   class CSSColor
     attr_accessor :value
 
     def self.from_json_data(data)
       out = CSSColor.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # An arbitrary static integer value with a label.
+  class CustomValueUsing
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    CUSTOM = new("custom")
+
+    def self.from_json_data(data)
+      {
+        "custom" => CUSTOM,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # An arbitrary static integer value with a label.
+  class CustomValue
+    attr_accessor :label
+
+    # An arbitrary static integer value with a label.
+    attr_accessor :using
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = CustomValue.new
+      out.label = Datasworn::from_json_data(Label, data["label"])
+      out.using = Datasworn::from_json_data(CustomValueUsing, data["using"])
+      out.value = Datasworn::from_json_data(Integer, data["value"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["label"] = Datasworn::to_json_data(label)
+      data["using"] = Datasworn::to_json_data(using)
+      data["value"] = Datasworn::to_json_data(value)
+      data
+    end
+  end
+
+  # A date formatted YYYY-MM-DD.
+  class Date
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = Date.new
       out.value = Datasworn.from_json_data(String, data)
       out
     end
@@ -1861,9 +2910,10 @@ module Datasworn
     end
   end
 
-  # Represents an entry in a site denizen matrix. Denizen matrices are described
-  # in Ironsworn: Delve.
+  # Represents an entry in a delve site denizen matrix. Denizen matrices are
+  # described in Ironsworn: Delve.
   class DelveSiteDenizen
+    attr_accessor :id
     attr_accessor :frequency
     attr_accessor :roll
 
@@ -1876,6 +2926,7 @@ module Datasworn
 
     def self.from_json_data(data)
       out = DelveSiteDenizen.new
+      out.id = Datasworn::from_json_data(DelveSiteDenizenID, data["_id"])
       out.frequency = Datasworn::from_json_data(DelveSiteDenizenFrequency, data["frequency"])
       out.roll = Datasworn::from_json_data(DiceRange, data["roll"])
       out.name = Datasworn::from_json_data(Label, data["name"])
@@ -1885,6 +2936,7 @@ module Datasworn
 
     def to_json_data
       data = {}
+      data["_id"] = Datasworn::to_json_data(id)
       data["frequency"] = Datasworn::to_json_data(frequency)
       data["roll"] = Datasworn::to_json_data(roll)
       data["name"] = Datasworn::to_json_data(name) unless name.nil?
@@ -1920,6 +2972,37 @@ module Datasworn
 
     def to_json_data
       value
+    end
+  end
+
+  # A unique ID representing a DelveSiteDenizen object.
+  class DelveSiteDenizenID
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = DelveSiteDenizenID.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A wildcarded DelveSiteDenizenId that can be used to match multiple
+  # DelveSiteDenizen objects.
+  class DelveSiteDenizenIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = DelveSiteDenizenIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
     end
   end
 
@@ -1984,8 +3067,8 @@ module Datasworn
       out = DelveSiteDomain.new
       out.id = Datasworn::from_json_data(DelveSiteDomainID, data["_id"])
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
-      out.dangers = Datasworn::from_json_data(Array[OracleTableRowText], data["dangers"])
-      out.features = Datasworn::from_json_data(Array[OracleTableRowText], data["features"])
+      out.dangers = Datasworn::from_json_data(Array[DelveSiteDomainDanger], data["dangers"])
+      out.features = Datasworn::from_json_data(Array[DelveSiteDomainFeature], data["features"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
       out.type = Datasworn::from_json_data(DelveSiteDomainType, data["type"])
@@ -2017,6 +3100,168 @@ module Datasworn
     end
   end
 
+  # Represents a single Danger entry from a delve site Domain card.
+  class DelveSiteDomainDanger
+    attr_accessor :id
+    attr_accessor :roll
+
+    # The primary text content of this row.
+    attr_accessor :text
+    attr_accessor :i18n
+
+    # Hints that the identified table should be rendered inside this table row.
+    attr_accessor :embed_table
+    attr_accessor :icon
+
+    # Further oracle rolls prompted by this table row.
+    attr_accessor :oracle_rolls
+    attr_accessor :suggestions
+    attr_accessor :tags
+    attr_accessor :template
+
+    def self.from_json_data(data)
+      out = DelveSiteDomainDanger.new
+      out.id = Datasworn::from_json_data(DelveSiteDomainDangerID, data["_id"])
+      out.roll = Datasworn::from_json_data(DiceRange, data["roll"])
+      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
+      out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
+      out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.oracle_rolls = Datasworn::from_json_data(Array[OracleRoll], data["oracle_rolls"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out.template = Datasworn::from_json_data(OracleRollTemplate, data["template"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["roll"] = Datasworn::to_json_data(roll)
+      data["text"] = Datasworn::to_json_data(text)
+      data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
+      data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["oracle_rolls"] = Datasworn::to_json_data(oracle_rolls) unless oracle_rolls.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data["template"] = Datasworn::to_json_data(template) unless template.nil?
+      data
+    end
+  end
+
+  # A unique ID representing a DelveSiteDomainDanger object.
+  class DelveSiteDomainDangerID
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = DelveSiteDomainDangerID.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A wildcarded DelveSiteDomainDangerId that can be used to match multiple
+  # DelveSiteDomainDanger objects.
+  class DelveSiteDomainDangerIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = DelveSiteDomainDangerIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # Represents a single Feature entry from a delve site Domain card.
+  class DelveSiteDomainFeature
+    attr_accessor :id
+    attr_accessor :roll
+
+    # The primary text content of this row.
+    attr_accessor :text
+    attr_accessor :i18n
+
+    # Hints that the identified table should be rendered inside this table row.
+    attr_accessor :embed_table
+    attr_accessor :icon
+
+    # Further oracle rolls prompted by this table row.
+    attr_accessor :oracle_rolls
+    attr_accessor :suggestions
+    attr_accessor :tags
+    attr_accessor :template
+
+    def self.from_json_data(data)
+      out = DelveSiteDomainFeature.new
+      out.id = Datasworn::from_json_data(DelveSiteDomainFeatureID, data["_id"])
+      out.roll = Datasworn::from_json_data(DiceRange, data["roll"])
+      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
+      out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
+      out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.oracle_rolls = Datasworn::from_json_data(Array[OracleRoll], data["oracle_rolls"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out.template = Datasworn::from_json_data(OracleRollTemplate, data["template"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["roll"] = Datasworn::to_json_data(roll)
+      data["text"] = Datasworn::to_json_data(text)
+      data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
+      data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["oracle_rolls"] = Datasworn::to_json_data(oracle_rolls) unless oracle_rolls.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data["template"] = Datasworn::to_json_data(template) unless template.nil?
+      data
+    end
+  end
+
+  # A unique ID representing a DelveSiteDomainFeature object.
+  class DelveSiteDomainFeatureID
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = DelveSiteDomainFeatureID.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A wildcarded DelveSiteDomainFeatureId that can be used to match multiple
+  # DelveSiteDomainFeature objects.
+  class DelveSiteDomainFeatureIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = DelveSiteDomainFeatureIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
   # A unique ID representing a DelveSiteDomain object.
   class DelveSiteDomainID
     attr_accessor :value
@@ -2032,12 +3277,44 @@ module Datasworn
     end
   end
 
+  # A wildcarded DelveSiteDomainId that can be used to match multiple
+  # DelveSiteDomain objects.
+  class DelveSiteDomainIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = DelveSiteDomainIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
   # A unique ID representing a DelveSite object.
   class DelveSiteID
     attr_accessor :value
 
     def self.from_json_data(data)
       out = DelveSiteID.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A wildcarded DelveSiteId that can be used to match multiple DelveSite
+  # objects.
+  class DelveSiteIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = DelveSiteIDWildcard.new
       out.value = Datasworn.from_json_data(String, data)
       out
     end
@@ -2101,8 +3378,8 @@ module Datasworn
       out = DelveSiteTheme.new
       out.id = Datasworn::from_json_data(DelveSiteThemeID, data["_id"])
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
-      out.dangers = Datasworn::from_json_data(Array[OracleTableRowText], data["dangers"])
-      out.features = Datasworn::from_json_data(Array[OracleTableRowText], data["features"])
+      out.dangers = Datasworn::from_json_data(Array[DelveSiteThemeFeature], data["dangers"])
+      out.features = Datasworn::from_json_data(Array[DelveSiteThemeFeature], data["features"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
       out.type = Datasworn::from_json_data(DelveSiteThemeType, data["type"])
@@ -2134,12 +3411,190 @@ module Datasworn
     end
   end
 
+  # Represents a single Danger entry from a delve site Theme card.
+  class DelveSiteThemeDanger
+    attr_accessor :id
+    attr_accessor :roll
+
+    # The primary text content of this row.
+    attr_accessor :text
+    attr_accessor :i18n
+
+    # Hints that the identified table should be rendered inside this table row.
+    attr_accessor :embed_table
+    attr_accessor :icon
+
+    # Further oracle rolls prompted by this table row.
+    attr_accessor :oracle_rolls
+    attr_accessor :suggestions
+    attr_accessor :tags
+    attr_accessor :template
+
+    def self.from_json_data(data)
+      out = DelveSiteThemeDanger.new
+      out.id = Datasworn::from_json_data(DelveSiteThemeDangerID, data["_id"])
+      out.roll = Datasworn::from_json_data(DiceRange, data["roll"])
+      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
+      out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
+      out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.oracle_rolls = Datasworn::from_json_data(Array[OracleRoll], data["oracle_rolls"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out.template = Datasworn::from_json_data(OracleRollTemplate, data["template"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["roll"] = Datasworn::to_json_data(roll)
+      data["text"] = Datasworn::to_json_data(text)
+      data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
+      data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["oracle_rolls"] = Datasworn::to_json_data(oracle_rolls) unless oracle_rolls.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data["template"] = Datasworn::to_json_data(template) unless template.nil?
+      data
+    end
+  end
+
+  # A unique ID representing a DelveSiteThemeDanger object.
+  class DelveSiteThemeDangerID
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = DelveSiteThemeDangerID.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A wildcarded DelveSiteThemeDangerId that can be used to match multiple
+  # DelveSiteThemeDanger objects.
+  class DelveSiteThemeDangerIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = DelveSiteThemeDangerIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # Represents a single Feature entry from a delve site Theme card.
+  class DelveSiteThemeFeature
+    attr_accessor :id
+    attr_accessor :roll
+
+    # The primary text content of this row.
+    attr_accessor :text
+    attr_accessor :i18n
+
+    # Hints that the identified table should be rendered inside this table row.
+    attr_accessor :embed_table
+    attr_accessor :icon
+
+    # Further oracle rolls prompted by this table row.
+    attr_accessor :oracle_rolls
+    attr_accessor :suggestions
+    attr_accessor :tags
+    attr_accessor :template
+
+    def self.from_json_data(data)
+      out = DelveSiteThemeFeature.new
+      out.id = Datasworn::from_json_data(DelveSiteThemeFeatureID, data["_id"])
+      out.roll = Datasworn::from_json_data(DiceRange, data["roll"])
+      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
+      out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
+      out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.oracle_rolls = Datasworn::from_json_data(Array[OracleRoll], data["oracle_rolls"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out.template = Datasworn::from_json_data(OracleRollTemplate, data["template"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["roll"] = Datasworn::to_json_data(roll)
+      data["text"] = Datasworn::to_json_data(text)
+      data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
+      data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["oracle_rolls"] = Datasworn::to_json_data(oracle_rolls) unless oracle_rolls.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data["template"] = Datasworn::to_json_data(template) unless template.nil?
+      data
+    end
+  end
+
+  # A unique ID representing a DelveSiteThemeFeature object.
+  class DelveSiteThemeFeatureID
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = DelveSiteThemeFeatureID.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A wildcarded DelveSiteThemeFeatureId that can be used to match multiple
+  # DelveSiteThemeFeature objects.
+  class DelveSiteThemeFeatureIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = DelveSiteThemeFeatureIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
   # A unique ID representing a DelveSiteTheme object.
   class DelveSiteThemeID
     attr_accessor :value
 
     def self.from_json_data(data)
       out = DelveSiteThemeID.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A wildcarded DelveSiteThemeId that can be used to match multiple
+  # DelveSiteTheme objects.
+  class DelveSiteThemeIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = DelveSiteThemeIDWildcard.new
       out.value = Datasworn.from_json_data(String, data)
       out
     end
@@ -2200,6 +3655,148 @@ module Datasworn
 
     def to_json_data
       Datasworn.to_json_data(value)
+    end
+  end
+
+  class EmbedOnlyType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ABILITY = new("ability")
+    DANGER = new("danger")
+    DENIZEN = new("denizen")
+    FEATURE = new("feature")
+    OPTION = new("option")
+    ROW = new("row")
+
+    def self.from_json_data(data)
+      {
+        "ability" => ABILITY,
+        "danger" => DANGER,
+        "denizen" => DENIZEN,
+        "feature" => FEATURE,
+        "option" => OPTION,
+        "row" => ROW,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # A move that makes an action roll.
+  class EmbeddedActionRollMoveRollType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ACTION_ROLL = new("action_roll")
+
+    def self.from_json_data(data)
+      {
+        "action_roll" => ACTION_ROLL,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class EmbeddedActionRollMoveType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    MOVE = new("move")
+
+    def self.from_json_data(data)
+      {
+        "move" => MOVE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class EmbeddedActionRollMove
+    attr_accessor :id
+
+    # Is burning momentum allowed for this move?
+    attr_accessor :allow_momentum_burn
+
+    # The primary name/label for this item.
+    attr_accessor :name
+    attr_accessor :outcomes
+
+    # A move that makes an action roll.
+    attr_accessor :roll_type
+
+    # The complete rules text of the move.
+    attr_accessor :text
+
+    # Trigger conditions for this move.
+    attr_accessor :trigger
+    attr_accessor :type
+
+    # Implementation hints or other developer-facing comments on this object.
+    # These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
+    # The name of this item as it appears on the page in the book, if it's
+    # different from `name`.
+    attr_accessor :canonical_name
+    attr_accessor :suggestions
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = EmbeddedActionRollMove.new
+      out.id = Datasworn::from_json_data(EmbeddedMoveID, data["_id"])
+      out.allow_momentum_burn = Datasworn::from_json_data(TrueClass, data["allow_momentum_burn"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.outcomes = Datasworn::from_json_data(MoveOutcomes, data["outcomes"])
+      out.roll_type = Datasworn::from_json_data(EmbeddedActionRollMoveRollType, data["roll_type"])
+      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
+      out.trigger = Datasworn::from_json_data(TriggerActionRoll, data["trigger"])
+      out.type = Datasworn::from_json_data(EmbeddedActionRollMoveType, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["allow_momentum_burn"] = Datasworn::to_json_data(allow_momentum_burn)
+      data["name"] = Datasworn::to_json_data(name)
+      data["outcomes"] = Datasworn::to_json_data(outcomes)
+      data["roll_type"] = Datasworn::to_json_data(roll_type)
+      data["text"] = Datasworn::to_json_data(text)
+      data["trigger"] = Datasworn::to_json_data(trigger)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
     end
   end
 
@@ -2506,6 +4103,475 @@ module Datasworn
     end
   end
 
+  class EmbeddedMoveIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = EmbeddedMoveIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A move that makes no action rolls or progress rolls.
+  class EmbeddedNoRollMoveRollType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    NO_ROLL = new("no_roll")
+
+    def self.from_json_data(data)
+      {
+        "no_roll" => NO_ROLL,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class EmbeddedNoRollMoveType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    MOVE = new("move")
+
+    def self.from_json_data(data)
+      {
+        "move" => MOVE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class EmbeddedNoRollMove
+    attr_accessor :id
+
+    # Is burning momentum allowed for this move?
+    attr_accessor :allow_momentum_burn
+
+    # The primary name/label for this item.
+    attr_accessor :name
+
+    # A move that makes no action rolls or progress rolls.
+    attr_accessor :roll_type
+
+    # The complete rules text of the move.
+    attr_accessor :text
+
+    # Trigger conditions for this move.
+    attr_accessor :trigger
+    attr_accessor :type
+
+    # Implementation hints or other developer-facing comments on this object.
+    # These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
+    # The name of this item as it appears on the page in the book, if it's
+    # different from `name`.
+    attr_accessor :canonical_name
+    attr_accessor :suggestions
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = EmbeddedNoRollMove.new
+      out.id = Datasworn::from_json_data(EmbeddedMoveID, data["_id"])
+      out.allow_momentum_burn = Datasworn::from_json_data(TrueClass, data["allow_momentum_burn"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.roll_type = Datasworn::from_json_data(EmbeddedNoRollMoveRollType, data["roll_type"])
+      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
+      out.trigger = Datasworn::from_json_data(TriggerNoRoll, data["trigger"])
+      out.type = Datasworn::from_json_data(EmbeddedNoRollMoveType, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["allow_momentum_burn"] = Datasworn::to_json_data(allow_momentum_burn)
+      data["name"] = Datasworn::to_json_data(name)
+      data["roll_type"] = Datasworn::to_json_data(roll_type)
+      data["text"] = Datasworn::to_json_data(text)
+      data["trigger"] = Datasworn::to_json_data(trigger)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  class EmbeddedOracleColumnTextOracleType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    COLUMN_TEXT = new("column_text")
+
+    def self.from_json_data(data)
+      {
+        "column_text" => COLUMN_TEXT,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class EmbeddedOracleColumnTextType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_ROLLABLE = new("oracle_rollable")
+
+    def self.from_json_data(data)
+      {
+        "oracle_rollable" => ORACLE_ROLLABLE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class EmbeddedOracleColumnText
+    attr_accessor :id
+
+    # The roll used to select a result on this oracle.
+    attr_accessor :dice
+
+    # The primary label at the head of this column.
+    attr_accessor :name
+    attr_accessor :oracle_type
+
+    # An array of objects, each representing a single row of the table.
+    attr_accessor :rows
+    attr_accessor :type
+
+    # Implementation hints or other developer-facing comments on this object.
+    # These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
+    # An optional thematic color for this column. For an example, see "Basic
+    # Creature Form" (Starforged p. 337)
+    attr_accessor :color
+
+    # An optional icon for this column.
+    attr_accessor :icon
+
+    # Most oracle tables are insensitive to matches, but a few define special
+    # match behavior.
+    attr_accessor :match
+    attr_accessor :suggestions
+
+    # Optional secondary text at the head of this column. For best results, this
+    # should be no more than a few words in length.
+    attr_accessor :summary
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = EmbeddedOracleColumnText.new
+      out.id = Datasworn::from_json_data(EmbeddedOracleRollableID, data["_id"])
+      out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.oracle_type = Datasworn::from_json_data(EmbeddedOracleColumnTextOracleType, data["oracle_type"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText], data["rows"])
+      out.type = Datasworn::from_json_data(EmbeddedOracleColumnTextType, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.color = Datasworn::from_json_data(CSSColor, data["color"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.match = Datasworn::from_json_data(OracleMatchBehavior, data["match"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["dice"] = Datasworn::to_json_data(dice)
+      data["name"] = Datasworn::to_json_data(name)
+      data["oracle_type"] = Datasworn::to_json_data(oracle_type)
+      data["rows"] = Datasworn::to_json_data(rows)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["color"] = Datasworn::to_json_data(color) unless color.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["match"] = Datasworn::to_json_data(match) unless match.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  class EmbeddedOracleColumnText2OracleType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    COLUMN_TEXT2 = new("column_text2")
+
+    def self.from_json_data(data)
+      {
+        "column_text2" => COLUMN_TEXT2,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class EmbeddedOracleColumnText2Type
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_ROLLABLE = new("oracle_rollable")
+
+    def self.from_json_data(data)
+      {
+        "oracle_rollable" => ORACLE_ROLLABLE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class EmbeddedOracleColumnText2
+    attr_accessor :id
+
+    # The roll used to select a result on this oracle.
+    attr_accessor :dice
+
+    # The primary label at the head of this column.
+    attr_accessor :name
+    attr_accessor :oracle_type
+
+    # An array of objects, each representing a single row of the table.
+    attr_accessor :rows
+    attr_accessor :type
+
+    # Implementation hints or other developer-facing comments on this object.
+    # These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
+    # An optional thematic color for this column. For an example, see "Basic
+    # Creature Form" (Starforged p. 337)
+    attr_accessor :color
+
+    # An optional icon for this column.
+    attr_accessor :icon
+
+    # Most oracle tables are insensitive to matches, but a few define special
+    # match behavior.
+    attr_accessor :match
+    attr_accessor :suggestions
+
+    # Optional secondary text at the head of this column. For best results, this
+    # should be no more than a few words in length.
+    attr_accessor :summary
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = EmbeddedOracleColumnText2.new
+      out.id = Datasworn::from_json_data(EmbeddedOracleRollableID, data["_id"])
+      out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.oracle_type = Datasworn::from_json_data(EmbeddedOracleColumnText2OracleType, data["oracle_type"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText2], data["rows"])
+      out.type = Datasworn::from_json_data(EmbeddedOracleColumnText2Type, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.color = Datasworn::from_json_data(CSSColor, data["color"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.match = Datasworn::from_json_data(OracleMatchBehavior, data["match"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["dice"] = Datasworn::to_json_data(dice)
+      data["name"] = Datasworn::to_json_data(name)
+      data["oracle_type"] = Datasworn::to_json_data(oracle_type)
+      data["rows"] = Datasworn::to_json_data(rows)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["color"] = Datasworn::to_json_data(color) unless color.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["match"] = Datasworn::to_json_data(match) unless match.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  class EmbeddedOracleColumnText3OracleType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    COLUMN_TEXT3 = new("column_text3")
+
+    def self.from_json_data(data)
+      {
+        "column_text3" => COLUMN_TEXT3,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class EmbeddedOracleColumnText3Type
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_ROLLABLE = new("oracle_rollable")
+
+    def self.from_json_data(data)
+      {
+        "oracle_rollable" => ORACLE_ROLLABLE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class EmbeddedOracleColumnText3
+    attr_accessor :id
+
+    # The roll used to select a result on this oracle.
+    attr_accessor :dice
+
+    # The primary label at the head of this column.
+    attr_accessor :name
+    attr_accessor :oracle_type
+
+    # An array of objects, each representing a single row of the table.
+    attr_accessor :rows
+    attr_accessor :type
+
+    # Implementation hints or other developer-facing comments on this object.
+    # These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
+    # An optional thematic color for this column. For an example, see "Basic
+    # Creature Form" (Starforged p. 337)
+    attr_accessor :color
+
+    # An optional icon for this column.
+    attr_accessor :icon
+
+    # Most oracle tables are insensitive to matches, but a few define special
+    # match behavior.
+    attr_accessor :match
+    attr_accessor :suggestions
+
+    # Optional secondary text at the head of this column. For best results, this
+    # should be no more than a few words in length.
+    attr_accessor :summary
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = EmbeddedOracleColumnText3.new
+      out.id = Datasworn::from_json_data(EmbeddedOracleRollableID, data["_id"])
+      out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.oracle_type = Datasworn::from_json_data(EmbeddedOracleColumnText3OracleType, data["oracle_type"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText3], data["rows"])
+      out.type = Datasworn::from_json_data(EmbeddedOracleColumnText3Type, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.color = Datasworn::from_json_data(CSSColor, data["color"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.match = Datasworn::from_json_data(OracleMatchBehavior, data["match"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["dice"] = Datasworn::to_json_data(dice)
+      data["name"] = Datasworn::to_json_data(name)
+      data["oracle_type"] = Datasworn::to_json_data(oracle_type)
+      data["rows"] = Datasworn::to_json_data(rows)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["color"] = Datasworn::to_json_data(color) unless color.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["match"] = Datasworn::to_json_data(match) unless match.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
   class EmbeddedOracleRollable
     attr_accessor :oracle_type
 
@@ -2563,7 +4629,7 @@ module Datasworn
       out.id = Datasworn::from_json_data(EmbeddedOracleRollableID, data["_id"])
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.rows = Datasworn::from_json_data(Array[OracleTableRowText], data["rows"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText], data["rows"])
       out.type = Datasworn::from_json_data(EmbeddedOracleRollableColumnTextType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
@@ -2635,7 +4701,7 @@ module Datasworn
       out.id = Datasworn::from_json_data(EmbeddedOracleRollableID, data["_id"])
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.rows = Datasworn::from_json_data(Array[OracleTableRowText2], data["rows"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText2], data["rows"])
       out.type = Datasworn::from_json_data(EmbeddedOracleRollableColumnText2Type, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
@@ -2707,7 +4773,7 @@ module Datasworn
       out.id = Datasworn::from_json_data(EmbeddedOracleRollableID, data["_id"])
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.rows = Datasworn::from_json_data(Array[OracleTableRowText3], data["rows"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText3], data["rows"])
       out.type = Datasworn::from_json_data(EmbeddedOracleRollableColumnText3Type, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
@@ -2823,7 +4889,7 @@ module Datasworn
       out.column_labels = Datasworn::from_json_data(EmbeddedOracleRollableTableTextColumnLabels, data["column_labels"])
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.rows = Datasworn::from_json_data(Array[OracleTableRowText], data["rows"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText], data["rows"])
       out.type = Datasworn::from_json_data(EmbeddedOracleRollableTableTextType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
@@ -2947,7 +5013,7 @@ module Datasworn
       out.column_labels = Datasworn::from_json_data(EmbeddedOracleRollableTableText2ColumnLabels, data["column_labels"])
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.rows = Datasworn::from_json_data(Array[OracleTableRowText2], data["rows"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText2], data["rows"])
       out.type = Datasworn::from_json_data(EmbeddedOracleRollableTableText2Type, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
@@ -3074,7 +5140,7 @@ module Datasworn
       out.column_labels = Datasworn::from_json_data(EmbeddedOracleRollableTableText3ColumnLabels, data["column_labels"])
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.rows = Datasworn::from_json_data(Array[OracleTableRowText3], data["rows"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText3], data["rows"])
       out.type = Datasworn::from_json_data(EmbeddedOracleRollableTableText3Type, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
@@ -3123,6 +5189,781 @@ module Datasworn
     end
   end
 
+  class EmbeddedOracleRollableIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = EmbeddedOracleRollableIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # The label at the head of each table column. The `roll` key refers to the
+  # roll column showing the dice range (`min` and `max` on each table row).
+  class EmbeddedOracleTableTextColumnLabels
+    attr_accessor :roll
+    attr_accessor :text
+
+    def self.from_json_data(data)
+      out = EmbeddedOracleTableTextColumnLabels.new
+      out.roll = Datasworn::from_json_data(Label, data["roll"])
+      out.text = Datasworn::from_json_data(Label, data["text"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["roll"] = Datasworn::to_json_data(roll)
+      data["text"] = Datasworn::to_json_data(text)
+      data
+    end
+  end
+
+  class EmbeddedOracleTableTextOracleType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    TABLE_TEXT = new("table_text")
+
+    def self.from_json_data(data)
+      {
+        "table_text" => TABLE_TEXT,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class EmbeddedOracleTableTextType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_ROLLABLE = new("oracle_rollable")
+
+    def self.from_json_data(data)
+      {
+        "oracle_rollable" => ORACLE_ROLLABLE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class EmbeddedOracleTableTextRecommendedRolls
+    attr_accessor :max
+    attr_accessor :min
+
+    def self.from_json_data(data)
+      out = EmbeddedOracleTableTextRecommendedRolls.new
+      out.max = Datasworn::from_json_data(Integer, data["max"])
+      out.min = Datasworn::from_json_data(Integer, data["min"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["max"] = Datasworn::to_json_data(max)
+      data["min"] = Datasworn::to_json_data(min)
+      data
+    end
+  end
+
+  class EmbeddedOracleTableText
+    attr_accessor :id
+
+    # The label at the head of each table column. The `roll` key refers to the
+    # roll column showing the dice range (`min` and `max` on each table row).
+    attr_accessor :column_labels
+
+    # The roll used to select a result on this oracle.
+    attr_accessor :dice
+
+    # The primary name/label for this item.
+    attr_accessor :name
+    attr_accessor :oracle_type
+
+    # An array of objects, each representing a single row of the table.
+    attr_accessor :rows
+    attr_accessor :type
+
+    # Implementation hints or other developer-facing comments on this object.
+    # These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
+    # The name of this item as it appears on the page in the book, if it's
+    # different from `name`.
+    attr_accessor :canonical_name
+
+    # A longer description of the oracle table's intended usage, which might
+    # include multiple paragraphs. If it's only a couple sentences, use the
+    # `summary` key instead.
+    attr_accessor :description
+
+    # An icon that represents this table.
+    attr_accessor :icon
+
+    # Most oracle tables are insensitive to matches, but a few define special
+    # match behavior.
+    attr_accessor :match
+    attr_accessor :recommended_rolls
+    attr_accessor :suggestions
+
+    # A brief summary of the oracle table's intended usage, no more than a few
+    # sentences in length. This is intended for use in application tooltips
+    # and similar sorts of hints. Longer text should use the "description" key
+    # instead.
+    attr_accessor :summary
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = EmbeddedOracleTableText.new
+      out.id = Datasworn::from_json_data(EmbeddedOracleRollableID, data["_id"])
+      out.column_labels = Datasworn::from_json_data(EmbeddedOracleTableTextColumnLabels, data["column_labels"])
+      out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.oracle_type = Datasworn::from_json_data(EmbeddedOracleTableTextOracleType, data["oracle_type"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText], data["rows"])
+      out.type = Datasworn::from_json_data(EmbeddedOracleTableTextType, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.match = Datasworn::from_json_data(OracleMatchBehavior, data["match"])
+      out.recommended_rolls = Datasworn::from_json_data(EmbeddedOracleTableTextRecommendedRolls, data["recommended_rolls"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["column_labels"] = Datasworn::to_json_data(column_labels)
+      data["dice"] = Datasworn::to_json_data(dice)
+      data["name"] = Datasworn::to_json_data(name)
+      data["oracle_type"] = Datasworn::to_json_data(oracle_type)
+      data["rows"] = Datasworn::to_json_data(rows)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["description"] = Datasworn::to_json_data(description) unless description.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["match"] = Datasworn::to_json_data(match) unless match.nil?
+      data["recommended_rolls"] = Datasworn::to_json_data(recommended_rolls) unless recommended_rolls.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  # The label at the head of each table column. The `roll` key refers to the
+  # roll column showing the dice range (`min` and `max` on each table row).
+  class EmbeddedOracleTableText2ColumnLabels
+    attr_accessor :roll
+    attr_accessor :text
+    attr_accessor :text2
+
+    def self.from_json_data(data)
+      out = EmbeddedOracleTableText2ColumnLabels.new
+      out.roll = Datasworn::from_json_data(Label, data["roll"])
+      out.text = Datasworn::from_json_data(Label, data["text"])
+      out.text2 = Datasworn::from_json_data(Label, data["text2"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["roll"] = Datasworn::to_json_data(roll)
+      data["text"] = Datasworn::to_json_data(text)
+      data["text2"] = Datasworn::to_json_data(text2)
+      data
+    end
+  end
+
+  class EmbeddedOracleTableText2OracleType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    TABLE_TEXT2 = new("table_text2")
+
+    def self.from_json_data(data)
+      {
+        "table_text2" => TABLE_TEXT2,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class EmbeddedOracleTableText2Type
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_ROLLABLE = new("oracle_rollable")
+
+    def self.from_json_data(data)
+      {
+        "oracle_rollable" => ORACLE_ROLLABLE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class EmbeddedOracleTableText2RecommendedRolls
+    attr_accessor :max
+    attr_accessor :min
+
+    def self.from_json_data(data)
+      out = EmbeddedOracleTableText2RecommendedRolls.new
+      out.max = Datasworn::from_json_data(Integer, data["max"])
+      out.min = Datasworn::from_json_data(Integer, data["min"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["max"] = Datasworn::to_json_data(max)
+      data["min"] = Datasworn::to_json_data(min)
+      data
+    end
+  end
+
+  class EmbeddedOracleTableText2
+    attr_accessor :id
+
+    # The label at the head of each table column. The `roll` key refers to the
+    # roll column showing the dice range (`min` and `max` on each table row).
+    attr_accessor :column_labels
+
+    # The roll used to select a result on this oracle.
+    attr_accessor :dice
+
+    # The primary name/label for this item.
+    attr_accessor :name
+    attr_accessor :oracle_type
+
+    # An array of objects, each representing a single row of the table.
+    attr_accessor :rows
+    attr_accessor :type
+
+    # Implementation hints or other developer-facing comments on this object.
+    # These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
+    # The name of this item as it appears on the page in the book, if it's
+    # different from `name`.
+    attr_accessor :canonical_name
+
+    # A longer description of the oracle table's intended usage, which might
+    # include multiple paragraphs. If it's only a couple sentences, use the
+    # `summary` key instead.
+    attr_accessor :description
+
+    # An icon that represents this table.
+    attr_accessor :icon
+
+    # Most oracle tables are insensitive to matches, but a few define special
+    # match behavior.
+    attr_accessor :match
+    attr_accessor :recommended_rolls
+    attr_accessor :suggestions
+
+    # A brief summary of the oracle table's intended usage, no more than a few
+    # sentences in length. This is intended for use in application tooltips
+    # and similar sorts of hints. Longer text should use the "description" key
+    # instead.
+    attr_accessor :summary
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = EmbeddedOracleTableText2.new
+      out.id = Datasworn::from_json_data(EmbeddedOracleRollableID, data["_id"])
+      out.column_labels = Datasworn::from_json_data(EmbeddedOracleTableText2ColumnLabels, data["column_labels"])
+      out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.oracle_type = Datasworn::from_json_data(EmbeddedOracleTableText2OracleType, data["oracle_type"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText2], data["rows"])
+      out.type = Datasworn::from_json_data(EmbeddedOracleTableText2Type, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.match = Datasworn::from_json_data(OracleMatchBehavior, data["match"])
+      out.recommended_rolls = Datasworn::from_json_data(EmbeddedOracleTableText2RecommendedRolls, data["recommended_rolls"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["column_labels"] = Datasworn::to_json_data(column_labels)
+      data["dice"] = Datasworn::to_json_data(dice)
+      data["name"] = Datasworn::to_json_data(name)
+      data["oracle_type"] = Datasworn::to_json_data(oracle_type)
+      data["rows"] = Datasworn::to_json_data(rows)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["description"] = Datasworn::to_json_data(description) unless description.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["match"] = Datasworn::to_json_data(match) unless match.nil?
+      data["recommended_rolls"] = Datasworn::to_json_data(recommended_rolls) unless recommended_rolls.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  # The label at the head of each table column. The `roll` key refers to the
+  # roll column showing the dice range (`min` and `max` on each table row).
+  class EmbeddedOracleTableText3ColumnLabels
+    attr_accessor :roll
+    attr_accessor :text
+    attr_accessor :text2
+    attr_accessor :text3
+
+    def self.from_json_data(data)
+      out = EmbeddedOracleTableText3ColumnLabels.new
+      out.roll = Datasworn::from_json_data(Label, data["roll"])
+      out.text = Datasworn::from_json_data(Label, data["text"])
+      out.text2 = Datasworn::from_json_data(Label, data["text2"])
+      out.text3 = Datasworn::from_json_data(Label, data["text3"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["roll"] = Datasworn::to_json_data(roll)
+      data["text"] = Datasworn::to_json_data(text)
+      data["text2"] = Datasworn::to_json_data(text2)
+      data["text3"] = Datasworn::to_json_data(text3)
+      data
+    end
+  end
+
+  class EmbeddedOracleTableText3OracleType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    TABLE_TEXT3 = new("table_text3")
+
+    def self.from_json_data(data)
+      {
+        "table_text3" => TABLE_TEXT3,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class EmbeddedOracleTableText3Type
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_ROLLABLE = new("oracle_rollable")
+
+    def self.from_json_data(data)
+      {
+        "oracle_rollable" => ORACLE_ROLLABLE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class EmbeddedOracleTableText3RecommendedRolls
+    attr_accessor :max
+    attr_accessor :min
+
+    def self.from_json_data(data)
+      out = EmbeddedOracleTableText3RecommendedRolls.new
+      out.max = Datasworn::from_json_data(Integer, data["max"])
+      out.min = Datasworn::from_json_data(Integer, data["min"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["max"] = Datasworn::to_json_data(max)
+      data["min"] = Datasworn::to_json_data(min)
+      data
+    end
+  end
+
+  class EmbeddedOracleTableText3
+    attr_accessor :id
+
+    # The label at the head of each table column. The `roll` key refers to the
+    # roll column showing the dice range (`min` and `max` on each table row).
+    attr_accessor :column_labels
+
+    # The roll used to select a result on this oracle.
+    attr_accessor :dice
+
+    # The primary name/label for this item.
+    attr_accessor :name
+    attr_accessor :oracle_type
+
+    # An array of objects, each representing a single row of the table.
+    attr_accessor :rows
+    attr_accessor :type
+
+    # Implementation hints or other developer-facing comments on this object.
+    # These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
+    # The name of this item as it appears on the page in the book, if it's
+    # different from `name`.
+    attr_accessor :canonical_name
+
+    # A longer description of the oracle table's intended usage, which might
+    # include multiple paragraphs. If it's only a couple sentences, use the
+    # `summary` key instead.
+    attr_accessor :description
+
+    # An icon that represents this table.
+    attr_accessor :icon
+
+    # Most oracle tables are insensitive to matches, but a few define special
+    # match behavior.
+    attr_accessor :match
+    attr_accessor :recommended_rolls
+    attr_accessor :suggestions
+
+    # A brief summary of the oracle table's intended usage, no more than a few
+    # sentences in length. This is intended for use in application tooltips
+    # and similar sorts of hints. Longer text should use the "description" key
+    # instead.
+    attr_accessor :summary
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = EmbeddedOracleTableText3.new
+      out.id = Datasworn::from_json_data(EmbeddedOracleRollableID, data["_id"])
+      out.column_labels = Datasworn::from_json_data(EmbeddedOracleTableText3ColumnLabels, data["column_labels"])
+      out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.oracle_type = Datasworn::from_json_data(EmbeddedOracleTableText3OracleType, data["oracle_type"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText3], data["rows"])
+      out.type = Datasworn::from_json_data(EmbeddedOracleTableText3Type, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.match = Datasworn::from_json_data(OracleMatchBehavior, data["match"])
+      out.recommended_rolls = Datasworn::from_json_data(EmbeddedOracleTableText3RecommendedRolls, data["recommended_rolls"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["column_labels"] = Datasworn::to_json_data(column_labels)
+      data["dice"] = Datasworn::to_json_data(dice)
+      data["name"] = Datasworn::to_json_data(name)
+      data["oracle_type"] = Datasworn::to_json_data(oracle_type)
+      data["rows"] = Datasworn::to_json_data(rows)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["description"] = Datasworn::to_json_data(description) unless description.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["match"] = Datasworn::to_json_data(match) unless match.nil?
+      data["recommended_rolls"] = Datasworn::to_json_data(recommended_rolls) unless recommended_rolls.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  # A progress move that rolls on a standard progress track type (defined by
+  # this move).
+  class EmbeddedProgressRollMoveRollType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    PROGRESS_ROLL = new("progress_roll")
+
+    def self.from_json_data(data)
+      {
+        "progress_roll" => PROGRESS_ROLL,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class EmbeddedProgressRollMoveType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    MOVE = new("move")
+
+    def self.from_json_data(data)
+      {
+        "move" => MOVE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class EmbeddedProgressRollMove
+    attr_accessor :id
+
+    # Is burning momentum allowed for this move?
+    attr_accessor :allow_momentum_burn
+
+    # The primary name/label for this item.
+    attr_accessor :name
+    attr_accessor :outcomes
+
+    # A progress move that rolls on a standard progress track type (defined by
+    # this move).
+    attr_accessor :roll_type
+
+    # The complete rules text of the move.
+    attr_accessor :text
+
+    # Describes the common features of progress tracks associated with this
+    # move.
+    attr_accessor :tracks
+
+    # Trigger conditions for this move.
+    attr_accessor :trigger
+    attr_accessor :type
+
+    # Implementation hints or other developer-facing comments on this object.
+    # These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
+    # The name of this item as it appears on the page in the book, if it's
+    # different from `name`.
+    attr_accessor :canonical_name
+    attr_accessor :suggestions
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = EmbeddedProgressRollMove.new
+      out.id = Datasworn::from_json_data(EmbeddedMoveID, data["_id"])
+      out.allow_momentum_burn = Datasworn::from_json_data(TrueClass, data["allow_momentum_burn"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.outcomes = Datasworn::from_json_data(MoveOutcomes, data["outcomes"])
+      out.roll_type = Datasworn::from_json_data(EmbeddedProgressRollMoveRollType, data["roll_type"])
+      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
+      out.tracks = Datasworn::from_json_data(ProgressTrackTypeInfo, data["tracks"])
+      out.trigger = Datasworn::from_json_data(TriggerProgressRoll, data["trigger"])
+      out.type = Datasworn::from_json_data(EmbeddedProgressRollMoveType, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["allow_momentum_burn"] = Datasworn::to_json_data(allow_momentum_burn)
+      data["name"] = Datasworn::to_json_data(name)
+      data["outcomes"] = Datasworn::to_json_data(outcomes)
+      data["roll_type"] = Datasworn::to_json_data(roll_type)
+      data["text"] = Datasworn::to_json_data(text)
+      data["tracks"] = Datasworn::to_json_data(tracks)
+      data["trigger"] = Datasworn::to_json_data(trigger)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  # A progress move that rolls on one or more special tracks, like Bonds
+  # (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
+  class EmbeddedSpecialTrackMoveRollType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    SPECIAL_TRACK = new("special_track")
+
+    def self.from_json_data(data)
+      {
+        "special_track" => SPECIAL_TRACK,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class EmbeddedSpecialTrackMoveType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    MOVE = new("move")
+
+    def self.from_json_data(data)
+      {
+        "move" => MOVE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class EmbeddedSpecialTrackMove
+    attr_accessor :id
+
+    # Is burning momentum allowed for this move?
+    attr_accessor :allow_momentum_burn
+
+    # The primary name/label for this item.
+    attr_accessor :name
+    attr_accessor :outcomes
+
+    # A progress move that rolls on one or more special tracks, like Bonds
+    # (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
+    attr_accessor :roll_type
+
+    # The complete rules text of the move.
+    attr_accessor :text
+
+    # Trigger conditions for this move.
+    attr_accessor :trigger
+    attr_accessor :type
+
+    # Implementation hints or other developer-facing comments on this object.
+    # These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
+    # The name of this item as it appears on the page in the book, if it's
+    # different from `name`.
+    attr_accessor :canonical_name
+    attr_accessor :suggestions
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = EmbeddedSpecialTrackMove.new
+      out.id = Datasworn::from_json_data(EmbeddedMoveID, data["_id"])
+      out.allow_momentum_burn = Datasworn::from_json_data(TrueClass, data["allow_momentum_burn"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.outcomes = Datasworn::from_json_data(MoveOutcomes, data["outcomes"])
+      out.roll_type = Datasworn::from_json_data(EmbeddedSpecialTrackMoveRollType, data["roll_type"])
+      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
+      out.trigger = Datasworn::from_json_data(TriggerSpecialTrack, data["trigger"])
+      out.type = Datasworn::from_json_data(EmbeddedSpecialTrackMoveType, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["allow_momentum_burn"] = Datasworn::to_json_data(allow_momentum_burn)
+      data["name"] = Datasworn::to_json_data(name)
+      data["outcomes"] = Datasworn::to_json_data(outcomes)
+      data["roll_type"] = Datasworn::to_json_data(roll_type)
+      data["text"] = Datasworn::to_json_data(text)
+      data["trigger"] = Datasworn::to_json_data(trigger)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
   # This type is a placeholder and may see signficant changes in v0.2.0.
   class EntityPrompt
     attr_accessor :text
@@ -3136,6 +5977,164 @@ module Datasworn
     def to_json_data
       data = {}
       data["text"] = Datasworn::to_json_data(text)
+      data
+    end
+  end
+
+  # The version of the Datasworn format used by this data.
+  class ExpansionDataswornVersion
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    DEFAULT_NAME = new("0.1.0")
+
+    def self.from_json_data(data)
+      {
+        "0.1.0" => DEFAULT_NAME,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class ExpansionType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    EXPANSION = new("expansion")
+
+    def self.from_json_data(data)
+      {
+        "expansion" => EXPANSION,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # A Datasworn package that relies on an external package to provide its
+  # ruleset.
+  class Expansion
+    attr_accessor :id
+
+    # The version of the Datasworn format used by this data.
+    attr_accessor :datasworn_version
+    attr_accessor :ruleset
+    attr_accessor :type
+
+    # A dictionary object containing asset collections, which contain assets.
+    attr_accessor :assets
+
+    # A dictionary object containing atlas collections, which contain atlas
+    # entries.
+    attr_accessor :atlas
+
+    # Lists authors credited by the source material.
+    attr_accessor :authors
+
+    # The date of the source documents's last update, formatted YYYY-MM-DD.
+    # Required because it's used to determine whether the data needs updating.
+    attr_accessor :date
+
+    # A dictionary object of delve sites, like the premade delve sites presented
+    # in Ironsworn: Delve
+    attr_accessor :delve_sites
+    attr_accessor :description
+    attr_accessor :license
+
+    # A dictionary object containing move categories, which contain moves.
+    attr_accessor :moves
+
+    # A dictionary object containing NPC collections, which contain NPCs.
+    attr_accessor :npcs
+
+    # A dictionary object containing oracle collections, which may contain
+    # oracle tables and/or oracle collections.
+    attr_accessor :oracles
+
+    # A dictionary object containing rarities, like those presented in
+    # Ironsworn: Delve.
+    attr_accessor :rarities
+    attr_accessor :rules
+
+    # A dictionary object containing delve site domains.
+    attr_accessor :site_domains
+
+    # A dictionary object containing delve site themes.
+    attr_accessor :site_themes
+
+    # The title of the source document.
+    attr_accessor :title
+
+    # A dictionary object of truth categories.
+    attr_accessor :truths
+
+    # A URL where the source document is available.
+    attr_accessor :url
+
+    def self.from_json_data(data)
+      out = Expansion.new
+      out.id = Datasworn::from_json_data(ExpansionID, data["_id"])
+      out.datasworn_version = Datasworn::from_json_data(ExpansionDataswornVersion, data["datasworn_version"])
+      out.ruleset = Datasworn::from_json_data(RulesetID, data["ruleset"])
+      out.type = Datasworn::from_json_data(ExpansionType, data["type"])
+      out.assets = Datasworn::from_json_data(Hash[String, AssetCollection], data["assets"])
+      out.atlas = Datasworn::from_json_data(Hash[String, AtlasCollection], data["atlas"])
+      out.authors = Datasworn::from_json_data(Array[AuthorInfo], data["authors"])
+      out.date = Datasworn::from_json_data(DateTime, data["date"])
+      out.delve_sites = Datasworn::from_json_data(Hash[String, DelveSite], data["delve_sites"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.license = Datasworn::from_json_data(License, data["license"])
+      out.moves = Datasworn::from_json_data(Hash[String, MoveCategory], data["moves"])
+      out.npcs = Datasworn::from_json_data(Hash[String, NpcCollection], data["npcs"])
+      out.oracles = Datasworn::from_json_data(Hash[String, OracleTablesCollection], data["oracles"])
+      out.rarities = Datasworn::from_json_data(Hash[String, Rarity], data["rarities"])
+      out.rules = Datasworn::from_json_data(RulesExpansion, data["rules"])
+      out.site_domains = Datasworn::from_json_data(Hash[String, DelveSiteDomain], data["site_domains"])
+      out.site_themes = Datasworn::from_json_data(Hash[String, DelveSiteTheme], data["site_themes"])
+      out.title = Datasworn::from_json_data(String, data["title"])
+      out.truths = Datasworn::from_json_data(Hash[String, Truth], data["truths"])
+      out.url = Datasworn::from_json_data(WebURL, data["url"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["datasworn_version"] = Datasworn::to_json_data(datasworn_version)
+      data["ruleset"] = Datasworn::to_json_data(ruleset)
+      data["type"] = Datasworn::to_json_data(type)
+      data["assets"] = Datasworn::to_json_data(assets) unless assets.nil?
+      data["atlas"] = Datasworn::to_json_data(atlas) unless atlas.nil?
+      data["authors"] = Datasworn::to_json_data(authors) unless authors.nil?
+      data["date"] = Datasworn::to_json_data(date) unless date.nil?
+      data["delve_sites"] = Datasworn::to_json_data(delve_sites) unless delve_sites.nil?
+      data["description"] = Datasworn::to_json_data(description) unless description.nil?
+      data["license"] = Datasworn::to_json_data(license) unless license.nil?
+      data["moves"] = Datasworn::to_json_data(moves) unless moves.nil?
+      data["npcs"] = Datasworn::to_json_data(npcs) unless npcs.nil?
+      data["oracles"] = Datasworn::to_json_data(oracles) unless oracles.nil?
+      data["rarities"] = Datasworn::to_json_data(rarities) unless rarities.nil?
+      data["rules"] = Datasworn::to_json_data(rules) unless rules.nil?
+      data["site_domains"] = Datasworn::to_json_data(site_domains) unless site_domains.nil?
+      data["site_themes"] = Datasworn::to_json_data(site_themes) unless site_themes.nil?
+      data["title"] = Datasworn::to_json_data(title) unless title.nil?
+      data["truths"] = Datasworn::to_json_data(truths) unless truths.nil?
+      data["url"] = Datasworn::to_json_data(url) unless url.nil?
       data
     end
   end
@@ -3352,10 +6351,10 @@ module Datasworn
 
     def self.from_json_data(data)
       {
-        "action_roll" => MoveActionRoll,
-        "no_roll" => MoveNoRoll,
-        "progress_roll" => MoveProgressRoll,
-        "special_track" => MoveSpecialTrack,
+        "action_roll" => MoveActionRoll0,
+        "no_roll" => MoveNoRoll0,
+        "progress_roll" => MoveProgressRoll0,
+        "special_track" => MoveSpecialTrack0,
       }[data["roll_type"]].from_json_data(data)
     end
   end
@@ -3383,7 +6382,7 @@ module Datasworn
   end
 
   # A move that makes an action roll.
-  class MoveActionRoll < Move
+  class MoveActionRoll0 < Move
     attr_accessor :id
     attr_accessor :source
     attr_accessor :allow_momentum_burn
@@ -3400,7 +6399,7 @@ module Datasworn
     attr_accessor :tags
 
     def self.from_json_data(data)
-      out = MoveActionRoll.new
+      out = MoveActionRoll0.new
       out.roll_type = "action_roll"
       out.id = Datasworn::from_json_data(MoveID, data["_id"])
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
@@ -3462,7 +6461,7 @@ module Datasworn
   end
 
   # A move that makes no progress rolls or action rolls.
-  class MoveNoRoll < Move
+  class MoveNoRoll0 < Move
     attr_accessor :id
     attr_accessor :source
     attr_accessor :allow_momentum_burn
@@ -3478,7 +6477,7 @@ module Datasworn
     attr_accessor :tags
 
     def self.from_json_data(data)
-      out = MoveNoRoll.new
+      out = MoveNoRoll0.new
       out.roll_type = "no_roll"
       out.id = Datasworn::from_json_data(MoveID, data["_id"])
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
@@ -3540,7 +6539,7 @@ module Datasworn
   # A progress move that rolls on a standard progress track type (whose features
   # are defined by this move object). For progress rolls that use special
   # tracks, see MoveSpecialTrack.
-  class MoveProgressRoll < Move
+  class MoveProgressRoll0 < Move
     attr_accessor :id
     attr_accessor :source
     attr_accessor :allow_momentum_burn
@@ -3558,7 +6557,7 @@ module Datasworn
     attr_accessor :tags
 
     def self.from_json_data(data)
-      out = MoveProgressRoll.new
+      out = MoveProgressRoll0.new
       out.roll_type = "progress_roll"
       out.id = Datasworn::from_json_data(MoveID, data["_id"])
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
@@ -3624,7 +6623,7 @@ module Datasworn
   # A progress move that rolls on a special track, such as Legacies (Starforged)
   # or Bonds (classic Ironsworn). For progress moves that use standard progress
   # tracks, see MoveProgressRoll instead.
-  class MoveSpecialTrack < Move
+  class MoveSpecialTrack0 < Move
     attr_accessor :id
     attr_accessor :source
     attr_accessor :allow_momentum_burn
@@ -3641,7 +6640,7 @@ module Datasworn
     attr_accessor :tags
 
     def self.from_json_data(data)
-      out = MoveSpecialTrack.new
+      out = MoveSpecialTrack0.new
       out.roll_type = "special_track"
       out.id = Datasworn::from_json_data(MoveID, data["_id"])
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
@@ -3676,6 +6675,185 @@ module Datasworn
       data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  # A move that makes an action roll.
+  class MoveActionRollRollType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ACTION_ROLL = new("action_roll")
+
+    def self.from_json_data(data)
+      {
+        "action_roll" => ACTION_ROLL,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class MoveActionRollType0
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    MOVE = new("move")
+
+    def self.from_json_data(data)
+      {
+        "move" => MOVE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # A move that makes an action roll.
+  class MoveActionRoll
+    # The unique Datasworn ID for this item.
+    attr_accessor :id
+
+    # Attribution for the original source (such as a book or website) of this
+    # item, including the author and licensing information.
+    attr_accessor :source
+
+    # Is burning momentum allowed for this move?
+    attr_accessor :allow_momentum_burn
+
+    # The primary name/label for this item.
+    attr_accessor :name
+    attr_accessor :outcomes
+
+    # A move that makes an action roll.
+    attr_accessor :roll_type
+
+    # The complete rules text of the move.
+    attr_accessor :text
+
+    # Trigger conditions for this move.
+    attr_accessor :trigger
+    attr_accessor :type
+
+    # Implementation hints or other developer-facing comments on this object.
+    # These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
+    # The name of this item as it appears on the page in the book, if it's
+    # different from `name`.
+    attr_accessor :canonical_name
+    attr_accessor :oracles
+
+    # Indicates that this move replaces the identified moves. References to the
+    # replaced moves can be considered equivalent to this move.
+    attr_accessor :replaces
+    attr_accessor :suggestions
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = MoveActionRoll.new
+      out.id = Datasworn::from_json_data(MoveID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
+      out.allow_momentum_burn = Datasworn::from_json_data(TrueClass, data["allow_momentum_burn"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.outcomes = Datasworn::from_json_data(MoveOutcomes, data["outcomes"])
+      out.roll_type = Datasworn::from_json_data(MoveActionRollRollType, data["roll_type"])
+      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
+      out.trigger = Datasworn::from_json_data(TriggerActionRoll, data["trigger"])
+      out.type = Datasworn::from_json_data(MoveActionRollType0, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.oracles = Datasworn::from_json_data(Hash[String, EmbeddedOracleRollable], data["oracles"])
+      out.replaces = Datasworn::from_json_data(Array[MoveIDWildcard], data["replaces"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
+      data["allow_momentum_burn"] = Datasworn::to_json_data(allow_momentum_burn)
+      data["name"] = Datasworn::to_json_data(name)
+      data["outcomes"] = Datasworn::to_json_data(outcomes)
+      data["roll_type"] = Datasworn::to_json_data(roll_type)
+      data["text"] = Datasworn::to_json_data(text)
+      data["trigger"] = Datasworn::to_json_data(trigger)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["oracles"] = Datasworn::to_json_data(oracles) unless oracles.nil?
+      data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  # A move must have this `roll_type` to receive this enhancement. This is in
+  # addition to any other restrictions made by other properties.
+  class MoveActionRollEnhancementRollType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ACTION_ROLL = new("action_roll")
+
+    def self.from_json_data(data)
+      {
+        "action_roll" => ACTION_ROLL,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # An object that describes changes to a move. These changes should be applied
+  # recursively, altering only the specified properties; enhanced arrays should
+  # be concatencated with the original array value.
+  class MoveActionRollEnhancement
+    attr_accessor :enhances
+
+    # A move must have this `roll_type` to receive this enhancement. This is in
+    # addition to any other restrictions made by other properties.
+    attr_accessor :roll_type
+    attr_accessor :trigger
+
+    def self.from_json_data(data)
+      out = MoveActionRollEnhancement.new
+      out.enhances = Datasworn::from_json_data(Array[AnyMoveIDWildcard], data["enhances"])
+      out.roll_type = Datasworn::from_json_data(MoveActionRollEnhancementRollType, data["roll_type"])
+      out.trigger = Datasworn::from_json_data(TriggerActionRollEnhancement, data["trigger"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["enhances"] = Datasworn::to_json_data(enhances)
+      data["roll_type"] = Datasworn::to_json_data(roll_type)
+      data["trigger"] = Datasworn::to_json_data(trigger) unless trigger.nil?
       data
     end
   end
@@ -3959,6 +7137,244 @@ module Datasworn
     end
   end
 
+  # A move that makes no action rolls or progress rolls.
+  class MoveNoRollRollType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    NO_ROLL = new("no_roll")
+
+    def self.from_json_data(data)
+      {
+        "no_roll" => NO_ROLL,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class MoveNoRollType0
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    MOVE = new("move")
+
+    def self.from_json_data(data)
+      {
+        "move" => MOVE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # A move that makes no progress rolls or action rolls.
+  class MoveNoRoll
+    # The unique Datasworn ID for this item.
+    attr_accessor :id
+
+    # Attribution for the original source (such as a book or website) of this
+    # item, including the author and licensing information.
+    attr_accessor :source
+
+    # Is burning momentum allowed for this move?
+    attr_accessor :allow_momentum_burn
+
+    # The primary name/label for this item.
+    attr_accessor :name
+
+    # A move that makes no action rolls or progress rolls.
+    attr_accessor :roll_type
+
+    # The complete rules text of the move.
+    attr_accessor :text
+
+    # Trigger conditions for this move.
+    attr_accessor :trigger
+    attr_accessor :type
+
+    # Implementation hints or other developer-facing comments on this object.
+    # These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
+    # The name of this item as it appears on the page in the book, if it's
+    # different from `name`.
+    attr_accessor :canonical_name
+    attr_accessor :oracles
+
+    # Indicates that this move replaces the identified moves. References to the
+    # replaced moves can be considered equivalent to this move.
+    attr_accessor :replaces
+    attr_accessor :suggestions
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = MoveNoRoll.new
+      out.id = Datasworn::from_json_data(MoveID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
+      out.allow_momentum_burn = Datasworn::from_json_data(TrueClass, data["allow_momentum_burn"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.roll_type = Datasworn::from_json_data(MoveNoRollRollType, data["roll_type"])
+      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
+      out.trigger = Datasworn::from_json_data(TriggerNoRoll, data["trigger"])
+      out.type = Datasworn::from_json_data(MoveNoRollType0, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.oracles = Datasworn::from_json_data(Hash[String, EmbeddedOracleRollable], data["oracles"])
+      out.replaces = Datasworn::from_json_data(Array[MoveIDWildcard], data["replaces"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
+      data["allow_momentum_burn"] = Datasworn::to_json_data(allow_momentum_burn)
+      data["name"] = Datasworn::to_json_data(name)
+      data["roll_type"] = Datasworn::to_json_data(roll_type)
+      data["text"] = Datasworn::to_json_data(text)
+      data["trigger"] = Datasworn::to_json_data(trigger)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["oracles"] = Datasworn::to_json_data(oracles) unless oracles.nil?
+      data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  # A move must have this `roll_type` to receive this enhancement. This is in
+  # addition to any other restrictions made by other properties.
+  class MoveNoRollEnhancementRollType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    NO_ROLL = new("no_roll")
+
+    def self.from_json_data(data)
+      {
+        "no_roll" => NO_ROLL,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # An object that describes changes to a move. These changes should be applied
+  # recursively, altering only the specified properties; enhanced arrays should
+  # be concatencated with the original array value.
+  class MoveNoRollEnhancement
+    attr_accessor :enhances
+
+    # A move must have this `roll_type` to receive this enhancement. This is in
+    # addition to any other restrictions made by other properties.
+    attr_accessor :roll_type
+    attr_accessor :trigger
+
+    def self.from_json_data(data)
+      out = MoveNoRollEnhancement.new
+      out.enhances = Datasworn::from_json_data(Array[AnyMoveIDWildcard], data["enhances"])
+      out.roll_type = Datasworn::from_json_data(MoveNoRollEnhancementRollType, data["roll_type"])
+      out.trigger = Datasworn::from_json_data(TriggerNoRollEnhancement, data["trigger"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["enhances"] = Datasworn::to_json_data(enhances)
+      data["roll_type"] = Datasworn::to_json_data(roll_type)
+      data["trigger"] = Datasworn::to_json_data(trigger) unless trigger.nil?
+      data
+    end
+  end
+
+  # A unique ID representing a MoveOracleRollable object.
+  class MoveOracleRollableID
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = MoveOracleRollableID.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A wildcarded MoveOracleRollableId that can be used to match multiple
+  # MoveOracleRollable objects.
+  class MoveOracleRollableIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = MoveOracleRollableIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A unique ID representing a MoveOracleRollableRow object.
+  class MoveOracleRollableRowID
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = MoveOracleRollableRowID.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A wildcarded MoveOracleRollableRowId that can be used to match multiple
+  # MoveOracleRollableRow objects.
+  class MoveOracleRollableRowIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = MoveOracleRollableRowIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
   class MoveOutcome
     attr_accessor :text
     attr_accessor :oracle_rolls
@@ -4005,6 +7421,445 @@ module Datasworn
       data["strong_hit"] = Datasworn::to_json_data(strong_hit)
       data["weak_hit"] = Datasworn::to_json_data(weak_hit)
       data
+    end
+  end
+
+  # A progress move that rolls on a standard progress track type (defined by
+  # this move).
+  class MoveProgressRollRollType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    PROGRESS_ROLL = new("progress_roll")
+
+    def self.from_json_data(data)
+      {
+        "progress_roll" => PROGRESS_ROLL,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class MoveProgressRollType0
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    MOVE = new("move")
+
+    def self.from_json_data(data)
+      {
+        "move" => MOVE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # A progress move that rolls on a standard progress track type (whose features
+  # are defined by this move object). For progress rolls that use special
+  # tracks, see MoveSpecialTrack.
+  class MoveProgressRoll
+    # The unique Datasworn ID for this item.
+    attr_accessor :id
+
+    # Attribution for the original source (such as a book or website) of this
+    # item, including the author and licensing information.
+    attr_accessor :source
+
+    # Is burning momentum allowed for this move?
+    attr_accessor :allow_momentum_burn
+
+    # The primary name/label for this item.
+    attr_accessor :name
+    attr_accessor :outcomes
+
+    # A progress move that rolls on a standard progress track type (defined by
+    # this move).
+    attr_accessor :roll_type
+
+    # The complete rules text of the move.
+    attr_accessor :text
+
+    # Describes the common features of progress tracks associated with this
+    # move.
+    attr_accessor :tracks
+
+    # Trigger conditions for this move.
+    attr_accessor :trigger
+    attr_accessor :type
+
+    # Implementation hints or other developer-facing comments on this object.
+    # These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
+    # The name of this item as it appears on the page in the book, if it's
+    # different from `name`.
+    attr_accessor :canonical_name
+    attr_accessor :oracles
+
+    # Indicates that this move replaces the identified moves. References to the
+    # replaced moves can be considered equivalent to this move.
+    attr_accessor :replaces
+    attr_accessor :suggestions
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = MoveProgressRoll.new
+      out.id = Datasworn::from_json_data(MoveID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
+      out.allow_momentum_burn = Datasworn::from_json_data(TrueClass, data["allow_momentum_burn"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.outcomes = Datasworn::from_json_data(MoveOutcomes, data["outcomes"])
+      out.roll_type = Datasworn::from_json_data(MoveProgressRollRollType, data["roll_type"])
+      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
+      out.tracks = Datasworn::from_json_data(ProgressTrackTypeInfo, data["tracks"])
+      out.trigger = Datasworn::from_json_data(TriggerProgressRoll, data["trigger"])
+      out.type = Datasworn::from_json_data(MoveProgressRollType0, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.oracles = Datasworn::from_json_data(Hash[String, EmbeddedOracleRollable], data["oracles"])
+      out.replaces = Datasworn::from_json_data(Array[MoveIDWildcard], data["replaces"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
+      data["allow_momentum_burn"] = Datasworn::to_json_data(allow_momentum_burn)
+      data["name"] = Datasworn::to_json_data(name)
+      data["outcomes"] = Datasworn::to_json_data(outcomes)
+      data["roll_type"] = Datasworn::to_json_data(roll_type)
+      data["text"] = Datasworn::to_json_data(text)
+      data["tracks"] = Datasworn::to_json_data(tracks)
+      data["trigger"] = Datasworn::to_json_data(trigger)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["oracles"] = Datasworn::to_json_data(oracles) unless oracles.nil?
+      data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  # A move must have this `roll_type` to receive this enhancement. This is in
+  # addition to any other restrictions made by other properties.
+  class MoveProgressRollEnhancementRollType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    PROGRESS_ROLL = new("progress_roll")
+
+    def self.from_json_data(data)
+      {
+        "progress_roll" => PROGRESS_ROLL,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # An object that describes changes to a move. These changes should be applied
+  # recursively, altering only the specified properties; enhanced arrays should
+  # be concatencated with the original array value.
+  class MoveProgressRollEnhancement
+    attr_accessor :enhances
+
+    # A move must have this `roll_type` to receive this enhancement. This is in
+    # addition to any other restrictions made by other properties.
+    attr_accessor :roll_type
+    attr_accessor :trigger
+
+    def self.from_json_data(data)
+      out = MoveProgressRollEnhancement.new
+      out.enhances = Datasworn::from_json_data(Array[AnyMoveIDWildcard], data["enhances"])
+      out.roll_type = Datasworn::from_json_data(MoveProgressRollEnhancementRollType, data["roll_type"])
+      out.trigger = Datasworn::from_json_data(TriggerProgressRollEnhancement, data["trigger"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["enhances"] = Datasworn::to_json_data(enhances)
+      data["roll_type"] = Datasworn::to_json_data(roll_type)
+      data["trigger"] = Datasworn::to_json_data(trigger) unless trigger.nil?
+      data
+    end
+  end
+
+  class MoveRollType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    # A move that makes an action roll.
+    ACTION_ROLL = new("action_roll")
+
+    # A move that makes no action rolls or progress rolls.
+    NO_ROLL = new("no_roll")
+
+    # A progress move that rolls on a standard progress track type (defined by
+    # this move).
+    PROGRESS_ROLL = new("progress_roll")
+
+    # A progress move that rolls on one or more special tracks, like Bonds
+    # (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
+    SPECIAL_TRACK = new("special_track")
+
+    def self.from_json_data(data)
+      {
+        "action_roll" => ACTION_ROLL,
+        "no_roll" => NO_ROLL,
+        "progress_roll" => PROGRESS_ROLL,
+        "special_track" => SPECIAL_TRACK,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # A progress move that rolls on one or more special tracks, like Bonds
+  # (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
+  class MoveSpecialTrackRollType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    SPECIAL_TRACK = new("special_track")
+
+    def self.from_json_data(data)
+      {
+        "special_track" => SPECIAL_TRACK,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class MoveSpecialTrackType0
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    MOVE = new("move")
+
+    def self.from_json_data(data)
+      {
+        "move" => MOVE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # A progress move that rolls on a special track, such as Legacies (Starforged)
+  # or Bonds (classic Ironsworn). For progress moves that use standard progress
+  # tracks, see MoveProgressRoll instead.
+  class MoveSpecialTrack
+    # The unique Datasworn ID for this item.
+    attr_accessor :id
+
+    # Attribution for the original source (such as a book or website) of this
+    # item, including the author and licensing information.
+    attr_accessor :source
+
+    # Is burning momentum allowed for this move?
+    attr_accessor :allow_momentum_burn
+
+    # The primary name/label for this item.
+    attr_accessor :name
+    attr_accessor :outcomes
+
+    # A progress move that rolls on one or more special tracks, like Bonds
+    # (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
+    attr_accessor :roll_type
+
+    # The complete rules text of the move.
+    attr_accessor :text
+
+    # Trigger conditions for this move.
+    attr_accessor :trigger
+    attr_accessor :type
+
+    # Implementation hints or other developer-facing comments on this object.
+    # These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
+    # The name of this item as it appears on the page in the book, if it's
+    # different from `name`.
+    attr_accessor :canonical_name
+    attr_accessor :oracles
+
+    # Indicates that this move replaces the identified moves. References to the
+    # replaced moves can be considered equivalent to this move.
+    attr_accessor :replaces
+    attr_accessor :suggestions
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = MoveSpecialTrack.new
+      out.id = Datasworn::from_json_data(MoveID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
+      out.allow_momentum_burn = Datasworn::from_json_data(TrueClass, data["allow_momentum_burn"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.outcomes = Datasworn::from_json_data(MoveOutcomes, data["outcomes"])
+      out.roll_type = Datasworn::from_json_data(MoveSpecialTrackRollType, data["roll_type"])
+      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
+      out.trigger = Datasworn::from_json_data(TriggerSpecialTrack, data["trigger"])
+      out.type = Datasworn::from_json_data(MoveSpecialTrackType0, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.oracles = Datasworn::from_json_data(Hash[String, EmbeddedOracleRollable], data["oracles"])
+      out.replaces = Datasworn::from_json_data(Array[MoveIDWildcard], data["replaces"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
+      data["allow_momentum_burn"] = Datasworn::to_json_data(allow_momentum_burn)
+      data["name"] = Datasworn::to_json_data(name)
+      data["outcomes"] = Datasworn::to_json_data(outcomes)
+      data["roll_type"] = Datasworn::to_json_data(roll_type)
+      data["text"] = Datasworn::to_json_data(text)
+      data["trigger"] = Datasworn::to_json_data(trigger)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["oracles"] = Datasworn::to_json_data(oracles) unless oracles.nil?
+      data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  # A move must have this `roll_type` to receive this enhancement. This is in
+  # addition to any other restrictions made by other properties.
+  class MoveSpecialTrackEnhancementRollType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    SPECIAL_TRACK = new("special_track")
+
+    def self.from_json_data(data)
+      {
+        "special_track" => SPECIAL_TRACK,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # An object that describes changes to a move. These changes should be applied
+  # recursively, altering only the specified properties; enhanced arrays should
+  # be concatencated with the original array value.
+  class MoveSpecialTrackEnhancement
+    attr_accessor :enhances
+
+    # A move must have this `roll_type` to receive this enhancement. This is in
+    # addition to any other restrictions made by other properties.
+    attr_accessor :roll_type
+    attr_accessor :trigger
+
+    def self.from_json_data(data)
+      out = MoveSpecialTrackEnhancement.new
+      out.enhances = Datasworn::from_json_data(Array[AnyMoveIDWildcard], data["enhances"])
+      out.roll_type = Datasworn::from_json_data(MoveSpecialTrackEnhancementRollType, data["roll_type"])
+      out.trigger = Datasworn::from_json_data(TriggerSpecialTrackEnhancement, data["trigger"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["enhances"] = Datasworn::to_json_data(enhances)
+      data["roll_type"] = Datasworn::to_json_data(roll_type)
+      data["trigger"] = Datasworn::to_json_data(trigger) unless trigger.nil?
+      data
+    end
+  end
+
+  class NonCollectableType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    DELVE_SITE = new("delve_site")
+    DELVE_SITE_DOMAIN = new("delve_site_domain")
+    DELVE_SITE_THEME = new("delve_site_theme")
+    RARITY = new("rarity")
+    TRUTH = new("truth")
+
+    def self.from_json_data(data)
+      {
+        "delve_site" => DELVE_SITE,
+        "delve_site_domain" => DELVE_SITE_DOMAIN,
+        "delve_site_theme" => DELVE_SITE_THEME,
+        "rarity" => RARITY,
+        "truth" => TRUTH,
+      }[data]
+    end
+
+    def to_json_data
+      value
     end
   end
 
@@ -4272,6 +8127,21 @@ module Datasworn
     end
   end
 
+  # A wildcarded NpcId that can be used to match multiple Npc objects.
+  class NpcIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = NpcIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
   # A localized category label describing the nature of this NPC.
   # 
   # In Ironsworn classic, this is probably the singular form of the parent
@@ -4319,60 +8189,6 @@ module Datasworn
       data["rank"] = Datasworn::to_json_data(rank)
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
       data
-    end
-  end
-
-  class ObjectType
-    attr_accessor :value
-
-    def initialize(value)
-      self.value = value
-    end
-
-    private_class_method :new
-
-    ASSET = new("asset")
-    ASSET_ABILITY = new("asset_ability")
-    ASSET_COLLECTION = new("asset_collection")
-    ATLAS_COLLECTION = new("atlas_collection")
-    ATLAS_ENTRY = new("atlas_entry")
-    DELVE_SITE = new("delve_site")
-    DELVE_SITE_DOMAIN = new("delve_site_domain")
-    DELVE_SITE_THEME = new("delve_site_theme")
-    MOVE = new("move")
-    MOVE_CATEGORY = new("move_category")
-    NPC = new("npc")
-    NPC_COLLECTION = new("npc_collection")
-    ORACLE_COLLECTION = new("oracle_collection")
-    ORACLE_ROLLABLE = new("oracle_rollable")
-    ORACLE_TABLE_ROW = new("oracle_table_row")
-    RARITY = new("rarity")
-    TRUTH = new("truth")
-
-    def self.from_json_data(data)
-      {
-        "asset" => ASSET,
-        "asset_ability" => ASSET_ABILITY,
-        "asset_collection" => ASSET_COLLECTION,
-        "atlas_collection" => ATLAS_COLLECTION,
-        "atlas_entry" => ATLAS_ENTRY,
-        "delve_site" => DELVE_SITE,
-        "delve_site_domain" => DELVE_SITE_DOMAIN,
-        "delve_site_theme" => DELVE_SITE_THEME,
-        "move" => MOVE,
-        "move_category" => MOVE_CATEGORY,
-        "npc" => NPC,
-        "npc_collection" => NPC_COLLECTION,
-        "oracle_collection" => ORACLE_COLLECTION,
-        "oracle_rollable" => ORACLE_ROLLABLE,
-        "oracle_table_row" => ORACLE_TABLE_ROW,
-        "rarity" => RARITY,
-        "truth" => TRUTH,
-      }[data]
-    end
-
-    def to_json_data
-      value
     end
   end
 
@@ -5034,7 +8850,7 @@ module Datasworn
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.oracle_type = Datasworn::from_json_data(OracleColumnTextOracleType, data["oracle_type"])
-      out.rows = Datasworn::from_json_data(Array[OracleTableRowText], data["rows"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText], data["rows"])
       out.type = Datasworn::from_json_data(OracleColumnTextType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
@@ -5158,7 +8974,7 @@ module Datasworn
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.oracle_type = Datasworn::from_json_data(OracleColumnText2OracleType, data["oracle_type"])
-      out.rows = Datasworn::from_json_data(Array[OracleTableRowText2], data["rows"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText2], data["rows"])
       out.type = Datasworn::from_json_data(OracleColumnText2Type, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
@@ -5282,7 +9098,7 @@ module Datasworn
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.oracle_type = Datasworn::from_json_data(OracleColumnText3OracleType, data["oracle_type"])
-      out.rows = Datasworn::from_json_data(Array[OracleTableRowText3], data["rows"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText3], data["rows"])
       out.type = Datasworn::from_json_data(OracleColumnText3Type, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
@@ -5401,22 +9217,22 @@ module Datasworn
     end
   end
 
-  # Provides string templates that may be used in place of the static
-  # row text from `OracleTableRow#text`, `OracleTableRow#text2`, and
-  # `OracleTableRow#text3`.
+  # Provides string templates that may be used in place of the static row
+  # text from `OracleRollableRow#text`, `OracleRollableRow#text2`, and
+  # `OracleRollableRow#text3`.
   # 
   #   These strings are formatted in Markdown, but use a special syntax
   # for their placeholders: `{{text>some_oracle_rollable_id}}`. The
   # placeholder should be replaced with the value of a rolled (or selected)
-  # `OracleTableRow#text` from the target oracle rollable ID.
+  # `OracleRollableRow#text` from the target oracle rollable ID.
   class OracleRollTemplate
-    # A string template that may be used in place of OracleTableRow#text.
+    # A string template that may be used in place of OracleRollableRow#text.
     attr_accessor :text
 
-    # A string template that may be used in place of OracleTableRow#text2.
+    # A string template that may be used in place of OracleRollableRow#text2.
     attr_accessor :text2
 
-    # A string template that may be used in place of OracleTableRow#text3.
+    # A string template that may be used in place of OracleRollableRow#text3.
     attr_accessor :text3
 
     def self.from_json_data(data)
@@ -5432,6 +9248,643 @@ module Datasworn
       data["text"] = Datasworn::to_json_data(text) unless text.nil?
       data["text2"] = Datasworn::to_json_data(text2) unless text2.nil?
       data["text3"] = Datasworn::to_json_data(text3) unless text3.nil?
+      data
+    end
+  end
+
+  # A collection of table rows from which random results may be rolled. This may
+  # represent a standalone table, or a column in a larger table.
+  class OracleRollable
+    attr_accessor :oracle_type
+
+    def self.from_json_data(data)
+      {
+        "column_text" => OracleRollableColumnText,
+        "column_text2" => OracleRollableColumnText2,
+        "column_text3" => OracleRollableColumnText3,
+        "table_text" => OracleRollableTableText,
+        "table_text2" => OracleRollableTableText2,
+        "table_text3" => OracleRollableTableText3,
+      }[data["oracle_type"]].from_json_data(data)
+    end
+  end
+
+  class OracleRollableColumnTextType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_ROLLABLE = new("oracle_rollable")
+
+    def self.from_json_data(data)
+      {
+        "oracle_rollable" => ORACLE_ROLLABLE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # Represents a single column in an OracleCollection.
+  class OracleRollableColumnText < OracleRollable
+    attr_accessor :id
+    attr_accessor :dice
+    attr_accessor :name
+    attr_accessor :rows
+    attr_accessor :type
+    attr_accessor :comment
+    attr_accessor :color
+    attr_accessor :icon
+    attr_accessor :match
+    attr_accessor :replaces
+    attr_accessor :suggestions
+    attr_accessor :summary
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = OracleRollableColumnText.new
+      out.oracle_type = "column_text"
+      out.id = Datasworn::from_json_data(OracleRollableID, data["_id"])
+      out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText], data["rows"])
+      out.type = Datasworn::from_json_data(OracleRollableColumnTextType, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.color = Datasworn::from_json_data(CSSColor, data["color"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.match = Datasworn::from_json_data(OracleMatchBehavior, data["match"])
+      out.replaces = Datasworn::from_json_data(Array[OracleRollableIDWildcard], data["replaces"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = { "oracle_type" => "column_text" }
+      data["_id"] = Datasworn::to_json_data(id)
+      data["dice"] = Datasworn::to_json_data(dice)
+      data["name"] = Datasworn::to_json_data(name)
+      data["rows"] = Datasworn::to_json_data(rows)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["color"] = Datasworn::to_json_data(color) unless color.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["match"] = Datasworn::to_json_data(match) unless match.nil?
+      data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  class OracleRollableColumnText2Type
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_ROLLABLE = new("oracle_rollable")
+
+    def self.from_json_data(data)
+      {
+        "oracle_rollable" => ORACLE_ROLLABLE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class OracleRollableColumnText2 < OracleRollable
+    attr_accessor :id
+    attr_accessor :dice
+    attr_accessor :name
+    attr_accessor :rows
+    attr_accessor :type
+    attr_accessor :comment
+    attr_accessor :color
+    attr_accessor :icon
+    attr_accessor :match
+    attr_accessor :replaces
+    attr_accessor :suggestions
+    attr_accessor :summary
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = OracleRollableColumnText2.new
+      out.oracle_type = "column_text2"
+      out.id = Datasworn::from_json_data(OracleRollableID, data["_id"])
+      out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText2], data["rows"])
+      out.type = Datasworn::from_json_data(OracleRollableColumnText2Type, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.color = Datasworn::from_json_data(CSSColor, data["color"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.match = Datasworn::from_json_data(OracleMatchBehavior, data["match"])
+      out.replaces = Datasworn::from_json_data(Array[OracleRollableIDWildcard], data["replaces"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = { "oracle_type" => "column_text2" }
+      data["_id"] = Datasworn::to_json_data(id)
+      data["dice"] = Datasworn::to_json_data(dice)
+      data["name"] = Datasworn::to_json_data(name)
+      data["rows"] = Datasworn::to_json_data(rows)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["color"] = Datasworn::to_json_data(color) unless color.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["match"] = Datasworn::to_json_data(match) unless match.nil?
+      data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  class OracleRollableColumnText3Type
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_ROLLABLE = new("oracle_rollable")
+
+    def self.from_json_data(data)
+      {
+        "oracle_rollable" => ORACLE_ROLLABLE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class OracleRollableColumnText3 < OracleRollable
+    attr_accessor :id
+    attr_accessor :dice
+    attr_accessor :name
+    attr_accessor :rows
+    attr_accessor :type
+    attr_accessor :comment
+    attr_accessor :color
+    attr_accessor :icon
+    attr_accessor :match
+    attr_accessor :replaces
+    attr_accessor :suggestions
+    attr_accessor :summary
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = OracleRollableColumnText3.new
+      out.oracle_type = "column_text3"
+      out.id = Datasworn::from_json_data(OracleRollableID, data["_id"])
+      out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText3], data["rows"])
+      out.type = Datasworn::from_json_data(OracleRollableColumnText3Type, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.color = Datasworn::from_json_data(CSSColor, data["color"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.match = Datasworn::from_json_data(OracleMatchBehavior, data["match"])
+      out.replaces = Datasworn::from_json_data(Array[OracleRollableIDWildcard], data["replaces"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = { "oracle_type" => "column_text3" }
+      data["_id"] = Datasworn::to_json_data(id)
+      data["dice"] = Datasworn::to_json_data(dice)
+      data["name"] = Datasworn::to_json_data(name)
+      data["rows"] = Datasworn::to_json_data(rows)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["color"] = Datasworn::to_json_data(color) unless color.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["match"] = Datasworn::to_json_data(match) unless match.nil?
+      data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  # The label at the head of each table column. The `roll` key refers to the
+  # roll column showing the dice range (`min` and `max` on each table row).
+  class OracleRollableTableTextColumnLabels
+    attr_accessor :roll
+    attr_accessor :text
+
+    def self.from_json_data(data)
+      out = OracleRollableTableTextColumnLabels.new
+      out.roll = Datasworn::from_json_data(Label, data["roll"])
+      out.text = Datasworn::from_json_data(Label, data["text"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["roll"] = Datasworn::to_json_data(roll)
+      data["text"] = Datasworn::to_json_data(text)
+      data
+    end
+  end
+
+  class OracleRollableTableTextType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_ROLLABLE = new("oracle_rollable")
+
+    def self.from_json_data(data)
+      {
+        "oracle_rollable" => ORACLE_ROLLABLE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class OracleRollableTableTextRecommendedRolls
+    attr_accessor :max
+    attr_accessor :min
+
+    def self.from_json_data(data)
+      out = OracleRollableTableTextRecommendedRolls.new
+      out.max = Datasworn::from_json_data(Integer, data["max"])
+      out.min = Datasworn::from_json_data(Integer, data["min"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["max"] = Datasworn::to_json_data(max)
+      data["min"] = Datasworn::to_json_data(min)
+      data
+    end
+  end
+
+  # Represents a basic rollable oracle table with one roll column and one text
+  # result column.
+  class OracleRollableTableText < OracleRollable
+    attr_accessor :id
+    attr_accessor :source
+    attr_accessor :column_labels
+    attr_accessor :dice
+    attr_accessor :name
+    attr_accessor :rows
+    attr_accessor :type
+    attr_accessor :comment
+    attr_accessor :canonical_name
+    attr_accessor :description
+    attr_accessor :icon
+    attr_accessor :match
+    attr_accessor :recommended_rolls
+    attr_accessor :replaces
+    attr_accessor :suggestions
+    attr_accessor :summary
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = OracleRollableTableText.new
+      out.oracle_type = "table_text"
+      out.id = Datasworn::from_json_data(OracleRollableID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
+      out.column_labels = Datasworn::from_json_data(OracleRollableTableTextColumnLabels, data["column_labels"])
+      out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText], data["rows"])
+      out.type = Datasworn::from_json_data(OracleRollableTableTextType, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.match = Datasworn::from_json_data(OracleMatchBehavior, data["match"])
+      out.recommended_rolls = Datasworn::from_json_data(OracleRollableTableTextRecommendedRolls, data["recommended_rolls"])
+      out.replaces = Datasworn::from_json_data(Array[OracleRollableIDWildcard], data["replaces"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = { "oracle_type" => "table_text" }
+      data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
+      data["column_labels"] = Datasworn::to_json_data(column_labels)
+      data["dice"] = Datasworn::to_json_data(dice)
+      data["name"] = Datasworn::to_json_data(name)
+      data["rows"] = Datasworn::to_json_data(rows)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["description"] = Datasworn::to_json_data(description) unless description.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["match"] = Datasworn::to_json_data(match) unless match.nil?
+      data["recommended_rolls"] = Datasworn::to_json_data(recommended_rolls) unless recommended_rolls.nil?
+      data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  # The label at the head of each table column. The `roll` key refers to the
+  # roll column showing the dice range (`min` and `max` on each table row).
+  class OracleRollableTableText2ColumnLabels
+    attr_accessor :roll
+    attr_accessor :text
+    attr_accessor :text2
+
+    def self.from_json_data(data)
+      out = OracleRollableTableText2ColumnLabels.new
+      out.roll = Datasworn::from_json_data(Label, data["roll"])
+      out.text = Datasworn::from_json_data(Label, data["text"])
+      out.text2 = Datasworn::from_json_data(Label, data["text2"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["roll"] = Datasworn::to_json_data(roll)
+      data["text"] = Datasworn::to_json_data(text)
+      data["text2"] = Datasworn::to_json_data(text2)
+      data
+    end
+  end
+
+  class OracleRollableTableText2Type
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_ROLLABLE = new("oracle_rollable")
+
+    def self.from_json_data(data)
+      {
+        "oracle_rollable" => ORACLE_ROLLABLE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class OracleRollableTableText2RecommendedRolls
+    attr_accessor :max
+    attr_accessor :min
+
+    def self.from_json_data(data)
+      out = OracleRollableTableText2RecommendedRolls.new
+      out.max = Datasworn::from_json_data(Integer, data["max"])
+      out.min = Datasworn::from_json_data(Integer, data["min"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["max"] = Datasworn::to_json_data(max)
+      data["min"] = Datasworn::to_json_data(min)
+      data
+    end
+  end
+
+  # A rollable oracle table with one roll column and two text columns.
+  class OracleRollableTableText2 < OracleRollable
+    attr_accessor :id
+    attr_accessor :source
+    attr_accessor :column_labels
+    attr_accessor :dice
+    attr_accessor :name
+    attr_accessor :rows
+    attr_accessor :type
+    attr_accessor :comment
+    attr_accessor :canonical_name
+    attr_accessor :description
+    attr_accessor :icon
+    attr_accessor :match
+    attr_accessor :recommended_rolls
+    attr_accessor :replaces
+    attr_accessor :suggestions
+    attr_accessor :summary
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = OracleRollableTableText2.new
+      out.oracle_type = "table_text2"
+      out.id = Datasworn::from_json_data(OracleRollableID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
+      out.column_labels = Datasworn::from_json_data(OracleRollableTableText2ColumnLabels, data["column_labels"])
+      out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText2], data["rows"])
+      out.type = Datasworn::from_json_data(OracleRollableTableText2Type, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.match = Datasworn::from_json_data(OracleMatchBehavior, data["match"])
+      out.recommended_rolls = Datasworn::from_json_data(OracleRollableTableText2RecommendedRolls, data["recommended_rolls"])
+      out.replaces = Datasworn::from_json_data(Array[OracleRollableIDWildcard], data["replaces"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = { "oracle_type" => "table_text2" }
+      data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
+      data["column_labels"] = Datasworn::to_json_data(column_labels)
+      data["dice"] = Datasworn::to_json_data(dice)
+      data["name"] = Datasworn::to_json_data(name)
+      data["rows"] = Datasworn::to_json_data(rows)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["description"] = Datasworn::to_json_data(description) unless description.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["match"] = Datasworn::to_json_data(match) unless match.nil?
+      data["recommended_rolls"] = Datasworn::to_json_data(recommended_rolls) unless recommended_rolls.nil?
+      data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  # The label at the head of each table column. The `roll` key refers to the
+  # roll column showing the dice range (`min` and `max` on each table row).
+  class OracleRollableTableText3ColumnLabels
+    attr_accessor :roll
+    attr_accessor :text
+    attr_accessor :text2
+    attr_accessor :text3
+
+    def self.from_json_data(data)
+      out = OracleRollableTableText3ColumnLabels.new
+      out.roll = Datasworn::from_json_data(Label, data["roll"])
+      out.text = Datasworn::from_json_data(Label, data["text"])
+      out.text2 = Datasworn::from_json_data(Label, data["text2"])
+      out.text3 = Datasworn::from_json_data(Label, data["text3"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["roll"] = Datasworn::to_json_data(roll)
+      data["text"] = Datasworn::to_json_data(text)
+      data["text2"] = Datasworn::to_json_data(text2)
+      data["text3"] = Datasworn::to_json_data(text3)
+      data
+    end
+  end
+
+  class OracleRollableTableText3Type
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_ROLLABLE = new("oracle_rollable")
+
+    def self.from_json_data(data)
+      {
+        "oracle_rollable" => ORACLE_ROLLABLE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class OracleRollableTableText3RecommendedRolls
+    attr_accessor :max
+    attr_accessor :min
+
+    def self.from_json_data(data)
+      out = OracleRollableTableText3RecommendedRolls.new
+      out.max = Datasworn::from_json_data(Integer, data["max"])
+      out.min = Datasworn::from_json_data(Integer, data["min"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["max"] = Datasworn::to_json_data(max)
+      data["min"] = Datasworn::to_json_data(min)
+      data
+    end
+  end
+
+  # A rollable oracle table with one roll column and 3 text columns.
+  class OracleRollableTableText3 < OracleRollable
+    attr_accessor :id
+    attr_accessor :source
+    attr_accessor :column_labels
+    attr_accessor :dice
+    attr_accessor :name
+    attr_accessor :rows
+    attr_accessor :type
+    attr_accessor :comment
+    attr_accessor :canonical_name
+    attr_accessor :description
+    attr_accessor :icon
+    attr_accessor :match
+    attr_accessor :recommended_rolls
+    attr_accessor :replaces
+    attr_accessor :suggestions
+    attr_accessor :summary
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = OracleRollableTableText3.new
+      out.oracle_type = "table_text3"
+      out.id = Datasworn::from_json_data(OracleRollableID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
+      out.column_labels = Datasworn::from_json_data(OracleRollableTableText3ColumnLabels, data["column_labels"])
+      out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText3], data["rows"])
+      out.type = Datasworn::from_json_data(OracleRollableTableText3Type, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.match = Datasworn::from_json_data(OracleMatchBehavior, data["match"])
+      out.recommended_rolls = Datasworn::from_json_data(OracleRollableTableText3RecommendedRolls, data["recommended_rolls"])
+      out.replaces = Datasworn::from_json_data(Array[OracleRollableIDWildcard], data["replaces"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = { "oracle_type" => "table_text3" }
+      data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
+      data["column_labels"] = Datasworn::to_json_data(column_labels)
+      data["dice"] = Datasworn::to_json_data(dice)
+      data["name"] = Datasworn::to_json_data(name)
+      data["rows"] = Datasworn::to_json_data(rows)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["description"] = Datasworn::to_json_data(description) unless description.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["match"] = Datasworn::to_json_data(match) unless match.nil?
+      data["recommended_rolls"] = Datasworn::to_json_data(recommended_rolls) unless recommended_rolls.nil?
+      data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data
     end
   end
@@ -5464,6 +9917,196 @@ module Datasworn
 
     def to_json_data
       Datasworn.to_json_data(value)
+    end
+  end
+
+  # A unique ID representing an OracleRollableRow object.
+  class OracleRollableRowID
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = OracleRollableRowID.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A wildcarded OracleRollableRowId that can be used to match multiple
+  # OracleRollableRow objects.
+  class OracleRollableRowIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = OracleRollableRowIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # Represents a row in an oracle table, with a single text cell.
+  class OracleRollableRowText
+    attr_accessor :id
+    attr_accessor :roll
+
+    # The primary text content of this row.
+    attr_accessor :text
+    attr_accessor :i18n
+
+    # Hints that the identified table should be rendered inside this table row.
+    attr_accessor :embed_table
+    attr_accessor :icon
+
+    # Further oracle rolls prompted by this table row.
+    attr_accessor :oracle_rolls
+    attr_accessor :suggestions
+    attr_accessor :tags
+    attr_accessor :template
+
+    def self.from_json_data(data)
+      out = OracleRollableRowText.new
+      out.id = Datasworn::from_json_data(AnyOracleRollableRowID, data["_id"])
+      out.roll = Datasworn::from_json_data(DiceRange, data["roll"])
+      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
+      out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
+      out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.oracle_rolls = Datasworn::from_json_data(Array[OracleRoll], data["oracle_rolls"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out.template = Datasworn::from_json_data(OracleRollTemplate, data["template"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["roll"] = Datasworn::to_json_data(roll)
+      data["text"] = Datasworn::to_json_data(text)
+      data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
+      data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["oracle_rolls"] = Datasworn::to_json_data(oracle_rolls) unless oracle_rolls.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data["template"] = Datasworn::to_json_data(template) unless template.nil?
+      data
+    end
+  end
+
+  # Represents a row in an oracle table that provides a secondary text field.
+  class OracleRollableRowText2
+    attr_accessor :id
+    attr_accessor :roll
+
+    # The primary text content of this row.
+    attr_accessor :text
+    attr_accessor :text2
+    attr_accessor :i18n
+
+    # Hints that the identified table should be rendered inside this table row.
+    attr_accessor :embed_table
+    attr_accessor :icon
+
+    # Further oracle rolls prompted by this table row.
+    attr_accessor :oracle_rolls
+    attr_accessor :suggestions
+    attr_accessor :tags
+    attr_accessor :template
+
+    def self.from_json_data(data)
+      out = OracleRollableRowText2.new
+      out.id = Datasworn::from_json_data(AnyOracleRollableRowID, data["_id"])
+      out.roll = Datasworn::from_json_data(DiceRange, data["roll"])
+      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
+      out.text2 = Datasworn::from_json_data(MarkdownString, data["text2"])
+      out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
+      out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.oracle_rolls = Datasworn::from_json_data(Array[OracleRoll], data["oracle_rolls"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out.template = Datasworn::from_json_data(OracleRollTemplate, data["template"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["roll"] = Datasworn::to_json_data(roll)
+      data["text"] = Datasworn::to_json_data(text)
+      data["text2"] = Datasworn::to_json_data(text2)
+      data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
+      data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["oracle_rolls"] = Datasworn::to_json_data(oracle_rolls) unless oracle_rolls.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data["template"] = Datasworn::to_json_data(template) unless template.nil?
+      data
+    end
+  end
+
+  # Represents a row in an oracle table with 3 text cells.
+  class OracleRollableRowText3
+    attr_accessor :id
+    attr_accessor :roll
+
+    # The primary text content of this row.
+    attr_accessor :text
+    attr_accessor :text2
+    attr_accessor :text3
+    attr_accessor :i18n
+
+    # Hints that the identified table should be rendered inside this table row.
+    attr_accessor :embed_table
+    attr_accessor :icon
+
+    # Further oracle rolls prompted by this table row.
+    attr_accessor :oracle_rolls
+    attr_accessor :suggestions
+    attr_accessor :tags
+    attr_accessor :template
+
+    def self.from_json_data(data)
+      out = OracleRollableRowText3.new
+      out.id = Datasworn::from_json_data(AnyOracleRollableRowID, data["_id"])
+      out.roll = Datasworn::from_json_data(DiceRange, data["roll"])
+      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
+      out.text2 = Datasworn::from_json_data(MarkdownString, data["text2"])
+      out.text3 = Datasworn::from_json_data(MarkdownString, data["text3"])
+      out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
+      out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.oracle_rolls = Datasworn::from_json_data(Array[OracleRoll], data["oracle_rolls"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out.template = Datasworn::from_json_data(OracleRollTemplate, data["template"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["roll"] = Datasworn::to_json_data(roll)
+      data["text"] = Datasworn::to_json_data(text)
+      data["text2"] = Datasworn::to_json_data(text2)
+      data["text3"] = Datasworn::to_json_data(text3)
+      data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
+      data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["oracle_rolls"] = Datasworn::to_json_data(oracle_rolls) unless oracle_rolls.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data["template"] = Datasworn::to_json_data(template) unless template.nil?
+      data
     end
   end
 
@@ -5570,7 +10213,7 @@ module Datasworn
       out.column_labels = Datasworn::from_json_data(OracleTableRollableTableTextColumnLabels, data["column_labels"])
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.rows = Datasworn::from_json_data(Array[OracleTableRowText], data["rows"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText], data["rows"])
       out.type = Datasworn::from_json_data(OracleTableRollableTableTextType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
@@ -5701,7 +10344,7 @@ module Datasworn
       out.column_labels = Datasworn::from_json_data(OracleTableRollableTableText2ColumnLabels, data["column_labels"])
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.rows = Datasworn::from_json_data(Array[OracleTableRowText2], data["rows"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText2], data["rows"])
       out.type = Datasworn::from_json_data(OracleTableRollableTableText2Type, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
@@ -5835,7 +10478,7 @@ module Datasworn
       out.column_labels = Datasworn::from_json_data(OracleTableRollableTableText3ColumnLabels, data["column_labels"])
       out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
       out.name = Datasworn::from_json_data(Label, data["name"])
-      out.rows = Datasworn::from_json_data(Array[OracleTableRowText3], data["rows"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText3], data["rows"])
       out.type = Datasworn::from_json_data(OracleTableRollableTableText3Type, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
@@ -5873,35 +10516,689 @@ module Datasworn
     end
   end
 
-  # Represents a row in an oracle table, with a single text cell.
-  class OracleTableRowText
+  # Provides column labels for this table. The `roll` key refers to the roll
+  # column showing the dice range (`min` and `max` on each table row). For all
+  # other column labels, see the `name` property of each child `OracleColumn`.
+  class OracleTableSharedRollsColumnLabels
     attr_accessor :roll
 
-    # The primary text content of this row.
-    attr_accessor :text
-    attr_accessor :i18n
+    def self.from_json_data(data)
+      out = OracleTableSharedRollsColumnLabels.new
+      out.roll = Datasworn::from_json_data(Label, data["roll"])
+      out
+    end
 
-    # Hints that the identified table should be rendered inside this table row.
-    attr_accessor :embed_table
-    attr_accessor :icon
+    def to_json_data
+      data = {}
+      data["roll"] = Datasworn::to_json_data(roll)
+      data
+    end
+  end
 
-    # Further oracle rolls prompted by this table row.
-    attr_accessor :oracle_rolls
-    attr_accessor :suggestions
-    attr_accessor :tags
-    attr_accessor :template
+  # A table with one shared roll column, and multiple unique text columns.
+  class OracleTableSharedRollsOracleType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    TABLE_SHARED_ROLLS = new("table_shared_rolls")
 
     def self.from_json_data(data)
-      out = OracleTableRowText.new
-      out.roll = Datasworn::from_json_data(DiceRange, data["roll"])
-      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
-      out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
-      out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
+      {
+        "table_shared_rolls" => TABLE_SHARED_ROLLS,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class OracleTableSharedRollsType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_COLLECTION = new("oracle_collection")
+
+    def self.from_json_data(data)
+      {
+        "oracle_collection" => ORACLE_COLLECTION,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # An OracleCollection representing a single table with one roll column and
+  # multiple `result` columns.
+  class OracleTableSharedRolls
+    # The unique Datasworn ID for this item.
+    attr_accessor :id
+
+    # Attribution for the original source (such as a book or website) of this
+    # item, including the author and licensing information.
+    attr_accessor :source
+
+    # Provides column labels for this table. The `roll` key refers to the roll
+    # column showing the dice range (`min` and `max` on each table row). For all
+    # other column labels, see the `name` property of each child `OracleColumn`.
+    attr_accessor :column_labels
+
+    # The primary name/label for this item.
+    attr_accessor :name
+
+    # A table with one shared roll column, and multiple unique text columns.
+    attr_accessor :oracle_type
+    attr_accessor :type
+
+    # Implementation hints or other developer-facing comments on this object.
+    # These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
+    # The name of this item as it appears on the page in the book, if it's
+    # different from `name`.
+    attr_accessor :canonical_name
+
+    # A thematic color associated with this collection.
+    attr_accessor :color
+    attr_accessor :contents
+
+    # A longer description of this collection, which might include multiple
+    # paragraphs. If it's only a couple sentences, use the `summary` key
+    # instead.
+    attr_accessor :description
+
+    # This collection's content enhances the identified collections, rather than
+    # being a standalone collection of its own.
+    attr_accessor :enhances
+
+    # An SVG icon associated with this collection.
+    attr_accessor :icon
+    attr_accessor :images
+
+    # This collection replaces the identified collections. References to the
+    # replaced collections can be considered equivalent to this collection.
+    attr_accessor :replaces
+    attr_accessor :suggestions
+
+    # A brief summary of this collection, no more than a few sentences in
+    # length. This is intended for use in application tooltips and similar sorts
+    # of hints. Longer text should use the "description" key instead.
+    attr_accessor :summary
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = OracleTableSharedRolls.new
+      out.id = Datasworn::from_json_data(OracleCollectionID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
+      out.column_labels = Datasworn::from_json_data(OracleTableSharedRollsColumnLabels, data["column_labels"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.oracle_type = Datasworn::from_json_data(OracleTableSharedRollsOracleType, data["oracle_type"])
+      out.type = Datasworn::from_json_data(OracleTableSharedRollsType, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.color = Datasworn::from_json_data(CSSColor, data["color"])
+      out.contents = Datasworn::from_json_data(Hash[String, OracleColumnText], data["contents"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.enhances = Datasworn::from_json_data(Array[OracleCollectionIDWildcard], data["enhances"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
-      out.oracle_rolls = Datasworn::from_json_data(Array[OracleRoll], data["oracle_rolls"])
+      out.images = Datasworn::from_json_data(Array[WebpImageURL], data["images"])
+      out.replaces = Datasworn::from_json_data(Array[OracleCollectionIDWildcard], data["replaces"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
       out.tags = Datasworn::from_json_data(Tags, data["tags"])
-      out.template = Datasworn::from_json_data(OracleRollTemplate, data["template"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
+      data["column_labels"] = Datasworn::to_json_data(column_labels)
+      data["name"] = Datasworn::to_json_data(name)
+      data["oracle_type"] = Datasworn::to_json_data(oracle_type)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["color"] = Datasworn::to_json_data(color) unless color.nil?
+      data["contents"] = Datasworn::to_json_data(contents) unless contents.nil?
+      data["description"] = Datasworn::to_json_data(description) unless description.nil?
+      data["enhances"] = Datasworn::to_json_data(enhances) unless enhances.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["images"] = Datasworn::to_json_data(images) unless images.nil?
+      data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  # The label at the head of each table column. The `roll` key refers to the
+  # roll column showing the dice range (`min` and `max` on each table row).
+  class OracleTableSharedTextColumnLabels
+    attr_accessor :text
+
+    def self.from_json_data(data)
+      out = OracleTableSharedTextColumnLabels.new
+      out.text = Datasworn::from_json_data(Label, data["text"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["text"] = Datasworn::to_json_data(text)
+      data
+    end
+  end
+
+  # A table with multiple unique roll columns, and one shared text column.
+  class OracleTableSharedTextOracleType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    TABLE_SHARED_TEXT = new("table_shared_text")
+
+    def self.from_json_data(data)
+      {
+        "table_shared_text" => TABLE_SHARED_TEXT,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class OracleTableSharedTextType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_COLLECTION = new("oracle_collection")
+
+    def self.from_json_data(data)
+      {
+        "oracle_collection" => ORACLE_COLLECTION,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # An OracleCollection representing a single table with multiple roll columns
+  # and one `result` column.
+  class OracleTableSharedText
+    # The unique Datasworn ID for this item.
+    attr_accessor :id
+
+    # Attribution for the original source (such as a book or website) of this
+    # item, including the author and licensing information.
+    attr_accessor :source
+
+    # The label at the head of each table column. The `roll` key refers to the
+    # roll column showing the dice range (`min` and `max` on each table row).
+    attr_accessor :column_labels
+
+    # The primary name/label for this item.
+    attr_accessor :name
+
+    # A table with multiple unique roll columns, and one shared text column.
+    attr_accessor :oracle_type
+    attr_accessor :type
+
+    # Implementation hints or other developer-facing comments on this object.
+    # These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
+    # The name of this item as it appears on the page in the book, if it's
+    # different from `name`.
+    attr_accessor :canonical_name
+
+    # A thematic color associated with this collection.
+    attr_accessor :color
+    attr_accessor :contents
+
+    # A longer description of this collection, which might include multiple
+    # paragraphs. If it's only a couple sentences, use the `summary` key
+    # instead.
+    attr_accessor :description
+
+    # This collection's content enhances the identified collections, rather than
+    # being a standalone collection of its own.
+    attr_accessor :enhances
+
+    # An SVG icon associated with this collection.
+    attr_accessor :icon
+    attr_accessor :images
+
+    # This collection replaces the identified collections. References to the
+    # replaced collections can be considered equivalent to this collection.
+    attr_accessor :replaces
+    attr_accessor :suggestions
+
+    # A brief summary of this collection, no more than a few sentences in
+    # length. This is intended for use in application tooltips and similar sorts
+    # of hints. Longer text should use the "description" key instead.
+    attr_accessor :summary
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = OracleTableSharedText.new
+      out.id = Datasworn::from_json_data(OracleCollectionID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
+      out.column_labels = Datasworn::from_json_data(OracleTableSharedTextColumnLabels, data["column_labels"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.oracle_type = Datasworn::from_json_data(OracleTableSharedTextOracleType, data["oracle_type"])
+      out.type = Datasworn::from_json_data(OracleTableSharedTextType, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.color = Datasworn::from_json_data(CSSColor, data["color"])
+      out.contents = Datasworn::from_json_data(Hash[String, OracleColumnText], data["contents"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.enhances = Datasworn::from_json_data(Array[OracleCollectionIDWildcard], data["enhances"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.images = Datasworn::from_json_data(Array[WebpImageURL], data["images"])
+      out.replaces = Datasworn::from_json_data(Array[OracleCollectionIDWildcard], data["replaces"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
+      data["column_labels"] = Datasworn::to_json_data(column_labels)
+      data["name"] = Datasworn::to_json_data(name)
+      data["oracle_type"] = Datasworn::to_json_data(oracle_type)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["color"] = Datasworn::to_json_data(color) unless color.nil?
+      data["contents"] = Datasworn::to_json_data(contents) unless contents.nil?
+      data["description"] = Datasworn::to_json_data(description) unless description.nil?
+      data["enhances"] = Datasworn::to_json_data(enhances) unless enhances.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["images"] = Datasworn::to_json_data(images) unless images.nil?
+      data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  # The label at the head of each table column. The `roll` key refers to the
+  # roll column showing the dice range (`min` and `max` on each table row).
+  class OracleTableSharedText2ColumnLabels
+    attr_accessor :text
+    attr_accessor :text2
+
+    def self.from_json_data(data)
+      out = OracleTableSharedText2ColumnLabels.new
+      out.text = Datasworn::from_json_data(Label, data["text"])
+      out.text2 = Datasworn::from_json_data(Label, data["text2"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["text"] = Datasworn::to_json_data(text)
+      data["text2"] = Datasworn::to_json_data(text2)
+      data
+    end
+  end
+
+  # A table with multiple unique roll columns, and 2 shared text columns.
+  class OracleTableSharedText2OracleType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    TABLE_SHARED_TEXT2 = new("table_shared_text2")
+
+    def self.from_json_data(data)
+      {
+        "table_shared_text2" => TABLE_SHARED_TEXT2,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class OracleTableSharedText2Type
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_COLLECTION = new("oracle_collection")
+
+    def self.from_json_data(data)
+      {
+        "oracle_collection" => ORACLE_COLLECTION,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # An OracleCollection representing a single table with multiple roll columns,
+  # and 2 shared text columns.
+  class OracleTableSharedText2
+    # The unique Datasworn ID for this item.
+    attr_accessor :id
+
+    # Attribution for the original source (such as a book or website) of this
+    # item, including the author and licensing information.
+    attr_accessor :source
+
+    # The label at the head of each table column. The `roll` key refers to the
+    # roll column showing the dice range (`min` and `max` on each table row).
+    attr_accessor :column_labels
+
+    # The primary name/label for this item.
+    attr_accessor :name
+
+    # A table with multiple unique roll columns, and 2 shared text columns.
+    attr_accessor :oracle_type
+    attr_accessor :type
+
+    # Implementation hints or other developer-facing comments on this object.
+    # These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
+    # The name of this item as it appears on the page in the book, if it's
+    # different from `name`.
+    attr_accessor :canonical_name
+
+    # A thematic color associated with this collection.
+    attr_accessor :color
+    attr_accessor :contents
+
+    # A longer description of this collection, which might include multiple
+    # paragraphs. If it's only a couple sentences, use the `summary` key
+    # instead.
+    attr_accessor :description
+
+    # This collection's content enhances the identified collections, rather than
+    # being a standalone collection of its own.
+    attr_accessor :enhances
+
+    # An SVG icon associated with this collection.
+    attr_accessor :icon
+    attr_accessor :images
+
+    # This collection replaces the identified collections. References to the
+    # replaced collections can be considered equivalent to this collection.
+    attr_accessor :replaces
+    attr_accessor :suggestions
+
+    # A brief summary of this collection, no more than a few sentences in
+    # length. This is intended for use in application tooltips and similar sorts
+    # of hints. Longer text should use the "description" key instead.
+    attr_accessor :summary
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = OracleTableSharedText2.new
+      out.id = Datasworn::from_json_data(OracleCollectionID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
+      out.column_labels = Datasworn::from_json_data(OracleTableSharedText2ColumnLabels, data["column_labels"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.oracle_type = Datasworn::from_json_data(OracleTableSharedText2OracleType, data["oracle_type"])
+      out.type = Datasworn::from_json_data(OracleTableSharedText2Type, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.color = Datasworn::from_json_data(CSSColor, data["color"])
+      out.contents = Datasworn::from_json_data(Hash[String, OracleColumnText2], data["contents"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.enhances = Datasworn::from_json_data(Array[OracleCollectionIDWildcard], data["enhances"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.images = Datasworn::from_json_data(Array[WebpImageURL], data["images"])
+      out.replaces = Datasworn::from_json_data(Array[OracleCollectionIDWildcard], data["replaces"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
+      data["column_labels"] = Datasworn::to_json_data(column_labels)
+      data["name"] = Datasworn::to_json_data(name)
+      data["oracle_type"] = Datasworn::to_json_data(oracle_type)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["color"] = Datasworn::to_json_data(color) unless color.nil?
+      data["contents"] = Datasworn::to_json_data(contents) unless contents.nil?
+      data["description"] = Datasworn::to_json_data(description) unless description.nil?
+      data["enhances"] = Datasworn::to_json_data(enhances) unless enhances.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["images"] = Datasworn::to_json_data(images) unless images.nil?
+      data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  # The label at the head of each table column. The `roll` key refers to the
+  # roll column showing the dice range (`min` and `max` on each table row).
+  class OracleTableSharedText3ColumnLabels
+    attr_accessor :text
+
+    def self.from_json_data(data)
+      out = OracleTableSharedText3ColumnLabels.new
+      out.text = Datasworn::from_json_data(Label, data["text"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["text"] = Datasworn::to_json_data(text)
+      data
+    end
+  end
+
+  # A table with multiple unique roll columns, and 3 shared text columns.
+  class OracleTableSharedText3OracleType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    TABLE_SHARED_TEXT3 = new("table_shared_text3")
+
+    def self.from_json_data(data)
+      {
+        "table_shared_text3" => TABLE_SHARED_TEXT3,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class OracleTableSharedText3Type
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_COLLECTION = new("oracle_collection")
+
+    def self.from_json_data(data)
+      {
+        "oracle_collection" => ORACLE_COLLECTION,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # An OracleCollection representing a single table with multiple roll columns,
+  # and 2 shared text columns.
+  class OracleTableSharedText3
+    # The unique Datasworn ID for this item.
+    attr_accessor :id
+
+    # Attribution for the original source (such as a book or website) of this
+    # item, including the author and licensing information.
+    attr_accessor :source
+
+    # The label at the head of each table column. The `roll` key refers to the
+    # roll column showing the dice range (`min` and `max` on each table row).
+    attr_accessor :column_labels
+
+    # The primary name/label for this item.
+    attr_accessor :name
+
+    # A table with multiple unique roll columns, and 3 shared text columns.
+    attr_accessor :oracle_type
+    attr_accessor :type
+
+    # Implementation hints or other developer-facing comments on this object.
+    # These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
+    # The name of this item as it appears on the page in the book, if it's
+    # different from `name`.
+    attr_accessor :canonical_name
+
+    # A thematic color associated with this collection.
+    attr_accessor :color
+    attr_accessor :contents
+
+    # A longer description of this collection, which might include multiple
+    # paragraphs. If it's only a couple sentences, use the `summary` key
+    # instead.
+    attr_accessor :description
+
+    # This collection's content enhances the identified collections, rather than
+    # being a standalone collection of its own.
+    attr_accessor :enhances
+
+    # An SVG icon associated with this collection.
+    attr_accessor :icon
+    attr_accessor :images
+
+    # This collection replaces the identified collections. References to the
+    # replaced collections can be considered equivalent to this collection.
+    attr_accessor :replaces
+    attr_accessor :suggestions
+
+    # A brief summary of this collection, no more than a few sentences in
+    # length. This is intended for use in application tooltips and similar sorts
+    # of hints. Longer text should use the "description" key instead.
+    attr_accessor :summary
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = OracleTableSharedText3.new
+      out.id = Datasworn::from_json_data(OracleCollectionID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
+      out.column_labels = Datasworn::from_json_data(OracleTableSharedText3ColumnLabels, data["column_labels"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.oracle_type = Datasworn::from_json_data(OracleTableSharedText3OracleType, data["oracle_type"])
+      out.type = Datasworn::from_json_data(OracleTableSharedText3Type, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.color = Datasworn::from_json_data(CSSColor, data["color"])
+      out.contents = Datasworn::from_json_data(Hash[String, OracleColumnText3], data["contents"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.enhances = Datasworn::from_json_data(Array[OracleCollectionIDWildcard], data["enhances"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.images = Datasworn::from_json_data(Array[WebpImageURL], data["images"])
+      out.replaces = Datasworn::from_json_data(Array[OracleCollectionIDWildcard], data["replaces"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
+      data["column_labels"] = Datasworn::to_json_data(column_labels)
+      data["name"] = Datasworn::to_json_data(name)
+      data["oracle_type"] = Datasworn::to_json_data(oracle_type)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["color"] = Datasworn::to_json_data(color) unless color.nil?
+      data["contents"] = Datasworn::to_json_data(contents) unless contents.nil?
+      data["description"] = Datasworn::to_json_data(description) unless description.nil?
+      data["enhances"] = Datasworn::to_json_data(enhances) unless enhances.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["images"] = Datasworn::to_json_data(images) unless images.nil?
+      data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  # The label at the head of each table column. The `roll` key refers to the
+  # roll column showing the dice range (`min` and `max` on each table row).
+  class OracleTableTextColumnLabels
+    attr_accessor :roll
+    attr_accessor :text
+
+    def self.from_json_data(data)
+      out = OracleTableTextColumnLabels.new
+      out.roll = Datasworn::from_json_data(Label, data["roll"])
+      out.text = Datasworn::from_json_data(Label, data["text"])
       out
     end
 
@@ -5909,48 +11206,191 @@ module Datasworn
       data = {}
       data["roll"] = Datasworn::to_json_data(roll)
       data["text"] = Datasworn::to_json_data(text)
-      data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
-      data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
-      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
-      data["oracle_rolls"] = Datasworn::to_json_data(oracle_rolls) unless oracle_rolls.nil?
-      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
-      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
-      data["template"] = Datasworn::to_json_data(template) unless template.nil?
       data
     end
   end
 
-  # Represents a row in an oracle table that provides a secondary text field.
-  class OracleTableRowText2
-    attr_accessor :roll
+  class OracleTableTextOracleType
+    attr_accessor :value
 
-    # The primary text content of this row.
-    attr_accessor :text
-    attr_accessor :text2
-    attr_accessor :i18n
+    def initialize(value)
+      self.value = value
+    end
 
-    # Hints that the identified table should be rendered inside this table row.
-    attr_accessor :embed_table
-    attr_accessor :icon
+    private_class_method :new
 
-    # Further oracle rolls prompted by this table row.
-    attr_accessor :oracle_rolls
-    attr_accessor :suggestions
-    attr_accessor :tags
-    attr_accessor :template
+    TABLE_TEXT = new("table_text")
 
     def self.from_json_data(data)
-      out = OracleTableRowText2.new
-      out.roll = Datasworn::from_json_data(DiceRange, data["roll"])
-      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
-      out.text2 = Datasworn::from_json_data(MarkdownString, data["text2"])
-      out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
-      out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
+      {
+        "table_text" => TABLE_TEXT,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class OracleTableTextType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_ROLLABLE = new("oracle_rollable")
+
+    def self.from_json_data(data)
+      {
+        "oracle_rollable" => ORACLE_ROLLABLE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class OracleTableTextRecommendedRolls
+    attr_accessor :max
+    attr_accessor :min
+
+    def self.from_json_data(data)
+      out = OracleTableTextRecommendedRolls.new
+      out.max = Datasworn::from_json_data(Integer, data["max"])
+      out.min = Datasworn::from_json_data(Integer, data["min"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["max"] = Datasworn::to_json_data(max)
+      data["min"] = Datasworn::to_json_data(min)
+      data
+    end
+  end
+
+  # Represents a basic rollable oracle table with one roll column and one text
+  # result column.
+  class OracleTableText
+    # The unique Datasworn ID for this item.
+    attr_accessor :id
+
+    # Attribution for the original source (such as a book or website) of this
+    # item, including the author and licensing information.
+    attr_accessor :source
+
+    # The label at the head of each table column. The `roll` key refers to the
+    # roll column showing the dice range (`min` and `max` on each table row).
+    attr_accessor :column_labels
+
+    # The roll used to select a result on this oracle.
+    attr_accessor :dice
+
+    # The primary name/label for this item.
+    attr_accessor :name
+    attr_accessor :oracle_type
+
+    # An array of objects, each representing a single row of the table.
+    attr_accessor :rows
+    attr_accessor :type
+
+    # Implementation hints or other developer-facing comments on this object.
+    # These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
+    # The name of this item as it appears on the page in the book, if it's
+    # different from `name`.
+    attr_accessor :canonical_name
+
+    # A longer description of the oracle table's intended usage, which might
+    # include multiple paragraphs. If it's only a couple sentences, use the
+    # `summary` key instead.
+    attr_accessor :description
+
+    # An icon that represents this table.
+    attr_accessor :icon
+
+    # Most oracle tables are insensitive to matches, but a few define special
+    # match behavior.
+    attr_accessor :match
+    attr_accessor :recommended_rolls
+
+    # Indicates that this object replaces the identified OracleRollables.
+    # References to the replaced objects can be considered equivalent to this
+    # object.
+    attr_accessor :replaces
+    attr_accessor :suggestions
+
+    # A brief summary of the oracle table's intended usage, no more than a few
+    # sentences in length. This is intended for use in application tooltips
+    # and similar sorts of hints. Longer text should use the "description" key
+    # instead.
+    attr_accessor :summary
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = OracleTableText.new
+      out.id = Datasworn::from_json_data(OracleRollableID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
+      out.column_labels = Datasworn::from_json_data(OracleTableTextColumnLabels, data["column_labels"])
+      out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.oracle_type = Datasworn::from_json_data(OracleTableTextOracleType, data["oracle_type"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText], data["rows"])
+      out.type = Datasworn::from_json_data(OracleTableTextType, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
-      out.oracle_rolls = Datasworn::from_json_data(Array[OracleRoll], data["oracle_rolls"])
+      out.match = Datasworn::from_json_data(OracleMatchBehavior, data["match"])
+      out.recommended_rolls = Datasworn::from_json_data(OracleTableTextRecommendedRolls, data["recommended_rolls"])
+      out.replaces = Datasworn::from_json_data(Array[OracleRollableIDWildcard], data["replaces"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
       out.tags = Datasworn::from_json_data(Tags, data["tags"])
-      out.template = Datasworn::from_json_data(OracleRollTemplate, data["template"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
+      data["column_labels"] = Datasworn::to_json_data(column_labels)
+      data["dice"] = Datasworn::to_json_data(dice)
+      data["name"] = Datasworn::to_json_data(name)
+      data["oracle_type"] = Datasworn::to_json_data(oracle_type)
+      data["rows"] = Datasworn::to_json_data(rows)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["description"] = Datasworn::to_json_data(description) unless description.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["match"] = Datasworn::to_json_data(match) unless match.nil?
+      data["recommended_rolls"] = Datasworn::to_json_data(recommended_rolls) unless recommended_rolls.nil?
+      data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  # The label at the head of each table column. The `roll` key refers to the
+  # roll column showing the dice range (`min` and `max` on each table row).
+  class OracleTableText2ColumnLabels
+    attr_accessor :roll
+    attr_accessor :text
+    attr_accessor :text2
+
+    def self.from_json_data(data)
+      out = OracleTableText2ColumnLabels.new
+      out.roll = Datasworn::from_json_data(Label, data["roll"])
+      out.text = Datasworn::from_json_data(Label, data["text"])
+      out.text2 = Datasworn::from_json_data(Label, data["text2"])
       out
     end
 
@@ -5959,50 +11399,192 @@ module Datasworn
       data["roll"] = Datasworn::to_json_data(roll)
       data["text"] = Datasworn::to_json_data(text)
       data["text2"] = Datasworn::to_json_data(text2)
-      data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
-      data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
-      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
-      data["oracle_rolls"] = Datasworn::to_json_data(oracle_rolls) unless oracle_rolls.nil?
-      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
-      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
-      data["template"] = Datasworn::to_json_data(template) unless template.nil?
       data
     end
   end
 
-  # Represents a row in an oracle table with 3 text cells.
-  class OracleTableRowText3
-    attr_accessor :roll
+  class OracleTableText2OracleType
+    attr_accessor :value
 
-    # The primary text content of this row.
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    TABLE_TEXT2 = new("table_text2")
+
+    def self.from_json_data(data)
+      {
+        "table_text2" => TABLE_TEXT2,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class OracleTableText2Type
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_ROLLABLE = new("oracle_rollable")
+
+    def self.from_json_data(data)
+      {
+        "oracle_rollable" => ORACLE_ROLLABLE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class OracleTableText2RecommendedRolls
+    attr_accessor :max
+    attr_accessor :min
+
+    def self.from_json_data(data)
+      out = OracleTableText2RecommendedRolls.new
+      out.max = Datasworn::from_json_data(Integer, data["max"])
+      out.min = Datasworn::from_json_data(Integer, data["min"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["max"] = Datasworn::to_json_data(max)
+      data["min"] = Datasworn::to_json_data(min)
+      data
+    end
+  end
+
+  # A rollable oracle table with one roll column and two text columns.
+  class OracleTableText2
+    # The unique Datasworn ID for this item.
+    attr_accessor :id
+
+    # Attribution for the original source (such as a book or website) of this
+    # item, including the author and licensing information.
+    attr_accessor :source
+
+    # The label at the head of each table column. The `roll` key refers to the
+    # roll column showing the dice range (`min` and `max` on each table row).
+    attr_accessor :column_labels
+
+    # The roll used to select a result on this oracle.
+    attr_accessor :dice
+
+    # The primary name/label for this item.
+    attr_accessor :name
+    attr_accessor :oracle_type
+
+    # An array of objects, each representing a single row of the table.
+    attr_accessor :rows
+    attr_accessor :type
+
+    # Implementation hints or other developer-facing comments on this object.
+    # These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
+    # The name of this item as it appears on the page in the book, if it's
+    # different from `name`.
+    attr_accessor :canonical_name
+
+    # A longer description of the oracle table's intended usage, which might
+    # include multiple paragraphs. If it's only a couple sentences, use the
+    # `summary` key instead.
+    attr_accessor :description
+
+    # An icon that represents this table.
+    attr_accessor :icon
+
+    # Most oracle tables are insensitive to matches, but a few define special
+    # match behavior.
+    attr_accessor :match
+    attr_accessor :recommended_rolls
+
+    # Indicates that this object replaces the identified OracleRollables.
+    # References to the replaced objects can be considered equivalent to this
+    # object.
+    attr_accessor :replaces
+    attr_accessor :suggestions
+
+    # A brief summary of the oracle table's intended usage, no more than a few
+    # sentences in length. This is intended for use in application tooltips
+    # and similar sorts of hints. Longer text should use the "description" key
+    # instead.
+    attr_accessor :summary
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = OracleTableText2.new
+      out.id = Datasworn::from_json_data(OracleRollableID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
+      out.column_labels = Datasworn::from_json_data(OracleTableText2ColumnLabels, data["column_labels"])
+      out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.oracle_type = Datasworn::from_json_data(OracleTableText2OracleType, data["oracle_type"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText2], data["rows"])
+      out.type = Datasworn::from_json_data(OracleTableText2Type, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.match = Datasworn::from_json_data(OracleMatchBehavior, data["match"])
+      out.recommended_rolls = Datasworn::from_json_data(OracleTableText2RecommendedRolls, data["recommended_rolls"])
+      out.replaces = Datasworn::from_json_data(Array[OracleRollableIDWildcard], data["replaces"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
+      data["column_labels"] = Datasworn::to_json_data(column_labels)
+      data["dice"] = Datasworn::to_json_data(dice)
+      data["name"] = Datasworn::to_json_data(name)
+      data["oracle_type"] = Datasworn::to_json_data(oracle_type)
+      data["rows"] = Datasworn::to_json_data(rows)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["description"] = Datasworn::to_json_data(description) unless description.nil?
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data["match"] = Datasworn::to_json_data(match) unless match.nil?
+      data["recommended_rolls"] = Datasworn::to_json_data(recommended_rolls) unless recommended_rolls.nil?
+      data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
+      data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
+      data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
+      data
+    end
+  end
+
+  # The label at the head of each table column. The `roll` key refers to the
+  # roll column showing the dice range (`min` and `max` on each table row).
+  class OracleTableText3ColumnLabels
+    attr_accessor :roll
     attr_accessor :text
     attr_accessor :text2
     attr_accessor :text3
-    attr_accessor :i18n
-
-    # Hints that the identified table should be rendered inside this table row.
-    attr_accessor :embed_table
-    attr_accessor :icon
-
-    # Further oracle rolls prompted by this table row.
-    attr_accessor :oracle_rolls
-    attr_accessor :suggestions
-    attr_accessor :tags
-    attr_accessor :template
 
     def self.from_json_data(data)
-      out = OracleTableRowText3.new
-      out.roll = Datasworn::from_json_data(DiceRange, data["roll"])
-      out.text = Datasworn::from_json_data(MarkdownString, data["text"])
-      out.text2 = Datasworn::from_json_data(MarkdownString, data["text2"])
-      out.text3 = Datasworn::from_json_data(MarkdownString, data["text3"])
-      out.i18n = Datasworn::from_json_data(I18nHints, data["_i18n"])
-      out.embed_table = Datasworn::from_json_data(OracleRollableID, data["embed_table"])
-      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
-      out.oracle_rolls = Datasworn::from_json_data(Array[OracleRoll], data["oracle_rolls"])
-      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
-      out.tags = Datasworn::from_json_data(Tags, data["tags"])
-      out.template = Datasworn::from_json_data(OracleRollTemplate, data["template"])
+      out = OracleTableText3ColumnLabels.new
+      out.roll = Datasworn::from_json_data(Label, data["roll"])
+      out.text = Datasworn::from_json_data(Label, data["text"])
+      out.text2 = Datasworn::from_json_data(Label, data["text2"])
+      out.text3 = Datasworn::from_json_data(Label, data["text3"])
       out
     end
 
@@ -6012,13 +11594,174 @@ module Datasworn
       data["text"] = Datasworn::to_json_data(text)
       data["text2"] = Datasworn::to_json_data(text2)
       data["text3"] = Datasworn::to_json_data(text3)
-      data["_i18n"] = Datasworn::to_json_data(i18n) unless i18n.nil?
-      data["embed_table"] = Datasworn::to_json_data(embed_table) unless embed_table.nil?
+      data
+    end
+  end
+
+  class OracleTableText3OracleType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    TABLE_TEXT3 = new("table_text3")
+
+    def self.from_json_data(data)
+      {
+        "table_text3" => TABLE_TEXT3,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class OracleTableText3Type
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ORACLE_ROLLABLE = new("oracle_rollable")
+
+    def self.from_json_data(data)
+      {
+        "oracle_rollable" => ORACLE_ROLLABLE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class OracleTableText3RecommendedRolls
+    attr_accessor :max
+    attr_accessor :min
+
+    def self.from_json_data(data)
+      out = OracleTableText3RecommendedRolls.new
+      out.max = Datasworn::from_json_data(Integer, data["max"])
+      out.min = Datasworn::from_json_data(Integer, data["min"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["max"] = Datasworn::to_json_data(max)
+      data["min"] = Datasworn::to_json_data(min)
+      data
+    end
+  end
+
+  # A rollable oracle table with one roll column and 3 text columns.
+  class OracleTableText3
+    # The unique Datasworn ID for this item.
+    attr_accessor :id
+
+    # Attribution for the original source (such as a book or website) of this
+    # item, including the author and licensing information.
+    attr_accessor :source
+
+    # The label at the head of each table column. The `roll` key refers to the
+    # roll column showing the dice range (`min` and `max` on each table row).
+    attr_accessor :column_labels
+
+    # The roll used to select a result on this oracle.
+    attr_accessor :dice
+
+    # The primary name/label for this item.
+    attr_accessor :name
+    attr_accessor :oracle_type
+
+    # An array of objects, each representing a single row of the table.
+    attr_accessor :rows
+    attr_accessor :type
+
+    # Implementation hints or other developer-facing comments on this object.
+    # These should be omitted when presenting the object for gameplay.
+    attr_accessor :comment
+
+    # The name of this item as it appears on the page in the book, if it's
+    # different from `name`.
+    attr_accessor :canonical_name
+
+    # A longer description of the oracle table's intended usage, which might
+    # include multiple paragraphs. If it's only a couple sentences, use the
+    # `summary` key instead.
+    attr_accessor :description
+
+    # An icon that represents this table.
+    attr_accessor :icon
+
+    # Most oracle tables are insensitive to matches, but a few define special
+    # match behavior.
+    attr_accessor :match
+    attr_accessor :recommended_rolls
+
+    # Indicates that this object replaces the identified OracleRollables.
+    # References to the replaced objects can be considered equivalent to this
+    # object.
+    attr_accessor :replaces
+    attr_accessor :suggestions
+
+    # A brief summary of the oracle table's intended usage, no more than a few
+    # sentences in length. This is intended for use in application tooltips
+    # and similar sorts of hints. Longer text should use the "description" key
+    # instead.
+    attr_accessor :summary
+    attr_accessor :tags
+
+    def self.from_json_data(data)
+      out = OracleTableText3.new
+      out.id = Datasworn::from_json_data(OracleRollableID, data["_id"])
+      out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
+      out.column_labels = Datasworn::from_json_data(OracleTableText3ColumnLabels, data["column_labels"])
+      out.dice = Datasworn::from_json_data(DiceExpression, data["dice"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out.oracle_type = Datasworn::from_json_data(OracleTableText3OracleType, data["oracle_type"])
+      out.rows = Datasworn::from_json_data(Array[OracleRollableRowText3], data["rows"])
+      out.type = Datasworn::from_json_data(OracleTableText3Type, data["type"])
+      out.comment = Datasworn::from_json_data(String, data["_comment"])
+      out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out.match = Datasworn::from_json_data(OracleMatchBehavior, data["match"])
+      out.recommended_rolls = Datasworn::from_json_data(OracleTableText3RecommendedRolls, data["recommended_rolls"])
+      out.replaces = Datasworn::from_json_data(Array[OracleRollableIDWildcard], data["replaces"])
+      out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
+      out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
+      out.tags = Datasworn::from_json_data(Tags, data["tags"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["_source"] = Datasworn::to_json_data(source)
+      data["column_labels"] = Datasworn::to_json_data(column_labels)
+      data["dice"] = Datasworn::to_json_data(dice)
+      data["name"] = Datasworn::to_json_data(name)
+      data["oracle_type"] = Datasworn::to_json_data(oracle_type)
+      data["rows"] = Datasworn::to_json_data(rows)
+      data["type"] = Datasworn::to_json_data(type)
+      data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
+      data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
+      data["description"] = Datasworn::to_json_data(description) unless description.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
-      data["oracle_rolls"] = Datasworn::to_json_data(oracle_rolls) unless oracle_rolls.nil?
+      data["match"] = Datasworn::to_json_data(match) unless match.nil?
+      data["recommended_rolls"] = Datasworn::to_json_data(recommended_rolls) unless recommended_rolls.nil?
+      data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
+      data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
       data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
-      data["template"] = Datasworn::to_json_data(template) unless template.nil?
       data
     end
   end
@@ -6166,6 +11909,21 @@ module Datasworn
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
       data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
       data
+    end
+  end
+
+  # Represents a page number in a book.
+  class PageNumber
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = PageNumber.new
+      out.value = Datasworn.from_json_data(Integer, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
     end
   end
 
@@ -6434,6 +12192,21 @@ module Datasworn
     end
   end
 
+  # A wildcarded RarityId that can be used to match multiple Rarity objects.
+  class RarityIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = RarityIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
   # Provides a value like a stat, condition meter, or other number (usually for
   # use in an action roll). The expected value is an integer, or null.
   class RollableValue
@@ -6669,6 +12442,160 @@ module Datasworn
     end
   end
 
+  # The version of the Datasworn format used by this data.
+  class RulesetDataswornVersion
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    DEFAULT_NAME = new("0.1.0")
+
+    def self.from_json_data(data)
+      {
+        "0.1.0" => DEFAULT_NAME,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  class RulesetType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    RULESET = new("ruleset")
+
+    def self.from_json_data(data)
+      {
+        "ruleset" => RULESET,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # A standalone Datasworn package that describes its own ruleset.
+  class Ruleset
+    attr_accessor :id
+
+    # A dictionary object containing asset collections, which contain assets.
+    attr_accessor :assets
+
+    # Lists authors credited by the source material.
+    attr_accessor :authors
+
+    # The version of the Datasworn format used by this data.
+    attr_accessor :datasworn_version
+
+    # The date of the source documents's last update, formatted YYYY-MM-DD.
+    # Required because it's used to determine whether the data needs updating.
+    attr_accessor :date
+    attr_accessor :license
+
+    # A dictionary object containing move categories, which contain moves.
+    attr_accessor :moves
+
+    # A dictionary object containing oracle collections, which may contain
+    # oracle tables and/or oracle collections.
+    attr_accessor :oracles
+    attr_accessor :rules
+
+    # The title of the source document.
+    attr_accessor :title
+    attr_accessor :type
+
+    # A URL where the source document is available.
+    attr_accessor :url
+
+    # A dictionary object containing atlas collections, which contain atlas
+    # entries.
+    attr_accessor :atlas
+
+    # A dictionary object of delve sites, like the premade delve sites presented
+    # in Ironsworn: Delve
+    attr_accessor :delve_sites
+    attr_accessor :description
+
+    # A dictionary object containing NPC collections, which contain NPCs.
+    attr_accessor :npcs
+
+    # A dictionary object containing rarities, like those presented in
+    # Ironsworn: Delve.
+    attr_accessor :rarities
+
+    # A dictionary object containing delve site domains.
+    attr_accessor :site_domains
+
+    # A dictionary object containing delve site themes.
+    attr_accessor :site_themes
+
+    # A dictionary object of truth categories.
+    attr_accessor :truths
+
+    def self.from_json_data(data)
+      out = Ruleset.new
+      out.id = Datasworn::from_json_data(RulesetID, data["_id"])
+      out.assets = Datasworn::from_json_data(Hash[String, AssetCollection], data["assets"])
+      out.authors = Datasworn::from_json_data(Array[AuthorInfo], data["authors"])
+      out.datasworn_version = Datasworn::from_json_data(RulesetDataswornVersion, data["datasworn_version"])
+      out.date = Datasworn::from_json_data(DateTime, data["date"])
+      out.license = Datasworn::from_json_data(License, data["license"])
+      out.moves = Datasworn::from_json_data(Hash[String, MoveCategory], data["moves"])
+      out.oracles = Datasworn::from_json_data(Hash[String, OracleTablesCollection], data["oracles"])
+      out.rules = Datasworn::from_json_data(Rules, data["rules"])
+      out.title = Datasworn::from_json_data(String, data["title"])
+      out.type = Datasworn::from_json_data(RulesetType, data["type"])
+      out.url = Datasworn::from_json_data(WebURL, data["url"])
+      out.atlas = Datasworn::from_json_data(Hash[String, AtlasCollection], data["atlas"])
+      out.delve_sites = Datasworn::from_json_data(Hash[String, DelveSite], data["delve_sites"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.npcs = Datasworn::from_json_data(Hash[String, NpcCollection], data["npcs"])
+      out.rarities = Datasworn::from_json_data(Hash[String, Rarity], data["rarities"])
+      out.site_domains = Datasworn::from_json_data(Hash[String, DelveSiteDomain], data["site_domains"])
+      out.site_themes = Datasworn::from_json_data(Hash[String, DelveSiteTheme], data["site_themes"])
+      out.truths = Datasworn::from_json_data(Hash[String, Truth], data["truths"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["_id"] = Datasworn::to_json_data(id)
+      data["assets"] = Datasworn::to_json_data(assets)
+      data["authors"] = Datasworn::to_json_data(authors)
+      data["datasworn_version"] = Datasworn::to_json_data(datasworn_version)
+      data["date"] = Datasworn::to_json_data(date)
+      data["license"] = Datasworn::to_json_data(license)
+      data["moves"] = Datasworn::to_json_data(moves)
+      data["oracles"] = Datasworn::to_json_data(oracles)
+      data["rules"] = Datasworn::to_json_data(rules)
+      data["title"] = Datasworn::to_json_data(title)
+      data["type"] = Datasworn::to_json_data(type)
+      data["url"] = Datasworn::to_json_data(url)
+      data["atlas"] = Datasworn::to_json_data(atlas) unless atlas.nil?
+      data["delve_sites"] = Datasworn::to_json_data(delve_sites) unless delve_sites.nil?
+      data["description"] = Datasworn::to_json_data(description) unless description.nil?
+      data["npcs"] = Datasworn::to_json_data(npcs) unless npcs.nil?
+      data["rarities"] = Datasworn::to_json_data(rarities) unless rarities.nil?
+      data["site_domains"] = Datasworn::to_json_data(site_domains) unless site_domains.nil?
+      data["site_themes"] = Datasworn::to_json_data(site_themes) unless site_themes.nil?
+      data["truths"] = Datasworn::to_json_data(truths) unless truths.nil?
+      data
+    end
+  end
+
   # The ID of standalone Datasworn package that describes its own ruleset.
   class RulesetID
     attr_accessor :value
@@ -6681,6 +12608,120 @@ module Datasworn
 
     def to_json_data
       Datasworn.to_json_data(value)
+    end
+  end
+
+  class SelectEnhancementFieldChoice0
+    attr_accessor :choice_type
+
+    def self.from_json_data(data)
+      {
+        "choice" => SelectEnhancementFieldChoiceChoice,
+        "choice_group" => SelectEnhancementFieldChoiceChoiceGroup,
+      }[data["choice_type"]].from_json_data(data)
+    end
+  end
+
+  # Represents an option in a list of choices.
+  class SelectEnhancementFieldChoiceChoice < SelectEnhancementFieldChoice0
+    attr_accessor :label
+    attr_accessor :enhance_asset
+    attr_accessor :enhance_moves
+
+    def self.from_json_data(data)
+      out = SelectEnhancementFieldChoiceChoice.new
+      out.choice_type = "choice"
+      out.label = Datasworn::from_json_data(Label, data["label"])
+      out.enhance_asset = Datasworn::from_json_data(AssetEnhancement, data["enhance_asset"])
+      out.enhance_moves = Datasworn::from_json_data(Array[MoveEnhancement], data["enhance_moves"])
+      out
+    end
+
+    def to_json_data
+      data = { "choice_type" => "choice" }
+      data["label"] = Datasworn::to_json_data(label)
+      data["enhance_asset"] = Datasworn::to_json_data(enhance_asset) unless enhance_asset.nil?
+      data["enhance_moves"] = Datasworn::to_json_data(enhance_moves) unless enhance_moves.nil?
+      data
+    end
+  end
+
+  # Represents a grouping of options in a list of choices.
+  class SelectEnhancementFieldChoiceChoiceGroup < SelectEnhancementFieldChoice0
+    attr_accessor :choices
+    attr_accessor :name
+
+    def self.from_json_data(data)
+      out = SelectEnhancementFieldChoiceChoiceGroup.new
+      out.choice_type = "choice_group"
+      out.choices = Datasworn::from_json_data(Hash[String, SelectEnhancementFieldChoice], data["choices"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out
+    end
+
+    def to_json_data
+      data = { "choice_type" => "choice_group" }
+      data["choices"] = Datasworn::to_json_data(choices)
+      data["name"] = Datasworn::to_json_data(name)
+      data
+    end
+  end
+
+  class SelectEnhancementFieldFieldType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    SELECT_ENHANCEMENT = new("select_enhancement")
+
+    def self.from_json_data(data)
+      {
+        "select_enhancement" => SELECT_ENHANCEMENT,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # Select from player and/or asset enhancements. Use it to describe modal
+  # abilities. For examples, see Ironclad (classic Ironsworn) and Windbinder
+  # (Sundered Isles).
+  class SelectEnhancementField
+    attr_accessor :choices
+    attr_accessor :field_type
+    attr_accessor :label
+
+    # The key of the currently selected choice from the `choices` property, or
+    # `null` if none is selected.
+    attr_accessor :value
+
+    # An icon associated with this input.
+    attr_accessor :icon
+
+    def self.from_json_data(data)
+      out = SelectEnhancementField.new
+      out.choices = Datasworn::from_json_data(Hash[String, SelectEnhancementFieldChoice0], data["choices"])
+      out.field_type = Datasworn::from_json_data(SelectEnhancementFieldFieldType, data["field_type"])
+      out.label = Datasworn::from_json_data(Label, data["label"])
+      out.value = Datasworn::from_json_data(DictKey, data["value"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["choices"] = Datasworn::to_json_data(choices)
+      data["field_type"] = Datasworn::to_json_data(field_type)
+      data["label"] = Datasworn::to_json_data(label)
+      data["value"] = Datasworn::to_json_data(value)
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data
     end
   end
 
@@ -6728,6 +12769,109 @@ module Datasworn
       data["label"] = Datasworn::to_json_data(label)
       data["enhance_asset"] = Datasworn::to_json_data(enhance_asset) unless enhance_asset.nil?
       data["enhance_moves"] = Datasworn::to_json_data(enhance_moves) unless enhance_moves.nil?
+      data
+    end
+  end
+
+  class SelectEnhancementFieldChoiceGroupChoiceType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    CHOICE_GROUP = new("choice_group")
+
+    def self.from_json_data(data)
+      {
+        "choice_group" => CHOICE_GROUP,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # Represents a grouping of options in a list of choices.
+  class SelectEnhancementFieldChoiceGroup
+    attr_accessor :choice_type
+    attr_accessor :choices
+
+    # A label for this option group.
+    attr_accessor :name
+
+    def self.from_json_data(data)
+      out = SelectEnhancementFieldChoiceGroup.new
+      out.choice_type = Datasworn::from_json_data(SelectEnhancementFieldChoiceGroupChoiceType, data["choice_type"])
+      out.choices = Datasworn::from_json_data(Hash[String, SelectEnhancementFieldChoice], data["choices"])
+      out.name = Datasworn::from_json_data(Label, data["name"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["choice_type"] = Datasworn::to_json_data(choice_type)
+      data["choices"] = Datasworn::to_json_data(choices)
+      data["name"] = Datasworn::to_json_data(name)
+      data
+    end
+  end
+
+  class SelectValueFieldFieldType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    SELECT_VALUE = new("select_value")
+
+    def self.from_json_data(data)
+      {
+        "select_value" => SELECT_VALUE,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # Represents a list of mutually exclusive choices.
+  class SelectValueField
+    attr_accessor :choices
+    attr_accessor :field_type
+    attr_accessor :label
+
+    # The key of the currently selected choice from the `choices` property, or
+    # `null` if none is selected.
+    attr_accessor :value
+
+    # An icon associated with this input.
+    attr_accessor :icon
+
+    def self.from_json_data(data)
+      out = SelectValueField.new
+      out.choices = Datasworn::from_json_data(Hash[String, SelectValueFieldChoice], data["choices"])
+      out.field_type = Datasworn::from_json_data(SelectValueFieldFieldType, data["field_type"])
+      out.label = Datasworn::from_json_data(Label, data["label"])
+      out.value = Datasworn::from_json_data(DictKey, data["value"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["choices"] = Datasworn::to_json_data(choices)
+      data["field_type"] = Datasworn::to_json_data(field_type)
+      data["label"] = Datasworn::to_json_data(label)
+      data["value"] = Datasworn::to_json_data(value)
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
       data
     end
   end
@@ -7118,6 +13262,21 @@ module Datasworn
     end
   end
 
+  # The title of the source document.
+  class SourceTitle
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SourceTitle.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
   class SpecialTrackRollMethod
     attr_accessor :value
 
@@ -7260,6 +13419,51 @@ module Datasworn
     end
   end
 
+  # A reference to the value of a standard player character stat.
+  class StatValueRefUsing
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    STAT = new("stat")
+
+    def self.from_json_data(data)
+      {
+        "stat" => STAT,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # A reference to the value of a standard player character stat.
+  class StatValueRef
+    attr_accessor :stat
+
+    # A reference to the value of a standard player character stat.
+    attr_accessor :using
+
+    def self.from_json_data(data)
+      out = StatValueRef.new
+      out.stat = Datasworn::from_json_data(StatKey, data["stat"])
+      out.using = Datasworn::from_json_data(StatValueRefUsing, data["using"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["stat"] = Datasworn::to_json_data(stat)
+      data["using"] = Datasworn::to_json_data(using)
+      data
+    end
+  end
+
   class Suggestions
     attr_accessor :value
 
@@ -7338,7 +13542,7 @@ module Datasworn
     def self.from_json_data(data)
       out = TagRuleAsset.new
       out.value_type = "asset"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.applies_to = Datasworn::from_json_data(Array[TaggableNodeType], data["applies_to"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
       out
@@ -7361,7 +13565,7 @@ module Datasworn
     def self.from_json_data(data)
       out = TagRuleAssetCollection.new
       out.value_type = "asset_collection"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.applies_to = Datasworn::from_json_data(Array[TaggableNodeType], data["applies_to"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
       out
@@ -7384,7 +13588,7 @@ module Datasworn
     def self.from_json_data(data)
       out = TagRuleAtlasCollection.new
       out.value_type = "atlas_collection"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.applies_to = Datasworn::from_json_data(Array[TaggableNodeType], data["applies_to"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
       out
@@ -7407,7 +13611,7 @@ module Datasworn
     def self.from_json_data(data)
       out = TagRuleAtlasEntry.new
       out.value_type = "atlas_entry"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.applies_to = Datasworn::from_json_data(Array[TaggableNodeType], data["applies_to"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
       out
@@ -7430,7 +13634,7 @@ module Datasworn
     def self.from_json_data(data)
       out = TagRuleBoolean.new
       out.value_type = "boolean"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.applies_to = Datasworn::from_json_data(Array[TaggableNodeType], data["applies_to"])
       out.array = Datasworn::from_json_data(TrueClass, data["array"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out
@@ -7453,7 +13657,7 @@ module Datasworn
     def self.from_json_data(data)
       out = TagRuleDelveSite.new
       out.value_type = "delve_site"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.applies_to = Datasworn::from_json_data(Array[TaggableNodeType], data["applies_to"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
       out
@@ -7476,7 +13680,7 @@ module Datasworn
     def self.from_json_data(data)
       out = TagRuleDelveSiteDomain.new
       out.value_type = "delve_site_domain"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.applies_to = Datasworn::from_json_data(Array[TaggableNodeType], data["applies_to"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
       out
@@ -7499,7 +13703,7 @@ module Datasworn
     def self.from_json_data(data)
       out = TagRuleDelveSiteTheme.new
       out.value_type = "delve_site_theme"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.applies_to = Datasworn::from_json_data(Array[TaggableNodeType], data["applies_to"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
       out
@@ -7523,7 +13727,7 @@ module Datasworn
     def self.from_json_data(data)
       out = TagRuleEnum.new
       out.value_type = "enum"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.applies_to = Datasworn::from_json_data(Array[TaggableNodeType], data["applies_to"])
       out.array = Datasworn::from_json_data(TrueClass, data["array"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.enum = Datasworn::from_json_data(Array[DictKey], data["enum"])
@@ -7548,7 +13752,7 @@ module Datasworn
     def self.from_json_data(data)
       out = TagRuleInteger.new
       out.value_type = "integer"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.applies_to = Datasworn::from_json_data(Array[TaggableNodeType], data["applies_to"])
       out.array = Datasworn::from_json_data(TrueClass, data["array"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out
@@ -7571,7 +13775,7 @@ module Datasworn
     def self.from_json_data(data)
       out = TagRuleMove.new
       out.value_type = "move"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.applies_to = Datasworn::from_json_data(Array[TaggableNodeType], data["applies_to"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
       out
@@ -7594,7 +13798,7 @@ module Datasworn
     def self.from_json_data(data)
       out = TagRuleMoveCategory.new
       out.value_type = "move_category"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.applies_to = Datasworn::from_json_data(Array[TaggableNodeType], data["applies_to"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
       out
@@ -7617,7 +13821,7 @@ module Datasworn
     def self.from_json_data(data)
       out = TagRuleNpc.new
       out.value_type = "npc"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.applies_to = Datasworn::from_json_data(Array[TaggableNodeType], data["applies_to"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
       out
@@ -7640,7 +13844,7 @@ module Datasworn
     def self.from_json_data(data)
       out = TagRuleNpcCollection.new
       out.value_type = "npc_collection"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.applies_to = Datasworn::from_json_data(Array[TaggableNodeType], data["applies_to"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
       out
@@ -7663,7 +13867,7 @@ module Datasworn
     def self.from_json_data(data)
       out = TagRuleOracleCollection.new
       out.value_type = "oracle_collection"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.applies_to = Datasworn::from_json_data(Array[TaggableNodeType], data["applies_to"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
       out
@@ -7686,7 +13890,7 @@ module Datasworn
     def self.from_json_data(data)
       out = TagRuleOracleRollable.new
       out.value_type = "oracle_rollable"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.applies_to = Datasworn::from_json_data(Array[TaggableNodeType], data["applies_to"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
       out
@@ -7709,7 +13913,7 @@ module Datasworn
     def self.from_json_data(data)
       out = TagRuleRarity.new
       out.value_type = "rarity"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.applies_to = Datasworn::from_json_data(Array[TaggableNodeType], data["applies_to"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
       out
@@ -7732,7 +13936,7 @@ module Datasworn
     def self.from_json_data(data)
       out = TagRuleTruth.new
       out.value_type = "truth"
-      out.applies_to = Datasworn::from_json_data(Array[ObjectType], data["applies_to"])
+      out.applies_to = Datasworn::from_json_data(Array[TaggableNodeType], data["applies_to"])
       out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.wildcard = Datasworn::from_json_data(TrueClass, data["wildcard"])
       out
@@ -7747,7 +13951,69 @@ module Datasworn
     end
   end
 
-  # A dictionary of tags, keyed by the RulesetID that the tags are from.
+  class TaggableNodeType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    ABILITY = new("ability")
+    ASSET = new("asset")
+    ASSET_COLLECTION = new("asset_collection")
+    ATLAS_COLLECTION = new("atlas_collection")
+    ATLAS_ENTRY = new("atlas_entry")
+    DANGER = new("danger")
+    DELVE_SITE = new("delve_site")
+    DELVE_SITE_DOMAIN = new("delve_site_domain")
+    DELVE_SITE_THEME = new("delve_site_theme")
+    DENIZEN = new("denizen")
+    FEATURE = new("feature")
+    MOVE = new("move")
+    MOVE_CATEGORY = new("move_category")
+    NPC = new("npc")
+    NPC_COLLECTION = new("npc_collection")
+    OPTION = new("option")
+    ORACLE_COLLECTION = new("oracle_collection")
+    ORACLE_ROLLABLE = new("oracle_rollable")
+    RARITY = new("rarity")
+    ROW = new("row")
+    TRUTH = new("truth")
+
+    def self.from_json_data(data)
+      {
+        "ability" => ABILITY,
+        "asset" => ASSET,
+        "asset_collection" => ASSET_COLLECTION,
+        "atlas_collection" => ATLAS_COLLECTION,
+        "atlas_entry" => ATLAS_ENTRY,
+        "danger" => DANGER,
+        "delve_site" => DELVE_SITE,
+        "delve_site_domain" => DELVE_SITE_DOMAIN,
+        "delve_site_theme" => DELVE_SITE_THEME,
+        "denizen" => DENIZEN,
+        "feature" => FEATURE,
+        "move" => MOVE,
+        "move_category" => MOVE_CATEGORY,
+        "npc" => NPC,
+        "npc_collection" => NPC_COLLECTION,
+        "option" => OPTION,
+        "oracle_collection" => ORACLE_COLLECTION,
+        "oracle_rollable" => ORACLE_ROLLABLE,
+        "rarity" => RARITY,
+        "row" => ROW,
+        "truth" => TRUTH,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # A dictionary of tags, keyed by the RulesPackageId that the tags are from.
   class Tags
     attr_accessor :value
 
@@ -7759,6 +14025,36 @@ module Datasworn
 
     def to_json_data
       Datasworn.to_json_data(value)
+    end
+  end
+
+  class TagsCore
+    # This object requires allies to function, and is intended for co-op play,
+    # or guided play with allies. It is not appropriate for solo play.
+    attr_accessor :requires_allies
+
+    # This object is supernatural in nature, and is ideal for settings that
+    # feature supernatural or mythic powers.
+    attr_accessor :supernatural
+
+    # This object is technological in nature, and is ideal for settings that
+    # feature remarkable technologies.
+    attr_accessor :technological
+
+    def self.from_json_data(data)
+      out = TagsCore.new
+      out.requires_allies = Datasworn::from_json_data(TrueClass, data["requires_allies"])
+      out.supernatural = Datasworn::from_json_data(TrueClass, data["supernatural"])
+      out.technological = Datasworn::from_json_data(TrueClass, data["technological"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["requires_allies"] = Datasworn::to_json_data(requires_allies) unless requires_allies.nil?
+      data["supernatural"] = Datasworn::to_json_data(supernatural) unless supernatural.nil?
+      data["technological"] = Datasworn::to_json_data(technological) unless technological.nil?
+      data
     end
   end
 
@@ -7779,6 +14075,56 @@ module Datasworn
 
     def to_json_data
       Datasworn.to_json_data(value)
+    end
+  end
+
+  class TextFieldFieldType
+    attr_accessor :value
+
+    def initialize(value)
+      self.value = value
+    end
+
+    private_class_method :new
+
+    TEXT = new("text")
+
+    def self.from_json_data(data)
+      {
+        "text" => TEXT,
+      }[data]
+    end
+
+    def to_json_data
+      value
+    end
+  end
+
+  # Represents an input that accepts plain text.
+  class TextField
+    attr_accessor :field_type
+    attr_accessor :label
+    attr_accessor :value
+
+    # An icon associated with this input.
+    attr_accessor :icon
+
+    def self.from_json_data(data)
+      out = TextField.new
+      out.field_type = Datasworn::from_json_data(TextFieldFieldType, data["field_type"])
+      out.label = Datasworn::from_json_data(Label, data["label"])
+      out.value = Datasworn::from_json_data(String, data["value"])
+      out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["field_type"] = Datasworn::to_json_data(field_type)
+      data["label"] = Datasworn::to_json_data(label)
+      data["value"] = Datasworn::to_json_data(value)
+      data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
+      data
     end
   end
 
@@ -8304,6 +14650,21 @@ module Datasworn
     end
   end
 
+  # A wildcarded TruthId that can be used to match multiple Truth objects.
+  class TruthIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = TruthIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
   class TruthOption
     attr_accessor :id
     attr_accessor :description
@@ -8341,6 +14702,84 @@ module Datasworn
 
     def self.from_json_data(data)
       out = TruthOptionID.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A wildcarded TruthOptionId that can be used to match multiple TruthOption
+  # objects.
+  class TruthOptionIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = TruthOptionIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A unique ID representing a TruthOptionOracleRollable object.
+  class TruthOptionOracleRollableID
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = TruthOptionOracleRollableID.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A wildcarded TruthOptionOracleRollableId that can be used to match multiple
+  # TruthOptionOracleRollable objects.
+  class TruthOptionOracleRollableIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = TruthOptionOracleRollableIDWildcard.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A unique ID representing a TruthOptionOracleRollableRow object.
+  class TruthOptionOracleRollableRowID
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = TruthOptionOracleRollableRowID.new
+      out.value = Datasworn.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      Datasworn.to_json_data(value)
+    end
+  end
+
+  # A wildcarded TruthOptionOracleRollableRowId that can be used to match
+  # multiple TruthOptionOracleRollableRow objects.
+  class TruthOptionOracleRollableRowIDWildcard
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = TruthOptionOracleRollableRowIDWildcard.new
       out.value = Datasworn.from_json_data(String, data)
       out
     end

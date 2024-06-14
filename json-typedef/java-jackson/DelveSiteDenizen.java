@@ -7,11 +7,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
- * Represents an entry in a site denizen matrix. Denizen matrices are described
- * in Ironsworn: Delve.
+ * Represents an entry in a delve site denizen matrix. Denizen matrices are
+ * described in Ironsworn: Delve.
  */
 @JsonSerialize
 public class DelveSiteDenizen {
+    @JsonProperty("_id")
+    private DelveSiteDenizenId id;
+
     @JsonProperty("frequency")
     private DelveSiteDenizenFrequency frequency;
 
@@ -27,6 +30,20 @@ public class DelveSiteDenizen {
     private NpcId npc;
 
     public DelveSiteDenizen() {
+    }
+
+    /**
+     * Getter for id.<p>
+     */
+    public DelveSiteDenizenId getId() {
+        return id;
+    }
+
+    /**
+     * Setter for id.<p>
+     */
+    public void setId(DelveSiteDenizenId id) {
+        this.id = id;
     }
 
     /**

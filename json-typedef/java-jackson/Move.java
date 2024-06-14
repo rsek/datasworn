@@ -7,10 +7,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "roll_type")
 @JsonSubTypes({
-    @JsonSubTypes.Type(name = "action_roll", value = MoveActionRoll.class),
-    @JsonSubTypes.Type(name = "no_roll", value = MoveNoRoll.class),
-    @JsonSubTypes.Type(name = "progress_roll", value = MoveProgressRoll.class),
-    @JsonSubTypes.Type(name = "special_track", value = MoveSpecialTrack.class),
+    @JsonSubTypes.Type(name = "action_roll", value = MoveActionRoll0.class),
+    @JsonSubTypes.Type(name = "no_roll", value = MoveNoRoll0.class),
+    @JsonSubTypes.Type(name = "progress_roll", value = MoveProgressRoll0.class),
+    @JsonSubTypes.Type(name = "special_track", value = MoveSpecialTrack0.class),
 })
 public abstract class Move {
 }

@@ -10,11 +10,8 @@ namespace Datasworn
     /// (Starforged) or Bonds (classic Ironsworn). For progress moves that use
     /// standard progress tracks, see MoveProgressRoll instead.
     /// </summary>
-    public class MoveSpecialTrack : Move
+    public class MoveSpecialTrack
     {
-        [JsonPropertyName("roll_type")]
-        public string RollType { get => "special_track"; }
-
         /// <summary>
         /// The unique Datasworn ID for this item.
         /// </summary>
@@ -44,6 +41,13 @@ namespace Datasworn
         public MoveOutcomes Outcomes { get; set; }
 
         /// <summary>
+        /// A progress move that rolls on one or more special tracks, like Bonds
+        /// (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
+        /// </summary>
+        [JsonPropertyName("roll_type")]
+        public MoveSpecialTrackRollType RollType { get; set; }
+
+        /// <summary>
         /// The complete rules text of the move.
         /// </summary>
         [JsonPropertyName("text")]
@@ -56,7 +60,7 @@ namespace Datasworn
         public TriggerSpecialTrack Trigger { get; set; }
 
         [JsonPropertyName("type")]
-        public MoveSpecialTrackType Type_ { get; set; }
+        public MoveSpecialTrackType0 Type_ { get; set; }
 
         /// <summary>
         /// Implementation hints or other developer-facing comments on this

@@ -9,7 +9,7 @@ import java.util.List;
 @JsonSerialize
 public class TagRuleNpcCollection extends TagRule {
     @JsonProperty("applies_to")
-    private List<ObjectType> appliesTo;
+    private List<TaggableNodeType> appliesTo;
 
     @JsonProperty("description")
     private MarkdownString description;
@@ -23,14 +23,14 @@ public class TagRuleNpcCollection extends TagRule {
     /**
      * Getter for appliesTo.<p>
      */
-    public List<ObjectType> getAppliesTo() {
+    public List<TaggableNodeType> getAppliesTo() {
         return appliesTo;
     }
 
     /**
      * Setter for appliesTo.<p>
      */
-    public void setAppliesTo(List<ObjectType> appliesTo) {
+    public void setAppliesTo(List<TaggableNodeType> appliesTo) {
         this.appliesTo = appliesTo;
     }
 
@@ -50,8 +50,8 @@ public class TagRuleNpcCollection extends TagRule {
 
     /**
      * Getter for wildcard.<p>
-     * If `true`, this field accepts an array of wildcard IDs. If `false`, this
-     * field accepts a single non-wildcard ID.
+     * If `true`, this field accepts an array of wildcard ID strings. If
+     * `false`, this field accepts a single non-wildcard ID string.
      */
     public Boolean getWildcard() {
         return wildcard;
@@ -59,8 +59,8 @@ public class TagRuleNpcCollection extends TagRule {
 
     /**
      * Setter for wildcard.<p>
-     * If `true`, this field accepts an array of wildcard IDs. If `false`, this
-     * field accepts a single non-wildcard ID.
+     * If `true`, this field accepts an array of wildcard ID strings. If
+     * `false`, this field accepts a single non-wildcard ID string.
      */
     public void setWildcard(Boolean wildcard) {
         this.wildcard = wildcard;

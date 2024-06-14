@@ -10,11 +10,8 @@ namespace Datasworn
     /// features are defined by this move object). For progress rolls that use
     /// special tracks, see MoveSpecialTrack.
     /// </summary>
-    public class MoveProgressRoll : Move
+    public class MoveProgressRoll
     {
-        [JsonPropertyName("roll_type")]
-        public string RollType { get => "progress_roll"; }
-
         /// <summary>
         /// The unique Datasworn ID for this item.
         /// </summary>
@@ -44,6 +41,13 @@ namespace Datasworn
         public MoveOutcomes Outcomes { get; set; }
 
         /// <summary>
+        /// A progress move that rolls on a standard progress track type
+        /// (defined by this move).
+        /// </summary>
+        [JsonPropertyName("roll_type")]
+        public MoveProgressRollRollType RollType { get; set; }
+
+        /// <summary>
         /// The complete rules text of the move.
         /// </summary>
         [JsonPropertyName("text")]
@@ -63,7 +67,7 @@ namespace Datasworn
         public TriggerProgressRoll Trigger { get; set; }
 
         [JsonPropertyName("type")]
-        public MoveProgressRollType Type_ { get; set; }
+        public MoveProgressRollType0 Type_ { get; set; }
 
         /// <summary>
         /// Implementation hints or other developer-facing comments on this

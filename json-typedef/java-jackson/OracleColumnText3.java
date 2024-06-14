@@ -22,7 +22,7 @@ public class OracleColumnText3 {
     private OracleColumnText3OracleType oracleType;
 
     @JsonProperty("rows")
-    private List<OracleTableRowText3> rows;
+    private List<OracleRollableRowText3> rows;
 
     @JsonProperty("type")
     private OracleColumnText3Type type;
@@ -128,7 +128,7 @@ public class OracleColumnText3 {
      * Getter for rows.<p>
      * An array of objects, each representing a single row of the table.
      */
-    public List<OracleTableRowText3> getRows() {
+    public List<OracleRollableRowText3> getRows() {
         return rows;
     }
 
@@ -136,7 +136,7 @@ public class OracleColumnText3 {
      * Setter for rows.<p>
      * An array of objects, each representing a single row of the table.
      */
-    public void setRows(List<OracleTableRowText3> rows) {
+    public void setRows(List<OracleRollableRowText3> rows) {
         this.rows = rows;
     }
 

@@ -7,14 +7,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
- * Provides string templates that may be used in place of the static
- * row text from `OracleTableRow#text`, `OracleTableRow#text2`, and
- * `OracleTableRow#text3`.
+ * Provides string templates that may be used in place of the static row
+ * text from `OracleRollableRow#text`, `OracleRollableRow#text2`, and
+ * `OracleRollableRow#text3`.
  * 
  *   These strings are formatted in Markdown, but use a special syntax for their
  * placeholders: `{{text>some_oracle_rollable_id}}`. The placeholder should be
- * replaced with the value of a rolled (or selected) `OracleTableRow#text` from
- * the target oracle rollable ID.
+ * replaced with the value of a rolled (or selected) `OracleRollableRow#text`
+ * from the target oracle rollable ID.
  */
 @JsonSerialize
 public class OracleRollTemplate {
@@ -35,7 +35,7 @@ public class OracleRollTemplate {
 
     /**
      * Getter for text.<p>
-     * A string template that may be used in place of OracleTableRow#text.
+     * A string template that may be used in place of OracleRollableRow#text.
      */
     public TemplateString getText() {
         return text;
@@ -43,7 +43,7 @@ public class OracleRollTemplate {
 
     /**
      * Setter for text.<p>
-     * A string template that may be used in place of OracleTableRow#text.
+     * A string template that may be used in place of OracleRollableRow#text.
      */
     public void setText(TemplateString text) {
         this.text = text;
@@ -51,7 +51,7 @@ public class OracleRollTemplate {
 
     /**
      * Getter for text2.<p>
-     * A string template that may be used in place of OracleTableRow#text2.
+     * A string template that may be used in place of OracleRollableRow#text2.
      */
     public TemplateString getText2() {
         return text2;
@@ -59,7 +59,7 @@ public class OracleRollTemplate {
 
     /**
      * Setter for text2.<p>
-     * A string template that may be used in place of OracleTableRow#text2.
+     * A string template that may be used in place of OracleRollableRow#text2.
      */
     public void setText2(TemplateString text2) {
         this.text2 = text2;
@@ -67,7 +67,7 @@ public class OracleRollTemplate {
 
     /**
      * Getter for text3.<p>
-     * A string template that may be used in place of OracleTableRow#text3.
+     * A string template that may be used in place of OracleRollableRow#text3.
      */
     public TemplateString getText3() {
         return text3;
@@ -75,7 +75,7 @@ public class OracleRollTemplate {
 
     /**
      * Setter for text3.<p>
-     * A string template that may be used in place of OracleTableRow#text3.
+     * A string template that may be used in place of OracleRollableRow#text3.
      */
     public void setText3(TemplateString text3) {
         this.text3 = text3;

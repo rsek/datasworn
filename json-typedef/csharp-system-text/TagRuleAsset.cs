@@ -11,14 +11,14 @@ namespace Datasworn
         public string ValueType_ { get => "asset"; }
 
         [JsonPropertyName("applies_to")]
-        public IList<ObjectType> AppliesTo { get; set; }
+        public IList<TaggableNodeType> AppliesTo { get; set; }
 
         [JsonPropertyName("description")]
         public MarkdownString Description { get; set; }
 
         /// <summary>
-        /// If `true`, this field accepts an array of wildcard IDs. If `false`,
-        /// this field accepts a single non-wildcard ID.
+        /// If `true`, this field accepts an array of wildcard ID strings. If
+        /// `false`, this field accepts a single non-wildcard ID string.
         /// </summary>
         [JsonPropertyName("wildcard")]
         public bool Wildcard { get; set; }
