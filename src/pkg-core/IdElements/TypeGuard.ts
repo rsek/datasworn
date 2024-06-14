@@ -52,17 +52,15 @@ namespace TypeGuard {
 		return TypeId.Collectable.includes(value as TypeId.Collectable)
 	}
 
-	export function EmbedOnlyType(
-		value: unknown
-	): value is TypeId.EmbedOnlyTypes {
-		return TypeId.EmbedOnlyTypes.includes(value as TypeId.EmbedOnlyTypes)
+	export function EmbedOnlyType(value: unknown): value is TypeId.EmbedOnlyType {
+		return TypeId.EmbedOnlyType.includes(value as TypeId.EmbedOnlyType)
 	}
 
 	export function EmbeddablePrimaryType(
 		value: unknown
-	): value is TypeId.EmbeddablePrimaryTypes {
-		return TypeId.EmbeddablePrimaryTypes.includes(
-			value as TypeId.EmbeddablePrimaryTypes
+	): value is TypeId.EmbeddablePrimaryType {
+		return TypeId.EmbeddablePrimaryType.includes(
+			value as TypeId.EmbeddablePrimaryType
 		)
 	}
 

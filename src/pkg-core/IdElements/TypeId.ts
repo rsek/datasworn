@@ -39,6 +39,16 @@ namespace TypeId {
 	/** Any primary node type. Primary node types can have IDs that address only their type (IDs without '.' separators). */
 	export type AnyPrimary = Collectable | Collection | NonCollectable
 
+	export const AnyPrimary = [
+		...Collectable,
+		...Collection,
+		...NonCollectable
+	] satisfies [
+		...typeof Collectable,
+		...typeof Collection,
+		...typeof NonCollectable
+	]
+
 	export const CollectedByMap = {
 		asset_collection: 'asset',
 		move_category: 'move',
@@ -68,43 +78,86 @@ namespace TypeId {
 		return CollectionOfMap[typeId] as CollectionOf<T>
 	}
 
-	export const EmbeddablePrimaryTypes = [
+	export const EmbeddablePrimaryType = [
 		'oracle_rollable',
 		'move'
 	] as const satisfies [...(Collectable | NonCollectable)[]]
-	export type EmbeddablePrimaryTypes = (typeof EmbeddablePrimaryTypes)[number]
-	export const EmbedOnlyTypes = ['ability', 'option'] as const
-	export type EmbedOnlyTypes = (typeof EmbedOnlyTypes)[number]
-	type EmbedOnlyTypePath = `${AnyPrimary}${CONST.PathTypeSep}${EmbedOnlyTypes}`
-	export const EmbeddableTypes = [
+	export type EmbeddablePrimaryType = (typeof EmbeddablePrimaryType)[number]
+	export const EmbedOnlyType = ['ability', 'option', 'row'] as const
+	export type EmbedOnlyType = (typeof EmbedOnlyType)[number]
+	export const EmbeddableType = [
 		'oracle_rollable',
 		'move',
 		'ability',
-		'option'
+		'option',
+		'row'
 	] as const satisfies [
-		...typeof EmbeddablePrimaryTypes,
-		...typeof EmbedOnlyTypes
+		...typeof EmbeddablePrimaryType,
+		...typeof EmbedOnlyType
 	]
-	export type EmbeddableTypes = (typeof EmbeddableTypes)[number]
+	export type EmbeddableType = (typeof EmbeddableType)[number]
 
-	export const EmbeddedTypePaths = [
-		'asset.ability',
-		'truth.option',
-		'move.oracle_rollable'
-	] as const satisfies [
-		...(
-			| `${AnyPrimary}${CONST.PathTypeSep}${EmbeddablePrimaryTypes}`
-			| EmbedOnlyTypePath
-		)[]
-	]
-	export type EmbeddedTypePaths = (typeof EmbeddedTypePaths)[number]
+	export const EmbedTypeMap = {
+		asset: ['ability'],
+		ability: ['move', 'oracle_rollable'],
+		truth: ['option'],
+		option: ['oracle_rollable'],
+		move: ['oracle_rollable'],
+		oracle_rollable: ['row']
+	} as const satisfies Partial<
+		Record<AnyPrimary | EmbedOnlyType, EmbeddableType[]>
+	>
+	export type CanEmbed = keyof typeof EmbedTypeMap
 
-	export const EmbedOfEmbedTypePaths = [
-		'asset.ability.move',
-		'asset.ability.oracle_rollable',
-		'truth.option.oracle_rollable'
-	] as const satisfies `${EmbeddedTypePaths}${CONST.PathTypeSep}${EmbeddablePrimaryTypes}`[]
-	export type EmbedOfEmbedTypePaths = (typeof EmbedOfEmbedTypePaths)[number]
+	export const AllowedEmbedOfEmbedTypes = {
+		ability: ['oracle_rollable'],
+		move: [],
+		option: ['oracle_rollable'],
+		oracle_rollable: ['row']
+	} as const satisfies {
+		[T in EmbeddableType & CanEmbed]: (typeof EmbedTypeMap)[T][number][]
+	}
+
+	export function getEmbeddableTypes(
+		typeId: string,
+		typeIsEmbedded = false
+	): EmbeddableType[] {
+		if (typeIsEmbedded) return AllowedEmbedOfEmbedTypes[typeId] ?? []
+		return EmbedTypeMap[typeId] ?? []
+	}
+
+	export function getTypesThatCanEmbedType(typeId: string): CanEmbed[] {
+		const typeIds: CanEmbed[] = []
+
+		for (const embedder in EmbedTypeMap) {
+			const embeddables = EmbedTypeMap[embedder]
+			if (embeddables.includes(typeId)) typeIds.push(embedder as CanEmbed)
+		}
+
+		return typeIds
+	}
+
+	export type CanEmbedType<T extends EmbeddableType = EmbeddableType> = {
+		[P in keyof typeof EmbedTypeMap as (typeof EmbedTypeMap)[P][number]]: P
+	}[T]
+
+	export const EmbeddedTypePaths = [] as string[]
+
+	function expandTypePath(typeId: CanEmbed, path: string[] = []) {
+		const isPrimary = path.length === 0
+		const thisPath = [...path, typeId]
+		if (!isPrimary) EmbeddedTypePaths.push(thisPath.join(CONST.PathTypeSep))
+		if (typeId in EmbedTypeMap) {
+			for (const childTypeId of EmbedTypeMap[typeId])
+				if (
+					isPrimary ||
+					(AllowedEmbedOfEmbedTypes[typeId] ?? []).includes(childTypeId)
+				)
+					expandTypePath(childTypeId as CanEmbed, thisPath)
+		}
+	}
+
+	for (const typeId in EmbedTypeMap) expandTypePath(typeId as CanEmbed)
 
 	export const RootKeys = {
 		asset_collection: 'assets',
@@ -123,17 +176,19 @@ namespace TypeId {
 		delve_site_theme: 'site_themes',
 		rarity: 'rarities'
 	} as const satisfies Record<AnyPrimary, keyof Datasworn.RulesPackage>
-  export type RootKeys<T extends AnyPrimary = AnyPrimary> = (typeof RootKeys)[T]
+	export type RootKeys<T extends AnyPrimary = AnyPrimary> = (typeof RootKeys)[T]
 
 	export const EmbeddedPropertyKeys = {
 		ability: 'abilities',
-		option: 'options'
-	} as const satisfies Record<EmbedOnlyTypes, string>
+		option: 'options',
+		row: 'rows'
+	} as const satisfies Record<EmbedOnlyType, string>
 
-	export type Any = AnyPrimary | EmbeddedTypePaths | EmbedOfEmbedTypePaths
+	export type Any = AnyPrimary | EmbedOnlyType
+	// | EmbeddedTypePath | EmbedOfEmbedTypePaths
 
 	export type RootKey<T extends AnyPrimary = AnyPrimary> = (typeof RootKeys)[T]
-	export type EmbeddedPropertyKey<T extends EmbeddableTypes> =
+	export type EmbeddedPropertyKey<T extends EmbeddableType> =
 		T extends keyof typeof EmbeddedPropertyKeys
 			? (typeof EmbeddedPropertyKeys)[T]
 			: T extends AnyPrimary
@@ -146,7 +201,7 @@ namespace TypeId {
 			throw new Error(`Expected primary TypeId but got ${typeId}`)
 		return result
 	}
-	export function getEmbeddedPropertyKey<T extends EmbeddableTypes>(
+	export function getEmbeddedPropertyKey<T extends EmbeddableType>(
 		typeId: T
 	): EmbeddedPropertyKey<T> {
 		const result =
@@ -162,28 +217,6 @@ namespace TypeId {
 		} catch (e) {
 			throw new Error(`Expected embeddable TypeId but got ${typeId}`)
 		}
-	}
-
-	export function getEmbeddableTypes<T extends Any>(typeId: T) {
-		const allEmbeddedTypePaths = [
-			...EmbeddedTypePaths,
-			...EmbedOfEmbedTypePaths
-		]
-		const matches = new Set<string>()
-
-		for (const typePath of allEmbeddedTypePaths) {
-			const typeHead = typeId + CONST.PathTypeSep
-			if (typePath.startsWith(typeId))
-				matches.add(
-					typePath
-						// remove the parts that represent the current path
-						.replace(typeHead, '')
-						// get the first relevant segment
-						.split(CONST.PathTypeSep)[0]
-				)
-		}
-
-		return Array.from(matches) as EmbeddableTypes[]
 	}
 }
 

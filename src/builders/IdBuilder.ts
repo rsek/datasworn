@@ -1,6 +1,8 @@
 import {
 	Type,
 	type StringOptions,
+	type TRef,
+	type TSchema,
 	type TString,
 	type TUnion
 } from '@sinclair/typebox'
@@ -13,6 +15,7 @@ import { pascalCase } from '../schema/utils/string.js'
 import type { Join, PascalCase, Split } from 'type-fest'
 import { JsonTypeDef } from '../schema/Symbols.js'
 import JtdType from '../scripts/json-typedef/typedef.js'
+import { TypeGuard } from '../pkg-core/IdElements/index.js'
 
 type RegexGroupType =
 	| 'none'
@@ -124,7 +127,7 @@ namespace PathSymbol {
 
 			const minMax = min === max ? min.toString() : `${min},${max}`
 
-			let wrappedKey = `(?:${base}){${minMax}}`
+			const wrappedKey = `(?:${base}){${minMax}}`
 
 			if (!wildcard) return RegExp(wrappedKey)
 
@@ -273,8 +276,32 @@ class IdPattern<
 		return this.at(-1)?.typeId ?? null
 	}
 
+	get nodeTypeId() {
+		return this.at(0)?.typeId ?? null
+	}
+
 	get current() {
 		return (this.at(-1) as PathFormat<CurrentNode>) ?? null
+	}
+
+	get isEmbedded() {
+		// if there's more than one path format, it's a multi-part path, and therefore an embedded ID
+		return this.length > 1
+	}
+
+	createEmbedded<T extends TypeId.EmbeddableType>(
+		typeId: T
+	): IdPattern<Extract<TypeNode.AnyEmbedded, { type: typeof typeId }>> {
+		const withGroup = this.clone().addNewTypeGroup(typeId)
+
+		if (TypeId.EmbeddablePrimaryType.includes(typeId as any))
+			return withGroup.addDictKey(
+				TypeId.getEmbeddedPropertyKey(typeId) as any
+			) as any
+
+		return withGroup.addIndex(
+			TypeId.getEmbeddedPropertyKey(typeId) as any
+		) as any
 	}
 
 	addNewTypeGroup(typeId: string) {
@@ -541,170 +568,133 @@ class PathFormat<Origin = Datasworn.RulesPackage> extends Array<
 	}
 }
 
-const patterns: IdPattern[] = []
+const patternIndex = {} as Record<TypeId.Any, IdPattern[]>
 
-for (const k of TypeId.Collection) {
-	const key = k as TypeId.Collection
-	const pattern = IdPattern.createCollection(key, TypeId.getRootKey(key))
+for (const typeId of TypeId.AnyPrimary) {
+	let pattern: IdPattern
 
-	patterns.push(pattern)
-}
+	switch (true) {
+		case TypeGuard.CollectionType(typeId):
+			pattern = IdPattern.createCollection(typeId, TypeId.getRootKey(typeId))
+			break
 
-for (const k of TypeId.Collectable) {
-	const key = k as TypeId.Collectable
-	const pattern = IdPattern.createCollectable(key, TypeId.getRootKey(key))
+		case TypeGuard.CollectableType(typeId):
+			pattern = IdPattern.createCollectable(typeId, TypeId.getRootKey(typeId))
+			break
 
-	patterns.push(pattern)
-}
-for (const k of TypeId.NonCollectable) {
-	const key = k as TypeId.NonCollectable
-	const pattern = IdPattern.createNonCollectable(key, TypeId.getRootKey(key))
-
-	patterns.push(pattern)
-}
-
-const embeddedIdNames: Record<TypeId.AnyPrimary, string[]> = {}
-
-function extendForEmbed(
-	base: IdPattern,
-	embeddedTypeId: TypeId.AnyPrimary | TypeId.EmbedOnlyTypes
-) {
-	let newPattern = base.clone().addNewTypeGroup(embeddedTypeId)
-
-	if (embeddedTypeId in TypeId.RootKeys) {
-		newPattern = newPattern.addDictKey(
-			TypeId.getRootKey(embeddedTypeId as TypeId.AnyPrimary)
-		)
-		embeddedIdNames[embeddedTypeId] ||= []
-		embeddedIdNames[embeddedTypeId].push(
-			base.map(({ typeId }) => pascalCase(typeId)).join('')
-		)
-
-		return newPattern
-	}
-
-	switch (embeddedTypeId as TypeId.EmbedOnlyTypes) {
-		case 'ability':
-		case 'option':
-			// @ts-expect-error
-			return newPattern.addIndex(
-				TypeId.EmbeddedPropertyKeys[embeddedTypeId as TypeId.EmbedOnlyTypes]
+		case TypeGuard.NonCollectableType(typeId):
+			pattern = IdPattern.createNonCollectable(
+				typeId,
+				TypeId.getRootKey(typeId)
 			)
-
+			break
 		default:
-			throw new Error(
-				`Couldn't determine property for embedded type "${embeddedTypeId}"`
-			)
+			throw new Error(`Expected a primary type, got ${JSON.stringify(typeId)}`)
+	}
+
+	patternIndex[typeId] ||= []
+	patternIndex[typeId].push(pattern)
+
+	if (typeId in TypeId.EmbedTypeMap) computeEmbeddedTypes(pattern, patternIndex)
+}
+
+function computeEmbeddedTypes(
+	pattern: IdPattern,
+	patternIndex: Record<TypeId.Any, IdPattern[]>
+) {
+	const typeId = pattern.nodeTypeId as TypeId.EmbeddableType
+
+	const embeddableTypes = TypeId.getEmbeddableTypes(typeId, pattern.isEmbedded)
+
+	for (const embeddedTypeId of embeddableTypes) {
+		const childPattern = pattern.createEmbedded(embeddedTypeId)
+
+		patternIndex[typeId] ||= []
+		patternIndex[typeId].push(childPattern)
+
+		if (embeddedTypeId in TypeId.EmbedTypeMap)
+			computeEmbeddedTypes(childPattern, patternIndex)
 	}
 }
 
-for (const compositeTypeId of TypeId.EmbeddedTypePaths) {
-	const [parentTypeId, typeId] = compositeTypeId.split('.') as Split<
-		typeof compositeTypeId,
-		'.'
-	>
+// patterns.sort((a, b) =>
+// a.getLeftSide().source.localeCompare(b.getLeftSide().source, 'en-US'))
 
-	const parentPattern = patterns.find(
-		(pattern) => pattern[0].typeId === parentTypeId
-	) as IdPattern<TypeNode.ByType<typeof parentTypeId>>
+type PrimaryNodePrefix<T extends TypeId.AnyPrimary = TypeId.AnyPrimary> =
+	`${PascalCase<T>}`
+type EmbeddedPrimaryNodePrefix<
+	T extends TypeId.EmbeddablePrimaryType = TypeId.EmbeddablePrimaryType
+> = `Embedded${PascalCase<T>}`
+type PrimaryNodeUnionPrefix<
+	T extends TypeId.EmbeddablePrimaryType = TypeId.EmbeddablePrimaryType
+> = `Any${PascalCase<T>}`
+type EmbedOnlyPrefix<
+	T extends TypeId.EmbedOnlyType = TypeId.EmbedOnlyType,
+	TParent extends TypeId.CanEmbedType<T> = TypeId.CanEmbedType<T>
+> = `${PascalCase<TParent>}${PascalCase<T>}`
 
-	if (parentPattern == null)
-		throw new Error(`Couldn't find parent IdPattern of type "${parentTypeId}"`)
-
-	const embeddedPattern = extendForEmbed(parentPattern, typeId)
-	patterns.push(embeddedPattern)
-
-	const childTypeIds = TypeId.EmbedOfEmbedTypePaths.filter((t) =>
-		t.startsWith(compositeTypeId)
-	)
-
-	if (childTypeIds.length === 0) continue
-
-	for (const childTypeIdComposite of childTypeIds) {
-		const [_parentTypeId, _typeId, childTypeId] = childTypeIdComposite.split(
-			'.'
-		) as Split<typeof childTypeIdComposite, '.'>
-		const childPattern = extendForEmbed(embeddedPattern, childTypeId)
-		patterns.push(childPattern)
-	}
-}
+type IdSuffix = 'Id' | 'IdWildcard'
 
 type IdSchemaName =
-	`${PascalCase<Join<Split<TypeId.Any, '.'>, '_'>>}${'Id' | 'IdWildcard'}`
+	`${EmbeddedPrimaryNodePrefix | PrimaryNodePrefix | PrimaryNodeUnionPrefix | EmbedOnlyPrefix | 'Any'}${IdSuffix}`
 
-const ids = {} as Record<IdSchemaName, TString>
+const ids = {} as Record<IdSchemaName, TString | TUnion<TRef<TString>[]>>
 
-for (const pattern of patterns.sort((a, b) =>
-	a.getLeftSide().source.localeCompare(b.getLeftSide().source, 'en-US')
-)) {
-	for (const schema of [pattern.toSchema(), pattern.toWildcardSchema()])
-		ids[schema.$id as PascalCase<IdSchemaName>] = schema
-}
+const anyIdTypes: TRef<TString>[] = []
+const anyWildcardIdTypes: TRef<TString>[] = []
 
-// generate unions for embedded types, and Any*Id for their base types
-for (const typeId in embeddedIdNames) {
-	const unionTypes = embeddedIdNames[typeId]
-	if (unionTypes.length === 0) continue
-	const baseTypeId = `${pascalCase(typeId)}Id`
-	const embeddedTypeId = `Embedded${baseTypeId}`
-	const anyTypeId = `Any${baseTypeId}`
+for (const typeId in patternIndex) {
+	const patterns = patternIndex[typeId as TypeId.Any]
 
-	ids[embeddedTypeId] = Type.Union(
-		unionTypes.map((parentType) => Type.Ref(parentType + baseTypeId)),
-		{
-			$id: embeddedTypeId,
-			[JsonTypeDef]: { schema: JtdType.String() }
+	for (const pattern of patterns)
+		for (const schema of [pattern.toSchema(), pattern.toWildcardSchema()]) {
+			ids[schema.$id as IdSchemaName] = schema
+			schema.$id?.endsWith('Wildcard')
+				? anyWildcardIdTypes.push(Type.Ref(schema))
+				: anyIdTypes.push(Type.Ref(schema))
 		}
-	)
-	ids[embeddedTypeId + 'Wildcard'] = Type.Union(
-		unionTypes.map((parentType) =>
-			Type.Ref(parentType + baseTypeId + 'Wildcard')
+
+	const baseTypeId = `${pascalCase(typeId)}Id` as IdSchemaName
+
+	const embeddedPatterns = patterns.filter((pattern) => pattern.isEmbedded)
+
+	// if there's no embed to generate unions for, we're done
+	if (embeddedPatterns.length === 0) continue
+
+	const f = {
+		[`Embedded${baseTypeId}`]: embeddedPatterns.map((pattern) =>
+			Type.Ref(pattern.toSchema())
 		),
-		{
-			$id: embeddedTypeId + 'Wildcard',
+		[`Embedded${baseTypeId}Wildcard`]: embeddedPatterns.map((pattern) =>
+			Type.Ref(pattern.toWildcardSchema())
+		),
+		[`Any${baseTypeId}`]: patterns.map((pattern) =>
+			Type.Ref(pattern.toSchema())
+		),
+		[`Any${baseTypeId}Wildcard`]: patterns.map((pattern) =>
+			Type.Ref(pattern.toSchema())
+		)
+	} satisfies Record<string, TSchema[]>
+
+	for (const $id in f) {
+		ids[$id as IdSchemaName] = Type.Union(f[$id], {
+			$id,
 			[JsonTypeDef]: { schema: JtdType.String() }
-		}
-	)
-
-	ids[anyTypeId] = Type.Union(
-		[Type.Ref(embeddedTypeId), Type.Ref(baseTypeId)],
-		{ $id: anyTypeId, [JsonTypeDef]: { schema: JtdType.String() } }
-	)
-	ids[anyTypeId + 'Wildcard'] = Type.Union(
-		[Type.Ref(embeddedTypeId + 'Wildcard'), Type.Ref(baseTypeId + 'Wildcard')],
-		{ $id: anyTypeId + 'Wildcard', [JsonTypeDef]: { schema: JtdType.String() } }
-	)
+		})
+	}
 }
 
-const idTypes: string[] = []
-const wildcardIdTypes: string[] = []
-for (const idTypeName in ids) {
-	const idType = ids[idTypeName] as TUnion | TString
-
-	// skip things that are already a union
-	if (idType.type !== 'string') continue
-
-	if (idTypeName.endsWith('Wildcard')) wildcardIdTypes.push(idTypeName)
-	else idTypes.push(idTypeName)
-}
-
-ids['AnyId'] = Type.Union(
-	idTypes.map((idType) => Type.Ref(idType)),
-	{
-		$id: 'AnyId',
-		description:
-			'Represents any kind of non-wildcard ID, including IDs of embedded objects.',
-		[JsonTypeDef]: { schema: JtdType.String() }
-	}
-)
-ids['AnyIdWildcard'] = Type.Union(
-	wildcardIdTypes.map((idType) => Type.Ref(idType)),
-	{
-		$id: 'AnyIdWildcard',
-		description:
-			'Represents any kind of wildcard ID, including IDs of embedded objects.',
-		[JsonTypeDef]: { schema: JtdType.String() }
-	}
-)
+ids.AnyId = Type.Union(anyIdTypes, {
+	$id: 'AnyId',
+	description:
+		'Represents any kind of non-wildcard ID, including IDs of embedded objects.',
+	[JsonTypeDef]: { schema: JtdType.String() }
+})
+ids.AnyIdWildcard = Type.Union(anyWildcardIdTypes, {
+	$id: 'AnyIdWildcard',
+	description:
+		'Represents any kind of wildcard ID, including IDs of embedded objects.',
+	[JsonTypeDef]: { schema: JtdType.String() }
+})
 
 export default ids

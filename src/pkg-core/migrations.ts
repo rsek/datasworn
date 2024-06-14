@@ -149,7 +149,7 @@ function createMoveOracleIdMapper(
 }
 
 export type IdReplacementMap = Record<
-	TypeId.AnyPrimary | TypeId.EmbedOnlyTypes,
+	TypeId.AnyPrimary | TypeId.EmbedOnlyType,
 	IdReplacer[]
 >
 

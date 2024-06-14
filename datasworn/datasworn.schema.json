@@ -396,6 +396,84 @@
 			"remarks": "If you need to generate a key from a user-provided label, it's recommended to use a 'slugify' function/library, e.g. https://www.npmjs.com/package/slugify for NodeJS.",
 			"pattern": "^[a-z][a-z_]*$"
 		},
+		"AtlasEntryId": {
+			"title": "AtlasEntryId",
+			"type": "string",
+			"description": "A unique ID representing an AtlasEntry object.",
+			"pattern": "^atlas_entry:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
+		},
+		"AtlasEntryIdWildcard": {
+			"title": "AtlasEntryIdWildcard",
+			"type": "string",
+			"description": "A wildcarded AtlasEntryId that can be used to match multiple AtlasEntry objects.",
+			"pattern": "^atlas_entry:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
+		},
+		"NpcId": {
+			"title": "NpcId",
+			"type": "string",
+			"description": "A unique ID representing a Npc object.",
+			"pattern": "^npc:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
+		},
+		"NpcIdWildcard": {
+			"title": "NpcIdWildcard",
+			"type": "string",
+			"description": "A wildcarded NpcId that can be used to match multiple Npc objects.",
+			"pattern": "^npc:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
+		},
+		"OracleRollableId": {
+			"title": "OracleRollableId",
+			"type": "string",
+			"description": "A unique ID representing an OracleRollable object.",
+			"pattern": "^oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
+		},
+		"OracleRollableIdWildcard": {
+			"title": "OracleRollableIdWildcard",
+			"type": "string",
+			"description": "A wildcarded OracleRollableId that can be used to match multiple OracleRollable objects.",
+			"pattern": "^oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
+		},
+		"OracleRollableRowId": {
+			"title": "OracleRollableRowId",
+			"type": "string",
+			"description": "A unique ID representing an OracleRollableRow object.",
+			"pattern": "^oracle_rollable\\.row:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.(\\d+)$"
+		},
+		"OracleRollableRowIdWildcard": {
+			"title": "OracleRollableRowIdWildcard",
+			"type": "string",
+			"description": "A wildcarded OracleRollableRowId that can be used to match multiple OracleRollableRow objects.",
+			"pattern": "^oracle_rollable\\.row:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.(\\d+|\\*)$"
+		},
+		"EmbeddedOracleRollableId": {
+			"$ref": "#/definitions/OracleRollableRowId",
+			"title": "EmbeddedOracleRollableId"
+		},
+		"EmbeddedOracleRollableIdWildcard": {
+			"$ref": "#/definitions/OracleRollableRowIdWildcard",
+			"title": "EmbeddedOracleRollableIdWildcard"
+		},
+		"AnyOracleRollableId": {
+			"title": "AnyOracleRollableId",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/OracleRollableId"
+				},
+				{
+					"$ref": "#/definitions/OracleRollableRowId"
+				}
+			]
+		},
+		"AnyOracleRollableIdWildcard": {
+			"title": "AnyOracleRollableIdWildcard",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/OracleRollableId"
+				},
+				{
+					"$ref": "#/definitions/OracleRollableRowId"
+				}
+			]
+		},
 		"AssetId": {
 			"title": "AssetId",
 			"type": "string",
@@ -407,18 +485,6 @@
 			"type": "string",
 			"description": "A wildcarded AssetId that can be used to match multiple Asset objects.",
 			"pattern": "^asset:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
-		},
-		"AssetCollectionId": {
-			"title": "AssetCollectionId",
-			"type": "string",
-			"description": "A unique ID representing an AssetCollection object.",
-			"pattern": "^asset_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
-		},
-		"AssetCollectionIdWildcard": {
-			"title": "AssetCollectionIdWildcard",
-			"type": "string",
-			"description": "A wildcarded AssetCollectionId that can be used to match multiple AssetCollection objects.",
-			"pattern": "^asset_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
 		},
 		"AssetAbilityId": {
 			"title": "AssetAbilityId",
@@ -432,29 +498,89 @@
 			"description": "A wildcarded AssetAbilityId that can be used to match multiple AssetAbility objects.",
 			"pattern": "^asset\\.ability:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.(\\d+|\\*)$"
 		},
-		"AssetAbilityMoveId": {
-			"title": "AssetAbilityMoveId",
-			"type": "string",
-			"description": "A unique ID representing an AssetAbilityMove object.",
-			"pattern": "^asset\\.ability\\.move:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
+		"EmbeddedAssetId": {
+			"$ref": "#/definitions/AssetAbilityId",
+			"title": "EmbeddedAssetId"
 		},
-		"AssetAbilityMoveIdWildcard": {
-			"title": "AssetAbilityMoveIdWildcard",
-			"type": "string",
-			"description": "A wildcarded AssetAbilityMoveId that can be used to match multiple AssetAbilityMove objects.",
-			"pattern": "^asset\\.ability\\.move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
+		"EmbeddedAssetIdWildcard": {
+			"$ref": "#/definitions/AssetAbilityIdWildcard",
+			"title": "EmbeddedAssetIdWildcard"
 		},
-		"AssetAbilityOracleRollableId": {
-			"title": "AssetAbilityOracleRollableId",
-			"type": "string",
-			"description": "A unique ID representing an AssetAbilityOracleRollable object.",
-			"pattern": "^asset\\.ability\\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
+		"AnyAssetId": {
+			"title": "AnyAssetId",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/AssetId"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityId"
+				}
+			]
 		},
-		"AssetAbilityOracleRollableIdWildcard": {
-			"title": "AssetAbilityOracleRollableIdWildcard",
+		"AnyAssetIdWildcard": {
+			"title": "AnyAssetIdWildcard",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/AssetId"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityId"
+				}
+			]
+		},
+		"MoveId": {
+			"title": "MoveId",
 			"type": "string",
-			"description": "A wildcarded AssetAbilityOracleRollableId that can be used to match multiple AssetAbilityOracleRollable objects.",
-			"pattern": "^asset\\.ability\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
+			"description": "A unique ID representing a Move object.",
+			"pattern": "^move:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
+		},
+		"MoveIdWildcard": {
+			"title": "MoveIdWildcard",
+			"type": "string",
+			"description": "A wildcarded MoveId that can be used to match multiple Move objects.",
+			"pattern": "^move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
+		},
+		"MoveOracleRollableId": {
+			"title": "MoveOracleRollableId",
+			"type": "string",
+			"description": "A unique ID representing a MoveOracleRollable object.",
+			"pattern": "^move\\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.([a-z][a-z_]*|\\*)$"
+		},
+		"MoveOracleRollableIdWildcard": {
+			"title": "MoveOracleRollableIdWildcard",
+			"type": "string",
+			"description": "A wildcarded MoveOracleRollableId that can be used to match multiple MoveOracleRollable objects.",
+			"pattern": "^move\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.([a-z][a-z_]*|\\*)$"
+		},
+		"EmbeddedMoveId": {
+			"$ref": "#/definitions/MoveOracleRollableId",
+			"title": "EmbeddedMoveId"
+		},
+		"EmbeddedMoveIdWildcard": {
+			"$ref": "#/definitions/MoveOracleRollableIdWildcard",
+			"title": "EmbeddedMoveIdWildcard"
+		},
+		"AnyMoveId": {
+			"title": "AnyMoveId",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/MoveId"
+				},
+				{
+					"$ref": "#/definitions/MoveOracleRollableId"
+				}
+			]
+		},
+		"AnyMoveIdWildcard": {
+			"title": "AnyMoveIdWildcard",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/MoveId"
+				},
+				{
+					"$ref": "#/definitions/MoveOracleRollableId"
+				}
+			]
 		},
 		"AtlasCollectionId": {
 			"title": "AtlasCollectionId",
@@ -468,17 +594,53 @@
 			"description": "A wildcarded AtlasCollectionId that can be used to match multiple AtlasCollection objects.",
 			"pattern": "^atlas_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
 		},
-		"AtlasEntryId": {
-			"title": "AtlasEntryId",
+		"NpcCollectionId": {
+			"title": "NpcCollectionId",
 			"type": "string",
-			"description": "A unique ID representing an AtlasEntry object.",
-			"pattern": "^atlas_entry:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
+			"description": "A unique ID representing a NpcCollection object.",
+			"pattern": "^npc_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
 		},
-		"AtlasEntryIdWildcard": {
-			"title": "AtlasEntryIdWildcard",
+		"NpcCollectionIdWildcard": {
+			"title": "NpcCollectionIdWildcard",
 			"type": "string",
-			"description": "A wildcarded AtlasEntryId that can be used to match multiple AtlasEntry objects.",
-			"pattern": "^atlas_entry:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
+			"description": "A wildcarded NpcCollectionId that can be used to match multiple NpcCollection objects.",
+			"pattern": "^npc_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
+		},
+		"OracleCollectionId": {
+			"title": "OracleCollectionId",
+			"type": "string",
+			"description": "A unique ID representing an OracleCollection object.",
+			"pattern": "^oracle_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
+		},
+		"OracleCollectionIdWildcard": {
+			"title": "OracleCollectionIdWildcard",
+			"type": "string",
+			"description": "A wildcarded OracleCollectionId that can be used to match multiple OracleCollection objects.",
+			"pattern": "^oracle_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
+		},
+		"AssetCollectionId": {
+			"title": "AssetCollectionId",
+			"type": "string",
+			"description": "A unique ID representing an AssetCollection object.",
+			"pattern": "^asset_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
+		},
+		"AssetCollectionIdWildcard": {
+			"title": "AssetCollectionIdWildcard",
+			"type": "string",
+			"description": "A wildcarded AssetCollectionId that can be used to match multiple AssetCollection objects.",
+			"pattern": "^asset_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
+		},
+		"MoveCategoryId": {
+			"title": "MoveCategoryId",
+			"type": "string",
+			"description": "A unique ID representing a MoveCategory object.",
+			"pattern": "^move_category:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
+		},
+		"MoveCategoryIdWildcard": {
+			"title": "MoveCategoryIdWildcard",
+			"type": "string",
+			"description": "A wildcarded MoveCategoryId that can be used to match multiple MoveCategory objects.",
+			"pattern": "^move_category:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
 		},
 		"DelveSiteId": {
 			"title": "DelveSiteId",
@@ -516,90 +678,6 @@
 			"description": "A wildcarded DelveSiteThemeId that can be used to match multiple DelveSiteTheme objects.",
 			"pattern": "^delve_site_theme:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
 		},
-		"MoveId": {
-			"title": "MoveId",
-			"type": "string",
-			"description": "A unique ID representing a Move object.",
-			"pattern": "^move:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
-		},
-		"MoveIdWildcard": {
-			"title": "MoveIdWildcard",
-			"type": "string",
-			"description": "A wildcarded MoveId that can be used to match multiple Move objects.",
-			"pattern": "^move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
-		},
-		"MoveCategoryId": {
-			"title": "MoveCategoryId",
-			"type": "string",
-			"description": "A unique ID representing a MoveCategory object.",
-			"pattern": "^move_category:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
-		},
-		"MoveCategoryIdWildcard": {
-			"title": "MoveCategoryIdWildcard",
-			"type": "string",
-			"description": "A wildcarded MoveCategoryId that can be used to match multiple MoveCategory objects.",
-			"pattern": "^move_category:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
-		},
-		"MoveOracleRollableId": {
-			"title": "MoveOracleRollableId",
-			"type": "string",
-			"description": "A unique ID representing a MoveOracleRollable object.",
-			"pattern": "^move\\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.([a-z][a-z_]*|\\*)$"
-		},
-		"MoveOracleRollableIdWildcard": {
-			"title": "MoveOracleRollableIdWildcard",
-			"type": "string",
-			"description": "A wildcarded MoveOracleRollableId that can be used to match multiple MoveOracleRollable objects.",
-			"pattern": "^move\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.([a-z][a-z_]*|\\*)$"
-		},
-		"NpcId": {
-			"title": "NpcId",
-			"type": "string",
-			"description": "A unique ID representing a Npc object.",
-			"pattern": "^npc:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
-		},
-		"NpcIdWildcard": {
-			"title": "NpcIdWildcard",
-			"type": "string",
-			"description": "A wildcarded NpcId that can be used to match multiple Npc objects.",
-			"pattern": "^npc:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
-		},
-		"NpcCollectionId": {
-			"title": "NpcCollectionId",
-			"type": "string",
-			"description": "A unique ID representing a NpcCollection object.",
-			"pattern": "^npc_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
-		},
-		"NpcCollectionIdWildcard": {
-			"title": "NpcCollectionIdWildcard",
-			"type": "string",
-			"description": "A wildcarded NpcCollectionId that can be used to match multiple NpcCollection objects.",
-			"pattern": "^npc_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
-		},
-		"OracleCollectionId": {
-			"title": "OracleCollectionId",
-			"type": "string",
-			"description": "A unique ID representing an OracleCollection object.",
-			"pattern": "^oracle_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
-		},
-		"OracleCollectionIdWildcard": {
-			"title": "OracleCollectionIdWildcard",
-			"type": "string",
-			"description": "A wildcarded OracleCollectionId that can be used to match multiple OracleCollection objects.",
-			"pattern": "^oracle_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
-		},
-		"OracleRollableId": {
-			"title": "OracleRollableId",
-			"type": "string",
-			"description": "A unique ID representing an OracleRollable object.",
-			"pattern": "^oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
-		},
-		"OracleRollableIdWildcard": {
-			"title": "OracleRollableIdWildcard",
-			"type": "string",
-			"description": "A wildcarded OracleRollableId that can be used to match multiple OracleRollable objects.",
-			"pattern": "^oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
-		},
 		"RarityId": {
 			"title": "RarityId",
 			"type": "string",
@@ -636,95 +714,33 @@
 			"description": "A wildcarded TruthOptionId that can be used to match multiple TruthOption objects.",
 			"pattern": "^truth\\.option:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)$"
 		},
-		"TruthOptionOracleRollableId": {
-			"title": "TruthOptionOracleRollableId",
-			"type": "string",
-			"description": "A unique ID representing a TruthOptionOracleRollable object.",
-			"pattern": "^truth\\.option\\.oracle_rollable:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
+		"EmbeddedTruthId": {
+			"$ref": "#/definitions/TruthOptionId",
+			"title": "EmbeddedTruthId"
 		},
-		"TruthOptionOracleRollableIdWildcard": {
-			"title": "TruthOptionOracleRollableIdWildcard",
-			"type": "string",
-			"description": "A wildcarded TruthOptionOracleRollableId that can be used to match multiple TruthOptionOracleRollable objects.",
-			"pattern": "^truth\\.option\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
+		"EmbeddedTruthIdWildcard": {
+			"$ref": "#/definitions/TruthOptionIdWildcard",
+			"title": "EmbeddedTruthIdWildcard"
 		},
-		"EmbeddedMoveId": {
-			"$ref": "#/definitions/AssetAbilityMoveId",
-			"title": "EmbeddedMoveId"
-		},
-		"EmbeddedMoveIdWildcard": {
-			"$ref": "#/definitions/AssetAbilityMoveIdWildcard",
-			"title": "EmbeddedMoveIdWildcard"
-		},
-		"AnyMoveId": {
-			"title": "AnyMoveId",
+		"AnyTruthId": {
+			"title": "AnyTruthId",
 			"anyOf": [
 				{
-					"$ref": "#/definitions/EmbeddedMoveId"
+					"$ref": "#/definitions/TruthId"
 				},
 				{
-					"$ref": "#/definitions/MoveId"
+					"$ref": "#/definitions/TruthOptionId"
 				}
 			]
 		},
-		"AnyMoveIdWildcard": {
-			"title": "AnyMoveIdWildcard",
+		"AnyTruthIdWildcard": {
+			"title": "AnyTruthIdWildcard",
 			"anyOf": [
 				{
-					"$ref": "#/definitions/EmbeddedMoveIdWildcard"
+					"$ref": "#/definitions/TruthId"
 				},
 				{
-					"$ref": "#/definitions/MoveIdWildcard"
-				}
-			]
-		},
-		"EmbeddedOracleRollableId": {
-			"title": "EmbeddedOracleRollableId",
-			"anyOf": [
-				{
-					"$ref": "#/definitions/AssetAbilityOracleRollableId"
-				},
-				{
-					"$ref": "#/definitions/TruthOptionOracleRollableId"
-				},
-				{
-					"$ref": "#/definitions/MoveOracleRollableId"
-				}
-			]
-		},
-		"EmbeddedOracleRollableIdWildcard": {
-			"title": "EmbeddedOracleRollableIdWildcard",
-			"anyOf": [
-				{
-					"$ref": "#/definitions/AssetAbilityOracleRollableIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/TruthOptionOracleRollableIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/MoveOracleRollableIdWildcard"
-				}
-			]
-		},
-		"AnyOracleRollableId": {
-			"title": "AnyOracleRollableId",
-			"anyOf": [
-				{
-					"$ref": "#/definitions/EmbeddedOracleRollableId"
-				},
-				{
-					"$ref": "#/definitions/OracleRollableId"
-				}
-			]
-		},
-		"AnyOracleRollableIdWildcard": {
-			"title": "AnyOracleRollableIdWildcard",
-			"anyOf": [
-				{
-					"$ref": "#/definitions/EmbeddedOracleRollableIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/OracleRollableIdWildcard"
+					"$ref": "#/definitions/TruthOptionId"
 				}
 			]
 		},
@@ -733,25 +749,43 @@
 			"description": "Represents any kind of non-wildcard ID, including IDs of embedded objects.",
 			"anyOf": [
 				{
-					"$ref": "#/definitions/AssetId"
+					"$ref": "#/definitions/AtlasEntryId"
 				},
 				{
-					"$ref": "#/definitions/AssetCollectionId"
+					"$ref": "#/definitions/NpcId"
+				},
+				{
+					"$ref": "#/definitions/OracleRollableId"
+				},
+				{
+					"$ref": "#/definitions/OracleRollableRowId"
+				},
+				{
+					"$ref": "#/definitions/AssetId"
 				},
 				{
 					"$ref": "#/definitions/AssetAbilityId"
 				},
 				{
-					"$ref": "#/definitions/AssetAbilityMoveId"
+					"$ref": "#/definitions/MoveId"
 				},
 				{
-					"$ref": "#/definitions/AssetAbilityOracleRollableId"
+					"$ref": "#/definitions/MoveOracleRollableId"
 				},
 				{
 					"$ref": "#/definitions/AtlasCollectionId"
 				},
 				{
-					"$ref": "#/definitions/AtlasEntryId"
+					"$ref": "#/definitions/NpcCollectionId"
+				},
+				{
+					"$ref": "#/definitions/OracleCollectionId"
+				},
+				{
+					"$ref": "#/definitions/AssetCollectionId"
+				},
+				{
+					"$ref": "#/definitions/MoveCategoryId"
 				},
 				{
 					"$ref": "#/definitions/DelveSiteId"
@@ -763,27 +797,6 @@
 					"$ref": "#/definitions/DelveSiteThemeId"
 				},
 				{
-					"$ref": "#/definitions/MoveId"
-				},
-				{
-					"$ref": "#/definitions/MoveCategoryId"
-				},
-				{
-					"$ref": "#/definitions/MoveOracleRollableId"
-				},
-				{
-					"$ref": "#/definitions/NpcId"
-				},
-				{
-					"$ref": "#/definitions/NpcCollectionId"
-				},
-				{
-					"$ref": "#/definitions/OracleCollectionId"
-				},
-				{
-					"$ref": "#/definitions/OracleRollableId"
-				},
-				{
 					"$ref": "#/definitions/RarityId"
 				},
 				{
@@ -791,9 +804,6 @@
 				},
 				{
 					"$ref": "#/definitions/TruthOptionId"
-				},
-				{
-					"$ref": "#/definitions/TruthOptionOracleRollableId"
 				}
 			]
 		},
@@ -802,25 +812,43 @@
 			"description": "Represents any kind of wildcard ID, including IDs of embedded objects.",
 			"anyOf": [
 				{
-					"$ref": "#/definitions/AssetIdWildcard"
+					"$ref": "#/definitions/AtlasEntryIdWildcard"
 				},
 				{
-					"$ref": "#/definitions/AssetCollectionIdWildcard"
+					"$ref": "#/definitions/NpcIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/OracleRollableIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/OracleRollableRowIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AssetIdWildcard"
 				},
 				{
 					"$ref": "#/definitions/AssetAbilityIdWildcard"
 				},
 				{
-					"$ref": "#/definitions/AssetAbilityMoveIdWildcard"
+					"$ref": "#/definitions/MoveIdWildcard"
 				},
 				{
-					"$ref": "#/definitions/AssetAbilityOracleRollableIdWildcard"
+					"$ref": "#/definitions/MoveOracleRollableIdWildcard"
 				},
 				{
 					"$ref": "#/definitions/AtlasCollectionIdWildcard"
 				},
 				{
-					"$ref": "#/definitions/AtlasEntryIdWildcard"
+					"$ref": "#/definitions/NpcCollectionIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/OracleCollectionIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AssetCollectionIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/MoveCategoryIdWildcard"
 				},
 				{
 					"$ref": "#/definitions/DelveSiteIdWildcard"
@@ -832,27 +860,6 @@
 					"$ref": "#/definitions/DelveSiteThemeIdWildcard"
 				},
 				{
-					"$ref": "#/definitions/MoveIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/MoveCategoryIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/MoveOracleRollableIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/NpcIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/NpcCollectionIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/OracleCollectionIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/OracleRollableIdWildcard"
-				},
-				{
 					"$ref": "#/definitions/RarityIdWildcard"
 				},
 				{
@@ -860,9 +867,6 @@
 				},
 				{
 					"$ref": "#/definitions/TruthOptionIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/TruthOptionOracleRollableIdWildcard"
 				}
 			]
 		},
@@ -1089,16 +1093,16 @@
 		},
 		"CollectableType": {
 			"title": "CollectableType",
-			"enum": ["oracle_rollable", "move", "asset", "atlas_entry", "npc"]
+			"enum": ["atlas_entry", "npc", "oracle_rollable", "asset", "move"]
 		},
 		"CollectionType": {
 			"title": "CollectionType",
 			"enum": [
-				"oracle_collection",
-				"move_category",
-				"asset_collection",
 				"atlas_collection",
-				"npc_collection"
+				"npc_collection",
+				"oracle_collection",
+				"asset_collection",
+				"move_category"
 			]
 		},
 		"ConditionMeterRule": {
@@ -1219,32 +1223,15 @@
 			"title": "NonCollectableType",
 			"enum": [
 				"delve_site",
-				"delve_site_theme",
 				"delve_site_domain",
-				"truth",
-				"rarity"
+				"delve_site_theme",
+				"rarity",
+				"truth"
 			]
 		},
 		"NonIdentifiableType": {
 			"title": "NonIdentifiableType",
-			"enum": ["asset_ability", "oracle_table_row"]
-		},
-		"ObjectType": {
-			"title": "ObjectType",
-			"anyOf": [
-				{
-					"$ref": "#/definitions/CollectableType"
-				},
-				{
-					"$ref": "#/definitions/NonCollectableType"
-				},
-				{
-					"$ref": "#/definitions/CollectionType"
-				},
-				{
-					"$ref": "#/definitions/NonIdentifiableType"
-				}
-			]
+			"enum": ["oracle_table_row"]
 		},
 		"Rules": {
 			"title": "Rules",
@@ -1433,28 +1420,19 @@
 					"$ref": "#/definitions/DiceExpression"
 				},
 				{
-					"$ref": "#/definitions/OracleRollableId"
-				},
-				{
-					"$ref": "#/definitions/MoveId"
-				},
-				{
-					"$ref": "#/definitions/AssetId"
-				},
-				{
 					"$ref": "#/definitions/AtlasEntryId"
 				},
 				{
 					"$ref": "#/definitions/NpcId"
 				},
 				{
-					"$ref": "#/definitions/OracleCollectionId"
+					"$ref": "#/definitions/OracleRollableId"
 				},
 				{
-					"$ref": "#/definitions/MoveCategoryId"
+					"$ref": "#/definitions/AssetId"
 				},
 				{
-					"$ref": "#/definitions/AssetCollectionId"
+					"$ref": "#/definitions/MoveId"
 				},
 				{
 					"$ref": "#/definitions/AtlasCollectionId"
@@ -1463,33 +1441,33 @@
 					"$ref": "#/definitions/NpcCollectionId"
 				},
 				{
-					"$ref": "#/definitions/DelveSiteId"
+					"$ref": "#/definitions/OracleCollectionId"
 				},
 				{
-					"$ref": "#/definitions/DelveSiteThemeId"
+					"$ref": "#/definitions/AssetCollectionId"
+				},
+				{
+					"$ref": "#/definitions/MoveCategoryId"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteId"
 				},
 				{
 					"$ref": "#/definitions/DelveSiteDomainId"
 				},
 				{
-					"$ref": "#/definitions/TruthId"
+					"$ref": "#/definitions/DelveSiteThemeId"
 				},
 				{
 					"$ref": "#/definitions/RarityId"
 				},
 				{
+					"$ref": "#/definitions/TruthId"
+				},
+				{
 					"type": "array",
 					"items": {
 						"anyOf": [
-							{
-								"$ref": "#/definitions/OracleRollableIdWildcard"
-							},
-							{
-								"$ref": "#/definitions/MoveIdWildcard"
-							},
-							{
-								"$ref": "#/definitions/AssetIdWildcard"
-							},
 							{
 								"$ref": "#/definitions/AtlasEntryIdWildcard"
 							},
@@ -1497,13 +1475,13 @@
 								"$ref": "#/definitions/NpcIdWildcard"
 							},
 							{
-								"$ref": "#/definitions/OracleCollectionIdWildcard"
+								"$ref": "#/definitions/OracleRollableIdWildcard"
 							},
 							{
-								"$ref": "#/definitions/MoveCategoryIdWildcard"
+								"$ref": "#/definitions/AssetIdWildcard"
 							},
 							{
-								"$ref": "#/definitions/AssetCollectionIdWildcard"
+								"$ref": "#/definitions/MoveIdWildcard"
 							},
 							{
 								"$ref": "#/definitions/AtlasCollectionIdWildcard"
@@ -1512,19 +1490,28 @@
 								"$ref": "#/definitions/NpcCollectionIdWildcard"
 							},
 							{
-								"$ref": "#/definitions/DelveSiteIdWildcard"
+								"$ref": "#/definitions/OracleCollectionIdWildcard"
 							},
 							{
-								"$ref": "#/definitions/DelveSiteThemeIdWildcard"
+								"$ref": "#/definitions/AssetCollectionIdWildcard"
+							},
+							{
+								"$ref": "#/definitions/MoveCategoryIdWildcard"
+							},
+							{
+								"$ref": "#/definitions/DelveSiteIdWildcard"
 							},
 							{
 								"$ref": "#/definitions/DelveSiteDomainIdWildcard"
 							},
 							{
-								"$ref": "#/definitions/TruthIdWildcard"
+								"$ref": "#/definitions/DelveSiteThemeIdWildcard"
 							},
 							{
 								"$ref": "#/definitions/RarityIdWildcard"
+							},
+							{
+								"$ref": "#/definitions/TruthIdWildcard"
 							}
 						]
 					}
@@ -1541,21 +1528,21 @@
 					"enum": [
 						"boolean",
 						"integer",
-						"oracle_rollable",
-						"move",
-						"asset",
 						"atlas_entry",
 						"npc",
-						"oracle_collection",
-						"move_category",
-						"asset_collection",
+						"oracle_rollable",
+						"asset",
+						"move",
 						"atlas_collection",
 						"npc_collection",
+						"oracle_collection",
+						"asset_collection",
+						"move_category",
 						"delve_site",
-						"delve_site_theme",
 						"delve_site_domain",
-						"truth",
+						"delve_site_theme",
 						"rarity",
+						"truth",
 						"enum"
 					]
 				}
@@ -1581,7 +1568,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -1624,7 +1611,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -1652,138 +1639,6 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "oracle_rollable",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"type": "object",
-						"properties": {
-							"applies_to": {
-								"default": null,
-								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
-								"anyOf": [
-									{
-										"type": "array",
-										"items": {
-											"$ref": "#/definitions/ObjectType"
-										}
-									},
-									{
-										"type": "null"
-									}
-								]
-							},
-							"description": {
-								"$ref": "#/definitions/MarkdownString"
-							},
-							"wildcard": {
-								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
-								"type": "boolean"
-							},
-							"value_type": {
-								"const": "oracle_rollable",
-								"type": "string"
-							}
-						},
-						"required": ["applies_to", "description", "wildcard", "value_type"],
-						"title": "TagRuleOracleRollable"
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"value_type": {
-								"const": "move",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"type": "object",
-						"properties": {
-							"applies_to": {
-								"default": null,
-								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
-								"anyOf": [
-									{
-										"type": "array",
-										"items": {
-											"$ref": "#/definitions/ObjectType"
-										}
-									},
-									{
-										"type": "null"
-									}
-								]
-							},
-							"description": {
-								"$ref": "#/definitions/MarkdownString"
-							},
-							"wildcard": {
-								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
-								"type": "boolean"
-							},
-							"value_type": {
-								"const": "move",
-								"type": "string"
-							}
-						},
-						"required": ["applies_to", "description", "wildcard", "value_type"],
-						"title": "TagRuleMove"
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"value_type": {
-								"const": "asset",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"type": "object",
-						"properties": {
-							"applies_to": {
-								"default": null,
-								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
-								"anyOf": [
-									{
-										"type": "array",
-										"items": {
-											"$ref": "#/definitions/ObjectType"
-										}
-									},
-									{
-										"type": "null"
-									}
-								]
-							},
-							"description": {
-								"$ref": "#/definitions/MarkdownString"
-							},
-							"wildcard": {
-								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
-								"type": "boolean"
-							},
-							"value_type": {
-								"const": "asset",
-								"type": "string"
-							}
-						},
-						"required": ["applies_to", "description", "wildcard", "value_type"],
-						"title": "TagRuleAsset"
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"value_type": {
 								"const": "atlas_entry",
 								"type": "string"
 							}
@@ -1799,7 +1654,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -1812,7 +1667,7 @@
 							},
 							"wildcard": {
 								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
 								"type": "boolean"
 							},
 							"value_type": {
@@ -1843,7 +1698,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -1856,7 +1711,7 @@
 							},
 							"wildcard": {
 								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
 								"type": "boolean"
 							},
 							"value_type": {
@@ -1872,7 +1727,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "oracle_collection",
+								"const": "oracle_rollable",
 								"type": "string"
 							}
 						}
@@ -1887,7 +1742,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -1900,23 +1755,23 @@
 							},
 							"wildcard": {
 								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "oracle_collection",
+								"const": "oracle_rollable",
 								"type": "string"
 							}
 						},
 						"required": ["applies_to", "description", "wildcard", "value_type"],
-						"title": "TagRuleOracleCollection"
+						"title": "TagRuleOracleRollable"
 					}
 				},
 				{
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "move_category",
+								"const": "asset",
 								"type": "string"
 							}
 						}
@@ -1931,7 +1786,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -1944,23 +1799,23 @@
 							},
 							"wildcard": {
 								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "move_category",
+								"const": "asset",
 								"type": "string"
 							}
 						},
 						"required": ["applies_to", "description", "wildcard", "value_type"],
-						"title": "TagRuleMoveCategory"
+						"title": "TagRuleAsset"
 					}
 				},
 				{
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "asset_collection",
+								"const": "move",
 								"type": "string"
 							}
 						}
@@ -1975,7 +1830,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -1988,16 +1843,16 @@
 							},
 							"wildcard": {
 								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "asset_collection",
+								"const": "move",
 								"type": "string"
 							}
 						},
 						"required": ["applies_to", "description", "wildcard", "value_type"],
-						"title": "TagRuleAssetCollection"
+						"title": "TagRuleMove"
 					}
 				},
 				{
@@ -2019,7 +1874,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -2032,7 +1887,7 @@
 							},
 							"wildcard": {
 								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
 								"type": "boolean"
 							},
 							"value_type": {
@@ -2063,7 +1918,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -2076,7 +1931,7 @@
 							},
 							"wildcard": {
 								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
 								"type": "boolean"
 							},
 							"value_type": {
@@ -2092,6 +1947,138 @@
 					"if": {
 						"properties": {
 							"value_type": {
+								"const": "oracle_collection",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/definitions/TaggableNodeType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/definitions/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "oracle_collection",
+								"type": "string"
+							}
+						},
+						"required": ["applies_to", "description", "wildcard", "value_type"],
+						"title": "TagRuleOracleCollection"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "asset_collection",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/definitions/TaggableNodeType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/definitions/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "asset_collection",
+								"type": "string"
+							}
+						},
+						"required": ["applies_to", "description", "wildcard", "value_type"],
+						"title": "TagRuleAssetCollection"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "move_category",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/definitions/TaggableNodeType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/definitions/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "move_category",
+								"type": "string"
+							}
+						},
+						"required": ["applies_to", "description", "wildcard", "value_type"],
+						"title": "TagRuleMoveCategory"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
 								"const": "delve_site",
 								"type": "string"
 							}
@@ -2107,7 +2094,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -2120,7 +2107,7 @@
 							},
 							"wildcard": {
 								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
 								"type": "boolean"
 							},
 							"value_type": {
@@ -2136,50 +2123,6 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "delve_site_theme",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"type": "object",
-						"properties": {
-							"applies_to": {
-								"default": null,
-								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
-								"anyOf": [
-									{
-										"type": "array",
-										"items": {
-											"$ref": "#/definitions/ObjectType"
-										}
-									},
-									{
-										"type": "null"
-									}
-								]
-							},
-							"description": {
-								"$ref": "#/definitions/MarkdownString"
-							},
-							"wildcard": {
-								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
-								"type": "boolean"
-							},
-							"value_type": {
-								"const": "delve_site_theme",
-								"type": "string"
-							}
-						},
-						"required": ["applies_to", "description", "wildcard", "value_type"],
-						"title": "TagRuleDelveSiteTheme"
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"value_type": {
 								"const": "delve_site_domain",
 								"type": "string"
 							}
@@ -2195,7 +2138,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -2208,7 +2151,7 @@
 							},
 							"wildcard": {
 								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
 								"type": "boolean"
 							},
 							"value_type": {
@@ -2224,7 +2167,7 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "truth",
+								"const": "delve_site_theme",
 								"type": "string"
 							}
 						}
@@ -2239,7 +2182,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -2252,16 +2195,16 @@
 							},
 							"wildcard": {
 								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "truth",
+								"const": "delve_site_theme",
 								"type": "string"
 							}
 						},
 						"required": ["applies_to", "description", "wildcard", "value_type"],
-						"title": "TagRuleTruth"
+						"title": "TagRuleDelveSiteTheme"
 					}
 				},
 				{
@@ -2283,7 +2226,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -2296,7 +2239,7 @@
 							},
 							"wildcard": {
 								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
 								"type": "boolean"
 							},
 							"value_type": {
@@ -2306,6 +2249,50 @@
 						},
 						"required": ["applies_to", "description", "wildcard", "value_type"],
 						"title": "TagRuleRarity"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "truth",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/definitions/TaggableNodeType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/definitions/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "truth",
+								"type": "string"
+							}
+						},
+						"required": ["applies_to", "description", "wildcard", "value_type"],
+						"title": "TagRuleTruth"
 					}
 				},
 				{
@@ -2327,7 +2314,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -2365,15 +2352,31 @@
 				}
 			]
 		},
+		"TaggableNodeType": {
+			"title": "TaggableNodeType",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/CollectableType"
+				},
+				{
+					"$ref": "#/definitions/NonCollectableType"
+				},
+				{
+					"$ref": "#/definitions/CollectionType"
+				},
+				{
+					"$ref": "#/definitions/NonIdentifiableType"
+				}
+			]
+		},
 		"Tags": {
 			"title": "Tags",
 			"type": "object",
-			"description": "A dictionary of tags, keyed by the RulesetID that the tags are from.",
-			"remarks": "Deserialize as a dictionary object.",
+			"description": "A dictionary of tags, keyed by the RulesPackageId that the tags are from.",
 			"releaseStage": "experimental",
 			"patternProperties": {
 				"^[a-z][a-z0-9_]{3,}$": {
-					"title": "RulesetTags",
+					"title": "RulesPackageTags",
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
@@ -2381,6 +2384,30 @@
 							"$ref": "#/definitions/Tag"
 						}
 					}
+				}
+			},
+			"key": "^[a-z][a-z0-9_]{3,}$"
+		},
+		"TagsCore": {
+			"title": "TagsCore",
+			"type": "object",
+			"properties": {
+				"requires_allies": {
+					"type": "boolean",
+					"description": "This object requires allies to function, and is intended for co-op play, or guided play with allies. It is not appropriate for solo play."
+				},
+				"supernatural": {
+					"type": "boolean",
+					"description": "This object is supernatural in nature, and is ideal for settings that feature supernatural or mythic powers."
+				},
+				"technological": {
+					"type": "boolean",
+					"description": "This object is technological in nature, and is ideal for settings that feature remarkable technologies."
+				}
+			},
+			"patternProperties": {
+				"^[a-z][a-z_]*$": {
+					"$ref": "#/definitions/Tag"
 				}
 			}
 		},

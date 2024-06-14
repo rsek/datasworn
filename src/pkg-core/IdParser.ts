@@ -76,7 +76,7 @@ abstract class IdParser<
 		if (errors.length > 0) throw new ParseError(id, errors.join('\n'))
 	}
 
-	createEmbeddedId<TypeId extends TypeId.EmbeddableTypes, Key extends string>(
+	createEmbeddedId<TypeId extends TypeId.EmbeddableType, Key extends string>(
 		typeId: TypeId,
 		key: Key
 	) {
@@ -312,7 +312,7 @@ abstract class IdParser<
 
 	#assignIdsInDictionary(
 		childNodes: Record<string, TypeNode.AnyEmbedded>,
-		nextTypeId: TypeId.EmbeddableTypes,
+		nextTypeId: TypeId.EmbeddableType,
 		recursive?: boolean,
 		index?: Map<string, TypeNode.Any>
 	) {
@@ -327,7 +327,7 @@ abstract class IdParser<
 
 	#assignIdsInArray(
 		childNodes: TypeNode.AnyEmbedded[],
-		nextTypeId: TypeId.EmbeddableTypes,
+		nextTypeId: TypeId.EmbeddableType,
 		recursive?: boolean,
 		index?: Map<string, TypeNode.Any>
 	) {
@@ -409,7 +409,7 @@ abstract class IdParser<
 			const typeId = embeddedTypeIds[i]
 			const path = embeddedPaths[i]
 			const property = TypeId.getEmbeddedPropertyKey(
-				typeId as TypeId.EmbeddableTypes
+				typeId as TypeId.EmbeddableType
 			)
 
 			dotPath.push(property, path)
@@ -526,7 +526,7 @@ abstract class IdParser<
 		const { typeIds, pathSegments } = this.#parseOptions(id)
 		const [primaryTypeId, ...embeddedTypeIds] = typeIds as [
 			TypeId.AnyPrimary,
-			...TypeId.EmbeddableTypes[]
+			...TypeId.EmbeddableType[]
 		]
 		const [primaryPath, ...embeddedPaths] = pathSegments
 		const [rulesPackage, ...pathKeys] = primaryPath.split(CONST.PathKeySep)
@@ -546,7 +546,7 @@ abstract class IdParser<
 			| EmbeddedId
 
 		for (let i = 0; i < embeddedTypeIds.length; i++) {
-			const typeId = embeddedTypeIds[i] as TypeId.EmbeddableTypes
+			const typeId = embeddedTypeIds[i] as TypeId.EmbeddableType
 			const pathKey = embeddedPaths[i]
 			lastParser = lastParser.createEmbeddedId(typeId, pathKey)
 		}
@@ -933,7 +933,7 @@ namespace CollectionId {
 
 class EmbeddedId<
 	Parent extends IdParser = IdParser,
-	TypeId extends TypeId.EmbeddableTypes = TypeId.EmbeddableTypes,
+	TypeId extends TypeId.EmbeddableType = TypeId.EmbeddableType,
 	Key extends string = string
 > extends IdParser {
 	constructor(parent: Parent, typeId: TypeId, key: string)
@@ -949,7 +949,7 @@ class EmbeddedId<
 }
 interface EmbeddedId<
 	Parent extends IdParser,
-	TypeId extends TypeId.EmbeddableTypes = TypeId.EmbeddableTypes,
+	TypeId extends TypeId.EmbeddableType = TypeId.EmbeddableType,
 	Key extends string = string
 > extends IdParser {
 	get id(): `${this['fullTypeId']}${CONST.PrefixSep}${Join<this['pathSegments'], CONST.PathTypeSep>}`
