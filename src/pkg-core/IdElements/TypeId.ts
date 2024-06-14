@@ -110,7 +110,7 @@ namespace TypeId {
 	export type CanEmbed = keyof typeof EmbedTypeMap
 
 	export const AllowedEmbedOfEmbedTypes = {
-		ability: ['oracle_rollable'],
+		ability: ['oracle_rollable', 'move'],
 		move: [],
 		option: ['oracle_rollable'],
 		oracle_rollable: ['row']
@@ -118,15 +118,31 @@ namespace TypeId {
 		[T in EmbeddableType & CanEmbed]: (typeof EmbedTypeMap)[T][number][]
 	}
 
+	export function canHaveEmbed(typeId: string, typeIsEmbedded = false) {
+		return getEmbeddableTypes(typeId, typeIsEmbedded).length > 0
+	}
+
+	export function canBeEmbedded(typeId: string) {
+		return getTypesThatCanHaveEmbedOfType(typeId).length > 0
+	}
+
+	export function isPrimary(typeId: string): typeId is AnyPrimary {
+		return AnyPrimary.includes(typeId as AnyPrimary)
+	}
+	export function isEmbedOnly(typeId: string): typeId is EmbedOnlyType {
+		return EmbedOnlyType.includes(typeId as EmbedOnlyType)
+	}
+
 	export function getEmbeddableTypes(
 		typeId: string,
 		typeIsEmbedded = false
 	): EmbeddableType[] {
 		if (typeIsEmbedded) return AllowedEmbedOfEmbedTypes[typeId] ?? []
+
 		return EmbedTypeMap[typeId] ?? []
 	}
 
-	export function getTypesThatCanEmbedType(typeId: string): CanEmbed[] {
+	export function getTypesThatCanHaveEmbedOfType(typeId: string): CanEmbed[] {
 		const typeIds: CanEmbed[] = []
 
 		for (const embedder in EmbedTypeMap) {

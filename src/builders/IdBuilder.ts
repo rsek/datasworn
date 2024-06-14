@@ -241,6 +241,10 @@ class IdPattern<
 		)
 	}
 
+	get fullTypeId() {
+		return this.map(({ typeId }) => typeId).join(CONST.PathTypeSep)
+	}
+
 	/**
 	 * Get the right hand side of the ID pattern: the path.
 	 * @example `starforged/core/action`
@@ -272,12 +276,14 @@ class IdPattern<
 		) as this
 	}
 
+	/** The type ID of the most recent primary node ancestor. */
 	get primaryTypeId() {
-		return this.at(-1)?.typeId ?? null
+		return this.at(0)?.typeId ?? null
 	}
 
+	/** The type of the node itself. */
 	get nodeTypeId() {
-		return this.at(0)?.typeId ?? null
+		return this.at(-1)?.typeId ?? null
 	}
 
 	get current() {
@@ -344,8 +350,10 @@ class IdPattern<
 	}
 
 	toWildcardSchema(options: StringOptions = {}) {
-		const typeName = this.map((item) => pascalCase(item.typeId)).join('')
-		const indefiniteArticle = typeName.match(/^[aeiou]/i) ? 'an' : 'a'
+		const typeName = this.fullTypeId
+			.split(CONST.PathTypeSep)
+			.map(pascalCase)
+			.join('')
 		const $id = typeName + 'IdWildcard'
 		const description = `A wildcarded ${typeName}Id that can be used to match multiple ${typeName} objects.`
 		// named capture groups aren't universally available, so JSON schema docs recommend against using them
@@ -360,7 +368,10 @@ class IdPattern<
 	}
 
 	toSchema(options: StringOptions = {}) {
-		const typeName = this.map((item) => pascalCase(item.typeId)).join('')
+		const typeName = this.fullTypeId
+			.split(CONST.PathTypeSep)
+			.map(pascalCase)
+			.join('')
 		const indefiniteArticle = typeName.match(/^[aeiou]/i) ? 'an' : 'a'
 		const $id = typeName + 'Id'
 		const description = `A unique ID representing ${indefiniteArticle} ${typeName} object.`
@@ -595,25 +606,23 @@ for (const typeId of TypeId.AnyPrimary) {
 	patternIndex[typeId] ||= []
 	patternIndex[typeId].push(pattern)
 
-	if (typeId in TypeId.EmbedTypeMap) computeEmbeddedTypes(pattern, patternIndex)
+	if (TypeId.canHaveEmbed(typeId)) computeEmbeddedTypes(pattern)
 }
 
-function computeEmbeddedTypes(
-	pattern: IdPattern,
-	patternIndex: Record<TypeId.Any, IdPattern[]>
-) {
-	const typeId = pattern.nodeTypeId as TypeId.EmbeddableType
+function computeEmbeddedTypes(pattern: IdPattern) {
+	const nodeTypeId = pattern.nodeTypeId as TypeId.Any
 
-	const embeddableTypes = TypeId.getEmbeddableTypes(typeId, pattern.isEmbedded)
+	if (!TypeId.canHaveEmbed(nodeTypeId, pattern.isEmbedded)) return
 
-	for (const embeddedTypeId of embeddableTypes) {
-		const childPattern = pattern.createEmbedded(embeddedTypeId)
+	const embedTypes = TypeId.getEmbeddableTypes(nodeTypeId, pattern.isEmbedded)
 
-		patternIndex[typeId] ||= []
-		patternIndex[typeId].push(childPattern)
+	for (const embedType of embedTypes) {
+		const embedPattern = pattern.createEmbedded(embedType)
 
-		if (embeddedTypeId in TypeId.EmbedTypeMap)
-			computeEmbeddedTypes(childPattern, patternIndex)
+		patternIndex[embedType] ||= []
+		patternIndex[embedType].push(embedPattern)
+
+		computeEmbeddedTypes(embedPattern)
 	}
 }
 
@@ -640,57 +649,84 @@ type IdSchemaName =
 
 const ids = {} as Record<IdSchemaName, TString | TUnion<TRef<TString>[]>>
 
-const anyIdTypes: TRef<TString>[] = []
-const anyWildcardIdTypes: TRef<TString>[] = []
-
 for (const typeId in patternIndex) {
-	const patterns = patternIndex[typeId as TypeId.Any]
+	const typePatterns = patternIndex[typeId as TypeId.Any]
 
-	for (const pattern of patterns)
+	for (const pattern of typePatterns)
 		for (const schema of [pattern.toSchema(), pattern.toWildcardSchema()]) {
 			ids[schema.$id as IdSchemaName] = schema
-			schema.$id?.endsWith('Wildcard')
-				? anyWildcardIdTypes.push(Type.Ref(schema))
-				: anyIdTypes.push(Type.Ref(schema))
 		}
+}
 
-	const baseTypeId = `${pascalCase(typeId)}Id` as IdSchemaName
+const permutations = {} as Record<string, Set<string>>
 
-	const embeddedPatterns = patterns.filter((pattern) => pattern.isEmbedded)
+function permutate(typeId: string, parentTypeId: string) {
+	if (TypeId.isPrimary(typeId) && !TypeId.isEmbedOnly(parentTypeId)) {
+		const typeSchema = pascalCase(typeId) + 'Id'
 
-	// if there's no embed to generate unions for, we're done
-	if (embeddedPatterns.length === 0) continue
+		const parentTypePrefix = parentTypeId
+			.split(CONST.PathTypeSep)
+			.map(pascalCase)
+			.join('')
 
-	const f = {
-		[`Embedded${baseTypeId}`]: embeddedPatterns.map((pattern) =>
-			Type.Ref(pattern.toSchema())
-		),
-		[`Embedded${baseTypeId}Wildcard`]: embeddedPatterns.map((pattern) =>
-			Type.Ref(pattern.toWildcardSchema())
-		),
-		[`Any${baseTypeId}`]: patterns.map((pattern) =>
-			Type.Ref(pattern.toSchema())
-		),
-		[`Any${baseTypeId}Wildcard`]: patterns.map((pattern) =>
-			Type.Ref(pattern.toSchema())
-		)
-	} satisfies Record<string, TSchema[]>
+		const thisSchema = parentTypePrefix + typeSchema
+		const thisWildcardSchema = thisSchema + 'Wildcard'
 
-	for (const $id in f) {
-		ids[$id as IdSchemaName] = Type.Union(f[$id], {
-			$id,
-			[JsonTypeDef]: { schema: JtdType.String() }
-		})
+		const anySchema = `Any` + typeSchema
+		const anyWildcardSchema = anySchema + 'Wildcard'
+		const embeddedSchema = `Embedded` + typeSchema
+		const embeddedWildcardSchema = embeddedSchema + 'Wildcard'
+
+		permutations[anySchema] ||= new Set([typeSchema])
+		permutations[embeddedWildcardSchema] ||= new Set()
+		permutations[embeddedSchema] ||= new Set()
+		permutations[anyWildcardSchema] ||= new Set([typeSchema + 'Wildcard'])
+
+		permutations[anySchema].add(thisSchema)
+		permutations[anyWildcardSchema].add(thisWildcardSchema)
+
+		permutations[embeddedSchema].add(thisSchema)
+		permutations[embeddedWildcardSchema].add(thisWildcardSchema)
+	}
+
+	if (TypeId.canHaveEmbed(typeId, true)) {
+		const embeddedTypes = TypeId.getEmbeddableTypes(typeId, true)
+
+		for (const embeddedTypeId of embeddedTypes) {
+			permutate(embeddedTypeId, `${parentTypeId}${CONST.PathTypeSep}${typeId}`)
+		}
 	}
 }
 
-ids.AnyId = Type.Union(anyIdTypes, {
+for (const primaryTypeId in TypeId.EmbedTypeMap) {
+	const embeddedTypeIds = TypeId.EmbedTypeMap[primaryTypeId as TypeId.CanEmbed]
+
+	for (const embeddedTypeId of embeddedTypeIds)
+		permutate(embeddedTypeId, primaryTypeId)
+}
+
+const anyIdSchemata: TRef<TString>[] = []
+const anyIdWildcardSchemata: TRef<TString>[] = []
+
+for (const $id in permutations) {
+	const schemaIds = Array.from(permutations[$id]).map((id) =>
+		Type.Ref<TString>(id)
+	)
+	ids[$id as IdSchemaName] = Type.Union(schemaIds, {
+		$id,
+		[JsonTypeDef]: { schema: JtdType.String() }
+	})
+	if ($id.endsWith('IdWildcard')) anyIdSchemata.push(...schemaIds)
+	else anyIdWildcardSchemata.push(...schemaIds)
+}
+
+ids.AnyId = Type.Union(anyIdSchemata, {
 	$id: 'AnyId',
 	description:
 		'Represents any kind of non-wildcard ID, including IDs of embedded objects.',
 	[JsonTypeDef]: { schema: JtdType.String() }
 })
-ids.AnyIdWildcard = Type.Union(anyWildcardIdTypes, {
+ids.AnyIdWildcard = Type.Union(anyIdWildcardSchemata, {
 	$id: 'AnyIdWildcard',
 	description:
 		'Represents any kind of wildcard ID, including IDs of embedded objects.',

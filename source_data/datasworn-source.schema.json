@@ -574,6 +574,42 @@
 			"description": "A wildcarded OracleRollableId that can be used to match multiple OracleRollable objects.",
 			"pattern": "^oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
 		},
+		"AssetAbilityOracleRollableId": {
+			"title": "AssetAbilityOracleRollableId",
+			"type": "string",
+			"description": "A unique ID representing an AssetAbilityOracleRollable object.",
+			"pattern": "^asset\\.ability\\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
+		},
+		"AssetAbilityOracleRollableIdWildcard": {
+			"title": "AssetAbilityOracleRollableIdWildcard",
+			"type": "string",
+			"description": "A wildcarded AssetAbilityOracleRollableId that can be used to match multiple AssetAbilityOracleRollable objects.",
+			"pattern": "^asset\\.ability\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
+		},
+		"MoveOracleRollableId": {
+			"title": "MoveOracleRollableId",
+			"type": "string",
+			"description": "A unique ID representing a MoveOracleRollable object.",
+			"pattern": "^move\\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.([a-z][a-z_]*|\\*)$"
+		},
+		"MoveOracleRollableIdWildcard": {
+			"title": "MoveOracleRollableIdWildcard",
+			"type": "string",
+			"description": "A wildcarded MoveOracleRollableId that can be used to match multiple MoveOracleRollable objects.",
+			"pattern": "^move\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.([a-z][a-z_]*|\\*)$"
+		},
+		"TruthOptionOracleRollableId": {
+			"title": "TruthOptionOracleRollableId",
+			"type": "string",
+			"description": "A unique ID representing a TruthOptionOracleRollable object.",
+			"pattern": "^truth\\.option\\.oracle_rollable:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
+		},
+		"TruthOptionOracleRollableIdWildcard": {
+			"title": "TruthOptionOracleRollableIdWildcard",
+			"type": "string",
+			"description": "A wildcarded TruthOptionOracleRollableId that can be used to match multiple TruthOptionOracleRollable objects.",
+			"pattern": "^truth\\.option\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
+		},
 		"OracleRollableRowId": {
 			"title": "OracleRollableRowId",
 			"type": "string",
@@ -586,35 +622,41 @@
 			"description": "A wildcarded OracleRollableRowId that can be used to match multiple OracleRollableRow objects.",
 			"pattern": "^oracle_rollable\\.row:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.(\\d+|\\*)$"
 		},
-		"EmbeddedOracleRollableId": {
-			"$ref": "#/definitions/OracleRollableRowId",
-			"title": "EmbeddedOracleRollableId"
+		"AssetAbilityOracleRollableRowId": {
+			"title": "AssetAbilityOracleRollableRowId",
+			"type": "string",
+			"description": "A unique ID representing an AssetAbilityOracleRollableRow object.",
+			"pattern": "^asset\\.ability\\.oracle_rollable\\.row:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.(\\d+)\\.([a-z][a-z_]*|\\*)\\.(\\d+)$"
 		},
-		"EmbeddedOracleRollableIdWildcard": {
-			"$ref": "#/definitions/OracleRollableRowIdWildcard",
-			"title": "EmbeddedOracleRollableIdWildcard"
+		"AssetAbilityOracleRollableRowIdWildcard": {
+			"title": "AssetAbilityOracleRollableRowIdWildcard",
+			"type": "string",
+			"description": "A wildcarded AssetAbilityOracleRollableRowId that can be used to match multiple AssetAbilityOracleRollableRow objects.",
+			"pattern": "^asset\\.ability\\.oracle_rollable\\.row:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)\\.(\\d+|\\*)$"
 		},
-		"AnyOracleRollableId": {
-			"title": "AnyOracleRollableId",
-			"anyOf": [
-				{
-					"$ref": "#/definitions/OracleRollableId"
-				},
-				{
-					"$ref": "#/definitions/OracleRollableRowId"
-				}
-			]
+		"MoveOracleRollableRowId": {
+			"title": "MoveOracleRollableRowId",
+			"type": "string",
+			"description": "A unique ID representing a MoveOracleRollableRow object.",
+			"pattern": "^move\\.oracle_rollable\\.row:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.([a-z][a-z_]*|\\*)\\.(\\d+)$"
 		},
-		"AnyOracleRollableIdWildcard": {
-			"title": "AnyOracleRollableIdWildcard",
-			"anyOf": [
-				{
-					"$ref": "#/definitions/OracleRollableId"
-				},
-				{
-					"$ref": "#/definitions/OracleRollableRowId"
-				}
-			]
+		"MoveOracleRollableRowIdWildcard": {
+			"title": "MoveOracleRollableRowIdWildcard",
+			"type": "string",
+			"description": "A wildcarded MoveOracleRollableRowId that can be used to match multiple MoveOracleRollableRow objects.",
+			"pattern": "^move\\.oracle_rollable\\.row:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.([a-z][a-z_]*|\\*)\\.(\\d+|\\*)$"
+		},
+		"TruthOptionOracleRollableRowId": {
+			"title": "TruthOptionOracleRollableRowId",
+			"type": "string",
+			"description": "A unique ID representing a TruthOptionOracleRollableRow object.",
+			"pattern": "^truth\\.option\\.oracle_rollable\\.row:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)\\.([a-z][a-z_]*|\\*)\\.(\\d+)$"
+		},
+		"TruthOptionOracleRollableRowIdWildcard": {
+			"title": "TruthOptionOracleRollableRowIdWildcard",
+			"type": "string",
+			"description": "A wildcarded TruthOptionOracleRollableRowId that can be used to match multiple TruthOptionOracleRollableRow objects.",
+			"pattern": "^truth\\.option\\.oracle_rollable\\.row:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)\\.(\\d+|\\*)$"
 		},
 		"AssetId": {
 			"title": "AssetId",
@@ -640,35 +682,17 @@
 			"description": "A wildcarded AssetAbilityId that can be used to match multiple AssetAbility objects.",
 			"pattern": "^asset\\.ability:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.(\\d+|\\*)$"
 		},
-		"EmbeddedAssetId": {
-			"$ref": "#/definitions/AssetAbilityId",
-			"title": "EmbeddedAssetId"
+		"AssetAbilityMoveId": {
+			"title": "AssetAbilityMoveId",
+			"type": "string",
+			"description": "A unique ID representing an AssetAbilityMove object.",
+			"pattern": "^asset\\.ability\\.move:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
 		},
-		"EmbeddedAssetIdWildcard": {
-			"$ref": "#/definitions/AssetAbilityIdWildcard",
-			"title": "EmbeddedAssetIdWildcard"
-		},
-		"AnyAssetId": {
-			"title": "AnyAssetId",
-			"anyOf": [
-				{
-					"$ref": "#/definitions/AssetId"
-				},
-				{
-					"$ref": "#/definitions/AssetAbilityId"
-				}
-			]
-		},
-		"AnyAssetIdWildcard": {
-			"title": "AnyAssetIdWildcard",
-			"anyOf": [
-				{
-					"$ref": "#/definitions/AssetId"
-				},
-				{
-					"$ref": "#/definitions/AssetAbilityId"
-				}
-			]
+		"AssetAbilityMoveIdWildcard": {
+			"title": "AssetAbilityMoveIdWildcard",
+			"type": "string",
+			"description": "A wildcarded AssetAbilityMoveId that can be used to match multiple AssetAbilityMove objects.",
+			"pattern": "^asset\\.ability\\.move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
 		},
 		"MoveId": {
 			"title": "MoveId",
@@ -681,48 +705,6 @@
 			"type": "string",
 			"description": "A wildcarded MoveId that can be used to match multiple Move objects.",
 			"pattern": "^move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
-		},
-		"MoveOracleRollableId": {
-			"title": "MoveOracleRollableId",
-			"type": "string",
-			"description": "A unique ID representing a MoveOracleRollable object.",
-			"pattern": "^move\\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.([a-z][a-z_]*|\\*)$"
-		},
-		"MoveOracleRollableIdWildcard": {
-			"title": "MoveOracleRollableIdWildcard",
-			"type": "string",
-			"description": "A wildcarded MoveOracleRollableId that can be used to match multiple MoveOracleRollable objects.",
-			"pattern": "^move\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.([a-z][a-z_]*|\\*)$"
-		},
-		"EmbeddedMoveId": {
-			"$ref": "#/definitions/MoveOracleRollableId",
-			"title": "EmbeddedMoveId"
-		},
-		"EmbeddedMoveIdWildcard": {
-			"$ref": "#/definitions/MoveOracleRollableIdWildcard",
-			"title": "EmbeddedMoveIdWildcard"
-		},
-		"AnyMoveId": {
-			"title": "AnyMoveId",
-			"anyOf": [
-				{
-					"$ref": "#/definitions/MoveId"
-				},
-				{
-					"$ref": "#/definitions/MoveOracleRollableId"
-				}
-			]
-		},
-		"AnyMoveIdWildcard": {
-			"title": "AnyMoveIdWildcard",
-			"anyOf": [
-				{
-					"$ref": "#/definitions/MoveId"
-				},
-				{
-					"$ref": "#/definitions/MoveOracleRollableId"
-				}
-			]
 		},
 		"AtlasCollectionId": {
 			"title": "AtlasCollectionId",
@@ -856,33 +838,95 @@
 			"description": "A wildcarded TruthOptionId that can be used to match multiple TruthOption objects.",
 			"pattern": "^truth\\.option:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)$"
 		},
-		"EmbeddedTruthId": {
-			"$ref": "#/definitions/TruthOptionId",
-			"title": "EmbeddedTruthId"
-		},
-		"EmbeddedTruthIdWildcard": {
-			"$ref": "#/definitions/TruthOptionIdWildcard",
-			"title": "EmbeddedTruthIdWildcard"
-		},
-		"AnyTruthId": {
-			"title": "AnyTruthId",
+		"AnyOracleRollableId": {
+			"title": "AnyOracleRollableId",
 			"anyOf": [
 				{
-					"$ref": "#/definitions/TruthId"
+					"$ref": "#/definitions/OracleRollableId"
 				},
 				{
-					"$ref": "#/definitions/TruthOptionId"
+					"$ref": "#/definitions/AssetAbilityOracleRollableId"
+				},
+				{
+					"$ref": "#/definitions/TruthOptionOracleRollableId"
+				},
+				{
+					"$ref": "#/definitions/MoveOracleRollableId"
 				}
 			]
 		},
-		"AnyTruthIdWildcard": {
-			"title": "AnyTruthIdWildcard",
+		"EmbeddedOracleRollableIdWildcard": {
+			"title": "EmbeddedOracleRollableIdWildcard",
 			"anyOf": [
 				{
-					"$ref": "#/definitions/TruthId"
+					"$ref": "#/definitions/AssetAbilityOracleRollableIdWildcard"
 				},
 				{
-					"$ref": "#/definitions/TruthOptionId"
+					"$ref": "#/definitions/TruthOptionOracleRollableIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/MoveOracleRollableIdWildcard"
+				}
+			]
+		},
+		"EmbeddedOracleRollableId": {
+			"title": "EmbeddedOracleRollableId",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/AssetAbilityOracleRollableId"
+				},
+				{
+					"$ref": "#/definitions/TruthOptionOracleRollableId"
+				},
+				{
+					"$ref": "#/definitions/MoveOracleRollableId"
+				}
+			]
+		},
+		"AnyOracleRollableIdWildcard": {
+			"title": "AnyOracleRollableIdWildcard",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/OracleRollableIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityOracleRollableIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/TruthOptionOracleRollableIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/MoveOracleRollableIdWildcard"
+				}
+			]
+		},
+		"AnyMoveId": {
+			"title": "AnyMoveId",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/MoveId"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityMoveId"
+				}
+			]
+		},
+		"EmbeddedMoveIdWildcard": {
+			"$ref": "#/definitions/AssetAbilityMoveIdWildcard",
+			"title": "EmbeddedMoveIdWildcard"
+		},
+		"EmbeddedMoveId": {
+			"$ref": "#/definitions/AssetAbilityMoveId",
+			"title": "EmbeddedMoveId"
+		},
+		"AnyMoveIdWildcard": {
+			"title": "AnyMoveIdWildcard",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/MoveIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityMoveIdWildcard"
 				}
 			]
 		},
@@ -891,61 +935,34 @@
 			"description": "Represents any kind of non-wildcard ID, including IDs of embedded objects.",
 			"anyOf": [
 				{
-					"$ref": "#/definitions/AtlasEntryId"
+					"$ref": "#/definitions/AssetAbilityOracleRollableIdWildcard"
 				},
 				{
-					"$ref": "#/definitions/NpcId"
+					"$ref": "#/definitions/TruthOptionOracleRollableIdWildcard"
 				},
 				{
-					"$ref": "#/definitions/OracleRollableId"
+					"$ref": "#/definitions/MoveOracleRollableIdWildcard"
 				},
 				{
-					"$ref": "#/definitions/OracleRollableRowId"
+					"$ref": "#/definitions/OracleRollableIdWildcard"
 				},
 				{
-					"$ref": "#/definitions/AssetId"
+					"$ref": "#/definitions/AssetAbilityOracleRollableIdWildcard"
 				},
 				{
-					"$ref": "#/definitions/AssetAbilityId"
+					"$ref": "#/definitions/TruthOptionOracleRollableIdWildcard"
 				},
 				{
-					"$ref": "#/definitions/MoveId"
+					"$ref": "#/definitions/MoveOracleRollableIdWildcard"
 				},
 				{
-					"$ref": "#/definitions/MoveOracleRollableId"
+					"$ref": "#/definitions/AssetAbilityMoveIdWildcard"
 				},
 				{
-					"$ref": "#/definitions/AtlasCollectionId"
+					"$ref": "#/definitions/MoveIdWildcard"
 				},
 				{
-					"$ref": "#/definitions/NpcCollectionId"
-				},
-				{
-					"$ref": "#/definitions/OracleCollectionId"
-				},
-				{
-					"$ref": "#/definitions/AssetCollectionId"
-				},
-				{
-					"$ref": "#/definitions/MoveCategoryId"
-				},
-				{
-					"$ref": "#/definitions/DelveSiteId"
-				},
-				{
-					"$ref": "#/definitions/DelveSiteDomainId"
-				},
-				{
-					"$ref": "#/definitions/DelveSiteThemeId"
-				},
-				{
-					"$ref": "#/definitions/RarityId"
-				},
-				{
-					"$ref": "#/definitions/TruthId"
-				},
-				{
-					"$ref": "#/definitions/TruthOptionId"
+					"$ref": "#/definitions/AssetAbilityMoveIdWildcard"
 				}
 			]
 		},
@@ -954,61 +971,34 @@
 			"description": "Represents any kind of wildcard ID, including IDs of embedded objects.",
 			"anyOf": [
 				{
-					"$ref": "#/definitions/AtlasEntryIdWildcard"
+					"$ref": "#/definitions/OracleRollableId"
 				},
 				{
-					"$ref": "#/definitions/NpcIdWildcard"
+					"$ref": "#/definitions/AssetAbilityOracleRollableId"
 				},
 				{
-					"$ref": "#/definitions/OracleRollableIdWildcard"
+					"$ref": "#/definitions/TruthOptionOracleRollableId"
 				},
 				{
-					"$ref": "#/definitions/OracleRollableRowIdWildcard"
+					"$ref": "#/definitions/MoveOracleRollableId"
 				},
 				{
-					"$ref": "#/definitions/AssetIdWildcard"
+					"$ref": "#/definitions/AssetAbilityOracleRollableId"
 				},
 				{
-					"$ref": "#/definitions/AssetAbilityIdWildcard"
+					"$ref": "#/definitions/TruthOptionOracleRollableId"
 				},
 				{
-					"$ref": "#/definitions/MoveIdWildcard"
+					"$ref": "#/definitions/MoveOracleRollableId"
 				},
 				{
-					"$ref": "#/definitions/MoveOracleRollableIdWildcard"
+					"$ref": "#/definitions/MoveId"
 				},
 				{
-					"$ref": "#/definitions/AtlasCollectionIdWildcard"
+					"$ref": "#/definitions/AssetAbilityMoveId"
 				},
 				{
-					"$ref": "#/definitions/NpcCollectionIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/OracleCollectionIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/AssetCollectionIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/MoveCategoryIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/DelveSiteIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/DelveSiteDomainIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/DelveSiteThemeIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/RarityIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/TruthIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/TruthOptionIdWildcard"
+					"$ref": "#/definitions/AssetAbilityMoveId"
 				}
 			]
 		},
