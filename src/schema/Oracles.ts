@@ -1,9 +1,9 @@
 // constituent types
 export {
-	OracleTableRowText,
-	OracleTableRowText2,
-	OracleTableRowText3,
-	OracleTableRow
+	OracleRollableRowText,
+	OracleRollableRowText2,
+	OracleRollableRowText3,
+	OracleRollableRow
 } from './oracles/TableRow.js'
 
 // primary type

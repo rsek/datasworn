@@ -2,6 +2,7 @@ import { Type, type Static } from '@sinclair/typebox'
 import { FlatIntersect } from '../utils/FlatIntersect.js'
 import { JsonTypeDef } from '../Symbols.js'
 import JtdType from '../../scripts/json-typedef/typedef.js'
+import { omit } from 'lodash-es'
 
 // const IntegerRange = Type.Object({
 // 	min: Type.Integer(),
@@ -42,12 +43,12 @@ export type DiceRange = Static<typeof DiceRange>
 export function StaticDiceRange(min: number, max: number) {
 	return Type.Object(
 		{
-			min: Type.Const(min, minOptions),
-			max: Type.Const(max, maxOptions)
+			min: Type.Const(min, omit(minOptions, ['description'])),
+			max: Type.Const(max, omit(maxOptions, ['description']))
 		},
 		{
 			title: 'DiceRangeStatic',
-			...diceRangeOptions
+			...omit(diceRangeOptions, ['description'])
 		}
 	)
 }

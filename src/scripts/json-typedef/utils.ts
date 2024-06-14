@@ -348,10 +348,10 @@ export function toJtdRoot<T extends TRoot>(schemaRoot: T) {
 				Log.info(`Skipping "${k}"`)
 				return true
 			}
-			if (!refTracker.has(k)) {
-				Log.info(`Orphaned definition "${k}" -- skipping`)
-				return true
-			}
+			// if (!refTracker.has(k)) {
+			// 	Log.info(`Orphaned definition "${k}" -- skipping`)
+			// 	return true
+			// }
 
 			return false
 		})

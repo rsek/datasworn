@@ -25,7 +25,7 @@ declare abstract class IdParser<TypeIds extends StringId.TypeIdParts = StringId.
     get pathSegments(): PathSegments;
     set pathSegments(value: PathSegments);
     constructor(options: IdParser.Options<TypeIds, PathSegments>);
-    createEmbeddedId<TypeId extends TypeId.EmbeddableTypes, Key extends string>(typeId: TypeId, key: Key): EmbeddedId<this, TypeId, Key>;
+    createEmbeddedId<TypeId extends TypeId.EmbeddableType, Key extends string>(typeId: TypeId, key: Key): EmbeddedId<this, TypeId, Key>;
     /**
      * Returns a string representation of the ID.
      */
@@ -38,8 +38,8 @@ declare abstract class IdParser<TypeIds extends StringId.TypeIdParts = StringId.
     get primaryDictKeyElements(): string[];
     get fullTypeId(): string;
     get fullPath(): string;
-    get targetTypeId(): string;
-    get lastProperty(): TypeId.RootKey<TypeId.AnyPrimary>;
+    get nodeTypeId(): string;
+    get parentProperty(): TypeId.RootKey<TypeId.AnyPrimary>;
     /** Does this ID contain any wildcard ("*") or globstar ("**") elements? */
     get isWildcard(): boolean;
     /** May this ID contain recursive elements in its path? */
@@ -48,12 +48,15 @@ declare abstract class IdParser<TypeIds extends StringId.TypeIdParts = StringId.
     get isCollectable(): boolean;
     /** Does this ID include a collection object in its path? */
     get isCollection(): boolean;
+    get embedTypes(): ("oracle_rollable" | "move" | "ability" | "option" | "row" | "feature" | "danger" | "denizen")[];
     /** Assign a string ID to a Datasworn node, and all eligible descendant nodes.
      * @param node The Datasworn
      * @param recursive Should IDs be assigned to descendant objects too? (default: true)
      * @returns The mutated object.
      */
-    assignIdsIn(node: TypeNode.Any, recursive?: boolean, index?: Map<string, TypeNode.Any>): TypeNode.Any;
+    assignIdsIn<T extends {
+        _id?: string;
+    }>(node: T, recursive?: boolean, index?: Map<string, unknown>): T;
     /**
      * Get a Datasworn node by its ID.
      * @throws If the ID is invalid; if a path to the identified object can't be found; if no Datasworn tree is provided (either in {@link IdParser.datasworn} or as an argument).
@@ -75,7 +78,7 @@ declare abstract class IdParser<TypeIds extends StringId.TypeIdParts = StringId.
      * @param index If provided, nodes that receive IDs will be indexed in the map (with their ID as the key).
      * @returns The mutated `rulesPackage`, which now satisfies the requirements for a complete {@link Datasworn.RulesPackage}
      */
-    static assignIdsInRulesPackage<T extends DataswornSource.RulesPackage>(rulesPackage: T, index?: Map<string, TypeNode.Any>): Extract<Datasworn.RulesPackage, Pick<T, 'type'>>;
+    static assignIdsInRulesPackage<T extends DataswornSource.RulesPackage>(rulesPackage: T, index?: Map<string, unknown>): Extract<Datasworn.RulesPackage, Pick<T, 'type'>>;
     static parse<T extends StringId.NonCollectableId>(id: T): NonCollectableId;
     static parse<T extends StringId.CollectableId>(id: T): CollectableId;
     static parse<T extends StringId.CollectionId>(id: T): CollectionId;
@@ -144,7 +147,11 @@ declare class CollectionId<TypeId extends TypeId.Collection = TypeId.Collection,
         ...CollectionAncestorKeys,
         Key
     ], ChildKey>;
-    assignIdsIn<T extends TypeNode.ByType<TypeId>>(node: T, recursive?: boolean, index?: Map<string, TypeNode.Any>): T;
+    assignIdsIn<T extends {
+        _id?: string;
+        [CONST.ContentsKey]?: Record<string, unknown>;
+        [CONST.CollectionsKey]?: Record<string, unknown>;
+    }>(node: T, recursive?: boolean, index?: Map<string, unknown>): T;
     /**
      * @throws If a parent ID isn't possible (because this ID doesn't have a parent collection.)
      */
@@ -180,11 +187,14 @@ declare namespace CollectionId {
         infer K extends string
     ] ? CollectionId<T['primaryTypeId'], T['rulesPackage'], U, K> : never;
 }
-declare class EmbeddedId<Parent extends IdParser = IdParser, TypeId extends TypeId.EmbeddableTypes = TypeId.EmbeddableTypes, Key extends string = string> extends IdParser {
+declare class EmbeddedId<Parent extends IdParser = IdParser, TypeId extends TypeId.EmbeddableType = TypeId.EmbeddableType, Key extends string = string> extends IdParser {
     constructor(parent: Parent, typeId: TypeId, key: string);
     constructor(parent: Parent, typeId: TypeId, index: number);
+    assignIdsIn<T extends {
+        _id?: string;
+    }>(node: T, recursive?: boolean, index?: Map<string, unknown>): T;
 }
-interface EmbeddedId<Parent extends IdParser, TypeId extends TypeId.EmbeddableTypes = TypeId.EmbeddableTypes, Key extends string = string> extends IdParser {
+interface EmbeddedId<Parent extends IdParser, TypeId extends TypeId.EmbeddableType = TypeId.EmbeddableType, Key extends string = string> extends IdParser {
     get id(): `${this['fullTypeId']}${CONST.PrefixSep}${Join<this['pathSegments'], CONST.PathTypeSep>}`;
     get typeIds(): [...Parent['typeIds'], TypeId];
     get pathSegments(): [...Parent['pathSegments'], Key];

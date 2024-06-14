@@ -716,9 +716,27 @@ for (const $id in permutations) {
 		$id,
 		[JsonTypeDef]: { schema: JtdType.String() }
 	})
-	if ($id.endsWith('IdWildcard')) anyIdSchemata.push(...schemaIds)
-	else anyIdWildcardSchemata.push(...schemaIds)
+	if ($id.endsWith('IdWildcard')) anyIdWildcardSchemata.push(...schemaIds)
+	else anyIdSchemata.push(...schemaIds)
 }
+
+ids.AnyOracleRollableRowId = Type.Union(
+	Object.values(ids)
+		.filter((schema) => schema.$id?.endsWith('OracleRollableRowId'))
+		.map((schema) => Type.Ref(schema.$id as string)),
+	{ $id: 'AnyOracleRollableRowId', [JsonTypeDef]: { schema: JtdType.String() } }
+)
+
+ids.AnyOracleRollableRowIdWildcard = Type.Union(
+	Object.values(ids)
+		.flat()
+		.filter((schema) => schema.$id?.endsWith('OracleRollableRowIdWildcard'))
+		.map((schema) => Type.Ref(schema.$id as string)),
+	{
+		$id: 'AnyOracleRollableRowIdWildcard',
+		[JsonTypeDef]: { schema: JtdType.String() }
+	}
+)
 
 ids.AnyId = Type.Union(anyIdSchemata, {
 	$id: 'AnyId',

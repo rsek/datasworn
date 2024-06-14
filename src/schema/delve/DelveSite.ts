@@ -13,6 +13,7 @@ import * as Generic from '../Generic.js'
 import JtdType from '../../scripts/json-typedef/typedef.js'
 import { FlatIntersect } from '../utils/FlatIntersect.js'
 import { DiceRange, StaticDiceRange } from '../common/Range.js'
+import { EmbeddedType } from './common.js'
 
 export const DelveSiteDenizenFrequency = Utils.UnionEnum(
 	['very_common', 'common', 'uncommon', 'rare', 'unforeseen'],
@@ -20,8 +21,8 @@ export const DelveSiteDenizenFrequency = Utils.UnionEnum(
 )
 export type DelveSiteDenizenFrequency = Static<typeof DelveSiteDenizenFrequency>
 
-export const DelveSiteDenizen = Type.Object(
-	{
+export const DelveSiteDenizen = EmbeddedType(
+	Type.Object({
 		name: Type.Optional(
 			Type.Ref(Localize.Label, {
 				description:
@@ -35,11 +36,12 @@ export const DelveSiteDenizen = Type.Object(
 		),
 		frequency: Type.Ref(DelveSiteDenizenFrequency),
 		roll: Type.Ref(DiceRange)
-	},
+	}),
+	'delve_site',
+	'denizen',
 	{
-		$id: 'DelveSiteDenizen',
 		description:
-			'Represents an entry in a site denizen matrix. Denizen matrices are described in Ironsworn: Delve.'
+			'Represents an entry in a delve site denizen matrix. Denizen matrices are described in Ironsworn: Delve.'
 	}
 )
 

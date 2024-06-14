@@ -235,11 +235,11 @@ abstract class IdParser<
 		return this.pathSegments.join(CONST.PathTypeSep)
 	}
 
-	get targetTypeId() {
+	get nodeTypeId() {
 		return this.typeIds.at(-1)
 	}
 
-	get lastProperty() {
+	get parentProperty() {
 		return TypeId.getRootKey(this.fullTypeId as TypeId.AnyPrimary)
 	}
 
@@ -263,16 +263,23 @@ abstract class IdParser<
 		return TypeGuard.CollectionType(this.primaryTypeId)
 	}
 
+	get embedTypes() {
+		return TypeId.getEmbeddableTypes(
+			this.nodeTypeId,
+			this instanceof EmbeddedId
+		)
+	}
+
 	/** Assign a string ID to a Datasworn node, and all eligible descendant nodes.
 	 * @param node The Datasworn
 	 * @param recursive Should IDs be assigned to descendant objects too? (default: true)
 	 * @returns The mutated object.
 	 */
-	assignIdsIn(
-		node: TypeNode.Any,
+	assignIdsIn<T extends { _id?: string }>(
+		node: T,
 		recursive = true,
-		index?: Map<string, TypeNode.Any>
-	): TypeNode.Any {
+		index?: Map<string, unknown>
+	): T {
 		if (typeof node._id === 'string')
 			IdParser.logger.warn(
 				`Can't assign <${this.id}>, node already has <${node._id}>`
@@ -285,22 +292,20 @@ abstract class IdParser<
 		}
 
 		if (recursive) {
-			const embeddedTypes = TypeId.getEmbeddableTypes(
-				this.fullTypeId as TypeId.Any
-			)
+			for (const embedTypeId of this.embedTypes) {
+				const property = TypeId.getEmbeddedPropertyKey(embedTypeId)
 
-			for (const nextTypeId of embeddedTypes) {
-				const property = TypeId.getEmbeddedPropertyKey(nextTypeId)
 				if (!(property in node)) continue
+
 				const childNodes = node[property] as
-					| Record<string, TypeNode.AnyEmbedded>
-					| Array<TypeNode.AnyEmbedded>
+					| Record<string, { _id?: string }>
+					| Array<{ _id?: string }>
 				if (childNodes == null) continue
 
 				if (Array.isArray(childNodes)) {
-					this.#assignIdsInArray(childNodes, nextTypeId, recursive, index)
+					this.#assignIdsInArray(childNodes, embedTypeId, recursive, index)
 				} else {
-					this.#assignIdsInDictionary(childNodes, nextTypeId, recursive, index)
+					this.#assignIdsInDictionary(childNodes, embedTypeId, recursive, index)
 				}
 			}
 		}
@@ -311,10 +316,10 @@ abstract class IdParser<
 	}
 
 	#assignIdsInDictionary(
-		childNodes: Record<string, TypeNode.AnyEmbedded>,
+		childNodes: Record<string, { _id?: string }>,
 		nextTypeId: TypeId.EmbeddableType,
 		recursive?: boolean,
-		index?: Map<string, TypeNode.Any>
+		index?: Map<string, unknown>
 	) {
 		// IdParser.logger.debug('[#assignIdsInDictionary]')
 		for (const k in childNodes) {
@@ -326,10 +331,10 @@ abstract class IdParser<
 	}
 
 	#assignIdsInArray(
-		childNodes: TypeNode.AnyEmbedded[],
+		childNodes: { _id?: string }[],
 		nextTypeId: TypeId.EmbeddableType,
 		recursive?: boolean,
-		index?: Map<string, TypeNode.Any>
+		index?: Map<string, unknown>
 	) {
 		// IdParser.logger.debug('[#assignIdsInArray]')
 		for (let i = 0; i < childNodes.length; i++) {
@@ -428,7 +433,7 @@ abstract class IdParser<
 	 */
 	static assignIdsInRulesPackage<T extends DataswornSource.RulesPackage>(
 		rulesPackage: T,
-		index?: Map<string, TypeNode.Any>
+		index?: Map<string, unknown>
 	): Extract<Datasworn.RulesPackage, Pick<T, 'type'>> {
 		const errorMessages: string[] = []
 		for (const typeId in TypeId.RootKeys) {
@@ -799,11 +804,13 @@ class CollectionId<
 		)
 	}
 
-	override assignIdsIn<T extends TypeNode.ByType<TypeId>>(
-		node: T,
-		recursive = true,
-		index?: Map<string, TypeNode.Any>
-	): T {
+	override assignIdsIn<
+		T extends {
+			_id?: string
+			[CONST.ContentsKey]?: Record<string, unknown>
+			[CONST.CollectionsKey]?: Record<string, unknown>
+		}
+	>(node: T, recursive = true, index?: Map<string, unknown>) {
 		// run this up front so the log ordering is more intuitive
 		const base = super.assignIdsIn(node, recursive, index)
 
@@ -824,7 +831,7 @@ class CollectionId<
 				}
 		}
 
-		return base as T
+		return base
 	}
 
 	/**
@@ -945,6 +952,16 @@ class EmbeddedId<
 		} as const satisfies IdParser.Options
 
 		super(options)
+	}
+
+	override assignIdsIn<T extends { _id?: string }>(
+		node: T,
+		recursive?: boolean,
+		index?: Map<string, unknown>
+	): T {
+		const result = super.assignIdsIn(node, recursive, index)
+
+		return result
 	}
 }
 interface EmbeddedId<

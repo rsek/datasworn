@@ -102,10 +102,10 @@ class IdParser {
     get fullPath() {
         return this.pathSegments.join(CONST_js_1.default.PathTypeSep);
     }
-    get targetTypeId() {
+    get nodeTypeId() {
         return this.typeIds.at(-1);
     }
-    get lastProperty() {
+    get parentProperty() {
         return TypeId_js_1.default.getRootKey(this.fullTypeId);
     }
     /** Does this ID contain any wildcard ("*") or globstar ("**") elements? */
@@ -124,6 +124,9 @@ class IdParser {
     get isCollection() {
         return TypeGuard_js_1.default.CollectionType(this.primaryTypeId);
     }
+    get embedTypes() {
+        return TypeId_js_1.default.getEmbeddableTypes(this.nodeTypeId, this instanceof EmbeddedId);
+    }
     /** Assign a string ID to a Datasworn node, and all eligible descendant nodes.
      * @param node The Datasworn
      * @param recursive Should IDs be assigned to descendant objects too? (default: true)
@@ -139,19 +142,18 @@ class IdParser {
             // )
         }
         if (recursive) {
-            const embeddedTypes = TypeId_js_1.default.getEmbeddableTypes(this.fullTypeId);
-            for (const nextTypeId of embeddedTypes) {
-                const property = TypeId_js_1.default.getEmbeddedPropertyKey(nextTypeId);
+            for (const embedTypeId of this.embedTypes) {
+                const property = TypeId_js_1.default.getEmbeddedPropertyKey(embedTypeId);
                 if (!(property in node))
                     continue;
                 const childNodes = node[property];
                 if (childNodes == null)
                     continue;
                 if (Array.isArray(childNodes)) {
-                    __classPrivateFieldGet(this, _IdParser_instances, "m", _IdParser_assignIdsInArray).call(this, childNodes, nextTypeId, recursive, index);
+                    __classPrivateFieldGet(this, _IdParser_instances, "m", _IdParser_assignIdsInArray).call(this, childNodes, embedTypeId, recursive, index);
                 }
                 else {
-                    __classPrivateFieldGet(this, _IdParser_instances, "m", _IdParser_assignIdsInDictionary).call(this, childNodes, nextTypeId, recursive, index);
+                    __classPrivateFieldGet(this, _IdParser_instances, "m", _IdParser_assignIdsInDictionary).call(this, childNodes, embedTypeId, recursive, index);
                 }
             }
         }
@@ -499,6 +501,10 @@ class EmbeddedId extends IdParser {
             pathSegments: [...parent.pathSegments, key.toString()]
         };
         super(options);
+    }
+    assignIdsIn(node, recursive, index) {
+        const result = super.assignIdsIn(node, recursive, index);
+        return result;
     }
 }
 exports.EmbeddedId = EmbeddedId;

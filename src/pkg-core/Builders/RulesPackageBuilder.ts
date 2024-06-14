@@ -1,3 +1,4 @@
+import fsExtra from 'fs-extra'
 import CONST from '../IdElements/CONST.js'
 import type TypeNode from '../TypeNode.js'
 import {
@@ -74,8 +75,8 @@ export class RulesPackageBuilder<
 
 	#build(force = false) {
 		this.mergeFiles(force)
-		this.#sortKeys(force)
 		this.#isValidated = false
+		this.#sortKeys(force)
 		return this.#result
 	}
 
@@ -122,6 +123,7 @@ export class RulesPackageBuilder<
 
 			return this
 		} catch (e) {
+			fsExtra.writeJSONSync('error_build.json', this.toJSON(), { spaces: '\t' })
 			throw new Error(`Couldn't build "${this.id}". ${String(e)}`)
 		}
 	}
@@ -284,13 +286,9 @@ class RulesPackagePart<
 	}
 
 	init() {
-		try {
-			this.validate()
-		} catch (e) {
-			throw new Error(
-				`${this.name} doesn't match DataswornSource\n${String(e)}`
-			)
-		}
+		const isValid = this.validate()
+
+		if (!isValid) throw new Error(`${this.name} doesn't match DataswornSource`)
 
 		void IdParser.assignIdsInRulesPackage(this.data, this.index)
 	}

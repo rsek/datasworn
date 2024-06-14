@@ -83,14 +83,24 @@ namespace TypeId {
 		'move'
 	] as const satisfies [...(Collectable | NonCollectable)[]]
 	export type EmbeddablePrimaryType = (typeof EmbeddablePrimaryType)[number]
-	export const EmbedOnlyType = ['ability', 'option', 'row'] as const
+	export const EmbedOnlyType = [
+		'ability',
+		'option',
+		'row',
+		'feature',
+		'danger',
+		'denizen'
+	] as const
 	export type EmbedOnlyType = (typeof EmbedOnlyType)[number]
 	export const EmbeddableType = [
 		'oracle_rollable',
 		'move',
 		'ability',
 		'option',
-		'row'
+		'row',
+		'feature',
+		'danger',
+		'denizen'
 	] as const satisfies [
 		...typeof EmbeddablePrimaryType,
 		...typeof EmbedOnlyType
@@ -103,13 +113,19 @@ namespace TypeId {
 		truth: ['option'],
 		option: ['oracle_rollable'],
 		move: ['oracle_rollable'],
-		oracle_rollable: ['row']
+		oracle_rollable: ['row'],
+		delve_site: ['denizen'],
+		delve_site_domain: ['feature', 'danger'],
+		delve_site_theme: ['feature', 'danger']
 	} as const satisfies Partial<
 		Record<AnyPrimary | EmbedOnlyType, EmbeddableType[]>
 	>
 	export type CanEmbed = keyof typeof EmbedTypeMap
 
-	export const AllowedEmbedOfEmbedTypes = {
+	export type EmbeddableIn<T extends CanEmbed> =
+		(typeof EmbedTypeMap)[T][number]
+
+	export const AllowedEmbedInEmbedTypes = {
 		ability: ['oracle_rollable', 'move'],
 		move: [],
 		option: ['oracle_rollable'],
@@ -137,7 +153,7 @@ namespace TypeId {
 		typeId: string,
 		typeIsEmbedded = false
 	): EmbeddableType[] {
-		if (typeIsEmbedded) return AllowedEmbedOfEmbedTypes[typeId] ?? []
+		if (typeIsEmbedded) return AllowedEmbedInEmbedTypes[typeId] ?? []
 
 		return EmbedTypeMap[typeId] ?? []
 	}
@@ -157,17 +173,17 @@ namespace TypeId {
 		[P in keyof typeof EmbedTypeMap as (typeof EmbedTypeMap)[P][number]]: P
 	}[T]
 
-	export const EmbeddedTypePaths = [] as string[]
+	export const EmbeddedTypePath = [] as string[]
 
 	function expandTypePath(typeId: CanEmbed, path: string[] = []) {
 		const isPrimary = path.length === 0
 		const thisPath = [...path, typeId]
-		if (!isPrimary) EmbeddedTypePaths.push(thisPath.join(CONST.PathTypeSep))
+		if (!isPrimary) EmbeddedTypePath.push(thisPath.join(CONST.PathTypeSep))
 		if (typeId in EmbedTypeMap) {
 			for (const childTypeId of EmbedTypeMap[typeId])
 				if (
 					isPrimary ||
-					(AllowedEmbedOfEmbedTypes[typeId] ?? []).includes(childTypeId)
+					(AllowedEmbedInEmbedTypes[typeId] ?? []).includes(childTypeId)
 				)
 					expandTypePath(childTypeId as CanEmbed, thisPath)
 		}
@@ -197,7 +213,10 @@ namespace TypeId {
 	export const EmbeddedPropertyKeys = {
 		ability: 'abilities',
 		option: 'options',
-		row: 'rows'
+		row: 'rows',
+		feature: 'features',
+		danger: 'dangers',
+		denizen: 'denizens'
 	} as const satisfies Record<EmbedOnlyType, string>
 
 	export type Any = AnyPrimary | EmbedOnlyType

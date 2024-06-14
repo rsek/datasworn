@@ -538,6 +538,126 @@
 			"remarks": "If you need to generate a key from a user-provided label, it's recommended to use a 'slugify' function/library, e.g. https://www.npmjs.com/package/slugify for NodeJS.",
 			"pattern": "^[a-z][a-z_]*$"
 		},
+		"AtlasEntryId": {
+			"title": "AtlasEntryId",
+			"type": "string",
+			"description": "A unique ID representing an AtlasEntry object.",
+			"pattern": "^atlas_entry:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
+		},
+		"AtlasEntryIdWildcard": {
+			"title": "AtlasEntryIdWildcard",
+			"type": "string",
+			"description": "A wildcarded AtlasEntryId that can be used to match multiple AtlasEntry objects.",
+			"pattern": "^atlas_entry:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
+		},
+		"NpcId": {
+			"title": "NpcId",
+			"type": "string",
+			"description": "A unique ID representing a Npc object.",
+			"pattern": "^npc:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
+		},
+		"NpcIdWildcard": {
+			"title": "NpcIdWildcard",
+			"type": "string",
+			"description": "A wildcarded NpcId that can be used to match multiple Npc objects.",
+			"pattern": "^npc:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
+		},
+		"OracleRollableId": {
+			"title": "OracleRollableId",
+			"type": "string",
+			"description": "A unique ID representing an OracleRollable object.",
+			"pattern": "^oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
+		},
+		"OracleRollableIdWildcard": {
+			"title": "OracleRollableIdWildcard",
+			"type": "string",
+			"description": "A wildcarded OracleRollableId that can be used to match multiple OracleRollable objects.",
+			"pattern": "^oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
+		},
+		"AssetAbilityOracleRollableId": {
+			"title": "AssetAbilityOracleRollableId",
+			"type": "string",
+			"description": "A unique ID representing an AssetAbilityOracleRollable object.",
+			"pattern": "^asset\\.ability\\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
+		},
+		"AssetAbilityOracleRollableIdWildcard": {
+			"title": "AssetAbilityOracleRollableIdWildcard",
+			"type": "string",
+			"description": "A wildcarded AssetAbilityOracleRollableId that can be used to match multiple AssetAbilityOracleRollable objects.",
+			"pattern": "^asset\\.ability\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
+		},
+		"MoveOracleRollableId": {
+			"title": "MoveOracleRollableId",
+			"type": "string",
+			"description": "A unique ID representing a MoveOracleRollable object.",
+			"pattern": "^move\\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.([a-z][a-z_]*|\\*)$"
+		},
+		"MoveOracleRollableIdWildcard": {
+			"title": "MoveOracleRollableIdWildcard",
+			"type": "string",
+			"description": "A wildcarded MoveOracleRollableId that can be used to match multiple MoveOracleRollable objects.",
+			"pattern": "^move\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.([a-z][a-z_]*|\\*)$"
+		},
+		"TruthOptionOracleRollableId": {
+			"title": "TruthOptionOracleRollableId",
+			"type": "string",
+			"description": "A unique ID representing a TruthOptionOracleRollable object.",
+			"pattern": "^truth\\.option\\.oracle_rollable:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
+		},
+		"TruthOptionOracleRollableIdWildcard": {
+			"title": "TruthOptionOracleRollableIdWildcard",
+			"type": "string",
+			"description": "A wildcarded TruthOptionOracleRollableId that can be used to match multiple TruthOptionOracleRollable objects.",
+			"pattern": "^truth\\.option\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
+		},
+		"OracleRollableRowId": {
+			"title": "OracleRollableRowId",
+			"type": "string",
+			"description": "A unique ID representing an OracleRollableRow object.",
+			"pattern": "^oracle_rollable\\.row:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.(\\d+)$"
+		},
+		"OracleRollableRowIdWildcard": {
+			"title": "OracleRollableRowIdWildcard",
+			"type": "string",
+			"description": "A wildcarded OracleRollableRowId that can be used to match multiple OracleRollableRow objects.",
+			"pattern": "^oracle_rollable\\.row:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.(\\d+|\\*)$"
+		},
+		"AssetAbilityOracleRollableRowId": {
+			"title": "AssetAbilityOracleRollableRowId",
+			"type": "string",
+			"description": "A unique ID representing an AssetAbilityOracleRollableRow object.",
+			"pattern": "^asset\\.ability\\.oracle_rollable\\.row:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.(\\d+)\\.([a-z][a-z_]*|\\*)\\.(\\d+)$"
+		},
+		"AssetAbilityOracleRollableRowIdWildcard": {
+			"title": "AssetAbilityOracleRollableRowIdWildcard",
+			"type": "string",
+			"description": "A wildcarded AssetAbilityOracleRollableRowId that can be used to match multiple AssetAbilityOracleRollableRow objects.",
+			"pattern": "^asset\\.ability\\.oracle_rollable\\.row:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)\\.(\\d+|\\*)$"
+		},
+		"MoveOracleRollableRowId": {
+			"title": "MoveOracleRollableRowId",
+			"type": "string",
+			"description": "A unique ID representing a MoveOracleRollableRow object.",
+			"pattern": "^move\\.oracle_rollable\\.row:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.([a-z][a-z_]*|\\*)\\.(\\d+)$"
+		},
+		"MoveOracleRollableRowIdWildcard": {
+			"title": "MoveOracleRollableRowIdWildcard",
+			"type": "string",
+			"description": "A wildcarded MoveOracleRollableRowId that can be used to match multiple MoveOracleRollableRow objects.",
+			"pattern": "^move\\.oracle_rollable\\.row:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.([a-z][a-z_]*|\\*)\\.(\\d+|\\*)$"
+		},
+		"TruthOptionOracleRollableRowId": {
+			"title": "TruthOptionOracleRollableRowId",
+			"type": "string",
+			"description": "A unique ID representing a TruthOptionOracleRollableRow object.",
+			"pattern": "^truth\\.option\\.oracle_rollable\\.row:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)\\.([a-z][a-z_]*|\\*)\\.(\\d+)$"
+		},
+		"TruthOptionOracleRollableRowIdWildcard": {
+			"title": "TruthOptionOracleRollableRowIdWildcard",
+			"type": "string",
+			"description": "A wildcarded TruthOptionOracleRollableRowId that can be used to match multiple TruthOptionOracleRollableRow objects.",
+			"pattern": "^truth\\.option\\.oracle_rollable\\.row:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)\\.(\\d+|\\*)$"
+		},
 		"AssetId": {
 			"title": "AssetId",
 			"type": "string",
@@ -549,18 +669,6 @@
 			"type": "string",
 			"description": "A wildcarded AssetId that can be used to match multiple Asset objects.",
 			"pattern": "^asset:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
-		},
-		"AssetCollectionId": {
-			"title": "AssetCollectionId",
-			"type": "string",
-			"description": "A unique ID representing an AssetCollection object.",
-			"pattern": "^asset_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
-		},
-		"AssetCollectionIdWildcard": {
-			"title": "AssetCollectionIdWildcard",
-			"type": "string",
-			"description": "A wildcarded AssetCollectionId that can be used to match multiple AssetCollection objects.",
-			"pattern": "^asset_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
 		},
 		"AssetAbilityId": {
 			"title": "AssetAbilityId",
@@ -586,78 +694,6 @@
 			"description": "A wildcarded AssetAbilityMoveId that can be used to match multiple AssetAbilityMove objects.",
 			"pattern": "^asset\\.ability\\.move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
 		},
-		"AssetAbilityOracleRollableId": {
-			"title": "AssetAbilityOracleRollableId",
-			"type": "string",
-			"description": "A unique ID representing an AssetAbilityOracleRollable object.",
-			"pattern": "^asset\\.ability\\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
-		},
-		"AssetAbilityOracleRollableIdWildcard": {
-			"title": "AssetAbilityOracleRollableIdWildcard",
-			"type": "string",
-			"description": "A wildcarded AssetAbilityOracleRollableId that can be used to match multiple AssetAbilityOracleRollable objects.",
-			"pattern": "^asset\\.ability\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
-		},
-		"AtlasCollectionId": {
-			"title": "AtlasCollectionId",
-			"type": "string",
-			"description": "A unique ID representing an AtlasCollection object.",
-			"pattern": "^atlas_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
-		},
-		"AtlasCollectionIdWildcard": {
-			"title": "AtlasCollectionIdWildcard",
-			"type": "string",
-			"description": "A wildcarded AtlasCollectionId that can be used to match multiple AtlasCollection objects.",
-			"pattern": "^atlas_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
-		},
-		"AtlasEntryId": {
-			"title": "AtlasEntryId",
-			"type": "string",
-			"description": "A unique ID representing an AtlasEntry object.",
-			"pattern": "^atlas_entry:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
-		},
-		"AtlasEntryIdWildcard": {
-			"title": "AtlasEntryIdWildcard",
-			"type": "string",
-			"description": "A wildcarded AtlasEntryId that can be used to match multiple AtlasEntry objects.",
-			"pattern": "^atlas_entry:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
-		},
-		"DelveSiteId": {
-			"title": "DelveSiteId",
-			"type": "string",
-			"description": "A unique ID representing a DelveSite object.",
-			"pattern": "^delve_site:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
-		},
-		"DelveSiteIdWildcard": {
-			"title": "DelveSiteIdWildcard",
-			"type": "string",
-			"description": "A wildcarded DelveSiteId that can be used to match multiple DelveSite objects.",
-			"pattern": "^delve_site:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
-		},
-		"DelveSiteDomainId": {
-			"title": "DelveSiteDomainId",
-			"type": "string",
-			"description": "A unique ID representing a DelveSiteDomain object.",
-			"pattern": "^delve_site_domain:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
-		},
-		"DelveSiteDomainIdWildcard": {
-			"title": "DelveSiteDomainIdWildcard",
-			"type": "string",
-			"description": "A wildcarded DelveSiteDomainId that can be used to match multiple DelveSiteDomain objects.",
-			"pattern": "^delve_site_domain:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
-		},
-		"DelveSiteThemeId": {
-			"title": "DelveSiteThemeId",
-			"type": "string",
-			"description": "A unique ID representing a DelveSiteTheme object.",
-			"pattern": "^delve_site_theme:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
-		},
-		"DelveSiteThemeIdWildcard": {
-			"title": "DelveSiteThemeIdWildcard",
-			"type": "string",
-			"description": "A wildcarded DelveSiteThemeId that can be used to match multiple DelveSiteTheme objects.",
-			"pattern": "^delve_site_theme:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
-		},
 		"MoveId": {
 			"title": "MoveId",
 			"type": "string",
@@ -670,41 +706,17 @@
 			"description": "A wildcarded MoveId that can be used to match multiple Move objects.",
 			"pattern": "^move:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
 		},
-		"MoveCategoryId": {
-			"title": "MoveCategoryId",
+		"AtlasCollectionId": {
+			"title": "AtlasCollectionId",
 			"type": "string",
-			"description": "A unique ID representing a MoveCategory object.",
-			"pattern": "^move_category:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
+			"description": "A unique ID representing an AtlasCollection object.",
+			"pattern": "^atlas_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
 		},
-		"MoveCategoryIdWildcard": {
-			"title": "MoveCategoryIdWildcard",
+		"AtlasCollectionIdWildcard": {
+			"title": "AtlasCollectionIdWildcard",
 			"type": "string",
-			"description": "A wildcarded MoveCategoryId that can be used to match multiple MoveCategory objects.",
-			"pattern": "^move_category:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
-		},
-		"MoveOracleRollableId": {
-			"title": "MoveOracleRollableId",
-			"type": "string",
-			"description": "A unique ID representing a MoveOracleRollable object.",
-			"pattern": "^move\\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.([a-z][a-z_]*|\\*)$"
-		},
-		"MoveOracleRollableIdWildcard": {
-			"title": "MoveOracleRollableIdWildcard",
-			"type": "string",
-			"description": "A wildcarded MoveOracleRollableId that can be used to match multiple MoveOracleRollable objects.",
-			"pattern": "^move\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.([a-z][a-z_]*|\\*)$"
-		},
-		"NpcId": {
-			"title": "NpcId",
-			"type": "string",
-			"description": "A unique ID representing a Npc object.",
-			"pattern": "^npc:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
-		},
-		"NpcIdWildcard": {
-			"title": "NpcIdWildcard",
-			"type": "string",
-			"description": "A wildcarded NpcId that can be used to match multiple Npc objects.",
-			"pattern": "^npc:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
+			"description": "A wildcarded AtlasCollectionId that can be used to match multiple AtlasCollection objects.",
+			"pattern": "^atlas_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
 		},
 		"NpcCollectionId": {
 			"title": "NpcCollectionId",
@@ -730,17 +742,125 @@
 			"description": "A wildcarded OracleCollectionId that can be used to match multiple OracleCollection objects.",
 			"pattern": "^oracle_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
 		},
-		"OracleRollableId": {
-			"title": "OracleRollableId",
+		"AssetCollectionId": {
+			"title": "AssetCollectionId",
 			"type": "string",
-			"description": "A unique ID representing an OracleRollable object.",
-			"pattern": "^oracle_rollable:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})$"
+			"description": "A unique ID representing an AssetCollection object.",
+			"pattern": "^asset_collection:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
 		},
-		"OracleRollableIdWildcard": {
-			"title": "OracleRollableIdWildcard",
+		"AssetCollectionIdWildcard": {
+			"title": "AssetCollectionIdWildcard",
 			"type": "string",
-			"description": "A wildcarded OracleRollableId that can be used to match multiple OracleRollable objects.",
-			"pattern": "^oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
+			"description": "A wildcarded AssetCollectionId that can be used to match multiple AssetCollection objects.",
+			"pattern": "^asset_collection:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
+		},
+		"MoveCategoryId": {
+			"title": "MoveCategoryId",
+			"type": "string",
+			"description": "A unique ID representing a MoveCategory object.",
+			"pattern": "^move_category:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){1,4})$"
+		},
+		"MoveCategoryIdWildcard": {
+			"title": "MoveCategoryIdWildcard",
+			"type": "string",
+			"description": "A wildcarded MoveCategoryId that can be used to match multiple MoveCategory objects.",
+			"pattern": "^move_category:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){1,4})$"
+		},
+		"DelveSiteId": {
+			"title": "DelveSiteId",
+			"type": "string",
+			"description": "A unique ID representing a DelveSite object.",
+			"pattern": "^delve_site:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
+		},
+		"DelveSiteIdWildcard": {
+			"title": "DelveSiteIdWildcard",
+			"type": "string",
+			"description": "A wildcarded DelveSiteId that can be used to match multiple DelveSite objects.",
+			"pattern": "^delve_site:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
+		},
+		"DelveSiteDenizenId": {
+			"title": "DelveSiteDenizenId",
+			"type": "string",
+			"description": "A unique ID representing a DelveSiteDenizen object.",
+			"pattern": "^delve_site\\.denizen:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)$"
+		},
+		"DelveSiteDenizenIdWildcard": {
+			"title": "DelveSiteDenizenIdWildcard",
+			"type": "string",
+			"description": "A wildcarded DelveSiteDenizenId that can be used to match multiple DelveSiteDenizen objects.",
+			"pattern": "^delve_site\\.denizen:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)$"
+		},
+		"DelveSiteDomainId": {
+			"title": "DelveSiteDomainId",
+			"type": "string",
+			"description": "A unique ID representing a DelveSiteDomain object.",
+			"pattern": "^delve_site_domain:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
+		},
+		"DelveSiteDomainIdWildcard": {
+			"title": "DelveSiteDomainIdWildcard",
+			"type": "string",
+			"description": "A wildcarded DelveSiteDomainId that can be used to match multiple DelveSiteDomain objects.",
+			"pattern": "^delve_site_domain:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
+		},
+		"DelveSiteDomainFeatureId": {
+			"title": "DelveSiteDomainFeatureId",
+			"type": "string",
+			"description": "A unique ID representing a DelveSiteDomainFeature object.",
+			"pattern": "^delve_site_domain\\.feature:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)$"
+		},
+		"DelveSiteDomainFeatureIdWildcard": {
+			"title": "DelveSiteDomainFeatureIdWildcard",
+			"type": "string",
+			"description": "A wildcarded DelveSiteDomainFeatureId that can be used to match multiple DelveSiteDomainFeature objects.",
+			"pattern": "^delve_site_domain\\.feature:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)$"
+		},
+		"DelveSiteThemeFeatureId": {
+			"title": "DelveSiteThemeFeatureId",
+			"type": "string",
+			"description": "A unique ID representing a DelveSiteThemeFeature object.",
+			"pattern": "^delve_site_theme\\.feature:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)$"
+		},
+		"DelveSiteThemeFeatureIdWildcard": {
+			"title": "DelveSiteThemeFeatureIdWildcard",
+			"type": "string",
+			"description": "A wildcarded DelveSiteThemeFeatureId that can be used to match multiple DelveSiteThemeFeature objects.",
+			"pattern": "^delve_site_theme\\.feature:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)$"
+		},
+		"DelveSiteDomainDangerId": {
+			"title": "DelveSiteDomainDangerId",
+			"type": "string",
+			"description": "A unique ID representing a DelveSiteDomainDanger object.",
+			"pattern": "^delve_site_domain\\.danger:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)$"
+		},
+		"DelveSiteDomainDangerIdWildcard": {
+			"title": "DelveSiteDomainDangerIdWildcard",
+			"type": "string",
+			"description": "A wildcarded DelveSiteDomainDangerId that can be used to match multiple DelveSiteDomainDanger objects.",
+			"pattern": "^delve_site_domain\\.danger:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)$"
+		},
+		"DelveSiteThemeDangerId": {
+			"title": "DelveSiteThemeDangerId",
+			"type": "string",
+			"description": "A unique ID representing a DelveSiteThemeDanger object.",
+			"pattern": "^delve_site_theme\\.danger:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)$"
+		},
+		"DelveSiteThemeDangerIdWildcard": {
+			"title": "DelveSiteThemeDangerIdWildcard",
+			"type": "string",
+			"description": "A wildcarded DelveSiteThemeDangerId that can be used to match multiple DelveSiteThemeDanger objects.",
+			"pattern": "^delve_site_theme\\.danger:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)$"
+		},
+		"DelveSiteThemeId": {
+			"title": "DelveSiteThemeId",
+			"type": "string",
+			"description": "A unique ID representing a DelveSiteTheme object.",
+			"pattern": "^delve_site_theme:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)$"
+		},
+		"DelveSiteThemeIdWildcard": {
+			"title": "DelveSiteThemeIdWildcard",
+			"type": "string",
+			"description": "A wildcarded DelveSiteThemeId that can be used to match multiple DelveSiteTheme objects.",
+			"pattern": "^delve_site_theme:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
 		},
 		"RarityId": {
 			"title": "RarityId",
@@ -778,51 +898,12 @@
 			"description": "A wildcarded TruthOptionId that can be used to match multiple TruthOption objects.",
 			"pattern": "^truth\\.option:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)$"
 		},
-		"TruthOptionOracleRollableId": {
-			"title": "TruthOptionOracleRollableId",
-			"type": "string",
-			"description": "A unique ID representing a TruthOptionOracleRollable object.",
-			"pattern": "^truth\\.option\\.oracle_rollable:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)\\.([a-z][a-z_]*|\\*)$"
-		},
-		"TruthOptionOracleRollableIdWildcard": {
-			"title": "TruthOptionOracleRollableIdWildcard",
-			"type": "string",
-			"description": "A wildcarded TruthOptionOracleRollableId that can be used to match multiple TruthOptionOracleRollable objects.",
-			"pattern": "^truth\\.option\\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)\\.([a-z][a-z_]*|\\*)$"
-		},
-		"EmbeddedMoveId": {
-			"$ref": "#/definitions/AssetAbilityMoveId",
-			"title": "EmbeddedMoveId"
-		},
-		"EmbeddedMoveIdWildcard": {
-			"$ref": "#/definitions/AssetAbilityMoveIdWildcard",
-			"title": "EmbeddedMoveIdWildcard"
-		},
-		"AnyMoveId": {
-			"title": "AnyMoveId",
+		"AnyOracleRollableId": {
+			"title": "AnyOracleRollableId",
 			"anyOf": [
 				{
-					"$ref": "#/definitions/EmbeddedMoveId"
+					"$ref": "#/definitions/OracleRollableId"
 				},
-				{
-					"$ref": "#/definitions/MoveId"
-				}
-			]
-		},
-		"AnyMoveIdWildcard": {
-			"title": "AnyMoveIdWildcard",
-			"anyOf": [
-				{
-					"$ref": "#/definitions/EmbeddedMoveIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/MoveIdWildcard"
-				}
-			]
-		},
-		"EmbeddedOracleRollableId": {
-			"title": "EmbeddedOracleRollableId",
-			"anyOf": [
 				{
 					"$ref": "#/definitions/AssetAbilityOracleRollableId"
 				},
@@ -848,14 +929,17 @@
 				}
 			]
 		},
-		"AnyOracleRollableId": {
-			"title": "AnyOracleRollableId",
+		"EmbeddedOracleRollableId": {
+			"title": "EmbeddedOracleRollableId",
 			"anyOf": [
 				{
-					"$ref": "#/definitions/EmbeddedOracleRollableId"
+					"$ref": "#/definitions/AssetAbilityOracleRollableId"
 				},
 				{
-					"$ref": "#/definitions/OracleRollableId"
+					"$ref": "#/definitions/TruthOptionOracleRollableId"
+				},
+				{
+					"$ref": "#/definitions/MoveOracleRollableId"
 				}
 			]
 		},
@@ -863,10 +947,80 @@
 			"title": "AnyOracleRollableIdWildcard",
 			"anyOf": [
 				{
-					"$ref": "#/definitions/EmbeddedOracleRollableIdWildcard"
+					"$ref": "#/definitions/OracleRollableIdWildcard"
 				},
 				{
-					"$ref": "#/definitions/OracleRollableIdWildcard"
+					"$ref": "#/definitions/AssetAbilityOracleRollableIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/TruthOptionOracleRollableIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/MoveOracleRollableIdWildcard"
+				}
+			]
+		},
+		"AnyMoveId": {
+			"title": "AnyMoveId",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/MoveId"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityMoveId"
+				}
+			]
+		},
+		"EmbeddedMoveIdWildcard": {
+			"$ref": "#/definitions/AssetAbilityMoveIdWildcard",
+			"title": "EmbeddedMoveIdWildcard"
+		},
+		"EmbeddedMoveId": {
+			"$ref": "#/definitions/AssetAbilityMoveId",
+			"title": "EmbeddedMoveId"
+		},
+		"AnyMoveIdWildcard": {
+			"title": "AnyMoveIdWildcard",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/MoveIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityMoveIdWildcard"
+				}
+			]
+		},
+		"AnyOracleRollableRowId": {
+			"title": "AnyOracleRollableRowId",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/OracleRollableRowId"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityOracleRollableRowId"
+				},
+				{
+					"$ref": "#/definitions/MoveOracleRollableRowId"
+				},
+				{
+					"$ref": "#/definitions/TruthOptionOracleRollableRowId"
+				}
+			]
+		},
+		"AnyOracleRollableRowIdWildcard": {
+			"title": "AnyOracleRollableRowIdWildcard",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/OracleRollableRowIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityOracleRollableRowIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/MoveOracleRollableRowIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/TruthOptionOracleRollableRowIdWildcard"
 				}
 			]
 		},
@@ -875,67 +1029,34 @@
 			"description": "Represents any kind of non-wildcard ID, including IDs of embedded objects.",
 			"anyOf": [
 				{
-					"$ref": "#/definitions/AssetId"
-				},
-				{
-					"$ref": "#/definitions/AssetCollectionId"
-				},
-				{
-					"$ref": "#/definitions/AssetAbilityId"
-				},
-				{
-					"$ref": "#/definitions/AssetAbilityMoveId"
+					"$ref": "#/definitions/OracleRollableId"
 				},
 				{
 					"$ref": "#/definitions/AssetAbilityOracleRollableId"
 				},
 				{
-					"$ref": "#/definitions/AtlasCollectionId"
-				},
-				{
-					"$ref": "#/definitions/AtlasEntryId"
-				},
-				{
-					"$ref": "#/definitions/DelveSiteId"
-				},
-				{
-					"$ref": "#/definitions/DelveSiteDomainId"
-				},
-				{
-					"$ref": "#/definitions/DelveSiteThemeId"
-				},
-				{
-					"$ref": "#/definitions/MoveId"
-				},
-				{
-					"$ref": "#/definitions/MoveCategoryId"
+					"$ref": "#/definitions/TruthOptionOracleRollableId"
 				},
 				{
 					"$ref": "#/definitions/MoveOracleRollableId"
 				},
 				{
-					"$ref": "#/definitions/NpcId"
-				},
-				{
-					"$ref": "#/definitions/NpcCollectionId"
-				},
-				{
-					"$ref": "#/definitions/OracleCollectionId"
-				},
-				{
-					"$ref": "#/definitions/OracleRollableId"
-				},
-				{
-					"$ref": "#/definitions/RarityId"
-				},
-				{
-					"$ref": "#/definitions/TruthId"
-				},
-				{
-					"$ref": "#/definitions/TruthOptionId"
+					"$ref": "#/definitions/AssetAbilityOracleRollableId"
 				},
 				{
 					"$ref": "#/definitions/TruthOptionOracleRollableId"
+				},
+				{
+					"$ref": "#/definitions/MoveOracleRollableId"
+				},
+				{
+					"$ref": "#/definitions/MoveId"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityMoveId"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityMoveId"
 				}
 			]
 		},
@@ -944,67 +1065,34 @@
 			"description": "Represents any kind of wildcard ID, including IDs of embedded objects.",
 			"anyOf": [
 				{
-					"$ref": "#/definitions/AssetIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/AssetCollectionIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/AssetAbilityIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/AssetAbilityMoveIdWildcard"
-				},
-				{
 					"$ref": "#/definitions/AssetAbilityOracleRollableIdWildcard"
 				},
 				{
-					"$ref": "#/definitions/AtlasCollectionIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/AtlasEntryIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/DelveSiteIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/DelveSiteDomainIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/DelveSiteThemeIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/MoveIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/MoveCategoryIdWildcard"
+					"$ref": "#/definitions/TruthOptionOracleRollableIdWildcard"
 				},
 				{
 					"$ref": "#/definitions/MoveOracleRollableIdWildcard"
 				},
 				{
-					"$ref": "#/definitions/NpcIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/NpcCollectionIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/OracleCollectionIdWildcard"
-				},
-				{
 					"$ref": "#/definitions/OracleRollableIdWildcard"
 				},
 				{
-					"$ref": "#/definitions/RarityIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/TruthIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/TruthOptionIdWildcard"
+					"$ref": "#/definitions/AssetAbilityOracleRollableIdWildcard"
 				},
 				{
 					"$ref": "#/definitions/TruthOptionOracleRollableIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/MoveOracleRollableIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityMoveIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/MoveIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityMoveIdWildcard"
 				}
 			]
 		},
@@ -1235,16 +1323,16 @@
 		},
 		"CollectableType": {
 			"title": "CollectableType",
-			"enum": ["oracle_rollable", "move", "asset", "atlas_entry", "npc"]
+			"enum": ["atlas_entry", "npc", "oracle_rollable", "asset", "move"]
 		},
 		"CollectionType": {
 			"title": "CollectionType",
 			"enum": [
-				"oracle_collection",
-				"move_category",
-				"asset_collection",
 				"atlas_collection",
-				"npc_collection"
+				"npc_collection",
+				"oracle_collection",
+				"asset_collection",
+				"move_category"
 			]
 		},
 		"ConditionMeterRule": {
@@ -1287,6 +1375,10 @@
 				}
 			},
 			"additionalProperties": false
+		},
+		"EmbedOnlyType": {
+			"title": "EmbedOnlyType",
+			"enum": ["ability", "option", "row", "feature", "danger", "denizen"]
 		},
 		"ImpactCategory": {
 			"title": "ImpactCategory",
@@ -1354,31 +1446,10 @@
 			"title": "NonCollectableType",
 			"enum": [
 				"delve_site",
-				"delve_site_theme",
 				"delve_site_domain",
-				"truth",
-				"rarity"
-			]
-		},
-		"NonIdentifiableType": {
-			"title": "NonIdentifiableType",
-			"enum": ["asset_ability", "oracle_table_row"]
-		},
-		"ObjectType": {
-			"title": "ObjectType",
-			"anyOf": [
-				{
-					"$ref": "#/definitions/CollectableType"
-				},
-				{
-					"$ref": "#/definitions/NonCollectableType"
-				},
-				{
-					"$ref": "#/definitions/CollectionType"
-				},
-				{
-					"$ref": "#/definitions/NonIdentifiableType"
-				}
+				"delve_site_theme",
+				"rarity",
+				"truth"
 			]
 		},
 		"Rules": {
@@ -1566,28 +1637,19 @@
 					"$ref": "#/definitions/DiceExpression"
 				},
 				{
-					"$ref": "#/definitions/OracleRollableId"
-				},
-				{
-					"$ref": "#/definitions/MoveId"
-				},
-				{
-					"$ref": "#/definitions/AssetId"
-				},
-				{
 					"$ref": "#/definitions/AtlasEntryId"
 				},
 				{
 					"$ref": "#/definitions/NpcId"
 				},
 				{
-					"$ref": "#/definitions/OracleCollectionId"
+					"$ref": "#/definitions/OracleRollableId"
 				},
 				{
-					"$ref": "#/definitions/MoveCategoryId"
+					"$ref": "#/definitions/AssetId"
 				},
 				{
-					"$ref": "#/definitions/AssetCollectionId"
+					"$ref": "#/definitions/MoveId"
 				},
 				{
 					"$ref": "#/definitions/AtlasCollectionId"
@@ -1596,33 +1658,33 @@
 					"$ref": "#/definitions/NpcCollectionId"
 				},
 				{
-					"$ref": "#/definitions/DelveSiteId"
+					"$ref": "#/definitions/OracleCollectionId"
 				},
 				{
-					"$ref": "#/definitions/DelveSiteThemeId"
+					"$ref": "#/definitions/AssetCollectionId"
+				},
+				{
+					"$ref": "#/definitions/MoveCategoryId"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteId"
 				},
 				{
 					"$ref": "#/definitions/DelveSiteDomainId"
 				},
 				{
-					"$ref": "#/definitions/TruthId"
+					"$ref": "#/definitions/DelveSiteThemeId"
 				},
 				{
 					"$ref": "#/definitions/RarityId"
 				},
 				{
+					"$ref": "#/definitions/TruthId"
+				},
+				{
 					"type": "array",
 					"items": {
 						"anyOf": [
-							{
-								"$ref": "#/definitions/OracleRollableIdWildcard"
-							},
-							{
-								"$ref": "#/definitions/MoveIdWildcard"
-							},
-							{
-								"$ref": "#/definitions/AssetIdWildcard"
-							},
 							{
 								"$ref": "#/definitions/AtlasEntryIdWildcard"
 							},
@@ -1630,13 +1692,13 @@
 								"$ref": "#/definitions/NpcIdWildcard"
 							},
 							{
-								"$ref": "#/definitions/OracleCollectionIdWildcard"
+								"$ref": "#/definitions/OracleRollableIdWildcard"
 							},
 							{
-								"$ref": "#/definitions/MoveCategoryIdWildcard"
+								"$ref": "#/definitions/AssetIdWildcard"
 							},
 							{
-								"$ref": "#/definitions/AssetCollectionIdWildcard"
+								"$ref": "#/definitions/MoveIdWildcard"
 							},
 							{
 								"$ref": "#/definitions/AtlasCollectionIdWildcard"
@@ -1645,19 +1707,28 @@
 								"$ref": "#/definitions/NpcCollectionIdWildcard"
 							},
 							{
-								"$ref": "#/definitions/DelveSiteIdWildcard"
+								"$ref": "#/definitions/OracleCollectionIdWildcard"
 							},
 							{
-								"$ref": "#/definitions/DelveSiteThemeIdWildcard"
+								"$ref": "#/definitions/AssetCollectionIdWildcard"
+							},
+							{
+								"$ref": "#/definitions/MoveCategoryIdWildcard"
+							},
+							{
+								"$ref": "#/definitions/DelveSiteIdWildcard"
 							},
 							{
 								"$ref": "#/definitions/DelveSiteDomainIdWildcard"
 							},
 							{
-								"$ref": "#/definitions/TruthIdWildcard"
+								"$ref": "#/definitions/DelveSiteThemeIdWildcard"
 							},
 							{
 								"$ref": "#/definitions/RarityIdWildcard"
+							},
+							{
+								"$ref": "#/definitions/TruthIdWildcard"
 							}
 						]
 					}
@@ -1674,21 +1745,21 @@
 					"enum": [
 						"boolean",
 						"integer",
-						"oracle_rollable",
-						"move",
-						"asset",
 						"atlas_entry",
 						"npc",
-						"oracle_collection",
-						"move_category",
-						"asset_collection",
+						"oracle_rollable",
+						"asset",
+						"move",
 						"atlas_collection",
 						"npc_collection",
+						"oracle_collection",
+						"asset_collection",
+						"move_category",
 						"delve_site",
-						"delve_site_theme",
 						"delve_site_domain",
-						"truth",
+						"delve_site_theme",
 						"rarity",
+						"truth",
 						"enum"
 					]
 				}
@@ -1715,7 +1786,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -1759,7 +1830,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -1787,141 +1858,6 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "oracle_rollable",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"type": "object",
-						"title": "TagRuleOracleRollable",
-						"properties": {
-							"applies_to": {
-								"default": null,
-								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
-								"anyOf": [
-									{
-										"type": "array",
-										"items": {
-											"$ref": "#/definitions/ObjectType"
-										}
-									},
-									{
-										"type": "null"
-									}
-								]
-							},
-							"description": {
-								"$ref": "#/definitions/MarkdownString"
-							},
-							"wildcard": {
-								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
-								"type": "boolean"
-							},
-							"value_type": {
-								"const": "oracle_rollable",
-								"type": "string"
-							}
-						},
-						"required": ["description", "value_type"],
-						"additionalProperties": false
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"value_type": {
-								"const": "move",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"type": "object",
-						"title": "TagRuleMove",
-						"properties": {
-							"applies_to": {
-								"default": null,
-								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
-								"anyOf": [
-									{
-										"type": "array",
-										"items": {
-											"$ref": "#/definitions/ObjectType"
-										}
-									},
-									{
-										"type": "null"
-									}
-								]
-							},
-							"description": {
-								"$ref": "#/definitions/MarkdownString"
-							},
-							"wildcard": {
-								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
-								"type": "boolean"
-							},
-							"value_type": {
-								"const": "move",
-								"type": "string"
-							}
-						},
-						"required": ["description", "value_type"],
-						"additionalProperties": false
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"value_type": {
-								"const": "asset",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"type": "object",
-						"title": "TagRuleAsset",
-						"properties": {
-							"applies_to": {
-								"default": null,
-								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
-								"anyOf": [
-									{
-										"type": "array",
-										"items": {
-											"$ref": "#/definitions/ObjectType"
-										}
-									},
-									{
-										"type": "null"
-									}
-								]
-							},
-							"description": {
-								"$ref": "#/definitions/MarkdownString"
-							},
-							"wildcard": {
-								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
-								"type": "boolean"
-							},
-							"value_type": {
-								"const": "asset",
-								"type": "string"
-							}
-						},
-						"required": ["description", "value_type"],
-						"additionalProperties": false
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"value_type": {
 								"const": "atlas_entry",
 								"type": "string"
 							}
@@ -1938,7 +1874,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -1951,7 +1887,7 @@
 							},
 							"wildcard": {
 								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
 								"type": "boolean"
 							},
 							"value_type": {
@@ -1983,7 +1919,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -1996,7 +1932,7 @@
 							},
 							"wildcard": {
 								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
 								"type": "boolean"
 							},
 							"value_type": {
@@ -2012,14 +1948,14 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "oracle_collection",
+								"const": "oracle_rollable",
 								"type": "string"
 							}
 						}
 					},
 					"then": {
 						"type": "object",
-						"title": "TagRuleOracleCollection",
+						"title": "TagRuleOracleRollable",
 						"properties": {
 							"applies_to": {
 								"default": null,
@@ -2028,7 +1964,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -2041,11 +1977,11 @@
 							},
 							"wildcard": {
 								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "oracle_collection",
+								"const": "oracle_rollable",
 								"type": "string"
 							}
 						},
@@ -2057,14 +1993,14 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "move_category",
+								"const": "asset",
 								"type": "string"
 							}
 						}
 					},
 					"then": {
 						"type": "object",
-						"title": "TagRuleMoveCategory",
+						"title": "TagRuleAsset",
 						"properties": {
 							"applies_to": {
 								"default": null,
@@ -2073,7 +2009,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -2086,11 +2022,11 @@
 							},
 							"wildcard": {
 								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "move_category",
+								"const": "asset",
 								"type": "string"
 							}
 						},
@@ -2102,14 +2038,14 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "asset_collection",
+								"const": "move",
 								"type": "string"
 							}
 						}
 					},
 					"then": {
 						"type": "object",
-						"title": "TagRuleAssetCollection",
+						"title": "TagRuleMove",
 						"properties": {
 							"applies_to": {
 								"default": null,
@@ -2118,7 +2054,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -2131,11 +2067,11 @@
 							},
 							"wildcard": {
 								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "asset_collection",
+								"const": "move",
 								"type": "string"
 							}
 						},
@@ -2163,7 +2099,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -2176,7 +2112,7 @@
 							},
 							"wildcard": {
 								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
 								"type": "boolean"
 							},
 							"value_type": {
@@ -2208,7 +2144,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -2221,11 +2157,146 @@
 							},
 							"wildcard": {
 								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
 								"type": "boolean"
 							},
 							"value_type": {
 								"const": "npc_collection",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"],
+						"additionalProperties": false
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "oracle_collection",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleOracleCollection",
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/definitions/TaggableNodeType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/definitions/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "oracle_collection",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"],
+						"additionalProperties": false
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "asset_collection",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleAssetCollection",
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/definitions/TaggableNodeType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/definitions/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "asset_collection",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"],
+						"additionalProperties": false
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "move_category",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleMoveCategory",
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/definitions/TaggableNodeType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/definitions/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "move_category",
 								"type": "string"
 							}
 						},
@@ -2253,7 +2324,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -2266,56 +2337,11 @@
 							},
 							"wildcard": {
 								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
 								"type": "boolean"
 							},
 							"value_type": {
 								"const": "delve_site",
-								"type": "string"
-							}
-						},
-						"required": ["description", "value_type"],
-						"additionalProperties": false
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"value_type": {
-								"const": "delve_site_theme",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"type": "object",
-						"title": "TagRuleDelveSiteTheme",
-						"properties": {
-							"applies_to": {
-								"default": null,
-								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
-								"anyOf": [
-									{
-										"type": "array",
-										"items": {
-											"$ref": "#/definitions/ObjectType"
-										}
-									},
-									{
-										"type": "null"
-									}
-								]
-							},
-							"description": {
-								"$ref": "#/definitions/MarkdownString"
-							},
-							"wildcard": {
-								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
-								"type": "boolean"
-							},
-							"value_type": {
-								"const": "delve_site_theme",
 								"type": "string"
 							}
 						},
@@ -2343,7 +2369,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -2356,7 +2382,7 @@
 							},
 							"wildcard": {
 								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
 								"type": "boolean"
 							},
 							"value_type": {
@@ -2372,14 +2398,14 @@
 					"if": {
 						"properties": {
 							"value_type": {
-								"const": "truth",
+								"const": "delve_site_theme",
 								"type": "string"
 							}
 						}
 					},
 					"then": {
 						"type": "object",
-						"title": "TagRuleTruth",
+						"title": "TagRuleDelveSiteTheme",
 						"properties": {
 							"applies_to": {
 								"default": null,
@@ -2388,7 +2414,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -2401,11 +2427,11 @@
 							},
 							"wildcard": {
 								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
 								"type": "boolean"
 							},
 							"value_type": {
-								"const": "truth",
+								"const": "delve_site_theme",
 								"type": "string"
 							}
 						},
@@ -2433,7 +2459,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -2446,11 +2472,56 @@
 							},
 							"wildcard": {
 								"default": false,
-								"description": "If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.",
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
 								"type": "boolean"
 							},
 							"value_type": {
 								"const": "rarity",
+								"type": "string"
+							}
+						},
+						"required": ["description", "value_type"],
+						"additionalProperties": false
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"value_type": {
+								"const": "truth",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"type": "object",
+						"title": "TagRuleTruth",
+						"properties": {
+							"applies_to": {
+								"default": null,
+								"description": "Types of object that can receive this tag, or `null` if any type of object accepts it.",
+								"anyOf": [
+									{
+										"type": "array",
+										"items": {
+											"$ref": "#/definitions/TaggableNodeType"
+										}
+									},
+									{
+										"type": "null"
+									}
+								]
+							},
+							"description": {
+								"$ref": "#/definitions/MarkdownString"
+							},
+							"wildcard": {
+								"default": false,
+								"description": "If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.",
+								"type": "boolean"
+							},
+							"value_type": {
+								"const": "truth",
 								"type": "string"
 							}
 						},
@@ -2478,7 +2549,7 @@
 									{
 										"type": "array",
 										"items": {
-											"$ref": "#/definitions/ObjectType"
+											"$ref": "#/definitions/TaggableNodeType"
 										}
 									},
 									{
@@ -2510,15 +2581,31 @@
 				}
 			]
 		},
+		"TaggableNodeType": {
+			"title": "TaggableNodeType",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/CollectableType"
+				},
+				{
+					"$ref": "#/definitions/NonCollectableType"
+				},
+				{
+					"$ref": "#/definitions/CollectionType"
+				},
+				{
+					"$ref": "#/definitions/EmbedOnlyType"
+				}
+			]
+		},
 		"Tags": {
 			"title": "Tags",
 			"type": "object",
-			"description": "A dictionary of tags, keyed by the RulesetID that the tags are from.",
-			"remarks": "Deserialize as a dictionary object.",
+			"description": "A dictionary of tags, keyed by the RulesPackageId that the tags are from.",
 			"releaseStage": "experimental",
 			"patternProperties": {
 				"^[a-z][a-z0-9_]{3,}$": {
-					"title": "RulesetTags",
+					"title": "RulesPackageTags",
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
 					"patternProperties": {
@@ -2527,7 +2614,32 @@
 						}
 					}
 				}
-			}
+			},
+			"key": "^[a-z][a-z0-9_]{3,}$"
+		},
+		"TagsCore": {
+			"title": "TagsCore",
+			"type": "object",
+			"properties": {
+				"requires_allies": {
+					"type": "boolean",
+					"description": "This object requires allies to function, and is intended for co-op play, or guided play with allies. It is not appropriate for solo play."
+				},
+				"supernatural": {
+					"type": "boolean",
+					"description": "This object is supernatural in nature, and is ideal for settings that feature supernatural or mythic powers."
+				},
+				"technological": {
+					"type": "boolean",
+					"description": "This object is technological in nature, and is ideal for settings that feature remarkable technologies."
+				}
+			},
+			"patternProperties": {
+				"^[a-z][a-z_]*$": {
+					"$ref": "#/definitions/Tag"
+				}
+			},
+			"additionalProperties": false
 		},
 		"ChallengeRank": {
 			"title": "ChallengeRank",
@@ -3144,23 +3256,23 @@
 		"OracleRollTemplate": {
 			"title": "OracleRollTemplate",
 			"type": "object",
-			"description": "Provides string templates that may be used in place of the static row text from `OracleTableRow#text`, `OracleTableRow#text2`, and `OracleTableRow#text3`.\n\n  These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text>some_oracle_rollable_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#text` from the target oracle rollable ID.",
+			"description": "Provides string templates that may be used in place of the static row text from `OracleRollableRow#text`, `OracleRollableRow#text2`, and `OracleRollableRow#text3`.\n\n  These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text>some_oracle_rollable_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleRollableRow#text` from the target oracle rollable ID.",
 			"releaseStage": "experimental",
 			"properties": {
 				"text": {
 					"$ref": "#/definitions/TemplateString",
-					"description": "A string template that may be used in place of OracleTableRow#text.",
+					"description": "A string template that may be used in place of OracleRollableRow#text.",
 					"examples": [
 						"{{text:starforged/oracles/factions/affiliation}} of the {{text:starforged/oracles/factions/legacy}} {{text:starforged/oracles/factions/identity}}"
 					]
 				},
 				"text2": {
 					"$ref": "#/definitions/TemplateString",
-					"description": "A string template that may be used in place of OracleTableRow#text2."
+					"description": "A string template that may be used in place of OracleRollableRow#text2."
 				},
 				"text3": {
 					"$ref": "#/definitions/TemplateString",
-					"description": "A string template that may be used in place of OracleTableRow#text3."
+					"description": "A string template that may be used in place of OracleRollableRow#text3."
 				}
 			},
 			"additionalProperties": false
@@ -3251,7 +3363,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText"
+						"$ref": "#/definitions/OracleRollableRowText"
 					}
 				}
 			},
@@ -3313,7 +3425,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText2"
+						"$ref": "#/definitions/OracleRollableRowText2"
 					}
 				}
 			},
@@ -3375,7 +3487,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText3"
+						"$ref": "#/definitions/OracleRollableRowText3"
 					}
 				}
 			},
@@ -3574,7 +3686,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText"
+						"$ref": "#/definitions/OracleRollableRowText"
 					}
 				}
 			},
@@ -3679,7 +3791,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText2"
+						"$ref": "#/definitions/OracleRollableRowText2"
 					}
 				}
 			},
@@ -3780,7 +3892,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText3"
+						"$ref": "#/definitions/OracleRollableRowText3"
 					}
 				}
 			},
@@ -3936,7 +4048,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText"
+						"$ref": "#/definitions/OracleRollableRowText"
 					}
 				}
 			},
@@ -4006,7 +4118,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText2"
+						"$ref": "#/definitions/OracleRollableRowText2"
 					}
 				}
 			},
@@ -4076,7 +4188,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText3"
+						"$ref": "#/definitions/OracleRollableRowText3"
 					}
 				}
 			},
@@ -4182,79 +4294,29 @@
 				}
 			]
 		},
-		"OracleTableRollable": {
-			"title": "OracleTableRollable",
-			"type": "object",
-			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.",
-			"required": ["oracle_type"],
-			"properties": {
-				"oracle_type": {
-					"enum": ["table_text", "table_text2", "table_text3"]
-				}
-			},
-			"additionalProperties": true,
-			"allOf": [
-				{
-					"if": {
-						"properties": {
-							"oracle_type": {
-								"const": "table_text",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"$ref": "#/definitions/OracleTableText"
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"oracle_type": {
-								"const": "table_text2",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"$ref": "#/definitions/OracleTableText2"
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"oracle_type": {
-								"const": "table_text3",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"$ref": "#/definitions/OracleTableText3"
-					}
-				}
-			]
-		},
-		"OracleTableRow": {
-			"title": "OracleTableRow",
+		"OracleRollableRow": {
+			"title": "OracleRollableRow",
 			"anyOf": [
 				{
-					"$ref": "#/definitions/OracleTableRowText"
+					"$ref": "#/definitions/OracleRollableRowText"
 				},
 				{
-					"$ref": "#/definitions/OracleTableRowText2"
+					"$ref": "#/definitions/OracleRollableRowText2"
 				},
 				{
-					"$ref": "#/definitions/OracleTableRowText3"
+					"$ref": "#/definitions/OracleRollableRowText3"
 				}
 			]
 		},
-		"OracleTableRowText": {
-			"title": "OracleTableRowText",
+		"OracleRollableRowText": {
+			"title": "OracleRollableRowText",
 			"type": "object",
 			"description": "Represents a row in an oracle table, with a single text cell.",
 			"required": ["text"],
 			"properties": {
+				"_id": {
+					"$ref": "#/definitions/AnyOracleRollableRowId"
+				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
 				},
@@ -4303,12 +4365,15 @@
 			},
 			"additionalProperties": false
 		},
-		"OracleTableRowText2": {
-			"title": "OracleTableRowText2",
+		"OracleRollableRowText2": {
+			"title": "OracleRollableRowText2",
 			"type": "object",
 			"description": "Represents a row in an oracle table that provides a secondary text field.",
 			"required": ["text", "text2"],
 			"properties": {
+				"_id": {
+					"$ref": "#/definitions/AnyOracleRollableRowId"
+				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
 				},
@@ -4368,12 +4433,15 @@
 			},
 			"additionalProperties": false
 		},
-		"OracleTableRowText3": {
-			"title": "OracleTableRowText3",
+		"OracleRollableRowText3": {
+			"title": "OracleRollableRowText3",
 			"type": "object",
 			"description": "Represents a row in an oracle table with 3 text cells.",
 			"required": ["text", "text2", "text3"],
 			"properties": {
+				"_id": {
+					"$ref": "#/definitions/AnyOracleRollableRowId"
+				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
 				},
@@ -4443,6 +4511,59 @@
 				}
 			},
 			"additionalProperties": false
+		},
+		"OracleTableRollable": {
+			"title": "OracleTableRollable",
+			"type": "object",
+			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.",
+			"required": ["oracle_type"],
+			"properties": {
+				"oracle_type": {
+					"enum": ["table_text", "table_text2", "table_text3"]
+				}
+			},
+			"additionalProperties": true,
+			"allOf": [
+				{
+					"if": {
+						"properties": {
+							"oracle_type": {
+								"const": "table_text",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/OracleTableText"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"oracle_type": {
+								"const": "table_text2",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/OracleTableText2"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"oracle_type": {
+								"const": "table_text3",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/OracleTableText3"
+					}
+				}
+			]
 		},
 		"OracleTableSharedRolls": {
 			"title": "OracleTableSharedRolls",
@@ -4973,7 +5094,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText"
+						"$ref": "#/definitions/OracleRollableRowText"
 					}
 				},
 				"_source": {
@@ -5091,7 +5212,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText2"
+						"$ref": "#/definitions/OracleRollableRowText2"
 					}
 				},
 				"_source": {
@@ -5205,7 +5326,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText3"
+						"$ref": "#/definitions/OracleRollableRowText3"
 					}
 				},
 				"_source": {
@@ -8659,17 +8780,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 1
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 27
 												}
 											}
@@ -8689,17 +8807,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 28
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 41
 												}
 											}
@@ -8719,17 +8834,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 42
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 55
 												}
 											}
@@ -8749,17 +8861,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 56
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 69
 												}
 											}
@@ -8779,17 +8888,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 70
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 75
 												}
 											}
@@ -8809,17 +8915,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 76
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 81
 												}
 											}
@@ -8839,17 +8942,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 82
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 87
 												}
 											}
@@ -8869,17 +8969,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 88
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 93
 												}
 											}
@@ -8899,17 +8996,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 94
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 95
 												}
 											}
@@ -8929,17 +9023,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 96
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 97
 												}
 											}
@@ -8959,17 +9050,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 98
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 99
 												}
 											}
@@ -8989,17 +9077,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 100
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 100
 												}
 											}
@@ -9024,9 +9109,12 @@
 		"DelveSiteDenizen": {
 			"title": "DelveSiteDenizen",
 			"type": "object",
-			"description": "Represents an entry in a site denizen matrix. Denizen matrices are described in Ironsworn: Delve.",
+			"description": "Represents an entry in a delve site denizen matrix. Denizen matrices are described in Ironsworn: Delve.",
 			"required": ["frequency", "roll"],
 			"properties": {
+				"_id": {
+					"$ref": "#/definitions/DelveSiteDenizenId"
+				},
 				"name": {
 					"$ref": "#/definitions/Label",
 					"description": "A name for the denizen, if it's different than the `name` property of the NPC."
@@ -9083,7 +9171,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/OracleTableRowText"
+								"$ref": "#/definitions/DelveSiteDomainFeature"
 							}
 						},
 						{
@@ -9096,17 +9184,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 21
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 43
 												}
 											}
@@ -9121,17 +9206,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 44
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 56
 												}
 											}
@@ -9146,17 +9228,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 57
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 64
 												}
 											}
@@ -9171,17 +9250,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 65
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 68
 												}
 											}
@@ -9196,17 +9272,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 69
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 72
 												}
 											}
@@ -9221,17 +9294,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 73
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 76
 												}
 											}
@@ -9246,17 +9316,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 77
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 80
 												}
 											}
@@ -9271,17 +9338,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 81
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 84
 												}
 											}
@@ -9296,17 +9360,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 85
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 88
 												}
 											}
@@ -9321,17 +9382,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 89
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 98
 												}
 											}
@@ -9346,17 +9404,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 99
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 99
 												}
 											}
@@ -9371,17 +9426,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 100
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 100
 												}
 											}
@@ -9401,7 +9453,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/OracleTableRowText"
+								"$ref": "#/definitions/DelveSiteDomainDanger"
 							}
 						},
 						{
@@ -9414,17 +9466,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 31
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 33
 												}
 											}
@@ -9439,17 +9488,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 34
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 36
 												}
 											}
@@ -9464,17 +9510,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 37
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 39
 												}
 											}
@@ -9489,17 +9532,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 40
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 42
 												}
 											}
@@ -9514,17 +9554,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 43
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 45
 												}
 											}
@@ -9559,6 +9596,120 @@
 			},
 			"additionalProperties": true
 		},
+		"DelveSiteDomainDanger": {
+			"title": "DelveSiteDomainDanger",
+			"type": "object",
+			"description": "Represents a row in an oracle table, with a single text cell.",
+			"required": ["_id", "text"],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/DelveSiteDomainDangerId"
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl"
+				},
+				"roll": {
+					"description": "`null` represents an unrollable row, included only for rendering purposes.",
+					"default": null,
+					"anyOf": [
+						{
+							"$ref": "#/definitions/DiceRange"
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "The primary text content of this row."
+				},
+				"template": {
+					"$ref": "#/definitions/OracleRollTemplate",
+					"releaseStage": "experimental"
+				},
+				"embed_table": {
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Hints that the identified table should be rendered inside this table row.",
+					"releaseStage": "experimental"
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"oracle_rolls": {
+					"type": "array",
+					"description": "Further oracle rolls prompted by this table row.",
+					"items": {
+						"$ref": "#/definitions/OracleRoll"
+					}
+				},
+				"tags": {
+					"$ref": "#/definitions/Tags"
+				},
+				"_i18n": {
+					"$ref": "#/definitions/I18nHints",
+					"releaseStage": "experimental"
+				}
+			},
+			"additionalProperties": false
+		},
+		"DelveSiteDomainFeature": {
+			"title": "DelveSiteDomainFeature",
+			"type": "object",
+			"description": "Represents a row in an oracle table, with a single text cell.",
+			"required": ["_id", "text"],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/DelveSiteDomainFeatureId"
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl"
+				},
+				"roll": {
+					"description": "`null` represents an unrollable row, included only for rendering purposes.",
+					"default": null,
+					"anyOf": [
+						{
+							"$ref": "#/definitions/DiceRange"
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "The primary text content of this row."
+				},
+				"template": {
+					"$ref": "#/definitions/OracleRollTemplate",
+					"releaseStage": "experimental"
+				},
+				"embed_table": {
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Hints that the identified table should be rendered inside this table row.",
+					"releaseStage": "experimental"
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"oracle_rolls": {
+					"type": "array",
+					"description": "Further oracle rolls prompted by this table row.",
+					"items": {
+						"$ref": "#/definitions/OracleRoll"
+					}
+				},
+				"tags": {
+					"$ref": "#/definitions/Tags"
+				},
+				"_i18n": {
+					"$ref": "#/definitions/I18nHints",
+					"releaseStage": "experimental"
+				}
+			},
+			"additionalProperties": false
+		},
 		"DelveSiteTheme": {
 			"title": "DelveSiteTheme",
 			"type": "object",
@@ -9592,7 +9743,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/OracleTableRowText"
+								"$ref": "#/definitions/DelveSiteThemeFeature"
 							}
 						},
 						{
@@ -9605,17 +9756,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 1
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 4
 												}
 											}
@@ -9630,17 +9778,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 5
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 8
 												}
 											}
@@ -9655,17 +9800,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 9
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 12
 												}
 											}
@@ -9680,17 +9822,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 13
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 16
 												}
 											}
@@ -9705,17 +9844,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 17
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 20
 												}
 											}
@@ -9735,7 +9871,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/OracleTableRowText"
+								"$ref": "#/definitions/DelveSiteThemeFeature"
 							}
 						},
 						{
@@ -9748,17 +9884,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 1
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 5
 												}
 											}
@@ -9773,17 +9906,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 6
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 10
 												}
 											}
@@ -9798,17 +9928,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 11
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 12
 												}
 											}
@@ -9823,17 +9950,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 13
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 14
 												}
 											}
@@ -9848,17 +9972,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 15
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 16
 												}
 											}
@@ -9873,17 +9994,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 17
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 18
 												}
 											}
@@ -9898,17 +10016,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 19
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 20
 												}
 											}
@@ -9923,17 +10038,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 21
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 22
 												}
 											}
@@ -9948,17 +10060,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 23
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 24
 												}
 											}
@@ -9973,17 +10082,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 25
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 26
 												}
 											}
@@ -9998,17 +10104,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 27
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 28
 												}
 											}
@@ -10023,17 +10126,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 29
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 30
 												}
 											}
@@ -10067,6 +10167,120 @@
 				}
 			},
 			"additionalProperties": true
+		},
+		"DelveSiteThemeDanger": {
+			"title": "DelveSiteThemeDanger",
+			"type": "object",
+			"description": "Represents a row in an oracle table, with a single text cell.",
+			"required": ["_id", "text"],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/DelveSiteThemeDangerId"
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl"
+				},
+				"roll": {
+					"description": "`null` represents an unrollable row, included only for rendering purposes.",
+					"default": null,
+					"anyOf": [
+						{
+							"$ref": "#/definitions/DiceRange"
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "The primary text content of this row."
+				},
+				"template": {
+					"$ref": "#/definitions/OracleRollTemplate",
+					"releaseStage": "experimental"
+				},
+				"embed_table": {
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Hints that the identified table should be rendered inside this table row.",
+					"releaseStage": "experimental"
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"oracle_rolls": {
+					"type": "array",
+					"description": "Further oracle rolls prompted by this table row.",
+					"items": {
+						"$ref": "#/definitions/OracleRoll"
+					}
+				},
+				"tags": {
+					"$ref": "#/definitions/Tags"
+				},
+				"_i18n": {
+					"$ref": "#/definitions/I18nHints",
+					"releaseStage": "experimental"
+				}
+			},
+			"additionalProperties": false
+		},
+		"DelveSiteThemeFeature": {
+			"title": "DelveSiteThemeFeature",
+			"type": "object",
+			"description": "Represents a row in an oracle table, with a single text cell.",
+			"required": ["_id", "text"],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/DelveSiteThemeFeatureId"
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl"
+				},
+				"roll": {
+					"description": "`null` represents an unrollable row, included only for rendering purposes.",
+					"default": null,
+					"anyOf": [
+						{
+							"$ref": "#/definitions/DiceRange"
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "The primary text content of this row."
+				},
+				"template": {
+					"$ref": "#/definitions/OracleRollTemplate",
+					"releaseStage": "experimental"
+				},
+				"embed_table": {
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Hints that the identified table should be rendered inside this table row.",
+					"releaseStage": "experimental"
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"oracle_rolls": {
+					"type": "array",
+					"description": "Further oracle rolls prompted by this table row.",
+					"items": {
+						"$ref": "#/definitions/OracleRoll"
+					}
+				},
+				"tags": {
+					"$ref": "#/definitions/Tags"
+				},
+				"_i18n": {
+					"$ref": "#/definitions/I18nHints",
+					"releaseStage": "experimental"
+				}
+			},
+			"additionalProperties": false
 		}
 	}
 }

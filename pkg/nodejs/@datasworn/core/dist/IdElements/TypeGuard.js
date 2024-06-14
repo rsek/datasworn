@@ -50,11 +50,11 @@ var TypeGuard;
     }
     TypeGuard.CollectableType = CollectableType;
     function EmbedOnlyType(value) {
-        return TypeId_js_1.default.EmbedOnlyTypes.includes(value);
+        return TypeId_js_1.default.EmbedOnlyType.includes(value);
     }
     TypeGuard.EmbedOnlyType = EmbedOnlyType;
     function EmbeddablePrimaryType(value) {
-        return TypeId_js_1.default.EmbeddablePrimaryTypes.includes(value);
+        return TypeId_js_1.default.EmbeddablePrimaryType.includes(value);
     }
     TypeGuard.EmbeddablePrimaryType = EmbeddablePrimaryType;
     function AnyPrimaryType(value) {

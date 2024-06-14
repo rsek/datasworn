@@ -68,7 +68,7 @@ export const OracleRollTemplate = Type.Object(
 		text: Type.Optional(
 			Type.Ref(Localize.TemplateString, {
 				description:
-					'A string template that may be used in place of OracleTableRow#text.',
+					'A string template that may be used in place of OracleRollableRow#text.',
 				examples: [
 					'{{text:starforged/oracles/factions/affiliation}} of the {{text:starforged/oracles/factions/legacy}} {{text:starforged/oracles/factions/identity}}'
 				]
@@ -77,22 +77,22 @@ export const OracleRollTemplate = Type.Object(
 		text2: Type.Optional(
 			Type.Ref(Localize.TemplateString, {
 				description:
-					'A string template that may be used in place of OracleTableRow#text2.'
+					'A string template that may be used in place of OracleRollableRow#text2.'
 			})
 		),
 		text3: Type.Optional(
 			Type.Ref(Localize.TemplateString, {
 				description:
-					'A string template that may be used in place of OracleTableRow#text3.'
+					'A string template that may be used in place of OracleRollableRow#text3.'
 			})
 		)
 	},
 	{
 		$id: 'OracleRollTemplate',
 		releaseStage: 'experimental',
-		description: `Provides string templates that may be used in place of the static row text from \`OracleTableRow#text\`, \`OracleTableRow#text2\`, and \`OracleTableRow#text3\`.
+		description: `Provides string templates that may be used in place of the static row text from \`OracleRollableRow#text\`, \`OracleRollableRow#text2\`, and \`OracleRollableRow#text3\`.
 
-  These strings are formatted in Markdown, but use a special syntax for their placeholders: \`{{text>some_oracle_rollable_id}}\`. The placeholder should be replaced with the value of a rolled (or selected) \`OracleTableRow#text\` from the target oracle rollable ID.`
+  These strings are formatted in Markdown, but use a special syntax for their placeholders: \`{{text>some_oracle_rollable_id}}\`. The placeholder should be replaced with the value of a rolled (or selected) \`OracleRollableRow#text\` from the target oracle rollable ID.`
 	}
 )
 export type OracleRollTemplate = Static<typeof OracleRollTemplate>

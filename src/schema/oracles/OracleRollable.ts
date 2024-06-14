@@ -16,11 +16,11 @@ import { ColumnMixin } from './Column.js'
 import { TableMeta, TableMixin } from './Table.js'
 import {
 	Text2ColumnLabels,
-	OracleTableRowText2,
-	OracleTableRowText,
+	OracleRollableRowText2,
+	OracleRollableRowText,
 	TextColumnLabels,
 	type ColumnLabels,
-	OracleTableRowText3,
+	OracleRollableRowText3,
 	Text3ColumnLabels
 } from './TableRow.js'
 import { FlatIntersect } from '../utils/FlatIntersect.js'
@@ -149,7 +149,7 @@ function OracleColumnBase<
 
 export const OracleTableText = RollableTable(
 	'table_text',
-	Type.Ref(OracleTableRowText),
+	Type.Ref(OracleRollableRowText),
 	TextColumnLabels,
 	{
 		$id: 'OracleTableText',
@@ -162,7 +162,7 @@ export type OracleTableText = Static<typeof OracleTableText>
 
 export const OracleTableText2 = RollableTable(
 	'table_text2',
-	Type.Ref(OracleTableRowText2),
+	Type.Ref(OracleRollableRowText2),
 	Text2ColumnLabels,
 	{
 		$id: 'OracleTableText2',
@@ -175,7 +175,7 @@ export type OracleTableText2 = Static<typeof OracleTableText2>
 
 export const OracleTableText3 = RollableTable(
 	'table_text3',
-	Type.Ref(OracleTableRowText3),
+	Type.Ref(OracleRollableRowText3),
 	Text3ColumnLabels,
 	{
 		$id: 'OracleTableText3',
@@ -188,7 +188,7 @@ export type OracleTableText3 = Static<typeof OracleTableText2>
 
 export const OracleColumnText = RollableTableColumn(
 	'column_text',
-	Type.Ref(OracleTableRowText),
+	Type.Ref(OracleRollableRowText),
 	{
 		$id: 'OracleColumnText',
 		description: 'Represents a single column in an OracleCollection.'
@@ -199,7 +199,7 @@ export type OracleColumnText = Static<typeof OracleColumnText>
 
 export const OracleColumnText2 = RollableTableColumn(
 	'column_text2',
-	Type.Ref(OracleTableRowText2),
+	Type.Ref(OracleRollableRowText2),
 	{
 		$id: 'OracleColumnText2'
 	}
@@ -210,7 +210,7 @@ export type OracleColumnText2 = Static<typeof OracleColumnText2>
 
 export const OracleColumnText3 = RollableTableColumn(
 	'column_text3',
-	Type.Ref(OracleTableRowText3),
+	Type.Ref(OracleRollableRowText3),
 	{
 		$id: 'OracleColumnText3'
 	}

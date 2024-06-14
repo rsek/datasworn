@@ -26,7 +26,7 @@ declare namespace TypeNode {
         delve_site_theme: Datasworn.DelveSiteTheme;
         rarity: Datasworn.Rarity;
     };
-    type EmbeddedTypeMap = TypeMapLike<TypeId.EmbeddableTypes> & {
+    type EmbeddedTypeMap = TypeMapLike<TypeId.EmbeddableType> & {
         ability: Datasworn.AssetAbility;
         option: Datasworn.TruthOption;
         oracle_rollable: Datasworn.EmbeddedOracleRollable;

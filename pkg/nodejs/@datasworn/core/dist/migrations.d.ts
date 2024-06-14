@@ -6,7 +6,7 @@ export type IdReplacer = {
     /** A replacement template string to replace the old ID with. */
     new: string;
 };
-export type IdReplacementMap = Record<TypeId.AnyPrimary | TypeId.EmbedOnlyTypes, IdReplacer[]>;
+export type IdReplacementMap = Record<TypeId.AnyPrimary | TypeId.EmbedOnlyType, IdReplacer[]>;
 /**
  * Updates old (pre-0.1.0) Datasworn IDs (and pointers that reference them in markdown strings) for use with v0.1.0.
  * Intended for use as the `replacer` in {@link JSON.stringify} or the `reviver` in {@link JSON.parse}; this way, it will iterate over every string value so you can update all the IDs in one go.

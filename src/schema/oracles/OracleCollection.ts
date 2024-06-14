@@ -18,9 +18,9 @@ import {
 } from './OracleRollable.js'
 import {
 	ColumnLabels,
-	type OracleTableRowText,
-	type OracleTableRowText2,
-	type OracleTableRowText3
+	type OracleRollableRowText,
+	type OracleRollableRowText2,
+	type OracleRollableRowText3
 } from './TableRow.js'
 
 const OracleCollectionType = Utils.UnionEnumFromRecord(
@@ -166,7 +166,7 @@ export type OracleTableSharedRolls = Static<TOracleTableSharedRolls>
 
 export const OracleTableSharedText = OracleCollectionBase(
 	{
-		column_labels: ColumnLabels<typeof OracleTableRowText>({
+		column_labels: ColumnLabels<typeof OracleRollableRowText>({
 			text: 'Result'
 		}),
 		oracle_type: Utils.ExtractLiteralFromEnum(
@@ -188,7 +188,7 @@ export type OracleTableSharedText = Static<TOracleTableSharedText>
 
 export const OracleTableSharedText2 = OracleCollectionBase(
 	{
-		column_labels: ColumnLabels<typeof OracleTableRowText2>({
+		column_labels: ColumnLabels<typeof OracleRollableRowText2>({
 			text: 'Result',
 			text2: 'Details'
 		}),
@@ -211,7 +211,7 @@ export type OracleTableSharedText2 = Static<TOracleTableSharedText2>
 
 export const OracleTableSharedText3 = OracleCollectionBase(
 	{
-		column_labels: ColumnLabels<typeof OracleTableRowText3>({
+		column_labels: ColumnLabels<typeof OracleRollableRowText3>({
 			text: 'Result'
 		}),
 		oracle_type: Utils.ExtractLiteralFromEnum(

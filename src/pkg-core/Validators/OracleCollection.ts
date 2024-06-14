@@ -46,8 +46,8 @@ export function validate<T extends Datasworn.OracleCollection>(collection: T) {
  */
 function oracleRowsEqualBy(
 	equalityFn: (
-		a: Datasworn.OracleTableRow,
-		b: Datasworn.OracleTableRow
+		a: Datasworn.OracleRollableRow,
+		b: Datasworn.OracleRollableRow
 	) => boolean,
 	oracleRollables: Record<string, Datasworn.OracleRollable>
 ) {
@@ -78,8 +78,8 @@ function oracleRowsEqualBy(
 }
 
 function rowHasSameRolls(
-	a: Datasworn.OracleTableRow,
-	b: Datasworn.OracleTableRow
+	a: Datasworn.OracleRollableRow,
+	b: Datasworn.OracleRollableRow
 ) {
 	if (a.roll.min === b.roll.min && a.roll.max === b.roll.max) return true
 	throw new Error(
@@ -90,11 +90,11 @@ const textProperties = [
 	'text',
 	'text2',
 	'text3'
-] as const satisfies (keyof Datasworn.OracleTableRowText3)[]
+] as const satisfies (keyof Datasworn.OracleRollableRowText3)[]
 
 function rowHasSameText(
-	a: Datasworn.OracleTableRow,
-	b: Datasworn.OracleTableRow
+	a: Datasworn.OracleRollableRow,
+	b: Datasworn.OracleRollableRow
 ) {
 	for (const k of textProperties) {
 		// neither has key -- skip it
@@ -111,7 +111,7 @@ function rowHasSameText(
 
 function renderMultiTable<
 	T extends Record<string, Datasworn.OracleRollable>,
-	K extends (keyof Datasworn.OracleTableRowText3)[]
+	K extends (keyof Datasworn.OracleRollableRowText3)[]
 >(oracleRollables: T, showContent: K) {
 	const tabularData: Record<keyof T, string>[] = []
 

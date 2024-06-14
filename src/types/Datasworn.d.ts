@@ -201,6 +201,166 @@ export type RulesPackageId = RulesetId | ExpansionId
 export type DictKey = string
 
 /**
+ * A unique ID representing an AtlasEntry object.
+ * @pattern ```javascript
+ * /^atlas_entry:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})$/
+ * ```
+ */
+export type AtlasEntryId = string
+
+/**
+ * A wildcarded AtlasEntryId that can be used to match multiple AtlasEntry objects.
+ * @pattern ```javascript
+ * /^atlas_entry:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})$/
+ * ```
+ */
+export type AtlasEntryIdWildcard = string
+
+/**
+ * A unique ID representing a Npc object.
+ * @pattern ```javascript
+ * /^npc:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})$/
+ * ```
+ */
+export type NpcId = string
+
+/**
+ * A wildcarded NpcId that can be used to match multiple Npc objects.
+ * @pattern ```javascript
+ * /^npc:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})$/
+ * ```
+ */
+export type NpcIdWildcard = string
+
+/**
+ * A unique ID representing an OracleRollable object.
+ * @pattern ```javascript
+ * /^oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})$/
+ * ```
+ */
+export type OracleRollableId = string
+
+/**
+ * A wildcarded OracleRollableId that can be used to match multiple OracleRollable objects.
+ * @pattern ```javascript
+ * /^oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})$/
+ * ```
+ */
+export type OracleRollableIdWildcard = string
+
+/**
+ * A unique ID representing an AssetAbilityOracleRollable object.
+ * @pattern ```javascript
+ * /^asset\.ability\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})\.(\d+)\.([a-z][a-z_]*|\*)$/
+ * ```
+ */
+export type AssetAbilityOracleRollableId = string
+
+/**
+ * A wildcarded AssetAbilityOracleRollableId that can be used to match multiple AssetAbilityOracleRollable objects.
+ * @pattern ```javascript
+ * /^asset\.ability\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})\.(\d+|\*)\.([a-z][a-z_]*|\*)$/
+ * ```
+ */
+export type AssetAbilityOracleRollableIdWildcard = string
+
+/**
+ * A unique ID representing a MoveOracleRollable object.
+ * @pattern ```javascript
+ * /^move\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})\.([a-z][a-z_]*|\*)$/
+ * ```
+ */
+export type MoveOracleRollableId = string
+
+/**
+ * A wildcarded MoveOracleRollableId that can be used to match multiple MoveOracleRollable objects.
+ * @pattern ```javascript
+ * /^move\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})\.([a-z][a-z_]*|\*)$/
+ * ```
+ */
+export type MoveOracleRollableIdWildcard = string
+
+/**
+ * A unique ID representing a TruthOptionOracleRollable object.
+ * @pattern ```javascript
+ * /^truth\.option\.oracle_rollable:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)\.(\d+)\.([a-z][a-z_]*|\*)$/
+ * ```
+ */
+export type TruthOptionOracleRollableId = string
+
+/**
+ * A wildcarded TruthOptionOracleRollableId that can be used to match multiple TruthOptionOracleRollable objects.
+ * @pattern ```javascript
+ * /^truth\.option\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)\.(\d+|\*)\.([a-z][a-z_]*|\*)$/
+ * ```
+ */
+export type TruthOptionOracleRollableIdWildcard = string
+
+/**
+ * A unique ID representing an OracleRollableRow object.
+ * @pattern ```javascript
+ * /^oracle_rollable\.row:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})\.(\d+)$/
+ * ```
+ */
+export type OracleRollableRowId = string
+
+/**
+ * A wildcarded OracleRollableRowId that can be used to match multiple OracleRollableRow objects.
+ * @pattern ```javascript
+ * /^oracle_rollable\.row:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})\.(\d+|\*)$/
+ * ```
+ */
+export type OracleRollableRowIdWildcard = string
+
+/**
+ * A unique ID representing an AssetAbilityOracleRollableRow object.
+ * @pattern ```javascript
+ * /^asset\.ability\.oracle_rollable\.row:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})\.(\d+)\.([a-z][a-z_]*|\*)\.(\d+)$/
+ * ```
+ */
+export type AssetAbilityOracleRollableRowId = string
+
+/**
+ * A wildcarded AssetAbilityOracleRollableRowId that can be used to match multiple AssetAbilityOracleRollableRow objects.
+ * @pattern ```javascript
+ * /^asset\.ability\.oracle_rollable\.row:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})\.(\d+|\*)\.([a-z][a-z_]*|\*)\.(\d+|\*)$/
+ * ```
+ */
+export type AssetAbilityOracleRollableRowIdWildcard = string
+
+/**
+ * A unique ID representing a MoveOracleRollableRow object.
+ * @pattern ```javascript
+ * /^move\.oracle_rollable\.row:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})\.([a-z][a-z_]*|\*)\.(\d+)$/
+ * ```
+ */
+export type MoveOracleRollableRowId = string
+
+/**
+ * A wildcarded MoveOracleRollableRowId that can be used to match multiple MoveOracleRollableRow objects.
+ * @pattern ```javascript
+ * /^move\.oracle_rollable\.row:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})\.([a-z][a-z_]*|\*)\.(\d+|\*)$/
+ * ```
+ */
+export type MoveOracleRollableRowIdWildcard = string
+
+/**
+ * A unique ID representing a TruthOptionOracleRollableRow object.
+ * @pattern ```javascript
+ * /^truth\.option\.oracle_rollable\.row:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)\.(\d+)\.([a-z][a-z_]*|\*)\.(\d+)$/
+ * ```
+ */
+export type TruthOptionOracleRollableRowId = string
+
+/**
+ * A wildcarded TruthOptionOracleRollableRowId that can be used to match multiple TruthOptionOracleRollableRow objects.
+ * @pattern ```javascript
+ * /^truth\.option\.oracle_rollable\.row:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)\.(\d+|\*)\.([a-z][a-z_]*|\*)\.(\d+|\*)$/
+ * ```
+ */
+export type TruthOptionOracleRollableRowIdWildcard = string
+
+/**
  * A unique ID representing an Asset object.
  * @pattern ```javascript
  * /^asset:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})$/
@@ -215,22 +375,6 @@ export type AssetId = string
  * ```
  */
 export type AssetIdWildcard = string
-
-/**
- * A unique ID representing an AssetCollection object.
- * @pattern ```javascript
- * /^asset_collection:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,4})$/
- * ```
- */
-export type AssetCollectionId = string
-
-/**
- * A wildcarded AssetCollectionId that can be used to match multiple AssetCollection objects.
- * @pattern ```javascript
- * /^asset_collection:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,4})$/
- * ```
- */
-export type AssetCollectionIdWildcard = string
 
 /**
  * A unique ID representing an AssetAbility object.
@@ -265,102 +409,6 @@ export type AssetAbilityMoveId = string
 export type AssetAbilityMoveIdWildcard = string
 
 /**
- * A unique ID representing an AssetAbilityOracleRollable object.
- * @pattern ```javascript
- * /^asset\.ability\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})\.(\d+)\.([a-z][a-z_]*|\*)$/
- * ```
- */
-export type AssetAbilityOracleRollableId = string
-
-/**
- * A wildcarded AssetAbilityOracleRollableId that can be used to match multiple AssetAbilityOracleRollable objects.
- * @pattern ```javascript
- * /^asset\.ability\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})\.(\d+|\*)\.([a-z][a-z_]*|\*)$/
- * ```
- */
-export type AssetAbilityOracleRollableIdWildcard = string
-
-/**
- * A unique ID representing an AtlasCollection object.
- * @pattern ```javascript
- * /^atlas_collection:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,4})$/
- * ```
- */
-export type AtlasCollectionId = string
-
-/**
- * A wildcarded AtlasCollectionId that can be used to match multiple AtlasCollection objects.
- * @pattern ```javascript
- * /^atlas_collection:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,4})$/
- * ```
- */
-export type AtlasCollectionIdWildcard = string
-
-/**
- * A unique ID representing an AtlasEntry object.
- * @pattern ```javascript
- * /^atlas_entry:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})$/
- * ```
- */
-export type AtlasEntryId = string
-
-/**
- * A wildcarded AtlasEntryId that can be used to match multiple AtlasEntry objects.
- * @pattern ```javascript
- * /^atlas_entry:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})$/
- * ```
- */
-export type AtlasEntryIdWildcard = string
-
-/**
- * A unique ID representing a DelveSite object.
- * @pattern ```javascript
- * /^delve_site:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)$/
- * ```
- */
-export type DelveSiteId = string
-
-/**
- * A wildcarded DelveSiteId that can be used to match multiple DelveSite objects.
- * @pattern ```javascript
- * /^delve_site:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)$/
- * ```
- */
-export type DelveSiteIdWildcard = string
-
-/**
- * A unique ID representing a DelveSiteDomain object.
- * @pattern ```javascript
- * /^delve_site_domain:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)$/
- * ```
- */
-export type DelveSiteDomainId = string
-
-/**
- * A wildcarded DelveSiteDomainId that can be used to match multiple DelveSiteDomain objects.
- * @pattern ```javascript
- * /^delve_site_domain:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)$/
- * ```
- */
-export type DelveSiteDomainIdWildcard = string
-
-/**
- * A unique ID representing a DelveSiteTheme object.
- * @pattern ```javascript
- * /^delve_site_theme:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)$/
- * ```
- */
-export type DelveSiteThemeId = string
-
-/**
- * A wildcarded DelveSiteThemeId that can be used to match multiple DelveSiteTheme objects.
- * @pattern ```javascript
- * /^delve_site_theme:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)$/
- * ```
- */
-export type DelveSiteThemeIdWildcard = string
-
-/**
  * A unique ID representing a Move object.
  * @pattern ```javascript
  * /^move:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})$/
@@ -377,52 +425,20 @@ export type MoveId = string
 export type MoveIdWildcard = string
 
 /**
- * A unique ID representing a MoveCategory object.
+ * A unique ID representing an AtlasCollection object.
  * @pattern ```javascript
- * /^move_category:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,4})$/
+ * /^atlas_collection:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,4})$/
  * ```
  */
-export type MoveCategoryId = string
+export type AtlasCollectionId = string
 
 /**
- * A wildcarded MoveCategoryId that can be used to match multiple MoveCategory objects.
+ * A wildcarded AtlasCollectionId that can be used to match multiple AtlasCollection objects.
  * @pattern ```javascript
- * /^move_category:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,4})$/
+ * /^atlas_collection:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,4})$/
  * ```
  */
-export type MoveCategoryIdWildcard = string
-
-/**
- * A unique ID representing a MoveOracleRollable object.
- * @pattern ```javascript
- * /^move\.oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})\.([a-z][a-z_]*|\*)$/
- * ```
- */
-export type MoveOracleRollableId = string
-
-/**
- * A wildcarded MoveOracleRollableId that can be used to match multiple MoveOracleRollable objects.
- * @pattern ```javascript
- * /^move\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})\.([a-z][a-z_]*|\*)$/
- * ```
- */
-export type MoveOracleRollableIdWildcard = string
-
-/**
- * A unique ID representing a Npc object.
- * @pattern ```javascript
- * /^npc:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})$/
- * ```
- */
-export type NpcId = string
-
-/**
- * A wildcarded NpcId that can be used to match multiple Npc objects.
- * @pattern ```javascript
- * /^npc:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})$/
- * ```
- */
-export type NpcIdWildcard = string
+export type AtlasCollectionIdWildcard = string
 
 /**
  * A unique ID representing a NpcCollection object.
@@ -457,20 +473,164 @@ export type OracleCollectionId = string
 export type OracleCollectionIdWildcard = string
 
 /**
- * A unique ID representing an OracleRollable object.
+ * A unique ID representing an AssetCollection object.
  * @pattern ```javascript
- * /^oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})$/
+ * /^asset_collection:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,4})$/
  * ```
  */
-export type OracleRollableId = string
+export type AssetCollectionId = string
 
 /**
- * A wildcarded OracleRollableId that can be used to match multiple OracleRollable objects.
+ * A wildcarded AssetCollectionId that can be used to match multiple AssetCollection objects.
  * @pattern ```javascript
- * /^oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})$/
+ * /^asset_collection:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,4})$/
  * ```
  */
-export type OracleRollableIdWildcard = string
+export type AssetCollectionIdWildcard = string
+
+/**
+ * A unique ID representing a MoveCategory object.
+ * @pattern ```javascript
+ * /^move_category:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){1,4})$/
+ * ```
+ */
+export type MoveCategoryId = string
+
+/**
+ * A wildcarded MoveCategoryId that can be used to match multiple MoveCategory objects.
+ * @pattern ```javascript
+ * /^move_category:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){1,4})$/
+ * ```
+ */
+export type MoveCategoryIdWildcard = string
+
+/**
+ * A unique ID representing a DelveSite object.
+ * @pattern ```javascript
+ * /^delve_site:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)$/
+ * ```
+ */
+export type DelveSiteId = string
+
+/**
+ * A wildcarded DelveSiteId that can be used to match multiple DelveSite objects.
+ * @pattern ```javascript
+ * /^delve_site:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)$/
+ * ```
+ */
+export type DelveSiteIdWildcard = string
+
+/**
+ * A unique ID representing a DelveSiteDenizen object.
+ * @pattern ```javascript
+ * /^delve_site\.denizen:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)\.(\d+)$/
+ * ```
+ */
+export type DelveSiteDenizenId = string
+
+/**
+ * A wildcarded DelveSiteDenizenId that can be used to match multiple DelveSiteDenizen objects.
+ * @pattern ```javascript
+ * /^delve_site\.denizen:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)\.(\d+|\*)$/
+ * ```
+ */
+export type DelveSiteDenizenIdWildcard = string
+
+/**
+ * A unique ID representing a DelveSiteDomain object.
+ * @pattern ```javascript
+ * /^delve_site_domain:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)$/
+ * ```
+ */
+export type DelveSiteDomainId = string
+
+/**
+ * A wildcarded DelveSiteDomainId that can be used to match multiple DelveSiteDomain objects.
+ * @pattern ```javascript
+ * /^delve_site_domain:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)$/
+ * ```
+ */
+export type DelveSiteDomainIdWildcard = string
+
+/**
+ * A unique ID representing a DelveSiteDomainFeature object.
+ * @pattern ```javascript
+ * /^delve_site_domain\.feature:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)\.(\d+)$/
+ * ```
+ */
+export type DelveSiteDomainFeatureId = string
+
+/**
+ * A wildcarded DelveSiteDomainFeatureId that can be used to match multiple DelveSiteDomainFeature objects.
+ * @pattern ```javascript
+ * /^delve_site_domain\.feature:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)\.(\d+|\*)$/
+ * ```
+ */
+export type DelveSiteDomainFeatureIdWildcard = string
+
+/**
+ * A unique ID representing a DelveSiteThemeFeature object.
+ * @pattern ```javascript
+ * /^delve_site_theme\.feature:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)\.(\d+)$/
+ * ```
+ */
+export type DelveSiteThemeFeatureId = string
+
+/**
+ * A wildcarded DelveSiteThemeFeatureId that can be used to match multiple DelveSiteThemeFeature objects.
+ * @pattern ```javascript
+ * /^delve_site_theme\.feature:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)\.(\d+|\*)$/
+ * ```
+ */
+export type DelveSiteThemeFeatureIdWildcard = string
+
+/**
+ * A unique ID representing a DelveSiteDomainDanger object.
+ * @pattern ```javascript
+ * /^delve_site_domain\.danger:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)\.(\d+)$/
+ * ```
+ */
+export type DelveSiteDomainDangerId = string
+
+/**
+ * A wildcarded DelveSiteDomainDangerId that can be used to match multiple DelveSiteDomainDanger objects.
+ * @pattern ```javascript
+ * /^delve_site_domain\.danger:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)\.(\d+|\*)$/
+ * ```
+ */
+export type DelveSiteDomainDangerIdWildcard = string
+
+/**
+ * A unique ID representing a DelveSiteThemeDanger object.
+ * @pattern ```javascript
+ * /^delve_site_theme\.danger:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)\.(\d+)$/
+ * ```
+ */
+export type DelveSiteThemeDangerId = string
+
+/**
+ * A wildcarded DelveSiteThemeDangerId that can be used to match multiple DelveSiteThemeDanger objects.
+ * @pattern ```javascript
+ * /^delve_site_theme\.danger:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)\.(\d+|\*)$/
+ * ```
+ */
+export type DelveSiteThemeDangerIdWildcard = string
+
+/**
+ * A unique ID representing a DelveSiteTheme object.
+ * @pattern ```javascript
+ * /^delve_site_theme:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)$/
+ * ```
+ */
+export type DelveSiteThemeId = string
+
+/**
+ * A wildcarded DelveSiteThemeId that can be used to match multiple DelveSiteTheme objects.
+ * @pattern ```javascript
+ * /^delve_site_theme:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)$/
+ * ```
+ */
+export type DelveSiteThemeIdWildcard = string
 
 /**
  * A unique ID representing a Rarity object.
@@ -520,31 +680,8 @@ export type TruthOptionId = string
  */
 export type TruthOptionIdWildcard = string
 
-/**
- * A unique ID representing a TruthOptionOracleRollable object.
- * @pattern ```javascript
- * /^truth\.option\.oracle_rollable:([a-z][a-z0-9_]{3,}\/[a-z][a-z_]*)\.(\d+)\.([a-z][a-z_]*|\*)$/
- * ```
- */
-export type TruthOptionOracleRollableId = string
-
-/**
- * A wildcarded TruthOptionOracleRollableId that can be used to match multiple TruthOptionOracleRollable objects.
- * @pattern ```javascript
- * /^truth\.option\.oracle_rollable:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)\/[a-z][a-z_]*|\/\*|\/\*\*)\.(\d+|\*)\.([a-z][a-z_]*|\*)$/
- * ```
- */
-export type TruthOptionOracleRollableIdWildcard = string
-
-export type EmbeddedMoveId = AssetAbilityMoveId
-
-export type EmbeddedMoveIdWildcard = AssetAbilityMoveIdWildcard
-
-export type AnyMoveId = EmbeddedMoveId | MoveId
-
-export type AnyMoveIdWildcard = EmbeddedMoveIdWildcard | MoveIdWildcard
-
-export type EmbeddedOracleRollableId =
+export type AnyOracleRollableId =
+	| OracleRollableId
 	| AssetAbilityOracleRollableId
 	| TruthOptionOracleRollableId
 	| MoveOracleRollableId
@@ -554,63 +691,58 @@ export type EmbeddedOracleRollableIdWildcard =
 	| TruthOptionOracleRollableIdWildcard
 	| MoveOracleRollableIdWildcard
 
-export type AnyOracleRollableId = EmbeddedOracleRollableId | OracleRollableId
+export type EmbeddedOracleRollableId =
+	| AssetAbilityOracleRollableId
+	| TruthOptionOracleRollableId
+	| MoveOracleRollableId
 
 export type AnyOracleRollableIdWildcard =
-	| EmbeddedOracleRollableIdWildcard
 	| OracleRollableIdWildcard
+	| AssetAbilityOracleRollableIdWildcard
+	| TruthOptionOracleRollableIdWildcard
+	| MoveOracleRollableIdWildcard
+
+export type AnyMoveId = MoveId | AssetAbilityMoveId
+
+export type EmbeddedMoveIdWildcard = AssetAbilityMoveIdWildcard
+
+export type EmbeddedMoveId = AssetAbilityMoveId
+
+export type AnyMoveIdWildcard = MoveIdWildcard | AssetAbilityMoveIdWildcard
+
+export type AnyOracleRollableRowId =
+	| OracleRollableRowId
+	| AssetAbilityOracleRollableRowId
+	| MoveOracleRollableRowId
+	| TruthOptionOracleRollableRowId
+
+export type AnyOracleRollableRowIdWildcard =
+	| OracleRollableRowIdWildcard
+	| AssetAbilityOracleRollableRowIdWildcard
+	| MoveOracleRollableRowIdWildcard
+	| TruthOptionOracleRollableRowIdWildcard
 
 /**
  * Represents any kind of non-wildcard ID, including IDs of embedded objects.
  */
 export type AnyId =
-	| AssetId
-	| AssetCollectionId
-	| AssetAbilityId
-	| AssetAbilityMoveId
-	| AssetAbilityOracleRollableId
-	| AtlasCollectionId
-	| AtlasEntryId
-	| DelveSiteId
-	| DelveSiteDomainId
-	| DelveSiteThemeId
-	| MoveId
-	| MoveCategoryId
-	| MoveOracleRollableId
-	| NpcId
-	| NpcCollectionId
-	| OracleCollectionId
 	| OracleRollableId
-	| RarityId
-	| TruthId
-	| TruthOptionId
+	| AssetAbilityOracleRollableId
 	| TruthOptionOracleRollableId
+	| MoveOracleRollableId
+	| MoveId
+	| AssetAbilityMoveId
 
 /**
  * Represents any kind of wildcard ID, including IDs of embedded objects.
  */
 export type AnyIdWildcard =
-	| AssetIdWildcard
-	| AssetCollectionIdWildcard
-	| AssetAbilityIdWildcard
-	| AssetAbilityMoveIdWildcard
 	| AssetAbilityOracleRollableIdWildcard
-	| AtlasCollectionIdWildcard
-	| AtlasEntryIdWildcard
-	| DelveSiteIdWildcard
-	| DelveSiteDomainIdWildcard
-	| DelveSiteThemeIdWildcard
-	| MoveIdWildcard
-	| MoveCategoryIdWildcard
-	| MoveOracleRollableIdWildcard
-	| NpcIdWildcard
-	| NpcCollectionIdWildcard
-	| OracleCollectionIdWildcard
-	| OracleRollableIdWildcard
-	| RarityIdWildcard
-	| TruthIdWildcard
-	| TruthOptionIdWildcard
 	| TruthOptionOracleRollableIdWildcard
+	| MoveOracleRollableIdWildcard
+	| OracleRollableIdWildcard
+	| AssetAbilityMoveIdWildcard
+	| MoveIdWildcard
 
 /**
  * Information on the original creator of this material.
@@ -800,18 +932,18 @@ export type PartOfSpeech =
 export type TemplateString = string
 
 export type CollectableType =
-	| 'oracle_rollable'
-	| 'move'
-	| 'asset'
 	| 'atlas_entry'
 	| 'npc'
+	| 'oracle_rollable'
+	| 'asset'
+	| 'move'
 
 export type CollectionType =
-	| 'oracle_collection'
-	| 'move_category'
-	| 'asset_collection'
 	| 'atlas_collection'
 	| 'npc_collection'
+	| 'oracle_collection'
+	| 'asset_collection'
+	| 'move_category'
 
 /**
  * Describes a standard player character condition meter.
@@ -846,6 +978,14 @@ export interface ConditionMeterRule {
 	 */
 	rollable: true
 }
+
+export type EmbedOnlyType =
+	| 'ability'
+	| 'option'
+	| 'row'
+	| 'feature'
+	| 'danger'
+	| 'denizen'
 
 /**
  * Describes a category of standard impacts/debilities.
@@ -897,18 +1037,10 @@ export interface ImpactRule {
 
 export type NonCollectableType =
 	| 'delve_site'
-	| 'delve_site_theme'
 	| 'delve_site_domain'
-	| 'truth'
+	| 'delve_site_theme'
 	| 'rarity'
-
-export type NonIdentifiableType = 'asset_ability' | 'oracle_table_row'
-
-export type ObjectType =
-	| CollectableType
-	| NonCollectableType
-	| CollectionType
-	| NonIdentifiableType
+	| 'truth'
 
 /**
  * Describes rules for player characters in this ruleset, such as stats and condition meters.
@@ -1031,37 +1163,37 @@ export type Tag =
 	| number
 	| DictKey
 	| DiceExpression
-	| OracleRollableId
-	| MoveId
-	| AssetId
 	| AtlasEntryId
 	| NpcId
-	| OracleCollectionId
-	| MoveCategoryId
-	| AssetCollectionId
+	| OracleRollableId
+	| AssetId
+	| MoveId
 	| AtlasCollectionId
 	| NpcCollectionId
+	| OracleCollectionId
+	| AssetCollectionId
+	| MoveCategoryId
 	| DelveSiteId
-	| DelveSiteThemeId
 	| DelveSiteDomainId
-	| TruthId
+	| DelveSiteThemeId
 	| RarityId
+	| TruthId
 	| Array<
-			| OracleRollableIdWildcard
-			| MoveIdWildcard
-			| AssetIdWildcard
 			| AtlasEntryIdWildcard
 			| NpcIdWildcard
-			| OracleCollectionIdWildcard
-			| MoveCategoryIdWildcard
-			| AssetCollectionIdWildcard
+			| OracleRollableIdWildcard
+			| AssetIdWildcard
+			| MoveIdWildcard
 			| AtlasCollectionIdWildcard
 			| NpcCollectionIdWildcard
+			| OracleCollectionIdWildcard
+			| AssetCollectionIdWildcard
+			| MoveCategoryIdWildcard
 			| DelveSiteIdWildcard
-			| DelveSiteThemeIdWildcard
 			| DelveSiteDomainIdWildcard
-			| TruthIdWildcard
+			| DelveSiteThemeIdWildcard
 			| RarityIdWildcard
+			| TruthIdWildcard
 	  >
 
 /**
@@ -1073,7 +1205,7 @@ export type TagRule =
 			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
 			 * @default null
 			 */
-			applies_to: ObjectType[] | null
+			applies_to: TaggableNodeType[] | null
 			description: MarkdownString
 			/**
 			 * @default false
@@ -1086,7 +1218,7 @@ export type TagRule =
 			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
 			 * @default null
 			 */
-			applies_to: ObjectType[] | null
+			applies_to: TaggableNodeType[] | null
 			description: MarkdownString
 			/**
 			 * @default false
@@ -1099,52 +1231,10 @@ export type TagRule =
 			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
 			 * @default null
 			 */
-			applies_to: ObjectType[] | null
+			applies_to: TaggableNodeType[] | null
 			description: MarkdownString
 			/**
-			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
-			 * @default false
-			 */
-			wildcard: boolean
-			value_type: 'oracle_rollable'
-	  }
-	| {
-			/**
-			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
-			 * @default null
-			 */
-			applies_to: ObjectType[] | null
-			description: MarkdownString
-			/**
-			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
-			 * @default false
-			 */
-			wildcard: boolean
-			value_type: 'move'
-	  }
-	| {
-			/**
-			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
-			 * @default null
-			 */
-			applies_to: ObjectType[] | null
-			description: MarkdownString
-			/**
-			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
-			 * @default false
-			 */
-			wildcard: boolean
-			value_type: 'asset'
-	  }
-	| {
-			/**
-			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
-			 * @default null
-			 */
-			applies_to: ObjectType[] | null
-			description: MarkdownString
-			/**
-			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.
 			 * @default false
 			 */
 			wildcard: boolean
@@ -1155,10 +1245,10 @@ export type TagRule =
 			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
 			 * @default null
 			 */
-			applies_to: ObjectType[] | null
+			applies_to: TaggableNodeType[] | null
 			description: MarkdownString
 			/**
-			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.
 			 * @default false
 			 */
 			wildcard: boolean
@@ -1169,52 +1259,52 @@ export type TagRule =
 			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
 			 * @default null
 			 */
-			applies_to: ObjectType[] | null
+			applies_to: TaggableNodeType[] | null
 			description: MarkdownString
 			/**
-			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.
 			 * @default false
 			 */
 			wildcard: boolean
-			value_type: 'oracle_collection'
+			value_type: 'oracle_rollable'
 	  }
 	| {
 			/**
 			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
 			 * @default null
 			 */
-			applies_to: ObjectType[] | null
+			applies_to: TaggableNodeType[] | null
 			description: MarkdownString
 			/**
-			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.
 			 * @default false
 			 */
 			wildcard: boolean
-			value_type: 'move_category'
+			value_type: 'asset'
 	  }
 	| {
 			/**
 			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
 			 * @default null
 			 */
-			applies_to: ObjectType[] | null
+			applies_to: TaggableNodeType[] | null
 			description: MarkdownString
 			/**
-			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.
 			 * @default false
 			 */
 			wildcard: boolean
-			value_type: 'asset_collection'
+			value_type: 'move'
 	  }
 	| {
 			/**
 			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
 			 * @default null
 			 */
-			applies_to: ObjectType[] | null
+			applies_to: TaggableNodeType[] | null
 			description: MarkdownString
 			/**
-			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.
 			 * @default false
 			 */
 			wildcard: boolean
@@ -1225,10 +1315,10 @@ export type TagRule =
 			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
 			 * @default null
 			 */
-			applies_to: ObjectType[] | null
+			applies_to: TaggableNodeType[] | null
 			description: MarkdownString
 			/**
-			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.
 			 * @default false
 			 */
 			wildcard: boolean
@@ -1239,10 +1329,52 @@ export type TagRule =
 			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
 			 * @default null
 			 */
-			applies_to: ObjectType[] | null
+			applies_to: TaggableNodeType[] | null
 			description: MarkdownString
 			/**
-			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'oracle_collection'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: TaggableNodeType[] | null
+			description: MarkdownString
+			/**
+			 * If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'asset_collection'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: TaggableNodeType[] | null
+			description: MarkdownString
+			/**
+			 * If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'move_category'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: TaggableNodeType[] | null
+			description: MarkdownString
+			/**
+			 * If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.
 			 * @default false
 			 */
 			wildcard: boolean
@@ -1253,24 +1385,10 @@ export type TagRule =
 			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
 			 * @default null
 			 */
-			applies_to: ObjectType[] | null
+			applies_to: TaggableNodeType[] | null
 			description: MarkdownString
 			/**
-			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
-			 * @default false
-			 */
-			wildcard: boolean
-			value_type: 'delve_site_theme'
-	  }
-	| {
-			/**
-			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
-			 * @default null
-			 */
-			applies_to: ObjectType[] | null
-			description: MarkdownString
-			/**
-			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.
 			 * @default false
 			 */
 			wildcard: boolean
@@ -1281,24 +1399,24 @@ export type TagRule =
 			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
 			 * @default null
 			 */
-			applies_to: ObjectType[] | null
+			applies_to: TaggableNodeType[] | null
 			description: MarkdownString
 			/**
-			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.
 			 * @default false
 			 */
 			wildcard: boolean
-			value_type: 'truth'
+			value_type: 'delve_site_theme'
 	  }
 	| {
 			/**
 			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
 			 * @default null
 			 */
-			applies_to: ObjectType[] | null
+			applies_to: TaggableNodeType[] | null
 			description: MarkdownString
 			/**
-			 * If `true`, this field accepts an array of wildcard IDs. If `false`, this field accepts a single non-wildcard ID.
+			 * If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.
 			 * @default false
 			 */
 			wildcard: boolean
@@ -1309,7 +1427,21 @@ export type TagRule =
 			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
 			 * @default null
 			 */
-			applies_to: ObjectType[] | null
+			applies_to: TaggableNodeType[] | null
+			description: MarkdownString
+			/**
+			 * If `true`, this field accepts an array of wildcard ID strings. If `false`, this field accepts a single non-wildcard ID string.
+			 * @default false
+			 */
+			wildcard: boolean
+			value_type: 'truth'
+	  }
+	| {
+			/**
+			 * Types of object that can receive this tag, or `null` if any type of object accepts it.
+			 * @default null
+			 */
+			applies_to: TaggableNodeType[] | null
 			description: MarkdownString
 			/**
 			 * @default false
@@ -1319,12 +1451,32 @@ export type TagRule =
 			enum: DictKey[]
 	  }
 
+export type TaggableNodeType =
+	| CollectableType
+	| NonCollectableType
+	| CollectionType
+	| EmbedOnlyType
+
 /**
- * A dictionary of tags, keyed by the RulesetID that the tags are from.
- * @remarks Deserialize as a dictionary object.
+ * A dictionary of tags, keyed by the RulesPackageId that the tags are from.
  * @experimental
  */
 export type Tags = Record<DictKey, Record<DictKey, Tag>>
+
+export interface TagsCore {
+	/**
+	 * This object is supernatural in nature, and is ideal for settings that feature supernatural or mythic powers.
+	 */
+	supernatural?: boolean
+	/**
+	 * This object is technological in nature, and is ideal for settings that feature remarkable technologies.
+	 */
+	technological?: boolean
+	/**
+	 * This object requires allies to function, and is intended for co-op play, or guided play with allies. It is not appropriate for solo play.
+	 */
+	requires_allies?: boolean
+}
 
 /**
  * Challenge rank, represented as an integer from 1 (troublesome) to 5 (epic).
@@ -1675,23 +1827,23 @@ export interface OracleRoll {
 }
 
 /**
- * Provides string templates that may be used in place of the static row text from `OracleTableRow#text`, `OracleTableRow#text2`, and `OracleTableRow#text3`.
+ * Provides string templates that may be used in place of the static row text from `OracleRollableRow#text`, `OracleRollableRow#text2`, and `OracleRollableRow#text3`.
  *
- *   These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text>some_oracle_rollable_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#text` from the target oracle rollable ID.
+ *   These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text>some_oracle_rollable_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleRollableRow#text` from the target oracle rollable ID.
  * @experimental
  */
 export interface OracleRollTemplate {
 	/**
-	 * A string template that may be used in place of OracleTableRow#text.
+	 * A string template that may be used in place of OracleRollableRow#text.
 	 * @example "{{text:starforged/oracles/factions/affiliation}} of the {{text:starforged/oracles/factions/legacy}} {{text:starforged/oracles/factions/identity}}"
 	 */
 	text?: TemplateString
 	/**
-	 * A string template that may be used in place of OracleTableRow#text2.
+	 * A string template that may be used in place of OracleRollableRow#text2.
 	 */
 	text2?: TemplateString
 	/**
-	 * A string template that may be used in place of OracleTableRow#text3.
+	 * A string template that may be used in place of OracleRollableRow#text3.
 	 */
 	text3?: TemplateString
 }
@@ -1755,7 +1907,7 @@ export interface EmbeddedOracleColumnText {
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
-	rows: OracleTableRowText[]
+	rows: OracleRollableRowText[]
 	oracle_type: 'column_text'
 }
 
@@ -1796,7 +1948,7 @@ export interface EmbeddedOracleColumnText2 {
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
-	rows: Array<OracleTableRowText2>
+	rows: Array<OracleRollableRowText2>
 	oracle_type: 'column_text2'
 }
 
@@ -1837,7 +1989,7 @@ export interface EmbeddedOracleColumnText3 {
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
-	rows: Array<OracleTableRowText3>
+	rows: Array<OracleRollableRowText3>
 	oracle_type: 'column_text3'
 }
 
@@ -1882,7 +2034,7 @@ export interface EmbeddedOracleTableText {
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
-	rows: OracleTableRowText[]
+	rows: OracleRollableRowText[]
 	recommended_rolls?: {
 		/**
 		 * @default 1
@@ -1951,7 +2103,7 @@ export interface EmbeddedOracleTableText2 {
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
-	rows: Array<OracleTableRowText2>
+	rows: Array<OracleRollableRowText2>
 	recommended_rolls?: {
 		/**
 		 * @default 1
@@ -2024,7 +2176,7 @@ export interface EmbeddedOracleTableText3 {
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
-	rows: Array<OracleTableRowText3>
+	rows: Array<OracleRollableRowText3>
 	recommended_rolls?: {
 		/**
 		 * @default 1
@@ -2116,7 +2268,7 @@ export interface OracleColumnText {
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
-	rows: OracleTableRowText[]
+	rows: OracleRollableRowText[]
 	oracle_type: 'column_text'
 }
 
@@ -2164,7 +2316,7 @@ export interface OracleColumnText2 {
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
-	rows: Array<OracleTableRowText2>
+	rows: Array<OracleRollableRowText2>
 	oracle_type: 'column_text2'
 }
 
@@ -2212,7 +2364,7 @@ export interface OracleColumnText3 {
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
-	rows: Array<OracleTableRowText3>
+	rows: Array<OracleRollableRowText3>
 	oracle_type: 'column_text3'
 }
 
@@ -2228,23 +2380,15 @@ export type OracleRollable =
 	| OracleColumnText2
 	| OracleColumnText3
 
-/**
- * @remarks Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.
- */
-export type OracleTableRollable =
-	| OracleTableText
-	| OracleTableText2
-	| OracleTableText3
-
-export type OracleTableRow =
-	| OracleTableRowText
-	| OracleTableRowText2
-	| OracleTableRowText3
+export type OracleRollableRow =
+	| OracleRollableRowText
+	| OracleRollableRowText2
+	| OracleRollableRowText3
 
 /**
  * Represents a row in an oracle table, with a single text cell.
  */
-export interface OracleTableRowText {
+export interface OracleRollableRowText {
 	/**
 	 * The primary text content of this row.
 	 */
@@ -2274,12 +2418,13 @@ export interface OracleTableRowText {
 	 */
 	roll: DiceRange | null
 	tags?: Tags
+	_id: AnyOracleRollableRowId
 }
 
 /**
  * Represents a row in an oracle table that provides a secondary text field.
  */
-export interface OracleTableRowText2 {
+export interface OracleRollableRowText2 {
 	/**
 	 * The primary text content of this row.
 	 */
@@ -2309,6 +2454,7 @@ export interface OracleTableRowText2 {
 	 */
 	roll: DiceRange | null
 	tags?: Tags
+	_id: AnyOracleRollableRowId
 	/**
 	 * The secondary text for this row. Use `null` to represent a cell with a blank or empty vlue.
 	 */
@@ -2318,7 +2464,7 @@ export interface OracleTableRowText2 {
 /**
  * Represents a row in an oracle table with 3 text cells.
  */
-export interface OracleTableRowText3 {
+export interface OracleRollableRowText3 {
 	/**
 	 * The primary text content of this row.
 	 */
@@ -2348,6 +2494,7 @@ export interface OracleTableRowText3 {
 	 */
 	roll: DiceRange | null
 	tags?: Tags
+	_id: AnyOracleRollableRowId
 	/**
 	 * The secondary text for this row. Use `null` to represent a cell with a blank or empty vlue.
 	 */
@@ -2357,6 +2504,14 @@ export interface OracleTableRowText3 {
 	 */
 	text3: MarkdownString | null
 }
+
+/**
+ * @remarks Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.
+ */
+export type OracleTableRollable =
+	| OracleTableText
+	| OracleTableText2
+	| OracleTableText3
 
 /**
  * An OracleCollection representing a single table with one roll column and multiple `result` columns.
@@ -2694,7 +2849,7 @@ export interface OracleTableText {
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
-	rows: OracleTableRowText[]
+	rows: OracleRollableRowText[]
 	recommended_rolls?: {
 		/**
 		 * @default 1
@@ -2777,7 +2932,7 @@ export interface OracleTableText2 {
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
-	rows: Array<OracleTableRowText2>
+	rows: Array<OracleRollableRowText2>
 	recommended_rolls?: {
 		/**
 		 * @default 1
@@ -2864,7 +3019,7 @@ export interface OracleTableText3 {
 	/**
 	 * An array of objects, each representing a single row of the table.
 	 */
-	rows: Array<OracleTableRowText3>
+	rows: Array<OracleRollableRowText3>
 	recommended_rolls?: {
 		/**
 		 * @default 1
@@ -4726,193 +4881,85 @@ export interface DelveSite {
 		[
 			{
 				frequency: 'very_common'
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 1
-					/**
-					 * High end of the dice range.
-					 */
 					max: 27
 				}
 			},
 			{
 				frequency: 'common'
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 28
-					/**
-					 * High end of the dice range.
-					 */
 					max: 41
 				}
 			},
 			{
 				frequency: 'common'
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 42
-					/**
-					 * High end of the dice range.
-					 */
 					max: 55
 				}
 			},
 			{
 				frequency: 'common'
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 56
-					/**
-					 * High end of the dice range.
-					 */
 					max: 69
 				}
 			},
 			{
 				frequency: 'uncommon'
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 70
-					/**
-					 * High end of the dice range.
-					 */
 					max: 75
 				}
 			},
 			{
 				frequency: 'uncommon'
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 76
-					/**
-					 * High end of the dice range.
-					 */
 					max: 81
 				}
 			},
 			{
 				frequency: 'uncommon'
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 82
-					/**
-					 * High end of the dice range.
-					 */
 					max: 87
 				}
 			},
 			{
 				frequency: 'uncommon'
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 88
-					/**
-					 * High end of the dice range.
-					 */
 					max: 93
 				}
 			},
 			{
 				frequency: 'rare'
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 94
-					/**
-					 * High end of the dice range.
-					 */
 					max: 95
 				}
 			},
 			{
 				frequency: 'rare'
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 96
-					/**
-					 * High end of the dice range.
-					 */
 					max: 97
 				}
 			},
 			{
 				frequency: 'rare'
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 98
-					/**
-					 * High end of the dice range.
-					 */
 					max: 99
 				}
 			},
 			{
 				frequency: 'unforeseen'
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 100
-					/**
-					 * High end of the dice range.
-					 */
 					max: 100
 				}
 			}
@@ -4920,7 +4967,7 @@ export interface DelveSite {
 }
 
 /**
- * Represents an entry in a site denizen matrix. Denizen matrices are described in Ironsworn: Delve.
+ * Represents an entry in a delve site denizen matrix. Denizen matrices are described in Ironsworn: Delve.
  */
 export interface DelveSiteDenizen {
 	/**
@@ -4933,6 +4980,7 @@ export interface DelveSiteDenizen {
 	npc?: NpcId
 	frequency: DelveSiteDenizenFrequency
 	roll: DiceRange
+	_id: DelveSiteDenizenId
 }
 
 export type DelveSiteDenizenFrequency =
@@ -4978,267 +5026,186 @@ export interface DelveSiteDomain {
 	 * An oracle table ID containing place name elements. For examples, see oracle ID `oracle_rollable:delve/site_name/place/barrow`, and its siblings in oracle collection ID `oracle_collection:delve/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (`oracle_rollable:delve/site_name/format`) to create random names for delve sites.
 	 */
 	name_oracle?: OracleRollableId
-	features: OracleTableRowText[] &
+	features: DelveSiteDomainFeature[] &
 		[
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 21
-					/**
-					 * High end of the dice range.
-					 */
 					max: 43
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 44
-					/**
-					 * High end of the dice range.
-					 */
 					max: 56
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 57
-					/**
-					 * High end of the dice range.
-					 */
 					max: 64
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 65
-					/**
-					 * High end of the dice range.
-					 */
 					max: 68
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 69
-					/**
-					 * High end of the dice range.
-					 */
 					max: 72
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 73
-					/**
-					 * High end of the dice range.
-					 */
 					max: 76
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 77
-					/**
-					 * High end of the dice range.
-					 */
 					max: 80
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 81
-					/**
-					 * High end of the dice range.
-					 */
 					max: 84
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 85
-					/**
-					 * High end of the dice range.
-					 */
 					max: 88
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 89
-					/**
-					 * High end of the dice range.
-					 */
 					max: 98
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 99
-					/**
-					 * High end of the dice range.
-					 */
 					max: 99
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 100
-					/**
-					 * High end of the dice range.
-					 */
 					max: 100
 				}
 			}
 		]
-	dangers: OracleTableRowText[] &
+	dangers: DelveSiteDomainDanger[] &
 		[
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 31
-					/**
-					 * High end of the dice range.
-					 */
 					max: 33
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 34
-					/**
-					 * High end of the dice range.
-					 */
 					max: 36
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 37
-					/**
-					 * High end of the dice range.
-					 */
 					max: 39
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 40
-					/**
-					 * High end of the dice range.
-					 */
 					max: 42
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 43
-					/**
-					 * High end of the dice range.
-					 */
 					max: 45
 				}
 			}
 		]
+}
+
+/**
+ * Represents a single Danger entry from a delve site Domain card.
+ */
+export interface DelveSiteDomainDanger {
+	/**
+	 * The primary text content of this row.
+	 */
+	text: MarkdownString
+	icon?: SvgImageUrl
+	/**
+	 * Further oracle rolls prompted by this table row.
+	 */
+	oracle_rolls?: OracleRoll[]
+	suggestions?: Suggestions
+	/**
+	 * Hints that the identified table should be rendered inside this table row.
+	 * @experimental
+	 */
+	embed_table?: OracleRollableId
+	/**
+	 * @experimental
+	 */
+	template?: OracleRollTemplate
+	/**
+	 * @experimental
+	 */
+	_i18n?: I18nHints
+	/**
+	 * `null` represents an unrollable row, included only for rendering purposes.
+	 * @default null
+	 */
+	roll: DiceRange | null
+	tags?: Tags
+	_id: DelveSiteDomainDangerId
+}
+
+/**
+ * Represents a single Feature entry from a delve site Domain card.
+ */
+export interface DelveSiteDomainFeature {
+	/**
+	 * The primary text content of this row.
+	 */
+	text: MarkdownString
+	icon?: SvgImageUrl
+	/**
+	 * Further oracle rolls prompted by this table row.
+	 */
+	oracle_rolls?: OracleRoll[]
+	suggestions?: Suggestions
+	/**
+	 * Hints that the identified table should be rendered inside this table row.
+	 * @experimental
+	 */
+	embed_table?: OracleRollableId
+	/**
+	 * @experimental
+	 */
+	template?: OracleRollTemplate
+	/**
+	 * @experimental
+	 */
+	_i18n?: I18nHints
+	/**
+	 * `null` represents an unrollable row, included only for rendering purposes.
+	 * @default null
+	 */
+	roll: DiceRange | null
+	tags?: Tags
+	_id: DelveSiteDomainFeatureId
 }
 
 /**
@@ -5271,265 +5238,184 @@ export interface DelveSiteTheme {
 	summary: MarkdownString
 	description?: MarkdownString
 	icon?: SvgImageUrl
-	features: OracleTableRowText[] &
+	features: DelveSiteThemeFeature[] &
 		[
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 1
-					/**
-					 * High end of the dice range.
-					 */
 					max: 4
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 5
-					/**
-					 * High end of the dice range.
-					 */
 					max: 8
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 9
-					/**
-					 * High end of the dice range.
-					 */
 					max: 12
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 13
-					/**
-					 * High end of the dice range.
-					 */
 					max: 16
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 17
-					/**
-					 * High end of the dice range.
-					 */
 					max: 20
 				}
 			}
 		]
-	dangers: OracleTableRowText[] &
+	dangers: DelveSiteThemeFeature[] &
 		[
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 1
-					/**
-					 * High end of the dice range.
-					 */
 					max: 5
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 6
-					/**
-					 * High end of the dice range.
-					 */
 					max: 10
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 11
-					/**
-					 * High end of the dice range.
-					 */
 					max: 12
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 13
-					/**
-					 * High end of the dice range.
-					 */
 					max: 14
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 15
-					/**
-					 * High end of the dice range.
-					 */
 					max: 16
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 17
-					/**
-					 * High end of the dice range.
-					 */
 					max: 18
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 19
-					/**
-					 * High end of the dice range.
-					 */
 					max: 20
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 21
-					/**
-					 * High end of the dice range.
-					 */
 					max: 22
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 23
-					/**
-					 * High end of the dice range.
-					 */
 					max: 24
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 25
-					/**
-					 * High end of the dice range.
-					 */
 					max: 26
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 27
-					/**
-					 * High end of the dice range.
-					 */
 					max: 28
 				}
 			},
 			{
-				/**
-				 * Represents a range of dice roll results, bounded by `min` and `max` (inclusive).
-				 */
 				roll: {
-					/**
-					 * Low end of the dice range.
-					 */
 					min: 29
-					/**
-					 * High end of the dice range.
-					 */
 					max: 30
 				}
 			}
 		]
+}
+
+/**
+ * Represents a single Danger entry from a delve site Theme card.
+ */
+export interface DelveSiteThemeDanger {
+	/**
+	 * The primary text content of this row.
+	 */
+	text: MarkdownString
+	icon?: SvgImageUrl
+	/**
+	 * Further oracle rolls prompted by this table row.
+	 */
+	oracle_rolls?: OracleRoll[]
+	suggestions?: Suggestions
+	/**
+	 * Hints that the identified table should be rendered inside this table row.
+	 * @experimental
+	 */
+	embed_table?: OracleRollableId
+	/**
+	 * @experimental
+	 */
+	template?: OracleRollTemplate
+	/**
+	 * @experimental
+	 */
+	_i18n?: I18nHints
+	/**
+	 * `null` represents an unrollable row, included only for rendering purposes.
+	 * @default null
+	 */
+	roll: DiceRange | null
+	tags?: Tags
+	_id: DelveSiteThemeDangerId
+}
+
+/**
+ * Represents a single Feature entry from a delve site Theme card.
+ */
+export interface DelveSiteThemeFeature {
+	/**
+	 * The primary text content of this row.
+	 */
+	text: MarkdownString
+	icon?: SvgImageUrl
+	/**
+	 * Further oracle rolls prompted by this table row.
+	 */
+	oracle_rolls?: OracleRoll[]
+	suggestions?: Suggestions
+	/**
+	 * Hints that the identified table should be rendered inside this table row.
+	 * @experimental
+	 */
+	embed_table?: OracleRollableId
+	/**
+	 * @experimental
+	 */
+	template?: OracleRollTemplate
+	/**
+	 * @experimental
+	 */
+	_i18n?: I18nHints
+	/**
+	 * `null` represents an unrollable row, included only for rendering purposes.
+	 * @default null
+	 */
+	roll: DiceRange | null
+	tags?: Tags
+	_id: DelveSiteThemeFeatureId
 }

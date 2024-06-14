@@ -34,6 +34,11 @@ var TypeId;
         'rarity',
         'truth'
     ];
+    TypeId.AnyPrimary = [
+        ...TypeId.Collectable,
+        ...TypeId.Collection,
+        ...TypeId.NonCollectable
+    ];
     TypeId.CollectedByMap = {
         asset_collection: 'asset',
         move_category: 'move',
@@ -56,27 +61,94 @@ var TypeId;
         return TypeId.CollectionOfMap[typeId];
     }
     TypeId.getCollectionOf = getCollectionOf;
-    TypeId.EmbeddablePrimaryTypes = [
+    TypeId.EmbeddablePrimaryType = [
         'oracle_rollable',
         'move'
     ];
-    TypeId.EmbedOnlyTypes = ['ability', 'option'];
-    TypeId.EmbeddableTypes = [
+    TypeId.EmbedOnlyType = [
+        'ability',
+        'option',
+        'row',
+        'feature',
+        'danger',
+        'denizen'
+    ];
+    TypeId.EmbeddableType = [
         'oracle_rollable',
         'move',
         'ability',
-        'option'
+        'option',
+        'row',
+        'feature',
+        'danger',
+        'denizen'
     ];
-    TypeId.EmbeddedTypePaths = [
-        'asset.ability',
-        'truth.option',
-        'move.oracle_rollable'
-    ];
-    TypeId.EmbedOfEmbedTypePaths = [
-        'asset.ability.move',
-        'asset.ability.oracle_rollable',
-        'truth.option.oracle_rollable'
-    ];
+    TypeId.EmbedTypeMap = {
+        asset: ['ability'],
+        ability: ['move', 'oracle_rollable'],
+        truth: ['option'],
+        option: ['oracle_rollable'],
+        move: ['oracle_rollable'],
+        oracle_rollable: ['row'],
+        delve_site: ['denizen'],
+        delve_site_domain: ['feature', 'danger'],
+        delve_site_theme: ['feature', 'danger']
+    };
+    TypeId.AllowedEmbedInEmbedTypes = {
+        ability: ['oracle_rollable', 'move'],
+        move: [],
+        option: ['oracle_rollable'],
+        oracle_rollable: ['row']
+    };
+    function canHaveEmbed(typeId, typeIsEmbedded = false) {
+        return getEmbeddableTypes(typeId, typeIsEmbedded).length > 0;
+    }
+    TypeId.canHaveEmbed = canHaveEmbed;
+    function canBeEmbedded(typeId) {
+        return getTypesThatCanHaveEmbedOfType(typeId).length > 0;
+    }
+    TypeId.canBeEmbedded = canBeEmbedded;
+    function isPrimary(typeId) {
+        return TypeId.AnyPrimary.includes(typeId);
+    }
+    TypeId.isPrimary = isPrimary;
+    function isEmbedOnly(typeId) {
+        return TypeId.EmbedOnlyType.includes(typeId);
+    }
+    TypeId.isEmbedOnly = isEmbedOnly;
+    function getEmbeddableTypes(typeId, typeIsEmbedded = false) {
+        var _a, _b;
+        if (typeIsEmbedded)
+            return (_a = TypeId.AllowedEmbedInEmbedTypes[typeId]) !== null && _a !== void 0 ? _a : [];
+        return (_b = TypeId.EmbedTypeMap[typeId]) !== null && _b !== void 0 ? _b : [];
+    }
+    TypeId.getEmbeddableTypes = getEmbeddableTypes;
+    function getTypesThatCanHaveEmbedOfType(typeId) {
+        const typeIds = [];
+        for (const embedder in TypeId.EmbedTypeMap) {
+            const embeddables = TypeId.EmbedTypeMap[embedder];
+            if (embeddables.includes(typeId))
+                typeIds.push(embedder);
+        }
+        return typeIds;
+    }
+    TypeId.getTypesThatCanHaveEmbedOfType = getTypesThatCanHaveEmbedOfType;
+    TypeId.EmbeddedTypePath = [];
+    function expandTypePath(typeId, path = []) {
+        var _a;
+        const isPrimary = path.length === 0;
+        const thisPath = [...path, typeId];
+        if (!isPrimary)
+            TypeId.EmbeddedTypePath.push(thisPath.join(CONST_js_1.default.PathTypeSep));
+        if (typeId in TypeId.EmbedTypeMap) {
+            for (const childTypeId of TypeId.EmbedTypeMap[typeId])
+                if (isPrimary ||
+                    ((_a = TypeId.AllowedEmbedInEmbedTypes[typeId]) !== null && _a !== void 0 ? _a : []).includes(childTypeId))
+                    expandTypePath(childTypeId, thisPath);
+        }
+    }
+    for (const typeId in TypeId.EmbedTypeMap)
+        expandTypePath(typeId);
     TypeId.RootKeys = {
         asset_collection: 'assets',
         asset: 'assets',
@@ -96,7 +168,11 @@ var TypeId;
     };
     TypeId.EmbeddedPropertyKeys = {
         ability: 'abilities',
-        option: 'options'
+        option: 'options',
+        row: 'rows',
+        feature: 'features',
+        danger: 'dangers',
+        denizen: 'denizens'
     };
     function getRootKey(typeId) {
         const result = TypeId.RootKeys[typeId];
@@ -120,23 +196,5 @@ var TypeId;
         }
     }
     TypeId.getEmbeddedPropertyKey = getEmbeddedPropertyKey;
-    function getEmbeddableTypes(typeId) {
-        const allEmbeddedTypePaths = [
-            ...TypeId.EmbeddedTypePaths,
-            ...TypeId.EmbedOfEmbedTypePaths
-        ];
-        const matches = new Set();
-        for (const typePath of allEmbeddedTypePaths) {
-            const typeHead = typeId + CONST_js_1.default.PathTypeSep;
-            if (typePath.startsWith(typeId))
-                matches.add(typePath
-                    // remove the parts that represent the current path
-                    .replace(typeHead, '')
-                    // get the first relevant segment
-                    .split(CONST_js_1.default.PathTypeSep)[0]);
-        }
-        return Array.from(matches);
-    }
-    TypeId.getEmbeddableTypes = getEmbeddableTypes;
 })(TypeId || (TypeId = {}));
 exports.default = TypeId;

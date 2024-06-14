@@ -25,7 +25,9 @@
 	},
 	"oracles": {
 		"character": {
-			"enhances": ["oracle_collection:classic/character"],
+			"enhances": [
+				"oracle_collection:classic/character"
+			],
 			"type": "oracle_collection",
 			"name": "Character",
 			"summary": "Set the initial disposition for a character, or reveal what activity they are focused on when you first encounter them.",
@@ -927,14 +929,18 @@
 				"page": 218
 			},
 			"description": "Use the Combat Event oracles to answer questions about the actions of a foe or enemy force. You can use these oracles instead of—or in addition to—the [Combat Action](oracle_rollable:classic/turning_point/combat_action) oracle.\n\nRoll once each on the [Method](oracle_rollable:delve/combat_event/method) oracle and the [Target](oracle_rollable:delve/combat_event/target) oracle. Then, interpret the response as appropriate to the current situation and the nature of your foe.\n\nFor example, you are fighting a rhaskar, a bear-like beast. It has initiative, and you want to know what it does next. You [Ask the Oracle](move:classic/fate/ask_the_oracle), rolling [Method](oracle_rollable:delve/combat_event/method) and [Target](oracle_rollable:delve/combat_event/target). The oracle responds, “Await Weakness.” You envision the rhaskar circling you, its keen eyes narrowing as it looks for an opening in your defenses. You must [Face Danger](move:classic/adventure/face_danger) to avoid being outmaneuvered.",
-			"suggestions": ["oracle_rollable:classic/turning_point/combat_action"],
+			"suggestions": [
+				"oracle_rollable:classic/turning_point/combat_action"
+			],
 			"contents": {
 				"method": {
 					"name": "Method",
 					"oracle_type": "table_text",
 					"type": "oracle_rollable",
 					"canonical_name": "Combat Event: Method",
-					"suggestions": ["oracle_rollable:delve/combat_event/target"],
+					"suggestions": [
+						"oracle_rollable:delve/combat_event/target"
+					],
 					"_source": {
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com",
@@ -1611,7 +1617,9 @@
 					"oracle_type": "table_text",
 					"type": "oracle_rollable",
 					"canonical_name": "Combat Event: Target",
-					"suggestions": ["oracle_rollable:delve/combat_event/method"],
+					"suggestions": [
+						"oracle_rollable:delve/combat_event/method"
+					],
 					"_source": {
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com",
@@ -2310,7 +2318,9 @@
 					"oracle_type": "table_text",
 					"type": "oracle_rollable",
 					"canonical_name": "Feature: Aspect",
-					"suggestions": ["oracle_rollable:delve/feature/focus"],
+					"suggestions": [
+						"oracle_rollable:delve/feature/focus"
+					],
 					"_source": {
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com",
@@ -2987,7 +2997,9 @@
 					"oracle_type": "table_text",
 					"type": "oracle_rollable",
 					"canonical_name": "Feature: Focus",
-					"suggestions": ["oracle_rollable:delve/feature/aspect"],
+					"suggestions": [
+						"oracle_rollable:delve/feature/aspect"
+					],
 					"_source": {
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com",
@@ -10204,7 +10216,9 @@
 					"canonical_name": "Trap: Event",
 					"oracle_type": "table_text",
 					"type": "oracle_rollable",
-					"suggestions": ["oracle_rollable:delve/trap/component"],
+					"suggestions": [
+						"oracle_rollable:delve/trap/component"
+					],
 					"_source": {
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com",
@@ -10556,7 +10570,9 @@
 					"canonical_name": "Trap: Component",
 					"oracle_type": "table_text",
 					"type": "oracle_rollable",
-					"suggestions": ["oracle_rollable:delve/trap/event"],
+					"suggestions": [
+						"oracle_rollable:delve/trap/event"
+					],
 					"_source": {
 						"license": "https://creativecommons.org/licenses/by/4.0",
 						"url": "https://ironswornrpg.com",
@@ -11613,7 +11629,9 @@
 					"roll_type": "no_roll",
 					"type": "move",
 					"name": "Reveal a Danger (alternate version)",
-					"replaces": ["move:delve/delve/reveal_a_danger"],
+					"replaces": [
+						"move:delve/delve/reveal_a_danger"
+					],
 					"oracles": {
 						"reveal_a_danger_alt": {
 							"name": "Reveal a Danger (alternate version)",
@@ -11995,7 +12013,9 @@
 		"ironlanders": {
 			"type": "npc_collection",
 			"name": "Ironlanders",
-			"enhances": ["npc_collection:classic/ironlanders"],
+			"enhances": [
+				"npc_collection:classic/ironlanders"
+			],
 			"_source": {
 				"authors": [
 					{
@@ -12063,7 +12083,11 @@
 						"url": "https://ironswornrpg.com",
 						"page": 111
 					},
-					"features": ["Sickly pallor", "Distant eyes", "Marks of their faith"],
+					"features": [
+						"Sickly pallor",
+						"Distant eyes",
+						"Marks of their faith"
+					],
 					"drives": [
 						"Serve the faith",
 						"Bring others into the fold",
@@ -12084,7 +12108,9 @@
 		"firstborn": {
 			"type": "npc_collection",
 			"name": "Firstborn",
-			"enhances": ["npc_collection:classic/firstborn"],
+			"enhances": [
+				"npc_collection:classic/firstborn"
+			],
 			"_source": {
 				"authors": [
 					{
@@ -12120,7 +12146,11 @@
 						"Iridescent skin and dark hair",
 						"Clothed in hides and furs"
 					],
-					"drives": ["Hunt and fish", "Respect the sea", "Seek out new lands"],
+					"drives": [
+						"Hunt and fish",
+						"Respect the sea",
+						"Seek out new lands"
+					],
 					"tactics": [
 						"Strike with spears",
 						"Fight as one, and embody the power of the mighty sea"
@@ -12147,8 +12177,14 @@
 						"url": "https://ironswornrpg.com",
 						"page": 113
 					},
-					"features": ["Gray scaled skin", "Bulbous eyes", "Webbed claws"],
-					"drives": ["Blood for the deep gods"],
+					"features": [
+						"Gray scaled skin",
+						"Bulbous eyes",
+						"Webbed claws"
+					],
+					"drives": [
+						"Blood for the deep gods"
+					],
 					"tactics": [
 						"Swarm and overwhelm",
 						"Entangle in nets",
@@ -12165,7 +12201,9 @@
 		"animals": {
 			"type": "npc_collection",
 			"name": "Animals",
-			"enhances": ["npc_collection:classic/animals"],
+			"enhances": [
+				"npc_collection:classic/animals"
+			],
 			"_source": {
 				"authors": [
 					{
@@ -12205,7 +12243,10 @@
 						"Take flight under the cover of darkness",
 						"Hunt from above"
 					],
-					"tactics": ["Glide silently", "Sudden, swift attack"],
+					"tactics": [
+						"Glide silently",
+						"Sudden, swift attack"
+					],
 					"description": "These carnivorous creatures dwell in caves and ruins, and emerge at night to hunt. They have a lean, angular form, with a wingspan as wide as an Ironlander’s outstretched arms.\n\nThey typically feed on smaller prey, but a pack of hungry bladewings will harass larger victims, diving and slashing in coordinated attacks. During the long nights of winter, swarms of these creatures have descended on Ironlander settlements or unwary travelers.",
 					"quest_starter": "Night after night, a colony of bladewings emerges to prey on a remote settlement. The creatures are rumored to lair in a long-abandoned [Ravaged](delve_site_theme:delve/ravaged) [Mine](delve_site_domain:delve/mine). What is driving their attacks?",
 					"your_truth": "A clan of hill people conduct ceremonial hunts of the bladewings, and decorate their banners and shields with its form. Their mystics and warriors even wear the leathery wings as ornamentation. What powers or protections do they believe this imparts?",
@@ -12233,7 +12274,10 @@
 						"Brightly-colored markings",
 						"Serrated teeth"
 					],
-					"drives": ["Hunt and feed", "Lay eggs within fresh kills"],
+					"drives": [
+						"Hunt and feed",
+						"Lay eggs within fresh kills"
+					],
 					"tactics": [
 						"Lurk in the shallows",
 						"Sudden, ferocious attack",
@@ -12261,9 +12305,18 @@
 						"url": "https://ironswornrpg.com",
 						"page": 116
 					},
-					"features": ["Feline grace", "Tawny, striped coat"],
-					"drives": ["Hunt"],
-					"tactics": ["Stalk prey", "Leap and bite", "Intimidating roar"],
+					"features": [
+						"Feline grace",
+						"Tawny, striped coat"
+					],
+					"drives": [
+						"Hunt"
+					],
+					"tactics": [
+						"Stalk prey",
+						"Leap and bite",
+						"Intimidating roar"
+					],
 					"description": "Cave lions are sleek, powerful creatures who dwell primarily in the [Hinterlands](atlas_entry:classic/ironlands/hinterlands) and [Tempest Hills](atlas_entry:classic/ironlands/tempest_hills). They lair in caverns and other hidden places, emerging to hunt prey such as deer, boar, and rodents. They are typically solitary creatures, but have been seen working together to bring down larger quarry. Even a [mammoth](npc:classic/beasts/mammoth) is no match for a determined pack of cave lions.",
 					"quest_starter": "A large cave lion kills livestock in outlying Ironlander steadings, and attacked a farmer. It hunts well beyond its usual territory, and is said to lair in a [Wild](delve_site_theme:delve/wild) [Cavern](delve_site_domain:delve/cavern). What has driven this beast from its hunting grounds?",
 					"_id": "npc:delve/animals/cave_lion"
@@ -12291,8 +12344,14 @@
 						"Clawed feet",
 						"Jutting incisors"
 					],
-					"drives": ["Dig", "Feed"],
-					"tactics": ["Undermine paths", "Swarm and bite"],
+					"drives": [
+						"Dig",
+						"Feed"
+					],
+					"tactics": [
+						"Undermine paths",
+						"Swarm and bite"
+					],
 					"description": "These foul, oversized rats have squat bodies and stubby tails. They are essentially blind, but navigate through smell and touch.\n\nDeep rats are constantly collecting food and will eat anything even vaguely edible. They often dwell in caves or subterranean structures, digging compulsively to expand their lair. In those places, they serve as fodder for greater creatures.",
 					"quest_starter": "A fallen hero must be laid to rest with their kinfolk, but deep rats have invaded the settlement’s tomb. Within the dark depths of this [Infested](delve_site_theme:delve/infested) [Barrow](delve_site_domain:delve/barrow) is the massive brood mother, a formidable creature that will fight savagely to protect the horde.",
 					"your_truth": "During the longest night of winter, deep rats swarm the surface world. They are drawn inexorably to a specific place. What is it?",
@@ -12320,7 +12379,11 @@
 						"Long, skinny legs",
 						"Fangs, dripping with venom"
 					],
-					"drives": ["Lurk in darkness", "Feed", "Lay eggs"],
+					"drives": [
+						"Lurk in darkness",
+						"Feed",
+						"Lay eggs"
+					],
 					"tactics": [
 						"Spin webs",
 						"Drop on prey",
@@ -12353,7 +12416,10 @@
 						"Snapping, slashing claws",
 						"Barbed, whiplike tail"
 					],
-					"drives": ["Lie hidden among rocks and ice", "Feed"],
+					"drives": [
+						"Lie hidden among rocks and ice",
+						"Feed"
+					],
 					"tactics": [
 						"Mimic surroundings",
 						"Leap at unsuspecting prey",
@@ -12387,7 +12453,10 @@
 						"Long claws and sharp teeth",
 						"Powerful tail"
 					],
-					"drives": ["Lurk in darkness", "Dig tunnels"],
+					"drives": [
+						"Lurk in darkness",
+						"Dig tunnels"
+					],
 					"tactics": [
 						"Stealthy approach",
 						"Intimidating display",
@@ -12405,7 +12474,9 @@
 		"beasts": {
 			"type": "npc_collection",
 			"name": "Beasts",
-			"enhances": ["npc_collection:classic/beasts"],
+			"enhances": [
+				"npc_collection:classic/beasts"
+			],
 			"_source": {
 				"authors": [
 					{
@@ -12436,8 +12507,14 @@
 						"url": "https://ironswornrpg.com",
 						"page": 121
 					},
-					"features": ["Chitinous shell", "Snapping mandibles"],
-					"drives": ["Sniff out food", "Defend the nest"],
+					"features": [
+						"Chitinous shell",
+						"Snapping mandibles"
+					],
+					"drives": [
+						"Sniff out food",
+						"Defend the nest"
+					],
 					"tactics": [
 						"Summon the horde",
 						"Swarm and bite",
@@ -12470,8 +12547,15 @@
 						"Majestic horns",
 						"Sorrowful call"
 					],
-					"drives": ["Keep to the woodlands", "Forage"],
-					"tactics": ["Threatening posture", "Powerful charge", "Stomp"],
+					"drives": [
+						"Keep to the woodlands",
+						"Forage"
+					],
+					"tactics": [
+						"Threatening posture",
+						"Powerful charge",
+						"Stomp"
+					],
 					"description": "Gnarls dwell in woodlands throughout the Ironlands. The tallest of them are nearly the height of towering trees, with a long neck and legs as stout as trunks. Atop their heads are sprays of horns which twist and intertwine like slender branches. They roam the forest alone or in small family groups, feeding on lichen, leaves, and other plants. They are not naturally aggressive, but are mighty foes when threatened.\n\nThe color of a gnarl’s bark-like hide changes through its life, emulating the passage of the seasons. A young gnarl’s hide is the verdant green of spring. As they mature, it transitions to the deeper brown-green of summer, then the burnished amber of fall, and finally the cold gray of winter. To protect itself from potential predators, a gnarl will stand among a copse of trees. It will plant its feet, straighten its back, stretch its neck, and stay perfectly still, blending in with its surroundings.\n\nThe low, resonant call of a gnarl can carry for miles. It is a lonely sound, as evocative and heartrending as the most mournful funeral song.",
 					"quest_starter": "A fire rages within a [Ravaged](delve_site_theme:delve/ravaged) [Tanglewood](delve_site_domain:delve/tanglewood). In that place dwells an unusually large gnarl, its ancient hide as white as new snow. Why are you sworn to guide this creature safely through the blaze? What was the source of the fire? Who opposes you in this quest?",
 					"_id": "npc:delve/beasts/gnarl"
@@ -12493,13 +12577,19 @@
 						"url": "https://ironswornrpg.com",
 						"page": 123
 					},
-					"features": ["Flesh corrupted by iron", "Pained howl"],
+					"features": [
+						"Flesh corrupted by iron",
+						"Pained howl"
+					],
 					"drives": [
 						"Feed the insatiable hunger",
 						"Destroy those who wield iron",
 						"Find a release from pain"
 					],
-					"tactics": ["Attack with brutal rage", "Bite and devour"],
+					"tactics": [
+						"Attack with brutal rage",
+						"Bite and devour"
+					],
 					"description": "We don’t know the origin of the Iron Blight, nor do we know its cure. It inflicts creatures of the wilds and transforms their flesh slowly to iron. These pitiful but powerful beasts are scarred by patches of metal flesh within ragged, weeping wounds. The iron is like a parasite, devouring the host as it torments them with unstoppable pain and insatiable hunger. Their howls echo with animalistic agony and the clangor of hammer against anvil.\n\nIn time, the Blight takes too much, and the beast dies while it is still more flesh than iron. We pray a creature never survives beyond that stage. What would it become?",
 					"quest_starter": "Your animal companion is stricken with the Iron Blight. The disease is in its early stages, but time is your enemy. Locals say the origin of the blight lies within a [Corrupted](delve_site_theme:delve/corrupted) [Tanglewood](delve_site_domain:delve/tanglewood). What will you do to stop the relentless progression of the iron corruption?",
 					"your_truth": "A sect of [zealots](npc:delve/ironlanders/zealot) believe the Iron Blight is a divine manifestation. What god do they worship? What purpose do they believe the disease fulfills, and how to they intend to hasten the will of their god?",
@@ -12522,7 +12612,11 @@
 						"url": "https://ironswornrpg.com",
 						"page": 124
 					},
-					"features": ["Gargantuan size", "Grasping tentacles", "Beaked maw"],
+					"features": [
+						"Gargantuan size",
+						"Grasping tentacles",
+						"Beaked maw"
+					],
 					"drives": [
 						"Lurk in unfathomable depths",
 						"Destroy those who would trespass",
@@ -12594,7 +12688,10 @@
 						"Rows of razor-sharp teeth",
 						"Massive claws"
 					],
-					"drives": ["Protect territory", "Hunt prey in water and on land"],
+					"drives": [
+						"Protect territory",
+						"Hunt prey in water and on land"
+					],
 					"tactics": [
 						"Burst through ice",
 						"Rend with savage claws",
@@ -12629,7 +12726,10 @@
 						"Scaled skin",
 						"Cavernous mouth"
 					],
-					"drives": ["Protect territory", "Kill and feed"],
+					"drives": [
+						"Protect territory",
+						"Kill and feed"
+					],
 					"tactics": [
 						"Tail smash",
 						"Pin to the ground",
@@ -12646,7 +12746,9 @@
 		"horrors": {
 			"type": "npc_collection",
 			"name": "Horrors",
-			"enhances": ["npc_collection:classic/horrors"],
+			"enhances": [
+				"npc_collection:classic/horrors"
+			],
 			"_source": {
 				"authors": [
 					{
@@ -12677,13 +12779,21 @@
 						"url": "https://ironswornrpg.com",
 						"page": 128
 					},
-					"features": ["Red eyes", "Lean, hound-like form", "Curved horns"],
+					"features": [
+						"Red eyes",
+						"Lean, hound-like form",
+						"Curved horns"
+					],
 					"drives": [
 						"Portend death",
 						"Fulfill the prophecy of death",
 						"Lair in places where death is near"
 					],
-					"tactics": ["Unearthly howl", "Piercing gaze", "Savage bite"],
+					"tactics": [
+						"Unearthly howl",
+						"Piercing gaze",
+						"Savage bite"
+					],
 					"description": "Blighthounds lurk on blood-soaked battlefields, on the outskirts of settlements destined for famine, or within the dark catacombs of ancient tombs. Drawn to the dead, and foretelling great doom, they are capable predators and grim messengers of death.\n\nThey appear as gaunt, emaciated hounds, often mistaken for starving animals at first glance. Their fiendish form reveals itself in blood-red eyes, sweeping horns, and skin the texture of charred and blistered wood.",
 					"quest_starter": "Every night, a blighthound appears outside a settlement at the edge of a [Wild](delve_site_theme:delve/wild) [Tanglewood](delve_site_domain:delve/tanglewood), observing silently from within the mist. The people are gripped with a cold fear, wondering what fate will befall them. If any approach the blighthound, it leads them into the depths of the woods...",
 					"_id": "npc:delve/horrors/blighthound"
@@ -12705,7 +12815,10 @@
 						"url": "https://ironswornrpg.com",
 						"page": 129
 					},
-					"features": ["Mummified flesh", "Shambling gait"],
+					"features": [
+						"Mummified flesh",
+						"Shambling gait"
+					],
 					"drives": [
 						"Rise to seek out the living",
 						"Consign another to death in their place"
@@ -12742,7 +12855,10 @@
 						"The bones of many corpses, held together by a dark will",
 						"Scurries with a hollow clatter"
 					],
-					"drives": ["Destroy and kill", "Gather new bones"],
+					"drives": [
+						"Destroy and kill",
+						"Gather new bones"
+					],
 					"tactics": [
 						"Alter shape",
 						"Strike with skeletal appendages",
@@ -12811,7 +12927,9 @@
 						"Ragged, unhealed wounds",
 						"Iron burial mask"
 					],
-					"drives": ["Stand in defense"],
+					"drives": [
+						"Stand in defense"
+					],
 					"tactics": [
 						"Skulk in darkness",
 						"Resolute assault",
@@ -12863,8 +12981,14 @@
 						"Scattered bones, stripped clean",
 						"Large central pod"
 					],
-					"drives": ["Consume blood", "Proliferate"],
-					"tactics": ["Lie in wait", "Grasp, entangle, and feed"],
+					"drives": [
+						"Consume blood",
+						"Proliferate"
+					],
+					"tactics": [
+						"Lie in wait",
+						"Grasp, entangle, and feed"
+					],
 					"description": "A blood thorn is a malignant, carnivorous plant. It seizes its victims with long, creeping tendrils. Then, it leeches their life through hollow thorns, eventually bleeding them dry.\n\nBlood thorns appear in woodland areas throughout the Ironlands. They are especially common in the [Deep Wilds](atlas_entry:classic/ironlands/deep_wilds), where they often encircle [elf](npc:classic/firstborn/elf) villages. Some suspect they are cultivated by the elves, or share a symbiotic relationship with them.",
 					"quest_starter": "Ironlanders attempted to found a settlement at the heart of a [Wild](delve_site_theme:delve/wild) [Tanglewood](delve_site_domain:delve/tanglewood) a decade ago. That place is now abandoned and infested by blood thorns. Why did the settlers try to create a home in such an untamed place? What object or information do you seek there?",
 					"your_truth": "Each spring, a vibrant red flower sprouts from blood thorn branches. This blossom is coveted as an ingredient for alchemical elixirs. What effect does it provide?",
@@ -12892,7 +13016,10 @@
 						"Whispers of old magic",
 						"Visions of hoarded memories"
 					],
-					"drives": ["Preserve age-old secrets", "Seek new knowledge"],
+					"drives": [
+						"Preserve age-old secrets",
+						"Seek new knowledge"
+					],
 					"tactics": [
 						"Trap the unwary, and lure the desperate",
 						"Extract painful memories",
@@ -12920,7 +13047,10 @@
 						"url": "https://ironswornrpg.com",
 						"page": 142
 					},
-					"features": ["Dancing lights given vague form", "Silent beckoning"],
+					"features": [
+						"Dancing lights given vague form",
+						"Silent beckoning"
+					],
 					"drives": [
 						"Illuminate the darkness",
 						"Provide escort along secret paths"
@@ -12952,8 +13082,14 @@
 						"url": "https://ironswornrpg.com",
 						"page": 144
 					},
-					"features": ["Creeping, vaporous murk", "Whispers and illusions"],
-					"drives": ["Envelop all in shadow", "Feed on fear and despair"],
+					"features": [
+						"Creeping, vaporous murk",
+						"Whispers and illusions"
+					],
+					"drives": [
+						"Envelop all in shadow",
+						"Feed on fear and despair"
+					],
 					"tactics": [
 						"Lure with trickery",
 						"Snuff out lights",
@@ -12987,7 +13123,10 @@
 						"Fierce currents",
 						"Ghostly screams"
 					],
-					"drives": ["Engulf victims", "Amass the voices of the lost"],
+					"drives": [
+						"Engulf victims",
+						"Amass the voices of the lost"
+					],
 					"tactics": [
 						"Seize with raging, swirling waters",
 						"Stun with numbing cold",
@@ -13021,7 +13160,9 @@
 						"Stinging ice",
 						"Ghostly voices and shadowy forms"
 					],
-					"drives": ["Seek warmth, and snuff it out"],
+					"drives": [
+						"Seek warmth, and snuff it out"
+					],
 					"tactics": [
 						"Envelop in a wintry cyclone",
 						"Batter with icy shards and ferocious winds",
@@ -16821,6 +16962,3362 @@
 			],
 			"description": "A long-dead civilization once used this path through the [Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountains) as a trade road. Their crumbling outposts, forts, and waystones, half-buried in snow and fallen glacial stones, mark the way. Some say you can still hear their voices and songs carried on the wind; echoes of lives long lost.\n\nA clan of [giants](id:npc:classic/firstborn/giant) now live here, drawn to the remains of this once-powerful place like travelers huddling close to a dying fire. They defend the pass against a massive tribe of [broken](id:npc:classic/ironlanders/broken) who lurk within the caves and ruins of this frozen land. What purpose do the giants have here, and what can be done to aid their defense against the broken?",
 			"_id": "delve_site:delve/trail_of_spirits"
+		}
+	},
+	"site_domains": {
+		"barrow": {
+			"type": "delve_site_domain",
+			"name": "Barrow",
+			"name_oracle": "oracle_rollable:delve/site_name/place/barrow",
+			"_source": {
+				"license": "https://creativecommons.org/licenses/by/4.0",
+				"url": "https://ironswornrpg.com",
+				"date": "2020-02-13",
+				"title": "Ironsworn: Delve",
+				"authors": [
+					{
+						"name": "Shawn Tomkin"
+					}
+				],
+				"page": 88
+			},
+			"summary": "The dead are enshrined here.",
+			"description": "In this cruel land, there is no shortage of dead to be put to rest. Some barrows are simple crypts for a family or steading. Others are more elaborate or extensive, plunging well into the depths of the earth. A few inconspicuous mounds, their rock and earth worn by time, mark an entryway into impossibly labyrinthine tombs built by long-forgotten people.\n\nEven the most ancient of these sites still echo with the memory and power of lives once lived, battles once fought, loves gained or lost, and vows unfulfilled.",
+			"features": [
+				{
+					"roll": {
+						"min": 21,
+						"max": 43
+					},
+					"text": "Burial chambers",
+					"_id": "delve_site_domain.feature:delve/barrow.0"
+				},
+				{
+					"roll": {
+						"min": 44,
+						"max": 56
+					},
+					"text": "Maze of narrow passages",
+					"_id": "delve_site_domain.feature:delve/barrow.1"
+				},
+				{
+					"roll": {
+						"min": 57,
+						"max": 64
+					},
+					"text": "Shrine",
+					"_id": "delve_site_domain.feature:delve/barrow.2"
+				},
+				{
+					"roll": {
+						"min": 65,
+						"max": 68
+					},
+					"text": "Stately vault",
+					"_id": "delve_site_domain.feature:delve/barrow.3"
+				},
+				{
+					"roll": {
+						"min": 69,
+						"max": 72
+					},
+					"text": "Offerings to the dead",
+					"_id": "delve_site_domain.feature:delve/barrow.4"
+				},
+				{
+					"roll": {
+						"min": 73,
+						"max": 76
+					},
+					"text": "Statuary or tapestries",
+					"_id": "delve_site_domain.feature:delve/barrow.5"
+				},
+				{
+					"roll": {
+						"min": 77,
+						"max": 80
+					},
+					"text": "Remains of a grave robber",
+					"_id": "delve_site_domain.feature:delve/barrow.6"
+				},
+				{
+					"roll": {
+						"min": 81,
+						"max": 84
+					},
+					"text": "Mass grave",
+					"_id": "delve_site_domain.feature:delve/barrow.7"
+				},
+				{
+					"roll": {
+						"min": 85,
+						"max": 88
+					},
+					"text": "Exhumed corpses",
+					"_id": "delve_site_domain.feature:delve/barrow.8"
+				},
+				{
+					"roll": {
+						"min": 89,
+						"max": 98
+					},
+					"text": "Something unusual or unexpected",
+					"suggestions": [
+						"oracle_rollable:delve/feature/aspect",
+						"oracle_rollable:delve/feature/focus"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.9"
+				},
+				{
+					"roll": {
+						"min": 99,
+						"max": 99
+					},
+					"text": "You transition into a new theme",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/theme"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.10"
+				},
+				{
+					"roll": {
+						"min": 100,
+						"max": 100
+					},
+					"text": "You transition into a new domain",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/domain"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.11"
+				}
+			],
+			"dangers": [
+				{
+					"roll": {
+						"min": 31,
+						"max": 33
+					},
+					"text": "Denizen guards this area",
+					"_id": "delve_site_domain.danger:delve/barrow.0"
+				},
+				{
+					"roll": {
+						"min": 34,
+						"max": 36
+					},
+					"text": "Trap",
+					"suggestions": [
+						"oracle_rollable:delve/trap/event",
+						"oracle_rollable:delve/trap/component"
+					],
+					"_id": "delve_site_domain.danger:delve/barrow.1"
+				},
+				{
+					"roll": {
+						"min": 37,
+						"max": 39
+					},
+					"text": "Death makes its presence known",
+					"_id": "delve_site_domain.danger:delve/barrow.2"
+				},
+				{
+					"roll": {
+						"min": 40,
+						"max": 42
+					},
+					"text": "Crumbling architecture",
+					"_id": "delve_site_domain.danger:delve/barrow.3"
+				},
+				{
+					"roll": {
+						"min": 43,
+						"max": 45
+					},
+					"text": "Grave goods with hidden dangers",
+					"_id": "delve_site_domain.danger:delve/barrow.4"
+				}
+			],
+			"_id": "delve_site_domain:delve/barrow"
+		},
+		"cavern": {
+			"type": "delve_site_domain",
+			"name": "Cavern",
+			"name_oracle": "oracle_rollable:delve/site_name/place/cavern",
+			"_source": {
+				"license": "https://creativecommons.org/licenses/by/4.0",
+				"url": "https://ironswornrpg.com",
+				"date": "2020-02-13",
+				"title": "Ironsworn: Delve",
+				"authors": [
+					{
+						"name": "Shawn Tomkin"
+					}
+				],
+				"page": 88
+			},
+			"summary": "A place of stone and darkness.",
+			"description": "Another world lies beneath our feet. Caverns vein the Ironlands with meandering tunnels, plunging pits, soaring chambers, and absolute darkness. Claustrophobic crawlspaces and crevices may lead to miles-long cave complexes. Underground waterways carve a relentless path through stone.\n\nWhen you enter these sites, you are a trespasser in a hostile domain. What unseen things dwell here, watching and waiting, amidst the depths?",
+			"features": [
+				{
+					"roll": {
+						"min": 21,
+						"max": 43
+					},
+					"text": "Twisting passages",
+					"_id": "delve_site_domain.feature:delve/cavern.0"
+				},
+				{
+					"roll": {
+						"min": 44,
+						"max": 56
+					},
+					"text": "Cramped caves",
+					"_id": "delve_site_domain.feature:delve/cavern.1"
+				},
+				{
+					"roll": {
+						"min": 57,
+						"max": 64
+					},
+					"text": "Vast chamber",
+					"_id": "delve_site_domain.feature:delve/cavern.2"
+				},
+				{
+					"roll": {
+						"min": 65,
+						"max": 68
+					},
+					"text": "Subterranean waterway",
+					"_id": "delve_site_domain.feature:delve/cavern.3"
+				},
+				{
+					"roll": {
+						"min": 69,
+						"max": 72
+					},
+					"text": "Cave pool",
+					"_id": "delve_site_domain.feature:delve/cavern.4"
+				},
+				{
+					"roll": {
+						"min": 73,
+						"max": 76
+					},
+					"text": "Natural bridge",
+					"_id": "delve_site_domain.feature:delve/cavern.5"
+				},
+				{
+					"roll": {
+						"min": 77,
+						"max": 80
+					},
+					"text": "Towering stone formations",
+					"_id": "delve_site_domain.feature:delve/cavern.6"
+				},
+				{
+					"roll": {
+						"min": 81,
+						"max": 84
+					},
+					"text": "Natural illumination",
+					"_id": "delve_site_domain.feature:delve/cavern.7"
+				},
+				{
+					"roll": {
+						"min": 85,
+						"max": 88
+					},
+					"text": "Dark pit",
+					"_id": "delve_site_domain.feature:delve/cavern.8"
+				},
+				{
+					"roll": {
+						"min": 89,
+						"max": 98
+					},
+					"text": "Something unusual or unexpected",
+					"suggestions": [
+						"oracle_rollable:delve/feature/aspect",
+						"oracle_rollable:delve/feature/focus"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.9"
+				},
+				{
+					"roll": {
+						"min": 99,
+						"max": 99
+					},
+					"text": "You transition into a new theme",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/theme"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.10"
+				},
+				{
+					"roll": {
+						"min": 100,
+						"max": 100
+					},
+					"text": "You transition into a new domain",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/domain"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.11"
+				}
+			],
+			"dangers": [
+				{
+					"roll": {
+						"min": 31,
+						"max": 33
+					},
+					"text": "Denizen lairs here",
+					"_id": "delve_site_domain.danger:delve/cavern.0"
+				},
+				{
+					"roll": {
+						"min": 34,
+						"max": 36
+					},
+					"text": "Cave-in",
+					"_id": "delve_site_domain.danger:delve/cavern.1"
+				},
+				{
+					"roll": {
+						"min": 37,
+						"max": 39
+					},
+					"text": "Flooding",
+					"_id": "delve_site_domain.danger:delve/cavern.2"
+				},
+				{
+					"roll": {
+						"min": 40,
+						"max": 42
+					},
+					"text": "Perilous climb or descent",
+					"_id": "delve_site_domain.danger:delve/cavern.3"
+				},
+				{
+					"roll": {
+						"min": 43,
+						"max": 45
+					},
+					"text": "Fissure or sinkhole",
+					"_id": "delve_site_domain.danger:delve/cavern.4"
+				}
+			],
+			"_id": "delve_site_domain:delve/cavern"
+		},
+		"frozen_cavern": {
+			"type": "delve_site_domain",
+			"name": "Frozen cavern",
+			"name_oracle": "oracle_rollable:delve/site_name/place/frozen_cavern",
+			"_source": {
+				"license": "https://creativecommons.org/licenses/by/4.0",
+				"url": "https://ironswornrpg.com",
+				"date": "2020-02-13",
+				"title": "Ironsworn: Delve",
+				"authors": [
+					{
+						"name": "Shawn Tomkin"
+					}
+				],
+				"page": 89
+			},
+			"summary": "A place of deep caves and enduring cold.",
+			"description": "These maze-like tunnels are found in the most inhospitable northern reaches of the Ironlands—carved through glacier, mountain, and hill—or in places of supernatural cold. Their icy depths are a perilous environment of fracturing terrain, shadowy reflections, hollow echoes, and lurking predators.\n\nEntering a frozen cavern is like delving into another world. There is a stark beauty in the icebound passages and glistening chambers. Amazing discoveries, locked in the ice, lie unseen for millennia. But do not be distracted by those enticements. The hazards of this site have no sympathy for the unwary and ill-prepared.",
+			"features": [
+				{
+					"roll": {
+						"min": 21,
+						"max": 43
+					},
+					"text": "Maze of icy tunnels",
+					"_id": "delve_site_domain.feature:delve/frozen_cavern.0"
+				},
+				{
+					"roll": {
+						"min": 44,
+						"max": 56
+					},
+					"text": "Glistening cave",
+					"_id": "delve_site_domain.feature:delve/frozen_cavern.1"
+				},
+				{
+					"roll": {
+						"min": 57,
+						"max": 64
+					},
+					"text": "Vast chamber",
+					"_id": "delve_site_domain.feature:delve/frozen_cavern.2"
+				},
+				{
+					"roll": {
+						"min": 65,
+						"max": 68
+					},
+					"text": "Frigid waterway",
+					"_id": "delve_site_domain.feature:delve/frozen_cavern.3"
+				},
+				{
+					"roll": {
+						"min": 69,
+						"max": 72
+					},
+					"text": "Icy pools",
+					"_id": "delve_site_domain.feature:delve/frozen_cavern.4"
+				},
+				{
+					"roll": {
+						"min": 73,
+						"max": 76
+					},
+					"text": "Magnificent ice formations",
+					"_id": "delve_site_domain.feature:delve/frozen_cavern.5"
+				},
+				{
+					"roll": {
+						"min": 77,
+						"max": 80
+					},
+					"text": "Frozen waterfall",
+					"_id": "delve_site_domain.feature:delve/frozen_cavern.6"
+				},
+				{
+					"roll": {
+						"min": 81,
+						"max": 84
+					},
+					"text": "Deep crevasses",
+					"_id": "delve_site_domain.feature:delve/frozen_cavern.7"
+				},
+				{
+					"roll": {
+						"min": 85,
+						"max": 88
+					},
+					"text": "Discovery locked in the ice",
+					"_id": "delve_site_domain.feature:delve/frozen_cavern.8"
+				},
+				{
+					"roll": {
+						"min": 89,
+						"max": 98
+					},
+					"text": "Something unusual or unexpected",
+					"suggestions": [
+						"oracle_rollable:delve/feature/aspect",
+						"oracle_rollable:delve/feature/focus"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.9"
+				},
+				{
+					"roll": {
+						"min": 99,
+						"max": 99
+					},
+					"text": "You transition into a new theme",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/theme"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.10"
+				},
+				{
+					"roll": {
+						"min": 100,
+						"max": 100
+					},
+					"text": "You transition into a new domain",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/domain"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.11"
+				}
+			],
+			"dangers": [
+				{
+					"roll": {
+						"min": 31,
+						"max": 33
+					},
+					"text": "Denizen lairs here",
+					"_id": "delve_site_domain.danger:delve/frozen_cavern.0"
+				},
+				{
+					"roll": {
+						"min": 34,
+						"max": 36
+					},
+					"text": "Fracturing ice",
+					"_id": "delve_site_domain.danger:delve/frozen_cavern.1"
+				},
+				{
+					"roll": {
+						"min": 37,
+						"max": 39
+					},
+					"text": "Crumbling chasm",
+					"_id": "delve_site_domain.danger:delve/frozen_cavern.2"
+				},
+				{
+					"roll": {
+						"min": 40,
+						"max": 42
+					},
+					"text": "Bitter chill",
+					"_id": "delve_site_domain.danger:delve/frozen_cavern.3"
+				},
+				{
+					"roll": {
+						"min": 43,
+						"max": 45
+					},
+					"text": "Disorienting reflections",
+					"_id": "delve_site_domain.danger:delve/frozen_cavern.4"
+				}
+			],
+			"_id": "delve_site_domain:delve/frozen_cavern"
+		},
+		"icereach": {
+			"type": "delve_site_domain",
+			"name": "Icereach",
+			"name_oracle": "oracle_rollable:delve/site_name/place/icereach",
+			"_source": {
+				"license": "https://creativecommons.org/licenses/by/4.0",
+				"url": "https://ironswornrpg.com",
+				"date": "2020-02-13",
+				"title": "Ironsworn: Delve",
+				"authors": [
+					{
+						"name": "Shawn Tomkin"
+					}
+				],
+				"page": 89
+			},
+			"summary": "A frigid landscape formed of frozen seas.",
+			"description": "An Icereach is an expanse of frozen sea, blue-white and sprawling in all directions. These sites are typically found in the northernmost waters. However, a few vast icereaches—kept perpetually frozen by forces we do not understand—clog the seas in southern regions.\n\nOnly the cruelest, most powerful creatures can survive here. The terrain is rugged and cut-through with unstable ice and frigid waterways. Food is scarce. Bitter winds blast the landscape. The remains of ships, locked within the ice, stand as monuments to those who braved these places and were forever lost.",
+			"features": [
+				{
+					"roll": {
+						"min": 21,
+						"max": 43
+					},
+					"text": "Plains of ice and snow",
+					"_id": "delve_site_domain.feature:delve/icereach.0"
+				},
+				{
+					"roll": {
+						"min": 44,
+						"max": 56
+					},
+					"text": "Seawater channel",
+					"_id": "delve_site_domain.feature:delve/icereach.1"
+				},
+				{
+					"roll": {
+						"min": 57,
+						"max": 64
+					},
+					"text": "Icy highlands",
+					"_id": "delve_site_domain.feature:delve/icereach.2"
+				},
+				{
+					"roll": {
+						"min": 65,
+						"max": 68
+					},
+					"text": "Crevasse",
+					"_id": "delve_site_domain.feature:delve/icereach.3"
+				},
+				{
+					"roll": {
+						"min": 69,
+						"max": 72
+					},
+					"text": "Ice floes",
+					"_id": "delve_site_domain.feature:delve/icereach.4"
+				},
+				{
+					"roll": {
+						"min": 73,
+						"max": 76
+					},
+					"text": "Ship trapped in ice",
+					"_id": "delve_site_domain.feature:delve/icereach.5"
+				},
+				{
+					"roll": {
+						"min": 77,
+						"max": 80
+					},
+					"text": "Animal herd or habitat",
+					"_id": "delve_site_domain.feature:delve/icereach.6"
+				},
+				{
+					"roll": {
+						"min": 81,
+						"max": 84
+					},
+					"text": "Frozen carcass",
+					"_id": "delve_site_domain.feature:delve/icereach.7"
+				},
+				{
+					"roll": {
+						"min": 85,
+						"max": 88
+					},
+					"text": "Camp or",
+					"_id": "delve_site_domain.feature:delve/icereach.8"
+				},
+				{
+					"roll": {
+						"min": 89,
+						"max": 98
+					},
+					"text": "Something unusual or unexpected",
+					"suggestions": [
+						"oracle_rollable:delve/feature/aspect",
+						"oracle_rollable:delve/feature/focus"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.9"
+				},
+				{
+					"roll": {
+						"min": 99,
+						"max": 99
+					},
+					"text": "You transition into a new theme",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/theme"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.10"
+				},
+				{
+					"roll": {
+						"min": 100,
+						"max": 100
+					},
+					"text": "You transition into a new domain",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/domain"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.11"
+				}
+			],
+			"dangers": [
+				{
+					"roll": {
+						"min": 31,
+						"max": 33
+					},
+					"text": "Denizen hunts",
+					"_id": "delve_site_domain.danger:delve/icereach.0"
+				},
+				{
+					"roll": {
+						"min": 34,
+						"max": 36
+					},
+					"text": "Fragile ice above watery depths",
+					"_id": "delve_site_domain.danger:delve/icereach.1"
+				},
+				{
+					"roll": {
+						"min": 37,
+						"max": 39
+					},
+					"text": "Perilous climb or descent",
+					"_id": "delve_site_domain.danger:delve/icereach.2"
+				},
+				{
+					"roll": {
+						"min": 40,
+						"max": 42
+					},
+					"text": "Avalanche or icefall",
+					"_id": "delve_site_domain.danger:delve/icereach.3"
+				},
+				{
+					"roll": {
+						"min": 43,
+						"max": 45
+					},
+					"text": "Foul weather",
+					"_id": "delve_site_domain.danger:delve/icereach.4"
+				}
+			],
+			"_id": "delve_site_domain:delve/icereach"
+		},
+		"mine": {
+			"type": "delve_site_domain",
+			"name": "Mine",
+			"name_oracle": "oracle_rollable:delve/site_name/place/mine",
+			"_source": {
+				"license": "https://creativecommons.org/licenses/by/4.0",
+				"url": "https://ironswornrpg.com",
+				"date": "2020-02-13",
+				"title": "Ironsworn: Delve",
+				"authors": [
+					{
+						"name": "Shawn Tomkin"
+					}
+				],
+				"page": 90
+			},
+			"summary": "Tunnels dug greedily and deep.",
+			"description": "Within the earth, riches await the bold. Some mines are shallow pits worked by pick and shovel. Others are offshoots of existing caverns which pierce deep into hills and mountains. A few are the remains of vast underground complexes built by forgotten cultures.\n\nThe iron and other metals claimed from these sites feed our furnaces. From those fires, we craft tools, armor, weapons, and other precious goods. Our hunger for these resources is never satiated, and we often dig into places best left undisturbed.",
+			"features": [
+				{
+					"roll": {
+						"min": 21,
+						"max": 43
+					},
+					"text": "Cramped tunnels",
+					"_id": "delve_site_domain.feature:delve/mine.0"
+				},
+				{
+					"roll": {
+						"min": 44,
+						"max": 56
+					},
+					"text": "Mine works",
+					"_id": "delve_site_domain.feature:delve/mine.1"
+				},
+				{
+					"roll": {
+						"min": 57,
+						"max": 64
+					},
+					"text": "Excavated chamber",
+					"_id": "delve_site_domain.feature:delve/mine.2"
+				},
+				{
+					"roll": {
+						"min": 65,
+						"max": 68
+					},
+					"text": "Mineshaft",
+					"_id": "delve_site_domain.feature:delve/mine.3"
+				},
+				{
+					"roll": {
+						"min": 69,
+						"max": 72
+					},
+					"text": "Collapsed tunnel",
+					"_id": "delve_site_domain.feature:delve/mine.4"
+				},
+				{
+					"roll": {
+						"min": 73,
+						"max": 76
+					},
+					"text": "Cluttered storage",
+					"_id": "delve_site_domain.feature:delve/mine.5"
+				},
+				{
+					"roll": {
+						"min": 77,
+						"max": 80
+					},
+					"text": "Housing or common areas",
+					"_id": "delve_site_domain.feature:delve/mine.6"
+				},
+				{
+					"roll": {
+						"min": 81,
+						"max": 84
+					},
+					"text": "Flooded chamber",
+					"_id": "delve_site_domain.feature:delve/mine.7"
+				},
+				{
+					"roll": {
+						"min": 85,
+						"max": 88
+					},
+					"text": "Unearthed secret",
+					"_id": "delve_site_domain.feature:delve/mine.8"
+				},
+				{
+					"roll": {
+						"min": 89,
+						"max": 98
+					},
+					"text": "Something unusual or unexpected",
+					"suggestions": [
+						"oracle_rollable:delve/feature/aspect",
+						"oracle_rollable:delve/feature/focus"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.9"
+				},
+				{
+					"roll": {
+						"min": 99,
+						"max": 99
+					},
+					"text": "You transition into a new theme",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/theme"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.10"
+				},
+				{
+					"roll": {
+						"min": 100,
+						"max": 100
+					},
+					"text": "You transition into a new domain",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/domain"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.11"
+				}
+			],
+			"dangers": [
+				{
+					"roll": {
+						"min": 31,
+						"max": 33
+					},
+					"text": "Cave-in",
+					"_id": "delve_site_domain.danger:delve/mine.0"
+				},
+				{
+					"roll": {
+						"min": 34,
+						"max": 36
+					},
+					"text": "Flooding",
+					"_id": "delve_site_domain.danger:delve/mine.1"
+				},
+				{
+					"roll": {
+						"min": 37,
+						"max": 39
+					},
+					"text": "Unstable platforms or architecture",
+					"_id": "delve_site_domain.danger:delve/mine.2"
+				},
+				{
+					"roll": {
+						"min": 40,
+						"max": 42
+					},
+					"text": "Hazardous gas pocket",
+					"_id": "delve_site_domain.danger:delve/mine.3"
+				},
+				{
+					"roll": {
+						"min": 43,
+						"max": 45
+					},
+					"text": "Weakened terrain",
+					"_id": "delve_site_domain.danger:delve/mine.4"
+				}
+			],
+			"_id": "delve_site_domain:delve/mine"
+		},
+		"pass": {
+			"type": "delve_site_domain",
+			"name": "Pass",
+			"name_oracle": "oracle_rollable:delve/site_name/place/pass",
+			"_source": {
+				"license": "https://creativecommons.org/licenses/by/4.0",
+				"url": "https://ironswornrpg.com",
+				"date": "2020-02-13",
+				"title": "Ironsworn: Delve",
+				"authors": [
+					{
+						"name": "Shawn Tomkin"
+					}
+				],
+				"page": 90
+			},
+			"summary": "Treacherous paths over high mountains.",
+			"description": "Winding through highlands and mountain ranges, these sites offer a tempting route over otherwise impassable terrain. But treacherous landscapes, foul weather, and a host of mountain predators offer their own dangers. Raiders and others take advantage of these natural chokepoints to ambush the unwary.\n\nLonely cairns mark the resting places of those who walked these routes undefended or unprepared. Pray that your path here does not end under a pile of mountain stones.",
+			"features": [
+				{
+					"roll": {
+						"min": 21,
+						"max": 43
+					},
+					"text": "Winding mountain path",
+					"_id": "delve_site_domain.feature:delve/pass.0"
+				},
+				{
+					"roll": {
+						"min": 44,
+						"max": 56
+					},
+					"text": "Snowfield or glacial rocks",
+					"_id": "delve_site_domain.feature:delve/pass.1"
+				},
+				{
+					"roll": {
+						"min": 57,
+						"max": 64
+					},
+					"text": "River gorge",
+					"_id": "delve_site_domain.feature:delve/pass.2"
+				},
+				{
+					"roll": {
+						"min": 65,
+						"max": 68
+					},
+					"text": "Crashing waterfall",
+					"_id": "delve_site_domain.feature:delve/pass.3"
+				},
+				{
+					"roll": {
+						"min": 69,
+						"max": 72
+					},
+					"text": "Highland lake",
+					"_id": "delve_site_domain.feature:delve/pass.4"
+				},
+				{
+					"roll": {
+						"min": 73,
+						"max": 76
+					},
+					"text": "Forgotten cairn",
+					"_id": "delve_site_domain.feature:delve/pass.5"
+				},
+				{
+					"roll": {
+						"min": 77,
+						"max": 80
+					},
+					"text": "Bridge",
+					"_id": "delve_site_domain.feature:delve/pass.6"
+				},
+				{
+					"roll": {
+						"min": 81,
+						"max": 84
+					},
+					"text": "Overlook",
+					"_id": "delve_site_domain.feature:delve/pass.7"
+				},
+				{
+					"roll": {
+						"min": 85,
+						"max": 88
+					},
+					"text": "Camp or outpost",
+					"_id": "delve_site_domain.feature:delve/pass.8"
+				},
+				{
+					"roll": {
+						"min": 89,
+						"max": 98
+					},
+					"text": "Something unusual or unexpected",
+					"suggestions": [
+						"oracle_rollable:delve/feature/aspect",
+						"oracle_rollable:delve/feature/focus"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.9"
+				},
+				{
+					"roll": {
+						"min": 99,
+						"max": 99
+					},
+					"text": "You transition into a new theme",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/theme"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.10"
+				},
+				{
+					"roll": {
+						"min": 100,
+						"max": 100
+					},
+					"text": "You transition into a new domain",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/domain"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.11"
+				}
+			],
+			"dangers": [
+				{
+					"roll": {
+						"min": 31,
+						"max": 33
+					},
+					"text": "Denizen lairs here",
+					"_id": "delve_site_domain.danger:delve/pass.0"
+				},
+				{
+					"roll": {
+						"min": 34,
+						"max": 36
+					},
+					"text": "Denizen hunts",
+					"_id": "delve_site_domain.danger:delve/pass.1"
+				},
+				{
+					"roll": {
+						"min": 37,
+						"max": 39
+					},
+					"text": "Perilous climb or descent",
+					"_id": "delve_site_domain.danger:delve/pass.2"
+				},
+				{
+					"roll": {
+						"min": 40,
+						"max": 42
+					},
+					"text": "Avalanche or rockslide",
+					"_id": "delve_site_domain.danger:delve/pass.3"
+				},
+				{
+					"roll": {
+						"min": 43,
+						"max": 45
+					},
+					"text": "Foul weather",
+					"_id": "delve_site_domain.danger:delve/pass.4"
+				}
+			],
+			"_id": "delve_site_domain:delve/pass"
+		},
+		"ruin": {
+			"type": "delve_site_domain",
+			"name": "Ruin",
+			"name_oracle": "oracle_rollable:delve/site_name/place/ruin",
+			"_source": {
+				"license": "https://creativecommons.org/licenses/by/4.0",
+				"url": "https://ironswornrpg.com",
+				"date": "2020-02-13",
+				"title": "Ironsworn: Delve",
+				"authors": [
+					{
+						"name": "Shawn Tomkin"
+					}
+				],
+				"page": 91
+			},
+			"summary": "The crumbling legacy of a dead civilization.",
+			"description": "These decaying edifices, skeletal and shadowed, mark the remains of once-great communities and civilizations. Some of these sites have been newly adapted by [Ironlanders](npc_collection:classic/ironlanders) as shelter, temple, or citadel. Others are home only to dangerous creatures and dark forces.\n\nNewly discovered ruins tempt bold explorers with the promise of powerful legacies and forgotten secrets. But most see these places as a portent of our inescapable, grim fate in these lands. Someday, another people may delve into the ruins of what we leave behind.",
+			"features": [
+				{
+					"roll": {
+						"min": 21,
+						"max": 43
+					},
+					"text": "Crumbling corridors and chambers",
+					"_id": "delve_site_domain.feature:delve/ruin.0"
+				},
+				{
+					"roll": {
+						"min": 44,
+						"max": 56
+					},
+					"text": "Collapsed architecture",
+					"_id": "delve_site_domain.feature:delve/ruin.1"
+				},
+				{
+					"roll": {
+						"min": 57,
+						"max": 64
+					},
+					"text": "Rubble-choked hall",
+					"_id": "delve_site_domain.feature:delve/ruin.2"
+				},
+				{
+					"roll": {
+						"min": 65,
+						"max": 68
+					},
+					"text": "Courtyard",
+					"_id": "delve_site_domain.feature:delve/ruin.3"
+				},
+				{
+					"roll": {
+						"min": 69,
+						"max": 72
+					},
+					"text": "Archive or library",
+					"_id": "delve_site_domain.feature:delve/ruin.4"
+				},
+				{
+					"roll": {
+						"min": 73,
+						"max": 76
+					},
+					"text": "Broken statuary or fading murals",
+					"_id": "delve_site_domain.feature:delve/ruin.5"
+				},
+				{
+					"roll": {
+						"min": 77,
+						"max": 80
+					},
+					"text": "Preserved vault",
+					"_id": "delve_site_domain.feature:delve/ruin.6"
+				},
+				{
+					"roll": {
+						"min": 81,
+						"max": 84
+					},
+					"text": "Temple to forgotten gods",
+					"_id": "delve_site_domain.feature:delve/ruin.7"
+				},
+				{
+					"roll": {
+						"min": 85,
+						"max": 88
+					},
+					"text": "Mausoleum",
+					"_id": "delve_site_domain.feature:delve/ruin.8"
+				},
+				{
+					"roll": {
+						"min": 89,
+						"max": 98
+					},
+					"text": "Something unusual or unexpected",
+					"suggestions": [
+						"oracle_rollable:delve/feature/aspect",
+						"oracle_rollable:delve/feature/focus"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.9"
+				},
+				{
+					"roll": {
+						"min": 99,
+						"max": 99
+					},
+					"text": "You transition into a new theme",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/theme"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.10"
+				},
+				{
+					"roll": {
+						"min": 100,
+						"max": 100
+					},
+					"text": "You transition into a new domain",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/domain"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.11"
+				}
+			],
+			"dangers": [
+				{
+					"roll": {
+						"min": 31,
+						"max": 33
+					},
+					"text": "Ancient mechanism or trap",
+					"suggestions": [
+						"oracle_rollable:delve/trap/event",
+						"oracle_rollable:delve/trap/component"
+					],
+					"_id": "delve_site_domain.danger:delve/ruin.0"
+				},
+				{
+					"roll": {
+						"min": 34,
+						"max": 36
+					},
+					"text": "Collapsing wall or ceiling",
+					"_id": "delve_site_domain.danger:delve/ruin.1"
+				},
+				{
+					"roll": {
+						"min": 37,
+						"max": 39
+					},
+					"text": "Blocked or broken passage",
+					"_id": "delve_site_domain.danger:delve/ruin.2"
+				},
+				{
+					"roll": {
+						"min": 40,
+						"max": 42
+					},
+					"text": "Unstable floor above a new danger",
+					"_id": "delve_site_domain.danger:delve/ruin.3"
+				},
+				{
+					"roll": {
+						"min": 43,
+						"max": 45
+					},
+					"text": "Ancient secrets best left buried",
+					"_id": "delve_site_domain.danger:delve/ruin.4"
+				}
+			],
+			"_id": "delve_site_domain:delve/ruin"
+		},
+		"sea_cave": {
+			"type": "delve_site_domain",
+			"name": "Sea cave",
+			"name_oracle": "oracle_rollable:delve/site_name/place/sea_cave",
+			"_source": {
+				"license": "https://creativecommons.org/licenses/by/4.0",
+				"url": "https://ironswornrpg.com",
+				"date": "2020-02-13",
+				"title": "Ironsworn: Delve",
+				"authors": [
+					{
+						"name": "Shawn Tomkin"
+					}
+				],
+				"page": 91
+			},
+			"summary": "Stone passages carved by ocean waves.",
+			"description": "Carved by ocean waves and unyielding currents, the sea caves pockmarking the coasts plunge deep into the land’s dark heart. Deadly creatures or determined foes often lair within, but it is the water that is your ever-present enemy. The chill and damp seep into your bones. The tides and upland flooding can bring a torrent of water with little warning. You plunge desperately through submerged passages, praying that an opening will provide a pocket of air.\n\nThis is a realm of water and stone, cold and darkness. You are not welcome here.",
+			"features": [
+				{
+					"roll": {
+						"min": 21,
+						"max": 43
+					},
+					"text": "Watery tunnels",
+					"_id": "delve_site_domain.feature:delve/sea_cave.0"
+				},
+				{
+					"roll": {
+						"min": 44,
+						"max": 56
+					},
+					"text": "Eroded chamber",
+					"_id": "delve_site_domain.feature:delve/sea_cave.1"
+				},
+				{
+					"roll": {
+						"min": 57,
+						"max": 64
+					},
+					"text": "Flooded chamber",
+					"_id": "delve_site_domain.feature:delve/sea_cave.2"
+				},
+				{
+					"roll": {
+						"min": 65,
+						"max": 68
+					},
+					"text": "Vast chamber",
+					"_id": "delve_site_domain.feature:delve/sea_cave.3"
+				},
+				{
+					"roll": {
+						"min": 69,
+						"max": 72
+					},
+					"text": "Dry passages",
+					"_id": "delve_site_domain.feature:delve/sea_cave.4"
+				},
+				{
+					"roll": {
+						"min": 73,
+						"max": 76
+					},
+					"text": "Freshwater inlet",
+					"_id": "delve_site_domain.feature:delve/sea_cave.5"
+				},
+				{
+					"roll": {
+						"min": 77,
+						"max": 80
+					},
+					"text": "Rocky island",
+					"_id": "delve_site_domain.feature:delve/sea_cave.6"
+				},
+				{
+					"roll": {
+						"min": 81,
+						"max": 84
+					},
+					"text": "Waterborne debris",
+					"_id": "delve_site_domain.feature:delve/sea_cave.7"
+				},
+				{
+					"roll": {
+						"min": 85,
+						"max": 88
+					},
+					"text": "Shipwreck or boat",
+					"_id": "delve_site_domain.feature:delve/sea_cave.8"
+				},
+				{
+					"roll": {
+						"min": 89,
+						"max": 98
+					},
+					"text": "Something unusual or unexpected",
+					"suggestions": [
+						"oracle_rollable:delve/feature/aspect",
+						"oracle_rollable:delve/feature/focus"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.9"
+				},
+				{
+					"roll": {
+						"min": 99,
+						"max": 99
+					},
+					"text": "You transition into a new theme",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/theme"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.10"
+				},
+				{
+					"roll": {
+						"min": 100,
+						"max": 100
+					},
+					"text": "You transition into a new domain",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/domain"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.11"
+				}
+			],
+			"dangers": [
+				{
+					"roll": {
+						"min": 31,
+						"max": 33
+					},
+					"text": "Denizen strikes without warning",
+					"_id": "delve_site_domain.danger:delve/sea_cave.0"
+				},
+				{
+					"roll": {
+						"min": 34,
+						"max": 36
+					},
+					"text": "Denizen lurks below",
+					"_id": "delve_site_domain.danger:delve/sea_cave.1"
+				},
+				{
+					"roll": {
+						"min": 37,
+						"max": 39
+					},
+					"text": "Flooding",
+					"_id": "delve_site_domain.danger:delve/sea_cave.2"
+				},
+				{
+					"roll": {
+						"min": 40,
+						"max": 42
+					},
+					"text": "Rushing current",
+					"_id": "delve_site_domain.danger:delve/sea_cave.3"
+				},
+				{
+					"roll": {
+						"min": 43,
+						"max": 45
+					},
+					"text": "Claustrophobic squeeze",
+					"_id": "delve_site_domain.danger:delve/sea_cave.4"
+				}
+			],
+			"_id": "delve_site_domain:delve/sea_cave"
+		},
+		"shadowfen": {
+			"type": "delve_site_domain",
+			"name": "Shadowfen",
+			"name_oracle": "oracle_rollable:delve/site_name/place/shadowfen",
+			"_source": {
+				"license": "https://creativecommons.org/licenses/by/4.0",
+				"url": "https://ironswornrpg.com",
+				"date": "2020-02-13",
+				"title": "Ironsworn: Delve",
+				"authors": [
+					{
+						"name": "Shawn Tomkin"
+					}
+				],
+				"page": 92
+			},
+			"summary": "A primeval marsh, cloaked in mist.",
+			"description": "These foul sites are cloaked in mist, clogged with muddy peat, and drenched in fetid water. Thickets of gray, skeletal trees conceal stalking creatures. Strange shapes move in the fog and beneath dark, placid water. Narrow trails tease with the promise of passage, but instead lead to hidden quagmires.\n\nBe wary. When you enter a shadowfen, the specter of death is your constant companion.",
+			"features": [
+				{
+					"roll": {
+						"min": 21,
+						"max": 43
+					},
+					"text": "Narrow path through a fetid bog",
+					"_id": "delve_site_domain.feature:delve/shadowfen.0"
+				},
+				{
+					"roll": {
+						"min": 44,
+						"max": 56
+					},
+					"text": "Stagnant waterway",
+					"_id": "delve_site_domain.feature:delve/shadowfen.1"
+				},
+				{
+					"roll": {
+						"min": 57,
+						"max": 64
+					},
+					"text": "Flooded thicket",
+					"_id": "delve_site_domain.feature:delve/shadowfen.2"
+				},
+				{
+					"roll": {
+						"min": 65,
+						"max": 68
+					},
+					"text": "Island of dry land",
+					"_id": "delve_site_domain.feature:delve/shadowfen.3"
+				},
+				{
+					"roll": {
+						"min": 69,
+						"max": 72
+					},
+					"text": "Submerged discovery",
+					"_id": "delve_site_domain.feature:delve/shadowfen.4"
+				},
+				{
+					"roll": {
+						"min": 73,
+						"max": 76
+					},
+					"text": "Preserved corpses",
+					"_id": "delve_site_domain.feature:delve/shadowfen.5"
+				},
+				{
+					"roll": {
+						"min": 77,
+						"max": 80
+					},
+					"text": "Overgrown structure",
+					"_id": "delve_site_domain.feature:delve/shadowfen.6"
+				},
+				{
+					"roll": {
+						"min": 81,
+						"max": 84
+					},
+					"text": "Tall reeds",
+					"_id": "delve_site_domain.feature:delve/shadowfen.7"
+				},
+				{
+					"roll": {
+						"min": 85,
+						"max": 88
+					},
+					"text": "Camp or outpost",
+					"_id": "delve_site_domain.feature:delve/shadowfen.8"
+				},
+				{
+					"roll": {
+						"min": 89,
+						"max": 98
+					},
+					"text": "Something unusual or unexpected",
+					"suggestions": [
+						"oracle_rollable:delve/feature/aspect",
+						"oracle_rollable:delve/feature/focus"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.9"
+				},
+				{
+					"roll": {
+						"min": 99,
+						"max": 99
+					},
+					"text": "You transition into a new theme",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/theme"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.10"
+				},
+				{
+					"roll": {
+						"min": 100,
+						"max": 100
+					},
+					"text": "You transition into a new domain",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/domain"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.11"
+				}
+			],
+			"dangers": [
+				{
+					"roll": {
+						"min": 31,
+						"max": 33
+					},
+					"text": "Denizen hunts",
+					"_id": "delve_site_domain.danger:delve/shadowfen.0"
+				},
+				{
+					"roll": {
+						"min": 34,
+						"max": 36
+					},
+					"text": "Deep water blocks the path",
+					"_id": "delve_site_domain.danger:delve/shadowfen.1"
+				},
+				{
+					"roll": {
+						"min": 37,
+						"max": 39
+					},
+					"text": "Toxic environment",
+					"_id": "delve_site_domain.danger:delve/shadowfen.2"
+				},
+				{
+					"roll": {
+						"min": 40,
+						"max": 42
+					},
+					"text": "Concealing or disorienting mist",
+					"_id": "delve_site_domain.danger:delve/shadowfen.3"
+				},
+				{
+					"roll": {
+						"min": 43,
+						"max": 45
+					},
+					"text": "Hidden quagmire",
+					"_id": "delve_site_domain.danger:delve/shadowfen.4"
+				}
+			],
+			"_id": "delve_site_domain:delve/shadowfen"
+		},
+		"stronghold": {
+			"type": "delve_site_domain",
+			"name": "Stronghold",
+			"name_oracle": "oracle_rollable:delve/site_name/place/stronghold",
+			"_source": {
+				"license": "https://creativecommons.org/licenses/by/4.0",
+				"url": "https://ironswornrpg.com",
+				"date": "2020-02-13",
+				"title": "Ironsworn: Delve",
+				"authors": [
+					{
+						"name": "Shawn Tomkin"
+					}
+				],
+				"page": 92
+			},
+			"summary": "A fortress secured against trespassers.",
+			"description": "These sites weather storms and sieges alike. Their walls stand firm against the forces of this dark land. They are fortified against attack and rife with guards, traps, and other defenses. For those who dwell within, strongholds provide the comfort of wood and stone, axe and bow. For those who seek to breach the walls, they can be as unyielding and unforgiving as the most stalwart ironbound shield.",
+			"features": [
+				{
+					"roll": {
+						"min": 21,
+						"max": 43
+					},
+					"text": "Connecting passageways",
+					"_id": "delve_site_domain.feature:delve/stronghold.0"
+				},
+				{
+					"roll": {
+						"min": 44,
+						"max": 56
+					},
+					"text": "Barracks or common quarters",
+					"_id": "delve_site_domain.feature:delve/stronghold.1"
+				},
+				{
+					"roll": {
+						"min": 57,
+						"max": 64
+					},
+					"text": "Large hall",
+					"_id": "delve_site_domain.feature:delve/stronghold.2"
+				},
+				{
+					"roll": {
+						"min": 65,
+						"max": 68
+					},
+					"text": "Workshop or library",
+					"_id": "delve_site_domain.feature:delve/stronghold.3"
+				},
+				{
+					"roll": {
+						"min": 69,
+						"max": 72
+					},
+					"text": "Command center or leadership",
+					"_id": "delve_site_domain.feature:delve/stronghold.4"
+				},
+				{
+					"roll": {
+						"min": 73,
+						"max": 76
+					},
+					"text": "Ladder or stairwell",
+					"_id": "delve_site_domain.feature:delve/stronghold.5"
+				},
+				{
+					"roll": {
+						"min": 77,
+						"max": 80
+					},
+					"text": "Storage",
+					"_id": "delve_site_domain.feature:delve/stronghold.6"
+				},
+				{
+					"roll": {
+						"min": 81,
+						"max": 84
+					},
+					"text": "Kitchen or larder",
+					"_id": "delve_site_domain.feature:delve/stronghold.7"
+				},
+				{
+					"roll": {
+						"min": 85,
+						"max": 88
+					},
+					"text": "Courtyard",
+					"_id": "delve_site_domain.feature:delve/stronghold.8"
+				},
+				{
+					"roll": {
+						"min": 89,
+						"max": 98
+					},
+					"text": "Something unusual or unexpected",
+					"suggestions": [
+						"oracle_rollable:delve/feature/aspect",
+						"oracle_rollable:delve/feature/focus"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.9"
+				},
+				{
+					"roll": {
+						"min": 99,
+						"max": 99
+					},
+					"text": "You transition into a new theme",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/theme"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.10"
+				},
+				{
+					"roll": {
+						"min": 100,
+						"max": 100
+					},
+					"text": "You transition into a new domain",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/domain"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.11"
+				}
+			],
+			"dangers": [
+				{
+					"roll": {
+						"min": 31,
+						"max": 33
+					},
+					"text": "Blocked or guarded path",
+					"_id": "delve_site_domain.danger:delve/stronghold.0"
+				},
+				{
+					"roll": {
+						"min": 34,
+						"max": 36
+					},
+					"text": "Caught in the open",
+					"_id": "delve_site_domain.danger:delve/stronghold.1"
+				},
+				{
+					"roll": {
+						"min": 37,
+						"max": 39
+					},
+					"text": "Chokepoint",
+					"_id": "delve_site_domain.danger:delve/stronghold.2"
+				},
+				{
+					"roll": {
+						"min": 40,
+						"max": 42
+					},
+					"text": "Trap",
+					"suggestions": [
+						"oracle_rollable:delve/trap/event",
+						"oracle_rollable:delve/trap/component"
+					],
+					"_id": "delve_site_domain.danger:delve/stronghold.3"
+				},
+				{
+					"roll": {
+						"min": 43,
+						"max": 45
+					},
+					"text": "Alarm trigger",
+					"_id": "delve_site_domain.danger:delve/stronghold.4"
+				}
+			],
+			"_id": "delve_site_domain:delve/stronghold"
+		},
+		"tanglewood": {
+			"type": "delve_site_domain",
+			"name": "Tanglewood",
+			"name_oracle": "oracle_rollable:delve/site_name/place/tanglewood",
+			"_source": {
+				"license": "https://creativecommons.org/licenses/by/4.0",
+				"url": "https://ironswornrpg.com",
+				"date": "2020-02-13",
+				"title": "Ironsworn: Delve",
+				"authors": [
+					{
+						"name": "Shawn Tomkin"
+					}
+				],
+				"page": 93
+			},
+			"summary": "A perilous forest of eternal shadow.",
+			"description": "A tanglewood is a thick wilderness, shrouded in mist. Overhanging, twisted boughs obscure the sky. The ground is snarled with exposed roots. The wind carries foreboding whispers, and branches rattle like old bones.\n\nMany refuse to harvest wood from these places, believing the spirits who reside within will bring a curse upon them and their families. Others fear the creatures and beings which lurk within. For these reasons, even near settled areas, the tangles still stand.",
+			"features": [
+				{
+					"roll": {
+						"min": 21,
+						"max": 43
+					},
+					"text": "Dense thicket",
+					"_id": "delve_site_domain.feature:delve/tanglewood.0"
+				},
+				{
+					"roll": {
+						"min": 44,
+						"max": 56
+					},
+					"text": "Overgrown path",
+					"_id": "delve_site_domain.feature:delve/tanglewood.1"
+				},
+				{
+					"roll": {
+						"min": 57,
+						"max": 64
+					},
+					"text": "Waterway",
+					"_id": "delve_site_domain.feature:delve/tanglewood.2"
+				},
+				{
+					"roll": {
+						"min": 65,
+						"max": 68
+					},
+					"text": "Clearing",
+					"_id": "delve_site_domain.feature:delve/tanglewood.3"
+				},
+				{
+					"roll": {
+						"min": 69,
+						"max": 72
+					},
+					"text": "Elder tree",
+					"_id": "delve_site_domain.feature:delve/tanglewood.4"
+				},
+				{
+					"roll": {
+						"min": 73,
+						"max": 76
+					},
+					"text": "Brambles",
+					"_id": "delve_site_domain.feature:delve/tanglewood.5"
+				},
+				{
+					"roll": {
+						"min": 77,
+						"max": 80
+					},
+					"text": "Overgrown structure",
+					"_id": "delve_site_domain.feature:delve/tanglewood.6"
+				},
+				{
+					"roll": {
+						"min": 81,
+						"max": 84
+					},
+					"text": "Rocky outcrop",
+					"_id": "delve_site_domain.feature:delve/tanglewood.7"
+				},
+				{
+					"roll": {
+						"min": 85,
+						"max": 88
+					},
+					"text": "Camp or outpost",
+					"_id": "delve_site_domain.feature:delve/tanglewood.8"
+				},
+				{
+					"roll": {
+						"min": 89,
+						"max": 98
+					},
+					"text": "Something unusual or unexpected",
+					"suggestions": [
+						"oracle_rollable:delve/feature/aspect",
+						"oracle_rollable:delve/feature/focus"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.9"
+				},
+				{
+					"roll": {
+						"min": 99,
+						"max": 99
+					},
+					"text": "You transition into a new theme",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/theme"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.10"
+				},
+				{
+					"roll": {
+						"min": 100,
+						"max": 100
+					},
+					"text": "You transition into a new domain",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/domain"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.11"
+				}
+			],
+			"dangers": [
+				{
+					"roll": {
+						"min": 31,
+						"max": 33
+					},
+					"text": "Denizen hunts",
+					"_id": "delve_site_domain.danger:delve/tanglewood.0"
+				},
+				{
+					"roll": {
+						"min": 34,
+						"max": 36
+					},
+					"text": "Denizen lairs here",
+					"_id": "delve_site_domain.danger:delve/tanglewood.1"
+				},
+				{
+					"roll": {
+						"min": 37,
+						"max": 39
+					},
+					"text": "Trap or snare",
+					"suggestions": [
+						"oracle_rollable:delve/trap/event",
+						"oracle_rollable:delve/trap/component"
+					],
+					"_id": "delve_site_domain.danger:delve/tanglewood.2"
+				},
+				{
+					"roll": {
+						"min": 40,
+						"max": 42
+					},
+					"text": "Path leads you astray",
+					"_id": "delve_site_domain.danger:delve/tanglewood.3"
+				},
+				{
+					"roll": {
+						"min": 43,
+						"max": 45
+					},
+					"text": "Entangling plant life",
+					"_id": "delve_site_domain.danger:delve/tanglewood.4"
+				}
+			],
+			"_id": "delve_site_domain:delve/tanglewood"
+		},
+		"underkeep": {
+			"type": "delve_site_domain",
+			"name": "Underkeep",
+			"name_oracle": "oracle_rollable:delve/site_name/place/underkeep",
+			"_source": {
+				"license": "https://creativecommons.org/licenses/by/4.0",
+				"url": "https://ironswornrpg.com",
+				"date": "2020-02-13",
+				"title": "Ironsworn: Delve",
+				"authors": [
+					{
+						"name": "Shawn Tomkin"
+					}
+				],
+				"page": 93
+			},
+			"summary": "An age-old subterranean dungeon.",
+			"description": "These subterranean structures are a mystery. They are inexplicably ancient, older perhaps than even the [Firstborn](npc_collection:classic/firstborn). Their passages and halls hide dangers within unfathomable darkness.\n\nMost [Ironlanders](npc_collection:classic/ironlanders) stay well clear of these places. But some stumble upon the entrance to an underkeep and delve inside, drawn by its secrets or the alluring promise of forgotten power. Others, desperate for protection from the perils of the surface world, foolishly try to use the depths of an underkeep as a sanctum for their kin or clan. They soon discover that the greatest threats lie beneath.",
+			"features": [
+				{
+					"roll": {
+						"min": 21,
+						"max": 43
+					},
+					"text": "Carved passages",
+					"_id": "delve_site_domain.feature:delve/underkeep.0"
+				},
+				{
+					"roll": {
+						"min": 44,
+						"max": 56
+					},
+					"text": "Hall or chamber",
+					"_id": "delve_site_domain.feature:delve/underkeep.1"
+				},
+				{
+					"roll": {
+						"min": 57,
+						"max": 64
+					},
+					"text": "Stairs into the depths",
+					"_id": "delve_site_domain.feature:delve/underkeep.2"
+				},
+				{
+					"roll": {
+						"min": 65,
+						"max": 68
+					},
+					"text": "Grand doorway or entrance",
+					"_id": "delve_site_domain.feature:delve/underkeep.3"
+				},
+				{
+					"roll": {
+						"min": 69,
+						"max": 72
+					},
+					"text": "Tomb or catacombs",
+					"_id": "delve_site_domain.feature:delve/underkeep.4"
+				},
+				{
+					"roll": {
+						"min": 73,
+						"max": 76
+					},
+					"text": "Rough-hewn cave",
+					"_id": "delve_site_domain.feature:delve/underkeep.5"
+				},
+				{
+					"roll": {
+						"min": 77,
+						"max": 80
+					},
+					"text": "Foundry or workshop",
+					"_id": "delve_site_domain.feature:delve/underkeep.6"
+				},
+				{
+					"roll": {
+						"min": 81,
+						"max": 84
+					},
+					"text": "Shrine or temple",
+					"_id": "delve_site_domain.feature:delve/underkeep.7"
+				},
+				{
+					"roll": {
+						"min": 85,
+						"max": 88
+					},
+					"text": "Imposing architecture or artistry",
+					"_id": "delve_site_domain.feature:delve/underkeep.8"
+				},
+				{
+					"roll": {
+						"min": 89,
+						"max": 98
+					},
+					"text": "Something unusual or unexpected",
+					"suggestions": [
+						"oracle_rollable:delve/feature/aspect",
+						"oracle_rollable:delve/feature/focus"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.9"
+				},
+				{
+					"roll": {
+						"min": 99,
+						"max": 99
+					},
+					"text": "You transition into a new theme",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/theme"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.10"
+				},
+				{
+					"roll": {
+						"min": 100,
+						"max": 100
+					},
+					"text": "You transition into a new domain",
+					"suggestions": [
+						"oracle_rollable:delve/site_nature/domain"
+					],
+					"_id": "delve_site_domain.feature:delve/barrow.11"
+				}
+			],
+			"dangers": [
+				{
+					"roll": {
+						"min": 31,
+						"max": 33
+					},
+					"text": "Ancient mechanism or trap",
+					"suggestions": [
+						"oracle_rollable:delve/trap/event",
+						"oracle_rollable:delve/trap/component"
+					],
+					"_id": "delve_site_domain.danger:delve/underkeep.0"
+				},
+				{
+					"roll": {
+						"min": 34,
+						"max": 36
+					},
+					"text": "Crumbling architecture",
+					"_id": "delve_site_domain.danger:delve/underkeep.1"
+				},
+				{
+					"roll": {
+						"min": 37,
+						"max": 39
+					},
+					"text": "Blocked or broken passage",
+					"_id": "delve_site_domain.danger:delve/underkeep.2"
+				},
+				{
+					"roll": {
+						"min": 40,
+						"max": 42
+					},
+					"text": "Artifact with a hidden danger",
+					"_id": "delve_site_domain.danger:delve/underkeep.3"
+				},
+				{
+					"roll": {
+						"min": 43,
+						"max": 45
+					},
+					"text": "Denizen lurks in darkness",
+					"_id": "delve_site_domain.danger:delve/underkeep.4"
+				}
+			],
+			"_id": "delve_site_domain:delve/underkeep"
+		}
+	},
+	"site_themes": {
+		"ancient": {
+			"type": "delve_site_theme",
+			"name": "Ancient",
+			"_source": {
+				"license": "https://creativecommons.org/licenses/by/4.0",
+				"url": "https://ironswornrpg.com",
+				"date": "2020-02-13",
+				"title": "Ironsworn: Delve",
+				"authors": [
+					{
+						"name": "Shawn Tomkin"
+					}
+				],
+				"page": 84
+			},
+			"summary": "This place holds the secrets of a bygone age.",
+			"description": "An ancient site contains the mysteries, legacies, and dangers of another age.\n\nWalking the paths of this place is like stepping through time. Ruins and relics provide glimpses of long-forgotten people and events. The knowledge and power hidden here are a tempting lure, but those treasures may come with a dire cost. Some secrets are best left buried.",
+			"features": [
+				{
+					"roll": {
+						"min": 1,
+						"max": 4
+					},
+					"text": "Evidence of lost knowledge",
+					"_id": "delve_site_theme.feature:delve/ancient.0"
+				},
+				{
+					"roll": {
+						"min": 5,
+						"max": 8
+					},
+					"text": "Inscrutable relics",
+					"_id": "delve_site_theme.feature:delve/ancient.1"
+				},
+				{
+					"roll": {
+						"min": 9,
+						"max": 12
+					},
+					"text": "Ancient artistry or craft",
+					"_id": "delve_site_theme.feature:delve/ancient.2"
+				},
+				{
+					"roll": {
+						"min": 13,
+						"max": 16
+					},
+					"text": "Preserved corpses or fossils",
+					"_id": "delve_site_theme.feature:delve/ancient.3"
+				},
+				{
+					"roll": {
+						"min": 17,
+						"max": 20
+					},
+					"text": "Visions of this place in another time",
+					"_id": "delve_site_theme.feature:delve/ancient.4"
+				}
+			],
+			"dangers": [
+				{
+					"roll": {
+						"min": 1,
+						"max": 5
+					},
+					"text": "Ancient trap",
+					"suggestions": [
+						"oracle_rollable:classic/trap/event",
+						"oracle_rollable:classic/trap/component"
+					],
+					"_id": "delve_site_theme.danger:delve/ancient.0"
+				},
+				{
+					"roll": {
+						"min": 6,
+						"max": 10
+					},
+					"text": "Hazardous architecture or terrain",
+					"_id": "delve_site_theme.danger:delve/ancient.1"
+				},
+				{
+					"roll": {
+						"min": 11,
+						"max": 12
+					},
+					"text": "Blocked or broken path",
+					"_id": "delve_site_theme.danger:delve/ancient.2"
+				},
+				{
+					"roll": {
+						"min": 13,
+						"max": 14
+					},
+					"text": "Denizen protects an ancient secret",
+					"_id": "delve_site_theme.danger:delve/ancient.3"
+				},
+				{
+					"roll": {
+						"min": 15,
+						"max": 16
+					},
+					"text": "Denizen reveres an ancient power",
+					"_id": "delve_site_theme.danger:delve/ancient.4"
+				},
+				{
+					"roll": {
+						"min": 17,
+						"max": 18
+					},
+					"text": "Living relics of a lost age",
+					"_id": "delve_site_theme.danger:delve/ancient.5"
+				},
+				{
+					"roll": {
+						"min": 19,
+						"max": 20
+					},
+					"text": "Ancient evil resurgent",
+					"_id": "delve_site_theme.danger:delve/ancient.6"
+				},
+				{
+					"roll": {
+						"min": 21,
+						"max": 22
+					},
+					"text": "Dire warnings of a long-buried danger",
+					"_id": "delve_site_theme.danger:delve/ancient.7"
+				},
+				{
+					"roll": {
+						"min": 23,
+						"max": 24
+					},
+					"text": "Ancient disease or contamination",
+					"_id": "delve_site_theme.danger:delve/ancient.8"
+				},
+				{
+					"roll": {
+						"min": 25,
+						"max": 26
+					},
+					"text": "Artifact of terrible meaning or power",
+					"_id": "delve_site_theme.danger:delve/ancient.9"
+				},
+				{
+					"roll": {
+						"min": 27,
+						"max": 28
+					},
+					"text": "Disturbing evidence of ancient wrongs",
+					"_id": "delve_site_theme.danger:delve/ancient.10"
+				},
+				{
+					"roll": {
+						"min": 29,
+						"max": 30
+					},
+					"text": "Others seek power or knowledge",
+					"_id": "delve_site_theme.danger:delve/ancient.11"
+				}
+			],
+			"_id": "delve_site_theme:delve/ancient"
+		},
+		"corrupted": {
+			"type": "delve_site_theme",
+			"name": "Corrupted",
+			"_source": {
+				"license": "https://creativecommons.org/licenses/by/4.0",
+				"url": "https://ironswornrpg.com",
+				"date": "2020-02-13",
+				"title": "Ironsworn: Delve",
+				"authors": [
+					{
+						"name": "Shawn Tomkin"
+					}
+				],
+				"page": 84
+			},
+			"summary": "This place is tainted by dark magic.",
+			"description": "A corrupted site is befouled by dark forces. It might be the ancient magic of the Ironlands, or the residue of ancient evils, concentrated here like poisoned water soaked into a sponge. Perhaps a powerful mystic dwells in this place, one who walks a sinister path in search of power.\n\nWhen you enter a corrupted site, you can feel the wrongness of it down to your bones. The air is tainted with foul smells, or tinged with strange energies. You hear unintelligible whispers. Shadows lurk at the edge of your vision. The creatures of this place are twisted by corruption, and the people are in thrall to a dark influence.",
+			"features": [
+				{
+					"roll": {
+						"min": 1,
+						"max": 4
+					},
+					"text": "Mystic focus or conduit",
+					"_id": "delve_site_theme.feature:delve/corrupted.0"
+				},
+				{
+					"roll": {
+						"min": 5,
+						"max": 8
+					},
+					"text": "Strange environmental disturbances",
+					"_id": "delve_site_theme.feature:delve/corrupted.1"
+				},
+				{
+					"roll": {
+						"min": 9,
+						"max": 12
+					},
+					"text": "Mystic runes or markings",
+					"_id": "delve_site_theme.feature:delve/corrupted.2"
+				},
+				{
+					"roll": {
+						"min": 13,
+						"max": 16
+					},
+					"text": "Blight or decay",
+					"_id": "delve_site_theme.feature:delve/corrupted.3"
+				},
+				{
+					"roll": {
+						"min": 17,
+						"max": 20
+					},
+					"text": "Evidence of a foul ritual",
+					"_id": "delve_site_theme.feature:delve/corrupted.4"
+				}
+			],
+			"dangers": [
+				{
+					"roll": {
+						"min": 1,
+						"max": 5
+					},
+					"text": "Denizen spawned from dark magic",
+					"_id": "delve_site_theme.danger:delve/corrupted.0"
+				},
+				{
+					"roll": {
+						"min": 6,
+						"max": 10
+					},
+					"text": "Denizen controls dark magic",
+					"_id": "delve_site_theme.danger:delve/corrupted.1"
+				},
+				{
+					"roll": {
+						"min": 11,
+						"max": 12
+					},
+					"text": "Denizen corrupted by dark magic",
+					"_id": "delve_site_theme.danger:delve/corrupted.2"
+				},
+				{
+					"roll": {
+						"min": 13,
+						"max": 14
+					},
+					"text": "Corruption marks you",
+					"_id": "delve_site_theme.danger:delve/corrupted.3"
+				},
+				{
+					"roll": {
+						"min": 15,
+						"max": 16
+					},
+					"text": "Innocents held in thrall",
+					"_id": "delve_site_theme.danger:delve/corrupted.4"
+				},
+				{
+					"roll": {
+						"min": 17,
+						"max": 18
+					},
+					"text": "Revelations of a terrible truth",
+					"_id": "delve_site_theme.danger:delve/corrupted.5"
+				},
+				{
+					"roll": {
+						"min": 19,
+						"max": 20
+					},
+					"text": "Mystic trap or trigger",
+					"suggestions": [
+						"oracle_rollable:classic/trap/event",
+						"oracle_rollable:classic/trap/component"
+					],
+					"_id": "delve_site_theme.danger:delve/corrupted.6"
+				},
+				{
+					"roll": {
+						"min": 21,
+						"max": 22
+					},
+					"text": "Mystic barrier or ward",
+					"_id": "delve_site_theme.danger:delve/corrupted.7"
+				},
+				{
+					"roll": {
+						"min": 23,
+						"max": 24
+					},
+					"text": "Illusions lead you astray",
+					"_id": "delve_site_theme.danger:delve/corrupted.8"
+				},
+				{
+					"roll": {
+						"min": 25,
+						"max": 26
+					},
+					"text": "Dark ritual in progress",
+					"_id": "delve_site_theme.danger:delve/corrupted.9"
+				},
+				{
+					"roll": {
+						"min": 27,
+						"max": 28
+					},
+					"text": "Lingering effects of a dark ritual",
+					"_id": "delve_site_theme.danger:delve/corrupted.10"
+				},
+				{
+					"roll": {
+						"min": 29,
+						"max": 30
+					},
+					"text": "Dread harbingers of a greater magic",
+					"_id": "delve_site_theme.danger:delve/corrupted.11"
+				}
+			],
+			"_id": "delve_site_theme:delve/corrupted"
+		},
+		"fortified": {
+			"type": "delve_site_theme",
+			"name": "Fortified",
+			"_source": {
+				"license": "https://creativecommons.org/licenses/by/4.0",
+				"url": "https://ironswornrpg.com",
+				"date": "2020-02-13",
+				"title": "Ironsworn: Delve",
+				"authors": [
+					{
+						"name": "Shawn Tomkin"
+					}
+				],
+				"page": 85
+			},
+			"summary": "Foes defend this place against intruders.",
+			"description": "A fortified site is held and defended by an enemy force. It might be an enemy camp, an outpost, a fortress, or a closely-guarded territory.\n\nInfiltrating this place requires caution and cunning. You may be forced to avoid inhabitants, sentries, and patrols. Revealing yourself or causing a disturbance will catch the attention of the denizens, perhaps forcing you to fight your way to your objective.",
+			"features": [
+				{
+					"roll": {
+						"min": 1,
+						"max": 4
+					},
+					"text": "Camp or quarters",
+					"_id": "delve_site_theme.feature:delve/fortified.0"
+				},
+				{
+					"roll": {
+						"min": 5,
+						"max": 8
+					},
+					"text": "Guarded location",
+					"_id": "delve_site_theme.feature:delve/fortified.1"
+				},
+				{
+					"roll": {
+						"min": 9,
+						"max": 12
+					},
+					"text": "Storage or repository",
+					"_id": "delve_site_theme.feature:delve/fortified.2"
+				},
+				{
+					"roll": {
+						"min": 13,
+						"max": 16
+					},
+					"text": "Work or training area",
+					"_id": "delve_site_theme.feature:delve/fortified.3"
+				},
+				{
+					"roll": {
+						"min": 17,
+						"max": 20
+					},
+					"text": "Command center or leadership",
+					"_id": "delve_site_theme.feature:delve/fortified.4"
+				}
+			],
+			"dangers": [
+				{
+					"roll": {
+						"min": 1,
+						"max": 5
+					},
+					"text": "Denizen patrols the area",
+					"_id": "delve_site_theme.danger:delve/fortified.0"
+				},
+				{
+					"roll": {
+						"min": 6,
+						"max": 10
+					},
+					"text": "Denizen on guard",
+					"_id": "delve_site_theme.danger:delve/fortified.1"
+				},
+				{
+					"roll": {
+						"min": 11,
+						"max": 12
+					},
+					"text": "Denizen ready to sound the alarm",
+					"_id": "delve_site_theme.danger:delve/fortified.2"
+				},
+				{
+					"roll": {
+						"min": 13,
+						"max": 14
+					},
+					"text": "Denizen sets an ambush",
+					"_id": "delve_site_theme.danger:delve/fortified.3"
+				},
+				{
+					"roll": {
+						"min": 15,
+						"max": 16
+					},
+					"text": "Denizen lures you into a trap",
+					"suggestions": [
+						"oracle_rollable:classic/trap/event",
+						"oracle_rollable:classic/trap/component"
+					],
+					"_id": "delve_site_theme.danger:delve/fortified.4"
+				},
+				{
+					"roll": {
+						"min": 17,
+						"max": 18
+					},
+					"text": "Denizens converge on this area",
+					"_id": "delve_site_theme.danger:delve/fortified.5"
+				},
+				{
+					"roll": {
+						"min": 19,
+						"max": 20
+					},
+					"text": "Pets or underlings",
+					"_id": "delve_site_theme.danger:delve/fortified.6"
+				},
+				{
+					"roll": {
+						"min": 21,
+						"max": 22
+					},
+					"text": "Unexpected alliance revealed",
+					"_id": "delve_site_theme.danger:delve/fortified.7"
+				},
+				{
+					"roll": {
+						"min": 23,
+						"max": 24
+					},
+					"text": "Nefarious plans revealed",
+					"_id": "delve_site_theme.danger:delve/fortified.8"
+				},
+				{
+					"roll": {
+						"min": 25,
+						"max": 26
+					},
+					"text": "Unexpected leader revealed",
+					"_id": "delve_site_theme.danger:delve/fortified.9"
+				},
+				{
+					"roll": {
+						"min": 27,
+						"max": 28
+					},
+					"text": "Trap",
+					"suggestions": [
+						"oracle_rollable:classic/trap/event",
+						"oracle_rollable:classic/trap/component"
+					],
+					"_id": "delve_site_theme.danger:delve/fortified.10"
+				},
+				{
+					"roll": {
+						"min": 29,
+						"max": 30
+					},
+					"text": "Alarm trigger",
+					"_id": "delve_site_theme.danger:delve/fortified.11"
+				}
+			],
+			"_id": "delve_site_theme:delve/fortified"
+		},
+		"hallowed": {
+			"type": "delve_site_theme",
+			"name": "Hallowed",
+			"_source": {
+				"license": "https://creativecommons.org/licenses/by/4.0",
+				"url": "https://ironswornrpg.com",
+				"date": "2020-02-13",
+				"title": "Ironsworn: Delve",
+				"authors": [
+					{
+						"name": "Shawn Tomkin"
+					}
+				],
+				"page": 85
+			},
+			"summary": "The faithful worship here.",
+			"description": "A hallowed site is a place of great reverence, suffused with the power of old gods or the fervency of belief. It might be a location of religious significance, the resting place of legendary relics or figures, or the haven of a religious leader.\n\nHallowed places may be warded by ancient rituals, or imbued with divine energy. But it is the faithful and the zealous who will sacrifice everything to defend this place.",
+			"features": [
+				{
+					"roll": {
+						"min": 1,
+						"max": 4
+					},
+					"text": "Temple or altar",
+					"_id": "delve_site_theme.feature:delve/hallowed.0"
+				},
+				{
+					"roll": {
+						"min": 5,
+						"max": 8
+					},
+					"text": "Offerings or atonements",
+					"_id": "delve_site_theme.feature:delve/hallowed.1"
+				},
+				{
+					"roll": {
+						"min": 9,
+						"max": 12
+					},
+					"text": "Religious relic or idol",
+					"_id": "delve_site_theme.feature:delve/hallowed.2"
+				},
+				{
+					"roll": {
+						"min": 13,
+						"max": 16
+					},
+					"text": "Consecrated ground",
+					"_id": "delve_site_theme.feature:delve/hallowed.3"
+				},
+				{
+					"roll": {
+						"min": 17,
+						"max": 20
+					},
+					"text": "Dwellings or gathering place",
+					"_id": "delve_site_theme.feature:delve/hallowed.4"
+				}
+			],
+			"dangers": [
+				{
+					"roll": {
+						"min": 1,
+						"max": 5
+					},
+					"text": "Denizen defends their sanctum",
+					"_id": "delve_site_theme.danger:delve/hallowed.0"
+				},
+				{
+					"roll": {
+						"min": 6,
+						"max": 10
+					},
+					"text": "Denizen enacts the will of their god",
+					"_id": "delve_site_theme.danger:delve/hallowed.1"
+				},
+				{
+					"roll": {
+						"min": 11,
+						"max": 12
+					},
+					"text": "Denizen seeks martyrdom",
+					"_id": "delve_site_theme.danger:delve/hallowed.2"
+				},
+				{
+					"roll": {
+						"min": 13,
+						"max": 14
+					},
+					"text": "Secret of the faith is revealed",
+					"_id": "delve_site_theme.danger:delve/hallowed.3"
+				},
+				{
+					"roll": {
+						"min": 15,
+						"max": 16
+					},
+					"text": "Greater purpose is revealed",
+					"_id": "delve_site_theme.danger:delve/hallowed.4"
+				},
+				{
+					"roll": {
+						"min": 17,
+						"max": 18
+					},
+					"text": "Unexpected disciples are revealed",
+					"_id": "delve_site_theme.danger:delve/hallowed.5"
+				},
+				{
+					"roll": {
+						"min": 19,
+						"max": 20
+					},
+					"text": "Divine manifestations",
+					"_id": "delve_site_theme.danger:delve/hallowed.6"
+				},
+				{
+					"roll": {
+						"min": 21,
+						"max": 22
+					},
+					"text": "Aspect of the faith beguiles you",
+					"_id": "delve_site_theme.danger:delve/hallowed.7"
+				},
+				{
+					"roll": {
+						"min": 23,
+						"max": 24
+					},
+					"text": "Unexpected leader is revealed",
+					"_id": "delve_site_theme.danger:delve/hallowed.8"
+				},
+				{
+					"roll": {
+						"min": 25,
+						"max": 26
+					},
+					"text": "Embodiment of a god or myth",
+					"_id": "delve_site_theme.danger:delve/hallowed.9"
+				},
+				{
+					"roll": {
+						"min": 27,
+						"max": 28
+					},
+					"text": "Protective ward or barrier",
+					"_id": "delve_site_theme.danger:delve/hallowed.10"
+				},
+				{
+					"roll": {
+						"min": 29,
+						"max": 30
+					},
+					"text": "Prophecies reveal a dark fate",
+					"_id": "delve_site_theme.danger:delve/hallowed.11"
+				}
+			],
+			"_id": "delve_site_theme:delve/hallowed"
+		},
+		"haunted": {
+			"type": "delve_site_theme",
+			"name": "Haunted",
+			"_source": {
+				"license": "https://creativecommons.org/licenses/by/4.0",
+				"url": "https://ironswornrpg.com",
+				"date": "2020-02-13",
+				"title": "Ironsworn: Delve",
+				"authors": [
+					{
+						"name": "Shawn Tomkin"
+					}
+				],
+				"page": 86
+			},
+			"summary": "Restless spirits are bound to this place.",
+			"description": "Within a haunted site, dread, sadness, and fear are palpable. Disturbing sounds and visions lure the unwary and terrorize the vulnerable. Gird your will when you enter this place, for you walk at the boundary of life and death.\n\nSome lost souls, unaware they have passed, wander the site in search of answers. Others, stricken by eternal grief, seek to set right what caused their death or see their vows fulfilled. But all too often, the denizens of this place are undone by their deaths. They are rage and terror made incarnate, feeling nothing but hate for the living and a hunger for warmth which will never be sated.",
+			"features": [
+				{
+					"roll": {
+						"min": 1,
+						"max": 4
+					},
+					"text": "Tomb or burial site",
+					"_id": "delve_site_theme.feature:delve/haunted.0"
+				},
+				{
+					"roll": {
+						"min": 5,
+						"max": 8
+					},
+					"text": "Blood was spilled here",
+					"_id": "delve_site_theme.feature:delve/haunted.1"
+				},
+				{
+					"roll": {
+						"min": 9,
+						"max": 12
+					},
+					"text": "Unnatural mists or darkness",
+					"_id": "delve_site_theme.feature:delve/haunted.2"
+				},
+				{
+					"roll": {
+						"min": 13,
+						"max": 16
+					},
+					"text": "Messages from beyond the grave",
+					"_id": "delve_site_theme.feature:delve/haunted.3"
+				},
+				{
+					"roll": {
+						"min": 17,
+						"max": 20
+					},
+					"text": "Apparitions of a person or event",
+					"_id": "delve_site_theme.feature:delve/haunted.4"
+				}
+			],
+			"dangers": [
+				{
+					"roll": {
+						"min": 1,
+						"max": 5
+					},
+					"text": "Denizen haunts this area",
+					"_id": "delve_site_theme.danger:delve/haunted.0"
+				},
+				{
+					"roll": {
+						"min": 6,
+						"max": 10
+					},
+					"text": "Unsettling sounds or foreboding signs",
+					"_id": "delve_site_theme.danger:delve/haunted.1"
+				},
+				{
+					"roll": {
+						"min": 11,
+						"max": 12
+					},
+					"text": "Denizen attacks without warning",
+					"_id": "delve_site_theme.danger:delve/haunted.2"
+				},
+				{
+					"roll": {
+						"min": 13,
+						"max": 14
+					},
+					"text": "Denizen makes a costly demand",
+					"_id": "delve_site_theme.danger:delve/haunted.3"
+				},
+				{
+					"roll": {
+						"min": 15,
+						"max": 16
+					},
+					"text": "Denizen seizes your body or mind",
+					"_id": "delve_site_theme.danger:delve/haunted.4"
+				},
+				{
+					"roll": {
+						"min": 17,
+						"max": 18
+					},
+					"text": "Denizen taunts or lures you",
+					"_id": "delve_site_theme.danger:delve/haunted.5"
+				},
+				{
+					"roll": {
+						"min": 19,
+						"max": 20
+					},
+					"text": "A disturbing truth is revealed",
+					"_id": "delve_site_theme.danger:delve/haunted.6"
+				},
+				{
+					"roll": {
+						"min": 21,
+						"max": 22
+					},
+					"text": "Frightening visions",
+					"_id": "delve_site_theme.danger:delve/haunted.7"
+				},
+				{
+					"roll": {
+						"min": 23,
+						"max": 24
+					},
+					"text": "The environment is used against you",
+					"_id": "delve_site_theme.danger:delve/haunted.8"
+				},
+				{
+					"roll": {
+						"min": 25,
+						"max": 26
+					},
+					"text": "Trickery leads you astray",
+					"_id": "delve_site_theme.danger:delve/haunted.9"
+				},
+				{
+					"roll": {
+						"min": 27,
+						"max": 28
+					},
+					"text": "True nature of this place is revealed",
+					"_id": "delve_site_theme.danger:delve/haunted.10"
+				},
+				{
+					"roll": {
+						"min": 29,
+						"max": 30
+					},
+					"text": "Sudden, shocking manifestation",
+					"_id": "delve_site_theme.danger:delve/haunted.11"
+				}
+			],
+			"_id": "delve_site_theme:delve/haunted"
+		},
+		"infested": {
+			"type": "delve_site_theme",
+			"name": "Infested",
+			"_source": {
+				"license": "https://creativecommons.org/licenses/by/4.0",
+				"url": "https://ironswornrpg.com",
+				"date": "2020-02-13",
+				"title": "Ironsworn: Delve",
+				"authors": [
+					{
+						"name": "Shawn Tomkin"
+					}
+				],
+				"page": 86
+			},
+			"summary": "Foul creatures dwell here.",
+			"description": "Foul creatures swarm these sites, overwhelming trespassers with sheer numbers and unchecked ferocity. The denizens do little beyond multiplying, feeding, and expanding, ravenous for fresh kills to feed the swarm.\n\nNavigation through this place, across paths undermined by the hordes, may be perilous. The sights and smells may test your fortitude. But it is the creatures which pose the greatest threat, as they ambush and cut off your escape with unforeseen cunning.",
+			"features": [
+				{
+					"roll": {
+						"min": 1,
+						"max": 4
+					},
+					"text": "Inhabited nest",
+					"_id": "delve_site_theme.feature:delve/infested.0"
+				},
+				{
+					"roll": {
+						"min": 5,
+						"max": 8
+					},
+					"text": "Abandoned nest",
+					"_id": "delve_site_theme.feature:delve/infested.1"
+				},
+				{
+					"roll": {
+						"min": 9,
+						"max": 12
+					},
+					"text": "Ravaged terrain or architecture",
+					"_id": "delve_site_theme.feature:delve/infested.2"
+				},
+				{
+					"roll": {
+						"min": 13,
+						"max": 16
+					},
+					"text": "Remains or carrion",
+					"_id": "delve_site_theme.feature:delve/infested.3"
+				},
+				{
+					"roll": {
+						"min": 17,
+						"max": 20
+					},
+					"text": "Hoarded food",
+					"_id": "delve_site_theme.feature:delve/infested.4"
+				}
+			],
+			"dangers": [
+				{
+					"roll": {
+						"min": 1,
+						"max": 5
+					},
+					"text": "Denizens swarm and attack",
+					"_id": "delve_site_theme.danger:delve/infested.0"
+				},
+				{
+					"roll": {
+						"min": 6,
+						"max": 10
+					},
+					"text": "Toxic or sickening environment",
+					"_id": "delve_site_theme.danger:delve/infested.1"
+				},
+				{
+					"roll": {
+						"min": 11,
+						"max": 12
+					},
+					"text": "Denizen stalks you",
+					"_id": "delve_site_theme.danger:delve/infested.2"
+				},
+				{
+					"roll": {
+						"min": 13,
+						"max": 14
+					},
+					"text": "Denizen takes or destroys something",
+					"_id": "delve_site_theme.danger:delve/infested.3"
+				},
+				{
+					"roll": {
+						"min": 15,
+						"max": 16
+					},
+					"text": "Denizen reveals surprising cleverness",
+					"_id": "delve_site_theme.danger:delve/infested.4"
+				},
+				{
+					"roll": {
+						"min": 17,
+						"max": 18
+					},
+					"text": "Denizen guided by a greater threat",
+					"_id": "delve_site_theme.danger:delve/infested.5"
+				},
+				{
+					"roll": {
+						"min": 19,
+						"max": 20
+					},
+					"text": "Denizen blocks the path",
+					"_id": "delve_site_theme.danger:delve/infested.6"
+				},
+				{
+					"roll": {
+						"min": 21,
+						"max": 22
+					},
+					"text": "Denizen funnels you down a new path",
+					"_id": "delve_site_theme.danger:delve/infested.7"
+				},
+				{
+					"roll": {
+						"min": 23,
+						"max": 24
+					},
+					"text": "Denizen undermines the path",
+					"_id": "delve_site_theme.danger:delve/infested.8"
+				},
+				{
+					"roll": {
+						"min": 25,
+						"max": 26
+					},
+					"text": "Denizen lays in wait",
+					"_id": "delve_site_theme.danger:delve/infested.9"
+				},
+				{
+					"roll": {
+						"min": 27,
+						"max": 28
+					},
+					"text": "Trap or snare",
+					"suggestions": [
+						"oracle_rollable:classic/trap/event",
+						"oracle_rollable:classic/trap/component"
+					],
+					"_id": "delve_site_theme.danger:delve/infested.10"
+				},
+				{
+					"roll": {
+						"min": 29,
+						"max": 30
+					},
+					"text": "Victim’s horrible fate is revealed",
+					"_id": "delve_site_theme.danger:delve/infested.11"
+				}
+			],
+			"_id": "delve_site_theme:delve/infested"
+		},
+		"ravaged": {
+			"type": "delve_site_theme",
+			"name": "Ravaged",
+			"_source": {
+				"license": "https://creativecommons.org/licenses/by/4.0",
+				"url": "https://ironswornrpg.com",
+				"date": "2020-02-13",
+				"title": "Ironsworn: Delve",
+				"authors": [
+					{
+						"name": "Shawn Tomkin"
+					}
+				],
+				"page": 87
+			},
+			"summary": "Time, disaster, or strife have taken their toll.",
+			"description": "Time, weather, war, or calamity have laid waste to a ravaged site. The terrain is precarious. Hazards lurk around every corner. You may face glimpses of a former greatness, but this place is a ruined shadow of what it once was.\n\nTraversing a ravaged site requires care, cunning, and quick wits to react to sudden perils. The environment here is your greatest enemy. It is a force, as willful as any intelligent adversary, which will see your quest undone.",
+			"features": [
+				{
+					"roll": {
+						"min": 1,
+						"max": 4
+					},
+					"text": "Path of destruction",
+					"_id": "delve_site_theme.feature:delve/ravaged.0"
+				},
+				{
+					"roll": {
+						"min": 5,
+						"max": 8
+					},
+					"text": "Abandoned or ruined dwelling",
+					"_id": "delve_site_theme.feature:delve/ravaged.1"
+				},
+				{
+					"roll": {
+						"min": 9,
+						"max": 12
+					},
+					"text": "Untouched or preserved area",
+					"_id": "delve_site_theme.feature:delve/ravaged.2"
+				},
+				{
+					"roll": {
+						"min": 13,
+						"max": 16
+					},
+					"text": "Traces of what was lost",
+					"_id": "delve_site_theme.feature:delve/ravaged.3"
+				},
+				{
+					"roll": {
+						"min": 17,
+						"max": 20
+					},
+					"text": "Ill-fated victims",
+					"_id": "delve_site_theme.feature:delve/ravaged.4"
+				}
+			],
+			"dangers": [
+				{
+					"roll": {
+						"min": 1,
+						"max": 5
+					},
+					"text": "Precarious architecture or terrain",
+					"_id": "delve_site_theme.danger:delve/ravaged.0"
+				},
+				{
+					"roll": {
+						"min": 6,
+						"max": 10
+					},
+					"text": "Imminent collapse or destruction",
+					"_id": "delve_site_theme.danger:delve/ravaged.1"
+				},
+				{
+					"roll": {
+						"min": 11,
+						"max": 12
+					},
+					"text": "Path undermined",
+					"_id": "delve_site_theme.danger:delve/ravaged.2"
+				},
+				{
+					"roll": {
+						"min": 13,
+						"max": 14
+					},
+					"text": "Blocked or broken path",
+					"_id": "delve_site_theme.danger:delve/ravaged.3"
+				},
+				{
+					"roll": {
+						"min": 15,
+						"max": 16
+					},
+					"text": "Vestiges of a destructive force",
+					"_id": "delve_site_theme.danger:delve/ravaged.4"
+				},
+				{
+					"roll": {
+						"min": 17,
+						"max": 18
+					},
+					"text": "Unexpected environmental threat",
+					"_id": "delve_site_theme.danger:delve/ravaged.5"
+				},
+				{
+					"roll": {
+						"min": 19,
+						"max": 20
+					},
+					"text": "Echoes of a troubling past",
+					"_id": "delve_site_theme.danger:delve/ravaged.6"
+				},
+				{
+					"roll": {
+						"min": 21,
+						"max": 22
+					},
+					"text": "Signs of a horrible fate",
+					"_id": "delve_site_theme.danger:delve/ravaged.7"
+				},
+				{
+					"roll": {
+						"min": 23,
+						"max": 24
+					},
+					"text": "Denizen seeks retribution",
+					"_id": "delve_site_theme.danger:delve/ravaged.8"
+				},
+				{
+					"roll": {
+						"min": 25,
+						"max": 26
+					},
+					"text": "Denizen leverages the environment",
+					"_id": "delve_site_theme.danger:delve/ravaged.9"
+				},
+				{
+					"roll": {
+						"min": 27,
+						"max": 28
+					},
+					"text": "Denizen restores what was lost",
+					"_id": "delve_site_theme.danger:delve/ravaged.10"
+				},
+				{
+					"roll": {
+						"min": 29,
+						"max": 30
+					},
+					"text": "Ravages return anew",
+					"_id": "delve_site_theme.danger:delve/ravaged.11"
+				}
+			],
+			"_id": "delve_site_theme:delve/ravaged"
+		},
+		"wild": {
+			"type": "delve_site_theme",
+			"name": "Wild",
+			"_source": {
+				"license": "https://creativecommons.org/licenses/by/4.0",
+				"url": "https://ironswornrpg.com",
+				"date": "2020-02-13",
+				"title": "Ironsworn: Delve",
+				"authors": [
+					{
+						"name": "Shawn Tomkin"
+					}
+				],
+				"page": 87
+			},
+			"summary": "Nature prevails in this place.",
+			"description": "Despite our attempts to extend our control into untracked reaches, the primal forces of nature still hold sway across the Ironlands. In those wild places, we must test our shields against tooth and claw, our wits against insidious creatures, and our resolve against dangerous terrain and harsh environments.\n\nBe wary when you enter the wild places of this world. Beyond the comforting walls of your village, you are not the hunter. You are the prey.",
+			"features": [
+				{
+					"roll": {
+						"min": 1,
+						"max": 4
+					},
+					"text": "Denizen’s lair",
+					"_id": "delve_site_theme.feature:delve/wild.0"
+				},
+				{
+					"roll": {
+						"min": 5,
+						"max": 8
+					},
+					"text": "Territorial markings",
+					"_id": "delve_site_theme.feature:delve/wild.1"
+				},
+				{
+					"roll": {
+						"min": 9,
+						"max": 12
+					},
+					"text": "Impressive flora or fauna",
+					"_id": "delve_site_theme.feature:delve/wild.2"
+				},
+				{
+					"roll": {
+						"min": 13,
+						"max": 16
+					},
+					"text": "Hunting ground or watering hole",
+					"_id": "delve_site_theme.feature:delve/wild.3"
+				},
+				{
+					"roll": {
+						"min": 17,
+						"max": 20
+					},
+					"text": "Remains or carrion",
+					"_id": "delve_site_theme.feature:delve/wild.4"
+				}
+			],
+			"dangers": [
+				{
+					"roll": {
+						"min": 1,
+						"max": 5
+					},
+					"text": "Denizen hunts",
+					"_id": "delve_site_theme.danger:delve/wild.0"
+				},
+				{
+					"roll": {
+						"min": 6,
+						"max": 10
+					},
+					"text": "Denizen strikes without warning",
+					"_id": "delve_site_theme.danger:delve/wild.1"
+				},
+				{
+					"roll": {
+						"min": 11,
+						"max": 12
+					},
+					"text": "Denizen leverages the environment",
+					"_id": "delve_site_theme.danger:delve/wild.2"
+				},
+				{
+					"roll": {
+						"min": 13,
+						"max": 14
+					},
+					"text": "Denizen wields unexpected abilities",
+					"_id": "delve_site_theme.danger:delve/wild.3"
+				},
+				{
+					"roll": {
+						"min": 15,
+						"max": 16
+					},
+					"text": "Denizen guided by a greater threat",
+					"_id": "delve_site_theme.danger:delve/wild.4"
+				},
+				{
+					"roll": {
+						"min": 17,
+						"max": 18
+					},
+					"text": "Denizen protects something",
+					"_id": "delve_site_theme.danger:delve/wild.5"
+				},
+				{
+					"roll": {
+						"min": 19,
+						"max": 20
+					},
+					"text": "Hazardous terrain",
+					"_id": "delve_site_theme.danger:delve/wild.6"
+				},
+				{
+					"roll": {
+						"min": 21,
+						"max": 22
+					},
+					"text": "Weather or environmental threat",
+					"_id": "delve_site_theme.danger:delve/wild.7"
+				},
+				{
+					"roll": {
+						"min": 23,
+						"max": 24
+					},
+					"text": "Benign aspect becomes a threat",
+					"_id": "delve_site_theme.danger:delve/wild.8"
+				},
+				{
+					"roll": {
+						"min": 25,
+						"max": 26
+					},
+					"text": "Overzealous hunter",
+					"_id": "delve_site_theme.danger:delve/wild.9"
+				},
+				{
+					"roll": {
+						"min": 27,
+						"max": 28
+					},
+					"text": "Disturbing evidence of a victim’s fate",
+					"_id": "delve_site_theme.danger:delve/wild.10"
+				},
+				{
+					"roll": {
+						"min": 29,
+						"max": 30
+					},
+					"text": "Ill-fated victim in danger",
+					"_id": "delve_site_theme.danger:delve/wild.11"
+				}
+			],
+			"_id": "delve_site_theme:delve/wild"
 		}
 	}
 }

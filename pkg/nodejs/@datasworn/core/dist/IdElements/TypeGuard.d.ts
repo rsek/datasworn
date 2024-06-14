@@ -16,8 +16,8 @@ declare namespace TypeGuard {
     function CollectionType(value: unknown): value is TypeId.Collection;
     function NonCollectableType(value: unknown): value is TypeId.NonCollectable;
     function CollectableType(value: unknown): value is TypeId.Collectable;
-    function EmbedOnlyType(value: unknown): value is TypeId.EmbedOnlyTypes;
-    function EmbeddablePrimaryType(value: unknown): value is TypeId.EmbeddablePrimaryTypes;
+    function EmbedOnlyType(value: unknown): value is TypeId.EmbedOnlyType;
+    function EmbeddablePrimaryType(value: unknown): value is TypeId.EmbeddablePrimaryType;
     function AnyPrimaryType(value: unknown): value is TypeId.NonCollectable | TypeId.Collectable | TypeId.Collection;
 }
 export default TypeGuard;

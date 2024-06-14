@@ -56,7 +56,8 @@ export const TableRowMixin = Utils.Assign([
 	TableRowBase,
 	Type.Object({
 		roll: Type.Ref(DiceRange),
-		tags: Type.Optional(Type.Ref<typeof Tags>('Tags'))
+		tags: Type.Optional(Type.Ref<typeof Tags>('Tags')),
+		_id: Utils.Computed(Type.Ref('AnyOracleRollableRowId'))
 	})
 ])
 
@@ -82,23 +83,23 @@ export function StaticRowPartial(min: number, max: number) {
 		{ additionalProperties: true }
 	)
 }
-// export const OracleTableRowBasic = Generic.IdentifiedNode(
-// 	Type.Ref(Id.OracleTableRowId),
+// export const OracleRollableRowBasic = Generic.IdentifiedNode(
+// 	Type.Ref(Id.OracleRollableRowId),
 // 	CloneType(TableRowNullableMixin),
 // 	{
-// 		$id: 'OracleTableRowBasic',
+// 		$id: 'OracleRollableRowBasic',
 // 		description: 'Represents a row in an oracle table.'
 // 	}
 // )
-export const OracleTableRowText = CloneType(TableRowNullableMixin, {
-	$id: 'OracleTableRowText',
+export const OracleRollableRowText = CloneType(TableRowNullableMixin, {
+	$id: 'OracleRollableRowText',
 	description: 'Represents a row in an oracle table, with a single text cell.'
 })
 
-export type OracleTableRowText = Static<typeof OracleTableRowText>
+export type OracleRollableRowText = Static<typeof OracleRollableRowText>
 
-// export const OracleTableRowDetails = Generic.IdentifiedNode(
-// 	Type.Ref(Id.OracleTableRowId),
+// export const OracleRollableRowDetails = Generic.IdentifiedNode(
+// 	Type.Ref(Id.OracleRollableRowId),
 // 	Utils.Assign([
 // 		TableRowNullableMixin,
 // 		Type.Object({
@@ -110,12 +111,12 @@ export type OracleTableRowText = Static<typeof OracleTableRowText>
 // 		})
 // 	]),
 // 	{
-// 		$id: 'OracleTableRowDetails',
+// 		$id: 'OracleRollableRowDetails',
 // 		description:
 // 			'Represents a row in an oracle table that provides additional details.'
 // 	}
 // )
-export const OracleTableRowText2 = Utils.Assign(
+export const OracleRollableRowText2 = Utils.Assign(
 	[
 		TableRowNullableMixin,
 		Type.Object({
@@ -127,14 +128,14 @@ export const OracleTableRowText2 = Utils.Assign(
 		})
 	],
 	{
-		$id: 'OracleTableRowText2',
+		$id: 'OracleRollableRowText2',
 		description:
 			'Represents a row in an oracle table that provides a secondary text field.'
 	}
 )
-export type OracleTableRowText2 = Static<typeof OracleTableRowText2>
+export type OracleRollableRowText2 = Static<typeof OracleRollableRowText2>
 
-export const OracleTableRowText3 = Utils.Assign(
+export const OracleRollableRowText3 = Utils.Assign(
 	[
 		TableRowNullableMixin,
 		Type.Object({
@@ -151,11 +152,11 @@ export const OracleTableRowText3 = Utils.Assign(
 		})
 	],
 	{
-		$id: 'OracleTableRowText3',
+		$id: 'OracleRollableRowText3',
 		description: 'Represents a row in an oracle table with 3 text cells.'
 	}
 )
-export type OracleTableRowText3 = Static<typeof OracleTableRowText3>
+export type OracleRollableRowText3 = Static<typeof OracleRollableRowText3>
 
 type StringDefaultsFor<T extends TObject> = {
 	[K in
@@ -186,30 +187,30 @@ export function ColumnLabels<
 	)
 }
 
-export const TextColumnLabels = ColumnLabels<typeof OracleTableRowText>({
+export const TextColumnLabels = ColumnLabels<typeof OracleRollableRowText>({
 	roll: 'Roll',
 	text: 'Result'
 })
-export const Text2ColumnLabels = ColumnLabels<typeof OracleTableRowText2>({
+export const Text2ColumnLabels = ColumnLabels<typeof OracleRollableRowText2>({
 	roll: 'Roll',
 	text: 'Result',
 	text2: 'Details'
 })
 
-export const Text3ColumnLabels = ColumnLabels<typeof OracleTableRowText3>({
+export const Text3ColumnLabels = ColumnLabels<typeof OracleRollableRowText3>({
 	roll: undefined,
 	text: undefined,
 	text2: undefined,
 	text3: undefined
 })
 
-export const OracleTableRow = Type.Union(
+export const OracleRollableRow = Type.Union(
 	[
-		Type.Ref(OracleTableRowText),
-		Type.Ref(OracleTableRowText2),
-		Type.Ref(OracleTableRowText3)
+		Type.Ref(OracleRollableRowText),
+		Type.Ref(OracleRollableRowText2),
+		Type.Ref(OracleRollableRowText3)
 	],
-	{ $id: 'OracleTableRow', [JsonTypeDef]: { skip: true } }
+	{ $id: 'OracleRollableRow', [JsonTypeDef]: { skip: true } }
 )
 
-export type OracleTableRow = Static<typeof OracleTableRow>
+export type OracleRollableRow = Static<typeof OracleRollableRow>

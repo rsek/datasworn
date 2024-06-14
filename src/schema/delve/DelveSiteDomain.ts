@@ -3,30 +3,37 @@ import { JsonTypeDef } from '../Symbols.js'
 import { toJtdElements } from '../../scripts/json-typedef/utils.js'
 import { Id, Localize, Metadata } from '../common/index.js'
 import {
-	OracleTableRowText,
+	OracleRollableRowText,
 	StaticRowPartial,
 	TableRowMixin
 } from '../oracles/TableRow.js'
 import * as Generic from '../Generic.js'
 import { setSourceDataSchema } from '../Utils.js'
+import { EmbeddedType } from './common.js'
 
-// export const DelveSiteDomainFeatureRow = CloneType(TableRowMixin, {
-// 	$id: 'DelveSiteDomainFeatureRow',
-// 	description:
-// 		'Represents a single Feature entry from a delve site Domain card.'
-// })
-// export type DelveSiteDomainFeatureRow = Static<typeof DelveSiteDomainFeatureRow>
-// export const DelveSiteDomainDangerRow = CloneType(TableRowMixin, {
-// 	$id: 'DelveSiteDomainDangerRow',
-// 	description: 'Represents a single Danger entry from a delve site Domain card.'
-// })
-// export type DelveSiteDomainDangerRow = Static<typeof DelveSiteDomainDangerRow>
+export const DelveSiteDomainFeature = EmbeddedType(
+	OracleRollableRowText,
+	'delve_site_domain',
+	'feature',
+	{
+		description:
+			'Represents a single Feature entry from a delve site Domain card.'
+	}
+)
+export const DelveSiteDomainDanger = EmbeddedType(
+	OracleRollableRowText,
+	'delve_site_domain',
+	'danger',
+	{
+		description:
+			'Represents a single Danger entry from a delve site Domain card.'
+	}
+)
 
-// const DelveSiteDomainFeatures = Type.Array(Type.Ref(DelveSiteDomainFeatureRow))
-const DelveSiteDomainFeatures = Type.Array(Type.Ref(OracleTableRowText))
+const DelveSiteDomainFeatures = Type.Array(Type.Ref(DelveSiteDomainFeature))
 
 // const DelveSiteDomainDangers = Type.Array(Type.Ref(DelveSiteDomainDangerRow))
-const DelveSiteDomainDangers = Type.Array(Type.Ref(OracleTableRowText))
+const DelveSiteDomainDangers = Type.Array(Type.Ref(DelveSiteDomainDanger))
 
 export const DelveSiteDomain = setSourceDataSchema(
 	Generic.SourcedNode(

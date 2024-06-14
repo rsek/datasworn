@@ -1,13 +1,13 @@
 import type { DictKey, ExpansionId, RulesetId } from './Datasworn.js';
 import { type CONST, type TypeId } from './IdElements/index.js';
 import type * as PathKeys from './IdElements/PathKeys.js';
-import { type Join, type Split } from './Utils/String.js';
+import { type Join } from './Utils/String.js';
 export type RulesPackageId = RulesetId | ExpansionId;
 export type TypeIdParts = string[];
 export type IdBase<TypeIds extends TypeIdParts, PathSegments extends string[] & {
     length: TypeIds['length'];
 }> = `${Join<TypeIds, CONST.PathTypeSep>}${CONST.PrefixSep}${Join<PathSegments, CONST.PathTypeSep>}`;
-export type EmbeddedId<TypeIds extends Split<TypeId.EmbeddedTypePaths | TypeId.EmbedOfEmbedTypePaths, CONST.PathTypeSep> = Split<TypeId.EmbeddedTypePaths | TypeId.EmbedOfEmbedTypePaths, CONST.PathTypeSep>, PathSegments extends string[] & {
+export type EmbeddedId<TypeIds extends [TypeId.AnyPrimary, ...string[]] = [TypeId.AnyPrimary, ...string[]], PathSegments extends string[] & {
     length: TypeIds['length'];
 } = string[] & {
     length: TypeIds['length'];

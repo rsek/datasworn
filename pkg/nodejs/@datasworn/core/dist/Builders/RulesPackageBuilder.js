@@ -16,6 +16,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 var _RulesPackageBuilder_instances, _a, _RulesPackageBuilder_result, _RulesPackageBuilder_isSorted, _RulesPackageBuilder_isMergeComplete, _RulesPackageBuilder_isValidated, _RulesPackageBuilder_countTypes, _RulesPackageBuilder_build, _RulesPackageBuilder_sortKeys, _RulesPackageBuilder_addFile, _RulesPackageBuilder_isObject, _RulesPackageBuilder_merge, _RulesPackagePart_data, _RulesPackagePart_isValidated;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RulesPackageBuilder = void 0;
+const fs_extra_1 = __importDefault(require("fs-extra"));
 const CONST_js_1 = __importDefault(require("../IdElements/CONST.js"));
 const Sort_js_1 = require("../Utils/Sort.js");
 const Text_js_1 = require("../Validators/Text.js");
@@ -81,6 +82,7 @@ class RulesPackageBuilder {
             return this;
         }
         catch (e) {
+            fs_extra_1.default.writeJSONSync('error_build.json', this.toJSON(), { spaces: '\t' });
             throw new Error(`Couldn't build "${this.id}". ${String(e)}`);
         }
     }
@@ -130,8 +132,8 @@ _a = RulesPackageBuilder, _RulesPackageBuilder_result = new WeakMap(), _RulesPac
     return types;
 }, _RulesPackageBuilder_build = function _RulesPackageBuilder_build(force = false) {
     this.mergeFiles(force);
-    __classPrivateFieldGet(this, _RulesPackageBuilder_instances, "m", _RulesPackageBuilder_sortKeys).call(this, force);
     __classPrivateFieldSet(this, _RulesPackageBuilder_isValidated, false, "f");
+    __classPrivateFieldGet(this, _RulesPackageBuilder_instances, "m", _RulesPackageBuilder_sortKeys).call(this, force);
     return __classPrivateFieldGet(this, _RulesPackageBuilder_result, "f");
 }, _RulesPackageBuilder_sortKeys = function _RulesPackageBuilder_sortKeys(force = false) {
     if (__classPrivateFieldGet(this, _RulesPackageBuilder_isSorted, "f") && !force)
@@ -207,12 +209,9 @@ class RulesPackagePart {
         this.init();
     }
     init() {
-        try {
-            this.validate();
-        }
-        catch (e) {
-            throw new Error(`${this.name} doesn't match DataswornSource\n${String(e)}`);
-        }
+        const isValid = this.validate();
+        if (!isValid)
+            throw new Error(`${this.name} doesn't match DataswornSource`);
         void index_js_2.IdParser.assignIdsInRulesPackage(this.data, this.index);
     }
 }

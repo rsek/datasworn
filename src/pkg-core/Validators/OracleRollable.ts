@@ -1,5 +1,5 @@
 import type { Datasworn } from '../index.js'
-import * as OracleTableRow from './OracleTableRow.js'
+import * as OracleRollableRow from './OracleRollableRow.js'
 
 const diceExpressionPattern =
 	/^(?<numberOfDice>[1-9][0-9]*)d(?<sides>[1-9][0-9]*)(?<modifier>[+-]([1-9][0-9]*))?$/
@@ -32,7 +32,7 @@ function validateTableRollRanges(
 
 		// basic validation of a single row's contents
 		try {
-			OracleTableRow.validate(row)
+			OracleRollableRow.validate(row)
 		} catch (e) {
 			throw new Error(`@ index ${i}: ${String(e)}`)
 		}

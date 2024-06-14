@@ -3,30 +3,37 @@ import { JsonTypeDef } from '../Symbols.js'
 import { toJtdElements } from '../../scripts/json-typedef/utils.js'
 import { Id, Localize, Metadata } from '../common/index.js'
 import {
-	OracleTableRowText,
+	OracleRollableRowText,
 	StaticRowPartial,
 	TableRowMixin
 } from '../oracles/TableRow.js'
 import * as Generic from '../Generic.js'
 import { setSourceDataSchema } from '../Utils.js'
+import { EmbeddedType } from './common.js'
 
-// export const DelveSiteThemeFeatureRow = CloneType(TableRowMixin, {
-// 	$id: 'DelveSiteThemeFeatureRow',
-// 	description: 'Represents a single Feature entry from a delve site Theme card.'
-// })
-// export type DelveSiteThemeFeatureRow = Static<typeof DelveSiteThemeFeatureRow>
+export const DelveSiteThemeFeature = EmbeddedType(
+	OracleRollableRowText,
+	'delve_site_theme',
+	'feature',
 
-// export const DelveSiteThemeDangerRow = CloneType(TableRowMixin, {
-// 	$id: 'DelveSiteThemeDangerRow',
-// 	description: 'Represents a single Danger entry from a delve site Theme card.'
-// })
-// export type DelveSiteThemeDangerRow = Static<typeof DelveSiteThemeDangerRow>
+	{
+		description:
+			'Represents a single Feature entry from a delve site Theme card.'
+	}
+)
+export const DelveSiteThemeDanger = EmbeddedType(
+	OracleRollableRowText,
+	'delve_site_theme',
+	'danger',
 
-// const DelveSiteThemeFeatures = Type.Array(Type.Ref(DelveSiteThemeFeatureRow))
-// const DelveSiteThemeDangers = Type.Array(Type.Ref(DelveSiteThemeDangerRow))
+	{
+		description:
+			'Represents a single Danger entry from a delve site Theme card.'
+	}
+)
 
-const DelveSiteThemeFeatures = Type.Array(Type.Ref(OracleTableRowText))
-const DelveSiteThemeDangers = Type.Array(Type.Ref(OracleTableRowText))
+const DelveSiteThemeFeatures = Type.Array(Type.Ref(DelveSiteThemeFeature))
+const DelveSiteThemeDangers = Type.Array(Type.Ref(DelveSiteThemeFeature))
 
 export const DelveSiteTheme = setSourceDataSchema(
 	Generic.SourcedNode(

@@ -15,13 +15,7 @@ export type IdBase<
 type f = IdBase<['move', 'oracle_rollable'], ['foo', 'bar']>
 
 export type EmbeddedId<
-	TypeIds extends Split<
-		TypeId.EmbeddedTypePath | TypeId.EmbedOfEmbedTypePaths,
-		CONST.PathTypeSep
-	> = Split<
-		TypeId.EmbeddedTypePath | TypeId.EmbedOfEmbedTypePaths,
-		CONST.PathTypeSep
-	>,
+	TypeIds extends [TypeId.AnyPrimary, ...string[]]= [TypeId.AnyPrimary, ...string[]],
 	PathSegments extends string[] & { length: TypeIds['length'] } = string[] & {
 		length: TypeIds['length']
 	}
