@@ -170,11 +170,11 @@ atlas:
           - Wary [giants](npc:classic/firstborn/giant) keeping their distance
           - '[Mammoths](npc:classic/beasts/mammoth) grazing in alpine meadows'
         description: |-
-          These highlands are defined by rugged hills and low mountains, thin conifer woods, and wide, grassy plateaus, leading up to the heights of the [Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountain). Through most seasons, the constant ill-winds break against the sides of the hills, screeching and moaning. In the dead of winter, some say these winds carry the names of those fated to die during the long cold season.
+          These highlands are defined by rugged hills and low mountains, thin conifer woods, and wide, grassy plateaus, leading up to the heights of the [Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountains). Through most seasons, the constant ill-winds break against the sides of the hills, screeching and moaning. In the dead of winter, some say these winds carry the names of those fated to die during the long cold season.
 
           Nomadic [Ironlanders](npc_collection:classic/ironlanders) live among the hills, herding livestock. In the spring and summer they move among high pastures. In the winter, they find some relief from the brutal weather in sheltered valleys.
 
-          Others live in mining settlements, drawing iron ore from riverbeds and shallow digs. Their furnaces, sending up plumes of black smoke, convert the ore into wrought iron, which is sent south for trade with the [Havens](atlas_entry:classic/ironlands/haven).
+          Others live in mining settlements, drawing iron ore from riverbeds and shallow digs. Their furnaces, sending up plumes of black smoke, convert the ore into wrought iron, which is sent south for trade with the [Havens](atlas_entry:classic/ironlands/havens).
         quest_starter: |-
           You have come across or learned of a rich source of unclaimed iron and silver among these hills. What hazards must be overcome before a mine can be established? What force opposes you or attempts to establish its own claim?
       veiled_mountains:
@@ -193,7 +193,7 @@ atlas:
           - Abandoned settlements
           - Circling [wyverns](npc:classic/beasts/wyvern)
         description: |-
-          Commonly referred to as the Veils, these great mountains mark the northern bounds of the settled lands. They are almost perpetually shrouded in cloud, snow, and mist. On the rare day they are visible to those [Ironlanders](npc_collection:classic/ironlanders) far south in the [Havens](atlas_entry:classic/ironlands/haven), the sight of the towering peaks is enough to inspire a mix of fear and awe.
+          Commonly referred to as the Veils, these great mountains mark the northern bounds of the settled lands. They are almost perpetually shrouded in cloud, snow, and mist. On the rare day they are visible to those [Ironlanders](npc_collection:classic/ironlanders) far south in the [Havens](atlas_entry:classic/ironlands/havens), the sight of the towering peaks is enough to inspire a mix of fear and awe.
 
           For a few, that feeling is a call rather than a warning. The Ironlanders who dwell here are mostly members of small mining communities. They seek fortunes in iron or silver, but often find only death in the endless, brutal cold. Even those who manage to eke out some sort of life among the Veils are sure to head south before the onset of winter. Before the long dark takes hold.
         quest_starter: |-
@@ -212,7 +212,7 @@ atlas:
           - Piercing cold
           - Unnatural [horrors](npc_collection:classic/horrors) breaking through the ice
         description: |-
-          To the north of the [Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountain) lies the Shattered Wastes, a plain of jagged, broken ice.
+          To the north of the [Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountains) lies the Shattered Wastes, a plain of jagged, broken ice.
 
           No one knows the bounds of this land or what lies beyond. No [Ironlanders](npc_collection:classic/ironlanders) dwell here, and only a handful have explored the passage into the Wastes through the Veils. Those who survived the journey returned with stories of unimaginable cold and things moving beneath the ice.
         quest_starter: |-

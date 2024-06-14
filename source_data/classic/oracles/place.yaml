@@ -27,7 +27,7 @@ oracles:
           page: 176
         rows:
           - roll: { min: 1, max: 12 }
-            text: '[Barrier Islands](atlas_entry:classic/ironlands/barrier_island)'
+            text: '[Barrier Islands](atlas_entry:classic/ironlands/barrier_islands)'
           - roll: { min: 13, max: 24 }
             text: '[Ragged Coast](atlas_entry:classic/ironlands/ragged_coast)'
           - roll: { min: 25, max: 34 }

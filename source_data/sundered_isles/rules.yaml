@@ -72,18 +72,18 @@ rules:
     supernatural:
       description: This object is supernatural in nature, and is ideal for settings that feature supernatural or mythic powers.
       value_type: boolean
-      applies_to: [asset,oracle_table_row]
+      applies_to: [asset, row]
     technological:
       description: This object is technological in nature, and is ideal for settings that feature remarkable technologies.
       value_type: boolean
-      applies_to: [asset,oracle_table_row]
+      applies_to: [asset, row]
     starforged_friendly:
       description: This asset is ideal for use in Starforged.
       value_type: boolean
       applies_to: [asset]
     region:
       description: This oracle table or row relates to a specific region of the Sundered Isles.
-      applies_to: [oracle_rollable, oracle_table_row]
+      applies_to: [oracle_rollable, row]
       value_type: enum
       enum:
         - myriads
@@ -92,7 +92,7 @@ rules:
     overland_region:
       description: This oracle table or row relates to a specific overland region type.
       value_type: enum
-      applies_to: [oracle_rollable, oracle_table_row]
+      applies_to: [oracle_rollable, row]
       # TODO: is there a way to make this extensible? seems likely to be expanded by 3rd-party content
       enum:
         - highlands
@@ -108,7 +108,7 @@ rules:
         - cursed
     location:
       value_type: enum
-      applies_to: [oracle_rollable, oracle_table_row]
+      applies_to: [oracle_rollable, row]
       description: This oracle table or row relates to a location type.
       enum:
         - shore
@@ -121,7 +121,7 @@ rules:
         - river # shipwreck only -- described similarly to waterside, but this is a cleaner match for shipwreck oracle keys
     faction_type:
       value_type: enum
-      applies_to: [oracle_rollable, oracle_table_row]
+      applies_to: [oracle_rollable, row]
       description: This oracle table or row relates to a specific type of faction.
       enum:
         - society
@@ -129,7 +129,7 @@ rules:
         - empire
     ship_size:
       value_type: enum
-      applies_to: [oracle_rollable, oracle_table_row]
+      applies_to: [oracle_rollable, row]
       description: This oracle table or row relates to a specific size of ship.
       enum:
         - small
@@ -141,7 +141,7 @@ rules:
         - armada
     treasure_size:
       value_type: enum
-      applies_to: [oracle_rollable, oracle_table_row]
+      applies_to: [oracle_rollable, row]
       description: This oracle table or row relates to a specific size of treasure.
       enum:
         - small

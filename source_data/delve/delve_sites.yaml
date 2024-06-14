@@ -102,7 +102,7 @@ delve_sites:
         roll: { min: 100, max: 100 }
         npc: npc:classic/firstborn/primordial
     description: |-
-      The roots of the trees run deep into the veins of the earth, tangling amid the frozen tunnels of Bleakroot Depths. The site is perilous, but provides the only passage between the remote villages of Idleburrow and Lora’s Rise. Those settlements depend on each other for trade and protection amid the perilous heights of the [Tempest Hills](atlas_entry:classic/ironlands/tempest_hill).
+      The roots of the trees run deep into the veins of the earth, tangling amid the frozen tunnels of Bleakroot Depths. The site is perilous, but provides the only passage between the remote villages of Idleburrow and Lora’s Rise. Those settlements depend on each other for trade and protection amid the perilous heights of the [Tempest Hills](atlas_entry:classic/ironlands/tempest_hills).
 
       Recently, the beasts of the hills have taken to the tunnels, drawn there inexplicably. Within, they become frenzied and wild. They ambush all who dare enter Bleakroot Depths, cutting off this critical route. What primal force is at work here?
   bonewilds:
@@ -254,7 +254,7 @@ delve_sites:
       <<: *Source
       page: 98
     rank: 4
-    region: atlas_entry:classic/ironlands/tempest_mountais
+    region: atlas_entry:classic/ironlands/tempest_mountains
     theme: delve_site_theme:delve/haunted
     domain: delve_site_domain:delve/pass
     denizens:
@@ -300,7 +300,7 @@ delve_sites:
       <<: *Source
       page: 99
     rank: 3
-    region: atlas_entry:classic/ironlands/ragged_coat
+    region: atlas_entry:classic/ironlands/ragged_coast
     theme: delve_site_theme:delve/corrupted
     domain: delve_site_domain:delve/sea_cave
     denizens:
@@ -347,7 +347,7 @@ delve_sites:
       <<: *Source
       page: 99
     rank: 3
-    region: atlas_entry:classic/ironlands/shattered_wasts
+    region: atlas_entry:classic/ironlands/shattered_wastes
     theme: delve_site_theme:delve/fortified
     domain: delve_site_domain:delve/icereach
     denizens:
@@ -396,7 +396,7 @@ delve_sites:
       <<: *Source
       page: 100
     rank: 4
-    region: atlas_entry:classic/ironlands/shattered_wasts
+    region: atlas_entry:classic/ironlands/shattered_wastes
     theme: delve_site_theme:delve/ravaged
     domain: delve_site_domain:delve/mine
     denizens:
@@ -432,7 +432,7 @@ delve_sites:
         roll: { min: 100, max: 100 }
         npc: npc:delve/beasts/wyrm
     description: |-
-      In ancient days, a lineage of giants lived beyond the [Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountain) in the great expanse we now call the [Shattered Wastes](atlas_entry:classic/ironlands/shattered_waste). The cavernous entrance to this abandoned mine sits at the summit of an icy mount. In the frozen depths, the giants once mined for ore and fashioned great weapons. Today, their abandoned tools and preserved corpses are all that remain of their legacy.
+      In ancient days, a lineage of giants lived beyond the [Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountains) in the great expanse we now call the [Shattered Wastes](atlas_entry:classic/ironlands/shattered_wastes). The cavernous entrance to this abandoned mine sits at the summit of an icy mount. In the frozen depths, the giants once mined for ore and fashioned great weapons. Today, their abandoned tools and preserved corpses are all that remain of their legacy.
 
       Exploration of this place is treacherous. The mine is shaken by frequent earthquakes, causing cave-ins and pitfalls. The cold is as piercing and deadly as the sharpest blade. Horrid things lurk amid the echoing shadows.
 
@@ -444,7 +444,7 @@ delve_sites:
       <<: *Source
       page: 100
     rank: 3
-    region: atlas_entry:classic/ironlands/haven # FIXME
+    region: atlas_entry:classic/ironlands/havens
     theme: delve_site_theme:delve/haunted
     domain: delve_site_domain:delve/barrow
     denizens:
@@ -492,7 +492,7 @@ delve_sites:
       <<: *Source
       page: 101
     rank: 4
-    region: atlas_entry:classic/ironlands/barrier_islans
+    region: atlas_entry:classic/ironlands/barrier_islands
     theme: delve_site_theme:delve/ancient
     domain: delve_site_domain:delve/underkeep
     denizens:
@@ -539,7 +539,7 @@ delve_sites:
       <<: *Source
       page: 101
     rank: 4
-    region: atlas_entry:classic/ironlands/ragged_coat
+    region: atlas_entry:classic/ironlands/ragged_coast
     theme: delve_site_theme:delve/wild
     domain: delve_site_domain:delve/icereach
     denizens:
@@ -586,7 +586,7 @@ delve_sites:
       <<: *Source
       page: 102
     rank: 3
-    region: atlas_entry:classic/ironlands/veiled_mountais
+    region: atlas_entry:classic/ironlands/veiled_mountains
     theme: delve_site_theme:delve/infested
     domain: delve_site_domain:delve/mine
     denizens:
@@ -632,7 +632,7 @@ delve_sites:
       <<: *Source
       page: 102
     rank: 4
-    region: atlas_entry:classic/ironlands/haves
+    region: atlas_entry:classic/ironlands/havens
     theme: delve_site_theme:delve/corrupted
     domain: delve_site_domain:delve/underkeep
     denizens:
@@ -677,7 +677,7 @@ delve_sites:
       <<: *Source
       page: 103
     rank: 4
-    region: atlas_entry:classic/ironlands/ragged_coat
+    region: atlas_entry:classic/ironlands/ragged_coast
     theme: delve_site_theme:delve/ravaged
     domain: delve_site_domain:delve/ruin
     denizens:
@@ -724,7 +724,7 @@ delve_sites:
       <<: *Source
       page: 103
     rank: 3
-    region: atlas_entry:classic/ironlands/haves
+    region: atlas_entry:classic/ironlands/havens
     theme: delve_site_theme:delve/ravaged
     domain: delve_site_domain:delve/tanglewood
     denizens:
@@ -770,7 +770,7 @@ delve_sites:
       <<: *Source
       page: 104
     rank: 3
-    region: atlas_entry:classic/ironlands/haves
+    region: atlas_entry:classic/ironlands/havens
     theme: delve_site_theme:delve/haunted
     domain: delve_site_domain:delve/shadowfen
     denizens:
@@ -817,7 +817,7 @@ delve_sites:
       <<: *Source
       page: 104
     rank: 4
-    region: atlas_entry:classic/ironlands/haves
+    region: atlas_entry:classic/ironlands/havens
     theme: delve_site_theme:delve/hallowed
     domain: delve_site_domain:delve/stronghold
     denizens:
@@ -854,7 +854,7 @@ delve_sites:
       - frequency: unforeseen
         roll: { min: 100, max: 100 }
     description: |-
-      Visions of a once-great fortress drew Kord the Stonewright to a deep lake in the northern [Havens](atlas_entry:classic/ironlands/haven). There, he discovered the stones scattered in shallow waters and buried in mud near the shore—all that was left of the ancient place which haunted his dreams. Piece by piece, he recovered the remains of the fortress, transplanting the stones laboriously to an island at the lake’s center.
+      Visions of a once-great fortress drew Kord the Stonewright to a deep lake in the northern [Havens](atlas_entry:classic/ironlands/havens). There, he discovered the stones scattered in shallow waters and buried in mud near the shore—all that was left of the ancient place which haunted his dreams. Piece by piece, he recovered the remains of the fortress, transplanting the stones laboriously to an island at the lake’s center.
 
       Most laughed at this crazy venture. But some joined Kord, drawn to this place by a compulsion they can’t understand or explain. Guided by the stonewright’s unwavering vision, they rebuilt the vaults of the fortress and its tall central spire. Today, nearly two decades later, the workforce numbers in the hundreds. They live in ramshackle camps encircling the fortress and on the lakeshore. Many protect the place with spear and shield. The stones sing to them, they say, and with each block mortared in place the words become clearer. Folk of this area call them the builders.
 
@@ -911,7 +911,7 @@ delve_sites:
       <<: *Source
       page: 105
     rank: 4
-    region: atlas_entry:classic/ironlands/veiled_mountais
+    region: atlas_entry:classic/ironlands/veiled_mountains
     theme: delve_site_theme:delve/ancient
     domain: delve_site_domain:delve/pass
     denizens:
@@ -947,6 +947,6 @@ delve_sites:
         roll: { min: 100, max: 100 }
         npc: npc:classic/firstborn/primordial
     description: |-
-      A long-dead civilization once used this path through the [Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountain) as a trade road. Their crumbling outposts, forts, and waystones, half-buried in snow and fallen glacial stones, mark the way. Some say you can still hear their voices and songs carried on the wind; echoes of lives long lost.
+      A long-dead civilization once used this path through the [Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountains) as a trade road. Their crumbling outposts, forts, and waystones, half-buried in snow and fallen glacial stones, mark the way. Some say you can still hear their voices and songs carried on the wind; echoes of lives long lost.
 
       A clan of [giants](id:npc:classic/firstborn/giant) now live here, drawn to the remains of this once-powerful place like travelers huddling close to a dying fire. They defend the pass against a massive tribe of [broken](id:npc:classic/ironlanders/broken) who lurk within the caves and ruins of this frozen land. What purpose do the giants have here, and what can be done to aid their defense against the broken?

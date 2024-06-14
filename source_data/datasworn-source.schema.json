@@ -778,6 +778,18 @@
 			"description": "A wildcarded DelveSiteId that can be used to match multiple DelveSite objects.",
 			"pattern": "^delve_site:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
 		},
+		"DelveSiteDenizenId": {
+			"title": "DelveSiteDenizenId",
+			"type": "string",
+			"description": "A unique ID representing a DelveSiteDenizen object.",
+			"pattern": "^delve_site\\.denizen:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)$"
+		},
+		"DelveSiteDenizenIdWildcard": {
+			"title": "DelveSiteDenizenIdWildcard",
+			"type": "string",
+			"description": "A wildcarded DelveSiteDenizenId that can be used to match multiple DelveSiteDenizen objects.",
+			"pattern": "^delve_site\\.denizen:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)$"
+		},
 		"DelveSiteDomainId": {
 			"title": "DelveSiteDomainId",
 			"type": "string",
@@ -789,6 +801,54 @@
 			"type": "string",
 			"description": "A wildcarded DelveSiteDomainId that can be used to match multiple DelveSiteDomain objects.",
 			"pattern": "^delve_site_domain:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)$"
+		},
+		"DelveSiteDomainFeatureId": {
+			"title": "DelveSiteDomainFeatureId",
+			"type": "string",
+			"description": "A unique ID representing a DelveSiteDomainFeature object.",
+			"pattern": "^delve_site_domain\\.feature:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)$"
+		},
+		"DelveSiteDomainFeatureIdWildcard": {
+			"title": "DelveSiteDomainFeatureIdWildcard",
+			"type": "string",
+			"description": "A wildcarded DelveSiteDomainFeatureId that can be used to match multiple DelveSiteDomainFeature objects.",
+			"pattern": "^delve_site_domain\\.feature:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)$"
+		},
+		"DelveSiteThemeFeatureId": {
+			"title": "DelveSiteThemeFeatureId",
+			"type": "string",
+			"description": "A unique ID representing a DelveSiteThemeFeature object.",
+			"pattern": "^delve_site_theme\\.feature:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)$"
+		},
+		"DelveSiteThemeFeatureIdWildcard": {
+			"title": "DelveSiteThemeFeatureIdWildcard",
+			"type": "string",
+			"description": "A wildcarded DelveSiteThemeFeatureId that can be used to match multiple DelveSiteThemeFeature objects.",
+			"pattern": "^delve_site_theme\\.feature:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)$"
+		},
+		"DelveSiteDomainDangerId": {
+			"title": "DelveSiteDomainDangerId",
+			"type": "string",
+			"description": "A unique ID representing a DelveSiteDomainDanger object.",
+			"pattern": "^delve_site_domain\\.danger:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)$"
+		},
+		"DelveSiteDomainDangerIdWildcard": {
+			"title": "DelveSiteDomainDangerIdWildcard",
+			"type": "string",
+			"description": "A wildcarded DelveSiteDomainDangerId that can be used to match multiple DelveSiteDomainDanger objects.",
+			"pattern": "^delve_site_domain\\.danger:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)$"
+		},
+		"DelveSiteThemeDangerId": {
+			"title": "DelveSiteThemeDangerId",
+			"type": "string",
+			"description": "A unique ID representing a DelveSiteThemeDanger object.",
+			"pattern": "^delve_site_theme\\.danger:([a-z][a-z0-9_]{3,}\\/[a-z][a-z_]*)\\.(\\d+)$"
+		},
+		"DelveSiteThemeDangerIdWildcard": {
+			"title": "DelveSiteThemeDangerIdWildcard",
+			"type": "string",
+			"description": "A wildcarded DelveSiteThemeDangerId that can be used to match multiple DelveSiteThemeDanger objects.",
+			"pattern": "^delve_site_theme\\.danger:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)\\/[a-z][a-z_]*|\\/\\*|\\/\\*\\*)\\.(\\d+|\\*)$"
 		},
 		"DelveSiteThemeId": {
 			"title": "DelveSiteThemeId",
@@ -930,45 +990,43 @@
 				}
 			]
 		},
-		"AnyId": {
-			"title": "AnyId",
-			"description": "Represents any kind of non-wildcard ID, including IDs of embedded objects.",
+		"AnyOracleRollableRowId": {
+			"title": "AnyOracleRollableRowId",
 			"anyOf": [
 				{
-					"$ref": "#/definitions/AssetAbilityOracleRollableIdWildcard"
+					"$ref": "#/definitions/OracleRollableRowId"
 				},
 				{
-					"$ref": "#/definitions/TruthOptionOracleRollableIdWildcard"
+					"$ref": "#/definitions/AssetAbilityOracleRollableRowId"
 				},
 				{
-					"$ref": "#/definitions/MoveOracleRollableIdWildcard"
+					"$ref": "#/definitions/MoveOracleRollableRowId"
 				},
 				{
-					"$ref": "#/definitions/OracleRollableIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/AssetAbilityOracleRollableIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/TruthOptionOracleRollableIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/MoveOracleRollableIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/AssetAbilityMoveIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/MoveIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/AssetAbilityMoveIdWildcard"
+					"$ref": "#/definitions/TruthOptionOracleRollableRowId"
 				}
 			]
 		},
-		"AnyIdWildcard": {
-			"title": "AnyIdWildcard",
-			"description": "Represents any kind of wildcard ID, including IDs of embedded objects.",
+		"AnyOracleRollableRowIdWildcard": {
+			"title": "AnyOracleRollableRowIdWildcard",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/OracleRollableRowIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityOracleRollableRowIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/MoveOracleRollableRowIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/TruthOptionOracleRollableRowIdWildcard"
+				}
+			]
+		},
+		"AnyId": {
+			"title": "AnyId",
+			"description": "Represents any kind of non-wildcard ID, including IDs of embedded objects.",
 			"anyOf": [
 				{
 					"$ref": "#/definitions/OracleRollableId"
@@ -999,6 +1057,42 @@
 				},
 				{
 					"$ref": "#/definitions/AssetAbilityMoveId"
+				}
+			]
+		},
+		"AnyIdWildcard": {
+			"title": "AnyIdWildcard",
+			"description": "Represents any kind of wildcard ID, including IDs of embedded objects.",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/AssetAbilityOracleRollableIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/TruthOptionOracleRollableIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/MoveOracleRollableIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/OracleRollableIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityOracleRollableIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/TruthOptionOracleRollableIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/MoveOracleRollableIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityMoveIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/MoveIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityMoveIdWildcard"
 				}
 			]
 		},
@@ -1282,6 +1376,10 @@
 			},
 			"additionalProperties": false
 		},
+		"EmbedOnlyType": {
+			"title": "EmbedOnlyType",
+			"enum": ["ability", "option", "row", "feature", "danger", "denizen"]
+		},
 		"ImpactCategory": {
 			"title": "ImpactCategory",
 			"type": "object",
@@ -1353,10 +1451,6 @@
 				"rarity",
 				"truth"
 			]
-		},
-		"NonIdentifiableType": {
-			"title": "NonIdentifiableType",
-			"enum": ["oracle_table_row"]
 		},
 		"Rules": {
 			"title": "Rules",
@@ -2500,7 +2594,7 @@
 					"$ref": "#/definitions/CollectionType"
 				},
 				{
-					"$ref": "#/definitions/NonIdentifiableType"
+					"$ref": "#/definitions/EmbedOnlyType"
 				}
 			]
 		},
@@ -3162,23 +3256,23 @@
 		"OracleRollTemplate": {
 			"title": "OracleRollTemplate",
 			"type": "object",
-			"description": "Provides string templates that may be used in place of the static row text from `OracleTableRow#text`, `OracleTableRow#text2`, and `OracleTableRow#text3`.\n\n  These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text>some_oracle_rollable_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleTableRow#text` from the target oracle rollable ID.",
+			"description": "Provides string templates that may be used in place of the static row text from `OracleRollableRow#text`, `OracleRollableRow#text2`, and `OracleRollableRow#text3`.\n\n  These strings are formatted in Markdown, but use a special syntax for their placeholders: `{{text>some_oracle_rollable_id}}`. The placeholder should be replaced with the value of a rolled (or selected) `OracleRollableRow#text` from the target oracle rollable ID.",
 			"releaseStage": "experimental",
 			"properties": {
 				"text": {
 					"$ref": "#/definitions/TemplateString",
-					"description": "A string template that may be used in place of OracleTableRow#text.",
+					"description": "A string template that may be used in place of OracleRollableRow#text.",
 					"examples": [
 						"{{text:starforged/oracles/factions/affiliation}} of the {{text:starforged/oracles/factions/legacy}} {{text:starforged/oracles/factions/identity}}"
 					]
 				},
 				"text2": {
 					"$ref": "#/definitions/TemplateString",
-					"description": "A string template that may be used in place of OracleTableRow#text2."
+					"description": "A string template that may be used in place of OracleRollableRow#text2."
 				},
 				"text3": {
 					"$ref": "#/definitions/TemplateString",
-					"description": "A string template that may be used in place of OracleTableRow#text3."
+					"description": "A string template that may be used in place of OracleRollableRow#text3."
 				}
 			},
 			"additionalProperties": false
@@ -3269,7 +3363,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText"
+						"$ref": "#/definitions/OracleRollableRowText"
 					}
 				}
 			},
@@ -3331,7 +3425,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText2"
+						"$ref": "#/definitions/OracleRollableRowText2"
 					}
 				}
 			},
@@ -3393,7 +3487,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText3"
+						"$ref": "#/definitions/OracleRollableRowText3"
 					}
 				}
 			},
@@ -3592,7 +3686,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText"
+						"$ref": "#/definitions/OracleRollableRowText"
 					}
 				}
 			},
@@ -3697,7 +3791,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText2"
+						"$ref": "#/definitions/OracleRollableRowText2"
 					}
 				}
 			},
@@ -3798,7 +3892,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText3"
+						"$ref": "#/definitions/OracleRollableRowText3"
 					}
 				}
 			},
@@ -3954,7 +4048,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText"
+						"$ref": "#/definitions/OracleRollableRowText"
 					}
 				}
 			},
@@ -4024,7 +4118,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText2"
+						"$ref": "#/definitions/OracleRollableRowText2"
 					}
 				}
 			},
@@ -4094,7 +4188,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText3"
+						"$ref": "#/definitions/OracleRollableRowText3"
 					}
 				}
 			},
@@ -4200,79 +4294,29 @@
 				}
 			]
 		},
-		"OracleTableRollable": {
-			"title": "OracleTableRollable",
-			"type": "object",
-			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.",
-			"required": ["oracle_type"],
-			"properties": {
-				"oracle_type": {
-					"enum": ["table_text", "table_text2", "table_text3"]
-				}
-			},
-			"additionalProperties": true,
-			"allOf": [
-				{
-					"if": {
-						"properties": {
-							"oracle_type": {
-								"const": "table_text",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"$ref": "#/definitions/OracleTableText"
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"oracle_type": {
-								"const": "table_text2",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"$ref": "#/definitions/OracleTableText2"
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"oracle_type": {
-								"const": "table_text3",
-								"type": "string"
-							}
-						}
-					},
-					"then": {
-						"$ref": "#/definitions/OracleTableText3"
-					}
-				}
-			]
-		},
-		"OracleTableRow": {
-			"title": "OracleTableRow",
+		"OracleRollableRow": {
+			"title": "OracleRollableRow",
 			"anyOf": [
 				{
-					"$ref": "#/definitions/OracleTableRowText"
+					"$ref": "#/definitions/OracleRollableRowText"
 				},
 				{
-					"$ref": "#/definitions/OracleTableRowText2"
+					"$ref": "#/definitions/OracleRollableRowText2"
 				},
 				{
-					"$ref": "#/definitions/OracleTableRowText3"
+					"$ref": "#/definitions/OracleRollableRowText3"
 				}
 			]
 		},
-		"OracleTableRowText": {
-			"title": "OracleTableRowText",
+		"OracleRollableRowText": {
+			"title": "OracleRollableRowText",
 			"type": "object",
 			"description": "Represents a row in an oracle table, with a single text cell.",
 			"required": ["text"],
 			"properties": {
+				"_id": {
+					"$ref": "#/definitions/AnyOracleRollableRowId"
+				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
 				},
@@ -4321,12 +4365,15 @@
 			},
 			"additionalProperties": false
 		},
-		"OracleTableRowText2": {
-			"title": "OracleTableRowText2",
+		"OracleRollableRowText2": {
+			"title": "OracleRollableRowText2",
 			"type": "object",
 			"description": "Represents a row in an oracle table that provides a secondary text field.",
 			"required": ["text", "text2"],
 			"properties": {
+				"_id": {
+					"$ref": "#/definitions/AnyOracleRollableRowId"
+				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
 				},
@@ -4386,12 +4433,15 @@
 			},
 			"additionalProperties": false
 		},
-		"OracleTableRowText3": {
-			"title": "OracleTableRowText3",
+		"OracleRollableRowText3": {
+			"title": "OracleRollableRowText3",
 			"type": "object",
 			"description": "Represents a row in an oracle table with 3 text cells.",
 			"required": ["text", "text2", "text3"],
 			"properties": {
+				"_id": {
+					"$ref": "#/definitions/AnyOracleRollableRowId"
+				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl"
 				},
@@ -4461,6 +4511,59 @@
 				}
 			},
 			"additionalProperties": false
+		},
+		"OracleTableRollable": {
+			"title": "OracleTableRollable",
+			"type": "object",
+			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.",
+			"required": ["oracle_type"],
+			"properties": {
+				"oracle_type": {
+					"enum": ["table_text", "table_text2", "table_text3"]
+				}
+			},
+			"additionalProperties": true,
+			"allOf": [
+				{
+					"if": {
+						"properties": {
+							"oracle_type": {
+								"const": "table_text",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/OracleTableText"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"oracle_type": {
+								"const": "table_text2",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/OracleTableText2"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"oracle_type": {
+								"const": "table_text3",
+								"type": "string"
+							}
+						}
+					},
+					"then": {
+						"$ref": "#/definitions/OracleTableText3"
+					}
+				}
+			]
 		},
 		"OracleTableSharedRolls": {
 			"title": "OracleTableSharedRolls",
@@ -4991,7 +5094,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText"
+						"$ref": "#/definitions/OracleRollableRowText"
 					}
 				},
 				"_source": {
@@ -5109,7 +5212,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText2"
+						"$ref": "#/definitions/OracleRollableRowText2"
 					}
 				},
 				"_source": {
@@ -5223,7 +5326,7 @@
 					"description": "An array of objects, each representing a single row of the table.",
 					"rollable": true,
 					"items": {
-						"$ref": "#/definitions/OracleTableRowText3"
+						"$ref": "#/definitions/OracleRollableRowText3"
 					}
 				},
 				"_source": {
@@ -8677,17 +8780,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 1
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 27
 												}
 											}
@@ -8707,17 +8807,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 28
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 41
 												}
 											}
@@ -8737,17 +8834,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 42
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 55
 												}
 											}
@@ -8767,17 +8861,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 56
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 69
 												}
 											}
@@ -8797,17 +8888,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 70
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 75
 												}
 											}
@@ -8827,17 +8915,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 76
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 81
 												}
 											}
@@ -8857,17 +8942,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 82
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 87
 												}
 											}
@@ -8887,17 +8969,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 88
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 93
 												}
 											}
@@ -8917,17 +8996,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 94
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 95
 												}
 											}
@@ -8947,17 +9023,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 96
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 97
 												}
 											}
@@ -8977,17 +9050,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 98
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 99
 												}
 											}
@@ -9007,17 +9077,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 100
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 100
 												}
 											}
@@ -9042,9 +9109,12 @@
 		"DelveSiteDenizen": {
 			"title": "DelveSiteDenizen",
 			"type": "object",
-			"description": "Represents an entry in a site denizen matrix. Denizen matrices are described in Ironsworn: Delve.",
+			"description": "Represents an entry in a delve site denizen matrix. Denizen matrices are described in Ironsworn: Delve.",
 			"required": ["frequency", "roll"],
 			"properties": {
+				"_id": {
+					"$ref": "#/definitions/DelveSiteDenizenId"
+				},
 				"name": {
 					"$ref": "#/definitions/Label",
 					"description": "A name for the denizen, if it's different than the `name` property of the NPC."
@@ -9101,7 +9171,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/OracleTableRowText"
+								"$ref": "#/definitions/DelveSiteDomainFeature"
 							}
 						},
 						{
@@ -9114,17 +9184,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 21
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 43
 												}
 											}
@@ -9139,17 +9206,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 44
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 56
 												}
 											}
@@ -9164,17 +9228,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 57
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 64
 												}
 											}
@@ -9189,17 +9250,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 65
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 68
 												}
 											}
@@ -9214,17 +9272,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 69
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 72
 												}
 											}
@@ -9239,17 +9294,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 73
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 76
 												}
 											}
@@ -9264,17 +9316,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 77
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 80
 												}
 											}
@@ -9289,17 +9338,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 81
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 84
 												}
 											}
@@ -9314,17 +9360,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 85
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 88
 												}
 											}
@@ -9339,17 +9382,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 89
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 98
 												}
 											}
@@ -9364,17 +9404,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 99
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 99
 												}
 											}
@@ -9389,17 +9426,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 100
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 100
 												}
 											}
@@ -9419,7 +9453,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/OracleTableRowText"
+								"$ref": "#/definitions/DelveSiteDomainDanger"
 							}
 						},
 						{
@@ -9432,17 +9466,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 31
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 33
 												}
 											}
@@ -9457,17 +9488,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 34
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 36
 												}
 											}
@@ -9482,17 +9510,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 37
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 39
 												}
 											}
@@ -9507,17 +9532,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 40
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 42
 												}
 											}
@@ -9532,17 +9554,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 43
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 45
 												}
 											}
@@ -9577,6 +9596,120 @@
 			},
 			"additionalProperties": true
 		},
+		"DelveSiteDomainDanger": {
+			"title": "DelveSiteDomainDanger",
+			"type": "object",
+			"description": "Represents a single Danger entry from a delve site Domain card.",
+			"required": ["text"],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/DelveSiteDomainDangerId"
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl"
+				},
+				"roll": {
+					"description": "`null` represents an unrollable row, included only for rendering purposes.",
+					"default": null,
+					"anyOf": [
+						{
+							"$ref": "#/definitions/DiceRange"
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "The primary text content of this row."
+				},
+				"template": {
+					"$ref": "#/definitions/OracleRollTemplate",
+					"releaseStage": "experimental"
+				},
+				"embed_table": {
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Hints that the identified table should be rendered inside this table row.",
+					"releaseStage": "experimental"
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"oracle_rolls": {
+					"type": "array",
+					"description": "Further oracle rolls prompted by this table row.",
+					"items": {
+						"$ref": "#/definitions/OracleRoll"
+					}
+				},
+				"tags": {
+					"$ref": "#/definitions/Tags"
+				},
+				"_i18n": {
+					"$ref": "#/definitions/I18nHints",
+					"releaseStage": "experimental"
+				}
+			},
+			"additionalProperties": false
+		},
+		"DelveSiteDomainFeature": {
+			"title": "DelveSiteDomainFeature",
+			"type": "object",
+			"description": "Represents a single Feature entry from a delve site Domain card.",
+			"required": ["text"],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/DelveSiteDomainFeatureId"
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl"
+				},
+				"roll": {
+					"description": "`null` represents an unrollable row, included only for rendering purposes.",
+					"default": null,
+					"anyOf": [
+						{
+							"$ref": "#/definitions/DiceRange"
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "The primary text content of this row."
+				},
+				"template": {
+					"$ref": "#/definitions/OracleRollTemplate",
+					"releaseStage": "experimental"
+				},
+				"embed_table": {
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Hints that the identified table should be rendered inside this table row.",
+					"releaseStage": "experimental"
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"oracle_rolls": {
+					"type": "array",
+					"description": "Further oracle rolls prompted by this table row.",
+					"items": {
+						"$ref": "#/definitions/OracleRoll"
+					}
+				},
+				"tags": {
+					"$ref": "#/definitions/Tags"
+				},
+				"_i18n": {
+					"$ref": "#/definitions/I18nHints",
+					"releaseStage": "experimental"
+				}
+			},
+			"additionalProperties": false
+		},
 		"DelveSiteTheme": {
 			"title": "DelveSiteTheme",
 			"type": "object",
@@ -9610,7 +9743,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/OracleTableRowText"
+								"$ref": "#/definitions/DelveSiteThemeFeature"
 							}
 						},
 						{
@@ -9623,17 +9756,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 1
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 4
 												}
 											}
@@ -9648,17 +9778,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 5
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 8
 												}
 											}
@@ -9673,17 +9800,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 9
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 12
 												}
 											}
@@ -9698,17 +9822,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 13
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 16
 												}
 											}
@@ -9723,17 +9844,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 17
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 20
 												}
 											}
@@ -9753,7 +9871,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/OracleTableRowText"
+								"$ref": "#/definitions/DelveSiteThemeFeature"
 							}
 						},
 						{
@@ -9766,17 +9884,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 1
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 5
 												}
 											}
@@ -9791,17 +9906,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 6
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 10
 												}
 											}
@@ -9816,17 +9928,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 11
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 12
 												}
 											}
@@ -9841,17 +9950,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 13
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 14
 												}
 											}
@@ -9866,17 +9972,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 15
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 16
 												}
 											}
@@ -9891,17 +9994,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 17
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 18
 												}
 											}
@@ -9916,17 +10016,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 19
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 20
 												}
 											}
@@ -9941,17 +10038,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 21
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 22
 												}
 											}
@@ -9966,17 +10060,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 23
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 24
 												}
 											}
@@ -9991,17 +10082,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 25
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 26
 												}
 											}
@@ -10016,17 +10104,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 27
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 28
 												}
 											}
@@ -10041,17 +10126,14 @@
 										"roll": {
 											"title": "DiceRangeStatic",
 											"type": "object",
-											"description": "Represents a range of dice roll results, bounded by `min` and `max` (inclusive).",
 											"required": ["min", "max"],
 											"properties": {
 												"min": {
 													"type": "number",
-													"description": "Low end of the dice range.",
 													"const": 29
 												},
 												"max": {
 													"type": "number",
-													"description": "High end of the dice range.",
 													"const": 30
 												}
 											}
@@ -10085,6 +10167,120 @@
 				}
 			},
 			"additionalProperties": true
+		},
+		"DelveSiteThemeDanger": {
+			"title": "DelveSiteThemeDanger",
+			"type": "object",
+			"description": "Represents a single Danger entry from a delve site Theme card.",
+			"required": ["text"],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/DelveSiteThemeDangerId"
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl"
+				},
+				"roll": {
+					"description": "`null` represents an unrollable row, included only for rendering purposes.",
+					"default": null,
+					"anyOf": [
+						{
+							"$ref": "#/definitions/DiceRange"
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "The primary text content of this row."
+				},
+				"template": {
+					"$ref": "#/definitions/OracleRollTemplate",
+					"releaseStage": "experimental"
+				},
+				"embed_table": {
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Hints that the identified table should be rendered inside this table row.",
+					"releaseStage": "experimental"
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"oracle_rolls": {
+					"type": "array",
+					"description": "Further oracle rolls prompted by this table row.",
+					"items": {
+						"$ref": "#/definitions/OracleRoll"
+					}
+				},
+				"tags": {
+					"$ref": "#/definitions/Tags"
+				},
+				"_i18n": {
+					"$ref": "#/definitions/I18nHints",
+					"releaseStage": "experimental"
+				}
+			},
+			"additionalProperties": false
+		},
+		"DelveSiteThemeFeature": {
+			"title": "DelveSiteThemeFeature",
+			"type": "object",
+			"description": "Represents a single Feature entry from a delve site Theme card.",
+			"required": ["text"],
+			"properties": {
+				"_id": {
+					"$ref": "#/definitions/DelveSiteThemeFeatureId"
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl"
+				},
+				"roll": {
+					"description": "`null` represents an unrollable row, included only for rendering purposes.",
+					"default": null,
+					"anyOf": [
+						{
+							"$ref": "#/definitions/DiceRange"
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
+				"text": {
+					"$ref": "#/definitions/MarkdownString",
+					"description": "The primary text content of this row."
+				},
+				"template": {
+					"$ref": "#/definitions/OracleRollTemplate",
+					"releaseStage": "experimental"
+				},
+				"embed_table": {
+					"$ref": "#/definitions/OracleRollableId",
+					"description": "Hints that the identified table should be rendered inside this table row.",
+					"releaseStage": "experimental"
+				},
+				"suggestions": {
+					"$ref": "#/definitions/Suggestions"
+				},
+				"oracle_rolls": {
+					"type": "array",
+					"description": "Further oracle rolls prompted by this table row.",
+					"items": {
+						"$ref": "#/definitions/OracleRoll"
+					}
+				},
+				"tags": {
+					"$ref": "#/definitions/Tags"
+				},
+				"_i18n": {
+					"$ref": "#/definitions/I18nHints",
+					"releaseStage": "experimental"
+				}
+			},
+			"additionalProperties": false
 		}
 	}
 }
