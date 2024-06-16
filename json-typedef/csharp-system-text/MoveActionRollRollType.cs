@@ -6,9 +6,6 @@ using System.Text.Json.Serialization;
 
 namespace Datasworn
 {
-    /// <summary>
-    /// A move that makes an action roll.
-    /// </summary>
     [JsonConverter(typeof(MoveActionRollRollTypeJsonConverter))]
     public enum MoveActionRollRollType
     {

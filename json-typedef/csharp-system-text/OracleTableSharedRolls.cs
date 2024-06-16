@@ -7,19 +7,19 @@ namespace Datasworn
 {
     /// <summary>
     /// An OracleCollection representing a single table with one roll column and
-    /// multiple `result` columns.
+    /// multiple text columns.
     /// </summary>
     public class OracleTableSharedRolls
     {
         /// <summary>
-        /// The unique Datasworn ID for this item.
+        /// The unique Datasworn ID for this node.
         /// </summary>
         [JsonPropertyName("_id")]
         public OracleCollectionId Id { get; set; }
 
         /// <summary>
         /// Attribution for the original source (such as a book or website) of
-        /// this item, including the author and licensing information.
+        /// this node, including the author and licensing information.
         /// </summary>
         [JsonPropertyName("_source")]
         public SourceInfo Source { get; set; }
@@ -33,16 +33,15 @@ namespace Datasworn
         [JsonPropertyName("column_labels")]
         public OracleTableSharedRollsColumnLabels ColumnLabels { get; set; }
 
+        [JsonPropertyName("contents")]
+        public IDictionary<string, OracleColumnText> Contents { get; set; }
+
         /// <summary>
-        /// The primary name/label for this item.
+        /// The primary name/label for this node.
         /// </summary>
         [JsonPropertyName("name")]
         public Label Name { get; set; }
 
-        /// <summary>
-        /// A table with one shared roll column, and multiple unique text
-        /// columns.
-        /// </summary>
         [JsonPropertyName("oracle_type")]
         public OracleTableSharedRollsOracleType OracleType { get; set; }
 
@@ -51,15 +50,14 @@ namespace Datasworn
 
         /// <summary>
         /// Implementation hints or other developer-facing comments on this
-        /// object. These should be omitted when presenting the object for
-        /// gameplay.
+        /// node. These should be omitted when presenting the node for gameplay.
         /// </summary>
         [JsonPropertyName("_comment")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public string Comment { get; set; }
 
         /// <summary>
-        /// The name of this item as it appears on the page in the book, if it's
+        /// The name of this node as it appears on the page in the book, if it's
         /// different from `name`.
         /// </summary>
         [JsonPropertyName("canonical_name")]
@@ -67,15 +65,11 @@ namespace Datasworn
         public Label? CanonicalName { get; set; }
 
         /// <summary>
-        /// A thematic color associated with this collection.
+        /// A thematic color associated with this node.
         /// </summary>
         [JsonPropertyName("color")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public CssColor? Color { get; set; }
-
-        [JsonPropertyName("contents")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IDictionary<string, OracleColumnText> Contents { get; set; }
 
         /// <summary>
         /// A longer description of this collection, which might include
@@ -87,8 +81,8 @@ namespace Datasworn
         public MarkdownString? Description { get; set; }
 
         /// <summary>
-        /// This collection's content enhances the identified collections,
-        /// rather than being a standalone collection of its own.
+        /// This node's content enhances all nodes that match these wildcards,
+        /// rather than being a standalone item of its own.
         /// </summary>
         [JsonPropertyName("enhances")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
@@ -106,9 +100,8 @@ namespace Datasworn
         public IList<WebpImageUrl> Images { get; set; }
 
         /// <summary>
-        /// This collection replaces the identified collections. References
-        /// to the replaced collections can be considered equivalent to this
-        /// collection.
+        /// This node replaces all nodes that match these wildcards. References
+        /// to the replaced nodes can be considered equivalent to this node.
         /// </summary>
         [JsonPropertyName("replaces")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

@@ -6,10 +6,6 @@ using System.Text.Json.Serialization;
 
 namespace Datasworn
 {
-    /// <summary>
-    /// A progress move that rolls on one or more special tracks, like Bonds
-    /// (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
-    /// </summary>
     [JsonConverter(typeof(MoveSpecialTrackRollTypeJsonConverter))]
     public enum MoveSpecialTrackRollType
     {

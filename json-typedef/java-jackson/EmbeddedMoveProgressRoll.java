@@ -5,6 +5,7 @@ package Datasworn;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
 @JsonSerialize
 public class EmbeddedMoveProgressRoll extends EmbeddedMove {
@@ -39,6 +40,18 @@ public class EmbeddedMoveProgressRoll extends EmbeddedMove {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("canonical_name")
     private Label canonicalName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("color")
+    private CssColor color;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("icon")
+    private SvgImageUrl icon;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("images")
+    private List<WebpImageUrl> images;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("suggestions")
@@ -83,7 +96,7 @@ public class EmbeddedMoveProgressRoll extends EmbeddedMove {
 
     /**
      * Getter for name.<p>
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     public Label getName() {
         return name;
@@ -91,7 +104,7 @@ public class EmbeddedMoveProgressRoll extends EmbeddedMove {
 
     /**
      * Setter for name.<p>
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     public void setName(Label name) {
         this.name = name;
@@ -177,8 +190,8 @@ public class EmbeddedMoveProgressRoll extends EmbeddedMove {
 
     /**
      * Getter for comment.<p>
-     * Implementation hints or other developer-facing comments on this object.
-     * These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node.
+     * These should be omitted when presenting the node for gameplay.
      */
     public String getComment() {
         return comment;
@@ -186,8 +199,8 @@ public class EmbeddedMoveProgressRoll extends EmbeddedMove {
 
     /**
      * Setter for comment.<p>
-     * Implementation hints or other developer-facing comments on this object.
-     * These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node.
+     * These should be omitted when presenting the node for gameplay.
      */
     public void setComment(String comment) {
         this.comment = comment;
@@ -195,7 +208,7 @@ public class EmbeddedMoveProgressRoll extends EmbeddedMove {
 
     /**
      * Getter for canonicalName.<p>
-     * The name of this item as it appears on the page in the book, if it's
+     * The name of this node as it appears on the page in the book, if it's
      * different from `name`.
      */
     public Label getCanonicalName() {
@@ -204,11 +217,57 @@ public class EmbeddedMoveProgressRoll extends EmbeddedMove {
 
     /**
      * Setter for canonicalName.<p>
-     * The name of this item as it appears on the page in the book, if it's
+     * The name of this node as it appears on the page in the book, if it's
      * different from `name`.
      */
     public void setCanonicalName(Label canonicalName) {
         this.canonicalName = canonicalName;
+    }
+
+    /**
+     * Getter for color.<p>
+     * A thematic color associated with this node.
+     */
+    public CssColor getColor() {
+        return color;
+    }
+
+    /**
+     * Setter for color.<p>
+     * A thematic color associated with this node.
+     */
+    public void setColor(CssColor color) {
+        this.color = color;
+    }
+
+    /**
+     * Getter for icon.<p>
+     * An SVG icon associated with this collection.
+     */
+    public SvgImageUrl getIcon() {
+        return icon;
+    }
+
+    /**
+     * Setter for icon.<p>
+     * An SVG icon associated with this collection.
+     */
+    public void setIcon(SvgImageUrl icon) {
+        this.icon = icon;
+    }
+
+    /**
+     * Getter for images.<p>
+     */
+    public List<WebpImageUrl> getImages() {
+        return images;
+    }
+
+    /**
+     * Setter for images.<p>
+     */
+    public void setImages(List<WebpImageUrl> images) {
+        this.images = images;
     }
 
     /**

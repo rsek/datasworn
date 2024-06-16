@@ -5,6 +5,7 @@ package Datasworn;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
 /**
  * A rarity, as described in Ironsworn: Delve.
@@ -19,9 +20,6 @@ public class Rarity {
 
     @JsonProperty("asset")
     private AssetId asset;
-
-    @JsonProperty("description")
-    private MarkdownString description;
 
     @JsonProperty("name")
     private Label name;
@@ -41,8 +39,20 @@ public class Rarity {
     private Label canonicalName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("color")
+    private CssColor color;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("icon")
     private SvgImageUrl icon;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("images")
+    private List<WebpImageUrl> images;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("replaces")
+    private List<RarityIdWildcard> replaces;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("suggestions")
@@ -57,7 +67,7 @@ public class Rarity {
 
     /**
      * Getter for id.<p>
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     public RarityId getId() {
         return id;
@@ -65,7 +75,7 @@ public class Rarity {
 
     /**
      * Setter for id.<p>
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     public void setId(RarityId id) {
         this.id = id;
@@ -74,7 +84,7 @@ public class Rarity {
     /**
      * Getter for source.<p>
      * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
+     * node, including the author and licensing information.
      */
     public SourceInfo getSource() {
         return source;
@@ -83,7 +93,7 @@ public class Rarity {
     /**
      * Setter for source.<p>
      * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
+     * node, including the author and licensing information.
      */
     public void setSource(SourceInfo source) {
         this.source = source;
@@ -106,22 +116,8 @@ public class Rarity {
     }
 
     /**
-     * Getter for description.<p>
-     */
-    public MarkdownString getDescription() {
-        return description;
-    }
-
-    /**
-     * Setter for description.<p>
-     */
-    public void setDescription(MarkdownString description) {
-        this.description = description;
-    }
-
-    /**
      * Getter for name.<p>
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     public Label getName() {
         return name;
@@ -129,7 +125,7 @@ public class Rarity {
 
     /**
      * Setter for name.<p>
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     public void setName(Label name) {
         this.name = name;
@@ -183,8 +179,8 @@ public class Rarity {
 
     /**
      * Getter for comment.<p>
-     * Implementation hints or other developer-facing comments on this object.
-     * These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node.
+     * These should be omitted when presenting the node for gameplay.
      */
     public String getComment() {
         return comment;
@@ -192,8 +188,8 @@ public class Rarity {
 
     /**
      * Setter for comment.<p>
-     * Implementation hints or other developer-facing comments on this object.
-     * These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node.
+     * These should be omitted when presenting the node for gameplay.
      */
     public void setComment(String comment) {
         this.comment = comment;
@@ -201,7 +197,7 @@ public class Rarity {
 
     /**
      * Getter for canonicalName.<p>
-     * The name of this item as it appears on the page in the book, if it's
+     * The name of this node as it appears on the page in the book, if it's
      * different from `name`.
      */
     public Label getCanonicalName() {
@@ -210,7 +206,7 @@ public class Rarity {
 
     /**
      * Setter for canonicalName.<p>
-     * The name of this item as it appears on the page in the book, if it's
+     * The name of this node as it appears on the page in the book, if it's
      * different from `name`.
      */
     public void setCanonicalName(Label canonicalName) {
@@ -218,7 +214,24 @@ public class Rarity {
     }
 
     /**
+     * Getter for color.<p>
+     * A thematic color associated with this node.
+     */
+    public CssColor getColor() {
+        return color;
+    }
+
+    /**
+     * Setter for color.<p>
+     * A thematic color associated with this node.
+     */
+    public void setColor(CssColor color) {
+        this.color = color;
+    }
+
+    /**
      * Getter for icon.<p>
+     * An SVG icon associated with this collection.
      */
     public SvgImageUrl getIcon() {
         return icon;
@@ -226,9 +239,42 @@ public class Rarity {
 
     /**
      * Setter for icon.<p>
+     * An SVG icon associated with this collection.
      */
     public void setIcon(SvgImageUrl icon) {
         this.icon = icon;
+    }
+
+    /**
+     * Getter for images.<p>
+     */
+    public List<WebpImageUrl> getImages() {
+        return images;
+    }
+
+    /**
+     * Setter for images.<p>
+     */
+    public void setImages(List<WebpImageUrl> images) {
+        this.images = images;
+    }
+
+    /**
+     * Getter for replaces.<p>
+     * This node replaces all nodes that match these wildcards. References to
+     * the replaced nodes can be considered equivalent to this node.
+     */
+    public List<RarityIdWildcard> getReplaces() {
+        return replaces;
+    }
+
+    /**
+     * Setter for replaces.<p>
+     * This node replaces all nodes that match these wildcards. References to
+     * the replaced nodes can be considered equivalent to this node.
+     */
+    public void setReplaces(List<RarityIdWildcard> replaces) {
+        this.replaces = replaces;
     }
 
     /**

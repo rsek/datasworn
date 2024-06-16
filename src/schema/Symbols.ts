@@ -15,3 +15,9 @@ export const Mapping = Symbol('Mapping')
 
 /** A less complex alternate version of the schema for use with code generation tools. */
 export const Simplify = Symbol('Simplify')
+
+/**
+ * Details type inheritance for use in code generation.
+ */
+export const Inherits = Symbol('Inherits')
+

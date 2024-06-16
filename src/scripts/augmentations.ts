@@ -1,6 +1,10 @@
 import { Type, type Static, type TSchema, type Kind } from '@sinclair/typebox'
 import { UnionEnum } from '../schema/Utils.js'
-import { type Simplify, type JsonTypeDef } from '../schema/Symbols.js'
+import {
+	type Simplify,
+	type JsonTypeDef,
+	type Inherits
+} from '../schema/Symbols.js'
 import { type Metadata } from './json-typedef/typedef.js'
 import { DiceExpression } from '../schema/common/Rolls.js'
 
@@ -18,12 +22,28 @@ export namespace Keywords {
 	})
 }
 
+type TypeParamCodeGenData = {
+	/** Default value for the type parameter. */
+	default?: string
+	parameters?: Record<string, TypeParamCodeGenData>
+	constraint?: string
+}
+
+type TypeCodeGenData = {
+	id: string
+	/**
+	 * Key is the type generic parameter ID (e.g. `TType`).
+	 */
+	parameters?: Record<string, TypeParamCodeGenData>
+}
+
 declare module '@sinclair/typebox' {
 	interface SchemaOptions {
 		rollable?: Static<typeof Keywords.rollable>
 		remarks?: Static<typeof Keywords.remarks>
 		releaseStage?: Static<typeof Keywords.releaseStage>
 		deprecated?: Static<typeof Keywords.deprecated>
+		[Inherits]?: TypeCodeGenData[]
 		/** A less complex alternate version of the schema for use with code generation tools. */
 		[Simplify]?: TSchema
 		[JsonTypeDef]?: {

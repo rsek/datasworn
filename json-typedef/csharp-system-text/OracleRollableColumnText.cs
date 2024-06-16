@@ -14,7 +14,7 @@ namespace Datasworn
         public string OracleType { get => "column_text"; }
 
         /// <summary>
-        /// The unique Datasworn ID for this item.
+        /// The unique Datasworn ID for this node.
         /// </summary>
         [JsonPropertyName("_id")]
         public OracleRollableId Id { get; set; }
@@ -26,7 +26,7 @@ namespace Datasworn
         public DiceExpression Dice { get; set; }
 
         /// <summary>
-        /// The primary label at the head of this column.
+        /// The primary name/label for this node.
         /// </summary>
         [JsonPropertyName("name")]
         public Label Name { get; set; }
@@ -42,27 +42,37 @@ namespace Datasworn
 
         /// <summary>
         /// Implementation hints or other developer-facing comments on this
-        /// object. These should be omitted when presenting the object for
-        /// gameplay.
+        /// node. These should be omitted when presenting the node for gameplay.
         /// </summary>
         [JsonPropertyName("_comment")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public string Comment { get; set; }
 
         /// <summary>
-        /// An optional thematic color for this column. For an example, see
-        /// "Basic Creature Form" (Starforged p. 337)
+        /// The name of this node as it appears on the page in the book, if it's
+        /// different from `name`.
+        /// </summary>
+        [JsonPropertyName("canonical_name")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public Label? CanonicalName { get; set; }
+
+        /// <summary>
+        /// A thematic color associated with this node.
         /// </summary>
         [JsonPropertyName("color")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public CssColor? Color { get; set; }
 
         /// <summary>
-        /// An optional icon for this column.
+        /// An SVG icon associated with this collection.
         /// </summary>
         [JsonPropertyName("icon")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public SvgImageUrl? Icon { get; set; }
+
+        [JsonPropertyName("images")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public IList<WebpImageUrl> Images { get; set; }
 
         /// <summary>
         /// Most oracle tables are insensitive to matches, but a few define
@@ -72,10 +82,13 @@ namespace Datasworn
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public OracleMatchBehavior? Match { get; set; }
 
+        [JsonPropertyName("recommended_rolls")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public OracleRollableColumnTextRecommendedRolls RecommendedRolls { get; set; }
+
         /// <summary>
-        /// Indicates that this object replaces the identified OracleRollables.
-        /// References to the replaced objects can be considered equivalent to
-        /// this object.
+        /// This node replaces all nodes that match these wildcards. References
+        /// to the replaced nodes can be considered equivalent to this node.
         /// </summary>
         [JsonPropertyName("replaces")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
@@ -84,14 +97,6 @@ namespace Datasworn
         [JsonPropertyName("suggestions")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public Suggestions? Suggestions { get; set; }
-
-        /// <summary>
-        /// Optional secondary text at the head of this column. For best
-        /// results, this should be no more than a few words in length.
-        /// </summary>
-        [JsonPropertyName("summary")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public MarkdownString? Summary { get; set; }
 
         [JsonPropertyName("tags")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

@@ -13,7 +13,7 @@ var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _IdParser_instances, _a, _IdParser_pathSegments, _IdParser_typeIds, _IdParser_validateTypeIds, _IdParser_toString, _IdParser_getIdFormat, _IdParser_validatePathSegments, _IdParser_validateIndexKey, _IdParser_assignIdsInDictionary, _IdParser_assignIdsInArray, _IdParser_globberPath, _IdParser_parseOptions, _IdParser_getClassForPrimaryTypeId, _IdParser_validateRulesPackage, _IdParser_validatePrimaryPathKeys, _IdParser_validateDictKey, _IdParser_validateCollectionKey;
+var _IdParser_instances, _a, _IdParser_pathSegments, _IdParser_typeIds, _IdParser_validateTypeIds, _IdParser_toString, _IdParser_getIdFormat, _IdParser_validatePathSegments, _IdParser_validateIndexKey, _IdParser_assignEmbeddedIdsInDictionary, _IdParser_assignEmbeddedIdsInArray, _IdParser_globberPath, _IdParser_parseOptions, _IdParser_getClassForPrimaryTypeId, _IdParser_validateRulesPackage, _IdParser_validatePrimaryPathKeys, _IdParser_validateDictKey, _IdParser_validateCollectionKey;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CollectionId = exports.EmbeddedId = exports.CollectableId = exports.NonCollectableId = exports.IdParser = void 0;
 const CONST_js_1 = __importDefault(require("./IdElements/CONST.js"));
@@ -66,7 +66,6 @@ class IdParser {
             throw new Errors_js_1.ParseError(id, errors.join('\n'));
     }
     createEmbeddedId(typeId, key) {
-        // IdParser.logger.debug(`[createdEmbeddedId] ${this.id} > ${typeId}, ${key}`)
         return new EmbeddedId(this, typeId, key.toString());
     }
     /**
@@ -136,12 +135,13 @@ class IdParser {
         if (typeof node._id === 'string')
             _a.logger.warn(`Can't assign <${this.id}>, node already has <${node._id}>`);
         else {
+            if (index instanceof Map && index.has(this.id))
+                throw new Error(`Generated ID <${this.id}>, but it already exists in the index`);
             node._id = this.id;
-            // IdParser.logger.debug(
-            // 	`[assignIdsIn] Assigned ${this.constructor.name} @ <${this.id}>`
-            // )
+            if (index instanceof Map)
+                index.set(this.id, node);
         }
-        if (recursive) {
+        if (recursive)
             for (const embedTypeId of this.embedTypes) {
                 const property = TypeId_js_1.default.getEmbeddedPropertyKey(embedTypeId);
                 if (!(property in node))
@@ -150,15 +150,12 @@ class IdParser {
                 if (childNodes == null)
                     continue;
                 if (Array.isArray(childNodes)) {
-                    __classPrivateFieldGet(this, _IdParser_instances, "m", _IdParser_assignIdsInArray).call(this, childNodes, embedTypeId, recursive, index);
+                    __classPrivateFieldGet(this, _IdParser_instances, "m", _IdParser_assignEmbeddedIdsInArray).call(this, childNodes, embedTypeId, recursive, index);
                 }
                 else {
-                    __classPrivateFieldGet(this, _IdParser_instances, "m", _IdParser_assignIdsInDictionary).call(this, childNodes, embedTypeId, recursive, index);
+                    __classPrivateFieldGet(this, _IdParser_instances, "m", _IdParser_assignEmbeddedIdsInDictionary).call(this, childNodes, embedTypeId, recursive, index);
                 }
             }
-        }
-        if (index instanceof Map)
-            index.set(this.id, node);
         return node;
     }
     /**
@@ -220,26 +217,21 @@ class IdParser {
             if (typeRoot == null)
                 continue;
             for (const dictKey in typeRoot) {
-                const trunkNode = typeRoot[dictKey];
-                if (trunkNode == null)
+                const node = typeRoot[dictKey];
+                if (node == null)
                     continue;
-                const id = `${typeId}${CONST_js_1.default.PrefixSep}${rulesPackage._id}${CONST_js_1.default.PathKeySep}${dictKey}`;
-                let parser;
                 try {
                     switch (true) {
                         case TypeGuard_js_1.default.CollectionType(typeId):
-                            parser = new CollectionId(typeId, rulesPackage._id, dictKey);
-                            parser.assignIdsIn(trunkNode, true, index);
+                            new CollectionId(typeId, rulesPackage._id, dictKey).assignIdsIn(node, true, index);
                             break;
                         case TypeGuard_js_1.default.NonCollectableType(typeId):
-                            parser = new NonCollectableId(typeId, rulesPackage._id, dictKey);
-                            parser.assignIdsIn(trunkNode, true, index);
-                            break;
-                        default:
+                            new NonCollectableId(typeId, rulesPackage._id, dictKey).assignIdsIn(node, true, index);
                             break;
                     }
                 }
                 catch (e) {
+                    const id = `${typeId}${CONST_js_1.default.PrefixSep}${rulesPackage._id}${CONST_js_1.default.PathKeySep}${dictKey}`;
                     errorMessages.push(`Failed to create ID within <${id}>. ${String(e)}`);
                 }
             }
@@ -323,7 +315,7 @@ _a = IdParser, _IdParser_pathSegments = new WeakMap(), _IdParser_typeIds = new W
     return true;
 }, _IdParser_validateIndexKey = function _IdParser_validateIndexKey(value) {
     return TypeGuard_js_1.default.Wildcard(value) || TypeGuard_js_1.default.IndexKey(value);
-}, _IdParser_assignIdsInDictionary = function _IdParser_assignIdsInDictionary(childNodes, nextTypeId, recursive, index) {
+}, _IdParser_assignEmbeddedIdsInDictionary = function _IdParser_assignEmbeddedIdsInDictionary(childNodes, nextTypeId, recursive, index) {
     // IdParser.logger.debug('[#assignIdsInDictionary]')
     for (const k in childNodes) {
         const childNode = childNodes[k];
@@ -332,13 +324,8 @@ _a = IdParser, _IdParser_pathSegments = new WeakMap(), _IdParser_typeIds = new W
         const childParser = this.createEmbeddedId(nextTypeId, k);
         childParser.assignIdsIn(childNode, recursive, index);
     }
-}, _IdParser_assignIdsInArray = function _IdParser_assignIdsInArray(childNodes, nextTypeId, recursive, index) {
-    // IdParser.logger.debug('[#assignIdsInArray]')
-    for (let i = 0; i < childNodes.length; i++) {
-        const childNode = childNodes[i];
-        const childParser = this.createEmbeddedId(nextTypeId, i.toString());
-        childParser.assignIdsIn(childNode, recursive, index);
-    }
+}, _IdParser_assignEmbeddedIdsInArray = function _IdParser_assignEmbeddedIdsInArray(childNodes, nextTypeId, recursive, index) {
+    childNodes.forEach((childNode, i) => this.createEmbeddedId(nextTypeId, i.toString()).assignIdsIn(childNode, recursive, index));
 }, _IdParser_parseOptions = function _IdParser_parseOptions(id) {
     const [leftSide, rightSide] = id.split(CONST_js_1.default.PrefixSep);
     const typeIds = leftSide.split(CONST_js_1.default.PathTypeSep);
@@ -490,7 +477,8 @@ class CollectionId extends IdParser {
     createCollectionChild(key) {
         if (this.recursionDepth >= CONST_js_1.default.RECURSIVE_PATH_ELEMENTS_MAX)
             throw new Errors_js_1.ParseError(this.id, `Cant't generate a child collection ID because this ID has reached the maximum recursion depth (${CONST_js_1.default.RECURSIVE_PATH_ELEMENTS_MAX})`);
-        return new CollectionId(this.primaryTypeId, this.rulesPackage, ...this.primaryDictKeyElements, key);
+        const { primaryTypeId, rulesPackage, primaryDictKeyElements } = this;
+        return new CollectionId(primaryTypeId, rulesPackage, ...primaryDictKeyElements, key);
     }
 }
 exports.CollectionId = CollectionId;
@@ -501,10 +489,6 @@ class EmbeddedId extends IdParser {
             pathSegments: [...parent.pathSegments, key.toString()]
         };
         super(options);
-    }
-    assignIdsIn(node, recursive, index) {
-        const result = super.assignIdsIn(node, recursive, index);
-        return result;
     }
 }
 exports.EmbeddedId = EmbeddedId;

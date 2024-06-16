@@ -12,7 +12,7 @@ namespace Datasworn
     public class AssetAbility
     {
         /// <summary>
-        /// The unique Datasworn ID for this item.
+        /// The unique Datasworn ID for this node.
         /// </summary>
         [JsonPropertyName("_id")]
         public AssetAbilityId Id { get; set; }
@@ -31,8 +31,7 @@ namespace Datasworn
 
         /// <summary>
         /// Implementation hints or other developer-facing comments on this
-        /// object. These should be omitted when presenting the object for
-        /// gameplay.
+        /// node. These should be omitted when presenting the node for gameplay.
         /// </summary>
         [JsonPropertyName("_comment")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

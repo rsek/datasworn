@@ -13,14 +13,14 @@ namespace Datasworn
     public class MoveSpecialTrack
     {
         /// <summary>
-        /// The unique Datasworn ID for this item.
+        /// The unique Datasworn ID for this node.
         /// </summary>
         [JsonPropertyName("_id")]
         public MoveId Id { get; set; }
 
         /// <summary>
         /// Attribution for the original source (such as a book or website) of
-        /// this item, including the author and licensing information.
+        /// this node, including the author and licensing information.
         /// </summary>
         [JsonPropertyName("_source")]
         public SourceInfo Source { get; set; }
@@ -32,7 +32,7 @@ namespace Datasworn
         public bool AllowMomentumBurn { get; set; }
 
         /// <summary>
-        /// The primary name/label for this item.
+        /// The primary name/label for this node.
         /// </summary>
         [JsonPropertyName("name")]
         public Label Name { get; set; }
@@ -40,10 +40,6 @@ namespace Datasworn
         [JsonPropertyName("outcomes")]
         public MoveOutcomes Outcomes { get; set; }
 
-        /// <summary>
-        /// A progress move that rolls on one or more special tracks, like Bonds
-        /// (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
-        /// </summary>
         [JsonPropertyName("roll_type")]
         public MoveSpecialTrackRollType RollType { get; set; }
 
@@ -64,20 +60,37 @@ namespace Datasworn
 
         /// <summary>
         /// Implementation hints or other developer-facing comments on this
-        /// object. These should be omitted when presenting the object for
-        /// gameplay.
+        /// node. These should be omitted when presenting the node for gameplay.
         /// </summary>
         [JsonPropertyName("_comment")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public string Comment { get; set; }
 
         /// <summary>
-        /// The name of this item as it appears on the page in the book, if it's
+        /// The name of this node as it appears on the page in the book, if it's
         /// different from `name`.
         /// </summary>
         [JsonPropertyName("canonical_name")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public Label? CanonicalName { get; set; }
+
+        /// <summary>
+        /// A thematic color associated with this node.
+        /// </summary>
+        [JsonPropertyName("color")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public CssColor? Color { get; set; }
+
+        /// <summary>
+        /// An SVG icon associated with this collection.
+        /// </summary>
+        [JsonPropertyName("icon")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public SvgImageUrl? Icon { get; set; }
+
+        [JsonPropertyName("images")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public IList<WebpImageUrl> Images { get; set; }
 
         [JsonPropertyName("oracles")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

@@ -190,9 +190,6 @@ declare namespace CollectionId {
 declare class EmbeddedId<Parent extends IdParser = IdParser, TypeId extends TypeId.EmbeddableType = TypeId.EmbeddableType, Key extends string = string> extends IdParser {
     constructor(parent: Parent, typeId: TypeId, key: string);
     constructor(parent: Parent, typeId: TypeId, index: number);
-    assignIdsIn<T extends {
-        _id?: string;
-    }>(node: T, recursive?: boolean, index?: Map<string, unknown>): T;
 }
 interface EmbeddedId<Parent extends IdParser, TypeId extends TypeId.EmbeddableType = TypeId.EmbeddableType, Key extends string = string> extends IdParser {
     get id(): `${this['fullTypeId']}${CONST.PrefixSep}${Join<this['pathSegments'], CONST.PathTypeSep>}`;

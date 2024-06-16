@@ -242,11 +242,11 @@ const (
 )
 
 type Asset struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID AssetID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	Abilities []AssetAbility `json:"abilities"`
@@ -259,7 +259,7 @@ type Asset struct {
 	// (classic Ironsworn).
 	CountAsImpact bool `json:"count_as_impact"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	// Most assets only benefit to their owner, but certain assets (like
@@ -269,30 +269,36 @@ type Asset struct {
 
 	Type AssetType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
 	Attachments *AssetAttachment `json:"attachments,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A thematic color associated with this asset.
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
 
 	// Controls are condition meters, clocks, counters, and other asset input
 	// fields whose values are expected to change throughout the life of the asset.
 	Controls map[string]AssetControlField `json:"controls,omitempty"`
 
-	// This asset's icon.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Options are input fields set when the player purchases the asset. They're
 	// likely to remain the same through the life of the asset. Typically, they are
 	// rendered at the top of the asset card.
 	Options map[string]AssetOptionField `json:"options,omitempty"`
+
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
+	Replaces []AssetIDWildcard `json:"replaces,omitempty"`
 
 	// Describes prerequisites for purchasing or using this asset.
 	Requirement *MarkdownString `json:"requirement,omitempty"`
@@ -305,7 +311,7 @@ type Asset struct {
 // An asset ability: one of the purchasable features of an asset. Most assets
 // have three.
 type AssetAbility struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID AssetAbilityID `json:"_id"`
 
 	// Is this asset ability enabled?
@@ -314,8 +320,8 @@ type AssetAbility struct {
 	// The complete rules text of this asset ability.
 	Text MarkdownString `json:"text"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
 	// Fields whose values are expected to change over the life of the asset.
@@ -607,37 +613,39 @@ const (
 )
 
 type AssetCollection struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID AssetCollectionID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	// The primary name/label for this item.
+	Collections map[string]AssetCollection `json:"collections"`
+
+	Contents map[string]Asset `json:"contents"`
+
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Type AssetCollectionType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A thematic color associated with this collection.
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
-
-	Contents map[string]Asset `json:"contents,omitempty"`
 
 	// A longer description of this collection, which might include multiple
 	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
 	Description *MarkdownString `json:"description,omitempty"`
 
-	// This collection's content enhances the identified collections, rather than
-	// being a standalone collection of its own.
+	// This node's content enhances all nodes that match these wildcards, rather
+	// than being a standalone item of its own.
 	Enhances []AssetCollectionIDWildcard `json:"enhances,omitempty"`
 
 	// An SVG icon associated with this collection.
@@ -645,8 +653,8 @@ type AssetCollection struct {
 
 	Images []WebpImageURL `json:"images,omitempty"`
 
-	// This collection replaces the identified collections. References to the
-	// replaced collections can be considered equivalent to this collection.
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []AssetCollectionIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
@@ -1288,39 +1296,39 @@ const (
 )
 
 type AtlasCollection struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID AtlasCollectionID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	// The primary name/label for this item.
+	Collections map[string]AtlasCollection `json:"collections"`
+
+	Contents map[string]AtlasEntry `json:"contents"`
+
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Type AtlasCollectionType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	Collections map[string]AtlasCollection `json:"collections,omitempty"`
-
-	// A thematic color associated with this collection.
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
-
-	Contents map[string]AtlasEntry `json:"contents,omitempty"`
 
 	// A longer description of this collection, which might include multiple
 	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
 	Description *MarkdownString `json:"description,omitempty"`
 
-	// This collection's content enhances the identified collections, rather than
-	// being a standalone collection of its own.
+	// This node's content enhances all nodes that match these wildcards, rather
+	// than being a standalone item of its own.
 	Enhances []AtlasCollectionIDWildcard `json:"enhances,omitempty"`
 
 	// An SVG icon associated with this collection.
@@ -1328,8 +1336,8 @@ type AtlasCollection struct {
 
 	Images []WebpImageURL `json:"images,omitempty"`
 
-	// This collection replaces the identified collections. References to the
-	// replaced collections can be considered equivalent to this collection.
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []AtlasCollectionIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
@@ -1357,31 +1365,42 @@ const (
 
 // An atlas entry, like the Ironlands region entries found in classic Ironsworn.
 type AtlasEntry struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID AtlasEntryID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	Description MarkdownString `json:"description"`
 
 	Features []MarkdownString `json:"features"`
 
-	// The primary name/label for this item.
 	Name Label `json:"name"`
 
 	Type AtlasEntryType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
+
+	// An SVG icon associated with this collection.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
+
 	QuestStarter *MarkdownString `json:"quest_starter,omitempty"`
+
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
+	Replaces []AtlasEntryIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
@@ -1634,11 +1653,11 @@ const (
 
 // A delve site with a theme, domain, and denizens.
 type DelveSite struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID DelveSiteID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// Represents the delve site's denizen matrix as an array of objects.
@@ -1649,7 +1668,7 @@ type DelveSite struct {
 	// The ID of the site's DelveSiteDomain card.
 	Domain DelveSiteDomainID `json:"domain"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Rank ChallengeRank `json:"rank"`
@@ -1659,23 +1678,33 @@ type DelveSite struct {
 
 	Type DelveSiteType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
 
 	// An additional theme or domain card ID, for use with optional rules in
 	// Ironsworn: Delve.
 	ExtraCard *string `json:"extra_card,omitempty"`
 
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// The ID of an atlas entry representing the region in which this delve site
 	// is located.
 	Region *AtlasEntryID `json:"region,omitempty"`
+
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
+	Replaces []DelveSiteIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
@@ -1728,33 +1757,37 @@ const (
 
 // A delve site Domain card.
 type DelveSiteDomain struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID DelveSiteDomainID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	Dangers []DelveSiteDomainDanger `json:"dangers"`
 
 	Features []DelveSiteDomainFeature `json:"features"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
-
-	Summary MarkdownString `json:"summary"`
 
 	Type DelveSiteDomainType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	Description *MarkdownString `json:"description,omitempty"`
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
+
+	// An SVG icon associated with this collection.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// An oracle table ID containing place name elements. For examples, see
 	// oracle ID `oracle_rollable:delve/site_name/place/barrow`, and its siblings
@@ -1763,6 +1796,10 @@ type DelveSiteDomain struct {
 	// (`oracle_rollable:delve/site_name/format`) to create random names for delve
 	// sites.
 	NameOracle *OracleRollableID `json:"name_oracle,omitempty"`
+
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
+	Replaces []DelveSiteDomainIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
@@ -1857,35 +1894,41 @@ const (
 
 // A delve site theme card.
 type DelveSiteTheme struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID DelveSiteThemeID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	Dangers []DelveSiteThemeFeature `json:"dangers"`
+	Dangers []DelveSiteThemeDanger `json:"dangers"`
 
 	Features []DelveSiteThemeFeature `json:"features"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
-
-	Summary MarkdownString `json:"summary"`
 
 	Type DelveSiteThemeType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	Description *MarkdownString `json:"description,omitempty"`
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
 
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
+
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
+	Replaces []DelveSiteThemeIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
@@ -1997,7 +2040,6 @@ const (
 	EmbedOnlyTypeRow EmbedOnlyType = "row"
 )
 
-// A move that makes an action roll.
 type EmbeddedActionRollMoveRollType string
 
 const (
@@ -2016,12 +2058,11 @@ type EmbeddedActionRollMove struct {
 	// Is burning momentum allowed for this move?
 	AllowMomentumBurn bool `json:"allow_momentum_burn"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Outcomes MoveOutcomes `json:"outcomes"`
 
-	// A move that makes an action roll.
 	RollType EmbeddedActionRollMoveRollType `json:"roll_type"`
 
 	// The complete rules text of the move.
@@ -2032,13 +2073,21 @@ type EmbeddedActionRollMove struct {
 
 	Type EmbeddedActionRollMoveType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
+
+	// An SVG icon associated with this collection.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
@@ -2112,7 +2161,7 @@ type EmbeddedMoveActionRoll struct {
 	// Is burning momentum allowed for this move?
 	AllowMomentumBurn bool `json:"allow_momentum_burn"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Outcomes MoveOutcomes `json:"outcomes"`
@@ -2125,13 +2174,21 @@ type EmbeddedMoveActionRoll struct {
 
 	Type EmbeddedMoveActionRollType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
+
+	// An SVG icon associated with this collection.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
@@ -2150,7 +2207,7 @@ type EmbeddedMoveNoRoll struct {
 	// Is burning momentum allowed for this move?
 	AllowMomentumBurn bool `json:"allow_momentum_burn"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	// The complete rules text of the move.
@@ -2161,13 +2218,21 @@ type EmbeddedMoveNoRoll struct {
 
 	Type EmbeddedMoveNoRollType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
+
+	// An SVG icon associated with this collection.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
@@ -2186,7 +2251,7 @@ type EmbeddedMoveProgressRoll struct {
 	// Is burning momentum allowed for this move?
 	AllowMomentumBurn bool `json:"allow_momentum_burn"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Outcomes MoveOutcomes `json:"outcomes"`
@@ -2202,13 +2267,21 @@ type EmbeddedMoveProgressRoll struct {
 
 	Type EmbeddedMoveProgressRollType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
+
+	// An SVG icon associated with this collection.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
@@ -2227,7 +2300,7 @@ type EmbeddedMoveSpecialTrack struct {
 	// Is burning momentum allowed for this move?
 	AllowMomentumBurn bool `json:"allow_momentum_burn"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Outcomes MoveOutcomes `json:"outcomes"`
@@ -2240,13 +2313,21 @@ type EmbeddedMoveSpecialTrack struct {
 
 	Type EmbeddedMoveSpecialTrackType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
+
+	// An SVG icon associated with this collection.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
@@ -2257,7 +2338,6 @@ type EmbeddedMoveID = string
 
 type EmbeddedMoveIDWildcard = string
 
-// A move that makes no action rolls or progress rolls.
 type EmbeddedNoRollMoveRollType string
 
 const (
@@ -2276,10 +2356,9 @@ type EmbeddedNoRollMove struct {
 	// Is burning momentum allowed for this move?
 	AllowMomentumBurn bool `json:"allow_momentum_burn"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
-	// A move that makes no action rolls or progress rolls.
 	RollType EmbeddedNoRollMoveRollType `json:"roll_type"`
 
 	// The complete rules text of the move.
@@ -2290,13 +2369,21 @@ type EmbeddedNoRollMove struct {
 
 	Type EmbeddedNoRollMoveType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
+
+	// An SVG icon associated with this collection.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
@@ -2315,13 +2402,19 @@ const (
 	EmbeddedOracleColumnTextTypeOracleRollable EmbeddedOracleColumnTextType = "oracle_rollable"
 )
 
+type EmbeddedOracleColumnTextRecommendedRolls struct {
+	Max int16 `json:"max"`
+
+	Min int16 `json:"min"`
+}
+
 type EmbeddedOracleColumnText struct {
 	ID EmbeddedOracleRollableID `json:"_id"`
 
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary label at the head of this column.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	OracleType EmbeddedOracleColumnTextOracleType `json:"oracle_type"`
@@ -2331,26 +2424,29 @@ type EmbeddedOracleColumnText struct {
 
 	Type EmbeddedOracleColumnTextType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// An optional thematic color for this column. For an example, see "Basic
-	// Creature Form" (Starforged p. 337)
+	// The name of this node as it appears on the page in the book, if it's
+	// different from `name`.
+	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
 
-	// An optional icon for this column.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
 	Match *OracleMatchBehavior `json:"match,omitempty"`
 
-	Suggestions *Suggestions `json:"suggestions,omitempty"`
+	RecommendedRolls *EmbeddedOracleColumnTextRecommendedRolls `json:"recommended_rolls,omitempty"`
 
-	// Optional secondary text at the head of this column. For best results, this
-	// should be no more than a few words in length.
-	Summary *MarkdownString `json:"summary,omitempty"`
+	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -2367,13 +2463,19 @@ const (
 	EmbeddedOracleColumnText2TypeOracleRollable EmbeddedOracleColumnText2Type = "oracle_rollable"
 )
 
+type EmbeddedOracleColumnText2RecommendedRolls struct {
+	Max int16 `json:"max"`
+
+	Min int16 `json:"min"`
+}
+
 type EmbeddedOracleColumnText2 struct {
 	ID EmbeddedOracleRollableID `json:"_id"`
 
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary label at the head of this column.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	OracleType EmbeddedOracleColumnText2OracleType `json:"oracle_type"`
@@ -2383,26 +2485,29 @@ type EmbeddedOracleColumnText2 struct {
 
 	Type EmbeddedOracleColumnText2Type `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// An optional thematic color for this column. For an example, see "Basic
-	// Creature Form" (Starforged p. 337)
+	// The name of this node as it appears on the page in the book, if it's
+	// different from `name`.
+	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
 
-	// An optional icon for this column.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
 	Match *OracleMatchBehavior `json:"match,omitempty"`
 
-	Suggestions *Suggestions `json:"suggestions,omitempty"`
+	RecommendedRolls *EmbeddedOracleColumnText2RecommendedRolls `json:"recommended_rolls,omitempty"`
 
-	// Optional secondary text at the head of this column. For best results, this
-	// should be no more than a few words in length.
-	Summary *MarkdownString `json:"summary,omitempty"`
+	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -2419,13 +2524,19 @@ const (
 	EmbeddedOracleColumnText3TypeOracleRollable EmbeddedOracleColumnText3Type = "oracle_rollable"
 )
 
+type EmbeddedOracleColumnText3RecommendedRolls struct {
+	Max int16 `json:"max"`
+
+	Min int16 `json:"min"`
+}
+
 type EmbeddedOracleColumnText3 struct {
 	ID EmbeddedOracleRollableID `json:"_id"`
 
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary label at the head of this column.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	OracleType EmbeddedOracleColumnText3OracleType `json:"oracle_type"`
@@ -2435,26 +2546,29 @@ type EmbeddedOracleColumnText3 struct {
 
 	Type EmbeddedOracleColumnText3Type `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// An optional thematic color for this column. For an example, see "Basic
-	// Creature Form" (Starforged p. 337)
+	// The name of this node as it appears on the page in the book, if it's
+	// different from `name`.
+	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
 
-	// An optional icon for this column.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
 	Match *OracleMatchBehavior `json:"match,omitempty"`
 
-	Suggestions *Suggestions `json:"suggestions,omitempty"`
+	RecommendedRolls *EmbeddedOracleColumnText3RecommendedRolls `json:"recommended_rolls,omitempty"`
 
-	// Optional secondary text at the head of this column. For best results, this
-	// should be no more than a few words in length.
-	Summary *MarkdownString `json:"summary,omitempty"`
+	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -2532,13 +2646,19 @@ const (
 	EmbeddedOracleRollableColumnTextTypeOracleRollable EmbeddedOracleRollableColumnTextType = "oracle_rollable"
 )
 
+type EmbeddedOracleRollableColumnTextRecommendedRolls struct {
+	Max int16 `json:"max"`
+
+	Min int16 `json:"min"`
+}
+
 type EmbeddedOracleRollableColumnText struct {
 	ID EmbeddedOracleRollableID `json:"_id"`
 
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary label at the head of this column.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	// An array of objects, each representing a single row of the table.
@@ -2546,26 +2666,29 @@ type EmbeddedOracleRollableColumnText struct {
 
 	Type EmbeddedOracleRollableColumnTextType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// An optional thematic color for this column. For an example, see "Basic
-	// Creature Form" (Starforged p. 337)
+	// The name of this node as it appears on the page in the book, if it's
+	// different from `name`.
+	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
 
-	// An optional icon for this column.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
 	Match *OracleMatchBehavior `json:"match,omitempty"`
 
-	Suggestions *Suggestions `json:"suggestions,omitempty"`
+	RecommendedRolls *EmbeddedOracleRollableColumnTextRecommendedRolls `json:"recommended_rolls,omitempty"`
 
-	// Optional secondary text at the head of this column. For best results, this
-	// should be no more than a few words in length.
-	Summary *MarkdownString `json:"summary,omitempty"`
+	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -2576,13 +2699,19 @@ const (
 	EmbeddedOracleRollableColumnText2TypeOracleRollable EmbeddedOracleRollableColumnText2Type = "oracle_rollable"
 )
 
+type EmbeddedOracleRollableColumnText2RecommendedRolls struct {
+	Max int16 `json:"max"`
+
+	Min int16 `json:"min"`
+}
+
 type EmbeddedOracleRollableColumnText2 struct {
 	ID EmbeddedOracleRollableID `json:"_id"`
 
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary label at the head of this column.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	// An array of objects, each representing a single row of the table.
@@ -2590,26 +2719,29 @@ type EmbeddedOracleRollableColumnText2 struct {
 
 	Type EmbeddedOracleRollableColumnText2Type `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// An optional thematic color for this column. For an example, see "Basic
-	// Creature Form" (Starforged p. 337)
+	// The name of this node as it appears on the page in the book, if it's
+	// different from `name`.
+	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
 
-	// An optional icon for this column.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
 	Match *OracleMatchBehavior `json:"match,omitempty"`
 
-	Suggestions *Suggestions `json:"suggestions,omitempty"`
+	RecommendedRolls *EmbeddedOracleRollableColumnText2RecommendedRolls `json:"recommended_rolls,omitempty"`
 
-	// Optional secondary text at the head of this column. For best results, this
-	// should be no more than a few words in length.
-	Summary *MarkdownString `json:"summary,omitempty"`
+	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -2620,13 +2752,19 @@ const (
 	EmbeddedOracleRollableColumnText3TypeOracleRollable EmbeddedOracleRollableColumnText3Type = "oracle_rollable"
 )
 
+type EmbeddedOracleRollableColumnText3RecommendedRolls struct {
+	Max int16 `json:"max"`
+
+	Min int16 `json:"min"`
+}
+
 type EmbeddedOracleRollableColumnText3 struct {
 	ID EmbeddedOracleRollableID `json:"_id"`
 
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary label at the head of this column.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	// An array of objects, each representing a single row of the table.
@@ -2634,26 +2772,29 @@ type EmbeddedOracleRollableColumnText3 struct {
 
 	Type EmbeddedOracleRollableColumnText3Type `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// An optional thematic color for this column. For an example, see "Basic
-	// Creature Form" (Starforged p. 337)
+	// The name of this node as it appears on the page in the book, if it's
+	// different from `name`.
+	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
 
-	// An optional icon for this column.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
 	Match *OracleMatchBehavior `json:"match,omitempty"`
 
-	Suggestions *Suggestions `json:"suggestions,omitempty"`
+	RecommendedRolls *EmbeddedOracleRollableColumnText3RecommendedRolls `json:"recommended_rolls,omitempty"`
 
-	// Optional secondary text at the head of this column. For best results, this
-	// should be no more than a few words in length.
-	Summary *MarkdownString `json:"summary,omitempty"`
+	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -2688,7 +2829,7 @@ type EmbeddedOracleRollableTableText struct {
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	// An array of objects, each representing a single row of the table.
@@ -2696,21 +2837,21 @@ type EmbeddedOracleRollableTableText struct {
 
 	Type EmbeddedOracleRollableTableTextType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A longer description of the oracle table's intended usage, which might
-	// include multiple paragraphs. If it's only a couple sentences, use the
-	// `summary` key instead.
-	Description *MarkdownString `json:"description,omitempty"`
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
 
-	// An icon that represents this table.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
@@ -2719,12 +2860,6 @@ type EmbeddedOracleRollableTableText struct {
 	RecommendedRolls *EmbeddedOracleRollableTableTextRecommendedRolls `json:"recommended_rolls,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	// A brief summary of the oracle table's intended usage, no more than a few
-	// sentences in length. This is intended for use in application tooltips
-	// and similar sorts of hints. Longer text should use the "description" key
-	// instead.
-	Summary *MarkdownString `json:"summary,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -2761,7 +2896,7 @@ type EmbeddedOracleRollableTableText2 struct {
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	// An array of objects, each representing a single row of the table.
@@ -2769,21 +2904,21 @@ type EmbeddedOracleRollableTableText2 struct {
 
 	Type EmbeddedOracleRollableTableText2Type `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A longer description of the oracle table's intended usage, which might
-	// include multiple paragraphs. If it's only a couple sentences, use the
-	// `summary` key instead.
-	Description *MarkdownString `json:"description,omitempty"`
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
 
-	// An icon that represents this table.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
@@ -2792,12 +2927,6 @@ type EmbeddedOracleRollableTableText2 struct {
 	RecommendedRolls *EmbeddedOracleRollableTableText2RecommendedRolls `json:"recommended_rolls,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	// A brief summary of the oracle table's intended usage, no more than a few
-	// sentences in length. This is intended for use in application tooltips
-	// and similar sorts of hints. Longer text should use the "description" key
-	// instead.
-	Summary *MarkdownString `json:"summary,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -2836,7 +2965,7 @@ type EmbeddedOracleRollableTableText3 struct {
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	// An array of objects, each representing a single row of the table.
@@ -2844,21 +2973,21 @@ type EmbeddedOracleRollableTableText3 struct {
 
 	Type EmbeddedOracleRollableTableText3Type `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A longer description of the oracle table's intended usage, which might
-	// include multiple paragraphs. If it's only a couple sentences, use the
-	// `summary` key instead.
-	Description *MarkdownString `json:"description,omitempty"`
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
 
-	// An icon that represents this table.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
@@ -2867,12 +2996,6 @@ type EmbeddedOracleRollableTableText3 struct {
 	RecommendedRolls *EmbeddedOracleRollableTableText3RecommendedRolls `json:"recommended_rolls,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	// A brief summary of the oracle table's intended usage, no more than a few
-	// sentences in length. This is intended for use in application tooltips
-	// and similar sorts of hints. Longer text should use the "description" key
-	// instead.
-	Summary *MarkdownString `json:"summary,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -2917,7 +3040,7 @@ type EmbeddedOracleTableText struct {
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	OracleType EmbeddedOracleTableTextOracleType `json:"oracle_type"`
@@ -2927,21 +3050,21 @@ type EmbeddedOracleTableText struct {
 
 	Type EmbeddedOracleTableTextType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A longer description of the oracle table's intended usage, which might
-	// include multiple paragraphs. If it's only a couple sentences, use the
-	// `summary` key instead.
-	Description *MarkdownString `json:"description,omitempty"`
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
 
-	// An icon that represents this table.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
@@ -2950,12 +3073,6 @@ type EmbeddedOracleTableText struct {
 	RecommendedRolls *EmbeddedOracleTableTextRecommendedRolls `json:"recommended_rolls,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	// A brief summary of the oracle table's intended usage, no more than a few
-	// sentences in length. This is intended for use in application tooltips
-	// and similar sorts of hints. Longer text should use the "description" key
-	// instead.
-	Summary *MarkdownString `json:"summary,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -2998,7 +3115,7 @@ type EmbeddedOracleTableText2 struct {
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	OracleType EmbeddedOracleTableText2OracleType `json:"oracle_type"`
@@ -3008,21 +3125,21 @@ type EmbeddedOracleTableText2 struct {
 
 	Type EmbeddedOracleTableText2Type `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A longer description of the oracle table's intended usage, which might
-	// include multiple paragraphs. If it's only a couple sentences, use the
-	// `summary` key instead.
-	Description *MarkdownString `json:"description,omitempty"`
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
 
-	// An icon that represents this table.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
@@ -3031,12 +3148,6 @@ type EmbeddedOracleTableText2 struct {
 	RecommendedRolls *EmbeddedOracleTableText2RecommendedRolls `json:"recommended_rolls,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	// A brief summary of the oracle table's intended usage, no more than a few
-	// sentences in length. This is intended for use in application tooltips
-	// and similar sorts of hints. Longer text should use the "description" key
-	// instead.
-	Summary *MarkdownString `json:"summary,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -3081,7 +3192,7 @@ type EmbeddedOracleTableText3 struct {
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	OracleType EmbeddedOracleTableText3OracleType `json:"oracle_type"`
@@ -3091,21 +3202,21 @@ type EmbeddedOracleTableText3 struct {
 
 	Type EmbeddedOracleTableText3Type `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A longer description of the oracle table's intended usage, which might
-	// include multiple paragraphs. If it's only a couple sentences, use the
-	// `summary` key instead.
-	Description *MarkdownString `json:"description,omitempty"`
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
 
-	// An icon that represents this table.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
@@ -3115,17 +3226,9 @@ type EmbeddedOracleTableText3 struct {
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
-	// A brief summary of the oracle table's intended usage, no more than a few
-	// sentences in length. This is intended for use in application tooltips
-	// and similar sorts of hints. Longer text should use the "description" key
-	// instead.
-	Summary *MarkdownString `json:"summary,omitempty"`
-
 	Tags *Tags `json:"tags,omitempty"`
 }
 
-// A progress move that rolls on a standard progress track type (defined by
-// this move).
 type EmbeddedProgressRollMoveRollType string
 
 const (
@@ -3144,13 +3247,11 @@ type EmbeddedProgressRollMove struct {
 	// Is burning momentum allowed for this move?
 	AllowMomentumBurn bool `json:"allow_momentum_burn"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Outcomes MoveOutcomes `json:"outcomes"`
 
-	// A progress move that rolls on a standard progress track type (defined by
-	// this move).
 	RollType EmbeddedProgressRollMoveRollType `json:"roll_type"`
 
 	// The complete rules text of the move.
@@ -3164,21 +3265,27 @@ type EmbeddedProgressRollMove struct {
 
 	Type EmbeddedProgressRollMoveType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
+
+	// An SVG icon associated with this collection.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
 
-// A progress move that rolls on one or more special tracks, like Bonds (classic
-// Ironsworn), Failure (Delve), or Legacies (Starforged).
 type EmbeddedSpecialTrackMoveRollType string
 
 const (
@@ -3197,13 +3304,11 @@ type EmbeddedSpecialTrackMove struct {
 	// Is burning momentum allowed for this move?
 	AllowMomentumBurn bool `json:"allow_momentum_burn"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Outcomes MoveOutcomes `json:"outcomes"`
 
-	// A progress move that rolls on one or more special tracks, like Bonds
-	// (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
 	RollType EmbeddedSpecialTrackMoveRollType `json:"roll_type"`
 
 	// The complete rules text of the move.
@@ -3214,13 +3319,21 @@ type EmbeddedSpecialTrackMove struct {
 
 	Type EmbeddedSpecialTrackMoveType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
+
+	// An SVG icon associated with this collection.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
@@ -3374,7 +3487,7 @@ type ImpactRule struct {
 // exposed to assistive technology (e.g. with `aria-label` in HTML).
 type Label = string
 
-// An URL pointing to the location where this element's license can be found.
+// An URL pointing to the location where this content's license can be found.
 // 
 // A `null` here indicates that the content provides __no__ license, and is not
 // intended for redistribution.
@@ -3455,17 +3568,17 @@ const (
 
 // A move that makes an action roll.
 type MoveActionRoll0 struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID MoveID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// Is burning momentum allowed for this move?
 	AllowMomentumBurn bool `json:"allow_momentum_burn"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Outcomes MoveOutcomes `json:"outcomes"`
@@ -3478,13 +3591,21 @@ type MoveActionRoll0 struct {
 
 	Type MoveActionRollType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
+
+	// An SVG icon associated with this collection.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	Oracles map[string]EmbeddedOracleRollable `json:"oracles,omitempty"`
 
@@ -3505,17 +3626,17 @@ const (
 
 // A move that makes no progress rolls or action rolls.
 type MoveNoRoll0 struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID MoveID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// Is burning momentum allowed for this move?
 	AllowMomentumBurn bool `json:"allow_momentum_burn"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	// The complete rules text of the move.
@@ -3526,13 +3647,21 @@ type MoveNoRoll0 struct {
 
 	Type MoveNoRollType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
+
+	// An SVG icon associated with this collection.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	Oracles map[string]EmbeddedOracleRollable `json:"oracles,omitempty"`
 
@@ -3555,17 +3684,17 @@ const (
 // are defined by this move object). For progress rolls that use special tracks,
 // see MoveSpecialTrack.
 type MoveProgressRoll0 struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID MoveID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// Is burning momentum allowed for this move?
 	AllowMomentumBurn bool `json:"allow_momentum_burn"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Outcomes MoveOutcomes `json:"outcomes"`
@@ -3581,13 +3710,21 @@ type MoveProgressRoll0 struct {
 
 	Type MoveProgressRollType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
+
+	// An SVG icon associated with this collection.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	Oracles map[string]EmbeddedOracleRollable `json:"oracles,omitempty"`
 
@@ -3610,17 +3747,17 @@ const (
 // or Bonds (classic Ironsworn). For progress moves that use standard progress
 // tracks, see MoveProgressRoll instead.
 type MoveSpecialTrack0 struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID MoveID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// Is burning momentum allowed for this move?
 	AllowMomentumBurn bool `json:"allow_momentum_burn"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Outcomes MoveOutcomes `json:"outcomes"`
@@ -3633,13 +3770,21 @@ type MoveSpecialTrack0 struct {
 
 	Type MoveSpecialTrackType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
+
+	// An SVG icon associated with this collection.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	Oracles map[string]EmbeddedOracleRollable `json:"oracles,omitempty"`
 
@@ -3652,7 +3797,6 @@ type MoveSpecialTrack0 struct {
 	Tags *Tags `json:"tags,omitempty"`
 }
 
-// A move that makes an action roll.
 type MoveActionRollRollType string
 
 const (
@@ -3667,22 +3811,21 @@ const (
 
 // A move that makes an action roll.
 type MoveActionRoll struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID MoveID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// Is burning momentum allowed for this move?
 	AllowMomentumBurn bool `json:"allow_momentum_burn"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Outcomes MoveOutcomes `json:"outcomes"`
 
-	// A move that makes an action roll.
 	RollType MoveActionRollRollType `json:"roll_type"`
 
 	// The complete rules text of the move.
@@ -3693,13 +3836,21 @@ type MoveActionRoll struct {
 
 	Type MoveActionRollType0 `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
+
+	// An SVG icon associated with this collection.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	Oracles map[string]EmbeddedOracleRollable `json:"oracles,omitempty"`
 
@@ -3740,37 +3891,39 @@ const (
 )
 
 type MoveCategory struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID MoveCategoryID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	// The primary name/label for this item.
+	Collections map[string]MoveCategory `json:"collections"`
+
+	Contents map[string]Move `json:"contents"`
+
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Type MoveCategoryType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A thematic color associated with this collection.
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
-
-	Contents map[string]Move `json:"contents,omitempty"`
 
 	// A longer description of this collection, which might include multiple
 	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
 	Description *MarkdownString `json:"description,omitempty"`
 
-	// This collection's content enhances the identified collections, rather than
-	// being a standalone collection of its own.
+	// This node's content enhances all nodes that match these wildcards, rather
+	// than being a standalone item of its own.
 	Enhances []MoveCategoryIDWildcard `json:"enhances,omitempty"`
 
 	// An SVG icon associated with this collection.
@@ -3778,8 +3931,8 @@ type MoveCategory struct {
 
 	Images []WebpImageURL `json:"images,omitempty"`
 
-	// This collection replaces the identified collections. References to the
-	// replaced collections can be considered equivalent to this collection.
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []MoveCategoryIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
@@ -3896,7 +4049,6 @@ type MoveID = string
 // A wildcarded MoveId that can be used to match multiple Move objects.
 type MoveIDWildcard = string
 
-// A move that makes no action rolls or progress rolls.
 type MoveNoRollRollType string
 
 const (
@@ -3911,20 +4063,19 @@ const (
 
 // A move that makes no progress rolls or action rolls.
 type MoveNoRoll struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID MoveID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// Is burning momentum allowed for this move?
 	AllowMomentumBurn bool `json:"allow_momentum_burn"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
-	// A move that makes no action rolls or progress rolls.
 	RollType MoveNoRollRollType `json:"roll_type"`
 
 	// The complete rules text of the move.
@@ -3935,13 +4086,21 @@ type MoveNoRoll struct {
 
 	Type MoveNoRollType0 `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
+
+	// An SVG icon associated with this collection.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	Oracles map[string]EmbeddedOracleRollable `json:"oracles,omitempty"`
 
@@ -4011,8 +4170,6 @@ type MoveOutcomes struct {
 	WeakHit MoveOutcome `json:"weak_hit"`
 }
 
-// A progress move that rolls on a standard progress track type (defined by
-// this move).
 type MoveProgressRollRollType string
 
 const (
@@ -4029,23 +4186,21 @@ const (
 // are defined by this move object). For progress rolls that use special tracks,
 // see MoveSpecialTrack.
 type MoveProgressRoll struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID MoveID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// Is burning momentum allowed for this move?
 	AllowMomentumBurn bool `json:"allow_momentum_burn"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Outcomes MoveOutcomes `json:"outcomes"`
 
-	// A progress move that rolls on a standard progress track type (defined by
-	// this move).
 	RollType MoveProgressRollRollType `json:"roll_type"`
 
 	// The complete rules text of the move.
@@ -4059,13 +4214,21 @@ type MoveProgressRoll struct {
 
 	Type MoveProgressRollType0 `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
+
+	// An SVG icon associated with this collection.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	Oracles map[string]EmbeddedOracleRollable `json:"oracles,omitempty"`
 
@@ -4117,8 +4280,6 @@ const (
 	MoveRollTypeSpecialTrack MoveRollType = "special_track"
 )
 
-// A progress move that rolls on one or more special tracks, like Bonds (classic
-// Ironsworn), Failure (Delve), or Legacies (Starforged).
 type MoveSpecialTrackRollType string
 
 const (
@@ -4135,23 +4296,21 @@ const (
 // or Bonds (classic Ironsworn). For progress moves that use standard progress
 // tracks, see MoveProgressRoll instead.
 type MoveSpecialTrack struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID MoveID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// Is burning momentum allowed for this move?
 	AllowMomentumBurn bool `json:"allow_momentum_burn"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Outcomes MoveOutcomes `json:"outcomes"`
 
-	// A progress move that rolls on one or more special tracks, like Bonds
-	// (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
 	RollType MoveSpecialTrackRollType `json:"roll_type"`
 
 	// The complete rules text of the move.
@@ -4162,13 +4321,21 @@ type MoveSpecialTrack struct {
 
 	Type MoveSpecialTrackType0 `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
+
+	// An SVG icon associated with this collection.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	Oracles map[string]EmbeddedOracleRollable `json:"oracles,omitempty"`
 
@@ -4225,11 +4392,11 @@ const (
 // A non-player character entry, similar to those in Chapter 5 of the Ironsworn
 // Rulebook, or Chapter 4 of Starforged.
 type Npc struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID NpcID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	Description MarkdownString `json:"description"`
@@ -4238,7 +4405,6 @@ type Npc struct {
 
 	Features []MarkdownString `json:"features"`
 
-	// The primary name/label for this item.
 	Name Label `json:"name"`
 
 	Nature NpcNature `json:"nature"`
@@ -4250,15 +4416,27 @@ type Npc struct {
 
 	Type NpcType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
+
+	// An SVG icon associated with this collection.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
+
 	QuestStarter *MarkdownString `json:"quest_starter,omitempty"`
+
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
+	Replaces []NpcIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
@@ -4278,37 +4456,39 @@ const (
 )
 
 type NpcCollection struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID NpcCollectionID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	// The primary name/label for this item.
+	Collections map[string]NpcCollection `json:"collections"`
+
+	Contents map[string]Npc `json:"contents"`
+
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Type NpcCollectionType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A thematic color associated with this collection.
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
-
-	Contents map[string]Npc `json:"contents,omitempty"`
 
 	// A longer description of this collection, which might include multiple
 	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
 	Description *MarkdownString `json:"description,omitempty"`
 
-	// This collection's content enhances the identified collections, rather than
-	// being a standalone collection of its own.
+	// This node's content enhances all nodes that match these wildcards, rather
+	// than being a standalone item of its own.
 	Enhances []NpcCollectionIDWildcard `json:"enhances,omitempty"`
 
 	// An SVG icon associated with this collection.
@@ -4316,8 +4496,8 @@ type NpcCollection struct {
 
 	Images []WebpImageURL `json:"images,omitempty"`
 
-	// This collection replaces the identified collections. References to the
-	// replaced collections can be considered equivalent to this collection.
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []NpcCollectionIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
@@ -4367,27 +4547,27 @@ type NpcVariant struct {
 type OracleCollection struct {
 	OracleType string
 
-	OracleTableSharedText3 OracleCollectionOracleTableSharedText3
-
 	TableSharedRolls OracleCollectionTableSharedRolls
 
 	TableSharedText OracleCollectionTableSharedText
 
 	TableSharedText2 OracleCollectionTableSharedText2
 
+	TableSharedText3 OracleCollectionTableSharedText3
+
 	Tables OracleCollectionTables
 }
 
 func (v OracleCollection) MarshalJSON() ([]byte, error) {
 	switch v.OracleType {
-	case "OracleTableSharedText3":
-		return json.Marshal(struct { T string `json:"oracle_type"`; OracleCollectionOracleTableSharedText3 }{ v.OracleType, v.OracleTableSharedText3 })
 	case "table_shared_rolls":
 		return json.Marshal(struct { T string `json:"oracle_type"`; OracleCollectionTableSharedRolls }{ v.OracleType, v.TableSharedRolls })
 	case "table_shared_text":
 		return json.Marshal(struct { T string `json:"oracle_type"`; OracleCollectionTableSharedText }{ v.OracleType, v.TableSharedText })
 	case "table_shared_text2":
 		return json.Marshal(struct { T string `json:"oracle_type"`; OracleCollectionTableSharedText2 }{ v.OracleType, v.TableSharedText2 })
+	case "table_shared_text3":
+		return json.Marshal(struct { T string `json:"oracle_type"`; OracleCollectionTableSharedText3 }{ v.OracleType, v.TableSharedText3 })
 	case "tables":
 		return json.Marshal(struct { T string `json:"oracle_type"`; OracleCollectionTables }{ v.OracleType, v.Tables })
 	}
@@ -4403,14 +4583,14 @@ func (v *OracleCollection) UnmarshalJSON(b []byte) error {
 
 	var err error
 	switch t.T {
-	case "OracleTableSharedText3":
-		err = json.Unmarshal(b, &v.OracleTableSharedText3)
 	case "table_shared_rolls":
 		err = json.Unmarshal(b, &v.TableSharedRolls)
 	case "table_shared_text":
 		err = json.Unmarshal(b, &v.TableSharedText)
 	case "table_shared_text2":
 		err = json.Unmarshal(b, &v.TableSharedText2)
+	case "table_shared_text3":
+		err = json.Unmarshal(b, &v.TableSharedText3)
 	case "tables":
 		err = json.Unmarshal(b, &v.Tables)
 	default:
@@ -4423,77 +4603,6 @@ func (v *OracleCollection) UnmarshalJSON(b []byte) error {
 
 	v.OracleType = t.T
 	return nil
-}
-
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
-type OracleCollectionOracleTableSharedText3ColumnLabels struct {
-	Text Label `json:"text"`
-}
-
-type OracleCollectionOracleTableSharedText3Type string
-
-const (
-	OracleCollectionOracleTableSharedText3TypeOracleCollection OracleCollectionOracleTableSharedText3Type = "oracle_collection"
-)
-
-// An OracleCollection representing a single table with multiple roll columns,
-// and 2 shared text columns.
-type OracleCollectionOracleTableSharedText3 struct {
-	// The unique Datasworn ID for this item.
-	ID OracleCollectionID `json:"_id"`
-
-	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
-	Source SourceInfo `json:"_source"`
-
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
-	ColumnLabels OracleCollectionOracleTableSharedText3ColumnLabels `json:"column_labels"`
-
-	// The primary name/label for this item.
-	Name Label `json:"name"`
-
-	Type OracleCollectionOracleTableSharedText3Type `json:"type"`
-
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
-	Comment *string `json:"_comment,omitempty"`
-
-	// The name of this item as it appears on the page in the book, if it's
-	// different from `name`.
-	CanonicalName *Label `json:"canonical_name,omitempty"`
-
-	// A thematic color associated with this collection.
-	Color *CSSColor `json:"color,omitempty"`
-
-	Contents map[string]OracleColumnText3 `json:"contents,omitempty"`
-
-	// A longer description of this collection, which might include multiple
-	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
-	Description *MarkdownString `json:"description,omitempty"`
-
-	// This collection's content enhances the identified collections, rather than
-	// being a standalone collection of its own.
-	Enhances []OracleCollectionIDWildcard `json:"enhances,omitempty"`
-
-	// An SVG icon associated with this collection.
-	Icon *SvgImageURL `json:"icon,omitempty"`
-
-	Images []WebpImageURL `json:"images,omitempty"`
-
-	// This collection replaces the identified collections. References to the
-	// replaced collections can be considered equivalent to this collection.
-	Replaces []OracleCollectionIDWildcard `json:"replaces,omitempty"`
-
-	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	// A brief summary of this collection, no more than a few sentences in length.
-	// This is intended for use in application tooltips and similar sorts of hints.
-	// Longer text should use the "description" key instead.
-	Summary *MarkdownString `json:"summary,omitempty"`
-
-	Tags *Tags `json:"tags,omitempty"`
 }
 
 // Provides column labels for this table. The `roll` key refers to the roll
@@ -4510,13 +4619,13 @@ const (
 )
 
 // An OracleCollection representing a single table with one roll column and
-// multiple `result` columns.
+// multiple text columns.
 type OracleCollectionTableSharedRolls struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID OracleCollectionID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// Provides column labels for this table. The `roll` key refers to the roll
@@ -4524,30 +4633,30 @@ type OracleCollectionTableSharedRolls struct {
 	// other column labels, see the `name` property of each child `OracleColumn`.
 	ColumnLabels OracleCollectionTableSharedRollsColumnLabels `json:"column_labels"`
 
-	// The primary name/label for this item.
+	Contents map[string]OracleColumnText `json:"contents"`
+
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Type OracleCollectionTableSharedRollsType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A thematic color associated with this collection.
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
-
-	Contents map[string]OracleColumnText `json:"contents,omitempty"`
 
 	// A longer description of this collection, which might include multiple
 	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
 	Description *MarkdownString `json:"description,omitempty"`
 
-	// This collection's content enhances the identified collections, rather than
-	// being a standalone collection of its own.
+	// This node's content enhances all nodes that match these wildcards, rather
+	// than being a standalone item of its own.
 	Enhances []OracleCollectionIDWildcard `json:"enhances,omitempty"`
 
 	// An SVG icon associated with this collection.
@@ -4555,8 +4664,8 @@ type OracleCollectionTableSharedRolls struct {
 
 	Images []WebpImageURL `json:"images,omitempty"`
 
-	// This collection replaces the identified collections. References to the
-	// replaced collections can be considered equivalent to this collection.
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleCollectionIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
@@ -4582,43 +4691,43 @@ const (
 )
 
 // An OracleCollection representing a single table with multiple roll columns
-// and one `result` column.
+// and one text column.
 type OracleCollectionTableSharedText struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID OracleCollectionID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// The label at the head of each table column. The `roll` key refers to the
 	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleCollectionTableSharedTextColumnLabels `json:"column_labels"`
 
-	// The primary name/label for this item.
+	Contents map[string]OracleColumnText `json:"contents"`
+
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Type OracleCollectionTableSharedTextType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A thematic color associated with this collection.
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
-
-	Contents map[string]OracleColumnText `json:"contents,omitempty"`
 
 	// A longer description of this collection, which might include multiple
 	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
 	Description *MarkdownString `json:"description,omitempty"`
 
-	// This collection's content enhances the identified collections, rather than
-	// being a standalone collection of its own.
+	// This node's content enhances all nodes that match these wildcards, rather
+	// than being a standalone item of its own.
 	Enhances []OracleCollectionIDWildcard `json:"enhances,omitempty"`
 
 	// An SVG icon associated with this collection.
@@ -4626,8 +4735,8 @@ type OracleCollectionTableSharedText struct {
 
 	Images []WebpImageURL `json:"images,omitempty"`
 
-	// This collection replaces the identified collections. References to the
-	// replaced collections can be considered equivalent to this collection.
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleCollectionIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
@@ -4657,41 +4766,41 @@ const (
 // An OracleCollection representing a single table with multiple roll columns,
 // and 2 shared text columns.
 type OracleCollectionTableSharedText2 struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID OracleCollectionID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// The label at the head of each table column. The `roll` key refers to the
 	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleCollectionTableSharedText2ColumnLabels `json:"column_labels"`
 
-	// The primary name/label for this item.
+	Contents map[string]OracleColumnText2 `json:"contents"`
+
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Type OracleCollectionTableSharedText2Type `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A thematic color associated with this collection.
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
-
-	Contents map[string]OracleColumnText2 `json:"contents,omitempty"`
 
 	// A longer description of this collection, which might include multiple
 	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
 	Description *MarkdownString `json:"description,omitempty"`
 
-	// This collection's content enhances the identified collections, rather than
-	// being a standalone collection of its own.
+	// This node's content enhances all nodes that match these wildcards, rather
+	// than being a standalone item of its own.
 	Enhances []OracleCollectionIDWildcard `json:"enhances,omitempty"`
 
 	// An SVG icon associated with this collection.
@@ -4699,8 +4808,73 @@ type OracleCollectionTableSharedText2 struct {
 
 	Images []WebpImageURL `json:"images,omitempty"`
 
-	// This collection replaces the identified collections. References to the
-	// replaced collections can be considered equivalent to this collection.
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
+	Replaces []OracleCollectionIDWildcard `json:"replaces,omitempty"`
+
+	Suggestions *Suggestions `json:"suggestions,omitempty"`
+
+	// A brief summary of this collection, no more than a few sentences in length.
+	// This is intended for use in application tooltips and similar sorts of hints.
+	// Longer text should use the "description" key instead.
+	Summary *MarkdownString `json:"summary,omitempty"`
+
+	Tags *Tags `json:"tags,omitempty"`
+}
+
+type OracleCollectionTableSharedText3Type string
+
+const (
+	OracleCollectionTableSharedText3TypeOracleCollection OracleCollectionTableSharedText3Type = "oracle_collection"
+)
+
+// An OracleCollection representing a single table with multiple roll columns,
+// and 3 shared text columns.
+type OracleCollectionTableSharedText3 struct {
+	// The unique Datasworn ID for this node.
+	ID OracleCollectionID `json:"_id"`
+
+	// Attribution for the original source (such as a book or website) of this
+	// node, including the author and licensing information.
+	Source SourceInfo `json:"_source"`
+
+	// The label at the head of each table column. The `roll` key refers to the
+	// roll column showing the dice range (`min` and `max` on each table row).
+	ColumnLabels interface{} `json:"column_labels"`
+
+	Contents map[string]OracleColumnText3 `json:"contents"`
+
+	// The primary name/label for this node.
+	Name Label `json:"name"`
+
+	Type OracleCollectionTableSharedText3Type `json:"type"`
+
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
+	Comment *string `json:"_comment,omitempty"`
+
+	// The name of this node as it appears on the page in the book, if it's
+	// different from `name`.
+	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
+
+	// A longer description of this collection, which might include multiple
+	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
+	Description *MarkdownString `json:"description,omitempty"`
+
+	// This node's content enhances all nodes that match these wildcards, rather
+	// than being a standalone item of its own.
+	Enhances []OracleCollectionIDWildcard `json:"enhances,omitempty"`
+
+	// An SVG icon associated with this collection.
+	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
+
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleCollectionIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
@@ -4722,39 +4896,39 @@ const (
 // An OracleCollection that represents a category or grouping of tables, which
 // may themselves be `OracleTablesCollection`s.
 type OracleCollectionTables struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID OracleCollectionID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	// The primary name/label for this item.
+	Collections map[string]OracleCollection `json:"collections"`
+
+	Contents map[string]OracleRollableTable `json:"contents"`
+
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Type OracleCollectionTablesType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	Collections map[string]OracleCollection `json:"collections,omitempty"`
-
-	// A thematic color associated with this collection.
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
-
-	Contents map[string]OracleTableRollable `json:"contents,omitempty"`
 
 	// A longer description of this collection, which might include multiple
 	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
 	Description *MarkdownString `json:"description,omitempty"`
 
-	// This collection's content enhances the identified collections, rather than
-	// being a standalone collection of its own.
+	// This node's content enhances all nodes that match these wildcards, rather
+	// than being a standalone item of its own.
 	Enhances []OracleCollectionIDWildcard `json:"enhances,omitempty"`
 
 	// An SVG icon associated with this collection.
@@ -4762,8 +4936,8 @@ type OracleCollectionTables struct {
 
 	Images []WebpImageURL `json:"images,omitempty"`
 
-	// This collection replaces the identified collections. References to the
-	// replaced collections can be considered equivalent to this collection.
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleCollectionIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
@@ -4795,15 +4969,21 @@ const (
 	OracleColumnTextTypeOracleRollable OracleColumnTextType = "oracle_rollable"
 )
 
+type OracleColumnTextRecommendedRolls struct {
+	Max int16 `json:"max"`
+
+	Min int16 `json:"min"`
+}
+
 // Represents a single column in an OracleCollection.
 type OracleColumnText struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID OracleRollableID `json:"_id"`
 
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary label at the head of this column.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	OracleType OracleColumnTextOracleType `json:"oracle_type"`
@@ -4813,31 +4993,33 @@ type OracleColumnText struct {
 
 	Type OracleColumnTextType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// An optional thematic color for this column. For an example, see "Basic
-	// Creature Form" (Starforged p. 337)
+	// The name of this node as it appears on the page in the book, if it's
+	// different from `name`.
+	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
 
-	// An optional icon for this column.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
 	Match *OracleMatchBehavior `json:"match,omitempty"`
 
-	// Indicates that this object replaces the identified OracleRollables.
-	// References to the replaced objects can be considered equivalent to this
-	// object.
+	RecommendedRolls *OracleColumnTextRecommendedRolls `json:"recommended_rolls,omitempty"`
+
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleRollableIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	// Optional secondary text at the head of this column. For best results, this
-	// should be no more than a few words in length.
-	Summary *MarkdownString `json:"summary,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -4854,14 +5036,20 @@ const (
 	OracleColumnText2TypeOracleRollable OracleColumnText2Type = "oracle_rollable"
 )
 
+type OracleColumnText2RecommendedRolls struct {
+	Max int16 `json:"max"`
+
+	Min int16 `json:"min"`
+}
+
 type OracleColumnText2 struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID OracleRollableID `json:"_id"`
 
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary label at the head of this column.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	OracleType OracleColumnText2OracleType `json:"oracle_type"`
@@ -4871,31 +5059,33 @@ type OracleColumnText2 struct {
 
 	Type OracleColumnText2Type `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// An optional thematic color for this column. For an example, see "Basic
-	// Creature Form" (Starforged p. 337)
+	// The name of this node as it appears on the page in the book, if it's
+	// different from `name`.
+	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
 
-	// An optional icon for this column.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
 	Match *OracleMatchBehavior `json:"match,omitempty"`
 
-	// Indicates that this object replaces the identified OracleRollables.
-	// References to the replaced objects can be considered equivalent to this
-	// object.
+	RecommendedRolls *OracleColumnText2RecommendedRolls `json:"recommended_rolls,omitempty"`
+
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleRollableIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	// Optional secondary text at the head of this column. For best results, this
-	// should be no more than a few words in length.
-	Summary *MarkdownString `json:"summary,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -4912,14 +5102,20 @@ const (
 	OracleColumnText3TypeOracleRollable OracleColumnText3Type = "oracle_rollable"
 )
 
+type OracleColumnText3RecommendedRolls struct {
+	Max int16 `json:"max"`
+
+	Min int16 `json:"min"`
+}
+
 type OracleColumnText3 struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID OracleRollableID `json:"_id"`
 
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary label at the head of this column.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	OracleType OracleColumnText3OracleType `json:"oracle_type"`
@@ -4929,31 +5125,33 @@ type OracleColumnText3 struct {
 
 	Type OracleColumnText3Type `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// An optional thematic color for this column. For an example, see "Basic
-	// Creature Form" (Starforged p. 337)
+	// The name of this node as it appears on the page in the book, if it's
+	// different from `name`.
+	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
 
-	// An optional icon for this column.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
 	Match *OracleMatchBehavior `json:"match,omitempty"`
 
-	// Indicates that this object replaces the identified OracleRollables.
-	// References to the replaced objects can be considered equivalent to this
-	// object.
+	RecommendedRolls *OracleColumnText3RecommendedRolls `json:"recommended_rolls,omitempty"`
+
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleRollableIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	// Optional secondary text at the head of this column. For best results, this
-	// should be no more than a few words in length.
-	Summary *MarkdownString `json:"summary,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -5090,15 +5288,21 @@ const (
 	OracleRollableColumnTextTypeOracleRollable OracleRollableColumnTextType = "oracle_rollable"
 )
 
+type OracleRollableColumnTextRecommendedRolls struct {
+	Max int16 `json:"max"`
+
+	Min int16 `json:"min"`
+}
+
 // Represents a single column in an OracleCollection.
 type OracleRollableColumnText struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID OracleRollableID `json:"_id"`
 
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary label at the head of this column.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	// An array of objects, each representing a single row of the table.
@@ -5106,31 +5310,33 @@ type OracleRollableColumnText struct {
 
 	Type OracleRollableColumnTextType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// An optional thematic color for this column. For an example, see "Basic
-	// Creature Form" (Starforged p. 337)
+	// The name of this node as it appears on the page in the book, if it's
+	// different from `name`.
+	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
 
-	// An optional icon for this column.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
 	Match *OracleMatchBehavior `json:"match,omitempty"`
 
-	// Indicates that this object replaces the identified OracleRollables.
-	// References to the replaced objects can be considered equivalent to this
-	// object.
+	RecommendedRolls *OracleRollableColumnTextRecommendedRolls `json:"recommended_rolls,omitempty"`
+
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleRollableIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	// Optional secondary text at the head of this column. For best results, this
-	// should be no more than a few words in length.
-	Summary *MarkdownString `json:"summary,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -5141,14 +5347,20 @@ const (
 	OracleRollableColumnText2TypeOracleRollable OracleRollableColumnText2Type = "oracle_rollable"
 )
 
+type OracleRollableColumnText2RecommendedRolls struct {
+	Max int16 `json:"max"`
+
+	Min int16 `json:"min"`
+}
+
 type OracleRollableColumnText2 struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID OracleRollableID `json:"_id"`
 
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary label at the head of this column.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	// An array of objects, each representing a single row of the table.
@@ -5156,31 +5368,33 @@ type OracleRollableColumnText2 struct {
 
 	Type OracleRollableColumnText2Type `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// An optional thematic color for this column. For an example, see "Basic
-	// Creature Form" (Starforged p. 337)
+	// The name of this node as it appears on the page in the book, if it's
+	// different from `name`.
+	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
 
-	// An optional icon for this column.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
 	Match *OracleMatchBehavior `json:"match,omitempty"`
 
-	// Indicates that this object replaces the identified OracleRollables.
-	// References to the replaced objects can be considered equivalent to this
-	// object.
+	RecommendedRolls *OracleRollableColumnText2RecommendedRolls `json:"recommended_rolls,omitempty"`
+
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleRollableIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	// Optional secondary text at the head of this column. For best results, this
-	// should be no more than a few words in length.
-	Summary *MarkdownString `json:"summary,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -5191,14 +5405,20 @@ const (
 	OracleRollableColumnText3TypeOracleRollable OracleRollableColumnText3Type = "oracle_rollable"
 )
 
+type OracleRollableColumnText3RecommendedRolls struct {
+	Max int16 `json:"max"`
+
+	Min int16 `json:"min"`
+}
+
 type OracleRollableColumnText3 struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID OracleRollableID `json:"_id"`
 
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary label at the head of this column.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	// An array of objects, each representing a single row of the table.
@@ -5206,31 +5426,33 @@ type OracleRollableColumnText3 struct {
 
 	Type OracleRollableColumnText3Type `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// An optional thematic color for this column. For an example, see "Basic
-	// Creature Form" (Starforged p. 337)
+	// The name of this node as it appears on the page in the book, if it's
+	// different from `name`.
+	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
 
-	// An optional icon for this column.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
 	Match *OracleMatchBehavior `json:"match,omitempty"`
 
-	// Indicates that this object replaces the identified OracleRollables.
-	// References to the replaced objects can be considered equivalent to this
-	// object.
+	RecommendedRolls *OracleRollableColumnText3RecommendedRolls `json:"recommended_rolls,omitempty"`
+
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleRollableIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	// Optional secondary text at the head of this column. For best results, this
-	// should be no more than a few words in length.
-	Summary *MarkdownString `json:"summary,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -5258,11 +5480,11 @@ type OracleRollableTableTextRecommendedRolls struct {
 // Represents a basic rollable oracle table with one roll column and one text
 // result column.
 type OracleRollableTableText struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID OracleRollableID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// The label at the head of each table column. The `roll` key refers to the
@@ -5272,7 +5494,7 @@ type OracleRollableTableText struct {
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	// An array of objects, each representing a single row of the table.
@@ -5280,21 +5502,21 @@ type OracleRollableTableText struct {
 
 	Type OracleRollableTableTextType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A longer description of the oracle table's intended usage, which might
-	// include multiple paragraphs. If it's only a couple sentences, use the
-	// `summary` key instead.
-	Description *MarkdownString `json:"description,omitempty"`
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
 
-	// An icon that represents this table.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
@@ -5302,18 +5524,11 @@ type OracleRollableTableText struct {
 
 	RecommendedRolls *OracleRollableTableTextRecommendedRolls `json:"recommended_rolls,omitempty"`
 
-	// Indicates that this object replaces the identified OracleRollables.
-	// References to the replaced objects can be considered equivalent to this
-	// object.
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleRollableIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	// A brief summary of the oracle table's intended usage, no more than a few
-	// sentences in length. This is intended for use in application tooltips
-	// and similar sorts of hints. Longer text should use the "description" key
-	// instead.
-	Summary *MarkdownString `json:"summary,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -5342,11 +5557,11 @@ type OracleRollableTableText2RecommendedRolls struct {
 
 // A rollable oracle table with one roll column and two text columns.
 type OracleRollableTableText2 struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID OracleRollableID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// The label at the head of each table column. The `roll` key refers to the
@@ -5356,7 +5571,7 @@ type OracleRollableTableText2 struct {
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	// An array of objects, each representing a single row of the table.
@@ -5364,21 +5579,21 @@ type OracleRollableTableText2 struct {
 
 	Type OracleRollableTableText2Type `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A longer description of the oracle table's intended usage, which might
-	// include multiple paragraphs. If it's only a couple sentences, use the
-	// `summary` key instead.
-	Description *MarkdownString `json:"description,omitempty"`
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
 
-	// An icon that represents this table.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
@@ -5386,18 +5601,11 @@ type OracleRollableTableText2 struct {
 
 	RecommendedRolls *OracleRollableTableText2RecommendedRolls `json:"recommended_rolls,omitempty"`
 
-	// Indicates that this object replaces the identified OracleRollables.
-	// References to the replaced objects can be considered equivalent to this
-	// object.
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleRollableIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	// A brief summary of the oracle table's intended usage, no more than a few
-	// sentences in length. This is intended for use in application tooltips
-	// and similar sorts of hints. Longer text should use the "description" key
-	// instead.
-	Summary *MarkdownString `json:"summary,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -5428,11 +5636,11 @@ type OracleRollableTableText3RecommendedRolls struct {
 
 // A rollable oracle table with one roll column and 3 text columns.
 type OracleRollableTableText3 struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID OracleRollableID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// The label at the head of each table column. The `roll` key refers to the
@@ -5442,7 +5650,7 @@ type OracleRollableTableText3 struct {
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	// An array of objects, each representing a single row of the table.
@@ -5450,21 +5658,21 @@ type OracleRollableTableText3 struct {
 
 	Type OracleRollableTableText3Type `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A longer description of the oracle table's intended usage, which might
-	// include multiple paragraphs. If it's only a couple sentences, use the
-	// `summary` key instead.
-	Description *MarkdownString `json:"description,omitempty"`
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
 
-	// An icon that represents this table.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
@@ -5472,18 +5680,11 @@ type OracleRollableTableText3 struct {
 
 	RecommendedRolls *OracleRollableTableText3RecommendedRolls `json:"recommended_rolls,omitempty"`
 
-	// Indicates that this object replaces the identified OracleRollables.
-	// References to the replaced objects can be considered equivalent to this
-	// object.
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleRollableIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	// A brief summary of the oracle table's intended usage, no more than a few
-	// sentences in length. This is intended for use in application tooltips
-	// and similar sorts of hints. Longer text should use the "description" key
-	// instead.
-	Summary *MarkdownString `json:"summary,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -5586,30 +5787,30 @@ type OracleRollableRowText3 struct {
 	Template *OracleRollTemplate `json:"template,omitempty"`
 }
 
-type OracleTableRollable struct {
+type OracleRollableTable struct {
 	OracleType string
 
-	TableText OracleTableRollableTableText
+	TableText OracleRollableTableTableText
 
-	TableText2 OracleTableRollableTableText2
+	TableText2 OracleRollableTableTableText2
 
-	TableText3 OracleTableRollableTableText3
+	TableText3 OracleRollableTableTableText3
 }
 
-func (v OracleTableRollable) MarshalJSON() ([]byte, error) {
+func (v OracleRollableTable) MarshalJSON() ([]byte, error) {
 	switch v.OracleType {
 	case "table_text":
-		return json.Marshal(struct { T string `json:"oracle_type"`; OracleTableRollableTableText }{ v.OracleType, v.TableText })
+		return json.Marshal(struct { T string `json:"oracle_type"`; OracleRollableTableTableText }{ v.OracleType, v.TableText })
 	case "table_text2":
-		return json.Marshal(struct { T string `json:"oracle_type"`; OracleTableRollableTableText2 }{ v.OracleType, v.TableText2 })
+		return json.Marshal(struct { T string `json:"oracle_type"`; OracleRollableTableTableText2 }{ v.OracleType, v.TableText2 })
 	case "table_text3":
-		return json.Marshal(struct { T string `json:"oracle_type"`; OracleTableRollableTableText3 }{ v.OracleType, v.TableText3 })
+		return json.Marshal(struct { T string `json:"oracle_type"`; OracleRollableTableTableText3 }{ v.OracleType, v.TableText3 })
 	}
 
 	return nil, fmt.Errorf("bad OracleType value: %s", v.OracleType)
 }
 
-func (v *OracleTableRollable) UnmarshalJSON(b []byte) error {
+func (v *OracleRollableTable) UnmarshalJSON(b []byte) error {
 	var t struct { T string `json:"oracle_type"` }
 	if err := json.Unmarshal(b, &t); err != nil {
 		return err
@@ -5637,19 +5838,19 @@ func (v *OracleTableRollable) UnmarshalJSON(b []byte) error {
 
 // The label at the head of each table column. The `roll` key refers to the roll
 // column showing the dice range (`min` and `max` on each table row).
-type OracleTableRollableTableTextColumnLabels struct {
+type OracleRollableTableTableTextColumnLabels struct {
 	Roll Label `json:"roll"`
 
 	Text Label `json:"text"`
 }
 
-type OracleTableRollableTableTextType string
+type OracleRollableTableTableTextType string
 
 const (
-	OracleTableRollableTableTextTypeOracleRollable OracleTableRollableTableTextType = "oracle_rollable"
+	OracleRollableTableTableTextTypeOracleRollable OracleRollableTableTableTextType = "oracle_rollable"
 )
 
-type OracleTableRollableTableTextRecommendedRolls struct {
+type OracleRollableTableTableTextRecommendedRolls struct {
 	Max int16 `json:"max"`
 
 	Min int16 `json:"min"`
@@ -5657,70 +5858,63 @@ type OracleTableRollableTableTextRecommendedRolls struct {
 
 // Represents a basic rollable oracle table with one roll column and one text
 // result column.
-type OracleTableRollableTableText struct {
-	// The unique Datasworn ID for this item.
+type OracleRollableTableTableText struct {
+	// The unique Datasworn ID for this node.
 	ID OracleRollableID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// The label at the head of each table column. The `roll` key refers to the
 	// roll column showing the dice range (`min` and `max` on each table row).
-	ColumnLabels OracleTableRollableTableTextColumnLabels `json:"column_labels"`
+	ColumnLabels OracleRollableTableTableTextColumnLabels `json:"column_labels"`
 
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	// An array of objects, each representing a single row of the table.
 	Rows []OracleRollableRowText `json:"rows"`
 
-	Type OracleTableRollableTableTextType `json:"type"`
+	Type OracleRollableTableTableTextType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A longer description of the oracle table's intended usage, which might
-	// include multiple paragraphs. If it's only a couple sentences, use the
-	// `summary` key instead.
-	Description *MarkdownString `json:"description,omitempty"`
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
 
-	// An icon that represents this table.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
 	Match *OracleMatchBehavior `json:"match,omitempty"`
 
-	RecommendedRolls *OracleTableRollableTableTextRecommendedRolls `json:"recommended_rolls,omitempty"`
+	RecommendedRolls *OracleRollableTableTableTextRecommendedRolls `json:"recommended_rolls,omitempty"`
 
-	// Indicates that this object replaces the identified OracleRollables.
-	// References to the replaced objects can be considered equivalent to this
-	// object.
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleRollableIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	// A brief summary of the oracle table's intended usage, no more than a few
-	// sentences in length. This is intended for use in application tooltips
-	// and similar sorts of hints. Longer text should use the "description" key
-	// instead.
-	Summary *MarkdownString `json:"summary,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
 
 // The label at the head of each table column. The `roll` key refers to the roll
 // column showing the dice range (`min` and `max` on each table row).
-type OracleTableRollableTableText2ColumnLabels struct {
+type OracleRollableTableTableText2ColumnLabels struct {
 	Roll Label `json:"roll"`
 
 	Text Label `json:"text"`
@@ -5728,83 +5922,76 @@ type OracleTableRollableTableText2ColumnLabels struct {
 	Text2 Label `json:"text2"`
 }
 
-type OracleTableRollableTableText2Type string
+type OracleRollableTableTableText2Type string
 
 const (
-	OracleTableRollableTableText2TypeOracleRollable OracleTableRollableTableText2Type = "oracle_rollable"
+	OracleRollableTableTableText2TypeOracleRollable OracleRollableTableTableText2Type = "oracle_rollable"
 )
 
-type OracleTableRollableTableText2RecommendedRolls struct {
+type OracleRollableTableTableText2RecommendedRolls struct {
 	Max int16 `json:"max"`
 
 	Min int16 `json:"min"`
 }
 
 // A rollable oracle table with one roll column and two text columns.
-type OracleTableRollableTableText2 struct {
-	// The unique Datasworn ID for this item.
+type OracleRollableTableTableText2 struct {
+	// The unique Datasworn ID for this node.
 	ID OracleRollableID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// The label at the head of each table column. The `roll` key refers to the
 	// roll column showing the dice range (`min` and `max` on each table row).
-	ColumnLabels OracleTableRollableTableText2ColumnLabels `json:"column_labels"`
+	ColumnLabels OracleRollableTableTableText2ColumnLabels `json:"column_labels"`
 
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	// An array of objects, each representing a single row of the table.
 	Rows []OracleRollableRowText2 `json:"rows"`
 
-	Type OracleTableRollableTableText2Type `json:"type"`
+	Type OracleRollableTableTableText2Type `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A longer description of the oracle table's intended usage, which might
-	// include multiple paragraphs. If it's only a couple sentences, use the
-	// `summary` key instead.
-	Description *MarkdownString `json:"description,omitempty"`
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
 
-	// An icon that represents this table.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
 	Match *OracleMatchBehavior `json:"match,omitempty"`
 
-	RecommendedRolls *OracleTableRollableTableText2RecommendedRolls `json:"recommended_rolls,omitempty"`
+	RecommendedRolls *OracleRollableTableTableText2RecommendedRolls `json:"recommended_rolls,omitempty"`
 
-	// Indicates that this object replaces the identified OracleRollables.
-	// References to the replaced objects can be considered equivalent to this
-	// object.
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleRollableIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	// A brief summary of the oracle table's intended usage, no more than a few
-	// sentences in length. This is intended for use in application tooltips
-	// and similar sorts of hints. Longer text should use the "description" key
-	// instead.
-	Summary *MarkdownString `json:"summary,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
 
 // The label at the head of each table column. The `roll` key refers to the roll
 // column showing the dice range (`min` and `max` on each table row).
-type OracleTableRollableTableText3ColumnLabels struct {
+type OracleRollableTableTableText3ColumnLabels struct {
 	Roll Label `json:"roll"`
 
 	Text Label `json:"text"`
@@ -5814,76 +6001,69 @@ type OracleTableRollableTableText3ColumnLabels struct {
 	Text3 Label `json:"text3"`
 }
 
-type OracleTableRollableTableText3Type string
+type OracleRollableTableTableText3Type string
 
 const (
-	OracleTableRollableTableText3TypeOracleRollable OracleTableRollableTableText3Type = "oracle_rollable"
+	OracleRollableTableTableText3TypeOracleRollable OracleRollableTableTableText3Type = "oracle_rollable"
 )
 
-type OracleTableRollableTableText3RecommendedRolls struct {
+type OracleRollableTableTableText3RecommendedRolls struct {
 	Max int16 `json:"max"`
 
 	Min int16 `json:"min"`
 }
 
 // A rollable oracle table with one roll column and 3 text columns.
-type OracleTableRollableTableText3 struct {
-	// The unique Datasworn ID for this item.
+type OracleRollableTableTableText3 struct {
+	// The unique Datasworn ID for this node.
 	ID OracleRollableID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// The label at the head of each table column. The `roll` key refers to the
 	// roll column showing the dice range (`min` and `max` on each table row).
-	ColumnLabels OracleTableRollableTableText3ColumnLabels `json:"column_labels"`
+	ColumnLabels OracleRollableTableTableText3ColumnLabels `json:"column_labels"`
 
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	// An array of objects, each representing a single row of the table.
 	Rows []OracleRollableRowText3 `json:"rows"`
 
-	Type OracleTableRollableTableText3Type `json:"type"`
+	Type OracleRollableTableTableText3Type `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A longer description of the oracle table's intended usage, which might
-	// include multiple paragraphs. If it's only a couple sentences, use the
-	// `summary` key instead.
-	Description *MarkdownString `json:"description,omitempty"`
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
 
-	// An icon that represents this table.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
 	Match *OracleMatchBehavior `json:"match,omitempty"`
 
-	RecommendedRolls *OracleTableRollableTableText3RecommendedRolls `json:"recommended_rolls,omitempty"`
+	RecommendedRolls *OracleRollableTableTableText3RecommendedRolls `json:"recommended_rolls,omitempty"`
 
-	// Indicates that this object replaces the identified OracleRollables.
-	// References to the replaced objects can be considered equivalent to this
-	// object.
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleRollableIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	// A brief summary of the oracle table's intended usage, no more than a few
-	// sentences in length. This is intended for use in application tooltips
-	// and similar sorts of hints. Longer text should use the "description" key
-	// instead.
-	Summary *MarkdownString `json:"summary,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -5895,7 +6075,6 @@ type OracleTableSharedRollsColumnLabels struct {
 	Roll Label `json:"roll"`
 }
 
-// A table with one shared roll column, and multiple unique text columns.
 type OracleTableSharedRollsOracleType string
 
 const (
@@ -5909,13 +6088,13 @@ const (
 )
 
 // An OracleCollection representing a single table with one roll column and
-// multiple `result` columns.
+// multiple text columns.
 type OracleTableSharedRolls struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID OracleCollectionID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// Provides column labels for this table. The `roll` key refers to the roll
@@ -5923,33 +6102,32 @@ type OracleTableSharedRolls struct {
 	// other column labels, see the `name` property of each child `OracleColumn`.
 	ColumnLabels OracleTableSharedRollsColumnLabels `json:"column_labels"`
 
-	// The primary name/label for this item.
+	Contents map[string]OracleColumnText `json:"contents"`
+
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
-	// A table with one shared roll column, and multiple unique text columns.
 	OracleType OracleTableSharedRollsOracleType `json:"oracle_type"`
 
 	Type OracleTableSharedRollsType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A thematic color associated with this collection.
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
-
-	Contents map[string]OracleColumnText `json:"contents,omitempty"`
 
 	// A longer description of this collection, which might include multiple
 	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
 	Description *MarkdownString `json:"description,omitempty"`
 
-	// This collection's content enhances the identified collections, rather than
-	// being a standalone collection of its own.
+	// This node's content enhances all nodes that match these wildcards, rather
+	// than being a standalone item of its own.
 	Enhances []OracleCollectionIDWildcard `json:"enhances,omitempty"`
 
 	// An SVG icon associated with this collection.
@@ -5957,8 +6135,8 @@ type OracleTableSharedRolls struct {
 
 	Images []WebpImageURL `json:"images,omitempty"`
 
-	// This collection replaces the identified collections. References to the
-	// replaced collections can be considered equivalent to this collection.
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleCollectionIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
@@ -5977,7 +6155,6 @@ type OracleTableSharedTextColumnLabels struct {
 	Text Label `json:"text"`
 }
 
-// A table with multiple unique roll columns, and one shared text column.
 type OracleTableSharedTextOracleType string
 
 const (
@@ -5991,46 +6168,45 @@ const (
 )
 
 // An OracleCollection representing a single table with multiple roll columns
-// and one `result` column.
+// and one text column.
 type OracleTableSharedText struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID OracleCollectionID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// The label at the head of each table column. The `roll` key refers to the
 	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleTableSharedTextColumnLabels `json:"column_labels"`
 
-	// The primary name/label for this item.
+	Contents map[string]OracleColumnText `json:"contents"`
+
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
-	// A table with multiple unique roll columns, and one shared text column.
 	OracleType OracleTableSharedTextOracleType `json:"oracle_type"`
 
 	Type OracleTableSharedTextType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A thematic color associated with this collection.
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
-
-	Contents map[string]OracleColumnText `json:"contents,omitempty"`
 
 	// A longer description of this collection, which might include multiple
 	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
 	Description *MarkdownString `json:"description,omitempty"`
 
-	// This collection's content enhances the identified collections, rather than
-	// being a standalone collection of its own.
+	// This node's content enhances all nodes that match these wildcards, rather
+	// than being a standalone item of its own.
 	Enhances []OracleCollectionIDWildcard `json:"enhances,omitempty"`
 
 	// An SVG icon associated with this collection.
@@ -6038,8 +6214,8 @@ type OracleTableSharedText struct {
 
 	Images []WebpImageURL `json:"images,omitempty"`
 
-	// This collection replaces the identified collections. References to the
-	// replaced collections can be considered equivalent to this collection.
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleCollectionIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
@@ -6060,7 +6236,6 @@ type OracleTableSharedText2ColumnLabels struct {
 	Text2 Label `json:"text2"`
 }
 
-// A table with multiple unique roll columns, and 2 shared text columns.
 type OracleTableSharedText2OracleType string
 
 const (
@@ -6076,44 +6251,43 @@ const (
 // An OracleCollection representing a single table with multiple roll columns,
 // and 2 shared text columns.
 type OracleTableSharedText2 struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID OracleCollectionID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// The label at the head of each table column. The `roll` key refers to the
 	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleTableSharedText2ColumnLabels `json:"column_labels"`
 
-	// The primary name/label for this item.
+	Contents map[string]OracleColumnText2 `json:"contents"`
+
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
-	// A table with multiple unique roll columns, and 2 shared text columns.
 	OracleType OracleTableSharedText2OracleType `json:"oracle_type"`
 
 	Type OracleTableSharedText2Type `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A thematic color associated with this collection.
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
-
-	Contents map[string]OracleColumnText2 `json:"contents,omitempty"`
 
 	// A longer description of this collection, which might include multiple
 	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
 	Description *MarkdownString `json:"description,omitempty"`
 
-	// This collection's content enhances the identified collections, rather than
-	// being a standalone collection of its own.
+	// This node's content enhances all nodes that match these wildcards, rather
+	// than being a standalone item of its own.
 	Enhances []OracleCollectionIDWildcard `json:"enhances,omitempty"`
 
 	// An SVG icon associated with this collection.
@@ -6121,8 +6295,8 @@ type OracleTableSharedText2 struct {
 
 	Images []WebpImageURL `json:"images,omitempty"`
 
-	// This collection replaces the identified collections. References to the
-	// replaced collections can be considered equivalent to this collection.
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleCollectionIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
@@ -6135,13 +6309,6 @@ type OracleTableSharedText2 struct {
 	Tags *Tags `json:"tags,omitempty"`
 }
 
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
-type OracleTableSharedText3ColumnLabels struct {
-	Text Label `json:"text"`
-}
-
-// A table with multiple unique roll columns, and 3 shared text columns.
 type OracleTableSharedText3OracleType string
 
 const (
@@ -6155,46 +6322,45 @@ const (
 )
 
 // An OracleCollection representing a single table with multiple roll columns,
-// and 2 shared text columns.
+// and 3 shared text columns.
 type OracleTableSharedText3 struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID OracleCollectionID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// The label at the head of each table column. The `roll` key refers to the
 	// roll column showing the dice range (`min` and `max` on each table row).
-	ColumnLabels OracleTableSharedText3ColumnLabels `json:"column_labels"`
+	ColumnLabels interface{} `json:"column_labels"`
 
-	// The primary name/label for this item.
+	Contents map[string]OracleColumnText3 `json:"contents"`
+
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
-	// A table with multiple unique roll columns, and 3 shared text columns.
 	OracleType OracleTableSharedText3OracleType `json:"oracle_type"`
 
 	Type OracleTableSharedText3Type `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A thematic color associated with this collection.
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
-
-	Contents map[string]OracleColumnText3 `json:"contents,omitempty"`
 
 	// A longer description of this collection, which might include multiple
 	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
 	Description *MarkdownString `json:"description,omitempty"`
 
-	// This collection's content enhances the identified collections, rather than
-	// being a standalone collection of its own.
+	// This node's content enhances all nodes that match these wildcards, rather
+	// than being a standalone item of its own.
 	Enhances []OracleCollectionIDWildcard `json:"enhances,omitempty"`
 
 	// An SVG icon associated with this collection.
@@ -6202,8 +6368,8 @@ type OracleTableSharedText3 struct {
 
 	Images []WebpImageURL `json:"images,omitempty"`
 
-	// This collection replaces the identified collections. References to the
-	// replaced collections can be considered equivalent to this collection.
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleCollectionIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
@@ -6245,11 +6411,11 @@ type OracleTableTextRecommendedRolls struct {
 // Represents a basic rollable oracle table with one roll column and one text
 // result column.
 type OracleTableText struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID OracleRollableID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// The label at the head of each table column. The `roll` key refers to the
@@ -6259,7 +6425,7 @@ type OracleTableText struct {
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	OracleType OracleTableTextOracleType `json:"oracle_type"`
@@ -6269,21 +6435,21 @@ type OracleTableText struct {
 
 	Type OracleTableTextType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A longer description of the oracle table's intended usage, which might
-	// include multiple paragraphs. If it's only a couple sentences, use the
-	// `summary` key instead.
-	Description *MarkdownString `json:"description,omitempty"`
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
 
-	// An icon that represents this table.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
@@ -6291,18 +6457,11 @@ type OracleTableText struct {
 
 	RecommendedRolls *OracleTableTextRecommendedRolls `json:"recommended_rolls,omitempty"`
 
-	// Indicates that this object replaces the identified OracleRollables.
-	// References to the replaced objects can be considered equivalent to this
-	// object.
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleRollableIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	// A brief summary of the oracle table's intended usage, no more than a few
-	// sentences in length. This is intended for use in application tooltips
-	// and similar sorts of hints. Longer text should use the "description" key
-	// instead.
-	Summary *MarkdownString `json:"summary,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -6337,11 +6496,11 @@ type OracleTableText2RecommendedRolls struct {
 
 // A rollable oracle table with one roll column and two text columns.
 type OracleTableText2 struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID OracleRollableID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// The label at the head of each table column. The `roll` key refers to the
@@ -6351,7 +6510,7 @@ type OracleTableText2 struct {
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	OracleType OracleTableText2OracleType `json:"oracle_type"`
@@ -6361,21 +6520,21 @@ type OracleTableText2 struct {
 
 	Type OracleTableText2Type `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A longer description of the oracle table's intended usage, which might
-	// include multiple paragraphs. If it's only a couple sentences, use the
-	// `summary` key instead.
-	Description *MarkdownString `json:"description,omitempty"`
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
 
-	// An icon that represents this table.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
@@ -6383,18 +6542,11 @@ type OracleTableText2 struct {
 
 	RecommendedRolls *OracleTableText2RecommendedRolls `json:"recommended_rolls,omitempty"`
 
-	// Indicates that this object replaces the identified OracleRollables.
-	// References to the replaced objects can be considered equivalent to this
-	// object.
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleRollableIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
-
-	// A brief summary of the oracle table's intended usage, no more than a few
-	// sentences in length. This is intended for use in application tooltips
-	// and similar sorts of hints. Longer text should use the "description" key
-	// instead.
-	Summary *MarkdownString `json:"summary,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 }
@@ -6431,11 +6583,11 @@ type OracleTableText3RecommendedRolls struct {
 
 // A rollable oracle table with one roll column and 3 text columns.
 type OracleTableText3 struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID OracleRollableID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// The label at the head of each table column. The `roll` key refers to the
@@ -6445,7 +6597,7 @@ type OracleTableText3 struct {
 	// The roll used to select a result on this oracle.
 	Dice DiceExpression `json:"dice"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	OracleType OracleTableText3OracleType `json:"oracle_type"`
@@ -6455,21 +6607,21 @@ type OracleTableText3 struct {
 
 	Type OracleTableText3Type `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	// A longer description of the oracle table's intended usage, which might
-	// include multiple paragraphs. If it's only a couple sentences, use the
-	// `summary` key instead.
-	Description *MarkdownString `json:"description,omitempty"`
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
 
-	// An icon that represents this table.
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
 
 	// Most oracle tables are insensitive to matches, but a few define special
 	// match behavior.
@@ -6477,23 +6629,15 @@ type OracleTableText3 struct {
 
 	RecommendedRolls *OracleTableText3RecommendedRolls `json:"recommended_rolls,omitempty"`
 
-	// Indicates that this object replaces the identified OracleRollables.
-	// References to the replaced objects can be considered equivalent to this
-	// object.
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleRollableIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
-	// A brief summary of the oracle table's intended usage, no more than a few
-	// sentences in length. This is intended for use in application tooltips
-	// and similar sorts of hints. Longer text should use the "description" key
-	// instead.
-	Summary *MarkdownString `json:"summary,omitempty"`
-
 	Tags *Tags `json:"tags,omitempty"`
 }
 
-// A grouping of separate tables.
 type OracleTablesCollectionOracleType string
 
 const (
@@ -6509,42 +6653,41 @@ const (
 // An OracleCollection that represents a category or grouping of tables, which
 // may themselves be `OracleTablesCollection`s.
 type OracleTablesCollection struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID OracleCollectionID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	// The primary name/label for this item.
+	Collections map[string]OracleCollection `json:"collections"`
+
+	Contents map[string]OracleRollableTable `json:"contents"`
+
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
-	// A grouping of separate tables.
 	OracleType OracleTablesCollectionOracleType `json:"oracle_type"`
 
 	Type OracleTablesCollectionType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
-	Collections map[string]OracleCollection `json:"collections,omitempty"`
-
-	// A thematic color associated with this collection.
+	// A thematic color associated with this node.
 	Color *CSSColor `json:"color,omitempty"`
-
-	Contents map[string]OracleTableRollable `json:"contents,omitempty"`
 
 	// A longer description of this collection, which might include multiple
 	// paragraphs. If it's only a couple sentences, use the `summary` key instead.
 	Description *MarkdownString `json:"description,omitempty"`
 
-	// This collection's content enhances the identified collections, rather than
-	// being a standalone collection of its own.
+	// This node's content enhances all nodes that match these wildcards, rather
+	// than being a standalone item of its own.
 	Enhances []OracleCollectionIDWildcard `json:"enhances,omitempty"`
 
 	// An SVG icon associated with this collection.
@@ -6552,8 +6695,8 @@ type OracleTablesCollection struct {
 
 	Images []WebpImageURL `json:"images,omitempty"`
 
-	// This collection replaces the identified collections. References to the
-	// replaced collections can be considered equivalent to this collection.
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
 	Replaces []OracleCollectionIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
@@ -6646,19 +6789,17 @@ const (
 
 // A rarity, as described in Ironsworn: Delve.
 type Rarity struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID RarityID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	// The asset augmented by this rarity.
 	Asset AssetID `json:"asset"`
 
-	Description MarkdownString `json:"description"`
-
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Type RarityType `json:"type"`
@@ -6674,15 +6815,25 @@ type Rarity struct {
 	// spend 3 experience points to purchase a rarity.
 	XpCost int16 `json:"xp_cost"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
 
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
+
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
+
+	Images []WebpImageURL `json:"images,omitempty"`
+
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
+	Replaces []RarityIDWildcard `json:"replaces,omitempty"`
 
 	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
@@ -6858,6 +7009,8 @@ type RulesExpansion struct {
 
 	Tags map[string]TagRule `json:"tags,omitempty"`
 }
+
+type RulesPackageID = string
 
 // The version of the Datasworn format used by this data.
 type RulesetDataswornVersion string
@@ -7263,7 +7416,7 @@ type SelectValueFieldChoiceStat struct {
 	Stat StatKey `json:"stat"`
 }
 
-// Metadata describing the original source of this item
+// Metadata describing the original source of this node
 type SourceInfo struct {
 	// Lists authors credited by the source material.
 	Authors []AuthorInfo `json:"authors"`
@@ -7280,7 +7433,7 @@ type SourceInfo struct {
 	// A URL where the source document is available.
 	URL WebURL `json:"url"`
 
-	// The page number where this item is described in full.
+	// The page number where this content is described in full.
 	Page *uint16 `json:"page,omitempty"`
 }
 
@@ -7948,29 +8101,32 @@ const (
 
 // A setting truth category.
 type Truth struct {
-	// The unique Datasworn ID for this item.
+	// The unique Datasworn ID for this node.
 	ID TruthID `json:"_id"`
 
 	// Attribution for the original source (such as a book or website) of this
-	// item, including the author and licensing information.
+	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
 	Dice DiceExpression `json:"dice"`
 
-	// The primary name/label for this item.
+	// The primary name/label for this node.
 	Name Label `json:"name"`
 
 	Options []TruthOption `json:"options"`
 
 	Type TruthType `json:"type"`
 
-	// Implementation hints or other developer-facing comments on this object.
-	// These should be omitted when presenting the object for gameplay.
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
 
-	// The name of this item as it appears on the page in the book, if it's
+	// The name of this node as it appears on the page in the book, if it's
 	// different from `name`.
 	CanonicalName *Label `json:"canonical_name,omitempty"`
+
+	// A thematic color associated with this node.
+	Color *CSSColor `json:"color,omitempty"`
 
 	// Prompts for factions related to this truth, like those presented in standard
 	// isles. This is presented as a single paragraph in the original text;
@@ -7980,11 +8136,16 @@ type Truth struct {
 	// This property is a placeholder and may see signficant changes in v0.2.0.
 	Factions []EntityPrompt `json:"factions,omitempty"`
 
+	// An SVG icon associated with this collection.
 	Icon *SvgImageURL `json:"icon,omitempty"`
 
-	Suggestions *Suggestions `json:"suggestions,omitempty"`
+	Images []WebpImageURL `json:"images,omitempty"`
 
-	Summary *MarkdownString `json:"summary,omitempty"`
+	// This node replaces all nodes that match these wildcards. References to the
+	// replaced nodes can be considered equivalent to this node.
+	Replaces []TruthIDWildcard `json:"replaces,omitempty"`
+
+	Suggestions *Suggestions `json:"suggestions,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
 
@@ -7998,6 +8159,7 @@ type TruthID = string
 type TruthIDWildcard = string
 
 type TruthOption struct {
+	// The unique Datasworn ID for this node.
 	ID TruthOptionID `json:"_id"`
 
 	Description MarkdownString `json:"description"`
@@ -8005,6 +8167,10 @@ type TruthOption struct {
 	QuestStarter MarkdownString `json:"quest_starter"`
 
 	Roll DiceRange `json:"roll"`
+
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
+	Comment *string `json:"_comment,omitempty"`
 
 	Oracles map[string]EmbeddedOracleRollable `json:"oracles,omitempty"`
 

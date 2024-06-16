@@ -29,6 +29,10 @@ public class OracleRollableColumnText2 extends OracleRollable {
     private String comment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("canonical_name")
+    private Label canonicalName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("color")
     private CssColor color;
 
@@ -37,8 +41,16 @@ public class OracleRollableColumnText2 extends OracleRollable {
     private SvgImageUrl icon;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("images")
+    private List<WebpImageUrl> images;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("match")
     private OracleMatchBehavior match;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("recommended_rolls")
+    private OracleRollableColumnText2RecommendedRolls recommendedRolls;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("replaces")
@@ -49,10 +61,6 @@ public class OracleRollableColumnText2 extends OracleRollable {
     private Suggestions suggestions;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("summary")
-    private MarkdownString summary;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("tags")
     private Tags tags;
 
@@ -61,7 +69,7 @@ public class OracleRollableColumnText2 extends OracleRollable {
 
     /**
      * Getter for id.<p>
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     public OracleRollableId getId() {
         return id;
@@ -69,7 +77,7 @@ public class OracleRollableColumnText2 extends OracleRollable {
 
     /**
      * Setter for id.<p>
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     public void setId(OracleRollableId id) {
         this.id = id;
@@ -93,7 +101,7 @@ public class OracleRollableColumnText2 extends OracleRollable {
 
     /**
      * Getter for name.<p>
-     * The primary label at the head of this column.
+     * The primary name/label for this node.
      */
     public Label getName() {
         return name;
@@ -101,7 +109,7 @@ public class OracleRollableColumnText2 extends OracleRollable {
 
     /**
      * Setter for name.<p>
-     * The primary label at the head of this column.
+     * The primary name/label for this node.
      */
     public void setName(Label name) {
         this.name = name;
@@ -139,8 +147,8 @@ public class OracleRollableColumnText2 extends OracleRollable {
 
     /**
      * Getter for comment.<p>
-     * Implementation hints or other developer-facing comments on this object.
-     * These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node.
+     * These should be omitted when presenting the node for gameplay.
      */
     public String getComment() {
         return comment;
@@ -148,17 +156,34 @@ public class OracleRollableColumnText2 extends OracleRollable {
 
     /**
      * Setter for comment.<p>
-     * Implementation hints or other developer-facing comments on this object.
-     * These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node.
+     * These should be omitted when presenting the node for gameplay.
      */
     public void setComment(String comment) {
         this.comment = comment;
     }
 
     /**
+     * Getter for canonicalName.<p>
+     * The name of this node as it appears on the page in the book, if it's
+     * different from `name`.
+     */
+    public Label getCanonicalName() {
+        return canonicalName;
+    }
+
+    /**
+     * Setter for canonicalName.<p>
+     * The name of this node as it appears on the page in the book, if it's
+     * different from `name`.
+     */
+    public void setCanonicalName(Label canonicalName) {
+        this.canonicalName = canonicalName;
+    }
+
+    /**
      * Getter for color.<p>
-     * An optional thematic color for this column. For an example, see "Basic
-     * Creature Form" (Starforged p. 337)
+     * A thematic color associated with this node.
      */
     public CssColor getColor() {
         return color;
@@ -166,8 +191,7 @@ public class OracleRollableColumnText2 extends OracleRollable {
 
     /**
      * Setter for color.<p>
-     * An optional thematic color for this column. For an example, see "Basic
-     * Creature Form" (Starforged p. 337)
+     * A thematic color associated with this node.
      */
     public void setColor(CssColor color) {
         this.color = color;
@@ -175,7 +199,7 @@ public class OracleRollableColumnText2 extends OracleRollable {
 
     /**
      * Getter for icon.<p>
-     * An optional icon for this column.
+     * An SVG icon associated with this collection.
      */
     public SvgImageUrl getIcon() {
         return icon;
@@ -183,10 +207,24 @@ public class OracleRollableColumnText2 extends OracleRollable {
 
     /**
      * Setter for icon.<p>
-     * An optional icon for this column.
+     * An SVG icon associated with this collection.
      */
     public void setIcon(SvgImageUrl icon) {
         this.icon = icon;
+    }
+
+    /**
+     * Getter for images.<p>
+     */
+    public List<WebpImageUrl> getImages() {
+        return images;
+    }
+
+    /**
+     * Setter for images.<p>
+     */
+    public void setImages(List<WebpImageUrl> images) {
+        this.images = images;
     }
 
     /**
@@ -208,10 +246,23 @@ public class OracleRollableColumnText2 extends OracleRollable {
     }
 
     /**
+     * Getter for recommendedRolls.<p>
+     */
+    public OracleRollableColumnText2RecommendedRolls getRecommendedRolls() {
+        return recommendedRolls;
+    }
+
+    /**
+     * Setter for recommendedRolls.<p>
+     */
+    public void setRecommendedRolls(OracleRollableColumnText2RecommendedRolls recommendedRolls) {
+        this.recommendedRolls = recommendedRolls;
+    }
+
+    /**
      * Getter for replaces.<p>
-     * Indicates that this object replaces the identified OracleRollables.
-     * References to the replaced objects can be considered equivalent to this
-     * object.
+     * This node replaces all nodes that match these wildcards. References to
+     * the replaced nodes can be considered equivalent to this node.
      */
     public List<OracleRollableIdWildcard> getReplaces() {
         return replaces;
@@ -219,9 +270,8 @@ public class OracleRollableColumnText2 extends OracleRollable {
 
     /**
      * Setter for replaces.<p>
-     * Indicates that this object replaces the identified OracleRollables.
-     * References to the replaced objects can be considered equivalent to this
-     * object.
+     * This node replaces all nodes that match these wildcards. References to
+     * the replaced nodes can be considered equivalent to this node.
      */
     public void setReplaces(List<OracleRollableIdWildcard> replaces) {
         this.replaces = replaces;
@@ -239,24 +289,6 @@ public class OracleRollableColumnText2 extends OracleRollable {
      */
     public void setSuggestions(Suggestions suggestions) {
         this.suggestions = suggestions;
-    }
-
-    /**
-     * Getter for summary.<p>
-     * Optional secondary text at the head of this column. For best results,
-     * this should be no more than a few words in length.
-     */
-    public MarkdownString getSummary() {
-        return summary;
-    }
-
-    /**
-     * Setter for summary.<p>
-     * Optional secondary text at the head of this column. For best results,
-     * this should be no more than a few words in length.
-     */
-    public void setSummary(MarkdownString summary) {
-        this.summary = summary;
     }
 
     /**

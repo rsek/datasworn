@@ -59,8 +59,16 @@ public class Asset {
     private SvgImageUrl icon;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("images")
+    private List<WebpImageUrl> images;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("options")
     private Map<String, AssetOptionField> options;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("replaces")
+    private List<AssetIdWildcard> replaces;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("requirement")
@@ -79,7 +87,7 @@ public class Asset {
 
     /**
      * Getter for id.<p>
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     public AssetId getId() {
         return id;
@@ -87,7 +95,7 @@ public class Asset {
 
     /**
      * Setter for id.<p>
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     public void setId(AssetId id) {
         this.id = id;
@@ -96,7 +104,7 @@ public class Asset {
     /**
      * Getter for source.<p>
      * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
+     * node, including the author and licensing information.
      */
     public SourceInfo getSource() {
         return source;
@@ -105,7 +113,7 @@ public class Asset {
     /**
      * Setter for source.<p>
      * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
+     * node, including the author and licensing information.
      */
     public void setSource(SourceInfo source) {
         this.source = source;
@@ -163,7 +171,7 @@ public class Asset {
 
     /**
      * Getter for name.<p>
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     public Label getName() {
         return name;
@@ -171,7 +179,7 @@ public class Asset {
 
     /**
      * Setter for name.<p>
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     public void setName(Label name) {
         this.name = name;
@@ -213,8 +221,8 @@ public class Asset {
 
     /**
      * Getter for comment.<p>
-     * Implementation hints or other developer-facing comments on this object.
-     * These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node.
+     * These should be omitted when presenting the node for gameplay.
      */
     public String getComment() {
         return comment;
@@ -222,8 +230,8 @@ public class Asset {
 
     /**
      * Setter for comment.<p>
-     * Implementation hints or other developer-facing comments on this object.
-     * These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node.
+     * These should be omitted when presenting the node for gameplay.
      */
     public void setComment(String comment) {
         this.comment = comment;
@@ -245,7 +253,7 @@ public class Asset {
 
     /**
      * Getter for canonicalName.<p>
-     * The name of this item as it appears on the page in the book, if it's
+     * The name of this node as it appears on the page in the book, if it's
      * different from `name`.
      */
     public Label getCanonicalName() {
@@ -254,7 +262,7 @@ public class Asset {
 
     /**
      * Setter for canonicalName.<p>
-     * The name of this item as it appears on the page in the book, if it's
+     * The name of this node as it appears on the page in the book, if it's
      * different from `name`.
      */
     public void setCanonicalName(Label canonicalName) {
@@ -263,7 +271,7 @@ public class Asset {
 
     /**
      * Getter for color.<p>
-     * A thematic color associated with this asset.
+     * A thematic color associated with this node.
      */
     public CssColor getColor() {
         return color;
@@ -271,7 +279,7 @@ public class Asset {
 
     /**
      * Setter for color.<p>
-     * A thematic color associated with this asset.
+     * A thematic color associated with this node.
      */
     public void setColor(CssColor color) {
         this.color = color;
@@ -299,7 +307,7 @@ public class Asset {
 
     /**
      * Getter for icon.<p>
-     * This asset's icon.
+     * An SVG icon associated with this collection.
      */
     public SvgImageUrl getIcon() {
         return icon;
@@ -307,10 +315,24 @@ public class Asset {
 
     /**
      * Setter for icon.<p>
-     * This asset's icon.
+     * An SVG icon associated with this collection.
      */
     public void setIcon(SvgImageUrl icon) {
         this.icon = icon;
+    }
+
+    /**
+     * Getter for images.<p>
+     */
+    public List<WebpImageUrl> getImages() {
+        return images;
+    }
+
+    /**
+     * Setter for images.<p>
+     */
+    public void setImages(List<WebpImageUrl> images) {
+        this.images = images;
     }
 
     /**
@@ -331,6 +353,24 @@ public class Asset {
      */
     public void setOptions(Map<String, AssetOptionField> options) {
         this.options = options;
+    }
+
+    /**
+     * Getter for replaces.<p>
+     * This node replaces all nodes that match these wildcards. References to
+     * the replaced nodes can be considered equivalent to this node.
+     */
+    public List<AssetIdWildcard> getReplaces() {
+        return replaces;
+    }
+
+    /**
+     * Setter for replaces.<p>
+     * This node replaces all nodes that match these wildcards. References to
+     * the replaced nodes can be considered equivalent to this node.
+     */
+    public void setReplaces(List<AssetIdWildcard> replaces) {
+        this.replaces = replaces;
     }
 
     /**

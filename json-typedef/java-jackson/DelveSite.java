@@ -48,6 +48,10 @@ public class DelveSite {
     private Label canonicalName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("color")
+    private CssColor color;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("extra_card")
     private String extraCard;
 
@@ -56,8 +60,16 @@ public class DelveSite {
     private SvgImageUrl icon;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("images")
+    private List<WebpImageUrl> images;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("region")
     private AtlasEntryId region;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("replaces")
+    private List<DelveSiteIdWildcard> replaces;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("suggestions")
@@ -72,7 +84,7 @@ public class DelveSite {
 
     /**
      * Getter for id.<p>
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     public DelveSiteId getId() {
         return id;
@@ -80,7 +92,7 @@ public class DelveSite {
 
     /**
      * Setter for id.<p>
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     public void setId(DelveSiteId id) {
         this.id = id;
@@ -89,7 +101,7 @@ public class DelveSite {
     /**
      * Getter for source.<p>
      * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
+     * node, including the author and licensing information.
      */
     public SourceInfo getSource() {
         return source;
@@ -98,7 +110,7 @@ public class DelveSite {
     /**
      * Setter for source.<p>
      * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
+     * node, including the author and licensing information.
      */
     public void setSource(SourceInfo source) {
         this.source = source;
@@ -152,7 +164,7 @@ public class DelveSite {
 
     /**
      * Getter for name.<p>
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     public Label getName() {
         return name;
@@ -160,7 +172,7 @@ public class DelveSite {
 
     /**
      * Setter for name.<p>
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     public void setName(Label name) {
         this.name = name;
@@ -212,8 +224,8 @@ public class DelveSite {
 
     /**
      * Getter for comment.<p>
-     * Implementation hints or other developer-facing comments on this object.
-     * These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node.
+     * These should be omitted when presenting the node for gameplay.
      */
     public String getComment() {
         return comment;
@@ -221,8 +233,8 @@ public class DelveSite {
 
     /**
      * Setter for comment.<p>
-     * Implementation hints or other developer-facing comments on this object.
-     * These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node.
+     * These should be omitted when presenting the node for gameplay.
      */
     public void setComment(String comment) {
         this.comment = comment;
@@ -230,7 +242,7 @@ public class DelveSite {
 
     /**
      * Getter for canonicalName.<p>
-     * The name of this item as it appears on the page in the book, if it's
+     * The name of this node as it appears on the page in the book, if it's
      * different from `name`.
      */
     public Label getCanonicalName() {
@@ -239,11 +251,27 @@ public class DelveSite {
 
     /**
      * Setter for canonicalName.<p>
-     * The name of this item as it appears on the page in the book, if it's
+     * The name of this node as it appears on the page in the book, if it's
      * different from `name`.
      */
     public void setCanonicalName(Label canonicalName) {
         this.canonicalName = canonicalName;
+    }
+
+    /**
+     * Getter for color.<p>
+     * A thematic color associated with this node.
+     */
+    public CssColor getColor() {
+        return color;
+    }
+
+    /**
+     * Setter for color.<p>
+     * A thematic color associated with this node.
+     */
+    public void setColor(CssColor color) {
+        this.color = color;
     }
 
     /**
@@ -266,6 +294,7 @@ public class DelveSite {
 
     /**
      * Getter for icon.<p>
+     * An SVG icon associated with this collection.
      */
     public SvgImageUrl getIcon() {
         return icon;
@@ -273,9 +302,24 @@ public class DelveSite {
 
     /**
      * Setter for icon.<p>
+     * An SVG icon associated with this collection.
      */
     public void setIcon(SvgImageUrl icon) {
         this.icon = icon;
+    }
+
+    /**
+     * Getter for images.<p>
+     */
+    public List<WebpImageUrl> getImages() {
+        return images;
+    }
+
+    /**
+     * Setter for images.<p>
+     */
+    public void setImages(List<WebpImageUrl> images) {
+        this.images = images;
     }
 
     /**
@@ -294,6 +338,24 @@ public class DelveSite {
      */
     public void setRegion(AtlasEntryId region) {
         this.region = region;
+    }
+
+    /**
+     * Getter for replaces.<p>
+     * This node replaces all nodes that match these wildcards. References to
+     * the replaced nodes can be considered equivalent to this node.
+     */
+    public List<DelveSiteIdWildcard> getReplaces() {
+        return replaces;
+    }
+
+    /**
+     * Setter for replaces.<p>
+     * This node replaces all nodes that match these wildcards. References to
+     * the replaced nodes can be considered equivalent to this node.
+     */
+    public void setReplaces(List<DelveSiteIdWildcard> replaces) {
+        this.replaces = replaces;
     }
 
     /**

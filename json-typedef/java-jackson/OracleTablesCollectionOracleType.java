@@ -4,9 +4,6 @@ package Datasworn;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * A grouping of separate tables.
- */
 public enum OracleTablesCollectionOracleType {
     @JsonProperty("tables")
     TABLES,

@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// An URL pointing to the location where this element's license can be
+    /// An URL pointing to the location where this content's license can be
     /// found.
     /// 
     /// A `null` here indicates that the content provides __no__ license, and is

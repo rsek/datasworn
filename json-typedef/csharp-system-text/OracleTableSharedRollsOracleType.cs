@@ -6,9 +6,6 @@ using System.Text.Json.Serialization;
 
 namespace Datasworn
 {
-    /// <summary>
-    /// A table with one shared roll column, and multiple unique text columns.
-    /// </summary>
     [JsonConverter(typeof(OracleTableSharedRollsOracleTypeJsonConverter))]
     public enum OracleTableSharedRollsOracleType
     {

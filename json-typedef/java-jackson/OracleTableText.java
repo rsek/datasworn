@@ -46,12 +46,16 @@ public class OracleTableText {
     private Label canonicalName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("description")
-    private MarkdownString description;
+    @JsonProperty("color")
+    private CssColor color;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("icon")
     private SvgImageUrl icon;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("images")
+    private List<WebpImageUrl> images;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("match")
@@ -70,10 +74,6 @@ public class OracleTableText {
     private Suggestions suggestions;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("summary")
-    private MarkdownString summary;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("tags")
     private Tags tags;
 
@@ -82,7 +82,7 @@ public class OracleTableText {
 
     /**
      * Getter for id.<p>
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     public OracleRollableId getId() {
         return id;
@@ -90,7 +90,7 @@ public class OracleTableText {
 
     /**
      * Setter for id.<p>
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     public void setId(OracleRollableId id) {
         this.id = id;
@@ -99,7 +99,7 @@ public class OracleTableText {
     /**
      * Getter for source.<p>
      * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
+     * node, including the author and licensing information.
      */
     public SourceInfo getSource() {
         return source;
@@ -108,7 +108,7 @@ public class OracleTableText {
     /**
      * Setter for source.<p>
      * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
+     * node, including the author and licensing information.
      */
     public void setSource(SourceInfo source) {
         this.source = source;
@@ -150,7 +150,7 @@ public class OracleTableText {
 
     /**
      * Getter for name.<p>
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     public Label getName() {
         return name;
@@ -158,7 +158,7 @@ public class OracleTableText {
 
     /**
      * Setter for name.<p>
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     public void setName(Label name) {
         this.name = name;
@@ -210,8 +210,8 @@ public class OracleTableText {
 
     /**
      * Getter for comment.<p>
-     * Implementation hints or other developer-facing comments on this object.
-     * These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node.
+     * These should be omitted when presenting the node for gameplay.
      */
     public String getComment() {
         return comment;
@@ -219,8 +219,8 @@ public class OracleTableText {
 
     /**
      * Setter for comment.<p>
-     * Implementation hints or other developer-facing comments on this object.
-     * These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node.
+     * These should be omitted when presenting the node for gameplay.
      */
     public void setComment(String comment) {
         this.comment = comment;
@@ -228,7 +228,7 @@ public class OracleTableText {
 
     /**
      * Getter for canonicalName.<p>
-     * The name of this item as it appears on the page in the book, if it's
+     * The name of this node as it appears on the page in the book, if it's
      * different from `name`.
      */
     public Label getCanonicalName() {
@@ -237,7 +237,7 @@ public class OracleTableText {
 
     /**
      * Setter for canonicalName.<p>
-     * The name of this item as it appears on the page in the book, if it's
+     * The name of this node as it appears on the page in the book, if it's
      * different from `name`.
      */
     public void setCanonicalName(Label canonicalName) {
@@ -245,28 +245,24 @@ public class OracleTableText {
     }
 
     /**
-     * Getter for description.<p>
-     * A longer description of the oracle table's intended usage, which might
-     * include multiple paragraphs. If it's only a couple sentences, use the
-     * `summary` key instead.
+     * Getter for color.<p>
+     * A thematic color associated with this node.
      */
-    public MarkdownString getDescription() {
-        return description;
+    public CssColor getColor() {
+        return color;
     }
 
     /**
-     * Setter for description.<p>
-     * A longer description of the oracle table's intended usage, which might
-     * include multiple paragraphs. If it's only a couple sentences, use the
-     * `summary` key instead.
+     * Setter for color.<p>
+     * A thematic color associated with this node.
      */
-    public void setDescription(MarkdownString description) {
-        this.description = description;
+    public void setColor(CssColor color) {
+        this.color = color;
     }
 
     /**
      * Getter for icon.<p>
-     * An icon that represents this table.
+     * An SVG icon associated with this collection.
      */
     public SvgImageUrl getIcon() {
         return icon;
@@ -274,10 +270,24 @@ public class OracleTableText {
 
     /**
      * Setter for icon.<p>
-     * An icon that represents this table.
+     * An SVG icon associated with this collection.
      */
     public void setIcon(SvgImageUrl icon) {
         this.icon = icon;
+    }
+
+    /**
+     * Getter for images.<p>
+     */
+    public List<WebpImageUrl> getImages() {
+        return images;
+    }
+
+    /**
+     * Setter for images.<p>
+     */
+    public void setImages(List<WebpImageUrl> images) {
+        this.images = images;
     }
 
     /**
@@ -314,9 +324,8 @@ public class OracleTableText {
 
     /**
      * Getter for replaces.<p>
-     * Indicates that this object replaces the identified OracleRollables.
-     * References to the replaced objects can be considered equivalent to this
-     * object.
+     * This node replaces all nodes that match these wildcards. References to
+     * the replaced nodes can be considered equivalent to this node.
      */
     public List<OracleRollableIdWildcard> getReplaces() {
         return replaces;
@@ -324,9 +333,8 @@ public class OracleTableText {
 
     /**
      * Setter for replaces.<p>
-     * Indicates that this object replaces the identified OracleRollables.
-     * References to the replaced objects can be considered equivalent to this
-     * object.
+     * This node replaces all nodes that match these wildcards. References to
+     * the replaced nodes can be considered equivalent to this node.
      */
     public void setReplaces(List<OracleRollableIdWildcard> replaces) {
         this.replaces = replaces;
@@ -344,28 +352,6 @@ public class OracleTableText {
      */
     public void setSuggestions(Suggestions suggestions) {
         this.suggestions = suggestions;
-    }
-
-    /**
-     * Getter for summary.<p>
-     * A brief summary of the oracle table's intended usage, no more than a few
-     * sentences in length. This is intended for use in application tooltips
-     * and similar sorts of hints. Longer text should use the "description"
-     * key instead.
-     */
-    public MarkdownString getSummary() {
-        return summary;
-    }
-
-    /**
-     * Setter for summary.<p>
-     * A brief summary of the oracle table's intended usage, no more than a few
-     * sentences in length. This is intended for use in application tooltips
-     * and similar sorts of hints. Longer text should use the "description"
-     * key instead.
-     */
-    public void setSummary(MarkdownString summary) {
-        this.summary = summary;
     }
 
     /**

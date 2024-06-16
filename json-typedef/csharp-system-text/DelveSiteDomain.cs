@@ -11,14 +11,14 @@ namespace Datasworn
     public class DelveSiteDomain
     {
         /// <summary>
-        /// The unique Datasworn ID for this item.
+        /// The unique Datasworn ID for this node.
         /// </summary>
         [JsonPropertyName("_id")]
         public DelveSiteDomainId Id { get; set; }
 
         /// <summary>
         /// Attribution for the original source (such as a book or website) of
-        /// this item, including the author and licensing information.
+        /// this node, including the author and licensing information.
         /// </summary>
         [JsonPropertyName("_source")]
         public SourceInfo Source { get; set; }
@@ -30,37 +30,47 @@ namespace Datasworn
         public IList<DelveSiteDomainFeature> Features { get; set; }
 
         /// <summary>
-        /// The primary name/label for this item.
+        /// The primary name/label for this node.
         /// </summary>
         [JsonPropertyName("name")]
         public Label Name { get; set; }
-
-        [JsonPropertyName("summary")]
-        public MarkdownString Summary { get; set; }
 
         [JsonPropertyName("type")]
         public DelveSiteDomainType Type_ { get; set; }
 
         /// <summary>
         /// Implementation hints or other developer-facing comments on this
-        /// object. These should be omitted when presenting the object for
-        /// gameplay.
+        /// node. These should be omitted when presenting the node for gameplay.
         /// </summary>
         [JsonPropertyName("_comment")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public string Comment { get; set; }
 
         /// <summary>
-        /// The name of this item as it appears on the page in the book, if it's
+        /// The name of this node as it appears on the page in the book, if it's
         /// different from `name`.
         /// </summary>
         [JsonPropertyName("canonical_name")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public Label? CanonicalName { get; set; }
 
-        [JsonPropertyName("description")]
+        /// <summary>
+        /// A thematic color associated with this node.
+        /// </summary>
+        [JsonPropertyName("color")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public MarkdownString? Description { get; set; }
+        public CssColor? Color { get; set; }
+
+        /// <summary>
+        /// An SVG icon associated with this collection.
+        /// </summary>
+        [JsonPropertyName("icon")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public SvgImageUrl? Icon { get; set; }
+
+        [JsonPropertyName("images")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public IList<WebpImageUrl> Images { get; set; }
 
         /// <summary>
         /// An oracle table ID containing place name elements. For examples,
@@ -74,6 +84,14 @@ namespace Datasworn
         [JsonPropertyName("name_oracle")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public OracleRollableId? NameOracle { get; set; }
+
+        /// <summary>
+        /// This node replaces all nodes that match these wildcards. References
+        /// to the replaced nodes can be considered equivalent to this node.
+        /// </summary>
+        [JsonPropertyName("replaces")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public IList<DelveSiteDomainIdWildcard> Replaces { get; set; }
 
         [JsonPropertyName("suggestions")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

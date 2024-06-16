@@ -3,8 +3,8 @@ import { type Datasworn, type DataswornSource } from '../index.js';
 export type SchemaValidator<TTarget> = (data: unknown) => data is TTarget;
 export type Logger = Record<'warn' | 'info' | 'debug' | 'error', (message?: any, ...optionalParams: any[]) => any>;
 /**
- * Merges, assigns IDs to, and validates multiple {@link DataswornSource.RulesPackage}s to create a complete {@link Datasworn.RulesPackage} object.
- * */
+    * Merges, assigns IDs to, and validates multiple {@link DataswornSource.RulesPackage}s to create a complete {@link Datasworn.RulesPackage} object.
+    * */
 export declare class RulesPackageBuilder<TSource extends DataswornSource.RulesPackage = DataswornSource.RulesPackage, TTarget extends Datasworn.RulesPackage = Datasworn.RulesPackage> {
     #private;
     id: string;

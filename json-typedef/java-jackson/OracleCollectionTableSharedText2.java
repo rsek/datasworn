@@ -23,6 +23,9 @@ public class OracleCollectionTableSharedText2 extends OracleCollection {
     @JsonProperty("column_labels")
     private OracleCollectionTableSharedText2ColumnLabels columnLabels;
 
+    @JsonProperty("contents")
+    private Map<String, OracleColumnText2> contents;
+
     @JsonProperty("name")
     private Label name;
 
@@ -40,10 +43,6 @@ public class OracleCollectionTableSharedText2 extends OracleCollection {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("color")
     private CssColor color;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("contents")
-    private Map<String, OracleColumnText2> contents;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("description")
@@ -82,7 +81,7 @@ public class OracleCollectionTableSharedText2 extends OracleCollection {
 
     /**
      * Getter for id.<p>
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     public OracleCollectionId getId() {
         return id;
@@ -90,7 +89,7 @@ public class OracleCollectionTableSharedText2 extends OracleCollection {
 
     /**
      * Setter for id.<p>
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     public void setId(OracleCollectionId id) {
         this.id = id;
@@ -99,7 +98,7 @@ public class OracleCollectionTableSharedText2 extends OracleCollection {
     /**
      * Getter for source.<p>
      * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
+     * node, including the author and licensing information.
      */
     public SourceInfo getSource() {
         return source;
@@ -108,7 +107,7 @@ public class OracleCollectionTableSharedText2 extends OracleCollection {
     /**
      * Setter for source.<p>
      * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
+     * node, including the author and licensing information.
      */
     public void setSource(SourceInfo source) {
         this.source = source;
@@ -133,8 +132,22 @@ public class OracleCollectionTableSharedText2 extends OracleCollection {
     }
 
     /**
+     * Getter for contents.<p>
+     */
+    public Map<String, OracleColumnText2> getContents() {
+        return contents;
+    }
+
+    /**
+     * Setter for contents.<p>
+     */
+    public void setContents(Map<String, OracleColumnText2> contents) {
+        this.contents = contents;
+    }
+
+    /**
      * Getter for name.<p>
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     public Label getName() {
         return name;
@@ -142,7 +155,7 @@ public class OracleCollectionTableSharedText2 extends OracleCollection {
 
     /**
      * Setter for name.<p>
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     public void setName(Label name) {
         this.name = name;
@@ -164,8 +177,8 @@ public class OracleCollectionTableSharedText2 extends OracleCollection {
 
     /**
      * Getter for comment.<p>
-     * Implementation hints or other developer-facing comments on this object.
-     * These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node.
+     * These should be omitted when presenting the node for gameplay.
      */
     public String getComment() {
         return comment;
@@ -173,8 +186,8 @@ public class OracleCollectionTableSharedText2 extends OracleCollection {
 
     /**
      * Setter for comment.<p>
-     * Implementation hints or other developer-facing comments on this object.
-     * These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node.
+     * These should be omitted when presenting the node for gameplay.
      */
     public void setComment(String comment) {
         this.comment = comment;
@@ -182,7 +195,7 @@ public class OracleCollectionTableSharedText2 extends OracleCollection {
 
     /**
      * Getter for canonicalName.<p>
-     * The name of this item as it appears on the page in the book, if it's
+     * The name of this node as it appears on the page in the book, if it's
      * different from `name`.
      */
     public Label getCanonicalName() {
@@ -191,7 +204,7 @@ public class OracleCollectionTableSharedText2 extends OracleCollection {
 
     /**
      * Setter for canonicalName.<p>
-     * The name of this item as it appears on the page in the book, if it's
+     * The name of this node as it appears on the page in the book, if it's
      * different from `name`.
      */
     public void setCanonicalName(Label canonicalName) {
@@ -200,7 +213,7 @@ public class OracleCollectionTableSharedText2 extends OracleCollection {
 
     /**
      * Getter for color.<p>
-     * A thematic color associated with this collection.
+     * A thematic color associated with this node.
      */
     public CssColor getColor() {
         return color;
@@ -208,24 +221,10 @@ public class OracleCollectionTableSharedText2 extends OracleCollection {
 
     /**
      * Setter for color.<p>
-     * A thematic color associated with this collection.
+     * A thematic color associated with this node.
      */
     public void setColor(CssColor color) {
         this.color = color;
-    }
-
-    /**
-     * Getter for contents.<p>
-     */
-    public Map<String, OracleColumnText2> getContents() {
-        return contents;
-    }
-
-    /**
-     * Setter for contents.<p>
-     */
-    public void setContents(Map<String, OracleColumnText2> contents) {
-        this.contents = contents;
     }
 
     /**
@@ -250,8 +249,8 @@ public class OracleCollectionTableSharedText2 extends OracleCollection {
 
     /**
      * Getter for enhances.<p>
-     * This collection's content enhances the identified collections, rather
-     * than being a standalone collection of its own.
+     * This node's content enhances all nodes that match these wildcards, rather
+     * than being a standalone item of its own.
      */
     public List<OracleCollectionIdWildcard> getEnhances() {
         return enhances;
@@ -259,8 +258,8 @@ public class OracleCollectionTableSharedText2 extends OracleCollection {
 
     /**
      * Setter for enhances.<p>
-     * This collection's content enhances the identified collections, rather
-     * than being a standalone collection of its own.
+     * This node's content enhances all nodes that match these wildcards, rather
+     * than being a standalone item of its own.
      */
     public void setEnhances(List<OracleCollectionIdWildcard> enhances) {
         this.enhances = enhances;
@@ -298,8 +297,8 @@ public class OracleCollectionTableSharedText2 extends OracleCollection {
 
     /**
      * Getter for replaces.<p>
-     * This collection replaces the identified collections. References to the
-     * replaced collections can be considered equivalent to this collection.
+     * This node replaces all nodes that match these wildcards. References to
+     * the replaced nodes can be considered equivalent to this node.
      */
     public List<OracleCollectionIdWildcard> getReplaces() {
         return replaces;
@@ -307,8 +306,8 @@ public class OracleCollectionTableSharedText2 extends OracleCollection {
 
     /**
      * Setter for replaces.<p>
-     * This collection replaces the identified collections. References to the
-     * replaced collections can be considered equivalent to this collection.
+     * This node replaces all nodes that match these wildcards. References to
+     * the replaced nodes can be considered equivalent to this node.
      */
     public void setReplaces(List<OracleCollectionIdWildcard> replaces) {
         this.replaces = replaces;

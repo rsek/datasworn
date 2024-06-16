@@ -6,9 +6,6 @@ using System.Text.Json.Serialization;
 
 namespace Datasworn
 {
-    /// <summary>
-    /// A move that makes no action rolls or progress rolls.
-    /// </summary>
     [JsonConverter(typeof(MoveNoRollRollTypeJsonConverter))]
     public enum MoveNoRollRollType
     {

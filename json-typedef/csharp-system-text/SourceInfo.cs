@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Datasworn
 {
     /// <summary>
-    /// Metadata describing the original source of this item
+    /// Metadata describing the original source of this node
     /// </summary>
     public class SourceInfo
     {
@@ -41,7 +41,7 @@ namespace Datasworn
         public WebUrl Url { get; set; }
 
         /// <summary>
-        /// The page number where this item is described in full.
+        /// The page number where this content is described in full.
         /// </summary>
         [JsonPropertyName("page")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

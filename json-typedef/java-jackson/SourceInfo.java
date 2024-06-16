@@ -9,7 +9,7 @@ import java.time.OffsetDateTime;
 import java.util.List;
 
 /**
- * Metadata describing the original source of this item
+ * Metadata describing the original source of this node
  */
 @JsonSerialize
 public class SourceInfo {
@@ -117,7 +117,7 @@ public class SourceInfo {
 
     /**
      * Getter for page.<p>
-     * The page number where this item is described in full.
+     * The page number where this content is described in full.
      */
     public UnsignedShort getPage() {
         return page;
@@ -125,7 +125,7 @@ public class SourceInfo {
 
     /**
      * Setter for page.<p>
-     * The page number where this item is described in full.
+     * The page number where this content is described in full.
      */
     public void setPage(UnsignedShort page) {
         this.page = page;

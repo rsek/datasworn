@@ -13,12 +13,12 @@ export function validate<
 ) {
 	collectionValidator(obj)
 
-	if (!(CONST.ContentsKey in obj)) {
+	if (CONST.ContentsKey in obj) {
 		const children = obj[CONST.ContentsKey]
 		for (const k in children) collectableValidator(children[k] as TChild)
 	}
 
-	if (!(CONST.CollectionsKey in obj)) {
+	if (CONST.CollectionsKey in obj) {
 		const collectionChildren = obj[CONST.CollectionsKey]
 		for (const k in collectionChildren)
 			validate(collectionChildren[k], collectionValidator, collectableValidator)

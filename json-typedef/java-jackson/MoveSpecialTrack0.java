@@ -48,6 +48,18 @@ public class MoveSpecialTrack0 extends Move {
     private Label canonicalName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("color")
+    private CssColor color;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("icon")
+    private SvgImageUrl icon;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("images")
+    private List<WebpImageUrl> images;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("oracles")
     private Map<String, EmbeddedOracleRollable> oracles;
 
@@ -68,7 +80,7 @@ public class MoveSpecialTrack0 extends Move {
 
     /**
      * Getter for id.<p>
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     public MoveId getId() {
         return id;
@@ -76,7 +88,7 @@ public class MoveSpecialTrack0 extends Move {
 
     /**
      * Setter for id.<p>
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     public void setId(MoveId id) {
         this.id = id;
@@ -85,7 +97,7 @@ public class MoveSpecialTrack0 extends Move {
     /**
      * Getter for source.<p>
      * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
+     * node, including the author and licensing information.
      */
     public SourceInfo getSource() {
         return source;
@@ -94,7 +106,7 @@ public class MoveSpecialTrack0 extends Move {
     /**
      * Setter for source.<p>
      * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
+     * node, including the author and licensing information.
      */
     public void setSource(SourceInfo source) {
         this.source = source;
@@ -118,7 +130,7 @@ public class MoveSpecialTrack0 extends Move {
 
     /**
      * Getter for name.<p>
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     public Label getName() {
         return name;
@@ -126,7 +138,7 @@ public class MoveSpecialTrack0 extends Move {
 
     /**
      * Setter for name.<p>
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     public void setName(Label name) {
         this.name = name;
@@ -194,8 +206,8 @@ public class MoveSpecialTrack0 extends Move {
 
     /**
      * Getter for comment.<p>
-     * Implementation hints or other developer-facing comments on this object.
-     * These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node.
+     * These should be omitted when presenting the node for gameplay.
      */
     public String getComment() {
         return comment;
@@ -203,8 +215,8 @@ public class MoveSpecialTrack0 extends Move {
 
     /**
      * Setter for comment.<p>
-     * Implementation hints or other developer-facing comments on this object.
-     * These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node.
+     * These should be omitted when presenting the node for gameplay.
      */
     public void setComment(String comment) {
         this.comment = comment;
@@ -212,7 +224,7 @@ public class MoveSpecialTrack0 extends Move {
 
     /**
      * Getter for canonicalName.<p>
-     * The name of this item as it appears on the page in the book, if it's
+     * The name of this node as it appears on the page in the book, if it's
      * different from `name`.
      */
     public Label getCanonicalName() {
@@ -221,11 +233,57 @@ public class MoveSpecialTrack0 extends Move {
 
     /**
      * Setter for canonicalName.<p>
-     * The name of this item as it appears on the page in the book, if it's
+     * The name of this node as it appears on the page in the book, if it's
      * different from `name`.
      */
     public void setCanonicalName(Label canonicalName) {
         this.canonicalName = canonicalName;
+    }
+
+    /**
+     * Getter for color.<p>
+     * A thematic color associated with this node.
+     */
+    public CssColor getColor() {
+        return color;
+    }
+
+    /**
+     * Setter for color.<p>
+     * A thematic color associated with this node.
+     */
+    public void setColor(CssColor color) {
+        this.color = color;
+    }
+
+    /**
+     * Getter for icon.<p>
+     * An SVG icon associated with this collection.
+     */
+    public SvgImageUrl getIcon() {
+        return icon;
+    }
+
+    /**
+     * Setter for icon.<p>
+     * An SVG icon associated with this collection.
+     */
+    public void setIcon(SvgImageUrl icon) {
+        this.icon = icon;
+    }
+
+    /**
+     * Getter for images.<p>
+     */
+    public List<WebpImageUrl> getImages() {
+        return images;
+    }
+
+    /**
+     * Setter for images.<p>
+     */
+    public void setImages(List<WebpImageUrl> images) {
+        this.images = images;
     }
 
     /**

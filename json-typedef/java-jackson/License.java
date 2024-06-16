@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * An URL pointing to the location where this element's license can be found.
+ * An URL pointing to the location where this content's license can be found.
  * 
  * A `null` here indicates that the content provides __no__ license, and is not
  * intended for redistribution.

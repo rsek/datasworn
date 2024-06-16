@@ -22,6 +22,10 @@ public class TruthOption {
     private DiceRange roll;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("_comment")
+    private String comment;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("oracles")
     private Map<String, EmbeddedOracleRollable> oracles;
 
@@ -34,6 +38,7 @@ public class TruthOption {
 
     /**
      * Getter for id.<p>
+     * The unique Datasworn ID for this node.
      */
     public TruthOptionId getId() {
         return id;
@@ -41,6 +46,7 @@ public class TruthOption {
 
     /**
      * Setter for id.<p>
+     * The unique Datasworn ID for this node.
      */
     public void setId(TruthOptionId id) {
         this.id = id;
@@ -86,6 +92,24 @@ public class TruthOption {
      */
     public void setRoll(DiceRange roll) {
         this.roll = roll;
+    }
+
+    /**
+     * Getter for comment.<p>
+     * Implementation hints or other developer-facing comments on this node.
+     * These should be omitted when presenting the node for gameplay.
+     */
+    public String getComment() {
+        return comment;
+    }
+
+    /**
+     * Setter for comment.<p>
+     * Implementation hints or other developer-facing comments on this node.
+     * These should be omitted when presenting the node for gameplay.
+     */
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     /**

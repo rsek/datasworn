@@ -4,9 +4,6 @@ package Datasworn;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * A table with multiple unique roll columns, and one shared text column.
- */
 public enum OracleTableSharedTextOracleType {
     @JsonProperty("table_shared_text")
     TABLE_SHARED_TEXT,

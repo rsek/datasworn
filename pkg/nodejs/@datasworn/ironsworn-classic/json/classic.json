@@ -165,6 +165,7 @@
 			},
 			"name": "Action and Theme Oracles",
 			"type": "oracle_collection",
+			"oracle_type": "tables",
 			"contents": {
 				"action": {
 					"name": "Action",
@@ -2823,12 +2824,13 @@
 					"_id": "oracle_rollable:classic/action_and_theme/theme"
 				}
 			},
-			"oracle_type": "tables",
+			"collections": {},
 			"_id": "oracle_collection:classic/action_and_theme"
 		},
 		"character": {
 			"name": "Character",
 			"type": "oracle_collection",
+			"oracle_type": "tables",
 			"_source": {
 				"authors": [
 					{
@@ -4895,12 +4897,13 @@
 					"_id": "oracle_rollable:classic/character/descriptor"
 				}
 			},
-			"oracle_type": "tables",
+			"collections": {},
 			"_id": "oracle_collection:classic/character"
 		},
 		"name": {
 			"name": "Name",
 			"type": "oracle_collection",
+			"oracle_type": "tables",
 			"_source": {
 				"authors": [
 					{
@@ -7586,6 +7589,7 @@
 							"_id": "oracle_rollable:classic/name/ironlander/b"
 						}
 					},
+					"collections": {},
 					"_id": "oracle_collection:classic/name/ironlander"
 				},
 				"other": {
@@ -9295,12 +9299,12 @@
 					"_id": "oracle_rollable:classic/name/elf"
 				}
 			},
-			"oracle_type": "tables",
 			"_id": "oracle_collection:classic/name"
 		},
 		"place": {
 			"name": "Place Oracles",
 			"type": "oracle_collection",
+			"oracle_type": "tables",
 			"_source": {
 				"authors": [
 					{
@@ -11037,7 +11041,7 @@
 					"_id": "oracle_rollable:classic/place/descriptor"
 				}
 			},
-			"oracle_type": "tables",
+			"collections": {},
 			"_id": "oracle_collection:classic/place"
 		},
 		"settlement": {
@@ -12682,6 +12686,7 @@
 							"_id": "oracle_rollable:classic/settlement/name/something_else"
 						}
 					},
+					"collections": {},
 					"_id": "oracle_collection:classic/settlement/name"
 				},
 				"quick_name": {
@@ -13383,6 +13388,7 @@
 		"turning_point": {
 			"name": "Turning Point Oracles",
 			"type": "oracle_collection",
+			"oracle_type": "tables",
 			"_source": {
 				"authors": [
 					{
@@ -14067,7 +14073,7 @@
 					"_id": "oracle_rollable:classic/turning_point/challenge_rank"
 				}
 			},
-			"oracle_type": "tables",
+			"collections": {},
 			"_id": "oracle_collection:classic/turning_point"
 		}
 	},
@@ -14148,6 +14154,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/archer.0"
 						},
 						{
@@ -14171,6 +14181,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/archer.1"
 						},
 						{
@@ -14191,11 +14205,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/archer.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/combat_talent/archer"
 				},
 				"berserker": {
@@ -14237,6 +14257,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/berserker.0"
 						},
 						{
@@ -14260,6 +14284,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/berserker.1"
 						},
 						{
@@ -14280,11 +14308,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/berserker.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/combat_talent/berserker"
 				},
 				"brawler": {
@@ -14328,6 +14362,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/brawler.0"
 						},
 						{
@@ -14348,6 +14386,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/brawler.1"
 						},
 						{
@@ -14371,11 +14413,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/brawler.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/combat_talent/brawler"
 				},
 				"cutthroat": {
@@ -14414,6 +14462,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/cutthroat.0"
 						},
 						{
@@ -14447,6 +14499,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/cutthroat.1"
 						},
 						{
@@ -14472,11 +14528,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/cutthroat.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/combat_talent/cutthroat"
 				},
 				"duelist": {
@@ -14509,6 +14571,10 @@
 									"roll_type": "action_roll"
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/duelist.0"
 						},
 						{
@@ -14534,6 +14600,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/duelist.1"
 						},
 						{
@@ -14545,11 +14615,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/duelist.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/combat_talent/duelist"
 				},
 				"fletcher": {
@@ -14587,6 +14663,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/fletcher.0"
 						},
 						{
@@ -14607,6 +14687,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/fletcher.1"
 						},
 						{
@@ -14647,11 +14731,16 @@
 								}
 							},
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/combat_talent/fletcher.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/combat_talent/fletcher"
 				},
 				"ironclad": {
@@ -14726,6 +14815,10 @@
 								}
 							],
 							"enabled": true,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/ironclad.0"
 						},
 						{
@@ -14746,6 +14839,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/ironclad.1"
 						},
 						{
@@ -14766,9 +14863,14 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/ironclad.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
 					"_id": "asset:classic/combat_talent/ironclad"
@@ -14817,6 +14919,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/long_arm.0"
 						},
 						{
@@ -14842,6 +14948,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/long_arm.1"
 						},
 						{
@@ -14865,11 +14975,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/long_arm.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/combat_talent/long_arm"
 				},
 				"shield_bearer": {
@@ -14921,6 +15037,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/shield_bearer.0"
 						},
 						{
@@ -14941,6 +15061,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/shield_bearer.1"
 						},
 						{
@@ -14952,11 +15076,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/shield_bearer.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/combat_talent/shield_bearer"
 				},
 				"skirmisher": {
@@ -15004,6 +15134,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/skirmisher.0"
 						},
 						{
@@ -15024,6 +15158,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/skirmisher.1"
 						},
 						{
@@ -15044,11 +15182,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/skirmisher.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/combat_talent/skirmisher"
 				},
 				"slinger": {
@@ -15087,6 +15231,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/slinger.0"
 						},
 						{
@@ -15107,6 +15255,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/slinger.1"
 						},
 						{
@@ -15127,11 +15279,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/slinger.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/combat_talent/slinger"
 				},
 				"sunderer": {
@@ -15173,6 +15331,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/sunderer.0"
 						},
 						{
@@ -15196,6 +15358,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/sunderer.1"
 						},
 						{
@@ -15236,11 +15402,16 @@
 								}
 							},
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/combat_talent/sunderer.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/combat_talent/sunderer"
 				},
 				"swordmaster": {
@@ -15273,6 +15444,10 @@
 									"roll_type": "action_roll"
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/swordmaster.0"
 						},
 						{
@@ -15284,6 +15459,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/swordmaster.1"
 						},
 						{
@@ -15304,11 +15483,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/swordmaster.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/combat_talent/swordmaster"
 				},
 				"thunder_bringer": {
@@ -15351,6 +15536,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/thunder_bringer.0"
 						},
 						{
@@ -15371,6 +15560,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/thunder_bringer.1"
 						},
 						{
@@ -15382,14 +15575,21 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/combat_talent/thunder_bringer.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/combat_talent/thunder_bringer"
 				}
 			},
+			"collections": {},
 			"_id": "asset_collection:classic/combat_talent"
 		},
 		"companion": {
@@ -15458,6 +15658,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/cave_lion.0"
 						},
 						{
@@ -15487,6 +15691,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/cave_lion.1"
 						},
 						{
@@ -15499,6 +15707,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/cave_lion.2"
 						}
 					],
@@ -15517,7 +15729,8 @@
 								]
 							},
 							"rollable": true,
-							"min": 0
+							"min": 0,
+							"controls": {}
 						}
 					},
 					"count_as_impact": false,
@@ -15568,6 +15781,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/giant_spider.0"
 						},
 						{
@@ -15594,6 +15811,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/giant_spider.1"
 						},
 						{
@@ -15620,6 +15841,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/giant_spider.2"
 						}
 					],
@@ -15638,7 +15863,8 @@
 							"max": 4,
 							"value": 4,
 							"rollable": true,
-							"min": 0
+							"min": 0,
+							"controls": {}
 						}
 					},
 					"count_as_impact": false,
@@ -15683,7 +15909,8 @@
 							"max": 3,
 							"value": 3,
 							"rollable": true,
-							"min": 0
+							"min": 0,
+							"controls": {}
 						}
 					},
 					"requirement": "Your hawk can aid you while it is aloft.",
@@ -15711,6 +15938,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/hawk.0"
 						},
 						{
@@ -15737,6 +15968,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/hawk.1"
 						},
 						{
@@ -15780,6 +16015,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/hawk.2"
 						}
 					],
@@ -15840,6 +16079,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/horse.0"
 						},
 						{
@@ -15869,6 +16112,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/horse.1"
 						},
 						{
@@ -15893,6 +16140,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/horse.2"
 						}
 					],
@@ -15911,7 +16162,8 @@
 							"max": 5,
 							"value": 5,
 							"rollable": true,
-							"min": 0
+							"min": 0,
+							"controls": {}
 						}
 					},
 					"count_as_impact": false,
@@ -15962,6 +16214,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/hound.0"
 						},
 						{
@@ -15986,6 +16242,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/hound.1"
 						},
 						{
@@ -16007,6 +16267,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/hound.2"
 						}
 					],
@@ -16025,7 +16289,8 @@
 							"max": 4,
 							"value": 4,
 							"rollable": true,
-							"min": 0
+							"min": 0,
+							"controls": {}
 						}
 					},
 					"count_as_impact": false,
@@ -16070,7 +16335,8 @@
 							"max": 4,
 							"value": 4,
 							"rollable": true,
-							"min": 0
+							"min": 0,
+							"controls": {}
 						}
 					},
 					"requirement": "Your friend stands by you.",
@@ -16101,6 +16367,9 @@
 								}
 							],
 							"enabled": false,
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/kindred.0"
 						},
 						{
@@ -16138,6 +16407,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/kindred.1"
 						},
 						{
@@ -16150,6 +16423,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/kindred.2"
 						}
 					],
@@ -16186,6 +16463,10 @@
 							"name": "Lumbering",
 							"text": "When your mammoth travels with you as you [Undertake a Journey](move:classic/adventure/undertake_a_journey), you may add +2 but suffer -1 momentum (decide before rolling).",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/mammoth.0"
 						},
 						{
@@ -16215,6 +16496,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/mammoth.1"
 						},
 						{
@@ -16239,6 +16524,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/mammoth.2"
 						}
 					],
@@ -16257,7 +16546,8 @@
 							"max": 5,
 							"value": 5,
 							"rollable": true,
-							"min": 0
+							"min": 0,
+							"controls": {}
 						}
 					},
 					"count_as_impact": false,
@@ -16326,6 +16616,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/owl.0"
 						},
 						{
@@ -16347,6 +16641,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/owl.1"
 						},
 						{
@@ -16359,6 +16657,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/owl.2"
 						}
 					],
@@ -16377,7 +16679,8 @@
 							"value": 3,
 							"max": 3,
 							"rollable": true,
-							"min": 0
+							"min": 0,
+							"controls": {}
 						}
 					},
 					"count_as_impact": false,
@@ -16436,6 +16739,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/raven.0"
 						},
 						{
@@ -16448,6 +16755,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/raven.1"
 						},
 						{
@@ -16473,6 +16784,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/raven.2"
 						}
 					],
@@ -16491,7 +16806,8 @@
 							"max": 2,
 							"value": 2,
 							"rollable": true,
-							"min": 0
+							"min": 0,
+							"controls": {}
 						}
 					},
 					"count_as_impact": false,
@@ -16533,6 +16849,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/young_wyvern.0"
 						},
 						{
@@ -16554,6 +16874,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/young_wyvern.1"
 						},
 						{
@@ -16580,6 +16904,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/companion/young_wyvern.2"
 						}
 					],
@@ -16598,7 +16926,8 @@
 							"max": 5,
 							"value": 5,
 							"rollable": true,
-							"min": 0
+							"min": 0,
+							"controls": {}
 						}
 					},
 					"count_as_impact": false,
@@ -16606,6 +16935,7 @@
 					"_id": "asset:classic/companion/young_wyvern"
 				}
 			},
+			"collections": {},
 			"_id": "asset_collection:classic/companion"
 		},
 		"path": {
@@ -16722,6 +17052,9 @@
 									"_id": "asset.ability.move:classic/path/alchemist.0.create_elixir"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/path/alchemist.0"
 						},
 						{
@@ -16735,6 +17068,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/alchemist.1"
 						},
 						{
@@ -16748,11 +17085,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/alchemist.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/alchemist"
 				},
 				"animal_kin": {
@@ -16790,6 +17133,10 @@
 									"enhances": null
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/animal_kin.0"
 						},
 						{
@@ -16810,6 +17157,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/animal_kin.1"
 						},
 						{
@@ -16830,11 +17181,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/animal_kin.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/animal_kin"
 				},
 				"banner_sworn": {
@@ -16884,6 +17241,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/banner_sworn.0"
 						},
 						{
@@ -16907,6 +17268,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/banner_sworn.1"
 						},
 						{
@@ -16927,11 +17292,16 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/banner_sworn.2"
 						}
 					],
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/banner_sworn"
 				},
 				"battle_scarred": {
@@ -16955,11 +17325,19 @@
 						{
 							"text": "You focus your energies: Reduce your edge or iron by 1 and add +2 to wits or heart, or +1 to each (to a maximum of +4).",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/battle_scarred.0"
 						},
 						{
 							"text": "You overcome your limitations: Reduce your maximum health by 1. Maimed no longer counts as a debility, and does not reduce your maximum momentum or reset value. When you [Endure Stress](move:classic/suffer/endure_stress) +heart, take +1 momentum on a strong hit.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/battle_scarred.1"
 						},
 						{
@@ -16989,11 +17367,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/battle_scarred.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/battle_scarred"
 				},
 				"blade_bound": {
@@ -17042,6 +17426,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/blade_bound.0"
 						},
 						{
@@ -17062,6 +17450,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/blade_bound.1"
 						},
 						{
@@ -17082,11 +17474,16 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/blade_bound.2"
 						}
 					],
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/blade_bound"
 				},
 				"bonded": {
@@ -17124,11 +17521,19 @@
 									"enhances": null
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/bonded.0"
 						},
 						{
 							"text": "When you completely fill a box on your bonds progress track, envision what your relationships have taught you. Then, take 1 experience and +2 momentum.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/bonded.1"
 						},
 						{
@@ -17140,11 +17545,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/bonded.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/bonded"
 				},
 				"commander": {
@@ -17200,6 +17611,10 @@
 									"roll_type": "action_roll"
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/commander.0"
 						},
 						{
@@ -17229,11 +17644,19 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/commander.1"
 						},
 						{
 							"text": "Once you [Forge a Bond](move:classic/relationship/forge_a_bond) with your warband, take +1 momentum on a hit when you leverage a warband ability.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/commander.2"
 						}
 					],
@@ -17250,9 +17673,11 @@
 								]
 							},
 							"rollable": true,
-							"min": 0
+							"min": 0,
+							"controls": {}
 						}
 					},
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
 					"_id": "asset:classic/path/commander"
@@ -17297,6 +17722,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/dancer.0"
 						},
 						{
@@ -17317,6 +17746,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/dancer.1"
 						},
 						{
@@ -17375,11 +17808,16 @@
 								}
 							},
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/path/dancer.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/dancer"
 				},
 				"devotant": {
@@ -17467,6 +17905,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/devotant.0"
 						},
 						{
@@ -17506,6 +17948,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/devotant.1"
 						},
 						{
@@ -17532,11 +17978,16 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/devotant.2"
 						}
 					],
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/devotant"
 				},
 				"empowered": {
@@ -17572,6 +18023,10 @@
 									"enhances": ["move:classic/relationship/sojourn"]
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/empowered.0"
 						},
 						{
@@ -17592,6 +18047,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/empowered.1"
 						},
 						{
@@ -17625,11 +18084,16 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/empowered.2"
 						}
 					],
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/empowered"
 				},
 				"fated": {
@@ -17670,6 +18134,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/fated.0"
 						},
 						{
@@ -17690,6 +18158,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/fated.1"
 						},
 						{
@@ -17710,11 +18182,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/fated.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/fated"
 				},
 				"fortune_hunter": {
@@ -17778,11 +18256,19 @@
 									"enhances": null
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/fortune_hunter.0"
 						},
 						{
 							"text": "When in a community or trading, you may suffer -1 wealth and take +2 supply.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/fortune_hunter.1"
 						},
 						{
@@ -17803,6 +18289,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/fortune_hunter.2"
 						}
 					],
@@ -17813,9 +18303,11 @@
 							"max": 5,
 							"value": 0,
 							"rollable": true,
-							"min": 0
+							"min": 0,
+							"controls": {}
 						}
 					},
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
 					"_id": "asset:classic/path/fortune_hunter"
@@ -17868,6 +18360,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/herbalist.0"
 						},
 						{
@@ -17888,6 +18384,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/herbalist.1"
 						},
 						{
@@ -17911,11 +18411,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/herbalist.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/herbalist"
 				},
 				"honorbound": {
@@ -17944,6 +18450,10 @@
 									"enhances": ["move:classic/combat/turn_the_tide"]
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/honorbound.0"
 						},
 						{
@@ -17967,6 +18477,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/honorbound.1"
 						},
 						{
@@ -17978,11 +18492,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/honorbound.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/honorbound"
 				},
 				"improviser": {
@@ -18024,6 +18544,10 @@
 								}
 							],
 							"enabled": true,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/improviser.0"
 						},
 						{
@@ -18047,6 +18571,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/improviser.1"
 						},
 						{
@@ -18067,11 +18595,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/improviser.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/improviser"
 				},
 				"infiltrator": {
@@ -18109,6 +18643,10 @@
 									"enhances": null
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/infiltrator.0"
 						},
 						{
@@ -18152,6 +18690,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/infiltrator.1"
 						},
 						{
@@ -18177,11 +18719,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/infiltrator.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/infiltrator"
 				},
 				"lorekeeper": {
@@ -18238,6 +18786,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/lorekeeper.0"
 						},
 						{
@@ -18271,16 +18823,26 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/lorekeeper.1"
 						},
 						{
 							"text": "One time only, you may browse the archive’s forbidden depths. If you do, raise your wits by 1 and roll an action die. On 1-3, you must also mark corrupted or [Face Desolation](move:classic/suffer/face_desolation) (ignoring momentum).",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/lorekeeper.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/lorekeeper"
 				},
 				"loyalist": {
@@ -18309,6 +18871,10 @@
 									"enhances": ["move:classic/adventure/aid_your_ally"]
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/loyalist.0"
 						},
 						{
@@ -18333,6 +18899,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/loyalist.1"
 						},
 						{
@@ -18357,11 +18927,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/loyalist.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/loyalist"
 				},
 				"masked": {
@@ -18439,6 +19015,10 @@
 									"enhances": null
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/masked.0"
 						},
 						{
@@ -18465,6 +19045,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/masked.1"
 						},
 						{
@@ -18494,11 +19078,16 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/masked.2"
 						}
 					],
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/masked"
 				},
 				"oathbreaker": {
@@ -18538,6 +19127,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/oathbreaker.0"
 						},
 						{
@@ -18561,6 +19154,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/oathbreaker.1"
 						},
 						{
@@ -18581,10 +19178,16 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/oathbreaker.2"
 						}
 					],
+					"options": {},
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/oathbreaker"
 				},
 				"outcast": {
@@ -18648,6 +19251,9 @@
 									"_id": "asset.ability.move:classic/path/outcast.0.scrape_by"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/path/outcast.0"
 						},
 						{
@@ -18659,6 +19265,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/outcast.1"
 						},
 						{
@@ -18670,11 +19280,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/outcast.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/outcast"
 				},
 				"pretender": {
@@ -18732,6 +19348,9 @@
 									"_id": "asset.ability.move:classic/path/pretender.0.establish_false_identity"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/path/pretender.0"
 						},
 						{
@@ -18763,6 +19382,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/pretender.1"
 						},
 						{
@@ -18783,11 +19406,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/pretender.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/pretender"
 				},
 				"revenant": {
@@ -18829,6 +19458,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/revenant.0"
 						},
 						{
@@ -18849,6 +19482,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/revenant.1"
 						},
 						{
@@ -18869,11 +19506,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/revenant.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/revenant"
 				},
 				"rider": {
@@ -18925,6 +19568,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/rider.0"
 						},
 						{
@@ -18936,6 +19583,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/rider.1"
 						},
 						{
@@ -18961,11 +19612,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/rider.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/rider"
 				},
 				"ritualist": {
@@ -19004,6 +19661,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/ritualist.0"
 						},
 						{
@@ -19015,16 +19676,26 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/ritualist.1"
 						},
 						{
 							"text": "When you tattoo the essence of a new ritual onto your skin, envision the mark you create. You may then purchase and upgrade that ritual asset for 1 fewer experience.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/ritualist.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/ritualist"
 				},
 				"shadow_kin": {
@@ -19048,6 +19719,10 @@
 						{
 							"text": "You harden your heart: Reduce your heart stat by 1 and add up to +2 to shadow (to a maximum of +4).",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/shadow_kin.0"
 						},
 						{
@@ -19059,6 +19734,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/shadow_kin.1"
 						},
 						{
@@ -19083,11 +19762,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/shadow_kin.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/shadow_kin"
 				},
 				"sighted": {
@@ -19128,6 +19813,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/sighted.0"
 						},
 						{
@@ -19152,6 +19841,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/sighted.1"
 						},
 						{
@@ -19172,11 +19865,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/sighted.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/sighted"
 				},
 				"slayer": {
@@ -19227,6 +19926,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/slayer.0"
 						},
 						{
@@ -19260,6 +19963,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/slayer.1"
 						},
 						{
@@ -19293,11 +20000,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/slayer.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/slayer"
 				},
 				"spirit_bound": {
@@ -19338,6 +20051,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/spirit_bound.0"
 						},
 						{
@@ -19358,6 +20075,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/spirit_bound.1"
 						},
 						{
@@ -19378,11 +20099,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/spirit_bound.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/spirit_bound"
 				},
 				"storyweaver": {
@@ -19424,6 +20151,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/storyweaver.0"
 						},
 						{
@@ -19435,6 +20166,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/storyweaver.1"
 						},
 						{
@@ -19455,11 +20190,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/storyweaver.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/storyweaver"
 				},
 				"trickster": {
@@ -19482,6 +20223,10 @@
 						{
 							"text": "When you [Face Danger](move:classic/adventure/face_danger), [Secure an Advantage](move:classic/adventure/secure_an_advantage), or [Compel](move:classic/relationship/compel) by lying, bluffing, stealing, or cheating, add +1.",
 							"enabled": true,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/trickster.0"
 						},
 						{
@@ -19507,6 +20252,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/trickster.1"
 						},
 						{
@@ -19542,11 +20291,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/trickster.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/trickster"
 				},
 				"veteran": {
@@ -19569,6 +20324,10 @@
 						{
 							"text": "When you burn momentum to improve your result in combat, envision how your hard-won fighting experience gives you the upper hand. Then, take +1 momentum after you reset, and add +1 when you make your next move. Once per fight, you also take initiative when burning momentum to improve a miss to a weak hit.",
 							"enabled": true,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/veteran.0"
 						},
 						{
@@ -19602,6 +20361,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/veteran.1"
 						},
 						{
@@ -19622,11 +20385,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/veteran.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/veteran"
 				},
 				"waterborn": {
@@ -19668,6 +20437,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/waterborn.0"
 						},
 						{
@@ -19688,6 +20461,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/waterborn.1"
 						},
 						{
@@ -19708,11 +20485,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/waterborn.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/waterborn"
 				},
 				"wayfinder": {
@@ -19741,6 +20524,10 @@
 									"roll_type": "action_roll"
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/wayfinder.0"
 						},
 						{
@@ -19764,6 +20551,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/wayfinder.1"
 						},
 						{
@@ -19797,11 +20588,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/wayfinder.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/wayfinder"
 				},
 				"weaponmaster": {
@@ -19840,6 +20637,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/weaponmaster.0"
 						},
 						{
@@ -19860,6 +20661,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/weaponmaster.1"
 						},
 						{
@@ -19880,11 +20685,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/weaponmaster.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/weaponmaster"
 				},
 				"wildblood": {
@@ -19926,6 +20737,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/wildblood.0"
 						},
 						{
@@ -19949,6 +20764,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/wildblood.1"
 						},
 						{
@@ -19974,11 +20793,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/wildblood.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/wildblood"
 				},
 				"wright": {
@@ -20036,6 +20861,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/wright.0"
 						},
 						{
@@ -20069,6 +20898,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/wright.1"
 						},
 						{
@@ -20093,14 +20926,20 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/path/wright.2"
 						}
 					],
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/path/wright"
 				}
 			},
+			"collections": {},
 			"_id": "asset_collection:classic/path"
 		},
 		"ritual": {
@@ -20175,6 +21014,9 @@
 									"_id": "asset.ability.move:classic/ritual/augur.0.augur"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/ritual/augur.0"
 						},
 						{
@@ -20188,6 +21030,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/augur.1"
 						},
 						{
@@ -20201,11 +21047,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/augur.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/ritual/augur"
 				},
 				"awakening": {
@@ -20263,6 +21115,9 @@
 									"_id": "asset.ability.move:classic/ritual/awakening.0.awaken_simulacrum"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/ritual/awakening.0"
 						},
 						{
@@ -20276,6 +21131,10 @@
 								}
 							},
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/awakening.1"
 						},
 						{
@@ -20289,6 +21148,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/awakening.2"
 						}
 					],
@@ -20299,9 +21162,11 @@
 							"max": 3,
 							"value": 3,
 							"rollable": true,
-							"min": 0
+							"min": 0,
+							"controls": {}
 						}
 					},
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
 					"_id": "asset:classic/ritual/awakening"
@@ -20361,6 +21226,9 @@
 									"_id": "asset.ability.move:classic/ritual/bind.0.bind"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/ritual/bind.0"
 						},
 						{
@@ -20372,6 +21240,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/bind.1"
 						},
 						{
@@ -20383,11 +21255,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/bind.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/ritual/bind"
 				},
 				"communion": {
@@ -20445,6 +21323,9 @@
 									"_id": "asset.ability.move:classic/ritual/communion.0.commune"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/ritual/communion.0"
 						},
 						{
@@ -20458,6 +21339,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/communion.1"
 						},
 						{
@@ -20471,11 +21356,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/communion.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/ritual/communion"
 				},
 				"divination": {
@@ -20533,6 +21424,9 @@
 									"_id": "asset.ability.move:classic/ritual/divination.0.cast_runes"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/ritual/divination.0"
 						},
 						{
@@ -20546,6 +21440,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/divination.1"
 						},
 						{
@@ -20559,11 +21457,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/divination.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/ritual/divination"
 				},
 				"invoke": {
@@ -20645,6 +21549,9 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/ritual/invoke.0"
 						},
 						{
@@ -20671,6 +21578,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/invoke.1"
 						},
 						{
@@ -20684,6 +21595,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/invoke.2"
 						}
 					],
@@ -20694,9 +21609,11 @@
 							"max": 6,
 							"value": 0,
 							"rollable": true,
-							"min": 0
+							"min": 0,
+							"controls": {}
 						}
 					},
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
 					"_id": "asset:classic/ritual/invoke"
@@ -20756,6 +21673,9 @@
 									"_id": "asset.ability.move:classic/ritual/keen.0.keen"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/ritual/keen.0"
 						},
 						{
@@ -20767,6 +21687,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/keen.1"
 						},
 						{
@@ -20778,11 +21702,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/keen.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/ritual/keen"
 				},
 				"leech": {
@@ -20840,6 +21770,9 @@
 									"_id": "asset.ability.move:classic/ritual/leech.0.draw_blood_rune"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/ritual/leech.0"
 						},
 						{
@@ -20853,6 +21786,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/leech.1"
 						},
 						{
@@ -20866,11 +21803,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/leech.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/ritual/leech"
 				},
 				"lightbearer": {
@@ -20901,7 +21844,8 @@
 								]
 							},
 							"rollable": true,
-							"min": 0
+							"min": 0,
+							"controls": {}
 						}
 					},
 					"abilities": [
@@ -20943,6 +21887,9 @@
 									"_id": "asset.ability.move:classic/ritual/lightbearer.0.capture_light"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/ritual/lightbearer.0"
 						},
 						{
@@ -20972,6 +21919,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/lightbearer.1"
 						},
 						{
@@ -20985,9 +21936,14 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/lightbearer.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
 					"_id": "asset:classic/ritual/lightbearer"
@@ -21047,6 +22003,9 @@
 									"_id": "asset.ability.move:classic/ritual/scry.0.scry"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/ritual/scry.0"
 						},
 						{
@@ -21058,6 +22017,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/scry.1"
 						},
 						{
@@ -21069,11 +22032,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/scry.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/ritual/scry"
 				},
 				"shadow_walk": {
@@ -21131,6 +22100,9 @@
 									"_id": "asset.ability.move:classic/ritual/shadow_walk.0.shadow_walk"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/ritual/shadow_walk.0"
 						},
 						{
@@ -21144,6 +22116,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/shadow_walk.1"
 						},
 						{
@@ -21157,11 +22133,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/shadow_walk.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/ritual/shadow_walk"
 				},
 				"sway": {
@@ -21219,6 +22201,9 @@
 									"_id": "asset.ability.move:classic/ritual/sway.0.sway"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/ritual/sway.0"
 						},
 						{
@@ -21232,6 +22217,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/sway.1"
 						},
 						{
@@ -21243,11 +22232,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/sway.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/ritual/sway"
 				},
 				"talisman": {
@@ -21305,6 +22300,9 @@
 									"_id": "asset.ability.move:classic/ritual/talisman.0.fashion_talisman"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/ritual/talisman.0"
 						},
 						{
@@ -21318,6 +22316,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/talisman.1"
 						},
 						{
@@ -21331,11 +22333,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/talisman.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/ritual/talisman"
 				},
 				"tether": {
@@ -21421,6 +22429,9 @@
 									"roll_type": "action_roll"
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/ritual/tether.0"
 						},
 						{
@@ -21441,6 +22452,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/tether.1"
 						},
 						{
@@ -21454,11 +22469,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/tether.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/ritual/tether"
 				},
 				"totem": {
@@ -21516,6 +22537,9 @@
 									"_id": "asset.ability.move:classic/ritual/totem.0.focus_totem"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/ritual/totem.0"
 						},
 						{
@@ -21529,6 +22553,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/totem.1"
 						},
 						{
@@ -21542,11 +22570,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/totem.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/ritual/totem"
 				},
 				"visage": {
@@ -21604,6 +22638,9 @@
 									"_id": "asset.ability.move:classic/ritual/visage.0.paint_visage"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/ritual/visage.0"
 						},
 						{
@@ -21617,6 +22654,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/visage.1"
 						},
 						{
@@ -21630,11 +22671,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/visage.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/ritual/visage"
 				},
 				"ward": {
@@ -21692,6 +22739,9 @@
 									"_id": "asset.ability.move:classic/ritual/ward.0.ward"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:classic/ritual/ward.0"
 						},
 						{
@@ -21703,6 +22753,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/ward.1"
 						},
 						{
@@ -21714,14 +22768,21 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:classic/ritual/ward.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:classic/ritual/ward"
 				}
 			},
+			"collections": {},
 			"_id": "asset_collection:classic/ritual"
 		}
 	},
@@ -22004,6 +23065,7 @@
 					"_id": "atlas_entry:classic/ironlands/shattered_wastes"
 				}
 			},
+			"collections": {},
 			"_id": "atlas_collection:classic/ironlands"
 		}
 	},
@@ -22108,6 +23170,7 @@
 							"text": "On a __miss__, you fail, or your progress is undermined by a dramatic and costly turn of events. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:classic/adventure/face_danger"
 				},
@@ -22194,6 +23257,7 @@
 							"text": "On a __miss__, you fail or your assumptions betray you. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:classic/adventure/secure_an_advantage"
 				},
@@ -22239,6 +23303,7 @@
 							"text": "On a __miss__, your investigation unearths a dire threat or reveals an unwelcome truth that undermines your quest. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:classic/adventure/gather_information"
 				},
@@ -22298,6 +23363,7 @@
 							"text": "On a __miss__, your aid is ineffective. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:classic/adventure/heal"
 				},
@@ -22343,6 +23409,7 @@
 							"text": "On a __miss__, you find nothing helpful. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:classic/adventure/resupply"
 				},
@@ -22388,6 +23455,7 @@
 							"text": "On a __miss__, you take no comfort. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:classic/adventure/make_camp"
 				},
@@ -22433,6 +23501,7 @@
 							"text": "On a __miss__, you are waylaid by a perilous event. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:classic/adventure/undertake_a_journey"
 				},
@@ -22441,7 +23510,8 @@
 					"type": "move",
 					"roll_type": "progress_roll",
 					"tracks": {
-						"category": "Journey"
+						"category": "Journey",
+						"controls": {}
 					},
 					"trigger": {
 						"text": "When your journey comes to an end...",
@@ -22480,10 +23550,12 @@
 							"text": "On a __strong hit__, the situation at your destination favors you. Choose one.\n\n  * Make another move now (not a progress move), and add +1.\n  * Take +1 momentum."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": false,
 					"_id": "move:classic/adventure/reach_your_destination"
 				}
 			},
+			"collections": {},
 			"_id": "move_category:classic/adventure"
 		},
 		"relationship": {
@@ -22566,6 +23638,7 @@
 							"text": "On a __miss__, they refuse or make a demand which costs you greatly. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:classic/relationship/compel"
 				},
@@ -22611,6 +23684,7 @@
 							"text": "On a __miss__, you find no help here. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:classic/relationship/sojourn"
 				},
@@ -22656,6 +23730,7 @@
 							"text": "On a __miss__, you begin the duel at a disadvantage. Your foe has initiative. [Pay the Price](move:classic/fate/pay_the_price).\n\nThen, make moves to resolve the fight. If you are the victor, you may make a lawful demand, and your opponent must comply or forfeit their honor and standing. If you refuse the challenge, surrender, or are defeated, they make a demand of you."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:classic/relationship/draw_the_circle"
 				},
@@ -22701,6 +23776,7 @@
 							"text": "On a __miss__, they reject you. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:classic/relationship/forge_a_bond"
 				},
@@ -22746,6 +23822,7 @@
 							"text": "On a __miss__, clear the bond and [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:classic/relationship/test_your_bond"
 				},
@@ -22771,6 +23848,7 @@
 					},
 					"text": "When __you [Secure an Advantage](move:classic/adventure/secure_an_advantage) in direct support of an ally__, and score a hit, they (instead of you) can take the benefits of the move. If you are in combat and score a strong hit, you and your ally have initiative.",
 					"outcomes": null,
+					"oracles": {},
 					"allow_momentum_burn": false,
 					"_id": "move:classic/relationship/aid_your_ally"
 				},
@@ -22815,10 +23893,12 @@
 							"text": "On a __miss__, your fears are realized."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": false,
 					"_id": "move:classic/relationship/write_your_epilogue"
 				}
 			},
+			"collections": {},
 			"_id": "move_category:classic/relationship"
 		},
 		"combat": {
@@ -22901,6 +23981,7 @@
 							"text": "On a __miss__, combat begins with you at a disadvantage. [Pay the Price](move:classic/fate/pay_the_price). Your foe has initiative."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:classic/combat/enter_the_fray"
 				},
@@ -22957,6 +24038,7 @@
 							"text": "On a __miss__, your attack fails and you must [Pay the Price](move:classic/fate/pay_the_price). Your foe has initiative."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:classic/combat/strike"
 				},
@@ -23013,6 +24095,7 @@
 							"text": "On a __miss__, you are outmatched and must [Pay the Price](move:classic/fate/pay_the_price). Your foe has initiative."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:classic/combat/clash"
 				},
@@ -23038,6 +24121,7 @@
 					},
 					"text": "Once per fight, when you __risk it all__, you may steal initiative from your foe to make a move (not a progress move). When you do, add +1 and take +1 momentum on a hit. If you fail to score a hit on that move, you must suffer a dire outcome. [Pay the Price](move:classic/fate/pay_the_price).",
 					"outcomes": null,
+					"oracles": {},
 					"allow_momentum_burn": false,
 					"_id": "move:classic/combat/turn_the_tide"
 				},
@@ -23046,7 +24130,8 @@
 					"type": "move",
 					"roll_type": "progress_roll",
 					"tracks": {
-						"category": "Combat"
+						"category": "Combat",
+						"controls": {}
 					},
 					"trigger": {
 						"text": "When you make a move to take decisive action, and score a strong hit...",
@@ -23085,6 +24170,7 @@
 							"text": "On a __miss__, you have lost this fight. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": false,
 					"_id": "move:classic/combat/end_the_fight"
 				},
@@ -23171,10 +24257,12 @@
 							"text": "On a __miss__, you are defeated and the objective is lost to you. [Pay the Price](move:classic/fate/pay_the_price)."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:classic/combat/battle"
 				}
 			},
+			"collections": {},
 			"_id": "move_category:classic/combat"
 		},
 		"suffer": {
@@ -23340,6 +24428,7 @@
 							"text": "On a __miss__, you are dead."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:classic/suffer/face_death"
 				},
@@ -23390,6 +24479,7 @@
 							"text": "On a __miss__, also suffer -1 momentum. If your companion’s health is 0, they are gravely wounded and out of action. Without aid, they die in an hour or two.\n\nIf you roll a miss with a 1 on your action die, and your companion’s health is 0, they are now dead. Take 1 experience for each marked ability on your companion asset, and remove it."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:classic/suffer/companion_endure_harm"
 				},
@@ -23531,6 +24621,7 @@
 							"text": "On a __miss__, you succumb to despair or horror and are lost."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:classic/suffer/face_desolation"
 				},
@@ -23556,6 +24647,7 @@
 					},
 					"text": "When __your supply is exhausted__ (reduced to 0), mark unprepared. If you suffer additional -supply while unprepared, you must exchange each additional -supply for any combination of -health, -spirit or -momentum as appropriate to the circumstances.",
 					"outcomes": null,
+					"oracles": {},
 					"allow_momentum_burn": false,
 					"_id": "move:classic/suffer/out_of_supply"
 				},
@@ -23581,10 +24673,12 @@
 					},
 					"text": "When __your momentum is at its minimum__ (-6), and you suffer additional -momentum, choose one.\n\n  * Exchange each additional -momentum for any combination of -health, -spirit, or -supply as appropriate to the circumstances.\n  * Envision an event or discovery ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure) which undermines your progress in a current quest, journey or fight. Then, for each additional _momentum, clear 1 unit of progress on that track per its rank (troublesome=clear 3 progress; dangerous=clear 2 progress; formidable=clear 1 progress; extreme=clear 2 ticks; epic=clear 1 tick).",
 					"outcomes": null,
+					"oracles": {},
 					"allow_momentum_burn": false,
 					"_id": "move:classic/suffer/face_a_setback"
 				}
 			},
+			"collections": {},
 			"_id": "move_category:classic/suffer"
 		},
 		"quest": {
@@ -23646,6 +24740,7 @@
 							"text": "On a __miss__, you face a significant obstacle before you can begin your quest. Envision what stands in your way ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure), and choose one.\n\n  * You press on: Suffer -2 momentum, and do what you must to overcome this obstacle.\n  * You give up: [Forsake Your Vow](move:classic/quest/forsake_your_vow)."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:classic/quest/swear_an_iron_vow"
 				},
@@ -23671,6 +24766,7 @@
 					},
 					"text": "When __you make significant progress in your quest by overcoming a critical obstacle, completing a perilous journey, solving a complex mystery, defeating a powerful threat, gaining vital support, or acquiring a crucial item__, you may mark progress.\n\n  * Troublesome quest: Mark 3 progress.\n  * Dangerous quest: Mark 2 progress.\n  * Formidable quest: Mark 1 progress.\n  * Extreme quest: Mark 2 ticks.\n  * Epic quest: Mark 1 tick.",
 					"outcomes": null,
+					"oracles": {},
 					"allow_momentum_burn": false,
 					"_id": "move:classic/quest/reach_a_milestone"
 				},
@@ -23691,7 +24787,8 @@
 					},
 					"roll_type": "progress_roll",
 					"tracks": {
-						"category": "Vow"
+						"category": "Vow",
+						"controls": {}
 					},
 					"trigger": {
 						"text": "When you achieve what you believe to be the fulfillment of your vow...",
@@ -23718,6 +24815,7 @@
 							"text": "On a __miss__, your quest is undone. Envision what happens ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure), and choose one.\n\n  * You recommit: Clear all but one filled progress, and raise the quest’s rank by one (if not already epic).\n  * You give up: [Forsake Your Vow](move:classic/quest/forsake_your_vow)."
 						}
 					},
+					"oracles": {},
 					"allow_momentum_burn": false,
 					"_id": "move:classic/quest/fulfill_your_vow"
 				},
@@ -23743,6 +24841,7 @@
 					},
 					"text": "When __you renounce your quest, betray your promise, or the goal is lost to you__, clear the vow and [Endure Stress](move:classic/suffer/endure_stress). You suffer _spirit equal to the rank of your quest (troublesome=1; dangerous=2; formidable=3; extreme=4; epic=5). If the vow was made to a person or community with whom you share a bond, Test Your Bond when you next meet.",
 					"outcomes": null,
+					"oracles": {},
 					"allow_momentum_burn": false,
 					"_id": "move:classic/quest/forsake_your_vow"
 				},
@@ -23768,10 +24867,12 @@
 					},
 					"text": "When __you focus on your skills, receive training, find inspiration, earn a reward, or gain a companion__, you may spend 3 experience to add a new asset, or 2 experience to upgrade an asset.",
 					"outcomes": null,
+					"oracles": {},
 					"allow_momentum_burn": false,
 					"_id": "move:classic/quest/advance"
 				}
 			},
+			"collections": {},
 			"_id": "move_category:classic/quest"
 		},
 		"fate": {
@@ -24137,6 +25238,7 @@
 					"_id": "move:classic/fate/ask_the_oracle"
 				}
 			},
+			"collections": {},
 			"_id": "move_category:classic/fate"
 		}
 	},
@@ -24186,6 +25288,7 @@
 					"tactics": ["Spring from hiding", "Ferocious attacks"],
 					"description": "Another people sailed to the Ironlands from the [Old World](truth:classic/old_world) long before our kin settled here. Something happened. Something changed them.\n\nWhether it was the long struggle in a harsh land, the ravages of war, or the corruption of some dark force, they left their humanity behind and became what we call the broken. Now, they exist only to kill, to destroy.\n\nWe fear the broken for their savagery. But, more than this, we fear them as a dark portent of what we might one day become.",
 					"quest_starter": "Years ago, an Ironlander child was taken by a broken tribe. Now they are seen living among them. What is your connection to this person? Can they be brought home, or are they forever lost?",
+					"variants": {},
 					"_id": "npc:classic/ironlanders/broken"
 				},
 				"common_folk": {
@@ -24214,6 +25317,7 @@
 					"tactics": ["Desperate defense", "Stand together"],
 					"description": "Most of us in the Ironlands are common folk. We are farmers, laborers, crafters, sailors, and traders. When trouble comes, we know which way the pointy end goes and we stand together to protect our homes and kin.",
 					"quest_starter": "Two prominent families are at odds. What is the source of the conflict? What is your relationship to them? What danger threatens to destroy their community if they can’t put aside their petty squabble?",
+					"variants": {},
 					"_id": "npc:classic/ironlanders/common_folk"
 				},
 				"hunter": {
@@ -24242,6 +25346,7 @@
 					"tactics": ["Set traps", "Keep to the shadows", "Deadly shot"],
 					"description": "Hunters face brutal weather, difficult terrain, dangerous [animals](npc_collection:classic/animals), and worse. Many never return from their hunts. Others return, but are forever changed.",
 					"quest_starter": "A hunter returns to her village, panic-stricken and pleading for help. The rest of her party is still out there. What happened to them?",
+					"variants": {},
 					"_id": "npc:classic/ironlanders/hunter"
 				},
 				"mystic": {
@@ -24270,6 +25375,7 @@
 					],
 					"description": "Some say you can tell a mystic by looking them in the eye. They walk in two worlds, and their eyes shimmer with that dark reflection of realms beyond our own. We call it the sight. Some hold that darkness in check. Others are consumed by it.",
 					"quest_starter": "A mystic returns to their home after a years-long journey. They are changed. What new power or knowledge do now they wield? What do they seek to do with it? Why do you oppose them?",
+					"variants": {},
 					"_id": "npc:classic/ironlanders/mystic"
 				},
 				"raider": {
@@ -24299,6 +25405,7 @@
 					"description": "Raiders survive by seizing what they need from others. Our grain. Our meat. Our animals. Our iron. They’ll take it all, and leave us facing the long winter with nothing to sustain us but prayers to indifferent gods.",
 					"quest_starter": "You were raised as a raider, born to battle, but long ago left that life. Troubled by your past, you vow to wipe this powerful clan from the Ironlands. How can you defeat them? What will happen when you must face your former shield-kin?",
 					"your_truth": "A large raider clan is known and feared throughout the Ironlands. What is it called? Who leads it?",
+					"variants": {},
 					"_id": "npc:classic/ironlanders/raider"
 				},
 				"warrior": {
@@ -24328,9 +25435,11 @@
 					"description": "Some Ironlanders, through strength of arms, set themselves apart from the common rabble. They are trained to fight, or simply born to it. For them, a sword, spear or axe is as natural a tool as any hammer or spade.",
 					"quest_starter": "A legendary warrior, now well past their prime, swears to face a daunting foe in one final battle. What help do they ask of you and why? Who is their enemy?",
 					"your_truth": "Warrior’s shields are often emblazoned with meaningful symbols. What are they? Family crests? Animal totems? Mystical sigils? Motifs honoring the nations of the [Old World](truth:classic/old_world)? If you carry a shield, what is painted on yours?",
+					"variants": {},
 					"_id": "npc:classic/ironlanders/warrior"
 				}
 			},
+			"collections": {},
 			"_id": "npc_collection:classic/ironlanders"
 		},
 		"firstborn": {
@@ -24386,6 +25495,7 @@
 					"description": "Elves are strange beings of the forest, seldom seen beyond the ancient woods of the [Deep Wilds](atlas_entry:classic/ironlands/deep_wilds). They are fiercely protective of their lands and suspicious of humans. Their scouts patrol the borderlands, riding the fearsome mounts we call [gaunts](npc:classic/animals/gaunt). Others of their kind watch us from the shadow of the deep woods, spears and bow at the ready. Some say elven mystics can bind the animals and beasts of the forest to aid in the defense of the Wilds.\n\nA few warn that the elves are biding their time, readying the attack which will drive us from these lands.",
 					"quest_starter": "The leader of an Ironlander community seeks an audience with the elves. For what purpose? Why are you compelled to help?",
 					"your_truth": "Elves conceal their faces behind ornate wooden masks. What do these masks signify?",
+					"variants": {},
 					"_id": "npc:classic/firstborn/elf"
 				},
 				"giant": {
@@ -24420,6 +25530,7 @@
 					"description": "Giants dwell in the [Tempest Hills](atlas_entry:classic/ironlands/tempest_hills) and [Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountains). They live a nomadic life alone or in small family units, herding oxen, mountain goats, and sheep. In their own language they are called the Jokul.\n\nMany Ironlanders misinterpret their quiet nature for dullness, but giants are keenly intelligent and observant. They have a great respect for life, even for our kind, and will use trickery and negotiation to avoid a fight. When they are left without other options, an enraged giant is a devastating, relentless force.",
 					"quest_starter": "A pair of giants are raiding human settlements, stealing supplies and livestock. With winter coming, the survival of those settlements is threatened. What is driving the giants down from the hills?",
 					"your_truth": "Every fifth spring, the giant clans meet for a gathering. There, the memory-keepers sing of a great giant hero, revered by all. Who is this hero?",
+					"variants": {},
 					"_id": "npc:classic/firstborn/giant"
 				},
 				"primordial": {
@@ -24448,6 +25559,7 @@
 					"tactics": ["Control the elements", "Destroy with primal rage"],
 					"description": "The primordials, said to be the vestigial spirits of long-forgotten gods, are the most ancient of the firstborn. Each embodies some aspect of the natural world, bound in a form which is a crude mimicry of a human or large animal. A river primordial is a mass of rock, gravel, and flowing water. A forest primordial is comprised of wood, earth, rocks, and plants. A mountain primordial is a lumbering being of glacier stone and ice. A fire primordial, depending on its mood, might take form as embers, ash and smoke—or as a raging pyre.\n\nThey range in size from the height of an Ironlander to half-again as tall as a [giant](npc:classic/firstborn/giant). Rumors persist of primordials who dwell in the deepest parts of the Wilds, or high in the ranges of the [Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountains), who are as tall as an ancient tree. Beyond, some suggest, in the [Shattered Wastes](atlas_entry:classic/ironlands/shattered_wastes), live primordials who tower into the clouds. Is the sound of distant thunder sometimes the footfalls of mountain-sized primordials who dwell beyond the edges of the known world?\n\nPrimordials are solitary beings and as unpredictable as the natural forces they personify. They might ignore you. They might lurk at a distance, as if observing you. Or, they might attack. They do not speak in any language we can understand. Some suggest they have no intelligence, and are merely a manifestation of the natural world, no different than a winter storm.\n\nHow do you kill an primordial? Most scoff at the idea. You are just as likely to kill the rain or the sea. A mystic might tell you to use a weapon imbued with elemental power. Don’t trust them. If you see a primordial, keep your distance. Better yet, run.",
 					"quest_starter": "In the dead of winter, a fire primordial is razing homes and burning a nearby wood. At night, orange flames light the sky. What can be done to stop this destruction?",
+					"variants": {},
 					"_id": "npc:classic/firstborn/primordial"
 				},
 				"troll": {
@@ -24478,6 +25590,7 @@
 					"tactics": ["Be sneaky", "Bite and claw", "Run and hide"],
 					"description": "Trolls mostly live in the [Flooded Land](atlas_entry:classic/ironlands/flooded_lands), but it’s not unusual to encounter one in the [Hinterlands](atlas_entry:classic/ironlands/hinterlands) or even in the southern reaches of the [Havens](atlas_entry:classic/ironlands/havens). They are solitary creatures, wary of contact with Ironlanders but likely to attack if scared or provoked.\n\nThey move with their back hunched, often skulking on all four gangly limbs. When they stand straight they are much taller than humans—nearly as tall as a giant. Their skin is a sickly pale gray, but they can camouflage themselves by changing it to match their environment.\n\nTrolls collect objects of all sorts, and particularly value Ironlander trinkets. They are tormented by the fear of others stealing their hoard, and are constantly seeking out new, better hiding places. The items are mostly junk to anyone but a troll, but occasionally an object of real value finds its way into the dregs.",
 					"quest_starter": "The villagers tolerate the troll who lives nearby because its presence serves to dissuade a greater threat. They even donate items for its hoard, and put up with its occasional thievery. But now, the troll is missing. What is the looming threat the troll helped avert?",
+					"variants": {},
 					"_id": "npc:classic/firstborn/troll"
 				},
 				"varou": {
@@ -24514,9 +25627,11 @@
 					"description": "The varou are humanoid beings who dwell within the [Deep Wilds](atlas_entry:classic/ironlands/deep_wilds) and in the woods of the [Hinterlands](atlas_entry:classic/ironlands/hinterlands). They have fierce, wolf-like features and are broad-shouldered and a head taller than the average Ironlander. Their long hair is ornately groomed and decorated with beads and other trinkets.\n\nThe varou value territory above all things. They often war amongst themselves and against the [elves](npc:classic/firstborn/elf) to gain or defend holdings. They mark their claims by carving clan symbols into trees. Only the foolish ignore the warning of these border signs. Several of our settlements—built too close to varou territory—are now abandoned ruins bearing the mark of a victorious varou clan.",
 					"quest_starter": "A varou clan has carved their mark into the trees surrounding an Ironlander community, claiming it as their territory. An attack is surely imminent. What will you do to prevent it?",
 					"your_truth": "A young varou receives their keth—a curved dagger—before undergoing a rite of passage. What must they do to take their place among the adults of the clan?",
+					"variants": {},
 					"_id": "npc:classic/firstborn/varou"
 				}
 			},
+			"collections": {},
 			"_id": "npc_collection:classic/firstborn"
 		},
 		"animals": {
@@ -24559,6 +25674,7 @@
 					"tactics": ["Roar", "Pin down", "Maul with savage force"],
 					"description": "Most bears are not aggressive. They avoid Ironlanders and are unlikely to attack unless they see you as a threat.\n\nThere are exceptions. The silver bears of the [Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountains), which sometimes range as far south as the [Tempest Hills](atlas_entry:classic/ironlands/tempest_hills), are territorial, powerful, and aggressive. Likewise, the ash bear, encountered in woodlands through the Ironlands, is known for its ferocity and cunning. If either catch the scent of you on the wind, they are likely to hunt you down and attack.",
 					"quest_starter": "A group of hunters felled a large ash bear with several arrows. It tumbled into a river and was swept away. Unfortunately, the bear they thought dead is now stalking the group as they make their way back home.",
+					"variants": {},
 					"_id": "npc:classic/animals/bear"
 				},
 				"boar": {
@@ -24583,6 +25699,7 @@
 					"tactics": ["Charge and gore", "Circle and attack again"],
 					"description": "In the [Old World](truth:classic/old_world), wild boars were belligerent and dangerous animals. Here in the Ironlands? They are even bigger and meaner. They will attack without warning or provocation. They will run you down, gore you, bite you, and circle around to do it all again. And again. And again.",
 					"quest_starter": "A boar hunt ends in tragedy when an Ironlander is gored and grievously\nwounded. How do you know this person? What terrible truth do they\nreveal as they lay dying?",
+					"variants": {},
 					"_id": "npc:classic/animals/boar"
 				},
 				"gaunt": {
@@ -24612,6 +25729,7 @@
 					"description": "A gaunt is a creature unique to the Ironlands. They maneuver across the rough, dense terrain of the [Deep Wilds](atlas_entry:classic/ironlands/deep_wilds) and [Hinterlands](atlas_entry:classic/ironlands/hinterlands) with uncanny speed and grace. This makes them ideal as mounts for the [elves](npc:classic/firstborn/elf), who breed and train them.\n\nA gaunt will not usually act aggressively without provocation, but they are as deadly as the fiercest warhorse under the command of a talented rider.",
 					"quest_starter": "Villages in the [Hinterlands](atlas_entry:classic/ironlands/hinterlands) have fallen prey to a large band of gaunt-riding elves. They attack with sudden and violent force, and are gone before any sort of defense can be mustered. Their leader, a warrior of unmatched skill, rides a distinctive white gaunt. What has driven these elves to strike out against the Ironlanders?",
 					"your_truth": "Some gaunts live in wild herds. They once roamed the wilds in countless numbers, but few now remain. What has happened to thin these herds so dramatically?",
+					"variants": {},
 					"_id": "npc:classic/animals/gaunt"
 				},
 				"marsh_rat": {
@@ -24636,6 +25754,7 @@
 					"tactics": ["Swarm and bite"],
 					"description": "The marsh rat is a rodent of unusual size. They are all-too-common in the [Flooded Lands](atlas_entry:classic/ironlands/flooded_lands) or in wetlands within the [Hinterlands](atlas_entry:classic/ironlands/hinterlands) and [Deep Wilds](atlas_entry:classic/ironlands/deep_wilds).\n\nThey will eat almost anything, including carrion and waste. Our grain stores and pantries are an easy target for a hungry pack, who will dig tunnels or chew through walls to get at the food. They will also try to make a meal out of living prey—deer, cattle, or even an unlucky Ironlander. It is said that a swarm of marsh rats can kill a horse and reduce it to bone in a matter of hours.",
 					"quest_starter": "Marsh rats raided the stores of an isolated settlement. How will you ensure the Ironlanders have enough food to survive the coming winter?",
+					"variants": {},
 					"_id": "npc:classic/animals/marsh_rat"
 				},
 				"wolf": {
@@ -24660,9 +25779,11 @@
 					"tactics": ["Stalk", "Pack rush", "Drag to the ground"],
 					"description": "The Ironlands are home to several breeds of wolves. Most are not aggressive and stay clear of settlements and travelers. Despite that, attacks against Ironlanders are not unknown. A harsh winter and insufficient prey can drive a pack to hunt livestock or even an unwary Ironlander. As night falls we hear their howls, and hope they are well fed.",
 					"quest_starter": "You find the grisly remains of a pack of wolves. All are dead, even the cubs. What caused this? Why is it a harbinger of a greater danger?",
+					"variants": {},
 					"_id": "npc:classic/animals/wolf"
 				}
 			},
+			"collections": {},
 			"_id": "npc_collection:classic/animals"
 		},
 		"beasts": {
@@ -24715,6 +25836,7 @@
 					"description": "Basilisks dwell in the [Flooded Lands](atlas_entry:classic/ironlands/flooded_lands), lurking in the murky waters of the swamps or within marshy thickets. There, they wait patiently for prey. They regularly feed on marsh rats or deer, but will eagerly make a meal out of a passing Ironlander.",
 					"quest_starter": "The adventurer set out to slay a basilisk, only to become its next meal. Because the serpent digests its prey slowly, the remains of the adventurer are still undoubtedly within the beast—along with the heirloom sword he wielded. What is your relationship to this person? Why is recovering the sword so important to you?",
 					"your_truth": "Some piece of a basilisk anatomy is prized by the Ironlanders. What is it? How is it used?",
+					"variants": {},
 					"_id": "npc:classic/beasts/basilisk"
 				},
 				"elder_beast": {
@@ -24743,6 +25865,7 @@
 					"description": "Elder beasts—wolves, bears and boars—are huge, monstrous versions of their common kin. They are primarily solitary creatures, though elder wolves have been known to lead a pack of common wolves. They are not aggressive, but are protective of their lands and the creatures within it. Some say they are avatars of the old gods and as long-lived as the oldest trees.",
 					"quest_starter": "An elder wolf, white as snow, appears to you in a dream. When you wake, the memory of its piercing gaze lingers. Is the vision a dark portent or a promise? Why are you compelled to seek this beast out?",
 					"your_truth": "What people of the Ironlands revere and protect the elder beasts? What group hunts them and why?",
+					"variants": {},
 					"_id": "npc:classic/beasts/elder_beast"
 				},
 				"harrow_spider": {
@@ -24771,6 +25894,7 @@
 					"tactics": ["Drop atop prey", "Bite with pincers", "Trap in webbing"],
 					"description": "These gigantic creatures are a menace in woodlands throughout the Ironlands. Despite their size, they move through high branches with unnatural grace, dropping suddenly to grapple their prey and entomb them in webbing.",
 					"quest_starter": "A brood of harrow spiders attacked a contingent of Ironlanders. The single survivor tells of the horrifying encounter and the monstrous brood mother—a harrow spider larger and stronger than a warhorse. What was this group’s mission? What important item are you sworn to recover from one of the victims?",
+					"variants": {},
 					"_id": "npc:classic/beasts/harrow_spider"
 				},
 				"leviathan": {
@@ -24805,6 +25929,7 @@
 					"description": "These massive sea beasts lurk in the darkness of the deepest fjords and in the abyssal depths beyond the [Barrier Islands](atlas_entry:classic/ironlands/barrier_islands). They sometimes surface to hunt within shallower waters. They will indiscriminately destroy any Ironlander craft which stray to close to their hunting grounds.\n\nWatchful sailors might catch sight of a leviathan circling their boat, studying them, in the moments before it attacks. Their dagger-shaped head is as tough and destructive as any battering ram, able to shatter a ship in a single blow.",
 					"quest_starter": "A leviathan lurks off the coast, preying on fishing boats and trade ships. Among the dead is someone important to you. Who is it? You have vowed to send this beast back to the depths, but doing so will require a mythic weapon—The Abyssal Harpoon, an [Old World](truth:classic/old_world) artifact said to be carved from the bones of a long-dead sea god. Where is this weapon rumored to be held?",
 					"your_truth": "Some coastal people believe leviathans are a manifestation of an ancient spirit. What is it?",
+					"variants": {},
 					"_id": "npc:classic/beasts/leviathan"
 				},
 				"mammoth": {
@@ -24837,6 +25962,7 @@
 					"tactics": ["Form a protective circle", "Charge", "Trample", "Gore"],
 					"description": "These beasts resemble the elephants of the [Old World](truth:classic/old_world)’s southern realms, but are larger and covered in a coat of thick fur. They travel in herds among the [Tempest Hills](atlas_entry:classic/ironlands/tempest_hills), migrating south with the winter and north with the spring. They are not aggressive creatures, but are fearless and will fight to the death to protect their young.\n\nA herd of mammoths is an amazing and humbling sight, but smart Ironlanders keep their distance and stay upwind.",
 					"quest_starter": "A mammoth calf wanders alone into an Ironlander settlement. Why do you swear to reunite it with its herd?",
+					"variants": {},
 					"_id": "npc:classic/beasts/mammoth"
 				},
 				"wyvern": {
@@ -24872,9 +25998,11 @@
 					"description": "There are several breeds of wyverns in the Ironlands. To the west, tawny wyverns nest in the cliffs of the [Barrier Islands](atlas_entry:classic/ironlands/barrier_islands) and [Ragged Coast](atlas_entry:classic/ironlands/ragged_coast), diving for fish in the surrounding waters. Inland, the verdant wyverns dwell in forested regions. The largest and most fearsome breed, the iron wyverns, hunt among the [Tempest Hills](atlas_entry:classic/ironlands/tempest_hills) and along the flanks of the [Veiled Mountains](classic/atlas_entry/ironlands/veiled_mountains).\n\nAll wyverns have wolfish heads with wide jaws, thick bodies, and sinuous tails. They have short hind limbs and elongated forelimbs which extend along their wings. In flight, they are a terrifying but awe-inspiring creature. On the ground, they lumber heavily on all four limbs, their wings folded back, jaws agape, gaze fixed on their prey. They are the grim cruelty of the Ironlands given form. They are death.",
 					"quest_starter": "Ancient cave paintings in the [Tempest Hills](atlas_entry:classic/ironlands/tempest_hills) show humanoids riding atop wyverns. Perhaps these beasts can be tamed. Why are you obsessed with this possibility?",
 					"your_truth": "Rumors persist of a wyvern graveyard where wyverns instinctively go when their death is near. Where is this supposedly located? In what way do Ironlanders make use of wyvern bones?",
+					"variants": {},
 					"_id": "npc:classic/beasts/wyvern"
 				}
 			},
+			"collections": {},
 			"_id": "npc_collection:classic/beasts"
 		},
 		"horrors": {
@@ -24925,6 +26053,7 @@
 					],
 					"description": "Bonewalkers are human remains given unnatural life. The source of the dark energy that animates them is a mystery. Some say it is the will of dark gods. Some say an ancient evil permeates this land and seeps into porous bones of the dead. Or, perhaps it is the work of corrupt mystics.\n\nBonewalkers usually roam the location of their final resting place—a burial site, a cursed battlefield, or a settlement blighted by disease or violence. Nothing remains of their previous selves. They are soulless monsters driven only to destroy the living.",
 					"quest_starter": "A horde of bonewalkers marches relentlessly towards the [Havens](atlas_entry:classic/ironlands/havens). What dark force has gathered this army of the undead? How will you stop them?",
+					"variants": {},
 					"_id": "npc:classic/horrors/bonewalker"
 				},
 				"frostbound": {
@@ -24954,6 +26083,7 @@
 					"description": "Some who fall prey to the long winters or the wild storms of the northern regions are given a horrible new life as the frostbound. These animated corpses are cursed to forever seek out the warmth their death took from them.",
 					"quest_starter": "A group of frostbound lurk along a mountain trail. This path is the only safe route to the lowlands from a mining village.",
 					"your_truth": "Can creatures other than Ironlanders become frostbound? If so, undeath gives them uncanny strength. Make them one rank higher than their living form.",
+					"variants": {},
 					"_id": "npc:classic/horrors/frostbound"
 				},
 				"chimera": {
@@ -24985,6 +26115,7 @@
 					],
 					"description": "A chimera is the corrupted form of animal flesh given unnatural life. Its body is a collection of various dead creatures, fused together into a twisted, massive entity which knows only pain and hunger. When a dozen blood-tinged eyes focus on you, when its gibbering mouths open at once to scream, your only hope is a quick death.",
 					"quest_starter": "Multiple chimera have spawned from the heart of a deep wood. What evil is at work there?",
+					"variants": {},
 					"_id": "npc:classic/horrors/chimera"
 				},
 				"haunt": {
@@ -25019,6 +26150,7 @@
 					"description": "Haunts are restless spirits bound to this world by a traumatic or unjust death. They may be tied to a location, an object, or even a person.\n\nA haunt who manifests as a physical being can be dispelled by overcoming them in a fight, but only temporarily. They will only be at peace when their death is avenged or resolved. Some say a haunt can be banished, but these rituals are a lost art.",
 					"quest_starter": "You are plagued by a haunt. Who is it? What do they want of you?",
 					"your_truth": "When someone dies a violent death, or at the hand of another, they are often laid to rest using a specific, ceremonial rite. This, it is believed, prevents them from returning as a haunt. What is this ritual? What rare material is required?",
+					"variants": {},
 					"_id": "npc:classic/horrors/haunt"
 				},
 				"hollow": {
@@ -25052,6 +26184,7 @@
 					"description": "It is said that [elves](npc:classic/firstborn/elf) who die an unjust death or have cause to seek retribution can rise as a hollow. Their form is a rippling mass of dead leaves, plants, soil, carrion, and insects. They move with a nightmarish, shambling gait. Their face is the wooden mask they wore in life. Their voice is the rattle of the wind through dry leaves.\n\nAs with [haunts](npc:classic/horrors/haunt), they can be temporarily defeated but cannot be killed by physical means. They are a relentless force. They will not stop until they enact their vengeance.",
 					"quest_starter": "A hollow terrorizes an Ironlander village. What does it seek? What will you do to stop it?",
 					"your_truth": "How do elven communities view a risen hollow? Are they seen as spirits of righteous vengeance or as dangerous aberrations?",
+					"variants": {},
 					"_id": "npc:classic/horrors/hollow"
 				},
 				"iron_revenant": {
@@ -25083,6 +26216,7 @@
 					],
 					"description": "Some vows are held so fiercely that they survive even after death. An iron revenant is an incorporeal force of furious resolve, the unfinished vow of an Ironsworn given horrible form as a construct of metal.\n\nAttacks may slow them down or temporarily break apart their armored form, but they have no flesh to pierce and cannot be killed. An iron revenant will not stop until their vow is fulfilled.",
 					"quest_starter": "Someone you knew has taken form as an iron revenant. Who is it? What is their vow?",
+					"variants": {},
 					"_id": "npc:classic/horrors/iron_revenant"
 				},
 				"sodden": {
@@ -25113,9 +26247,11 @@
 					"description": "A sodden is the restless spirit of someone who drowned or was put to rest in water. They can appear in seas, rivers, lakes, ponds or marshes. It is said that their loneliness compels them to draw living victims into their watery lairs.\n\nA sodden is not confined to its resting place. In fact, some believe that surviving an encounter with a sodden will leave you vulnerable around any body of water until the spirit finishes its work.",
 					"quest_starter": "Someone you know died and appears to you as a sodden. Who are they? Can anything be done to put them to rest?",
 					"your_truth": "Many Ironlanders habitually perform a quick ritual when near a body of water, believing it keeps any lurking sodden at bay. What do they do? Is there any truth to this custom?",
+					"variants": {},
 					"_id": "npc:classic/horrors/sodden"
 				}
 			},
+			"collections": {},
 			"_id": "npc_collection:classic/horrors"
 		}
 	},
@@ -25143,6 +26279,7 @@
 					},
 					"description": "The savage clans called the Skulde invaded the kingdoms of the Old World. Our armies fell. Most were killed or taken into slavery. Those who escaped set sail aboard anything that would float. After an arduous months-long voyage, the survivors made landfall upon the Ironlands.",
 					"quest_starter": "You are a descendant of the Skulde. Because of your heritage, your family has long borne the distrust of your fellow Ironlanders. Now, a small force of Skulde have landed on our shores. Are they the harbinger of an invasion? Where do your loyalties lie?",
+					"oracles": {},
 					"_id": "truth.option:classic/old_world.0"
 				},
 				{
@@ -25152,6 +26289,7 @@
 					},
 					"description": "The sickness moved like a horrible wave across the Old World, killing all in its path. Thousands fled aboard ships. However, the plague could not be outrun. On many ships, the disease was contained through ruthless measures—tossing overboard any who exhibited the slightest symptom. Other ships were forever lost. In the end, those who survived found the Ironlands and made it their new home. Some say we will forever be cursed by those we left behind.",
 					"quest_starter": "A settlement is stricken by disease. Though this sickness bears some similarities to the Old World plague, it doesn’t kill its victims. Instead, it changes them. How does this disease manifest? Why do you swear to seek out a cure?",
+					"oracles": {},
 					"_id": "truth.option:classic/old_world.1"
 				},
 				{
@@ -25161,6 +26299,7 @@
 					},
 					"description": "The Old World could no longer sustain us. We were too large in number. We had felled the forests. Our crops withered in the barren ground. The cities and villages overflowed with desperate, hungry people. Petty kings battled for scraps. We cast our fate to the sea and found the Ironlands. A new world. A fresh start.",
 					"quest_starter": "Decades ago, the exodus ended. Since then, no ships have sailed here from the Old World. Until now. Word comes of a single ship, newly arrived across the vast ocean, grounded on the rocks of the Barrier Islands. When you hear the name of this ship, you swear to uncover the fate of its passengers. Why is it so important to you?",
+					"oracles": {},
 					"_id": "truth.option:classic/old_world.2"
 				}
 			],
@@ -25190,6 +26329,7 @@
 					},
 					"description": "The imposing hills and mountains of the Ironlands are rich in iron ore. Most prized of all is the star-forged black iron.",
 					"quest_starter": "The caravan, bound for the distant southlands, left the mining settlement last season but never arrived at its destination. It carried a bounty of black iron. Why is finding this lost caravan so important to you?",
+					"oracles": {},
 					"_id": "truth.option:classic/iron.0"
 				},
 				{
@@ -25199,6 +26339,7 @@
 					},
 					"description": "The weather is bleak. Rain and wind sweep in from the ocean. The winters are long and bitter. One of the first settlers complained, \"Only those made of iron dare live in this foul place\" – and thus our land was named.",
 					"quest_starter": "The harvest fell short. The unrelenting snows left the village isolated. The food is running out. What will you do to see these people through this harsh season?",
+					"oracles": {},
 					"_id": "truth.option:classic/iron.1"
 				},
 				{
@@ -25208,6 +26349,7 @@
 					},
 					"description": "Inscrutable metal pillars are found throughout the land. They are iron gray, and smooth as river stone. No one knows their purpose. Some say they are as old as the world. Some, such as the Iron Priests, worship them and swear vows upon them. Most make the warding sign and hurry along their way when they happen across one. The pillars do not tarnish, and even the sharpest blade cannot mark them.",
 					"quest_starter": "Your dreams are haunted by visions of a pillar which stands in an unfamiliar landscape. What do you see? Why are you sworn to seek it out?",
+					"oracles": {},
 					"_id": "truth.option:classic/iron.2"
 				}
 			],
@@ -25237,6 +26379,7 @@
 					},
 					"description": "We are the first humans to walk these lands.",
 					"quest_starter": "In the writings of one of the first settlers, there is a description of a glade in the heart of the Deep Wilds. The spirits of this place are said to grant a miraculous blessing. What boon does it bestow?",
+					"oracles": {},
 					"_id": "truth.option:classic/legacies.0"
 				},
 				{
@@ -25246,6 +26389,7 @@
 					},
 					"description": "Other humans sailed here from the Old World untold years ago, but all that is left of them is a savage, feral people we call the broken. Is their fate to become our own?",
 					"quest_starter": "You find a child—one of the broken. It is wounded, and hunted by others of its kind. Do you protect it, even at the risk of inviting the wrath of the broken tribes?",
+					"oracles": {},
 					"_id": "truth.option:classic/legacies.1"
 				},
 				{
@@ -25255,6 +26399,7 @@
 					},
 					"description": "Before the Ironlanders, before even the firstborn, another people lived here. Their ancient ruins are found throughout the Ironlands.",
 					"quest_starter": "Miners uncovered an underground ruin. Thereafter, the people of the settlement are haunted by strange dreams. The ruins call to them, they say. Several have disappeared in that dark, ancient place – including someone important to you.",
+					"oracles": {},
 					"_id": "truth.option:classic/legacies.2"
 				}
 			],
@@ -25284,6 +26429,7 @@
 					},
 					"description": "We are few in number in this accursed land. Most rarely have contact with anyone outside our own small steading or village, and strangers are viewed with deep suspicion.",
 					"quest_starter": "In the dead of winter, a desperate man arrives at a snowbound steading. He is wounded, hungry, and nearly frozen to death. His family has been taken. By whom? Will you brave the merciless winter to save them?",
+					"oracles": {},
 					"_id": "truth.option:classic/communities.0"
 				},
 				{
@@ -25293,6 +26439,7 @@
 					},
 					"description": "We live in communities called circles. These are settlements ranging in size from a steading with a few families to a village of several hundred. Some circles belong to nomadic folk. Some powerful circles might include a cluster of settlements. We trade (and sometimes feud) with other circles.",
 					"quest_starter": "A decades-long feud between two circles has flared into open conflict. What is the cause of this dispute? Do you join in the fight, or swear to put a stop to it?",
+					"oracles": {},
 					"_id": "truth.option:classic/communities.1"
 				},
 				{
@@ -25302,6 +26449,7 @@
 					},
 					"description": "We have forged the Ironlands into a home. Villages within the Havens are connected by well-trod roads. Trade caravans travel between settlements in the Havens and those in outlying regions. Even so, much of this land is untamed.",
 					"quest_starter": "Caravans are forced to pay for passage along a trade road. This payment, one-quarter of the goods carried, leaves several communities without sufficient winter stores. Who is making these demands? How will you set things right?",
+					"oracles": {},
 					"_id": "truth.option:classic/communities.2"
 				}
 			],
@@ -25331,6 +26479,7 @@
 					},
 					"description": "Leadership is as varied as the people. Some communities are governed by the head of a powerful family. Or, they have a council of elders who make decisions and settle disputes. In others, the priests hold sway. For some, it is duels in the circle that decide.",
 					"quest_starter": "You have vivid reoccurring dreams of an Ironlands city. It has strong stone walls, bustling markets, and a keep on a high hill. And so many people! Nowhere in the Ironlands does such a city exist. In your dreams, you are the ruler of this city. Somehow, no matter how long it takes, you must make this vision a reality.",
+					"oracles": {},
 					"_id": "truth.option:classic/leaders.0"
 				},
 				{
@@ -25340,6 +26489,7 @@
 					},
 					"description": "Each of our communities has its own leader, called an overseer. Every seventh spring, the people affirm their current overseer or choose a new one. Some overseers wear the iron circlet reluctantly, while others thirst for power and gain it through schemes or threats.",
 					"quest_starter": "An overseer has fallen ill. She is sure to die without help, and the illness is unknown to the village healer. Poison, or perhaps even foul magic, is suspected. The families in the community are now at each other’s throats as they position their preferred candidates to take up the iron circlet. Will you discover the truth of the overseer’s illness and restore her to health?",
+					"oracles": {},
 					"_id": "truth.option:classic/leaders.1"
 				},
 				{
@@ -25349,6 +26499,7 @@
 					},
 					"description": "Numerous clan-chiefs rule over petty domains. Most are intent on becoming the one true king. Their squabbles will be our undoing.",
 					"quest_starter": "You secretly possess one-half of the True Crown, an Old World relic. Centuries ago, this crown was broken in two when an assassin’s axe split the head of the supreme ruler. You are descended from that lineage. Who gave you this relic? Will you find the other half of the broken crown and attempt to unite the clans under your rule? Or, do you see another use for it?",
+					"oracles": {},
 					"_id": "truth.option:classic/leaders.2"
 				}
 			],
@@ -25378,6 +26529,7 @@
 					},
 					"description": "Here in the Ironlands, supplies are too precious, and the lands are too sparsely populated, to support organized fighting forces. When a community is threatened, the people stand together to protect their own.",
 					"quest_starter": "A settlement is unable, or unwilling, to defend itself against an imminent threat. Why? What peril do they face? What will you do to protect them?",
+					"oracles": {},
 					"_id": "truth.option:classic/defense.0"
 				},
 				{
@@ -25387,6 +26539,7 @@
 					},
 					"description": "The wardens are our soldiers, guards, and militia. They serve their communities by standing sentry, patrolling surrounding lands, and organizing defenses in times of crisis. Most have strong ties to their community. Others, called free wardens, are wandering mercenaries who hire on to serve a community or protect caravans.",
 					"quest_starter": "You come upon a dying warden. She tells you of an important mission, and charges you with its completion. \"Swear to me,\" she says, reaching out with a bloodied hand to give you an object crucial to the quest. What is it?",
+					"oracles": {},
 					"_id": "truth.option:classic/defense.1"
 				},
 				{
@@ -25396,6 +26549,7 @@
 					},
 					"description": "Our warbands are rallied to strike at our enemies or defend our holdings. Though not nearly as impressive as the armies that once marched across the Old World, these forces are as well-trained and equipped as their communities can manage. The banners of the warbands are adorned with depictions of their Old World history and Ironland victories.",
 					"quest_starter": "A warband was wiped out in a battle against an overwhelming enemy. What is your connection to this band? Who defeated them? Will you carry their banner on a quest for vengeance, or do you vow to see it brought home to a place of honor?",
+					"oracles": {},
 					"_id": "truth.option:classic/defense.2"
 				}
 			],
@@ -25425,6 +26579,7 @@
 					},
 					"description": "Some still find comfort in the old ways. They call on mystics to divine the fortune of their newborn, or ask them to perform rituals to invoke a bountiful harvest. Others act out of fear against those who they suspect of having power. However, most folk believe true magic—if it ever existed—is lost to us now.",
 					"quest_starter": "Someone close to you is accused of cursing a settlement, causing fields to go fallow and cattle to become sick. What is the evidence of this? Will you defend this person and uncover the true cause of the settlement’s troubles?",
+					"oracles": {},
 					"_id": "truth.option:classic/mysticism.0"
 				},
 				{
@@ -25434,6 +26589,7 @@
 					},
 					"description": "Magic is rare and dangerous, but those few who wield the power are truly gifted.",
 					"quest_starter": "You have heard stories of someone who wields true power. They live in an isolated settlement far away. Who told you of this mystic? Are they feared or respected? Why do you swear to seek them out?",
+					"oracles": {},
 					"_id": "truth.option:classic/mysticism.1"
 				},
 				{
@@ -25443,6 +26599,7 @@
 					},
 					"description": "Magic courses through this land as the rivers flow through the hills. The power is there for those who choose to harness it, and even the common folk often know a helpful ritual or two.",
 					"quest_starter": "Someone you love walked the paths of power, and succumbed to it. Who are they? Why did they fall into darkness? Where are they now? Do you seek to save them or defeat them?",
+					"oracles": {},
 					"_id": "truth.option:classic/mysticism.2"
 				}
 			],
@@ -25472,6 +26629,7 @@
 					},
 					"description": "A few Ironlanders still make signs or mumble prayers out of habit or tradition, but most believe the gods long ago abandoned us.",
 					"quest_starter": "A charismatic Ironlander, encouraging her followers to renounce the vestiges of Old World religions, proposes a new path for this new world. What doctrine does she teach? What does she seek to achieve? Are you sworn to aid or stop her?",
+					"oracles": {},
 					"_id": "truth.option:classic/religion.0"
 				},
 				{
@@ -25481,6 +26639,7 @@
 					},
 					"description": "The people honor old gods and new. In this harsh land, a prayer is a simple but powerful comfort.",
 					"quest_starter": "An Ironlander is determined to make a pilgrimage into dangerous lands. What holy place do they seek? Why do you swear to aid them on this journey? Who seeks to stop them and why?",
+					"oracles": {},
 					"_id": "truth.option:classic/religion.1"
 				},
 				{
@@ -25490,6 +26649,7 @@
 					},
 					"description": "Our gods are many. They make themselves known through manifestations and miracles. Some say they even secretly walk among us. The priests convey the will of the gods and hold sway over many communities.",
 					"quest_starter": "You bear the mark of a god. What is it? The priests declare this as a sign you are chosen to fulfill a destiny. Do you accept this fate, and swear to see it through, or are you determined to see it undone? What force opposes you?",
+					"oracles": {},
 					"_id": "truth.option:classic/religion.2"
 				}
 			],
@@ -25519,6 +26679,7 @@
 					},
 					"description": "The firstborn have passed into legend. Some say the remnants of the old tribes still dwell in deep forests or high mountains. Most believe they were never anything more than myth.",
 					"quest_starter": "Someone obsessed with the firstborn wants to find evidence of their existence. This will require an expedition into the far reaches of the Ironlands. What is your role in this mission?",
+					"oracles": {},
 					"_id": "truth.option:classic/firstborn.0"
 				},
 				{
@@ -25528,6 +26689,7 @@
 					},
 					"description": "The firstborn live in isolation and are fiercely protective of their own lands.",
 					"quest_starter": "The elf, outcast from his kind, lives with Ironlanders. Over time, he became a part of the community. Now, he is dying. He yearns to return to his people before he passes. Does he seek absolution or justice? Why do you swear to help him? What force opposes his return?",
+					"oracles": {},
 					"_id": "truth.option:classic/firstborn.1"
 				},
 				{
@@ -25537,6 +26699,7 @@
 					},
 					"description": "The firstborn hold sway in the Ironlands. The elves of the deep forests and the giants of the hills tolerate us and even trade with us—for now. Ironlanders fear the day they decide we are no longer welcome here.",
 					"quest_starter": "Humans and giants are on the brink of war. What has happened? Who do you side with? Can anything be done to defuse the situation?",
+					"oracles": {},
 					"_id": "truth.option:classic/firstborn.2"
 				}
 			],
@@ -25566,6 +26729,7 @@
 					},
 					"description": "The beasts of old are nothing but legend. A few who travel into the deep forests and high mountains return with wild tales of monstrous creatures, but they are obviously delusional. No such things exist.",
 					"quest_starter": "You were witness to an attack by what you thought was an animal of monstrous proportions. No one believes you. In fact, you are accused of the murder you blame on this beast. How can you prove your innocence? Can you even trust your own memories of the event?",
+					"oracles": {},
 					"_id": "truth.option:classic/beasts.0"
 				},
 				{
@@ -25575,6 +26739,7 @@
 					},
 					"description": "Monstrous beasts stalk the wild areas of the Ironlands.",
 					"quest_starter": "A prominent Ironlander is consumed with the need to bring vengeance upon a specific beast. What makes this creature distinctive? How did it earn the wrath of this Ironlander? Do you aid this person in their quest, or act to prevent their blind hate from destroying more than just the beast?",
+					"oracles": {},
 					"_id": "truth.option:classic/beasts.1"
 				},
 				{
@@ -25584,6 +26749,7 @@
 					},
 					"description": "Beasts of all sorts roam the Ironlands. They dwell primarily in the reaches, but range into the settled lands to hunt. There, they often prey on cattle, but attacks on travelers, caravans, or even settlements are not uncommon.",
 					"quest_starter": "Professional slayers earn their keep by killing beasts. This particular slayer, famed throughout the Ironlands for her numerous kills, has gone missing on a hunt. Did she finally meet her match, or is something more nefarious at play. What is your connection to her?",
+					"oracles": {},
 					"_id": "truth.option:classic/beasts.2"
 				}
 			],
@@ -25613,6 +26779,7 @@
 					},
 					"description": "Nothing but stories to frighten children.",
 					"quest_starter": "The murders began last season. Local gossip suggests they are the work of a vengeful horror, but there may be more mundane forces at work. What is your connection to these killings? What will you do to stop them?",
+					"oracles": {},
 					"_id": "truth.option:classic/horrors.0"
 				},
 				{
@@ -25622,6 +26789,7 @@
 					},
 					"description": "We are wary of dark forests and deep waterways, for monsters lurk in those places. In the depths of the long-night, when all is wreathed in darkness, only fools venture beyond their homes.",
 					"quest_starter": "You bear the scars of an attack by a horror. What was it? Are those scars physical, emotional, or both? How do you seek to make yourself whole again?",
+					"oracles": {},
 					"_id": "truth.option:classic/horrors.1"
 				},
 				{
@@ -25631,6 +26799,7 @@
 					},
 					"description": "The dead do not rest in the Ironlands. At night we light torches, scatter salt, and post sentries at the gate. It is not enough. They are coming.",
 					"quest_starter": "A group of Ironlanders establish a settlement in a territory cursed by a malevolent horror. What evil plagues this land? Why are the Ironlanders so intent on settling here? Will you aid them, or attempt to force them to give up this foolish undertaking?",
+					"oracles": {},
 					"_id": "truth.option:classic/horrors.2"
 				}
 			],

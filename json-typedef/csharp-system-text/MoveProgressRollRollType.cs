@@ -6,10 +6,6 @@ using System.Text.Json.Serialization;
 
 namespace Datasworn
 {
-    /// <summary>
-    /// A progress move that rolls on a standard progress track type (defined by
-    /// this move).
-    /// </summary>
     [JsonConverter(typeof(MoveProgressRollRollTypeJsonConverter))]
     public enum MoveProgressRollRollType
     {

@@ -25,7 +25,7 @@ namespace Datasworn
         public DiceExpression Dice { get; set; }
 
         /// <summary>
-        /// The primary name/label for this item.
+        /// The primary name/label for this node.
         /// </summary>
         [JsonPropertyName("name")]
         public Label Name { get; set; }
@@ -44,15 +44,14 @@ namespace Datasworn
 
         /// <summary>
         /// Implementation hints or other developer-facing comments on this
-        /// object. These should be omitted when presenting the object for
-        /// gameplay.
+        /// node. These should be omitted when presenting the node for gameplay.
         /// </summary>
         [JsonPropertyName("_comment")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public string Comment { get; set; }
 
         /// <summary>
-        /// The name of this item as it appears on the page in the book, if it's
+        /// The name of this node as it appears on the page in the book, if it's
         /// different from `name`.
         /// </summary>
         [JsonPropertyName("canonical_name")]
@@ -60,20 +59,22 @@ namespace Datasworn
         public Label? CanonicalName { get; set; }
 
         /// <summary>
-        /// A longer description of the oracle table's intended usage, which
-        /// might include multiple paragraphs. If it's only a couple sentences,
-        /// use the `summary` key instead.
+        /// A thematic color associated with this node.
         /// </summary>
-        [JsonPropertyName("description")]
+        [JsonPropertyName("color")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public MarkdownString? Description { get; set; }
+        public CssColor? Color { get; set; }
 
         /// <summary>
-        /// An icon that represents this table.
+        /// An SVG icon associated with this collection.
         /// </summary>
         [JsonPropertyName("icon")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public SvgImageUrl? Icon { get; set; }
+
+        [JsonPropertyName("images")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public IList<WebpImageUrl> Images { get; set; }
 
         /// <summary>
         /// Most oracle tables are insensitive to matches, but a few define
@@ -90,16 +91,6 @@ namespace Datasworn
         [JsonPropertyName("suggestions")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public Suggestions? Suggestions { get; set; }
-
-        /// <summary>
-        /// A brief summary of the oracle table's intended usage, no more than
-        /// a few sentences in length. This is intended for use in application
-        /// tooltips and similar sorts of hints. Longer text should use the
-        /// "description" key instead.
-        /// </summary>
-        [JsonPropertyName("summary")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public MarkdownString? Summary { get; set; }
 
         [JsonPropertyName("tags")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

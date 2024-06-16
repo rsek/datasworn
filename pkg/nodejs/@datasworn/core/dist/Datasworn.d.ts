@@ -663,7 +663,7 @@ export type CssColor = string;
  */
 export type Date = string;
 /**
- * An URL pointing to the location where this element's license can be found.
+ * An URL pointing to the location where this content's license can be found.
  *
  * A `null` here indicates that the content provides __no__ license, and is not intended for redistribution.
  * @example "https://creativecommons.org/licenses/by/4.0"
@@ -676,12 +676,12 @@ export type License = WebUrl | null;
  */
 export type PageNumber = number;
 /**
- * Metadata describing the original source of this item
+ * Metadata describing the original source of this node
  */
 export interface SourceInfo {
     title: SourceTitle;
     /**
-     * The page number where this item is described in full.
+     * The page number where this content is described in full.
      */
     page?: PageNumber;
     /**
@@ -842,6 +842,12 @@ export interface ImpactCategory {
     /**
      * A dictionary object of the Impacts in this category.
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     contents: Record<DictKey, ImpactRule>;
 }
@@ -882,21 +888,45 @@ export interface Rules {
     /**
      * Describes the standard stats used by player characters in this ruleset.
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     stats: Record<DictKey, StatRule>;
     /**
      * Describes the standard condition meters used by player characters in this ruleset.
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     condition_meters: Record<DictKey, ConditionMeterRule>;
     /**
      * Describes the standard impacts/debilities used by player characters in this ruleset.
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     impacts: Record<DictKey, ImpactCategory>;
     /**
      * Describes the special tracks used by player characters in this ruleset, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     special_tracks: Record<DictKey, SpecialTrackRule>;
     /**
@@ -919,21 +949,45 @@ export interface RulesExpansion {
     /**
      * Describes the standard stats used by player characters in this ruleset.
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     stats?: Record<DictKey, StatRule>;
     /**
      * Describes the standard condition meters used by player characters in this ruleset.
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     condition_meters?: Record<DictKey, ConditionMeterRule>;
     /**
      * Describes the standard impacts/debilities used by player characters in this ruleset.
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     impacts?: Record<DictKey, ImpactCategory>;
     /**
      * Describes the special tracks used by player characters in this ruleset, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     special_tracks?: Record<DictKey, SpecialTrackRule>;
     /**
@@ -1270,6 +1324,12 @@ export interface ProgressTrackTypeInfo {
     category: Label;
     /**
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     controls?: Record<DictKey, {}>;
 }
@@ -1395,27 +1455,37 @@ export interface StatValueRef {
  */
 export interface Npc {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: NpcId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
-    /**
-     * The primary name/label for this item.
-     */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
     tags?: Tags;
+    /**
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
+     */
+    replaces?: NpcIdWildcard[];
+    /**
+     * A thematic color associated with this node.
+     */
+    color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
     features: MarkdownString[];
     summary?: MarkdownString;
     description: MarkdownString;
@@ -1430,37 +1500,56 @@ export interface Npc {
     tactics: MarkdownString[];
     /**
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     variants?: Record<DictKey, NpcVariant>;
     type: 'npc';
 }
 export interface NpcCollection {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: NpcCollectionId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
     tags?: Tags;
     /**
-     * A thematic color associated with this collection.
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
+     */
+    replaces?: NpcCollectionIdWildcard[];
+    /**
+     * A thematic color associated with this node.
      */
     color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    /**
+     * This node's content enhances all nodes that match these wildcards, rather than being a standalone item of its own.
+     */
+    enhances?: NpcCollectionIdWildcard[];
     /**
      * A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
      */
@@ -1469,24 +1558,27 @@ export interface NpcCollection {
      * A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
      */
     description?: MarkdownString;
-    images?: WebpImageUrl[];
-    /**
-     * An SVG icon associated with this collection.
-     */
-    icon?: SvgImageUrl;
-    type: 'npc_collection';
-    /**
-     * This collection's content enhances the identified collections, rather than being a standalone collection of its own.
-     */
-    enhances?: NpcCollectionIdWildcard[];
-    /**
-     * This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.
-     */
-    replaces?: NpcCollectionIdWildcard[];
     /**
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
-    contents?: Record<DictKey, Npc>;
+    contents: Record<DictKey, Npc>;
+    /**
+     * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
+     */
+    collections: Record<DictKey, NpcCollection>;
+    type: 'npc_collection';
 }
 /**
  * A localized category label describing the nature of this NPC.
@@ -1609,158 +1701,28 @@ export interface EntityPrompt {
 export interface EmbeddedOracleColumnText {
     _id: EmbeddedOracleRollableId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary label at the head of this column.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * Optional secondary text at the head of this column. For best results, this should be no more than a few words in length.
-     */
-    summary?: MarkdownString;
-    /**
-     * An optional thematic color for this column. For an example, see "Basic Creature Form" (Starforged p. 337)
-     */
-    color?: CssColor;
-    /**
-     * An optional icon for this column.
-     */
-    icon?: SvgImageUrl;
-    /**
-     * The roll used to select a result on this oracle.
-     * @default "1d100"
-     */
-    dice: DiceExpression;
-    /**
-     * Most oracle tables are insensitive to matches, but a few define special match behavior.
-     */
-    match?: OracleMatchBehavior;
-    tags?: Tags;
-    suggestions?: Suggestions;
-    type: 'oracle_rollable';
-    /**
-     * An array of objects, each representing a single row of the table.
-     */
-    rows: OracleRollableRowText[];
-    oracle_type: 'column_text';
-}
-export interface EmbeddedOracleColumnText2 {
-    _id: EmbeddedOracleRollableId;
-    /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
-     */
-    _comment?: string;
-    /**
-     * The primary label at the head of this column.
-     */
-    name: Label;
-    /**
-     * Optional secondary text at the head of this column. For best results, this should be no more than a few words in length.
-     */
-    summary?: MarkdownString;
-    /**
-     * An optional thematic color for this column. For an example, see "Basic Creature Form" (Starforged p. 337)
-     */
-    color?: CssColor;
-    /**
-     * An optional icon for this column.
-     */
-    icon?: SvgImageUrl;
-    /**
-     * The roll used to select a result on this oracle.
-     * @default "1d100"
-     */
-    dice: DiceExpression;
-    /**
-     * Most oracle tables are insensitive to matches, but a few define special match behavior.
-     */
-    match?: OracleMatchBehavior;
-    tags?: Tags;
-    suggestions?: Suggestions;
-    type: 'oracle_rollable';
-    /**
-     * An array of objects, each representing a single row of the table.
-     */
-    rows: Array<OracleRollableRowText2>;
-    oracle_type: 'column_text2';
-}
-export interface EmbeddedOracleColumnText3 {
-    _id: EmbeddedOracleRollableId;
-    /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
-     */
-    _comment?: string;
-    /**
-     * The primary label at the head of this column.
-     */
-    name: Label;
-    /**
-     * Optional secondary text at the head of this column. For best results, this should be no more than a few words in length.
-     */
-    summary?: MarkdownString;
-    /**
-     * An optional thematic color for this column. For an example, see "Basic Creature Form" (Starforged p. 337)
-     */
-    color?: CssColor;
-    /**
-     * An optional icon for this column.
-     */
-    icon?: SvgImageUrl;
-    /**
-     * The roll used to select a result on this oracle.
-     * @default "1d100"
-     */
-    dice: DiceExpression;
-    /**
-     * Most oracle tables are insensitive to matches, but a few define special match behavior.
-     */
-    match?: OracleMatchBehavior;
-    tags?: Tags;
-    suggestions?: Suggestions;
-    type: 'oracle_rollable';
-    /**
-     * An array of objects, each representing a single row of the table.
-     */
-    rows: Array<OracleRollableRowText3>;
-    oracle_type: 'column_text3';
-}
-/**
- * @remarks Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.
- */
-export type EmbeddedOracleRollable = EmbeddedOracleTableText | EmbeddedOracleTableText2 | EmbeddedOracleTableText3 | EmbeddedOracleColumnText | EmbeddedOracleColumnText2 | EmbeddedOracleColumnText3;
-export interface EmbeddedOracleTableText {
-    _id: EmbeddedOracleRollableId;
-    /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
-     */
-    _comment?: string;
-    /**
-     * The primary name/label for this item.
-     */
-    name: Label;
-    /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     suggestions?: Suggestions;
     tags?: Tags;
-    oracle_type: 'table_text';
     /**
-     * The roll used to select a result on this oracle.
-     * @default "1d100"
+     * A thematic color associated with this node.
      */
-    dice: DiceExpression;
+    color?: CssColor;
+    images?: WebpImageUrl[];
     /**
-     * Most oracle tables are insensitive to matches, but a few define special match behavior.
+     * An SVG icon associated with this collection.
      */
-    match?: OracleMatchBehavior;
-    type: 'oracle_rollable';
-    /**
-     * An array of objects, each representing a single row of the table.
-     */
-    rows: OracleRollableRowText[];
+    icon?: SvgImageUrl;
     recommended_rolls?: {
         /**
          * @default 1
@@ -1772,17 +1734,175 @@ export interface EmbeddedOracleTableText {
         max: number;
     };
     /**
-     * An icon that represents this table.
+     * The roll used to select a result on this oracle.
+     * @default "1d100"
+     */
+    dice: DiceExpression;
+    /**
+     * Most oracle tables are insensitive to matches, but a few define special match behavior.
+     */
+    match?: OracleMatchBehavior;
+    /**
+     * An array of objects, each representing a single row of the table.
+     */
+    rows: OracleRollableRowText[];
+    type: 'oracle_rollable';
+    oracle_type: 'column_text';
+}
+export interface EmbeddedOracleColumnText2 {
+    _id: EmbeddedOracleRollableId;
+    /**
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
+     */
+    _comment?: string;
+    /**
+     * The primary name/label for this node.
+     */
+    name: Label;
+    /**
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
+     */
+    canonical_name?: Label;
+    suggestions?: Suggestions;
+    tags?: Tags;
+    /**
+     * A thematic color associated with this node.
+     */
+    color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
      */
     icon?: SvgImageUrl;
+    recommended_rolls?: {
+        /**
+         * @default 1
+         */
+        min: number;
+        /**
+         * @default 1
+         */
+        max: number;
+    };
     /**
-     * A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
+     * The roll used to select a result on this oracle.
+     * @default "1d100"
      */
-    summary?: MarkdownString;
+    dice: DiceExpression;
     /**
-     * A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
+     * Most oracle tables are insensitive to matches, but a few define special match behavior.
      */
-    description?: MarkdownString;
+    match?: OracleMatchBehavior;
+    /**
+     * An array of objects, each representing a single row of the table.
+     */
+    rows: Array<OracleRollableRowText2>;
+    type: 'oracle_rollable';
+    oracle_type: 'column_text2';
+}
+export interface EmbeddedOracleColumnText3 {
+    _id: EmbeddedOracleRollableId;
+    /**
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
+     */
+    _comment?: string;
+    /**
+     * The primary name/label for this node.
+     */
+    name: Label;
+    /**
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
+     */
+    canonical_name?: Label;
+    suggestions?: Suggestions;
+    tags?: Tags;
+    /**
+     * A thematic color associated with this node.
+     */
+    color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    recommended_rolls?: {
+        /**
+         * @default 1
+         */
+        min: number;
+        /**
+         * @default 1
+         */
+        max: number;
+    };
+    /**
+     * The roll used to select a result on this oracle.
+     * @default "1d100"
+     */
+    dice: DiceExpression;
+    /**
+     * Most oracle tables are insensitive to matches, but a few define special match behavior.
+     */
+    match?: OracleMatchBehavior;
+    /**
+     * An array of objects, each representing a single row of the table.
+     */
+    rows: Array<OracleRollableRowText3>;
+    type: 'oracle_rollable';
+    oracle_type: 'column_text3';
+}
+/**
+ * @remarks Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.
+ */
+export type EmbeddedOracleRollable = EmbeddedOracleTableText | EmbeddedOracleTableText2 | EmbeddedOracleTableText3 | EmbeddedOracleColumnText | EmbeddedOracleColumnText2 | EmbeddedOracleColumnText3;
+export interface EmbeddedOracleTableText {
+    _id: EmbeddedOracleRollableId;
+    /**
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
+     */
+    _comment?: string;
+    /**
+     * The primary name/label for this node.
+     */
+    name: Label;
+    /**
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
+     */
+    canonical_name?: Label;
+    suggestions?: Suggestions;
+    tags?: Tags;
+    /**
+     * A thematic color associated with this node.
+     */
+    color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    recommended_rolls?: {
+        /**
+         * @default 1
+         */
+        min: number;
+        /**
+         * @default 1
+         */
+        max: number;
+    };
+    /**
+     * The roll used to select a result on this oracle.
+     * @default "1d100"
+     */
+    dice: DiceExpression;
+    /**
+     * Most oracle tables are insensitive to matches, but a few define special match behavior.
+     */
+    match?: OracleMatchBehavior;
+    /**
+     * An array of objects, each representing a single row of the table.
+     */
+    rows: OracleRollableRowText[];
     /**
      * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
      * @default {}
@@ -1797,38 +1917,34 @@ export interface EmbeddedOracleTableText {
          */
         text: Label;
     };
+    type: 'oracle_rollable';
+    oracle_type: 'table_text';
 }
 export interface EmbeddedOracleTableText2 {
     _id: EmbeddedOracleRollableId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     suggestions?: Suggestions;
     tags?: Tags;
-    oracle_type: 'table_text2';
     /**
-     * The roll used to select a result on this oracle.
-     * @default "1d100"
+     * A thematic color associated with this node.
      */
-    dice: DiceExpression;
+    color?: CssColor;
+    images?: WebpImageUrl[];
     /**
-     * Most oracle tables are insensitive to matches, but a few define special match behavior.
+     * An SVG icon associated with this collection.
      */
-    match?: OracleMatchBehavior;
-    type: 'oracle_rollable';
-    /**
-     * An array of objects, each representing a single row of the table.
-     */
-    rows: Array<OracleRollableRowText2>;
+    icon?: SvgImageUrl;
     recommended_rolls?: {
         /**
          * @default 1
@@ -1840,17 +1956,18 @@ export interface EmbeddedOracleTableText2 {
         max: number;
     };
     /**
-     * An icon that represents this table.
+     * The roll used to select a result on this oracle.
+     * @default "1d100"
      */
-    icon?: SvgImageUrl;
+    dice: DiceExpression;
     /**
-     * A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
+     * Most oracle tables are insensitive to matches, but a few define special match behavior.
      */
-    summary?: MarkdownString;
+    match?: OracleMatchBehavior;
     /**
-     * A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
+     * An array of objects, each representing a single row of the table.
      */
-    description?: MarkdownString;
+    rows: Array<OracleRollableRowText2>;
     /**
      * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
      * @default {}
@@ -1869,38 +1986,34 @@ export interface EmbeddedOracleTableText2 {
          */
         text2: Label;
     };
+    type: 'oracle_rollable';
+    oracle_type: 'table_text2';
 }
 export interface EmbeddedOracleTableText3 {
     _id: EmbeddedOracleRollableId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     suggestions?: Suggestions;
     tags?: Tags;
-    oracle_type: 'table_text3';
     /**
-     * The roll used to select a result on this oracle.
-     * @default "1d100"
+     * A thematic color associated with this node.
      */
-    dice: DiceExpression;
+    color?: CssColor;
+    images?: WebpImageUrl[];
     /**
-     * Most oracle tables are insensitive to matches, but a few define special match behavior.
+     * An SVG icon associated with this collection.
      */
-    match?: OracleMatchBehavior;
-    type: 'oracle_rollable';
-    /**
-     * An array of objects, each representing a single row of the table.
-     */
-    rows: Array<OracleRollableRowText3>;
+    icon?: SvgImageUrl;
     recommended_rolls?: {
         /**
          * @default 1
@@ -1912,17 +2025,18 @@ export interface EmbeddedOracleTableText3 {
         max: number;
     };
     /**
-     * An icon that represents this table.
+     * The roll used to select a result on this oracle.
+     * @default "1d100"
      */
-    icon?: SvgImageUrl;
+    dice: DiceExpression;
     /**
-     * A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
+     * Most oracle tables are insensitive to matches, but a few define special match behavior.
      */
-    summary?: MarkdownString;
+    match?: OracleMatchBehavior;
     /**
-     * A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
+     * An array of objects, each representing a single row of the table.
      */
-    description?: MarkdownString;
+    rows: Array<OracleRollableRowText3>;
     /**
      * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
      * @default {}
@@ -1933,6 +2047,8 @@ export interface EmbeddedOracleTableText3 {
         text2: Label;
         text3: Label;
     };
+    type: 'oracle_rollable';
+    oracle_type: 'table_text3';
 }
 /**
  * @remarks Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.
@@ -1943,33 +2059,46 @@ export type OracleCollection = OracleTablesCollection | OracleTableSharedRolls |
  */
 export interface OracleColumnText {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: OracleRollableId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary label at the head of this column.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * Optional secondary text at the head of this column. For best results, this should be no more than a few words in length.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
-    summary?: MarkdownString;
+    canonical_name?: Label;
+    suggestions?: Suggestions;
+    tags?: Tags;
     /**
-     * An optional thematic color for this column. For an example, see "Basic Creature Form" (Starforged p. 337)
-     */
-    color?: CssColor;
-    /**
-     * An optional icon for this column.
-     */
-    icon?: SvgImageUrl;
-    /**
-     * Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
      */
     replaces?: OracleRollableIdWildcard[];
+    /**
+     * A thematic color associated with this node.
+     */
+    color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    recommended_rolls?: {
+        /**
+         * @default 1
+         */
+        min: number;
+        /**
+         * @default 1
+         */
+        max: number;
+    };
     /**
      * The roll used to select a result on this oracle.
      * @default "1d100"
@@ -1979,44 +2108,55 @@ export interface OracleColumnText {
      * Most oracle tables are insensitive to matches, but a few define special match behavior.
      */
     match?: OracleMatchBehavior;
-    tags?: Tags;
-    suggestions?: Suggestions;
-    type: 'oracle_rollable';
     /**
      * An array of objects, each representing a single row of the table.
      */
     rows: OracleRollableRowText[];
+    type: 'oracle_rollable';
     oracle_type: 'column_text';
 }
 export interface OracleColumnText2 {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: OracleRollableId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary label at the head of this column.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * Optional secondary text at the head of this column. For best results, this should be no more than a few words in length.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
-    summary?: MarkdownString;
+    canonical_name?: Label;
+    suggestions?: Suggestions;
+    tags?: Tags;
     /**
-     * An optional thematic color for this column. For an example, see "Basic Creature Form" (Starforged p. 337)
-     */
-    color?: CssColor;
-    /**
-     * An optional icon for this column.
-     */
-    icon?: SvgImageUrl;
-    /**
-     * Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
      */
     replaces?: OracleRollableIdWildcard[];
+    /**
+     * A thematic color associated with this node.
+     */
+    color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    recommended_rolls?: {
+        /**
+         * @default 1
+         */
+        min: number;
+        /**
+         * @default 1
+         */
+        max: number;
+    };
     /**
      * The roll used to select a result on this oracle.
      * @default "1d100"
@@ -2026,44 +2166,55 @@ export interface OracleColumnText2 {
      * Most oracle tables are insensitive to matches, but a few define special match behavior.
      */
     match?: OracleMatchBehavior;
-    tags?: Tags;
-    suggestions?: Suggestions;
-    type: 'oracle_rollable';
     /**
      * An array of objects, each representing a single row of the table.
      */
     rows: Array<OracleRollableRowText2>;
+    type: 'oracle_rollable';
     oracle_type: 'column_text2';
 }
 export interface OracleColumnText3 {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: OracleRollableId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary label at the head of this column.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * Optional secondary text at the head of this column. For best results, this should be no more than a few words in length.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
-    summary?: MarkdownString;
+    canonical_name?: Label;
+    suggestions?: Suggestions;
+    tags?: Tags;
     /**
-     * An optional thematic color for this column. For an example, see "Basic Creature Form" (Starforged p. 337)
-     */
-    color?: CssColor;
-    /**
-     * An optional icon for this column.
-     */
-    icon?: SvgImageUrl;
-    /**
-     * Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
      */
     replaces?: OracleRollableIdWildcard[];
+    /**
+     * A thematic color associated with this node.
+     */
+    color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    recommended_rolls?: {
+        /**
+         * @default 1
+         */
+        min: number;
+        /**
+         * @default 1
+         */
+        max: number;
+    };
     /**
      * The roll used to select a result on this oracle.
      * @default "1d100"
@@ -2073,13 +2224,11 @@ export interface OracleColumnText3 {
      * Most oracle tables are insensitive to matches, but a few define special match behavior.
      */
     match?: OracleMatchBehavior;
-    tags?: Tags;
-    suggestions?: Suggestions;
-    type: 'oracle_rollable';
     /**
      * An array of objects, each representing a single row of the table.
      */
     rows: Array<OracleRollableRowText3>;
+    type: 'oracle_rollable';
     oracle_type: 'column_text3';
 }
 /**
@@ -2208,37 +2357,50 @@ export interface OracleRollableRowText3 {
 /**
  * @remarks Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.
  */
-export type OracleTableRollable = OracleTableText | OracleTableText2 | OracleTableText3;
+export type OracleRollableTable = OracleTableText | OracleTableText2 | OracleTableText3;
 /**
- * An OracleCollection representing a single table with one roll column and multiple `result` columns.
+ * An OracleCollection representing a single table with one roll column and multiple text columns.
  */
 export interface OracleTableSharedRolls {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: OracleCollectionId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
     tags?: Tags;
     /**
-     * A thematic color associated with this collection.
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
+     */
+    replaces?: OracleCollectionIdWildcard[];
+    /**
+     * A thematic color associated with this node.
      */
     color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    /**
+     * This node's content enhances all nodes that match these wildcards, rather than being a standalone item of its own.
+     */
+    enhances?: OracleCollectionIdWildcard[];
     /**
      * A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
      */
@@ -2247,24 +2409,16 @@ export interface OracleTableSharedRolls {
      * A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
      */
     description?: MarkdownString;
-    images?: WebpImageUrl[];
-    /**
-     * An SVG icon associated with this collection.
-     */
-    icon?: SvgImageUrl;
-    type: 'oracle_collection';
-    /**
-     * This collection's content enhances the identified collections, rather than being a standalone collection of its own.
-     */
-    enhances?: OracleCollectionIdWildcard[];
-    /**
-     * This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.
-     */
-    replaces?: OracleCollectionIdWildcard[];
     /**
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
-    contents?: Record<DictKey, OracleColumnText>;
+    contents: Record<DictKey, OracleColumnText>;
     /**
      * Provides column labels for this table. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row). For all other column labels, see the `name` property of each child `OracleColumn`.
      * @default {}
@@ -2275,41 +2429,52 @@ export interface OracleTableSharedRolls {
          */
         roll: Label;
     };
-    /**
-     * A table with one shared roll column, and multiple unique text columns.
-     */
+    type: 'oracle_collection';
     oracle_type: 'table_shared_rolls';
 }
 /**
- * An OracleCollection representing a single table with multiple roll columns and one `result` column.
+ * An OracleCollection representing a single table with multiple roll columns and one text column.
  */
 export interface OracleTableSharedText {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: OracleCollectionId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
     tags?: Tags;
     /**
-     * A thematic color associated with this collection.
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
+     */
+    replaces?: OracleCollectionIdWildcard[];
+    /**
+     * A thematic color associated with this node.
      */
     color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    /**
+     * This node's content enhances all nodes that match these wildcards, rather than being a standalone item of its own.
+     */
+    enhances?: OracleCollectionIdWildcard[];
     /**
      * A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
      */
@@ -2318,24 +2483,16 @@ export interface OracleTableSharedText {
      * A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
      */
     description?: MarkdownString;
-    images?: WebpImageUrl[];
-    /**
-     * An SVG icon associated with this collection.
-     */
-    icon?: SvgImageUrl;
-    type: 'oracle_collection';
-    /**
-     * This collection's content enhances the identified collections, rather than being a standalone collection of its own.
-     */
-    enhances?: OracleCollectionIdWildcard[];
-    /**
-     * This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.
-     */
-    replaces?: OracleCollectionIdWildcard[];
     /**
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
-    contents?: Record<DictKey, OracleColumnText>;
+    contents: Record<DictKey, OracleColumnText>;
     /**
      * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
      * @default {}
@@ -2346,9 +2503,7 @@ export interface OracleTableSharedText {
          */
         text: Label;
     };
-    /**
-     * A table with multiple unique roll columns, and one shared text column.
-     */
+    type: 'oracle_collection';
     oracle_type: 'table_shared_text';
 }
 /**
@@ -2356,31 +2511,44 @@ export interface OracleTableSharedText {
  */
 export interface OracleTableSharedText2 {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: OracleCollectionId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
     tags?: Tags;
     /**
-     * A thematic color associated with this collection.
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
+     */
+    replaces?: OracleCollectionIdWildcard[];
+    /**
+     * A thematic color associated with this node.
      */
     color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    /**
+     * This node's content enhances all nodes that match these wildcards, rather than being a standalone item of its own.
+     */
+    enhances?: OracleCollectionIdWildcard[];
     /**
      * A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
      */
@@ -2389,24 +2557,16 @@ export interface OracleTableSharedText2 {
      * A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
      */
     description?: MarkdownString;
-    images?: WebpImageUrl[];
-    /**
-     * An SVG icon associated with this collection.
-     */
-    icon?: SvgImageUrl;
-    type: 'oracle_collection';
-    /**
-     * This collection's content enhances the identified collections, rather than being a standalone collection of its own.
-     */
-    enhances?: OracleCollectionIdWildcard[];
-    /**
-     * This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.
-     */
-    replaces?: OracleCollectionIdWildcard[];
     /**
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
-    contents?: Record<DictKey, OracleColumnText2>;
+    contents: Record<DictKey, OracleColumnText2>;
     /**
      * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
      * @default {}
@@ -2421,41 +2581,52 @@ export interface OracleTableSharedText2 {
          */
         text2: Label;
     };
-    /**
-     * A table with multiple unique roll columns, and 2 shared text columns.
-     */
+    type: 'oracle_collection';
     oracle_type: 'table_shared_text2';
 }
 /**
- * An OracleCollection representing a single table with multiple roll columns, and 2 shared text columns.
+ * An OracleCollection representing a single table with multiple roll columns, and 3 shared text columns.
  */
 export interface OracleTableSharedText3 {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: OracleCollectionId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
     tags?: Tags;
     /**
-     * A thematic color associated with this collection.
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
+     */
+    replaces?: OracleCollectionIdWildcard[];
+    /**
+     * A thematic color associated with this node.
      */
     color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    /**
+     * This node's content enhances all nodes that match these wildcards, rather than being a standalone item of its own.
+     */
+    enhances?: OracleCollectionIdWildcard[];
     /**
      * A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
      */
@@ -2464,37 +2635,27 @@ export interface OracleTableSharedText3 {
      * A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
      */
     description?: MarkdownString;
-    images?: WebpImageUrl[];
-    /**
-     * An SVG icon associated with this collection.
-     */
-    icon?: SvgImageUrl;
-    type: 'oracle_collection';
-    /**
-     * This collection's content enhances the identified collections, rather than being a standalone collection of its own.
-     */
-    enhances?: OracleCollectionIdWildcard[];
-    /**
-     * This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.
-     */
-    replaces?: OracleCollectionIdWildcard[];
     /**
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
-    contents?: Record<DictKey, OracleColumnText3>;
+    contents: Record<DictKey, OracleColumnText3>;
     /**
      * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
-     * @default {}
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
-    column_labels: {
-        /**
-         * @default "Result"
-         */
-        text: Label;
-    };
-    /**
-     * A table with multiple unique roll columns, and 3 shared text columns.
-     */
+    column_labels: {};
+    type: 'oracle_collection';
     oracle_type: 'table_shared_text3';
 }
 /**
@@ -2502,46 +2663,40 @@ export interface OracleTableSharedText3 {
  */
 export interface OracleTableText {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: OracleRollableId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
     tags?: Tags;
-    oracle_type: 'table_text';
     /**
-     * Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
      */
     replaces?: OracleRollableIdWildcard[];
     /**
-     * The roll used to select a result on this oracle.
-     * @default "1d100"
+     * A thematic color associated with this node.
      */
-    dice: DiceExpression;
+    color?: CssColor;
+    images?: WebpImageUrl[];
     /**
-     * Most oracle tables are insensitive to matches, but a few define special match behavior.
+     * An SVG icon associated with this collection.
      */
-    match?: OracleMatchBehavior;
-    type: 'oracle_rollable';
-    /**
-     * An array of objects, each representing a single row of the table.
-     */
-    rows: OracleRollableRowText[];
+    icon?: SvgImageUrl;
     recommended_rolls?: {
         /**
          * @default 1
@@ -2553,17 +2708,18 @@ export interface OracleTableText {
         max: number;
     };
     /**
-     * An icon that represents this table.
+     * The roll used to select a result on this oracle.
+     * @default "1d100"
      */
-    icon?: SvgImageUrl;
+    dice: DiceExpression;
     /**
-     * A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
+     * Most oracle tables are insensitive to matches, but a few define special match behavior.
      */
-    summary?: MarkdownString;
+    match?: OracleMatchBehavior;
     /**
-     * A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
+     * An array of objects, each representing a single row of the table.
      */
-    description?: MarkdownString;
+    rows: OracleRollableRowText[];
     /**
      * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
      * @default {}
@@ -2578,52 +2734,48 @@ export interface OracleTableText {
          */
         text: Label;
     };
+    type: 'oracle_rollable';
+    oracle_type: 'table_text';
 }
 /**
  * A rollable oracle table with one roll column and two text columns.
  */
 export interface OracleTableText2 {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: OracleRollableId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
     tags?: Tags;
-    oracle_type: 'table_text2';
     /**
-     * Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
      */
     replaces?: OracleRollableIdWildcard[];
     /**
-     * The roll used to select a result on this oracle.
-     * @default "1d100"
+     * A thematic color associated with this node.
      */
-    dice: DiceExpression;
+    color?: CssColor;
+    images?: WebpImageUrl[];
     /**
-     * Most oracle tables are insensitive to matches, but a few define special match behavior.
+     * An SVG icon associated with this collection.
      */
-    match?: OracleMatchBehavior;
-    type: 'oracle_rollable';
-    /**
-     * An array of objects, each representing a single row of the table.
-     */
-    rows: Array<OracleRollableRowText2>;
+    icon?: SvgImageUrl;
     recommended_rolls?: {
         /**
          * @default 1
@@ -2635,17 +2787,18 @@ export interface OracleTableText2 {
         max: number;
     };
     /**
-     * An icon that represents this table.
+     * The roll used to select a result on this oracle.
+     * @default "1d100"
      */
-    icon?: SvgImageUrl;
+    dice: DiceExpression;
     /**
-     * A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
+     * Most oracle tables are insensitive to matches, but a few define special match behavior.
      */
-    summary?: MarkdownString;
+    match?: OracleMatchBehavior;
     /**
-     * A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
+     * An array of objects, each representing a single row of the table.
      */
-    description?: MarkdownString;
+    rows: Array<OracleRollableRowText2>;
     /**
      * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
      * @default {}
@@ -2664,52 +2817,48 @@ export interface OracleTableText2 {
          */
         text2: Label;
     };
+    type: 'oracle_rollable';
+    oracle_type: 'table_text2';
 }
 /**
  * A rollable oracle table with one roll column and 3 text columns.
  */
 export interface OracleTableText3 {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: OracleRollableId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
     tags?: Tags;
-    oracle_type: 'table_text3';
     /**
-     * Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
      */
     replaces?: OracleRollableIdWildcard[];
     /**
-     * The roll used to select a result on this oracle.
-     * @default "1d100"
+     * A thematic color associated with this node.
      */
-    dice: DiceExpression;
+    color?: CssColor;
+    images?: WebpImageUrl[];
     /**
-     * Most oracle tables are insensitive to matches, but a few define special match behavior.
+     * An SVG icon associated with this collection.
      */
-    match?: OracleMatchBehavior;
-    type: 'oracle_rollable';
-    /**
-     * An array of objects, each representing a single row of the table.
-     */
-    rows: Array<OracleRollableRowText3>;
+    icon?: SvgImageUrl;
     recommended_rolls?: {
         /**
          * @default 1
@@ -2721,17 +2870,18 @@ export interface OracleTableText3 {
         max: number;
     };
     /**
-     * An icon that represents this table.
+     * The roll used to select a result on this oracle.
+     * @default "1d100"
      */
-    icon?: SvgImageUrl;
+    dice: DiceExpression;
     /**
-     * A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
+     * Most oracle tables are insensitive to matches, but a few define special match behavior.
      */
-    summary?: MarkdownString;
+    match?: OracleMatchBehavior;
     /**
-     * A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
+     * An array of objects, each representing a single row of the table.
      */
-    description?: MarkdownString;
+    rows: Array<OracleRollableRowText3>;
     /**
      * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
      * @default {}
@@ -2742,37 +2892,52 @@ export interface OracleTableText3 {
         text2: Label;
         text3: Label;
     };
+    type: 'oracle_rollable';
+    oracle_type: 'table_text3';
 }
 /**
  * An OracleCollection that represents a category or grouping of tables, which may themselves be `OracleTablesCollection`s.
  */
 export interface OracleTablesCollection {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: OracleCollectionId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
     tags?: Tags;
     /**
-     * A thematic color associated with this collection.
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
+     */
+    replaces?: OracleCollectionIdWildcard[];
+    /**
+     * A thematic color associated with this node.
      */
     color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    /**
+     * This node's content enhances all nodes that match these wildcards, rather than being a standalone item of its own.
+     */
+    enhances?: OracleCollectionIdWildcard[];
     /**
      * A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
      */
@@ -2781,32 +2946,28 @@ export interface OracleTablesCollection {
      * A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
      */
     description?: MarkdownString;
-    images?: WebpImageUrl[];
     /**
-     * An SVG icon associated with this collection.
+     * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
-    icon?: SvgImageUrl;
+    contents: Record<DictKey, OracleRollableTable>;
+    /**
+     * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
+     */
+    collections: Record<DictKey, OracleCollection>;
     type: 'oracle_collection';
-    /**
-     * This collection's content enhances the identified collections, rather than being a standalone collection of its own.
-     */
-    enhances?: OracleCollectionIdWildcard[];
-    /**
-     * This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.
-     */
-    replaces?: OracleCollectionIdWildcard[];
-    /**
-     * @remarks Deserialize as a dictionary object.
-     */
-    contents?: Record<DictKey, OracleTableRollable>;
-    /**
-     * A grouping of separate tables.
-     */
     oracle_type: 'tables';
-    /**
-     * @remarks Deserialize as a dictionary object.
-     */
-    collections?: Record<DictKey, OracleCollection>;
 }
 /**
  *   - `miss`: An automatic miss.
@@ -2821,27 +2982,32 @@ export type ActionRollMethod = 'miss' | 'weak_hit' | 'strong_hit' | 'player_choi
 export interface EmbeddedActionRollMove {
     _id: EmbeddedMoveId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     suggestions?: Suggestions;
     tags?: Tags;
     /**
+     * A thematic color associated with this node.
+     */
+    color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    /**
      * The complete rules text of the move.
      */
     text: MarkdownString;
-    /**
-     * A move that makes an action roll.
-     */
-    roll_type: 'action_roll';
     /**
      * Trigger conditions for this move.
      */
@@ -2853,6 +3019,7 @@ export interface EmbeddedActionRollMove {
     allow_momentum_burn: boolean;
     outcomes: MoveOutcomes;
     type: 'move';
+    roll_type: 'action_roll';
 }
 /**
  * @remarks Deserialize as a discriminated union/polymorphic object type, using the `roll_type` property as a discriminator.
@@ -2861,27 +3028,32 @@ export type EmbeddedMove = EmbeddedActionRollMove | EmbeddedNoRollMove | Embedde
 export interface EmbeddedNoRollMove {
     _id: EmbeddedMoveId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     suggestions?: Suggestions;
     tags?: Tags;
     /**
+     * A thematic color associated with this node.
+     */
+    color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    /**
      * The complete rules text of the move.
      */
     text: MarkdownString;
-    /**
-     * A move that makes no action rolls or progress rolls.
-     */
-    roll_type: 'no_roll';
     /**
      * Trigger conditions for this move.
      */
@@ -2895,31 +3067,37 @@ export interface EmbeddedNoRollMove {
      */
     outcomes: null;
     type: 'move';
+    roll_type: 'no_roll';
 }
 export interface EmbeddedProgressRollMove {
     _id: EmbeddedMoveId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     suggestions?: Suggestions;
     tags?: Tags;
     /**
+     * A thematic color associated with this node.
+     */
+    color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    /**
      * The complete rules text of the move.
      */
     text: MarkdownString;
-    /**
-     * A progress move that rolls on a standard progress track type (defined by this move).
-     */
-    roll_type: 'progress_roll';
     /**
      * Trigger conditions for this move.
      */
@@ -2930,6 +3108,7 @@ export interface EmbeddedProgressRollMove {
     allow_momentum_burn: false;
     outcomes: MoveOutcomes;
     type: 'move';
+    roll_type: 'progress_roll';
     /**
      * Describes the common features of progress tracks associated with this move.
      */
@@ -2938,27 +3117,32 @@ export interface EmbeddedProgressRollMove {
 export interface EmbeddedSpecialTrackMove {
     _id: EmbeddedMoveId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     suggestions?: Suggestions;
     tags?: Tags;
     /**
+     * A thematic color associated with this node.
+     */
+    color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    /**
      * The complete rules text of the move.
      */
     text: MarkdownString;
-    /**
-     * A progress move that rolls on one or more special tracks, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
-     */
-    roll_type: 'special_track';
     /**
      * Trigger conditions for this move.
      */
@@ -2969,6 +3153,7 @@ export interface EmbeddedSpecialTrackMove {
     allow_momentum_burn: false;
     outcomes: MoveOutcomes;
     type: 'move';
+    roll_type: 'special_track';
 }
 /**
  * @remarks Deserialize as a discriminated union/polymorphic object type, using the `roll_type` property as a discriminator.
@@ -2979,23 +3164,23 @@ export type Move = MoveActionRoll | MoveNoRoll | MoveProgressRoll | MoveSpecialT
  */
 export interface MoveActionRoll {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: MoveId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
@@ -3005,17 +3190,28 @@ export interface MoveActionRoll {
      */
     replaces?: MoveIdWildcard[];
     /**
+     * A thematic color associated with this node.
+     */
+    color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    /**
      * The complete rules text of the move.
      */
     text: MarkdownString;
     /**
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     oracles?: Record<DictKey, EmbeddedOracleRollable>;
-    /**
-     * A move that makes an action roll.
-     */
-    roll_type: 'action_roll';
     /**
      * Trigger conditions for this move.
      */
@@ -3027,6 +3223,7 @@ export interface MoveActionRoll {
     allow_momentum_burn: boolean;
     outcomes: MoveOutcomes;
     type: 'move';
+    roll_type: 'action_roll';
 }
 /**
  * An object that describes changes to a move. These changes should be applied recursively, altering only the specified properties; enhanced arrays should be concatencated with the original array value.
@@ -3045,31 +3242,44 @@ export interface MoveActionRollEnhancement {
 }
 export interface MoveCategory {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: MoveCategoryId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
     tags?: Tags;
     /**
-     * A thematic color associated with this collection.
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
+     */
+    replaces?: MoveCategoryIdWildcard[];
+    /**
+     * A thematic color associated with this node.
      */
     color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    /**
+     * This node's content enhances all nodes that match these wildcards, rather than being a standalone item of its own.
+     */
+    enhances?: MoveCategoryIdWildcard[];
     /**
      * A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
      */
@@ -3078,24 +3288,27 @@ export interface MoveCategory {
      * A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
      */
     description?: MarkdownString;
-    images?: WebpImageUrl[];
-    /**
-     * An SVG icon associated with this collection.
-     */
-    icon?: SvgImageUrl;
-    type: 'move_category';
-    /**
-     * This collection's content enhances the identified collections, rather than being a standalone collection of its own.
-     */
-    enhances?: MoveCategoryIdWildcard[];
-    /**
-     * This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.
-     */
-    replaces?: MoveCategoryIdWildcard[];
     /**
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
-    contents?: Record<DictKey, Move>;
+    contents: Record<DictKey, Move>;
+    /**
+     * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
+     */
+    collections: Record<DictKey, MoveCategory>;
+    type: 'move_category';
 }
 /**
  * @remarks Deserialize as a discriminated union/polymorphic object type, using the `roll_type` property as a discriminator.
@@ -3106,23 +3319,23 @@ export type MoveEnhancement = MoveActionRollEnhancement | MoveNoRollEnhancement 
  */
 export interface MoveNoRoll {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: MoveId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
@@ -3132,17 +3345,28 @@ export interface MoveNoRoll {
      */
     replaces?: MoveIdWildcard[];
     /**
+     * A thematic color associated with this node.
+     */
+    color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    /**
      * The complete rules text of the move.
      */
     text: MarkdownString;
     /**
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     oracles?: Record<DictKey, EmbeddedOracleRollable>;
-    /**
-     * A move that makes no action rolls or progress rolls.
-     */
-    roll_type: 'no_roll';
     /**
      * Trigger conditions for this move.
      */
@@ -3156,6 +3380,7 @@ export interface MoveNoRoll {
      */
     outcomes: null;
     type: 'move';
+    roll_type: 'no_roll';
 }
 /**
  * An object that describes changes to a move. These changes should be applied recursively, altering only the specified properties; enhanced arrays should be concatencated with the original array value.
@@ -3196,23 +3421,23 @@ export interface MoveOutcomes {
  */
 export interface MoveProgressRoll {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: MoveId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
@@ -3222,17 +3447,28 @@ export interface MoveProgressRoll {
      */
     replaces?: MoveIdWildcard[];
     /**
+     * A thematic color associated with this node.
+     */
+    color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    /**
      * The complete rules text of the move.
      */
     text: MarkdownString;
     /**
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     oracles?: Record<DictKey, EmbeddedOracleRollable>;
-    /**
-     * A progress move that rolls on a standard progress track type (defined by this move).
-     */
-    roll_type: 'progress_roll';
     /**
      * Trigger conditions for this move.
      */
@@ -3243,6 +3479,7 @@ export interface MoveProgressRoll {
     allow_momentum_burn: false;
     outcomes: MoveOutcomes;
     type: 'move';
+    roll_type: 'progress_roll';
     /**
      * Describes the common features of progress tracks associated with this move.
      */
@@ -3275,23 +3512,23 @@ export type MoveRollType = 'no_roll' | 'action_roll' | 'progress_roll' | 'specia
  */
 export interface MoveSpecialTrack {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: MoveId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
@@ -3301,17 +3538,28 @@ export interface MoveSpecialTrack {
      */
     replaces?: MoveIdWildcard[];
     /**
+     * A thematic color associated with this node.
+     */
+    color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    /**
      * The complete rules text of the move.
      */
     text: MarkdownString;
     /**
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     oracles?: Record<DictKey, EmbeddedOracleRollable>;
-    /**
-     * A progress move that rolls on one or more special tracks, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
-     */
-    roll_type: 'special_track';
     /**
      * Trigger conditions for this move.
      */
@@ -3322,6 +3570,7 @@ export interface MoveSpecialTrack {
     allow_momentum_burn: false;
     outcomes: MoveOutcomes;
     type: 'move';
+    roll_type: 'special_track';
 }
 /**
  * An object that describes changes to a move. These changes should be applied recursively, altering only the specified properties; enhanced arrays should be concatencated with the original array value.
@@ -3587,27 +3836,40 @@ export interface TriggerSpecialTrackEnhancement {
 }
 export interface Asset {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: AssetId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
     tags?: Tags;
+    /**
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
+     */
+    replaces?: AssetIdWildcard[];
+    /**
+     * A thematic color associated with this node.
+     */
+    color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
     /**
      * A localized category label for this asset. This is the surtitle above the asset's name on the card.
      * @example "Combat Talent"
@@ -3621,16 +3883,14 @@ export interface Asset {
      */
     category: Label;
     /**
-     * This asset's icon.
-     */
-    icon?: SvgImageUrl;
-    /**
-     * A thematic color associated with this asset.
-     */
-    color?: CssColor;
-    /**
      * Options are input fields set when the player purchases the asset. They're likely to remain the same through the life of the asset. Typically, they are rendered at the top of the asset card.
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     options?: Record<DictKey, AssetOptionField>;
     /**
@@ -3641,6 +3901,12 @@ export interface Asset {
     /**
      * Controls are condition meters, clocks, counters, and other asset input fields whose values are expected to change throughout the life of the asset.
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     controls?: Record<DictKey, AssetControlField>;
     /**
@@ -3661,11 +3927,11 @@ export interface Asset {
  */
 export interface AssetAbility {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: AssetAbilityId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
@@ -3684,20 +3950,44 @@ export interface AssetAbility {
     /**
      * Unique moves added by this asset ability.
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     moves?: Record<DictKey, EmbeddedMove>;
     /**
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     oracles?: Record<DictKey, EmbeddedOracleRollable>;
     /**
      * Fields that are expected to be set once and remain the same through the life of the asset.
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     options?: Record<DictKey, AssetAbilityOptionField>;
     /**
      * Fields whose values are expected to change over the life of the asset.
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     controls?: Record<DictKey, AssetAbilityControlField>;
     /**
@@ -3780,31 +4070,44 @@ export interface AssetCheckboxField {
 }
 export interface AssetCollection {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: AssetCollectionId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
     tags?: Tags;
     /**
-     * A thematic color associated with this collection.
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
+     */
+    replaces?: AssetCollectionIdWildcard[];
+    /**
+     * A thematic color associated with this node.
      */
     color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    /**
+     * This node's content enhances all nodes that match these wildcards, rather than being a standalone item of its own.
+     */
+    enhances?: AssetCollectionIdWildcard[];
     /**
      * A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
      */
@@ -3813,24 +4116,27 @@ export interface AssetCollection {
      * A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
      */
     description?: MarkdownString;
-    images?: WebpImageUrl[];
-    /**
-     * An SVG icon associated with this collection.
-     */
-    icon?: SvgImageUrl;
-    type: 'asset_collection';
-    /**
-     * This collection's content enhances the identified collections, rather than being a standalone collection of its own.
-     */
-    enhances?: AssetCollectionIdWildcard[];
-    /**
-     * This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.
-     */
-    replaces?: AssetCollectionIdWildcard[];
     /**
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
-    contents?: Record<DictKey, Asset>;
+    contents: Record<DictKey, Asset>;
+    /**
+     * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
+     */
+    collections: Record<DictKey, AssetCollection>;
+    type: 'asset_collection';
 }
 /**
  * Some assets provide a special condition meter of their own. The most common example is the health meters on companion assets. Asset condition meters may also include their own controls, such as the checkboxes that Starforged companion assets use to indicate they are "out of action".
@@ -3877,6 +4183,12 @@ export interface AssetConditionMeter {
     /**
      * Checkbox controls rendered as part of the condition meter.
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     controls?: Record<DictKey, AssetConditionMeterControlField>;
 }
@@ -4025,6 +4337,12 @@ export interface SelectEnhancementField {
     value: DictKey | null;
     /**
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     choices: Record<DictKey, SelectEnhancementFieldChoice | SelectEnhancementFieldChoiceGroup>;
     field_type: 'select_enhancement';
@@ -4055,6 +4373,12 @@ export interface SelectEnhancementFieldChoiceGroup {
     choice_type: 'choice_group';
     /**
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     choices: Record<DictKey, SelectEnhancementFieldChoice>;
 }
@@ -4071,6 +4395,12 @@ export interface SelectValueField {
     value: DictKey | null;
     /**
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     choices: Record<DictKey, SelectValueFieldChoice>;
     field_type: 'select_value';
@@ -4187,33 +4517,44 @@ export interface TextField {
  */
 export interface Truth {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: TruthId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
     tags?: Tags;
     /**
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
+     */
+    replaces?: TruthIdWildcard[];
+    /**
+     * A thematic color associated with this node.
+     */
+    color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    /**
      * @default "1d100"
      */
     dice: DiceExpression;
-    icon?: SvgImageUrl;
-    summary?: MarkdownString;
     options: TruthOption[];
     your_character?: MarkdownString;
     /**
@@ -4226,43 +4567,69 @@ export interface Truth {
     type: 'truth';
 }
 export interface TruthOption {
+    /**
+     * The unique Datasworn ID for this node.
+     */
     _id: TruthOptionId;
+    /**
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
+     */
+    _comment?: string;
     roll: DiceRange;
     summary?: MarkdownString;
     description: MarkdownString;
     quest_starter: MarkdownString;
     /**
      * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
     oracles?: Record<DictKey, EmbeddedOracleRollable>;
 }
 export interface AtlasCollection {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: AtlasCollectionId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
     tags?: Tags;
     /**
-     * A thematic color associated with this collection.
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
+     */
+    replaces?: AtlasCollectionIdWildcard[];
+    /**
+     * A thematic color associated with this node.
      */
     color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    /**
+     * This node's content enhances all nodes that match these wildcards, rather than being a standalone item of its own.
+     */
+    enhances?: AtlasCollectionIdWildcard[];
     /**
      * A brief summary of this collection, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the "description" key instead.
      */
@@ -4271,55 +4638,64 @@ export interface AtlasCollection {
      * A longer description of this collection, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead.
      */
     description?: MarkdownString;
-    images?: WebpImageUrl[];
     /**
-     * An SVG icon associated with this collection.
+     * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
      */
-    icon?: SvgImageUrl;
+    contents: Record<DictKey, AtlasEntry>;
+    /**
+     * @remarks Deserialize as a dictionary object.
+     * @default
+     * ```javascript
+     * 	{
+     *
+     * 	}
+     * ```
+     */
+    collections: Record<DictKey, AtlasCollection>;
     type: 'atlas_collection';
-    /**
-     * This collection's content enhances the identified collections, rather than being a standalone collection of its own.
-     */
-    enhances?: AtlasCollectionIdWildcard[];
-    /**
-     * This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.
-     */
-    replaces?: AtlasCollectionIdWildcard[];
-    /**
-     * @remarks Deserialize as a dictionary object.
-     */
-    contents?: Record<DictKey, AtlasEntry>;
-    /**
-     * @remarks Deserialize as a dictionary object.
-     */
-    collections?: Record<DictKey, AtlasCollection>;
 }
 /**
  * An atlas entry, like the Ironlands region entries found in classic Ironsworn.
  */
 export interface AtlasEntry {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: AtlasEntryId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
-    /**
-     * The primary name/label for this item.
-     */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
     tags?: Tags;
+    /**
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
+     */
+    replaces?: AtlasEntryIdWildcard[];
+    /**
+     * A thematic color associated with this node.
+     */
+    color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
     features: MarkdownString[];
     summary?: MarkdownString;
     description: MarkdownString;
@@ -4348,33 +4724,44 @@ export type StatKey = DictKey;
  */
 export interface Rarity {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: RarityId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
     tags?: Tags;
     /**
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
+     */
+    replaces?: RarityIdWildcard[];
+    /**
+     * A thematic color associated with this node.
+     */
+    color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
+    /**
      * The asset augmented by this rarity.
      */
     asset: AssetId;
-    type: 'rarity';
-    icon?: SvgImageUrl;
     /**
      * From Ironsworn: Delve, p. 174:
      *
@@ -4386,35 +4773,46 @@ export interface Rarity {
      * @maximum 5
      */
     xp_cost: number;
-    description: MarkdownString;
+    type: 'rarity';
 }
 /**
  * A delve site with a theme, domain, and denizens.
  */
 export interface DelveSite {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: DelveSiteId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
     tags?: Tags;
-    type: 'delve_site';
+    /**
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
+     */
+    replaces?: DelveSiteIdWildcard[];
+    /**
+     * A thematic color associated with this node.
+     */
+    color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
     icon?: SvgImageUrl;
     rank: ChallengeRank;
     /**
@@ -4523,6 +4921,7 @@ export interface DelveSite {
             };
         }
     ];
+    type: 'delve_site';
 }
 /**
  * Represents an entry in a delve site denizen matrix. Denizen matrices are described in Ironsworn: Delve.
@@ -4546,33 +4945,40 @@ export type DelveSiteDenizenFrequency = 'very_common' | 'common' | 'uncommon' | 
  */
 export interface DelveSiteDomain {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: DelveSiteDomainId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
     tags?: Tags;
-    type: 'delve_site_domain';
     /**
-     * @deprecated
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
      */
-    summary: MarkdownString;
-    description?: MarkdownString;
+    replaces?: DelveSiteDomainIdWildcard[];
+    /**
+     * A thematic color associated with this node.
+     */
+    color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
+    icon?: SvgImageUrl;
     /**
      * An oracle table ID containing place name elements. For examples, see oracle ID `oracle_rollable:delve/site_name/place/barrow`, and its siblings in oracle collection ID `oracle_collection:delve/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (`oracle_rollable:delve/site_name/format`) to create random names for delve sites.
      */
@@ -4683,9 +5089,10 @@ export interface DelveSiteDomain {
             };
         }
     ];
+    type: 'delve_site_domain';
 }
 /**
- * Represents a row in an oracle table, with a single text cell.
+ * Represents a single Danger entry from a delve site Domain card.
  */
 export interface DelveSiteDomainDanger {
     /**
@@ -4720,7 +5127,7 @@ export interface DelveSiteDomainDanger {
     _id: DelveSiteDomainDangerId;
 }
 /**
- * Represents a row in an oracle table, with a single text cell.
+ * Represents a single Feature entry from a delve site Domain card.
  */
 export interface DelveSiteDomainFeature {
     /**
@@ -4759,30 +5166,39 @@ export interface DelveSiteDomainFeature {
  */
 export interface DelveSiteTheme {
     /**
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     _id: DelveSiteThemeId;
     /**
-     * Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
      */
     _comment?: string;
     /**
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     name: Label;
     /**
-     * The name of this item as it appears on the page in the book, if it's different from `name`.
+     * The name of this node as it appears on the page in the book, if it's different from `name`.
      */
     canonical_name?: Label;
     /**
-     * Attribution for the original source (such as a book or website) of this item, including the author and licensing information.
+     * Attribution for the original source (such as a book or website) of this node, including the author and licensing information.
      */
     _source: SourceInfo;
     suggestions?: Suggestions;
     tags?: Tags;
-    type: 'delve_site_theme';
-    summary: MarkdownString;
-    description?: MarkdownString;
+    /**
+     * This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.
+     */
+    replaces?: DelveSiteThemeIdWildcard[];
+    /**
+     * A thematic color associated with this node.
+     */
+    color?: CssColor;
+    images?: WebpImageUrl[];
+    /**
+     * An SVG icon associated with this collection.
+     */
     icon?: SvgImageUrl;
     features: DelveSiteThemeFeature[] & [
         {
@@ -4816,7 +5232,7 @@ export interface DelveSiteTheme {
             };
         }
     ];
-    dangers: DelveSiteThemeFeature[] & [
+    dangers: DelveSiteThemeDanger[] & [
         {
             roll: {
                 min: 1;
@@ -4890,9 +5306,10 @@ export interface DelveSiteTheme {
             };
         }
     ];
+    type: 'delve_site_theme';
 }
 /**
- * Represents a row in an oracle table, with a single text cell.
+ * Represents a single Danger entry from a delve site Theme card.
  */
 export interface DelveSiteThemeDanger {
     /**
@@ -4927,7 +5344,7 @@ export interface DelveSiteThemeDanger {
     _id: DelveSiteThemeDangerId;
 }
 /**
- * Represents a row in an oracle table, with a single text cell.
+ * Represents a single Feature entry from a delve site Theme card.
  */
 export interface DelveSiteThemeFeature {
     /**

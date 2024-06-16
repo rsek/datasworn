@@ -39,6 +39,10 @@ public class Truth {
     private Label canonicalName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("color")
+    private CssColor color;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("factions")
     private List<EntityPrompt> factions;
 
@@ -47,12 +51,16 @@ public class Truth {
     private SvgImageUrl icon;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("suggestions")
-    private Suggestions suggestions;
+    @JsonProperty("images")
+    private List<WebpImageUrl> images;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("summary")
-    private MarkdownString summary;
+    @JsonProperty("replaces")
+    private List<TruthIdWildcard> replaces;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("suggestions")
+    private Suggestions suggestions;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("tags")
@@ -67,7 +75,7 @@ public class Truth {
 
     /**
      * Getter for id.<p>
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     public TruthId getId() {
         return id;
@@ -75,7 +83,7 @@ public class Truth {
 
     /**
      * Setter for id.<p>
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     public void setId(TruthId id) {
         this.id = id;
@@ -84,7 +92,7 @@ public class Truth {
     /**
      * Getter for source.<p>
      * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
+     * node, including the author and licensing information.
      */
     public SourceInfo getSource() {
         return source;
@@ -93,7 +101,7 @@ public class Truth {
     /**
      * Setter for source.<p>
      * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
+     * node, including the author and licensing information.
      */
     public void setSource(SourceInfo source) {
         this.source = source;
@@ -115,7 +123,7 @@ public class Truth {
 
     /**
      * Getter for name.<p>
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     public Label getName() {
         return name;
@@ -123,7 +131,7 @@ public class Truth {
 
     /**
      * Setter for name.<p>
-     * The primary name/label for this item.
+     * The primary name/label for this node.
      */
     public void setName(Label name) {
         this.name = name;
@@ -159,8 +167,8 @@ public class Truth {
 
     /**
      * Getter for comment.<p>
-     * Implementation hints or other developer-facing comments on this object.
-     * These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node.
+     * These should be omitted when presenting the node for gameplay.
      */
     public String getComment() {
         return comment;
@@ -168,8 +176,8 @@ public class Truth {
 
     /**
      * Setter for comment.<p>
-     * Implementation hints or other developer-facing comments on this object.
-     * These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node.
+     * These should be omitted when presenting the node for gameplay.
      */
     public void setComment(String comment) {
         this.comment = comment;
@@ -177,7 +185,7 @@ public class Truth {
 
     /**
      * Getter for canonicalName.<p>
-     * The name of this item as it appears on the page in the book, if it's
+     * The name of this node as it appears on the page in the book, if it's
      * different from `name`.
      */
     public Label getCanonicalName() {
@@ -186,11 +194,27 @@ public class Truth {
 
     /**
      * Setter for canonicalName.<p>
-     * The name of this item as it appears on the page in the book, if it's
+     * The name of this node as it appears on the page in the book, if it's
      * different from `name`.
      */
     public void setCanonicalName(Label canonicalName) {
         this.canonicalName = canonicalName;
+    }
+
+    /**
+     * Getter for color.<p>
+     * A thematic color associated with this node.
+     */
+    public CssColor getColor() {
+        return color;
+    }
+
+    /**
+     * Setter for color.<p>
+     * A thematic color associated with this node.
+     */
+    public void setColor(CssColor color) {
+        this.color = color;
     }
 
     /**
@@ -221,6 +245,7 @@ public class Truth {
 
     /**
      * Getter for icon.<p>
+     * An SVG icon associated with this collection.
      */
     public SvgImageUrl getIcon() {
         return icon;
@@ -228,9 +253,42 @@ public class Truth {
 
     /**
      * Setter for icon.<p>
+     * An SVG icon associated with this collection.
      */
     public void setIcon(SvgImageUrl icon) {
         this.icon = icon;
+    }
+
+    /**
+     * Getter for images.<p>
+     */
+    public List<WebpImageUrl> getImages() {
+        return images;
+    }
+
+    /**
+     * Setter for images.<p>
+     */
+    public void setImages(List<WebpImageUrl> images) {
+        this.images = images;
+    }
+
+    /**
+     * Getter for replaces.<p>
+     * This node replaces all nodes that match these wildcards. References to
+     * the replaced nodes can be considered equivalent to this node.
+     */
+    public List<TruthIdWildcard> getReplaces() {
+        return replaces;
+    }
+
+    /**
+     * Setter for replaces.<p>
+     * This node replaces all nodes that match these wildcards. References to
+     * the replaced nodes can be considered equivalent to this node.
+     */
+    public void setReplaces(List<TruthIdWildcard> replaces) {
+        this.replaces = replaces;
     }
 
     /**
@@ -245,20 +303,6 @@ public class Truth {
      */
     public void setSuggestions(Suggestions suggestions) {
         this.suggestions = suggestions;
-    }
-
-    /**
-     * Getter for summary.<p>
-     */
-    public MarkdownString getSummary() {
-        return summary;
-    }
-
-    /**
-     * Setter for summary.<p>
-     */
-    public void setSummary(MarkdownString summary) {
-        this.summary = summary;
     }
 
     /**

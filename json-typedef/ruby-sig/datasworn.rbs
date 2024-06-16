@@ -173,7 +173,9 @@ module Datasworn
     attr_accessor color: CSSColor?
     attr_accessor controls: Hash[String, AssetControlField]?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor options: Hash[String, AssetOptionField]?
+    attr_accessor replaces: Array[AssetIDWildcard]?
     attr_accessor requirement: MarkdownString?
     attr_accessor suggestions: Suggestions?
     attr_accessor tags: Tags?
@@ -385,12 +387,13 @@ module Datasworn
   class AssetCollection
     attr_accessor id: AssetCollectionID
     attr_accessor source: SourceInfo
+    attr_accessor collections: Hash[String, AssetCollection]
+    attr_accessor contents: Hash[String, Asset]
     attr_accessor name: Label
     attr_accessor type: AssetCollectionType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
-    attr_accessor contents: Hash[String, Asset]?
     attr_accessor description: MarkdownString?
     attr_accessor enhances: Array[AssetCollectionIDWildcard]?
     attr_accessor icon: SvgImageURL?
@@ -728,13 +731,13 @@ module Datasworn
   class AtlasCollection
     attr_accessor id: AtlasCollectionID
     attr_accessor source: SourceInfo
+    attr_accessor collections: Hash[String, AtlasCollection]
+    attr_accessor contents: Hash[String, AtlasEntry]
     attr_accessor name: Label
     attr_accessor type: AtlasCollectionType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor collections: Hash[String, AtlasCollection]?
     attr_accessor color: CSSColor?
-    attr_accessor contents: Hash[String, AtlasEntry]?
     attr_accessor description: MarkdownString?
     attr_accessor enhances: Array[AtlasCollectionIDWildcard]?
     attr_accessor icon: SvgImageURL?
@@ -780,7 +783,11 @@ module Datasworn
     attr_accessor type: AtlasEntryType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor quest_starter: MarkdownString?
+    attr_accessor replaces: Array[AtlasEntryIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
@@ -1036,9 +1043,12 @@ module Datasworn
     attr_accessor type: DelveSiteType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
     attr_accessor extra_card: String?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor region: AtlasEntryID?
+    attr_accessor replaces: Array[DelveSiteIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor tags: Tags?
 
@@ -1099,12 +1109,14 @@ module Datasworn
     attr_accessor dangers: Array[DelveSiteDomainDanger]
     attr_accessor features: Array[DelveSiteDomainFeature]
     attr_accessor name: Label
-    attr_accessor summary: MarkdownString
     attr_accessor type: DelveSiteDomainType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor description: MarkdownString?
+    attr_accessor color: CSSColor?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor name_oracle: OracleRollableID?
+    attr_accessor replaces: Array[DelveSiteDomainIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor tags: Tags?
 
@@ -1212,15 +1224,16 @@ module Datasworn
   class DelveSiteTheme
     attr_accessor id: DelveSiteThemeID
     attr_accessor source: SourceInfo
-    attr_accessor dangers: Array[DelveSiteThemeFeature]
+    attr_accessor dangers: Array[DelveSiteThemeDanger]
     attr_accessor features: Array[DelveSiteThemeFeature]
     attr_accessor name: Label
-    attr_accessor summary: MarkdownString
     attr_accessor type: DelveSiteThemeType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor description: MarkdownString?
+    attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
+    attr_accessor replaces: Array[DelveSiteThemeIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor tags: Tags?
 
@@ -1367,6 +1380,9 @@ module Datasworn
     attr_accessor type: EmbeddedActionRollMoveType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor suggestions: Suggestions?
     attr_accessor tags: Tags?
 
@@ -1400,6 +1416,9 @@ module Datasworn
     attr_accessor type: EmbeddedMoveActionRollType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor suggestions: Suggestions?
     attr_accessor tags: Tags?
 
@@ -1425,6 +1444,9 @@ module Datasworn
     attr_accessor type: EmbeddedMoveNoRollType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor suggestions: Suggestions?
     attr_accessor tags: Tags?
 
@@ -1452,6 +1474,9 @@ module Datasworn
     attr_accessor type: EmbeddedMoveProgressRollType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor suggestions: Suggestions?
     attr_accessor tags: Tags?
 
@@ -1478,6 +1503,9 @@ module Datasworn
     attr_accessor type: EmbeddedMoveSpecialTrackType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor suggestions: Suggestions?
     attr_accessor tags: Tags?
 
@@ -1527,6 +1555,9 @@ module Datasworn
     attr_accessor type: EmbeddedNoRollMoveType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor suggestions: Suggestions?
     attr_accessor tags: Tags?
 
@@ -1552,6 +1583,14 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class EmbeddedOracleColumnTextRecommendedRolls
+    attr_accessor max: Integer
+    attr_accessor min: Integer
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleColumnTextRecommendedRolls
+    def to_json_data: () -> untyped
+  end
+
   class EmbeddedOracleColumnText
     attr_accessor id: EmbeddedOracleRollableID
     attr_accessor dice: DiceExpression
@@ -1560,11 +1599,13 @@ module Datasworn
     attr_accessor rows: Array[OracleRollableRowText]
     attr_accessor type: EmbeddedOracleColumnTextType
     attr_accessor comment: String?
+    attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
+    attr_accessor recommended_rolls: EmbeddedOracleColumnTextRecommendedRolls?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> EmbeddedOracleColumnText
@@ -1589,6 +1630,14 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class EmbeddedOracleColumnText2RecommendedRolls
+    attr_accessor max: Integer
+    attr_accessor min: Integer
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleColumnText2RecommendedRolls
+    def to_json_data: () -> untyped
+  end
+
   class EmbeddedOracleColumnText2
     attr_accessor id: EmbeddedOracleRollableID
     attr_accessor dice: DiceExpression
@@ -1597,11 +1646,13 @@ module Datasworn
     attr_accessor rows: Array[OracleRollableRowText2]
     attr_accessor type: EmbeddedOracleColumnText2Type
     attr_accessor comment: String?
+    attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
+    attr_accessor recommended_rolls: EmbeddedOracleColumnText2RecommendedRolls?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> EmbeddedOracleColumnText2
@@ -1626,6 +1677,14 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class EmbeddedOracleColumnText3RecommendedRolls
+    attr_accessor max: Integer
+    attr_accessor min: Integer
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleColumnText3RecommendedRolls
+    def to_json_data: () -> untyped
+  end
+
   class EmbeddedOracleColumnText3
     attr_accessor id: EmbeddedOracleRollableID
     attr_accessor dice: DiceExpression
@@ -1634,11 +1693,13 @@ module Datasworn
     attr_accessor rows: Array[OracleRollableRowText3]
     attr_accessor type: EmbeddedOracleColumnText3Type
     attr_accessor comment: String?
+    attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
+    attr_accessor recommended_rolls: EmbeddedOracleColumnText3RecommendedRolls?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> EmbeddedOracleColumnText3
@@ -1661,6 +1722,14 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class EmbeddedOracleRollableColumnTextRecommendedRolls
+    attr_accessor max: Integer
+    attr_accessor min: Integer
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollableColumnTextRecommendedRolls
+    def to_json_data: () -> untyped
+  end
+
   class EmbeddedOracleRollableColumnText < EmbeddedOracleRollable
     attr_accessor id: EmbeddedOracleRollableID
     attr_accessor dice: DiceExpression
@@ -1668,11 +1737,13 @@ module Datasworn
     attr_accessor rows: Array[OracleRollableRowText]
     attr_accessor type: EmbeddedOracleRollableColumnTextType
     attr_accessor comment: String?
+    attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
+    attr_accessor recommended_rolls: EmbeddedOracleRollableColumnTextRecommendedRolls?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> EmbeddedOracleRollableColumnText
@@ -1688,6 +1759,14 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class EmbeddedOracleRollableColumnText2RecommendedRolls
+    attr_accessor max: Integer
+    attr_accessor min: Integer
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollableColumnText2RecommendedRolls
+    def to_json_data: () -> untyped
+  end
+
   class EmbeddedOracleRollableColumnText2 < EmbeddedOracleRollable
     attr_accessor id: EmbeddedOracleRollableID
     attr_accessor dice: DiceExpression
@@ -1695,11 +1774,13 @@ module Datasworn
     attr_accessor rows: Array[OracleRollableRowText2]
     attr_accessor type: EmbeddedOracleRollableColumnText2Type
     attr_accessor comment: String?
+    attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
+    attr_accessor recommended_rolls: EmbeddedOracleRollableColumnText2RecommendedRolls?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> EmbeddedOracleRollableColumnText2
@@ -1715,6 +1796,14 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class EmbeddedOracleRollableColumnText3RecommendedRolls
+    attr_accessor max: Integer
+    attr_accessor min: Integer
+
+    def self.from_json_data: (untyped) -> EmbeddedOracleRollableColumnText3RecommendedRolls
+    def to_json_data: () -> untyped
+  end
+
   class EmbeddedOracleRollableColumnText3 < EmbeddedOracleRollable
     attr_accessor id: EmbeddedOracleRollableID
     attr_accessor dice: DiceExpression
@@ -1722,11 +1811,13 @@ module Datasworn
     attr_accessor rows: Array[OracleRollableRowText3]
     attr_accessor type: EmbeddedOracleRollableColumnText3Type
     attr_accessor comment: String?
+    attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
+    attr_accessor recommended_rolls: EmbeddedOracleRollableColumnText3RecommendedRolls?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> EmbeddedOracleRollableColumnText3
@@ -1767,12 +1858,12 @@ module Datasworn
     attr_accessor type: EmbeddedOracleRollableTableTextType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor description: MarkdownString?
+    attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
     attr_accessor recommended_rolls: EmbeddedOracleRollableTableTextRecommendedRolls?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> EmbeddedOracleRollableTableText
@@ -1814,12 +1905,12 @@ module Datasworn
     attr_accessor type: EmbeddedOracleRollableTableText2Type
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor description: MarkdownString?
+    attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
     attr_accessor recommended_rolls: EmbeddedOracleRollableTableText2RecommendedRolls?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> EmbeddedOracleRollableTableText2
@@ -1862,12 +1953,12 @@ module Datasworn
     attr_accessor type: EmbeddedOracleRollableTableText3Type
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor description: MarkdownString?
+    attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
     attr_accessor recommended_rolls: EmbeddedOracleRollableTableText3RecommendedRolls?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> EmbeddedOracleRollableTableText3
@@ -1932,12 +2023,12 @@ module Datasworn
     attr_accessor type: EmbeddedOracleTableTextType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor description: MarkdownString?
+    attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
     attr_accessor recommended_rolls: EmbeddedOracleTableTextRecommendedRolls?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> EmbeddedOracleTableText
@@ -1989,12 +2080,12 @@ module Datasworn
     attr_accessor type: EmbeddedOracleTableText2Type
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor description: MarkdownString?
+    attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
     attr_accessor recommended_rolls: EmbeddedOracleTableText2RecommendedRolls?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> EmbeddedOracleTableText2
@@ -2047,12 +2138,12 @@ module Datasworn
     attr_accessor type: EmbeddedOracleTableText3Type
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor description: MarkdownString?
+    attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
     attr_accessor recommended_rolls: EmbeddedOracleTableText3RecommendedRolls?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> EmbeddedOracleTableText3
@@ -2089,6 +2180,9 @@ module Datasworn
     attr_accessor type: EmbeddedProgressRollMoveType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor suggestions: Suggestions?
     attr_accessor tags: Tags?
 
@@ -2125,6 +2219,9 @@ module Datasworn
     attr_accessor type: EmbeddedSpecialTrackMoveType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor suggestions: Suggestions?
     attr_accessor tags: Tags?
 
@@ -2285,6 +2382,9 @@ module Datasworn
     attr_accessor type: MoveActionRollType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor oracles: Hash[String, EmbeddedOracleRollable]?
     attr_accessor replaces: Array[MoveIDWildcard]?
     attr_accessor suggestions: Suggestions?
@@ -2313,6 +2413,9 @@ module Datasworn
     attr_accessor type: MoveNoRollType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor oracles: Hash[String, EmbeddedOracleRollable]?
     attr_accessor replaces: Array[MoveIDWildcard]?
     attr_accessor suggestions: Suggestions?
@@ -2343,6 +2446,9 @@ module Datasworn
     attr_accessor type: MoveProgressRollType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor oracles: Hash[String, EmbeddedOracleRollable]?
     attr_accessor replaces: Array[MoveIDWildcard]?
     attr_accessor suggestions: Suggestions?
@@ -2372,6 +2478,9 @@ module Datasworn
     attr_accessor type: MoveSpecialTrackType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor oracles: Hash[String, EmbeddedOracleRollable]?
     attr_accessor replaces: Array[MoveIDWildcard]?
     attr_accessor suggestions: Suggestions?
@@ -2411,6 +2520,9 @@ module Datasworn
     attr_accessor type: MoveActionRollType0
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor oracles: Hash[String, EmbeddedOracleRollable]?
     attr_accessor replaces: Array[MoveIDWildcard]?
     attr_accessor suggestions: Suggestions?
@@ -2450,12 +2562,13 @@ module Datasworn
   class MoveCategory
     attr_accessor id: MoveCategoryID
     attr_accessor source: SourceInfo
+    attr_accessor collections: Hash[String, MoveCategory]
+    attr_accessor contents: Hash[String, Move]
     attr_accessor name: Label
     attr_accessor type: MoveCategoryType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
-    attr_accessor contents: Hash[String, Move]?
     attr_accessor description: MarkdownString?
     attr_accessor enhances: Array[MoveCategoryIDWildcard]?
     attr_accessor icon: SvgImageURL?
@@ -2565,6 +2678,9 @@ module Datasworn
     attr_accessor type: MoveNoRollType0
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor oracles: Hash[String, EmbeddedOracleRollable]?
     attr_accessor replaces: Array[MoveIDWildcard]?
     attr_accessor suggestions: Suggestions?
@@ -2668,6 +2784,9 @@ module Datasworn
     attr_accessor type: MoveProgressRollType0
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor oracles: Hash[String, EmbeddedOracleRollable]?
     attr_accessor replaces: Array[MoveIDWildcard]?
     attr_accessor suggestions: Suggestions?
@@ -2737,6 +2856,9 @@ module Datasworn
     attr_accessor type: MoveSpecialTrackType0
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor oracles: Hash[String, EmbeddedOracleRollable]?
     attr_accessor replaces: Array[MoveIDWildcard]?
     attr_accessor suggestions: Suggestions?
@@ -2799,7 +2921,11 @@ module Datasworn
     attr_accessor type: NpcType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor quest_starter: MarkdownString?
+    attr_accessor replaces: Array[NpcIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
@@ -2822,12 +2948,13 @@ module Datasworn
   class NpcCollection
     attr_accessor id: NpcCollectionID
     attr_accessor source: SourceInfo
+    attr_accessor collections: Hash[String, NpcCollection]
+    attr_accessor contents: Hash[String, Npc]
     attr_accessor name: Label
     attr_accessor type: NpcCollectionType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
-    attr_accessor contents: Hash[String, Npc]?
     attr_accessor description: MarkdownString?
     attr_accessor enhances: Array[NpcCollectionIDWildcard]?
     attr_accessor icon: SvgImageURL?
@@ -2894,45 +3021,6 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
-  class OracleCollectionOracleTableSharedText3ColumnLabels
-    attr_accessor text: Label
-
-    def self.from_json_data: (untyped) -> OracleCollectionOracleTableSharedText3ColumnLabels
-    def to_json_data: () -> untyped
-  end
-
-  class OracleCollectionOracleTableSharedText3Type
-    attr_accessor value: String
-
-    ORACLE_COLLECTION: OracleCollectionOracleTableSharedText3Type
-
-    def self.from_json_data: (untyped) -> OracleCollectionOracleTableSharedText3Type
-    def to_json_data: () -> untyped
-  end
-
-  class OracleCollectionOracleTableSharedText3 < OracleCollection
-    attr_accessor id: OracleCollectionID
-    attr_accessor source: SourceInfo
-    attr_accessor column_labels: OracleCollectionOracleTableSharedText3ColumnLabels
-    attr_accessor name: Label
-    attr_accessor type: OracleCollectionOracleTableSharedText3Type
-    attr_accessor comment: String?
-    attr_accessor canonical_name: Label?
-    attr_accessor color: CSSColor?
-    attr_accessor contents: Hash[String, OracleColumnText3]?
-    attr_accessor description: MarkdownString?
-    attr_accessor enhances: Array[OracleCollectionIDWildcard]?
-    attr_accessor icon: SvgImageURL?
-    attr_accessor images: Array[WebpImageURL]?
-    attr_accessor replaces: Array[OracleCollectionIDWildcard]?
-    attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
-    attr_accessor tags: Tags?
-
-    def self.from_json_data: (untyped) -> OracleCollectionOracleTableSharedText3
-    def to_json_data: () -> untyped
-  end
-
   class OracleCollectionTableSharedRollsColumnLabels
     attr_accessor roll: Label
 
@@ -2953,12 +3041,12 @@ module Datasworn
     attr_accessor id: OracleCollectionID
     attr_accessor source: SourceInfo
     attr_accessor column_labels: OracleCollectionTableSharedRollsColumnLabels
+    attr_accessor contents: Hash[String, OracleColumnText]
     attr_accessor name: Label
     attr_accessor type: OracleCollectionTableSharedRollsType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
-    attr_accessor contents: Hash[String, OracleColumnText]?
     attr_accessor description: MarkdownString?
     attr_accessor enhances: Array[OracleCollectionIDWildcard]?
     attr_accessor icon: SvgImageURL?
@@ -2992,12 +3080,12 @@ module Datasworn
     attr_accessor id: OracleCollectionID
     attr_accessor source: SourceInfo
     attr_accessor column_labels: OracleCollectionTableSharedTextColumnLabels
+    attr_accessor contents: Hash[String, OracleColumnText]
     attr_accessor name: Label
     attr_accessor type: OracleCollectionTableSharedTextType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
-    attr_accessor contents: Hash[String, OracleColumnText]?
     attr_accessor description: MarkdownString?
     attr_accessor enhances: Array[OracleCollectionIDWildcard]?
     attr_accessor icon: SvgImageURL?
@@ -3032,12 +3120,12 @@ module Datasworn
     attr_accessor id: OracleCollectionID
     attr_accessor source: SourceInfo
     attr_accessor column_labels: OracleCollectionTableSharedText2ColumnLabels
+    attr_accessor contents: Hash[String, OracleColumnText2]
     attr_accessor name: Label
     attr_accessor type: OracleCollectionTableSharedText2Type
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
-    attr_accessor contents: Hash[String, OracleColumnText2]?
     attr_accessor description: MarkdownString?
     attr_accessor enhances: Array[OracleCollectionIDWildcard]?
     attr_accessor icon: SvgImageURL?
@@ -3048,6 +3136,38 @@ module Datasworn
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleCollectionTableSharedText2
+    def to_json_data: () -> untyped
+  end
+
+  class OracleCollectionTableSharedText3Type
+    attr_accessor value: String
+
+    ORACLE_COLLECTION: OracleCollectionTableSharedText3Type
+
+    def self.from_json_data: (untyped) -> OracleCollectionTableSharedText3Type
+    def to_json_data: () -> untyped
+  end
+
+  class OracleCollectionTableSharedText3 < OracleCollection
+    attr_accessor id: OracleCollectionID
+    attr_accessor source: SourceInfo
+    attr_accessor column_labels: untyped
+    attr_accessor contents: Hash[String, OracleColumnText3]
+    attr_accessor name: Label
+    attr_accessor type: OracleCollectionTableSharedText3Type
+    attr_accessor comment: String?
+    attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
+    attr_accessor description: MarkdownString?
+    attr_accessor enhances: Array[OracleCollectionIDWildcard]?
+    attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
+    attr_accessor replaces: Array[OracleCollectionIDWildcard]?
+    attr_accessor suggestions: Suggestions?
+    attr_accessor summary: MarkdownString?
+    attr_accessor tags: Tags?
+
+    def self.from_json_data: (untyped) -> OracleCollectionTableSharedText3
     def to_json_data: () -> untyped
   end
 
@@ -3063,13 +3183,13 @@ module Datasworn
   class OracleCollectionTables < OracleCollection
     attr_accessor id: OracleCollectionID
     attr_accessor source: SourceInfo
+    attr_accessor collections: Hash[String, OracleCollection]
+    attr_accessor contents: Hash[String, OracleRollableTable]
     attr_accessor name: Label
     attr_accessor type: OracleCollectionTablesType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor collections: Hash[String, OracleCollection]?
     attr_accessor color: CSSColor?
-    attr_accessor contents: Hash[String, OracleTableRollable]?
     attr_accessor description: MarkdownString?
     attr_accessor enhances: Array[OracleCollectionIDWildcard]?
     attr_accessor icon: SvgImageURL?
@@ -3115,6 +3235,14 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class OracleColumnTextRecommendedRolls
+    attr_accessor max: Integer
+    attr_accessor min: Integer
+
+    def self.from_json_data: (untyped) -> OracleColumnTextRecommendedRolls
+    def to_json_data: () -> untyped
+  end
+
   class OracleColumnText
     attr_accessor id: OracleRollableID
     attr_accessor dice: DiceExpression
@@ -3123,12 +3251,14 @@ module Datasworn
     attr_accessor rows: Array[OracleRollableRowText]
     attr_accessor type: OracleColumnTextType
     attr_accessor comment: String?
+    attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
+    attr_accessor recommended_rolls: OracleColumnTextRecommendedRolls?
     attr_accessor replaces: Array[OracleRollableIDWildcard]?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleColumnText
@@ -3153,6 +3283,14 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class OracleColumnText2RecommendedRolls
+    attr_accessor max: Integer
+    attr_accessor min: Integer
+
+    def self.from_json_data: (untyped) -> OracleColumnText2RecommendedRolls
+    def to_json_data: () -> untyped
+  end
+
   class OracleColumnText2
     attr_accessor id: OracleRollableID
     attr_accessor dice: DiceExpression
@@ -3161,12 +3299,14 @@ module Datasworn
     attr_accessor rows: Array[OracleRollableRowText2]
     attr_accessor type: OracleColumnText2Type
     attr_accessor comment: String?
+    attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
+    attr_accessor recommended_rolls: OracleColumnText2RecommendedRolls?
     attr_accessor replaces: Array[OracleRollableIDWildcard]?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleColumnText2
@@ -3191,6 +3331,14 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class OracleColumnText3RecommendedRolls
+    attr_accessor max: Integer
+    attr_accessor min: Integer
+
+    def self.from_json_data: (untyped) -> OracleColumnText3RecommendedRolls
+    def to_json_data: () -> untyped
+  end
+
   class OracleColumnText3
     attr_accessor id: OracleRollableID
     attr_accessor dice: DiceExpression
@@ -3199,12 +3347,14 @@ module Datasworn
     attr_accessor rows: Array[OracleRollableRowText3]
     attr_accessor type: OracleColumnText3Type
     attr_accessor comment: String?
+    attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
+    attr_accessor recommended_rolls: OracleColumnText3RecommendedRolls?
     attr_accessor replaces: Array[OracleRollableIDWildcard]?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleColumnText3
@@ -3265,6 +3415,14 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class OracleRollableColumnTextRecommendedRolls
+    attr_accessor max: Integer
+    attr_accessor min: Integer
+
+    def self.from_json_data: (untyped) -> OracleRollableColumnTextRecommendedRolls
+    def to_json_data: () -> untyped
+  end
+
   class OracleRollableColumnText < OracleRollable
     attr_accessor id: OracleRollableID
     attr_accessor dice: DiceExpression
@@ -3272,12 +3430,14 @@ module Datasworn
     attr_accessor rows: Array[OracleRollableRowText]
     attr_accessor type: OracleRollableColumnTextType
     attr_accessor comment: String?
+    attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
+    attr_accessor recommended_rolls: OracleRollableColumnTextRecommendedRolls?
     attr_accessor replaces: Array[OracleRollableIDWildcard]?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleRollableColumnText
@@ -3293,6 +3453,14 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class OracleRollableColumnText2RecommendedRolls
+    attr_accessor max: Integer
+    attr_accessor min: Integer
+
+    def self.from_json_data: (untyped) -> OracleRollableColumnText2RecommendedRolls
+    def to_json_data: () -> untyped
+  end
+
   class OracleRollableColumnText2 < OracleRollable
     attr_accessor id: OracleRollableID
     attr_accessor dice: DiceExpression
@@ -3300,12 +3468,14 @@ module Datasworn
     attr_accessor rows: Array[OracleRollableRowText2]
     attr_accessor type: OracleRollableColumnText2Type
     attr_accessor comment: String?
+    attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
+    attr_accessor recommended_rolls: OracleRollableColumnText2RecommendedRolls?
     attr_accessor replaces: Array[OracleRollableIDWildcard]?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleRollableColumnText2
@@ -3321,6 +3491,14 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class OracleRollableColumnText3RecommendedRolls
+    attr_accessor max: Integer
+    attr_accessor min: Integer
+
+    def self.from_json_data: (untyped) -> OracleRollableColumnText3RecommendedRolls
+    def to_json_data: () -> untyped
+  end
+
   class OracleRollableColumnText3 < OracleRollable
     attr_accessor id: OracleRollableID
     attr_accessor dice: DiceExpression
@@ -3328,12 +3506,14 @@ module Datasworn
     attr_accessor rows: Array[OracleRollableRowText3]
     attr_accessor type: OracleRollableColumnText3Type
     attr_accessor comment: String?
+    attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
+    attr_accessor recommended_rolls: OracleRollableColumnText3RecommendedRolls?
     attr_accessor replaces: Array[OracleRollableIDWildcard]?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleRollableColumnText3
@@ -3375,13 +3555,13 @@ module Datasworn
     attr_accessor type: OracleRollableTableTextType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor description: MarkdownString?
+    attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
     attr_accessor recommended_rolls: OracleRollableTableTextRecommendedRolls?
     attr_accessor replaces: Array[OracleRollableIDWildcard]?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleRollableTableText
@@ -3424,13 +3604,13 @@ module Datasworn
     attr_accessor type: OracleRollableTableText2Type
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor description: MarkdownString?
+    attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
     attr_accessor recommended_rolls: OracleRollableTableText2RecommendedRolls?
     attr_accessor replaces: Array[OracleRollableIDWildcard]?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleRollableTableText2
@@ -3474,13 +3654,13 @@ module Datasworn
     attr_accessor type: OracleRollableTableText3Type
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor description: MarkdownString?
+    attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
     attr_accessor recommended_rolls: OracleRollableTableText3RecommendedRolls?
     attr_accessor replaces: Array[OracleRollableIDWildcard]?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleRollableTableText3
@@ -3566,157 +3746,157 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
-  class OracleTableRollable
+  class OracleRollableTable
     attr_accessor oracle_type: String
 
-    def self.from_json_data: (untyped) -> OracleTableRollable
+    def self.from_json_data: (untyped) -> OracleRollableTable
     def to_json_data: () -> untyped
   end
 
-  class OracleTableRollableTableTextColumnLabels
+  class OracleRollableTableTableTextColumnLabels
     attr_accessor roll: Label
     attr_accessor text: Label
 
-    def self.from_json_data: (untyped) -> OracleTableRollableTableTextColumnLabels
+    def self.from_json_data: (untyped) -> OracleRollableTableTableTextColumnLabels
     def to_json_data: () -> untyped
   end
 
-  class OracleTableRollableTableTextType
+  class OracleRollableTableTableTextType
     attr_accessor value: String
 
-    ORACLE_ROLLABLE: OracleTableRollableTableTextType
+    ORACLE_ROLLABLE: OracleRollableTableTableTextType
 
-    def self.from_json_data: (untyped) -> OracleTableRollableTableTextType
+    def self.from_json_data: (untyped) -> OracleRollableTableTableTextType
     def to_json_data: () -> untyped
   end
 
-  class OracleTableRollableTableTextRecommendedRolls
+  class OracleRollableTableTableTextRecommendedRolls
     attr_accessor max: Integer
     attr_accessor min: Integer
 
-    def self.from_json_data: (untyped) -> OracleTableRollableTableTextRecommendedRolls
+    def self.from_json_data: (untyped) -> OracleRollableTableTableTextRecommendedRolls
     def to_json_data: () -> untyped
   end
 
-  class OracleTableRollableTableText < OracleTableRollable
+  class OracleRollableTableTableText < OracleRollableTable
     attr_accessor id: OracleRollableID
     attr_accessor source: SourceInfo
-    attr_accessor column_labels: OracleTableRollableTableTextColumnLabels
+    attr_accessor column_labels: OracleRollableTableTableTextColumnLabels
     attr_accessor dice: DiceExpression
     attr_accessor name: Label
     attr_accessor rows: Array[OracleRollableRowText]
-    attr_accessor type: OracleTableRollableTableTextType
+    attr_accessor type: OracleRollableTableTableTextType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor description: MarkdownString?
+    attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
-    attr_accessor recommended_rolls: OracleTableRollableTableTextRecommendedRolls?
+    attr_accessor recommended_rolls: OracleRollableTableTableTextRecommendedRolls?
     attr_accessor replaces: Array[OracleRollableIDWildcard]?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
-    def self.from_json_data: (untyped) -> OracleTableRollableTableText
+    def self.from_json_data: (untyped) -> OracleRollableTableTableText
     def to_json_data: () -> untyped
   end
 
-  class OracleTableRollableTableText2ColumnLabels
+  class OracleRollableTableTableText2ColumnLabels
     attr_accessor roll: Label
     attr_accessor text: Label
     attr_accessor text2: Label
 
-    def self.from_json_data: (untyped) -> OracleTableRollableTableText2ColumnLabels
+    def self.from_json_data: (untyped) -> OracleRollableTableTableText2ColumnLabels
     def to_json_data: () -> untyped
   end
 
-  class OracleTableRollableTableText2Type
+  class OracleRollableTableTableText2Type
     attr_accessor value: String
 
-    ORACLE_ROLLABLE: OracleTableRollableTableText2Type
+    ORACLE_ROLLABLE: OracleRollableTableTableText2Type
 
-    def self.from_json_data: (untyped) -> OracleTableRollableTableText2Type
+    def self.from_json_data: (untyped) -> OracleRollableTableTableText2Type
     def to_json_data: () -> untyped
   end
 
-  class OracleTableRollableTableText2RecommendedRolls
+  class OracleRollableTableTableText2RecommendedRolls
     attr_accessor max: Integer
     attr_accessor min: Integer
 
-    def self.from_json_data: (untyped) -> OracleTableRollableTableText2RecommendedRolls
+    def self.from_json_data: (untyped) -> OracleRollableTableTableText2RecommendedRolls
     def to_json_data: () -> untyped
   end
 
-  class OracleTableRollableTableText2 < OracleTableRollable
+  class OracleRollableTableTableText2 < OracleRollableTable
     attr_accessor id: OracleRollableID
     attr_accessor source: SourceInfo
-    attr_accessor column_labels: OracleTableRollableTableText2ColumnLabels
+    attr_accessor column_labels: OracleRollableTableTableText2ColumnLabels
     attr_accessor dice: DiceExpression
     attr_accessor name: Label
     attr_accessor rows: Array[OracleRollableRowText2]
-    attr_accessor type: OracleTableRollableTableText2Type
+    attr_accessor type: OracleRollableTableTableText2Type
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor description: MarkdownString?
+    attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
-    attr_accessor recommended_rolls: OracleTableRollableTableText2RecommendedRolls?
+    attr_accessor recommended_rolls: OracleRollableTableTableText2RecommendedRolls?
     attr_accessor replaces: Array[OracleRollableIDWildcard]?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
-    def self.from_json_data: (untyped) -> OracleTableRollableTableText2
+    def self.from_json_data: (untyped) -> OracleRollableTableTableText2
     def to_json_data: () -> untyped
   end
 
-  class OracleTableRollableTableText3ColumnLabels
+  class OracleRollableTableTableText3ColumnLabels
     attr_accessor roll: Label
     attr_accessor text: Label
     attr_accessor text2: Label
     attr_accessor text3: Label
 
-    def self.from_json_data: (untyped) -> OracleTableRollableTableText3ColumnLabels
+    def self.from_json_data: (untyped) -> OracleRollableTableTableText3ColumnLabels
     def to_json_data: () -> untyped
   end
 
-  class OracleTableRollableTableText3Type
+  class OracleRollableTableTableText3Type
     attr_accessor value: String
 
-    ORACLE_ROLLABLE: OracleTableRollableTableText3Type
+    ORACLE_ROLLABLE: OracleRollableTableTableText3Type
 
-    def self.from_json_data: (untyped) -> OracleTableRollableTableText3Type
+    def self.from_json_data: (untyped) -> OracleRollableTableTableText3Type
     def to_json_data: () -> untyped
   end
 
-  class OracleTableRollableTableText3RecommendedRolls
+  class OracleRollableTableTableText3RecommendedRolls
     attr_accessor max: Integer
     attr_accessor min: Integer
 
-    def self.from_json_data: (untyped) -> OracleTableRollableTableText3RecommendedRolls
+    def self.from_json_data: (untyped) -> OracleRollableTableTableText3RecommendedRolls
     def to_json_data: () -> untyped
   end
 
-  class OracleTableRollableTableText3 < OracleTableRollable
+  class OracleRollableTableTableText3 < OracleRollableTable
     attr_accessor id: OracleRollableID
     attr_accessor source: SourceInfo
-    attr_accessor column_labels: OracleTableRollableTableText3ColumnLabels
+    attr_accessor column_labels: OracleRollableTableTableText3ColumnLabels
     attr_accessor dice: DiceExpression
     attr_accessor name: Label
     attr_accessor rows: Array[OracleRollableRowText3]
-    attr_accessor type: OracleTableRollableTableText3Type
+    attr_accessor type: OracleRollableTableTableText3Type
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor description: MarkdownString?
+    attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
-    attr_accessor recommended_rolls: OracleTableRollableTableText3RecommendedRolls?
+    attr_accessor recommended_rolls: OracleRollableTableTableText3RecommendedRolls?
     attr_accessor replaces: Array[OracleRollableIDWildcard]?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
-    def self.from_json_data: (untyped) -> OracleTableRollableTableText3
+    def self.from_json_data: (untyped) -> OracleRollableTableTableText3
     def to_json_data: () -> untyped
   end
 
@@ -3749,13 +3929,13 @@ module Datasworn
     attr_accessor id: OracleCollectionID
     attr_accessor source: SourceInfo
     attr_accessor column_labels: OracleTableSharedRollsColumnLabels
+    attr_accessor contents: Hash[String, OracleColumnText]
     attr_accessor name: Label
     attr_accessor oracle_type: OracleTableSharedRollsOracleType
     attr_accessor type: OracleTableSharedRollsType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
-    attr_accessor contents: Hash[String, OracleColumnText]?
     attr_accessor description: MarkdownString?
     attr_accessor enhances: Array[OracleCollectionIDWildcard]?
     attr_accessor icon: SvgImageURL?
@@ -3798,13 +3978,13 @@ module Datasworn
     attr_accessor id: OracleCollectionID
     attr_accessor source: SourceInfo
     attr_accessor column_labels: OracleTableSharedTextColumnLabels
+    attr_accessor contents: Hash[String, OracleColumnText]
     attr_accessor name: Label
     attr_accessor oracle_type: OracleTableSharedTextOracleType
     attr_accessor type: OracleTableSharedTextType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
-    attr_accessor contents: Hash[String, OracleColumnText]?
     attr_accessor description: MarkdownString?
     attr_accessor enhances: Array[OracleCollectionIDWildcard]?
     attr_accessor icon: SvgImageURL?
@@ -3848,13 +4028,13 @@ module Datasworn
     attr_accessor id: OracleCollectionID
     attr_accessor source: SourceInfo
     attr_accessor column_labels: OracleTableSharedText2ColumnLabels
+    attr_accessor contents: Hash[String, OracleColumnText2]
     attr_accessor name: Label
     attr_accessor oracle_type: OracleTableSharedText2OracleType
     attr_accessor type: OracleTableSharedText2Type
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
-    attr_accessor contents: Hash[String, OracleColumnText2]?
     attr_accessor description: MarkdownString?
     attr_accessor enhances: Array[OracleCollectionIDWildcard]?
     attr_accessor icon: SvgImageURL?
@@ -3865,13 +4045,6 @@ module Datasworn
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleTableSharedText2
-    def to_json_data: () -> untyped
-  end
-
-  class OracleTableSharedText3ColumnLabels
-    attr_accessor text: Label
-
-    def self.from_json_data: (untyped) -> OracleTableSharedText3ColumnLabels
     def to_json_data: () -> untyped
   end
 
@@ -3896,14 +4069,14 @@ module Datasworn
   class OracleTableSharedText3
     attr_accessor id: OracleCollectionID
     attr_accessor source: SourceInfo
-    attr_accessor column_labels: OracleTableSharedText3ColumnLabels
+    attr_accessor column_labels: untyped
+    attr_accessor contents: Hash[String, OracleColumnText3]
     attr_accessor name: Label
     attr_accessor oracle_type: OracleTableSharedText3OracleType
     attr_accessor type: OracleTableSharedText3Type
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
-    attr_accessor contents: Hash[String, OracleColumnText3]?
     attr_accessor description: MarkdownString?
     attr_accessor enhances: Array[OracleCollectionIDWildcard]?
     attr_accessor icon: SvgImageURL?
@@ -3962,13 +4135,13 @@ module Datasworn
     attr_accessor type: OracleTableTextType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor description: MarkdownString?
+    attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
     attr_accessor recommended_rolls: OracleTableTextRecommendedRolls?
     attr_accessor replaces: Array[OracleRollableIDWildcard]?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleTableText
@@ -4021,13 +4194,13 @@ module Datasworn
     attr_accessor type: OracleTableText2Type
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor description: MarkdownString?
+    attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
     attr_accessor recommended_rolls: OracleTableText2RecommendedRolls?
     attr_accessor replaces: Array[OracleRollableIDWildcard]?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleTableText2
@@ -4081,13 +4254,13 @@ module Datasworn
     attr_accessor type: OracleTableText3Type
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor description: MarkdownString?
+    attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
     attr_accessor match: OracleMatchBehavior?
     attr_accessor recommended_rolls: OracleTableText3RecommendedRolls?
     attr_accessor replaces: Array[OracleRollableIDWildcard]?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
 
     def self.from_json_data: (untyped) -> OracleTableText3
@@ -4115,14 +4288,14 @@ module Datasworn
   class OracleTablesCollection
     attr_accessor id: OracleCollectionID
     attr_accessor source: SourceInfo
+    attr_accessor collections: Hash[String, OracleCollection]
+    attr_accessor contents: Hash[String, OracleRollableTable]
     attr_accessor name: Label
     attr_accessor oracle_type: OracleTablesCollectionOracleType
     attr_accessor type: OracleTablesCollectionType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
-    attr_accessor collections: Hash[String, OracleCollection]?
     attr_accessor color: CSSColor?
-    attr_accessor contents: Hash[String, OracleTableRollable]?
     attr_accessor description: MarkdownString?
     attr_accessor enhances: Array[OracleCollectionIDWildcard]?
     attr_accessor icon: SvgImageURL?
@@ -4210,13 +4383,15 @@ module Datasworn
     attr_accessor id: RarityID
     attr_accessor source: SourceInfo
     attr_accessor asset: AssetID
-    attr_accessor description: MarkdownString
     attr_accessor name: Label
     attr_accessor type: RarityType
     attr_accessor xp_cost: Integer
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
+    attr_accessor replaces: Array[RarityIDWildcard]?
     attr_accessor suggestions: Suggestions?
     attr_accessor tags: Tags?
 
@@ -4316,6 +4491,13 @@ module Datasworn
     attr_accessor tags: Hash[String, TagRule]?
 
     def self.from_json_data: (untyped) -> RulesExpansion
+    def to_json_data: () -> untyped
+  end
+
+  class RulesPackageID
+    attr_accessor value: String
+
+    def self.from_json_data: (untyped) -> RulesPackageID
     def to_json_data: () -> untyped
   end
 
@@ -5112,10 +5294,12 @@ module Datasworn
     attr_accessor type: TruthType
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
+    attr_accessor color: CSSColor?
     attr_accessor factions: Array[EntityPrompt]?
     attr_accessor icon: SvgImageURL?
+    attr_accessor images: Array[WebpImageURL]?
+    attr_accessor replaces: Array[TruthIDWildcard]?
     attr_accessor suggestions: Suggestions?
-    attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
     attr_accessor your_character: MarkdownString?
 
@@ -5142,6 +5326,7 @@ module Datasworn
     attr_accessor description: MarkdownString
     attr_accessor quest_starter: MarkdownString
     attr_accessor roll: DiceRange
+    attr_accessor comment: String?
     attr_accessor oracles: Hash[String, EmbeddedOracleRollable]?
     attr_accessor summary: MarkdownString?
 

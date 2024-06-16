@@ -39,8 +39,24 @@ public class AtlasEntry {
     private Label canonicalName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("color")
+    private CssColor color;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("icon")
+    private SvgImageUrl icon;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("images")
+    private List<WebpImageUrl> images;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("quest_starter")
     private MarkdownString questStarter;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty("replaces")
+    private List<AtlasEntryIdWildcard> replaces;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("suggestions")
@@ -63,7 +79,7 @@ public class AtlasEntry {
 
     /**
      * Getter for id.<p>
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     public AtlasEntryId getId() {
         return id;
@@ -71,7 +87,7 @@ public class AtlasEntry {
 
     /**
      * Setter for id.<p>
-     * The unique Datasworn ID for this item.
+     * The unique Datasworn ID for this node.
      */
     public void setId(AtlasEntryId id) {
         this.id = id;
@@ -80,7 +96,7 @@ public class AtlasEntry {
     /**
      * Getter for source.<p>
      * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
+     * node, including the author and licensing information.
      */
     public SourceInfo getSource() {
         return source;
@@ -89,7 +105,7 @@ public class AtlasEntry {
     /**
      * Setter for source.<p>
      * Attribution for the original source (such as a book or website) of this
-     * item, including the author and licensing information.
+     * node, including the author and licensing information.
      */
     public void setSource(SourceInfo source) {
         this.source = source;
@@ -125,7 +141,6 @@ public class AtlasEntry {
 
     /**
      * Getter for name.<p>
-     * The primary name/label for this item.
      */
     public Label getName() {
         return name;
@@ -133,7 +148,6 @@ public class AtlasEntry {
 
     /**
      * Setter for name.<p>
-     * The primary name/label for this item.
      */
     public void setName(Label name) {
         this.name = name;
@@ -155,8 +169,8 @@ public class AtlasEntry {
 
     /**
      * Getter for comment.<p>
-     * Implementation hints or other developer-facing comments on this object.
-     * These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node.
+     * These should be omitted when presenting the node for gameplay.
      */
     public String getComment() {
         return comment;
@@ -164,8 +178,8 @@ public class AtlasEntry {
 
     /**
      * Setter for comment.<p>
-     * Implementation hints or other developer-facing comments on this object.
-     * These should be omitted when presenting the object for gameplay.
+     * Implementation hints or other developer-facing comments on this node.
+     * These should be omitted when presenting the node for gameplay.
      */
     public void setComment(String comment) {
         this.comment = comment;
@@ -173,7 +187,7 @@ public class AtlasEntry {
 
     /**
      * Getter for canonicalName.<p>
-     * The name of this item as it appears on the page in the book, if it's
+     * The name of this node as it appears on the page in the book, if it's
      * different from `name`.
      */
     public Label getCanonicalName() {
@@ -182,11 +196,57 @@ public class AtlasEntry {
 
     /**
      * Setter for canonicalName.<p>
-     * The name of this item as it appears on the page in the book, if it's
+     * The name of this node as it appears on the page in the book, if it's
      * different from `name`.
      */
     public void setCanonicalName(Label canonicalName) {
         this.canonicalName = canonicalName;
+    }
+
+    /**
+     * Getter for color.<p>
+     * A thematic color associated with this node.
+     */
+    public CssColor getColor() {
+        return color;
+    }
+
+    /**
+     * Setter for color.<p>
+     * A thematic color associated with this node.
+     */
+    public void setColor(CssColor color) {
+        this.color = color;
+    }
+
+    /**
+     * Getter for icon.<p>
+     * An SVG icon associated with this collection.
+     */
+    public SvgImageUrl getIcon() {
+        return icon;
+    }
+
+    /**
+     * Setter for icon.<p>
+     * An SVG icon associated with this collection.
+     */
+    public void setIcon(SvgImageUrl icon) {
+        this.icon = icon;
+    }
+
+    /**
+     * Getter for images.<p>
+     */
+    public List<WebpImageUrl> getImages() {
+        return images;
+    }
+
+    /**
+     * Setter for images.<p>
+     */
+    public void setImages(List<WebpImageUrl> images) {
+        this.images = images;
     }
 
     /**
@@ -201,6 +261,24 @@ public class AtlasEntry {
      */
     public void setQuestStarter(MarkdownString questStarter) {
         this.questStarter = questStarter;
+    }
+
+    /**
+     * Getter for replaces.<p>
+     * This node replaces all nodes that match these wildcards. References to
+     * the replaced nodes can be considered equivalent to this node.
+     */
+    public List<AtlasEntryIdWildcard> getReplaces() {
+        return replaces;
+    }
+
+    /**
+     * Setter for replaces.<p>
+     * This node replaces all nodes that match these wildcards. References to
+     * the replaced nodes can be considered equivalent to this node.
+     */
+    public void setReplaces(List<AtlasEntryIdWildcard> replaces) {
+        this.replaces = replaces;
     }
 
     /**

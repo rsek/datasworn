@@ -4,10 +4,6 @@ package Datasworn;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * A progress move that rolls on a standard progress track type (defined by
- * this move).
- */
 public enum MoveProgressRollRollType {
     @JsonProperty("progress_roll")
     PROGRESS_ROLL,

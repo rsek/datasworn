@@ -14,7 +14,7 @@ var CONST;
     CONST.WildcardString = '*';
     /** A globstar (recursive wildcard) representing any number of levels of in recursive collections. */
     CONST.GlobstarString = '**';
-    /** Key in RecursiveCollection that contains a dictionary object of child collections. */
+    /** Key in Collection that contains a dictionary object of child collections. */
     CONST.CollectionsKey = 'collections';
     /** Key in Collection that contains a dictionary object of collectable items. */
     CONST.ContentsKey = 'contents';

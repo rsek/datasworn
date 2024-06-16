@@ -128,12 +128,17 @@
 				"enum": ["small", "medium", "large", "vast"],
 				"array": false
 			}
-		}
+		},
+		"condition_meters": {},
+		"stats": {},
+		"impacts": {},
+		"special_tracks": {}
 	},
 	"oracles": {
 		"campaign": {
 			"name": "Campaign Oracles",
 			"type": "oracle_collection",
+			"oracle_type": "tables",
 			"_source": {
 				"date": "2024-06-11",
 				"title": "Sundered Isles",
@@ -642,6 +647,7 @@
 							"_id": "oracle_rollable:sundered_isles/campaign/faction_inspiration/cursed"
 						}
 					},
+					"collections": {},
 					"_id": "oracle_collection:sundered_isles/campaign/faction_inspiration"
 				},
 				"character": {
@@ -1584,6 +1590,7 @@
 							"_id": "oracle_rollable:sundered_isles/campaign/character/persona"
 						}
 					},
+					"collections": {},
 					"_id": "oracle_collection:sundered_isles/campaign/character"
 				},
 				"command": {
@@ -2249,6 +2256,7 @@
 							"_id": "oracle_rollable:sundered_isles/campaign/command/crew_cursed"
 						}
 					},
+					"collections": {},
 					"_id": "oracle_collection:sundered_isles/campaign/command"
 				},
 				"beasts": {
@@ -2842,6 +2850,7 @@
 							"_id": "oracle_rollable:sundered_isles/campaign/beasts/sky"
 						}
 					},
+					"collections": {},
 					"_id": "oracle_collection:sundered_isles/campaign/beasts"
 				},
 				"notable_locations": {
@@ -3360,10 +3369,11 @@
 							"_id": "oracle_rollable:sundered_isles/campaign/notable_locations/location_details_cursed"
 						}
 					},
+					"collections": {},
 					"_id": "oracle_collection:sundered_isles/campaign/notable_locations"
 				}
 			},
-			"oracle_type": "tables",
+			"contents": {},
 			"_id": "oracle_collection:sundered_isles/campaign"
 		},
 		"cave": {
@@ -4120,7 +4130,7 @@
 						]
 					},
 					"contents": {
-						"features": {
+						"feature": {
 							"name": "Sea Cave Features",
 							"type": "oracle_rollable",
 							"oracle_type": "table_text",
@@ -4131,7 +4141,7 @@
 							"tags": {
 								"sundered_isles": {
 									"location": "sea",
-									"cursed_by": "oracle_rollable:sundered_isles/cave/sea/features_cursed"
+									"cursed_by": "oracle_rollable:sundered_isles/cave/sea/feature_cursed"
 								}
 							},
 							"_source": {
@@ -4152,7 +4162,7 @@
 										"max": 1
 									},
 									"text": "Abandoned boat",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.0"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.0"
 								},
 								{
 									"roll": {
@@ -4160,7 +4170,7 @@
 										"max": 2
 									},
 									"text": "Abandoned waterside camp",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.1"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.1"
 								},
 								{
 									"roll": {
@@ -4168,7 +4178,7 @@
 										"max": 3
 									},
 									"text": "Ancient carvings or statues",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.2"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.2"
 								},
 								{
 									"roll": {
@@ -4176,7 +4186,7 @@
 										"max": 4
 									},
 									"text": "Bat colony",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.3"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.3"
 								},
 								{
 									"roll": {
@@ -4184,7 +4194,7 @@
 										"max": 5
 									},
 									"text": "Boat landing or dock",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.4"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.4"
 								},
 								{
 									"roll": {
@@ -4192,7 +4202,7 @@
 										"max": 6
 									},
 									"text": "Bobbing bottle with enclosed message",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.5"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.5"
 								},
 								{
 									"roll": {
@@ -4200,7 +4210,7 @@
 										"max": 7
 									},
 									"text": "Briny pool with dead coral",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.6"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.6"
 								},
 								{
 									"roll": {
@@ -4208,7 +4218,7 @@
 										"max": 8
 									},
 									"text": "Bubbling vents",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.7"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.7"
 								},
 								{
 									"roll": {
@@ -4216,7 +4226,7 @@
 										"max": 9
 									},
 									"text": "Carcass of a washed up sea creature",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.8"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.8"
 								},
 								{
 									"roll": {
@@ -4224,7 +4234,7 @@
 										"max": 10
 									},
 									"text": "Carved arch leading onwards",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.9"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.9"
 								},
 								{
 									"roll": {
@@ -4232,7 +4242,7 @@
 										"max": 11
 									},
 									"text": "Coral garden nurtured by shafts of light",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.10"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.10"
 								},
 								{
 									"roll": {
@@ -4240,7 +4250,7 @@
 										"max": 12
 									},
 									"text": "Curtains of falling water",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.11"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.11"
 								},
 								{
 									"roll": {
@@ -4248,7 +4258,7 @@
 										"max": 13
 									},
 									"text": "Darting schools of pale fish",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.12"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.12"
 								},
 								{
 									"roll": {
@@ -4256,7 +4266,7 @@
 										"max": 14
 									},
 									"text": "Deep, placid pool",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.13"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.13"
 								},
 								{
 									"roll": {
@@ -4264,7 +4274,7 @@
 										"max": 15
 									},
 									"text": "Dry alcove",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.14"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.14"
 								},
 								{
 									"roll": {
@@ -4272,7 +4282,7 @@
 										"max": 16
 									},
 									"text": "Dry tunnel above the tide",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.15"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.15"
 								},
 								{
 									"roll": {
@@ -4280,7 +4290,7 @@
 										"max": 17
 									},
 									"text": "Excavated or constructed waterway",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.16"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.16"
 								},
 								{
 									"roll": {
@@ -4288,7 +4298,7 @@
 										"max": 18
 									},
 									"text": "Flooded lava tube",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.17"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.17"
 								},
 								{
 									"roll": {
@@ -4296,7 +4306,7 @@
 										"max": 19
 									},
 									"text": "Flooded shaft or sinkhole",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.18"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.18"
 								},
 								{
 									"roll": {
@@ -4304,7 +4314,7 @@
 										"max": 20
 									},
 									"text": "Freshwater inlet",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.19"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.19"
 								},
 								{
 									"roll": {
@@ -4312,7 +4322,7 @@
 										"max": 21
 									},
 									"text": "Incessant dripping",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.20"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.20"
 								},
 								{
 									"roll": {
@@ -4320,7 +4330,7 @@
 										"max": 22
 									},
 									"text": "Jagged oyster beds",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.21"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.21"
 								},
 								{
 									"roll": {
@@ -4328,7 +4338,7 @@
 										"max": 23
 									},
 									"text": "Luminescent algae",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.22"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.22"
 								},
 								{
 									"roll": {
@@ -4336,7 +4346,7 @@
 										"max": 24
 									},
 									"text": "Luminescent jellyfish",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.23"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.23"
 								},
 								{
 									"roll": {
@@ -4344,7 +4354,7 @@
 										"max": 25
 									},
 									"text": "Luminescent water",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.24"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.24"
 								},
 								{
 									"roll": {
@@ -4352,7 +4362,7 @@
 										"max": 26
 									},
 									"text": "Message carved into wet stone",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.25"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.25"
 								},
 								{
 									"roll": {
@@ -4360,7 +4370,7 @@
 										"max": 27
 									},
 									"text": "Morass of rotting seaweed",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.26"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.26"
 								},
 								{
 									"roll": {
@@ -4368,7 +4378,7 @@
 										"max": 28
 									},
 									"text": "Mounds of fallen boulders",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.27"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.27"
 								},
 								{
 									"roll": {
@@ -4376,7 +4386,7 @@
 										"max": 29
 									},
 									"text": "Muddy waterway",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.28"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.28"
 								},
 								{
 									"roll": {
@@ -4384,7 +4394,7 @@
 										"max": 30
 									},
 									"text": "Overwhelming briny stench",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.29"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.29"
 								},
 								{
 									"roll": {
@@ -4392,7 +4402,7 @@
 										"max": 31
 									},
 									"text": "Piles of crushed shells",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.30"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.30"
 								},
 								{
 									"roll": {
@@ -4400,7 +4410,7 @@
 										"max": 32
 									},
 									"text": "Rock bridge",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.31"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.31"
 								},
 								{
 									"roll": {
@@ -4408,7 +4418,7 @@
 										"max": 33
 									},
 									"text": "Scattered, silt-covered bones",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.32"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.32"
 								},
 								{
 									"roll": {
@@ -4416,7 +4426,7 @@
 										"max": 34
 									},
 									"text": "Shadowy tentacles in dark water",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.33"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.33"
 								},
 								{
 									"roll": {
@@ -4424,7 +4434,7 @@
 										"max": 35
 									},
 									"text": "Sound of rushing water",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.34"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.34"
 								},
 								{
 									"roll": {
@@ -4432,7 +4442,7 @@
 										"max": 36
 									},
 									"text": "Sound of voices",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.35"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.35"
 								},
 								{
 									"roll": {
@@ -4440,7 +4450,7 @@
 										"max": 37
 									},
 									"text": "Steaming hot springs",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.36"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.36"
 								},
 								{
 									"roll": {
@@ -4448,7 +4458,7 @@
 										"max": 38
 									},
 									"text": "Triangular fin circling in deep water",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.37"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.37"
 								},
 								{
 									"roll": {
@@ -4456,7 +4466,7 @@
 										"max": 39
 									},
 									"text": "Wet tracks at water's edge",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.38"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.38"
 								},
 								{
 									"roll": {
@@ -4464,7 +4474,7 @@
 										"max": 41
 									},
 									"text": "Branching waterway",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.39"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.39"
 								},
 								{
 									"roll": {
@@ -4472,7 +4482,7 @@
 										"max": 43
 									},
 									"text": "Dam of waterborne debris",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.40"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.40"
 								},
 								{
 									"roll": {
@@ -4480,7 +4490,7 @@
 										"max": 45
 									},
 									"text": "Freshwater falls pouring from above",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.41"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.41"
 								},
 								{
 									"roll": {
@@ -4488,7 +4498,7 @@
 										"max": 47
 									},
 									"text": "Fully submerged passage",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.42"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.42"
 								},
 								{
 									"roll": {
@@ -4496,7 +4506,7 @@
 										"max": 49
 									},
 									"text": "Glimmer of metal in the water",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.43"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.43"
 								},
 								{
 									"roll": {
@@ -4504,7 +4514,7 @@
 										"max": 51
 									},
 									"text": "Hordes of scuttling crabs",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.44"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.44"
 								},
 								{
 									"roll": {
@@ -4512,7 +4522,7 @@
 										"max": 53
 									},
 									"text": "Idyllic pool with bountiful sea life",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.45"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.45"
 								},
 								{
 									"roll": {
@@ -4520,7 +4530,7 @@
 										"max": 55
 									},
 									"text": "Intricate lava formations",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.46"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.46"
 								},
 								{
 									"roll": {
@@ -4528,7 +4538,7 @@
 										"max": 57
 									},
 									"text": "Low-hanging rock formations",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.47"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.47"
 								},
 								{
 									"roll": {
@@ -4536,7 +4546,7 @@
 										"max": 59
 									},
 									"text": "Low-lying mist",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.48"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.48"
 								},
 								{
 									"roll": {
@@ -4544,7 +4554,7 @@
 										"max": 61
 									},
 									"text": "Massive, watery cavern",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.49"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.49"
 								},
 								{
 									"roll": {
@@ -4552,7 +4562,7 @@
 										"max": 63
 									},
 									"text": "Perfectly crystalline water",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.50"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.50"
 								},
 								{
 									"roll": {
@@ -4560,7 +4570,7 @@
 										"max": 65
 									},
 									"text": "Plunging series of terraced waterfalls",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.51"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.51"
 								},
 								{
 									"roll": {
@@ -4568,7 +4578,7 @@
 										"max": 67
 									},
 									"text": "Rocky island surrounded by water",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.52"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.52"
 								},
 								{
 									"roll": {
@@ -4576,7 +4586,7 @@
 										"max": 69
 									},
 									"text": "Shafts of natural light",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.53"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.53"
 								},
 								{
 									"roll": {
@@ -4584,7 +4594,7 @@
 										"max": 71
 									},
 									"text": "Shallow pools and algae-covered rocks",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.54"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.54"
 								},
 								{
 									"roll": {
@@ -4592,7 +4602,7 @@
 										"max": 73
 									},
 									"text": "Silt-clouded waters",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.55"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.55"
 								},
 								{
 									"roll": {
@@ -4600,7 +4610,7 @@
 										"max": 75
 									},
 									"text": "Skeletal corpse",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.56"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.56"
 								},
 								{
 									"roll": {
@@ -4608,7 +4618,7 @@
 										"max": 77
 									},
 									"text": "Sound of watery movement or splashes",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.57"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.57"
 								},
 								{
 									"roll": {
@@ -4616,7 +4626,7 @@
 										"max": 79
 									},
 									"text": "Stirrings of a large creature",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.58"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.58"
 								},
 								{
 									"roll": {
@@ -4624,7 +4634,7 @@
 										"max": 81
 									},
 									"text": "Surfaces encrusted with sea life",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.59"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.59"
 								},
 								{
 									"roll": {
@@ -4632,7 +4642,7 @@
 										"max": 83
 									},
 									"text": "Surging waterway",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.60"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.60"
 								},
 								{
 									"roll": {
@@ -4640,7 +4650,7 @@
 										"max": 85
 									},
 									"text": "Swirling whirlpool",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.61"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.61"
 								},
 								{
 									"roll": {
@@ -4648,7 +4658,7 @@
 										"max": 87
 									},
 									"text": "Tight squeeze through narrowing tunnel",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.62"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.62"
 								},
 								{
 									"roll": {
@@ -4656,7 +4666,7 @@
 										"max": 89
 									},
 									"text": "Waterlogged corpse",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.63"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.63"
 								},
 								{
 									"roll": {
@@ -4664,7 +4674,7 @@
 										"max": 91
 									},
 									"text": "Wrecked or sunken boat",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.64"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.64"
 								},
 								{
 									"roll": {
@@ -4681,7 +4691,7 @@
 											"duplicates": "reroll"
 										}
 									],
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.65"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.65"
 								},
 								{
 									"roll": {
@@ -4689,7 +4699,7 @@
 										"max": 95
 									},
 									"text": "Connection to an [Inland Cave](oracle_collection:sundered_isles/cave/inland_cave)",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.66"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.66"
 								},
 								{
 									"roll": {
@@ -4713,7 +4723,7 @@
 											"number_of_rolls": 1
 										}
 									],
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features.67"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature.67"
 								}
 							],
 							"dice": "1d100",
@@ -4721,9 +4731,9 @@
 								"roll": "Roll",
 								"text": "Result"
 							},
-							"_id": "oracle_rollable:sundered_isles/cave/sea/features"
+							"_id": "oracle_rollable:sundered_isles/cave/sea/feature"
 						},
-						"features_cursed": {
+						"feature_cursed": {
 							"name": "Sea Cave Cursed Features",
 							"type": "oracle_rollable",
 							"oracle_type": "table_text",
@@ -4731,7 +4741,7 @@
 								"sundered_isles": {
 									"location": "sea",
 									"cursed_version_of": [
-										"oracle_rollable:sundered_isles/cave/sea/features"
+										"oracle_rollable:sundered_isles/cave/sea/feature"
 									],
 									"curse_behavior": "replace_result"
 								}
@@ -4754,7 +4764,7 @@
 										"max": 5
 									},
 									"text": "Bewitching illusion",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features_cursed.0"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature_cursed.0"
 								},
 								{
 									"roll": {
@@ -4762,7 +4772,7 @@
 										"max": 10
 									},
 									"text": "Bloody water",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features_cursed.1"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature_cursed.1"
 								},
 								{
 									"roll": {
@@ -4770,7 +4780,7 @@
 										"max": 15
 									},
 									"text": "Bones of a colossal beast",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features_cursed.2"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature_cursed.2"
 								},
 								{
 									"roll": {
@@ -4778,7 +4788,7 @@
 										"max": 20
 									},
 									"text": "Corpses encrusted with sea life",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features_cursed.3"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature_cursed.3"
 								},
 								{
 									"roll": {
@@ -4786,7 +4796,7 @@
 										"max": 25
 									},
 									"text": "Creepy echoes",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features_cursed.4"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature_cursed.4"
 								},
 								{
 									"roll": {
@@ -4794,7 +4804,7 @@
 										"max": 30
 									},
 									"text": "Drowned corpses come to life",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features_cursed.5"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature_cursed.5"
 								},
 								{
 									"roll": {
@@ -4802,7 +4812,7 @@
 										"max": 35
 									},
 									"text": "Eldritch symbols",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features_cursed.6"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature_cursed.6"
 								},
 								{
 									"roll": {
@@ -4810,7 +4820,7 @@
 										"max": 40
 									},
 									"text": "Fouled water",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features_cursed.7"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature_cursed.7"
 								},
 								{
 									"roll": {
@@ -4818,7 +4828,7 @@
 										"max": 45
 									},
 									"text": "Frozen water",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features_cursed.8"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature_cursed.8"
 								},
 								{
 									"roll": {
@@ -4826,7 +4836,7 @@
 										"max": 50
 									},
 									"text": "Ghastly reflections in the water",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features_cursed.9"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature_cursed.9"
 								},
 								{
 									"roll": {
@@ -4834,7 +4844,7 @@
 										"max": 55
 									},
 									"text": "Impenetrable darkness",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features_cursed.10"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature_cursed.10"
 								},
 								{
 									"roll": {
@@ -4842,7 +4852,7 @@
 										"max": 60
 									},
 									"text": "Lights snuffed out",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features_cursed.11"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature_cursed.11"
 								},
 								{
 									"roll": {
@@ -4850,7 +4860,7 @@
 										"max": 65
 									},
 									"text": "Monstrous water-dwelling predator",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features_cursed.12"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature_cursed.12"
 								},
 								{
 									"roll": {
@@ -4858,7 +4868,7 @@
 										"max": 70
 									},
 									"text": "Rotting stench",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features_cursed.13"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature_cursed.13"
 								},
 								{
 									"roll": {
@@ -4866,7 +4876,7 @@
 										"max": 75
 									},
 									"text": "Sea creatures mutated by darkness",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features_cursed.14"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature_cursed.14"
 								},
 								{
 									"roll": {
@@ -4874,7 +4884,7 @@
 										"max": 80
 									},
 									"text": "Spectral manifestation",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features_cursed.15"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature_cursed.15"
 								},
 								{
 									"roll": {
@@ -4882,7 +4892,7 @@
 										"max": 85
 									},
 									"text": "Unnatural cold",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features_cursed.16"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature_cursed.16"
 								},
 								{
 									"roll": {
@@ -4890,7 +4900,7 @@
 										"max": 90
 									},
 									"text": "Unnaturally rising water",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features_cursed.17"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature_cursed.17"
 								},
 								{
 									"roll": {
@@ -4898,7 +4908,7 @@
 										"max": 95
 									},
 									"text": "Unseen entities grab hold",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features_cursed.18"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature_cursed.18"
 								},
 								{
 									"roll": {
@@ -4906,7 +4916,7 @@
 										"max": 100
 									},
 									"text": "Water above, stone below",
-									"_id": "oracle_rollable.row:sundered_isles/cave/sea/features_cursed.19"
+									"_id": "oracle_rollable.row:sundered_isles/cave/sea/feature_cursed.19"
 								}
 							],
 							"dice": "1d100",
@@ -4914,7 +4924,7 @@
 								"roll": "Roll",
 								"text": "Result"
 							},
-							"_id": "oracle_rollable:sundered_isles/cave/sea/features_cursed"
+							"_id": "oracle_rollable:sundered_isles/cave/sea/feature_cursed"
 						},
 						"peril": {
 							"name": "Sea Cave Peril",
@@ -5423,6 +5433,7 @@
 							"_id": "oracle_rollable:sundered_isles/cave/sea/heart"
 						}
 					},
+					"collections": {},
 					"_id": "oracle_collection:sundered_isles/cave/sea"
 				},
 				"inland_cave": {
@@ -5441,13 +5452,13 @@
 						]
 					},
 					"contents": {
-						"features": {
+						"feature": {
 							"name": "Inland Cave Features",
 							"type": "oracle_rollable",
 							"oracle_type": "table_text",
 							"tags": {
 								"sundered_isles": {
-									"cursed_by": "oracle_rollable:sundered_isles/cave/inland_cave/features_cursed",
+									"cursed_by": "oracle_rollable:sundered_isles/cave/inland_cave/feature_cursed",
 									"location": "inland"
 								}
 							},
@@ -5473,7 +5484,7 @@
 										"max": 1
 									},
 									"text": "Abandoned camp",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.0"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.0"
 								},
 								{
 									"roll": {
@@ -5481,7 +5492,7 @@
 										"max": 2
 									},
 									"text": "Abandoned mineworks",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.1"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.1"
 								},
 								{
 									"roll": {
@@ -5489,7 +5500,7 @@
 										"max": 3
 									},
 									"text": "Ancient carvings or statues",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.2"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.2"
 								},
 								{
 									"roll": {
@@ -5497,7 +5508,7 @@
 										"max": 4
 									},
 									"text": "Ancient cave paintings",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.3"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.3"
 								},
 								{
 									"roll": {
@@ -5505,7 +5516,7 @@
 										"max": 5
 									},
 									"text": "Blind rodents",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.4"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.4"
 								},
 								{
 									"roll": {
@@ -5513,7 +5524,7 @@
 										"max": 6
 									},
 									"text": "Cairn-marked grave",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.5"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.5"
 								},
 								{
 									"roll": {
@@ -5521,7 +5532,7 @@
 										"max": 7
 									},
 									"text": "Carpet of crushed bone",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.6"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.6"
 								},
 								{
 									"roll": {
@@ -5529,7 +5540,7 @@
 										"max": 8
 									},
 									"text": "Chiseled stairway",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.7"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.7"
 								},
 								{
 									"roll": {
@@ -5537,7 +5548,7 @@
 										"max": 9
 									},
 									"text": "Churning magma pools",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.8"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.8"
 								},
 								{
 									"roll": {
@@ -5545,7 +5556,7 @@
 										"max": 10
 									},
 									"text": "Clouds of ash or dust",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.9"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.9"
 								},
 								{
 									"roll": {
@@ -5553,7 +5564,7 @@
 										"max": 11
 									},
 									"text": "Constructed bridge",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.10"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.10"
 								},
 								{
 									"roll": {
@@ -5561,7 +5572,7 @@
 										"max": 12
 									},
 									"text": "Crystalline formations",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.11"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.11"
 								},
 								{
 									"roll": {
@@ -5569,7 +5580,7 @@
 										"max": 13
 									},
 									"text": "Dangling ladder or rope",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.12"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.12"
 								},
 								{
 									"roll": {
@@ -5577,7 +5588,7 @@
 										"max": 14
 									},
 									"text": "Excavated chamber",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.13"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.13"
 								},
 								{
 									"roll": {
@@ -5585,7 +5596,7 @@
 										"max": 15
 									},
 									"text": "Excavated tunnel",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.14"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.14"
 								},
 								{
 									"roll": {
@@ -5593,7 +5604,7 @@
 										"max": 16
 									},
 									"text": "Fossilized bones",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.15"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.15"
 								},
 								{
 									"roll": {
@@ -5601,7 +5612,7 @@
 										"max": 17
 									},
 									"text": "Fungi forest",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.16"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.16"
 								},
 								{
 									"roll": {
@@ -5609,7 +5620,7 @@
 										"max": 18
 									},
 									"text": "Glassy lava tube",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.17"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.17"
 								},
 								{
 									"roll": {
@@ -5617,7 +5628,7 @@
 										"max": 19
 									},
 									"text": "Humid, dripping environment",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.18"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.18"
 								},
 								{
 									"roll": {
@@ -5625,7 +5636,7 @@
 										"max": 20
 									},
 									"text": "Magma lake",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.19"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.19"
 								},
 								{
 									"roll": {
@@ -5633,7 +5644,7 @@
 										"max": 21
 									},
 									"text": "Magma river",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.20"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.20"
 								},
 								{
 									"roll": {
@@ -5641,7 +5652,7 @@
 										"max": 22
 									},
 									"text": "Maze of intersecting passages",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.21"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.21"
 								},
 								{
 									"roll": {
@@ -5649,7 +5660,7 @@
 										"max": 23
 									},
 									"text": "Message carved or scrawled on stone",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.22"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.22"
 								},
 								{
 									"roll": {
@@ -5657,7 +5668,7 @@
 										"max": 24
 									},
 									"text": "Multilevel cavern",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.23"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.23"
 								},
 								{
 									"roll": {
@@ -5665,7 +5676,7 @@
 										"max": 25
 									},
 									"text": "Mummified corpse",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.24"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.24"
 								},
 								{
 									"roll": {
@@ -5673,7 +5684,7 @@
 										"max": 26
 									},
 									"text": "Narrow ledge over a chasm",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.25"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.25"
 								},
 								{
 									"roll": {
@@ -5681,7 +5692,7 @@
 										"max": 27
 									},
 									"text": "Natural bridge",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.26"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.26"
 								},
 								{
 									"roll": {
@@ -5689,7 +5700,7 @@
 										"max": 28
 									},
 									"text": "Perfectly geometric columns",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.27"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.27"
 								},
 								{
 									"roll": {
@@ -5697,7 +5708,7 @@
 										"max": 29
 									},
 									"text": "Pile of bones and offal",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.28"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.28"
 								},
 								{
 									"roll": {
@@ -5705,7 +5716,7 @@
 										"max": 30
 									},
 									"text": "Rush of hot air",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.29"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.29"
 								},
 								{
 									"roll": {
@@ -5713,7 +5724,7 @@
 										"max": 31
 									},
 									"text": "Smoking fissures",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.30"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.30"
 								},
 								{
 									"roll": {
@@ -5721,7 +5732,7 @@
 										"max": 32
 									},
 									"text": "Sound of heavy movement",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.31"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.31"
 								},
 								{
 									"roll": {
@@ -5729,7 +5740,7 @@
 										"max": 33
 									},
 									"text": "Sound of voices",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.32"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.32"
 								},
 								{
 									"roll": {
@@ -5737,7 +5748,7 @@
 										"max": 34
 									},
 									"text": "Surfaces covered in flourishing fungi",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.33"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.33"
 								},
 								{
 									"roll": {
@@ -5745,7 +5756,7 @@
 										"max": 35
 									},
 									"text": "Surfaces honeycombed with holes",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.34"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.34"
 								},
 								{
 									"roll": {
@@ -5753,7 +5764,7 @@
 										"max": 36
 									},
 									"text": "Tracks through dust or muck",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.35"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.35"
 								},
 								{
 									"roll": {
@@ -5761,7 +5772,7 @@
 										"max": 37
 									},
 									"text": "Trail of scattered coins",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.36"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.36"
 								},
 								{
 									"roll": {
@@ -5769,7 +5780,7 @@
 										"max": 38
 									},
 									"text": "Underground lake with isolated island",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.37"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.37"
 								},
 								{
 									"roll": {
@@ -5777,7 +5788,7 @@
 										"max": 39
 									},
 									"text": "Veins of ore",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.38"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.38"
 								},
 								{
 									"roll": {
@@ -5785,7 +5796,7 @@
 										"max": 41
 									},
 									"text": "Bat colony",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.39"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.39"
 								},
 								{
 									"roll": {
@@ -5793,7 +5804,7 @@
 										"max": 43
 									},
 									"text": "Boiling mud pits",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.40"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.40"
 								},
 								{
 									"roll": {
@@ -5801,7 +5812,7 @@
 										"max": 45
 									},
 									"text": "Carpet of lichen",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.41"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.41"
 								},
 								{
 									"roll": {
@@ -5809,7 +5820,7 @@
 										"max": 47
 									},
 									"text": "Clinging webs",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.42"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.42"
 								},
 								{
 									"roll": {
@@ -5817,7 +5828,7 @@
 										"max": 49
 									},
 									"text": "Collapsed rubble",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.43"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.43"
 								},
 								{
 									"roll": {
@@ -5825,7 +5836,7 @@
 										"max": 51
 									},
 									"text": "Crawling-height tunnel",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.44"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.44"
 								},
 								{
 									"roll": {
@@ -5833,7 +5844,7 @@
 										"max": 53
 									},
 									"text": "Curtains of dangling roots or vines",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.45"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.45"
 								},
 								{
 									"roll": {
@@ -5841,7 +5852,7 @@
 										"max": 55
 									},
 									"text": "Domed cavern",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.46"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.46"
 								},
 								{
 									"roll": {
@@ -5849,7 +5860,7 @@
 										"max": 57
 									},
 									"text": "Earth-shaking tremor",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.47"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.47"
 								},
 								{
 									"roll": {
@@ -5857,7 +5868,7 @@
 										"max": 59
 									},
 									"text": "Elaborate stone formations",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.48"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.48"
 								},
 								{
 									"roll": {
@@ -5865,7 +5876,7 @@
 										"max": 61
 									},
 									"text": "Flooded shaft or sinkhole",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.49"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.49"
 								},
 								{
 									"roll": {
@@ -5873,7 +5884,7 @@
 										"max": 63
 									},
 									"text": "Flooded tunnel",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.50"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.50"
 								},
 								{
 									"roll": {
@@ -5881,7 +5892,7 @@
 										"max": 65
 									},
 									"text": "Labyrinth of stone formations",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.51"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.51"
 								},
 								{
 									"roll": {
@@ -5889,7 +5900,7 @@
 										"max": 67
 									},
 									"text": "Luminescent fungi",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.52"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.52"
 								},
 								{
 									"roll": {
@@ -5897,7 +5908,7 @@
 										"max": 69
 									},
 									"text": "Massive, cathedral-like cavern",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.53"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.53"
 								},
 								{
 									"roll": {
@@ -5905,7 +5916,7 @@
 										"max": 71
 									},
 									"text": "Moldering corpse",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.54"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.54"
 								},
 								{
 									"roll": {
@@ -5913,7 +5924,7 @@
 										"max": 73
 									},
 									"text": "Plunging shaft leading downwards",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.55"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.55"
 								},
 								{
 									"roll": {
@@ -5921,7 +5932,7 @@
 										"max": 75
 									},
 									"text": "Shafts of natural light",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.56"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.56"
 								},
 								{
 									"roll": {
@@ -5929,7 +5940,7 @@
 										"max": 77
 									},
 									"text": "Skeletal corpse",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.57"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.57"
 								},
 								{
 									"roll": {
@@ -5937,7 +5948,7 @@
 										"max": 79
 									},
 									"text": "Steaming hot springs",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.58"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.58"
 								},
 								{
 									"roll": {
@@ -5945,7 +5956,7 @@
 										"max": 81
 									},
 									"text": "Steep escarpment",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.59"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.59"
 								},
 								{
 									"roll": {
@@ -5953,7 +5964,7 @@
 										"max": 83
 									},
 									"text": "Thundering waterfall",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.60"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.60"
 								},
 								{
 									"roll": {
@@ -5961,7 +5972,7 @@
 										"max": 85
 									},
 									"text": "Tight squeeze",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.61"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.61"
 								},
 								{
 									"roll": {
@@ -5969,7 +5980,7 @@
 										"max": 87
 									},
 									"text": "Trail or splashes of blood",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.62"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.62"
 								},
 								{
 									"roll": {
@@ -5977,7 +5988,7 @@
 										"max": 89
 									},
 									"text": "Underground lake",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.63"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.63"
 								},
 								{
 									"roll": {
@@ -5985,7 +5996,7 @@
 										"max": 91
 									},
 									"text": "Underground river",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.64"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.64"
 								},
 								{
 									"roll": {
@@ -5993,7 +6004,7 @@
 										"max": 93
 									},
 									"text": "Vertical chimney leading upward",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.65"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.65"
 								},
 								{
 									"roll": {
@@ -6010,7 +6021,7 @@
 											"duplicates": "reroll"
 										}
 									],
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.66"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.66"
 								},
 								{
 									"roll": {
@@ -6034,7 +6045,7 @@
 											"number_of_rolls": 1
 										}
 									],
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features.67"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature.67"
 								}
 							],
 							"dice": "1d100",
@@ -6042,9 +6053,9 @@
 								"roll": "Roll",
 								"text": "Result"
 							},
-							"_id": "oracle_rollable:sundered_isles/cave/inland_cave/features"
+							"_id": "oracle_rollable:sundered_isles/cave/inland_cave/feature"
 						},
-						"features_cursed": {
+						"feature_cursed": {
 							"name": "Inland Cave Cursed Features",
 							"type": "oracle_rollable",
 							"oracle_type": "table_text",
@@ -6052,7 +6063,7 @@
 								"sundered_isles": {
 									"location": "inland",
 									"cursed_version_of": [
-										"oracle_rollable:sundered_isles/cave/inland_cave/features_cursed"
+										"oracle_rollable:sundered_isles/cave/inland_cave/feature_cursed"
 									],
 									"curse_behavior": "replace_result"
 								}
@@ -6075,7 +6086,7 @@
 										"max": 5
 									},
 									"text": "Bewitching illusion",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features_cursed.0"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature_cursed.0"
 								},
 								{
 									"roll": {
@@ -6083,7 +6094,7 @@
 										"max": 10
 									},
 									"text": "Bones of a colossal beast",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features_cursed.1"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature_cursed.1"
 								},
 								{
 									"roll": {
@@ -6091,7 +6102,7 @@
 										"max": 15
 									},
 									"text": "Corpses come to life",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features_cursed.2"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature_cursed.2"
 								},
 								{
 									"roll": {
@@ -6099,7 +6110,7 @@
 										"max": 20
 									},
 									"text": "Corpses entombed within stone",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features_cursed.3"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature_cursed.3"
 								},
 								{
 									"roll": {
@@ -6107,7 +6118,7 @@
 										"max": 25
 									},
 									"text": "Creepy echoes",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features_cursed.4"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature_cursed.4"
 								},
 								{
 									"roll": {
@@ -6115,7 +6126,7 @@
 										"max": 30
 									},
 									"text": "Eldritch shrine or monument",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features_cursed.5"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature_cursed.5"
 								},
 								{
 									"roll": {
@@ -6123,7 +6134,7 @@
 										"max": 35
 									},
 									"text": "Impenetrable darkness",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features_cursed.6"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature_cursed.6"
 								},
 								{
 									"roll": {
@@ -6131,7 +6142,7 @@
 										"max": 40
 									},
 									"text": "Lights snuffed out",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features_cursed.7"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature_cursed.7"
 								},
 								{
 									"roll": {
@@ -6139,7 +6150,7 @@
 										"max": 45
 									},
 									"text": "Monstrous predator",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features_cursed.8"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature_cursed.8"
 								},
 								{
 									"roll": {
@@ -6147,7 +6158,7 @@
 										"max": 50
 									},
 									"text": "Oversized eggs",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features_cursed.9"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature_cursed.9"
 								},
 								{
 									"roll": {
@@ -6155,7 +6166,7 @@
 										"max": 55
 									},
 									"text": "Passage carved by a burrowing beast",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features_cursed.10"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature_cursed.10"
 								},
 								{
 									"roll": {
@@ -6163,7 +6174,7 @@
 										"max": 60
 									},
 									"text": "Rotting stench",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features_cursed.11"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature_cursed.11"
 								},
 								{
 									"roll": {
@@ -6171,7 +6182,7 @@
 										"max": 65
 									},
 									"text": "Spectral manifestation",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features_cursed.12"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature_cursed.12"
 								},
 								{
 									"roll": {
@@ -6179,7 +6190,7 @@
 										"max": 70
 									},
 									"text": "Surfaces covered by cyst-like growths",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features_cursed.13"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature_cursed.13"
 								},
 								{
 									"roll": {
@@ -6187,7 +6198,7 @@
 										"max": 75
 									},
 									"text": "Trail of ooze",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features_cursed.14"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature_cursed.14"
 								},
 								{
 									"roll": {
@@ -6195,7 +6206,7 @@
 										"max": 80
 									},
 									"text": "Unnatural cold",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features_cursed.15"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature_cursed.15"
 								},
 								{
 									"roll": {
@@ -6203,7 +6214,7 @@
 										"max": 85
 									},
 									"text": "Unnaturally aggressive creatures",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features_cursed.16"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature_cursed.16"
 								},
 								{
 									"roll": {
@@ -6211,7 +6222,7 @@
 										"max": 90
 									},
 									"text": "Unnaturally thick webbing",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features_cursed.17"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature_cursed.17"
 								},
 								{
 									"roll": {
@@ -6219,7 +6230,7 @@
 										"max": 95
 									},
 									"text": "Unnerving howls or roars",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features_cursed.18"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature_cursed.18"
 								},
 								{
 									"roll": {
@@ -6227,7 +6238,7 @@
 										"max": 100
 									},
 									"text": "Webbed or cocooned corpses",
-									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/features_cursed.19"
+									"_id": "oracle_rollable.row:sundered_isles/cave/inland_cave/feature_cursed.19"
 								}
 							],
 							"dice": "1d100",
@@ -6235,7 +6246,7 @@
 								"roll": "Roll",
 								"text": "Result"
 							},
-							"_id": "oracle_rollable:sundered_isles/cave/inland_cave/features_cursed"
+							"_id": "oracle_rollable:sundered_isles/cave/inland_cave/feature_cursed"
 						},
 						"peril": {
 							"name": "Inland Cave Peril",
@@ -6735,6 +6746,7 @@
 							"_id": "oracle_rollable:sundered_isles/cave/inland_cave/heart"
 						}
 					},
+					"collections": {},
 					"_id": "oracle_collection:sundered_isles/cave/inland_cave"
 				}
 			},
@@ -11381,6 +11393,7 @@
 							"_id": "oracle_rollable:sundered_isles/character/role_details/tradesperson"
 						}
 					},
+					"collections": {},
 					"_id": "oracle_collection:sundered_isles/character/role_details"
 				},
 				"name": {
@@ -16471,6 +16484,7 @@
 									"_id": "oracle_rollable:sundered_isles/character/name/moniker_cursed/mechanical_form"
 								}
 							},
+							"collections": {},
 							"_id": "oracle_collection:sundered_isles/character/name/moniker_cursed"
 						}
 					},
@@ -19797,6 +19811,7 @@
 					"_id": "oracle_rollable:sundered_isles/core/focus"
 				}
 			},
+			"collections": {},
 			"_id": "oracle_collection:sundered_isles/core"
 		},
 		"faction": {
@@ -21324,6 +21339,7 @@
 							"_id": "oracle_rollable:sundered_isles/faction/society/touchstones"
 						}
 					},
+					"collections": {},
 					"_id": "oracle_collection:sundered_isles/faction/society"
 				},
 				"organization": {
@@ -22007,6 +22023,7 @@
 							"_id": "oracle_rollable:sundered_isles/faction/organization/secrets"
 						}
 					},
+					"collections": {},
 					"_id": "oracle_collection:sundered_isles/faction/organization"
 				},
 				"empire": {
@@ -22612,6 +22629,7 @@
 							"_id": "oracle_rollable:sundered_isles/faction/empire/vulnerabilities"
 						}
 					},
+					"collections": {},
 					"_id": "oracle_collection:sundered_isles/faction/empire"
 				},
 				"cursed": {
@@ -23079,6 +23097,7 @@
 							"_id": "oracle_rollable:sundered_isles/faction/cursed/aspects"
 						}
 					},
+					"collections": {},
 					"_id": "oracle_collection:sundered_isles/faction/cursed"
 				},
 				"name": {
@@ -34955,6 +34974,7 @@
 							"_id": "oracle_rollable:sundered_isles/overland/region_landmarks/cursed"
 						}
 					},
+					"collections": {},
 					"_id": "oracle_collection:sundered_isles/overland/region_landmarks"
 				}
 			},
@@ -38859,7 +38879,7 @@
 					},
 					"_id": "oracle_rollable:sundered_isles/ruin/cipher_cursed"
 				},
-				"features": {
+				"feature": {
 					"name": "Ruin Features",
 					"type": "oracle_rollable",
 					"oracle_type": "table_text",
@@ -38869,7 +38889,7 @@
 					},
 					"tags": {
 						"sundered_isles": {
-							"cursed_by": "oracle_rollable:sundered_isles/ruin/features_cursed"
+							"cursed_by": "oracle_rollable:sundered_isles/ruin/feature_cursed"
 						}
 					},
 					"_source": {
@@ -38890,7 +38910,7 @@
 								"max": 1
 							},
 							"text": "Alchemical experiments or supplies",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.0"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.0"
 						},
 						{
 							"roll": {
@@ -38898,7 +38918,7 @@
 								"max": 2
 							},
 							"text": "Amphitheater or arena",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.1"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.1"
 						},
 						{
 							"roll": {
@@ -38906,7 +38926,7 @@
 								"max": 3
 							},
 							"text": "Balcony or overlook",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.2"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.2"
 						},
 						{
 							"roll": {
@@ -38914,7 +38934,7 @@
 								"max": 4
 							},
 							"text": "Banquet hall",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.3"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.3"
 						},
 						{
 							"roll": {
@@ -38922,7 +38942,7 @@
 								"max": 5
 							},
 							"text": "Barricaded or blocked path",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.4"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.4"
 						},
 						{
 							"roll": {
@@ -38930,7 +38950,7 @@
 								"max": 6
 							},
 							"text": "Blood trail",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.5"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.5"
 						},
 						{
 							"roll": {
@@ -38938,7 +38958,7 @@
 								"max": 7
 							},
 							"text": "Breached doorway or gate",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.6"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.6"
 						},
 						{
 							"roll": {
@@ -38946,7 +38966,7 @@
 								"max": 8
 							},
 							"text": "Bridge or elevated path",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.7"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.7"
 						},
 						{
 							"roll": {
@@ -38954,7 +38974,7 @@
 								"max": 9
 							},
 							"text": "Broken machinery",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.8"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.8"
 						},
 						{
 							"roll": {
@@ -38962,7 +38982,7 @@
 								"max": 10
 							},
 							"text": "Broken statues",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.9"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.9"
 						},
 						{
 							"roll": {
@@ -38970,7 +38990,7 @@
 								"max": 11
 							},
 							"text": "Burial chamber",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.10"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.10"
 						},
 						{
 							"roll": {
@@ -38978,7 +38998,7 @@
 								"max": 12
 							},
 							"text": "Carcass of an invasive creature",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.11"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.11"
 						},
 						{
 							"roll": {
@@ -38986,7 +39006,7 @@
 								"max": 13
 							},
 							"text": "Chamber of unusual material and form",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.12"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.12"
 						},
 						{
 							"roll": {
@@ -38994,7 +39014,7 @@
 								"max": 14
 							},
 							"text": "Chamber reclaimed by nature",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.13"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.13"
 						},
 						{
 							"roll": {
@@ -39002,7 +39022,7 @@
 								"max": 15
 							},
 							"text": "Claw marks",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.14"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.14"
 						},
 						{
 							"roll": {
@@ -39010,7 +39030,7 @@
 								"max": 16
 							},
 							"text": "Clinging webs",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.15"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.15"
 						},
 						{
 							"roll": {
@@ -39018,7 +39038,7 @@
 								"max": 17
 							},
 							"text": "Cluttered workshop",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.16"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.16"
 						},
 						{
 							"roll": {
@@ -39026,7 +39046,7 @@
 								"max": 18
 							},
 							"text": "Collapsed architecture",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.17"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.17"
 						},
 						{
 							"roll": {
@@ -39034,7 +39054,7 @@
 								"max": 19
 							},
 							"text": "Colony of infesting creatures",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.18"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.18"
 						},
 						{
 							"roll": {
@@ -39042,7 +39062,7 @@
 								"max": 20
 							},
 							"text": "Concealed mechanism or trap",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.19"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.19"
 						},
 						{
 							"roll": {
@@ -39050,7 +39070,7 @@
 								"max": 21
 							},
 							"text": "Crumbling architecture",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.20"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.20"
 						},
 						{
 							"roll": {
@@ -39058,7 +39078,7 @@
 								"max": 22
 							},
 							"text": "Deep well or pit",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.21"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.21"
 						},
 						{
 							"roll": {
@@ -39066,7 +39086,7 @@
 								"max": 23
 							},
 							"text": "Dormant smithy or forge",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.22"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.22"
 						},
 						{
 							"roll": {
@@ -39074,7 +39094,7 @@
 								"max": 24
 							},
 							"text": "Dried-up pool or fountain",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.23"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.23"
 						},
 						{
 							"roll": {
@@ -39082,7 +39102,7 @@
 								"max": 25
 							},
 							"text": "Dripping water",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.24"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.24"
 						},
 						{
 							"roll": {
@@ -39090,7 +39110,7 @@
 								"max": 26
 							},
 							"text": "Dusty or murky air",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.25"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.25"
 						},
 						{
 							"roll": {
@@ -39098,7 +39118,7 @@
 								"max": 27
 							},
 							"text": "Echoing noises",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.26"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.26"
 						},
 						{
 							"roll": {
@@ -39106,7 +39126,7 @@
 								"max": 28
 							},
 							"text": "Elaborate puzzle or cryptic device",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.27"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.27"
 						},
 						{
 							"roll": {
@@ -39114,7 +39134,7 @@
 								"max": 29
 							},
 							"text": "Elaborate stained glass or mosaics",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.28"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.28"
 						},
 						{
 							"roll": {
@@ -39122,7 +39142,7 @@
 								"max": 30
 							},
 							"text": "Evidence of past skirmishes",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.29"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.29"
 						},
 						{
 							"roll": {
@@ -39130,7 +39150,7 @@
 								"max": 31
 							},
 							"text": "Expansive courtyard",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.30"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.30"
 						},
 						{
 							"roll": {
@@ -39138,7 +39158,7 @@
 								"max": 32
 							},
 							"text": "Faded banners or flags",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.31"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.31"
 						},
 						{
 							"roll": {
@@ -39146,7 +39166,7 @@
 								"max": 33
 							},
 							"text": "Faded murals",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.32"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.32"
 						},
 						{
 							"roll": {
@@ -39154,7 +39174,7 @@
 								"max": 34
 							},
 							"text": "Faint sounds of footsteps or movement",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.33"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.33"
 						},
 						{
 							"roll": {
@@ -39162,7 +39182,7 @@
 								"max": 35
 							},
 							"text": "Flooded chamber or passage",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.34"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.34"
 						},
 						{
 							"roll": {
@@ -39170,7 +39190,7 @@
 								"max": 36
 							},
 							"text": "Fortification or strongpoint",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.35"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.35"
 						},
 						{
 							"roll": {
@@ -39178,7 +39198,7 @@
 								"max": 37
 							},
 							"text": "Foul stench",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.36"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.36"
 						},
 						{
 							"roll": {
@@ -39186,7 +39206,7 @@
 								"max": 38
 							},
 							"text": "Grand or palatial living chamber",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.37"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.37"
 						},
 						{
 							"roll": {
@@ -39194,7 +39214,7 @@
 								"max": 39
 							},
 							"text": "Great hall or ballroom",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.38"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.38"
 						},
 						{
 							"roll": {
@@ -39202,7 +39222,7 @@
 								"max": 40
 							},
 							"text": "Hidden compartment",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.39"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.39"
 						},
 						{
 							"roll": {
@@ -39210,7 +39230,7 @@
 								"max": 41
 							},
 							"text": "Hidden passage or chamber",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.40"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.40"
 						},
 						{
 							"roll": {
@@ -39218,7 +39238,7 @@
 								"max": 42
 							},
 							"text": "Imposing statues or idols",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.41"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.41"
 						},
 						{
 							"roll": {
@@ -39226,7 +39246,7 @@
 								"max": 43
 							},
 							"text": "Improvised memorial",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.42"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.42"
 						},
 						{
 							"roll": {
@@ -39234,7 +39254,7 @@
 								"max": 44
 							},
 							"text": "Insect nests or swarms",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.43"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.43"
 						},
 						{
 							"roll": {
@@ -39242,7 +39262,7 @@
 								"max": 45
 							},
 							"text": "Intact stairway",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.44"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.44"
 						},
 						{
 							"roll": {
@@ -39250,7 +39270,7 @@
 								"max": 46
 							},
 							"text": "Intricate symbols or pictographs",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.45"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.45"
 						},
 						{
 							"roll": {
@@ -39258,7 +39278,7 @@
 								"max": 47
 							},
 							"text": "Invasive roots or tree limbs",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.46"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.46"
 						},
 						{
 							"roll": {
@@ -39266,7 +39286,7 @@
 								"max": 48
 							},
 							"text": "Lair of a creature",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.47"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.47"
 						},
 						{
 							"roll": {
@@ -39274,7 +39294,7 @@
 								"max": 49
 							},
 							"text": "Library or archive",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.48"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.48"
 						},
 						{
 							"roll": {
@@ -39282,7 +39302,7 @@
 								"max": 50
 							},
 							"text": "Makeshift defenses",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.49"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.49"
 						},
 						{
 							"roll": {
@@ -39290,7 +39310,7 @@
 								"max": 51
 							},
 							"text": "Makeshift shelter",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.50"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.50"
 						},
 						{
 							"roll": {
@@ -39298,7 +39318,7 @@
 								"max": 52
 							},
 							"text": "Mechanical whirring",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.51"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.51"
 						},
 						{
 							"roll": {
@@ -39306,7 +39326,7 @@
 								"max": 53
 							},
 							"text": "Moldering tapestries",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.52"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.52"
 						},
 						{
 							"roll": {
@@ -39314,7 +39334,7 @@
 								"max": 54
 							},
 							"text": "Mummified or decayed corpses",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.53"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.53"
 						},
 						{
 							"roll": {
@@ -39322,7 +39342,7 @@
 								"max": 55
 							},
 							"text": "Mundane living chambers",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.54"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.54"
 						},
 						{
 							"roll": {
@@ -39330,7 +39350,7 @@
 								"max": 56
 							},
 							"text": "Mysterious locked container",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.55"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.55"
 						},
 						{
 							"roll": {
@@ -39338,7 +39358,7 @@
 								"max": 57
 							},
 							"text": "Narrow, maze-like passages",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.56"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.56"
 						},
 						{
 							"roll": {
@@ -39346,7 +39366,7 @@
 								"max": 58
 							},
 							"text": "Observatory or orrery",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.57"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.57"
 						},
 						{
 							"roll": {
@@ -39354,7 +39374,7 @@
 								"max": 59
 							},
 							"text": "Ornate burial urns",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.58"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.58"
 						},
 						{
 							"roll": {
@@ -39362,7 +39382,7 @@
 								"max": 60
 							},
 							"text": "Overgrown garden",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.59"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.59"
 						},
 						{
 							"roll": {
@@ -39370,7 +39390,7 @@
 								"max": 61
 							},
 							"text": "Painted or carved portraits",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.60"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.60"
 						},
 						{
 							"roll": {
@@ -39378,7 +39398,7 @@
 								"max": 62
 							},
 							"text": "Piled rubble",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.61"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.61"
 						},
 						{
 							"roll": {
@@ -39386,7 +39406,7 @@
 								"max": 63
 							},
 							"text": "Prison or cages",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.62"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.62"
 						},
 						{
 							"roll": {
@@ -39394,7 +39414,7 @@
 								"max": 64
 							},
 							"text": "Rampant molds and fungi",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.63"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.63"
 						},
 						{
 							"roll": {
@@ -39402,7 +39422,7 @@
 								"max": 65
 							},
 							"text": "Ransacked or looted chamber",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.64"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.64"
 						},
 						{
 							"roll": {
@@ -39410,7 +39430,7 @@
 								"max": 66
 							},
 							"text": "Reflective surfaces",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.65"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.65"
 						},
 						{
 							"roll": {
@@ -39418,7 +39438,7 @@
 								"max": 67
 							},
 							"text": "Remains of a careless intruder",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.66"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.66"
 						},
 						{
 							"roll": {
@@ -39426,7 +39446,7 @@
 								"max": 68
 							},
 							"text": "Rubble-strewn path",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.67"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.67"
 						},
 						{
 							"roll": {
@@ -39434,7 +39454,7 @@
 								"max": 69
 							},
 							"text": "Sacred space or religious idols",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.68"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.68"
 						},
 						{
 							"roll": {
@@ -39442,7 +39462,7 @@
 								"max": 70
 							},
 							"text": "Scattered animal bones and detritus",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.69"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.69"
 						},
 						{
 							"roll": {
@@ -39450,7 +39470,7 @@
 								"max": 71
 							},
 							"text": "Scattering of old coins",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.70"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.70"
 						},
 						{
 							"roll": {
@@ -39458,7 +39478,7 @@
 								"max": 72
 							},
 							"text": "Scrawled message or warning",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.71"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.71"
 						},
 						{
 							"roll": {
@@ -39466,7 +39486,7 @@
 								"max": 73
 							},
 							"text": "Scuttling vermin",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.72"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.72"
 						},
 						{
 							"roll": {
@@ -39474,7 +39494,7 @@
 								"max": 74
 							},
 							"text": "Sealed vault",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.73"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.73"
 						},
 						{
 							"roll": {
@@ -39482,7 +39502,7 @@
 								"max": 75
 							},
 							"text": "Sealed vault",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.74"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.74"
 						},
 						{
 							"roll": {
@@ -39490,7 +39510,7 @@
 								"max": 76
 							},
 							"text": "Signs of inhabitants or guardians",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.75"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.75"
 						},
 						{
 							"roll": {
@@ -39498,7 +39518,7 @@
 								"max": 77
 							},
 							"text": "Signs of repair or refurbishment",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.76"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.76"
 						},
 						{
 							"roll": {
@@ -39506,7 +39526,7 @@
 								"max": 78
 							},
 							"text": "Signs that others passed this way",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.77"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.77"
 						},
 						{
 							"roll": {
@@ -39514,7 +39534,7 @@
 								"max": 79
 							},
 							"text": "Skittering or scratching sounds",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.78"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.78"
 						},
 						{
 							"roll": {
@@ -39522,7 +39542,7 @@
 								"max": 80
 							},
 							"text": "Soot-stained surfaces and ashes",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.79"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.79"
 						},
 						{
 							"roll": {
@@ -39530,7 +39550,7 @@
 								"max": 81
 							},
 							"text": "Sound of voices",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.80"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.80"
 						},
 						{
 							"roll": {
@@ -39538,7 +39558,7 @@
 								"max": 82
 							},
 							"text": "Sounds of structural instability",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.81"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.81"
 						},
 						{
 							"roll": {
@@ -39546,7 +39566,7 @@
 								"max": 83
 							},
 							"text": "Stack of books or scrolls",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.82"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.82"
 						},
 						{
 							"roll": {
@@ -39554,7 +39574,7 @@
 								"max": 84
 							},
 							"text": "Standing water",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.83"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.83"
 						},
 						{
 							"roll": {
@@ -39562,7 +39582,7 @@
 								"max": 85
 							},
 							"text": "Storage or armory",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.84"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.84"
 						},
 						{
 							"roll": {
@@ -39570,7 +39590,7 @@
 								"max": 86
 							},
 							"text": "Throne room or audience chamber",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.85"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.85"
 						},
 						{
 							"roll": {
@@ -39578,7 +39598,7 @@
 								"max": 87
 							},
 							"text": "Toppled Pillars",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.86"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.86"
 						},
 						{
 							"roll": {
@@ -39586,7 +39606,7 @@
 								"max": 88
 							},
 							"text": "Tracks through dust or dirt",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.87"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.87"
 						},
 						{
 							"roll": {
@@ -39594,7 +39614,7 @@
 								"max": 89
 							},
 							"text": "Vaulted ceiling with intricate designs",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.88"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.88"
 						},
 						{
 							"roll": {
@@ -39602,7 +39622,7 @@
 								"max": 90
 							},
 							"text": "Vertical shaft or broken stairwell",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.89"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.89"
 						},
 						{
 							"roll": {
@@ -39610,7 +39630,7 @@
 								"max": 91
 							},
 							"text": "Wind whistling through gaps",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.90"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.90"
 						},
 						{
 							"roll": {
@@ -39618,7 +39638,7 @@
 								"max": 92
 							},
 							"text": "Winding staircase",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.91"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.91"
 						},
 						{
 							"roll": {
@@ -39635,7 +39655,7 @@
 									"duplicates": "reroll"
 								}
 							],
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.92"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.92"
 						},
 						{
 							"roll": {
@@ -39652,7 +39672,7 @@
 									"duplicates": "reroll"
 								}
 							],
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.93"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.93"
 						},
 						{
 							"roll": {
@@ -39660,7 +39680,7 @@
 								"max": 95
 							},
 							"text": "Broken wall reveals a [Cave](oracle_collection:sundered_isles/cave)",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.94"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.94"
 						},
 						{
 							"roll": {
@@ -39684,7 +39704,7 @@
 									"number_of_rolls": 1
 								}
 							],
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features.95"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature.95"
 						}
 					],
 					"dice": "1d100",
@@ -39692,9 +39712,9 @@
 						"roll": "Roll",
 						"text": "Result"
 					},
-					"_id": "oracle_rollable:sundered_isles/ruin/features"
+					"_id": "oracle_rollable:sundered_isles/ruin/feature"
 				},
-				"features_cursed": {
+				"feature_cursed": {
 					"name": "Cursed Ruin Features",
 					"type": "oracle_rollable",
 					"oracle_type": "table_text",
@@ -39724,7 +39744,7 @@
 								"max": 2
 							},
 							"text": "Animate statues or machines",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.0"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.0"
 						},
 						{
 							"roll": {
@@ -39732,7 +39752,7 @@
 								"max": 4
 							},
 							"text": "Arcane light or energies",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.1"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.1"
 						},
 						{
 							"roll": {
@@ -39740,7 +39760,7 @@
 								"max": 6
 							},
 							"text": "Arcane trigger or trap",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.2"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.2"
 						},
 						{
 							"roll": {
@@ -39748,7 +39768,7 @@
 								"max": 8
 							},
 							"text": "Artifact evokes unnerving power",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.3"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.3"
 						},
 						{
 							"roll": {
@@ -39756,7 +39776,7 @@
 								"max": 10
 							},
 							"text": "Artwork depicting disturbing scenes",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.4"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.4"
 						},
 						{
 							"roll": {
@@ -39764,7 +39784,7 @@
 								"max": 12
 							},
 							"text": "Bewitching illusion",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.5"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.5"
 						},
 						{
 							"roll": {
@@ -39772,7 +39792,7 @@
 								"max": 14
 							},
 							"text": "Bloodstained shrine or altar",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.6"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.6"
 						},
 						{
 							"roll": {
@@ -39780,7 +39800,7 @@
 								"max": 16
 							},
 							"text": "Colossal machinery",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.7"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.7"
 						},
 						{
 							"roll": {
@@ -39788,7 +39808,7 @@
 								"max": 18
 							},
 							"text": "Corpses come to life",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.8"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.8"
 						},
 						{
 							"roll": {
@@ -39796,7 +39816,7 @@
 								"max": 20
 							},
 							"text": "Corpses frozen in terror",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.9"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.9"
 						},
 						{
 							"roll": {
@@ -39804,7 +39824,7 @@
 								"max": 22
 							},
 							"text": "Creeping, entangling plant life",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.10"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.10"
 						},
 						{
 							"roll": {
@@ -39812,7 +39832,7 @@
 								"max": 24
 							},
 							"text": "Distorted flow of time",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.11"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.11"
 						},
 						{
 							"roll": {
@@ -39820,7 +39840,7 @@
 								"max": 26
 							},
 							"text": "Doors slam shut on their own",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.12"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.12"
 						},
 						{
 							"roll": {
@@ -39828,7 +39848,7 @@
 								"max": 28
 							},
 							"text": "Dreadful whispering",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.13"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.13"
 						},
 						{
 							"roll": {
@@ -39836,7 +39856,7 @@
 								"max": 30
 							},
 							"text": "Eerie echoes",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.14"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.14"
 						},
 						{
 							"roll": {
@@ -39844,7 +39864,7 @@
 								"max": 32
 							},
 							"text": "Eldritch symbols",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.15"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.15"
 						},
 						{
 							"roll": {
@@ -39852,7 +39872,7 @@
 								"max": 34
 							},
 							"text": "Faces and figures move within the walls",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.16"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.16"
 						},
 						{
 							"roll": {
@@ -39860,7 +39880,7 @@
 								"max": 36
 							},
 							"text": "Familiar voices call out from the dark",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.17"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.17"
 						},
 						{
 							"roll": {
@@ -39868,7 +39888,7 @@
 								"max": 38
 							},
 							"text": "Grasping, creeping shadows",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.18"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.18"
 						},
 						{
 							"roll": {
@@ -39876,7 +39896,7 @@
 								"max": 40
 							},
 							"text": "Gusts of phantom wind",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.19"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.19"
 						},
 						{
 							"roll": {
@@ -39884,7 +39904,7 @@
 								"max": 42
 							},
 							"text": "Haunting cries or weeping",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.20"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.20"
 						},
 						{
 							"roll": {
@@ -39892,7 +39912,7 @@
 								"max": 44
 							},
 							"text": "Haunting dreams or hallucinations",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.21"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.21"
 						},
 						{
 							"roll": {
@@ -39900,7 +39920,7 @@
 								"max": 46
 							},
 							"text": "Haunting music",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.22"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.22"
 						},
 						{
 							"roll": {
@@ -39908,7 +39928,7 @@
 								"max": 48
 							},
 							"text": "Impenetrable darkness",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.23"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.23"
 						},
 						{
 							"roll": {
@@ -39916,7 +39936,7 @@
 								"max": 50
 							},
 							"text": "Lair of a monstrous creature",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.24"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.24"
 						},
 						{
 							"roll": {
@@ -39924,7 +39944,7 @@
 								"max": 52
 							},
 							"text": "Message or symbols written in blood",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.25"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.25"
 						},
 						{
 							"roll": {
@@ -39932,7 +39952,7 @@
 								"max": 54
 							},
 							"text": "Monstrous swarm of creatures",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.26"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.26"
 						},
 						{
 							"roll": {
@@ -39940,7 +39960,7 @@
 								"max": 56
 							},
 							"text": "Monstrous tracks",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.27"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.27"
 						},
 						{
 							"roll": {
@@ -39948,7 +39968,7 @@
 								"max": 58
 							},
 							"text": "Moving or changing architecture",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.28"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.28"
 						},
 						{
 							"roll": {
@@ -39956,7 +39976,7 @@
 								"max": 60
 							},
 							"text": "Objects move of their own accord",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.29"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.29"
 						},
 						{
 							"roll": {
@@ -39964,7 +39984,7 @@
 								"max": 62
 							},
 							"text": "Ominous chanting",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.30"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.30"
 						},
 						{
 							"roll": {
@@ -39972,7 +39992,7 @@
 								"max": 64
 							},
 							"text": "Passages seem to stretch and distort",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.31"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.31"
 						},
 						{
 							"roll": {
@@ -39980,7 +40000,7 @@
 								"max": 66
 							},
 							"text": "Path that endlessly repeats",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.32"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.32"
 						},
 						{
 							"roll": {
@@ -39988,7 +40008,7 @@
 								"max": 68
 							},
 							"text": "Phantom voices or laughter",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.33"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.33"
 						},
 						{
 							"roll": {
@@ -39996,7 +40016,7 @@
 								"max": 70
 							},
 							"text": "Piles of broken skulls and bones",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.34"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.34"
 						},
 						{
 							"roll": {
@@ -40004,7 +40024,7 @@
 								"max": 72
 							},
 							"text": "Reflections reveal unseen aspects",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.35"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.35"
 						},
 						{
 							"roll": {
@@ -40012,7 +40032,7 @@
 								"max": 74
 							},
 							"text": "Remains of a monstrous beast",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.36"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.36"
 						},
 						{
 							"roll": {
@@ -40020,7 +40040,7 @@
 								"max": 76
 							},
 							"text": "Rotting stench",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.37"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.37"
 						},
 						{
 							"roll": {
@@ -40028,7 +40048,7 @@
 								"max": 78
 							},
 							"text": "Spectral reenactments of past events",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.38"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.38"
 						},
 						{
 							"roll": {
@@ -40036,7 +40056,7 @@
 								"max": 80
 							},
 							"text": "Strangely preserved feature or area",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.39"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.39"
 						},
 						{
 							"roll": {
@@ -40044,7 +40064,7 @@
 								"max": 82
 							},
 							"text": "Sudden ghostly manifestation",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.40"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.40"
 						},
 						{
 							"roll": {
@@ -40052,7 +40072,7 @@
 								"max": 84
 							},
 							"text": "Transforming murals or paintings",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.41"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.41"
 						},
 						{
 							"roll": {
@@ -40060,7 +40080,7 @@
 								"max": 86
 							},
 							"text": "Twisted or grotesque statues",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.42"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.42"
 						},
 						{
 							"roll": {
@@ -40068,7 +40088,7 @@
 								"max": 88
 							},
 							"text": "Unexplainable path of destruction",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.43"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.43"
 						},
 						{
 							"roll": {
@@ -40076,7 +40096,7 @@
 								"max": 90
 							},
 							"text": "Unnatural cold",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.44"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.44"
 						},
 						{
 							"roll": {
@@ -40084,7 +40104,7 @@
 								"max": 92
 							},
 							"text": "Unnatural corruption or decay",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.45"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.45"
 						},
 						{
 							"roll": {
@@ -40092,7 +40112,7 @@
 								"max": 94
 							},
 							"text": "Unnatural mists or darkness",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.46"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.46"
 						},
 						{
 							"roll": {
@@ -40100,7 +40120,7 @@
 								"max": 96
 							},
 							"text": "Unnaturally aggressive creatures",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.47"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.47"
 						},
 						{
 							"roll": {
@@ -40108,7 +40128,7 @@
 								"max": 98
 							},
 							"text": "Unnaturally thick webbing",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.48"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.48"
 						},
 						{
 							"roll": {
@@ -40116,7 +40136,7 @@
 								"max": 100
 							},
 							"text": "Unnerving sensation of being watched",
-							"_id": "oracle_rollable.row:sundered_isles/ruin/features_cursed.49"
+							"_id": "oracle_rollable.row:sundered_isles/ruin/feature_cursed.49"
 						}
 					],
 					"dice": "1d100",
@@ -40124,7 +40144,7 @@
 						"roll": "Roll",
 						"text": "Result"
 					},
-					"_id": "oracle_rollable:sundered_isles/ruin/features_cursed"
+					"_id": "oracle_rollable:sundered_isles/ruin/feature_cursed"
 				},
 				"peril": {
 					"name": "Ruin Peril",
@@ -40632,6 +40652,7 @@
 					"_id": "oracle_rollable:sundered_isles/ruin/opportunity"
 				}
 			},
+			"collections": {},
 			"_id": "oracle_collection:sundered_isles/ruin"
 		},
 		"seafaring": {
@@ -41362,6 +41383,7 @@
 							"_id": "oracle_collection:sundered_isles/seafaring/waypoints/unknown_waters"
 						}
 					},
+					"contents": {},
 					"_id": "oracle_collection:sundered_isles/seafaring/waypoints"
 				}
 			},
@@ -53411,6 +53433,7 @@
 							"_id": "oracle_rollable:sundered_isles/ship/position/status"
 						}
 					},
+					"collections": {},
 					"_id": "oracle_collection:sundered_isles/ship/position"
 				},
 				"controlling_faction": {
@@ -59896,6 +59919,10 @@
 						{
 							"enabled": true,
 							"text": "Your albatross companion brings good luck, but its fate is tied to your own. When you are at sea, increase your momentum reset by 1. If the albatross is killed, discard this asset and suffer a permanent impact.",
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/albatross.0"
 						},
 						{
@@ -59918,6 +59945,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/albatross.1"
 						},
 						{
@@ -59944,6 +59975,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/albatross.2"
 						}
 					],
@@ -60021,11 +60056,19 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/chattering_skull.0"
 						},
 						{
 							"text": "When you roll a match with a 10 on the cursed die, you learn a surprising or dreadful aspect of the skull’s history or nature; mark 1 box on your bonds legacy track.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/chattering_skull.1"
 						},
 						{
@@ -60046,11 +60089,16 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/chattering_skull.2"
 						}
 					],
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/companion/chattering_skull"
 				},
 				"dolphin": {
@@ -60115,6 +60163,9 @@
 									"_id": "asset.ability.move:sundered_isles/companion/dolphin.0.call_dolphin"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:sundered_isles/companion/dolphin.0"
 						},
 						{
@@ -60141,6 +60192,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/dolphin.1"
 						},
 						{
@@ -60154,6 +60209,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/dolphin.2"
 						}
 					],
@@ -60237,11 +60296,19 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/dragon.0"
 						},
 						{
 							"text": "The dragon accepts you as a rider. It flies under your direction, and assails your foes using tooth, tail, claw, and fiery breath. When you make a move from the saddle to lead an expedition or leverage the dragon as a weapon, you may roll +its health. If you then roll a 1 or 2 on your action die, the dragon must bear the brunt of any cost or counterattack.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/dragon.1"
 						},
 						{
@@ -60267,6 +60334,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/dragon.2"
 						}
 					],
@@ -60365,6 +60436,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/jungle_cat.0"
 						},
 						{
@@ -60387,6 +60462,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/jungle_cat.1"
 						},
 						{
@@ -60410,6 +60489,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/jungle_cat.2"
 						}
 					],
@@ -60509,6 +60592,9 @@
 									"_id": "asset.ability.move:sundered_isles/companion/monkey.0.suffer_monkey_business"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:sundered_isles/companion/monkey.0"
 						},
 						{
@@ -60529,6 +60615,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/monkey.1"
 						},
 						{
@@ -60549,6 +60639,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/monkey.2"
 						}
 					],
@@ -60689,11 +60783,18 @@
 									"_id": "asset.ability.oracle_rollable:sundered_isles/companion/parrot.0.parrot_wisdom"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/parrot.0"
 						},
 						{
 							"text": "Once per fight, when you score a miss, you may envision how the parrot appears on the scene to cause a timely distraction. If you do, make it a strong hit instead.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/parrot.1"
 						},
 						{
@@ -60727,6 +60828,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/parrot.2"
 						}
 					],
@@ -60799,6 +60904,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/rat.0"
 						},
 						{
@@ -60819,6 +60928,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/rat.1"
 						},
 						{
@@ -60847,6 +60960,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/rat.2"
 						}
 					],
@@ -60928,6 +61045,9 @@
 									}
 								}
 							],
+							"options": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/kraken.0"
 						},
 						{
@@ -60948,6 +61068,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/kraken.1"
 						},
 						{
@@ -60968,14 +61092,21 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/companion/kraken.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/companion/kraken"
 				}
 			},
+			"collections": {},
 			"_id": "asset_collection:sundered_isles/companion"
 		},
 		"deed": {
@@ -61031,11 +61162,19 @@
 									"roll_type": "no_roll"
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/deed/cohort.0"
 						},
 						{
 							"text": "Gain additional specialists by spending 1 experience to add a connection to your crew as a specialist. Specialist bonuses may not be stacked for a single action.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/deed/cohort.1"
 						},
 						{
@@ -61056,11 +61195,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/deed/cohort.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/deed/cohort"
 				},
 				"damned": {
@@ -61107,6 +61252,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/deed/damned.0"
 						},
 						{
@@ -61127,16 +61276,26 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/deed/damned.1"
 						},
 						{
 							"text": "When your curse is broken through the fulfillment of a vow or other event, activate this ability at no cost. Discard this asset and any of your damned assets, exchanging them one-for-one for new assets with an equal number of marked abilities. You may then improve one of your stats by +1.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/deed/damned.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/deed/damned"
 				},
 				"fleet_commander": {
@@ -61186,6 +61345,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/deed/fleet_commander.0"
 						},
 						{
@@ -61199,6 +61362,10 @@
 								}
 							},
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/deed/fleet_commander.1"
 						},
 						{
@@ -61212,6 +61379,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/deed/fleet_commander.2"
 						}
 					],
@@ -61237,6 +61408,7 @@
 							"value": 0
 						}
 					},
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
 					"_id": "asset:sundered_isles/deed/fleet_commander"
@@ -61262,6 +61434,10 @@
 						{
 							"enabled": true,
 							"text": "You are accustomed to a life at sea. When you set sail after a landlocked layover, take +2 momentum or +2 spirit, or +1 of each. When you make landfall, [Lose Momentum](move:sundered_isles/suffer/lose_momentum) (-1).",
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/deed/old_salt.0"
 						},
 						{
@@ -61295,6 +61471,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/deed/old_salt.1"
 						},
 						{
@@ -61315,11 +61495,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/deed/old_salt.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/deed/old_salt"
 				},
 				"undead": {
@@ -61374,6 +61560,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/deed/undead.0"
 						},
 						{
@@ -61394,6 +61584,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/deed/undead.1"
 						},
 						{
@@ -61421,14 +61615,21 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/deed/undead.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/deed/undead"
 				}
 			},
+			"collections": {},
 			"_id": "asset_collection:sundered_isles/deed"
 		},
 		"module": {
@@ -61500,6 +61701,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/armored_prow.0"
 						},
 						{
@@ -61520,6 +61725,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/armored_prow.1"
 						},
 						{
@@ -61553,6 +61762,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/armored_prow.2"
 						}
 					],
@@ -61573,9 +61786,11 @@
 								"recover": ["move:starforged/recover/repair"]
 							},
 							"rollable": true,
-							"min": 0
+							"min": 0,
+							"controls": {}
 						}
 					},
+					"options": {},
 					"count_as_impact": false,
 					"_id": "asset:sundered_isles/module/armored_prow"
 				},
@@ -61620,6 +61835,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/chase_guns.0"
 						},
 						{
@@ -61640,6 +61859,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/chase_guns.1"
 						},
 						{
@@ -61660,10 +61883,16 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/chase_guns.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/module/chase_guns"
 				},
 				"gilded_adornments": {
@@ -61718,6 +61947,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/gilded_adornments.0"
 						},
 						{
@@ -61762,6 +61995,9 @@
 								}
 							},
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:sundered_isles/module/gilded_adornments.1"
 						},
 						{
@@ -61795,10 +62031,16 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/gilded_adornments.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/module/gilded_adornments"
 				},
 				"harpoon_cannon": {
@@ -61850,6 +62092,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/harpoon_cannon.0"
 						},
 						{
@@ -61878,6 +62124,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/harpoon_cannon.1"
 						},
 						{
@@ -61898,10 +62148,16 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/harpoon_cannon.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/module/harpoon_cannon"
 				},
 				"improved_armory": {
@@ -61960,6 +62216,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/improved_armory.0"
 						},
 						{
@@ -61980,15 +62240,25 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/improved_armory.1"
 						},
 						{
 							"text": "When you are out of options and set the fuse to self-destruct your command vehicle, activate this ability at no cost. If you do, envision how the sacrifice allows you to escape or overcome your foes amid the chaos. Then, mark 1 box on your quests legacy track and [Overcome Destruction](move:starforged/threshold/overcome_destruction).",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/improved_armory.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/module/improved_armory"
 				},
 				"improved_galley": {
@@ -62028,6 +62298,10 @@
 									"roll_type": "action_roll"
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/improved_galley.0"
 						},
 						{
@@ -62073,6 +62347,9 @@
 								}
 							},
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:sundered_isles/module/improved_galley.1"
 						},
 						{
@@ -62084,10 +62361,16 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/improved_galley.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/module/improved_galley"
 				},
 				"improved_gunnery": {
@@ -62134,6 +62417,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/improved_gunnery.0"
 						},
 						{
@@ -62145,6 +62432,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/improved_gunnery.1"
 						},
 						{
@@ -62165,10 +62456,16 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/improved_gunnery.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/module/improved_gunnery"
 				},
 				"improved_hold": {
@@ -62212,6 +62509,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/improved_hold.0"
 						},
 						{
@@ -62252,6 +62553,9 @@
 								}
 							},
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:sundered_isles/module/improved_hold.1"
 						},
 						{
@@ -62272,10 +62576,16 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/improved_hold.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/module/improved_hold"
 				},
 				"improved_lookout": {
@@ -62339,6 +62649,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/improved_lookout.0"
 						},
 						{
@@ -62359,15 +62673,25 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/improved_lookout.1"
 						},
 						{
 							"text": "When you come upon a rare and awe-inspiring sight, and use the lookout post for a better vantage point, choose one.\n\n  * Gain insight: take +1 momentum\n  * Gain inspiration: take +1 spirit",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/improved_lookout.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/module/improved_lookout"
 				},
 				"improved_sick_bay": {
@@ -62436,6 +62760,9 @@
 									"_id": "asset.ability.move:sundered_isles/module/improved_sick_bay.0.aid_wounded"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:sundered_isles/module/improved_sick_bay.0"
 						},
 						{
@@ -62447,6 +62774,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/improved_sick_bay.1"
 						},
 						{
@@ -62467,10 +62798,16 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/improved_sick_bay.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/module/improved_sick_bay"
 				},
 				"ironclad_hull": {
@@ -62532,6 +62869,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/ironclad_hull.0"
 						},
 						{
@@ -62561,6 +62902,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/ironclad_hull.1"
 						},
 						{
@@ -62589,6 +62934,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/ironclad_hull.2"
 						}
 					],
@@ -62602,9 +62951,11 @@
 							},
 							"rollable": true,
 							"min": 0,
-							"value": 0
+							"value": 0,
+							"controls": {}
 						}
 					},
+					"options": {},
 					"count_as_impact": false,
 					"_id": "asset:sundered_isles/module/ironclad_hull"
 				},
@@ -62719,6 +63070,9 @@
 									"_id": "asset.ability.move:sundered_isles/module/lucky_figurehead.0.depart_port"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:sundered_isles/module/lucky_figurehead.0"
 						},
 						{
@@ -62745,6 +63099,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/lucky_figurehead.1"
 						},
 						{
@@ -62756,10 +63114,15 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/lucky_figurehead.2"
 						}
 					],
 					"count_as_impact": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/module/lucky_figurehead"
 				},
 				"map_room": {
@@ -62811,11 +63174,19 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/map_room.0"
 						},
 						{
 							"text": "When you assemble others in the map room to formulate a plan or speculate on a mysterious aspect of the world, you and any participating allies take +1 momentum.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/map_room.1"
 						},
 						{
@@ -62841,10 +63212,16 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/map_room.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/module/map_room"
 				},
 				"rigged_for_speed": {
@@ -62894,6 +63271,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/rigged_for_speed.0"
 						},
 						{
@@ -62905,6 +63286,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/rigged_for_speed.1"
 						},
 						{
@@ -62925,10 +63310,16 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/rigged_for_speed.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/module/rigged_for_speed"
 				},
 				"submersible_mode": {
@@ -62990,6 +63381,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/submersible_mode.0"
 						},
 						{
@@ -63017,6 +63412,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/submersible_mode.1"
 						},
 						{
@@ -63042,10 +63441,16 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/submersible_mode.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/module/submersible_mode"
 				},
 				"trophy_vault": {
@@ -63097,11 +63502,19 @@
 									"enhances": null
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/trophy_vault.0"
 						},
 						{
 							"text": "As above, and if you use a trophy to reroll all dice and score a strong hit with a match, the legacy of that object favors you; mark 2 ticks on your bonds legacy track, and do not mark the trophy as spent. If you instead score a miss with a match, envision the cursed legacy that now haunts you.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/trophy_vault.1"
 						},
 						{
@@ -63122,13 +63535,20 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/module/trophy_vault.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/module/trophy_vault"
 				}
 			},
+			"collections": {},
 			"_id": "asset_collection:sundered_isles/module"
 		},
 		"path": {
@@ -63183,11 +63603,19 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/cannoneer.0"
 						},
 						{
 							"text": "When you make a move by firing or directing the fire of a vehicle’s weapons, and burn momentum to improve your result, roll your action die. On a 5 or 6, do not reset momentum. Otherwise, take +1 momentum after you reset.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/cannoneer.1"
 						},
 						{
@@ -63221,11 +63649,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/cannoneer.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/path/cannoneer"
 				},
 				"construct": {
@@ -63256,6 +63690,10 @@
 						{
 							"enabled": true,
 							"text": "You are a machine, and do not eat, drink, or breathe. You [Endure Harm](move:sundered_isles/suffer/endure_harm) as normal, but restore health only when you [Repair](move:sundered_isles/recover/repair) (spend 1 repair point to take +1 health, and 2 points to clear the wounded impact).",
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/construct.0"
 						},
 						{
@@ -63281,6 +63719,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/construct.1"
 						},
 						{
@@ -63292,11 +63734,17 @@
 								}
 							},
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/construct.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/path/construct"
 				},
 				"crew_commander": {
@@ -63324,6 +63772,10 @@
 						{
 							"enabled": true,
 							"text": "You have 2 command; your max is 4. When you or an ally make a move leading or aided by the crew, you may (after rolling) suffer -1 command to improve a miss to a weak hit, or a weak hit to a strong hit. When you [Pay the Price](move:starforged/fate/pay_the_price), you may suffer the cost as -1 command. While at 0 command, this asset counts as an impact. To bolster your crew, provide a notable reward or respite, and roll +heart. On a strong hit, take +4 command. On a weak hit, take +2. On a miss, take +2 but envision a threat to your crew or leadership.",
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/crew_commander.0"
 						},
 						{
@@ -63337,6 +63789,10 @@
 								}
 							},
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/crew_commander.1"
 						},
 						{
@@ -63357,6 +63813,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/crew_commander.2"
 						}
 					],
@@ -63367,9 +63827,11 @@
 							"max": 4,
 							"value": 2,
 							"rollable": true,
-							"min": 0
+							"min": 0,
+							"controls": {}
 						}
 					},
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
 					"_id": "asset:sundered_isles/path/crew_commander"
@@ -63419,6 +63881,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/cutthroat.0"
 						},
 						{
@@ -63439,6 +63905,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/cutthroat.1"
 						},
 						{
@@ -63477,11 +63947,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/cutthroat.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/path/cutthroat"
 				},
 				"duelist": {
@@ -63527,6 +64003,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/duelist.0"
 						},
 						{
@@ -63547,16 +64027,26 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/duelist.1"
 						},
 						{
 							"text": "When you roll a miss with a match in a situation where your reputation is known, you may suffer the cost by envisioning a notable rival who challenges you to a duel. If you defeat them, mark 2 ticks on your quests legacy track. If you decline, mark 1 tick on your bonds legacy track but envision the fallout of this refusal.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/duelist.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/path/duelist"
 				},
 				"harpooner": {
@@ -63608,6 +64098,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/harpooner.0"
 						},
 						{
@@ -63646,6 +64140,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/harpooner.1"
 						},
 						{
@@ -63666,11 +64164,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/harpooner.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/path/harpooner"
 				},
 				"jinx": {
@@ -63701,16 +64205,28 @@
 						{
 							"enabled": true,
 							"text": "You are cursed by ill luck, but persisting offers its own rewards. If you score a miss with a match, this asset counts as an impact for you and your allies. You may undo this only by scoring a strong hit with a match; if you do, you and your allies each clear the impact and mark 1 tick on your bonds legacy track.",
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/jinx.0"
 						},
 						{
 							"text": "When you score a weak hit on a progress move, you may test your luck by reducing the progress score by 1 and rerolling all dice.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/jinx.1"
 						},
 						{
 							"text": "When you roll matched 1’s on your challenge dice while suffering from this asset’s impact, you may activate this ability at no cost. If you do, you are favored by fortune; you and your allies clear the impact and mark 1 box on your bonds legacy track. Then, discard this asset and increase your momentum reset and max momentum (if less than 10) by 1.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/jinx.2"
 						}
 					],
@@ -63723,6 +64239,7 @@
 							"disables_asset": false
 						}
 					},
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
 					"_id": "asset:sundered_isles/path/jinx"
@@ -63766,6 +64283,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/musician.0"
 						},
 						{
@@ -63786,6 +64307,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/musician.1"
 						},
 						{
@@ -63826,11 +64351,16 @@
 								}
 							},
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:sundered_isles/path/musician.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/path/musician"
 				},
 				"musketeer": {
@@ -63868,6 +64398,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/musketeer.0"
 						},
 						{
@@ -63888,6 +64422,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/musketeer.1"
 						},
 						{
@@ -63921,11 +64459,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/musketeer.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/path/musketeer"
 				},
 				"necromancer": {
@@ -63976,6 +64520,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/necromancer.0"
 						},
 						{
@@ -63991,6 +64539,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/necromancer.1"
 						},
 						{
@@ -64029,11 +64581,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/necromancer.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/path/necromancer"
 				},
 				"overlander": {
@@ -64078,6 +64636,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/overlander.0"
 						},
 						{
@@ -64118,6 +64680,9 @@
 								}
 							},
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:sundered_isles/path/overlander.1"
 						},
 						{
@@ -64138,11 +64703,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/overlander.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/path/overlander"
 				},
 				"peddler": {
@@ -64200,6 +64771,9 @@
 									"_id": "asset.ability.move:sundered_isles/path/peddler.0.peddle_your_wares"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:sundered_isles/path/peddler.0"
 						},
 						{
@@ -64213,6 +64787,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/peddler.1"
 						},
 						{
@@ -64235,11 +64813,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/peddler.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/path/peddler"
 				},
 				"pirate_captain": {
@@ -64302,6 +64886,9 @@
 									"_id": "asset.ability.move:sundered_isles/path/pirate_captain.0.seize_your_prize"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:sundered_isles/path/pirate_captain.0"
 						},
 						{
@@ -64335,6 +64922,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/pirate_captain.1"
 						},
 						{
@@ -64355,11 +64946,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/pirate_captain.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/path/pirate_captain"
 				},
 				"pistoleer": {
@@ -64411,6 +65008,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/pistoleer.0"
 						},
 						{
@@ -64434,16 +65035,26 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/pistoleer.1"
 						},
 						{
 							"text": "When you participate in a charged or antagonistic parlay with your pistols on display, take +2 momentum at the start of the interaction.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/pistoleer.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/path/pistoleer"
 				},
 				"scattershot": {
@@ -64502,6 +65113,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/scattershot.0"
 						},
 						{
@@ -64522,6 +65137,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/scattershot.1"
 						},
 						{
@@ -64542,11 +65161,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/scattershot.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/path/scattershot"
 				},
 				"scholar": {
@@ -64612,6 +65237,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/scholar.0"
 						},
 						{
@@ -64648,16 +65277,25 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/scholar.1"
 						},
 						{
 							"text": "You apply yourself to another discipline. Choose a second field of study.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/scholar.2"
 						}
 					],
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/path/scholar"
 				},
 				"shapechanger": {
@@ -64746,21 +65384,34 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/shapechanger.0"
 						},
 						{
 							"text": "As above, and when you score a hit with matching values on both action dice, your identities are in harmony; take +1 momentum.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/shapechanger.1"
 						},
 						{
 							"text": "Choose your normal or alternate form as your ideal self. When you change to that form, you are partially restored and may take +1 health or +1 spirit.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/shapechanger.2"
 						}
 					],
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/path/shapechanger"
 				},
 				"shipwright": {
@@ -64798,6 +65449,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/shipwright.0"
 						},
 						{
@@ -64823,6 +65478,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/shipwright.1"
 						},
 						{
@@ -64843,11 +65502,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/shipwright.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/path/shipwright"
 				},
 				"socialite": {
@@ -64890,6 +65555,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/socialite.0"
 						},
 						{
@@ -64930,6 +65599,9 @@
 								}
 							},
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:sundered_isles/path/socialite.1"
 						},
 						{
@@ -64950,11 +65622,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/socialite.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/path/socialite"
 				},
 				"sorcerer": {
@@ -65008,11 +65686,19 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/sorcerer.0"
 						},
 						{
 							"text": "You may purchase assets of a supernatural nature for 1 experience (instead of 3).",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/sorcerer.1"
 						},
 						{
@@ -65059,11 +65745,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/sorcerer.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/path/sorcerer"
 				},
 				"spy": {
@@ -65086,6 +65778,10 @@
 						{
 							"enabled": true,
 							"text": "When you infiltrate a location or event, increase your momentum reset by 1 for the duration of the mission.",
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/spy.0"
 						},
 						{
@@ -65122,6 +65818,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/spy.1"
 						},
 						{
@@ -65155,11 +65855,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/spy.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/path/spy"
 				},
 				"swashbuckler": {
@@ -65202,6 +65908,10 @@
 									"enhances": null
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/swashbuckler.0"
 						},
 						{
@@ -65222,6 +65932,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/swashbuckler.1"
 						},
 						{
@@ -65242,11 +65956,17 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/swashbuckler.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/path/swashbuckler"
 				},
 				"urchin": {
@@ -65302,6 +66022,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/urchin.0"
 						},
 						{
@@ -65350,16 +66074,26 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/urchin.1"
 						},
 						{
 							"text": "When you come of age or take on a role beyond your years, gain this ability at no cost. Then, discard this asset and take two others (at no cost) to represent your new status.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/urchin.2"
 						}
 					],
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
+					"controls": {},
 					"_id": "asset:sundered_isles/path/urchin"
 				},
 				"waterborn": {
@@ -65397,11 +66131,19 @@
 									"enhances": null
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/waterborn.0"
 						},
 						{
 							"text": "Once per foray into underwater environs, you may trade air for momentum, or vice-versa. Suffer -2 air and take +2 momentum, or [Lose Momentum](move:starforged/suffer/lose_momentum) (-2) and take +2 air.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/waterborn.1"
 						},
 						{
@@ -65422,6 +66164,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/waterborn.2"
 						}
 					],
@@ -65432,9 +66178,11 @@
 							"max": 5,
 							"value": 5,
 							"rollable": true,
-							"min": 0
+							"min": 0,
+							"controls": {}
 						}
 					},
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
 					"_id": "asset:sundered_isles/path/waterborn"
@@ -65499,6 +66247,9 @@
 									"_id": "asset.ability.move:sundered_isles/path/windbinder.0.bind_the_winds"
 								}
 							},
+							"options": {},
+							"controls": {},
+							"oracles": {},
 							"_id": "asset.ability:sundered_isles/path/windbinder.0"
 						},
 						{
@@ -65512,6 +66263,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/windbinder.1"
 						},
 						{
@@ -65534,6 +66289,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/path/windbinder.2"
 						}
 					],
@@ -65558,11 +66317,13 @@
 							"value": null
 						}
 					},
+					"options": {},
 					"count_as_impact": false,
 					"shared": false,
 					"_id": "asset:sundered_isles/path/windbinder"
 				}
 			},
+			"collections": {},
 			"_id": "asset_collection:sundered_isles/path"
 		},
 		"command_vehicle": {
@@ -65599,6 +66360,10 @@
 						{
 							"enabled": true,
 							"text": "Your seagoing flagship is armed with cannons, transports crew, cargo, and passengers, and can equip support vehicle and module assets. In addition, it has up to 5 hold that acts as supply for you and your allies when taking action or suffering a cost related to shipwide gear and provisions.",
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/command_vehicle/flagship.0"
 						},
 						{
@@ -65621,11 +66386,19 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/command_vehicle/flagship.1"
 						},
 						{
 							"text": "You fly a distinctive flag. Envision its design. Once per situation, when you hoist the colors in a dramatic moment, you and your allies take +1 momentum.",
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/command_vehicle/flagship.2"
 						}
 					],
@@ -65695,6 +66468,7 @@
 					"_id": "asset:sundered_isles/command_vehicle/flagship"
 				}
 			},
+			"collections": {},
 			"_id": "asset_collection:sundered_isles/command_vehicle"
 		},
 		"support_vehicle": {
@@ -65757,6 +66531,10 @@
 									}
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/support_vehicle/captains_boat.0"
 						},
 						{
@@ -65777,6 +66555,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/support_vehicle/captains_boat.1"
 						},
 						{
@@ -65803,6 +66585,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/support_vehicle/captains_boat.2"
 						}
 					],
@@ -65865,6 +66651,10 @@
 						{
 							"enabled": true,
 							"text": "Your diving bell carries passengers into the depths within an air-filled chamber. It offers a refuge when diving the seabed or while exploring underwater wrecks, ruins, or caves. When you set off from the bell on a perilous undersea dive, or return to the bell after a dive, take +1 momentum.",
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/support_vehicle/diving_bell.0"
 						},
 						{
@@ -65904,6 +66694,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/support_vehicle/diving_bell.1"
 						},
 						{
@@ -65926,6 +66720,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/support_vehicle/diving_bell.2"
 						}
 					],
@@ -66003,6 +66801,10 @@
 									"enhances": null
 								}
 							],
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/support_vehicle/flying_machine.0"
 						},
 						{
@@ -66023,6 +66825,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/support_vehicle/flying_machine.1"
 						},
 						{
@@ -66043,6 +66849,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/support_vehicle/flying_machine.2"
 						}
 					],
@@ -66121,6 +66931,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/support_vehicle/longboat.0"
 						},
 						{
@@ -66145,6 +66959,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/support_vehicle/longboat.1"
 						},
 						{
@@ -66168,6 +66986,10 @@
 								}
 							],
 							"enabled": false,
+							"options": {},
+							"controls": {},
+							"oracles": {},
+							"moves": {},
 							"_id": "asset.ability:sundered_isles/support_vehicle/longboat.2"
 						}
 					],
@@ -66198,6 +67020,7 @@
 					"_id": "asset:sundered_isles/support_vehicle/longboat"
 				}
 			},
+			"collections": {},
 			"_id": "asset_collection:sundered_isles/support_vehicle"
 		}
 	},
@@ -66306,6 +67129,7 @@
 					"_id": "atlas_entry:sundered_isles/realms/starfaring"
 				}
 			},
+			"collections": {},
 			"_id": "atlas_collection:sundered_isles/realms"
 		}
 	},
@@ -66389,6 +67213,7 @@
 							}
 						]
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:sundered_isles/exploration/undertake_an_expedition"
 				},
@@ -66848,10 +67673,12 @@
 							}
 						]
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:sundered_isles/exploration/set_a_course"
 				}
 			},
+			"collections": {},
 			"_id": "move_category:sundered_isles/exploration"
 		},
 		"combat": {
@@ -66953,10 +67780,12 @@
 							}
 						]
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:sundered_isles/combat/enter_the_fray"
 				}
 			},
+			"collections": {},
 			"_id": "move_category:sundered_isles/combat"
 		},
 		"suffer": {
@@ -67104,6 +67933,7 @@
 					"_id": "move:sundered_isles/suffer/withstand_damage"
 				}
 			},
+			"collections": {},
 			"_id": "move_category:sundered_isles/suffer"
 		},
 		"recover": {
@@ -67206,6 +68036,7 @@
 							}
 						]
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:sundered_isles/recover/resupply"
 				},
@@ -67262,10 +68093,12 @@
 							}
 						]
 					},
+					"oracles": {},
 					"allow_momentum_burn": true,
 					"_id": "move:sundered_isles/recover/repair"
 				}
 			},
+			"collections": {},
 			"_id": "move_category:sundered_isles/recover"
 		}
 	},
@@ -67294,6 +68127,7 @@
 					"summary": "A great war left horrible scars upon the isles.",
 					"description": "A generations-old war is only recently ended, and the reminders of that fruitless conflict are all around us. Islands wracked by destruction, seas tainted, people displaced. The cost is immeasurable, but some still squabble over what remains.",
 					"quest_starter": "A people, displaced by war, live on a remote island. A recent illness left many sick or dead. Supplies are urgently needed. Why do you swear to give them aid? Who stands against you, and why?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/sundering.0"
 				},
 				{
@@ -67304,6 +68138,7 @@
 					"summary": "Eons ago, a vast cataclysm shattered continents.",
 					"description": "Lands broke apart in an apocalyptic disaster. Powerful cities fell. Fire, lava, and ash scoured what remained. The isles, scattered like broken shards, are the vestiges of these once-great lands, the gravestones of a fallen dominion. Life eventually returned to this realm, but the wounds do not fully heal.",
 					"quest_starter": "You are haunted by dreams of this ancient cataclysm. In those dreams, you see a grand library of unfathomable scope, the collected knowledge of lost people and fallen dominions. What do you seek within this repository?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/sundering.1"
 				},
 				{
@@ -67314,6 +68149,7 @@
 					"summary": "Strange technologies unleashed a reality-fracturing wave of cursed energy, forever reshaping the isles.",
 					"description": "An ambitious few dabbled in ancient secrets, and in doing so, broke the bonds of reality. Strange energies flowed into our world, allowing uncanny phenomena to take hold. Science and magic took new forms. People and creatures of other realms were cast into our own like jetsam in a turbulent tide. The isles are forever altered by the curse of these chaotic realities.",
 					"quest_starter": "An explorer brings news. They’ve located what they say is a nexus of chaotic energy. If it could be deactivated, the isles might find some measure of peace. Which power or foe seeks to harness this power to their own ends?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/sundering.2"
 				}
 			],
@@ -67353,6 +68189,7 @@
 					"summary": "The long history of the isles is marked by disaster, war, and exodus. Abandoned and ruined sites are grim monuments to these events.",
 					"description": "Former communities—even entire islands—are sometimes forsaken by their people. Others are lost and forgotten through the ravages of time. These places echo with the memories of lost lives, but also remind us of the perseverance of those who survived to carry on their traditions elsewhere.",
 					"quest_starter": "An uninhabited island is marked by the ruins of a once- great city. Someone important to you led an expedition to that island months ago, but has not returned. What were they in search of?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/relics.0"
 				},
 				{
@@ -67363,6 +68200,7 @@
 					"summary": "Two centuries ago, a powerful empire dared to claim these isles as their own. Ruined places are all that remain to mark their hubris.",
 					"description": "The tattered banners of the fallen empire lie amid ravaged fortresses, wrecked ships, and abandoned cities. In some places, nature reclaimed these sites. In others, people return to build anew upon the graves of these former invaders. Meanwhile, scavengers—like gulls picking at the bones of dead fish—scour the remnants in search of plunder.",
 					"quest_starter": "The emperor wore a crown adorned with two gems of unsurpassed size and quality: a blue diamond to honor Wraith, and a fiery ruby to represent Cinder. The resting place of the emperor and this crown are a mystery—one you are determined to solve.",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/relics.1"
 				},
 				{
@@ -67373,6 +68211,7 @@
 					"summary": "An ancient civilization of unfathomable power left its mark upon the isles.",
 					"description": "These people unlocked secrets beyond our understanding. The ruins marking their legacy are places of unnatural construction, confounding mechanisms, and cryptic relics. Some islanders revere the ancients. Others seek to understand them. A few have more selfish motives—pillaging the sites for treasure and artifacts. But some secrets are best left buried. Many ruins are cursed, corrupted by time, and haunted by malignant evil.",
 					"quest_starter": "Dozens of ancient towers have flared to life, sending up beacons of light visible from leagues away. These lodestars form a marked path that stretches well beyond the far horizon. Why do you set out to see where this path leads?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/relics.2"
 				}
 			],
@@ -67415,6 +68254,7 @@
 					"summary": "It is an age of sail.",
 					"description": "Sailing ships navigate the farthest reaches and weather the fiercest storms. Their cannons unleash devastating barrages against rivals or raiders, and their crews wield muskets and blades to defend their decks. Some commanders plot a course through hazardous waters with chart and sextant, while others rely on a deeper understanding of sea and sky. But above all else, we trust in the loyalty of our shipmates and the strength of our vows.",
 					"quest_starter": "A famed shipwright, nearing the end of their life, seeks to build their magnum opus—a ship of uncompromising beauty and strength. What rare material do they require, and where is it found?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/modern_era.0"
 				},
 				{
@@ -67425,6 +68265,7 @@
 					"summary": "It is an age of industry.",
 					"description": "The winds of change are upon us. Some of these innovations inspire awe— flying machines that sail among the clouds, metal diving bells that plumb the greatest depths, and mechanical limbs of intricate design to replace what was lost. But industry is also an insatiable fire. Mines, smelters, and factories reshape our lands to feed those flames. Titanic ships seek dominance of the isles. Is it only a matter of time before our steadfast wooden ships and the simple ways of our communities are relics of a bygone age?",
 					"quest_starter": "An iron submersible stalks seagoing passages. Why do you seek vengeance against this vessel’s commander?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/modern_era.1"
 				},
 				{
@@ -67435,6 +68276,7 @@
 					"summary": "It is an age of wonders.",
 					"description": "Some have wielded ancient secrets and extraordinary science to power vessels, weapons, and other machines. Their ships are fitted with energized sails that augment the powers of wind and storm. Their cannons unleash volleys of infernal energies. A few commanders even count iron automatons, given life by improbable technologies, among their crew. Resisting these wonders is like casting a stone against a thunderstorm, and many see this new age as a portent of our doom.",
 					"quest_starter": "An enemy faction is building a colossal machine of fantastic destructive potential. What is the nature of this machine, and why are you sworn to see it destroyed?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/modern_era.2"
 				}
 			],
@@ -67480,6 +68322,7 @@
 					"summary": "Some see iron vows as a vestige of a more superstitious age, but the tradition persists.",
 					"description": "Our forebears bound their promises to the strength and permanence of iron. Today, self-avowed Ironsworn respect this tradition by affirming their resolve with a time-honored phrase: “By iron, I vow.” Even those who forgo an iron totem say the words to lend solemnity to a promise, setting themselves on an honorbound course—wherever it may lead.",
 					"quest_starter": "The Iron Tide, a force of warships whose commanders and crews have taken up the vow of their fallen leader, is bound for local waters. What do they seek, and why do you swear your own vow to prevent it?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/iron_vows.0"
 				},
 				{
@@ -67490,6 +68333,7 @@
 					"summary": "The Ironsworn bind their honor to iron blades.",
 					"description": "Even in this age of cannon and rifle, a finely-wrought blade—whether sword or dagger, dirk or bayonet—remains a mark of skill and resolve. When the Ironsworn swear a vow upon a blade, we bind our commitment to the metal. If we forsake a vow, that iron must be abandoned. To be Ironsworn without a blade is to be disgraced.",
 					"quest_starter": "You carry a broken sword. How was it broken, and what must you do to be worthy of a reforged blade?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/iron_vows.1"
 				},
 				{
@@ -67500,6 +68344,7 @@
 					"summary": "Since the distant time when iron was first hammered into form, seafaring folk of this world carried iron bondstones as sacred keepsakes.",
 					"description": "Each bondstone is unique—a relic of kin and culture—passed from one generation to the next. They are said to connect the soul of its keeper to their homeland or loved ones as if by an invisible thread. Thus, if lost at sea, our spirit may return home rather than remain entombed in the remorseless depths. We swear our vows upon bondstones as promises that follow us to our death—and beyond. But bondstones can also embody the curses of lost lives and forsaken vows, and bearing that weight can make them feel as heavy as a ship’s anchor.",
 					"quest_starter": "A merciless and powerful raider wears the bondstones of their victims as trophies. One of those totems is rightfully yours. To whom did it previously belong?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/iron_vows.2"
 				}
 			],
@@ -67539,6 +68384,7 @@
 					"summary": "We are scattered to the winds, but our connections persist.",
 					"description": "The people of the isles are often isolated. Trade and communication must overcome distance and the fickle nature of the surrounding waterways. Known passages are undone by tumultuous weather, capricious seas, or unforeseen conflicts. In spite of those challenges, skilled voyagers and their indomitable vessels are a tether that binds the people and places of remote seas into a greater community.",
 					"quest_starter": "The port city of Stormrest is a perennial center of community and trade within the isles. But this city is now cut-off by an invading or occupying force. Who threatens this longstanding refuge?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/navigation.0"
 				},
 				{
@@ -67549,6 +68395,7 @@
 					"summary": "We rely on the ancient traditions and knowledge of the Starmarked to navigate these perilous seas.",
 					"description": "The Starmarked have an uncanny sense of wind and tide, and bear the history of their travels as beautiful and intricate tattoos—etched in phosphorescent ink. Some of the places and passages pioneered by the Starmarked are now common knowledge, inscribed in charts and traveled widely. Others are coveted secrets, or lost to time and strife. The skills of the Starmarked make them highly valued as ship navigators, and some seek to exploit them to their own ends.",
 					"quest_starter": "In recent years, many Starmarked have not returned from expeditions into a remote area of the isles. Is there someone—or something—that does not want to be found?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/navigation.1"
 				},
 				{
@@ -67559,6 +68406,7 @@
 					"summary": "Bleakmists are a curse upon the isles, confounding navigation and severing connections between communities.",
 					"description": "Bleakmists are a damnable, seabound fog. Mariners tell of inexplicable sensations within the cursed waters of the mists—whispered voices, the ghostly clanging of ship bells, half-seen phantom shapes. Some bleakmists never dissipate, forming an enduring barrier that only the most foolhardy attempt to navigate. In other places, mists gather with little warning. Once you enter a bleakmist, it’s hard to predict where—or if—you’ll emerge.",
 					"quest_starter": "Someone will pay well for passage through an everlasting bleakmist. What do they seek on the other side?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/navigation.2"
 				}
 			],
@@ -67598,6 +68446,7 @@
 					"summary": "The Sundered Isles are free from imperial control—for now.",
 					"description": "The empires have only a minor presence; their outposts are isolated and pose little threat. But there are resources and riches to be exploited, and freedom is a fragile thing. Even now, imperial agents are said to be among us, working in the shadows, planting the seeds of conquest.",
 					"quest_starter": "A conflict between two nations is raging. Some suggest the war was sparked by imperial agents, working behind the scenes to destabilize the region and open a path for colonization. Can you convince the leaders of these powers to abandon their fighting and focus on the true threat?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/empires.0"
 				},
 				{
@@ -67608,6 +68457,7 @@
 					"summary": "Imperial forces vie for dominion over the Sundered Isles.",
 					"description": "Imperial colonization and exploitation is a creeping tide that threatens to engulf the isles. Colonial governors oversee ever-expanding settlements, while powerful trade companies control key trade routes and resources. Imperial agents conduct missions of subterfuge and assassination. Treaties between the empires are forged and broken on a whim, and mariners can never be certain of what flag will fly over a port from one day to the next.",
 					"quest_starter": "Envoys and aristocrats gather for a gala at a governor’s manor house, where a priceless object will be on display as a demonstration of the governor’s power and wealth. If a clever thief were to abscond with that item, it would undermine the governor and foment suspicion among the attendees. What is this object?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/empires.1"
 				},
 				{
@@ -67618,6 +68468,7 @@
 					"summary": "In the wake of a tumultuous war, a powerful empire prevailed. This supreme power holds the fate of the Sundered Isles in an iron grasp.",
 					"description": "A time before the empire is a fading memory. Today, their armies and fleets control large swaths of territory in the isles, and their expeditionary forces use coercion and warfare to expand their dominion ever further. Other nations are little more than vassals, their puppet governments loyal to the empire. But there are whispers that the empire has grown complacent. Is this the day the once-freeborn people of the isles relight the fires of revolution and reclaim their legacy?",
 					"quest_starter": "A valuable prisoner is held in an imperial fortress. Who is this person, and why are they the best hope for rebellion?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/empires.2"
 				}
 			],
@@ -67660,6 +68511,7 @@
 					"summary": "Pirates are merciless raiders.",
 					"description": "Pirates give no quarter to seagoing targets and raze settlements on a whim. Their loyalty is only to crew and captain, but even that bond is fragile. Ritualized duels to decide the captaincy or settle disputes are common, and a long-lived marauder is a rare thing. If you come upon a gray-haired pirate, be wary; they have outwitted sailors better than you a thousand times over.",
 					"quest_starter": "You possess one-third of a coded map said to lead to a fabled pirate treasure. What infamous pirates hold the other pieces? Will you form an uneasy alliance to collect and divide the treasure, or take the other pieces of the map by force?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/piracy.0"
 				},
 				{
@@ -67670,6 +68522,7 @@
 					"summary": "Pirates are fiercely independent, but bound by a shared code.",
 					"description": "A pirate crew is a power unto itself, a diverse band of fugitives, outcasts, and rebels who serve under a ship’s charter and have a say in the operation of the vessel. Pirates do not attack indiscriminately, and give quarter to those who ask for it. They are nevertheless vilified as barbarous murderers by trade guilds, imperial governors, and other powers in the isles. In some ways, this reputation serves them; fear is more powerful than the mightiest cannons or the sharpest swords.",
 					"quest_starter": "A former pirate, given a pardon and a letter of marque, has sent countless pirates to their doom. Who is this turncoat, and why do you plot to see their reign of the seas ended?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/piracy.1"
 				},
 				{
@@ -67680,6 +68533,7 @@
 					"summary": "A burgeoning pirate nation wields great influence.",
 					"description": "The marauder clans sail under the command of the Dread Court, a conclave of eight veteran pirates whose shrewd tactics positioned this nation of cutthroats as a rising power. Once each year, the pirate fleets gather at a port called Flotsam—an artificial island built from the husks of captured and ruined ships—to pay homage to the Court and make plans.",
 					"quest_starter": "There are schisms within the Dread Court. An assassination has tipped the latest gathering into chaos and threatens the future of this burgeoning power. Will you work to restore the alliance, or use the mayhem to your own advantage?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/piracy.2"
 				}
 			],
@@ -67722,6 +68576,7 @@
 					"summary": "Our faith is as diverse as the people.",
 					"description": "Many have no religion, or offer an occasional prayer out of habit. Others pay homage to the gods of our ancestors as a way of connecting to their roots. Some idolize the natural order of the world, and see the divine in the ebb and flow of the tides or the whirling dance of the stars. Then there are those who see this diversity as imperfection, who seek only to bend the world to their righteous will.",
 					"quest_starter": "A pilgrim seeks passage to remote and dangerous waters. What holy place do they seek?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/religion.0"
 				},
 				{
@@ -67732,6 +68587,7 @@
 					"summary": "The gods enact their will through manifestations and miracles.",
 					"description": "We chronicle the visitations of the gods in our histories, and decipher their enigmatic purpose through sacred rites. In times of crisis, their earthly avatars have guided us through the upheaval. For many, faith in these gods offers meaning and fulfillment. For others, belief is a cudgel used by tyrannical leaders to divide or control us. For this reason, some people and cultures disavow the gods to follow a different path.",
 					"quest_starter": "You bear the mark of a god. The priests declare this as a sign you are chosen to fulfill a destiny. Do you accept this fate, and swear to see it through, or are you determined to see it undone? What force opposes you?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/religion.1"
 				},
 				{
@@ -67742,6 +68598,7 @@
 					"summary": "The gods are dead.",
 					"description": "In a time before memory, the gods of the isles warred with each other. These seas were their battleground, and they ushered in an age of destruction that plunged all the lands into fire and darkness. In their death throes, they left behind areas of tainted seas and forsaken landscapes—a cursed corruption that lingers even today. The hubris of these fallen gods is a reminder of the empty promise of faith.",
 					"quest_starter": "A cult seeks to take control of a site reputed to hold an artifact of the fallen gods. What holy object do they seek? Why are you sworn to stop them?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/religion.2"
 				}
 			],
@@ -67787,6 +68644,7 @@
 					"summary": "Magic does not exist.",
 					"description": "Some find comfort in the old ways. Mariners heed a thousand superstitions to help ensure a safe voyage. A few perform elaborate rituals to gain the favor of the wind or cast runes to divine one's future. But true magic—if it ever existed—is lost to us now.",
 					"quest_starter": "Someone close to you is accused of casting a curse upon a settlement. Will you defend this person and uncover the true cause of the settlement’s troubles?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/magic.0"
 				},
 				{
@@ -67797,6 +68655,7 @@
 					"summary": "Magic is rare and mysterious.",
 					"description": "The isles lie at the nexus of the new and the old, science and superstition, the known and the inexplicable. This collision of realities is a powerful but chaotic force, and rare folk can manipulate these unstable realities to cast spells and perform rites. In some cultures, mystics are respected; in others, they are feared or even outcast.",
 					"quest_starter": "A powerful but outcast sorcerer lives alone on a faraway island. Why do you have urgent need of their abilities? What enemy or rival is on the hunt for this person?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/magic.1"
 				},
 				{
@@ -67807,6 +68666,7 @@
 					"summary": "Magic is an ever-present, elemental force.",
 					"description": "Magic is as constant as the winds and tides. Talented mystics exploit these energies to shape natural forces, divine the past and the future, and cast boons and curses. A few can even breathe unnatural life into the dead. Many mystics join guilds or serve under mentors to hone their craft, while others make do with raw, untrained talent. In spite of their uncanny nature, mystics are often hired as aides for powerful leaders, or to help guide ships on perilous voyages. But as the winds and tides are fickle, so is magic, and some fall prey to the dark curse of these forces.",
 					"quest_starter": "Someone you love is corrupted by cursed powers, and is set on a destructive course of vengeance. What caused their fall? Do you seek to save them or defeat them?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/magic.2"
 				}
 			],
@@ -67849,6 +68709,7 @@
 					"summary": "Beasts are lost to myth, but the tales persist.",
 					"description": "For most, monstrous beasts are the stuff of fables. But a few who journey across trackless isles and unknown seas claim otherwise. Some even bear the scars of those alleged encounters.",
 					"quest_starter": "In the highland jungles of a remote island, a settlement is plagued by attacks from an unknown creature. Five dead in these last few months, and fear and suspicion is rampant. What is your connection to this place?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/beasts.0"
 				},
 				{
@@ -67859,6 +68720,7 @@
 					"summary": "Beasts lurk in watery depths and within the reaches of remote islands.",
 					"description": "All manner of creatures dwell among the isles—including rare and incredible beasts of legend. Among them are colossal great whales and elder rays, larger than our greatest ship, and blade-winged sea dragons. Some foolish souls hunt these creatures for riches or sport. Others revere and protect them. A few are beast-bonded, forming an enduring friendship with their beast-kin.",
 					"quest_starter": "The captain of a powerful ship lost something dear to them when battling a beast, and has sworn vengeance against the creature. What is the nature of this beast? Do you aid the captain in their ill-fated quest, or stand against them to protect the creature?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/beasts.1"
 				},
 				{
@@ -67869,6 +68731,7 @@
 					"summary": "Here, there be monsters.",
 					"description": "We are trespassers in a cursed realm of beasts. Monstrous lizards stalk the inland wilds. Flying reptiles with wings the size of topsails dwell in cliffside nests. Giant sharks and serpents cruise the coastal waters in search of prey. The much-feared Kraken, larger than the greatest warship, lurks in fathomless depths. And some ancient beasts are too monstrous, too horrible, for even our worst imaginings.",
 					"quest_starter": "Tales tell of the means of forming a bond with the mightiest of the world’s beasts, the Kraken. Many have undertaken this quest, but none have succeeded. What must you accomplish to gain an accord with the Kraken, and why would you face this trial?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/beasts.2"
 				}
 			],
@@ -67911,6 +68774,7 @@
 					"summary": "Put enough grog in a sailor, and they’ll tell you stories of doomed ships and ghostly visitations. It’s nonsense.",
 					"description": "There’s enough to fear amid the isles without worrying about fanciful tales of ghosts and ghouls. Nonetheless, sailors are a superstitious folk. On dark nights, when a dead calm falls over the sea, they keep a wary eye for ships that sail heedless of the wind.",
 					"quest_starter": "Years ago, a ship bearing a stolen treasure was sunk in a fierce storm. But mariners report seeing this vessel sailing under the light of the Wraith moon, its sails tattered, its weather decks empty. It is a cursed ship, folks say, doomed to carry its ill-gotten treasure for all eternity. Why do you intend to prove or disprove this tale?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/horrors.0"
 				},
 				{
@@ -67921,6 +68785,7 @@
 					"summary": "The veil between life and death is as fragile as gossamer.",
 					"description": "In the darkest reaches of the isles, ghost ships stalk the seas, undead guardians protect ancient tombs, and drowned sailors emerge from the depths in search of absolution or vengeance. Others may scoff at these tales, but we know the truth—death waits for us all, but is not always an end.",
 					"quest_starter": "Your ship is haunted by its former captain. At night, they are sometimes seen on the quarterdeck, staring grimly at the distant horizon. What unfulfilled vow torments this restless spirit? Why do you swear to see it done?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/horrors.1"
 				},
 				{
@@ -67931,6 +68796,7 @@
 					"summary": "The damned and the dead are a plague upon the isles.",
 					"description": "We live in accursed times. The drowned and the buried do not rest. Tortured spirits hunt for retribution. Uncounted islands are blighted by dark forces. Cities and villages lie abandoned and forsaken, lost to a malevolent tide. We keep watch, craft wards, and offer prayers to keep the horrors at bay, but it is no use. They are coming.",
 					"quest_starter": "For generations, an infamous ghost fleet has haunted these seas, sending countless mariners to their doom. Why do you now seek to form an alliance with the cursed commander of this fleet?",
+					"oracles": {},
 					"_id": "truth.option:sundered_isles/horrors.2"
 				}
 			],

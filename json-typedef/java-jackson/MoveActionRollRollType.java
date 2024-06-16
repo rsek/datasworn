@@ -4,9 +4,6 @@ package Datasworn;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * A move that makes an action roll.
- */
 public enum MoveActionRollRollType {
     @JsonProperty("action_roll")
     ACTION_ROLL,

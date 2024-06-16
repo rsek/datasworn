@@ -7,12 +7,12 @@ exports.validate = void 0;
 const CONST_js_1 = __importDefault(require("../IdElements/CONST.js"));
 function validate(obj, collectionValidator, collectableValidator) {
     collectionValidator(obj);
-    if (!(CONST_js_1.default.ContentsKey in obj)) {
+    if (CONST_js_1.default.ContentsKey in obj) {
         const children = obj[CONST_js_1.default.ContentsKey];
         for (const k in children)
             collectableValidator(children[k]);
     }
-    if (!(CONST_js_1.default.CollectionsKey in obj)) {
+    if (CONST_js_1.default.CollectionsKey in obj) {
         const collectionChildren = obj[CONST_js_1.default.CollectionsKey];
         for (const k in collectionChildren)
             validate(collectionChildren[k], collectionValidator, collectableValidator);

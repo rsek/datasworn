@@ -6,9 +6,6 @@ using System.Text.Json.Serialization;
 
 namespace Datasworn
 {
-    /// <summary>
-    /// A grouping of separate tables.
-    /// </summary>
     [JsonConverter(typeof(OracleTablesCollectionOracleTypeJsonConverter))]
     public enum OracleTablesCollectionOracleType
     {

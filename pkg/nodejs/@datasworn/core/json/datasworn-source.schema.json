@@ -1142,7 +1142,7 @@
 		},
 		"License": {
 			"title": "License",
-			"description": "An URL pointing to the location where this element's license can be found.\n\nA `null` here indicates that the content provides __no__ license, and is not intended for redistribution.",
+			"description": "An URL pointing to the location where this content's license can be found.\n\nA `null` here indicates that the content provides __no__ license, and is not intended for redistribution.",
 			"examples": [
 				"https://creativecommons.org/licenses/by/4.0",
 				"https://creativecommons.org/licenses/by-nc-sa/4.0"
@@ -1165,7 +1165,7 @@
 		"SourceInfo": {
 			"title": "SourceInfo",
 			"type": "object",
-			"description": "Metadata describing the original source of this item",
+			"description": "Metadata describing the original source of this node",
 			"required": ["title", "authors", "date", "license", "url"],
 			"properties": {
 				"title": {
@@ -1188,7 +1188,7 @@
 				},
 				"page": {
 					"$ref": "#/definitions/PageNumber",
-					"description": "The page number where this item is described in full."
+					"description": "The page number where this content is described in full."
 				},
 				"url": {
 					"$ref": "#/definitions/WebUrl",
@@ -1384,7 +1384,7 @@
 			"title": "ImpactCategory",
 			"type": "object",
 			"description": "Describes a category of standard impacts/debilities.",
-			"required": ["label", "description", "contents"],
+			"required": ["label", "description"],
 			"properties": {
 				"label": {
 					"$ref": "#/definitions/Label",
@@ -1398,6 +1398,7 @@
 					"type": "object",
 					"description": "A dictionary object of the Impacts in this category.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/ImpactRule"
@@ -1457,12 +1458,12 @@
 			"type": "object",
 			"description": "Describes rules for player characters in this ruleset, such as stats and condition meters.",
 			"releaseStage": "experimental",
-			"required": ["condition_meters", "stats", "impacts", "special_tracks"],
 			"properties": {
 				"condition_meters": {
 					"type": "object",
 					"description": "Describes the standard condition meters used by player characters in this ruleset.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/ConditionMeterRule"
@@ -1473,6 +1474,7 @@
 					"type": "object",
 					"description": "Describes the standard stats used by player characters in this ruleset.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/StatRule"
@@ -1483,6 +1485,7 @@
 					"type": "object",
 					"description": "Describes the standard impacts/debilities used by player characters in this ruleset.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/ImpactCategory"
@@ -1493,6 +1496,7 @@
 					"type": "object",
 					"description": "Describes the special tracks used by player characters in this ruleset, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/SpecialTrackRule"
@@ -1523,6 +1527,7 @@
 					"type": "object",
 					"description": "Describes the standard condition meters used by player characters in this ruleset.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/ConditionMeterRule"
@@ -1533,6 +1538,7 @@
 					"type": "object",
 					"description": "Describes the standard stats used by player characters in this ruleset.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/StatRule"
@@ -1543,6 +1549,7 @@
 					"type": "object",
 					"description": "Describes the standard impacts/debilities used by player characters in this ruleset.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/ImpactCategory"
@@ -1553,6 +1560,7 @@
 					"type": "object",
 					"description": "Describes the special tracks used by player characters in this ruleset, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/SpecialTrackRule"
@@ -2608,6 +2616,7 @@
 					"title": "RulesPackageTags",
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/Tag"
@@ -2668,6 +2677,7 @@
 				"controls": {
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"type": "object",
@@ -2980,19 +2990,25 @@
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/NpcId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
 					"const": "npc"
 				},
 				"name": {
-					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"$ref": "#/definitions/Label"
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
+				},
+				"replaces": {
+					"type": "array",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
+					"items": {
+						"$ref": "#/definitions/NpcIdWildcard"
+					}
 				},
 				"rank": {
 					"$ref": "#/definitions/ChallengeRank",
@@ -3000,6 +3016,21 @@
 				},
 				"nature": {
 					"$ref": "#/definitions/NpcNature"
+				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this node."
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"summary": {
 					"$ref": "#/definitions/MarkdownString"
@@ -3025,6 +3056,7 @@
 				"variants": {
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/NpcVariant"
@@ -3048,11 +3080,11 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				}
 			},
 			"additionalProperties": true
@@ -3064,7 +3096,7 @@
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/NpcCollectionId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -3072,29 +3104,29 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"replaces": {
 					"type": "array",
-					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
 					"items": {
 						"$ref": "#/definitions/NpcCollectionIdWildcard"
 					}
 				},
 				"enhances": {
 					"type": "array",
-					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"description": "This node's content enhances all nodes that match these wildcards, rather than being a standalone item of its own.",
 					"items": {
 						"$ref": "#/definitions/NpcCollectionIdWildcard"
 					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
-					"description": "A thematic color associated with this collection."
+					"description": "A thematic color associated with this node."
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
@@ -3104,7 +3136,7 @@
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/WebpImageUrl",
-						"description": "Extra images associated with this collection."
+						"description": "Extra images associated with this node."
 					}
 				},
 				"summary": {
@@ -3118,9 +3150,20 @@
 				"contents": {
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/Npc"
+						}
+					}
+				},
+				"collections": {
+					"type": "object",
+					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
+					"patternProperties": {
+						"^[a-z][a-z_]*$": {
+							"$ref": "#/definitions/NpcCollection"
 						}
 					}
 				},
@@ -3132,11 +3175,11 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -3321,7 +3364,11 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary label at the head of this column."
+					"description": "The primary name/label for this node."
+				},
+				"canonical_name": {
+					"$ref": "#/definitions/Label",
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
 					"type": "string",
@@ -3329,24 +3376,41 @@
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
-					"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
+					"description": "A thematic color associated with this node."
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An optional icon for this column."
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"dice": {
 					"$ref": "#/definitions/DiceExpression",
 					"description": "The roll used to select a result on this oracle.",
 					"default": "1d100"
 				},
-				"summary": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
-				},
 				"match": {
 					"$ref": "#/definitions/OracleMatchBehavior",
 					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+				},
+				"recommended_rolls": {
+					"type": "object",
+					"required": ["min", "max"],
+					"properties": {
+						"min": {
+							"type": "integer",
+							"default": 1
+						},
+						"max": {
+							"type": "integer",
+							"default": 1
+						}
+					}
 				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
@@ -3356,7 +3420,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"rows": {
 					"type": "array",
@@ -3383,7 +3447,11 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary label at the head of this column."
+					"description": "The primary name/label for this node."
+				},
+				"canonical_name": {
+					"$ref": "#/definitions/Label",
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
 					"type": "string",
@@ -3391,24 +3459,41 @@
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
-					"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
+					"description": "A thematic color associated with this node."
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An optional icon for this column."
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"dice": {
 					"$ref": "#/definitions/DiceExpression",
 					"description": "The roll used to select a result on this oracle.",
 					"default": "1d100"
 				},
-				"summary": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
-				},
 				"match": {
 					"$ref": "#/definitions/OracleMatchBehavior",
 					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+				},
+				"recommended_rolls": {
+					"type": "object",
+					"required": ["min", "max"],
+					"properties": {
+						"min": {
+							"type": "integer",
+							"default": 1
+						},
+						"max": {
+							"type": "integer",
+							"default": 1
+						}
+					}
 				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
@@ -3418,7 +3503,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"rows": {
 					"type": "array",
@@ -3445,7 +3530,11 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary label at the head of this column."
+					"description": "The primary name/label for this node."
+				},
+				"canonical_name": {
+					"$ref": "#/definitions/Label",
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
 					"type": "string",
@@ -3453,24 +3542,41 @@
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
-					"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
+					"description": "A thematic color associated with this node."
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An optional icon for this column."
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"dice": {
 					"$ref": "#/definitions/DiceExpression",
 					"description": "The roll used to select a result on this oracle.",
 					"default": "1d100"
 				},
-				"summary": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
-				},
 				"match": {
 					"$ref": "#/definitions/OracleMatchBehavior",
 					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+				},
+				"recommended_rolls": {
+					"type": "object",
+					"required": ["min", "max"],
+					"properties": {
+						"min": {
+							"type": "integer",
+							"default": 1
+						},
+						"max": {
+							"type": "integer",
+							"default": 1
+						}
+					}
 				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
@@ -3480,7 +3586,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"rows": {
 					"type": "array",
@@ -3606,32 +3712,35 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
 					"type": "string",
 					"const": "table_text"
 				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this node."
+				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An icon that represents this table."
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"dice": {
 					"$ref": "#/definitions/DiceExpression",
 					"description": "The roll used to select a result on this oracle.",
 					"default": "1d100"
-				},
-				"summary": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
-				},
-				"description": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
 				},
 				"match": {
 					"$ref": "#/definitions/OracleMatchBehavior",
@@ -3679,7 +3788,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"rows": {
 					"type": "array",
@@ -3706,32 +3815,35 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
 					"type": "string",
 					"const": "table_text2"
 				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this node."
+				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An icon that represents this table."
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"dice": {
 					"$ref": "#/definitions/DiceExpression",
 					"description": "The roll used to select a result on this oracle.",
 					"default": "1d100"
-				},
-				"summary": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
-				},
-				"description": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
 				},
 				"match": {
 					"$ref": "#/definitions/OracleMatchBehavior",
@@ -3784,7 +3896,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"rows": {
 					"type": "array",
@@ -3811,32 +3923,35 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
 					"type": "string",
 					"const": "table_text3"
 				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this node."
+				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An icon that represents this table."
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"dice": {
 					"$ref": "#/definitions/DiceExpression",
 					"description": "The roll used to select a result on this oracle.",
 					"default": "1d100"
-				},
-				"summary": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
-				},
-				"description": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
 				},
 				"match": {
 					"$ref": "#/definitions/OracleMatchBehavior",
@@ -3885,7 +4000,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"rows": {
 					"type": "array",
@@ -3910,7 +4025,7 @@
 						"table_shared_rolls",
 						"table_shared_text",
 						"table_shared_text2",
-						"OracleTableSharedText3"
+						"table_shared_text3"
 					]
 				}
 			},
@@ -3972,7 +4087,7 @@
 					"if": {
 						"properties": {
 							"oracle_type": {
-								"const": "OracleTableSharedText3",
+								"const": "table_shared_text3",
 								"type": "string"
 							}
 						}
@@ -3991,7 +4106,7 @@
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -3999,7 +4114,11 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary label at the head of this column."
+					"description": "The primary name/label for this node."
+				},
+				"canonical_name": {
+					"$ref": "#/definitions/Label",
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
 					"type": "string",
@@ -4007,31 +4126,48 @@
 				},
 				"replaces": {
 					"type": "array",
-					"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
 					"items": {
 						"$ref": "#/definitions/OracleRollableIdWildcard"
 					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
-					"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
+					"description": "A thematic color associated with this node."
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An optional icon for this column."
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"dice": {
 					"$ref": "#/definitions/DiceExpression",
 					"description": "The roll used to select a result on this oracle.",
 					"default": "1d100"
 				},
-				"summary": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
-				},
 				"match": {
 					"$ref": "#/definitions/OracleMatchBehavior",
 					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+				},
+				"recommended_rolls": {
+					"type": "object",
+					"required": ["min", "max"],
+					"properties": {
+						"min": {
+							"type": "integer",
+							"default": 1
+						},
+						"max": {
+							"type": "integer",
+							"default": 1
+						}
+					}
 				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
@@ -4041,7 +4177,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"rows": {
 					"type": "array",
@@ -4052,7 +4188,7 @@
 					}
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": true
 		},
 		"OracleColumnText2": {
 			"title": "OracleColumnText2",
@@ -4061,7 +4197,7 @@
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -4069,7 +4205,11 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary label at the head of this column."
+					"description": "The primary name/label for this node."
+				},
+				"canonical_name": {
+					"$ref": "#/definitions/Label",
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
 					"type": "string",
@@ -4077,31 +4217,48 @@
 				},
 				"replaces": {
 					"type": "array",
-					"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
 					"items": {
 						"$ref": "#/definitions/OracleRollableIdWildcard"
 					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
-					"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
+					"description": "A thematic color associated with this node."
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An optional icon for this column."
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"dice": {
 					"$ref": "#/definitions/DiceExpression",
 					"description": "The roll used to select a result on this oracle.",
 					"default": "1d100"
 				},
-				"summary": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
-				},
 				"match": {
 					"$ref": "#/definitions/OracleMatchBehavior",
 					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+				},
+				"recommended_rolls": {
+					"type": "object",
+					"required": ["min", "max"],
+					"properties": {
+						"min": {
+							"type": "integer",
+							"default": 1
+						},
+						"max": {
+							"type": "integer",
+							"default": 1
+						}
+					}
 				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
@@ -4111,7 +4268,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"rows": {
 					"type": "array",
@@ -4122,7 +4279,7 @@
 					}
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": true
 		},
 		"OracleColumnText3": {
 			"title": "OracleColumnText3",
@@ -4131,7 +4288,7 @@
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -4139,7 +4296,11 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary label at the head of this column."
+					"description": "The primary name/label for this node."
+				},
+				"canonical_name": {
+					"$ref": "#/definitions/Label",
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
 					"type": "string",
@@ -4147,31 +4308,48 @@
 				},
 				"replaces": {
 					"type": "array",
-					"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
 					"items": {
 						"$ref": "#/definitions/OracleRollableIdWildcard"
 					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
-					"description": "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
+					"description": "A thematic color associated with this node."
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An optional icon for this column."
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"dice": {
 					"$ref": "#/definitions/DiceExpression",
 					"description": "The roll used to select a result on this oracle.",
 					"default": "1d100"
 				},
-				"summary": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "Optional secondary text at the head of this column. For best results, this should be no more than a few words in length."
-				},
 				"match": {
 					"$ref": "#/definitions/OracleMatchBehavior",
 					"description": "Most oracle tables are insensitive to matches, but a few define special match behavior."
+				},
+				"recommended_rolls": {
+					"type": "object",
+					"required": ["min", "max"],
+					"properties": {
+						"min": {
+							"type": "integer",
+							"default": 1
+						},
+						"max": {
+							"type": "integer",
+							"default": 1
+						}
+					}
 				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
@@ -4181,7 +4359,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"rows": {
 					"type": "array",
@@ -4192,7 +4370,7 @@
 					}
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": true
 		},
 		"OracleRollable": {
 			"title": "OracleRollable",
@@ -4512,8 +4690,8 @@
 			},
 			"additionalProperties": false
 		},
-		"OracleTableRollable": {
-			"title": "OracleTableRollable",
+		"OracleRollableTable": {
+			"title": "OracleRollableTable",
 			"type": "object",
 			"remarks": "Deserialize as a discriminated union/polymorphic object type, using the `oracle_type` property as a discriminator.",
 			"required": ["oracle_type"],
@@ -4568,12 +4746,12 @@
 		"OracleTableSharedRolls": {
 			"title": "OracleTableSharedRolls",
 			"type": "object",
-			"description": "An OracleCollection representing a single table with one roll column and multiple `result` columns.",
-			"required": ["type", "name", "_source"],
+			"description": "An OracleCollection representing a single table with one roll column and multiple text columns.",
+			"required": ["type", "name", "oracle_type", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleCollectionId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -4581,35 +4759,33 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
 					"type": "string",
-					"description": "A table with one shared roll column, and multiple unique text columns.",
-					"default": "table_shared_rolls",
 					"const": "table_shared_rolls"
 				},
 				"replaces": {
 					"type": "array",
-					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
 					"items": {
 						"$ref": "#/definitions/OracleCollectionIdWildcard"
 					}
 				},
 				"enhances": {
 					"type": "array",
-					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"description": "This node's content enhances all nodes that match these wildcards, rather than being a standalone item of its own.",
 					"items": {
 						"$ref": "#/definitions/OracleCollectionIdWildcard"
 					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
-					"description": "A thematic color associated with this collection."
+					"description": "A thematic color associated with this node."
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
@@ -4619,7 +4795,7 @@
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/WebpImageUrl",
-						"description": "Extra images associated with this collection."
+						"description": "Extra images associated with this node."
 					}
 				},
 				"summary": {
@@ -4633,6 +4809,7 @@
 				"contents": {
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/OracleColumnText"
@@ -4662,11 +4839,11 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -4674,12 +4851,12 @@
 		"OracleTableSharedText": {
 			"title": "OracleTableSharedText",
 			"type": "object",
-			"description": "An OracleCollection representing a single table with multiple roll columns and one `result` column.",
+			"description": "An OracleCollection representing a single table with multiple roll columns and one text column.",
 			"required": ["type", "name", "oracle_type", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleCollectionId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -4687,34 +4864,33 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
 					"type": "string",
-					"description": "A table with multiple unique roll columns, and one shared text column.",
 					"const": "table_shared_text"
 				},
 				"replaces": {
 					"type": "array",
-					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
 					"items": {
 						"$ref": "#/definitions/OracleCollectionIdWildcard"
 					}
 				},
 				"enhances": {
 					"type": "array",
-					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"description": "This node's content enhances all nodes that match these wildcards, rather than being a standalone item of its own.",
 					"items": {
 						"$ref": "#/definitions/OracleCollectionIdWildcard"
 					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
-					"description": "A thematic color associated with this collection."
+					"description": "A thematic color associated with this node."
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
@@ -4724,7 +4900,7 @@
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/WebpImageUrl",
-						"description": "Extra images associated with this collection."
+						"description": "Extra images associated with this node."
 					}
 				},
 				"summary": {
@@ -4738,6 +4914,7 @@
 				"contents": {
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/OracleColumnText"
@@ -4767,11 +4944,11 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -4784,7 +4961,7 @@
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleCollectionId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -4792,34 +4969,33 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
 					"type": "string",
-					"description": "A table with multiple unique roll columns, and 2 shared text columns.",
 					"const": "table_shared_text2"
 				},
 				"replaces": {
 					"type": "array",
-					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
 					"items": {
 						"$ref": "#/definitions/OracleCollectionIdWildcard"
 					}
 				},
 				"enhances": {
 					"type": "array",
-					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"description": "This node's content enhances all nodes that match these wildcards, rather than being a standalone item of its own.",
 					"items": {
 						"$ref": "#/definitions/OracleCollectionIdWildcard"
 					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
-					"description": "A thematic color associated with this collection."
+					"description": "A thematic color associated with this node."
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
@@ -4829,7 +5005,7 @@
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/WebpImageUrl",
-						"description": "Extra images associated with this collection."
+						"description": "Extra images associated with this node."
 					}
 				},
 				"summary": {
@@ -4843,6 +5019,7 @@
 				"contents": {
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/OracleColumnText2"
@@ -4877,11 +5054,11 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -4889,12 +5066,12 @@
 		"OracleTableSharedText3": {
 			"title": "OracleTableSharedText3",
 			"type": "object",
-			"description": "An OracleCollection representing a single table with multiple roll columns, and 2 shared text columns.",
+			"description": "An OracleCollection representing a single table with multiple roll columns, and 3 shared text columns.",
 			"required": ["type", "name", "oracle_type", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleCollectionId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -4902,34 +5079,33 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
 					"type": "string",
-					"description": "A table with multiple unique roll columns, and 3 shared text columns.",
 					"const": "table_shared_text3"
 				},
 				"replaces": {
 					"type": "array",
-					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
 					"items": {
 						"$ref": "#/definitions/OracleCollectionIdWildcard"
 					}
 				},
 				"enhances": {
 					"type": "array",
-					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"description": "This node's content enhances all nodes that match these wildcards, rather than being a standalone item of its own.",
 					"items": {
 						"$ref": "#/definitions/OracleCollectionIdWildcard"
 					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
-					"description": "A thematic color associated with this collection."
+					"description": "A thematic color associated with this node."
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
@@ -4939,7 +5115,7 @@
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/WebpImageUrl",
-						"description": "Extra images associated with this collection."
+						"description": "Extra images associated with this node."
 					}
 				},
 				"summary": {
@@ -4953,6 +5129,7 @@
 				"contents": {
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/OracleColumnText3"
@@ -4963,16 +5140,8 @@
 					"title": "ColumnLabels",
 					"type": "object",
 					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
-					"default": {
-						"text": "Result"
-					},
-					"required": ["text"],
-					"properties": {
-						"text": {
-							"$ref": "#/definitions/Label",
-							"default": "Result"
-						}
-					}
+					"default": {},
+					"properties": {}
 				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
@@ -4982,11 +5151,11 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -4999,7 +5168,7 @@
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -5007,11 +5176,11 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
 					"type": "string",
@@ -5019,27 +5188,30 @@
 				},
 				"replaces": {
 					"type": "array",
-					"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
 					"items": {
 						"$ref": "#/definitions/OracleRollableIdWildcard"
 					}
 				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this node."
+				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An icon that represents this table."
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"dice": {
 					"$ref": "#/definitions/DiceExpression",
 					"description": "The roll used to select a result on this oracle.",
 					"default": "1d100"
-				},
-				"summary": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
-				},
-				"description": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
 				},
 				"match": {
 					"$ref": "#/definitions/OracleMatchBehavior",
@@ -5087,7 +5259,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"rows": {
 					"type": "array",
@@ -5099,7 +5271,7 @@
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				}
 			},
 			"additionalProperties": true
@@ -5112,7 +5284,7 @@
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -5120,11 +5292,11 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
 					"type": "string",
@@ -5132,27 +5304,30 @@
 				},
 				"replaces": {
 					"type": "array",
-					"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
 					"items": {
 						"$ref": "#/definitions/OracleRollableIdWildcard"
 					}
 				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this node."
+				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An icon that represents this table."
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"dice": {
 					"$ref": "#/definitions/DiceExpression",
 					"description": "The roll used to select a result on this oracle.",
 					"default": "1d100"
-				},
-				"summary": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
-				},
-				"description": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
 				},
 				"match": {
 					"$ref": "#/definitions/OracleMatchBehavior",
@@ -5205,7 +5380,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"rows": {
 					"type": "array",
@@ -5217,7 +5392,7 @@
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				}
 			},
 			"additionalProperties": true
@@ -5230,7 +5405,7 @@
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -5238,11 +5413,11 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
 					"type": "string",
@@ -5250,27 +5425,30 @@
 				},
 				"replaces": {
 					"type": "array",
-					"description": "Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
 					"items": {
 						"$ref": "#/definitions/OracleRollableIdWildcard"
 					}
 				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this node."
+				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
-					"description": "An icon that represents this table."
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"dice": {
 					"$ref": "#/definitions/DiceExpression",
 					"description": "The roll used to select a result on this oracle.",
 					"default": "1d100"
-				},
-				"summary": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A brief summary of the oracle table's intended usage, no more than a few sentences in length. This is intended for use in application tooltips and similar sorts of hints. Longer text should use the \"description\" key instead."
-				},
-				"description": {
-					"$ref": "#/definitions/MarkdownString",
-					"description": "A longer description of the oracle table's intended usage, which might include multiple paragraphs. If it's only a couple sentences, use the `summary` key instead."
 				},
 				"match": {
 					"$ref": "#/definitions/OracleMatchBehavior",
@@ -5319,7 +5497,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"rows": {
 					"type": "array",
@@ -5331,7 +5509,7 @@
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				}
 			},
 			"additionalProperties": true
@@ -5340,11 +5518,11 @@
 			"title": "OracleTablesCollection",
 			"type": "object",
 			"description": "An OracleCollection that represents a category or grouping of tables, which may themselves be `OracleTablesCollection`s.",
-			"required": ["type", "name", "_source"],
+			"required": ["type", "name", "oracle_type", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleCollectionId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -5352,35 +5530,33 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"oracle_type": {
 					"type": "string",
-					"description": "A grouping of separate tables.",
-					"default": "tables",
 					"const": "tables"
 				},
 				"replaces": {
 					"type": "array",
-					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
 					"items": {
 						"$ref": "#/definitions/OracleCollectionIdWildcard"
 					}
 				},
 				"enhances": {
 					"type": "array",
-					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"description": "This node's content enhances all nodes that match these wildcards, rather than being a standalone item of its own.",
 					"items": {
 						"$ref": "#/definitions/OracleCollectionIdWildcard"
 					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
-					"description": "A thematic color associated with this collection."
+					"description": "A thematic color associated with this node."
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
@@ -5390,7 +5566,7 @@
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/WebpImageUrl",
-						"description": "Extra images associated with this collection."
+						"description": "Extra images associated with this node."
 					}
 				},
 				"summary": {
@@ -5404,15 +5580,17 @@
 				"contents": {
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
-							"$ref": "#/definitions/OracleTableRollable"
+							"$ref": "#/definitions/OracleRollableTable"
 						}
 					}
 				},
 				"collections": {
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/OracleCollection"
@@ -5427,11 +5605,11 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -5463,16 +5641,30 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"roll_type": {
 					"type": "string",
-					"description": "A move that makes an action roll.",
 					"const": "action_roll"
+				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this node."
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"trigger": {
 					"$ref": "#/definitions/TriggerActionRoll",
@@ -5495,7 +5687,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"allow_momentum_burn": {
 					"type": "boolean",
@@ -5585,16 +5777,30 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"roll_type": {
 					"type": "string",
-					"description": "A move that makes no action rolls or progress rolls.",
 					"const": "no_roll"
+				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this node."
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"trigger": {
 					"$ref": "#/definitions/TriggerNoRoll",
@@ -5618,7 +5824,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"allow_momentum_burn": {
 					"type": "boolean",
@@ -5651,20 +5857,34 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"roll_type": {
 					"type": "string",
-					"description": "A progress move that rolls on a standard progress track type (defined by this move).",
 					"const": "progress_roll"
 				},
 				"tracks": {
 					"$ref": "#/definitions/ProgressTrackTypeInfo",
 					"description": "Describes the common features of progress tracks associated with this move."
+				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this node."
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"trigger": {
 					"$ref": "#/definitions/TriggerProgressRoll",
@@ -5687,7 +5907,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"allow_momentum_burn": {
 					"type": "boolean",
@@ -5712,16 +5932,30 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"roll_type": {
 					"type": "string",
-					"description": "A progress move that rolls on one or more special tracks, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).",
 					"const": "special_track"
+				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this node."
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"trigger": {
 					"$ref": "#/definitions/TriggerSpecialTrack",
@@ -5744,7 +5978,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"allow_momentum_burn": {
 					"type": "boolean",
@@ -5837,7 +6071,7 @@
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/MoveId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -5845,15 +6079,14 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"roll_type": {
 					"type": "string",
-					"description": "A move that makes an action roll.",
 					"const": "action_roll"
 				},
 				"replaces": {
@@ -5861,6 +6094,21 @@
 					"description": "Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move.",
 					"items": {
 						"$ref": "#/definitions/MoveIdWildcard"
+					}
+				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this node."
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
 					}
 				},
 				"trigger": {
@@ -5880,6 +6128,7 @@
 					"title": "MoveOracles",
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/EmbeddedOracleRollable",
@@ -5895,11 +6144,11 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				},
 				"allow_momentum_burn": {
 					"type": "boolean",
@@ -5948,7 +6197,7 @@
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/MoveCategoryId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -5956,29 +6205,29 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"replaces": {
 					"type": "array",
-					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
 					"items": {
 						"$ref": "#/definitions/MoveCategoryIdWildcard"
 					}
 				},
 				"enhances": {
 					"type": "array",
-					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"description": "This node's content enhances all nodes that match these wildcards, rather than being a standalone item of its own.",
 					"items": {
 						"$ref": "#/definitions/MoveCategoryIdWildcard"
 					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
-					"description": "A thematic color associated with this collection."
+					"description": "A thematic color associated with this node."
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
@@ -5988,7 +6237,7 @@
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/WebpImageUrl",
-						"description": "Extra images associated with this collection."
+						"description": "Extra images associated with this node."
 					}
 				},
 				"summary": {
@@ -6002,9 +6251,20 @@
 				"contents": {
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/Move"
+						}
+					}
+				},
+				"collections": {
+					"type": "object",
+					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
+					"patternProperties": {
+						"^[a-z][a-z_]*$": {
+							"$ref": "#/definitions/MoveCategory"
 						}
 					}
 				},
@@ -6016,11 +6276,11 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -6099,7 +6359,7 @@
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/MoveId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -6107,15 +6367,14 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"roll_type": {
 					"type": "string",
-					"description": "A move that makes no action rolls or progress rolls.",
 					"const": "no_roll"
 				},
 				"replaces": {
@@ -6123,6 +6382,21 @@
 					"description": "Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move.",
 					"items": {
 						"$ref": "#/definitions/MoveIdWildcard"
+					}
+				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this node."
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
 					}
 				},
 				"trigger": {
@@ -6143,6 +6417,7 @@
 					"title": "MoveOracles",
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/EmbeddedOracleRollable",
@@ -6158,11 +6433,11 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				},
 				"allow_momentum_burn": {
 					"type": "boolean",
@@ -6259,7 +6534,7 @@
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/MoveId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -6267,15 +6542,14 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"roll_type": {
 					"type": "string",
-					"description": "A progress move that rolls on a standard progress track type (defined by this move).",
 					"const": "progress_roll"
 				},
 				"tracks": {
@@ -6287,6 +6561,21 @@
 					"description": "Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move.",
 					"items": {
 						"$ref": "#/definitions/MoveIdWildcard"
+					}
+				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this node."
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
 					}
 				},
 				"trigger": {
@@ -6306,6 +6595,7 @@
 					"title": "MoveOracles",
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/EmbeddedOracleRollable",
@@ -6321,11 +6611,11 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				},
 				"allow_momentum_burn": {
 					"type": "boolean",
@@ -6389,7 +6679,7 @@
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/MoveId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -6397,15 +6687,14 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"roll_type": {
 					"type": "string",
-					"description": "A progress move that rolls on one or more special tracks, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).",
 					"const": "special_track"
 				},
 				"replaces": {
@@ -6413,6 +6702,21 @@
 					"description": "Indicates that this move replaces the identified moves. References to the replaced moves can be considered equivalent to this move.",
 					"items": {
 						"$ref": "#/definitions/MoveIdWildcard"
+					}
+				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this node."
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
 					}
 				},
 				"trigger": {
@@ -6432,6 +6736,7 @@
 					"title": "MoveOracles",
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/EmbeddedOracleRollable",
@@ -6447,11 +6752,11 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				},
 				"allow_momentum_burn": {
 					"type": "boolean",
@@ -6942,7 +7247,7 @@
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/AssetId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -6950,11 +7255,11 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"category": {
 					"$ref": "#/definitions/Label",
@@ -6970,18 +7275,33 @@
 						"Support Vehicle"
 					]
 				},
+				"replaces": {
+					"type": "array",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
+					"items": {
+						"$ref": "#/definitions/AssetIdWildcard"
+					}
+				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
-					"description": "A thematic color associated with this asset."
+					"description": "A thematic color associated with this node."
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
-					"description": "This asset's icon."
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"options": {
 					"type": "object",
 					"description": "Options are input fields set when the player purchases the asset. They're likely to remain the same through the life of the asset. Typically, they are rendered at the top of the asset card.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/AssetOptionField"
@@ -7016,6 +7336,7 @@
 					"type": "object",
 					"description": "Controls are condition meters, clocks, counters, and other asset input fields whose values are expected to change throughout the life of the asset.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/AssetControlField"
@@ -7030,11 +7351,11 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				}
 			},
 			"additionalProperties": true
@@ -7047,7 +7368,7 @@
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/AssetAbilityId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -7062,6 +7383,7 @@
 					"type": "object",
 					"description": "Fields that are expected to be set once and remain the same through the life of the asset.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/AssetAbilityOptionField"
@@ -7076,6 +7398,7 @@
 					"type": "object",
 					"description": "Fields whose values are expected to change over the life of the asset.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/AssetAbilityControlField"
@@ -7086,6 +7409,7 @@
 					"title": "AssetAbilityOracles",
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/EmbeddedOracleRollable",
@@ -7102,7 +7426,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"enhance_moves": {
 					"type": "array",
@@ -7116,6 +7440,7 @@
 					"type": "object",
 					"description": "Unique moves added by this asset ability.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/EmbeddedMove",
@@ -7323,7 +7648,7 @@
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/AssetCollectionId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -7331,29 +7656,29 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"replaces": {
 					"type": "array",
-					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
 					"items": {
 						"$ref": "#/definitions/AssetCollectionIdWildcard"
 					}
 				},
 				"enhances": {
 					"type": "array",
-					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"description": "This node's content enhances all nodes that match these wildcards, rather than being a standalone item of its own.",
 					"items": {
 						"$ref": "#/definitions/AssetCollectionIdWildcard"
 					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
-					"description": "A thematic color associated with this collection."
+					"description": "A thematic color associated with this node."
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
@@ -7363,7 +7688,7 @@
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/WebpImageUrl",
-						"description": "Extra images associated with this collection."
+						"description": "Extra images associated with this node."
 					}
 				},
 				"summary": {
@@ -7377,9 +7702,20 @@
 				"contents": {
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/Asset"
+						}
+					}
+				},
+				"collections": {
+					"type": "object",
+					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
+					"patternProperties": {
+						"^[a-z][a-z_]*$": {
+							"$ref": "#/definitions/AssetCollection"
 						}
 					}
 				},
@@ -7391,11 +7727,11 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -7441,6 +7777,7 @@
 					"type": "object",
 					"description": "Checkbox controls rendered as part of the condition meter.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/AssetConditionMeterControlField"
@@ -7862,7 +8199,7 @@
 			"type": "object",
 			"description": "Select from player and/or asset enhancements. Use it to describe modal abilities. For examples, see Ironclad (classic Ironsworn) and Windbinder (Sundered Isles).",
 			"remarks": "Semantics are similar to the HTML `<select>` element",
-			"required": ["label", "field_type", "choices"],
+			"required": ["label", "field_type"],
 			"properties": {
 				"label": {
 					"$ref": "#/definitions/Label"
@@ -7874,6 +8211,7 @@
 				"choices": {
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"type": "object",
@@ -7968,7 +8306,7 @@
 			"type": "object",
 			"description": "Represents a grouping of options in a list of choices.",
 			"remarks": "Semantics are similar to the HTML `<optgroup>` element.",
-			"required": ["name", "choice_type", "choices"],
+			"required": ["name", "choice_type"],
 			"properties": {
 				"name": {
 					"$ref": "#/definitions/Label",
@@ -7981,6 +8319,7 @@
 				"choices": {
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/SelectEnhancementFieldChoice"
@@ -7995,7 +8334,7 @@
 			"type": "object",
 			"description": "Represents a list of mutually exclusive choices.",
 			"remarks": "Semantics are similar to the HTML `<select>` element",
-			"required": ["label", "field_type", "choices"],
+			"required": ["label", "field_type"],
 			"properties": {
 				"label": {
 					"$ref": "#/definitions/Label"
@@ -8007,6 +8346,7 @@
 				"choices": {
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/SelectValueFieldChoice"
@@ -8371,7 +8711,7 @@
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/TruthId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -8379,14 +8719,33 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
+				},
+				"replaces": {
+					"type": "array",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
+					"items": {
+						"$ref": "#/definitions/TruthIdWildcard"
+					}
+				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this node."
 				},
 				"icon": {
-					"$ref": "#/definitions/SvgImageUrl"
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"dice": {
 					"$ref": "#/definitions/DiceExpression",
@@ -8399,9 +8758,6 @@
 						"$ref": "#/definitions/TruthOption"
 					}
 				},
-				"summary": {
-					"$ref": "#/definitions/MarkdownString"
-				},
 				"your_character": {
 					"$ref": "#/definitions/MarkdownString"
 				},
@@ -8413,11 +8769,11 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				},
 				"factions": {
 					"type": "array",
@@ -8428,7 +8784,7 @@
 					}
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": true
 		},
 		"TruthOption": {
 			"title": "TruthOption",
@@ -8436,7 +8792,8 @@
 			"required": ["roll", "description", "quest_starter"],
 			"properties": {
 				"_id": {
-					"$ref": "#/definitions/TruthOptionId"
+					"$ref": "#/definitions/TruthOptionId",
+					"description": "The unique Datasworn ID for this node."
 				},
 				"roll": {
 					"$ref": "#/definitions/DiceRange"
@@ -8454,12 +8811,17 @@
 					"title": "TruthOptionOracles",
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/EmbeddedOracleRollable",
 							"title": "TruthOptionOracleRollable"
 						}
 					}
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				}
 			},
 			"additionalProperties": false
@@ -8471,7 +8833,7 @@
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/AtlasCollectionId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -8479,29 +8841,29 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"replaces": {
 					"type": "array",
-					"description": "This collection replaces the identified collections. References to the replaced collections can be considered equivalent to this collection.",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
 					"items": {
 						"$ref": "#/definitions/AtlasCollectionIdWildcard"
 					}
 				},
 				"enhances": {
 					"type": "array",
-					"description": "This collection's content enhances the identified collections, rather than being a standalone collection of its own.",
+					"description": "This node's content enhances all nodes that match these wildcards, rather than being a standalone item of its own.",
 					"items": {
 						"$ref": "#/definitions/AtlasCollectionIdWildcard"
 					}
 				},
 				"color": {
 					"$ref": "#/definitions/CssColor",
-					"description": "A thematic color associated with this collection."
+					"description": "A thematic color associated with this node."
 				},
 				"icon": {
 					"$ref": "#/definitions/SvgImageUrl",
@@ -8511,7 +8873,7 @@
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/WebpImageUrl",
-						"description": "Extra images associated with this collection."
+						"description": "Extra images associated with this node."
 					}
 				},
 				"summary": {
@@ -8525,6 +8887,7 @@
 				"contents": {
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/AtlasEntry"
@@ -8534,6 +8897,7 @@
 				"collections": {
 					"type": "object",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/AtlasCollection"
@@ -8548,11 +8912,11 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				}
 			},
 			"additionalProperties": false
@@ -8565,19 +8929,40 @@
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/AtlasEntryId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
 					"const": "atlas_entry"
 				},
 				"name": {
-					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"$ref": "#/definitions/Label"
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
+				},
+				"replaces": {
+					"type": "array",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
+					"items": {
+						"$ref": "#/definitions/AtlasEntryIdWildcard"
+					}
+				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this node."
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"summary": {
 					"$ref": "#/definitions/MarkdownString"
@@ -8605,11 +8990,11 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				}
 			},
 			"additionalProperties": true
@@ -8630,11 +9015,11 @@
 			"title": "Rarity",
 			"type": "object",
 			"description": "A rarity, as described in Ironsworn: Delve.",
-			"required": ["type", "name", "asset", "description", "_source"],
+			"required": ["type", "name", "asset", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/RarityId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -8642,11 +9027,11 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
 				},
 				"xp_cost": {
 					"type": "integer",
@@ -8655,15 +9040,31 @@
 					"minimum": 3,
 					"maximum": 5
 				},
+				"replaces": {
+					"type": "array",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
+					"items": {
+						"$ref": "#/definitions/RarityIdWildcard"
+					}
+				},
 				"asset": {
 					"$ref": "#/definitions/AssetId",
 					"description": "The asset augmented by this rarity."
 				},
-				"icon": {
-					"$ref": "#/definitions/SvgImageUrl"
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this node."
 				},
-				"description": {
-					"$ref": "#/definitions/MarkdownString"
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
@@ -8673,11 +9074,11 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				}
 			},
 			"additionalProperties": true
@@ -8699,7 +9100,7 @@
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/DelveSiteId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -8707,11 +9108,18 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
+				},
+				"replaces": {
+					"type": "array",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
+					"items": {
+						"$ref": "#/definitions/DelveSiteIdWildcard"
+					}
 				},
 				"region": {
 					"$ref": "#/definitions/AtlasEntryId",
@@ -8739,8 +9147,20 @@
 				"rank": {
 					"$ref": "#/definitions/ChallengeRank"
 				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this node."
+				},
 				"icon": {
-					"$ref": "#/definitions/SvgImageUrl"
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"description": {
 					"$ref": "#/definitions/MarkdownString"
@@ -8753,7 +9173,7 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"denizens": {
 					"description": "Represents the delve site's denizen matrix as an array of objects.",
@@ -9101,7 +9521,7 @@
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				}
 			},
 			"additionalProperties": true
@@ -9140,11 +9560,11 @@
 			"title": "DelveSiteDomain",
 			"type": "object",
 			"description": "A delve site Domain card.",
-			"required": ["type", "name", "summary", "features", "dangers", "_source"],
+			"required": ["type", "name", "features", "dangers", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/DelveSiteDomainId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -9152,19 +9572,37 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
+				},
+				"replaces": {
+					"type": "array",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
+					"items": {
+						"$ref": "#/definitions/DelveSiteDomainIdWildcard"
+					}
 				},
 				"name_oracle": {
 					"$ref": "#/definitions/OracleRollableId",
 					"description": "An oracle table ID containing place name elements. For examples, see oracle ID `oracle_rollable:delve/site_name/place/barrow`, and its siblings in oracle collection ID `oracle_collection:delve/site_name/place`. These oracles are used by the site name oracle from Ironsworn: Delve (`oracle_rollable:delve/site_name/format`) to create random names for delve sites."
 				},
-				"summary": {
-					"$ref": "#/definitions/MarkdownString",
-					"deprecated": true
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this node."
+				},
+				"icon": {
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"features": {
 					"allOf": [
@@ -9576,9 +10014,6 @@
 						}
 					]
 				},
-				"description": {
-					"$ref": "#/definitions/MarkdownString"
-				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
@@ -9587,11 +10022,11 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				}
 			},
 			"additionalProperties": true
@@ -9599,8 +10034,8 @@
 		"DelveSiteDomainDanger": {
 			"title": "DelveSiteDomainDanger",
 			"type": "object",
-			"description": "Represents a row in an oracle table, with a single text cell.",
-			"required": ["_id", "text"],
+			"description": "Represents a single Danger entry from a delve site Domain card.",
+			"required": ["text"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/DelveSiteDomainDangerId"
@@ -9656,8 +10091,8 @@
 		"DelveSiteDomainFeature": {
 			"title": "DelveSiteDomainFeature",
 			"type": "object",
-			"description": "Represents a row in an oracle table, with a single text cell.",
-			"required": ["_id", "text"],
+			"description": "Represents a single Feature entry from a delve site Domain card.",
+			"required": ["text"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/DelveSiteDomainFeatureId"
@@ -9714,11 +10149,11 @@
 			"title": "DelveSiteTheme",
 			"type": "object",
 			"description": "A delve site theme card.",
-			"required": ["type", "name", "summary", "features", "dangers", "_source"],
+			"required": ["type", "name", "features", "dangers", "_source"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/DelveSiteThemeId",
-					"description": "The unique Datasworn ID for this item."
+					"description": "The unique Datasworn ID for this node."
 				},
 				"type": {
 					"type": "string",
@@ -9726,17 +10161,33 @@
 				},
 				"name": {
 					"$ref": "#/definitions/Label",
-					"description": "The primary name/label for this item."
+					"description": "The primary name/label for this node."
 				},
 				"canonical_name": {
 					"$ref": "#/definitions/Label",
-					"description": "The name of this item as it appears on the page in the book, if it's different from `name`."
+					"description": "The name of this node as it appears on the page in the book, if it's different from `name`."
+				},
+				"replaces": {
+					"type": "array",
+					"description": "This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.",
+					"items": {
+						"$ref": "#/definitions/DelveSiteThemeIdWildcard"
+					}
+				},
+				"color": {
+					"$ref": "#/definitions/CssColor",
+					"description": "A thematic color associated with this node."
 				},
 				"icon": {
-					"$ref": "#/definitions/SvgImageUrl"
+					"$ref": "#/definitions/SvgImageUrl",
+					"description": "An SVG icon associated with this collection."
 				},
-				"summary": {
-					"$ref": "#/definitions/MarkdownString"
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WebpImageUrl",
+						"description": "Extra images associated with this node."
+					}
 				},
 				"features": {
 					"allOf": [
@@ -9871,7 +10322,7 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/DelveSiteThemeFeature"
+								"$ref": "#/definitions/DelveSiteThemeDanger"
 							}
 						},
 						{
@@ -10148,9 +10599,6 @@
 						}
 					]
 				},
-				"description": {
-					"$ref": "#/definitions/MarkdownString"
-				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
 				},
@@ -10159,11 +10607,11 @@
 				},
 				"_comment": {
 					"type": "string",
-					"description": "Implementation hints or other developer-facing comments on this object. These should be omitted when presenting the object for gameplay."
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				},
 				"_source": {
 					"$ref": "#/definitions/SourceInfo",
-					"description": "Attribution for the original source (such as a book or website) of this item, including the author and licensing information."
+					"description": "Attribution for the original source (such as a book or website) of this node, including the author and licensing information."
 				}
 			},
 			"additionalProperties": true
@@ -10171,8 +10619,8 @@
 		"DelveSiteThemeDanger": {
 			"title": "DelveSiteThemeDanger",
 			"type": "object",
-			"description": "Represents a row in an oracle table, with a single text cell.",
-			"required": ["_id", "text"],
+			"description": "Represents a single Danger entry from a delve site Theme card.",
+			"required": ["text"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/DelveSiteThemeDangerId"
@@ -10228,8 +10676,8 @@
 		"DelveSiteThemeFeature": {
 			"title": "DelveSiteThemeFeature",
 			"type": "object",
-			"description": "Represents a row in an oracle table, with a single text cell.",
-			"required": ["_id", "text"],
+			"description": "Represents a single Feature entry from a delve site Theme card.",
+			"required": ["text"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/DelveSiteThemeFeatureId"

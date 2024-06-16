@@ -23,8 +23,8 @@ const Text_js_1 = require("../Validators/Text.js");
 const index_js_1 = __importDefault(require("../Validators/index.js"));
 const index_js_2 = require("../index.js");
 /**
- * Merges, assigns IDs to, and validates multiple {@link DataswornSource.RulesPackage}s to create a complete {@link Datasworn.RulesPackage} object.
- * */
+    * Merges, assigns IDs to, and validates multiple {@link DataswornSource.RulesPackage}s to create a complete {@link Datasworn.RulesPackage} object.
+    * */
 class RulesPackageBuilder {
     mergeFiles(force = false) {
         if (!force && __classPrivateFieldGet(this, _RulesPackageBuilder_isMergeComplete, "f"))
@@ -82,7 +82,9 @@ class RulesPackageBuilder {
             return this;
         }
         catch (e) {
-            fs_extra_1.default.writeJSONSync('error_build.json', this.toJSON(), { spaces: '\t' });
+            fs_extra_1.default.writeJSONSync(`datasworn/${this.id}/error_build.json`, this.toJSON(), {
+                spaces: '\t'
+            });
             throw new Error(`Couldn't build "${this.id}". ${String(e)}`);
         }
     }

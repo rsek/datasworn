@@ -4,9 +4,6 @@ package Datasworn;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * A move that makes no action rolls or progress rolls.
- */
 public enum EmbeddedNoRollMoveRollType {
     @JsonProperty("no_roll")
     NO_ROLL,

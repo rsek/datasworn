@@ -19,7 +19,7 @@ declare namespace CONST {
     /** A globstar (recursive wildcard) representing any number of levels of in recursive collections. */
     const GlobstarString: "**";
     type GlobstarString = typeof GlobstarString;
-    /** Key in RecursiveCollection that contains a dictionary object of child collections. */
+    /** Key in Collection that contains a dictionary object of child collections. */
     const CollectionsKey = "collections";
     type CollectionsKey = typeof CollectionsKey;
     /** Key in Collection that contains a dictionary object of collectable items. */
