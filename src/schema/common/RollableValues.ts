@@ -7,6 +7,7 @@ import {
 import * as Utils from '../Utils.js'
 import { Id, Localize, Player } from './index.js'
 import { mapValues } from 'lodash-es'
+import { Assign } from '../utils/FlatIntersect.js'
 
 const RollableValueType = Utils.UnionEnumFromRecord(
 	{
@@ -30,13 +31,11 @@ function RollableValueBase<
 	Props extends TObject
 >(using: Using, props: Props, options: ObjectOptions = {}) {
 	const constant = Utils.ExtractLiteralFromEnum(RollableValueType, using)
-	return Utils.Assign(
-		[
-			props,
-			Type.Object({
-				using: constant
-			})
-		],
+	return Assign(
+		props,
+		Type.Object({
+			using: constant
+		}),
 		{
 			description: constant.description,
 			...options

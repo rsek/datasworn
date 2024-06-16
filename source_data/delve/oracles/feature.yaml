@@ -6,6 +6,7 @@ oracles:
   feature:
     name: Feature
     type: oracle_collection
+    oracle_type: tables
     _source:
       <<: &Source
         license: https://creativecommons.org/licenses/by/4.0

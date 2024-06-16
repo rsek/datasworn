@@ -44,7 +44,7 @@ export function sortTopLevelCollection<
 export function sortCollection<
 	T extends
 		| Generic.Collection<Generic.SourcedNode>
-		| Generic.RecursiveCollection<Generic.Collection<Generic.SourcedNode>>
+		| Generic.Collection<Generic.Collection<Generic.SourcedNode>>
 >(collection: T) {
 	const hasContents = Object.keys(collection.contents).length > 0
 
@@ -64,20 +64,18 @@ export function sortCollection<
 		result.contents = sortDictionary(contents, compareSourcedNode)
 
 	if (isRecursive && hasCollections) {
-		const recursiveCollection = result as Generic.RecursiveCollection<
+		const recursiveCollection = result as Generic.Collection<
 			Generic.Collection<Generic.SourcedNode>
 		>
 		const { collections } = recursiveCollection
 
-		;(
-			result as Generic.RecursiveCollection<
-				Generic.Collection<Generic.SourcedNode>
-			>
+		;;(
+			result as Generic.Collection<Generic.Collection<Generic.SourcedNode>>
 		).collections = sortDictionary(
 			collections as Generic.Dictionary<any>,
 			(
-				a: Generic.RecursiveCollection<Generic.Collection<Generic.SourcedNode>>,
-				b: Generic.RecursiveCollection<Generic.Collection<Generic.SourcedNode>>
+				a: Generic.Collection<Generic.Collection<Generic.SourcedNode>>,
+				b: Generic.Collection<Generic.Collection<Generic.SourcedNode>>
 			) => {
 				if (isCollection(a)) a = sortCollection(a)
 				return compareCollection(a, b)

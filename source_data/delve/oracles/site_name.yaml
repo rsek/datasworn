@@ -6,6 +6,7 @@ oracles:
   site_name:
     name: Site Name
     type: oracle_collection
+    oracle_type: tables
     summary: Give a site a name or learn more about its characteristics and history.
     description: |-
       To generate a name for a site, first roll on the [Format](oracle_rollable:delve/site_name/format) table. Then, fill in the blanks by using the [Description](oracle_rollable:delve/site_name/description), [Detail](oracle_rollable:delve/site_name/detail), [Namesake](oracle_rollable:delve/site_name/namesake), and [Place](oracle_rollable:delve/site_name/place) oracles.

@@ -24,6 +24,8 @@ import * as Generic from '../Generic.js'
 import * as Utils from '../utils/Assign.js'
 import type { ObjectProperties } from '../utils/ObjectProperties.js'
 import { EmbeddedOracleRollable } from '../oracles/EmbeddedOracleRollable.js'
+import { FlatIntersect } from '../utils/FlatIntersect.js'
+import type { SetRequired } from 'type-fest'
 
 /** The property key used to discriminate move subtypes */
 export const moveDiscriminator = 'roll_type'
@@ -50,7 +52,12 @@ export function Move<
 	RollType extends MoveRollType,
 	Trigger extends TRef<TTrigger>,
 	Outcomes extends TRef<TMoveOutcomes> | TNull
->(rollType: RollType, trigger: Trigger, outcomes: Outcomes, options = {}) {
+>(
+	rollType: RollType,
+	trigger: Trigger,
+	outcomes: Outcomes,
+	options: SetRequired<ObjectOptions, '$id'>
+) {
 	let allow_momentum_burn: TLiteral<boolean> | TBoolean
 
 	const description = 'Is burning momentum allowed for this move?'
@@ -67,10 +74,9 @@ export function Move<
 			break
 	}
 
-	const base = Utils.Assign([
+	const base = FlatIntersect([
 		MoveBase,
 		Type.Object({
-			[moveDiscriminator]: ExtractLiteralFromEnum(MoveRollType, rollType),
 			trigger: {
 				title: 'Trigger',
 				description: 'Trigger conditions for this move.',
@@ -79,15 +85,15 @@ export function Move<
 			allow_momentum_burn,
 			outcomes: { title: 'MoveOutcomes', ...outcomes } as Outcomes
 		})
-	]) as TObject<
-		ObjectProperties<typeof MoveBase> & {
-			[moveDiscriminator]: TLiteral<RollType>
-			trigger: Trigger
-			outcomes: Outcomes
-			allow_momentum_burn: TLiteral<boolean> | TBoolean
-		}
-	>
-	return Generic.Collectable(Type.Ref(Id.MoveId), 'move', base, options)
+	])
+
+	return Generic.CollectableSubtypeNode(
+		base,
+		'move',
+		moveDiscriminator,
+		rollType,
+		options
+	)
 }
 export type TMove<
 	RollType extends MoveRollType,

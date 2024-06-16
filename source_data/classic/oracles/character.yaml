@@ -5,6 +5,7 @@ oracles:
   character:
     name: Character
     type: oracle_collection
+    oracle_type: tables
     _source:
       <<: &Source
         authors:

@@ -8,8 +8,7 @@ import { AssetEnhancement } from './Enhancement.js'
 import { AssetAbilityControlField, AssetAbilityOptionField } from './Fields.js'
 import { EmbeddedOracleRollable } from '../oracles/EmbeddedOracleRollable.js'
 
-export const AssetAbility = Generic.IdentifiedNode(
-	Type.Ref(Id.AssetAbilityId),
+export const AssetAbility = Generic.IdNode(
 	Type.Object({
 		name: Type.Optional(
 			Type.Ref(Localize.Label, {
@@ -69,6 +68,7 @@ export const AssetAbility = Generic.IdentifiedNode(
 		),
 		tags: Type.Optional(Type.Ref<typeof Tags>('Tags'))
 	}),
+	Type.Ref(Id.AssetAbilityId),
 	{
 		$id: 'AssetAbility',
 		description:

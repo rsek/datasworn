@@ -5,6 +5,7 @@ oracles:
   location_theme:
     name: Location Theme Oracles
     canonical_name: Location Themes
+    oracle_type: tables
     type: oracle_collection
     _source:
       <<: &Source

@@ -52,17 +52,13 @@ type ComputedPropertyFn<T extends TSchema, ParentObject extends TObject> = (
 /** Symbol indicating that this property is optional in DataswornSource */
 export const SourceOptionalBrand = Symbol('SourceOptional')
 
-/** Creates a schema that is optional in DataswornSource.
+/** Flags a schema as being optional in DataswornSource. Mutates the original schema.
  * @remarks Functionally similar to {@link Computed}, but with different semantics.
  */
-export function SourceOptional<T extends TSchema>(
-	schema: T,
-	options: SchemaOptions = {}
-) {
-	return CloneType(schema, {
-		...options,
-		[SourceOptionalBrand]: 'SourceOptional'
-	}) as TComputed<T>
+export function setSourceOptional<T extends TSchema>(schema: T) {
+	if (schema == null) return schema
+	;(schema as TSourceOptional<T>)[SourceOptionalBrand] = 'SourceOptional'
+	return schema as TSourceOptional<T>
 }
 export type TSourceOptional<T extends TSchema> = T & {
 	[SourceOptionalBrand]: 'SourceOptional'
@@ -75,12 +71,11 @@ export function setSourceDataSchema<
 	T extends TSchema,
 	SourceSchema extends TSchema
 >(schema: T, sourceSchema: SourceSchema | ((schema: T) => SourceSchema)): T {
-	const base = {
-		...CloneType(schema),
-		[GetSourceDataSchema]:
-			typeof sourceSchema === 'function' ? sourceSchema : () => sourceSchema
-	} as THasSourceSchema<T, SourceSchema>
-	return base
+	// @ts-expect-error
+	schema[GetSourceDataSchema] =
+		typeof sourceSchema === 'function' ? sourceSchema : () => sourceSchema
+
+	return schema as THasSourceSchema<T, SourceSchema>
 }
 export type THasSourceSchema<
 	T extends TSchema = TSchema,

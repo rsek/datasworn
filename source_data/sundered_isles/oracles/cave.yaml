@@ -265,7 +265,7 @@ oracles:
         _source:
           <<: *Source
         contents:
-          features:
+          feature:
             name: Sea Cave Features
             type: oracle_rollable
             oracle_type: table_text
@@ -273,7 +273,7 @@ oracles:
             tags:
               sundered_isles:
                 location: sea
-                cursed_by: oracle_rollable:sundered_isles/cave/sea/features_cursed
+                cursed_by: oracle_rollable:sundered_isles/cave/sea/feature_cursed
             _source:
               <<: *Source
             rows:
@@ -422,7 +422,7 @@ oracles:
                     oracle: oracle_rollable:sundered_isles/core/descriptor
                   - auto: true
                     oracle: oracle_rollable:sundered_isles/core/focus
-          features_cursed:
+          feature_cursed:
             name: Sea Cave Cursed Features
             type: oracle_rollable
             oracle_type: table_text
@@ -430,7 +430,7 @@ oracles:
               sundered_isles:
                 location: sea
                 cursed_version_of:
-                  - oracle_rollable:sundered_isles/cave/sea/features
+                  - oracle_rollable:sundered_isles/cave/sea/feature
                 curse_behavior: replace_result
             _source:
               <<: *Source
@@ -627,13 +627,13 @@ oracles:
         _source:
           <<: *Source
         contents:
-          features:
+          feature:
             name: Inland Cave Features
             type: oracle_rollable
             oracle_type: table_text
             tags:
               sundered_isles:
-                cursed_by: oracle_rollable:sundered_isles/cave/inland_cave/features_cursed
+                cursed_by: oracle_rollable:sundered_isles/cave/inland_cave/feature_cursed
                 location: inland
             recommended_rolls: { min: 1, max: 2 }
             _source:
@@ -784,7 +784,7 @@ oracles:
                     oracle: oracle_rollable:sundered_isles/core/descriptor
                   - auto: true
                     oracle: oracle_rollable:sundered_isles/core/focus
-          features_cursed:
+          feature_cursed:
             name: Inland Cave Cursed Features
             type: oracle_rollable
             oracle_type: table_text
@@ -792,7 +792,7 @@ oracles:
               sundered_isles:
                 location: inland
                 cursed_version_of:
-                  - oracle_rollable:sundered_isles/cave/inland_cave/features_cursed
+                  - oracle_rollable:sundered_isles/cave/inland_cave/feature_cursed
                 curse_behavior: replace_result
             _source:
               <<: *Source

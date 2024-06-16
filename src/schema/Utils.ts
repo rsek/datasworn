@@ -2,7 +2,6 @@
  * TypeBox schema functions representing utility types. Used internally to compose schemata, but not part of the final Datasworn schema output.
  */
 
-export * from './utils/Assign.js'
 export * from './utils/Computed.js'
 export * from './utils/NonNullable.js'
 export * from './utils/Nullable.js'

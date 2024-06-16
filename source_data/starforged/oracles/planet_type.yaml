@@ -6,6 +6,7 @@ oracles:
     name: Planet Oracles
     canonical_name: Planets
     type: oracle_collection
+    oracle_type: tables
     _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'

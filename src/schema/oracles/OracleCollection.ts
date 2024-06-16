@@ -13,15 +13,20 @@ import { type TFuzzyObject } from '../utils/typebox.js'
 import {
 	OracleColumnText2,
 	OracleColumnText,
-	OracleTableRollable,
-	OracleColumnText3
+	OracleRollableTable,
+	OracleColumnText3,
+	OracleTableText,
+	OracleTableText3,
+	OracleTableText2
 } from './OracleRollable.js'
 import {
 	ColumnLabels,
-	type OracleRollableRowText,
-	type OracleRollableRowText2,
-	type OracleRollableRowText3
+	OracleRollableRowText,
+	OracleRollableRowText2,
+	OracleRollableRowText3
 } from './TableRow.js'
+
+// TODO: color property should get its own description: "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
 
 const OracleCollectionType = Utils.UnionEnumFromRecord(
 	{
@@ -41,92 +46,15 @@ const OracleCollectionType = Utils.UnionEnumFromRecord(
 )
 type OracleCollectionType = Static<typeof OracleCollectionType>
 
-const CollectionMeta = Type.Object({
-	images: Type.Optional(
-		Type.Array(
-			Type.Ref(Metadata.WebpImageUrl, {
-				description: 'Extra images associated with this oracle.'
-			})
-		)
-	),
-	icon: Type.Optional(
-		Type.Ref(Metadata.SvgImageUrl, {
-			description: 'An icon that represents this oracle.'
-		})
-	),
-	replaces: Type.Optional(
-		Type.Array(Type.Ref(Id.OracleCollectionIdWildcard), {
-			description:
-				'Indicates that this object replaces the identified OracleCollections. References to the replaced objects can be considered equivalent to this object.'
-		})
-	)
-})
+const subtypeKey = 'oracle_type' as const
 
-function OracleCollectionBase<
-	Props extends { oracle_type: TLiteral<string> },
-	Rollable extends TRef<TFuzzyObject>
->(
-	properties: Props,
-	rollable: Rollable,
-	recursive: false,
-	options: SetRequired<SchemaOptions, '$id'>
-): Generic.TCollection<Rollable, Props>
-function OracleCollectionBase<
-	T extends { oracle_type: TLiteral<string> },
-	Rollable extends TRef<TFuzzyObject>
->(
-	properties: T,
-	rollable: Rollable,
-	recursive: true,
-	options: SetRequired<SchemaOptions, '$id'>
-): Generic.TRecursiveCollection<Generic.TCollection<Rollable, T>>
-function OracleCollectionBase<
-	T extends { oracle_type: TLiteral<string> },
-	Rollable extends TRef<TFuzzyObject>,
-	Recursive extends boolean
->(
-	properties: T,
-	rollable: Rollable,
-	recursive: Recursive,
-	options: SetRequired<SchemaOptions, '$id'>
-): Recursive extends true
-	? Generic.TRecursiveCollection<Generic.TCollection<Rollable, T>>
-	: Generic.TCollection<Rollable, T> {
-	if (!recursive)
-		return Generic.Collection(
-			Type.Ref(Id.OracleCollectionId),
-			'oracle_collection',
-			rollable,
-			properties,
-			options
-		) as any
-
-	// recursive version can recurse to *any* OracleCollection
-	const result = Generic.RecursiveCollection(
-		Generic.Collection(
-			Type.Ref(Id.OracleCollectionId),
-			'oracle_collection',
-			rollable,
-			properties
-		),
-		options
-	) as any
-
-	result.properties.collections = Type.Optional(
-		Generic.Dictionary(Type.Ref<TOracleCollection>('OracleCollection'))
-	)
-
-	return result
-}
-
-export const OracleTablesCollection = OracleCollectionBase(
-	{
-		oracle_type: Utils.ExtractLiteralFromEnum(OracleCollectionType, 'tables', {
-			default: 'tables'
-		})
-	},
-	Type.Ref(OracleTableRollable),
-	true,
+export const OracleTablesCollection = Generic.CollectionSubtypeNode(
+	Type.Object({}),
+	'oracle_collection',
+	subtypeKey,
+	'tables' satisfies OracleCollectionType,
+	Generic.Dictionary(Type.Ref('OracleRollableTable')),
+	Generic.Dictionary(Type.Ref('OracleCollection')),
 	{
 		$id: 'OracleTablesCollection',
 		description:
@@ -137,97 +65,88 @@ export const OracleTablesCollection = OracleCollectionBase(
 export type TOracleTablesCollection = typeof OracleTablesCollection
 export type OracleTablesCollection = Static<TOracleTablesCollection>
 
-export const OracleTableSharedRolls = OracleCollectionBase(
-	{
-		column_labels: ColumnLabels<typeof OracleColumnText>(
+export const OracleTableSharedRolls = Generic.CollectionSubtypeNode(
+	Type.Object({
+		column_labels: ColumnLabels<typeof OracleRollableRowText>(
 			{ roll: 'Roll' },
 			{
 				description:
 					'Provides column labels for this table. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row). For all other column labels, see the `name` property of each child `OracleColumn`.'
 			}
-		),
-		oracle_type: Utils.ExtractLiteralFromEnum(
-			OracleCollectionType,
-			'table_shared_rolls',
-			{ default: 'table_shared_rolls' }
 		)
-	},
-	Type.Ref(OracleColumnText),
-	false,
+	}),
+	'oracle_collection',
+	subtypeKey,
+	'table_shared_rolls' satisfies OracleCollectionType,
+	Generic.Dictionary(Type.Ref(OracleColumnText)),
+	undefined,
 	{
 		$id: 'OracleTableSharedRolls',
 		description:
-			'An OracleCollection representing a single table with one roll column and multiple `result` columns.'
+			'An OracleCollection representing a single table with one roll column and multiple text columns.'
 	}
 )
 
 export type TOracleTableSharedRolls = typeof OracleTableSharedRolls
 export type OracleTableSharedRolls = Static<TOracleTableSharedRolls>
 
-export const OracleTableSharedText = OracleCollectionBase(
-	{
+export const OracleTableSharedText = Generic.CollectionSubtypeNode(
+	Type.Object({
 		column_labels: ColumnLabels<typeof OracleRollableRowText>({
 			text: 'Result'
-		}),
-		oracle_type: Utils.ExtractLiteralFromEnum(
-			OracleCollectionType,
-			'table_shared_text'
-		)
-	},
-	Type.Ref(OracleColumnText),
-	false,
+		})
+	}),
+	'oracle_collection',
+	subtypeKey,
+	'table_shared_text' satisfies OracleCollectionType,
+	Generic.Dictionary(Type.Ref(OracleColumnText)),
+	undefined,
 	{
 		$id: 'OracleTableSharedText',
 		description:
-			'An OracleCollection representing a single table with multiple roll columns and one `result` column.'
+			'An OracleCollection representing a single table with multiple roll columns and one text column.'
 	}
 )
 
 export type TOracleTableSharedText = typeof OracleTableSharedText
 export type OracleTableSharedText = Static<TOracleTableSharedText>
 
-export const OracleTableSharedText2 = OracleCollectionBase(
-	{
+export const OracleTableSharedText2 = Generic.CollectionSubtypeNode(
+	Type.Object({
 		column_labels: ColumnLabels<typeof OracleRollableRowText2>({
 			text: 'Result',
 			text2: 'Details'
-		}),
-		oracle_type: Utils.ExtractLiteralFromEnum(
-			OracleCollectionType,
-			'table_shared_text2'
-		)
-	},
-	Type.Ref(OracleColumnText2),
-	false,
+		})
+	}),
+	'oracle_collection',
+	subtypeKey,
+	'table_shared_text2' satisfies OracleCollectionType,
+	Generic.Dictionary(Type.Ref(OracleColumnText2)),
+	undefined,
 	{
 		$id: 'OracleTableSharedText2',
 		description:
 			'An OracleCollection representing a single table with multiple roll columns, and 2 shared text columns.'
 	}
 )
-
 export type TOracleTableSharedText2 = typeof OracleTableSharedText2
 export type OracleTableSharedText2 = Static<TOracleTableSharedText2>
 
-export const OracleTableSharedText3 = OracleCollectionBase(
-	{
-		column_labels: ColumnLabels<typeof OracleRollableRowText3>({
-			text: 'Result'
-		}),
-		oracle_type: Utils.ExtractLiteralFromEnum(
-			OracleCollectionType,
-			'table_shared_text3'
-		)
-	},
-	Type.Ref(OracleColumnText3),
-	false,
+export const OracleTableSharedText3 = Generic.CollectionSubtypeNode(
+	Type.Object({
+		column_labels: ColumnLabels<typeof OracleRollableRowText3>({})
+	}),
+	'oracle_collection',
+	subtypeKey,
+	'table_shared_text3' satisfies OracleCollectionType,
+	Generic.Dictionary(Type.Ref(OracleColumnText3)),
+	undefined,
 	{
 		$id: 'OracleTableSharedText3',
 		description:
-			'An OracleCollection representing a single table with multiple roll columns, and 2 shared text columns.'
+			'An OracleCollection representing a single table with multiple roll columns, and 3 shared text columns.'
 	}
 )
-
 export type TOracleTableSharedText3 = typeof OracleTableSharedText3
 export type OracleTableSharedText3 = Static<TOracleTableSharedText3>
 
@@ -237,9 +156,9 @@ export const OracleCollection = Utils.DiscriminatedUnion(
 		table_shared_rolls: OracleTableSharedRolls,
 		table_shared_text: OracleTableSharedText,
 		table_shared_text2: OracleTableSharedText2,
-		OracleTableSharedText3
+		table_shared_text3: OracleTableSharedText3
 	},
-	'oracle_type',
+	subtypeKey,
 	{ $id: 'OracleCollection' }
 )
 

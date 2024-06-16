@@ -95,7 +95,7 @@ export const WebUrl = Type.String({
 export const License = Nullable(Type.Ref(WebUrl), {
 	default: undefined,
 	description:
-		"An URL pointing to the location where this element's license can be found.\n\nA `null` here indicates that the content provides __no__ license, and is not intended for redistribution.",
+		"An URL pointing to the location where this content's license can be found.\n\nA `null` here indicates that the content provides __no__ license, and is not intended for redistribution.",
 	examples: [
 		'https://creativecommons.org/licenses/by/4.0',
 		'https://creativecommons.org/licenses/by-nc-sa/4.0'
@@ -115,7 +115,7 @@ export const SourceInfo = Type.Object(
 		}),
 		page: Type.Optional(
 			Type.Ref(PageNumber, {
-				description: 'The page number where this item is described in full.',
+				description: 'The page number where this content is described in full.',
 				[JsonTypeDef]: {
 					schema: Type.Optional(JtdType.Uint16())
 				}
@@ -137,7 +137,7 @@ export const SourceInfo = Type.Object(
 		license: Type.Ref(License)
 	},
 	{
-		description: 'Metadata describing the original source of this item',
+		description: 'Metadata describing the original source of this node',
 		$id: 'SourceInfo'
 	}
 )

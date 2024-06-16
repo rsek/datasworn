@@ -6,6 +6,7 @@ oracles:
     name: Settlement Oracles
     canonical_name: Settlements
     type: oracle_collection
+    oracle_type: tables
     _source: &CollectionSource
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'

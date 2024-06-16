@@ -6,6 +6,7 @@ oracles:
   monstrosity:
     name: Monstrosity
     type: oracle_collection
+    oracle_type: tables
     summary: Discover the nature of a [nightspawn](npc:delve/horrors/nightspawn) or other frightful creature within your world.
     description: |-
       Use the Monstrosity oracle to define the nature of a [Nightspawn](npc:delve/horrors/nightspawn), or to introduce a new type of [animal](npc_collection:classic/animal), [beast](npc_collection:classic/beast), or [horror](npc_collection:classic/horror) in your world.

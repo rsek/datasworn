@@ -20,6 +20,7 @@ import * as Utils from './Utils.js'
 import { SourceInfo } from './common/Metadata.js'
 import { type MoveCategory } from './moves/MoveCategory.js'
 import { type TOracleTablesCollection } from './oracles/OracleCollection.js'
+import { Assign } from './utils/FlatIntersect.js'
 
 export const Version = Type.Literal(CONST.VERSION, {
 	description: 'The version of the Datasworn format used by this data.',
@@ -33,18 +34,18 @@ const RulesPackageMetaProps = {
 	datasworn_version: Version,
 	description: Type.Optional(Type.Ref(Localize.MarkdownString)),
 	...mapValues(Type.Required(Type.Omit(SourceInfo, ['page'])).properties, (v) =>
-		Utils.SourceOptional(v)
+		Utils.setSourceOptional(v)
 	)
 }
 
 export const Ruleset = Type.Object(
 	{
-		// ruleset ID isn't optional in source, so we don't flag it with IdentifiedNode
+		// ruleset ID isn't optional in source, so we don't flag it with IdNode
 		_id: Type.Ref<typeof Id.RulesetId>('RulesetId'),
 		type: Type.Literal('ruleset'),
 		...RulesPackageMetaProps,
-		rules: Utils.SourceOptional(Type.Ref<TRules>('Rules')),
-		oracles: Utils.SourceOptional(
+		rules: Utils.setSourceOptional(Type.Ref<TRules>('Rules')),
+		oracles: Utils.setSourceOptional(
 			Generic.Dictionary(
 				Type.Ref<TOracleTablesCollection>('OracleTablesCollection'),
 				{
@@ -54,14 +55,14 @@ export const Ruleset = Type.Object(
 				}
 			)
 		),
-		moves: Utils.SourceOptional(
+		moves: Utils.setSourceOptional(
 			Generic.Dictionary(Type.Ref<TUnsafe<MoveCategory>>('MoveCategory'), {
 				default: undefined,
 				description:
 					'A dictionary object containing move categories, which contain moves.'
 			})
 		),
-		assets: Utils.SourceOptional(
+		assets: Utils.setSourceOptional(
 			Generic.Dictionary(Type.Ref<TAssetCollection>('AssetCollection'), {
 				default: undefined,
 				description:
@@ -124,19 +125,17 @@ export const Ruleset = Type.Object(
 )
 export type Ruleset = Static<typeof Ruleset>
 
-export const Expansion = Utils.Assign(
-	[
-		Type.Partial(
-			Type.Omit(Ruleset, ['_id', 'type', 'rules', 'datasworn_version'])
-		),
-		Type.Object({
-			_id: Type.Ref<typeof Id.ExpansionId>('ExpansionId'),
-			type: Type.Literal('expansion'),
-			...RulesPackageMetaProps,
-			ruleset: Type.Ref<typeof Id.RulesetId>('RulesetId'),
-			rules: Type.Optional(Type.Ref(Rules.RulesExpansion))
-		})
-	],
+export const Expansion = Assign(
+	Type.Partial(
+		Type.Omit(Ruleset, ['_id', 'type', 'rules', 'datasworn_version'])
+	),
+	Type.Object({
+		_id: Type.Ref<typeof Id.ExpansionId>('ExpansionId'),
+		type: Type.Literal('expansion'),
+		...RulesPackageMetaProps,
+		ruleset: Type.Ref<typeof Id.RulesetId>('RulesetId'),
+		rules: Type.Optional(Type.Ref(Rules.RulesExpansion))
+	}),
 	{
 		additionalProperties: true,
 

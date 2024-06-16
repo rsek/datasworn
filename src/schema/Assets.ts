@@ -1,16 +1,19 @@
-import { Type, type Static, type TUnsafe } from '@sinclair/typebox'
-import * as Generic from './Generic.js'
+import { Type, type Static } from '@sinclair/typebox'
+import { CollectableNode } from './generic/CollectableNode.js'
+import { CollectionNode } from './generic/CollectionNode.js'
+import { Dictionary } from './generic/Dictionary.js'
+import { Label, MarkdownString } from './common/Localize.js'
+import { FlatIntersect } from './utils/FlatIntersect.js'
+
+import { AssetPropertiesEnhanceable } from './assets/common.js'
 import { type TAssetAbility } from './assets/Ability.js'
 import {
 	type TAssetControlField,
 	type TAssetOptionField
 } from './assets/Fields.js'
-import { AssetPropertiesEnhanceable } from './assets/common.js'
-import { Id, Localize, Metadata } from './common/index.js'
-import * as Utils from './utils/Assign.js'
 
 const AssetMixin = Type.Object({
-	category: Type.Ref(Localize.Label, {
+	category: Type.Ref(Label, {
 		description:
 			"A localized category label for this asset. This is the surtitle above the asset's name on the card.",
 		examples: [
@@ -24,22 +27,14 @@ const AssetMixin = Type.Object({
 			'Support Vehicle'
 		]
 	}),
-	icon: Type.Optional(
-		Type.Ref(Metadata.SvgImageUrl, { description: "This asset's icon." })
-	),
-	color: Type.Optional(
-		Type.Ref(Metadata.CssColor, {
-			description: 'A thematic color associated with this asset.'
-		})
-	),
 	options: Type.Optional(
-		Generic.Dictionary(Type.Ref<TAssetOptionField>('AssetOptionField'), {
+		Dictionary(Type.Ref<TAssetOptionField>('AssetOptionField'), {
 			description:
 				"Options are input fields set when the player purchases the asset. They're likely to remain the same through the life of the asset. Typically, they are rendered at the top of the asset card."
 		})
 	),
 	requirement: Type.Optional(
-		Type.Ref(Localize.MarkdownString, {
+		Type.Ref(MarkdownString, {
 			description: 'Describes prerequisites for purchasing or using this asset.'
 		})
 	),
@@ -50,37 +45,27 @@ const AssetMixin = Type.Object({
 	)
 })
 
-export const Asset = Generic.Collectable(
-	Type.Ref(Id.AssetId),
-	'asset',
-	Utils.Assign([
+export const Asset = CollectableNode(
+	FlatIntersect([
 		AssetMixin,
 		AssetPropertiesEnhanceable(
 			Type.Ref<TAssetControlField>('AssetControlField')
 		)
 	]),
-	{ $id: 'Asset' }
+	'asset'
 )
-
-
 
 export type TAsset = typeof Asset
-export type Asset = Generic.Collectable<
-	Static<typeof AssetMixin> &
-		Static<ReturnType<typeof AssetPropertiesEnhanceable<TAssetControlField>>>
->
+// export type Asset = Collectable<
+// 	Static<typeof AssetMixin> &
+// 		Static<ReturnType<typeof AssetPropertiesEnhanceable<TAssetControlField>>>
+// >
 
-export const AssetCollection = Generic.Collection(
-	Type.Ref(Id.AssetCollectionId),
-	'asset_collection',
-	Type.Ref<TUnsafe<Asset>>('Asset'),
-	{},
-	{
-		$id: 'AssetCollection'
-	}
-)
+export const AssetCollection = CollectionNode(Type.Object({}), 'asset_collection', {
+	$id: 'AssetCollection'
+})
 export type TAssetCollection = typeof AssetCollection
-export type AssetCollection = Generic.Collection<Asset>
+// export type AssetCollection = Collection<Asset>
 
 export * from './assets/Ability.js'
 export * from './assets/Enhancement.js'

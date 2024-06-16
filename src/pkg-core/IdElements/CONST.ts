@@ -1,6 +1,6 @@
 namespace CONST {
 	/** The maximum depth for nesting collections, relative to the root dictionary for its type */
-  export const RECURSIVE_PATH_ELEMENTS_MAX = 4 as const
+	export const RECURSIVE_PATH_ELEMENTS_MAX = 4 as const
 	export type RECURSIVE_PATH_ELEMENTS_MAX = typeof RECURSIVE_PATH_ELEMENTS_MAX
 	export const RECURSIVE_PATH_ELEMENTS_MIN = 1 as const
 	export type RECURSIVE_PATH_ELEMENTS_MIN = typeof RECURSIVE_PATH_ELEMENTS_MIN
@@ -25,7 +25,7 @@ namespace CONST {
 	export const GlobstarString = '**' as const
 	export type GlobstarString = typeof GlobstarString
 
-	/** Key in RecursiveCollection that contains a dictionary object of child collections. */
+	/** Key in Collection that contains a dictionary object of child collections. */
 	export const CollectionsKey = 'collections'
 	export type CollectionsKey = typeof CollectionsKey
 

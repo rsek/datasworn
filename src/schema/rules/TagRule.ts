@@ -12,6 +12,7 @@ import { Dictionary } from '../Generic.js'
 import { canonicalTags } from '../tags/canonicalTags.js'
 import TypeId from '../../pkg-core/IdElements/TypeId.js'
 import type { Split } from '../../pkg-core/Utils/String.js'
+import { Assign } from '../utils/FlatIntersect.js'
 
 type NodeSchemaName<T extends string> = PascalCase<T>
 type EmbeddedNodeSchemaName<T extends string> = `Embedded${PascalCase<T>}`
@@ -44,7 +45,6 @@ const EmbeddedPrimary = TypeId.EmbeddablePrimaryType.map(
 const AnyPrimaryId = AnyPrimary.map(getIdSchemaName)
 const AnyPrimaryIdWildcard = AnyPrimary.map(getWildcardIdSchemaName)
 
-
 export const CollectionType = Utils.UnionEnum(TypeId.Collection, {
 	$id: 'CollectionType'
 })
@@ -59,7 +59,6 @@ export const NonCollectableType = Utils.UnionEnum(TypeId.NonCollectable, {
 	$id: 'NonCollectableType'
 })
 export type NonCollectableType = Static<typeof NonCollectableType>
-
 
 export const EmbedOnlyType = Utils.UnionEnum(TypeId.EmbedOnlyType, {
 	$id: 'EmbedOnlyType'
@@ -97,16 +96,16 @@ const TagRuleBase = Type.Object({
 const typedTags = keyBy(
 	[
 		...(['boolean', 'integer'] as const).map((type) =>
-			Utils.Assign([
+			Assign(
 				TagRuleBase,
 				Type.Object({
 					array: Type.Boolean({ default: false }),
 					value_type: Type.Literal(type)
 				})
-			])
+			)
 		),
 		...TypeId.AnyPrimary.map((type) =>
-			Utils.Assign([
+			Assign(
 				TagRuleBase,
 				Type.Object({
 					wildcard: Type.Boolean({
@@ -116,16 +115,16 @@ const typedTags = keyBy(
 					}),
 					value_type: Type.Literal(type)
 				})
-			])
+			)
 		),
-		Utils.Assign([
+		Assign(
 			TagRuleBase,
 			Type.Object({
 				array: Type.Boolean({ default: false }),
 				value_type: Type.Literal('enum'),
 				enum: Type.Array(Type.Ref(Id.DictKey))
 			})
-		])
+		)
 	].map((tag) => ({
 		...tag,
 		title: 'TagRule' + pascalCase(tag.properties.value_type.const)

@@ -8,7 +8,14 @@ export {
 
 // primary type
 export * from './oracles/OracleRollable.js'
-export * from './oracles/OracleCollection.js'
+export {
+	OracleTableSharedRolls,
+	OracleTableSharedText,
+	OracleTableSharedText2,
+	OracleTableSharedText3,
+	OracleTablesCollection,
+	OracleCollection
+} from './oracles/OracleCollection.js'
 
 // derived type
 export * from './oracles/EmbeddedOracleRollable.js'

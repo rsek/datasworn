@@ -24,6 +24,7 @@ import type * as Id from './Id.js'
 import * as Localize from './Localize.js'
 import JtdType from '../../scripts/json-typedef/typedef.js'
 import type { ObjectProperties } from '../utils/ObjectProperties.js'
+import { Assign } from '../utils/FlatIntersect.js'
 
 /**
  * @abstract
@@ -91,7 +92,7 @@ function IntegerInput<
 	{ min, max, rollable }: { min: Min; max: Max; rollable: Rollable },
 	options: ObjectOptions = {}
 ) {
-	const mixin = Utils.Assign([
+	const mixin = Assign(
 		Input(
 			Type.Integer({ default: 0, [JsonTypeDef]: { schema: JtdType.Int8() } })
 		),
@@ -99,19 +100,18 @@ function IntegerInput<
 			min: { [JsonTypeDef]: { schema: JtdType.Int8() }, ...min },
 			max: { [JsonTypeDef]: { schema: JtdType.Int8() }, ...max }
 		})
-	])
+	)
 
-	return Utils.Assign(
-		[
-			mixin,
-			Type.Object({
-				rollable: {
-					[JsonTypeDef]: { schema: JtdType.Boolean() },
-					default: rollable.const,
-					...rollable
-				}
-			})
-		],
+	return Assign(
+		mixin,
+		Type.Object({
+			rollable: {
+				[JsonTypeDef]: { schema: JtdType.Boolean() },
+				default: rollable.const,
+				...rollable
+			}
+		}),
+
 		options
 	) as unknown as TIntegerInput<Min, Max, Rollable>
 }
@@ -205,9 +205,9 @@ export function Meter<Rollable extends TLiteral<boolean>>(
 				}
 			},
 			{
-				...options,
 				description:
-					'A meter with an integer value, bounded by a minimum and maximum.'
+					'A meter with an integer value, bounded by a minimum and maximum.',
+				...options
 			}
 		),
 		{
@@ -262,7 +262,7 @@ export function SelectOption<T extends TObject>(
 	schema: T,
 	options: ObjectOptions = {}
 ) {
-	return Utils.Assign([SelectOptionBase, schema], {
+	return Assign(SelectOptionBase, schema, {
 		description: 'Represents an option in a list of choices.',
 		remarks: 'Semantics are similar to the HTML `<option>` element.',
 		...options
@@ -295,12 +295,11 @@ const SelectChoicesGroupBase = Type.Object({
 	}),
 	choice_type: Type.Literal('choice_group')
 })
-export function SelectChoicesGroup<Option extends TRef<TSelectChoice<TObject>>>(
-	optionSchema: Option,
-	options: ObjectOptions = {}
-) {
+export function SelectChoicesGroup<
+	TOption extends TRef<TSelectChoice<TObject>> | TSelectChoice<TObject>
+>(optionSchema: TOption, options: ObjectOptions = {}) {
 	const mixin = Choices(optionSchema)
-	return Utils.Assign([SelectChoicesGroupBase, mixin], {
+	return Assign(SelectChoicesGroupBase, mixin, {
 		description: 'Represents a grouping of options in a list of choices.',
 		remarks: 'Semantics are similar to the HTML `<optgroup>` element.',
 		title: optionSchema.title ? optionSchema.title + 'Group' : undefined,
@@ -311,8 +310,8 @@ export function SelectChoicesGroup<Option extends TRef<TSelectChoice<TObject>>>(
 	>
 }
 export type TSelectChoicesGroup<
-	Option extends TRef<TSelectChoice<TObject>> | TSelectChoice<TObject>
-> = ReturnType<typeof SelectChoicesGroup<Option>>
+	TOption extends TRef<TSelectChoice<TObject>> | TSelectChoice<TObject>
+> = ReturnType<typeof SelectChoicesGroup<TOption>>
 
 export type SelectChoicesGroup<Option extends SelectChoice<any>> = Static<
 	typeof SelectChoicesGroupBase
@@ -343,7 +342,7 @@ export function SelectWithGroups<Option extends TSelectChoice<TObject>>(
 			'choice_type'
 		)
 	)
-	return Utils.Assign([SelectBase, mixin], {
+	return Assign(SelectBase, mixin, {
 		description: 'Represents a list of mutually exclusive choices.',
 		remarks: 'Semantics are similar to the HTML `<select>` element',
 		...options
@@ -364,7 +363,7 @@ export function Select<
 >(choiceSchema: Option, options: ObjectOptions = {}) {
 	const mixin = Choices(choiceSchema)
 
-	return Utils.Assign([SelectBase, mixin], {
+	return Assign(SelectBase, mixin, {
 		description: 'Represents a list of mutually exclusive choices.',
 		remarks: 'Semantics are similar to the HTML `<select>` element',
 		...options

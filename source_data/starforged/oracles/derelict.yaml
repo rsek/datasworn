@@ -6,6 +6,7 @@ oracles:
     name: Derelict Oracles
     canonical_name: Derelicts
     type: oracle_collection
+    oracle_type: tables
     _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'

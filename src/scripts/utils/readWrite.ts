@@ -34,8 +34,7 @@ export async function readYAML(
 	}
 ) {
 	const str = await fs.readFile(filePath, { encoding })
-	const yamlData = yaml.parse(str, options)
-	return yamlData
+	return yaml.parse(str, options)
 }
 
 export async function writeJSON(

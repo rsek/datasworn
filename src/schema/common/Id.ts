@@ -8,6 +8,8 @@ import {
 
 import ids from '../../builders/IdBuilder.js'
 import Pattern from '../../pkg-core/IdElements/Pattern.js'
+import { JsonTypeDef } from '../Symbols.js'
+import JtdType from '../../scripts/json-typedef/typedef.js'
 
 
 export const RulesetId = Type.String({
@@ -31,7 +33,8 @@ export type ExpansionId = Static<typeof ExpansionId>
 export const RulesPackageId = Type.Union(
 	[Type.Ref(RulesetId), Type.Ref(ExpansionId)],
 	{
-		$id: 'RulesPackageId'
+		$id: 'RulesPackageId',
+		[JsonTypeDef]: { schema: JtdType.String() }
 	}
 )
 

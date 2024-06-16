@@ -6,6 +6,7 @@ oracles:
     name: Precursor Vault Oracles
     canonical_name: Precursor Vaults
     type: oracle_collection
+    oracle_type: tables
     _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'

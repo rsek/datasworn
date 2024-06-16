@@ -15,6 +15,7 @@ oracles:
       page: 217
     name: Trap
     type: oracle_collection
+    oracle_type: tables
     summary: Identify the characteristics and effects of a trap within a site.
     # TODO: replace the page ref for scene challenges to an article on the topic, once that's available
     description: |-

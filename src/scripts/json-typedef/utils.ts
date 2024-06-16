@@ -180,7 +180,7 @@ export function toJtdSingleEnum(schema: TLiteral<string>) {
 }
 
 export function toJtdDiscriminator<
-	M extends Utils.TDiscriminatorMap<Utils.TDiscriminable<TObject>>,
+	M extends Utils.TDiscriminatorMap<Utils.TDiscriminableish<TObject>>,
 	D extends Utils.TDiscriminableKeyFor<M>
 >(schema: Utils.TDiscriminatedUnion<M, D>) {
 	const discriminator = schema[Discriminator]

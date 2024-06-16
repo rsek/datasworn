@@ -108,13 +108,14 @@ export type TFuzzySchemaOf<T> =
 
 export function setDescriptions<T extends TObject>(
 	schema: T,
-	descriptions: Partial<Record<keyof T['properties'], string | undefined>>,
+	descriptions: { [P in keyof Static<TObject>]?: string | undefined },
 	override = true
 ) {
 	for (const property in descriptions) {
 		const description = descriptions[property]
-		if (schema.properties[property] == null) continue
 		if (!override && !isEmpty(schema.properties[property].description)) continue
+		if (typeof description !== 'string' && typeof description !== 'undefined')
+			continue
 		schema.properties[property].description = description
 	}
 

@@ -15,6 +15,7 @@ import * as Base from './Inputs.js'
 import * as Metadata from './Metadata.js'
 import { RollableValue } from './RollableValues.js'
 import { mapValues } from 'lodash-es'
+import { Assign } from '../utils/FlatIntersect.js'
 
 export const EnhanceableProperties = Symbol('EnhanceableProperties')
 
@@ -38,7 +39,7 @@ function InputField<T extends Base.TInput<TSchema>, V extends string>(
 		)
 	})
 
-	const result = Utils.Assign([base, mixin], {
+	const result = Assign(base, mixin, {
 		description,
 		remarks,
 		[EnhanceableProperties]: [] as Array<keyof Static<T>>,
@@ -47,7 +48,7 @@ function InputField<T extends Base.TInput<TSchema>, V extends string>(
 
 	// const result = Generic.IdentifiedNode(
 	// 	id,
-	// 	Utils.Assign([base, mixin]) as unknown as TObject<
+	// 	Assign(base, mixin) as unknown as TObject<
 	// 		T['properties'] & {
 	// 			[DISCRIMINATOR]: TLiteral<Discriminator>
 	// 			_id:Id.TAnyId
@@ -80,10 +81,7 @@ export type TInputField<
 
 // ReturnType<typeof InputField<T, Discriminator>> & InputFieldOptions<T>
 
-export type InputField<
-	T extends Base.Input<any>,
-	V extends string
-> = Utils.Assign<
+export type InputField<T extends Base.Input<any>, V extends string> = Assign<
 	T,
 	{
 		[DISCRIMINATOR]: V

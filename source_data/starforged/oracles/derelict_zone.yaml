@@ -5,6 +5,7 @@ oracles:
   derelict:
     name: Derelict Oracles
     canonical_name: Derelicts
+    oracle_type: tables
     type: oracle_collection
     _source:
       <<: &Source

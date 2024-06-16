@@ -46,7 +46,10 @@ function validateSchemaDefinitions(defs: Record<string, TSchema>) {
 	}
 
 	// console.log('unusedDefinitions', unusedDefinitions)
-	// console.log('invalidPointers', invalidPointers)
+	if (invalidPointers.size > 0)
+		throw new Error(
+			`Missing referenced definitions: ${Array.from(invalidPointers).join(', ')}`
+		)
 }
 
 const defsBase = pickBy(
@@ -74,7 +77,7 @@ const defsBase = pickBy(
 		...DelveSites
 	} as Record<string, TSchema>,
 	(schema, key) => {
-		if (!TypeGuard.IsSchema(schema)) return false
+		if (typeof schema !== 'object') return false
 
 		if (typeof schema.$id !== 'string') {
 			Log.warn(`Schema in #/${DefsKey}, but doesn't have an ID?`)
@@ -93,17 +96,7 @@ validateSchemaDefinitions(defsBase)
 
 export type Defs = Record<string, TSchema>
 const entries: [string, TSchema][] = Object.values<TSchema>(defsBase).map(
-	(entry) => {
-		if (typeof entry.$id !== 'string')
-			throw new Error(
-				`Schema in definitions is missing an $id:\n${JSON.stringify(
-					entry,
-					undefined,
-					'\t'
-				)}`
-			)
-		return [entry.$id, entry]
-	}
+	(entry) => [entry.$id, entry]
 )
 
 const Defs: Defs = Object.fromEntries(entries)

@@ -6,6 +6,7 @@ oracles:
   threat:
     name: Threat
     type: oracle_collection
+    oracle_type: tables
     summary: In support of the optional threat mechanics, use these oracles to introduce a threat and determine its actions within your world.
     description: |-
       These oracles support the optional threat mechanics detailed in Chapter 6.

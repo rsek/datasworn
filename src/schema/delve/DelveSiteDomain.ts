@@ -10,6 +10,7 @@ import {
 import * as Generic from '../Generic.js'
 import { setSourceDataSchema } from '../Utils.js'
 import { EmbeddedType } from './common.js'
+import { NonCollectableNode } from '../generic/NonCollectableNode.js'
 
 export const DelveSiteDomainFeature = EmbeddedType(
 	OracleRollableRowText,
@@ -36,13 +37,8 @@ const DelveSiteDomainFeatures = Type.Array(Type.Ref(DelveSiteDomainFeature))
 const DelveSiteDomainDangers = Type.Array(Type.Ref(DelveSiteDomainDanger))
 
 export const DelveSiteDomain = setSourceDataSchema(
-	Generic.SourcedNode(
-		Type.Ref(Id.DelveSiteDomainId),
+	NonCollectableNode(
 		Type.Object({
-			type: Type.Literal('delve_site_domain'),
-			summary: Type.Ref(Localize.MarkdownString, { deprecated: true }),
-			description: Type.Optional(Type.Ref(Localize.MarkdownString)),
-			// icon: Type.Optional(Type.Ref(Metadata.SvgImageUrl)),
 			name_oracle: Type.Optional(
 				Type.Ref(Id.OracleRollableId, {
 					description:
@@ -123,6 +119,7 @@ export const DelveSiteDomain = setSourceDataSchema(
 				}
 			)
 		}),
+		'delve_site_domain',
 		{
 			$id: 'DelveSiteDomain',
 			description: 'A delve site Domain card.'

@@ -5,6 +5,7 @@ import {
 	type TSchema,
 	type TString
 } from '@sinclair/typebox'
+
 import Id from '../common/Id.js'
 
 export const DictionaryBrand = Symbol('Dictionary')
@@ -22,6 +23,7 @@ export function Dictionary<T extends TSchema>(
 	const dict =
 		// Type.Transform(
 		Type.Record(key ?? Id.DictKey, schema, {
+			default: {},
 			...options,
 			remarks: 'Deserialize as a dictionary object.',
 			[DictionaryBrand]: 'Dictionary'

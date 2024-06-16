@@ -1,8 +1,9 @@
 import { Type, type Static } from '@sinclair/typebox'
 import { type Simplify } from 'type-fest'
 import * as Generic from '../Generic.js'
-import * as Utils from '../Utils.js'
-import { Fields, Id } from '../common/index.js'
+import { Fields } from '../common/index.js'
+import { Assign } from '../utils/FlatIntersect.js'
+import { DiscriminatedUnion } from '../Utils.js'
 
 const AssetBooleanFieldMixin = Type.Object({
 	is_impact: Type.Boolean({
@@ -25,7 +26,7 @@ const AssetBooleanFieldMixin = Type.Object({
 // 	// id
 // 	// ()
 // 	const { $comment, description } = base
-// 	return Utils.Assign(
+// 	return Assign(
 // 		[
 // 			Fields.CheckboxField,
 // 			// id
@@ -48,23 +49,25 @@ const AssetBooleanFieldMixin = Type.Object({
 // 		// id
 // 		()
 // 	const { $comment, description } = base
-// 	return Utils.Assign([base, AssetBooleanFieldMixin], {
+// 	return Assign([base, AssetBooleanFieldMixin], {
 // 		description,
 // 		$comment,
 // 		title: 'AssetCardFlipField',
 // 		...options
 // 	})
 // }
-export const AssetCheckboxField = Utils.Assign(
-	[Fields.CheckboxField, AssetBooleanFieldMixin],
+export const AssetCheckboxField = Assign(
+	Fields.CheckboxField,
+	AssetBooleanFieldMixin,
 	{ $id: 'AssetCheckboxField' }
 )
-export const AssetCardFlipField = Utils.Assign(
-	[Fields.CardFlipField, AssetBooleanFieldMixin],
+export const AssetCardFlipField = Assign(
+	Fields.CardFlipField,
+	AssetBooleanFieldMixin,
 	{ $id: 'AssetCardFlipField' }
 )
 
-export const AssetConditionMeterControlField = Utils.DiscriminatedUnion(
+export const AssetConditionMeterControlField = DiscriminatedUnion(
 	{ checkbox: AssetCheckboxField, card_flip: AssetCardFlipField },
 	// .map(
 	// 	(fn) => fn()
@@ -132,13 +135,11 @@ const AssetConditionMeterMixin = Type.Object({
 	)
 })
 
-export const AssetConditionMeter = Utils.Assign(
-	[
-		Fields.ConditionMeterField,
-		// Type.Ref(Id.AssetControlFieldId)
-		// ()
-		AssetConditionMeterMixin
-	],
+export const AssetConditionMeter = Assign(
+	Fields.ConditionMeterField,
+	// Type.Ref(Id.AssetControlFieldId)
+	// ()
+	AssetConditionMeterMixin,
 	{
 		$id: 'AssetConditionMeter',
 		description:
@@ -169,7 +170,7 @@ export type AssetConditionMeter = Simplify<Static<typeof AssetConditionMeter>>
 // 	}
 // )
 
-export const AssetOptionField = Utils.DiscriminatedUnion(
+export const AssetOptionField = DiscriminatedUnion(
 	{
 		select_value: Fields.SelectValueField,
 		select_enhancement: Fields.SelectEnhancementField,
@@ -207,7 +208,7 @@ export type TAssetOptionField = typeof AssetOptionField
 // 	{ $id: 'AssetCardFlipControlField' }
 // )
 
-export const AssetControlField = Utils.DiscriminatedUnion(
+export const AssetControlField = DiscriminatedUnion(
 	{
 		condition_meter: AssetConditionMeter,
 		select_enhancement: Fields.SelectEnhancementField,
@@ -244,7 +245,7 @@ export type AssetControlField = Static<typeof AssetControlField>
 // 	{ $id: 'AssetAbilityCheckbox' }
 // )
 
-export const AssetAbilityControlField = Utils.DiscriminatedUnion(
+export const AssetAbilityControlField = DiscriminatedUnion(
 	{
 		clock: Fields.ClockField,
 		counter: Fields.CounterField,
@@ -263,7 +264,7 @@ export type AssetAbilityControlField = Static<typeof AssetAbilityControlField>
 // 	// Type.Ref(Id.AssetAbilityOptionFieldId)
 // 	()
 
-export const AssetAbilityOptionField = Utils.DiscriminatedUnion(
+export const AssetAbilityOptionField = DiscriminatedUnion(
 	{
 		text: Fields.TextField
 	},

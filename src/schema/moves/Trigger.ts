@@ -16,6 +16,7 @@ import {
 	type TFuzzyRef
 } from '../utils/typebox.js'
 import * as Utils from '../Utils.js'
+import { Assign } from '../utils/FlatIntersect.js'
 
 export const TriggerBy = Type.Object(
 	{
@@ -57,14 +58,12 @@ export function TriggerCondition<
 			'The options available when rolling with this trigger condition.',
 		...rollOptions
 	}
-	return Utils.Assign(
-		[
-			TriggerConditionBase,
-			Type.Object({
-				method,
-				roll_options
-			})
-		],
+	return Assign(
+		TriggerConditionBase,
+		Type.Object({
+			method,
+			roll_options
+		}),
 		options
 	)
 }
@@ -142,13 +141,11 @@ const TriggerMixin = Type.Object({
 export function Trigger<
 	T extends TFuzzyNull<TArray<TFuzzyRef<TTriggerCondition>>>
 >(conditions: T, options: ObjectOptions = {}) {
-	return Utils.Assign(
-		[
-			TriggerMixin,
-			setDescriptions(Type.Object({ conditions }), {
-				conditions: 'Specific conditions that qualify for this trigger.'
-			})
-		],
+	return Assign(
+		TriggerMixin,
+		setDescriptions(Type.Object({ conditions }), {
+			conditions: 'Specific conditions that qualify for this trigger.'
+		}),
 		options
 	) as TTrigger<T>
 }

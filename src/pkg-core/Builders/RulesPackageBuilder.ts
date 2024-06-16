@@ -17,8 +17,8 @@ export type Logger = Record<
 >
 
 /**
- * Merges, assigns IDs to, and validates multiple {@link DataswornSource.RulesPackage}s to create a complete {@link Datasworn.RulesPackage} object.
- * */
+	* Merges, assigns IDs to, and validates multiple {@link DataswornSource.RulesPackage}s to create a complete {@link Datasworn.RulesPackage} object.
+	* */
 export class RulesPackageBuilder<
 	TSource extends DataswornSource.RulesPackage = DataswornSource.RulesPackage,
 	TTarget extends Datasworn.RulesPackage = Datasworn.RulesPackage
@@ -123,7 +123,13 @@ export class RulesPackageBuilder<
 
 			return this
 		} catch (e) {
-			fsExtra.writeJSONSync('error_build.json', this.toJSON(), { spaces: '\t' })
+			fsExtra.writeJSONSync(
+				`datasworn/${this.id}/error_build.json`,
+				this.toJSON(),
+				{
+					spaces: '\t'
+				}
+			)
 			throw new Error(`Couldn't build "${this.id}". ${String(e)}`)
 		}
 	}

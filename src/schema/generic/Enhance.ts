@@ -6,6 +6,7 @@ import {
 	type TString
 } from '@sinclair/typebox'
 import * as Utils from '../Utils.js'
+import { Assign } from '../utils/FlatIntersect.js'
 
 /**
  * Enhances multiple rules elements
@@ -23,7 +24,7 @@ export function EnhanceMany<T extends TObject, ID extends TSchema = TString>(
 				'An array of wildcard IDs. An item must match one of the wildcard IDs to receive this enhancement. If this is `null`, any ID is valid.'
 		})
 	})
-	return Utils.Assign([mixin, base], options)
+	return Assign(mixin, base, options)
 }
 export type TEnhanceMany<
 	T extends TObject,

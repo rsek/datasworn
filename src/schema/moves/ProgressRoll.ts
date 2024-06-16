@@ -13,6 +13,7 @@ import {
 	type SpecialTrackRollMethod
 } from './common.js'
 import { Move, MoveEnhancement } from './utils.js'
+import { Assign } from '../utils/FlatIntersect.js'
 
 export const ProgressRollOption = Type.Object(
 	{
@@ -44,21 +45,19 @@ export const TriggerProgressRoll = Trigger(
 
 export type TriggerProgressRoll = Static<typeof TriggerProgressRoll>
 
-export const MoveProgressRoll = Utils.Assign(
-	[
-		Move(
-			'progress_roll',
-			Type.Ref<typeof TriggerProgressRoll>('TriggerProgressRoll'),
-			Type.Ref<typeof MoveOutcomes>('MoveOutcomes')
-		),
-		Type.Object({
-			// is_progress_move: Type.Literal(true, { default: true }),
-			tracks: Type.Ref(Progress.ProgressTrackTypeInfo, {
-				description:
-					'Describes the common features of progress tracks associated with this move.'
-			})
+export const MoveProgressRoll = Assign(
+	Move(
+		'progress_roll',
+		Type.Ref<typeof TriggerProgressRoll>('TriggerProgressRoll'),
+		Type.Ref<typeof MoveOutcomes>('MoveOutcomes')
+	),
+	Type.Object({
+		// is_progress_move: Type.Literal(true, { default: true }),
+		tracks: Type.Ref(Progress.ProgressTrackTypeInfo, {
+			description:
+				'Describes the common features of progress tracks associated with this move.'
 		})
-	],
+	}),
 	{
 		title: 'Progress Move',
 		description:

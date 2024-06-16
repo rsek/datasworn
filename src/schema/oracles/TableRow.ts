@@ -23,6 +23,7 @@ import JtdType from '../../scripts/json-typedef/typedef.js'
 import { Tags } from '../Rules.js'
 import { DiceRange, StaticDiceRange } from '../common/Range.js'
 import type { SetRequired } from 'type-fest'
+import { Assign } from '../utils/FlatIntersect.js'
 
 const TableRowBase = Type.Object({
 	text: Type.Ref(Localize.MarkdownString, {
@@ -52,14 +53,14 @@ const TableRowBase = Type.Object({
 	)
 })
 
-export const TableRowMixin = Utils.Assign([
+export const TableRowMixin = Assign(
 	TableRowBase,
 	Type.Object({
 		roll: Type.Ref(DiceRange),
 		tags: Type.Optional(Type.Ref<typeof Tags>('Tags')),
 		_id: Utils.Computed(Type.Ref('AnyOracleRollableRowId'))
 	})
-])
+)
 
 export const TableRowNullableMixin = setDescriptions(
 	Utils.SetNullable(TableRowMixin, ['roll']),
@@ -83,14 +84,7 @@ export function StaticRowPartial(min: number, max: number) {
 		{ additionalProperties: true }
 	)
 }
-// export const OracleRollableRowBasic = Generic.IdentifiedNode(
-// 	Type.Ref(Id.OracleRollableRowId),
-// 	CloneType(TableRowNullableMixin),
-// 	{
-// 		$id: 'OracleRollableRowBasic',
-// 		description: 'Represents a row in an oracle table.'
-// 	}
-// )
+
 export const OracleRollableRowText = CloneType(TableRowNullableMixin, {
 	$id: 'OracleRollableRowText',
 	description: 'Represents a row in an oracle table, with a single text cell.'
@@ -98,35 +92,15 @@ export const OracleRollableRowText = CloneType(TableRowNullableMixin, {
 
 export type OracleRollableRowText = Static<typeof OracleRollableRowText>
 
-// export const OracleRollableRowDetails = Generic.IdentifiedNode(
-// 	Type.Ref(Id.OracleRollableRowId),
-// 	Utils.Assign([
-// 		TableRowNullableMixin,
-// 		Type.Object({
-// 			detail: Utils.Nullable(Type.Ref(Localize.MarkdownString), {
-// 				default: undefined,
-// 				description:
-// 					'The secondary text column for this row. More detailed than `result`. Use `null` to represent a cell with a blank or empty vlue.'
-// 			})
-// 		})
-// 	]),
-// 	{
-// 		$id: 'OracleRollableRowDetails',
-// 		description:
-// 			'Represents a row in an oracle table that provides additional details.'
-// 	}
-// )
-export const OracleRollableRowText2 = Utils.Assign(
-	[
-		TableRowNullableMixin,
-		Type.Object({
-			text2: Utils.Nullable(Type.Ref(Localize.MarkdownString), {
-				default: undefined,
-				description:
-					'The secondary text for this row. Use `null` to represent a cell with a blank or empty vlue.'
-			})
+export const OracleRollableRowText2 = Assign(
+	TableRowNullableMixin,
+	Type.Object({
+		text2: Utils.Nullable(Type.Ref(Localize.MarkdownString), {
+			default: undefined,
+			description:
+				'The secondary text for this row. Use `null` to represent a cell with a blank or empty vlue.'
 		})
-	],
+	}),
 	{
 		$id: 'OracleRollableRowText2',
 		description:
@@ -135,22 +109,20 @@ export const OracleRollableRowText2 = Utils.Assign(
 )
 export type OracleRollableRowText2 = Static<typeof OracleRollableRowText2>
 
-export const OracleRollableRowText3 = Utils.Assign(
-	[
-		TableRowNullableMixin,
-		Type.Object({
-			text2: Utils.Nullable(Type.Ref(Localize.MarkdownString), {
-				default: undefined,
-				description:
-					'The secondary text for this row. Use `null` to represent a cell with a blank or empty vlue.'
-			}),
-			text3: Utils.Nullable(Type.Ref(Localize.MarkdownString), {
-				default: undefined,
-				description:
-					'The tertiary text for this row. Use `null` to represent a cell with a blank or empty vlue.'
-			})
+export const OracleRollableRowText3 = Assign(
+	TableRowNullableMixin,
+	Type.Object({
+		text2: Utils.Nullable(Type.Ref(Localize.MarkdownString), {
+			default: undefined,
+			description:
+				'The secondary text for this row. Use `null` to represent a cell with a blank or empty vlue.'
+		}),
+		text3: Utils.Nullable(Type.Ref(Localize.MarkdownString), {
+			default: undefined,
+			description:
+				'The tertiary text for this row. Use `null` to represent a cell with a blank or empty vlue.'
 		})
-	],
+	}),
 	{
 		$id: 'OracleRollableRowText3',
 		description: 'Represents a row in an oracle table with 3 text cells.'

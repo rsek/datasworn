@@ -6,6 +6,7 @@ oracles:
     name: Faction Oracles
     canonical_name: Factions
     type: oracle_collection
+    oracle_type: tables
     _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'

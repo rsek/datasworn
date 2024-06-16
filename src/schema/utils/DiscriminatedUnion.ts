@@ -3,30 +3,21 @@ import {
 	Kind,
 	Type,
 	TypeRegistry,
+	type ObjectOptions,
 	type SchemaOptions,
 	type Static,
 	type TLiteral,
 	type TObject,
-	type TProperties,
-	type TSchema,
-	type TUnion,
 	type TRef,
-	type ObjectOptions
+	type TSchema,
+	type TUnion
 } from '@sinclair/typebox'
-import { keyBy, omit } from 'lodash-es'
+import { omit } from 'lodash-es'
 import { Discriminator, Mapping, Members } from '../Symbols.js'
-import { type TIfThenElse } from './IfThen.js'
+import { Assign, type TAssign } from './FlatIntersect.js'
+import { IfThenElse, type TIfThenElse } from './IfThen.js'
 import { UnionEnum, type TUnionEnum } from './UnionEnum.js'
-import type {
-	OracleCollection,
-	OracleRollable,
-	OracleTableText,
-	OracleTableText2,
-	OracleTableText3,
-	TOracleTableText
-} from '../Oracles.js'
 import type { PickByType } from './typebox.js'
-import { IfThenElse } from './IfThen.js'
 
 type DiscriminableKeyOf<T> = keyof T & keyof PickByType<T, string> & string
 type DiscriminatorValueOf<T, D extends DiscriminableKeyOf<T>> = T[D] & string
@@ -37,7 +28,32 @@ export type DiscriminatorMap<T, D extends DiscriminableKeyOf<T>> = {
 type ValueIn<T extends Record<any, TSchema>> =
 	T extends Record<any, infer U extends TSchema> ? U : never
 
-export type TDiscriminable<T extends TObject = TObject> = T | TRef<T>
+export type TDiscriminableish<
+	K extends string = string,
+	D extends string = string,
+	TBase extends TObject = TObject
+> = TDiscriminable<K, D, TBase> | TRef<TDiscriminable<K, D, TBase>>
+
+export function Discriminable<
+	K extends string,
+	V extends string,
+	TBase extends TObject = TObject
+>(base: TBase, discriminator: K, mappingKey: V, options = {}) {
+	const mixin = Type.Object({
+		[discriminator]: Type.Literal(mappingKey)
+	}) as TObject<{ [P in K]: TLiteral<V> }>
+	return Assign(base, mixin, options) as TDiscriminable<K, V, TBase>
+}
+export type TDiscriminable<
+	K extends string,
+	V extends string,
+	TBase extends TObject = TObject
+> = TAssign<TBase, TObject<{ [P in K]: TLiteral<V> }>>
+export type Discriminable<
+	K extends string,
+	V extends string,
+	TBase extends object
+> = Assign<TBase, { [P in K]: V }>
 
 export type TDiscriminableBy<
 	T extends TObject,
@@ -45,27 +61,27 @@ export type TDiscriminableBy<
 	V extends string = string
 > = TObject<T['properties'] & { [K in D]: TLiteral<V> }>
 
-export type TDiscriminableKeyOf<T extends TDiscriminable> = DiscriminableKeyOf<
-	Static<T>
->
+export type TDiscriminableKeyOf<T extends TDiscriminableish> =
+	DiscriminableKeyOf<Static<T>>
 
-export type TDiscriminableKeyFor<T extends TDiscriminatorMap<TDiscriminable>> =
-	keyof Static<ValueIn<T>> & string
+export type TDiscriminableKeyFor<
+	T extends TDiscriminatorMap<TDiscriminableish>
+> = keyof Static<ValueIn<T>> & string
 
 type TDiscriminatorValueOf<
-	T extends TDiscriminable,
+	T extends TDiscriminableish,
 	D extends TDiscriminableKeyOf<T>
 > = Static<T[D]>
 
 type TDiscriminatorValueFor<
-	T extends TDiscriminatorMap<TDiscriminable>,
+	T extends TDiscriminatorMap<TDiscriminableish>,
 	D extends TDiscriminableKeyFor<T>
 > = Static<T[keyof T] & TSchema>[D]
 
 export type TDiscriminatorMap<
-	T extends TDiscriminable = TDiscriminable,
+	T extends TDiscriminableish = TDiscriminableish,
 	D extends TDiscriminableKeyOf<T> = TDiscriminableKeyOf<T>
-> = Record<D, T & TDiscriminable>
+> = Record<D, T & TDiscriminableish>
 // > = {
 // 	[Schema in T as Static<T>[D] & string]: Schema
 // }TDiscriminatedUnion
@@ -75,7 +91,7 @@ export type TDiscriminatorMap<
 // }
 
 export interface TDiscriminatedUnion<
-	M extends TDiscriminatorMap<TDiscriminable>,
+	M extends TDiscriminatorMap<TDiscriminableish>,
 	D extends TDiscriminableKeyFor<M> = TDiscriminableKeyFor<M>
 > extends TSchema {
 	type: 'object'
@@ -97,12 +113,12 @@ export interface TDiscriminatedUnion<
 }
 
 export type TDiscriminatorMappingOf<
-	T extends TDiscriminatedUnion<TDiscriminatorMap<TDiscriminable>>
+	T extends TDiscriminatedUnion<TDiscriminatorMap<TDiscriminableish>>
 > = T[typeof Mapping]
 
 export type TDiscriminatedMemberType<T extends TDiscriminatedUnion<any>> =
 	T extends TDiscriminatedUnion<
-		infer U extends TDiscriminatorMap<TDiscriminable>,
+		infer U extends TDiscriminatorMap<TDiscriminableish>,
 		any
 	>
 		? keyof U
@@ -113,21 +129,8 @@ export type TDiscriminatedMember<
 	TMemberType extends TDiscriminatedMemberType<T> = TDiscriminatedMemberType<T>
 > = T extends TDiscriminatedUnion<infer U> ? U[TMemberType] : never
 
-export function Discriminable<
-	D extends string,
-	V extends string,
-	Base extends TObject = TObject
->(base: Base, discriminator: D, mappingKey: V, options = {}) {
-	const newProps = {
-		...CloneType(base, options).properties,
-		[discriminator]: Type.Literal(mappingKey)
-	} as Base['properties'] & { [P in D]: TLiteral<V> }
-
-	return Type.Object(newProps, options)
-}
-
 export function DiscriminatedUnion<
-	M extends TDiscriminatorMap<TDiscriminable<TObject>>,
+	M extends TDiscriminatorMap<TDiscriminableish<string, string, TObject>>,
 	D extends string & keyof Static<ValueIn<M>>
 >(mapping: M, discriminator: D, options: SchemaOptions = {}) {
 	if (!TypeRegistry.Has('DiscriminatedUnion'))
@@ -160,7 +163,7 @@ export function DiscriminatedUnion<
 }
 
 export function OmitDiscriminatedUnionMembers<
-	TBase extends TDiscriminatedUnion<TDiscriminatorMap<TDiscriminable>>,
+	TBase extends TDiscriminatedUnion<TDiscriminatorMap<TDiscriminableish>>,
 	TOmitKeys extends (keyof TBase[typeof Mapping])[]
 >(base: TBase, omitKeys: TOmitKeys, options: ObjectOptions = {}) {
 	const remapping = {} as Omit<TBase[typeof Mapping], TOmitKeys[number]>
@@ -177,17 +180,16 @@ export function OmitDiscriminatedUnionMembers<
 	) as TOmitDiscriminatedUnionMembers<TBase, TOmitKeys>
 }
 export type TOmitDiscriminatedUnionMembers<
-	TBase extends TDiscriminatedUnion<TDiscriminatorMap<TDiscriminable>>,
+	TBase extends TDiscriminatedUnion<TDiscriminatorMap<TDiscriminableish>>,
 	TOmitKeys extends (keyof TBase[typeof Mapping])[]
 > = TDiscriminatedUnion<
 	Omit<TBase[typeof Mapping], TOmitKeys[number]>,
 	TBase[typeof Discriminator]
 >
 
-
 function DiscriminatedUnionCheck(
 	schema: TDiscriminatedUnion<
-		TDiscriminatorMap<TDiscriminable>,
+		TDiscriminatorMap<TDiscriminableish>,
 		TDiscriminableKeyFor<unknown>
 	>,
 	value: unknown

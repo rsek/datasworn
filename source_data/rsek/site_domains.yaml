@@ -5,6 +5,7 @@ ruleset: classic
 site_domains:
   dreamscape:
     name: Dreamscape
+    type: delve_site_domain
     _source: &Source
       authors:
         - name: rsek
@@ -63,6 +64,7 @@ site_domains:
         text: Denizen intrudes in dreamscape
   infrastructure:
     name: Infrastructure
+    type: delve_site_domain
     _source: *Source
     icon: icons/delve_site_domain/infrastructure.svg
     summary: The substrate of public life or private enterprise.
@@ -101,6 +103,7 @@ site_domains:
         text: Area contaminated or hazardous
   plains:
     name: Plains
+    type: delve_site_domain
     _source: *Source
     icon: icons/delve_site_domain/plains.svg
     summary: A grassland, steppe, or other open country.
@@ -139,6 +142,7 @@ site_domains:
         text: Storm or flash flood
   repository:
     name: Repository
+    type: delve_site_domain
     _source: *Source
     icon: icons/delve_site_domain/repository.svg
     summary: A place to store or display precious things.
@@ -177,6 +181,7 @@ site_domains:
         text: Precarious or unnavigable storage
   revel:
     name: Revel
+    type: delve_site_domain
     _source: *Source
     icon: icons/delve_site_domain/revel.svg
     summary: Functions, festivities, and frolics.
@@ -215,6 +220,7 @@ site_domains:
         text: Unforeseen guest complicates matters
   wastes:
     name: Wastes
+    type: delve_site_domain
     _source: *Source
     icon: icons/delve_site_domain/wastes.svg
     summary: A badland, desert, tundra, or other barren place.

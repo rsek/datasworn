@@ -120,7 +120,14 @@ async function assemblePkgFiles(
 		sourceFiles.map(async (filePath) => {
 			Log.debug(`📖 Reading ${formatPath(filePath)}`)
 			try {
-				const data = await readSourceData(filePath)
+
+        let data = await readSourceData(filePath)
+
+				// yaml parsing creates anchors as references to the same object, but we need to edit them as unique instances.
+				if (filePath.endsWith('.yaml') || filePath.endsWith('.yml'))
+					// lazy way to deep clone dereferenced values
+					data = JSON.parse(JSON.stringify(data))
+
 				builder.addFiles({
 					name: path.relative(cwd(), filePath),
 					data

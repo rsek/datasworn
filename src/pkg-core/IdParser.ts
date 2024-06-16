@@ -80,7 +80,6 @@ abstract class IdParser<
 		typeId: TypeId,
 		key: Key
 	) {
-		// IdParser.logger.debug(`[createdEmbeddedId] ${this.id} > ${typeId}, ${key}`)
 		return new EmbeddedId<this, TypeId, Key>(this, typeId, key.toString())
 	}
 
@@ -285,13 +284,17 @@ abstract class IdParser<
 				`Can't assign <${this.id}>, node already has <${node._id}>`
 			)
 		else {
+			if (index instanceof Map && index.has(this.id))
+				throw new Error(
+					`Generated ID <${this.id}>, but it already exists in the index`
+				)
+
 			node._id = this.id
-			// IdParser.logger.debug(
-			// 	`[assignIdsIn] Assigned ${this.constructor.name} @ <${this.id}>`
-			// )
+
+			if (index instanceof Map) index.set(this.id, node)
 		}
 
-		if (recursive) {
+		if (recursive)
 			for (const embedTypeId of this.embedTypes) {
 				const property = TypeId.getEmbeddedPropertyKey(embedTypeId)
 
@@ -303,19 +306,26 @@ abstract class IdParser<
 				if (childNodes == null) continue
 
 				if (Array.isArray(childNodes)) {
-					this.#assignIdsInArray(childNodes, embedTypeId, recursive, index)
+					this.#assignEmbeddedIdsInArray(
+						childNodes,
+						embedTypeId,
+						recursive,
+						index
+					)
 				} else {
-					this.#assignIdsInDictionary(childNodes, embedTypeId, recursive, index)
+					this.#assignEmbeddedIdsInDictionary(
+						childNodes,
+						embedTypeId,
+						recursive,
+						index
+					)
 				}
 			}
-		}
-
-		if (index instanceof Map) index.set(this.id, node)
 
 		return node
 	}
 
-	#assignIdsInDictionary(
+	#assignEmbeddedIdsInDictionary(
 		childNodes: Record<string, { _id?: string }>,
 		nextTypeId: TypeId.EmbeddableType,
 		recursive?: boolean,
@@ -330,18 +340,19 @@ abstract class IdParser<
 		}
 	}
 
-	#assignIdsInArray(
+	#assignEmbeddedIdsInArray(
 		childNodes: { _id?: string }[],
 		nextTypeId: TypeId.EmbeddableType,
 		recursive?: boolean,
 		index?: Map<string, unknown>
 	) {
-		// IdParser.logger.debug('[#assignIdsInArray]')
-		for (let i = 0; i < childNodes.length; i++) {
-			const childNode = childNodes[i]
-			const childParser = this.createEmbeddedId(nextTypeId, i.toString())
-			childParser.assignIdsIn(childNode, recursive, index)
-		}
+		childNodes.forEach((childNode, i) =>
+			this.createEmbeddedId(nextTypeId, i.toString()).assignIdsIn(
+				childNode,
+				recursive,
+				index
+			)
+		)
 	}
 
 	/**
@@ -442,34 +453,27 @@ abstract class IdParser<
 			if (typeRoot == null) continue
 
 			for (const dictKey in typeRoot) {
-				const trunkNode = typeRoot[dictKey]
-				if (trunkNode == null) continue
-
-				const id = `${typeId}${CONST.PrefixSep}${rulesPackage._id}${CONST.PathKeySep}${dictKey}`
-
-				let parser: CollectionId | NonCollectableId
+				const node = typeRoot[dictKey]
+				if (node == null) continue
 				try {
 					switch (true) {
 						case TypeGuard.CollectionType(typeId):
-							parser = new CollectionId(typeId, rulesPackage._id, dictKey)
-							parser.assignIdsIn(
-								trunkNode as TypeNode.ByType<typeof typeId>,
+							new CollectionId(typeId, rulesPackage._id, dictKey).assignIdsIn(
+								node as TypeNode.ByType<typeof typeId>,
 								true,
 								index
 							)
 							break
 						case TypeGuard.NonCollectableType(typeId):
-							parser = new NonCollectableId(typeId, rulesPackage._id, dictKey)
-							parser.assignIdsIn(
-								trunkNode as TypeNode.ByType<typeof typeId>,
-								true,
-								index
-							)
-							break
-						default:
+							new NonCollectableId(
+								typeId,
+								rulesPackage._id,
+								dictKey
+							).assignIdsIn(node as TypeNode.ByType<typeof typeId>, true, index)
 							break
 					}
 				} catch (e) {
+					const id = `${typeId}${CONST.PrefixSep}${rulesPackage._id}${CONST.PathKeySep}${dictKey}`
 					errorMessages.push(`Failed to create ID within <${id}>. ${String(e)}`)
 				}
 			}
@@ -863,11 +867,12 @@ class CollectionId<
 				this.id,
 				`Cant't generate a child collection ID because this ID has reached the maximum recursion depth (${CONST.RECURSIVE_PATH_ELEMENTS_MAX})`
 			)
+		const { primaryTypeId, rulesPackage, primaryDictKeyElements } = this
 
 		return new CollectionId(
-			this.primaryTypeId,
-			this.rulesPackage,
-			...this.primaryDictKeyElements,
+			primaryTypeId,
+			rulesPackage,
+			...primaryDictKeyElements,
 			key
 		) as any
 	}
@@ -952,16 +957,6 @@ class EmbeddedId<
 		} as const satisfies IdParser.Options
 
 		super(options)
-	}
-
-	override assignIdsIn<T extends { _id?: string }>(
-		node: T,
-		recursive?: boolean,
-		index?: Map<string, unknown>
-	): T {
-		const result = super.assignIdsIn(node, recursive, index)
-
-		return result
 	}
 }
 interface EmbeddedId<

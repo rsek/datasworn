@@ -5,6 +5,7 @@ oracles:
   place:
     name: Place Oracles
     type: oracle_collection
+    oracle_type: tables
     _source:
       <<: &Source
         authors:

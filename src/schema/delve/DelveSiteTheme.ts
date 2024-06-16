@@ -10,6 +10,7 @@ import {
 import * as Generic from '../Generic.js'
 import { setSourceDataSchema } from '../Utils.js'
 import { EmbeddedType } from './common.js'
+import { NonCollectableNode } from '../generic/NonCollectableNode.js'
 
 export const DelveSiteThemeFeature = EmbeddedType(
 	OracleRollableRowText,
@@ -33,16 +34,11 @@ export const DelveSiteThemeDanger = EmbeddedType(
 )
 
 const DelveSiteThemeFeatures = Type.Array(Type.Ref(DelveSiteThemeFeature))
-const DelveSiteThemeDangers = Type.Array(Type.Ref(DelveSiteThemeFeature))
+const DelveSiteThemeDangers = Type.Array(Type.Ref(DelveSiteThemeDanger))
 
 export const DelveSiteTheme = setSourceDataSchema(
-	Generic.SourcedNode(
-		Type.Ref(Id.DelveSiteThemeId),
+	NonCollectableNode(
 		Type.Object({
-			type: Type.Literal('delve_site_theme'),
-			summary: Type.Ref(Localize.MarkdownString),
-			description: Type.Optional(Type.Ref(Localize.MarkdownString)),
-			icon: Type.Optional(Type.Ref(Metadata.SvgImageUrl)),
 			features: Type.Intersect(
 				[
 					DelveSiteThemeFeatures,
@@ -85,6 +81,7 @@ export const DelveSiteTheme = setSourceDataSchema(
 				}
 			)
 		}),
+		'delve_site_theme',
 		{
 			description: 'A delve site theme card.',
 			$id: 'DelveSiteTheme'

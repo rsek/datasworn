@@ -1,36 +1,31 @@
 import {
 	Type,
-	CloneType,
 	type ObjectOptions,
 	type Static,
-	type TArray,
 	type TObject,
-	type TProperties,
 	type TRef
 } from '@sinclair/typebox'
 import { type SetRequired } from 'type-fest'
-import * as Generic from '../Generic.js'
+import { CollectableSubtypeNode } from '../generic/CollectableNode.js'
 import * as Utils from '../Utils.js'
-import { Id, Rolls } from '../common/index.js'
-import { ColumnMixin } from './Column.js'
-import { TableMeta, TableMixin } from './Table.js'
-import {
-	Text2ColumnLabels,
-	OracleRollableRowText2,
-	OracleRollableRowText,
-	TextColumnLabels,
-	type ColumnLabels,
-	OracleRollableRowText3,
-	Text3ColumnLabels
-} from './TableRow.js'
+import { Rolls } from '../common/index.js'
 import { FlatIntersect } from '../utils/FlatIntersect.js'
+import {
+	OracleRollableRowText,
+	OracleRollableRowText2,
+	OracleRollableRowText3,
+	TextColumnLabels,
+	Text2ColumnLabels,
+	Text3ColumnLabels,
+	type ColumnLabels
+} from './TableRow.js'
 
 // metadata necessary to generate a roll result from an OracleRollable
 const RollableMeta = Type.Object({
-	replaces: Type.Optional(
-		Type.Array(Type.Ref(Id.OracleRollableIdWildcard), {
-			description:
-				'Indicates that this object replaces the identified OracleRollables. References to the replaced objects can be considered equivalent to this object.'
+	recommended_rolls: Type.Optional(
+		Type.Object({
+			min: Type.Integer({ default: 1 }),
+			max: Type.Integer({ default: 1 })
 		})
 	),
 	dice: Type.Ref(Rolls.DiceExpression, {
@@ -45,106 +40,64 @@ const RollableMeta = Type.Object({
 	)
 })
 
-function RollableMixin<OracleRow extends TObject>(row: TRef<OracleRow>) {
-	return Type.Object({
-		...CloneType(RollableMeta).properties,
-		...Type.Pick(Generic.SourcedNodeBase, ['tags', 'suggestions']).properties,
-		type: Type.Literal('oracle_rollable'),
-		rows: Type.Array(row, {
-			description:
-				'An array of objects, each representing a single row of the table.',
-			rollable: true
-		})
-	})
-}
+const subtypeKey = 'oracle_type' as const
 
-function RollableTable<OracleRow extends TObject, MappingKey extends string>(
-	mappingKey: MappingKey,
-	row: TRef<OracleRow>,
-	column_labels: ReturnType<typeof ColumnLabels<OracleRow>> | null,
+function OracleRollableBase<TBase extends TObject, TSubtype extends string>(
+	base: TBase,
+	row: TRef,
+	options: ObjectOptions = {}
+) {
+	const enhancedBase = FlatIntersect(
+		[
+			RollableMeta,
+			Type.Object({
+				rows: Type.Array(row, {
+					description:
+						'An array of objects, each representing a single row of the table.',
+					rollable: true
+				})
+			}),
+			base
+		],
+		options
+	)
+
+	return enhancedBase
+}
+function RollableTable<TRow extends TObject, TSubtype extends string>(
+	subtype: TSubtype,
+	row: TRef<TRow>,
+	column_labels: ReturnType<typeof ColumnLabels<TRow>> | null,
 	options: SetRequired<ObjectOptions, '$id'>
 ) {
-	const base = FlatIntersect([
-		Type.Object({ oracle_type: Type.Literal(mappingKey) }),
-		RollableMixin(row),
-		TableMixin<OracleRow>(column_labels ?? {})
-	])
-
-	return Generic.RecursiveCollectable(
-		Type.Ref(Id.OracleRollableId),
+	return CollectableSubtypeNode(
+		OracleRollableBase(
+			Type.Object({ column_labels: column_labels ?? undefined }),
+			row
+		),
 		'oracle_rollable',
-		base,
+		subtypeKey,
+		subtype,
 		options
 	)
 }
 
-function RollableTableColumn<
-	OracleRow extends TObject,
-	MappingKey extends string
->(
-	mappingKey: MappingKey,
-	row: TRef<OracleRow>,
+function RollableColumn<TRow extends TObject, TSubtype extends string>(
+	subtype: TSubtype,
+	row: TRef<TRow>,
 	options: SetRequired<ObjectOptions, '$id'>
 ) {
-	const base = Utils.Discriminable(
-		Type.Object({
-			...ColumnMixin.properties,
-			...RollableMixin(row).properties,
-			type: Type.Literal('oracle_rollable')
-		}),
-		'oracle_type',
-		mappingKey
+	return Type.Omit(
+		CollectableSubtypeNode(
+			OracleRollableBase(Type.Object({}), row),
+			'oracle_rollable',
+			subtypeKey,
+			subtype,
+			options
+		),
+		['_source'],
+		options
 	)
-	return Generic.IdentifiedNode(Type.Ref(Id.OracleRollableId), base, options)
-}
-
-function OracleRollableBase<
-	Props extends TProperties,
-	OracleRow extends TRef<TObject>
->(row: OracleRow, properties: Props) {
-	const base2 = FlatIntersect([
-		TableMeta,
-		Type.Object({
-			...properties,
-			rows: Type.Array(row, {
-				description:
-					'An array of objects, each representing a single row of the table.'
-			})
-		})
-	])
-	// const base = Type.Object({
-	// 	...CloneType(TableMeta).properties,
-	// 	...CloneType(Type.Object(properties)).properties,
-	// 	rows: Type.Array(row,
-	// 		{
-	// 			description:
-	// 				'An array of objects, each representing a single row of the table.'
-	// 		}
-	// 	)
-	// }) as TObject<
-	// 	(typeof TableMeta)['properties'] & Props & { rows: TArray<OracleRow> }
-	// >
-	return Generic.RecursiveCollectable(
-		Type.Ref(Id.OracleRollableId),
-		'oracle_rollable',
-		base2
-	)
-}
-
-function OracleColumnBase<
-	Props extends TProperties,
-	OracleRow extends TRef<TObject>
->(row: OracleRow, properties: Props) {
-	const base = OracleRollableBase(row, properties)
-	const toOmit = [
-		'replaces',
-		'images',
-		'description', // too long
-		'canonical_name', // no reason for `name` to be anything other than the column label
-		'_source' // adequately provided by parent table
-	] as (keyof Static<typeof base>)[]
-
-	return Type.Omit(base, toOmit)
 }
 
 export const OracleTableText = RollableTable(
@@ -186,7 +139,7 @@ export const OracleTableText3 = RollableTable(
 export type TOracleTableText3 = typeof OracleTableText3
 export type OracleTableText3 = Static<typeof OracleTableText2>
 
-export const OracleColumnText = RollableTableColumn(
+export const OracleColumnText = RollableColumn(
 	'column_text',
 	Type.Ref(OracleRollableRowText),
 	{
@@ -197,7 +150,7 @@ export const OracleColumnText = RollableTableColumn(
 export type TOracleColumnText = typeof OracleColumnText
 export type OracleColumnText = Static<typeof OracleColumnText>
 
-export const OracleColumnText2 = RollableTableColumn(
+export const OracleColumnText2 = RollableColumn(
 	'column_text2',
 	Type.Ref(OracleRollableRowText2),
 	{
@@ -208,7 +161,7 @@ export const OracleColumnText2 = RollableTableColumn(
 export type TOracleColumnText2 = typeof OracleColumnText2
 export type OracleColumnText2 = Static<typeof OracleColumnText2>
 
-export const OracleColumnText3 = RollableTableColumn(
+export const OracleColumnText3 = RollableColumn(
 	'column_text3',
 	Type.Ref(OracleRollableRowText3),
 	{
@@ -239,7 +192,7 @@ export const OracleRollable = Utils.DiscriminatedUnion(
 export type OracleRollable = Static<typeof OracleRollable>
 export type TOracleRollable = typeof OracleRollable
 
-export const OracleTableRollable = Utils.DiscriminatedUnion(
+export const OracleRollableTable = Utils.DiscriminatedUnion(
 	{
 		table_text: OracleTableText,
 		table_text2: OracleTableText2,
@@ -247,9 +200,9 @@ export const OracleTableRollable = Utils.DiscriminatedUnion(
 	},
 	'oracle_type',
 	{
-		$id: 'OracleTableRollable'
+		$id: 'OracleRollableTable'
 	}
 )
 
-export type OracleTableRollable = Static<typeof OracleTableRollable>
-export type TOracleTableRollable = typeof OracleTableRollable
+export type OracleRollableTable = Static<typeof OracleRollableTable>
+export type TOracleRollableTable = typeof OracleRollableTable

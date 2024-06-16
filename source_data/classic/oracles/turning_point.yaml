@@ -5,6 +5,7 @@ oracles:
   turning_point:
     name: Turning Point Oracles
     type: oracle_collection
+    oracle_type: tables
     _source:
       <<: &Source
         authors:

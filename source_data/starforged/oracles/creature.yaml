@@ -6,6 +6,7 @@ oracles:
     name: Creature Oracles
     canonical_name: Creatures
     type: oracle_collection
+    oracle_type: tables
     _source:
       <<: &Source
         title: 'Ironsworn: Starforged Rulebook'

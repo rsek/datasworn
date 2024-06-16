@@ -13,6 +13,7 @@ oracles:
   campaign:
     name: Campaign Oracles
     type: oracle_collection
+    oracle_type: tables
     _source: *Source
     collections:
       faction_inspiration:

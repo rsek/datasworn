@@ -2,6 +2,7 @@ import { Type, type Static } from '@sinclair/typebox'
 import { Id, Localize, Progress } from './common/index.js'
 import * as Generic from './Generic.js'
 import * as Utils from './Utils.js'
+import { FlatIntersect } from './utils/FlatIntersect.js'
 
 export const NpcNature = Type.Ref(Localize.Label, {
 	description:
@@ -26,7 +27,7 @@ export const NpcNature = Type.Ref(Localize.Label, {
 })
 export type NpcNature = Static<typeof NpcNature>
 
-const NpcMixin = Utils.Assign([
+const NpcMixin = FlatIntersect([
 	Generic.Cyclopedia,
 	Type.Object({
 		rank: Type.Ref(Progress.ChallengeRank, {
@@ -46,20 +47,17 @@ export const NpcVariant = Type.Pick(
 	}
 )
 
-
 export type NpcVariant = Static<typeof NpcVariant>
 
-export const Npc = Generic.Collectable(
-	Type.Ref(Id.NpcId),
-	'npc',
-	Utils.Assign([
+export const Npc = Generic.CollectableNode(
+	FlatIntersect([
 		NpcMixin,
 		Type.Object({
 			variants: Type.Optional(Generic.Dictionary(Type.Ref(NpcVariant)))
 		})
 	]),
+	'npc',
 	{
-		$id: 'Npc',
 		description:
 			'A non-player character entry, similar to those in Chapter 5 of the Ironsworn Rulebook, or Chapter 4 of Starforged.'
 	}
@@ -67,14 +65,9 @@ export const Npc = Generic.Collectable(
 
 export type Npc = Static<typeof Npc>
 
-export const NpcCollection = Generic.Collection(
-	Type.Ref(Id.NpcCollectionId),
-	'npc_collection',
-	Type.Ref(Npc),
-	{},
-	{
-		$id: 'NpcCollection'
-	}
+export const NpcCollection = Generic.CollectionNode(
+	Type.Object({}),
+	'npc_collection'
 )
 export type NpcCollection = Static<typeof NpcCollection>
 export type TNpcCollection = typeof NpcCollection
