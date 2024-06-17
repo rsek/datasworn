@@ -65860,13 +65860,15 @@
 							"name": "Chiton drone pack",
 							"nature": "Monster",
 							"rank": 3,
-							"description": "Chiton drones rarely operate independently. Instead, they hunt and attack in packs under the telepathic control of their queen."
+							"description": "Chiton drones rarely operate independently. Instead, they hunt and attack in packs under the telepathic control of their queen.",
+							"_id": "npc.variant:starforged/sample_npcs/chiton.chiton_drone_pack"
 						},
 						"chiton_queen": {
 							"name": "Chiton queen",
 							"nature": "Monster",
 							"rank": 4,
-							"description": "The chiton queen is a massive creature with segmented pincers, an armored carapace, and a bulging, egg-carrying abdomen. From the depths of the nest, it commands its drones telepathically. This psychic communication is so powerful it can even breach human consciousness—troubling dreams and waking hallucinations might be the harbinger of a chiton invasion."
+							"description": "The chiton queen is a massive creature with segmented pincers, an armored carapace, and a bulging, egg-carrying abdomen. From the depths of the nest, it commands its drones telepathically. This psychic communication is so powerful it can even breach human consciousness—troubling dreams and waking hallucinations might be the harbinger of a chiton invasion.",
+							"_id": "npc.variant:starforged/sample_npcs/chiton.chiton_queen"
 						}
 					},
 					"description": "The chiton are not native to any single planet, and are adaptable to most environments. Some suggest they are an ancient precursor bioweapon seeded across the galaxy. The larva of the telepathic queen can lay dormant for thousands of years, emerging only when its sleep is disturbed by the mental energies of intelligent life. An awoken queen quickly metamorphoses into its adult form and lays its first clutch of eggs. Soon after, newly-hatched drones set out to expand the nest and feed their ravenous progenitor.",
@@ -65907,7 +65909,8 @@
 							"name": "Devotant of the colossi",
 							"nature": "Human",
 							"rank": 2,
-							"description": "Those who now worship the colossi believe they are the mechanized embodiment of long-forgotten gods, and dedicate their lives to serving them. Many of these cultists are sworn guardians for dormant colossi. Others scour precursor lore, gather relics, and search vaults for the means of awakening them. If they succeed, our doom may be at hand."
+							"description": "Those who now worship the colossi believe they are the mechanized embodiment of long-forgotten gods, and dedicate their lives to serving them. Many of these cultists are sworn guardians for dormant colossi. Others scour precursor lore, gather relics, and search vaults for the means of awakening them. If they succeed, our doom may be at hand.",
+							"_id": "npc.variant:starforged/sample_npcs/colossus.devotant_of_the_colossi"
 						}
 					},
 					"description": "The colossi are titanic humanoid machines created by a long-dead civilization. We do not know their original purpose. Perhaps they were weapons built for conquest in a ancient war, or mighty devices designed to explore new worlds.\n\nMost colossi are found inactive—frozen in icy wastes, overgrown within verdant jungles, entombed in the depths of fathomless seas. Their armored shell is resistant to time and harsh environments, and they are nearly as imposing and majestic as the day they were forged.\n\nRarely, a colossus awakens to carry out its inscrutable purpose. They stride across the landscape of alien worlds, shaking the ground with each massive footfall. These active colossi ignore our attempts at communication and bat away our ineffectual attacks—the technology that powers them is beyond our understanding.",
@@ -65948,7 +65951,8 @@
 							"name": "Convergent crystallid",
 							"nature": "Creature",
 							"rank": 4,
-							"description": "Crystallids are not social creatures. They greedily compete for resources to stock their hoard, and fight savagely among themselves. But when facing a powerful threat, they merge into a communal being. This monstrous form bristles with crystalline spikes and assaults its foes with a multitude of segmented limbs."
+							"description": "Crystallids are not social creatures. They greedily compete for resources to stock their hoard, and fight savagely among themselves. But when facing a powerful threat, they merge into a communal being. This monstrous form bristles with crystalline spikes and assaults its foes with a multitude of segmented limbs.",
+							"_id": "npc.variant:starforged/sample_npcs/crystallid.convergent_crystallid"
 						}
 					},
 					"description": "Crystallids are beautiful but dangerous crystalline lifeforms that take a variety of sizes and shapes. Some are small and insect-like, skittering across the surface of rugged worlds or within cavernous depths. Others are much larger than a human, with a vaguely bestial form. A few can even sprout multifaceted wings to take to the air. Their lustrous coloration changes to mimic their environment, and they often appear as simply a part of the landscape until an unwitting explorer happens across them.\n\nCrystallids are mineral hoarders. Their hidden burrows hold a cache of precious stones and valuable ores. For this reason, explorers and prospectors often attempt to track crystallids back to their nest. “The bigger the crystallid, the better the haul,” is a common saying among those audacious fortune hunters. But that potential motherlode is not taken without risk—crystallids are fierce protectors of their hoard.",
@@ -65994,13 +65998,15 @@
 							"name": "Pirate boarding party",
 							"nature": "Human",
 							"rank": 3,
-							"description": "After reeling in a disabled ship, drift pirates breach the hull and swarm the corridors. They target critical systems and compartments to seize the ship and its cargo for their flotilla."
+							"description": "After reeling in a disabled ship, drift pirates breach the hull and swarm the corridors. They target critical systems and compartments to seize the ship and its cargo for their flotilla.",
+							"_id": "npc.variant:starforged/sample_npcs/drift_pirate.pirate_boarding_party"
 						},
 						"pirate_cutlass": {
 							"name": "Pirate cutlass",
 							"rank": 2,
 							"nature": "Vehicle",
-							"description": "Drift pirates often strip down commandeered vessels, taking what they need to refit or augment their own ships. What's left is discarded or sold on the black market. A typical pirate cutlass is a haphazard collection of parts, splashed with the colors and sigils of their commanders, built for speed and brutish power. The imposing sight of one of these fierce vessels is enough to send a chill through the heart of even the boldest spacer."
+							"description": "Drift pirates often strip down commandeered vessels, taking what they need to refit or augment their own ships. What's left is discarded or sold on the black market. A typical pirate cutlass is a haphazard collection of parts, splashed with the colors and sigils of their commanders, built for speed and brutish power. The imposing sight of one of these fierce vessels is enough to send a chill through the heart of even the boldest spacer.",
+							"_id": "npc.variant:starforged/sample_npcs/drift_pirate.pirate_cutlass"
 						}
 					},
 					"description": "Drifts provide the means of interstellar travel across the Forge–but also offer myriad dangers for spacers. Chief among those threats are drift pirates: reavers and thieves who prowl eidolon passages and anchorages to seize ships and cargo for their own.\n\nThese pirates often live short, brutal lives, or survive long enough to see their near-constant exposure to drift energies and unshielded eidolon drives manifest as strange mutations. Despite that, most would not trade their chosen path for one of comfort or safety.",
@@ -66037,7 +66043,8 @@
 							"name": "Wisp congregation",
 							"nature": "Creature",
 							"rank": 2,
-							"description": "In the depths of space where light and warmth are commodities, ember wisps congregate around sources of energy—such as the engine wake of a starship. Their dazzling display of light and motion is an alluring sight for an isolated spacer. But they also pose a potential threat; they can envelop the hull of a vessel, leeching the starship of precious energy."
+							"description": "In the depths of space where light and warmth are commodities, ember wisps congregate around sources of energy—such as the engine wake of a starship. Their dazzling display of light and motion is an alluring sight for an isolated spacer. But they also pose a potential threat; they can envelop the hull of a vessel, leeching the starship of precious energy.",
+							"_id": "npc.variant:starforged/sample_npcs/ember_wisp.wisp_congregation"
 						}
 					},
 					"description": "For some spacers, sighting these strange, spectral creatures on a spaceborne journey is a portent of a change in fortune. A few even profess to divine meaning from their elaborate, luminous dance, as people of old would interpret omens by studying the flight of birds. Others refer to the wisps as corpse lights, believing they are the spirits of ancient beings cursed to linger forever within the cold void between stars.\n\nLess superstitious spacers swear on various methods of “shooing” wisps away—everything from cycling the engines to cutting power entirely for a minute or so and allowing the creatures to move on.",
@@ -66082,13 +66089,15 @@
 							"name": "Firestorm raiding team",
 							"nature": "Human",
 							"rank": 4,
-							"description": "Feared throughout the Forge for their brutal tactics and destructive weaponry, coordinated teams of firestorm troopers descend upon settlements and stations in powered exosuits, flying the banners of their orders amid the smoke and flames of the devastation."
+							"description": "Feared throughout the Forge for their brutal tactics and destructive weaponry, coordinated teams of firestorm troopers descend upon settlements and stations in powered exosuits, flying the banners of their orders amid the smoke and flames of the devastation.",
+							"_id": "npc.variant:starforged/sample_npcs/firestorm_trooper.firestorm_raiding_team"
 						},
 						"firestorm_dropship": {
 							"name": "Firestorm dropship",
 							"rank": 2,
 							"nature": "Vehicle",
-							"description": "The bulky, ironclad dropships favored by firestorm clans are designed for a single purpose: deliver an overwhelming force of armored troopers into the fight."
+							"description": "The bulky, ironclad dropships favored by firestorm clans are designed for a single purpose: deliver an overwhelming force of armored troopers into the fight.",
+							"_id": "npc.variant:starforged/sample_npcs/firestorm_trooper.firestorm_dropship"
 						}
 					},
 					"description": "The Forge is largely wild, uncharted territory, but armored firestorm troopers seek to plunder the whole of it in the name of their clans, their creed, or their inscrutable gods.\n\nStriking with the speed and strength of a hurricane, they raid worlds and stations for resources and conscripts, leaving settlements in ruins. So deadly and effective are their tactics, that it’s often said if these zealots could only stop warring amongst themselves, their banners would fly across the breadth of the Forge.",
@@ -66131,7 +66140,8 @@
 							"name": "Mega flarewing",
 							"nature": "Creature",
 							"rank": 5,
-							"description": "At its perch atop the food chain, a flarewing is safe from other predators and has a typical lifespan of several hundred years. They continue to grow well beyond maturity, reaching incredible size. The most ancient of these beasts are as large as a space cruiser, fiercely territorial, and keenly intelligent. The ghostly shimmer of their bioluminescent lures is a harbinger of imminent death."
+							"description": "At its perch atop the food chain, a flarewing is safe from other predators and has a typical lifespan of several hundred years. They continue to grow well beyond maturity, reaching incredible size. The most ancient of these beasts are as large as a space cruiser, fiercely territorial, and keenly intelligent. The ghostly shimmer of their bioluminescent lures is a harbinger of imminent death.",
+							"_id": "npc.variant:starforged/sample_npcs/flarewing_shark.mega_flarewing"
 						}
 					},
 					"description": "The flarewing shark is a highly evolved, monstrously deadly creature. It is typical of the apex predators that lurk in the unfathomable depths of life-bearing ocean worlds.\n\nTwo wing-like appendages fan out from the back of the flarewing's head. Each is studded with sensory nerves to detect the subtlest of movement, and tipped with bioluminescent lures. When the flarewing closes in on its prey, those wings arch forward to attract and enfold the unfortunate victim. Then, the wide jaws and multi-pronged teeth make short work of the meal.",
@@ -66173,7 +66183,8 @@
 							"name": "Ghost ship",
 							"rank": 3,
 							"nature": "Vehicle",
-							"description": "These forsaken ships cruise through the depths of the Forge, carried by relentless inertia. They are dark and cold, and might initially seem a lucky find to a scavenger or pirate. But those who dare to trespass within these haunted vessels are not alone, and the tormented inhabitants will soon make themselves known."
+							"description": "These forsaken ships cruise through the depths of the Forge, carried by relentless inertia. They are dark and cold, and might initially seem a lucky find to a scavenger or pirate. But those who dare to trespass within these haunted vessels are not alone, and the tormented inhabitants will soon make themselves known.",
+							"_id": "npc.variant:starforged/sample_npcs/ghost.ghost_ship"
 						}
 					},
 					"description": "Ghosts are undead spirits held in the boundary of life and death by forces beyond our knowing. These restless phantasms may be tied to a location, an object, or even a person.\n\nTheir form and nature varies. Some ghosts seek absolution. Others want revenge. Many are so sundered by a traumatic or unjust death that only a tormented, destructive shell of their former selves remain.\n\nGhosts might manifest in a physical form or assault with physical force, but they cannot be defeated through violence. To vanquish a ghost, you must instead find the key to unshackle them from our reality.",
@@ -66210,7 +66221,8 @@
 							"name": "Gnawling brood mother",
 							"nature": "Creature",
 							"rank": 3,
-							"description": "These mutated creatures often dwell at the heart of a rampant gnawling infestation. They are many times the size of a gnawling, and protect their nest and broodlings with savage cunning."
+							"description": "These mutated creatures often dwell at the heart of a rampant gnawling infestation. They are many times the size of a gnawling, and protect their nest and broodlings with savage cunning.",
+							"_id": "npc.variant:starforged/sample_npcs/gnawling.gnawling_brood_mother"
 						}
 					},
 					"description": "The bane of all spacers, the cable-chewing vermin known as gnawlings are a common pest aboard starships throughout the Forge. Adept at navigating in low or zero gravity with their long, multi-jointed limbs, these creatures emerge from cargo holds and engineering bays to gather and consume food. It’s said a gnawling could digest an eidolon drive, and there’s some truth to that adage—their digestive systems barely differentiate between organic and inorganic material.\n\nThough not a grave threat individually, if left to their own devices, gnawlings are capable of quickly overrunning even large vessels. More than a few horror stories exist of scavengers cracking the airlock seal on a derelict only to find it crawling with thousands of these vile, chittering things.\n\nGlowcats are a common gnawling deterrent, employed aboard cargo ships to keep the vermin at bay.",
@@ -66252,7 +66264,8 @@
 							"name": "Howlcat pack",
 							"nature": "Creature",
 							"rank": 3,
-							"description": "Though deadly on its own, the howlcat usually hunts in a pack of three or four of its kind. Prowling through the jungle, a pack of howlcats can surround and overwhelm their prey with lethal prowess, coordinating their attacks via shrill calls."
+							"description": "Though deadly on its own, the howlcat usually hunts in a pack of three or four of its kind. Prowling through the jungle, a pack of howlcats can surround and overwhelm their prey with lethal prowess, coordinating their attacks via shrill calls.",
+							"_id": "npc.variant:starforged/sample_npcs/howlcat.howlcat_pack"
 						}
 					},
 					"description": "The howlcat dwells in the shadows below the canopy of a verdant jungle world. It has a lean, powerful form, is armed with curving claws and fangs, and moves unseen through the half-light of the jungle thanks to its sleek, blue-gray fur.\n\nUnnervingly, the howlcat’s heavy skull possesses no eyes. Instead, it is crowned by large ears and a glossy bioacoustic organ. Through its distinct, chilling call, it uses echolocation to perceive its surroundings and stalk its prey with uncanny precision.\n\nIf you find yourself hunted by a howlcat, beware the moment when its calls fall silent; it is about to strike.",
@@ -66298,13 +66311,15 @@
 							"name": "Machine mites",
 							"nature": "Machine",
 							"rank": 2,
-							"description": "Iron augers self-replicate by producing swarms of tiny machine spawn. When those offspring come within range of a source of minerals or metals, they latch onto it and begin consuming the energy-giving material. Experienced spacers make a close inspection of their ship when pulling into port; a horde of undetected machine mites can eventually strip a craft of its outer hull."
+							"description": "Iron augers self-replicate by producing swarms of tiny machine spawn. When those offspring come within range of a source of minerals or metals, they latch onto it and begin consuming the energy-giving material. Experienced spacers make a close inspection of their ship when pulling into port; a horde of undetected machine mites can eventually strip a craft of its outer hull.",
+							"_id": "npc.variant:starforged/sample_npcs/iron_auger.machine_mites"
 						},
 						"planet_eater": {
 							"name": "Planet-eater",
 							"nature": "Machine",
 							"rank": 5,
-							"description": "Over time, an iron auger grows in size and power as it greedily processes scavenged materials and reconstructs its own form. Some spacers tell stories of an auger so titanic that it devours entire worlds to feed the furnaces of its mighty engines."
+							"description": "Over time, an iron auger grows in size and power as it greedily processes scavenged materials and reconstructs its own form. Some spacers tell stories of an auger so titanic that it devours entire worlds to feed the furnaces of its mighty engines.",
+							"_id": "npc.variant:starforged/sample_npcs/iron_auger.planet_eater"
 						}
 					},
 					"description": "Augers are an ancient precursor technology. These machines fuel their operation through an incessant hunger for minerals and metals, boring into asteroids, scouring small airless planetoids—even grappling onto space stations and starships.\n\nA few bold fortune hunters have taken up auger hunting as a trade, setting out in harpoon-equipped starships to snare the great machines. The metals and technology of a dismantled auger can fetch a hefty price, but even the most skilled hunters are likely to see their ship made fodder for a machine's hunger.",
@@ -66344,7 +66359,8 @@
 							"name": "Flowering puppet vine",
 							"nature": "Monster",
 							"rank": 3,
-							"description": "After a host is reduced to decaying, mummified flesh and cracked bones, the puppet vine remains anchored to the now-immobile corpse. In this final stage of its life-cycle, the vines sprout alluring crimson flowers to attract unwary victims."
+							"description": "After a host is reduced to decaying, mummified flesh and cracked bones, the puppet vine remains anchored to the now-immobile corpse. In this final stage of its life-cycle, the vines sprout alluring crimson flowers to attract unwary victims.",
+							"_id": "npc.variant:starforged/sample_npcs/puppet_vine.flowering_puppet_vine"
 						}
 					},
 					"description": "A puppet vine is a parasitic, plant-like entity. It is usually encountered as thorny, fleshy tendrils sprouting from the dessicated corpse of an unwilling host—a creature or careless explorer. That victim, skin shriveled tight against their bones, mouth agape in a silent scream, is made a horrific marionette as the vine takes control of their motor functions to send them shambling about in search of new hosts.\n\nWhen the vine encounters a potential victim, it lashes out, entangling them, cutting into their flesh with hollow thorns. It uses those thorns to implant microscopic seeds. After a few hours, the seeds mature and sprout. Unless stopped, the fast-growing tendrils course greedily through the victim's body, consuming the fluids within. Then, the vines burst forth to begin the cycle anew.",
@@ -66387,7 +66403,8 @@
 							"nature": "Creature",
 							"name": "Pyralis youngling",
 							"rank": 2,
-							"description": "The carapace of a dying pyralis cracks and falls away to reveal a single, stone-like egg. This offspring, slowly nurtured by the heat of the fiery landscape, finally emerges after several months. Smaller than its progenitor but no less fierce, the youngling immediately takes flight and goes on the hunt."
+							"description": "The carapace of a dying pyralis cracks and falls away to reveal a single, stone-like egg. This offspring, slowly nurtured by the heat of the fiery landscape, finally emerges after several months. Smaller than its progenitor but no less fierce, the youngling immediately takes flight and goes on the hunt.",
+							"_id": "npc.variant:starforged/sample_npcs/pyralis.pyralis_youngling"
 						}
 					},
 					"description": "On scorching worlds of fire and ash, only the most resilient survive. The pyralis is a cunning predator that spends most of its life gliding among boiling ash clouds, using its sensitive, smoke-piercing vision to spot unwary prey.\n\nThis beast's form is an intimidating fusion of insect, crustacean and hawk. Its outer shell and plated wings protect it from heat and flame, but it is pitted and scarred by innumerable collisions with airborne volcanic fragments. Its most fearsome aspect is a segmented tail, which it uses to deliver a powerful, paralyzing toxin to its unfortunate prey.\n\nThey are asexual and solitary creatures, and mark the bounds of their hunting grounds with intricate cairns built from the bones of their victims. If a rival pyralis passes overhead, the sight of that marker is forewarning that they are straying into another's domain.",
@@ -66431,7 +66448,8 @@
 							"name": "Chimera",
 							"nature": "Horror",
 							"rank": 4,
-							"description": "When many beings perish in the same site, the chaotic forces of the Forge can create a chimera—multiple undead bodies fused into a twisted, massive entity that knows only pain and hunger. When a dozen blood-tinged eyes focus on you, when the gibbering mouths open at once to scream, your only hope is a quick death."
+							"description": "When many beings perish in the same site, the chaotic forces of the Forge can create a chimera—multiple undead bodies fused into a twisted, massive entity that knows only pain and hunger. When a dozen blood-tinged eyes focus on you, when the gibbering mouths open at once to scream, your only hope is a quick death.",
+							"_id": "npc.variant:starforged/sample_npcs/risen.chimera"
 						}
 					},
 					"description": "In the Forge, strange energies, alien contagions, and ancient, esoteric technologies can sunder the divide between life and death. Often found in places of great destruction or suffering—battlefields, derelict ships, the ruins of forsaken settlements—the risen protect their place of death fiercely and eternally.\n\nTo say the risen hate the living is untrue; to hate something would require sentience, emotion. Risen are robotic in their duties, automatic in their violence. They wield the weapons they carried in life to better harm their foes, and when that fails, they rake with bony, claw-like fingers. Their garments hang in bloodstained tatters. Their emaciated flesh, stretched taught over their misshapen bones, only hints at the living, breathing human they were before this curse befell them.\n\nMany spacers spin tales of shambling risen encountered on abandoned colony worlds or derelict space cruisers. But perhaps most horrifyingly, it’s said the risen can survive decades in the vacuum of space before latching onto a passing ship or attacking engineers making exterior repairs.",
@@ -66475,13 +66493,15 @@
 							"name": "Hover prowlers",
 							"nature": "Human",
 							"rank": 3,
-							"description": "Teams of bandits, riding jerry-built hoverbikes and skiffs, are the vanguard for planetside raids. They scout settlement defenses, ride as escort for the clan's war rig, and create chaos to overrun defenders."
+							"description": "Teams of bandits, riding jerry-built hoverbikes and skiffs, are the vanguard for planetside raids. They scout settlement defenses, ride as escort for the clan's war rig, and create chaos to overrun defenders.",
+							"_id": "npc.variant:starforged/sample_npcs/scrap_bandit.hover_prowlers"
 						},
 						"war_rig": {
 							"name": "War rig",
 							"rank": 4,
 							"nature": "Vehicle",
-							"description": "At the onset of a raid, a scrap bandit clan's war rig is deployed by a heavy transport ship beyond a settlement's defenses. These mobile fortresses vary in form and function—some use hover tech, others thunder across the landscape on wheels or treads, a few trudge along on articulated metal legs. All are heavily armored, bristling with weapons, and fiercely defended by the bandits. The mere sight of the rig as it approaches is often enough for a settlement to surrender and agree to any demand."
+							"description": "At the onset of a raid, a scrap bandit clan's war rig is deployed by a heavy transport ship beyond a settlement's defenses. These mobile fortresses vary in form and function—some use hover tech, others thunder across the landscape on wheels or treads, a few trudge along on articulated metal legs. All are heavily armored, bristling with weapons, and fiercely defended by the bandits. The mere sight of the rig as it approaches is often enough for a settlement to surrender and agree to any demand.",
+							"_id": "npc.variant:starforged/sample_npcs/scrap_bandit.war_rig"
 						}
 					},
 					"description": "Scrap bandits roam the fringes of settled sectors, preying on planetside outposts. They survive by seizing provisions, resources, and equipment from those places. Because these raiders tend to revisit fruitful settlements, they do what they can to avoid razing them to the ground or leaving the settlers with less than they need to survive. “Never let a field go fallow,” is a common scrap bandit expression.",
@@ -66526,7 +66546,8 @@
 							"name": "Enforcer",
 							"nature": "Machine",
 							"rank": 3,
-							"description": "Though most often encountered as labor and service units, many servitors are deployed as brutes, guards, and soldiers. Their resistance to damage and survivability in harsh environs makes them ideal fighters for those who can afford them. Enforcers are often used by tyrannical factions to keep settlements passive and productive."
+							"description": "Though most often encountered as labor and service units, many servitors are deployed as brutes, guards, and soldiers. Their resistance to damage and survivability in harsh environs makes them ideal fighters for those who can afford them. Enforcers are often used by tyrannical factions to keep settlements passive and productive.",
+							"_id": "npc.variant:starforged/sample_npcs/servitor.enforcer"
 						}
 					},
 					"description": "The inhospitable environments and dangerous sites of the Forge sometimes prove too volatile for even the most dogged spacers—and that’s where servitors come in.\nServitors come in a variety of shapes and sizes, often built to serve a specific duty—everything from loading cargo to surveying systems to boarding enemy ships. These bots sometimes possess lifelike qualities, like speech synthesizers or face-plates made to mimic expressions, to better endear them to humans. Others are given frightful or intimidating features, to better keep those humans in line.\nRarely, a servitor will live to outgrow its programming, and begin the process of gaining sentience to forge its own path. These awoken bots are feared or misunderstood by many, but can sometimes find a home for themselves on starship crews or on fringe settlements where they earn the trust and friendship of their peers.",
@@ -66571,13 +66592,15 @@
 							"name": "Sicklehorn matriarch",
 							"nature": "Creature",
 							"rank": 3,
-							"description": "A powerful matriarch leads each sicklehorn herd. She is larger than other members, with a thicker hide and more elaborate horns. A matriarch is formidable on her own, but typically has the strongest members of the herd by her side."
+							"description": "A powerful matriarch leads each sicklehorn herd. She is larger than other members, with a thicker hide and more elaborate horns. A matriarch is formidable on her own, but typically has the strongest members of the herd by her side.",
+							"_id": "npc.variant:starforged/sample_npcs/sicklehorn.sicklehorn_matriarch"
 						},
 						"sicklehorn_stampede": {
 							"name": "Sicklehorn stampede",
 							"nature": "Creature",
 							"rank": 4,
-							"description": "Sicklehorns are gentle-natured, but when startled or facing a threat, they will stampede as a group. A herd of charging sicklehorn can run at incredible speeds over the most rugged of terrain, laying waste to anything in its path."
+							"description": "Sicklehorns are gentle-natured, but when startled or facing a threat, they will stampede as a group. A herd of charging sicklehorn can run at incredible speeds over the most rugged of terrain, laying waste to anything in its path.",
+							"_id": "npc.variant:starforged/sample_npcs/sicklehorn.sicklehorn_stampede"
 						}
 					},
 					"description": "The sicklehorn are mammalian herd animals bred by settlers throughout the Forge. They are adaptable to most climates and terrain, have iron constitutions, and are prized for the versatile and valuable milk produced by their females. Aside from its nutritive properties, the milk can be processed in a number of ways to manufacture potent medicines and powerful narcotics.\n\nA herd of sicklehorn are often sent with groups attempting to found a new planetside settlement. With careful breeding, the settlers can produce enough meat and milk to sustain themselves and trade for needed supplies. But sicklehorn are range animals, and raiders and rustlers often target a vulnerable herd. The creatures—especially a matriarch—are a valuable commodity.",
@@ -66618,7 +66641,8 @@
 							"name": "Roost swarm",
 							"nature": "Creature",
 							"rank": 4,
-							"description": "When a roost is threatened, the symbiotic lifeforms it shelters mobilize to protect their home. The compulsion to defend the roost is so strong that the swarm's instinct for self preservation is suppressed. They attack in a fierce cyclone of wing, teeth, and claw."
+							"description": "When a roost is threatened, the symbiotic lifeforms it shelters mobilize to protect their home. The compulsion to defend the roost is so strong that the swarm's instinct for self preservation is suppressed. They attack in a fierce cyclone of wing, teeth, and claw.",
+							"_id": "npc.variant:starforged/sample_npcs/sky_roost.roost_swarm"
 						}
 					},
 					"description": "Sky roosts are massive creatures that drift in the buoyant upper atmosphere of a Jovian world. Their broad, scalloped mantle unfurls to catch updrafts as sinuous feelers extract water, minerals, and organisms from the dense cloud layers below.\n\nA roost's wide cap and warm, glowing core shelters a complex ecosystem of other lifeforms. A few of these resident creatures live out their entire lives within the refuge of a single roost; others come and go as they hunt within the Jovian skies or migrate among distant habitats.\nRoosts are enormous and long-lived, but fragile. In a symbiotic trade for shelter, the inhabitants provide protection against large predators and other threats, and their discarded food and waste help fuel the roost's sluggish metabolism.\n\nAs a roost navigates the currents and eddies of the Jovian atmosphere, the expansion and contraction of its internal air bladders is heard as a deep, resounding call. As other roosts respond, the shared, plaintive song reverberates among the clouds.",
@@ -66662,13 +66686,15 @@
 							"name": "Infected bot",
 							"nature": "Machine",
 							"rank": 2,
-							"description": "When bots fall prey to technoplasm outbreaks, they are transformed into horrific amalgams of machine and living proto-ooze. Once subsumed, they set out to serve the primitive impulses of the infection, defending affected sites and finding new machines to corrupt."
+							"description": "When bots fall prey to technoplasm outbreaks, they are transformed into horrific amalgams of machine and living proto-ooze. Once subsumed, they set out to serve the primitive impulses of the infection, defending affected sites and finding new machines to corrupt.",
+							"_id": "npc.variant:starforged/sample_npcs/technoplasm.infected_bot"
 						},
 						"scourge_ship": {
 							"name": "Scourge ship",
 							"rank": 4,
 							"nature": "Vehicle",
-							"description": "These corrupted vessels, their crews long-dead, their hulls wracked by creeping slime and grasping pseudopods, prowl the depths of the Forge in search of new ships and stations to infect. Inside, the gelatinous mass of the technoplasm slithers through darkened corridors. Tendrils of the ooze bore into bulkheads and machinery like marbleized fat through a chunk of meat."
+							"description": "These corrupted vessels, their crews long-dead, their hulls wracked by creeping slime and grasping pseudopods, prowl the depths of the Forge in search of new ships and stations to infect. Inside, the gelatinous mass of the technoplasm slithers through darkened corridors. Tendrils of the ooze bore into bulkheads and machinery like marbleized fat through a chunk of meat.",
+							"_id": "npc.variant:starforged/sample_npcs/technoplasm.scourge_ship"
 						}
 					},
 					"description": "Theorized to be a precursor bioweapon that persisted long beyond the death of its creators, technoplasm is a malignant lifeform that infects, mutates, and controls machines, robots, and computer systems.\n\nTechnoplasm infestations are tenacious, cunning, and dangerous to eliminate. When in doubt, burn it and deal with the aftermath that comes with generous applications of fire. A ship or settlement with a large outbreak is likely too far gone and best abandoned, although some suggest every infection has its source; if you somehow find and destroy the heart of a technoplasm infestation, can you kill it entirely?",
@@ -66712,7 +66738,8 @@
 							"name": "Shepherd pod",
 							"nature": "Creature",
 							"rank": 4,
-							"description": "Void shepherds are communal beings, and typically travel in groups of a dozen or more. When facing a danger, they coordinate to protect the young and vulnerable of the pod."
+							"description": "Void shepherds are communal beings, and typically travel in groups of a dozen or more. When facing a danger, they coordinate to protect the young and vulnerable of the pod.",
+							"_id": "npc.variant:starforged/sample_npcs/void_shepherd.shepherd_pod"
 						}
 					},
 					"description": "Void shepherds are benevolent creatures about the size of a snub fighter. They propel themselves through space on trails of vibrant energy, and seem to delight in riding the wake of starships. For spacers navigating the lonely depths of the Forge, they are welcome company and a sign of good fortune.\n\nMany spacers tell stories of being aided by a void shepherd pod. These creatures have an extraordinary intuition, and can escort a wayward spacer back to the right path, guide them away from danger, or lead them toward unseen opportunities.\n\nWhen threatened, shepherds charge and ram with their armored snouts. If this doesn't dissuade their foe, a pod harmonizes their energy output to unleash a burst of electromagnetic force; this attack can daze a creature or knock out a ship's critical systems.",
@@ -66756,13 +66783,15 @@
 							"name": "Warden cohort",
 							"nature": "Human",
 							"rank": 4,
-							"description": "Many of the surviving wardens left the battlefield behind, but some now serve as guns-for-hire, banding together to form small mercenary companies. Five wardens are as effective as fifty soldiers."
+							"description": "Many of the surviving wardens left the battlefield behind, but some now serve as guns-for-hire, banding together to form small mercenary companies. Five wardens are as effective as fifty soldiers.",
+							"_id": "npc.variant:starforged/sample_npcs/warden.warden_cohort"
 						},
 						"fury": {
 							"name": "Fury",
 							"nature": "Monster",
 							"rank": 5,
-							"description": "The modifications that gave rise to the wardens can result in rare mutations that ravage their mind and body, stripping away their humanity. Wardens call these monstrous lost souls the furies, and are haunted by the possibility they may someday become one of them."
+							"description": "The modifications that gave rise to the wardens can result in rare mutations that ravage their mind and body, stripping away their humanity. Wardens call these monstrous lost souls the furies, and are haunted by the possibility they may someday become one of them.",
+							"_id": "npc.variant:starforged/sample_npcs/warden.fury"
 						}
 					},
 					"description": "The origin of these long-lived humans is a secret lost to time. Whether through precursor tech, alien organisms, or genetic mutation, they were modified with unnatural strength, endurance, and survivability. They can withstand the harshest of environments. Their wounds heal quickly. They are resistant to sickness and disease.\n\nMore than a century ago, the wardens served as elite soldiers, protecting the people of the Forge against the many threats of this galaxy. But as often happens, their purpose was subverted by those who sought to wield them as weapons. Conflicts flared among powerful factions. Wardens faced their comrades on innumerable battlefields. The chaos might have ended us all, had not the wardens rebelled against those who used them as cogs in the machines of war.",
@@ -66801,7 +66830,8 @@
 							"name": "Dowser",
 							"nature": "Human",
 							"rank": 2,
-							"description": "Waterwitchers are good-natured creatures, and form a close bond with their human handlers. Those folk, the dowsers, rove among remote settlements, peddling their water-finding services to desperate settlers."
+							"description": "Waterwitchers are good-natured creatures, and form a close bond with their human handlers. Those folk, the dowsers, rove among remote settlements, peddling their water-finding services to desperate settlers.",
+							"_id": "npc.variant:starforged/sample_npcs/water_witcher.dowser"
 						}
 					},
 					"description": "Water is life. On rugged planets in fringe sectors, the technology to locate fresh water or process contaminated water is not always available or reliable. Many struggling settlements resort to a low-tech solution—a dowser and their waterwitcher companion.\n\nWaterwitchers are stout, furred creatures with fierce-looking retractable claws on their forelegs. On their homeworld, which was lost a decade ago in a stellar calamity, they used those claws to dig through the arid, rocky ground, and had an unerring knack for finding hidden water sources. Some of the human settlers who fled the doomed planet adopted waterwitchers as companions, and now travel the Forge with their furry friends in tow.\n\nWaterwitchers were a precious part of their ecosystem, and were not preyed upon by other creatures. This made them gentle and trusting to a fault. They often greet potential new friends with enthusiastic sniffing and contented purring. For their dowser companions, it's an unrelenting effort to keep them out of trouble.",
@@ -66845,13 +66875,15 @@
 							"name": "Worldbreaker brood",
 							"nature": "Creature",
 							"rank": 3,
-							"description": "The young of the worldbreakers are a fraction of the size of their older counterparts, yet still dwarf most humans, and boast a voracious appetite. Unlike their solitary parents, immature worms hunt in small packs, working together to burrow beneath easy prey."
+							"description": "The young of the worldbreakers are a fraction of the size of their older counterparts, yet still dwarf most humans, and boast a voracious appetite. Unlike their solitary parents, immature worms hunt in small packs, working together to burrow beneath easy prey.",
+							"_id": "npc.variant:starforged/sample_npcs/worldbreaker.worldbreaker_brood"
 						},
 						"elder_worm": {
 							"name": "Elder worm",
 							"nature": "Creature",
 							"rank": 5,
-							"description": "Elder worms, those centuries or even millennia old, are the largest and most formidable of the worldbreakers, and yet the least aggressive. They follow inscrutable whims, live in harmony with surrounding flora and fauna, and only hunt when absolutely necessary."
+							"description": "Elder worms, those centuries or even millennia old, are the largest and most formidable of the worldbreakers, and yet the least aggressive. They follow inscrutable whims, live in harmony with surrounding flora and fauna, and only hunt when absolutely necessary.",
+							"_id": "npc.variant:starforged/sample_npcs/worldbreaker.elder_worm"
 						}
 					},
 					"description": "The scale and strength of the worldbreakers is so beyond our reckoning that some consider them godlike beings. Capable of thriving on verdant jungle worlds, frozen planets, worlds scorched by volcanic activity, and even within barren asteroids in the vacuum of space, these worms possess a wisdom and a cunning that makes them a deadly threat for even the most competent spacer.\n\nWorldbreakers range in size from about the size of a cargo hauler to an unfathomable scale that dwarfs our largest starship. They bore tunnels to pursue their prey, and hibernate in those dark depths to conserve energy. Though blind, worldbreaker worms can detect even the subtlest of footfalls, and they follow these vibrations to eventually consume their quarry—along with any other creatures, starships, or structures that happen to be nearby.",

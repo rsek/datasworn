@@ -1,9 +1,11 @@
-import { Type, type Static } from '@sinclair/typebox'
+import { Type, type Static, type TString } from '@sinclair/typebox'
 import { Id, Localize, Progress } from './common/index.js'
 import * as Generic from './Generic.js'
 import * as Utils from './Utils.js'
-import { FlatIntersect } from './utils/FlatIntersect.js'
+import { Assign, FlatIntersect } from './utils/FlatIntersect.js'
 import { Namespace } from './Symbols.js'
+import { EmbeddedPrimaryNode } from './utils/EmbeddedNode.js'
+import { EmbedOnlyNode } from './generic/EmbedOnlyNode.js'
 
 const ns = 'Npcs'
 
@@ -43,13 +45,10 @@ const NpcMixin = FlatIntersect([
 	})
 ])
 
-export const NpcVariant = Type.Pick(
-	NpcMixin,
-	['name', 'rank', 'nature', 'summary', 'description'],
-	{
-		$id: 'NpcVariant',
-		[Namespace]: ns
-	}
+export const NpcVariant = EmbedOnlyNode(
+	Type.Pick(NpcMixin, ['name', 'rank', 'nature', 'summary', 'description']),
+	'variant',
+	'npc'
 )
 
 export type NpcVariant = Static<typeof NpcVariant>

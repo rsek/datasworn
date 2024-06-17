@@ -26,12 +26,17 @@ namespace TypeNode {
 		rarity: Datasworn.Rarity
 	}
 
-	type EmbeddedTypeMap = TypeMapLike<TypeId.EmbeddableType> & {
+  type EmbedOnlyTypeMap = TypeMapLike<TypeId.EmbedOnlyType> & {
 		ability: Datasworn.AssetAbility
 		option: Datasworn.TruthOption
-		oracle_rollable: Datasworn.EmbeddedOracleRollable
-		move: Datasworn.EmbeddedMove
+		row: Datasworn.OracleRollableRow
+		feature: Datasworn.DelveSiteThemeFeature | Datasworn.DelveSiteDomainFeature
+		danger: Datasworn.DelveSiteThemeDanger | Datasworn.DelveSiteDomainDanger
+		denizen: Datasworn.DelveSiteDenizen
+		variant: Datasworn.NpcVariant
 	}
+
+	type EmbeddedTypeMap = EmbedOnlyTypeMap & PrimaryTypeMap
 
   export type CollectableOf<T extends Collection> = ByType<
 		TypeId.CollectableOf<T['type']>

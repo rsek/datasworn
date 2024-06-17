@@ -1,4 +1,4 @@
-import { type JSONSchema } from 'json-schema-to-typescript'
+import type { JSONSchema7 } from 'json-schema'
 import {
 	compareObjectKeys,
 	dataswornKeyOrder,
@@ -10,7 +10,7 @@ import { DefsKey } from '../const.js'
 
 const keywordKeys = [...Object.keys(Keywords)]
 
-export function isSortableObjectSchema(schema: JSONSchema) {
+export function isSortableObjectSchema(schema: JSONSchema7) {
 	switch (true) {
 		// skip non-object schema or dictionary-like object
 		case schema.type !== 'object':

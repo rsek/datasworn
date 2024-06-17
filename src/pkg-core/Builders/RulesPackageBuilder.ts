@@ -1,4 +1,3 @@
-import fsExtra from 'fs-extra'
 import CONST from '../IdElements/CONST.js'
 import type TypeNode from '../TypeNode.js'
 import {
@@ -140,13 +139,13 @@ export class RulesPackageBuilder<
 
 			return this
 		} catch (e) {
-			fsExtra.writeJSONSync(
-				`datasworn/${this.id}/${this.id}.error.json`,
-				this.toJSON(),
-				{
-					spaces: '\t'
-				}
-			)
+			// fsExtra.writeJSONSync(
+			// 	`datasworn/${this.id}/${this.id}.error.json`,
+			// 	this.toJSON(),
+			// 	{
+			// 		spaces: '\t'
+			// 	}
+			// )
 			throw new Error(`Couldn't build "${this.id}". ${String(e)}`)
 		}
 	}

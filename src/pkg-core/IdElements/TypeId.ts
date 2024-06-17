@@ -89,7 +89,8 @@ namespace TypeId {
 		'row',
 		'feature',
 		'danger',
-		'denizen'
+		'denizen',
+		'variant'
 	] as const
 	export type EmbedOnlyType = (typeof EmbedOnlyType)[number]
 	export const EmbeddableType = [
@@ -100,7 +101,8 @@ namespace TypeId {
 		'row',
 		'feature',
 		'danger',
-		'denizen'
+		'denizen',
+		'variant'
 	] as const satisfies [
 		...typeof EmbeddablePrimaryType,
 		...typeof EmbedOnlyType
@@ -116,7 +118,8 @@ namespace TypeId {
 		oracle_rollable: ['row'],
 		delve_site: ['denizen'],
 		delve_site_domain: ['feature', 'danger'],
-		delve_site_theme: ['feature', 'danger']
+		delve_site_theme: ['feature', 'danger'],
+		npc: ['variant']
 	} as const satisfies Partial<
 		Record<AnyPrimary | EmbedOnlyType, EmbeddableType[]>
 	>
@@ -216,8 +219,40 @@ namespace TypeId {
 		row: 'rows',
 		feature: 'features',
 		danger: 'dangers',
-		denizen: 'denizens'
+		denizen: 'denizens',
+		variant: 'variants'
 	} as const satisfies Record<EmbedOnlyType, string>
+
+	// TODO
+	// is there a logic to this that i can formalize?
+	// i think it comes down to whether the type has a required `name` property to generate a key from.
+	const EmbeddedPropertyType = {
+		abilities: 'array',
+		dangers: 'array',
+		denizens: 'array',
+		features: 'array',
+		options: 'array',
+		rows: 'array',
+		variants: 'dictionary'
+	} as const satisfies Record<
+		EmbeddedPropertyKey<EmbedOnlyType>,
+		'array' | 'dictionary'
+	>
+
+	export function getEmbeddedPropertyType(
+		typeId: TypeId.Any
+	): 'array' | 'dictionary' {
+		if (AnyPrimary.includes(typeId as AnyPrimary)) return 'dictionary'
+
+		const propKey = getEmbeddedPropertyKey(typeId as EmbedOnlyType)
+
+		if (propKey == null)
+			throw new Error(
+				`Expected an embeddable TypeId, but got ${String(typeId)}`
+			)
+
+		return EmbeddedPropertyType[propKey]
+	}
 
 	export type Any = AnyPrimary | EmbedOnlyType
 	// | EmbeddedTypePath | EmbedOfEmbedTypePaths

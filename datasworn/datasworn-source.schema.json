@@ -582,6 +582,18 @@
 			"description": "A wildcarded NpcId that can be used to match multiple Npc objects.",
 			"pattern": "^npc:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
 		},
+		"NpcVariantId": {
+			"title": "NpcVariantId",
+			"type": "string",
+			"description": "A unique ID representing a NpcVariant object.",
+			"pattern": "^npc\\.variant:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.([a-z][a-z_]*|\\*)$"
+		},
+		"NpcVariantIdWildcard": {
+			"title": "NpcVariantIdWildcard",
+			"type": "string",
+			"description": "A wildcarded NpcVariantId that can be used to match multiple NpcVariant objects.",
+			"pattern": "^npc\\.variant:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.([a-z][a-z_]*|\\*)$"
+		},
 		"OracleRollableId": {
 			"title": "OracleRollableId",
 			"type": "string",
@@ -1055,6 +1067,9 @@
 					"$ref": "#/definitions/NpcId"
 				},
 				{
+					"$ref": "#/definitions/NpcVariantId"
+				},
+				{
 					"$ref": "#/definitions/OracleRollableId"
 				},
 				{
@@ -1149,6 +1164,9 @@
 				},
 				{
 					"$ref": "#/definitions/NpcIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/NpcVariantIdWildcard"
 				},
 				{
 					"$ref": "#/definitions/OracleRollableIdWildcard"
@@ -1518,7 +1536,15 @@
 		},
 		"EmbedOnlyType": {
 			"title": "EmbedOnlyType",
-			"enum": ["ability", "option", "row", "feature", "danger", "denizen"]
+			"enum": [
+				"ability",
+				"option",
+				"row",
+				"feature",
+				"danger",
+				"denizen",
+				"variant"
+			]
 		},
 		"ImpactCategory": {
 			"title": "ImpactCategory",
@@ -3347,6 +3373,10 @@
 			"type": "object",
 			"required": ["name", "rank", "nature", "description"],
 			"properties": {
+				"_id": {
+					"$ref": "#/definitions/NpcVariantId",
+					"description": "The unique Datasworn ID for this node."
+				},
 				"name": {
 					"$ref": "#/definitions/Label"
 				},
@@ -3362,6 +3392,10 @@
 				},
 				"description": {
 					"$ref": "#/definitions/MarkdownString"
+				},
+				"_comment": {
+					"type": "string",
+					"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
 				}
 			},
 			"additionalProperties": false

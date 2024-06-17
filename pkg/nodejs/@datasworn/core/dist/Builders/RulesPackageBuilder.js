@@ -16,7 +16,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 var _RulesPackageBuilder_instances, _a, _RulesPackageBuilder_result, _RulesPackageBuilder_isSorted, _RulesPackageBuilder_isMergeComplete, _RulesPackageBuilder_isValidated, _RulesPackageBuilder_countTypes, _RulesPackageBuilder_build, _RulesPackageBuilder_sortKeys, _RulesPackageBuilder_addFile, _RulesPackageBuilder_isObject, _RulesPackageBuilder_merge, _RulesPackagePart_data, _RulesPackagePart_isValidated;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RulesPackageBuilder = void 0;
-const fs_extra_1 = __importDefault(require("fs-extra"));
 const CONST_js_1 = __importDefault(require("../IdElements/CONST.js"));
 const Sort_js_1 = require("../Utils/Sort.js");
 const Text_js_1 = require("../Validators/Text.js");
@@ -91,9 +90,13 @@ class RulesPackageBuilder {
             return this;
         }
         catch (e) {
-            fs_extra_1.default.writeJSONSync(`datasworn/${this.id}/${this.id}.error.json`, this.toJSON(), {
-                spaces: '\t'
-            });
+            // fsExtra.writeJSONSync(
+            // 	`datasworn/${this.id}/${this.id}.error.json`,
+            // 	this.toJSON(),
+            // 	{
+            // 		spaces: '\t'
+            // 	}
+            // )
             throw new Error(`Couldn't build "${this.id}". ${String(e)}`);
         }
     }

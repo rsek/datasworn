@@ -300,14 +300,24 @@ class IdPattern<
 	): IdPattern<Extract<TypeNode.AnyEmbedded, { type: typeof typeId }>> {
 		const withGroup = this.clone().addNewTypeGroup(typeId)
 
-		if (TypeId.EmbeddablePrimaryType.includes(typeId as any))
-			return withGroup.addDictKey(
-				TypeId.getEmbeddedPropertyKey(typeId) as any
-			) as any
+    switch (TypeId.getEmbeddedPropertyType(typeId)) {
+			case 'array':
+				return withGroup.addIndex(
+					TypeId.getEmbeddedPropertyKey(typeId) as any
+				) as any
 
-		return withGroup.addIndex(
-			TypeId.getEmbeddedPropertyKey(typeId) as any
-		) as any
+			case 'dictionary':
+				return withGroup.addDictKey(
+					TypeId.getEmbeddedPropertyKey(typeId) as any
+				) as any
+
+			default:
+				throw new Error(
+					`Expected an embeddable TypeId, but got ${String(typeId)}`
+				)
+		}
+
+
 	}
 
 	addNewTypeGroup(typeId: string) {

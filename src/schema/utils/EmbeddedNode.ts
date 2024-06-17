@@ -25,7 +25,7 @@ type OmittedEmbedKeys = Writable<typeof OmittedEmbedKeys>
 
 type TTypeNode = TObject<{ type: TLiteral<string> }>
 
-export function EmbeddedNode<
+export function EmbeddedPrimaryNode<
 	TBase extends TTypeNode,
 	TId extends TRef<TString | TUnion<TString[]>>,
 	TEmbedKeys extends EmbeddedDictionaryKeys[]
