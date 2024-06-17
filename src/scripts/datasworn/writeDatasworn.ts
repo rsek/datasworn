@@ -73,7 +73,7 @@ export async function buildRulesPackages(pkgs: Record<string, RulesPackageConfig
 		}
 
 	if (errors.length > 0)
-		throw new Error(errors.map((e) => e.toString()).join('\n'))
+		throw new Error(errors.map(String).join('\n'))
 
 	await Promise.all(toWrite)
 
