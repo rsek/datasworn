@@ -5,7 +5,12 @@ const toolsPkg = fs.readJSONSync(path.join(process.cwd(), 'package.json')) as {
 	version: `${number}.${number}.${number}`
 }
 
+const src = path.join(process.cwd(), 'src')
+
 export const PKG_NAME = 'Datasworn'
+
+export const SCHEMA_NAME = 'Datasworn'
+export const SOURCE_SCHEMA_NAME = 'DataswornSource'
 
 export const VERSION = toolsPkg.version
 
@@ -14,19 +19,17 @@ export const PKG_SCOPE_COMMUNITY = '@datasworn-community-content'
 
 export const PKG_ROOT = path.join(process.cwd(), 'pkg')
 
+export const CORE_COMMON = path.join(src, 'pkg-core')
+
 export const PKG_DIR_NODE = path.join(PKG_ROOT, 'nodejs')
 
-export const LEGACY_ID_PATH = path.join(process.cwd(), 'src/legacy_id_map.json')
+export const LEGACY_ID_PATH = path.join(src, 'legacy_id_map.json')
 
 export const ROOT_SOURCE_DATA = path.join(process.cwd(), 'source_data')
 export const ROOT_OUTPUT = path.join(process.cwd(), 'datasworn')
-export const ROOT_TYPES_OUT = path.join(process.cwd(), 'src/types')
-
-export const TYPES_OUT = path.join(ROOT_TYPES_OUT, 'Datasworn.d.ts')
-export const SOURCE_TYPES_OUT = path.join(
-	ROOT_TYPES_OUT,
-	'DataswornSource.d.ts'
-)
+export const ROOT_HISTORY = path.join(src, 'migration/history')
+export const DIR_HISTORY_CURRENT = path.join(ROOT_HISTORY, VERSION)
+export const ROOT_TYPES_OUT = path.join(src, 'types')
 
 
 export const SCHEMA_PATH = path.join(ROOT_OUTPUT, 'datasworn.schema.json')

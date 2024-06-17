@@ -14,6 +14,8 @@ import * as Schema from '../../schema/index.js'
 import JSL from 'json-schema-library'
 import { type TRoot } from '../../schema/root/Root.js'
 import fsExtra from 'fs-extra/esm'
+import path from 'path'
+import { kebabCase } from 'lodash-es'
 
 const draft7 = new JSL.Draft07()
 
@@ -29,18 +31,31 @@ interface SchemaOptions {
 
 const schemaOptions: SchemaOptions[] = [
 	{
-		name: 'Datasworn',
+		name: CONST.SCHEMA_NAME,
 		rootSchema: Schema.DataswornSchema,
-		paths: [CONST.SCHEMA_PATH],
+		paths: [
+			CONST.SCHEMA_PATH,
+			path.join(
+				CONST.DIR_HISTORY_CURRENT,
+				kebabCase(CONST.SCHEMA_NAME) + '.schema.json'
+			)
+		],
 		messages: {
 			writeStart: '✏️  Writing schema for Datasworn',
 			writeFinish: '✅ Finished writing schema for Datasworn'
 		}
 	},
 	{
-		name: 'DataswornSource',
+		name: CONST.SOURCE_SCHEMA_NAME,
 		rootSchema: Schema.DataswornSourceSchema,
-		paths: [CONST.SOURCEDATA_SCHEMA_PATH, CONST.SOURCE_SCHEMA_PATH],
+		paths: [
+			CONST.SOURCEDATA_SCHEMA_PATH,
+			CONST.SOURCE_SCHEMA_PATH,
+			path.join(
+				CONST.DIR_HISTORY_CURRENT,
+				kebabCase(CONST.SOURCE_SCHEMA_NAME) + '.schema.json'
+			)
+		],
 		messages: {
 			writeStart: '✏️  Writing schema for DataswornSource',
 			writeFinish: '✅ Finished writing schema for DataswornSource'

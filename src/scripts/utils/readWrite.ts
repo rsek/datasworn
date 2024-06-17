@@ -48,6 +48,8 @@ export async function writeJSON(
 		prettierOptions?: Prettier.Options
 	} = {}
 ) {
+	await fs.ensureDir(path.dirname(filePath))
+
 	if (prettierOptions == null)
 		prettierOptions = await getPrettierOptions(filePath)
 
@@ -81,6 +83,8 @@ export async function writeCode(
 	parser = 'typescript',
 	{ prettierOptions }: { prettierOptions?: Prettier.Options } = {}
 ) {
+	await fs.ensureDir(path.dirname(filePath))
+
 	if (skipFormat) {
 		await fs.writeFile(filePath, content)
 	} else {

@@ -91,7 +91,7 @@ class RulesPackageBuilder {
             return this;
         }
         catch (e) {
-            fs_extra_1.default.writeJSONSync(`datasworn/${this.id}/error_build.json`, this.toJSON(), {
+            fs_extra_1.default.writeJSONSync(`datasworn/${this.id}/${this.id}.error.json`, this.toJSON(), {
                 spaces: '\t'
             });
             throw new Error(`Couldn't build "${this.id}". ${String(e)}`);
@@ -134,7 +134,7 @@ class RulesPackageBuilder {
 exports.RulesPackageBuilder = RulesPackageBuilder;
 _a = RulesPackageBuilder, _RulesPackageBuilder_result = new WeakMap(), _RulesPackageBuilder_isSorted = new WeakMap(), _RulesPackageBuilder_isMergeComplete = new WeakMap(), _RulesPackageBuilder_isValidated = new WeakMap(), _RulesPackageBuilder_instances = new WeakSet(), _RulesPackageBuilder_countTypes = function _RulesPackageBuilder_countTypes() {
     const ct = {};
-    for (const [k] of this.index) {
+    for (const [k, _] of this.index) {
         const [prefix] = k.split(':');
         ct[prefix] || (ct[prefix] = 0);
         ct[prefix]++;

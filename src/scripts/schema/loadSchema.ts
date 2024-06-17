@@ -21,11 +21,12 @@ export async function loadSchemaFile(filePath: string, key: string) {
 	return { AJV, JSL }
 }
 export async function loadSourceSchema() {
-	const key = 'DataswornSource'
-	return await loadSchemaFile(CONST.SOURCEDATA_SCHEMA_PATH, key)
+	return await loadSchemaFile(
+		CONST.SOURCEDATA_SCHEMA_PATH,
+		CONST.SOURCE_SCHEMA_NAME
+	)
 }
 
 export async function loadSchema() {
-	const key = 'Datasworn'
-	return await loadSchemaFile(CONST.SCHEMA_PATH, key)
+	return await loadSchemaFile(CONST.SCHEMA_PATH, CONST.SCHEMA_NAME)
 }

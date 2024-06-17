@@ -2,23 +2,36 @@ import fs from 'fs-extra'
 
 import path from 'path'
 import { DataswornSchema, DataswornSourceSchema } from '../../schema/Root.js'
-import { ROOT_TYPES_OUT, DefsKey } from '../const.js'
-import { extractDefs } from './schemaToTsDeclaration.js'
+import {
+	CORE_COMMON,
+	DIR_HISTORY_CURRENT,
+	DefsKey,
+	ROOT_TYPES_OUT
+} from '../const.js'
 import { writeCode } from '../utils/readWrite.js'
+import { extractDefs } from './schemaToTsDeclaration.js'
 
 const rootSchemas = {
 	Datasworn: DataswornSchema,
 	DataswornSource: DataswornSourceSchema
-}
+} satisfies Record<string, unknown>
 
 await fs.emptyDir(ROOT_TYPES_OUT)
 
-for await (const [identifier, value] of Object.entries(rootSchemas)) {
-	const filePath = path.join(ROOT_TYPES_OUT, identifier + '.d.ts')
-	const filePath2 = path.join(process.cwd(), 'src/pkg-core', identifier + '.ts')
+const writeJobs: Promise<void>[] = []
+
+for (const identifier in rootSchemas) {
+	const value = rootSchemas[identifier as keyof typeof rootSchemas]
+
+	const paths = [
+		path.join(ROOT_TYPES_OUT, identifier + '.d.ts'),
+		path.join(CORE_COMMON, identifier + '.ts'),
+		path.join(DIR_HISTORY_CURRENT, identifier + '.d.ts')
+	]
 
 	const fileContents = Object.values(extractDefs(value[DefsKey])).join('\n\n')
 
-	await writeCode(filePath, fileContents)
-	await writeCode(filePath2, fileContents)
+	for (const path of paths) writeJobs.push(writeCode(path, fileContents))
 }
+
+await Promise.all(writeJobs)

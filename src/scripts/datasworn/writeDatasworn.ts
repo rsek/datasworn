@@ -5,7 +5,12 @@ import { cwd } from 'process'
 import type { Datasworn, DataswornSource } from '../../pkg-core/index.js'
 import { type RulesPackageConfig } from '../../schema/tools/build/index.js'
 import { formatPath } from '../../utils.js'
-import { ROOT_OUTPUT } from '../const.js'
+import {
+	DIR_HISTORY_CURRENT,
+	ROOT_OUTPUT,
+	SCHEMA_NAME,
+	SOURCE_SCHEMA_NAME
+} from '../const.js'
 import { loadSchema, loadSourceSchema } from '../schema/loadSchema.js'
 import Log from '../utils/Log.js'
 import { readSourceData, writeJSON } from '../utils/readWrite.js'
@@ -17,16 +22,18 @@ import {
 import * as PkgConfig from '../pkg/pkgConfig.js'
 
 const schemaValidator = <SchemaValidator<Datasworn.RulesPackage>>(
-	_validate.bind(undefined, 'Datasworn')
+	_validate.bind(undefined, SCHEMA_NAME)
 )
 
 const sourceSchemaValidator = <SchemaValidator<DataswornSource.RulesPackage>>(
-	_validate.bind(undefined, 'DataswornSource')
+	_validate.bind(undefined, SOURCE_SCHEMA_NAME)
 )
 
 await buildRulesPackages(PkgConfig)
 
-export async function buildRulesPackages(pkgs: Record<string, RulesPackageConfig>) {
+export async function buildRulesPackages(
+	pkgs: Record<string, RulesPackageConfig>
+) {
 	const profiler = Log.startTimer()
 
 	Log.info('📖 Reading schema...')
@@ -66,14 +73,17 @@ export async function buildRulesPackages(pkgs: Record<string, RulesPackageConfig
 		try {
 			const validatedPointers = new Set<string>()
 			pkg.validateIdPointers(index)
-			const destDir = path.join(ROOT_OUTPUT, pkg.id)
-			toWrite.push(_writePkgFiles(destDir, pkg.toJSON(), filesToDelete))
+			const pathsToWriteTo = [
+				path.join(ROOT_OUTPUT, pkg.id),
+				path.join(DIR_HISTORY_CURRENT, pkg.id)
+			]
+			for (const dir of pathsToWriteTo)
+				toWrite.push(_writePkgFiles(dir, pkg.toJSON(), filesToDelete))
 		} catch (e) {
 			errors.push(e)
 		}
 
-	if (errors.length > 0)
-		throw new Error(errors.map(String).join('\n'))
+	if (errors.length > 0) throw new Error(errors.map(String).join('\n'))
 
 	await Promise.all(toWrite)
 
@@ -122,11 +132,10 @@ async function assemblePkgFiles(
 		sourceFiles.map(async (filePath) => {
 			Log.debug(`📖 Reading ${formatPath(filePath)}`)
 			try {
-
-        let data = await readSourceData(filePath)
+				let data = await readSourceData(filePath)
 
 				// yaml parsing creates anchors as references to the same object, but we need to edit them as unique instances.
-				if (filePath.endsWith('.yaml') || filePath.endsWith('.yml'))
+				if (['.yaml', '.yml'].includes(path.extname(filePath)))
 					// lazy way to deep clone dereferenced values
 					data = JSON.parse(JSON.stringify(data))
 
@@ -157,8 +166,6 @@ async function _writePkgFiles(
 
 	// if (toDelete.length > 0)
 	// 	await Promise.all(toDelete.map(async (f) => fs.unlink(f)))
-
-	await fs.ensureFile(outPath)
 
 	Log.info(`✏️  Writing to ${formatPath(outPath)}`)
 

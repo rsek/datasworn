@@ -32,8 +32,13 @@ export type FlatIntersect<T extends [...object[]]> = T extends [
 			? FlatIntersect<[Assign<TTarget, TSource>, ...Tail]>
 			: never
 
+// export type TAssign<TBase extends TObject, TOverride extends TObject> = TObject<
+// 	Assign<TBase['properties'], TOverride['properties']>
+// >
+// above version is more precise but more computation-intensive. the one below is close enough for most purposes
+
 export type TAssign<TBase extends TObject, TOverride extends TObject> = TObject<
-	Assign<TBase['properties'], TOverride['properties']>
+	TBase['properties'] & TOverride['properties']
 >
 
 export type TFlatIntersect<T extends [...TObject[]]> = T extends [
