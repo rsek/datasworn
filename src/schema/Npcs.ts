@@ -3,6 +3,9 @@ import { Id, Localize, Progress } from './common/index.js'
 import * as Generic from './Generic.js'
 import * as Utils from './Utils.js'
 import { FlatIntersect } from './utils/FlatIntersect.js'
+import { Namespace } from './Symbols.js'
+
+const ns = 'Npcs'
 
 export const NpcNature = Type.Ref(Localize.Label, {
 	description:
@@ -23,7 +26,8 @@ export const NpcNature = Type.Ref(Localize.Label, {
 		'Monster',
 		'Vehicle'
 	],
-	$id: 'NpcNature'
+	$id: 'NpcNature',
+	[Namespace]: ns
 })
 export type NpcNature = Static<typeof NpcNature>
 
@@ -43,7 +47,8 @@ export const NpcVariant = Type.Pick(
 	NpcMixin,
 	['name', 'rank', 'nature', 'summary', 'description'],
 	{
-		$id: 'NpcVariant'
+		$id: 'NpcVariant',
+		[Namespace]: ns
 	}
 )
 
@@ -58,6 +63,7 @@ export const Npc = Generic.CollectableNode(
 	]),
 	'npc',
 	{
+		[Namespace]: ns,
 		description:
 			'A non-player character entry, similar to those in Chapter 5 of the Ironsworn Rulebook, or Chapter 4 of Starforged.'
 	}
@@ -67,7 +73,10 @@ export type Npc = Static<typeof Npc>
 
 export const NpcCollection = Generic.CollectionNode(
 	Type.Object({}),
-	'npc_collection'
+	'npc_collection',
+	{
+		[Namespace]: ns
+	}
 )
 export type NpcCollection = Static<typeof NpcCollection>
 export type TNpcCollection = typeof NpcCollection

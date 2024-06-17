@@ -9,6 +9,7 @@ import {
 import { validateIdsInStrings } from '../Validators/Text.js'
 import Validators from '../Validators/index.js'
 import { IdParser, type Datasworn, type DataswornSource } from '../index.js'
+import type TypeId from '../IdElements/TypeId.js'
 
 export type SchemaValidator<TTarget> = (data: unknown) => data is TTarget
 export type Logger = Record<
@@ -17,8 +18,8 @@ export type Logger = Record<
 >
 
 /**
-	* Merges, assigns IDs to, and validates multiple {@link DataswornSource.RulesPackage}s to create a complete {@link Datasworn.RulesPackage} object.
-	* */
+ * Merges, assigns IDs to, and validates multiple {@link DataswornSource.RulesPackage}s to create a complete {@link Datasworn.RulesPackage} object.
+ * */
 export class RulesPackageBuilder<
 	TSource extends DataswornSource.RulesPackage = DataswornSource.RulesPackage,
 	TTarget extends Datasworn.RulesPackage = Datasworn.RulesPackage
@@ -41,16 +42,23 @@ export class RulesPackageBuilder<
 	#isValidated = false
 
 	#countTypes() {
-		const types = {} as Record<string, number>
+		const ct = {} as Record<string, number>
 
-		for (const [id, _] of this.index) {
-			const [fullTypeId, ..._path] = id.split(CONST.PrefixSep)
-			types[fullTypeId] ||= 0
-			types[fullTypeId]++
+		for (const [k, _] of this.index) {
+			const [prefix] = k.split(':')
+			ct[prefix] ||= 0
+			ct[prefix]++
 		}
-		// display using console.table or similar?
 
-		return types
+		return ct
+	}
+
+	countType(typeId: TypeId.Any) {
+		let ct = 0
+
+		for (const [k] of this.index) if (k.includes(typeId + CONST.PrefixSep)) ct++
+
+		return ct
 	}
 
 	mergeFiles(force = false) {
@@ -106,13 +114,20 @@ export class RulesPackageBuilder<
 			}
 		}
 
+		this.logger.info(
+			`<${this.id}> Validated pointers to ${validatedIds.size} unique IDs.`
+		)
+
 		this.#isValidated = true
 
 		return this
 	}
 
-	validateIdPointers(index: Map<string, unknown> | Set<string>) {
-		return validateIdsInStrings(this.#result, index)
+	validateIdPointers(
+		index: Map<string, unknown> | Set<string>,
+		validatedPointers?: Set<string>
+	) {
+		return validateIdsInStrings(this.#result, index, validatedPointers)
 	}
 
 	build(force = false) {
@@ -121,10 +136,12 @@ export class RulesPackageBuilder<
 
 			this.validate(force)
 
+			console.table(this.#countTypes())
+
 			return this
 		} catch (e) {
 			fsExtra.writeJSONSync(
-				`datasworn/${this.id}/error_build.json`,
+				`datasworn/${this.id}/${this.id}.error.json`,
 				this.toJSON(),
 				{
 					spaces: '\t'

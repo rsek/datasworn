@@ -49,7 +49,7 @@ export const Ruleset = Type.Object(
 			Generic.Dictionary(
 				Type.Ref<TOracleTablesCollection>('OracleTablesCollection'),
 				{
-					default: undefined,
+					default: {},
 					description:
 						'A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections.'
 				}
@@ -57,61 +57,61 @@ export const Ruleset = Type.Object(
 		),
 		moves: Utils.setSourceOptional(
 			Generic.Dictionary(Type.Ref<TUnsafe<MoveCategory>>('MoveCategory'), {
-				default: undefined,
+				default: {},
 				description:
 					'A dictionary object containing move categories, which contain moves.'
 			})
 		),
 		assets: Utils.setSourceOptional(
 			Generic.Dictionary(Type.Ref<TAssetCollection>('AssetCollection'), {
-				default: undefined,
+				default: {},
 				description:
 					'A dictionary object containing asset collections, which contain assets.'
 			})
 		),
 		atlas: Type.Optional(
 			Generic.Dictionary(Type.Ref<TAtlasCollection>('AtlasCollection'), {
-				default: undefined,
+				default: {},
 				description:
 					'A dictionary object containing atlas collections, which contain atlas entries.'
 			})
 		),
 		npcs: Type.Optional(
 			Generic.Dictionary(Type.Ref<TNpcCollection>('NpcCollection'), {
-				default: undefined,
+				default: {},
 				description:
 					'A dictionary object containing NPC collections, which contain NPCs.'
 			})
 		),
 		truths: Type.Optional(
 			Generic.Dictionary(Type.Ref<TTruth>('Truth'), {
-				default: undefined,
+				default: {},
 				description: 'A dictionary object of truth categories.'
 			})
 		),
 		rarities: Type.Optional(
 			Generic.Dictionary(Type.Ref<TRarity>('Rarity'), {
-				default: undefined,
+				default: {},
 				description:
 					'A dictionary object containing rarities, like those presented in Ironsworn: Delve.'
 			})
 		),
 		delve_sites: Type.Optional(
 			Generic.Dictionary(Type.Ref<TDelveSite>('DelveSite'), {
-				default: undefined,
+				default: {},
 				description:
 					'A dictionary object of delve sites, like the premade delve sites presented in Ironsworn: Delve'
 			})
 		),
 		site_themes: Type.Optional(
 			Generic.Dictionary(Type.Ref<TDelveSiteTheme>('DelveSiteTheme'), {
-				default: undefined,
+				default: {},
 				description: 'A dictionary object containing delve site themes.'
 			})
 		),
 		site_domains: Type.Optional(
 			Generic.Dictionary(Type.Ref<TDelveSiteDomain>('DelveSiteDomain'), {
-				default: undefined,
+				default: {},
 				description: 'A dictionary object containing delve site domains.'
 			})
 		)

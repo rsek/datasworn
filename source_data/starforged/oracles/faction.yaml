@@ -34,6 +34,7 @@ oracles:
           - roll: { min: 1, max: 40 }
             text: '[Dominion](oracle_rollable:starforged/faction/dominion)'
             text2: 'Governing power'
+            tags: {starforged: {faction_type: dominion}}
             oracle_rolls:
               - oracle: oracle_rollable:starforged/faction/dominion
               - oracle: oracle_rollable:starforged/faction/dominion_leadership
@@ -41,12 +42,14 @@ oracles:
           - roll: { min: 41, max: 70 }
             text: '[Guild](oracle_rollable:starforged/faction/guild)'
             text2: 'Organization of specialists'
+            tags: {starforged: {faction_type: guild}}
             oracle_rolls:
               - oracle: oracle_rollable:starforged/faction/guild
             # set_attributes: {faction_type: [guild]}
           - roll: { min: 71, max: 100 }
             text: '[Fringe Group](oracle_rollable:starforged/faction/fringe_group)'
             text2: 'Band of outlaws, outcasts, or rogues'
+            tags: {starforged: {faction_type: fringe_group}}
             oracle_rolls:
               - oracle: oracle_rollable:starforged/faction/fringe_group
             # set_attributes: {faction_type: [fringe_group]}
@@ -104,6 +107,7 @@ oracles:
         oracle_type: table_text
         type: oracle_rollable
         icon: icons/faction/dominion.svg
+        tags: {starforged: {faction_type: dominion}}
         _source:
           <<: *Source
           page: 341
@@ -218,6 +222,7 @@ oracles:
         name: 'Dominion: Leadership'
         oracle_type: table_text
         type: oracle_rollable
+        tags: {starforged: {faction_type: dominion}}
         _source:
           <<: *Source
           page: 341
@@ -265,6 +270,7 @@ oracles:
         oracle_type: table_text
         type: oracle_rollable
         icon: icons/faction/guild.svg
+        tags: {starforged: {faction_type: guild}}
         _source:
           <<: *Source
           page: 341
@@ -343,6 +349,7 @@ oracles:
         oracle_type: table_text
         type: oracle_rollable
         icon: icons/faction/fringe_group.svg
+        tags: {starforged: {faction_type: fringe_group}}
         _source:
           <<: *Source
           page: 341

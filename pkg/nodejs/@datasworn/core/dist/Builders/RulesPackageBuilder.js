@@ -23,9 +23,16 @@ const Text_js_1 = require("../Validators/Text.js");
 const index_js_1 = __importDefault(require("../Validators/index.js"));
 const index_js_2 = require("../index.js");
 /**
-    * Merges, assigns IDs to, and validates multiple {@link DataswornSource.RulesPackage}s to create a complete {@link Datasworn.RulesPackage} object.
-    * */
+ * Merges, assigns IDs to, and validates multiple {@link DataswornSource.RulesPackage}s to create a complete {@link Datasworn.RulesPackage} object.
+ * */
 class RulesPackageBuilder {
+    countType(typeId) {
+        let ct = 0;
+        for (const [k] of this.index)
+            if (k.includes(typeId + CONST_js_1.default.PrefixSep))
+                ct++;
+        return ct;
+    }
     mergeFiles(force = false) {
         if (!force && __classPrivateFieldGet(this, _RulesPackageBuilder_isMergeComplete, "f"))
             return this;
@@ -69,16 +76,18 @@ class RulesPackageBuilder {
                 throw new Error(`<${id}> ${String(e)}\n\n${JSON.stringify(typeNode, undefined, '\t')}`);
             }
         }
+        this.logger.info(`<${this.id}> Validated pointers to ${validatedIds.size} unique IDs.`);
         __classPrivateFieldSet(this, _RulesPackageBuilder_isValidated, true, "f");
         return this;
     }
-    validateIdPointers(index) {
-        return (0, Text_js_1.validateIdsInStrings)(__classPrivateFieldGet(this, _RulesPackageBuilder_result, "f"), index);
+    validateIdPointers(index, validatedPointers) {
+        return (0, Text_js_1.validateIdsInStrings)(__classPrivateFieldGet(this, _RulesPackageBuilder_result, "f"), index, validatedPointers);
     }
     build(force = false) {
         try {
             __classPrivateFieldGet(this, _RulesPackageBuilder_instances, "m", _RulesPackageBuilder_build).call(this, force);
             this.validate(force);
+            console.table(__classPrivateFieldGet(this, _RulesPackageBuilder_instances, "m", _RulesPackageBuilder_countTypes).call(this));
             return this;
         }
         catch (e) {
@@ -124,14 +133,13 @@ class RulesPackageBuilder {
 }
 exports.RulesPackageBuilder = RulesPackageBuilder;
 _a = RulesPackageBuilder, _RulesPackageBuilder_result = new WeakMap(), _RulesPackageBuilder_isSorted = new WeakMap(), _RulesPackageBuilder_isMergeComplete = new WeakMap(), _RulesPackageBuilder_isValidated = new WeakMap(), _RulesPackageBuilder_instances = new WeakSet(), _RulesPackageBuilder_countTypes = function _RulesPackageBuilder_countTypes() {
-    const types = {};
-    for (const [id, _] of this.index) {
-        const [fullTypeId, ..._path] = id.split(CONST_js_1.default.PrefixSep);
-        types[fullTypeId] || (types[fullTypeId] = 0);
-        types[fullTypeId]++;
+    const ct = {};
+    for (const [k] of this.index) {
+        const [prefix] = k.split(':');
+        ct[prefix] || (ct[prefix] = 0);
+        ct[prefix]++;
     }
-    // display using console.table or similar?
-    return types;
+    return ct;
 }, _RulesPackageBuilder_build = function _RulesPackageBuilder_build(force = false) {
     this.mergeFiles(force);
     __classPrivateFieldSet(this, _RulesPackageBuilder_isValidated, false, "f");

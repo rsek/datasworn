@@ -37,51 +37,111 @@ export interface Ruleset {
 	/**
 	 * A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections.
 	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
 	 */
 	oracles: Record<DictKey, OracleTablesCollection>
 	/**
 	 * A dictionary object containing move categories, which contain moves.
 	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
 	 */
 	moves: Record<DictKey, MoveCategory>
 	/**
 	 * A dictionary object containing asset collections, which contain assets.
 	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
 	 */
 	assets: Record<DictKey, AssetCollection>
 	/**
 	 * A dictionary object containing atlas collections, which contain atlas entries.
 	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
 	 */
 	atlas?: Record<DictKey, AtlasCollection>
 	/**
 	 * A dictionary object containing NPC collections, which contain NPCs.
 	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
 	 */
 	npcs?: Record<DictKey, NpcCollection>
 	/**
 	 * A dictionary object of truth categories.
 	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
 	 */
 	truths?: Record<DictKey, Truth>
 	/**
 	 * A dictionary object containing rarities, like those presented in Ironsworn: Delve.
 	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
 	 */
 	rarities?: Record<DictKey, Rarity>
 	/**
 	 * A dictionary object of delve sites, like the premade delve sites presented in Ironsworn: Delve
 	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
 	 */
 	delve_sites?: Record<DictKey, DelveSite>
 	/**
 	 * A dictionary object containing delve site themes.
 	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
 	 */
 	site_themes?: Record<DictKey, DelveSiteTheme>
 	/**
 	 * A dictionary object containing delve site domains.
 	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
 	 */
 	site_domains?: Record<DictKey, DelveSiteDomain>
 }
@@ -109,51 +169,111 @@ export interface Expansion {
 	/**
 	 * A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections.
 	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
 	 */
 	oracles?: Record<DictKey, OracleTablesCollection>
 	/**
 	 * A dictionary object containing move categories, which contain moves.
 	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
 	 */
 	moves?: Record<DictKey, MoveCategory>
 	/**
 	 * A dictionary object containing asset collections, which contain assets.
 	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
 	 */
 	assets?: Record<DictKey, AssetCollection>
 	/**
 	 * A dictionary object containing atlas collections, which contain atlas entries.
 	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
 	 */
 	atlas?: Record<DictKey, AtlasCollection>
 	/**
 	 * A dictionary object containing NPC collections, which contain NPCs.
 	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
 	 */
 	npcs?: Record<DictKey, NpcCollection>
 	/**
 	 * A dictionary object of truth categories.
 	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
 	 */
 	truths?: Record<DictKey, Truth>
 	/**
 	 * A dictionary object containing rarities, like those presented in Ironsworn: Delve.
 	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
 	 */
 	rarities?: Record<DictKey, Rarity>
 	/**
 	 * A dictionary object of delve sites, like the premade delve sites presented in Ironsworn: Delve
 	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
 	 */
 	delve_sites?: Record<DictKey, DelveSite>
 	/**
 	 * A dictionary object containing delve site themes.
 	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
 	 */
 	site_themes?: Record<DictKey, DelveSiteTheme>
 	/**
 	 * A dictionary object containing delve site domains.
 	 * @remarks Deserialize as a dictionary object.
+	 * @default
+	 * ```javascript
+	 * 	{
+	 *
+	 * 	}
+	 * ```
 	 */
 	site_domains?: Record<DictKey, DelveSiteDomain>
 	_id: ExpansionId
@@ -726,23 +846,71 @@ export type AnyOracleRollableRowIdWildcard =
  * Represents any kind of non-wildcard ID, including IDs of embedded objects.
  */
 export type AnyId =
+	| AtlasEntryId
+	| NpcId
 	| OracleRollableId
 	| AssetAbilityOracleRollableId
-	| TruthOptionOracleRollableId
 	| MoveOracleRollableId
-	| MoveId
+	| TruthOptionOracleRollableId
+	| OracleRollableRowId
+	| AssetAbilityOracleRollableRowId
+	| MoveOracleRollableRowId
+	| TruthOptionOracleRollableRowId
+	| AssetId
+	| AssetAbilityId
 	| AssetAbilityMoveId
+	| MoveId
+	| AtlasCollectionId
+	| NpcCollectionId
+	| OracleCollectionId
+	| AssetCollectionId
+	| MoveCategoryId
+	| DelveSiteId
+	| DelveSiteDenizenId
+	| DelveSiteDomainId
+	| DelveSiteDomainFeatureId
+	| DelveSiteThemeFeatureId
+	| DelveSiteDomainDangerId
+	| DelveSiteThemeDangerId
+	| DelveSiteThemeId
+	| RarityId
+	| TruthId
+	| TruthOptionId
 
 /**
  * Represents any kind of wildcard ID, including IDs of embedded objects.
  */
 export type AnyIdWildcard =
-	| AssetAbilityOracleRollableIdWildcard
-	| TruthOptionOracleRollableIdWildcard
-	| MoveOracleRollableIdWildcard
+	| AtlasEntryIdWildcard
+	| NpcIdWildcard
 	| OracleRollableIdWildcard
+	| AssetAbilityOracleRollableIdWildcard
+	| MoveOracleRollableIdWildcard
+	| TruthOptionOracleRollableIdWildcard
+	| OracleRollableRowIdWildcard
+	| AssetAbilityOracleRollableRowIdWildcard
+	| MoveOracleRollableRowIdWildcard
+	| TruthOptionOracleRollableRowIdWildcard
+	| AssetIdWildcard
+	| AssetAbilityIdWildcard
 	| AssetAbilityMoveIdWildcard
 	| MoveIdWildcard
+	| AtlasCollectionIdWildcard
+	| NpcCollectionIdWildcard
+	| OracleCollectionIdWildcard
+	| AssetCollectionIdWildcard
+	| MoveCategoryIdWildcard
+	| DelveSiteIdWildcard
+	| DelveSiteDenizenIdWildcard
+	| DelveSiteDomainIdWildcard
+	| DelveSiteDomainFeatureIdWildcard
+	| DelveSiteThemeFeatureIdWildcard
+	| DelveSiteDomainDangerIdWildcard
+	| DelveSiteThemeDangerIdWildcard
+	| DelveSiteThemeIdWildcard
+	| RarityIdWildcard
+	| TruthIdWildcard
+	| TruthOptionIdWildcard
 
 /**
  * Information on the original creator of this material.

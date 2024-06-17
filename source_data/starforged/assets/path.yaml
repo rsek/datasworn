@@ -1393,7 +1393,7 @@ assets:
               loop_back:
                 name: Loop Back
                 type: move
-                # Burn momentum: false
+                allow_momentum_burn: false
                 #TODO: add to IMove? Move usage?
                 roll_type: action_roll
                 trigger:

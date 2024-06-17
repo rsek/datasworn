@@ -29,27 +29,28 @@ const macroSymbolPattern = new RegExp(
 
 export function validateIdsInStrings(
 	data: unknown,
-	validIds: Map<string, unknown> | Set<string>
+	validIds: Map<string, unknown> | Set<string>,
+	validatedPointers?: Set<string>
 ) {
 	const errors: unknown[] = []
 
 	forEachPrimitiveValue(data, undefined, (v, k) => {
-		if (typeof v !== 'string') return
 		// skip non-string values
+		if (typeof v !== 'string') return
 		// skip underscore keys
 		if (typeof k === 'string' && k.startsWith('_')) return
 
 		if (idPointerPattern.test(v)) {
-			validateIdPointer(v, validIds)
+			validateIdPointer(v, validIds, validatedPointers)
 			// if it's a standalone pointer, markdown checks can be skipped
 		} else {
 			try {
-				validateMarkdownIdPointers(v, validIds)
+				validateMarkdownIdPointers(v, validIds, validatedPointers)
 			} catch (e: any) {
 				errors.push(e)
 			}
 			try {
-				validateMacroIdPointers(v, validIds)
+				validateMacroIdPointers(v, validIds, validatedPointers)
 			} catch (e: any) {
 				errors.push(e)
 			}
@@ -63,7 +64,8 @@ export function validateIdsInStrings(
 
 export function validateMacroIdPointers(
 	text: string,
-	validIds: Map<string, unknown> | Set<string>
+	validIds: Map<string, unknown> | Set<string>,
+	validatedPointers?: Set<string>
 ) {
 	const macros = text.matchAll(macroSymbolPattern)
 
@@ -75,7 +77,7 @@ export function validateMacroIdPointers(
 		switch (directive) {
 			case 'table':
 			case 'text':
-				return validateIdPointer(path, validIds)
+				return validateIdPointer(path, validIds, validatedPointers)
 
 			default:
 				errors.push(
@@ -91,7 +93,8 @@ export function validateMacroIdPointers(
 
 export function validateMarkdownIdPointers(
 	text: string,
-	validIds: Map<string, unknown> | Set<string>
+	validIds: Map<string, unknown> | Set<string>,
+	validatedPointers?: Set<string>
 ) {
 	const links = text.matchAll(linkSymbolPattern)
 
@@ -102,7 +105,7 @@ export function validateMarkdownIdPointers(
 		const { id } = link.groups
 
 		try {
-			validateIdPointer(id, validIds)
+			validateIdPointer(id, validIds, validatedPointers)
 		} catch (e) {
 			errors.push(e)
 		}
@@ -115,11 +118,15 @@ export function validateMarkdownIdPointers(
 
 export function validateIdPointer(
 	dataswornId: string,
-	idTracker: Set<string> | Map<string, unknown>
+	idTracker: Set<string> | Map<string, unknown>,
+	validatedPointers?: Set<string>
 ) {
-	if (idTracker.has(dataswornId)) return true
+	if (!idTracker.has(dataswornId))
+		throw Error(`Bad Datasworn ID pointer: ${dataswornId}`)
 
-	throw Error(`Bad Datasworn ID pointer: ${dataswornId}`)
+	if (validatedPointers instanceof Set) validatedPointers.add(dataswornId)
+
+	return true
 }
 
 /** Recursively iterates over JSON values, applying a function to every primitive boolean, number, string, and null value. */

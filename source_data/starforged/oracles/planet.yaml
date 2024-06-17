@@ -107,6 +107,10 @@ oracles:
             name: Lifebearing
             oracle_type: column_text
             type: oracle_rollable
+            tags:
+              starforged:
+                life: lifebearing
+                location: planetside
             # usage:
             #   requires: &attr:Life.Lifebearing
             #     attributes:
@@ -240,10 +244,10 @@ oracles:
             # source: *CollectionSource
             oracle_type: column_text
             type: oracle_rollable
-            # usage:
-            #   requires: &attr:Life.Lifeless
-            #     attributes:
-            #       life: [none, extinct]
+            tags:
+              starforged:
+                life: lifeless
+                location: planetside
             rows:
               - <<: *PlanetPeril.0
               - <<: *PlanetPeril.1
@@ -327,6 +331,10 @@ oracles:
             oracle_type: column_text
             type: oracle_rollable
             name: Lifebearing
+            tags:
+              starforged:
+                location: planetside
+                life: lifebearing
             # source: *CollectionSource
             # usage:
             #   requires: *attr:Life.Lifebearing
@@ -396,6 +404,10 @@ oracles:
             oracle_type: column_text
             type: oracle_rollable
             name: Lifeless
+            tags:
+              starforged:
+                location: planetside
+                life: lifeless
             # source: *CollectionSource
             # usage:
             #   requires: *attr:Life.Lifeless

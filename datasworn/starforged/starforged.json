@@ -181,17 +181,38 @@
 		},
 		"tags": {
 			"region": {
-				"description": "This oracle applies to a specific region of the Forge.",
-				"applies_to": ["oracle_rollable"],
+				"description": "This content applies to a specific region of the Forge.",
+				"applies_to": ["oracle_rollable", "row"],
 				"value_type": "enum",
 				"enum": ["terminus", "outlands", "expanse"],
 				"array": false
 			},
 			"location": {
-				"description": "This oracle applies specifically to planetside, orbital, or deep space environments.",
-				"applies_to": ["oracle_rollable"],
+				"description": "This content applies specifically to planetside, orbital, or deep space environments.",
+				"applies_to": ["oracle_rollable", "row"],
 				"value_type": "enum",
 				"enum": ["planetside", "orbital", "deep_space"],
+				"array": false
+			},
+			"environment": {
+				"description": "This content applies to a specific creature environment.",
+				"applies_to": ["oracle_rollable", "row"],
+				"value_type": "enum",
+				"enum": ["space", "interior", "land", "liquid", "air"],
+				"array": false
+			},
+			"faction_type": {
+				"description": "This content applies to a specific type of faction.",
+				"applies_to": ["oracle_rollable", "row"],
+				"value_type": "enum",
+				"enum": ["dominion", "guild", "fringe_group"],
+				"array": false
+			},
+			"life": {
+				"description": "This content applies specifically to life-bearing or lifeless worlds.",
+				"value_type": "enum",
+				"applies_to": ["oracle_rollable", "row"],
+				"enum": ["lifebearing", "lifeless"],
 				"array": false
 			}
 		}
@@ -13791,6 +13812,12 @@
 					"summary": "Choose the closest match for your location. Or roll to identify the primary habitat of a creature.",
 					"rows": [
 						{
+							"icon": "icons/creature/environment/space.svg",
+							"tags": {
+								"starforged": {
+									"environment": "space"
+								}
+							},
 							"_i18n": {
 								"text": {
 									"part_of_speech": "common_noun"
@@ -13801,7 +13828,6 @@
 								"max": 5
 							},
 							"text": "Space",
-							"icon": "icons/creature/environment/space.svg",
 							"oracle_rolls": [
 								{
 									"oracle": "oracle_rollable:starforged/creature/basic_form/space",
@@ -13825,6 +13851,11 @@
 							},
 							"text": "Interior",
 							"icon": "icons/creature/environment/interior.svg",
+							"tags": {
+								"starforged": {
+									"environment": "interior"
+								}
+							},
 							"oracle_rolls": [
 								{
 									"oracle": "oracle_rollable:starforged/creature/basic_form/interior",
@@ -13848,6 +13879,11 @@
 							},
 							"text": "Land",
 							"icon": "icons/creature/environment/land.svg",
+							"tags": {
+								"starforged": {
+									"environment": "land"
+								}
+							},
 							"oracle_rolls": [
 								{
 									"oracle": "oracle_rollable:starforged/creature/basic_form/land",
@@ -13871,6 +13907,11 @@
 							},
 							"text": "Liquid",
 							"icon": "icons/creature/environment/liquid.svg",
+							"tags": {
+								"starforged": {
+									"environment": "liquid"
+								}
+							},
 							"oracle_rolls": [
 								{
 									"oracle": "oracle_rollable:starforged/creature/basic_form/liquid",
@@ -13894,6 +13935,11 @@
 							},
 							"text": "Air",
 							"icon": "icons/creature/environment/air.svg",
+							"tags": {
+								"starforged": {
+									"environment": "air"
+								}
+							},
 							"oracle_rolls": [
 								{
 									"oracle": "oracle_rollable:starforged/creature/basic_form/air",
@@ -15289,6 +15335,11 @@
 						"space": {
 							"name": "Space",
 							"icon": "icons/creature/environment/space.svg",
+							"tags": {
+								"starforged": {
+									"environment": "space"
+								}
+							},
 							"color": "#131A1C",
 							"oracle_type": "column_text",
 							"type": "oracle_rollable",
@@ -15470,6 +15521,11 @@
 						"interior": {
 							"name": "Interior",
 							"icon": "icons/creature/environment/interior.svg",
+							"tags": {
+								"starforged": {
+									"environment": "interior"
+								}
+							},
 							"oracle_type": "column_text",
 							"type": "oracle_rollable",
 							"color": "#80868E",
@@ -15652,6 +15708,11 @@
 							"name": "Land",
 							"color": "#CA181A",
 							"icon": "icons/creature/environment/land.svg",
+							"tags": {
+								"starforged": {
+									"environment": "land"
+								}
+							},
 							"oracle_type": "column_text",
 							"type": "oracle_rollable",
 							"rows": [
@@ -15835,6 +15896,11 @@
 							"type": "oracle_rollable",
 							"color": "#0079BB",
 							"icon": "icons/creature/environment/liquid.svg",
+							"tags": {
+								"starforged": {
+									"environment": "liquid"
+								}
+							},
 							"rows": [
 								{
 									"roll": {
@@ -16016,6 +16082,11 @@
 							"type": "oracle_rollable",
 							"color": "#8D1D82",
 							"icon": "icons/creature/environment/air.svg",
+							"tags": {
+								"starforged": {
+									"environment": "air"
+								}
+							},
 							"rows": [
 								{
 									"roll": {
@@ -20256,7 +20327,8 @@
 									},
 									"text": "Starship",
 									"suggestions": [
-										"oracle_rollable:starforged/derelict/derelict/starship"
+										"oracle_rollable:starforged/derelict/derelict/starship",
+										"oracle_collection:starforged/starship"
 									],
 									"_id": "oracle_rollable.row:starforged/derelict/type/deep_space.0"
 								},
@@ -20267,7 +20339,8 @@
 									},
 									"text": "Settlement",
 									"suggestions": [
-										"oracle_rollable:starforged/derelict/derelict/settlement"
+										"oracle_rollable:starforged/derelict/derelict/settlement",
+										"oracle_collection:starforged/settlement"
 									],
 									"_id": "oracle_rollable.row:starforged/derelict/type/deep_space.1"
 								}
@@ -20492,6 +20565,11 @@
 							"suggestions": [
 								"oracle_rollable:starforged/derelict/type/planetside"
 							],
+							"tags": {
+								"starforged": {
+									"location": "planetside"
+								}
+							},
 							"_id": "oracle_rollable.row:starforged/derelict/location.0"
 						},
 						{
@@ -20504,6 +20582,11 @@
 							"suggestions": [
 								"oracle_rollable:starforged/derelict/type/orbital"
 							],
+							"tags": {
+								"starforged": {
+									"location": "orbital"
+								}
+							},
 							"_id": "oracle_rollable.row:starforged/derelict/location.1"
 						},
 						{
@@ -20513,6 +20596,11 @@
 							},
 							"text": "Deep Space",
 							"icon": "icon/oracle_rollable/location/deep_space.svg",
+							"tags": {
+								"starforged": {
+									"location": "deep_space"
+								}
+							},
 							"suggestions": [
 								"oracle_rollable:starforged/derelict/type/deep_space"
 							],
@@ -21059,6 +21147,11 @@
 							},
 							"text": "[Dominion](oracle_rollable:starforged/faction/dominion)",
 							"text2": "Governing power",
+							"tags": {
+								"starforged": {
+									"faction_type": "dominion"
+								}
+							},
 							"oracle_rolls": [
 								{
 									"oracle": "oracle_rollable:starforged/faction/dominion",
@@ -21084,6 +21177,11 @@
 							},
 							"text": "[Guild](oracle_rollable:starforged/faction/guild)",
 							"text2": "Organization of specialists",
+							"tags": {
+								"starforged": {
+									"faction_type": "guild"
+								}
+							},
 							"oracle_rolls": [
 								{
 									"oracle": "oracle_rollable:starforged/faction/guild",
@@ -21102,6 +21200,11 @@
 							},
 							"text": "[Fringe Group](oracle_rollable:starforged/faction/fringe_group)",
 							"text2": "Band of outlaws, outcasts, or rogues",
+							"tags": {
+								"starforged": {
+									"faction_type": "fringe_group"
+								}
+							},
 							"oracle_rolls": [
 								{
 									"oracle": "oracle_rollable:starforged/faction/fringe_group",
@@ -21246,6 +21349,11 @@
 					"oracle_type": "table_text",
 					"type": "oracle_rollable",
 					"icon": "icons/faction/dominion.svg",
+					"tags": {
+						"starforged": {
+							"faction_type": "dominion"
+						}
+					},
 					"_source": {
 						"title": "Ironsworn: Starforged Rulebook",
 						"license": "https://creativecommons.org/licenses/by/4.0",
@@ -21587,6 +21695,11 @@
 					"name": "Dominion: Leadership",
 					"oracle_type": "table_text",
 					"type": "oracle_rollable",
+					"tags": {
+						"starforged": {
+							"faction_type": "dominion"
+						}
+					},
 					"_source": {
 						"title": "Ironsworn: Starforged Rulebook",
 						"license": "https://creativecommons.org/licenses/by/4.0",
@@ -21693,6 +21806,11 @@
 					"oracle_type": "table_text",
 					"type": "oracle_rollable",
 					"icon": "icons/faction/guild.svg",
+					"tags": {
+						"starforged": {
+							"faction_type": "guild"
+						}
+					},
 					"_source": {
 						"title": "Ironsworn: Starforged Rulebook",
 						"license": "https://creativecommons.org/licenses/by/4.0",
@@ -21923,6 +22041,11 @@
 					"oracle_type": "table_text",
 					"type": "oracle_rollable",
 					"icon": "icons/faction/fringe_group.svg",
+					"tags": {
+						"starforged": {
+							"faction_type": "fringe_group"
+						}
+					},
 					"_source": {
 						"title": "Ironsworn: Starforged Rulebook",
 						"license": "https://creativecommons.org/licenses/by/4.0",
@@ -38957,6 +39080,12 @@
 							"name": "Lifebearing",
 							"oracle_type": "column_text",
 							"type": "oracle_rollable",
+							"tags": {
+								"starforged": {
+									"life": "lifebearing",
+									"location": "planetside"
+								}
+							},
 							"rows": [
 								{
 									"roll": {
@@ -39263,6 +39392,12 @@
 							"name": "Lifeless",
 							"oracle_type": "column_text",
 							"type": "oracle_rollable",
+							"tags": {
+								"starforged": {
+									"life": "lifeless",
+									"location": "planetside"
+								}
+							},
 							"rows": [
 								{
 									"text": "Corrupted or mutated lifeform",
@@ -39569,6 +39704,12 @@
 							"oracle_type": "column_text",
 							"type": "oracle_rollable",
 							"name": "Lifebearing",
+							"tags": {
+								"starforged": {
+									"location": "planetside",
+									"life": "lifebearing"
+								}
+							},
 							"rows": [
 								{
 									"roll": {
@@ -39778,6 +39919,12 @@
 							"oracle_type": "column_text",
 							"type": "oracle_rollable",
 							"name": "Lifeless",
+							"tags": {
+								"starforged": {
+									"location": "planetside",
+									"life": "lifeless"
+								}
+							},
 							"rows": [
 								{
 									"text": "Clue to a lifeform's nature or vulnerabilities",
@@ -40111,7 +40258,7 @@
 				],
 				"page": 360
 			},
-			"summary": "When you first come upon a vault, use the tables on the previous two pages to help envision its form and nature. For a more abstract prompt, just use the Descriptor oracle. In either case—if that’s enough detail for the role of the vault in your story—stop there.",
+			"summary": "When you first come upon a vault, use the tables on the previous two pages to help envision its form and nature. For a more abstract prompt, just use the [Descriptor](oracle_rollable:starforged/core/descriptor) oracle. In either case—if that’s enough detail for the role of the vault in your story—stop there.",
 			"contents": {
 				"location": {
 					"name": "Location",
@@ -40137,6 +40284,11 @@
 							},
 							"text": "Planetside",
 							"icon": "icon/oracle_rollable/location/planetside.svg",
+							"tags": {
+								"starforged": {
+									"location": "planetside"
+								}
+							},
 							"_id": "oracle_rollable.row:starforged/precursor_vault/location.0"
 						},
 						{
@@ -40146,6 +40298,11 @@
 							},
 							"text": "Orbital",
 							"icon": "icon/oracle_rollable/location/orbital.svg",
+							"tags": {
+								"starforged": {
+									"location": "orbital"
+								}
+							},
 							"_id": "oracle_rollable.row:starforged/precursor_vault/location.1"
 						},
 						{
@@ -40155,6 +40312,11 @@
 							},
 							"text": "Deep Space",
 							"icon": "icon/oracle_rollable/location/deep_space.svg",
+							"tags": {
+								"starforged": {
+									"location": "deep_space"
+								}
+							},
 							"_id": "oracle_rollable.row:starforged/precursor_vault/location.2"
 						}
 					],
@@ -43169,6 +43331,11 @@
 							},
 							"text": "Planetside",
 							"icon": "icon/oracle_rollable/location/planetside.svg",
+							"tags": {
+								"starforged": {
+									"location": "planetside"
+								}
+							},
 							"_id": "oracle_rollable.row:starforged/settlement/location.0"
 						},
 						{
@@ -43178,6 +43345,11 @@
 							},
 							"text": "Orbital",
 							"icon": "icon/oracle_rollable/location/orbital.svg",
+							"tags": {
+								"starforged": {
+									"location": "orbital"
+								}
+							},
 							"_id": "oracle_rollable.row:starforged/settlement/location.1"
 						},
 						{
@@ -43187,6 +43359,11 @@
 							},
 							"text": "Deep Space",
 							"icon": "icon/oracle_rollable/location/deep_space.svg",
+							"tags": {
+								"starforged": {
+									"location": "deep_space"
+								}
+							},
 							"_id": "oracle_rollable.row:starforged/settlement/location.2"
 						}
 					],
@@ -58471,6 +58648,7 @@
 								"loop_back": {
 									"name": "Loop Back",
 									"type": "move",
+									"allow_momentum_burn": false,
 									"roll_type": "action_roll",
 									"trigger": {
 										"text": "When you loop back to a linked moment in time...",
@@ -58509,7 +58687,6 @@
 											"text": "On a __miss__, you and your allies return to the linked point, retain any progress, and set condition meters (except for spirit) to their original values.\n\nHowever, you find the timeline corrupted! [Pay the Price](move:starforged/fate/pay_the_price)."
 										}
 									},
-									"allow_momentum_burn": true,
 									"_id": "asset.ability.move:starforged/path/looper.1.loop_back"
 								}
 							},
@@ -61541,6 +61718,7 @@
 			"_id": "asset_collection:starforged/support_vehicle"
 		}
 	},
+	"atlas": {},
 	"moves": {
 		"session": {
 			"name": "Session Moves",
@@ -66685,6 +66863,10 @@
 			"_id": "npc_collection:starforged/sample_npcs"
 		}
 	},
+	"rarities": {},
+	"delve_sites": {},
+	"site_domains": {},
+	"site_themes": {},
 	"truths": {
 		"cataclysm": {
 			"name": "Cataclysm",

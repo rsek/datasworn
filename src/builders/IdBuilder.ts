@@ -738,17 +738,34 @@ ids.AnyOracleRollableRowIdWildcard = Type.Union(
 	}
 )
 
-ids.AnyId = Type.Union(anyIdSchemata, {
-	$id: 'AnyId',
-	description:
-		'Represents any kind of non-wildcard ID, including IDs of embedded objects.',
-	[JsonTypeDef]: { schema: JtdType.String() }
-})
-ids.AnyIdWildcard = Type.Union(anyIdWildcardSchemata, {
-	$id: 'AnyIdWildcard',
-	description:
-		'Represents any kind of wildcard ID, including IDs of embedded objects.',
-	[JsonTypeDef]: { schema: JtdType.String() }
-})
+ids.AnyId = Type.Union(
+	Object.values(ids)
+		.flat()
+		.filter(
+			(schema) =>
+				schema.type === 'string' && !schema.$id?.endsWith('IdWildcard')
+		)
+		.map((schema) => Type.Ref(schema)),
+	{
+		$id: 'AnyId',
+		description:
+			'Represents any kind of non-wildcard ID, including IDs of embedded objects.',
+		[JsonTypeDef]: { schema: JtdType.String() }
+	}
+)
+ids.AnyIdWildcard = Type.Union(
+	Object.values(ids)
+		.flat()
+		.filter(
+			(schema) => schema.type === 'string' && schema.$id?.endsWith('IdWildcard')
+		)
+		.map((schema) => Type.Ref(schema)),
+	{
+		$id: 'AnyIdWildcard',
+		description:
+			'Represents any kind of wildcard ID, including IDs of embedded objects.',
+		[JsonTypeDef]: { schema: JtdType.String() }
+	}
+)
 
 export default ids

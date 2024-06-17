@@ -21,28 +21,28 @@ const macroSymbolPattern = new RegExp([
     `(?<id>${idPattern})`,
     `(?=\\}\\})` // lookahead for right curly braces
 ].join(''), 'g');
-function validateIdsInStrings(data, validIds) {
+function validateIdsInStrings(data, validIds, validatedPointers) {
     const errors = [];
     forEachPrimitiveValue(data, undefined, (v, k) => {
+        // skip non-string values
         if (typeof v !== 'string')
             return;
-        // skip non-string values
         // skip underscore keys
         if (typeof k === 'string' && k.startsWith('_'))
             return;
         if (idPointerPattern.test(v)) {
-            validateIdPointer(v, validIds);
+            validateIdPointer(v, validIds, validatedPointers);
             // if it's a standalone pointer, markdown checks can be skipped
         }
         else {
             try {
-                validateMarkdownIdPointers(v, validIds);
+                validateMarkdownIdPointers(v, validIds, validatedPointers);
             }
             catch (e) {
                 errors.push(e);
             }
             try {
-                validateMacroIdPointers(v, validIds);
+                validateMacroIdPointers(v, validIds, validatedPointers);
             }
             catch (e) {
                 errors.push(e);
@@ -54,7 +54,7 @@ function validateIdsInStrings(data, validIds) {
     return true;
 }
 exports.validateIdsInStrings = validateIdsInStrings;
-function validateMacroIdPointers(text, validIds) {
+function validateMacroIdPointers(text, validIds, validatedPointers) {
     const macros = text.matchAll(macroSymbolPattern);
     const errors = [];
     for (const macro of macros) {
@@ -64,7 +64,7 @@ function validateMacroIdPointers(text, validIds) {
         switch (directive) {
             case 'table':
             case 'text':
-                return validateIdPointer(path, validIds);
+                return validateIdPointer(path, validIds, validatedPointers);
             default:
                 errors.push(`Unknown Datasworn macro directive "${String(directive)}": ${macro[0]}`);
         }
@@ -74,7 +74,7 @@ function validateMacroIdPointers(text, validIds) {
     return true;
 }
 exports.validateMacroIdPointers = validateMacroIdPointers;
-function validateMarkdownIdPointers(text, validIds) {
+function validateMarkdownIdPointers(text, validIds, validatedPointers) {
     const links = text.matchAll(linkSymbolPattern);
     const errors = [];
     for (const link of links) {
@@ -82,7 +82,7 @@ function validateMarkdownIdPointers(text, validIds) {
             continue;
         const { id } = link.groups;
         try {
-            validateIdPointer(id, validIds);
+            validateIdPointer(id, validIds, validatedPointers);
         }
         catch (e) {
             errors.push(e);
@@ -93,10 +93,12 @@ function validateMarkdownIdPointers(text, validIds) {
     return true;
 }
 exports.validateMarkdownIdPointers = validateMarkdownIdPointers;
-function validateIdPointer(dataswornId, idTracker) {
-    if (idTracker.has(dataswornId))
-        return true;
-    throw Error(`Bad Datasworn ID pointer: ${dataswornId}`);
+function validateIdPointer(dataswornId, idTracker, validatedPointers) {
+    if (!idTracker.has(dataswornId))
+        throw Error(`Bad Datasworn ID pointer: ${dataswornId}`);
+    if (validatedPointers instanceof Set)
+        validatedPointers.add(dataswornId);
+    return true;
 }
 exports.validateIdPointer = validateIdPointer;
 /** Recursively iterates over JSON values, applying a function to every primitive boolean, number, string, and null value. */

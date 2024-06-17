@@ -3,7 +3,8 @@ import { UnionEnum } from '../schema/Utils.js'
 import {
 	type Simplify,
 	type JsonTypeDef,
-	type Inherits
+	type Inherits,
+	type Namespace
 } from '../schema/Symbols.js'
 import { type Metadata } from './json-typedef/typedef.js'
 import { DiceExpression } from '../schema/common/Rolls.js'
@@ -43,6 +44,7 @@ declare module '@sinclair/typebox' {
 		remarks?: Static<typeof Keywords.remarks>
 		releaseStage?: Static<typeof Keywords.releaseStage>
 		deprecated?: Static<typeof Keywords.deprecated>
+		[Namespace]?: string
 		[Inherits]?: TypeCodeGenData[]
 		/** A less complex alternate version of the schema for use with code generation tools. */
 		[Simplify]?: TSchema

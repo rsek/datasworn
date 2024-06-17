@@ -10919,6 +10919,8 @@
 			"_id": "oracle_collection:delve/trap"
 		}
 	},
+	"assets": {},
+	"atlas": {},
 	"moves": {
 		"delve": {
 			"name": "Delve Moves",
@@ -20189,5 +20191,6 @@
 			],
 			"_id": "delve_site_theme:delve/wild"
 		}
-	}
+	},
+	"truths": {}
 }

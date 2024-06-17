@@ -253,6 +253,7 @@
 					"type": "object",
 					"description": "A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/OracleTablesCollection"
@@ -263,6 +264,7 @@
 					"type": "object",
 					"description": "A dictionary object containing asset collections, which contain assets.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/AssetCollection"
@@ -273,6 +275,7 @@
 					"type": "object",
 					"description": "A dictionary object containing atlas collections, which contain atlas entries.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/AtlasCollection"
@@ -283,6 +286,7 @@
 					"type": "object",
 					"description": "A dictionary object containing move categories, which contain moves.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/MoveCategory"
@@ -293,6 +297,7 @@
 					"type": "object",
 					"description": "A dictionary object containing NPC collections, which contain NPCs.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/NpcCollection"
@@ -303,6 +308,7 @@
 					"type": "object",
 					"description": "A dictionary object containing rarities, like those presented in Ironsworn: Delve.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/Rarity"
@@ -313,6 +319,7 @@
 					"type": "object",
 					"description": "A dictionary object of delve sites, like the premade delve sites presented in Ironsworn: Delve",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/DelveSite"
@@ -323,6 +330,7 @@
 					"type": "object",
 					"description": "A dictionary object containing delve site domains.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/DelveSiteDomain"
@@ -333,6 +341,7 @@
 					"type": "object",
 					"description": "A dictionary object containing delve site themes.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/DelveSiteTheme"
@@ -343,6 +352,7 @@
 					"type": "object",
 					"description": "A dictionary object of truth categories.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/Truth"
@@ -407,6 +417,7 @@
 					"type": "object",
 					"description": "A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/OracleTablesCollection"
@@ -417,6 +428,7 @@
 					"type": "object",
 					"description": "A dictionary object containing asset collections, which contain assets.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/AssetCollection"
@@ -427,6 +439,7 @@
 					"type": "object",
 					"description": "A dictionary object containing atlas collections, which contain atlas entries.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/AtlasCollection"
@@ -437,6 +450,7 @@
 					"type": "object",
 					"description": "A dictionary object containing move categories, which contain moves.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/MoveCategory"
@@ -447,6 +461,7 @@
 					"type": "object",
 					"description": "A dictionary object containing NPC collections, which contain NPCs.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/NpcCollection"
@@ -457,6 +472,7 @@
 					"type": "object",
 					"description": "A dictionary object containing rarities, like those presented in Ironsworn: Delve.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/Rarity"
@@ -467,6 +483,7 @@
 					"type": "object",
 					"description": "A dictionary object of delve sites, like the premade delve sites presented in Ironsworn: Delve",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/DelveSite"
@@ -477,6 +494,7 @@
 					"type": "object",
 					"description": "A dictionary object containing delve site domains.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/DelveSiteDomain"
@@ -487,6 +505,7 @@
 					"type": "object",
 					"description": "A dictionary object containing delve site themes.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/DelveSiteTheme"
@@ -497,6 +516,7 @@
 					"type": "object",
 					"description": "A dictionary object of truth categories.",
 					"remarks": "Deserialize as a dictionary object.",
+					"default": {},
 					"patternProperties": {
 						"^[a-z][a-z_]*$": {
 							"$ref": "#/definitions/Truth"
@@ -1029,34 +1049,94 @@
 			"description": "Represents any kind of non-wildcard ID, including IDs of embedded objects.",
 			"anyOf": [
 				{
+					"$ref": "#/definitions/AtlasEntryId"
+				},
+				{
+					"$ref": "#/definitions/NpcId"
+				},
+				{
 					"$ref": "#/definitions/OracleRollableId"
 				},
 				{
 					"$ref": "#/definitions/AssetAbilityOracleRollableId"
 				},
 				{
-					"$ref": "#/definitions/TruthOptionOracleRollableId"
-				},
-				{
 					"$ref": "#/definitions/MoveOracleRollableId"
-				},
-				{
-					"$ref": "#/definitions/AssetAbilityOracleRollableId"
 				},
 				{
 					"$ref": "#/definitions/TruthOptionOracleRollableId"
 				},
 				{
-					"$ref": "#/definitions/MoveOracleRollableId"
+					"$ref": "#/definitions/OracleRollableRowId"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityOracleRollableRowId"
+				},
+				{
+					"$ref": "#/definitions/MoveOracleRollableRowId"
+				},
+				{
+					"$ref": "#/definitions/TruthOptionOracleRollableRowId"
+				},
+				{
+					"$ref": "#/definitions/AssetId"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityId"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityMoveId"
 				},
 				{
 					"$ref": "#/definitions/MoveId"
 				},
 				{
-					"$ref": "#/definitions/AssetAbilityMoveId"
+					"$ref": "#/definitions/AtlasCollectionId"
 				},
 				{
-					"$ref": "#/definitions/AssetAbilityMoveId"
+					"$ref": "#/definitions/NpcCollectionId"
+				},
+				{
+					"$ref": "#/definitions/OracleCollectionId"
+				},
+				{
+					"$ref": "#/definitions/AssetCollectionId"
+				},
+				{
+					"$ref": "#/definitions/MoveCategoryId"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteId"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteDenizenId"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteDomainId"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteDomainFeatureId"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteThemeFeatureId"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteDomainDangerId"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteThemeDangerId"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteThemeId"
+				},
+				{
+					"$ref": "#/definitions/RarityId"
+				},
+				{
+					"$ref": "#/definitions/TruthId"
+				},
+				{
+					"$ref": "#/definitions/TruthOptionId"
 				}
 			]
 		},
@@ -1065,13 +1145,10 @@
 			"description": "Represents any kind of wildcard ID, including IDs of embedded objects.",
 			"anyOf": [
 				{
-					"$ref": "#/definitions/AssetAbilityOracleRollableIdWildcard"
+					"$ref": "#/definitions/AtlasEntryIdWildcard"
 				},
 				{
-					"$ref": "#/definitions/TruthOptionOracleRollableIdWildcard"
-				},
-				{
-					"$ref": "#/definitions/MoveOracleRollableIdWildcard"
+					"$ref": "#/definitions/NpcIdWildcard"
 				},
 				{
 					"$ref": "#/definitions/OracleRollableIdWildcard"
@@ -1080,10 +1157,28 @@
 					"$ref": "#/definitions/AssetAbilityOracleRollableIdWildcard"
 				},
 				{
+					"$ref": "#/definitions/MoveOracleRollableIdWildcard"
+				},
+				{
 					"$ref": "#/definitions/TruthOptionOracleRollableIdWildcard"
 				},
 				{
-					"$ref": "#/definitions/MoveOracleRollableIdWildcard"
+					"$ref": "#/definitions/OracleRollableRowIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityOracleRollableRowIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/MoveOracleRollableRowIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/TruthOptionOracleRollableRowIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AssetIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AssetAbilityIdWildcard"
 				},
 				{
 					"$ref": "#/definitions/AssetAbilityMoveIdWildcard"
@@ -1092,7 +1187,52 @@
 					"$ref": "#/definitions/MoveIdWildcard"
 				},
 				{
-					"$ref": "#/definitions/AssetAbilityMoveIdWildcard"
+					"$ref": "#/definitions/AtlasCollectionIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/NpcCollectionIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/OracleCollectionIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/AssetCollectionIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/MoveCategoryIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteDenizenIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteDomainIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteDomainFeatureIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteThemeFeatureIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteDomainDangerIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteThemeDangerIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/DelveSiteThemeIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/RarityIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/TruthIdWildcard"
+				},
+				{
+					"$ref": "#/definitions/TruthOptionIdWildcard"
 				}
 			]
 		},

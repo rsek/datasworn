@@ -21,3 +21,7 @@ export const Simplify = Symbol('Simplify')
  */
 export const Inherits = Symbol('Inherits')
 
+/**
+ * Sets the namespace/module name for use in code generation.
+ */
+export const Namespace = Symbol('Namespace')

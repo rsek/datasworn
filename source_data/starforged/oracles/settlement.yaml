@@ -125,12 +125,21 @@ oracles:
           - roll: { min: 1, max: 40 }
             text: Planetside
             icon: icon/oracle_rollable/location/planetside.svg
+            tags:
+              starforged:
+                location: planetside
           - roll: { min: 41, max: 75 }
             text: Orbital
             icon: icon/oracle_rollable/location/orbital.svg
+            tags:
+              starforged:
+                location: orbital
           - roll: { min: 76, max: 100 }
             text: Deep Space
             icon: icon/oracle_rollable/location/deep_space.svg
+            tags:
+              starforged:
+                location: deep_space
       first_look:
         name: First Look
         oracle_type: table_text

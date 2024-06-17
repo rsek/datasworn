@@ -90,10 +90,12 @@ oracles:
                 text: Starship
                 suggestions:
                     - oracle_rollable:starforged/derelict/derelict/starship
+                    - oracle_collection:starforged/starship
               - roll: { min: 76, max: 100 }
                 text: Settlement
                 suggestions:
                     - oracle_rollable:starforged/derelict/derelict/settlement
+                    - oracle_collection:starforged/settlement
       zone:
         name: Derelict Zones
         _source: &CollectionSource
@@ -193,14 +195,23 @@ oracles:
             icon: icon/oracle_rollable/location/planetside.svg
             suggestions:
                 - oracle_rollable:starforged/derelict/type/planetside
+            tags:
+              starforged:
+                location: planetside
           - roll: { min: 41, max: 60 }
             text: Orbital
             icon: icon/oracle_rollable/location/orbital.svg
             suggestions:
                 - oracle_rollable:starforged/derelict/type/orbital
+            tags:
+              starforged:
+                location: orbital
           - roll: { min: 61, max: 100 }
             text: Deep Space
             icon: icon/oracle_rollable/location/deep_space.svg
+            tags:
+              starforged:
+                location: deep_space
             suggestions:
                 - oracle_rollable:starforged/derelict/type/deep_space
       condition:

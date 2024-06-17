@@ -64,6 +64,7 @@ export async function buildRulesPackages(pkgs: Record<string, RulesPackageConfig
 	// now that we have all IDs available, we can validate the built packages
 	for (const pkg of builtPkgs)
 		try {
+			const validatedPointers = new Set<string>()
 			pkg.validateIdPointers(index)
 			const destDir = path.join(ROOT_OUTPUT, pkg.id)
 			toWrite.push(_writePkgFiles(destDir, pkg.toJSON(), filesToDelete))
@@ -71,7 +72,8 @@ export async function buildRulesPackages(pkgs: Record<string, RulesPackageConfig
 			errors.push(e)
 		}
 
-	if (errors.length > 0) for (const e of errors) Log.error(e)
+	if (errors.length > 0)
+		throw new Error(errors.map((e) => e.toString()).join('\n'))
 
 	await Promise.all(toWrite)
 

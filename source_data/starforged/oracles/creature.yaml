@@ -31,42 +31,57 @@ oracles:
         summary: |-
           Choose the closest match for your location. Or roll to identify the primary habitat of a creature.
         rows:
-          - <<: &i18n.result.common_noun
-              _i18n:
-                text:
-                  part_of_speech: common_noun
+          -
+            <<: &Space
+              icon: icons/creature/environment/space.svg
+              tags:
+                starforged:
+                  environment: space
+            _i18n: &CommonNoun
+              text:
+                part_of_speech: common_noun
             roll: { min: 1, max: 5 }
             text: Space
-            icon: &Space.icon icons/creature/environment/space.svg
-            # set_attributes: {environment: [space]}
             oracle_rolls:
               - oracle: oracle_rollable:starforged/creature/basic_form/space
-          - <<:  *i18n.result.common_noun
+          - _i18n:  *CommonNoun
             roll: { min: 6, max: 15 }
             text: Interior
-            icon: &Interior.icon icons/creature/environment/interior.svg
-            # set_attributes: {environment: [interior]}
+            <<: &Interior
+              icon: icons/creature/environment/interior.svg
+              tags:
+                starforged:
+                  environment: interior
             oracle_rolls:
               - oracle: oracle_rollable:starforged/creature/basic_form/interior
-          - <<:  *i18n.result.common_noun
+          - _i18n:  *CommonNoun
             roll: { min: 16, max: 55 }
             text: Land
-            icon: &Land.icon icons/creature/environment/land.svg
-            # set_attributes: {environment: [land]}
+            <<: &Land
+              icon: icons/creature/environment/land.svg
+              tags:
+                starforged:
+                  environment: land
             oracle_rolls:
               - oracle: oracle_rollable:starforged/creature/basic_form/land
-          - <<:  *i18n.result.common_noun
+          - _i18n:  *CommonNoun
             roll: { min: 56, max: 80 }
             text: Liquid
-            icon: &Liquid.icon icons/creature/environment/liquid.svg
-            # set_attributes: {environment: [liquid]}
+            <<: &Liquid
+              icon: icons/creature/environment/liquid.svg
+              tags:
+                starforged:
+                  environment: liquid
             oracle_rolls:
               - oracle: oracle_rollable:starforged/creature/basic_form/liquid
-          - <<:  *i18n.result.common_noun
+          - _i18n:  *CommonNoun
             roll: { min: 81, max: 100 }
             text: Air
-            icon: &Air.icon icons/creature/environment/air.svg
-            # set_attributes: {environment: [air]}
+            <<: &Air
+              icon: icons/creature/environment/air.svg
+              tags:
+                starforged:
+                  environment: air
             oracle_rolls:
               - oracle: oracle_rollable:starforged/creature/basic_form/air
       scale:
@@ -486,7 +501,7 @@ oracles:
         contents:
           space:
             name: Space
-            icon: *Space.icon
+            <<: *Space
             color: '#131A1C'
             oracle_type: column_text
             type: oracle_rollable
@@ -571,7 +586,7 @@ oracles:
                     auto: true
           interior:
             name: Interior
-            icon: *Interior.icon
+            <<: *Interior
             oracle_type: column_text
             type: oracle_rollable
             color: '#80868E'
@@ -618,7 +633,7 @@ oracles:
           land:
             name: Land
             color: '#CA181A'
-            icon: *Land.icon
+            <<: *Land
             oracle_type: column_text
             type: oracle_rollable
             # usage:
@@ -666,7 +681,7 @@ oracles:
             oracle_type: column_text
             type: oracle_rollable
             color: '#0079BB'
-            icon: *Liquid.icon
+            <<: *Liquid
             # usage:
             #   requires:
             #     attributes:
@@ -712,7 +727,7 @@ oracles:
             oracle_type: column_text
             type: oracle_rollable
             color: '#8D1D82'
-            icon: *Air.icon
+            <<: *Air
             # usage:
             #   requires:
             #     attributes:
