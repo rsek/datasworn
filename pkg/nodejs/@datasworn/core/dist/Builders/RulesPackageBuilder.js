@@ -87,7 +87,7 @@ class RulesPackageBuilder {
         try {
             __classPrivateFieldGet(this, _RulesPackageBuilder_instances, "m", _RulesPackageBuilder_build).call(this, force);
             this.validate(force);
-            console.table(__classPrivateFieldGet(this, _RulesPackageBuilder_instances, "m", _RulesPackageBuilder_countTypes).call(this));
+            // console.table(this.#countTypes())
             return this;
         }
         catch (e) {

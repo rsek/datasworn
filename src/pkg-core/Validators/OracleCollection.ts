@@ -12,7 +12,7 @@ export function validate<T extends Datasworn.OracleCollection>(collection: T) {
 			try {
 				oracleRowsEqualBy(rowHasSameRolls, collection.contents)
 			} catch (e) {
-				console.table(renderMultiTable(collection.contents, ['roll']))
+				// console.table(renderMultiTable(collection.contents, ['roll']))
 				throw new Error(
 					`${oracle_type} child OracleRollables must have the same roll ranges in their rows, in the same order. The following rows array indices don't match:\n${e.toString()}`
 				)
@@ -24,7 +24,7 @@ export function validate<T extends Datasworn.OracleCollection>(collection: T) {
 			try {
 				oracleRowsEqualBy(rowHasSameText, collection.contents)
 			} catch (e) {
-				console.table(renderMultiTable(collection.contents, ['text']))
+				// console.table(renderMultiTable(collection.contents, ['text']))
 				throw new Error(
 					`${oracle_type} child OracleRollables must have the same text content in their rows, in the same order. The following rows array indices don't match:\n${e.toString()}`
 				)

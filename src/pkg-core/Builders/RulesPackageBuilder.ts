@@ -136,7 +136,7 @@ export class RulesPackageBuilder<
 
 			this.validate(force)
 
-			console.table(this.#countTypes())
+			// console.table(this.#countTypes())
 
 			return this
 		} catch (e) {

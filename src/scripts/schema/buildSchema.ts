@@ -13,7 +13,6 @@ import * as Schema from '../../schema/index.js'
 
 import JSL from 'json-schema-library'
 import { type TRoot } from '../../schema/root/Root.js'
-import fsExtra from 'fs-extra/esm'
 import path from 'path'
 import { kebabCase } from 'lodash-es'
 
