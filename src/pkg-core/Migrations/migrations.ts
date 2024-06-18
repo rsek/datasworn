@@ -1,5 +1,6 @@
 /** Utilties to assist in migration of Datasworn data across versions. */
 
+import type { CHAR_0 } from 'picomatch/lib/constants.js'
 import CONST from '../IdElements/CONST.js'
 import TypeId from '../IdElements/TypeId.js'
 import { TypeGuard } from '../IdElements/index.js'
@@ -10,8 +11,8 @@ type MinorNodeType = (typeof MinorNodeTypes)[number]
 export type IdReplacer = {
 	/** A regular expression matching the old ID. */
 	old: RegExp
-	/** A replacement template string to replace the old ID with. */
-	new: string
+	/** A replacement template string to replace the old ID with, or `null` if this ID explicitly has no equivalent. */
+	new: string | null
 }
 
 const legacyTypeMap = {
@@ -47,6 +48,7 @@ const keyRenamesByPkgAndType = {
 		// these will cascade down to any child collectables, too
 		oracle_collection: {
 			// new_key: 'old_key'
+			'derelict/zone': 'derelicts/zones',
 			faction: 'factions',
 			derelict: 'derelicts',
 			location_theme: 'location_themes',
@@ -55,8 +57,7 @@ const keyRenamesByPkgAndType = {
 			starship: 'starships',
 			precursor_vault: 'vaults',
 			character: 'characters',
-			creature: 'creatures',
-			'derelict/zone': 'derelicts/zones'
+			creature: 'creatures'
 		},
 		oracle_rollable: { 'name/given_name': 'name/given' }
 	},
@@ -83,16 +84,17 @@ function createKeyRenamersForType(typeId: TypeId.AnyPrimary) {
 				const oldKey = typeRenames[newKey] as string
 
 				// all of them have at least one, we're just worried keys in excess of that
-				const extraKeysInOldPath = oldKey.split('/').length - 1
 
-				const minTrailingKeys = min - extraKeysInOldPath
-				const maxTrailingKeys = max - extraKeysInOldPath
+				const [key, ...extraKeys] = oldKey.split('/')
+
+				const minLeadingKeys = Math.max(0, min - extraKeys.length - 1)
+				const maxLeadingKeys = Math.max(0, max - extraKeys.length - 1)
 
 				renamers.push({
 					old: RegExp(
-						`^${pkgId}/${oldType}((?:\\/[a-z_/*\\d]+){${minTrailingKeys},${maxTrailingKeys}})/${oldKey}$`
+						`^${pkgId}/${oldType}/${oldKey}((?:\\/[a-z_/*\\d]+){${minLeadingKeys},${maxLeadingKeys}})$`
 					),
-					new: `${typeId}${CONST.PrefixSep}${pkgId}$1${CONST.PathKeySep}${newKey}`
+					new: `${typeId}${CONST.PrefixSep}${pkgId}${CONST.PathKeySep}${newKey}$1`
 				})
 			}
 		}
@@ -108,11 +110,10 @@ function createKeyRenamersForType(typeId: TypeId.AnyPrimary) {
 			for (const newKey in collectionTypeRenames) {
 				const oldKey = collectionTypeRenames[newKey]
 
-				const extraKeysInOldPath = oldKey.split('/').length - 1
+				const [key, ...extraKeys] = oldKey.split('/')
 
-				// the additional -1 is to account for the key of the collectable itself.
-				const minTrailingKeys = min - extraKeysInOldPath - 1
-				const maxTrailingKeys = max - extraKeysInOldPath - 1
+				const minTrailingKeys = Math.max(0, min - extraKeys.length - 1)
+				const maxTrailingKeys = Math.max(0, max - extraKeys.length - 1)
 
 				renamers.push({
 					old: RegExp(
@@ -255,9 +256,28 @@ export const idReplacers = {
 				createMoveOracleIdMapper(pkg, 'fate', 'ask_the_oracle', k, k)
 			)
 		]),
-		...['edge', 'wits', 'shadow'].map((k) =>
-			createMoveOracleIdMapper('delve', 'delve', 'delve_the_depths', k)
+		createMoveOracleIdMapper(
+			'delve',
+			'delve',
+			'delve_the_depths',
+			'edge',
+			'edge'
 		),
+		createMoveOracleIdMapper(
+			'delve',
+			'delve',
+			'delve_the_depths',
+			'wits',
+			'wits'
+		),
+		createMoveOracleIdMapper(
+			'delve',
+			'delve',
+			'delve_the_depths',
+			'shadow',
+			'shadow'
+		),
+
 		createMoveOracleIdMapper('delve', 'delve', 'find_an_opportunity'),
 		createMoveOracleIdMapper('delve', 'delve', 'reveal_a_danger'),
 		createMoveOracleIdMapper('delve', 'delve', 'reveal_a_danger_alt'),
@@ -268,11 +288,17 @@ export const idReplacers = {
 		createMoveOracleIdMapper('starforged', 'combat', 'take_decisive_action'),
 		createMoveOracleIdMapper('starforged', 'suffer', 'withstand_damage')
 	],
+	oracle_collection: [
+		{
+			old: /^(\*|[a-z][a-z0-9_]{3,})\/collections\/oracles\/moves(\/(?:\*|[a-z][a-z_]*)){0,2}$/,
+			new: null
+		}
+	],
 	variant: [
 		{
 			// npc variants
 			old: /^(\*|[a-z][a-z0-9_]{3,})\/npcs((?:\/(?:\*|[a-z][a-z_]*)){2,4})\/variants\/(\*|[a-z][a-z_]*)$/,
-			new: 'npc.variant:$1/$2.$3'
+			new: 'npc.variant:$1$2.$3'
 		}
 	],
 	ability: [
@@ -297,6 +323,8 @@ for (const typeId in legacyTypeMap) {
 		...createIdMappers(typeId as keyof typeof legacyTypeMap)
 	)
 }
+
+// console.log(idReplacers)
 
 /**
  * Updates old (pre-0.1.0) Datasworn IDs (and pointers that reference them in markdown strings) for use with v0.1.0.

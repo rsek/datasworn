@@ -32,7 +32,7 @@ oracles:
         # usage:
         #   initial: true
         contents:
-          given:
+          given_name:
             name: Given Name
             summary: |-
               Given and family names can be used independently as standalone names. In many cases you can reverse the order.

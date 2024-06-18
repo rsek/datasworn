@@ -5,7 +5,7 @@ import {
 	sortDataswornKeys,
 	sortObjectKeys
 } from '../Utils/Sort.js'
-import { validateIdsInStrings } from '../Validators/Text.js'
+import { extractIdRefs, validateIdsInStrings } from '../Validators/Text.js'
 import Validators from '../Validators/index.js'
 import { IdParser, type Datasworn, type DataswornSource } from '../index.js'
 import type TypeId from '../IdElements/TypeId.js'
@@ -92,11 +92,8 @@ export class RulesPackageBuilder<
 
 		this.schemaValidator(this.#result)
 
-		const validatedIds = new Set<string>()
-
 		for (const [id, typeNode] of this.index) {
 			if (typeNode == null) continue
-			if (validatedIds.has(id)) continue
 			if (!RulesPackageBuilder.#isObject(typeNode)) continue
 			if (!('type' in typeNode)) continue
 			if (typeNode.type == null || typeof typeNode.type !== 'string') continue
@@ -105,7 +102,6 @@ export class RulesPackageBuilder<
 			if (typeof typeValidation !== 'function') continue
 			try {
 				typeValidation(typeNode)
-				validatedIds.add(id)
 			} catch (e) {
 				throw new Error(
 					`<${id}> ${String(e)}\n\n${JSON.stringify(typeNode, undefined, '\t')}`
@@ -113,20 +109,9 @@ export class RulesPackageBuilder<
 			}
 		}
 
-		this.logger.info(
-			`<${this.id}> Validated pointers to ${validatedIds.size} unique IDs.`
-		)
-
 		this.#isValidated = true
 
 		return this
-	}
-
-	validateIdPointers(
-		index: Map<string, unknown> | Set<string>,
-		validatedPointers?: Set<string>
-	) {
-		return validateIdsInStrings(this.#result, index, validatedPointers)
 	}
 
 	build(force = false) {
@@ -225,8 +210,15 @@ export class RulesPackageBuilder<
 	#merge(target: unknown, ...sources: unknown[]): unknown {
 		if (!sources.length) {
 			// nothing left to add, so index it
-			if (RulesPackageBuilder.#isObject(target) && '_id' in target)
-				this.index.set(target._id as string, target)
+			if (RulesPackageBuilder.#isObject(target) && '_id' in target) {
+				const isRulesPackage = ['ruleset', 'expansion'].includes(
+					(target as DataswornSource.RulesPackage).type
+				)
+				// if ((target._id as string).startsWith('asset.ability'))
+				// 	console.log(target._id)
+
+				if (!isRulesPackage) this.index.set(target._id as string, target)
+			}
 			return target
 		}
 		const source = sources.shift()

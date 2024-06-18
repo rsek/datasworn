@@ -54,7 +54,7 @@
 					"summary": "To give an NPC or faction a task or objective, use the Activity oracle. For more detail, you can combine this prompt with the [Focus](oracle_rollable:delve/feature/focus) oracle or [Theme](oracle_rollable:classic/action_and_theme/theme) oracle.",
 					"suggestions": [
 						"oracle_rollable:delve/feature/focus",
-						"oracle_rollable:delve/action_and_theme/theme"
+						"oracle_rollable:classic/action_and_theme/theme"
 					],
 					"_source": {
 						"license": "https://creativecommons.org/licenses/by/4.0",
@@ -3673,13 +3673,13 @@
 			"name": "Monstrosity",
 			"type": "oracle_collection",
 			"oracle_type": "tables",
-			"summary": "Discover the nature of a [nightspawn](npc:delve/horrors/nightspawn) or other frightful creature within your world.",
-			"description": "Use the Monstrosity oracle to define the nature of a [Nightspawn](npc:delve/horrors/nightspawn), or to introduce a new type of [animal](npc_collection:classic/animal), [beast](npc_collection:classic/beast), or [horror](npc_collection:classic/horror) in your world.\n\nTo create a monstrosity, start by rolling for its [Size](oracle_rollable:delve/monstrosity/size) and [Primary Form](oracle_rollable:delve/monstrosity/primary_form). Then, roll up to four times for [Characteristics](oracle_rollable:delve/monstrosity/characteristics) and keep up to three of those results. Do the same for [Abilities](oracle_rollable:delve/monstrosity/abilities).\n\nGive the monstrosity a rank. Choose one appropriate to its features, or use the [Challenge Rank](oracle_rollable:classic/turning_point/challenge_rank) oracle.\n\nFinally, envision your creation and give it a name. It’s part of your world now.\n\nSome results on these tables include two related options separated by a slash (/). Pick the one which best fits the nature of the creature or is the most interesting. You can also make one of the options likely, and [Ask the Oracle](move:classic/fate/ask_the_oracle) (using the pick two procedure) to confirm your choice. Or just take both!\n\nYou should weave these abilities into the fiction of your encounter with a monstrosity. Combined with its physical characteristics, they help define the creature’s approach and tactics. Make moves as appropriate to overcome, avoid, or face the consequences of these abilities.\n\nTo learn more about your creation’s nature, you can roll on additional tables. Use the [Character Goal](oracle_rollable:classic/character/goal) oracle to give the monstrosity a purpose. Roll on the [Character Disposition](oracle_rollable:classic/character/disposition) and [Activity](oracle_rollable:delve/character/activity) oracles to frame your initial encounter. Another roll or two can give your monstrosity nuance and complexity, making it a deeper part of your story.",
+			"summary": "Discover the nature of a [nightspawn](npc:delve/beasts/nightspawn) or other frightful creature within your world.",
+			"description": "Use the Monstrosity oracle to define the nature of a [Nightspawn](npc:delve/beasts/nightspawn), or to introduce a new type of [animal](npc_collection:classic/animals), [beast](npc_collection:classic/beasts), or [horror](npc_collection:classic/horrors) in your world.\n\nTo create a monstrosity, start by rolling for its [Size](oracle_rollable:delve/monstrosity/size) and [Primary Form](oracle_rollable:delve/monstrosity/primary_form). Then, roll up to four times for [Characteristics](oracle_rollable:delve/monstrosity/characteristics) and keep up to three of those results. Do the same for [Abilities](oracle_rollable:delve/monstrosity/abilities).\n\nGive the monstrosity a rank. Choose one appropriate to its features, or use the [Challenge Rank](oracle_rollable:classic/turning_point/challenge_rank) oracle.\n\nFinally, envision your creation and give it a name. It’s part of your world now.\n\nSome results on these tables include two related options separated by a slash (/). Pick the one which best fits the nature of the creature or is the most interesting. You can also make one of the options likely, and [Ask the Oracle](move:classic/fate/ask_the_oracle) (using the pick two procedure) to confirm your choice. Or just take both!\n\nYou should weave these abilities into the fiction of your encounter with a monstrosity. Combined with its physical characteristics, they help define the creature’s approach and tactics. Make moves as appropriate to overcome, avoid, or face the consequences of these abilities.\n\nTo learn more about your creation’s nature, you can roll on additional tables. Use the [Character Goal](oracle_rollable:classic/character/goal) oracle to give the monstrosity a purpose. Roll on the [Character Disposition](oracle_rollable:delve/character/disposition) and [Activity](oracle_rollable:delve/character/activity) oracles to frame your initial encounter. Another roll or two can give your monstrosity nuance and complexity, making it a deeper part of your story.",
 			"suggestions": [
 				"oracle_rollable:classic/turning_point/challenge_rank",
 				"oracle_rollable:classic/character/goal",
-				"oracle_rollable:classic/character/disposition",
-				"oracle_rollable:classic/character/activity"
+				"oracle_rollable:delve/character/disposition",
+				"oracle_rollable:delve/character/activity"
 			],
 			"_source": {
 				"license": "https://creativecommons.org/licenses/by/4.0",
@@ -10210,7 +10210,7 @@
 			"summary": "Identify the characteristics and effects of a trap within a site.",
 			"description": "If you encounter a trap within a site, use these oracles to better understand the nature or function of this obstacle. Roll once for an [Event](oracle_rollable:delve/trap/event) and once for a [Component](oracle_rollable:delve/trap/component), and interpret the response as appropriate to the situation and environment. A trap might be a physical, supernatural, or an ambush by a denizen.\n\nIf you are in a position to overcome or avoid the trap, make moves to see what happens. A simple trap might be dealt with in a single action, such as through the [Face Danger](move:classic/adventure/face_danger) move. A complex trap could be represented as a scene challenge (*Ironsworn Core*, page 234).",
 			"contents": {
-				"trap": {
+				"event": {
 					"name": "Event",
 					"canonical_name": "Trap: Event",
 					"oracle_type": "table_text",
@@ -10240,7 +10240,7 @@
 								"max": 4
 							},
 							"text": "Block",
-							"_id": "oracle_rollable.row:delve/trap/trap.0"
+							"_id": "oracle_rollable.row:delve/trap/event.0"
 						},
 						{
 							"_i18n": {
@@ -10253,7 +10253,7 @@
 								"max": 8
 							},
 							"text": "Create",
-							"_id": "oracle_rollable.row:delve/trap/trap.1"
+							"_id": "oracle_rollable.row:delve/trap/event.1"
 						},
 						{
 							"_i18n": {
@@ -10266,7 +10266,7 @@
 								"max": 12
 							},
 							"text": "Break",
-							"_id": "oracle_rollable.row:delve/trap/trap.2"
+							"_id": "oracle_rollable.row:delve/trap/event.2"
 						},
 						{
 							"_i18n": {
@@ -10279,7 +10279,7 @@
 								"max": 16
 							},
 							"text": "Puncture",
-							"_id": "oracle_rollable.row:delve/trap/trap.3"
+							"_id": "oracle_rollable.row:delve/trap/event.3"
 						},
 						{
 							"_i18n": {
@@ -10292,7 +10292,7 @@
 								"max": 20
 							},
 							"text": "Entangle",
-							"_id": "oracle_rollable.row:delve/trap/trap.4"
+							"_id": "oracle_rollable.row:delve/trap/event.4"
 						},
 						{
 							"_i18n": {
@@ -10305,7 +10305,7 @@
 								"max": 24
 							},
 							"text": "Enclose",
-							"_id": "oracle_rollable.row:delve/trap/trap.5"
+							"_id": "oracle_rollable.row:delve/trap/event.5"
 						},
 						{
 							"_i18n": {
@@ -10318,7 +10318,7 @@
 								"max": 28
 							},
 							"text": "Ambush",
-							"_id": "oracle_rollable.row:delve/trap/trap.6"
+							"_id": "oracle_rollable.row:delve/trap/event.6"
 						},
 						{
 							"_i18n": {
@@ -10331,7 +10331,7 @@
 								"max": 32
 							},
 							"text": "Snare",
-							"_id": "oracle_rollable.row:delve/trap/trap.7"
+							"_id": "oracle_rollable.row:delve/trap/event.7"
 						},
 						{
 							"_i18n": {
@@ -10344,7 +10344,7 @@
 								"max": 36
 							},
 							"text": "Change",
-							"_id": "oracle_rollable.row:delve/trap/trap.8"
+							"_id": "oracle_rollable.row:delve/trap/event.8"
 						},
 						{
 							"_i18n": {
@@ -10357,7 +10357,7 @@
 								"max": 40
 							},
 							"text": "Imitate",
-							"_id": "oracle_rollable.row:delve/trap/trap.9"
+							"_id": "oracle_rollable.row:delve/trap/event.9"
 						},
 						{
 							"_i18n": {
@@ -10370,7 +10370,7 @@
 								"max": 44
 							},
 							"text": "Crush",
-							"_id": "oracle_rollable.row:delve/trap/trap.10"
+							"_id": "oracle_rollable.row:delve/trap/event.10"
 						},
 						{
 							"_i18n": {
@@ -10383,7 +10383,7 @@
 								"max": 48
 							},
 							"text": "Drop",
-							"_id": "oracle_rollable.row:delve/trap/trap.11"
+							"_id": "oracle_rollable.row:delve/trap/event.11"
 						},
 						{
 							"_i18n": {
@@ -10396,7 +10396,7 @@
 								"max": 52
 							},
 							"text": "Conceal",
-							"_id": "oracle_rollable.row:delve/trap/trap.12"
+							"_id": "oracle_rollable.row:delve/trap/event.12"
 						},
 						{
 							"_i18n": {
@@ -10409,7 +10409,7 @@
 								"max": 56
 							},
 							"text": "Lure",
-							"_id": "oracle_rollable.row:delve/trap/trap.13"
+							"_id": "oracle_rollable.row:delve/trap/event.13"
 						},
 						{
 							"_i18n": {
@@ -10422,7 +10422,7 @@
 								"max": 60
 							},
 							"text": "Release",
-							"_id": "oracle_rollable.row:delve/trap/trap.14"
+							"_id": "oracle_rollable.row:delve/trap/event.14"
 						},
 						{
 							"_i18n": {
@@ -10435,7 +10435,7 @@
 								"max": 64
 							},
 							"text": "Obscure",
-							"_id": "oracle_rollable.row:delve/trap/trap.15"
+							"_id": "oracle_rollable.row:delve/trap/event.15"
 						},
 						{
 							"_i18n": {
@@ -10448,7 +10448,7 @@
 								"max": 68
 							},
 							"text": "Cut",
-							"_id": "oracle_rollable.row:delve/trap/trap.16"
+							"_id": "oracle_rollable.row:delve/trap/event.16"
 						},
 						{
 							"_i18n": {
@@ -10461,7 +10461,7 @@
 								"max": 72
 							},
 							"text": "Smother",
-							"_id": "oracle_rollable.row:delve/trap/trap.17"
+							"_id": "oracle_rollable.row:delve/trap/event.17"
 						},
 						{
 							"_i18n": {
@@ -10474,7 +10474,7 @@
 								"max": 76
 							},
 							"text": "Collapse",
-							"_id": "oracle_rollable.row:delve/trap/trap.18"
+							"_id": "oracle_rollable.row:delve/trap/event.18"
 						},
 						{
 							"_i18n": {
@@ -10487,7 +10487,7 @@
 								"max": 80
 							},
 							"text": "Summon",
-							"_id": "oracle_rollable.row:delve/trap/trap.19"
+							"_id": "oracle_rollable.row:delve/trap/event.19"
 						},
 						{
 							"_i18n": {
@@ -10500,7 +10500,7 @@
 								"max": 84
 							},
 							"text": "Move",
-							"_id": "oracle_rollable.row:delve/trap/trap.20"
+							"_id": "oracle_rollable.row:delve/trap/event.20"
 						},
 						{
 							"_i18n": {
@@ -10513,7 +10513,7 @@
 								"max": 88
 							},
 							"text": "Surprise",
-							"_id": "oracle_rollable.row:delve/trap/trap.21"
+							"_id": "oracle_rollable.row:delve/trap/event.21"
 						},
 						{
 							"_i18n": {
@@ -10526,7 +10526,7 @@
 								"max": 92
 							},
 							"text": "Divert",
-							"_id": "oracle_rollable.row:delve/trap/trap.22"
+							"_id": "oracle_rollable.row:delve/trap/event.22"
 						},
 						{
 							"_i18n": {
@@ -10539,7 +10539,7 @@
 								"max": 96
 							},
 							"text": "Attack",
-							"_id": "oracle_rollable.row:delve/trap/trap.23"
+							"_id": "oracle_rollable.row:delve/trap/event.23"
 						},
 						{
 							"_i18n": {
@@ -10552,7 +10552,7 @@
 								"max": 100
 							},
 							"text": "Trigger",
-							"_id": "oracle_rollable.row:delve/trap/trap.24"
+							"_id": "oracle_rollable.row:delve/trap/event.24"
 						}
 					],
 					"dice": "1d100",
@@ -10560,7 +10560,7 @@
 						"roll": "Roll",
 						"text": "Result"
 					},
-					"_id": "oracle_rollable:delve/trap/trap"
+					"_id": "oracle_rollable:delve/trap/event"
 				},
 				"component": {
 					"name": "Component",
@@ -11165,13 +11165,13 @@
 							"_id": "move.oracle_rollable:delve/delve/delve_the_depths.wits"
 						}
 					},
-					"text": "When you __traverse an area within a perilous site__, envision your surroundings ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure). Then, consider your approach. If you navigate this area...\n\n  * With haste: Roll +edge.\n  * With stealth or trickery: Roll +shadow.\n  * With observation, intuition, or expertise: Roll +wits.\n\nOn a __strong hit__, you delve deeper. Mark progress and [Find an Opportunity](move:delve/delve/find_an_opportunity). On a __weak hit__, roll on the following table according to your stat.\n\nOn a __miss__, [Reveal a Danger](move:delve/delve/reveal_a_danger).\n\n{{table>delve/oracle_collection/moves/delve_the_depths}}",
+					"text": "When you __traverse an area within a perilous site__, envision your surroundings ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure). Then, consider your approach. If you navigate this area...\n\n  * With haste: Roll +edge.\n  * With stealth or trickery: Roll +shadow.\n  * With observation, intuition, or expertise: Roll +wits.\n\nOn a __strong hit__, you delve deeper. Mark progress and [Find an Opportunity](move:delve/delve/find_an_opportunity). On a __weak hit__, roll on the following table according to your stat.\n\nOn a __miss__, [Reveal a Danger](move:delve/delve/reveal_a_danger).\n\n{{table_columns>move:delve/delve/delve_the_depths}}",
 					"outcomes": {
 						"strong_hit": {
 							"text": "On a __strong hit__, you delve deeper. Mark progress and [Find an Opportunity](move:delve/delve/find_an_opportunity)."
 						},
 						"weak_hit": {
-							"text": "On a __weak hit__, roll on the following table according to your stat.\n\n{{table>delve/oracle_collection/moves/delve_the_depths}}"
+							"text": "On a __weak hit__, roll on the following table according to your stat.\n\n{{table_columns>move:delve/delve/delve_the_depths}}"
 						},
 						"miss": {
 							"text": "On a __miss__, [Reveal a Danger](move:delve/delve/reveal_a_danger)."
@@ -11295,7 +11295,7 @@
 							"_id": "move.oracle_rollable:delve/delve/find_an_opportunity.find_an_opportunity"
 						}
 					},
-					"text": "When __you encounter a helpful situation or feature within a site__, roll on the following table. If you are making this move as a result of a strong hit on [Delve the Depths](move:delve/delve/delve_the_depths), you may pick or envision an opportunity instead of rolling.\n\nThen, choose one.\n\n  * Gain insight or prepare: Take +1 momentum.\n  * Take action now: You and any allies may make a move (not a progress move) which directly leverages the opportunity. When you do, add +1 and take +1 momentum on a hit.\n\n{{table>oracle_rollable:delve/moves/find_an_opportunity}}",
+					"text": "When __you encounter a helpful situation or feature within a site__, roll on the following table. If you are making this move as a result of a strong hit on [Delve the Depths](move:delve/delve/delve_the_depths), you may pick or envision an opportunity instead of rolling.\n\nThen, choose one.\n\n  * Gain insight or prepare: Take +1 momentum.\n  * Take action now: You and any allies may make a move (not a progress move) which directly leverages the opportunity. When you do, add +1 and take +1 momentum on a hit.\n\n{{table>move.oracle_rollable:delve/delve/find_an_opportunity.find_an_opportunity}}",
 					"outcomes": null,
 					"allow_momentum_burn": false,
 					"_id": "move:delve/delve/find_an_opportunity"
@@ -11440,7 +11440,7 @@
 							"_id": "move.oracle_rollable:delve/delve/reveal_a_danger.reveal_a_danger"
 						}
 					},
-					"text": "When __you encounter a risky situation within a site__, envision the danger or roll on the following table.\n\n{{table>oracle_rollable:delve/moves/reveal_a_danger}}",
+					"text": "When __you encounter a risky situation within a site__, envision the danger or roll on the following table.\n\n{{table>move.oracle_rollable:delve/delve/reveal_a_danger.reveal_a_danger}}",
 					"outcomes": null,
 					"allow_momentum_burn": false,
 					"_id": "move:delve/delve/reveal_a_danger"
@@ -11752,7 +11752,7 @@
 						"text": "When you encounter a risky situation within a site...",
 						"conditions": null
 					},
-					"text": "When __you encounter a risky situation within a site__, envision the danger or roll on the following table.\n\n{{table>oracle_rollable:delve/moves/reveal_a_danger_alt}}",
+					"text": "When __you encounter a risky situation within a site__, envision the danger or roll on the following table.\n\n{{table>move.oracle_rollable:delve/delve/reveal_a_danger_alt.reveal_a_danger_alt}}",
 					"outcomes": null,
 					"allow_momentum_burn": false,
 					"_id": "move:delve/delve/reveal_a_danger_alt"
@@ -11933,7 +11933,7 @@
 						"text": "When you give ground to a threat through inaction, failure, or delay...",
 						"conditions": null
 					},
-					"text": "When __you give ground to a threat through inaction, failure, or delay__, roll on the table below and envision how the change manifests in your world ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure).\n\n{{table>oracle_rollable:delve/moves/advance_a_threat}}\n\nOn a match, this development also exposes a surprising aspect of the threat’s plan or nature.\n\nIf __you mark the last box on the threat’s menace track__, the threat achieves its goal, or the final dire outcome occurs. You must [Forsake Your Vow](move:classic/quest/forsake_your_vow).",
+					"text": "When __you give ground to a threat through inaction, failure, or delay__, roll on the table below and envision how the change manifests in your world ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure).\n\n{{table>move.oracle_rollable:delve/threat/advance_a_threat.advance_a_threat}}\n\nOn a match, this development also exposes a surprising aspect of the threat’s plan or nature.\n\nIf __you mark the last box on the threat’s menace track__, the threat achieves its goal, or the final dire outcome occurs. You must [Forsake Your Vow](move:classic/quest/forsake_your_vow).",
 					"outcomes": null,
 					"allow_momentum_burn": false,
 					"_id": "move:delve/threat/advance_a_threat"
@@ -14919,7 +14919,7 @@
 						"min": 76,
 						"max": 81
 					},
-					"npc": "npc:delve/horror/bog_rot",
+					"npc": "npc:delve/horrors/bog_rot",
 					"_id": "delve_site.denizen:delve/deeprot_bog.5"
 				},
 				{
@@ -14974,7 +14974,7 @@
 					"_id": "delve_site.denizen:delve/deeprot_bog.11"
 				}
 			],
-			"description": "The marshes of Deeprot Bog sit within a low valley, surrounded by impassible cliffs. The only accessible approach to this place is through a [Ravaged](id:delve_site_theme:delve/ravaged) [Cavern](id:delve_site_domain:delve/cavern), carved into the heart of the enclosing hills. It is a dangerous path, prone to floods and collapse.\n\nWithin the bog itself, amid the black waters and tangled wilds of the fen, the cult of the One Beneath Us practices their rituals. Utterly devoted to the strange deity of decay, the cultists formerly kept to themselves. But recently, they’ve struck out, traveling by boat through the cavern passage. They gather supplies and new adherents from local settlements—through force if necessary.\n\nA perpetual storm seems to hang over the marsh, its dark clouds roiling. Could the cultists serving the One Beneath Us be reaching a zenith in their work?",
+			"description": "The marshes of Deeprot Bog sit within a low valley, surrounded by impassible cliffs. The only accessible approach to this place is through a [Ravaged](delve_site_theme:delve/ravaged) [Cavern](delve_site_domain:delve/cavern), carved into the heart of the enclosing hills. It is a dangerous path, prone to floods and collapse.\n\nWithin the bog itself, amid the black waters and tangled wilds of the fen, the cult of the One Beneath Us practices their rituals. Utterly devoted to the strange deity of decay, the cultists formerly kept to themselves. But recently, they’ve struck out, traveling by boat through the cavern passage. They gather supplies and new adherents from local settlements—through force if necessary.\n\nA perpetual storm seems to hang over the marsh, its dark clouds roiling. Could the cultists serving the One Beneath Us be reaching a zenith in their work?",
 			"_id": "delve_site:delve/deeprot_bog"
 		},
 		"egans_folly": {
@@ -14993,7 +14993,7 @@
 				"page": 98
 			},
 			"rank": 4,
-			"region": "atlas_entry:classic/ironlands/tempest_mountains",
+			"region": "atlas_entry:classic/ironlands/veiled_mountains",
 			"theme": "delve_site_theme:delve/haunted",
 			"domain": "delve_site_domain:delve/pass",
 			"denizens": [
@@ -15258,7 +15258,7 @@
 						"min": 1,
 						"max": 27
 					},
-					"npc": "npc:classic/ironlanders/raiders",
+					"npc": "npc:classic/ironlanders/raider",
 					"_id": "delve_site.denizen:delve/frostmark.0"
 				},
 				{
@@ -15357,7 +15357,7 @@
 					"_id": "delve_site.denizen:delve/frostmark.11"
 				}
 			],
-			"description": "A clan of raiders established a settlement on this icereach. Their village, Thilda’s Hold, sits high atop a high frozen crag. Elsewhere, they’ve built several work camps and outposts. In the spring, when the surrounding waters thaw, they board their longboats to raid along the coast.\n\nReaching the clan’s remote village requires difficult overland travel. In warmer seasons, a skilled seafarer can navigate the ice-strewn waterways that cut through Frostmark like ragged scars.\n\nA large tribe of broken also live here, sheltered in an [Ancient](id:delve_site_theme:delve/ancient) [Frozen Cavern](id:delve_site_theme:delve/frozen_cavern). In a recent nighttime attack on Thilda’s Hold, they killed many of the raiders, including the clan leader’s son. What will the raider’s do in retaliation?",
+			"description": "A clan of raiders established a settlement on this icereach. Their village, Thilda’s Hold, sits high atop a high frozen crag. Elsewhere, they’ve built several work camps and outposts. In the spring, when the surrounding waters thaw, they board their longboats to raid along the coast.\n\nReaching the clan’s remote village requires difficult overland travel. In warmer seasons, a skilled seafarer can navigate the ice-strewn waterways that cut through Frostmark like ragged scars.\n\nA large tribe of broken also live here, sheltered in an [Ancient](delve_site_theme:delve/ancient) [Frozen Cavern](delve_site_domain:delve/frozen_cavern). In a recent nighttime attack on Thilda’s Hold, they killed many of the raiders, including the clan leader’s son. What will the raider’s do in retaliation?",
 			"_id": "delve_site:delve/frostmark"
 		},
 		"greathammer_deep": {
@@ -16244,7 +16244,7 @@
 					"_id": "delve_site.denizen:delve/sinking_temple.11"
 				}
 			],
-			"description": "A massive ruin, ancient and abandoned, stands silent and still along the coast. Once, a lost people worshiped gods of the sea in this place. Today, the ground beneath it gives way, toppling the temple into the ocean and flooding its lower chambers.\n\nIronlanders pilgrimage here to pay respect to those old gods. They cast cherished items into the sea and pray for calm waters and safe voyages for their kin. Recently, these pilgrims found the ruin overrun with savage [merrow](id:npc:delve/firstborn/merrow), invading from the ocean’s depths.\n\nWhat brings the merrow to this place, and what hidden dangers lurk within its deluged chambers?",
+			"description": "A massive ruin, ancient and abandoned, stands silent and still along the coast. Once, a lost people worshiped gods of the sea in this place. Today, the ground beneath it gives way, toppling the temple into the ocean and flooding its lower chambers.\n\nIronlanders pilgrimage here to pay respect to those old gods. They cast cherished items into the sea and pray for calm waters and safe voyages for their kin. Recently, these pilgrims found the ruin overrun with savage [merrow](npc:delve/firstborn/merrow), invading from the ocean’s depths.\n\nWhat brings the merrow to this place, and what hidden dangers lurk within its deluged chambers?",
 			"_id": "delve_site:delve/sinking_temple"
 		},
 		"smoldering_wood": {
@@ -16753,7 +16753,7 @@
 					"_id": "delve_site.denizen:delve/topplekeep.11"
 				}
 			],
-			"description": "The skeletal structure of Topplekeep strikes an unsettling silhouette. It is a crumbling, tilting ruin, once a mighty fortress to some forgotten warlord. Time and weather have had their way with the place, eroding it down to its bones as it sinks deeper into the yielding ground and brackish waterways of the surrounding [Wild](id:delve_site_theme:classic/wild) [Shadowfen](id:delve_site_domain:classic/shadowfen). Many of its passages and rooms are flooded with foul, stagnant water.\n\nA colony of bladewings, emerging to hunt under cover of darkness, roost within this place. Wayward travelers and opportunistic treasure-seekers provide ample prey for the beasts, and gnawed bones litter the dilapidated ruin. It’s said the trove of the warlord lies in the heart of Topplekeep, and perhaps could be reached at night, when the bladewings hunt. But this is a fool’s errand. More than just the bladewings lurk in this place. What other dangers lie within?",
+			"description": "The skeletal structure of Topplekeep strikes an unsettling silhouette. It is a crumbling, tilting ruin, once a mighty fortress to some forgotten warlord. Time and weather have had their way with the place, eroding it down to its bones as it sinks deeper into the yielding ground and brackish waterways of the surrounding [Wild](delve_site_theme:delve/wild) [Shadowfen](delve_site_domain:delve/shadowfen). Many of its passages and rooms are flooded with foul, stagnant water.\n\nA colony of bladewings, emerging to hunt under cover of darkness, roost within this place. Wayward travelers and opportunistic treasure-seekers provide ample prey for the beasts, and gnawed bones litter the dilapidated ruin. It’s said the trove of the warlord lies in the heart of Topplekeep, and perhaps could be reached at night, when the bladewings hunt. But this is a fool’s errand. More than just the bladewings lurk in this place. What other dangers lie within?",
 			"_id": "delve_site:delve/topplekeep"
 		},
 		"trail_of_spirits": {
@@ -16880,7 +16880,7 @@
 					"_id": "delve_site.denizen:delve/trail_of_spirits.11"
 				}
 			],
-			"description": "A long-dead civilization once used this path through the [Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountains) as a trade road. Their crumbling outposts, forts, and waystones, half-buried in snow and fallen glacial stones, mark the way. Some say you can still hear their voices and songs carried on the wind; echoes of lives long lost.\n\nA clan of [giants](id:npc:classic/firstborn/giant) now live here, drawn to the remains of this once-powerful place like travelers huddling close to a dying fire. They defend the pass against a massive tribe of [broken](id:npc:classic/ironlanders/broken) who lurk within the caves and ruins of this frozen land. What purpose do the giants have here, and what can be done to aid their defense against the broken?",
+			"description": "A long-dead civilization once used this path through the [Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountains) as a trade road. Their crumbling outposts, forts, and waystones, half-buried in snow and fallen glacial stones, mark the way. Some say you can still hear their voices and songs carried on the wind; echoes of lives long lost.\n\nA clan of [giants](npc:classic/firstborn/giant) now live here, drawn to the remains of this once-powerful place like travelers huddling close to a dying fire. They defend the pass against a massive tribe of [broken](npc:classic/ironlanders/broken) who lurk within the caves and ruins of this frozen land. What purpose do the giants have here, and what can be done to aid their defense against the broken?",
 			"_id": "delve_site:delve/trail_of_spirits"
 		}
 	},
@@ -18966,8 +18966,8 @@
 					},
 					"text": "Ancient trap",
 					"suggestions": [
-						"oracle_rollable:classic/trap/event",
-						"oracle_rollable:classic/trap/component"
+						"oracle_rollable:delve/trap/event",
+						"oracle_rollable:delve/trap/component"
 					],
 					"_id": "delve_site_theme.danger:delve/ancient.0"
 				},
@@ -19177,8 +19177,8 @@
 					},
 					"text": "Mystic trap or trigger",
 					"suggestions": [
-						"oracle_rollable:classic/trap/event",
-						"oracle_rollable:classic/trap/component"
+						"oracle_rollable:delve/trap/event",
+						"oracle_rollable:delve/trap/component"
 					],
 					"_id": "delve_site_theme.danger:delve/corrupted.6"
 				},
@@ -19324,8 +19324,8 @@
 					},
 					"text": "Denizen lures you into a trap",
 					"suggestions": [
-						"oracle_rollable:classic/trap/event",
-						"oracle_rollable:classic/trap/component"
+						"oracle_rollable:delve/trap/event",
+						"oracle_rollable:delve/trap/component"
 					],
 					"_id": "delve_site_theme.danger:delve/fortified.4"
 				},
@@ -19376,8 +19376,8 @@
 					},
 					"text": "Trap",
 					"suggestions": [
-						"oracle_rollable:classic/trap/event",
-						"oracle_rollable:classic/trap/component"
+						"oracle_rollable:delve/trap/event",
+						"oracle_rollable:delve/trap/component"
 					],
 					"_id": "delve_site_theme.danger:delve/fortified.10"
 				},
@@ -19857,8 +19857,8 @@
 					},
 					"text": "Trap or snare",
 					"suggestions": [
-						"oracle_rollable:classic/trap/event",
-						"oracle_rollable:classic/trap/component"
+						"oracle_rollable:delve/trap/event",
+						"oracle_rollable:delve/trap/component"
 					],
 					"_id": "delve_site_theme.danger:delve/infested.10"
 				},

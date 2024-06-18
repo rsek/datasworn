@@ -28,7 +28,7 @@ oracles:
         summary: To give an NPC or faction a task or objective, use the Activity oracle. For more detail, you can combine this prompt with the [Focus](oracle_rollable:delve/feature/focus) oracle or [Theme](oracle_rollable:classic/action_and_theme/theme) oracle.
         suggestions:
             - oracle_rollable:delve/feature/focus
-            - oracle_rollable:delve/action_and_theme/theme
+            - oracle_rollable:classic/action_and_theme/theme
         _source:
           <<: *Source
           page: 213

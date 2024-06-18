@@ -35,9 +35,9 @@ declare namespace TypeId {
     function getCollectionOf<T extends Collectable>(typeId: T): CollectionOf<T>;
     const EmbeddablePrimaryType: ["oracle_rollable", "move"];
     type EmbeddablePrimaryType = (typeof EmbeddablePrimaryType)[number];
-    const EmbedOnlyType: readonly ["ability", "option", "row", "feature", "danger", "denizen"];
+    const EmbedOnlyType: readonly ["ability", "option", "row", "feature", "danger", "denizen", "variant"];
     type EmbedOnlyType = (typeof EmbedOnlyType)[number];
-    const EmbeddableType: ["oracle_rollable", "move", "ability", "option", "row", "feature", "danger", "denizen"];
+    const EmbeddableType: ["oracle_rollable", "move", "ability", "option", "row", "feature", "danger", "denizen", "variant"];
     type EmbeddableType = (typeof EmbeddableType)[number];
     const EmbedTypeMap: {
         readonly asset: ["ability"];
@@ -49,6 +49,7 @@ declare namespace TypeId {
         readonly delve_site: ["denizen"];
         readonly delve_site_domain: ["feature", "danger"];
         readonly delve_site_theme: ["feature", "danger"];
+        readonly npc: ["variant"];
     };
     type CanEmbed = keyof typeof EmbedTypeMap;
     type EmbeddableIn<T extends CanEmbed> = (typeof EmbedTypeMap)[T][number];
@@ -93,7 +94,9 @@ declare namespace TypeId {
         readonly feature: "features";
         readonly danger: "dangers";
         readonly denizen: "denizens";
+        readonly variant: "variants";
     };
+    function getEmbeddedPropertyType(typeId: TypeId.Any): 'array' | 'dictionary';
     type Any = AnyPrimary | EmbedOnlyType;
     type RootKey<T extends AnyPrimary = AnyPrimary> = (typeof RootKeys)[T];
     type EmbeddedPropertyKey<T extends EmbeddableType> = T extends keyof typeof EmbeddedPropertyKeys ? (typeof EmbeddedPropertyKeys)[T] : T extends AnyPrimary ? RootKey<T> : never;

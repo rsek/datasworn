@@ -50,6 +50,8 @@ namespace Datasworn
         Row,
 
         Truth,
+
+        Variant,
     }
     public class TaggableNodeTypeJsonConverter : JsonConverter<TaggableNodeType>
     {
@@ -100,6 +102,8 @@ namespace Datasworn
                     return TaggableNodeType.Row;
                 case "truth":
                     return TaggableNodeType.Truth;
+                case "variant":
+                    return TaggableNodeType.Variant;
                 default:
                     throw new ArgumentException(String.Format("Bad TaggableNodeType value: {0}", value));
             }
@@ -171,6 +175,9 @@ namespace Datasworn
                     return;
                 case TaggableNodeType.Truth:
                     JsonSerializer.Serialize<string>(writer, "truth", options);
+                    return;
+                case TaggableNodeType.Variant:
+                    JsonSerializer.Serialize<string>(writer, "variant", options);
                     return;
             }
         }

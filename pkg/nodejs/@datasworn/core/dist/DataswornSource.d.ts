@@ -355,6 +355,20 @@ export type NpcId = string;
  */
 export type NpcIdWildcard = string;
 /**
+ * A unique ID representing a NpcVariant object.
+ * @pattern ```javascript
+ * /^npc\.variant:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})\.([a-z][a-z_]*|\*)$/
+ * ```
+ */
+export type NpcVariantId = string;
+/**
+ * A wildcarded NpcVariantId that can be used to match multiple NpcVariant objects.
+ * @pattern ```javascript
+ * /^npc\.variant:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})\.([a-z][a-z_]*|\*)$/
+ * ```
+ */
+export type NpcVariantIdWildcard = string;
+/**
  * A unique ID representing an OracleRollable object.
  * @pattern ```javascript
  * /^oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})$/
@@ -759,11 +773,11 @@ export type AnyOracleRollableRowIdWildcard = OracleRollableRowIdWildcard | Asset
 /**
  * Represents any kind of non-wildcard ID, including IDs of embedded objects.
  */
-export type AnyId = AtlasEntryId | NpcId | OracleRollableId | AssetAbilityOracleRollableId | MoveOracleRollableId | TruthOptionOracleRollableId | OracleRollableRowId | AssetAbilityOracleRollableRowId | MoveOracleRollableRowId | TruthOptionOracleRollableRowId | AssetId | AssetAbilityId | AssetAbilityMoveId | MoveId | AtlasCollectionId | NpcCollectionId | OracleCollectionId | AssetCollectionId | MoveCategoryId | DelveSiteId | DelveSiteDenizenId | DelveSiteDomainId | DelveSiteDomainFeatureId | DelveSiteThemeFeatureId | DelveSiteDomainDangerId | DelveSiteThemeDangerId | DelveSiteThemeId | RarityId | TruthId | TruthOptionId;
+export type AnyId = AtlasEntryId | NpcId | NpcVariantId | OracleRollableId | AssetAbilityOracleRollableId | MoveOracleRollableId | TruthOptionOracleRollableId | OracleRollableRowId | AssetAbilityOracleRollableRowId | MoveOracleRollableRowId | TruthOptionOracleRollableRowId | AssetId | AssetAbilityId | AssetAbilityMoveId | MoveId | AtlasCollectionId | NpcCollectionId | OracleCollectionId | AssetCollectionId | MoveCategoryId | DelveSiteId | DelveSiteDenizenId | DelveSiteDomainId | DelveSiteDomainFeatureId | DelveSiteThemeFeatureId | DelveSiteDomainDangerId | DelveSiteThemeDangerId | DelveSiteThemeId | RarityId | TruthId | TruthOptionId;
 /**
  * Represents any kind of wildcard ID, including IDs of embedded objects.
  */
-export type AnyIdWildcard = AtlasEntryIdWildcard | NpcIdWildcard | OracleRollableIdWildcard | AssetAbilityOracleRollableIdWildcard | MoveOracleRollableIdWildcard | TruthOptionOracleRollableIdWildcard | OracleRollableRowIdWildcard | AssetAbilityOracleRollableRowIdWildcard | MoveOracleRollableRowIdWildcard | TruthOptionOracleRollableRowIdWildcard | AssetIdWildcard | AssetAbilityIdWildcard | AssetAbilityMoveIdWildcard | MoveIdWildcard | AtlasCollectionIdWildcard | NpcCollectionIdWildcard | OracleCollectionIdWildcard | AssetCollectionIdWildcard | MoveCategoryIdWildcard | DelveSiteIdWildcard | DelveSiteDenizenIdWildcard | DelveSiteDomainIdWildcard | DelveSiteDomainFeatureIdWildcard | DelveSiteThemeFeatureIdWildcard | DelveSiteDomainDangerIdWildcard | DelveSiteThemeDangerIdWildcard | DelveSiteThemeIdWildcard | RarityIdWildcard | TruthIdWildcard | TruthOptionIdWildcard;
+export type AnyIdWildcard = AtlasEntryIdWildcard | NpcIdWildcard | NpcVariantIdWildcard | OracleRollableIdWildcard | AssetAbilityOracleRollableIdWildcard | MoveOracleRollableIdWildcard | TruthOptionOracleRollableIdWildcard | OracleRollableRowIdWildcard | AssetAbilityOracleRollableRowIdWildcard | MoveOracleRollableRowIdWildcard | TruthOptionOracleRollableRowIdWildcard | AssetIdWildcard | AssetAbilityIdWildcard | AssetAbilityMoveIdWildcard | MoveIdWildcard | AtlasCollectionIdWildcard | NpcCollectionIdWildcard | OracleCollectionIdWildcard | AssetCollectionIdWildcard | MoveCategoryIdWildcard | DelveSiteIdWildcard | DelveSiteDenizenIdWildcard | DelveSiteDomainIdWildcard | DelveSiteDomainFeatureIdWildcard | DelveSiteThemeFeatureIdWildcard | DelveSiteDomainDangerIdWildcard | DelveSiteThemeDangerIdWildcard | DelveSiteThemeIdWildcard | RarityIdWildcard | TruthIdWildcard | TruthOptionIdWildcard;
 /**
  * Information on the original creator of this material.
  * @example {}
@@ -959,7 +973,7 @@ export interface ConditionMeterRule {
      */
     rollable?: true;
 }
-export type EmbedOnlyType = 'ability' | 'option' | 'row' | 'feature' | 'danger' | 'denizen';
+export type EmbedOnlyType = 'ability' | 'option' | 'row' | 'feature' | 'danger' | 'denizen' | 'variant';
 /**
  * Describes a category of standard impacts/debilities.
  */
@@ -1733,6 +1747,14 @@ export interface NpcCollection {
  */
 export type NpcNature = Label;
 export interface NpcVariant {
+    /**
+     * The unique Datasworn ID for this node.
+     */
+    _id?: NpcVariantId;
+    /**
+     * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
+     */
+    _comment?: string;
     name: Label;
     /**
      * The suggested challenge rank for this NPC.

@@ -1,10 +1,11 @@
+import CONST from '../IdElements/CONST.js'
 import Pattern from '../IdElements/Pattern.js'
 
-const typeIdPattern = '[a-z][a-z_](?:.[a-z][a-z_]){0,2}'
+const typeIdPattern = '[a-z][a-z_](?:\\.[a-z][a-z_]){0,2}'
 const dictKeyOrIndexPattern = `[\\/\\.][a-z_0-9]+`
-const pathPattern = `${Pattern.RulesPackageElement.source}(?:${dictKeyOrIndexPattern})+?`
+const pathPattern = `${Pattern.RulesPackageElement.source}(?:${dictKeyOrIndexPattern})+`
 
-const idPattern = `(?<typeId>${typeIdPattern}):(?<path>${pathPattern})`
+const idPattern = /(?<typeId>[a-z\d_.]{3,}):(?<path>[a-z_]+(?:\/[a-z\d_.]+)+)/g
 
 const idPointerPattern = new RegExp(`^${idPattern}$`)
 
@@ -27,34 +28,129 @@ const macroSymbolPattern = new RegExp(
 	'g'
 )
 
-export function validateIdsInStrings(
-	data: unknown,
-	validIds: Map<string, unknown> | Set<string>,
-	validatedPointers?: Set<string>
-) {
+const plainTextKeys = new Set([
+	'label',
+	'_comment',
+	'name',
+	'title',
+	'category'
+])
+const urlKeys = new Set(['url', 'license', 'icon'])
+
+const nonTextKeys = new Set(['dice'])
+
+const markdownKeys = new Set([
+	'text',
+	'description',
+	'summary',
+	'quest_starter',
+	'your_truth'
+])
+
+const idBlacklist = new Set([
+	' / ',
+	',',
+	'. ',
+	': ',
+	'[',
+	']',
+	'(',
+	')',
+	'{',
+	'}',
+	'>',
+	'<',
+	"'",
+	'"',
+	'://',
+	'.svg',
+	'.webp'
+])
+function isBareId(v: string) {
+	if (typeof v !== 'string') return false
+	if (!v.includes('/') || !v.includes(':')) return false
+
+	// check for character sequences that can occur only in markdown strings
+	for (const char of idBlacklist) if (v.includes(char)) return false
+
+	return true
+}
+
+function needsIdValidation(k: unknown, v: unknown) {
+	if (!(typeof k === 'number' || typeof k === 'string')) return false
+	if (typeof v !== 'string') return false
+
+	switch (true) {
+		case k === '_id':
+		case plainTextKeys.has(k as string):
+		case urlKeys.has(k as string):
+		case nonTextKeys.has(k as string):
+		case v.includes(CONST.WildcardString):
+		case !v.includes('/'):
+		case !v.includes(':'):
+			return false
+	}
+
+	return true
+}
+
+export function extractIdRefs(data) {
+	const extractedIds = new Set<string>()
+
+	forEachIdRef(data, extractedIds.add)
+
+	return extractedIds
+}
+
+export function forEachIdRef(data, forEach: (id: string) => void) {
+	forEachPrimitiveValue(data, undefined, (v, k) => {
+		if (typeof v !== 'string') return
+		if (!needsIdValidation(k, v)) return
+
+		const ids = v.matchAll(idPattern)
+
+		if (ids == null) return
+
+		for (const match of ids) forEach(match[0])
+	})
+}
+
+export function validateIdsInStrings(data: unknown, index: Map<string, unknown>) {
 	const errors: unknown[] = []
 
-	forEachPrimitiveValue(data, undefined, (v, k) => {
-		// skip non-string values
-		if (typeof v !== 'string') return
-		// skip underscore keys
-		if (typeof k === 'string' && k.startsWith('_')) return
+	const extractedIds = new Set()
 
-		if (idPointerPattern.test(v)) {
-			validateIdPointer(v, validIds, validatedPointers)
-			// if it's a standalone pointer, markdown checks can be skipped
-		} else {
-			try {
-				validateMarkdownIdPointers(v, validIds, validatedPointers)
-			} catch (e: any) {
-				errors.push(e)
-			}
-			try {
-				validateMacroIdPointers(v, validIds, validatedPointers)
-			} catch (e: any) {
-				errors.push(e)
-			}
+	forEachPrimitiveValue(data, undefined, (v, k) => {
+		if (typeof v !== 'string') return
+		if (!needsIdValidation(k, v)) return
+
+		const ids = v.matchAll(idPattern)
+
+		if (ids == null) return
+
+		for (const match of ids) {
+			extractedIds.add(match[0])
 		}
+
+		// if (isBareId(v))
+		// appears to be a standalone pointer
+		// 	try {
+		// 		validateIdPointer(v, index)
+		// 	} catch (e) {
+		// 		errors.push(e)
+		// 	}
+		// else {
+		// 	try {
+		// 		validateMarkdownIdPointers(v, index)
+		// 	} catch (e: any) {
+		// 		errors.push(e)
+		// 	}
+		// 	try {
+		// 		validateMacroIdPointers(v, index)
+		// 	} catch (e: any) {
+		// 		errors.push(e)
+		// 	}
+		// }
 	})
 
 	if (errors.length > 0) throw new Error(errors.map(String).join('\n'))
@@ -64,8 +160,7 @@ export function validateIdsInStrings(
 
 export function validateMacroIdPointers(
 	text: string,
-	validIds: Map<string, unknown> | Set<string>,
-	validatedPointers?: Set<string>
+	validIds: Map<string, unknown>
 ) {
 	const macros = text.matchAll(macroSymbolPattern)
 
@@ -77,7 +172,8 @@ export function validateMacroIdPointers(
 		switch (directive) {
 			case 'table':
 			case 'text':
-				return validateIdPointer(path, validIds, validatedPointers)
+			case 'table_columns':
+				return validateIdPointer(path, validIds)
 
 			default:
 				errors.push(
@@ -93,8 +189,7 @@ export function validateMacroIdPointers(
 
 export function validateMarkdownIdPointers(
 	text: string,
-	validIds: Map<string, unknown> | Set<string>,
-	validatedPointers?: Set<string>
+	validIds: Map<string, unknown>
 ) {
 	const links = text.matchAll(linkSymbolPattern)
 
@@ -105,7 +200,7 @@ export function validateMarkdownIdPointers(
 		const { id } = link.groups
 
 		try {
-			validateIdPointer(id, validIds, validatedPointers)
+			validateIdPointer(id, validIds)
 		} catch (e) {
 			errors.push(e)
 		}
@@ -116,15 +211,15 @@ export function validateMarkdownIdPointers(
 	return true
 }
 
-export function validateIdPointer(
-	dataswornId: string,
-	idTracker: Set<string> | Map<string, unknown>,
-	validatedPointers?: Set<string>
-) {
-	if (!idTracker.has(dataswornId))
-		throw Error(`Bad Datasworn ID pointer: ${dataswornId}`)
+const testStr =
+	'[Bannersworn](asset:starforged/path/bannersworn); [Diplomat](asset:starforged/path/diplomat)'
 
-	if (validatedPointers instanceof Set) validatedPointers.add(dataswornId)
+// for (const f of testStr.matchAll(idPattern)) {
+// 	console.log(f)
+// }
+
+export function validateIdPointer(id: string, index: Map<string, unknown>) {
+	if (!index.has(id)) throw Error(`Bad Datasworn ID pointer: ${id}`)
 
 	return true
 }

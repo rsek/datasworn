@@ -15,6 +15,7 @@ export const MarkdownString = Type.String({
 
 * \`[Link text](move:starforged/suffer/pay_the_price)\`: A link to the identified object. The ID must conform to the \`AnyId\` type; no wildcards allowed.
 * \`{{table>oracle_rollable:starforged/core/action}}\`: the referenced oracle is rendered here in the source material. The ID must conform to the \`AnyOracleRollableId\` type; no wildcards allowed.
+* \`{{table_columns>move:delve/delve/delve_the_depths}}\`: Render *all* direct OracleRollable children of the identified node. This can be an OracleCollectionId, or the ID of anything that can have EmbeddedOracleRollables (such as a Move or TruthOption).
 `,
 	format: 'markdown',
 	i18n: true

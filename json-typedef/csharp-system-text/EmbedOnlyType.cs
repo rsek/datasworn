@@ -20,6 +20,8 @@ namespace Datasworn
         Option,
 
         Row,
+
+        Variant,
     }
     public class EmbedOnlyTypeJsonConverter : JsonConverter<EmbedOnlyType>
     {
@@ -40,6 +42,8 @@ namespace Datasworn
                     return EmbedOnlyType.Option;
                 case "row":
                     return EmbedOnlyType.Row;
+                case "variant":
+                    return EmbedOnlyType.Variant;
                 default:
                     throw new ArgumentException(String.Format("Bad EmbedOnlyType value: {0}", value));
             }
@@ -66,6 +70,9 @@ namespace Datasworn
                     return;
                 case EmbedOnlyType.Row:
                     JsonSerializer.Serialize<string>(writer, "row", options);
+                    return;
+                case EmbedOnlyType.Variant:
+                    JsonSerializer.Serialize<string>(writer, "variant", options);
                     return;
             }
         }

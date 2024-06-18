@@ -23,7 +23,7 @@ oracles:
 
       If you are in a position to overcome or avoid the trap, make moves to see what happens. A simple trap might be dealt with in a single action, such as through the [Face Danger](move:classic/adventure/face_danger) move. A complex trap could be represented as a scene challenge (*Ironsworn Core*, page 234).
     contents:
-      trap:
+      event:
         name: Event
         canonical_name: 'Trap: Event'
         oracle_type: table_text

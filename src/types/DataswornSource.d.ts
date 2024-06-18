@@ -378,6 +378,22 @@ export type NpcId = string
 export type NpcIdWildcard = string
 
 /**
+ * A unique ID representing a NpcVariant object.
+ * @pattern ```javascript
+ * /^npc\.variant:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})\.([a-z][a-z_]*|\*)$/
+ * ```
+ */
+export type NpcVariantId = string
+
+/**
+ * A wildcarded NpcVariantId that can be used to match multiple NpcVariant objects.
+ * @pattern ```javascript
+ * /^npc\.variant:((?:[a-z][a-z0-9_]{3,}|\*|\*\*)(?:\/(?:[a-z][a-z_]*|\*|\*\*)){2,5})\.([a-z][a-z_]*|\*)$/
+ * ```
+ */
+export type NpcVariantIdWildcard = string
+
+/**
  * A unique ID representing an OracleRollable object.
  * @pattern ```javascript
  * /^oracle_rollable:([a-z][a-z0-9_]{3,}(?:\/[a-z][a-z_]*){2,5})$/
@@ -873,6 +889,7 @@ export type AnyOracleRollableRowIdWildcard =
 export type AnyId =
 	| AtlasEntryId
 	| NpcId
+	| NpcVariantId
 	| OracleRollableId
 	| AssetAbilityOracleRollableId
 	| MoveOracleRollableId
@@ -908,6 +925,7 @@ export type AnyId =
 export type AnyIdWildcard =
 	| AtlasEntryIdWildcard
 	| NpcIdWildcard
+	| NpcVariantIdWildcard
 	| OracleRollableIdWildcard
 	| AssetAbilityOracleRollableIdWildcard
 	| MoveOracleRollableIdWildcard
@@ -1179,6 +1197,7 @@ export type EmbedOnlyType =
 	| 'feature'
 	| 'danger'
 	| 'denizen'
+	| 'variant'
 
 /**
  * Describes a category of standard impacts/debilities.
@@ -2049,6 +2068,14 @@ export interface NpcCollection {
 export type NpcNature = Label
 
 export interface NpcVariant {
+	/**
+	 * The unique Datasworn ID for this node.
+	 */
+	_id?: NpcVariantId
+	/**
+	 * Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay.
+	 */
+	_comment?: string
 	name: Label
 	/**
 	 * The suggested challenge rank for this NPC.

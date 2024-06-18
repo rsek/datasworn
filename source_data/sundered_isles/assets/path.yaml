@@ -72,7 +72,7 @@ assets:
         abilities:
           - enabled: true
             text: |-
-               You are a machine, and do not eat, drink, or breathe. You [Endure Harm](move:sundered_isles/suffer/endure_harm) as normal, but restore health only when you [Repair](move:sundered_isles/recover/repair) (spend 1 repair point to take +1 health, and 2 points to clear the wounded impact).
+               You are a machine, and do not eat, drink, or breathe. You [Endure Harm](move:starforged/suffer/endure_harm) as normal, but restore health only when you [Repair](move:sundered_isles/recover/repair) (spend 1 repair point to take +1 health, and 2 points to clear the wounded impact).
             # TODO: enhance player? alter the moves used to recover health
           - text: |-
               When you make a move to build, repair, or study another mechanical device, or question or convince a mechanical being, you may roll +spirit. On a match, you gain understanding or affinity; mark 1 tick on your bonds legacy track.

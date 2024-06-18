@@ -225,7 +225,7 @@ delve_sites:
         npc: npc:classic/beasts/harrow_spider
       - frequency: uncommon
         roll: { min: 76, max: 81 }
-        npc: npc:delve/horror/bog_rot
+        npc: npc:delve/horrors/bog_rot
       - frequency: uncommon
         roll: { min: 82, max: 87 }
       - frequency: uncommon
@@ -242,7 +242,7 @@ delve_sites:
         roll: { min: 100, max: 100 }
         npc: npc:classic/horrors/chimera
     description: |-
-      The marshes of Deeprot Bog sit within a low valley, surrounded by impassible cliffs. The only accessible approach to this place is through a [Ravaged](id:delve_site_theme:delve/ravaged) [Cavern](id:delve_site_domain:delve/cavern), carved into the heart of the enclosing hills. It is a dangerous path, prone to floods and collapse.
+      The marshes of Deeprot Bog sit within a low valley, surrounded by impassible cliffs. The only accessible approach to this place is through a [Ravaged](delve_site_theme:delve/ravaged) [Cavern](delve_site_domain:delve/cavern), carved into the heart of the enclosing hills. It is a dangerous path, prone to floods and collapse.
 
       Within the bog itself, amid the black waters and tangled wilds of the fen, the cult of the One Beneath Us practices their rituals. Utterly devoted to the strange deity of decay, the cultists formerly kept to themselves. But recently, they’ve struck out, traveling by boat through the cavern passage. They gather supplies and new adherents from local settlements—through force if necessary.
 
@@ -254,7 +254,7 @@ delve_sites:
       <<: *Source
       page: 98
     rank: 4
-    region: atlas_entry:classic/ironlands/tempest_mountains
+    region: atlas_entry:classic/ironlands/veiled_mountains
     theme: delve_site_theme:delve/haunted
     domain: delve_site_domain:delve/pass
     denizens:
@@ -353,7 +353,7 @@ delve_sites:
     denizens:
       - frequency: very_common
         roll: { min: 1, max: 27 }
-        npc: npc:classic/ironlanders/raiders
+        npc: npc:classic/ironlanders/raider
       - frequency: common
         roll: { min: 28, max: 41 }
         npc: npc:classic/animals/wolf
@@ -388,7 +388,7 @@ delve_sites:
 
       Reaching the clan’s remote village requires difficult overland travel. In warmer seasons, a skilled seafarer can navigate the ice-strewn waterways that cut through Frostmark like ragged scars.
 
-      A large tribe of broken also live here, sheltered in an [Ancient](id:delve_site_theme:delve/ancient) [Frozen Cavern](id:delve_site_theme:delve/frozen_cavern). In a recent nighttime attack on Thilda’s Hold, they killed many of the raiders, including the clan leader’s son. What will the raider’s do in retaliation?
+      A large tribe of broken also live here, sheltered in an [Ancient](delve_site_theme:delve/ancient) [Frozen Cavern](delve_site_domain:delve/frozen_cavern). In a recent nighttime attack on Thilda’s Hold, they killed many of the raiders, including the clan leader’s son. What will the raider’s do in retaliation?
   greathammer_deep:
     type: delve_site
     name: Greathammer Deep
@@ -714,7 +714,7 @@ delve_sites:
     description: |-
       A massive ruin, ancient and abandoned, stands silent and still along the coast. Once, a lost people worshiped gods of the sea in this place. Today, the ground beneath it gives way, toppling the temple into the ocean and flooding its lower chambers.
 
-      Ironlanders pilgrimage here to pay respect to those old gods. They cast cherished items into the sea and pray for calm waters and safe voyages for their kin. Recently, these pilgrims found the ruin overrun with savage [merrow](id:npc:delve/firstborn/merrow), invading from the ocean’s depths.
+      Ironlanders pilgrimage here to pay respect to those old gods. They cast cherished items into the sea and pray for calm waters and safe voyages for their kin. Recently, these pilgrims found the ruin overrun with savage [merrow](npc:delve/firstborn/merrow), invading from the ocean’s depths.
 
       What brings the merrow to this place, and what hidden dangers lurk within its deluged chambers?
   smoldering_wood:
@@ -901,7 +901,7 @@ delve_sites:
       - frequency: unforeseen
         roll: { min: 100, max: 100 }
     description: |-
-      The skeletal structure of Topplekeep strikes an unsettling silhouette. It is a crumbling, tilting ruin, once a mighty fortress to some forgotten warlord. Time and weather have had their way with the place, eroding it down to its bones as it sinks deeper into the yielding ground and brackish waterways of the surrounding [Wild](id:delve_site_theme:classic/wild) [Shadowfen](id:delve_site_domain:classic/shadowfen). Many of its passages and rooms are flooded with foul, stagnant water.
+      The skeletal structure of Topplekeep strikes an unsettling silhouette. It is a crumbling, tilting ruin, once a mighty fortress to some forgotten warlord. Time and weather have had their way with the place, eroding it down to its bones as it sinks deeper into the yielding ground and brackish waterways of the surrounding [Wild](delve_site_theme:delve/wild) [Shadowfen](delve_site_domain:delve/shadowfen). Many of its passages and rooms are flooded with foul, stagnant water.
 
       A colony of bladewings, emerging to hunt under cover of darkness, roost within this place. Wayward travelers and opportunistic treasure-seekers provide ample prey for the beasts, and gnawed bones litter the dilapidated ruin. It’s said the trove of the warlord lies in the heart of Topplekeep, and perhaps could be reached at night, when the bladewings hunt. But this is a fool’s errand. More than just the bladewings lurk in this place. What other dangers lie within?
   trail_of_spirits:
@@ -949,4 +949,4 @@ delve_sites:
     description: |-
       A long-dead civilization once used this path through the [Veiled Mountains](atlas_entry:classic/ironlands/veiled_mountains) as a trade road. Their crumbling outposts, forts, and waystones, half-buried in snow and fallen glacial stones, mark the way. Some say you can still hear their voices and songs carried on the wind; echoes of lives long lost.
 
-      A clan of [giants](id:npc:classic/firstborn/giant) now live here, drawn to the remains of this once-powerful place like travelers huddling close to a dying fire. They defend the pass against a massive tribe of [broken](id:npc:classic/ironlanders/broken) who lurk within the caves and ruins of this frozen land. What purpose do the giants have here, and what can be done to aid their defense against the broken?
+      A clan of [giants](npc:classic/firstborn/giant) now live here, drawn to the remains of this once-powerful place like travelers huddling close to a dying fire. They defend the pass against a massive tribe of [broken](npc:classic/ironlanders/broken) who lurk within the caves and ruins of this frozen land. What purpose do the giants have here, and what can be done to aid their defense against the broken?

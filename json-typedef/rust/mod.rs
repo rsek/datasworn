@@ -2365,6 +2365,9 @@ pub enum EmbedOnlyType {
 
     #[serde(rename = "row")]
     Row,
+
+    #[serde(rename = "variant")]
+    Variant,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -5679,6 +5682,10 @@ pub type NpcNature = Label;
 
 #[derive(Serialize, Deserialize)]
 pub struct NpcVariant {
+    /// The unique Datasworn ID for this node.
+    #[serde(rename = "_id")]
+    pub id: NpcVariantId,
+
     #[serde(rename = "description")]
     pub description: MarkdownString,
 
@@ -5692,10 +5699,23 @@ pub struct NpcVariant {
     #[serde(rename = "rank")]
     pub rank: ChallengeRank,
 
+    /// Implementation hints or other developer-facing comments on this node.
+    /// These should be omitted when presenting the node for gameplay.
+    #[serde(rename = "_comment")]
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub comment: Option<Box<String>>,
+
     #[serde(rename = "summary")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub summary: Option<Box<MarkdownString>>,
 }
+
+/// A unique ID representing a NpcVariant object.
+pub type NpcVariantId = String;
+
+/// A wildcarded NpcVariantId that can be used to match multiple NpcVariant
+/// objects.
+pub type NpcVariantIdWildcard = String;
 
 #[derive(Serialize, Deserialize)]
 #[serde(tag = "oracle_type")]
@@ -9887,6 +9907,9 @@ pub enum TaggableNodeType {
 
     #[serde(rename = "truth")]
     Truth,
+
+    #[serde(rename = "variant")]
+    Variant,
 }
 
 /// A dictionary of tags, keyed by the RulesPackageId that the tags are from.

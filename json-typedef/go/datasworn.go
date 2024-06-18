@@ -2038,6 +2038,8 @@ const (
 	EmbedOnlyTypeOption EmbedOnlyType = "option"
 
 	EmbedOnlyTypeRow EmbedOnlyType = "row"
+
+	EmbedOnlyTypeVariant EmbedOnlyType = "variant"
 )
 
 type EmbeddedActionRollMoveRollType string
@@ -4532,6 +4534,9 @@ type NpcIDWildcard = string
 type NpcNature = Label
 
 type NpcVariant struct {
+	// The unique Datasworn ID for this node.
+	ID NpcVariantID `json:"_id"`
+
 	Description MarkdownString `json:"description"`
 
 	Name Label `json:"name"`
@@ -4541,8 +4546,19 @@ type NpcVariant struct {
 	// The suggested challenge rank for this NPC.
 	Rank ChallengeRank `json:"rank"`
 
+	// Implementation hints or other developer-facing comments on this node. These
+	// should be omitted when presenting the node for gameplay.
+	Comment *string `json:"_comment,omitempty"`
+
 	Summary *MarkdownString `json:"summary,omitempty"`
 }
+
+// A unique ID representing a NpcVariant object.
+type NpcVariantID = string
+
+// A wildcarded NpcVariantId that can be used to match multiple NpcVariant
+// objects.
+type NpcVariantIDWildcard = string
 
 type OracleCollection struct {
 	OracleType string
@@ -7885,6 +7901,8 @@ const (
 	TaggableNodeTypeRow TaggableNodeType = "row"
 
 	TaggableNodeTypeTruth TaggableNodeType = "truth"
+
+	TaggableNodeTypeVariant TaggableNodeType = "variant"
 )
 
 // A dictionary of tags, keyed by the RulesPackageId that the tags are from.

@@ -168,7 +168,7 @@ oracles:
         name: Story Complication
         type: oracle_rollable
         oracle_type: table_text
-        summary: This oracle will introduce narrative turns, troubles, and revelations. It can be used as an alternative to the [Pay the Price](oracle_rollable:move:starforged/pay_the_price) table when you encounter a negative outcome at a crucial moment. In particular, you might use this table after rolling matched 10s on the challenge dice.
+        summary: This oracle will introduce narrative turns, troubles, and revelations. It can be used as an alternative to the [Pay the Price](move.oracle_rollable:starforged/fate/pay_the_price.pay_the_price) table when you encounter a negative outcome at a crucial moment. In particular, you might use this table after rolling matched 10s on the challenge dice.
         replaces:
           - oracle_rollable:starforged/misc/story_complication
         _source:

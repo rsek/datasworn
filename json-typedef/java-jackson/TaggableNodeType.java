@@ -67,4 +67,7 @@ public enum TaggableNodeType {
 
     @JsonProperty("truth")
     TRUTH,
+
+    @JsonProperty("variant")
+    VARIANT,
 }

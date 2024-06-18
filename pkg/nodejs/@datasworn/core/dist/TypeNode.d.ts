@@ -26,12 +26,16 @@ declare namespace TypeNode {
         delve_site_theme: Datasworn.DelveSiteTheme;
         rarity: Datasworn.Rarity;
     };
-    type EmbeddedTypeMap = TypeMapLike<TypeId.EmbeddableType> & {
+    type EmbedOnlyTypeMap = TypeMapLike<TypeId.EmbedOnlyType> & {
         ability: Datasworn.AssetAbility;
         option: Datasworn.TruthOption;
-        oracle_rollable: Datasworn.EmbeddedOracleRollable;
-        move: Datasworn.EmbeddedMove;
+        row: Datasworn.OracleRollableRow;
+        feature: Datasworn.DelveSiteThemeFeature | Datasworn.DelveSiteDomainFeature;
+        danger: Datasworn.DelveSiteThemeDanger | Datasworn.DelveSiteDomainDanger;
+        denizen: Datasworn.DelveSiteDenizen;
+        variant: Datasworn.NpcVariant;
     };
+    type EmbeddedTypeMap = EmbedOnlyTypeMap & PrimaryTypeMap;
     export type CollectableOf<T extends Collection> = ByType<TypeId.CollectableOf<T['type']>> & Collectable;
     /** Gets the node type(s) corresponding to a given TypeId. */
     export type ByType<T extends keyof PrimaryTypeMap | keyof EmbeddedTypeMap> = T extends keyof PrimaryTypeMap ? T extends keyof EmbeddedTypeMap ? PrimaryTypeMap[T] | EmbeddedTypeMap[T] : PrimaryTypeMap[T] : T extends keyof EmbeddedTypeMap ? EmbeddedTypeMap[T] : never;

@@ -710,6 +710,20 @@
 				"pattern": "^npc:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})$"
 			}
 		},
+		"NpcVariantId": {
+			"type": "string",
+			"metadata": {
+				"description": "A unique ID representing a NpcVariant object.",
+				"pattern": "^npc\\.variant:([a-z][a-z0-9_]{3,}(?:\\/[a-z][a-z_]*){2,5})\\.([a-z][a-z_]*|\\*)$"
+			}
+		},
+		"NpcVariantIdWildcard": {
+			"type": "string",
+			"metadata": {
+				"description": "A wildcarded NpcVariantId that can be used to match multiple NpcVariant objects.",
+				"pattern": "^npc\\.variant:((?:[a-z][a-z0-9_]{3,}|\\*|\\*\\*)(?:\\/(?:[a-z][a-z_]*|\\*|\\*\\*)){2,5})\\.([a-z][a-z_]*|\\*)$"
+			}
+		},
 		"OracleRollableId": {
 			"type": "string",
 			"metadata": {
@@ -1466,7 +1480,8 @@
 				"row",
 				"feature",
 				"danger",
-				"denizen"
+				"denizen",
+				"variant"
 			]
 		},
 		"ImpactCategory": {
@@ -2051,7 +2066,8 @@
 				"row",
 				"feature",
 				"danger",
-				"denizen"
+				"denizen",
+				"variant"
 			]
 		},
 		"Tags": {
@@ -2667,6 +2683,12 @@
 		},
 		"NpcVariant": {
 			"properties": {
+				"_id": {
+					"ref": "NpcVariantId",
+					"metadata": {
+						"description": "The unique Datasworn ID for this node."
+					}
+				},
 				"name": {
 					"ref": "Label"
 				},
@@ -2684,6 +2706,12 @@
 				}
 			},
 			"optionalProperties": {
+				"_comment": {
+					"type": "string",
+					"metadata": {
+						"description": "Implementation hints or other developer-facing comments on this node. These should be omitted when presenting the node for gameplay."
+					}
+				},
 				"summary": {
 					"ref": "MarkdownString"
 				}

@@ -28,7 +28,7 @@ oracles:
           page: 308
         summary: A pitiless planet of searing heat, blowing sand, and sunbaked rock.
         collections:
-          settlement:
+          settlements:
             <<: &Settlements
               name: Settlements
               oracle_type: table_shared_text
@@ -216,7 +216,7 @@ oracles:
                       auto: true
               - &ObservedFromSpace.9
                 roll: { min: 99, max: 100 }
-                text: '[Precursor Vault](oracle_collection:starforged/vaults) (orbital)'
+                text: '[Precursor Vault](oracle_collection:starforged/precursor_vault) (orbital)'
           feature:
             <<: &Feature
               name: Planetside Feature
@@ -269,7 +269,7 @@ oracles:
                 <<: *DescriptorFocus
               - &Feature.14
                 roll: { min: 99, max: 100 }
-                text: '[Precursor Vault](oracle_collection:starforged/vaults) (planetside)'
+                text: '[Precursor Vault](oracle_collection:starforged/precursor_vault) (planetside)'
           life:
             <<: &Life
               name: Life
@@ -307,7 +307,7 @@ oracles:
           page: 309
         summary: A planet with relentless volcanic activity, wreathed in fire and ash.
         collections:
-          settlement:
+          settlements:
             <<: *Settlements
             _source: *CollectionSource
             contents:
@@ -494,7 +494,7 @@ oracles:
           page: 310
         summary: A once-thriving world—now a grim monument to a fallen civilization.
         collections:
-          settlement:
+          settlements:
             <<: *Settlements
             _source: *CollectionSource
             contents:
@@ -677,7 +677,7 @@ oracles:
           page: 311
         summary: A rugged, frozen world—locked in an unending winter.
         collections:
-          settlement:
+          settlements:
             <<: *Settlements
             _source: *CollectionSource
             contents:
@@ -865,7 +865,7 @@ oracles:
           page: 312
         summary: A massive planet with vast layers of dense gases surrounding a rocky core.
         collections:
-          settlement:
+          settlements:
             <<: *Settlements
             _source: *CollectionSource
             contents:
@@ -1051,7 +1051,7 @@ oracles:
           page: 313
         summary: A humid, rain-soaked planet that keeps its secrets under a thick canopy of vegetation.
         collections:
-          settlement:
+          settlements:
             <<: *Settlements
             _source: *CollectionSource
             contents:
@@ -1238,7 +1238,7 @@ oracles:
           page: 314
         summary: A planet completely or almost entirely covered by a boundless ocean.
         collections:
-          settlement:
+          settlements:
             <<: *Settlements
             _source: *CollectionSource
             contents:
@@ -1428,7 +1428,7 @@ oracles:
           page: 315
         summary: A rugged planet scarred by eons of destructive asteroid impacts.
         collections:
-          settlement:
+          settlements:
             <<: *Settlements
             _source: *CollectionSource
             contents:
@@ -1614,7 +1614,7 @@ oracles:
           page: 316
         summary: A planet sundered by cataclysmic destruction.
         collections:
-          settlement:
+          settlements:
             <<: *Settlements
             _source: *CollectionSource
             contents:
@@ -1798,7 +1798,7 @@ oracles:
           page: 317
         summary: A foul planet wracked by a poisonous climate and virulent growths.
         collections:
-          settlement:
+          settlements:
             <<: *Settlements
             _source: *CollectionSource
             contents:
@@ -1987,7 +1987,7 @@ oracles:
           page: 318
         summary: This diverse, life-bearing planet might provide some small measure of hope.
         collections:
-          settlement:
+          settlements:
             <<: *Settlements
             _source: *CollectionSource
             contents:

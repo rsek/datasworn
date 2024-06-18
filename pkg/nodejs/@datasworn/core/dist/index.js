@@ -33,7 +33,7 @@ exports.Builders = exports.Validators = exports.Migrations = exports.DataswornTr
 __exportStar(require("./IdParser.js"), exports);
 var DataswornTree_js_1 = require("./DataswornTree.js");
 Object.defineProperty(exports, "DataswornTree", { enumerable: true, get: function () { return DataswornTree_js_1.DataswornTree; } });
-exports.Migrations = __importStar(require("./migrations.js"));
+exports.Migrations = __importStar(require("./Migrations/migrations.js"));
 var index_js_1 = require("./Validators/index.js");
 Object.defineProperty(exports, "Validators", { enumerable: true, get: function () { return __importDefault(index_js_1).default; } });
 exports.Builders = __importStar(require("./Builders/index.js"));

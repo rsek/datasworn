@@ -415,7 +415,7 @@ assets:
               # there isn't an exact way to do this, but it's pretty close
               - enhances:
                   - move:classic/adventure/make_camp
-                  - move:classic/delve/check_your_gear
+                  - move:delve/delve/check_your_gear
                 roll_type: action_roll
                 trigger:
                   conditions:

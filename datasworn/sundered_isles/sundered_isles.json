@@ -676,7 +676,7 @@
 							},
 							"tags": {
 								"sundered_isles": {
-									"cursed_by": "oracle_rollable:sundered_isles/campaign/backstory_cursed"
+									"cursed_by": "oracle_rollable:sundered_isles/campaign/character/backstory_cursed"
 								}
 							},
 							"_source": {
@@ -930,7 +930,7 @@
 							"tags": {
 								"sundered_isles": {
 									"cursed_version_of": [
-										"oracle_rollable:sundered_isles/campaign/backstory"
+										"oracle_rollable:sundered_isles/campaign/character/backstory"
 									],
 									"curse_behavior": "replace_result"
 								}
@@ -2110,7 +2110,7 @@
 							"tags": {
 								"sundered_isles": {
 									"cursed_version_of": [
-										"oracle_rollable:sundered_isles/campaign/crew"
+										"oracle_rollable:sundered_isles/campaign/command/crew"
 									],
 									"curse_behavior": "add_result"
 								}
@@ -3155,7 +3155,7 @@
 							"dice": "1d100",
 							"_id": "oracle_rollable:sundered_isles/campaign/notable_locations/details"
 						},
-						"location_details_cursed": {
+						"details_cursed": {
 							"name": "Cursed Location Details",
 							"type": "oracle_rollable",
 							"oracle_type": "table_text2",
@@ -3191,7 +3191,7 @@
 									},
 									"text": "Area of endless dead calm",
 									"text2": "What ship is trapped in these waters?",
-									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/location_details_cursed.0"
+									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/details_cursed.0"
 								},
 								{
 									"roll": {
@@ -3200,7 +3200,7 @@
 									},
 									"text": "Colossal bones",
 									"text2": "Who lives in the shadow of this age-old corpse?",
-									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/location_details_cursed.1"
+									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/details_cursed.1"
 								},
 								{
 									"roll": {
@@ -3209,7 +3209,7 @@
 									},
 									"text": "Corrupted cave",
 									"text2": "What cult is said to practice foul rites here?",
-									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/location_details_cursed.2"
+									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/details_cursed.2"
 								},
 								{
 									"roll": {
@@ -3218,7 +3218,7 @@
 									},
 									"text": "Eldritch monument",
 									"text2": "What forsaken god or entity does this monument honor?",
-									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/location_details_cursed.3"
+									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/details_cursed.3"
 								},
 								{
 									"roll": {
@@ -3227,7 +3227,7 @@
 									},
 									"text": "Forsaken settlement",
 									"text2": "What foul creatures now dwell here?",
-									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/location_details_cursed.4"
+									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/details_cursed.4"
 								},
 								{
 									"roll": {
@@ -3236,7 +3236,7 @@
 									},
 									"text": "Frozen wastes",
 									"text2": "What long-lost ship lies trapped here?",
-									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/location_details_cursed.5"
+									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/details_cursed.5"
 								},
 								{
 									"roll": {
@@ -3245,7 +3245,7 @@
 									},
 									"text": "Ghost-haunted waters",
 									"text2": "What infamous cursed ship sails these waters?",
-									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/location_details_cursed.6"
+									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/details_cursed.6"
 								},
 								{
 									"roll": {
@@ -3254,7 +3254,7 @@
 									},
 									"text": "Ghost-plagued ruins",
 									"text2": "What sad fate befell these people?",
-									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/location_details_cursed.7"
+									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/details_cursed.7"
 								},
 								{
 									"roll": {
@@ -3263,7 +3263,7 @@
 									},
 									"text": "Haunted battlefield",
 									"text2": "What force or faction was defeated in this battle?",
-									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/location_details_cursed.8"
+									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/details_cursed.8"
 								},
 								{
 									"roll": {
@@ -3272,7 +3272,7 @@
 									},
 									"text": "Hidden island",
 									"text2": "On what rare event does this mystical island reappear?",
-									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/location_details_cursed.9"
+									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/details_cursed.9"
 								},
 								{
 									"roll": {
@@ -3281,7 +3281,7 @@
 									},
 									"text": "Inscrutable iron pillars",
 									"text2": "What faction worships these mysterious relics?",
-									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/location_details_cursed.10"
+									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/details_cursed.10"
 								},
 								{
 									"roll": {
@@ -3290,7 +3290,7 @@
 									},
 									"text": "Lair of a beast",
 									"text2": "What beast is reputed to dwell here?",
-									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/location_details_cursed.11"
+									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/details_cursed.11"
 								},
 								{
 									"roll": {
@@ -3299,7 +3299,7 @@
 									},
 									"text": "Perpetual fog bank",
 									"text2": "What is said to lie on the other side of this mist?",
-									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/location_details_cursed.12"
+									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/details_cursed.12"
 								},
 								{
 									"roll": {
@@ -3308,7 +3308,7 @@
 									},
 									"text": "Powerful maelstrom",
 									"text2": "Who do you know that was lost to this swirling vortex?",
-									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/location_details_cursed.13"
+									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/details_cursed.13"
 								},
 								{
 									"roll": {
@@ -3317,7 +3317,7 @@
 									},
 									"text": "Ship graveyard",
 									"text2": "What monstrous creature lurks here?",
-									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/location_details_cursed.14"
+									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/details_cursed.14"
 								},
 								{
 									"roll": {
@@ -3326,7 +3326,7 @@
 									},
 									"text": "Shipwreck on high ground",
 									"text2": "To which faction did this ship belong?",
-									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/location_details_cursed.15"
+									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/details_cursed.15"
 								},
 								{
 									"roll": {
@@ -3335,7 +3335,7 @@
 									},
 									"text": "Skull-shaped outcrop",
 									"text2": "Why does this place haunt your dreams?",
-									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/location_details_cursed.16"
+									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/details_cursed.16"
 								},
 								{
 									"roll": {
@@ -3344,7 +3344,7 @@
 									},
 									"text": "Sorcerous nexus",
 									"text2": "Who has gathered to reap the chaotic energy of this place?",
-									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/location_details_cursed.17"
+									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/details_cursed.17"
 								},
 								{
 									"roll": {
@@ -3353,7 +3353,7 @@
 									},
 									"text": "Titanic machinery",
 									"text2": "Who seeks to reactivate this ancient machine?",
-									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/location_details_cursed.18"
+									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/details_cursed.18"
 								},
 								{
 									"roll": {
@@ -3362,11 +3362,11 @@
 									},
 									"text": "Unending cyclonic storm",
 									"text2": "What is said to lie at this storm's center?",
-									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/location_details_cursed.19"
+									"_id": "oracle_rollable.row:sundered_isles/campaign/notable_locations/details_cursed.19"
 								}
 							],
 							"dice": "1d100",
-							"_id": "oracle_rollable:sundered_isles/campaign/notable_locations/location_details_cursed"
+							"_id": "oracle_rollable:sundered_isles/campaign/notable_locations/details_cursed"
 						}
 					},
 					"collections": {},
@@ -7380,7 +7380,7 @@
 					"type": "oracle_rollable",
 					"oracle_type": "table_text",
 					"summary": "Envision a character’s background or occupation using the broad categories below. For more detail, check the related subtable.",
-					"replaces": ["oracle_rollable:starforged/character/roles"],
+					"replaces": ["oracle_rollable:starforged/character/role"],
 					"_source": {
 						"date": "2024-06-11",
 						"title": "Sundered Isles",
@@ -7399,6 +7399,15 @@
 								"max": 5
 							},
 							"text": "[Academic](oracle_rollable:sundered_isles/character/role_details/academic)",
+							"oracle_rolls": [
+								{
+									"auto": false,
+									"number_of_rolls": 1,
+									"oracle": "oracle_rollable:sundered_isles/character/role_details/academic",
+									"dice": null,
+									"duplicates": "reroll"
+								}
+							],
 							"_id": "oracle_rollable.row:sundered_isles/character/roles.0"
 						},
 						{
@@ -7407,6 +7416,15 @@
 								"max": 10
 							},
 							"text": "[Agent](oracle_rollable:sundered_isles/character/role_details/agent)",
+							"oracle_rolls": [
+								{
+									"auto": false,
+									"number_of_rolls": 1,
+									"oracle": "oracle_rollable:sundered_isles/character/role_details/agent",
+									"dice": null,
+									"duplicates": "reroll"
+								}
+							],
 							"_id": "oracle_rollable.row:sundered_isles/character/roles.1"
 						},
 						{
@@ -7415,6 +7433,15 @@
 								"max": 15
 							},
 							"text": "[Caregiver](oracle_rollable:sundered_isles/character/role_details/caregiver)",
+							"oracle_rolls": [
+								{
+									"auto": false,
+									"number_of_rolls": 1,
+									"oracle": "oracle_rollable:sundered_isles/character/role_details/caregiver",
+									"dice": null,
+									"duplicates": "reroll"
+								}
+							],
 							"_id": "oracle_rollable.row:sundered_isles/character/roles.2"
 						},
 						{
@@ -7423,6 +7450,15 @@
 								"max": 20
 							},
 							"text": "[Combatant](oracle_rollable:sundered_isles/character/role_details/combatant)",
+							"oracle_rolls": [
+								{
+									"auto": false,
+									"number_of_rolls": 1,
+									"oracle": "oracle_rollable:sundered_isles/character/role_details/combatant",
+									"dice": null,
+									"duplicates": "reroll"
+								}
+							],
 							"_id": "oracle_rollable.row:sundered_isles/character/roles.3"
 						},
 						{
@@ -7431,6 +7467,15 @@
 								"max": 25
 							},
 							"text": "[Devotant](oracle_rollable:sundered_isles/character/role_details/devotant)",
+							"oracle_rolls": [
+								{
+									"auto": false,
+									"number_of_rolls": 1,
+									"oracle": "oracle_rollable:sundered_isles/character/role_details/devotant",
+									"dice": null,
+									"duplicates": "reroll"
+								}
+							],
 							"_id": "oracle_rollable.row:sundered_isles/character/roles.4"
 						},
 						{
@@ -7439,6 +7484,15 @@
 								"max": 30
 							},
 							"text": "[Laborer](oracle_rollable:sundered_isles/character/role_details/laborer)",
+							"oracle_rolls": [
+								{
+									"auto": false,
+									"number_of_rolls": 1,
+									"oracle": "oracle_rollable:sundered_isles/character/role_details/laborer",
+									"dice": null,
+									"duplicates": "reroll"
+								}
+							],
 							"_id": "oracle_rollable.row:sundered_isles/character/roles.5"
 						},
 						{
@@ -7447,6 +7501,15 @@
 								"max": 35
 							},
 							"text": "[Merchant](oracle_rollable:sundered_isles/character/role_details/merchant)",
+							"oracle_rolls": [
+								{
+									"auto": false,
+									"number_of_rolls": 1,
+									"oracle": "oracle_rollable:sundered_isles/character/role_details/merchant",
+									"dice": null,
+									"duplicates": "reroll"
+								}
+							],
 							"_id": "oracle_rollable.row:sundered_isles/character/roles.6"
 						},
 						{
@@ -7455,6 +7518,15 @@
 								"max": 40
 							},
 							"text": "[Mystic](oracle_rollable:sundered_isles/character/role_details/mystic)",
+							"oracle_rolls": [
+								{
+									"auto": false,
+									"number_of_rolls": 1,
+									"oracle": "oracle_rollable:sundered_isles/character/role_details/mystic",
+									"dice": null,
+									"duplicates": "reroll"
+								}
+							],
 							"_id": "oracle_rollable.row:sundered_isles/character/roles.7"
 						},
 						{
@@ -7463,6 +7535,15 @@
 								"max": 45
 							},
 							"text": "[Outcast](oracle_rollable:sundered_isles/character/role_details/outcast)",
+							"oracle_rolls": [
+								{
+									"auto": false,
+									"number_of_rolls": 1,
+									"oracle": "oracle_rollable:sundered_isles/character/role_details/outcast",
+									"dice": null,
+									"duplicates": "reroll"
+								}
+							],
 							"_id": "oracle_rollable.row:sundered_isles/character/roles.8"
 						},
 						{
@@ -7471,6 +7552,15 @@
 								"max": 50
 							},
 							"text": "[Outlander](oracle_rollable:sundered_isles/character/role_details/outlander)",
+							"oracle_rolls": [
+								{
+									"auto": false,
+									"number_of_rolls": 1,
+									"oracle": "oracle_rollable:sundered_isles/character/role_details/outlander",
+									"dice": null,
+									"duplicates": "reroll"
+								}
+							],
 							"_id": "oracle_rollable.row:sundered_isles/character/roles.9"
 						},
 						{
@@ -7479,6 +7569,15 @@
 								"max": 55
 							},
 							"text": "[Outlaw](oracle_rollable:sundered_isles/character/role_details/outlaw)",
+							"oracle_rolls": [
+								{
+									"auto": false,
+									"number_of_rolls": 1,
+									"oracle": "oracle_rollable:sundered_isles/character/role_details/outlaw",
+									"dice": null,
+									"duplicates": "reroll"
+								}
+							],
 							"_id": "oracle_rollable.row:sundered_isles/character/roles.10"
 						},
 						{
@@ -7487,6 +7586,15 @@
 								"max": 60
 							},
 							"text": "[Performer](oracle_rollable:sundered_isles/character/role_details/performer)",
+							"oracle_rolls": [
+								{
+									"auto": false,
+									"number_of_rolls": 1,
+									"oracle": "oracle_rollable:sundered_isles/character/role_details/performer",
+									"dice": null,
+									"duplicates": "reroll"
+								}
+							],
 							"_id": "oracle_rollable.row:sundered_isles/character/roles.11"
 						},
 						{
@@ -7495,6 +7603,15 @@
 								"max": 70
 							},
 							"text": "[Sailor](oracle_rollable:sundered_isles/character/role_details/sailor)",
+							"oracle_rolls": [
+								{
+									"auto": false,
+									"number_of_rolls": 1,
+									"oracle": "oracle_rollable:sundered_isles/character/role_details/sailor",
+									"dice": null,
+									"duplicates": "reroll"
+								}
+							],
 							"_id": "oracle_rollable.row:sundered_isles/character/roles.12"
 						},
 						{
@@ -7503,6 +7620,15 @@
 								"max": 75
 							},
 							"text": "[Scavenger](oracle_rollable:sundered_isles/character/role_details/scavenger)",
+							"oracle_rolls": [
+								{
+									"auto": false,
+									"number_of_rolls": 1,
+									"oracle": "oracle_rollable:sundered_isles/character/role_details/scavenger",
+									"dice": null,
+									"duplicates": "reroll"
+								}
+							],
 							"_id": "oracle_rollable.row:sundered_isles/character/roles.13"
 						},
 						{
@@ -7511,6 +7637,15 @@
 								"max": 80
 							},
 							"text": "[Statesperson](oracle_rollable:sundered_isles/character/role_details/statesperson)",
+							"oracle_rolls": [
+								{
+									"auto": false,
+									"number_of_rolls": 1,
+									"oracle": "oracle_rollable:sundered_isles/character/role_details/statesperson",
+									"dice": null,
+									"duplicates": "reroll"
+								}
+							],
 							"_id": "oracle_rollable.row:sundered_isles/character/roles.14"
 						},
 						{
@@ -7519,6 +7654,15 @@
 								"max": 85
 							},
 							"text": "[Tradesperson](oracle_rollable:sundered_isles/character/role_details/tradesperson)",
+							"oracle_rolls": [
+								{
+									"auto": false,
+									"number_of_rolls": 1,
+									"oracle": "oracle_rollable:sundered_isles/character/role_details/tradesperson",
+									"dice": null,
+									"duplicates": "reroll"
+								}
+							],
 							"_id": "oracle_rollable.row:sundered_isles/character/roles.15"
 						},
 						{
@@ -9532,7 +9676,7 @@
 						"min": 1,
 						"max": 2
 					},
-					"replaces": ["oracle_rollable:starforged/character/goals"],
+					"replaces": ["oracle_rollable:starforged/character/goal"],
 					"tags": {
 						"sundered_isles": {
 							"cursed_by": "oracle_rollable:sundered_isles/character/goals_cursed"
@@ -29917,7 +30061,7 @@
 					"name": "Story Complication",
 					"type": "oracle_rollable",
 					"oracle_type": "table_text",
-					"summary": "This oracle will introduce narrative turns, troubles, and revelations. It can be used as an alternative to the [Pay the Price](oracle_rollable:move:starforged/pay_the_price) table when you encounter a negative outcome at a crucial moment. In particular, you might use this table after rolling matched 10s on the challenge dice.",
+					"summary": "This oracle will introduce narrative turns, troubles, and revelations. It can be used as an alternative to the [Pay the Price](move.oracle_rollable:starforged/fate/pay_the_price.pay_the_price) table when you encounter a negative outcome at a crucial moment. In particular, you might use this table after rolling matched 10s on the challenge dice.",
 					"replaces": ["oracle_rollable:starforged/misc/story_complication"],
 					"_source": {
 						"date": "2024-06-11",
@@ -39721,7 +39865,7 @@
 					"tags": {
 						"sundered_isles": {
 							"cursed_version_of": [
-								"oracle_rollable:sundered_isles/ruin/features"
+								"oracle_rollable:sundered_isles/ruin/feature"
 							],
 							"curse_behavior": "replace_result"
 						}
@@ -50781,7 +50925,16 @@
 								"min": 92,
 								"max": 95
 							},
-							"text": "[Ship Damage](oracle_collection:sundered_isles/misc/ship_damage)",
+							"text": "[Ship Damage](oracle_rollable:sundered_isles/misc/ship_damage)",
+							"oracle_rolls": [
+								{
+									"auto": false,
+									"number_of_rolls": 1,
+									"oracle": "oracle_rollable:sundered_isles/misc/ship_damage",
+									"dice": null,
+									"duplicates": "reroll"
+								}
+							],
 							"_id": "oracle_rollable.row:sundered_isles/ship/details.36"
 						},
 						{
@@ -61019,7 +61172,7 @@
 					"abilities": [
 						{
 							"enabled": true,
-							"text": "When you summon the Kraken, fill one segment of a four-segment clock. The Kraken will heed a single command to destroy or overcome any foe or obstacle. If you are in a fight, [Take Decisive Action](move:starforged/combat/take_decisive_action) with an automatic strong hit. When the clock is filled, [Ask the Oracle](oracle_rollable:move:starforged/ask_the_oracle/fifty_fifty) (using the yes/no table) if the Kraken turns against you, making it 50/50. On a yes, discard this asset; the Kraken is now an epic foe. On a no, clear one segment of the clock.",
+							"text": "When you summon the Kraken, fill one segment of a four-segment clock. The Kraken will heed a single command to destroy or overcome any foe or obstacle. If you are in a fight, [Take Decisive Action](move:starforged/combat/take_decisive_action) with an automatic strong hit. When the clock is filled, [Ask the Oracle](move.oracle_rollable:starforged/fate/ask_the_oracle.fifty_fifty) (using the yes/no table) if the Kraken turns against you, making it 50/50. On a yes, discard this asset; the Kraken is now an epic foe. On a no, clear one segment of the clock.",
 							"controls": {
 								"clock": {
 									"label": "the Kraken turns against you",
@@ -61433,7 +61586,7 @@
 					"abilities": [
 						{
 							"enabled": true,
-							"text": "You are accustomed to a life at sea. When you set sail after a landlocked layover, take +2 momentum or +2 spirit, or +1 of each. When you make landfall, [Lose Momentum](move:sundered_isles/suffer/lose_momentum) (-1).",
+							"text": "You are accustomed to a life at sea. When you set sail after a landlocked layover, take +2 momentum or +2 spirit, or +1 of each. When you make landfall, [Lose Momentum](move:starforged/suffer/lose_momentum) (-1).",
 							"options": {},
 							"controls": {},
 							"oracles": {},
@@ -61441,7 +61594,7 @@
 							"_id": "asset.ability:sundered_isles/deed/old_salt.0"
 						},
 						{
-							"text": "When you [Secure an Advantage](move:sundered_isles/adventure/secure_an_advantage) to plot a course through careful study of currents and weather, or if you [Face Danger](move:sundered_isles/adventure/face_danger) aboard ship to overcome or avoid an environmental hazard such as a storm or rogue wave, add +1 and take +1 momentum on a hit.",
+							"text": "When you [Secure an Advantage](move:starforged/adventure/secure_an_advantage) to plot a course through careful study of currents and weather, or if you [Face Danger](move:starforged/adventure/face_danger) aboard ship to overcome or avoid an environmental hazard such as a storm or rogue wave, add +1 and take +1 momentum on a hit.",
 							"enhance_moves": [
 								{
 									"enhances": ["move:starforged/*/secure_an_advantage"],
@@ -63689,7 +63842,7 @@
 					"abilities": [
 						{
 							"enabled": true,
-							"text": "You are a machine, and do not eat, drink, or breathe. You [Endure Harm](move:sundered_isles/suffer/endure_harm) as normal, but restore health only when you [Repair](move:sundered_isles/recover/repair) (spend 1 repair point to take +1 health, and 2 points to clear the wounded impact).",
+							"text": "You are a machine, and do not eat, drink, or breathe. You [Endure Harm](move:starforged/suffer/endure_harm) as normal, but restore health only when you [Repair](move:sundered_isles/recover/repair) (spend 1 repair point to take +1 health, and 2 points to clear the wounded impact).",
 							"options": {},
 							"controls": {},
 							"oracles": {},

@@ -1,12 +1,34 @@
 /** Utilties to assist in migration of Datasworn data across versions. */
-import TypeId from './IdElements/TypeId.js';
+import TypeId from '../IdElements/TypeId.js';
 export type IdReplacer = {
     /** A regular expression matching the old ID. */
     old: RegExp;
-    /** A replacement template string to replace the old ID with. */
-    new: string;
+    /** A replacement template string to replace the old ID with, or `null` if this ID explicitly has no equivalent. */
+    new: string | null;
 };
 export type IdReplacementMap = Record<TypeId.AnyPrimary | TypeId.EmbedOnlyType, IdReplacer[]>;
+/**
+ * Provides an array of {@link IdReplacer} objects for each Datasworn ID type.
+ */
+export declare const idReplacers: {
+    oracle_rollable: IdReplacer[];
+    oracle_collection: {
+        old: RegExp;
+        new: any;
+    }[];
+    variant: {
+        old: RegExp;
+        new: string;
+    }[];
+    ability: {
+        old: RegExp;
+        new: string;
+    }[];
+    move: {
+        old: RegExp;
+        new: string;
+    }[];
+};
 /**
  * Updates old (pre-0.1.0) Datasworn IDs (and pointers that reference them in markdown strings) for use with v0.1.0.
  * Intended for use as the `replacer` in {@link JSON.stringify} or the `reviver` in {@link JSON.parse}; this way, it will iterate over every string value so you can update all the IDs in one go.
@@ -38,5 +60,3 @@ export declare function updateIdsInMarkdown(md: string): string;
  * @param typeHint An optional type hint. If you know the ID type ahead of time, this lets the function skip some iteration over irrelevant ID categories, which might make it faster.
  */
 export declare function updateId(oldId: string, typeHint?: keyof IdReplacementMap): string;
-/** Applies a replacement from an array of replacer objects to a string; the first matching replacer is used. If no matching replacer is found, returns `null` instead. */
-export declare function applyReplacements(str: string, replacers: IdReplacer[]): string;

@@ -71,7 +71,8 @@ var TypeId;
         'row',
         'feature',
         'danger',
-        'denizen'
+        'denizen',
+        'variant'
     ];
     TypeId.EmbeddableType = [
         'oracle_rollable',
@@ -81,7 +82,8 @@ var TypeId;
         'row',
         'feature',
         'danger',
-        'denizen'
+        'denizen',
+        'variant'
     ];
     TypeId.EmbedTypeMap = {
         asset: ['ability'],
@@ -92,7 +94,8 @@ var TypeId;
         oracle_rollable: ['row'],
         delve_site: ['denizen'],
         delve_site_domain: ['feature', 'danger'],
-        delve_site_theme: ['feature', 'danger']
+        delve_site_theme: ['feature', 'danger'],
+        npc: ['variant']
     };
     TypeId.AllowedEmbedInEmbedTypes = {
         ability: ['oracle_rollable', 'move'],
@@ -172,8 +175,30 @@ var TypeId;
         row: 'rows',
         feature: 'features',
         danger: 'dangers',
-        denizen: 'denizens'
+        denizen: 'denizens',
+        variant: 'variants'
     };
+    // TODO
+    // is there a logic to this that i can formalize?
+    // i think it comes down to whether the type has a required `name` property to generate a key from.
+    const EmbeddedPropertyType = {
+        abilities: 'array',
+        dangers: 'array',
+        denizens: 'array',
+        features: 'array',
+        options: 'array',
+        rows: 'array',
+        variants: 'dictionary'
+    };
+    function getEmbeddedPropertyType(typeId) {
+        if (TypeId.AnyPrimary.includes(typeId))
+            return 'dictionary';
+        const propKey = getEmbeddedPropertyKey(typeId);
+        if (propKey == null)
+            throw new Error(`Expected an embeddable TypeId, but got ${String(typeId)}`);
+        return EmbeddedPropertyType[propKey];
+    }
+    TypeId.getEmbeddedPropertyType = getEmbeddedPropertyType;
     function getRootKey(typeId) {
         const result = TypeId.RootKeys[typeId];
         if (result == null)

@@ -22,4 +22,7 @@ public enum EmbedOnlyType {
 
     @JsonProperty("row")
     ROW,
+
+    @JsonProperty("variant")
+    VARIANT,
 }

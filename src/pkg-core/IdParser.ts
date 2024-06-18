@@ -25,6 +25,11 @@ abstract class IdParser<
 	}
 > implements IdParser.Options<TypeIds, PathSegments>
 {
+	static tree:
+		| Map<string, Datasworn.RulesPackage>
+		| Record<string, Datasworn.RulesPackage>
+		| null = null
+
 	#pathSegments: PathSegments
 	#typeIds: TypeIds
 
@@ -359,13 +364,13 @@ abstract class IdParser<
 	 * Get a Datasworn node by its ID.
 	 * @throws If the ID is invalid; if a path to the identified object can't be found; if no Datasworn tree is provided (either in {@link IdParser.datasworn} or as an argument).
 	 */
-	get(tree?: (typeof IdParser)['datasworn']) {
+	get(tree = IdParser.datasworn) {
 		return IdParser.get(this, tree) as TypeNode.Any
 	}
 
 	/**
 	 * Get a Datasworn node by its ID.
-	 * @throws If the ID is invalid; if a path to the identified object can't be found; if no Datasworn tree is provided (either in IdParser.datasworn or as an argument).
+	 * @throws If the ID is invalid; if a path to the identified object can't be found; if no Datasworn tree is provided (either in {@link IdParser.tree} or as an argument).
 	 */
 	static get<T extends StringId.AnyId>(
 		id: T,
@@ -379,6 +384,11 @@ abstract class IdParser<
 		id: T,
 		tree = IdParser.datasworn
 	) {
+		if (tree == null)
+			throw new Error(
+				'No Datasworn tree found -- set IdParser#tree or provide one as a parameter.'
+			)
+
 		const parsedId: IdParser =
 			id instanceof IdParser ? id : (IdParser.parse(id as any) as any)
 
@@ -957,6 +967,19 @@ class EmbeddedId<
 		} as const satisfies IdParser.Options
 
 		super(options)
+	}
+
+	override assignIdsIn<T extends { _id?: string }>(
+		node: T,
+		recursive?: boolean,
+		index?: Map<string, unknown>
+	): T {
+		super.assignIdsIn(node, recursive, index)
+
+		// if (this.nodeTypeId === 'move')
+		// 	console.log(`Assigned <${this.id}>`, index?.has(this.id))
+
+		return node
 	}
 }
 interface EmbeddedId<

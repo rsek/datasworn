@@ -298,7 +298,7 @@ class ObjectGlobber<
 	 * @param from The object to walk.
 	 * @param path An array of object property to follow.
 	 * @param forEach An optional function to run on every walked value.
-	 * @throws If a key is an invalid type, or if a key can't be found.
+	 * @throws If a key is an invalid type, if a key can't be found, or if it reaches an undefined value.
 	 */
 	static walk<T extends Id.AnyId>(
 		from: Record<string, RulesPackage>,
@@ -337,6 +337,9 @@ class ObjectGlobber<
 		} else if (from instanceof Map) {
 			nextObject = from.get(currentKey)
 		} else nextObject = from[currentKey as keyof typeof from]
+
+		if (typeof nextObject === 'undefined')
+			throw new Error(`Got undefined value in property "${String(currentKey)}"`)
 
 		if (path.length === 0) return nextObject
 		else return ObjectGlobber.walk(nextObject, nextPath as any)

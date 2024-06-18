@@ -1333,7 +1333,7 @@ moves:
 
           On a __weak hit__, you achieve your objective, but not without cost. Roll on the table below or choose one. If the fight continues, you are in a bad spot.
 
-          {{table>oracle_rollable:starforged/moves/take_decisive_action}}
+          {{table>move.oracle_rollable:starforged/combat/take_decisive_action.take_decisive_action}}
 
           On a __miss__, you are defeated or your objective is lost. [Pay the Price](move:starforged/fate/pay_the_price).
         outcomes:
@@ -1343,7 +1343,7 @@ moves:
             text: |-
               On a __weak hit__, you achieve your objective, but not without cost. Roll on the table below or choose one. If the fight continues, you are in a bad spot.
 
-              {{table>oracle_rollable:starforged/moves/take_decisive_action}}
+              {{table>move.oracle_rollable:starforged/combat/take_decisive_action.take_decisive_action}}
           miss:
             text: On a __miss__, you are defeated or your objective is lost. [Pay the Price](move:starforged/fate/pay_the_price).
         _source:

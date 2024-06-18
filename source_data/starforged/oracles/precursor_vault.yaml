@@ -475,7 +475,7 @@ oracles:
               - roll: { min: 83, max: 85 }
                 text: Vertical shaft
               - roll: { min: 86, max: 90 }
-                text: 'Transition into the [Sanctum](oracle_rollable:starforged/precursor_vault/sanctum)'
+                text: 'Transition into the [Sanctum](oracle_collection:starforged/precursor_vault/sanctum)'
               - roll: { min: 91, max: 95 }
                 <<: *DescriptorFocus
               - roll: { min: 96, max: 100 }

@@ -904,12 +904,12 @@ assets:
         # https://game-icons.net/1x1/delapouite/shaking-hands.html
         abilities:
           - text: |-
-              When you [Aid Your Ally](move:classic/adventure/aid_your_ally), add +1 and take +1 momentum on a hit. This is in addition to the benefits taken by your ally.
+              When you [Aid Your Ally](move:classic/relationship/aid_your_ally), add +1 and take +1 momentum on a hit. This is in addition to the benefits taken by your ally.
             enabled: true
             enhance_moves:
               - roll_type: no_roll
                 enhances:
-                  - move:classic/adventure/aid_your_ally
+                  - move:classic/relationship/aid_your_ally
           - text: |-
               When an ally makes the [Endure Stress](move:classic/suffer/endure_stress) move in your company, they add +1 and you take +1 momentum on a hit.
             enhance_moves:
@@ -1427,7 +1427,7 @@ assets:
                       roll_options: null
                       method: null
               - enhances:
-                  - move:classic/relationships/sojourn
+                  - move:classic/relationship/sojourn
                 roll_type: action_roll
                 trigger:
                   conditions:

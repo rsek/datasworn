@@ -18,7 +18,7 @@ oracles:
       page: 348
     summary: Derelicts are the forsaken relics of human endeavors.
     description: |-
-      Derelicts are the forsaken relics of human endeavors. Use these First Look tables for your initial survey of the derelict. To reveal more about the look and original function or nature of the site, roll on appropriate tables in the [Starship](oracle_collection:starforged/starships) or [Settlement](oracle_collection:starforged/settlements) oracles. If you explore the depths of a derelict, you may use the zone oracles on the following pages to help envision what you find.
+      Derelicts are the forsaken relics of human endeavors. Use these First Look tables for your initial survey of the derelict. To reveal more about the look and original function or nature of the site, roll on appropriate tables in the [Starship](oracle_collection:starforged/starship) or [Settlement](oracle_collection:starforged/settlement) oracles. If you explore the depths of a derelict, you may use the zone oracles on the following pages to help envision what you find.
     collections:
       type:
         name: Derelict Type (by location)
@@ -47,12 +47,12 @@ oracles:
               - roll: { min: 1, max: 25 }
                 text: Starship
                 suggestions:
-                    - oracle_rollable:starforged/derelict/derelict/starship
+                    - oracle_rollable:starforged/derelict/zone/starship
                 # *attr:DerelictType.Starship
               - roll: { min: 26, max: 100 }
                 text: Settlement
                 suggestions:
-                    - oracle_rollable:starforged/derelict/derelict/settlement
+                    - oracle_rollable:starforged/derelict/zone/settlement
                 # *attr:DerelictType.Settlement
           orbital:
             name: Orbital
@@ -69,11 +69,11 @@ oracles:
               - roll: { min: 1, max: 40 }
                 text: Starship
                 suggestions:
-                    - oracle_rollable:starforged/derelict/derelict/starship
+                    - oracle_rollable:starforged/derelict/zone/starship
               - roll: { min: 41, max: 100 }
                 text: Settlement
                 suggestions:
-                    - oracle_rollable:starforged/derelict/derelict/settlement
+                    - oracle_rollable:starforged/derelict/zone/settlement
           deep_space:
             name: Deep Space
             tags:
@@ -89,12 +89,12 @@ oracles:
               - roll: { min: 1, max: 75 }
                 text: Starship
                 suggestions:
-                    - oracle_rollable:starforged/derelict/derelict/starship
+                    - oracle_rollable:starforged/derelict/zone/starship
                     - oracle_collection:starforged/starship
               - roll: { min: 76, max: 100 }
                 text: Settlement
                 suggestions:
-                    - oracle_rollable:starforged/derelict/derelict/settlement
+                    - oracle_rollable:starforged/derelict/zone/settlement
                     - oracle_collection:starforged/settlement
       zone:
         name: Derelict Zones

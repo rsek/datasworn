@@ -647,7 +647,7 @@ oracles:
         tags:
           sundered_isles:
             cursed_version_of:
-              - oracle_rollable:sundered_isles/ruin/features
+              - oracle_rollable:sundered_isles/ruin/feature
             curse_behavior: replace_result
         _source:
           <<: *Source

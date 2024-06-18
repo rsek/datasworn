@@ -1,6 +1,7 @@
 import {
 	Type,
 	type ObjectOptions,
+	type Static,
 	type TObject,
 	type TRef,
 	type TString,
@@ -9,10 +10,14 @@ import {
 import CONST from '../../pkg-core/IdElements/CONST.js'
 import TypeId from '../../pkg-core/IdElements/TypeId.js'
 import * as Localize from '../common/Localize.js'
-import { FlatIntersect } from '../utils/FlatIntersect.js'
+import { Assign, FlatIntersect, type TAssign } from '../utils/FlatIntersect.js'
 import { pascalCase } from '../utils/string.js'
 import { Dictionary, type TDictionary } from './Dictionary.js'
-import { PrimarySubtypeNode, PrimaryTypeNode } from './PrimaryTypeNode.js'
+import {
+	PrimarySubtypeNode,
+	PrimaryTypeNode,
+	type TPrimaryTypeNode
+} from './PrimaryTypeNode.js'
 import type { SetRequired } from 'type-fest'
 import { setSourceOptional } from '../Utils.js'
 
@@ -68,26 +73,38 @@ export function CollectionNode<
 	const thisIdRef = Type.Ref<TString>(thisIdSchemaId)
 	const thisSchemaRef = Type.Ref(thisSchemaId)
 
-	const enhancedBase = FlatIntersect([
+	const enhancedBase = Assign(
 		getCollectionNodeMetadata(
 			thisWildcardIdRef,
 			setSourceOptional(Dictionary(collectableSchemaRef, { default: {} })),
 			setSourceOptional(Dictionary(thisSchemaRef, { default: {} }))
 		),
 		base
-	])
+	)
 
 	return PrimaryTypeNode(enhancedBase, type, {
 		...options,
 		$id: thisSchemaId,
 		[CollectionBrand]: 'Collection'
-	})
+	}) as unknown as TCollectionNode<typeof enhancedBase, TType>
 }
+
+type TCollectionMeta = ReturnType<typeof getCollectionNodeMetadata>
+type CollectionMeta = Static<TCollectionMeta>
+
+export type CollectionNode<
+	TBase extends object,
+	TType extends TypeId.Collection
+> = PrimaryTypeNode<TBase & CollectionMeta, TType>
 
 export type TCollectionNode<
 	TBase extends TObject,
 	TType extends TypeId.Collection
-> = {}
+> = TPrimaryTypeNode<TAssign<TCollectionMeta, TBase>, TType> & {
+	$id: string
+	[CollectionBrand]: 'Collection'
+	static: CollectionNode<Static<TBase>, TType>
+}
 
 export function CollectionSubtypeNode<
 	TBase extends TObject,
@@ -109,10 +126,10 @@ export function CollectionSubtypeNode<
 	const thisId = Type.Ref<TString | TUnion<TString[]>>(baseSchemaName + 'Id')
 	const thisIdWildcardRef = Type.Ref<TString>(baseSchemaName + 'IdWildcard')
 
-	const enhancedBase = FlatIntersect([
+	const enhancedBase = Assign(
 		getCollectionNodeMetadata(thisIdWildcardRef, contents, collections),
 		base
-	])
+	)
 
 	return PrimarySubtypeNode(enhancedBase, type, subtypeKey, subtype, options)
 }

@@ -7,9 +7,9 @@ oracles:
     name: Monstrosity
     type: oracle_collection
     oracle_type: tables
-    summary: Discover the nature of a [nightspawn](npc:delve/horrors/nightspawn) or other frightful creature within your world.
+    summary: Discover the nature of a [nightspawn](npc:delve/beasts/nightspawn) or other frightful creature within your world.
     description: |-
-      Use the Monstrosity oracle to define the nature of a [Nightspawn](npc:delve/horrors/nightspawn), or to introduce a new type of [animal](npc_collection:classic/animal), [beast](npc_collection:classic/beast), or [horror](npc_collection:classic/horror) in your world.
+      Use the Monstrosity oracle to define the nature of a [Nightspawn](npc:delve/beasts/nightspawn), or to introduce a new type of [animal](npc_collection:classic/animals), [beast](npc_collection:classic/beasts), or [horror](npc_collection:classic/horrors) in your world.
 
       To create a monstrosity, start by rolling for its [Size](oracle_rollable:delve/monstrosity/size) and [Primary Form](oracle_rollable:delve/monstrosity/primary_form). Then, roll up to four times for [Characteristics](oracle_rollable:delve/monstrosity/characteristics) and keep up to three of those results. Do the same for [Abilities](oracle_rollable:delve/monstrosity/abilities).
 
@@ -21,12 +21,12 @@ oracles:
 
       You should weave these abilities into the fiction of your encounter with a monstrosity. Combined with its physical characteristics, they help define the creature’s approach and tactics. Make moves as appropriate to overcome, avoid, or face the consequences of these abilities.
 
-      To learn more about your creation’s nature, you can roll on additional tables. Use the [Character Goal](oracle_rollable:classic/character/goal) oracle to give the monstrosity a purpose. Roll on the [Character Disposition](oracle_rollable:classic/character/disposition) and [Activity](oracle_rollable:delve/character/activity) oracles to frame your initial encounter. Another roll or two can give your monstrosity nuance and complexity, making it a deeper part of your story.
+      To learn more about your creation’s nature, you can roll on additional tables. Use the [Character Goal](oracle_rollable:classic/character/goal) oracle to give the monstrosity a purpose. Roll on the [Character Disposition](oracle_rollable:delve/character/disposition) and [Activity](oracle_rollable:delve/character/activity) oracles to frame your initial encounter. Another roll or two can give your monstrosity nuance and complexity, making it a deeper part of your story.
     suggestions:
         - oracle_rollable:classic/turning_point/challenge_rank
         - oracle_rollable:classic/character/goal
-        - oracle_rollable:classic/character/disposition
-        - oracle_rollable:classic/character/activity
+        - oracle_rollable:delve/character/disposition
+        - oracle_rollable:delve/character/activity
     _source:
       <<:  &Source
         license: https://creativecommons.org/licenses/by/4.0

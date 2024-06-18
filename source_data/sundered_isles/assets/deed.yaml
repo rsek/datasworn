@@ -150,9 +150,9 @@ assets:
         abilities:
           - enabled: true
             text: |-
-              You are accustomed to a life at sea. When you set sail after a landlocked layover, take +2 momentum or +2 spirit, or +1 of each. When you make landfall, [Lose Momentum](move:sundered_isles/suffer/lose_momentum) (-1).
+              You are accustomed to a life at sea. When you set sail after a landlocked layover, take +2 momentum or +2 spirit, or +1 of each. When you make landfall, [Lose Momentum](move:starforged/suffer/lose_momentum) (-1).
           - text: |-
-              When you [Secure an Advantage](move:sundered_isles/adventure/secure_an_advantage) to plot a course through careful study of currents and weather, or if you [Face Danger](move:sundered_isles/adventure/face_danger) aboard ship to overcome or avoid an environmental hazard such as a storm or rogue wave, add +1 and take +1 momentum on a hit.
+              When you [Secure an Advantage](move:starforged/adventure/secure_an_advantage) to plot a course through careful study of currents and weather, or if you [Face Danger](move:starforged/adventure/face_danger) aboard ship to overcome or avoid an environmental hazard such as a storm or rogue wave, add +1 and take +1 momentum on a hit.
             enhance_moves:
               - enhances:
                   - move:starforged/*/secure_an_advantage

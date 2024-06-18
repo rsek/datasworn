@@ -61,7 +61,7 @@ export function PrimaryTypeNode<
 				Type.Array(replaces, { description: replacesDescription })
 			)
 		})
-	) as typeof PrimaryNodeBase
+	)
 
 	const enhancedBase = Discriminable(Assign(mixin, base), 'type', type)
 

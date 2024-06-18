@@ -48,7 +48,7 @@ declare abstract class IdParser<TypeIds extends StringId.TypeIdParts = StringId.
     get isCollectable(): boolean;
     /** Does this ID include a collection object in its path? */
     get isCollection(): boolean;
-    get embedTypes(): ("oracle_rollable" | "move" | "ability" | "option" | "row" | "feature" | "danger" | "denizen")[];
+    get embedTypes(): ("oracle_rollable" | "move" | "ability" | "option" | "row" | "feature" | "danger" | "denizen" | "variant")[];
     /** Assign a string ID to a Datasworn node, and all eligible descendant nodes.
      * @param node The Datasworn
      * @param recursive Should IDs be assigned to descendant objects too? (default: true)

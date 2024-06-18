@@ -188,42 +188,106 @@ oracles:
         oracle_type: table_text
         summary: Envision a character’s background or occupation using the broad categories below. For more detail, check the related subtable.
         replaces:
-          - oracle_rollable:starforged/character/roles
+          - oracle_rollable:starforged/character/role
         _source:
           <<: *Source
         rows:
           - roll: { min: 1, max: 5 }
             text: '[Academic](oracle_rollable:sundered_isles/character/role_details/academic)'
+            oracle_rolls:
+              - auto: false
+                number_of_rolls: 1
+                oracle: oracle_rollable:sundered_isles/character/role_details/academic
           - roll: { min: 6, max: 10 }
             text: '[Agent](oracle_rollable:sundered_isles/character/role_details/agent)'
+            oracle_rolls:
+              - auto: false
+                number_of_rolls: 1
+                oracle: oracle_rollable:sundered_isles/character/role_details/agent
           - roll: { min: 11, max: 15 }
             text: '[Caregiver](oracle_rollable:sundered_isles/character/role_details/caregiver)'
+            oracle_rolls:
+              - auto: false
+                number_of_rolls: 1
+                oracle: oracle_rollable:sundered_isles/character/role_details/caregiver
           - roll: { min: 16, max: 20 }
             text: '[Combatant](oracle_rollable:sundered_isles/character/role_details/combatant)'
+            oracle_rolls:
+              - auto: false
+                number_of_rolls: 1
+                oracle: oracle_rollable:sundered_isles/character/role_details/combatant
           - roll: { min: 21, max: 25 }
             text: '[Devotant](oracle_rollable:sundered_isles/character/role_details/devotant)'
+            oracle_rolls:
+              - auto: false
+                number_of_rolls: 1
+                oracle: oracle_rollable:sundered_isles/character/role_details/devotant
           - roll: { min: 26, max: 30 }
             text: '[Laborer](oracle_rollable:sundered_isles/character/role_details/laborer)'
+            oracle_rolls:
+              - auto: false
+                number_of_rolls: 1
+                oracle: oracle_rollable:sundered_isles/character/role_details/laborer
           - roll: { min: 31, max: 35 }
             text: '[Merchant](oracle_rollable:sundered_isles/character/role_details/merchant)'
+            oracle_rolls:
+              - auto: false
+                number_of_rolls: 1
+                oracle: oracle_rollable:sundered_isles/character/role_details/merchant
           - roll: { min: 36, max: 40 }
             text: '[Mystic](oracle_rollable:sundered_isles/character/role_details/mystic)'
+            oracle_rolls:
+              - auto: false
+                number_of_rolls: 1
+                oracle: oracle_rollable:sundered_isles/character/role_details/mystic
           - roll: { min: 41, max: 45 }
             text: '[Outcast](oracle_rollable:sundered_isles/character/role_details/outcast)'
+            oracle_rolls:
+              - auto: false
+                number_of_rolls: 1
+                oracle: oracle_rollable:sundered_isles/character/role_details/outcast
           - roll: { min: 46, max: 50 }
             text: '[Outlander](oracle_rollable:sundered_isles/character/role_details/outlander)'
+            oracle_rolls:
+              - auto: false
+                number_of_rolls: 1
+                oracle: oracle_rollable:sundered_isles/character/role_details/outlander
           - roll: { min: 51, max: 55 }
             text: '[Outlaw](oracle_rollable:sundered_isles/character/role_details/outlaw)'
+            oracle_rolls:
+              - auto: false
+                number_of_rolls: 1
+                oracle: oracle_rollable:sundered_isles/character/role_details/outlaw
           - roll: { min: 56, max: 60 }
             text: '[Performer](oracle_rollable:sundered_isles/character/role_details/performer)'
+            oracle_rolls:
+              - auto: false
+                number_of_rolls: 1
+                oracle: oracle_rollable:sundered_isles/character/role_details/performer
           - roll: { min: 61, max: 70 }
             text: '[Sailor](oracle_rollable:sundered_isles/character/role_details/sailor)'
+            oracle_rolls:
+              - auto: false
+                number_of_rolls: 1
+                oracle: oracle_rollable:sundered_isles/character/role_details/sailor
           - roll: { min: 71, max: 75 }
             text: '[Scavenger](oracle_rollable:sundered_isles/character/role_details/scavenger)'
+            oracle_rolls:
+              - auto: false
+                number_of_rolls: 1
+                oracle: oracle_rollable:sundered_isles/character/role_details/scavenger
           - roll: { min: 76, max: 80 }
             text: '[Statesperson](oracle_rollable:sundered_isles/character/role_details/statesperson)'
+            oracle_rolls:
+              - auto: false
+                number_of_rolls: 1
+                oracle: oracle_rollable:sundered_isles/character/role_details/statesperson
           - roll: { min: 81, max: 85 }
             text: '[Tradesperson](oracle_rollable:sundered_isles/character/role_details/tradesperson)'
+            oracle_rolls:
+              - auto: false
+                number_of_rolls: 1
+                oracle: oracle_rollable:sundered_isles/character/role_details/tradesperson
           - roll: { min: 86, max: 95 }
             text: '[Action](oracle_rollable:sundered_isles/core/action) + [Theme](oracle_rollable:sundered_isles/core/theme)'
             oracle_rolls:
@@ -751,7 +815,7 @@ oracles:
         oracle_type: table_text
         recommended_rolls: { min: 1, max: 2 }
         replaces:
-          - oracle_rollable:starforged/character/goals
+          - oracle_rollable:starforged/character/goal
         tags:
           sundered_isles:
             cursed_by: oracle_rollable:sundered_isles/character/goals_cursed

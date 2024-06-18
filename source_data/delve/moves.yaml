@@ -121,7 +121,7 @@ moves:
 
           On a __miss__, [Reveal a Danger](move:delve/delve/reveal_a_danger).
 
-          {{table>delve/oracle_collection/moves/delve_the_depths}}
+          {{table_columns>move:delve/delve/delve_the_depths}}
         outcomes:
           strong_hit:
             text: On a __strong hit__, you delve deeper. Mark progress and [Find an Opportunity](move:delve/delve/find_an_opportunity).
@@ -129,7 +129,7 @@ moves:
             text: |-
               On a __weak hit__, roll on the following table according to your stat.
 
-              {{table>delve/oracle_collection/moves/delve_the_depths}}
+              {{table_columns>move:delve/delve/delve_the_depths}}
           miss:
             text: |-
               On a __miss__, [Reveal a Danger](move:delve/delve/reveal_a_danger).
@@ -177,7 +177,7 @@ moves:
             * Gain insight or prepare: Take +1 momentum.
             * Take action now: You and any allies may make a move (not a progress move) which directly leverages the opportunity. When you do, add +1 and take +1 momentum on a hit.
 
-          {{table>oracle_rollable:delve/moves/find_an_opportunity}}
+          {{table>move.oracle_rollable:delve/delve/find_an_opportunity.find_an_opportunity}}
       reveal_a_danger:
         name: Reveal a Danger
         roll_type: no_roll
@@ -224,7 +224,7 @@ moves:
         text: |-
           When __you encounter a risky situation within a site__, envision the danger or roll on the following table.
 
-          {{table>oracle_rollable:delve/moves/reveal_a_danger}}
+          {{table>move.oracle_rollable:delve/delve/reveal_a_danger.reveal_a_danger}}
       check_your_gear:
         name: Check Your Gear
         roll_type: action_roll
@@ -409,7 +409,7 @@ moves:
         text: |-
           When __you encounter a risky situation within a site__, envision the danger or roll on the following table.
 
-          {{table>oracle_rollable:delve/moves/reveal_a_danger_alt}}
+          {{table>move.oracle_rollable:delve/delve/reveal_a_danger_alt.reveal_a_danger_alt}}
   failure:
     name: Failure Moves
     type: move_category
@@ -512,7 +512,7 @@ moves:
         text: |-
           When __you give ground to a threat through inaction, failure, or delay__, roll on the table below and envision how the change manifests in your world ([Ask the Oracle](move:classic/fate/ask_the_oracle) if unsure).
 
-          {{table>oracle_rollable:delve/moves/advance_a_threat}}
+          {{table>move.oracle_rollable:delve/threat/advance_a_threat.advance_a_threat}}
 
           On a match, this development also exposes a surprising aspect of the threat’s plan or nature.
 

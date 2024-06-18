@@ -427,7 +427,7 @@ assets:
         abilities:
         - enabled: true
           text: |-
-            When you summon the Kraken, fill one segment of a four-segment clock. The Kraken will heed a single command to destroy or overcome any foe or obstacle. If you are in a fight, [Take Decisive Action](move:starforged/combat/take_decisive_action) with an automatic strong hit. When the clock is filled, [Ask the Oracle](oracle_rollable:move:starforged/ask_the_oracle/fifty_fifty) (using the yes/no table) if the Kraken turns against you, making it 50/50. On a yes, discard this asset; the Kraken is now an epic foe. On a no, clear one segment of the clock.
+            When you summon the Kraken, fill one segment of a four-segment clock. The Kraken will heed a single command to destroy or overcome any foe or obstacle. If you are in a fight, [Take Decisive Action](move:starforged/combat/take_decisive_action) with an automatic strong hit. When the clock is filled, [Ask the Oracle](move.oracle_rollable:starforged/fate/ask_the_oracle.fifty_fifty) (using the yes/no table) if the Kraken turns against you, making it 50/50. On a yes, discard this asset; the Kraken is now an epic foe. On a no, clear one segment of the clock.
           controls:
             clock:
               label: the Kraken turns against you

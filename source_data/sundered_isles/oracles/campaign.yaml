@@ -198,7 +198,7 @@ oracles:
             recommended_rolls: { min: 1, max: 2 }
             tags:
               sundered_isles:
-                cursed_by: oracle_rollable:sundered_isles/campaign/backstory_cursed
+                cursed_by: oracle_rollable:sundered_isles/campaign/character/backstory_cursed
             _source:
               <<: *Source
             rows:
@@ -265,7 +265,7 @@ oracles:
             tags:
               sundered_isles:
                 cursed_version_of:
-                  - oracle_rollable:sundered_isles/campaign/backstory
+                  - oracle_rollable:sundered_isles/campaign/character/backstory
                 curse_behavior: replace_result
             _source:
               <<: *Source
@@ -622,7 +622,7 @@ oracles:
             tags:
               sundered_isles:
                 cursed_version_of:
-                  - oracle_rollable:sundered_isles/campaign/crew
+                  - oracle_rollable:sundered_isles/campaign/command/crew
                 curse_behavior: add_result
             _source:
               <<: *Source
@@ -997,7 +997,7 @@ oracles:
               - roll: { min: 98, max: 100 }
                 text: Wide, navigable river
                 text2: What important location lies upriver?
-          location_details_cursed:
+          details_cursed:
             name: Cursed Location Details
             type: oracle_rollable
             oracle_type: table_text2

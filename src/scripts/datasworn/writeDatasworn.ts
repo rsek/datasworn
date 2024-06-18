@@ -2,7 +2,11 @@ import fastGlob from 'fast-glob'
 import fs from 'fs-extra'
 import path from 'path'
 import { cwd } from 'process'
-import type { Datasworn, DataswornSource } from '../../pkg-core/index.js'
+import {
+	IdParser,
+	type Datasworn,
+	type DataswornSource
+} from '../../pkg-core/index.js'
 import { type RulesPackageConfig } from '../../schema/tools/build/index.js'
 import { formatPath } from '../../utils.js'
 import {
@@ -20,6 +24,7 @@ import {
 	type SchemaValidator
 } from '../../pkg-core/Builders/RulesPackageBuilder.js'
 import * as PkgConfig from '../pkg/pkgConfig.js'
+import { extractIdRefs, forEachIdRef } from '../../pkg-core/Validators/Text.js'
 
 const schemaValidator = <SchemaValidator<Datasworn.RulesPackage>>(
 	_validate.bind(undefined, SCHEMA_NAME)
@@ -62,23 +67,41 @@ export async function buildRulesPackages(
 
 		toBuild.push(assemblePkgFiles(pkg, filesToDelete, index))
 	}
-	const builtPkgs = await Promise.all(toBuild)
 
 	const errors = []
 
 	const toWrite: Promise<any>[] = []
 
+	const tree = new Map(
+		(await Promise.all(toBuild)).map((pkg) => [pkg.id, pkg.build().toJSON()])
+	)
+
+	IdParser.tree = tree
+
+	// console.log(new Set(index.keys()))
+
 	// now that we have all IDs available, we can validate the built packages
-	for (const pkg of builtPkgs)
+
+	const visitedIds = new Set<string>()
+
+	for (const [pkgId, pkg] of tree)
 		try {
-			const validatedPointers = new Set<string>()
-			pkg.validateIdPointers(index)
+			forEachIdRef(pkg, (id) => {
+				if (visitedIds.has(id)) return
+				try {
+					IdParser.get(id as any, tree)
+					visitedIds.add(id)
+				} catch (e) {
+					errors.push(`Couldn't reach <${id}> ${String(e)}`)
+				}
+			})
+
 			const pathsToWriteTo = [
-				path.join(ROOT_OUTPUT, pkg.id),
-				path.join(DIR_HISTORY_CURRENT, pkg.id)
+				path.join(ROOT_OUTPUT, pkgId),
+				path.join(DIR_HISTORY_CURRENT, pkgId)
 			]
 			for (const dir of pathsToWriteTo)
-				toWrite.push(_writePkgFiles(dir, pkg.toJSON(), filesToDelete))
+				toWrite.push(_writePkgFiles(dir, pkg, filesToDelete))
 		} catch (e) {
 			errors.push(e)
 		}

@@ -1411,7 +1411,7 @@
 					},
 					"summary": "Given and family names are presented as a pair, so you may roll once for both or twice to mix-and-match. You can also try reversing given and family names, or use either independently as a standalone name. If you’d like to give a character a callsign, which are the monikers used by spacers, you may roll separately or take the one provided for your rolled name.",
 					"contents": {
-						"given": {
+						"given_name": {
 							"name": "Given Name",
 							"summary": "Given and family names can be used independently as standalone names. In many cases you can reverse the order.",
 							"suggestions": [
@@ -1432,7 +1432,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.0"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.0"
 								},
 								{
 									"roll": {
@@ -1445,7 +1445,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.1"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.1"
 								},
 								{
 									"roll": {
@@ -1458,7 +1458,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.2"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.2"
 								},
 								{
 									"roll": {
@@ -1471,7 +1471,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.3"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.3"
 								},
 								{
 									"roll": {
@@ -1484,7 +1484,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.4"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.4"
 								},
 								{
 									"roll": {
@@ -1497,7 +1497,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.5"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.5"
 								},
 								{
 									"roll": {
@@ -1510,7 +1510,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.6"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.6"
 								},
 								{
 									"roll": {
@@ -1523,7 +1523,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.7"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.7"
 								},
 								{
 									"roll": {
@@ -1536,7 +1536,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.8"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.8"
 								},
 								{
 									"roll": {
@@ -1549,7 +1549,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.9"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.9"
 								},
 								{
 									"roll": {
@@ -1562,7 +1562,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.10"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.10"
 								},
 								{
 									"roll": {
@@ -1575,7 +1575,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.11"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.11"
 								},
 								{
 									"roll": {
@@ -1588,7 +1588,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.12"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.12"
 								},
 								{
 									"roll": {
@@ -1601,7 +1601,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.13"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.13"
 								},
 								{
 									"roll": {
@@ -1614,7 +1614,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.14"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.14"
 								},
 								{
 									"roll": {
@@ -1627,7 +1627,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.15"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.15"
 								},
 								{
 									"roll": {
@@ -1640,7 +1640,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.16"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.16"
 								},
 								{
 									"roll": {
@@ -1653,7 +1653,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.17"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.17"
 								},
 								{
 									"roll": {
@@ -1666,7 +1666,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.18"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.18"
 								},
 								{
 									"roll": {
@@ -1679,7 +1679,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.19"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.19"
 								},
 								{
 									"roll": {
@@ -1692,7 +1692,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.20"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.20"
 								},
 								{
 									"roll": {
@@ -1705,7 +1705,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.21"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.21"
 								},
 								{
 									"roll": {
@@ -1718,7 +1718,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.22"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.22"
 								},
 								{
 									"roll": {
@@ -1731,7 +1731,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.23"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.23"
 								},
 								{
 									"roll": {
@@ -1744,7 +1744,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.24"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.24"
 								},
 								{
 									"roll": {
@@ -1757,7 +1757,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.25"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.25"
 								},
 								{
 									"roll": {
@@ -1770,7 +1770,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.26"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.26"
 								},
 								{
 									"roll": {
@@ -1783,7 +1783,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.27"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.27"
 								},
 								{
 									"roll": {
@@ -1796,7 +1796,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.28"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.28"
 								},
 								{
 									"roll": {
@@ -1809,7 +1809,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.29"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.29"
 								},
 								{
 									"roll": {
@@ -1822,7 +1822,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.30"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.30"
 								},
 								{
 									"roll": {
@@ -1835,7 +1835,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.31"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.31"
 								},
 								{
 									"roll": {
@@ -1848,7 +1848,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.32"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.32"
 								},
 								{
 									"roll": {
@@ -1861,7 +1861,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.33"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.33"
 								},
 								{
 									"roll": {
@@ -1874,7 +1874,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.34"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.34"
 								},
 								{
 									"roll": {
@@ -1887,7 +1887,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.35"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.35"
 								},
 								{
 									"roll": {
@@ -1900,7 +1900,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.36"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.36"
 								},
 								{
 									"roll": {
@@ -1913,7 +1913,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.37"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.37"
 								},
 								{
 									"roll": {
@@ -1926,7 +1926,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.38"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.38"
 								},
 								{
 									"roll": {
@@ -1939,7 +1939,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.39"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.39"
 								},
 								{
 									"roll": {
@@ -1952,7 +1952,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.40"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.40"
 								},
 								{
 									"roll": {
@@ -1965,7 +1965,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.41"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.41"
 								},
 								{
 									"roll": {
@@ -1978,7 +1978,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.42"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.42"
 								},
 								{
 									"roll": {
@@ -1991,7 +1991,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.43"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.43"
 								},
 								{
 									"roll": {
@@ -2004,7 +2004,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.44"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.44"
 								},
 								{
 									"roll": {
@@ -2017,7 +2017,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.45"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.45"
 								},
 								{
 									"roll": {
@@ -2030,7 +2030,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.46"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.46"
 								},
 								{
 									"roll": {
@@ -2043,7 +2043,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.47"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.47"
 								},
 								{
 									"roll": {
@@ -2056,7 +2056,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.48"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.48"
 								},
 								{
 									"roll": {
@@ -2069,7 +2069,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.49"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.49"
 								},
 								{
 									"roll": {
@@ -2082,7 +2082,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.50"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.50"
 								},
 								{
 									"roll": {
@@ -2095,7 +2095,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.51"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.51"
 								},
 								{
 									"roll": {
@@ -2108,7 +2108,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.52"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.52"
 								},
 								{
 									"roll": {
@@ -2121,7 +2121,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.53"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.53"
 								},
 								{
 									"roll": {
@@ -2134,7 +2134,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.54"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.54"
 								},
 								{
 									"roll": {
@@ -2147,7 +2147,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.55"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.55"
 								},
 								{
 									"roll": {
@@ -2160,7 +2160,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.56"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.56"
 								},
 								{
 									"roll": {
@@ -2173,7 +2173,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.57"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.57"
 								},
 								{
 									"roll": {
@@ -2186,7 +2186,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.58"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.58"
 								},
 								{
 									"roll": {
@@ -2199,7 +2199,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.59"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.59"
 								},
 								{
 									"roll": {
@@ -2212,7 +2212,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.60"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.60"
 								},
 								{
 									"roll": {
@@ -2225,7 +2225,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.61"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.61"
 								},
 								{
 									"roll": {
@@ -2238,7 +2238,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.62"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.62"
 								},
 								{
 									"roll": {
@@ -2251,7 +2251,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.63"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.63"
 								},
 								{
 									"roll": {
@@ -2264,7 +2264,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.64"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.64"
 								},
 								{
 									"roll": {
@@ -2277,7 +2277,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.65"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.65"
 								},
 								{
 									"roll": {
@@ -2290,7 +2290,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.66"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.66"
 								},
 								{
 									"roll": {
@@ -2303,7 +2303,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.67"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.67"
 								},
 								{
 									"roll": {
@@ -2316,7 +2316,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.68"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.68"
 								},
 								{
 									"roll": {
@@ -2329,7 +2329,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.69"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.69"
 								},
 								{
 									"roll": {
@@ -2342,7 +2342,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.70"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.70"
 								},
 								{
 									"roll": {
@@ -2355,7 +2355,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.71"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.71"
 								},
 								{
 									"roll": {
@@ -2368,7 +2368,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.72"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.72"
 								},
 								{
 									"roll": {
@@ -2381,7 +2381,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.73"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.73"
 								},
 								{
 									"roll": {
@@ -2394,7 +2394,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.74"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.74"
 								},
 								{
 									"roll": {
@@ -2407,7 +2407,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.75"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.75"
 								},
 								{
 									"roll": {
@@ -2420,7 +2420,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.76"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.76"
 								},
 								{
 									"roll": {
@@ -2433,7 +2433,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.77"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.77"
 								},
 								{
 									"roll": {
@@ -2446,7 +2446,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.78"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.78"
 								},
 								{
 									"roll": {
@@ -2459,7 +2459,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.79"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.79"
 								},
 								{
 									"roll": {
@@ -2472,7 +2472,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.80"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.80"
 								},
 								{
 									"roll": {
@@ -2485,7 +2485,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.81"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.81"
 								},
 								{
 									"roll": {
@@ -2498,7 +2498,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.82"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.82"
 								},
 								{
 									"roll": {
@@ -2511,7 +2511,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.83"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.83"
 								},
 								{
 									"roll": {
@@ -2524,7 +2524,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.84"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.84"
 								},
 								{
 									"roll": {
@@ -2537,7 +2537,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.85"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.85"
 								},
 								{
 									"roll": {
@@ -2550,7 +2550,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.86"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.86"
 								},
 								{
 									"roll": {
@@ -2563,7 +2563,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.87"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.87"
 								},
 								{
 									"roll": {
@@ -2576,7 +2576,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.88"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.88"
 								},
 								{
 									"roll": {
@@ -2589,7 +2589,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.89"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.89"
 								},
 								{
 									"roll": {
@@ -2602,7 +2602,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.90"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.90"
 								},
 								{
 									"roll": {
@@ -2615,7 +2615,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.91"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.91"
 								},
 								{
 									"roll": {
@@ -2628,7 +2628,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.92"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.92"
 								},
 								{
 									"roll": {
@@ -2641,7 +2641,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.93"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.93"
 								},
 								{
 									"roll": {
@@ -2654,7 +2654,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.94"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.94"
 								},
 								{
 									"roll": {
@@ -2667,7 +2667,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.95"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.95"
 								},
 								{
 									"roll": {
@@ -2680,7 +2680,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.96"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.96"
 								},
 								{
 									"roll": {
@@ -2693,7 +2693,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.97"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.97"
 								},
 								{
 									"roll": {
@@ -2706,7 +2706,7 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.98"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.98"
 								},
 								{
 									"roll": {
@@ -2719,11 +2719,11 @@
 											"part_of_speech": "proper_noun"
 										}
 									},
-									"_id": "oracle_rollable.row:starforged/character/name/given.99"
+									"_id": "oracle_rollable.row:starforged/character/name/given_name.99"
 								}
 							],
 							"dice": "1d100",
-							"_id": "oracle_rollable:starforged/character/name/given"
+							"_id": "oracle_rollable:starforged/character/name/given_name"
 						},
 						"callsign": {
 							"name": "Callsign",
@@ -13791,7 +13791,7 @@
 				],
 				"page": 336
 			},
-			"summary": "Roll for a [basic form](oracle_rollable:starforged/creature/basic_form), and flesh out the creature’s appearance using this [Creature First Look](oracle_rollable:starforged/creature/first_look) table. Then, roll on the [Encountered Behavior](oracle_rollable:starforged/creature/encountered_behavior) table to envision this creature’s motivation and frame how the encounter begins.",
+			"summary": "Roll for a [basic form](oracle_collection:starforged/creature/basic_form), and flesh out the creature’s appearance using this [Creature First Look](oracle_rollable:starforged/creature/first_look) table. Then, roll on the [Encountered Behavior](oracle_rollable:starforged/creature/encountered_behavior) table to envision this creature’s motivation and frame how the encounter begins.",
 			"contents": {
 				"environment": {
 					"name": "Environment",
@@ -20253,7 +20253,7 @@
 									},
 									"text": "Starship",
 									"suggestions": [
-										"oracle_rollable:starforged/derelict/derelict/starship"
+										"oracle_rollable:starforged/derelict/zone/starship"
 									],
 									"_id": "oracle_rollable.row:starforged/derelict/type/planetside.0"
 								},
@@ -20264,7 +20264,7 @@
 									},
 									"text": "Settlement",
 									"suggestions": [
-										"oracle_rollable:starforged/derelict/derelict/settlement"
+										"oracle_rollable:starforged/derelict/zone/settlement"
 									],
 									"_id": "oracle_rollable.row:starforged/derelict/type/planetside.1"
 								}
@@ -20290,7 +20290,7 @@
 									},
 									"text": "Starship",
 									"suggestions": [
-										"oracle_rollable:starforged/derelict/derelict/starship"
+										"oracle_rollable:starforged/derelict/zone/starship"
 									],
 									"_id": "oracle_rollable.row:starforged/derelict/type/orbital.0"
 								},
@@ -20301,7 +20301,7 @@
 									},
 									"text": "Settlement",
 									"suggestions": [
-										"oracle_rollable:starforged/derelict/derelict/settlement"
+										"oracle_rollable:starforged/derelict/zone/settlement"
 									],
 									"_id": "oracle_rollable.row:starforged/derelict/type/orbital.1"
 								}
@@ -20327,7 +20327,7 @@
 									},
 									"text": "Starship",
 									"suggestions": [
-										"oracle_rollable:starforged/derelict/derelict/starship",
+										"oracle_rollable:starforged/derelict/zone/starship",
 										"oracle_collection:starforged/starship"
 									],
 									"_id": "oracle_rollable.row:starforged/derelict/type/deep_space.0"
@@ -20339,7 +20339,7 @@
 									},
 									"text": "Settlement",
 									"suggestions": [
-										"oracle_rollable:starforged/derelict/derelict/settlement",
+										"oracle_rollable:starforged/derelict/zone/settlement",
 										"oracle_collection:starforged/settlement"
 									],
 									"_id": "oracle_rollable.row:starforged/derelict/type/deep_space.1"
@@ -21098,7 +21098,7 @@
 			},
 			"_id": "oracle_collection:starforged/derelict",
 			"summary": "Derelicts are the forsaken relics of human endeavors.",
-			"description": "Derelicts are the forsaken relics of human endeavors. Use these First Look tables for your initial survey of the derelict. To reveal more about the look and original function or nature of the site, roll on appropriate tables in the [Starship](oracle_collection:starforged/starships) or [Settlement](oracle_collection:starforged/settlements) oracles. If you explore the depths of a derelict, you may use the zone oracles on the following pages to help envision what you find."
+			"description": "Derelicts are the forsaken relics of human endeavors. Use these First Look tables for your initial survey of the derelict. To reveal more about the look and original function or nature of the site, roll on appropriate tables in the [Starship](oracle_collection:starforged/starship) or [Settlement](oracle_collection:starforged/settlement) oracles. If you explore the depths of a derelict, you may use the zone oracles on the following pages to help envision what you find."
 		},
 		"faction": {
 			"name": "Faction Oracles",
@@ -25263,7 +25263,7 @@
 				"page": 370
 			},
 			"summary": "Themes help you envision atmosphere, features, and encounters within an unusual, aberrant, or important location.",
-			"description": "Themes help you envision atmosphere, features, and encounters within an unusual, aberrant, or important location.\n\nEach theme on the following pages includes a set of oracles.\n\n  * __Feature:__ Use this table to reveal a new aspect of the location.\n  * __Peril:__ Use this table to help envision a complication or hazard.\n  * __Opportunity:__ Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.\n\nYou can answer questions about a place using only the tables provided for a theme, such as when delving into an [Infested](oracle_collection:starforged/location_theme/infested) cave. Or pair a theme with other location oracles for more flavor and variety; for example, you might explore a [Haunted](oracle_collection:starforged/location_theme/haunted) [Grave World](oracle_collection:starforged/location_theme/grave), a [Ruined](oracle_collection:starforged/location_theme/ruined) [Derelict](oracle_collection:starforged/derelicts), a [Sacred](oracle_collection:starforged/location_theme/sacred) [Precursor Vault](oracle_collection:starforged/vaults), or an [Inhabited](oracle_collection:starforged/location_theme/inhabited) [Settlement](oracle_collection:starforged/settlements).\n\nWhen mixing-and-matching a theme with another set of tables, use the techniques described for an __oracle array__ (page 384) to determine which oracle you reference for that question or phase of your exploration.",
+			"description": "Themes help you envision atmosphere, features, and encounters within an unusual, aberrant, or important location.\n\nEach theme on the following pages includes a set of oracles.\n\n  * __Feature:__ Use this table to reveal a new aspect of the location.\n  * __Peril:__ Use this table to help envision a complication or hazard.\n  * __Opportunity:__ Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.\n\nYou can answer questions about a place using only the tables provided for a theme, such as when delving into an [Infested](oracle_collection:starforged/location_theme/infested) cave. Or pair a theme with other location oracles for more flavor and variety; for example, you might explore a [Haunted](oracle_collection:starforged/location_theme/haunted) [Grave World](oracle_collection:starforged/location_theme/grave), a [Ruined](oracle_collection:starforged/location_theme/ruined) [Derelict](oracle_collection:starforged/derelict), a [Sacred](oracle_collection:starforged/location_theme/sacred) [Precursor Vault](oracle_collection:starforged/precursor_vault), or an [Inhabited](oracle_collection:starforged/location_theme/inhabited) [Settlement](oracle_collection:starforged/settlements).\n\nWhen mixing-and-matching a theme with another set of tables, use the techniques described for an __oracle array__ (page 384) to determine which oracle you reference for that question or phase of your exploration.",
 			"contents": {
 				"type": {
 					"name": "Theme Type",
@@ -29653,7 +29653,7 @@
 					},
 					"summary": "A pitiless planet of searing heat, blowing sand, and sunbaked rock.",
 					"collections": {
-						"settlement": {
+						"settlements": {
 							"name": "Settlements",
 							"oracle_type": "table_shared_text",
 							"type": "oracle_collection",
@@ -29686,7 +29686,7 @@
 												"max": 50
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/desert/settlement/terminus.0"
+											"_id": "oracle_rollable.row:starforged/planet/desert/settlements/terminus.0"
 										},
 										{
 											"roll": {
@@ -29694,7 +29694,7 @@
 												"max": 60
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/desert/settlement/terminus.1"
+											"_id": "oracle_rollable.row:starforged/planet/desert/settlements/terminus.1"
 										},
 										{
 											"roll": {
@@ -29702,7 +29702,7 @@
 												"max": 80
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/desert/settlement/terminus.2"
+											"_id": "oracle_rollable.row:starforged/planet/desert/settlements/terminus.2"
 										},
 										{
 											"roll": {
@@ -29710,7 +29710,7 @@
 												"max": 92
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/desert/settlement/terminus.3"
+											"_id": "oracle_rollable.row:starforged/planet/desert/settlements/terminus.3"
 										},
 										{
 											"roll": {
@@ -29718,11 +29718,11 @@
 												"max": 100
 											},
 											"text": "Settlements in conflict",
-											"_id": "oracle_rollable.row:starforged/planet/desert/settlement/terminus.4"
+											"_id": "oracle_rollable.row:starforged/planet/desert/settlements/terminus.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/desert/settlement/terminus"
+									"_id": "oracle_rollable:starforged/planet/desert/settlements/terminus"
 								},
 								"outlands": {
 									"name": "Outlands",
@@ -29740,7 +29740,7 @@
 												"max": 75
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/desert/settlement/outlands.0"
+											"_id": "oracle_rollable.row:starforged/planet/desert/settlements/outlands.0"
 										},
 										{
 											"roll": {
@@ -29748,7 +29748,7 @@
 												"max": 83
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/desert/settlement/outlands.1"
+											"_id": "oracle_rollable.row:starforged/planet/desert/settlements/outlands.1"
 										},
 										{
 											"roll": {
@@ -29756,7 +29756,7 @@
 												"max": 95
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/desert/settlement/outlands.2"
+											"_id": "oracle_rollable.row:starforged/planet/desert/settlements/outlands.2"
 										},
 										{
 											"roll": {
@@ -29764,7 +29764,7 @@
 												"max": 98
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/desert/settlement/outlands.3"
+											"_id": "oracle_rollable.row:starforged/planet/desert/settlements/outlands.3"
 										},
 										{
 											"roll": {
@@ -29772,11 +29772,11 @@
 												"max": 100
 											},
 											"text": "Settlements in conflict",
-											"_id": "oracle_rollable.row:starforged/planet/desert/settlement/outlands.4"
+											"_id": "oracle_rollable.row:starforged/planet/desert/settlements/outlands.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/desert/settlement/outlands"
+									"_id": "oracle_rollable:starforged/planet/desert/settlements/outlands"
 								},
 								"expanse": {
 									"name": "Expanse",
@@ -29794,7 +29794,7 @@
 												"max": 90
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/desert/settlement/expanse.0"
+											"_id": "oracle_rollable.row:starforged/planet/desert/settlements/expanse.0"
 										},
 										{
 											"roll": {
@@ -29802,7 +29802,7 @@
 												"max": 96
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/desert/settlement/expanse.1"
+											"_id": "oracle_rollable.row:starforged/planet/desert/settlements/expanse.1"
 										},
 										{
 											"roll": {
@@ -29810,27 +29810,27 @@
 												"max": 100
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/desert/settlement/expanse.2"
+											"_id": "oracle_rollable.row:starforged/planet/desert/settlements/expanse.2"
 										},
 										{
 											"text": "Multiple settlements",
 											"roll": null,
-											"_id": "oracle_rollable.row:starforged/planet/desert/settlement/expanse.3"
+											"_id": "oracle_rollable.row:starforged/planet/desert/settlements/expanse.3"
 										},
 										{
 											"text": "Settlements in conflict",
 											"roll": null,
-											"_id": "oracle_rollable.row:starforged/planet/desert/settlement/expanse.4"
+											"_id": "oracle_rollable.row:starforged/planet/desert/settlements/expanse.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/desert/settlement/expanse"
+									"_id": "oracle_rollable:starforged/planet/desert/settlements/expanse"
 								}
 							},
 							"column_labels": {
 								"text": "Result"
 							},
-							"_id": "oracle_collection:starforged/planet/desert/settlement"
+							"_id": "oracle_collection:starforged/planet/desert/settlements"
 						}
 					},
 					"contents": {
@@ -30206,7 +30206,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (orbital)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault) (orbital)",
 									"_id": "oracle_rollable.row:starforged/planet/desert/observed_from_space.9"
 								}
 							],
@@ -30371,7 +30371,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (planetside)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault) (planetside)",
 									"_id": "oracle_rollable.row:starforged/planet/desert/feature.14"
 								}
 							],
@@ -30480,7 +30480,7 @@
 					},
 					"summary": "A planet with relentless volcanic activity, wreathed in fire and ash.",
 					"collections": {
-						"settlement": {
+						"settlements": {
 							"name": "Settlements",
 							"oracle_type": "table_shared_text",
 							"type": "oracle_collection",
@@ -30513,7 +30513,7 @@
 												"max": 60
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/furnace/settlement/terminus.0"
+											"_id": "oracle_rollable.row:starforged/planet/furnace/settlements/terminus.0"
 										},
 										{
 											"roll": {
@@ -30521,7 +30521,7 @@
 												"max": 75
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/furnace/settlement/terminus.1"
+											"_id": "oracle_rollable.row:starforged/planet/furnace/settlements/terminus.1"
 										},
 										{
 											"roll": {
@@ -30529,7 +30529,7 @@
 												"max": 87
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/furnace/settlement/terminus.2"
+											"_id": "oracle_rollable.row:starforged/planet/furnace/settlements/terminus.2"
 										},
 										{
 											"roll": {
@@ -30537,7 +30537,7 @@
 												"max": 96
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/furnace/settlement/terminus.3"
+											"_id": "oracle_rollable.row:starforged/planet/furnace/settlements/terminus.3"
 										},
 										{
 											"roll": {
@@ -30545,11 +30545,11 @@
 												"max": 100
 											},
 											"text": "Settlements in conflict",
-											"_id": "oracle_rollable.row:starforged/planet/furnace/settlement/terminus.4"
+											"_id": "oracle_rollable.row:starforged/planet/furnace/settlements/terminus.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/furnace/settlement/terminus"
+									"_id": "oracle_rollable:starforged/planet/furnace/settlements/terminus"
 								},
 								"outlands": {
 									"name": "Outlands",
@@ -30567,7 +30567,7 @@
 												"max": 85
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/furnace/settlement/outlands.0"
+											"_id": "oracle_rollable.row:starforged/planet/furnace/settlements/outlands.0"
 										},
 										{
 											"roll": {
@@ -30575,7 +30575,7 @@
 												"max": 92
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/furnace/settlement/outlands.1"
+											"_id": "oracle_rollable.row:starforged/planet/furnace/settlements/outlands.1"
 										},
 										{
 											"roll": {
@@ -30583,7 +30583,7 @@
 												"max": 97
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/furnace/settlement/outlands.2"
+											"_id": "oracle_rollable.row:starforged/planet/furnace/settlements/outlands.2"
 										},
 										{
 											"roll": {
@@ -30591,7 +30591,7 @@
 												"max": 99
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/furnace/settlement/outlands.3"
+											"_id": "oracle_rollable.row:starforged/planet/furnace/settlements/outlands.3"
 										},
 										{
 											"roll": {
@@ -30599,11 +30599,11 @@
 												"max": 100
 											},
 											"text": "Settlements in conflict",
-											"_id": "oracle_rollable.row:starforged/planet/furnace/settlement/outlands.4"
+											"_id": "oracle_rollable.row:starforged/planet/furnace/settlements/outlands.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/furnace/settlement/outlands"
+									"_id": "oracle_rollable:starforged/planet/furnace/settlements/outlands"
 								},
 								"expanse": {
 									"name": "Expanse",
@@ -30621,7 +30621,7 @@
 												"max": 95
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/furnace/settlement/expanse.0"
+											"_id": "oracle_rollable.row:starforged/planet/furnace/settlements/expanse.0"
 										},
 										{
 											"roll": {
@@ -30629,7 +30629,7 @@
 												"max": 98
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/furnace/settlement/expanse.1"
+											"_id": "oracle_rollable.row:starforged/planet/furnace/settlements/expanse.1"
 										},
 										{
 											"roll": {
@@ -30637,27 +30637,27 @@
 												"max": 100
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/furnace/settlement/expanse.2"
+											"_id": "oracle_rollable.row:starforged/planet/furnace/settlements/expanse.2"
 										},
 										{
 											"text": "Multiple settlements",
 											"roll": null,
-											"_id": "oracle_rollable.row:starforged/planet/furnace/settlement/expanse.3"
+											"_id": "oracle_rollable.row:starforged/planet/furnace/settlements/expanse.3"
 										},
 										{
 											"text": "Settlements in conflict",
 											"roll": null,
-											"_id": "oracle_rollable.row:starforged/planet/furnace/settlement/expanse.4"
+											"_id": "oracle_rollable.row:starforged/planet/furnace/settlements/expanse.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/furnace/settlement/expanse"
+									"_id": "oracle_rollable:starforged/planet/furnace/settlements/expanse"
 								}
 							},
 							"column_labels": {
 								"text": "Result"
 							},
-							"_id": "oracle_collection:starforged/planet/furnace/settlement"
+							"_id": "oracle_collection:starforged/planet/furnace/settlements"
 						}
 					},
 					"contents": {
@@ -31030,7 +31030,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (orbital)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault) (orbital)",
 									"_id": "oracle_rollable.row:starforged/planet/furnace/observed_from_space.9"
 								}
 							],
@@ -31195,7 +31195,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (planetside)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault) (planetside)",
 									"_id": "oracle_rollable.row:starforged/planet/furnace/feature.14"
 								}
 							],
@@ -31304,7 +31304,7 @@
 					},
 					"summary": "A once-thriving world—now a grim monument to a fallen civilization.",
 					"collections": {
-						"settlement": {
+						"settlements": {
 							"name": "Settlements",
 							"oracle_type": "table_shared_text",
 							"type": "oracle_collection",
@@ -31337,7 +31337,7 @@
 												"max": 80
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/grave/settlement/terminus.0"
+											"_id": "oracle_rollable.row:starforged/planet/grave/settlements/terminus.0"
 										},
 										{
 											"roll": {
@@ -31345,7 +31345,7 @@
 												"max": 90
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/grave/settlement/terminus.1"
+											"_id": "oracle_rollable.row:starforged/planet/grave/settlements/terminus.1"
 										},
 										{
 											"roll": {
@@ -31353,7 +31353,7 @@
 												"max": 95
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/grave/settlement/terminus.2"
+											"_id": "oracle_rollable.row:starforged/planet/grave/settlements/terminus.2"
 										},
 										{
 											"roll": {
@@ -31361,7 +31361,7 @@
 												"max": 98
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/grave/settlement/terminus.3"
+											"_id": "oracle_rollable.row:starforged/planet/grave/settlements/terminus.3"
 										},
 										{
 											"roll": {
@@ -31369,11 +31369,11 @@
 												"max": 100
 											},
 											"text": "Settlements in conflict",
-											"_id": "oracle_rollable.row:starforged/planet/grave/settlement/terminus.4"
+											"_id": "oracle_rollable.row:starforged/planet/grave/settlements/terminus.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/grave/settlement/terminus"
+									"_id": "oracle_rollable:starforged/planet/grave/settlements/terminus"
 								},
 								"outlands": {
 									"name": "Outlands",
@@ -31391,7 +31391,7 @@
 												"max": 90
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/grave/settlement/outlands.0"
+											"_id": "oracle_rollable.row:starforged/planet/grave/settlements/outlands.0"
 										},
 										{
 											"roll": {
@@ -31399,7 +31399,7 @@
 												"max": 97
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/grave/settlement/outlands.1"
+											"_id": "oracle_rollable.row:starforged/planet/grave/settlements/outlands.1"
 										},
 										{
 											"roll": {
@@ -31407,21 +31407,21 @@
 												"max": 100
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/grave/settlement/outlands.2"
+											"_id": "oracle_rollable.row:starforged/planet/grave/settlements/outlands.2"
 										},
 										{
 											"text": "Multiple settlements",
 											"roll": null,
-											"_id": "oracle_rollable.row:starforged/planet/grave/settlement/outlands.3"
+											"_id": "oracle_rollable.row:starforged/planet/grave/settlements/outlands.3"
 										},
 										{
 											"text": "Settlements in conflict",
 											"roll": null,
-											"_id": "oracle_rollable.row:starforged/planet/grave/settlement/outlands.4"
+											"_id": "oracle_rollable.row:starforged/planet/grave/settlements/outlands.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/grave/settlement/outlands"
+									"_id": "oracle_rollable:starforged/planet/grave/settlements/outlands"
 								},
 								"expanse": {
 									"name": "Expanse",
@@ -31439,7 +31439,7 @@
 												"max": 95
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/grave/settlement/expanse.0"
+											"_id": "oracle_rollable.row:starforged/planet/grave/settlements/expanse.0"
 										},
 										{
 											"roll": {
@@ -31447,7 +31447,7 @@
 												"max": 98
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/grave/settlement/expanse.1"
+											"_id": "oracle_rollable.row:starforged/planet/grave/settlements/expanse.1"
 										},
 										{
 											"roll": {
@@ -31455,27 +31455,27 @@
 												"max": 100
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/grave/settlement/expanse.2"
+											"_id": "oracle_rollable.row:starforged/planet/grave/settlements/expanse.2"
 										},
 										{
 											"text": "Multiple settlements",
 											"roll": null,
-											"_id": "oracle_rollable.row:starforged/planet/grave/settlement/expanse.3"
+											"_id": "oracle_rollable.row:starforged/planet/grave/settlements/expanse.3"
 										},
 										{
 											"text": "Settlements in conflict",
 											"roll": null,
-											"_id": "oracle_rollable.row:starforged/planet/grave/settlement/expanse.4"
+											"_id": "oracle_rollable.row:starforged/planet/grave/settlements/expanse.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/grave/settlement/expanse"
+									"_id": "oracle_rollable:starforged/planet/grave/settlements/expanse"
 								}
 							},
 							"column_labels": {
 								"text": "Result"
 							},
-							"_id": "oracle_collection:starforged/planet/grave/settlement"
+							"_id": "oracle_collection:starforged/planet/grave/settlements"
 						}
 					},
 					"contents": {
@@ -31848,7 +31848,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (orbital)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault) (orbital)",
 									"_id": "oracle_rollable.row:starforged/planet/grave/observed_from_space.9"
 								}
 							],
@@ -32013,7 +32013,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (planetside)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault) (planetside)",
 									"_id": "oracle_rollable.row:starforged/planet/grave/feature.14"
 								}
 							],
@@ -32113,7 +32113,7 @@
 					},
 					"summary": "A rugged, frozen world—locked in an unending winter.",
 					"collections": {
-						"settlement": {
+						"settlements": {
 							"name": "Settlements",
 							"oracle_type": "table_shared_text",
 							"type": "oracle_collection",
@@ -32146,7 +32146,7 @@
 												"max": 50
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/ice/settlement/terminus.0"
+											"_id": "oracle_rollable.row:starforged/planet/ice/settlements/terminus.0"
 										},
 										{
 											"roll": {
@@ -32154,7 +32154,7 @@
 												"max": 60
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/ice/settlement/terminus.1"
+											"_id": "oracle_rollable.row:starforged/planet/ice/settlements/terminus.1"
 										},
 										{
 											"roll": {
@@ -32162,7 +32162,7 @@
 												"max": 80
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/ice/settlement/terminus.2"
+											"_id": "oracle_rollable.row:starforged/planet/ice/settlements/terminus.2"
 										},
 										{
 											"roll": {
@@ -32170,7 +32170,7 @@
 												"max": 92
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/ice/settlement/terminus.3"
+											"_id": "oracle_rollable.row:starforged/planet/ice/settlements/terminus.3"
 										},
 										{
 											"roll": {
@@ -32178,11 +32178,11 @@
 												"max": 100
 											},
 											"text": "Settlements in conflict",
-											"_id": "oracle_rollable.row:starforged/planet/ice/settlement/terminus.4"
+											"_id": "oracle_rollable.row:starforged/planet/ice/settlements/terminus.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/ice/settlement/terminus"
+									"_id": "oracle_rollable:starforged/planet/ice/settlements/terminus"
 								},
 								"outlands": {
 									"name": "Outlands",
@@ -32200,7 +32200,7 @@
 												"max": 75
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/ice/settlement/outlands.0"
+											"_id": "oracle_rollable.row:starforged/planet/ice/settlements/outlands.0"
 										},
 										{
 											"roll": {
@@ -32208,7 +32208,7 @@
 												"max": 83
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/ice/settlement/outlands.1"
+											"_id": "oracle_rollable.row:starforged/planet/ice/settlements/outlands.1"
 										},
 										{
 											"roll": {
@@ -32216,7 +32216,7 @@
 												"max": 95
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/ice/settlement/outlands.2"
+											"_id": "oracle_rollable.row:starforged/planet/ice/settlements/outlands.2"
 										},
 										{
 											"roll": {
@@ -32224,7 +32224,7 @@
 												"max": 98
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/ice/settlement/outlands.3"
+											"_id": "oracle_rollable.row:starforged/planet/ice/settlements/outlands.3"
 										},
 										{
 											"roll": {
@@ -32232,11 +32232,11 @@
 												"max": 100
 											},
 											"text": "Settlements in conflict",
-											"_id": "oracle_rollable.row:starforged/planet/ice/settlement/outlands.4"
+											"_id": "oracle_rollable.row:starforged/planet/ice/settlements/outlands.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/ice/settlement/outlands"
+									"_id": "oracle_rollable:starforged/planet/ice/settlements/outlands"
 								},
 								"expanse": {
 									"name": "Expanse",
@@ -32254,7 +32254,7 @@
 												"max": 90
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/ice/settlement/expanse.0"
+											"_id": "oracle_rollable.row:starforged/planet/ice/settlements/expanse.0"
 										},
 										{
 											"roll": {
@@ -32262,7 +32262,7 @@
 												"max": 96
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/ice/settlement/expanse.1"
+											"_id": "oracle_rollable.row:starforged/planet/ice/settlements/expanse.1"
 										},
 										{
 											"roll": {
@@ -32270,27 +32270,27 @@
 												"max": 100
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/ice/settlement/expanse.2"
+											"_id": "oracle_rollable.row:starforged/planet/ice/settlements/expanse.2"
 										},
 										{
 											"text": "Multiple settlements",
 											"roll": null,
-											"_id": "oracle_rollable.row:starforged/planet/ice/settlement/expanse.3"
+											"_id": "oracle_rollable.row:starforged/planet/ice/settlements/expanse.3"
 										},
 										{
 											"text": "Settlements in conflict",
 											"roll": null,
-											"_id": "oracle_rollable.row:starforged/planet/ice/settlement/expanse.4"
+											"_id": "oracle_rollable.row:starforged/planet/ice/settlements/expanse.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/ice/settlement/expanse"
+									"_id": "oracle_rollable:starforged/planet/ice/settlements/expanse"
 								}
 							},
 							"column_labels": {
 								"text": "Result"
 							},
-							"_id": "oracle_collection:starforged/planet/ice/settlement"
+							"_id": "oracle_collection:starforged/planet/ice/settlements"
 						}
 					},
 					"contents": {
@@ -32666,7 +32666,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (orbital)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault) (orbital)",
 									"_id": "oracle_rollable.row:starforged/planet/ice/observed_from_space.9"
 								}
 							],
@@ -32831,7 +32831,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (planetside)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault) (planetside)",
 									"_id": "oracle_rollable.row:starforged/planet/ice/feature.14"
 								}
 							],
@@ -32940,7 +32940,7 @@
 					},
 					"summary": "A massive planet with vast layers of dense gases surrounding a rocky core.",
 					"collections": {
-						"settlement": {
+						"settlements": {
 							"name": "Settlements",
 							"oracle_type": "table_shared_text",
 							"type": "oracle_collection",
@@ -32973,7 +32973,7 @@
 												"max": 50
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/jovian/settlement/terminus.0"
+											"_id": "oracle_rollable.row:starforged/planet/jovian/settlements/terminus.0"
 										},
 										{
 											"roll": {
@@ -32981,7 +32981,7 @@
 												"max": 70
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/jovian/settlement/terminus.1"
+											"_id": "oracle_rollable.row:starforged/planet/jovian/settlements/terminus.1"
 										},
 										{
 											"roll": {
@@ -32989,7 +32989,7 @@
 												"max": 85
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/jovian/settlement/terminus.2"
+											"_id": "oracle_rollable.row:starforged/planet/jovian/settlements/terminus.2"
 										},
 										{
 											"roll": {
@@ -32997,7 +32997,7 @@
 												"max": 95
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/jovian/settlement/terminus.3"
+											"_id": "oracle_rollable.row:starforged/planet/jovian/settlements/terminus.3"
 										},
 										{
 											"roll": {
@@ -33005,11 +33005,11 @@
 												"max": 100
 											},
 											"text": "Settlements in conflict",
-											"_id": "oracle_rollable.row:starforged/planet/jovian/settlement/terminus.4"
+											"_id": "oracle_rollable.row:starforged/planet/jovian/settlements/terminus.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/jovian/settlement/terminus"
+									"_id": "oracle_rollable:starforged/planet/jovian/settlements/terminus"
 								},
 								"outlands": {
 									"name": "Outlands",
@@ -33027,7 +33027,7 @@
 												"max": 75
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/jovian/settlement/outlands.0"
+											"_id": "oracle_rollable.row:starforged/planet/jovian/settlements/outlands.0"
 										},
 										{
 											"roll": {
@@ -33035,7 +33035,7 @@
 												"max": 87
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/jovian/settlement/outlands.1"
+											"_id": "oracle_rollable.row:starforged/planet/jovian/settlements/outlands.1"
 										},
 										{
 											"roll": {
@@ -33043,7 +33043,7 @@
 												"max": 95
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/jovian/settlement/outlands.2"
+											"_id": "oracle_rollable.row:starforged/planet/jovian/settlements/outlands.2"
 										},
 										{
 											"roll": {
@@ -33051,7 +33051,7 @@
 												"max": 98
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/jovian/settlement/outlands.3"
+											"_id": "oracle_rollable.row:starforged/planet/jovian/settlements/outlands.3"
 										},
 										{
 											"roll": {
@@ -33059,11 +33059,11 @@
 												"max": 100
 											},
 											"text": "Settlements in conflict",
-											"_id": "oracle_rollable.row:starforged/planet/jovian/settlement/outlands.4"
+											"_id": "oracle_rollable.row:starforged/planet/jovian/settlements/outlands.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/jovian/settlement/outlands"
+									"_id": "oracle_rollable:starforged/planet/jovian/settlements/outlands"
 								},
 								"expanse": {
 									"name": "Expanse",
@@ -33081,7 +33081,7 @@
 												"max": 90
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/jovian/settlement/expanse.0"
+											"_id": "oracle_rollable.row:starforged/planet/jovian/settlements/expanse.0"
 										},
 										{
 											"roll": {
@@ -33089,7 +33089,7 @@
 												"max": 96
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/jovian/settlement/expanse.1"
+											"_id": "oracle_rollable.row:starforged/planet/jovian/settlements/expanse.1"
 										},
 										{
 											"roll": {
@@ -33097,27 +33097,27 @@
 												"max": 100
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/jovian/settlement/expanse.2"
+											"_id": "oracle_rollable.row:starforged/planet/jovian/settlements/expanse.2"
 										},
 										{
 											"text": "Multiple settlements",
 											"roll": null,
-											"_id": "oracle_rollable.row:starforged/planet/jovian/settlement/expanse.3"
+											"_id": "oracle_rollable.row:starforged/planet/jovian/settlements/expanse.3"
 										},
 										{
 											"text": "Settlements in conflict",
 											"roll": null,
-											"_id": "oracle_rollable.row:starforged/planet/jovian/settlement/expanse.4"
+											"_id": "oracle_rollable.row:starforged/planet/jovian/settlements/expanse.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/jovian/settlement/expanse"
+									"_id": "oracle_rollable:starforged/planet/jovian/settlements/expanse"
 								}
 							},
 							"column_labels": {
 								"text": "Result"
 							},
-							"_id": "oracle_collection:starforged/planet/jovian/settlement"
+							"_id": "oracle_collection:starforged/planet/jovian/settlements"
 						}
 					},
 					"contents": {
@@ -33487,7 +33487,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (orbital)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault) (orbital)",
 									"_id": "oracle_rollable.row:starforged/planet/jovian/observed_from_space.9"
 								}
 							],
@@ -33652,7 +33652,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (planetside)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault) (planetside)",
 									"_id": "oracle_rollable.row:starforged/planet/jovian/feature.14"
 								}
 							],
@@ -33761,7 +33761,7 @@
 					},
 					"summary": "A humid, rain-soaked planet that keeps its secrets under a thick canopy of vegetation.",
 					"collections": {
-						"settlement": {
+						"settlements": {
 							"name": "Settlements",
 							"oracle_type": "table_shared_text",
 							"type": "oracle_collection",
@@ -33794,7 +33794,7 @@
 												"max": 40
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/jungle/settlement/terminus.0"
+											"_id": "oracle_rollable.row:starforged/planet/jungle/settlements/terminus.0"
 										},
 										{
 											"roll": {
@@ -33802,7 +33802,7 @@
 												"max": 55
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/jungle/settlement/terminus.1"
+											"_id": "oracle_rollable.row:starforged/planet/jungle/settlements/terminus.1"
 										},
 										{
 											"roll": {
@@ -33810,7 +33810,7 @@
 												"max": 80
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/jungle/settlement/terminus.2"
+											"_id": "oracle_rollable.row:starforged/planet/jungle/settlements/terminus.2"
 										},
 										{
 											"roll": {
@@ -33818,7 +33818,7 @@
 												"max": 92
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/jungle/settlement/terminus.3"
+											"_id": "oracle_rollable.row:starforged/planet/jungle/settlements/terminus.3"
 										},
 										{
 											"roll": {
@@ -33826,11 +33826,11 @@
 												"max": 100
 											},
 											"text": "Settlements in conflict",
-											"_id": "oracle_rollable.row:starforged/planet/jungle/settlement/terminus.4"
+											"_id": "oracle_rollable.row:starforged/planet/jungle/settlements/terminus.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/jungle/settlement/terminus"
+									"_id": "oracle_rollable:starforged/planet/jungle/settlements/terminus"
 								},
 								"outlands": {
 									"name": "Outlands",
@@ -33848,7 +33848,7 @@
 												"max": 65
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/jungle/settlement/outlands.0"
+											"_id": "oracle_rollable.row:starforged/planet/jungle/settlements/outlands.0"
 										},
 										{
 											"roll": {
@@ -33856,7 +33856,7 @@
 												"max": 75
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/jungle/settlement/outlands.1"
+											"_id": "oracle_rollable.row:starforged/planet/jungle/settlements/outlands.1"
 										},
 										{
 											"roll": {
@@ -33864,7 +33864,7 @@
 												"max": 92
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/jungle/settlement/outlands.2"
+											"_id": "oracle_rollable.row:starforged/planet/jungle/settlements/outlands.2"
 										},
 										{
 											"roll": {
@@ -33872,7 +33872,7 @@
 												"max": 97
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/jungle/settlement/outlands.3"
+											"_id": "oracle_rollable.row:starforged/planet/jungle/settlements/outlands.3"
 										},
 										{
 											"roll": {
@@ -33880,11 +33880,11 @@
 												"max": 100
 											},
 											"text": "Settlements in conflict",
-											"_id": "oracle_rollable.row:starforged/planet/jungle/settlement/outlands.4"
+											"_id": "oracle_rollable.row:starforged/planet/jungle/settlements/outlands.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/jungle/settlement/outlands"
+									"_id": "oracle_rollable:starforged/planet/jungle/settlements/outlands"
 								},
 								"expanse": {
 									"name": "Expanse",
@@ -33902,7 +33902,7 @@
 												"max": 85
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/jungle/settlement/expanse.0"
+											"_id": "oracle_rollable.row:starforged/planet/jungle/settlements/expanse.0"
 										},
 										{
 											"roll": {
@@ -33910,7 +33910,7 @@
 												"max": 90
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/jungle/settlement/expanse.1"
+											"_id": "oracle_rollable.row:starforged/planet/jungle/settlements/expanse.1"
 										},
 										{
 											"roll": {
@@ -33918,7 +33918,7 @@
 												"max": 97
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/jungle/settlement/expanse.2"
+											"_id": "oracle_rollable.row:starforged/planet/jungle/settlements/expanse.2"
 										},
 										{
 											"roll": {
@@ -33926,7 +33926,7 @@
 												"max": 99
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/jungle/settlement/expanse.3"
+											"_id": "oracle_rollable.row:starforged/planet/jungle/settlements/expanse.3"
 										},
 										{
 											"roll": {
@@ -33934,17 +33934,17 @@
 												"max": 100
 											},
 											"text": "Settlements in conflict",
-											"_id": "oracle_rollable.row:starforged/planet/jungle/settlement/expanse.4"
+											"_id": "oracle_rollable.row:starforged/planet/jungle/settlements/expanse.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/jungle/settlement/expanse"
+									"_id": "oracle_rollable:starforged/planet/jungle/settlements/expanse"
 								}
 							},
 							"column_labels": {
 								"text": "Result"
 							},
-							"_id": "oracle_collection:starforged/planet/jungle/settlement"
+							"_id": "oracle_collection:starforged/planet/jungle/settlements"
 						}
 					},
 					"contents": {
@@ -34317,7 +34317,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (orbital)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault) (orbital)",
 									"_id": "oracle_rollable.row:starforged/planet/jungle/observed_from_space.9"
 								}
 							],
@@ -34482,7 +34482,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (planetside)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault) (planetside)",
 									"_id": "oracle_rollable.row:starforged/planet/jungle/feature.14"
 								}
 							],
@@ -34585,7 +34585,7 @@
 					},
 					"summary": "A planet completely or almost entirely covered by a boundless ocean.",
 					"collections": {
-						"settlement": {
+						"settlements": {
 							"name": "Settlements",
 							"oracle_type": "table_shared_text",
 							"type": "oracle_collection",
@@ -34618,7 +34618,7 @@
 												"max": 40
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/ocean/settlement/terminus.0"
+											"_id": "oracle_rollable.row:starforged/planet/ocean/settlements/terminus.0"
 										},
 										{
 											"roll": {
@@ -34626,7 +34626,7 @@
 												"max": 55
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/ocean/settlement/terminus.1"
+											"_id": "oracle_rollable.row:starforged/planet/ocean/settlements/terminus.1"
 										},
 										{
 											"roll": {
@@ -34634,7 +34634,7 @@
 												"max": 80
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/ocean/settlement/terminus.2"
+											"_id": "oracle_rollable.row:starforged/planet/ocean/settlements/terminus.2"
 										},
 										{
 											"roll": {
@@ -34642,7 +34642,7 @@
 												"max": 92
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/ocean/settlement/terminus.3"
+											"_id": "oracle_rollable.row:starforged/planet/ocean/settlements/terminus.3"
 										},
 										{
 											"roll": {
@@ -34650,11 +34650,11 @@
 												"max": 100
 											},
 											"text": "Settlements in conflict",
-											"_id": "oracle_rollable.row:starforged/planet/ocean/settlement/terminus.4"
+											"_id": "oracle_rollable.row:starforged/planet/ocean/settlements/terminus.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/ocean/settlement/terminus"
+									"_id": "oracle_rollable:starforged/planet/ocean/settlements/terminus"
 								},
 								"outlands": {
 									"name": "Outlands",
@@ -34672,7 +34672,7 @@
 												"max": 65
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/ocean/settlement/outlands.0"
+											"_id": "oracle_rollable.row:starforged/planet/ocean/settlements/outlands.0"
 										},
 										{
 											"roll": {
@@ -34680,7 +34680,7 @@
 												"max": 75
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/ocean/settlement/outlands.1"
+											"_id": "oracle_rollable.row:starforged/planet/ocean/settlements/outlands.1"
 										},
 										{
 											"roll": {
@@ -34688,7 +34688,7 @@
 												"max": 92
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/ocean/settlement/outlands.2"
+											"_id": "oracle_rollable.row:starforged/planet/ocean/settlements/outlands.2"
 										},
 										{
 											"roll": {
@@ -34696,7 +34696,7 @@
 												"max": 97
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/ocean/settlement/outlands.3"
+											"_id": "oracle_rollable.row:starforged/planet/ocean/settlements/outlands.3"
 										},
 										{
 											"roll": {
@@ -34704,11 +34704,11 @@
 												"max": 100
 											},
 											"text": "Settlements in conflict",
-											"_id": "oracle_rollable.row:starforged/planet/ocean/settlement/outlands.4"
+											"_id": "oracle_rollable.row:starforged/planet/ocean/settlements/outlands.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/ocean/settlement/outlands"
+									"_id": "oracle_rollable:starforged/planet/ocean/settlements/outlands"
 								},
 								"expanse": {
 									"name": "Expanse",
@@ -34726,7 +34726,7 @@
 												"max": 85
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/ocean/settlement/expanse.0"
+											"_id": "oracle_rollable.row:starforged/planet/ocean/settlements/expanse.0"
 										},
 										{
 											"roll": {
@@ -34734,7 +34734,7 @@
 												"max": 90
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/ocean/settlement/expanse.1"
+											"_id": "oracle_rollable.row:starforged/planet/ocean/settlements/expanse.1"
 										},
 										{
 											"roll": {
@@ -34742,7 +34742,7 @@
 												"max": 97
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/ocean/settlement/expanse.2"
+											"_id": "oracle_rollable.row:starforged/planet/ocean/settlements/expanse.2"
 										},
 										{
 											"roll": {
@@ -34750,7 +34750,7 @@
 												"max": 99
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/ocean/settlement/expanse.3"
+											"_id": "oracle_rollable.row:starforged/planet/ocean/settlements/expanse.3"
 										},
 										{
 											"roll": {
@@ -34758,17 +34758,17 @@
 												"max": 100
 											},
 											"text": "Settlements in conflict",
-											"_id": "oracle_rollable.row:starforged/planet/ocean/settlement/expanse.4"
+											"_id": "oracle_rollable.row:starforged/planet/ocean/settlements/expanse.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/ocean/settlement/expanse"
+									"_id": "oracle_rollable:starforged/planet/ocean/settlements/expanse"
 								}
 							},
 							"column_labels": {
 								"text": "Result"
 							},
-							"_id": "oracle_collection:starforged/planet/ocean/settlement"
+							"_id": "oracle_collection:starforged/planet/ocean/settlements"
 						}
 					},
 					"contents": {
@@ -35144,7 +35144,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (orbital)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault) (orbital)",
 									"_id": "oracle_rollable.row:starforged/planet/ocean/observed_from_space.9"
 								}
 							],
@@ -35309,7 +35309,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (planetside)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault) (planetside)",
 									"_id": "oracle_rollable.row:starforged/planet/ocean/feature.14"
 								}
 							],
@@ -35418,7 +35418,7 @@
 					},
 					"summary": "A rugged planet scarred by eons of destructive asteroid impacts.",
 					"collections": {
-						"settlement": {
+						"settlements": {
 							"name": "Settlements",
 							"oracle_type": "table_shared_text",
 							"type": "oracle_collection",
@@ -35451,7 +35451,7 @@
 												"max": 50
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/rocky/settlement/terminus.0"
+											"_id": "oracle_rollable.row:starforged/planet/rocky/settlements/terminus.0"
 										},
 										{
 											"roll": {
@@ -35459,7 +35459,7 @@
 												"max": 70
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/rocky/settlement/terminus.1"
+											"_id": "oracle_rollable.row:starforged/planet/rocky/settlements/terminus.1"
 										},
 										{
 											"roll": {
@@ -35467,7 +35467,7 @@
 												"max": 85
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/rocky/settlement/terminus.2"
+											"_id": "oracle_rollable.row:starforged/planet/rocky/settlements/terminus.2"
 										},
 										{
 											"roll": {
@@ -35475,7 +35475,7 @@
 												"max": 95
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/rocky/settlement/terminus.3"
+											"_id": "oracle_rollable.row:starforged/planet/rocky/settlements/terminus.3"
 										},
 										{
 											"roll": {
@@ -35483,11 +35483,11 @@
 												"max": 100
 											},
 											"text": "Settlements in conflict",
-											"_id": "oracle_rollable.row:starforged/planet/rocky/settlement/terminus.4"
+											"_id": "oracle_rollable.row:starforged/planet/rocky/settlements/terminus.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/rocky/settlement/terminus"
+									"_id": "oracle_rollable:starforged/planet/rocky/settlements/terminus"
 								},
 								"outlands": {
 									"name": "Outlands",
@@ -35505,7 +35505,7 @@
 												"max": 75
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/rocky/settlement/outlands.0"
+											"_id": "oracle_rollable.row:starforged/planet/rocky/settlements/outlands.0"
 										},
 										{
 											"roll": {
@@ -35513,7 +35513,7 @@
 												"max": 87
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/rocky/settlement/outlands.1"
+											"_id": "oracle_rollable.row:starforged/planet/rocky/settlements/outlands.1"
 										},
 										{
 											"roll": {
@@ -35521,7 +35521,7 @@
 												"max": 95
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/rocky/settlement/outlands.2"
+											"_id": "oracle_rollable.row:starforged/planet/rocky/settlements/outlands.2"
 										},
 										{
 											"roll": {
@@ -35529,7 +35529,7 @@
 												"max": 98
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/rocky/settlement/outlands.3"
+											"_id": "oracle_rollable.row:starforged/planet/rocky/settlements/outlands.3"
 										},
 										{
 											"roll": {
@@ -35537,11 +35537,11 @@
 												"max": 100
 											},
 											"text": "Settlements in conflict",
-											"_id": "oracle_rollable.row:starforged/planet/rocky/settlement/outlands.4"
+											"_id": "oracle_rollable.row:starforged/planet/rocky/settlements/outlands.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/rocky/settlement/outlands"
+									"_id": "oracle_rollable:starforged/planet/rocky/settlements/outlands"
 								},
 								"expanse": {
 									"name": "Expanse",
@@ -35559,7 +35559,7 @@
 												"max": 90
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/rocky/settlement/expanse.0"
+											"_id": "oracle_rollable.row:starforged/planet/rocky/settlements/expanse.0"
 										},
 										{
 											"roll": {
@@ -35567,7 +35567,7 @@
 												"max": 96
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/rocky/settlement/expanse.1"
+											"_id": "oracle_rollable.row:starforged/planet/rocky/settlements/expanse.1"
 										},
 										{
 											"roll": {
@@ -35575,27 +35575,27 @@
 												"max": 100
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/rocky/settlement/expanse.2"
+											"_id": "oracle_rollable.row:starforged/planet/rocky/settlements/expanse.2"
 										},
 										{
 											"text": "Multiple settlements",
 											"roll": null,
-											"_id": "oracle_rollable.row:starforged/planet/rocky/settlement/expanse.3"
+											"_id": "oracle_rollable.row:starforged/planet/rocky/settlements/expanse.3"
 										},
 										{
 											"text": "Settlements in conflict",
 											"roll": null,
-											"_id": "oracle_rollable.row:starforged/planet/rocky/settlement/expanse.4"
+											"_id": "oracle_rollable.row:starforged/planet/rocky/settlements/expanse.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/rocky/settlement/expanse"
+									"_id": "oracle_rollable:starforged/planet/rocky/settlements/expanse"
 								}
 							},
 							"column_labels": {
 								"text": "Result"
 							},
-							"_id": "oracle_collection:starforged/planet/rocky/settlement"
+							"_id": "oracle_collection:starforged/planet/rocky/settlements"
 						}
 					},
 					"contents": {
@@ -35965,7 +35965,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (orbital)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault) (orbital)",
 									"_id": "oracle_rollable.row:starforged/planet/rocky/observed_from_space.9"
 								}
 							],
@@ -36130,7 +36130,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (planetside)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault) (planetside)",
 									"_id": "oracle_rollable.row:starforged/planet/rocky/feature.14"
 								}
 							],
@@ -36239,7 +36239,7 @@
 					},
 					"summary": "A planet sundered by cataclysmic destruction.",
 					"collections": {
-						"settlement": {
+						"settlements": {
 							"name": "Settlements",
 							"oracle_type": "table_shared_text",
 							"type": "oracle_collection",
@@ -36272,7 +36272,7 @@
 												"max": 70
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/shattered/settlement/terminus.0"
+											"_id": "oracle_rollable.row:starforged/planet/shattered/settlements/terminus.0"
 										},
 										{
 											"roll": {
@@ -36280,7 +36280,7 @@
 												"max": 90
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/shattered/settlement/terminus.1"
+											"_id": "oracle_rollable.row:starforged/planet/shattered/settlements/terminus.1"
 										},
 										{
 											"roll": {
@@ -36288,7 +36288,7 @@
 												"max": 95
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/shattered/settlement/terminus.2"
+											"_id": "oracle_rollable.row:starforged/planet/shattered/settlements/terminus.2"
 										},
 										{
 											"roll": {
@@ -36296,7 +36296,7 @@
 												"max": 98
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/shattered/settlement/terminus.3"
+											"_id": "oracle_rollable.row:starforged/planet/shattered/settlements/terminus.3"
 										},
 										{
 											"roll": {
@@ -36304,11 +36304,11 @@
 												"max": 100
 											},
 											"text": "Settlements in conflict",
-											"_id": "oracle_rollable.row:starforged/planet/shattered/settlement/terminus.4"
+											"_id": "oracle_rollable.row:starforged/planet/shattered/settlements/terminus.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/shattered/settlement/terminus"
+									"_id": "oracle_rollable:starforged/planet/shattered/settlements/terminus"
 								},
 								"outlands": {
 									"name": "Outlands",
@@ -36326,7 +36326,7 @@
 												"max": 85
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/shattered/settlement/outlands.0"
+											"_id": "oracle_rollable.row:starforged/planet/shattered/settlements/outlands.0"
 										},
 										{
 											"roll": {
@@ -36334,7 +36334,7 @@
 												"max": 96
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/shattered/settlement/outlands.1"
+											"_id": "oracle_rollable.row:starforged/planet/shattered/settlements/outlands.1"
 										},
 										{
 											"roll": {
@@ -36342,7 +36342,7 @@
 												"max": 99
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/shattered/settlement/outlands.2"
+											"_id": "oracle_rollable.row:starforged/planet/shattered/settlements/outlands.2"
 										},
 										{
 											"roll": {
@@ -36350,16 +36350,16 @@
 												"max": 100
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/shattered/settlement/outlands.3"
+											"_id": "oracle_rollable.row:starforged/planet/shattered/settlements/outlands.3"
 										},
 										{
 											"text": "Settlements in conflict",
 											"roll": null,
-											"_id": "oracle_rollable.row:starforged/planet/shattered/settlement/outlands.4"
+											"_id": "oracle_rollable.row:starforged/planet/shattered/settlements/outlands.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/shattered/settlement/outlands"
+									"_id": "oracle_rollable:starforged/planet/shattered/settlements/outlands"
 								},
 								"expanse": {
 									"name": "Expanse",
@@ -36377,7 +36377,7 @@
 												"max": 95
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/shattered/settlement/expanse.0"
+											"_id": "oracle_rollable.row:starforged/planet/shattered/settlements/expanse.0"
 										},
 										{
 											"roll": {
@@ -36385,7 +36385,7 @@
 												"max": 99
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/shattered/settlement/expanse.1"
+											"_id": "oracle_rollable.row:starforged/planet/shattered/settlements/expanse.1"
 										},
 										{
 											"roll": {
@@ -36393,27 +36393,27 @@
 												"max": 100
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/shattered/settlement/expanse.2"
+											"_id": "oracle_rollable.row:starforged/planet/shattered/settlements/expanse.2"
 										},
 										{
 											"text": "Multiple settlements",
 											"roll": null,
-											"_id": "oracle_rollable.row:starforged/planet/shattered/settlement/expanse.3"
+											"_id": "oracle_rollable.row:starforged/planet/shattered/settlements/expanse.3"
 										},
 										{
 											"text": "Settlements in conflict",
 											"roll": null,
-											"_id": "oracle_rollable.row:starforged/planet/shattered/settlement/expanse.4"
+											"_id": "oracle_rollable.row:starforged/planet/shattered/settlements/expanse.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/shattered/settlement/expanse"
+									"_id": "oracle_rollable:starforged/planet/shattered/settlements/expanse"
 								}
 							},
 							"column_labels": {
 								"text": "Result"
 							},
-							"_id": "oracle_collection:starforged/planet/shattered/settlement"
+							"_id": "oracle_collection:starforged/planet/shattered/settlements"
 						}
 					},
 					"contents": {
@@ -36786,7 +36786,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (orbital)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault) (orbital)",
 									"_id": "oracle_rollable.row:starforged/planet/shattered/observed_from_space.9"
 								}
 							],
@@ -36951,7 +36951,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (planetside)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault) (planetside)",
 									"_id": "oracle_rollable.row:starforged/planet/shattered/feature.14"
 								}
 							],
@@ -37054,7 +37054,7 @@
 					},
 					"summary": "A foul planet wracked by a poisonous climate and virulent growths.",
 					"collections": {
-						"settlement": {
+						"settlements": {
 							"name": "Settlements",
 							"oracle_type": "table_shared_text",
 							"type": "oracle_collection",
@@ -37087,7 +37087,7 @@
 												"max": 80
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/tainted/settlement/terminus.0"
+											"_id": "oracle_rollable.row:starforged/planet/tainted/settlements/terminus.0"
 										},
 										{
 											"roll": {
@@ -37095,7 +37095,7 @@
 												"max": 90
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/tainted/settlement/terminus.1"
+											"_id": "oracle_rollable.row:starforged/planet/tainted/settlements/terminus.1"
 										},
 										{
 											"roll": {
@@ -37103,7 +37103,7 @@
 												"max": 95
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/tainted/settlement/terminus.2"
+											"_id": "oracle_rollable.row:starforged/planet/tainted/settlements/terminus.2"
 										},
 										{
 											"roll": {
@@ -37111,7 +37111,7 @@
 												"max": 98
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/tainted/settlement/terminus.3"
+											"_id": "oracle_rollable.row:starforged/planet/tainted/settlements/terminus.3"
 										},
 										{
 											"roll": {
@@ -37119,11 +37119,11 @@
 												"max": 100
 											},
 											"text": "Settlements in conflict",
-											"_id": "oracle_rollable.row:starforged/planet/tainted/settlement/terminus.4"
+											"_id": "oracle_rollable.row:starforged/planet/tainted/settlements/terminus.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/tainted/settlement/terminus"
+									"_id": "oracle_rollable:starforged/planet/tainted/settlements/terminus"
 								},
 								"outlands": {
 									"name": "Outlands",
@@ -37141,7 +37141,7 @@
 												"max": 90
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/tainted/settlement/outlands.0"
+											"_id": "oracle_rollable.row:starforged/planet/tainted/settlements/outlands.0"
 										},
 										{
 											"roll": {
@@ -37149,7 +37149,7 @@
 												"max": 97
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/tainted/settlement/outlands.1"
+											"_id": "oracle_rollable.row:starforged/planet/tainted/settlements/outlands.1"
 										},
 										{
 											"roll": {
@@ -37157,21 +37157,21 @@
 												"max": 100
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/tainted/settlement/outlands.2"
+											"_id": "oracle_rollable.row:starforged/planet/tainted/settlements/outlands.2"
 										},
 										{
 											"text": "Multiple settlements",
 											"roll": null,
-											"_id": "oracle_rollable.row:starforged/planet/tainted/settlement/outlands.3"
+											"_id": "oracle_rollable.row:starforged/planet/tainted/settlements/outlands.3"
 										},
 										{
 											"text": "Settlements in conflict",
 											"roll": null,
-											"_id": "oracle_rollable.row:starforged/planet/tainted/settlement/outlands.4"
+											"_id": "oracle_rollable.row:starforged/planet/tainted/settlements/outlands.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/tainted/settlement/outlands"
+									"_id": "oracle_rollable:starforged/planet/tainted/settlements/outlands"
 								},
 								"expanse": {
 									"name": "Expanse",
@@ -37189,7 +37189,7 @@
 												"max": 95
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/tainted/settlement/expanse.0"
+											"_id": "oracle_rollable.row:starforged/planet/tainted/settlements/expanse.0"
 										},
 										{
 											"roll": {
@@ -37197,7 +37197,7 @@
 												"max": 98
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/tainted/settlement/expanse.1"
+											"_id": "oracle_rollable.row:starforged/planet/tainted/settlements/expanse.1"
 										},
 										{
 											"roll": {
@@ -37205,27 +37205,27 @@
 												"max": 100
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/tainted/settlement/expanse.2"
+											"_id": "oracle_rollable.row:starforged/planet/tainted/settlements/expanse.2"
 										},
 										{
 											"text": "Multiple settlements",
 											"roll": null,
-											"_id": "oracle_rollable.row:starforged/planet/tainted/settlement/expanse.3"
+											"_id": "oracle_rollable.row:starforged/planet/tainted/settlements/expanse.3"
 										},
 										{
 											"text": "Settlements in conflict",
 											"roll": null,
-											"_id": "oracle_rollable.row:starforged/planet/tainted/settlement/expanse.4"
+											"_id": "oracle_rollable.row:starforged/planet/tainted/settlements/expanse.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/tainted/settlement/expanse"
+									"_id": "oracle_rollable:starforged/planet/tainted/settlements/expanse"
 								}
 							},
 							"column_labels": {
 								"text": "Result"
 							},
-							"_id": "oracle_collection:starforged/planet/tainted/settlement"
+							"_id": "oracle_collection:starforged/planet/tainted/settlements"
 						}
 					},
 					"contents": {
@@ -37595,7 +37595,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (orbital)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault) (orbital)",
 									"_id": "oracle_rollable.row:starforged/planet/tainted/observed_from_space.9"
 								}
 							],
@@ -37760,7 +37760,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (planetside)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault) (planetside)",
 									"_id": "oracle_rollable.row:starforged/planet/tainted/feature.14"
 								}
 							],
@@ -37863,7 +37863,7 @@
 					},
 					"summary": "This diverse, life-bearing planet might provide some small measure of hope.",
 					"collections": {
-						"settlement": {
+						"settlements": {
 							"name": "Settlements",
 							"oracle_type": "table_shared_text",
 							"type": "oracle_collection",
@@ -37896,7 +37896,7 @@
 												"max": 20
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/vital/settlement/terminus.0"
+											"_id": "oracle_rollable.row:starforged/planet/vital/settlements/terminus.0"
 										},
 										{
 											"roll": {
@@ -37904,7 +37904,7 @@
 												"max": 30
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/vital/settlement/terminus.1"
+											"_id": "oracle_rollable.row:starforged/planet/vital/settlements/terminus.1"
 										},
 										{
 											"roll": {
@@ -37912,7 +37912,7 @@
 												"max": 70
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/vital/settlement/terminus.2"
+											"_id": "oracle_rollable.row:starforged/planet/vital/settlements/terminus.2"
 										},
 										{
 											"roll": {
@@ -37920,7 +37920,7 @@
 												"max": 90
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/vital/settlement/terminus.3"
+											"_id": "oracle_rollable.row:starforged/planet/vital/settlements/terminus.3"
 										},
 										{
 											"roll": {
@@ -37928,11 +37928,11 @@
 												"max": 100
 											},
 											"text": "Settlements in conflict",
-											"_id": "oracle_rollable.row:starforged/planet/vital/settlement/terminus.4"
+											"_id": "oracle_rollable.row:starforged/planet/vital/settlements/terminus.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/vital/settlement/terminus"
+									"_id": "oracle_rollable:starforged/planet/vital/settlements/terminus"
 								},
 								"outlands": {
 									"name": "Outlands",
@@ -37950,7 +37950,7 @@
 												"max": 50
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/vital/settlement/outlands.0"
+											"_id": "oracle_rollable.row:starforged/planet/vital/settlements/outlands.0"
 										},
 										{
 											"roll": {
@@ -37958,7 +37958,7 @@
 												"max": 55
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/vital/settlement/outlands.1"
+											"_id": "oracle_rollable.row:starforged/planet/vital/settlements/outlands.1"
 										},
 										{
 											"roll": {
@@ -37966,7 +37966,7 @@
 												"max": 85
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/vital/settlement/outlands.2"
+											"_id": "oracle_rollable.row:starforged/planet/vital/settlements/outlands.2"
 										},
 										{
 											"roll": {
@@ -37974,7 +37974,7 @@
 												"max": 95
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/vital/settlement/outlands.3"
+											"_id": "oracle_rollable.row:starforged/planet/vital/settlements/outlands.3"
 										},
 										{
 											"roll": {
@@ -37982,11 +37982,11 @@
 												"max": 100
 											},
 											"text": "Settlements in conflict",
-											"_id": "oracle_rollable.row:starforged/planet/vital/settlement/outlands.4"
+											"_id": "oracle_rollable.row:starforged/planet/vital/settlements/outlands.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/vital/settlement/outlands"
+									"_id": "oracle_rollable:starforged/planet/vital/settlements/outlands"
 								},
 								"expanse": {
 									"name": "Expanse",
@@ -38004,7 +38004,7 @@
 												"max": 80
 											},
 											"text": "None",
-											"_id": "oracle_rollable.row:starforged/planet/vital/settlement/expanse.0"
+											"_id": "oracle_rollable.row:starforged/planet/vital/settlements/expanse.0"
 										},
 										{
 											"roll": {
@@ -38012,7 +38012,7 @@
 												"max": 83
 											},
 											"text": "Orbital settlement",
-											"_id": "oracle_rollable.row:starforged/planet/vital/settlement/expanse.1"
+											"_id": "oracle_rollable.row:starforged/planet/vital/settlements/expanse.1"
 										},
 										{
 											"roll": {
@@ -38020,7 +38020,7 @@
 												"max": 93
 											},
 											"text": "Planetside settlement",
-											"_id": "oracle_rollable.row:starforged/planet/vital/settlement/expanse.2"
+											"_id": "oracle_rollable.row:starforged/planet/vital/settlements/expanse.2"
 										},
 										{
 											"roll": {
@@ -38028,7 +38028,7 @@
 												"max": 98
 											},
 											"text": "Multiple settlements",
-											"_id": "oracle_rollable.row:starforged/planet/vital/settlement/expanse.3"
+											"_id": "oracle_rollable.row:starforged/planet/vital/settlements/expanse.3"
 										},
 										{
 											"roll": {
@@ -38036,17 +38036,17 @@
 												"max": 100
 											},
 											"text": "Settlements in conflict",
-											"_id": "oracle_rollable.row:starforged/planet/vital/settlement/expanse.4"
+											"_id": "oracle_rollable.row:starforged/planet/vital/settlements/expanse.4"
 										}
 									],
 									"dice": "1d100",
-									"_id": "oracle_rollable:starforged/planet/vital/settlement/expanse"
+									"_id": "oracle_rollable:starforged/planet/vital/settlements/expanse"
 								}
 							},
 							"column_labels": {
 								"text": "Result"
 							},
-							"_id": "oracle_collection:starforged/planet/vital/settlement"
+							"_id": "oracle_collection:starforged/planet/vital/settlements"
 						}
 					},
 					"contents": {
@@ -38413,7 +38413,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (orbital)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault) (orbital)",
 									"_id": "oracle_rollable.row:starforged/planet/vital/observed_from_space.9"
 								}
 							],
@@ -38578,7 +38578,7 @@
 										"min": 99,
 										"max": 100
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults) (planetside)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault) (planetside)",
 									"_id": "oracle_rollable.row:starforged/planet/vital/feature.14"
 								}
 							],
@@ -41759,7 +41759,7 @@
 										"min": 86,
 										"max": 90
 									},
-									"text": "Transition into the [Sanctum](oracle_rollable:starforged/precursor_vault/sanctum)",
+									"text": "Transition into the [Sanctum](oracle_collection:starforged/precursor_vault/sanctum)",
 									"_id": "oracle_rollable.row:starforged/precursor_vault/interior/feature.32"
 								},
 								{
@@ -43552,7 +43552,7 @@
 								"min": 88,
 								"max": 90
 							},
-							"text": "Within or near [Precursor Vault](oracle_collection:starforged/vaults)",
+							"text": "Within or near [Precursor Vault](oracle_collection:starforged/precursor_vault)",
 							"_id": "oracle_rollable.row:starforged/settlement/first_look.19"
 						},
 						{
@@ -43689,7 +43689,7 @@
 								"min": 96,
 								"max": 100
 							},
-							"text": "[Derelict](oracle_collection:starforged/derelicts)",
+							"text": "[Derelict](oracle_collection:starforged/derelict)",
 							"_id": "oracle_rollable.row:starforged/settlement/initial_contact.10"
 						}
 					],
@@ -46091,7 +46091,7 @@
 										"min": 16,
 										"max": 35
 									},
-									"text": "[Planet](oracle_collection:starforged/planets)",
+									"text": "[Planet](oracle_collection:starforged/planet)",
 									"_id": "oracle_rollable.row:starforged/space/sighting/terminus.1"
 								},
 								{
@@ -46099,7 +46099,7 @@
 										"min": 36,
 										"max": 40
 									},
-									"text": "[Settlement](oracle_collection:starforged/settlements)",
+									"text": "[Settlement](oracle_collection:starforged/settlement)",
 									"_id": "oracle_rollable.row:starforged/space/sighting/terminus.2"
 								},
 								{
@@ -46107,7 +46107,7 @@
 										"min": 41,
 										"max": 47
 									},
-									"text": "[Starship](oracle_collection:starforged/starships)",
+									"text": "[Starship](oracle_collection:starforged/starship)",
 									"_id": "oracle_rollable.row:starforged/space/sighting/terminus.3"
 								},
 								{
@@ -46115,7 +46115,7 @@
 										"min": 48,
 										"max": 51
 									},
-									"text": "[Derelict](oracle_collection:starforged/derelicts)",
+									"text": "[Derelict](oracle_collection:starforged/derelict)",
 									"_id": "oracle_rollable.row:starforged/space/sighting/terminus.4"
 								},
 								{
@@ -46123,7 +46123,7 @@
 										"min": 52,
 										"max": 53
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault)",
 									"_id": "oracle_rollable.row:starforged/space/sighting/terminus.5"
 								},
 								{
@@ -46131,7 +46131,7 @@
 										"min": 54,
 										"max": 55
 									},
-									"text": "[Creature](oracle_collection:starforged/creatures)",
+									"text": "[Creature](oracle_collection:starforged/creature)",
 									"_id": "oracle_rollable.row:starforged/space/sighting/terminus.6"
 								},
 								{
@@ -46316,7 +46316,7 @@
 										"min": 16,
 										"max": 35
 									},
-									"text": "[Planet](oracle_collection:starforged/planets)",
+									"text": "[Planet](oracle_collection:starforged/planet)",
 									"_id": "oracle_rollable.row:starforged/space/sighting/outlands.1"
 								},
 								{
@@ -46324,7 +46324,7 @@
 										"min": 36,
 										"max": 38
 									},
-									"text": "[Settlement](oracle_collection:starforged/settlements)",
+									"text": "[Settlement](oracle_collection:starforged/settlement)",
 									"_id": "oracle_rollable.row:starforged/space/sighting/outlands.2"
 								},
 								{
@@ -46332,7 +46332,7 @@
 										"min": 39,
 										"max": 43
 									},
-									"text": "[Starship](oracle_collection:starforged/starships)",
+									"text": "[Starship](oracle_collection:starforged/starship)",
 									"_id": "oracle_rollable.row:starforged/space/sighting/outlands.3"
 								},
 								{
@@ -46340,7 +46340,7 @@
 										"min": 44,
 										"max": 46
 									},
-									"text": "[Derelict](oracle_collection:starforged/derelicts)",
+									"text": "[Derelict](oracle_collection:starforged/derelict)",
 									"_id": "oracle_rollable.row:starforged/space/sighting/outlands.4"
 								},
 								{
@@ -46348,7 +46348,7 @@
 										"min": 47,
 										"max": 49
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault)",
 									"_id": "oracle_rollable.row:starforged/space/sighting/outlands.5"
 								},
 								{
@@ -46356,7 +46356,7 @@
 										"min": 50,
 										"max": 52
 									},
-									"text": "[Creature](oracle_collection:starforged/creatures)",
+									"text": "[Creature](oracle_collection:starforged/creature)",
 									"_id": "oracle_rollable.row:starforged/space/sighting/outlands.6"
 								},
 								{
@@ -46541,7 +46541,7 @@
 										"min": 16,
 										"max": 35
 									},
-									"text": "[Planet](oracle_collection:starforged/planets)",
+									"text": "[Planet](oracle_collection:starforged/planet)",
 									"_id": "oracle_rollable.row:starforged/space/sighting/expanse.1"
 								},
 								{
@@ -46549,7 +46549,7 @@
 										"min": 36,
 										"max": 37
 									},
-									"text": "[Settlement](oracle_collection:starforged/settlements)",
+									"text": "[Settlement](oracle_collection:starforged/settlement)",
 									"_id": "oracle_rollable.row:starforged/space/sighting/expanse.2"
 								},
 								{
@@ -46557,7 +46557,7 @@
 										"min": 38,
 										"max": 39
 									},
-									"text": "[Starship](oracle_collection:starforged/starships)",
+									"text": "[Starship](oracle_collection:starforged/starship)",
 									"_id": "oracle_rollable.row:starforged/space/sighting/expanse.3"
 								},
 								{
@@ -46565,7 +46565,7 @@
 										"min": 40,
 										"max": 41
 									},
-									"text": "[Derelict](oracle_collection:starforged/derelicts)",
+									"text": "[Derelict](oracle_collection:starforged/derelict)",
 									"_id": "oracle_rollable.row:starforged/space/sighting/expanse.4"
 								},
 								{
@@ -46573,7 +46573,7 @@
 										"min": 42,
 										"max": 45
 									},
-									"text": "[Precursor Vault](oracle_collection:starforged/vaults)",
+									"text": "[Precursor Vault](oracle_collection:starforged/precursor_vault)",
 									"_id": "oracle_rollable.row:starforged/space/sighting/expanse.5"
 								},
 								{
@@ -46581,7 +46581,7 @@
 										"min": 46,
 										"max": 49
 									},
-									"text": "[Creature](oracle_collection:starforged/creatures)",
+									"text": "[Creature](oracle_collection:starforged/creature)",
 									"_id": "oracle_rollable.row:starforged/space/sighting/expanse.6"
 								},
 								{
@@ -49969,16 +49969,7 @@
 								"max": 82
 							},
 							"text": "Multipurpose",
-							"text2": "[Starship Mission](oracle_rollable:starforged/starship/mission)",
-							"oracle_rolls": [
-								{
-									"oracle": "oracle_rollable:starforged/starship/mission",
-									"dice": null,
-									"auto": false,
-									"duplicates": "reroll",
-									"number_of_rolls": 1
-								}
-							],
+							"text2": "[Starship Mission](oracle_collection:starforged/starship/mission)",
 							"_i18n": {
 								"text": {
 									"part_of_speech": "adjective"
@@ -50153,16 +50144,7 @@
 								"min": 91,
 								"max": 100
 							},
-							"text": "[Starship Mission](oracle_rollable:starforged/starship/mission)",
-							"oracle_rolls": [
-								{
-									"oracle": "oracle_rollable:starforged/starship/mission",
-									"dice": null,
-									"auto": false,
-									"duplicates": "reroll",
-									"number_of_rolls": 1
-								}
-							],
+							"text": "[Starship Mission](oracle_collection:starforged/starship/mission)",
 							"_id": "oracle_rollable.row:starforged/starship/fleet.7"
 						}
 					],
@@ -50283,7 +50265,7 @@
 								"min": 96,
 								"max": 100
 							},
-							"text": "[Derelict](oracle_collection:starforged/derelicts)",
+							"text": "[Derelict](oracle_collection:starforged/derelict)",
 							"_id": "oracle_rollable.row:starforged/starship/initial_contact.11"
 						}
 					],
@@ -57226,12 +57208,12 @@
 								{
 									"enhances": [
 										"move:starforged/connection/make_a_connection",
-										"move:starforged/connection/sojourn"
+										"move:starforged/recover/sojourn"
 									],
 									"roll_type": "action_roll"
 								},
 								{
-									"enhances": ["move:starforged/connection/sojourn"],
+									"enhances": ["move:starforged/recover/sojourn"],
 									"roll_type": "action_roll"
 								}
 							],
@@ -60162,7 +60144,7 @@
 									}
 								},
 								{
-									"enhances": ["move:starforged/adventure/gain_ground"],
+									"enhances": ["move:starforged/combat/gain_ground"],
 									"roll_type": "action_roll",
 									"trigger": {
 										"conditions": [
@@ -60368,7 +60350,7 @@
 							"text": "When you or an ally [Sojourn](move:starforged/recover/sojourn) and score a strong hit with a match, you have a chance to secure a unique item or valuable payload. Envision the nature of the opportunity and the obstacle you must overcome to acquire it. If you are successful, mark 2 ticks on your quests legacy track. One time only, you may use this acquisition to gain an automatic strong hit on any move where your resources are a factor.",
 							"enhance_moves": [
 								{
-									"enhances": ["move:starforged/recover/make_a_connection"],
+									"enhances": ["move:starforged/recover/sojourn"],
 									"roll_type": "action_roll",
 									"trigger": {
 										"conditions": [
@@ -63918,13 +63900,13 @@
 							"_id": "move.oracle_rollable:starforged/combat/take_decisive_action.take_decisive_action"
 						}
 					},
-					"text": "__When you seize an objective in a fight__, envision how you take decisive action. Then, roll the challenge dice and compare to your progress.\n\nIf you are in control, check the result as normal. If you are in a bad spot, count a strong hit without a match as a weak hit, and a weak hit as a miss.\n\nOn a __strong hit__, you prevail. Take +1 momentum. If any objectives remain and the fight continues, you are in control.\n\nOn a __weak hit__, you achieve your objective, but not without cost. Roll on the table below or choose one. If the fight continues, you are in a bad spot.\n\n{{table>oracle_rollable:starforged/moves/take_decisive_action}}\n\nOn a __miss__, you are defeated or your objective is lost. [Pay the Price](move:starforged/fate/pay_the_price).",
+					"text": "__When you seize an objective in a fight__, envision how you take decisive action. Then, roll the challenge dice and compare to your progress.\n\nIf you are in control, check the result as normal. If you are in a bad spot, count a strong hit without a match as a weak hit, and a weak hit as a miss.\n\nOn a __strong hit__, you prevail. Take +1 momentum. If any objectives remain and the fight continues, you are in control.\n\nOn a __weak hit__, you achieve your objective, but not without cost. Roll on the table below or choose one. If the fight continues, you are in a bad spot.\n\n{{table>move.oracle_rollable:starforged/combat/take_decisive_action.take_decisive_action}}\n\nOn a __miss__, you are defeated or your objective is lost. [Pay the Price](move:starforged/fate/pay_the_price).",
 					"outcomes": {
 						"strong_hit": {
 							"text": "On a __strong hit__, you prevail. Take +1 momentum. If any objectives remain and the fight continues, you are in control."
 						},
 						"weak_hit": {
-							"text": "On a __weak hit__, you achieve your objective, but not without cost. Roll on the table below or choose one. If the fight continues, you are in a bad spot.\n\n{{table>oracle_rollable:starforged/moves/take_decisive_action}}"
+							"text": "On a __weak hit__, you achieve your objective, but not without cost. Roll on the table below or choose one. If the fight continues, you are in a bad spot.\n\n{{table>move.oracle_rollable:starforged/combat/take_decisive_action.take_decisive_action}}"
 						},
 						"miss": {
 							"text": "On a __miss__, you are defeated or your objective is lost. [Pay the Price](move:starforged/fate/pay_the_price)."

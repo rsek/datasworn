@@ -4350,6 +4350,7 @@ class EmbedOnlyType(Enum):
     FEATURE = "feature"
     OPTION = "option"
     ROW = "row"
+    VARIANT = "variant"
     @classmethod
     def from_json_data(cls, data: Any) -> 'EmbedOnlyType':
         return cls(data)
@@ -9725,6 +9726,11 @@ class NpcNature:
 
 @dataclass
 class NpcVariant:
+    id: 'NpcVariantID'
+    """
+    The unique Datasworn ID for this node.
+    """
+
     description: 'MarkdownString'
     name: 'Label'
     nature: 'NpcNature'
@@ -9733,27 +9739,69 @@ class NpcVariant:
     The suggested challenge rank for this NPC.
     """
 
+    comment: 'Optional[str]'
+    """
+    Implementation hints or other developer-facing comments on this node. These
+    should be omitted when presenting the node for gameplay.
+    """
+
     summary: 'Optional[MarkdownString]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'NpcVariant':
         return cls(
+            _from_json_data(NpcVariantID, data.get("_id")),
             _from_json_data(MarkdownString, data.get("description")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(NpcNature, data.get("nature")),
             _from_json_data(ChallengeRank, data.get("rank")),
+            _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
+        data["_id"] = _to_json_data(self.id)
         data["description"] = _to_json_data(self.description)
         data["name"] = _to_json_data(self.name)
         data["nature"] = _to_json_data(self.nature)
         data["rank"] = _to_json_data(self.rank)
+        if self.comment is not None:
+             data["_comment"] = _to_json_data(self.comment)
         if self.summary is not None:
              data["summary"] = _to_json_data(self.summary)
         return data
+
+@dataclass
+class NpcVariantID:
+    """
+    A unique ID representing a NpcVariant object.
+    """
+
+    value: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'NpcVariantID':
+        return cls(_from_json_data(str, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class NpcVariantIDWildcard:
+    """
+    A wildcarded NpcVariantId that can be used to match multiple NpcVariant
+    objects.
+    """
+
+    value: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'NpcVariantIDWildcard':
+        return cls(_from_json_data(str, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
 
 @dataclass
 class OracleCollection:
@@ -16633,6 +16681,7 @@ class TaggableNodeType(Enum):
     RARITY = "rarity"
     ROW = "row"
     TRUTH = "truth"
+    VARIANT = "variant"
     @classmethod
     def from_json_data(cls, data: Any) -> 'TaggableNodeType':
         return cls(data)
