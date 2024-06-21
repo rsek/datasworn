@@ -12,7 +12,7 @@
  * const unreplacedIds = new Set<string>()
  *
  * // parse and do ID replacements
- * const updated = JSON.parse(oldJson, (k,v) => updateIdsInString(k,v,replacementMap, unreplacedIds))
+ * const updated = JSON.parse(oldJson, (k,v) => updateIdsInString(k,v, JSON.parse(replacementMap), unreplacedIds))
  * ```
  */
 export declare function updateIdInString(k: unknown, v: unknown, replacementMap: Record<string, string | null>, unreplacedIds?: Set<string>): unknown;

@@ -51,7 +51,7 @@ const neverMdOrIdKeys = new Set([
  * const unreplacedIds = new Set<string>()
  *
  * // parse and do ID replacements
- * const updated = JSON.parse(oldJson, (k,v) => updateIdsInString(k,v,replacementMap, unreplacedIds))
+ * const updated = JSON.parse(oldJson, (k,v) => updateIdsInString(k,v, JSON.parse(replacementMap), unreplacedIds))
  * ```
  */
 export function updateIdInString(
