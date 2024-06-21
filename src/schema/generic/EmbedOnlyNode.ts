@@ -10,7 +10,7 @@ import { IdNode } from './IdNode.js'
 
 export function EmbedOnlyNode<
 	TBase extends TObject,
-	TType extends TypeId.EmbedOnlyType,
+	TType extends TypeId.EmbedOnly,
 	TParentType extends TypeId.CanEmbedType<TType>
 >(
 	base: TBase,

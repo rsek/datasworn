@@ -8,7 +8,6 @@ exports.updateId = exports.updateIdsInMarkdown = exports.updateIdsInString = exp
 const CONST_js_1 = __importDefault(require("../IdElements/CONST.js"));
 const TypeId_js_1 = __importDefault(require("../IdElements/TypeId.js"));
 const index_js_1 = require("../IdElements/index.js");
-const MinorNodeTypes = ['asset.ability.move', 'asset.ability'];
 const legacyTypeMap = {
     // new_type: 'old_type'
     asset: 'assets',
@@ -150,7 +149,7 @@ function createIdMappers(typeId) {
     const pathKeyCount = `{${min},${max}}`;
     const mappers = [];
     // these mappers are more specific, so they go first
-    if (index_js_1.TypeGuard.AnyPrimaryType(typeId))
+    if (index_js_1.TypeGuard.PrimaryType(typeId))
         mappers.push(...createKeyRenamersForType(typeId));
     // most generic possible renamer. only applies if no others match
     mappers.push({
@@ -160,9 +159,9 @@ function createIdMappers(typeId) {
     return mappers;
 }
 function createMoveOracleIdMapper(rulesPackage, moveCategoryKey, moveKey, newOracleKey = moveKey, oldOracleKey) {
-    const newTypeId = ['move', 'oracle_rollable'].join(CONST_js_1.default.PathTypeSep);
+    const newTypeId = ['move', 'oracle_rollable'].join(CONST_js_1.default.TypeSep);
     const newMovePath = [rulesPackage, moveCategoryKey, moveKey].join(CONST_js_1.default.PathKeySep);
-    const newFullPath = [newMovePath, newOracleKey].join(CONST_js_1.default.PathTypeSep);
+    const newFullPath = [newMovePath, newOracleKey].join(CONST_js_1.default.TypeSep);
     return {
         old: new RegExp(`^${rulesPackage}/oracles/moves/${moveKey}${oldOracleKey ? '/' + oldOracleKey : ''}$`),
         new: [newTypeId, newFullPath].join(CONST_js_1.default.PrefixSep)

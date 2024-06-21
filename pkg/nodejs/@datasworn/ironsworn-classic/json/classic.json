@@ -14008,8 +14008,8 @@
 				"challenge_rank": {
 					"canonical_name": "Oracle 19: Challenge Rank",
 					"name": "Challenge Rank",
-					"oracle_type": "table_text",
 					"type": "oracle_rollable",
+					"oracle_type": "table_text",
 					"summary": "Use this oracle when you want to randomly determine the challenge rank of a quest, journey, or foe.",
 					"_source": {
 						"authors": [
@@ -16476,7 +16476,7 @@
 								{
 									"enhances": [
 										"move:classic/adventure/make_camp",
-										"move:classic/delve/check_your_gear"
+										"move:delve/delve/check_your_gear"
 									],
 									"roll_type": "action_roll",
 									"trigger": {
@@ -18863,12 +18863,12 @@
 					"name": "Loyalist",
 					"abilities": [
 						{
-							"text": "When you [Aid Your Ally](move:classic/adventure/aid_your_ally), add +1 and take +1 momentum on a hit. This is in addition to the benefits taken by your ally.",
+							"text": "When you [Aid Your Ally](move:classic/relationship/aid_your_ally), add +1 and take +1 momentum on a hit. This is in addition to the benefits taken by your ally.",
 							"enabled": true,
 							"enhance_moves": [
 								{
 									"roll_type": "no_roll",
-									"enhances": ["move:classic/adventure/aid_your_ally"]
+									"enhances": ["move:classic/relationship/aid_your_ally"]
 								}
 							],
 							"options": {},
@@ -19986,7 +19986,7 @@
 									}
 								},
 								{
-									"enhances": ["move:classic/relationships/sojourn"],
+									"enhances": ["move:classic/relationship/sojourn"],
 									"roll_type": "action_roll",
 									"trigger": {
 										"conditions": [
@@ -24371,7 +24371,7 @@
 						"date": "2019-06-05",
 						"page": 91
 					},
-					"text": "When __you face physical damage__, suffer -health equal to your foe’s rank or as appropriate to the situation. If your health is 0, suffer -momentum equal to any remaining -health. Then, roll +health or +iron, whichever is higher.\n\nOn a __strong hit__, choose one.\n\n  * Shake it off: If your health is greater than 0, suffer -1 momentum in exchange for +1 health.\n  * Embrace the pain: Take +1 momentum.\n\nOn a __weak hit__, you press on.\n\nOn a __miss__, also suffer -1 momentum. If you are at 0 health, you must mark wounded or maimed (if currently unmarked) or roll on the following table.\n\n{{table>oracle_rollable:classic/moves/endure_harm}}",
+					"text": "When __you face physical damage__, suffer -health equal to your foe’s rank or as appropriate to the situation. If your health is 0, suffer -momentum equal to any remaining -health. Then, roll +health or +iron, whichever is higher.\n\nOn a __strong hit__, choose one.\n\n  * Shake it off: If your health is greater than 0, suffer -1 momentum in exchange for +1 health.\n  * Embrace the pain: Take +1 momentum.\n\nOn a __weak hit__, you press on.\n\nOn a __miss__, also suffer -1 momentum. If you are at 0 health, you must mark wounded or maimed (if currently unmarked) or roll on the following table.\n\n{{table>move.oracle_rollable:classic/suffer/endure_harm.endure_harm}}",
 					"outcomes": {
 						"strong_hit": {
 							"text": "On a __strong hit__, choose one.\n\n  * Shake it off: If your health is greater than 0, suffer -1 momentum in exchange for +1 health.\n  * Embrace the pain: Take +1 momentum."
@@ -24380,7 +24380,7 @@
 							"text": "On a __weak hit__, you press on."
 						},
 						"miss": {
-							"text": "On a __miss__, also suffer -1 momentum. If you are at 0 health, you must mark wounded or maimed (if currently unmarked) or roll on the following table.\n\n{{table>oracle_rollable:classic/moves/endure_harm}}"
+							"text": "On a __miss__, also suffer -1 momentum. If you are at 0 health, you must mark wounded or maimed (if currently unmarked) or roll on the following table.\n\n{{table>move.oracle_rollable:classic/suffer/endure_harm.endure_harm}}"
 						}
 					},
 					"allow_momentum_burn": true,
@@ -24564,7 +24564,7 @@
 						"date": "2019-06-05",
 						"page": 95
 					},
-					"text": "When __you face mental shock or despair__, suffer -spirit equal to your foe’s rank or as appropriate to the situation. If your spirit is 0, suffer -momentum equal to any remaining -spirit. Then, roll +spirit or +heart, whichever is higher.\n\nOn a __strong hit__, choose one.\n\n  * Shake it off: If your spirit is greater than 0, suffer -1 momentum in exchange for +1 spirit\n  * Embrace the darkness: Take +1 momentum\n\nOn a __weak hit__, you press on.\n\nOn a __miss__, also suffer -1 momentum. If you are at 0 spirit, you must mark shaken or corrupted (if currently unmarked) or roll on the following table.\n\n{{table>oracle_rollable:classic/moves/endure_stress}}",
+					"text": "When __you face mental shock or despair__, suffer -spirit equal to your foe’s rank or as appropriate to the situation. If your spirit is 0, suffer -momentum equal to any remaining -spirit. Then, roll +spirit or +heart, whichever is higher.\n\nOn a __strong hit__, choose one.\n\n  * Shake it off: If your spirit is greater than 0, suffer -1 momentum in exchange for +1 spirit\n  * Embrace the darkness: Take +1 momentum\n\nOn a __weak hit__, you press on.\n\nOn a __miss__, also suffer -1 momentum. If you are at 0 spirit, you must mark shaken or corrupted (if currently unmarked) or roll on the following table.\n\n{{table>move.oracle_rollable:classic/suffer/endure_stress.endure_stress}}",
 					"outcomes": {
 						"strong_hit": {
 							"text": "On a __strong hit__, choose one.\n\n  * Shake it off: If your spirit is greater than 0, suffer -1 momentum in exchange for +1 spirit\n  * Embrace the darkness: Take +1 momentum"
@@ -24573,7 +24573,7 @@
 							"text": "On a __weak hit__, you press on."
 						},
 						"miss": {
-							"text": "On a __miss__, also suffer -1 momentum. If you are at 0 spirit, you must mark shaken or corrupted (if currently unmarked) or roll on the following table.\n\n{{table>oracle_rollable:classic/moves/endure_stress}}"
+							"text": "On a __miss__, also suffer -1 momentum. If you are at 0 spirit, you must mark shaken or corrupted (if currently unmarked) or roll on the following table.\n\n{{table>move.oracle_rollable:classic/suffer/endure_stress.endure_stress}}"
 						}
 					},
 					"allow_momentum_burn": true,
@@ -25259,7 +25259,7 @@
 				"page": 138
 			},
 			"summary": "The __Ironlanders__ are the humans who have settled these lands.",
-			"description": "Ironlanders are the human inhabitants of these lands. Unless your story emphasizes adventures well outside of the settled regions, the majority of your interactions will be with fellow Ironlanders.\n\nThis section covers a few broad categories of Ironlanders. They are not representative of the variety of people and cultures in these lands. When you are forced to fight an Ironlander and need to determine their rank, you can [Ask the Oracle](oracle_rollable:classic/turning_point/challenge_rank/foe), or follow these guidelines:\n\n  * A common citizen or brute is __troublesome__.\n  * A trained warrior is __dangerous__.\n  * A powerful or veteran warrior is __formidable__.",
+			"description": "Ironlanders are the human inhabitants of these lands. Unless your story emphasizes adventures well outside of the settled regions, the majority of your interactions will be with fellow Ironlanders.\n\nThis section covers a few broad categories of Ironlanders. They are not representative of the variety of people and cultures in these lands. When you are forced to fight an Ironlander and need to determine their rank, you can [Ask the Oracle](oracle_rollable:classic/turning_point/challenge_rank), or follow these guidelines:\n\n  * A common citizen or brute is __troublesome__.\n  * A trained warrior is __dangerous__.\n  * A powerful or veteran warrior is __formidable__.",
 			"contents": {
 				"broken": {
 					"name": "Broken",

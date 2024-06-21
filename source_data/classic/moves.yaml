@@ -1350,7 +1350,7 @@ moves:
             * Envision two negative outcomes. Rate one as ‘likely’, and [Ask the Oracle](move:classic/fate/ask_the_oracle) using the yes/no table. On a ‘yes’, make that outcome happen. Otherwise, make it the other.
             * Roll on the following table. If you have difficulty interpreting the result to fit the current situation, roll again.
 
-          {{table>move.oracle_rollable:classic/suffer/pay_the_price.pay_the_price.pay_the_price}}
+          {{table>move.oracle_rollable:classic/suffer/pay_the_price.pay_the_price}}
         oracles:
           pay_the_price:
             name: Pay the Price

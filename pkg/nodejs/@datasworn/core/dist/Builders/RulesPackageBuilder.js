@@ -18,7 +18,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.RulesPackageBuilder = void 0;
 const CONST_js_1 = __importDefault(require("../IdElements/CONST.js"));
 const Sort_js_1 = require("../Utils/Sort.js");
-const Text_js_1 = require("../Validators/Text.js");
 const index_js_1 = __importDefault(require("../Validators/index.js"));
 const index_js_2 = require("../index.js");
 /**
@@ -52,11 +51,8 @@ class RulesPackageBuilder {
         if (!force && __classPrivateFieldGet(this, _RulesPackageBuilder_isValidated, "f"))
             return this;
         this.schemaValidator(__classPrivateFieldGet(this, _RulesPackageBuilder_result, "f"));
-        const validatedIds = new Set();
         for (const [id, typeNode] of this.index) {
             if (typeNode == null)
-                continue;
-            if (validatedIds.has(id))
                 continue;
             if (!__classPrivateFieldGet(_a, _a, "m", _RulesPackageBuilder_isObject).call(_a, typeNode))
                 continue;
@@ -69,18 +65,13 @@ class RulesPackageBuilder {
                 continue;
             try {
                 typeValidation(typeNode);
-                validatedIds.add(id);
             }
             catch (e) {
                 throw new Error(`<${id}> ${String(e)}\n\n${JSON.stringify(typeNode, undefined, '\t')}`);
             }
         }
-        this.logger.info(`<${this.id}> Validated pointers to ${validatedIds.size} unique IDs.`);
         __classPrivateFieldSet(this, _RulesPackageBuilder_isValidated, true, "f");
         return this;
-    }
-    validateIdPointers(index, validatedPointers) {
-        return (0, Text_js_1.validateIdsInStrings)(__classPrivateFieldGet(this, _RulesPackageBuilder_result, "f"), index, validatedPointers);
     }
     build(force = false) {
         try {
@@ -99,9 +90,6 @@ class RulesPackageBuilder {
             // )
             throw new Error(`Couldn't build "${this.id}". ${String(e)}`);
         }
-    }
-    static sortDataswornKeys(object, sortOrder = Sort_js_1.dataswornKeyOrder) {
-        return (0, Sort_js_1.sortObjectKeys)(object, sortOrder);
     }
     /**
      *
@@ -151,7 +139,7 @@ _a = RulesPackageBuilder, _RulesPackageBuilder_result = new WeakMap(), _RulesPac
 }, _RulesPackageBuilder_sortKeys = function _RulesPackageBuilder_sortKeys(force = false) {
     if (__classPrivateFieldGet(this, _RulesPackageBuilder_isSorted, "f") && !force)
         return this;
-    __classPrivateFieldSet(this, _RulesPackageBuilder_result, (0, Sort_js_1.sortDataswornKeys)(__classPrivateFieldGet(this, _RulesPackageBuilder_result, "f")), "f");
+    __classPrivateFieldSet(this, _RulesPackageBuilder_result, (0, Sort_js_1.sortObjectKeys)(__classPrivateFieldGet(this, _RulesPackageBuilder_result, "f"), Sort_js_1.dataswornKeyOrder), "f");
     __classPrivateFieldSet(this, _RulesPackageBuilder_isSorted, true, "f");
     return this;
 }, _RulesPackageBuilder_addFile = function _RulesPackageBuilder_addFile(file) {
@@ -165,8 +153,13 @@ _a = RulesPackageBuilder, _RulesPackageBuilder_result = new WeakMap(), _RulesPac
 }, _RulesPackageBuilder_merge = function _RulesPackageBuilder_merge(target, ...sources) {
     if (!sources.length) {
         // nothing left to add, so index it
-        if (__classPrivateFieldGet(_a, _a, "m", _RulesPackageBuilder_isObject).call(_a, target) && '_id' in target)
-            this.index.set(target._id, target);
+        if (__classPrivateFieldGet(_a, _a, "m", _RulesPackageBuilder_isObject).call(_a, target) && '_id' in target) {
+            const isRulesPackage = ['ruleset', 'expansion'].includes(target.type);
+            // if ((target._id as string).startsWith('asset.ability'))
+            // 	console.log(target._id)
+            if (!isRulesPackage)
+                this.index.set(target._id, target);
+        }
         return target;
     }
     const source = sources.shift();

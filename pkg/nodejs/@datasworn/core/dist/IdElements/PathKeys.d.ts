@@ -7,4 +7,4 @@ export type CollectionPathKeys = [...CollectionAncestorKeys, DictKey];
 export type CollectableAncestorKeys = CollectionPathKeys;
 export type CollectablePathKeys = [...CollectableAncestorKeys, DictKey];
 export type NonCollectablePathKeys = [DictKey];
-export type CollectionAncestorsLength = 0 | Range<CONST.RECURSIVE_PATH_ELEMENTS_MIN, CONST.RECURSIVE_PATH_ELEMENTS_MAX>;
+export type CollectionAncestorsLength = 0 | Range<CONST.COLLECTION_DEPTH_MIN, CONST.COLLECTION_DEPTH_MAX>;

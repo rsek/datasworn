@@ -1,16 +1,16 @@
 declare namespace CONST {
     /** The maximum depth for nesting collections, relative to the root dictionary for its type */
-    const RECURSIVE_PATH_ELEMENTS_MAX: 4;
-    type RECURSIVE_PATH_ELEMENTS_MAX = typeof RECURSIVE_PATH_ELEMENTS_MAX;
-    const RECURSIVE_PATH_ELEMENTS_MIN: 1;
-    type RECURSIVE_PATH_ELEMENTS_MIN = typeof RECURSIVE_PATH_ELEMENTS_MIN;
+    const COLLECTION_DEPTH_MAX: 4;
+    type COLLECTION_DEPTH_MAX = typeof COLLECTION_DEPTH_MAX;
+    const COLLECTION_DEPTH_MIN: 1;
+    type COLLECTION_DEPTH_MIN = typeof COLLECTION_DEPTH_MIN;
     const PACKAGE_ID_LENGTH_MIN: 3;
     type PACKAGE_ID_LENGTH_MIN = typeof PACKAGE_ID_LENGTH_MIN;
     /** The separator character for Datasworn IDs. */
     const PathKeySep: "/";
     type PathKeySep = typeof PathKeySep;
-    const PathTypeSep: ".";
-    type PathTypeSep = typeof PathTypeSep;
+    const TypeSep: ".";
+    type TypeSep = typeof TypeSep;
     const PrefixSep: ":";
     type PrefixSep = typeof PrefixSep;
     /** The wildcard character for Datasworn IDs that matches any key in a dictionary object. */

@@ -81,13 +81,10 @@ function getWildcardRegex(wildcardId: string) {
 		return new RegExp(`^${escapeRegExp(wildcardId)}$`)
 
 	const [fullTypeId, fullPath] = wildcardId.split(CONST.PrefixSep)
-	const [primaryPath, ...embeddedKeys] = fullPath.split(CONST.PathTypeSep)
+	const [primaryPath, ...embeddedKeys] = fullPath.split(CONST.TypeSep)
 	const [rulesPackage, ...primaryPathKeys] = wildcardId.split(CONST.PathKeySep)
 
-	const typePattern = fullTypeId.replaceAll(
-		CONST.PathTypeSep,
-		'\\' + CONST.PathTypeSep
-	)
+	const typePattern = fullTypeId.replaceAll(CONST.TypeSep, '\\' + CONST.TypeSep)
 	let pathPattern = ''
 
 	switch (rulesPackage) {
@@ -121,7 +118,7 @@ function getWildcardRegex(wildcardId: string) {
 	}
 
 	for (const embeddedKey of embeddedKeys) {
-		pathPattern += '\\' + CONST.PathTypeSep
+		pathPattern += '\\' + CONST.TypeSep
 		switch (embeddedKey) {
 			case CONST.WildcardString:
 				pathPattern += `${Pattern.DictKeyElement.source}|\\d+`

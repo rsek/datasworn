@@ -2,17 +2,25 @@ import CONST from '../IdElements/CONST.js'
 import Pattern from '../IdElements/Pattern.js'
 
 const typeIdPattern = '[a-z][a-z_](?:\\.[a-z][a-z_]){0,2}'
-const dictKeyOrIndexPattern = `[\\/\\.][a-z_0-9]+`
+const dictKeyOrIndexPattern = `[\\/\\.](?:[a-z_0-9\\]|\\*{1,2})+`
 const pathPattern = `${Pattern.RulesPackageElement.source}(?:${dictKeyOrIndexPattern})+`
 
-const idPattern = /(?<typeId>[a-z\d_.]{3,}):(?<path>[a-z_]+(?:\/[a-z\d_.]+)+)/g
+// (?<path>
+//   (?:[a-z_]+|\*{1,2})
+//   (?:\/
+//      (?:[a-z\d_.]+|\*{1,2})+
+//    )+
+// |\*{2})
 
-const idPointerPattern = new RegExp(`^${idPattern}$`)
+const idLike =
+	/(?<typeId>[a-z\d_.]{3,}|\*{1,2}):(?<path>(?:[a-z_]+|\*{1,2})(?:\/(?:[a-z\d_.]+|\*{1,2})+)+|\*{2})/g
+
+const idPointerPattern = new RegExp(`^${idLike}$`)
 
 const linkSymbolPattern = new RegExp(
 	[
 		`(?<=\\[\\w.+?\\]\\()`, // lookbehind for markdown text in square brackets, plus left paren
-		`(?<id>${idPattern})`,
+		`(?<id>${idLike})`,
 		`(?=\\))` // lookahead for right paren
 	].join(''),
 	'g'
@@ -22,7 +30,7 @@ const macroSymbolPattern = new RegExp(
 	[
 		`(?<=\\{\\{)`, // lookbehind for left curly braces
 		`(?<directive>[a-z][a-z_]+>)`,
-		`(?<id>${idPattern})`,
+		`(?<id>${idLike})`,
 		`(?=\\}\\})` // lookahead for right curly braces
 	].join(''),
 	'g'
@@ -85,7 +93,6 @@ function needsIdValidation(k: unknown, v: unknown) {
 		case plainTextKeys.has(k as string):
 		case urlKeys.has(k as string):
 		case nonTextKeys.has(k as string):
-		case v.includes(CONST.WildcardString):
 		case !v.includes('/'):
 		case !v.includes(':'):
 			return false
@@ -107,7 +114,7 @@ export function forEachIdRef(data, forEach: (id: string) => void) {
 		if (typeof v !== 'string') return
 		if (!needsIdValidation(k, v)) return
 
-		const ids = v.matchAll(idPattern)
+		const ids = v.matchAll(idLike)
 
 		if (ids == null) return
 
@@ -115,7 +122,10 @@ export function forEachIdRef(data, forEach: (id: string) => void) {
 	})
 }
 
-export function validateIdsInStrings(data: unknown, index: Map<string, unknown>) {
+export function validateIdsInStrings(
+	data: unknown,
+	index: Map<string, unknown>
+) {
 	const errors: unknown[] = []
 
 	const extractedIds = new Set()
@@ -124,7 +134,7 @@ export function validateIdsInStrings(data: unknown, index: Map<string, unknown>)
 		if (typeof v !== 'string') return
 		if (!needsIdValidation(k, v)) return
 
-		const ids = v.matchAll(idPattern)
+		const ids = v.matchAll(idLike)
 
 		if (ids == null) return
 

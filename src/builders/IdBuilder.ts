@@ -90,11 +90,11 @@ namespace PathSymbol {
 		)
 
 		public get minReps(): number {
-			return CONST.RECURSIVE_PATH_ELEMENTS_MIN
+			return CONST.COLLECTION_DEPTH_MIN
 		}
 
 		public get maxReps(): number {
-			return CONST.RECURSIVE_PATH_ELEMENTS_MIN
+			return CONST.COLLECTION_DEPTH_MIN
 		}
 
 		get pattern() {
@@ -167,11 +167,11 @@ namespace PathSymbol {
 		readonly recursiveProperty: RecursiveProp
 
 		override get minReps() {
-			return CONST.RECURSIVE_PATH_ELEMENTS_MIN
+			return CONST.COLLECTION_DEPTH_MIN
 		}
 
 		override get maxReps() {
-			return CONST.RECURSIVE_PATH_ELEMENTS_MAX
+			return CONST.COLLECTION_DEPTH_MAX
 		}
 
 		constructor(inProperty: Prop, recursiveProperty: RecursiveProp) {
@@ -220,7 +220,7 @@ namespace PathSymbol {
 class IdPattern<
 	CurrentNode = Datasworn.RulesPackage
 > extends Array<PathFormat> {
-	static readonly PathTypeSep = '\\' + CONST.PathTypeSep
+	static readonly TypeSep = '\\' + CONST.TypeSep
 
 	static readonly PrefixSep = CONST.PrefixSep
 
@@ -236,13 +236,11 @@ class IdPattern<
 	 * @example `asset.ability.move`
 	 */
 	getLeftSide(): RegExp {
-		return new RegExp(
-			this.map(({ typeId }) => typeId).join(IdPattern.PathTypeSep)
-		)
+		return new RegExp(this.map(({ typeId }) => typeId).join(IdPattern.TypeSep))
 	}
 
 	get fullTypeId() {
-		return this.map(({ typeId }) => typeId).join(CONST.PathTypeSep)
+		return this.map(({ typeId }) => typeId).join(CONST.TypeSep)
 	}
 
 	/**
@@ -257,7 +255,7 @@ class IdPattern<
 	): RegExp {
 		const result = this.map((part) =>
 			part.toRegexSource(groups, wildcard)
-		).join(IdPattern.PathTypeSep)
+		).join(IdPattern.TypeSep)
 
 		return new RegExp(result)
 	}
@@ -295,29 +293,25 @@ class IdPattern<
 		return this.length > 1
 	}
 
-	createEmbedded<T extends TypeId.EmbeddableType>(
+	createEmbedded<T extends TypeId.Embeddable>(
 		typeId: T
-	): IdPattern<Extract<TypeNode.AnyEmbedded, { type: typeof typeId }>> {
+	): IdPattern<Extract<TypeNode.Embedded, { type: typeof typeId }>> {
 		const withGroup = this.clone().addNewTypeGroup(typeId)
 
-    switch (TypeId.getEmbeddedPropertyType(typeId)) {
+		switch (TypeId.getEmbeddedPropertyType(typeId)) {
 			case 'array':
-				return withGroup.addIndex(
-					TypeId.getEmbeddedPropertyKey(typeId) as any
-				) as any
+				return withGroup.addIndex(TypeId.getEmbeddedPropertyKey(typeId) as any)
 
 			case 'dictionary':
 				return withGroup.addDictKey(
 					TypeId.getEmbeddedPropertyKey(typeId) as any
-				) as any
+				)
 
 			default:
 				throw new Error(
 					`Expected an embeddable TypeId, but got ${String(typeId)}`
 				)
 		}
-
-
 	}
 
 	addNewTypeGroup(typeId: string) {
@@ -361,7 +355,7 @@ class IdPattern<
 
 	toWildcardSchema(options: StringOptions = {}) {
 		const typeName = this.fullTypeId
-			.split(CONST.PathTypeSep)
+			.split(CONST.TypeSep)
 			.map(pascalCase)
 			.join('')
 		const $id = typeName + 'IdWildcard'
@@ -379,7 +373,7 @@ class IdPattern<
 
 	toSchema(options: StringOptions = {}) {
 		const typeName = this.fullTypeId
-			.split(CONST.PathTypeSep)
+			.split(CONST.TypeSep)
 			.map(pascalCase)
 			.join('')
 		const indefiniteArticle = typeName.match(/^[aeiou]/i) ? 'an' : 'a'
@@ -408,36 +402,36 @@ class IdPattern<
 
 	static createCollection<T extends TypeId.Collection>(
 		typeId: T,
-		typeRoot: TypeId.RootKey<T>
+		typeRoot: TypeId.BranchKey<T>
 	) {
 		return (
 			IdPattern.fromRoot(typeId)
 				// @ts-expect-error this happens because not all union members of OracleCollection have the 'collections' property
 				.addRecursiveDictKeys(typeRoot, CONST.CollectionsKey) as IdPattern<
-				TypeNode.ByType<T>
+				TypeNode.Collection<T>
 			>
 		)
 	}
 
 	static createCollectable<T extends TypeId.Collectable>(
 		typeId: T,
-		typeRoot: TypeId.RootKey<T>
+		typeRoot: TypeId.BranchKey<T>
 	) {
 		return (
 			IdPattern.fromRoot(typeId)
 				// @ts-expect-error
 				.addRecursiveDictKeys(typeRoot, CONST.CollectionsKey)
 				// @ts-expect-error
-				.addDictKey(CONST.ContentsKey) as IdPattern<TypeNode.ByType<T>>
+				.addDictKey(CONST.ContentsKey) as IdPattern<TypeNode.Collectable<T>>
 		)
 	}
 
 	static createNonCollectable<T extends TypeId.NonCollectable>(
 		typeId: T,
-		typeRoot: TypeId.RootKey<T>
+		typeRoot: TypeId.BranchKey<T>
 	) {
 		return IdPattern.fromRoot(typeId).addDictKey(typeRoot) as IdPattern<
-			TypeNode.ByType<T>
+			TypeNode.NonCollectable<T>
 		>
 	}
 }
@@ -591,22 +585,22 @@ class PathFormat<Origin = Datasworn.RulesPackage> extends Array<
 
 const patternIndex = {} as Record<TypeId.Any, IdPattern[]>
 
-for (const typeId of TypeId.AnyPrimary) {
+for (const typeId of TypeId.Primary) {
 	let pattern: IdPattern
 
 	switch (true) {
 		case TypeGuard.CollectionType(typeId):
-			pattern = IdPattern.createCollection(typeId, TypeId.getRootKey(typeId))
+			pattern = IdPattern.createCollection(typeId, TypeId.getBranchKey(typeId))
 			break
 
 		case TypeGuard.CollectableType(typeId):
-			pattern = IdPattern.createCollectable(typeId, TypeId.getRootKey(typeId))
+			pattern = IdPattern.createCollectable(typeId, TypeId.getBranchKey(typeId))
 			break
 
 		case TypeGuard.NonCollectableType(typeId):
 			pattern = IdPattern.createNonCollectable(
 				typeId,
-				TypeId.getRootKey(typeId)
+				TypeId.getBranchKey(typeId)
 			)
 			break
 		default:
@@ -639,16 +633,16 @@ function computeEmbeddedTypes(pattern: IdPattern) {
 // patterns.sort((a, b) =>
 // a.getLeftSide().source.localeCompare(b.getLeftSide().source, 'en-US'))
 
-type PrimaryNodePrefix<T extends TypeId.AnyPrimary = TypeId.AnyPrimary> =
+type PrimaryNodePrefix<T extends TypeId.Primary = TypeId.Primary> =
 	`${PascalCase<T>}`
 type EmbeddedPrimaryNodePrefix<
-	T extends TypeId.EmbeddablePrimaryType = TypeId.EmbeddablePrimaryType
+	T extends TypeId.EmbeddablePrimary = TypeId.EmbeddablePrimary
 > = `Embedded${PascalCase<T>}`
 type PrimaryNodeUnionPrefix<
-	T extends TypeId.EmbeddablePrimaryType = TypeId.EmbeddablePrimaryType
+	T extends TypeId.EmbeddablePrimary = TypeId.EmbeddablePrimary
 > = `Any${PascalCase<T>}`
 type EmbedOnlyPrefix<
-	T extends TypeId.EmbedOnlyType = TypeId.EmbedOnlyType,
+	T extends TypeId.EmbedOnly = TypeId.EmbedOnly,
 	TParent extends TypeId.CanEmbedType<T> = TypeId.CanEmbedType<T>
 > = `${PascalCase<TParent>}${PascalCase<T>}`
 
@@ -675,7 +669,7 @@ function permutate(typeId: string, parentTypeId: string) {
 		const typeSchema = pascalCase(typeId) + 'Id'
 
 		const parentTypePrefix = parentTypeId
-			.split(CONST.PathTypeSep)
+			.split(CONST.TypeSep)
 			.map(pascalCase)
 			.join('')
 
@@ -703,13 +697,13 @@ function permutate(typeId: string, parentTypeId: string) {
 		const embeddedTypes = TypeId.getEmbeddableTypes(typeId, true)
 
 		for (const embeddedTypeId of embeddedTypes) {
-			permutate(embeddedTypeId, `${parentTypeId}${CONST.PathTypeSep}${typeId}`)
+			permutate(embeddedTypeId, `${parentTypeId}${CONST.TypeSep}${typeId}`)
 		}
 	}
 }
 
 for (const primaryTypeId in TypeId.EmbedTypeMap) {
-	const embeddedTypeIds = TypeId.EmbedTypeMap[primaryTypeId as TypeId.CanEmbed]
+	const embeddedTypeIds = TypeId.EmbedTypeMap[primaryTypeId as TypeId.Embedding]
 
 	for (const embeddedTypeId of embeddedTypeIds)
 		permutate(embeddedTypeId, primaryTypeId)
@@ -730,12 +724,14 @@ for (const $id in permutations) {
 	else anyIdSchemata.push(...schemaIds)
 }
 
+// @ts-expect-error
 ids.AnyOracleRollableRowId = Type.Union(
 	Object.values(ids)
 		.filter((schema) => schema.$id?.endsWith('OracleRollableRowId'))
 		.map((schema) => Type.Ref(schema.$id as string)),
 	{ $id: 'AnyOracleRollableRowId', [JsonTypeDef]: { schema: JtdType.String() } }
 )
+// @ts-expect-error
 
 ids.AnyOracleRollableRowIdWildcard = Type.Union(
 	Object.values(ids)
@@ -747,6 +743,7 @@ ids.AnyOracleRollableRowIdWildcard = Type.Union(
 		[JsonTypeDef]: { schema: JtdType.String() }
 	}
 )
+// @ts-expect-error
 
 ids.AnyId = Type.Union(
 	Object.values(ids)
@@ -763,6 +760,8 @@ ids.AnyId = Type.Union(
 		[JsonTypeDef]: { schema: JtdType.String() }
 	}
 )
+// @ts-expect-error
+
 ids.AnyIdWildcard = Type.Union(
 	Object.values(ids)
 		.flat()

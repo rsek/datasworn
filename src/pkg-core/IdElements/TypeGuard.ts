@@ -38,6 +38,12 @@ namespace TypeGuard {
 		return Wildcard(value) || Globstar(value)
 	}
 
+	export function Recursive(
+		value: unknown
+	): value is TypeId.Collection | TypeId.Collectable {
+		return CollectionType(value) || CollectableType(value)
+	}
+
 	export function CollectionType(value: unknown): value is TypeId.Collection {
 		return TypeId.Collection.includes(value as TypeId.Collection)
 	}
@@ -52,19 +58,17 @@ namespace TypeGuard {
 		return TypeId.Collectable.includes(value as TypeId.Collectable)
 	}
 
-	export function EmbedOnlyType(value: unknown): value is TypeId.EmbedOnlyType {
-		return TypeId.EmbedOnlyType.includes(value as TypeId.EmbedOnlyType)
+	export function EmbedOnlyType(value: unknown): value is TypeId.EmbedOnly {
+		return TypeId.EmbedOnly.includes(value as TypeId.EmbedOnly)
 	}
 
 	export function EmbeddablePrimaryType(
 		value: unknown
-	): value is TypeId.EmbeddablePrimaryType {
-		return TypeId.EmbeddablePrimaryType.includes(
-			value as TypeId.EmbeddablePrimaryType
-		)
+	): value is TypeId.EmbeddablePrimary {
+		return TypeId.EmbeddablePrimary.includes(value as TypeId.EmbeddablePrimary)
 	}
 
-	export function AnyPrimaryType(
+	export function PrimaryType(
 		value: unknown
 	): value is TypeId.NonCollectable | TypeId.Collectable | TypeId.Collection {
 		return (

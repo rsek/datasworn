@@ -14008,8 +14008,8 @@
 				"challenge_rank": {
 					"canonical_name": "Oracle 19: Challenge Rank",
 					"name": "Challenge Rank",
-					"oracle_type": "table_text",
 					"type": "oracle_rollable",
+					"oracle_type": "table_text",
 					"summary": "Use this oracle when you want to randomly determine the challenge rank of a quest, journey, or foe.",
 					"_source": {
 						"authors": [
@@ -24913,7 +24913,7 @@
 						"text": "When you suffer the outcome of a move...",
 						"conditions": null
 					},
-					"text": "When __you suffer the outcome of a move__, choose one.\n\n  * Make the most obvious negative outcome happen.\n  * Envision two negative outcomes. Rate one as ‘likely’, and [Ask the Oracle](move:classic/fate/ask_the_oracle) using the yes/no table. On a ‘yes’, make that outcome happen. Otherwise, make it the other.\n  * Roll on the following table. If you have difficulty interpreting the result to fit the current situation, roll again.\n\n{{table>move.oracle_rollable:classic/suffer/pay_the_price.pay_the_price.pay_the_price}}",
+					"text": "When __you suffer the outcome of a move__, choose one.\n\n  * Make the most obvious negative outcome happen.\n  * Envision two negative outcomes. Rate one as ‘likely’, and [Ask the Oracle](move:classic/fate/ask_the_oracle) using the yes/no table. On a ‘yes’, make that outcome happen. Otherwise, make it the other.\n  * Roll on the following table. If you have difficulty interpreting the result to fit the current situation, roll again.\n\n{{table>move.oracle_rollable:classic/suffer/pay_the_price.pay_the_price}}",
 					"oracles": {
 						"pay_the_price": {
 							"name": "Pay the Price",
@@ -25259,7 +25259,7 @@
 				"page": 138
 			},
 			"summary": "The __Ironlanders__ are the humans who have settled these lands.",
-			"description": "Ironlanders are the human inhabitants of these lands. Unless your story emphasizes adventures well outside of the settled regions, the majority of your interactions will be with fellow Ironlanders.\n\nThis section covers a few broad categories of Ironlanders. They are not representative of the variety of people and cultures in these lands. When you are forced to fight an Ironlander and need to determine their rank, you can [Ask the Oracle](oracle_rollable:classic/turning_point/challenge_rank/foe), or follow these guidelines:\n\n  * A common citizen or brute is __troublesome__.\n  * A trained warrior is __dangerous__.\n  * A powerful or veteran warrior is __formidable__.",
+			"description": "Ironlanders are the human inhabitants of these lands. Unless your story emphasizes adventures well outside of the settled regions, the majority of your interactions will be with fellow Ironlanders.\n\nThis section covers a few broad categories of Ironlanders. They are not representative of the variety of people and cultures in these lands. When you are forced to fight an Ironlander and need to determine their rank, you can [Ask the Oracle](oracle_rollable:classic/turning_point/challenge_rank), or follow these guidelines:\n\n  * A common citizen or brute is __troublesome__.\n  * A trained warrior is __dangerous__.\n  * A powerful or veteran warrior is __formidable__.",
 			"contents": {
 				"broken": {
 					"name": "Broken",

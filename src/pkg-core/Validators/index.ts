@@ -12,7 +12,7 @@ const Validators = {
 	oracle_rollable,
 	oracle_collection
 } as const satisfies Partial<{
-	[K in TypeId.AnyPrimary]: (obj: TypeNode.ByType<K>) => boolean
+	[K in TypeId.Primary]: (obj: TypeNode.ByType<K>) => boolean
 }>
 
 export default Validators

@@ -88,8 +88,11 @@ export async function buildRulesPackages(
 		try {
 			forEachIdRef(pkg, (id) => {
 				if (visitedIds.has(id)) return
+
 				try {
-					IdParser.get(id as any, tree)
+					const parsedId = IdParser.parse(id as any)
+					const matches = parsedId.getMatches(tree)
+					if (matches.length === 0) throw new Error('No matches')
 					visitedIds.add(id)
 				} catch (e) {
 					errors.push(`Couldn't reach <${id}> ${String(e)}`)

@@ -1,9 +1,9 @@
 namespace CONST {
 	/** The maximum depth for nesting collections, relative to the root dictionary for its type */
-	export const RECURSIVE_PATH_ELEMENTS_MAX = 4 as const
-	export type RECURSIVE_PATH_ELEMENTS_MAX = typeof RECURSIVE_PATH_ELEMENTS_MAX
-	export const RECURSIVE_PATH_ELEMENTS_MIN = 1 as const
-	export type RECURSIVE_PATH_ELEMENTS_MIN = typeof RECURSIVE_PATH_ELEMENTS_MIN
+	export const COLLECTION_DEPTH_MAX = 4 as const
+	export type COLLECTION_DEPTH_MAX = typeof COLLECTION_DEPTH_MAX
+	export const COLLECTION_DEPTH_MIN = 1 as const
+	export type COLLECTION_DEPTH_MIN = typeof COLLECTION_DEPTH_MIN
 	export const PACKAGE_ID_LENGTH_MIN = 3 as const
 	export type PACKAGE_ID_LENGTH_MIN = typeof PACKAGE_ID_LENGTH_MIN
 
@@ -11,8 +11,8 @@ namespace CONST {
 	export const PathKeySep = '/' as const
 	export type PathKeySep = typeof PathKeySep
 
-	export const PathTypeSep = '.' as const
-	export type PathTypeSep = typeof PathTypeSep
+	export const TypeSep = '.' as const
+	export type TypeSep = typeof TypeSep
 
 	export const PrefixSep = ':' as const
 	export type PrefixSep = typeof PrefixSep

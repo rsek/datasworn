@@ -37,6 +37,10 @@ var TypeGuard;
         return Wildcard(value) || Globstar(value);
     }
     TypeGuard.AnyWildcard = AnyWildcard;
+    function Recursive(value) {
+        return CollectionType(value) || CollectableType(value);
+    }
+    TypeGuard.Recursive = Recursive;
     function CollectionType(value) {
         return TypeId_js_1.default.Collection.includes(value);
     }
@@ -50,18 +54,18 @@ var TypeGuard;
     }
     TypeGuard.CollectableType = CollectableType;
     function EmbedOnlyType(value) {
-        return TypeId_js_1.default.EmbedOnlyType.includes(value);
+        return TypeId_js_1.default.EmbedOnly.includes(value);
     }
     TypeGuard.EmbedOnlyType = EmbedOnlyType;
     function EmbeddablePrimaryType(value) {
-        return TypeId_js_1.default.EmbeddablePrimaryType.includes(value);
+        return TypeId_js_1.default.EmbeddablePrimary.includes(value);
     }
     TypeGuard.EmbeddablePrimaryType = EmbeddablePrimaryType;
-    function AnyPrimaryType(value) {
+    function PrimaryType(value) {
         return (NonCollectableType(value) ||
             CollectableType(value) ||
             CollectionType(value));
     }
-    TypeGuard.AnyPrimaryType = AnyPrimaryType;
+    TypeGuard.PrimaryType = PrimaryType;
 })(TypeGuard || (TypeGuard = {}));
 exports.default = TypeGuard;

@@ -534,7 +534,7 @@ moves:
             * Set your health, spirit, supply, and companion health to their maximum values.
             * Set your momentum to its reset value.
 
-          Then, for each active threat, [Advance a Threat](move:delve/legacy/advance_a_threat).
+          Then, for each active threat, [Advance a Threat](move:delve/threat/advance_a_threat).
   rarity:
     name: Rarity Moves
     type: move_category

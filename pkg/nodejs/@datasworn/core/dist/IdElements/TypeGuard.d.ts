@@ -13,11 +13,12 @@ declare namespace TypeGuard {
     function Wildcard(value: unknown): value is CONST.WildcardString;
     function Globstar(value: unknown): value is CONST.GlobstarString;
     function AnyWildcard(value: unknown): value is CONST.WildcardString | CONST.GlobstarString;
+    function Recursive(value: unknown): value is TypeId.Collection | TypeId.Collectable;
     function CollectionType(value: unknown): value is TypeId.Collection;
     function NonCollectableType(value: unknown): value is TypeId.NonCollectable;
     function CollectableType(value: unknown): value is TypeId.Collectable;
-    function EmbedOnlyType(value: unknown): value is TypeId.EmbedOnlyType;
-    function EmbeddablePrimaryType(value: unknown): value is TypeId.EmbeddablePrimaryType;
-    function AnyPrimaryType(value: unknown): value is TypeId.NonCollectable | TypeId.Collectable | TypeId.Collection;
+    function EmbedOnlyType(value: unknown): value is TypeId.EmbedOnly;
+    function EmbeddablePrimaryType(value: unknown): value is TypeId.EmbeddablePrimary;
+    function PrimaryType(value: unknown): value is TypeId.NonCollectable | TypeId.Collectable | TypeId.Collection;
 }
 export default TypeGuard;

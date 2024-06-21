@@ -181,13 +181,15 @@ oracles:
               - number_of_rolls: 2
                 auto: true
                 duplicates: make_it_worse
-              # *text:RollTwice.MakeItWorse
 
+# TODO
+# text3 won't really work here -- it actually needs *4* columns
+# so, a shared roll table might be the best way to do this
       challenge_rank:
         canonical_name: 'Oracle 19: Challenge Rank'
         name: Challenge Rank
-        oracle_type: table_text
         type: oracle_rollable
+        oracle_type: table_text
         summary: Use this oracle when you want to randomly determine the challenge rank of a quest, journey, or foe.
         _source: &CollectionSource
           <<: *Source

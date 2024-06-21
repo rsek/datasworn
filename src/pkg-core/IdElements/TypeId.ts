@@ -1,10 +1,11 @@
+import type { satisfies } from 'semver'
 import type * as Datasworn from '../Datasworn.js'
 import CONST from './CONST.js'
 
 /**
  * Datasworn ID elements that represent specific types of Datasworn object. They appear in the second position, immediately after the {@link RulesPackageId} element.
  *
- * TypeIds always have the same value as `type` property. In other words, the `type` of the ID's target is always reconstructable from the ID.
+ * On major nodes, TypeIds always have the same value as `type` property. In other words, the `type` of the ID's target is always reconstructable from the ID.
  */
 namespace TypeId {
 	/** Object types that can exist in collections. */
@@ -37,9 +38,9 @@ namespace TypeId {
 	export type NonCollectable = (typeof NonCollectable)[number]
 
 	/** Any primary node type. Primary node types can have IDs that address only their type (IDs without '.' separators). */
-	export type AnyPrimary = Collectable | Collection | NonCollectable
+	export type Primary = Collectable | Collection | NonCollectable
 
-	export const AnyPrimary = [
+	export const Primary = [
 		...Collectable,
 		...Collection,
 		...NonCollectable
@@ -78,12 +79,12 @@ namespace TypeId {
 		return CollectionOfMap[typeId] as CollectionOf<T>
 	}
 
-	export const EmbeddablePrimaryType = [
+	export const EmbeddablePrimary = [
 		'oracle_rollable',
 		'move'
 	] as const satisfies [...(Collectable | NonCollectable)[]]
-	export type EmbeddablePrimaryType = (typeof EmbeddablePrimaryType)[number]
-	export const EmbedOnlyType = [
+	export type EmbeddablePrimary = (typeof EmbeddablePrimary)[number]
+	export const EmbedOnly = [
 		'ability',
 		'option',
 		'row',
@@ -92,8 +93,8 @@ namespace TypeId {
 		'denizen',
 		'variant'
 	] as const
-	export type EmbedOnlyType = (typeof EmbedOnlyType)[number]
-	export const EmbeddableType = [
+	export type EmbedOnly = (typeof EmbedOnly)[number]
+	export const Embeddable = [
 		'oracle_rollable',
 		'move',
 		'ability',
@@ -103,11 +104,8 @@ namespace TypeId {
 		'danger',
 		'denizen',
 		'variant'
-	] as const satisfies [
-		...typeof EmbeddablePrimaryType,
-		...typeof EmbedOnlyType
-	]
-	export type EmbeddableType = (typeof EmbeddableType)[number]
+	] as const satisfies [...typeof EmbeddablePrimary, ...typeof EmbedOnly]
+	export type Embeddable = EmbeddablePrimary | EmbedOnly
 
 	export const EmbedTypeMap = {
 		asset: ['ability'],
@@ -120,81 +118,156 @@ namespace TypeId {
 		delve_site_domain: ['feature', 'danger'],
 		delve_site_theme: ['feature', 'danger'],
 		npc: ['variant']
-	} as const satisfies Partial<
-		Record<AnyPrimary | EmbedOnlyType, EmbeddableType[]>
-	>
-	export type CanEmbed = keyof typeof EmbedTypeMap
+	} as const satisfies Partial<Record<Primary | EmbedOnly, Embeddable[]>>
+	export type Embedding = keyof typeof EmbedTypeMap
 
-	export type EmbeddableIn<T extends CanEmbed> =
+	export type EmbeddableIn<T extends Embedding> =
 		(typeof EmbedTypeMap)[T][number]
 
-	export const AllowedEmbedInEmbedTypes = {
+	/** Types that can be an embed of an embed. */
+	export const EmbeddableInEmbeddedTypeMap = {
 		ability: ['oracle_rollable', 'move'],
 		move: [],
 		option: ['oracle_rollable'],
 		oracle_rollable: ['row']
 	} as const satisfies {
-		[T in EmbeddableType & CanEmbed]: (typeof EmbedTypeMap)[T][number][]
+		[T in Embeddable & Embedding]: (typeof EmbedTypeMap)[T][number][]
 	}
 
+	export type EmbeddingWhenEmbeddedType =
+		keyof typeof EmbeddableInEmbeddedTypeMap
+
+	export type EmbeddableInEmbeddedType<
+		T extends EmbeddingWhenEmbeddedType = EmbeddingWhenEmbeddedType
+	> = (typeof EmbeddableInEmbeddedTypeMap)[T][number]
+
 	export function canHaveEmbed(typeId: string, typeIsEmbedded = false) {
-		return getEmbeddableTypes(typeId, typeIsEmbedded).length > 0
+		return getEmbeddableTypes(typeId as Any, typeIsEmbedded).length > 0
 	}
 
 	export function canBeEmbedded(typeId: string) {
 		return getTypesThatCanHaveEmbedOfType(typeId).length > 0
 	}
 
-	export function isPrimary(typeId: string): typeId is AnyPrimary {
-		return AnyPrimary.includes(typeId as AnyPrimary)
+	export function isPrimary(typeId: string): typeId is Primary {
+		return Primary.includes(typeId as Primary)
 	}
-	export function isEmbedOnly(typeId: string): typeId is EmbedOnlyType {
-		return EmbedOnlyType.includes(typeId as EmbedOnlyType)
+	export function isEmbedOnly(typeId: string): typeId is EmbedOnly {
+		return EmbedOnly.includes(typeId as EmbedOnly)
 	}
 
 	export function getEmbeddableTypes(
-		typeId: string,
+		embeddingType: Any,
 		typeIsEmbedded = false
-	): EmbeddableType[] {
-		if (typeIsEmbedded) return AllowedEmbedInEmbedTypes[typeId] ?? []
+	): Embeddable[] {
+		if (typeIsEmbedded) return EmbeddableInEmbeddedTypeMap[embeddingType] ?? []
 
-		return EmbedTypeMap[typeId] ?? []
+		return EmbedTypeMap[embeddingType] ?? []
 	}
 
-	export function getTypesThatCanHaveEmbedOfType(typeId: string): CanEmbed[] {
-		const typeIds: CanEmbed[] = []
+	export function getTypesThatCanHaveEmbedOfType(typeId: string): Embedding[] {
+		const typeIds: Embedding[] = []
 
 		for (const embedder in EmbedTypeMap) {
 			const embeddables = EmbedTypeMap[embedder]
-			if (embeddables.includes(typeId)) typeIds.push(embedder as CanEmbed)
+			if (embeddables.includes(typeId)) typeIds.push(embedder as Embedding)
 		}
 
 		return typeIds
 	}
 
-	export type CanEmbedType<T extends EmbeddableType = EmbeddableType> = {
+	export type CanEmbedType<T extends Embeddable = Embeddable> = {
 		[P in keyof typeof EmbedTypeMap as (typeof EmbedTypeMap)[P][number]]: P
 	}[T]
 
 	export const EmbeddedTypePath = [] as string[]
 
-	function expandTypePath(typeId: CanEmbed, path: string[] = []) {
+	function expandTypePath(typeId: Embedding, path: string[] = []) {
 		const isPrimary = path.length === 0
 		const thisPath = [...path, typeId]
-		if (!isPrimary) EmbeddedTypePath.push(thisPath.join(CONST.PathTypeSep))
+		if (!isPrimary) EmbeddedTypePath.push(thisPath.join(CONST.TypeSep))
 		if (typeId in EmbedTypeMap) {
 			for (const childTypeId of EmbedTypeMap[typeId])
 				if (
 					isPrimary ||
-					(AllowedEmbedInEmbedTypes[typeId] ?? []).includes(childTypeId)
+					(EmbeddableInEmbeddedTypeMap[typeId] ?? []).includes(childTypeId)
 				)
-					expandTypePath(childTypeId as CanEmbed, thisPath)
+					expandTypePath(childTypeId as Embedding, thisPath)
 		}
 	}
 
-	for (const typeId in EmbedTypeMap) expandTypePath(typeId as CanEmbed)
+	for (const typeId in EmbedTypeMap) expandTypePath(typeId as Embedding)
 
-	export const RootKeys = {
+	export const EmbeddedPropertyKeys = {
+		ability: 'abilities',
+		option: 'options',
+		row: 'rows',
+		feature: 'features',
+		danger: 'dangers',
+		denizen: 'denizens',
+		variant: 'variants'
+	} as const satisfies Record<EmbedOnly, string>
+
+	// TODO
+	// is there a logic to this that i can formalize?
+	// i think it comes down to whether the type has a required `name` property to generate a key from.
+	const EmbeddedPropertyType = {
+		abilities: 'array',
+		dangers: 'array',
+		denizens: 'array',
+		features: 'array',
+		options: 'array',
+		rows: 'array',
+		variants: 'dictionary'
+	} as const satisfies Record<
+		EmbeddedPropertyKey<EmbedOnly>,
+		'array' | 'dictionary'
+	>
+
+	export function getEmbeddedPropertyType(
+		typeId: TypeId.Any
+	): 'array' | 'dictionary' {
+		if (Primary.includes(typeId as Primary)) return 'dictionary'
+
+		const propKey = getEmbeddedPropertyKey(typeId as EmbedOnly)
+
+		if (propKey == null)
+			throw new Error(
+				`Expected an embeddable TypeId, but got ${String(typeId)}`
+			)
+
+		return EmbeddedPropertyType[propKey]
+	}
+
+	export type Any = Primary | EmbedOnly
+	export const Any = [
+		'atlas_entry',
+		'npc',
+		'oracle_rollable',
+		'asset',
+		'move',
+		'atlas_collection',
+		'npc_collection',
+		'oracle_collection',
+		'asset_collection',
+		'move_category',
+		'delve_site',
+		'delve_site_domain',
+		'delve_site_theme',
+		'rarity',
+		'truth',
+		'ability',
+		'option',
+		'row',
+		'feature',
+		'danger',
+		'denizen',
+		'variant'
+	] as const satisfies [...typeof Primary, ...typeof EmbedOnly]
+	// | EmbeddedTypePath | EmbedOfEmbedTypePaths
+
+	/** The ancestor key of this type on the {@link Datasworn.RulesPackage} object. */
+	export const BranchKey = {
 		asset_collection: 'assets',
 		asset: 'assets',
 		move_category: 'moves',
@@ -210,68 +283,25 @@ namespace TypeId {
 		delve_site_domain: 'site_domains',
 		delve_site_theme: 'site_themes',
 		rarity: 'rarities'
-	} as const satisfies Record<AnyPrimary, keyof Datasworn.RulesPackage>
-	export type RootKeys<T extends AnyPrimary = AnyPrimary> = (typeof RootKeys)[T]
+	} as const satisfies Record<Primary, keyof Datasworn.RulesPackage>
 
-	export const EmbeddedPropertyKeys = {
-		ability: 'abilities',
-		option: 'options',
-		row: 'rows',
-		feature: 'features',
-		danger: 'dangers',
-		denizen: 'denizens',
-		variant: 'variants'
-	} as const satisfies Record<EmbedOnlyType, string>
+	export type BranchKey<T extends Primary = Primary> = (typeof BranchKey)[T]
 
-	// TODO
-	// is there a logic to this that i can formalize?
-	// i think it comes down to whether the type has a required `name` property to generate a key from.
-	const EmbeddedPropertyType = {
-		abilities: 'array',
-		dangers: 'array',
-		denizens: 'array',
-		features: 'array',
-		options: 'array',
-		rows: 'array',
-		variants: 'dictionary'
-	} as const satisfies Record<
-		EmbeddedPropertyKey<EmbedOnlyType>,
-		'array' | 'dictionary'
-	>
-
-	export function getEmbeddedPropertyType(
-		typeId: TypeId.Any
-	): 'array' | 'dictionary' {
-		if (AnyPrimary.includes(typeId as AnyPrimary)) return 'dictionary'
-
-		const propKey = getEmbeddedPropertyKey(typeId as EmbedOnlyType)
-
-		if (propKey == null)
-			throw new Error(
-				`Expected an embeddable TypeId, but got ${String(typeId)}`
-			)
-
-		return EmbeddedPropertyType[propKey]
-	}
-
-	export type Any = AnyPrimary | EmbedOnlyType
-	// | EmbeddedTypePath | EmbedOfEmbedTypePaths
-
-	export type RootKey<T extends AnyPrimary = AnyPrimary> = (typeof RootKeys)[T]
-	export type EmbeddedPropertyKey<T extends EmbeddableType> =
+	/** The ancestor key of this type when it's embedded in another object. */
+	export type EmbeddedPropertyKey<T extends Embeddable> =
 		T extends keyof typeof EmbeddedPropertyKeys
 			? (typeof EmbeddedPropertyKeys)[T]
-			: T extends AnyPrimary
-				? RootKey<T>
+			: T extends Primary
+				? BranchKey<T>
 				: never
 
-	export function getRootKey<T extends AnyPrimary>(typeId: T) {
-		const result = RootKeys[typeId] as RootKey<T>
+	export function getBranchKey<T extends Primary>(typeId: T) {
+		const result = BranchKey[typeId] as BranchKey<T>
 		if (result == null)
 			throw new Error(`Expected primary TypeId but got ${typeId}`)
 		return result
 	}
-	export function getEmbeddedPropertyKey<T extends EmbeddableType>(
+	export function getEmbeddedPropertyKey<T extends Embeddable>(
 		typeId: T
 	): EmbeddedPropertyKey<T> {
 		const result =
@@ -283,7 +313,7 @@ namespace TypeId {
 		if (result != null) return result
 
 		try {
-			return getRootKey(typeId as any)
+			return getBranchKey(typeId as any)
 		} catch (e) {
 			throw new Error(`Expected embeddable TypeId but got ${typeId}`)
 		}

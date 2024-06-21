@@ -15,7 +15,7 @@ import TypeId from '../../pkg-core/IdElements/TypeId.js'
 import { Computed } from './Computed.js'
 import { pascalCase } from './string.js'
 
-const EmbeddedDictionaryKeys = Object.values(TypeId.RootKeys)
+const EmbeddedDictionaryKeys = Object.values(TypeId.BranchKey)
 type EmbeddedDictionaryKeys = (typeof EmbeddedDictionaryKeys)[number]
 
 const ReplacedEmbedKeys = ['_id'] as const
@@ -58,7 +58,7 @@ export function EmbeddedPrimaryNode<
 export type TEmbeddedNodeTypeLiteral<
 	TBase extends TTypeNode,
 	TParentType extends string
-> = TLiteral<`${TParentType}${CONST.PathTypeSep}${Static<TBase>['type']}`>
+> = TLiteral<`${TParentType}${CONST.TypeSep}${Static<TBase>['type']}`>
 
 export type TEmbeddedNode<
 	TBase extends TTypeNode,

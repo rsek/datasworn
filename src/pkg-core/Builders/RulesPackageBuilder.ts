@@ -1,14 +1,9 @@
 import CONST from '../IdElements/CONST.js'
+import type TypeId from '../IdElements/TypeId.js'
 import type TypeNode from '../TypeNode.js'
-import {
-	dataswornKeyOrder,
-	sortDataswornKeys,
-	sortObjectKeys
-} from '../Utils/Sort.js'
-import { extractIdRefs, validateIdsInStrings } from '../Validators/Text.js'
+import { dataswornKeyOrder, sortObjectKeys } from '../Utils/Sort.js'
 import Validators from '../Validators/index.js'
 import { IdParser, type Datasworn, type DataswornSource } from '../index.js'
-import type TypeId from '../IdElements/TypeId.js'
 
 export type SchemaValidator<TTarget> = (data: unknown) => data is TTarget
 export type Logger = Record<
@@ -138,16 +133,9 @@ export class RulesPackageBuilder<
 	#sortKeys(force = false) {
 		if (this.#isSorted && !force) return this
 
-		this.#result = sortDataswornKeys(this.#result)
+		this.#result = sortObjectKeys(this.#result, dataswornKeyOrder)
 		this.#isSorted = true
 		return this
-	}
-
-	static sortDataswornKeys<T extends object>(
-		object: T,
-		sortOrder = dataswornKeyOrder
-	) {
-		return sortObjectKeys(object, sortOrder)
 	}
 
 	/** Top-level RulesPackage properties to omit from key sorting. */
@@ -261,7 +249,7 @@ class RulesPackagePart<
 
 	name: string
 
-	index = new Map<string, TypeNode.AnyPrimary>()
+	index = new Map<string, TypeNode.Primary>()
 
 	#data: TSource
 

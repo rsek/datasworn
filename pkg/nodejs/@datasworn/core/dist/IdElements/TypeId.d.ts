@@ -1,7 +1,7 @@
 /**
  * Datasworn ID elements that represent specific types of Datasworn object. They appear in the second position, immediately after the {@link RulesPackageId} element.
  *
- * TypeIds always have the same value as `type` property. In other words, the `type` of the ID's target is always reconstructable from the ID.
+ * On major nodes, TypeIds always have the same value as `type` property. In other words, the `type` of the ID's target is always reconstructable from the ID.
  */
 declare namespace TypeId {
     /** Object types that can exist in collections. */
@@ -13,8 +13,8 @@ declare namespace TypeId {
     const NonCollectable: readonly ["delve_site", "delve_site_domain", "delve_site_theme", "rarity", "truth"];
     type NonCollectable = (typeof NonCollectable)[number];
     /** Any primary node type. Primary node types can have IDs that address only their type (IDs without '.' separators). */
-    type AnyPrimary = Collectable | Collection | NonCollectable;
-    const AnyPrimary: ["atlas_entry", "npc", "oracle_rollable", "asset", "move", "atlas_collection", "npc_collection", "oracle_collection", "asset_collection", "move_category", "delve_site", "delve_site_domain", "delve_site_theme", "rarity", "truth"];
+    type Primary = Collectable | Collection | NonCollectable;
+    const Primary: ["atlas_entry", "npc", "oracle_rollable", "asset", "move", "atlas_collection", "npc_collection", "oracle_collection", "asset_collection", "move_category", "delve_site", "delve_site_domain", "delve_site_theme", "rarity", "truth"];
     const CollectedByMap: {
         readonly asset_collection: "asset";
         readonly move_category: "move";
@@ -33,12 +33,12 @@ declare namespace TypeId {
     };
     type CollectionOf<T extends Collectable> = (typeof CollectionOfMap)[T];
     function getCollectionOf<T extends Collectable>(typeId: T): CollectionOf<T>;
-    const EmbeddablePrimaryType: ["oracle_rollable", "move"];
-    type EmbeddablePrimaryType = (typeof EmbeddablePrimaryType)[number];
-    const EmbedOnlyType: readonly ["ability", "option", "row", "feature", "danger", "denizen", "variant"];
-    type EmbedOnlyType = (typeof EmbedOnlyType)[number];
-    const EmbeddableType: ["oracle_rollable", "move", "ability", "option", "row", "feature", "danger", "denizen", "variant"];
-    type EmbeddableType = (typeof EmbeddableType)[number];
+    const EmbeddablePrimary: ["oracle_rollable", "move"];
+    type EmbeddablePrimary = (typeof EmbeddablePrimary)[number];
+    const EmbedOnly: readonly ["ability", "option", "row", "feature", "danger", "denizen", "variant"];
+    type EmbedOnly = (typeof EmbedOnly)[number];
+    const Embeddable: ["oracle_rollable", "move", "ability", "option", "row", "feature", "danger", "denizen", "variant"];
+    type Embeddable = EmbeddablePrimary | EmbedOnly;
     const EmbedTypeMap: {
         readonly asset: ["ability"];
         readonly ability: ["move", "oracle_rollable"];
@@ -51,25 +51,41 @@ declare namespace TypeId {
         readonly delve_site_theme: ["feature", "danger"];
         readonly npc: ["variant"];
     };
-    type CanEmbed = keyof typeof EmbedTypeMap;
-    type EmbeddableIn<T extends CanEmbed> = (typeof EmbedTypeMap)[T][number];
-    const AllowedEmbedInEmbedTypes: {
+    type Embedding = keyof typeof EmbedTypeMap;
+    type EmbeddableIn<T extends Embedding> = (typeof EmbedTypeMap)[T][number];
+    /** Types that can be an embed of an embed. */
+    const EmbeddableInEmbeddedTypeMap: {
         readonly ability: ["oracle_rollable", "move"];
         readonly move: [];
         readonly option: ["oracle_rollable"];
         readonly oracle_rollable: ["row"];
     };
+    type EmbeddingWhenEmbeddedType = keyof typeof EmbeddableInEmbeddedTypeMap;
+    type EmbeddableInEmbeddedType<T extends EmbeddingWhenEmbeddedType = EmbeddingWhenEmbeddedType> = (typeof EmbeddableInEmbeddedTypeMap)[T][number];
     function canHaveEmbed(typeId: string, typeIsEmbedded?: boolean): boolean;
     function canBeEmbedded(typeId: string): boolean;
-    function isPrimary(typeId: string): typeId is AnyPrimary;
-    function isEmbedOnly(typeId: string): typeId is EmbedOnlyType;
-    function getEmbeddableTypes(typeId: string, typeIsEmbedded?: boolean): EmbeddableType[];
-    function getTypesThatCanHaveEmbedOfType(typeId: string): CanEmbed[];
-    type CanEmbedType<T extends EmbeddableType = EmbeddableType> = {
+    function isPrimary(typeId: string): typeId is Primary;
+    function isEmbedOnly(typeId: string): typeId is EmbedOnly;
+    function getEmbeddableTypes(embeddingType: Any, typeIsEmbedded?: boolean): Embeddable[];
+    function getTypesThatCanHaveEmbedOfType(typeId: string): Embedding[];
+    type CanEmbedType<T extends Embeddable = Embeddable> = {
         [P in keyof typeof EmbedTypeMap as (typeof EmbedTypeMap)[P][number]]: P;
     }[T];
     const EmbeddedTypePath: string[];
-    const RootKeys: {
+    const EmbeddedPropertyKeys: {
+        readonly ability: "abilities";
+        readonly option: "options";
+        readonly row: "rows";
+        readonly feature: "features";
+        readonly danger: "dangers";
+        readonly denizen: "denizens";
+        readonly variant: "variants";
+    };
+    function getEmbeddedPropertyType(typeId: TypeId.Any): 'array' | 'dictionary';
+    type Any = Primary | EmbedOnly;
+    const Any: ["atlas_entry", "npc", "oracle_rollable", "asset", "move", "atlas_collection", "npc_collection", "oracle_collection", "asset_collection", "move_category", "delve_site", "delve_site_domain", "delve_site_theme", "rarity", "truth", "ability", "option", "row", "feature", "danger", "denizen", "variant"];
+    /** The ancestor key of this type on the {@link Datasworn.RulesPackage} object. */
+    const BranchKey: {
         readonly asset_collection: "assets";
         readonly asset: "assets";
         readonly move_category: "moves";
@@ -86,21 +102,10 @@ declare namespace TypeId {
         readonly delve_site_theme: "site_themes";
         readonly rarity: "rarities";
     };
-    type RootKeys<T extends AnyPrimary = AnyPrimary> = (typeof RootKeys)[T];
-    const EmbeddedPropertyKeys: {
-        readonly ability: "abilities";
-        readonly option: "options";
-        readonly row: "rows";
-        readonly feature: "features";
-        readonly danger: "dangers";
-        readonly denizen: "denizens";
-        readonly variant: "variants";
-    };
-    function getEmbeddedPropertyType(typeId: TypeId.Any): 'array' | 'dictionary';
-    type Any = AnyPrimary | EmbedOnlyType;
-    type RootKey<T extends AnyPrimary = AnyPrimary> = (typeof RootKeys)[T];
-    type EmbeddedPropertyKey<T extends EmbeddableType> = T extends keyof typeof EmbeddedPropertyKeys ? (typeof EmbeddedPropertyKeys)[T] : T extends AnyPrimary ? RootKey<T> : never;
-    function getRootKey<T extends AnyPrimary>(typeId: T): RootKey<T>;
-    function getEmbeddedPropertyKey<T extends EmbeddableType>(typeId: T): EmbeddedPropertyKey<T>;
+    type BranchKey<T extends Primary = Primary> = (typeof BranchKey)[T];
+    /** The ancestor key of this type when it's embedded in another object. */
+    type EmbeddedPropertyKey<T extends Embeddable> = T extends keyof typeof EmbeddedPropertyKeys ? (typeof EmbeddedPropertyKeys)[T] : T extends Primary ? BranchKey<T> : never;
+    function getBranchKey<T extends Primary>(typeId: T): BranchKey<T>;
+    function getEmbeddedPropertyKey<T extends Embeddable>(typeId: T): EmbeddedPropertyKey<T>;
 }
 export default TypeId;

@@ -6,7 +6,7 @@ export type IdReplacer = {
     /** A replacement template string to replace the old ID with, or `null` if this ID explicitly has no equivalent. */
     new: string | null;
 };
-export type IdReplacementMap = Record<TypeId.AnyPrimary | TypeId.EmbedOnlyType, IdReplacer[]>;
+export type IdReplacementMap = Record<TypeId.Primary | TypeId.EmbedOnly, IdReplacer[]>;
 /**
  * Provides an array of {@link IdReplacer} objects for each Datasworn ID type.
  */

@@ -48,7 +48,7 @@ const PrimaryNodeBase = Type.Object({
 
 export function PrimaryTypeNode<
 	TBase extends TObject,
-	TType extends TypeId.AnyPrimary
+	TType extends TypeId.Primary
 >(base: TBase, type: TType, options: ObjectOptions = {}) {
 	const _id = Type.Ref<TString>(pascalCase(type) + 'Id')
 
@@ -73,19 +73,19 @@ export function PrimaryTypeNode<
 
 export type TPrimaryTypeNode<
 	TBase extends TObject,
-	TType extends TypeId.AnyPrimary
+	TType extends TypeId.Primary
 > = TSourcedNode<
 	TDiscriminable<'type', TType, TAssign<typeof PrimaryNodeBase, TBase>>
 > & { static: PrimaryTypeNode<Static<TBase>, TType> }
 
 export type PrimaryTypeNode<
 	TBase extends object,
-	TType extends TypeId.AnyPrimary
+	TType extends TypeId.Primary
 > = SourcedNode<Discriminable<'type', TType, TBase>>
 
 export function PrimarySubtypeNode<
 	TBase extends TObject,
-	TType extends TypeId.AnyPrimary,
+	TType extends TypeId.Primary,
 	TSubtypeKey extends string,
 	TSubtype extends string
 >(
@@ -106,7 +106,7 @@ export function PrimarySubtypeNode<
 }
 export type TPrimarySubtypeNode<
 	TBase extends TObject,
-	TType extends TypeId.AnyPrimary,
+	TType extends TypeId.Primary,
 	TSubtypeKey extends string,
 	TSubtype extends string
 > = TDiscriminable<TSubtypeKey, TSubtype, TPrimaryTypeNode<TBase, TType>>

@@ -16,7 +16,7 @@ namespace Pattern {
 	export const IndexElement = /\d+/
 
 	const RecursiveDictKeysBase = new RegExp(
-		`${DictKeyBase.source}(?:\\${CONST.PathKeySep}${DictKeyBase.source}){${CONST.RECURSIVE_PATH_ELEMENTS_MIN - 1},${CONST.RECURSIVE_PATH_ELEMENTS_MAX - 1}}`
+		`${DictKeyBase.source}(?:\\${CONST.PathKeySep}${DictKeyBase.source}){${CONST.COLLECTION_DEPTH_MIN - 1},${CONST.COLLECTION_DEPTH_MAX - 1}}`
 	)
 
 	export const RecursiveDictKeysElement = RecursiveDictKeysBase

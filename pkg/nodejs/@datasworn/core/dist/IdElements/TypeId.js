@@ -7,7 +7,7 @@ const CONST_js_1 = __importDefault(require("./CONST.js"));
 /**
  * Datasworn ID elements that represent specific types of Datasworn object. They appear in the second position, immediately after the {@link RulesPackageId} element.
  *
- * TypeIds always have the same value as `type` property. In other words, the `type` of the ID's target is always reconstructable from the ID.
+ * On major nodes, TypeIds always have the same value as `type` property. In other words, the `type` of the ID's target is always reconstructable from the ID.
  */
 var TypeId;
 (function (TypeId) {
@@ -34,7 +34,7 @@ var TypeId;
         'rarity',
         'truth'
     ];
-    TypeId.AnyPrimary = [
+    TypeId.Primary = [
         ...TypeId.Collectable,
         ...TypeId.Collection,
         ...TypeId.NonCollectable
@@ -61,11 +61,11 @@ var TypeId;
         return TypeId.CollectionOfMap[typeId];
     }
     TypeId.getCollectionOf = getCollectionOf;
-    TypeId.EmbeddablePrimaryType = [
+    TypeId.EmbeddablePrimary = [
         'oracle_rollable',
         'move'
     ];
-    TypeId.EmbedOnlyType = [
+    TypeId.EmbedOnly = [
         'ability',
         'option',
         'row',
@@ -74,7 +74,7 @@ var TypeId;
         'denizen',
         'variant'
     ];
-    TypeId.EmbeddableType = [
+    TypeId.Embeddable = [
         'oracle_rollable',
         'move',
         'ability',
@@ -97,7 +97,8 @@ var TypeId;
         delve_site_theme: ['feature', 'danger'],
         npc: ['variant']
     };
-    TypeId.AllowedEmbedInEmbedTypes = {
+    /** Types that can be an embed of an embed. */
+    TypeId.EmbeddableInEmbeddedTypeMap = {
         ability: ['oracle_rollable', 'move'],
         move: [],
         option: ['oracle_rollable'],
@@ -112,18 +113,18 @@ var TypeId;
     }
     TypeId.canBeEmbedded = canBeEmbedded;
     function isPrimary(typeId) {
-        return TypeId.AnyPrimary.includes(typeId);
+        return TypeId.Primary.includes(typeId);
     }
     TypeId.isPrimary = isPrimary;
     function isEmbedOnly(typeId) {
-        return TypeId.EmbedOnlyType.includes(typeId);
+        return TypeId.EmbedOnly.includes(typeId);
     }
     TypeId.isEmbedOnly = isEmbedOnly;
-    function getEmbeddableTypes(typeId, typeIsEmbedded = false) {
+    function getEmbeddableTypes(embeddingType, typeIsEmbedded = false) {
         var _a, _b;
         if (typeIsEmbedded)
-            return (_a = TypeId.AllowedEmbedInEmbedTypes[typeId]) !== null && _a !== void 0 ? _a : [];
-        return (_b = TypeId.EmbedTypeMap[typeId]) !== null && _b !== void 0 ? _b : [];
+            return (_a = TypeId.EmbeddableInEmbeddedTypeMap[embeddingType]) !== null && _a !== void 0 ? _a : [];
+        return (_b = TypeId.EmbedTypeMap[embeddingType]) !== null && _b !== void 0 ? _b : [];
     }
     TypeId.getEmbeddableTypes = getEmbeddableTypes;
     function getTypesThatCanHaveEmbedOfType(typeId) {
@@ -142,33 +143,16 @@ var TypeId;
         const isPrimary = path.length === 0;
         const thisPath = [...path, typeId];
         if (!isPrimary)
-            TypeId.EmbeddedTypePath.push(thisPath.join(CONST_js_1.default.PathTypeSep));
+            TypeId.EmbeddedTypePath.push(thisPath.join(CONST_js_1.default.TypeSep));
         if (typeId in TypeId.EmbedTypeMap) {
             for (const childTypeId of TypeId.EmbedTypeMap[typeId])
                 if (isPrimary ||
-                    ((_a = TypeId.AllowedEmbedInEmbedTypes[typeId]) !== null && _a !== void 0 ? _a : []).includes(childTypeId))
+                    ((_a = TypeId.EmbeddableInEmbeddedTypeMap[typeId]) !== null && _a !== void 0 ? _a : []).includes(childTypeId))
                     expandTypePath(childTypeId, thisPath);
         }
     }
     for (const typeId in TypeId.EmbedTypeMap)
         expandTypePath(typeId);
-    TypeId.RootKeys = {
-        asset_collection: 'assets',
-        asset: 'assets',
-        move_category: 'moves',
-        move: 'moves',
-        atlas_collection: 'atlas',
-        atlas_entry: 'atlas',
-        npc_collection: 'npcs',
-        npc: 'npcs',
-        oracle_collection: 'oracles',
-        oracle_rollable: 'oracles',
-        delve_site: 'delve_sites',
-        truth: 'truths',
-        delve_site_domain: 'site_domains',
-        delve_site_theme: 'site_themes',
-        rarity: 'rarities'
-    };
     TypeId.EmbeddedPropertyKeys = {
         ability: 'abilities',
         option: 'options',
@@ -191,7 +175,7 @@ var TypeId;
         variants: 'dictionary'
     };
     function getEmbeddedPropertyType(typeId) {
-        if (TypeId.AnyPrimary.includes(typeId))
+        if (TypeId.Primary.includes(typeId))
             return 'dictionary';
         const propKey = getEmbeddedPropertyKey(typeId);
         if (propKey == null)
@@ -199,13 +183,56 @@ var TypeId;
         return EmbeddedPropertyType[propKey];
     }
     TypeId.getEmbeddedPropertyType = getEmbeddedPropertyType;
-    function getRootKey(typeId) {
-        const result = TypeId.RootKeys[typeId];
+    TypeId.Any = [
+        'atlas_entry',
+        'npc',
+        'oracle_rollable',
+        'asset',
+        'move',
+        'atlas_collection',
+        'npc_collection',
+        'oracle_collection',
+        'asset_collection',
+        'move_category',
+        'delve_site',
+        'delve_site_domain',
+        'delve_site_theme',
+        'rarity',
+        'truth',
+        'ability',
+        'option',
+        'row',
+        'feature',
+        'danger',
+        'denizen',
+        'variant'
+    ];
+    // | EmbeddedTypePath | EmbedOfEmbedTypePaths
+    /** The ancestor key of this type on the {@link Datasworn.RulesPackage} object. */
+    TypeId.BranchKey = {
+        asset_collection: 'assets',
+        asset: 'assets',
+        move_category: 'moves',
+        move: 'moves',
+        atlas_collection: 'atlas',
+        atlas_entry: 'atlas',
+        npc_collection: 'npcs',
+        npc: 'npcs',
+        oracle_collection: 'oracles',
+        oracle_rollable: 'oracles',
+        delve_site: 'delve_sites',
+        truth: 'truths',
+        delve_site_domain: 'site_domains',
+        delve_site_theme: 'site_themes',
+        rarity: 'rarities'
+    };
+    function getBranchKey(typeId) {
+        const result = TypeId.BranchKey[typeId];
         if (result == null)
             throw new Error(`Expected primary TypeId but got ${typeId}`);
         return result;
     }
-    TypeId.getRootKey = getRootKey;
+    TypeId.getBranchKey = getBranchKey;
     function getEmbeddedPropertyKey(typeId) {
         const result = typeId in TypeId.EmbeddedPropertyKeys
             ? // @ts-expect-error
@@ -214,7 +241,7 @@ var TypeId;
         if (result != null)
             return result;
         try {
-            return getRootKey(typeId);
+            return getBranchKey(typeId);
         }
         catch (e) {
             throw new Error(`Expected embeddable TypeId but got ${typeId}`);

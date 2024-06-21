@@ -11,7 +11,7 @@ import { Computed } from '../Utils.js'
 
 export function EmbeddedType<
 	TBase extends TObject,
-	T extends TypeId.CanEmbed,
+	T extends TypeId.Embedding,
 	T2 extends TypeId.EmbeddableIn<T>
 >(
 	base: TBase,

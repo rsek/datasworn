@@ -1,12 +1,8 @@
 /** Utilties to assist in migration of Datasworn data across versions. */
 
-import type { CHAR_0 } from 'picomatch/lib/constants.js'
 import CONST from '../IdElements/CONST.js'
 import TypeId from '../IdElements/TypeId.js'
 import { TypeGuard } from '../IdElements/index.js'
-
-const MinorNodeTypes = ['asset.ability.move', 'asset.ability'] as const
-type MinorNodeType = (typeof MinorNodeTypes)[number]
 
 export type IdReplacer = {
 	/** A regular expression matching the old ID. */
@@ -37,8 +33,8 @@ const legacyTypeMap = {
 		| TypeId.Collection
 		| TypeId.NonCollectable
 		| TypeId.Collectable]: K extends TypeId.Collection
-		? `collections/${TypeId.RootKeys<K>}`
-		: TypeId.RootKeys<K>
+		? `collections/${TypeId.BranchKey<K>}`
+		: TypeId.BranchKey<K>
 }
 
 type CanonicalRulesPackage = 'starforged' | 'classic' | 'delve'
@@ -65,10 +61,10 @@ const keyRenamesByPkgAndType = {
 	delve: {}
 } as const satisfies Record<
 	CanonicalRulesPackage,
-	Partial<Record<TypeId.AnyPrimary, Record<string, string>>>
+	Partial<Record<TypeId.Primary, Record<string, string>>>
 >
 
-function createKeyRenamersForType(typeId: TypeId.AnyPrimary) {
+function createKeyRenamersForType(typeId: TypeId.Primary) {
 	const oldType = (legacyTypeMap[typeId] ?? legacyTypeMap[typeId]) as string
 
 	const renamers: IdReplacer[] = []
@@ -192,7 +188,7 @@ function createIdMappers(typeId: TypeId.Any) {
 	const mappers: IdReplacer[] = []
 
 	// these mappers are more specific, so they go first
-	if (TypeGuard.AnyPrimaryType(typeId))
+	if (TypeGuard.PrimaryType(typeId))
 		mappers.push(...createKeyRenamersForType(typeId))
 
 	// most generic possible renamer. only applies if no others match
@@ -213,11 +209,11 @@ function createMoveOracleIdMapper(
 	newOracleKey = moveKey,
 	oldOracleKey?: string
 ): IdReplacer {
-	const newTypeId = ['move', 'oracle_rollable'].join(CONST.PathTypeSep)
+	const newTypeId = ['move', 'oracle_rollable'].join(CONST.TypeSep)
 	const newMovePath = [rulesPackage, moveCategoryKey, moveKey].join(
 		CONST.PathKeySep
 	)
-	const newFullPath = [newMovePath, newOracleKey].join(CONST.PathTypeSep)
+	const newFullPath = [newMovePath, newOracleKey].join(CONST.TypeSep)
 	return {
 		old: new RegExp(
 			`^${rulesPackage}/oracles/moves/${moveKey}${oldOracleKey ? '/' + oldOracleKey : ''}$`
@@ -226,10 +222,7 @@ function createMoveOracleIdMapper(
 	}
 }
 
-export type IdReplacementMap = Record<
-	TypeId.AnyPrimary | TypeId.EmbedOnlyType,
-	IdReplacer[]
->
+export type IdReplacementMap = Record<TypeId.Primary | TypeId.EmbedOnly, IdReplacer[]>
 
 /**
  * Provides an array of {@link IdReplacer} objects for each Datasworn ID type.
