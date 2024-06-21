@@ -80,7 +80,7 @@ declare namespace TypeNode {
     /** Any Datasworn primary node type. */
     export type Primary<T extends TypeId.Primary = TypeId.Primary> = PrimaryTypeMap[T];
     /** Any Datasworn embedded node type. */
-    export type Embedded = EmbeddableTypeMap[keyof EmbeddableTypeMap];
+    export type Embedded<T extends keyof EmbeddableTypeMap = keyof EmbeddableTypeMap> = EmbeddableTypeMap[T];
     /** Any primary or embedded Datasworn node type. */
     export type Any = Primary | Embedded;
     export {};

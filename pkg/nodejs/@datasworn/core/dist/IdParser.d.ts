@@ -47,21 +47,24 @@ declare abstract class IdParser<TypeIds extends StringId.TypeIdParts = StringId.
      */
     get id(): string;
     toString(): this['id'];
-    /** The type ID of the target node. */
+    /** The type ID of the target node. For primary IDs, this is the same as {@link IdParser.typeId}. */
     get typeId(): string;
+    /** The type ID of the most recent primary node. For primary IDs, this is the same as {@link IdParser.typeId} */
     get primaryTypeId(): TypeId.Primary;
     get primaryPath(): string;
     get primaryPathKeys(): string[];
     /** The ID of the {@link RulesPackage} that contains this ID, or a wildcard to represent any RulesPackage. */
     get rulesPackageId(): string;
-    get primaryPathKeysWithinPkg(): string[];
-    get fullTypeId(): string;
-    get fullPath(): string;
+    /** The dot-separated, fully-qualified type ID. For primary types, this is the same as {@link IdParser.typeId}  */
+    get compositeTypeId(): string;
+    /** The dot-separated, fully-qualified path. For primary type IDs, this is the same as {@link IdParser.typeId}  */
+    get compositePath(): string;
     /** Does this ID contain any wildcard ("*") or globstar ("**") elements? */
     get isWildcard(): boolean;
     /** Can this ID contain recursive elements in its path? */
     abstract get isRecursive(): boolean;
-    get embedTypes(): TypeId.Embeddable[];
+    /** Get an array of the types that are embeddable by this type. */
+    getEmbeddableTypes(): TypeId.Embeddable[];
     /**
      * Get a Datasworn node by its ID.
      * @throws If the ID is a wildcard ID. If no Datasworn tree is provided (either in {@link IdParser.tree} or as an argument).
@@ -162,7 +165,10 @@ declare abstract class EmbeddingId<TypeIds extends StringId.TypeIdParts = String
     length: TypeIds['length'];
 }> extends IdParser<TypeIds, PathSegments> {
     #private;
-    createEmbeddedIdChild<T extends TypeId.Embeddable, K extends string>(typeId: T, key: K): EmbeddedId<this, T, K>;
+    /**
+     * Create a child EmbeddedId with a given type and key.
+     */
+    createEmbeddedIdChild(embeddedTypeId: TypeId.Embeddable, key: string): EmbeddedId;
     get embeddableTypes(): string[];
     assignIdsIn(node: object, recursive?: boolean, index?: Map<string, unknown>): object;
 }
@@ -176,6 +182,7 @@ declare class NonCollectableId<TTypeId extends TypeId.NonCollectable = TypeId.No
 interface NonCollectableId<TTypeId extends TypeId.NonCollectable = TypeId.NonCollectable, RulesPackage extends string = string, Key extends string = string> extends EmbeddingId<[TTypeId], [`${RulesPackage}${CONST.PathKeySep}${Key}`]> {
     get id(): StringId.NonCollectable<TTypeId, RulesPackage, Key>;
     get rulesPackageId(): RulesPackage;
+    createEmbeddedIdChild<T extends TTypeId extends TypeId.Embedding ? TypeId.EmbeddableIn<TTypeId> : never, K extends string>(embeddedTypeId: T, key: string): TTypeId extends TypeId.Embedding ? EmbeddedId<this, T, K> : never;
     /** @internal */
     _getTypeBranch(tree?: (typeof IdParser)['tree']): Map<string, TypeNode.NonCollectable<TTypeId>> | Record<string, TypeNode.NonCollectable<TTypeId>> | undefined;
     get(tree?: (typeof IdParser)['tree']): TypeNode.NonCollectable<TTypeId> | undefined;
@@ -213,14 +220,14 @@ interface CollectableId<TTypeId extends TypeId.Collectable = TypeId.Collectable,
     Join<[RulesPackage, ...CollectableAncestorKeys, Key]>
 ]> {
     get id(): StringId.Collectable<TTypeId, RulesPackage, CollectableAncestorKeys, Key>;
+    createEmbeddedIdChild<T extends TTypeId extends TypeId.Embedding ? TypeId.EmbeddableIn<TTypeId> : never, K extends string>(embeddedTypeId: T, key: string): TTypeId extends TypeId.Embedding ? EmbeddedId<this, T, K> : never;
     assignIdsIn<T extends TypeNode.CollectableSource<TTypeId>>(node: T, recursive?: boolean, index?: Map<string, unknown>): TypeNode.Collectable<TTypeId>;
     get typeId(): TTypeId;
     get primaryTypeId(): TTypeId;
     get primaryPathKeys(): [RulesPackage, ...CollectableAncestorKeys, Key];
-    get primaryPathKeysWithinPkg(): [...CollectableAncestorKeys, Key];
     get isCollection(): false;
     get isCollectable(): true;
-    get fullTypeId(): TTypeId;
+    get compositeTypeId(): TTypeId;
     get rulesPackageId(): RulesPackage;
     /** @internal */
     _getTypeBranch(tree?: (typeof IdParser)['tree']): Record<string, TypeNode.Collection<TypeId.CollectionOf<TTypeId>>> | Map<string, TypeNode.Collection<TypeId.CollectionOf<TTypeId>>> | undefined;
@@ -243,13 +250,12 @@ declare class CollectionId<TTypeId extends TypeId.Collection = TypeId.Collection
     get recursionDepth(): CollectionAncestorKeys['length'];
     get collectionAncestorKeys(): CollectionAncestorKeys;
     /**
-     * Create an ID representing a Collectable child of this CollectionId, using the provided key.
+     * Create an ID representing a {@link CollectableId} child of this CollectionId, using the provided key.
      * @example
      * ```typescript
-     * const collection = new CollectionId('oracle_collection', 'starforged', 'core')
-     * console.log(collection.toString()) // "oracle_collection:starforged/core"
+     * const collection = IdParser.parse('oracle_collection:starforged/core')
      * const collectable = collection.createCollectableIdChild('action')
-     * console.log(collectable.toString()) // "oracle_rollable:starforged/core/action"
+     * console.log(collectable.toString()) // 'oracle_rollable:starforged/core/action'
      * ```
      */
     createCollectableIdChild<ChildKey extends string>(key: ChildKey): CollectableId<TypeId.CollectableOf<TTypeId>, RulesPackage, [
@@ -262,10 +268,9 @@ declare class CollectionId<TTypeId extends TypeId.Collection = TypeId.Collection
      * @see {@link CONST.COLLECTION_DEPTH_MAX}
      * @example
      * ```typescript
-     * const collection = new CollectionId('oracle_collection', 'starforged', 'planet')
-     * console.log(collection.toString()) // "oracle_collection:starforged/planet"
+     * const collection = IdParser.parse('oracle_collection:starforged/planet')
      * const childCollection = collection.createCollectionIdChild('furnace')
-     * console.log(childCollection.toString()) // "oracle_collection:starforged/planet/furnace"
+     * console.log(childCollection.toString()) // 'oracle_collection:starforged/planet/furnace'
      * ```
      */
     createCollectionIdChild<ChildKey extends string>(key: ChildKey): CollectionId.ChildCollectionOf<this, ChildKey>;
@@ -275,10 +280,9 @@ declare class CollectionId<TTypeId extends TypeId.Collection = TypeId.Collection
      * @throws If a parent collection ID isn't possible (because this ID doesn't have a parent collection.)
      * @example
      * ```typescript
-     * const collection = new CollectionId('oracle_collection', 'starforged', 'planet')
-     * console.log(collection.toString()) // "oracle_collection:starforged/planet/jungle/settlements"
+     * const collection = IdParser.parse('oracle_collection:starforged/planet/jungle/settlements')
      * const parentCollection = collection.getCollectionIdParent()
-     * console.log(parentCollection.toString()) // "oracle_collection:starforged/planet/jungle"
+     * console.log(parentCollection.toString()) // 'oracle_collection:starforged/planet/jungle'
      * ```
      */
     getCollectionIdParent(): CollectionId.ParentCollectionOf<this>;
@@ -294,14 +298,13 @@ interface CollectionId<TTypeId extends TypeId.Collection = TypeId.Collection, Ru
 ], [
     Join<[RulesPackage, ...CollectionAncestorKeys, Key]>
 ]> {
-    get fullTypeId(): TTypeId;
+    get compositeTypeId(): TTypeId;
     get rulesPackageId(): RulesPackage;
     get isCollectable(): false;
     get isCollection(): true;
     get id(): StringId.Collection<TTypeId, RulesPackage, CollectionAncestorKeys, Key>;
     get primaryTypeId(): TTypeId;
     get primaryPathKeys(): [RulesPackage, ...CollectionAncestorKeys, Key];
-    get primaryPathKeysWithinPkg(): [...CollectionAncestorKeys, Key];
     /** @internal */
     _getTypeBranch(tree?: (typeof IdParser)['tree']): Record<string, TypeNode.Collection<TTypeId>> | Map<string, TypeNode.Collection<TTypeId>> | undefined;
     get(tree?: (typeof IdParser)['tree']): TypeNode.Collection<TTypeId> | undefined;
@@ -345,15 +348,15 @@ interface EmbeddedId<ParentId extends EmbeddingId = EmbeddingId, TTypeId extends
 ] & {
     length: [...ParentId['typeIds'], TTypeId]['length'];
 }> {
-    get id(): `${this['fullTypeId']}${CONST.PrefixSep}${Join<this['pathSegments'], CONST.TypeSep>}`;
+    get id(): `${this['compositeTypeId']}${CONST.PrefixSep}${Join<this['pathSegments'], CONST.TypeSep>}`;
     get embeddableTypes(): TTypeId extends TypeId.EmbeddingWhenEmbeddedType ? [...TypeId.EmbeddableInEmbeddedType<TTypeId>[]] : [];
+    get(): TypeNode.Embedded<TTypeId>;
     get typeId(): TTypeId;
     get typeIds(): [...ParentId['typeIds'], TTypeId];
     get pathSegments(): [...ParentId['pathSegments'], Key];
     get primaryTypeId(): ParentId['primaryTypeId'];
     get primaryPathKeys(): ParentId['primaryPathKeys'];
-    get primaryPathKeysWithinPkg(): ParentId['primaryPathKeysWithinPkg'];
     get isRecursive(): ParentId['isRecursive'];
-    get fullTypeId(): `${ParentId['fullTypeId']}${CONST.TypeSep}${TTypeId}`;
+    get compositeTypeId(): `${ParentId['compositeTypeId']}${CONST.TypeSep}${TTypeId}`;
 }
 export { CollectableId, CollectionId, EmbeddedId, IdParser, NonCollectableId };

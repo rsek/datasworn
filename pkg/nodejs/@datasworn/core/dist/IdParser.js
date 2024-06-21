@@ -13,7 +13,7 @@ var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _a, _IdParser_pathSegments, _IdParser_typeIds, _IdParser_validateEmbeddedTypeIdChain, _IdParser_validateTypeIds, _IdParser_toString, _IdParser_parseOptions, _IdParser_getClassForPrimaryTypeId, _IdParser_getPathKeyCount, _IdParser_getMatchesFromArray, _IdParser_getMatchesFromMap, _IdParser_getMatchesFromRecord, _EmbeddingId_instances, _EmbeddingId_assignEmbeddedIdsInMap, _EmbeddingId_assignEmbeddedIdsInRecord, _EmbeddingId_assignEmbeddedIdsInArray, _EmbeddedId_parent;
+var _a, _IdParser_pathSegments, _IdParser_typeIds, _IdParser_validateTypeIds, _IdParser_toString, _IdParser_parseOptions, _IdParser_getClassForPrimaryTypeId, _IdParser_getPathKeyCount, _IdParser_getMatchesFromArray, _IdParser_getMatchesFromMap, _IdParser_getMatchesFromRecord, _EmbeddingId_instances, _EmbeddingId_assignEmbeddedIdsInMap, _EmbeddingId_assignEmbeddedIdsInRecord, _EmbeddingId_assignEmbeddedIdsInArray, _EmbeddedId_parent;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NonCollectableId = exports.IdParser = exports.EmbeddedId = exports.CollectionId = exports.CollectableId = void 0;
 const CONST_js_1 = __importDefault(require("./IdElements/CONST.js"));
@@ -69,10 +69,11 @@ class IdParser {
         return this.id;
     }
     // ID parts
-    /** The type ID of the target node. */
+    /** The type ID of the target node. For primary IDs, this is the same as {@link IdParser.typeId}. */
     get typeId() {
         return this.typeIds.at(-1);
     }
+    /** The type ID of the most recent primary node. For primary IDs, this is the same as {@link IdParser.typeId} */
     get primaryTypeId() {
         return this.typeIds[0];
     }
@@ -86,22 +87,20 @@ class IdParser {
     get rulesPackageId() {
         return this.primaryPathKeys[0];
     }
-    get primaryPathKeysWithinPkg() {
-        // omit rules package, which is the first
-        const [_rulesPackage, ...keyElements] = this.primaryPathKeys;
-        return keyElements;
-    }
-    get fullTypeId() {
+    /** The dot-separated, fully-qualified type ID. For primary types, this is the same as {@link IdParser.typeId}  */
+    get compositeTypeId() {
         return this.typeIds.join(CONST_js_1.default.TypeSep);
     }
-    get fullPath() {
+    /** The dot-separated, fully-qualified path. For primary type IDs, this is the same as {@link IdParser.typeId}  */
+    get compositePath() {
         return this.pathSegments.join(CONST_js_1.default.TypeSep);
     }
     /** Does this ID contain any wildcard ("*") or globstar ("**") elements? */
     get isWildcard() {
         return this.id.includes(CONST_js_1.default.WildcardString);
     }
-    get embedTypes() {
+    /** Get an array of the types that are embeddable by this type. */
+    getEmbeddableTypes() {
         return TypeId_js_1.default.getEmbeddableTypes(this.typeId, this instanceof EmbeddedId);
     }
     /**
@@ -391,21 +390,7 @@ class IdParser {
     }
 }
 exports.IdParser = IdParser;
-_a = IdParser, _IdParser_pathSegments = new WeakMap(), _IdParser_typeIds = new WeakMap(), _IdParser_validateEmbeddedTypeIdChain = function _IdParser_validateEmbeddedTypeIdChain(typeIds) {
-    if (typeIds.length === 1)
-        return true;
-    for (let i = 1; i < typeIds.length; i++) {
-        const embeddedTypeId = typeIds[i];
-        const parentTypeId = typeIds[i - 1];
-        const parentTypeIsEmbedded = i > 1;
-        const embeddableTypes = TypeId_js_1.default.getEmbeddableTypes(parentTypeId, parentTypeIsEmbedded);
-        if (!embeddableTypes.includes(embeddedTypeId)) {
-            const parentTypeIdComposite = typeIds.slice(0, i).join(CONST_js_1.default.TypeSep);
-            throw new Error(`Can't embed type "${embeddedTypeId}" in type "${parentTypeIdComposite}"`);
-        }
-    }
-    return true;
-}, _IdParser_validateTypeIds = function _IdParser_validateTypeIds(typeIds) {
+_a = IdParser, _IdParser_pathSegments = new WeakMap(), _IdParser_typeIds = new WeakMap(), _IdParser_validateTypeIds = function _IdParser_validateTypeIds(typeIds) {
     if (!Array.isArray(typeIds) ||
         !typeIds.every((str) => typeof str === 'string'))
         throw new Error(`Expected an array of strings but got ${JSON.stringify(typeIds)}`);
@@ -529,8 +514,11 @@ class EmbeddingId extends IdParser {
         super(...arguments);
         _EmbeddingId_instances.add(this);
     }
-    createEmbeddedIdChild(typeId, key) {
-        return new EmbeddedId(this, typeId, key);
+    /**
+     * Create a child EmbeddedId with a given type and key.
+     */
+    createEmbeddedIdChild(embeddedTypeId, key) {
+        return new EmbeddedId(this, embeddedTypeId, key);
     }
     get embeddableTypes() {
         return TypeId_js_1.default.getEmbeddableTypes(this.typeId, this instanceof EmbeddedId);
@@ -538,7 +526,7 @@ class EmbeddingId extends IdParser {
     assignIdsIn(node, recursive, index) {
         const result = super.assignIdsIn(node, recursive, index);
         if (recursive)
-            for (const embedTypeId of this.embedTypes) {
+            for (const embedTypeId of this.getEmbeddableTypes()) {
                 const property = TypeId_js_1.default.getEmbeddedPropertyKey(embedTypeId);
                 if (typeof node !== 'object')
                     continue;
@@ -658,13 +646,12 @@ class CollectionId extends IdParser {
         return this.primaryPathKeys.slice(1, -1);
     }
     /**
-     * Create an ID representing a Collectable child of this CollectionId, using the provided key.
+     * Create an ID representing a {@link CollectableId} child of this CollectionId, using the provided key.
      * @example
      * ```typescript
-     * const collection = new CollectionId('oracle_collection', 'starforged', 'core')
-     * console.log(collection.toString()) // "oracle_collection:starforged/core"
+     * const collection = IdParser.parse('oracle_collection:starforged/core')
      * const collectable = collection.createCollectableIdChild('action')
-     * console.log(collectable.toString()) // "oracle_rollable:starforged/core/action"
+     * console.log(collectable.toString()) // 'oracle_rollable:starforged/core/action'
      * ```
      */
     createCollectableIdChild(key) {
@@ -676,17 +663,15 @@ class CollectionId extends IdParser {
      * @see {@link CONST.COLLECTION_DEPTH_MAX}
      * @example
      * ```typescript
-     * const collection = new CollectionId('oracle_collection', 'starforged', 'planet')
-     * console.log(collection.toString()) // "oracle_collection:starforged/planet"
+     * const collection = IdParser.parse('oracle_collection:starforged/planet')
      * const childCollection = collection.createCollectionIdChild('furnace')
-     * console.log(childCollection.toString()) // "oracle_collection:starforged/planet/furnace"
+     * console.log(childCollection.toString()) // 'oracle_collection:starforged/planet/furnace'
      * ```
      */
     createCollectionIdChild(key) {
         if (this.recursionDepth >= CONST_js_1.default.COLLECTION_DEPTH_MAX)
             throw new Errors_js_1.ParseError(this.id, `Cant't generate a child collection ID because this ID has reached the maximum recursion depth (${CONST_js_1.default.COLLECTION_DEPTH_MAX})`);
-        const { primaryTypeId, rulesPackageId: rulesPackage, primaryPathKeysWithinPkg: primaryDictKeyElements } = this;
-        return new CollectionId(primaryTypeId, rulesPackage, ...primaryDictKeyElements, key);
+        return new CollectionId(this.primaryTypeId, ...this.primaryPathKeys, key);
     }
     assignIdsIn(node, recursive = true, index) {
         // run this up front so the log ordering is more intuitive
@@ -716,10 +701,9 @@ class CollectionId extends IdParser {
      * @throws If a parent collection ID isn't possible (because this ID doesn't have a parent collection.)
      * @example
      * ```typescript
-     * const collection = new CollectionId('oracle_collection', 'starforged', 'planet')
-     * console.log(collection.toString()) // "oracle_collection:starforged/planet/jungle/settlements"
+     * const collection = IdParser.parse('oracle_collection:starforged/planet/jungle/settlements')
      * const parentCollection = collection.getCollectionIdParent()
-     * console.log(parentCollection.toString()) // "oracle_collection:starforged/planet/jungle"
+     * console.log(parentCollection.toString()) // 'oracle_collection:starforged/planet/jungle'
      * ```
      */
     getCollectionIdParent() {

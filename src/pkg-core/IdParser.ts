@@ -107,11 +107,12 @@ abstract class IdParser<
 
 	// ID parts
 
-	/** The type ID of the target node. */
+	/** The type ID of the target node. For primary IDs, this is the same as {@link IdParser.typeId}. */
 	get typeId() {
 		return this.typeIds.at(-1)
 	}
 
+	/** The type ID of the most recent primary node. For primary IDs, this is the same as {@link IdParser.typeId} */
 	get primaryTypeId() {
 		return this.typeIds[0] as TypeId.Primary
 	}
@@ -129,17 +130,13 @@ abstract class IdParser<
 		return this.primaryPathKeys[0]
 	}
 
-	get primaryPathKeysWithinPkg() {
-		// omit rules package, which is the first
-		const [_rulesPackage, ...keyElements] = this.primaryPathKeys
-		return keyElements
-	}
-
-	get fullTypeId() {
+	/** The dot-separated, fully-qualified type ID. For primary types, this is the same as {@link IdParser.typeId}  */
+	get compositeTypeId() {
 		return this.typeIds.join(CONST.TypeSep)
 	}
 
-	get fullPath() {
+	/** The dot-separated, fully-qualified path. For primary type IDs, this is the same as {@link IdParser.typeId}  */
+	get compositePath() {
 		return this.pathSegments.join(CONST.TypeSep)
 	}
 
@@ -151,7 +148,8 @@ abstract class IdParser<
 	/** Can this ID contain recursive elements in its path? */
 	abstract get isRecursive(): boolean
 
-	get embedTypes() {
+	/** Get an array of the types that are embeddable by this type. */
+	getEmbeddableTypes() {
 		return TypeId.getEmbeddableTypes(
 			this.typeId as TypeId.Any,
 			this instanceof EmbeddedId
@@ -365,32 +363,6 @@ abstract class IdParser<
 	}
 
 	// Static private methods
-
-	static #validateEmbeddedTypeIdChain(
-		typeIds: [TypeId.Primary, ...string[]]
-	): typeIds is [TypeId.Primary, ...TypeId.Embeddable[]] {
-		if (typeIds.length === 1) return true
-		for (let i = 1; i < typeIds.length; i++) {
-			const embeddedTypeId = typeIds[i]
-			const parentTypeId = typeIds[i - 1]
-			const parentTypeIsEmbedded = i > 1
-
-			const embeddableTypes = TypeId.getEmbeddableTypes(
-				parentTypeId as TypeId.Any,
-				parentTypeIsEmbedded
-			)
-
-			if (!embeddableTypes.includes(embeddedTypeId as TypeId.Embeddable)) {
-				const parentTypeIdComposite = typeIds.slice(0, i).join(CONST.TypeSep)
-
-				throw new Error(
-					`Can't embed type "${embeddedTypeId}" in type "${parentTypeIdComposite}"`
-				)
-			}
-		}
-
-		return true
-	}
 
 	static #validateTypeIds(typeIds: unknown) {
 		if (
@@ -892,15 +864,21 @@ abstract class EmbeddingId<
 		length: TypeIds['length']
 	}
 > extends IdParser<TypeIds, PathSegments> {
-	createEmbeddedIdChild<T extends TypeId.Embeddable, K extends string>(
-		typeId: T,
-		key: K
-	): EmbeddedId<this, T, K> {
-		return new EmbeddedId(this, typeId, key)
+	/**
+	 * Create a child EmbeddedId with a given type and key.
+	 */
+	createEmbeddedIdChild(
+		embeddedTypeId: TypeId.Embeddable,
+		key: string
+	): EmbeddedId {
+		return new EmbeddedId(this, embeddedTypeId, key)
 	}
 
 	get embeddableTypes(): string[] {
-		return TypeId.getEmbeddableTypes(this.typeId as TypeId.Any, this instanceof EmbeddedId)
+		return TypeId.getEmbeddableTypes(
+			this.typeId as TypeId.Any,
+			this instanceof EmbeddedId
+		)
 	}
 
 	override assignIdsIn(
@@ -911,7 +889,7 @@ abstract class EmbeddingId<
 		const result = super.assignIdsIn(node, recursive, index)
 
 		if (recursive)
-			for (const embedTypeId of this.embedTypes) {
+			for (const embedTypeId of this.getEmbeddableTypes()) {
 				const property = TypeId.getEmbeddedPropertyKey(embedTypeId)
 
 				if (typeof node !== 'object') continue
@@ -1033,6 +1011,16 @@ interface NonCollectableId<
 
 	// TODO: explicit typing for create embed method
 	// TODO: (on EmbeddingId) throw/fail validation if it receives an inappropriate embed type
+
+	createEmbeddedIdChild<
+		T extends TTypeId extends TypeId.Embedding
+			? TypeId.EmbeddableIn<TTypeId>
+			: never,
+		K extends string
+	>(
+		embeddedTypeId: T,
+		key: string
+	): TTypeId extends TypeId.Embedding ? EmbeddedId<this, T, K> : never
 
 	/** @internal */
 	_getTypeBranch(
@@ -1183,6 +1171,16 @@ interface CollectableId<
 		Key
 	>
 
+	createEmbeddedIdChild<
+		T extends TTypeId extends TypeId.Embedding
+			? TypeId.EmbeddableIn<TTypeId>
+			: never,
+		K extends string
+	>(
+		embeddedTypeId: T,
+		key: string
+	): TTypeId extends TypeId.Embedding ? EmbeddedId<this, T, K> : never
+
 	assignIdsIn<T extends TypeNode.CollectableSource<TTypeId>>(
 		node: T,
 		recursive?: boolean,
@@ -1192,10 +1190,9 @@ interface CollectableId<
 	get typeId(): TTypeId
 	get primaryTypeId(): TTypeId
 	get primaryPathKeys(): [RulesPackage, ...CollectableAncestorKeys, Key]
-	get primaryPathKeysWithinPkg(): [...CollectableAncestorKeys, Key]
 	get isCollection(): false
 	get isCollectable(): true
-	get fullTypeId(): TTypeId
+	get compositeTypeId(): TTypeId
 	get rulesPackageId(): RulesPackage
 
 	/** @internal */
@@ -1268,13 +1265,12 @@ class CollectionId<
 	}
 
 	/**
-	 * Create an ID representing a Collectable child of this CollectionId, using the provided key.
+	 * Create an ID representing a {@link CollectableId} child of this CollectionId, using the provided key.
 	 * @example
 	 * ```typescript
-	 * const collection = new CollectionId('oracle_collection', 'starforged', 'core')
-	 * console.log(collection.toString()) // "oracle_collection:starforged/core"
+	 * const collection = IdParser.parse('oracle_collection:starforged/core')
 	 * const collectable = collection.createCollectableIdChild('action')
-	 * console.log(collectable.toString()) // "oracle_rollable:starforged/core/action"
+	 * console.log(collectable.toString()) // 'oracle_rollable:starforged/core/action'
 	 * ```
 	 */
 	createCollectableIdChild<ChildKey extends string>(
@@ -1299,10 +1295,9 @@ class CollectionId<
 	 * @see {@link CONST.COLLECTION_DEPTH_MAX}
 	 * @example
 	 * ```typescript
-	 * const collection = new CollectionId('oracle_collection', 'starforged', 'planet')
-	 * console.log(collection.toString()) // "oracle_collection:starforged/planet"
+	 * const collection = IdParser.parse('oracle_collection:starforged/planet')
 	 * const childCollection = collection.createCollectionIdChild('furnace')
-	 * console.log(childCollection.toString()) // "oracle_collection:starforged/planet/furnace"
+	 * console.log(childCollection.toString()) // 'oracle_collection:starforged/planet/furnace'
 	 * ```
 	 */
 	createCollectionIdChild<ChildKey extends string>(
@@ -1313,16 +1308,10 @@ class CollectionId<
 				this.id,
 				`Cant't generate a child collection ID because this ID has reached the maximum recursion depth (${CONST.COLLECTION_DEPTH_MAX})`
 			)
-		const {
-			primaryTypeId,
-			rulesPackageId: rulesPackage,
-			primaryPathKeysWithinPkg: primaryDictKeyElements
-		} = this
 
 		return new CollectionId(
-			primaryTypeId,
-			rulesPackage,
-			...primaryDictKeyElements,
+			this.primaryTypeId,
+			...this.primaryPathKeys,
 			key
 		) as any
 	}
@@ -1360,10 +1349,9 @@ class CollectionId<
 	 * @throws If a parent collection ID isn't possible (because this ID doesn't have a parent collection.)
 	 * @example
 	 * ```typescript
-	 * const collection = new CollectionId('oracle_collection', 'starforged', 'planet')
-	 * console.log(collection.toString()) // "oracle_collection:starforged/planet/jungle/settlements"
+	 * const collection = IdParser.parse('oracle_collection:starforged/planet/jungle/settlements')
 	 * const parentCollection = collection.getCollectionIdParent()
-	 * console.log(parentCollection.toString()) // "oracle_collection:starforged/planet/jungle"
+	 * console.log(parentCollection.toString()) // 'oracle_collection:starforged/planet/jungle'
 	 * ```
 	 */
 	getCollectionIdParent(): CollectionId.ParentCollectionOf<this> {
@@ -1504,7 +1492,7 @@ interface CollectionId<
 		[TTypeId],
 		[Join<[RulesPackage, ...CollectionAncestorKeys, Key]>]
 	> {
-	get fullTypeId(): TTypeId
+	get compositeTypeId(): TTypeId
 	get rulesPackageId(): RulesPackage
 
 	get isCollectable(): false
@@ -1517,7 +1505,6 @@ interface CollectionId<
 	>
 	get primaryTypeId(): TTypeId
 	get primaryPathKeys(): [RulesPackage, ...CollectionAncestorKeys, Key]
-	get primaryPathKeysWithinPkg(): [...CollectionAncestorKeys, Key]
 
 	/** @internal */
 	_getTypeBranch(
@@ -1629,11 +1616,13 @@ interface EmbeddedId<
 			length: [...ParentId['typeIds'], TTypeId]['length']
 		}
 	> {
-	get id(): `${this['fullTypeId']}${CONST.PrefixSep}${Join<this['pathSegments'], CONST.TypeSep>}`
+	get id(): `${this['compositeTypeId']}${CONST.PrefixSep}${Join<this['pathSegments'], CONST.TypeSep>}`
 
 	get embeddableTypes(): TTypeId extends TypeId.EmbeddingWhenEmbeddedType
 		? [...TypeId.EmbeddableInEmbeddedType<TTypeId>[]]
 		: []
+
+	get(): TypeNode.Embedded<TTypeId>
 
 	get typeId(): TTypeId
 	get typeIds(): [...ParentId['typeIds'], TTypeId]
@@ -1641,9 +1630,8 @@ interface EmbeddedId<
 
 	get primaryTypeId(): ParentId['primaryTypeId']
 	get primaryPathKeys(): ParentId['primaryPathKeys']
-	get primaryPathKeysWithinPkg(): ParentId['primaryPathKeysWithinPkg']
 	get isRecursive(): ParentId['isRecursive']
-	get fullTypeId(): `${ParentId['fullTypeId']}${CONST.TypeSep}${TTypeId}`
+	get compositeTypeId(): `${ParentId['compositeTypeId']}${CONST.TypeSep}${TTypeId}`
 }
 
 export { CollectableId, CollectionId, EmbeddedId, IdParser, NonCollectableId }

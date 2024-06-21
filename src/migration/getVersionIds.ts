@@ -208,4 +208,4 @@ const data = Object.fromEntries(
 
 // console.log(data)
 
-await writeJSON(path.join(ROOT_HISTORY, oldVersion, 'id_map.json'), data)
+await writeJSON(path.join(ROOT_HISTORY, VERSION, 'id_map.json'), data)

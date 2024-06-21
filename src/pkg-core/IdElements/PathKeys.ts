@@ -10,6 +10,16 @@ export type CollectionPathKeys = [...CollectionAncestorKeys, DictKey]
 export type CollectableAncestorKeys = CollectionPathKeys
 export type CollectablePathKeys = [...CollectableAncestorKeys, DictKey]
 
+export type CollectionAncestorKeysOfCollection<
+	T extends CollectionAncestorKeys
+> = T extends [string] | []
+	? []
+	: T extends [...infer U extends CollectionAncestorKeys, string]
+		? U
+		: never
+export type CollectionAncestorKeysOfCollectable<T extends CollectablePathKeys> =
+	T extends [...infer U extends CollectionPathKeys, string] ? U : never
+
 export type NonCollectablePathKeys = [DictKey]
 type CollectionPathLength =
 	| CONST.COLLECTION_DEPTH_MIN
