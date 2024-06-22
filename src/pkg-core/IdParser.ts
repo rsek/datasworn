@@ -13,7 +13,7 @@ import type {
 import { Pattern, type PathKeys } from './IdElements/index.js'
 import type { Tree } from './Tree.js'
 import type TypeNode from './TypeNode.js'
-import type { Head, LastElementOf } from './Utils/Array.js'
+import type { DropFirst, Head, LastElementOf } from './Utils/Array.js'
 import type { Join, Split } from './Utils/String.js'
 
 interface RecursiveId<
@@ -1008,6 +1008,7 @@ interface NonCollectableId<
 > extends EmbeddingId<[TTypeId], [`${RulesPackage}${CONST.PathKeySep}${Key}`]> {
 	get id(): StringId.NonCollectable<TTypeId, RulesPackage, Key>
 	get rulesPackageId(): RulesPackage
+	get typeId(): TTypeId
 
 	// TODO: explicit typing for create embed method
 	// TODO: (on EmbeddingId) throw/fail validation if it receives an inappropriate embed type
@@ -1495,6 +1496,8 @@ interface CollectionId<
 	get compositeTypeId(): TTypeId
 	get rulesPackageId(): RulesPackage
 
+	get typeId(): TTypeId
+
 	get isCollectable(): false
 	get isCollection(): true
 	get id(): StringId.Collection<
@@ -1531,20 +1534,25 @@ namespace CollectionId {
 	> = CollectableId<
 		TypeId.CollectableOf<T['primaryTypeId']>,
 		T['rulesPackageId'],
-		T['primaryPathKeysWithinPkg'],
+		T extends CollectionId<
+			T['primaryTypeId'],
+			T['rulesPackageId'],
+			infer U extends CollectionAncestorKeys,
+			infer K extends string
+		>
+			? [...U, K]
+			: never,
 		K
 	>
-	export type ChildCollectionOf<
-		T extends CollectionId,
-		K extends string = string
-	> = T['primaryPathKeysWithinPkg'] extends PathKeys.CollectionAncestorKeys
-		? CollectionId<
-				T['primaryTypeId'],
-				T['rulesPackageId'],
-				T['primaryPathKeysWithinPkg'],
-				K
-			>
-		: never
+	export type ChildCollectionOf<T extends CollectionId, K extends string = string> =
+		DropFirst<T['primaryPathKeys']> extends CollectionAncestorKeys
+			? CollectionId<
+					T['typeId'],
+					T['rulesPackageId'],
+					DropFirst<T['primaryPathKeys']>,
+					K
+				>
+			: never
 
 	export type ParentCollectionOf<T extends CollectionId> =
 		T['collectionAncestorKeys'] extends [infer K extends string]

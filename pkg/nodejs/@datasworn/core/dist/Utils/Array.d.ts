@@ -4,6 +4,8 @@ export type LastElementOf<T extends unknown[]> = T extends [
     ...unknown[],
     infer Last
 ] ? Last : never;
+export type DropLast<T extends unknown[]> = T extends [] | [unknown] ? [] : T extends [infer U, unknown] ? [U] : T extends [...infer U extends unknown[], unknown] ? U : never;
+export type DropFirst<T extends unknown[]> = T extends [] | [unknown] ? [] : T extends [unknown, infer U] ? [U] : T extends [unknown, ...infer U extends unknown[]] ? U : never;
 export type TupleOfLength<Length extends number, T> = T[] & {
     length: Length;
 };

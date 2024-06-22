@@ -8,7 +8,7 @@ import type { CollectableAncestorKeys, CollectionAncestorKeys } from './IdElemen
 import { type PathKeys } from './IdElements/index.js';
 import type { Tree } from './Tree.js';
 import type TypeNode from './TypeNode.js';
-import type { Head, LastElementOf } from './Utils/Array.js';
+import type { DropFirst, Head, LastElementOf } from './Utils/Array.js';
 import type { Join, Split } from './Utils/String.js';
 interface RecursiveId<TypeIds extends StringId.TypeIdParts = StringId.TypeIdParts, PathSegments extends string[] & {
     length: TypeIds['length'];
@@ -182,6 +182,7 @@ declare class NonCollectableId<TTypeId extends TypeId.NonCollectable = TypeId.No
 interface NonCollectableId<TTypeId extends TypeId.NonCollectable = TypeId.NonCollectable, RulesPackage extends string = string, Key extends string = string> extends EmbeddingId<[TTypeId], [`${RulesPackage}${CONST.PathKeySep}${Key}`]> {
     get id(): StringId.NonCollectable<TTypeId, RulesPackage, Key>;
     get rulesPackageId(): RulesPackage;
+    get typeId(): TTypeId;
     createEmbeddedIdChild<T extends TTypeId extends TypeId.Embedding ? TypeId.EmbeddableIn<TTypeId> : never, K extends string>(embeddedTypeId: T, key: string): TTypeId extends TypeId.Embedding ? EmbeddedId<this, T, K> : never;
     /** @internal */
     _getTypeBranch(tree?: (typeof IdParser)['tree']): Map<string, TypeNode.NonCollectable<TTypeId>> | Record<string, TypeNode.NonCollectable<TTypeId>> | undefined;
@@ -300,6 +301,7 @@ interface CollectionId<TTypeId extends TypeId.Collection = TypeId.Collection, Ru
 ]> {
     get compositeTypeId(): TTypeId;
     get rulesPackageId(): RulesPackage;
+    get typeId(): TTypeId;
     get isCollectable(): false;
     get isCollection(): true;
     get id(): StringId.Collection<TTypeId, RulesPackage, CollectionAncestorKeys, Key>;
@@ -311,8 +313,8 @@ interface CollectionId<TTypeId extends TypeId.Collection = TypeId.Collection, Ru
 }
 declare namespace CollectionId {
     type FromString<T extends StringId.Collection> = T extends `${infer TypeId extends TypeId.Collection}${CONST.PrefixSep}${infer RulesPackage extends string}${CONST.PathKeySep}${infer AncestorKeys extends Join<CollectionAncestorKeys>}${CONST.PathKeySep}${infer Key extends string}` ? CollectionId<TypeId, RulesPackage, Split<AncestorKeys>, Key> : never;
-    type ChildOf<T extends CollectionId, K extends string = string> = CollectableId<TypeId.CollectableOf<T['primaryTypeId']>, T['rulesPackageId'], T['primaryPathKeysWithinPkg'], K>;
-    type ChildCollectionOf<T extends CollectionId, K extends string = string> = T['primaryPathKeysWithinPkg'] extends PathKeys.CollectionAncestorKeys ? CollectionId<T['primaryTypeId'], T['rulesPackageId'], T['primaryPathKeysWithinPkg'], K> : never;
+    type ChildOf<T extends CollectionId, K extends string = string> = CollectableId<TypeId.CollectableOf<T['primaryTypeId']>, T['rulesPackageId'], T extends CollectionId<T['primaryTypeId'], T['rulesPackageId'], infer U extends CollectionAncestorKeys, infer K extends string> ? [...U, K] : never, K>;
+    type ChildCollectionOf<T extends CollectionId, K extends string = string> = DropFirst<T['primaryPathKeys']> extends CollectionAncestorKeys ? CollectionId<T['typeId'], T['rulesPackageId'], DropFirst<T['primaryPathKeys']>, K> : never;
     type ParentCollectionOf<T extends CollectionId> = T['collectionAncestorKeys'] extends [infer K extends string] ? CollectionId<T['primaryTypeId'], T['rulesPackageId'], [], K> : T['collectionAncestorKeys'] extends [
         infer U extends string,
         infer K extends string
