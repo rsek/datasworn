@@ -2148,7 +2148,7 @@ export interface OracleRoll {
 export interface OracleRollTemplate {
 	/**
 	 * A string template that may be used in place of OracleRollableRow#text.
-	 * @example "{{text:starforged/oracles/factions/affiliation}} of the {{text:starforged/oracles/factions/legacy}} {{text:starforged/oracles/factions/identity}}"
+	 * @example "{{text>oracle_rollable:starforged/faction/name/affiliation}} of the {{text>oracle_rollable:starforged/faction/name/legacy}} {{text>oracle_rollable:starforged/faction/name/identity}}"
 	 */
 	text?: TemplateString
 	/**
