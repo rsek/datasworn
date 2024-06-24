@@ -2382,7 +2382,7 @@ moves:
             * [Ask the Oracle](move:starforged/fate/ask_the_oracle) for inspiration. Interpret the answer as a hardship or complication appropriate to the situation.
             * Roll on the table below. If the result doesn’t fit the situation, roll again.
 
-          {{table>oracle_rollable:starforged/moves/pay_the_price}}
+          {{table>move.oracle_rollable:starforged/fate/pay_the_price.pay_the_price}}
         _source:
           <<: *Source
           page: 232
