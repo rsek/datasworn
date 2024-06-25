@@ -1,31 +1,69 @@
 import type { DictKey, ExpansionId, RulesetId } from './Datasworn.js'
 import { type CONST, type TypeId } from './IdElements/index.js'
 import type * as PathKeys from './IdElements/PathKeys.js'
+import type { TupleOfLength } from './Utils/Array.js'
+import type { AnyCollectionKeys } from './Utils/Id.js'
 import { type Join, type Split } from './Utils/String.js'
 
 export type RulesPackageId = RulesetId | ExpansionId
 
 export type TypeIdParts = string[]
 
+export type IdSegments<T extends number> = TupleOfLength<T, string>
+
 type IdBase<
-	TypeIds extends TypeIdParts,
-	PathSegments extends string[] & { length: TypeIds['length'] }
+	L extends number,
+	TypeIds extends IdSegments<L>,
+	PathSegments extends IdSegments<L>
 > = `${Join<TypeIds, CONST.TypeSep>}${CONST.PrefixSep}${Join<PathSegments, CONST.TypeSep>}`
 
-type f = IdBase<['move', 'oracle_rollable'], ['foo', 'bar']>
+type f = IdBase<2, ['move', 'oracle_rollable'], ['foo', 'bar']>
 
-export type EmbeddedId<
-	TypeIds extends [TypeId.Primary, ...string[]] = [TypeId.Primary, ...string[]],
-	PathSegments extends string[] & { length: TypeIds['length'] } = string[] & {
-		length: TypeIds['length']
-	}
-> = IdBase<TypeIds, PathSegments>
+export type Embedded<
+	TPrimary extends TypeId.Primary & TypeId.Embedding,
+	TPrimaryPath extends string,
+	TEmbedded extends TypeId.EmbeddableIn<TPrimary>,
+	TEmbeddedPath extends string
+> = IdBase<2, [TPrimary, TEmbedded], [TPrimaryPath, TEmbeddedPath]>
+
+export type EmbeddedInEmbedded<
+	TPrimary extends TypeId.Primary & TypeId.Embedding,
+	TPrimaryPath extends string,
+	TEmbedded extends TypeId.EmbeddableIn<TPrimary> &
+		TypeId.EmbeddingWhenEmbeddedType,
+	TEmbeddedPath extends string,
+	TEmbedded2 extends TypeId.EmbeddableInEmbeddedType<TEmbedded>,
+	TEmbeddedPath2 extends string
+> = IdBase<
+	3,
+	[TPrimary, TEmbedded, TEmbedded2],
+	[TPrimaryPath, TEmbeddedPath, TEmbeddedPath2]
+>
+
+export type EmbedIn<
+	TBase extends
+		| Collectable
+		| NonCollectable
+		| EmbedIn<any, TypeId.Embeddable, any>,
+	EmbedTypeId extends TypeId.Embeddable,
+	Key extends string | number
+> = IdBase<
+	// @ts-expect-error
+	[...ExtractTypeIdParts<TBase>, EmbedTypeId]['length'],
+	[...ExtractTypeIdParts<TBase>, EmbedTypeId],
+	[...ExtractPathSegments<TBase>, `${Key}`]
+>
+
+type ExtractTypeIdParts<T extends `${string}${CONST.PrefixSep}${string}`> =
+	Split<Split<T, CONST.PrefixSep>[0], CONST.TypeSep>
+type ExtractPathSegments<T extends `${string}${CONST.PrefixSep}${string}`> =
+	Split<Split<T, CONST.PrefixSep>[1], CONST.TypeSep>
 
 type PrimaryBase<
 	TypeId extends TypeId.Primary,
 	RulesPackage extends RulesPackageId,
 	PathKeys extends DictKey[]
-> = IdBase<[TypeId], [Join<[RulesPackage, ...PathKeys]>]>
+> = IdBase<1, [TypeId], [Join<[RulesPackage, ...PathKeys]>]>
 
 export type Collection<
 	TypeId extends TypeId.Collection = TypeId.Collection,

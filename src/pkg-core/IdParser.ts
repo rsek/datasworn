@@ -282,7 +282,14 @@ abstract class IdParser<
 		id: T
 	): CollectableId.FromString<T>
 	static parse<T extends StringId.Collection>(id: T): CollectionId.FromString<T>
-	static parse<T extends StringId.EmbeddedId>(id: T): EmbeddedId
+	static parse<
+		T extends StringId.Embedded<
+			TypeId.Primary & TypeId.Embedding,
+			string,
+			TypeId.EmbeddableIn<TypeId.Primary & TypeId.Embedding>,
+			string
+		>
+	>(id: T): EmbeddedId
 	static parse(
 		id: string
 	): CollectionId | CollectableId | NonCollectableId | EmbeddedId
