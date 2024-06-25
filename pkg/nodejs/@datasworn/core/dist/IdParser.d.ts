@@ -104,7 +104,7 @@ declare abstract class IdParser<TypeIds extends StringId.TypeIdParts = StringId.
     static parse<T extends StringId.NonCollectable>(id: T): NonCollectableId.FromString<T>;
     static parse<T extends StringId.Collectable>(id: T): CollectableId.FromString<T>;
     static parse<T extends StringId.Collection>(id: T): CollectionId.FromString<T>;
-    static parse<T extends StringId.EmbeddedId>(id: T): EmbeddedId;
+    static parse<T extends StringId.Embedded<TypeId.Primary & TypeId.Embedding, string, TypeId.EmbeddableIn<TypeId.Primary & TypeId.Embedding>, string>>(id: T): EmbeddedId;
     static parse(id: string): CollectionId | CollectableId | NonCollectableId | EmbeddedId;
     /**
      * Recursively assigns IDs to all eligibile nodes within a given {@link DataswornSource.RulesPackage}.

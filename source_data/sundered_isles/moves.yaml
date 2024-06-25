@@ -398,7 +398,7 @@ moves:
             * __Support vehicle:__ Mark the vehicle as __battered__ or roll on the table below. If the vehicle is destroyed or sunk, discard the asset.
             * __Incidental vehicle:__ Roll on the table below.
 
-          {{table>starforged/oracles/moves/withstand_damage}}
+          {{table>move.oracle_rollable:starforged/suffer/withstand_damage.withstand_damage}}
         outcomes:
           strong_hit:
             text: |-
@@ -416,7 +416,7 @@ moves:
                 * __Support vehicle:__ Mark the vehicle as __battered__ or roll on the table below. If the vehicle is destroyed or sunk, discard the asset.
                 * __Incidental vehicle:__ Roll on the table below.
 
-              {{table>starforged/oracles/moves/withstand_damage}}
+              {{table>move.oracle_rollable/starforged/suffer/withstand_damage.withstand_damage}}
         _source:
           <<: *Source
   recover:

@@ -65493,7 +65493,7 @@
 							"_id": "move.oracle_rollable:starforged/fate/pay_the_price.pay_the_price"
 						}
 					},
-					"text": "__When you suffer the outcome of an action__, choose one.\n\n  * Make the most obvious negative outcome happen.\n  * [Ask the Oracle](move:starforged/fate/ask_the_oracle) for inspiration. Interpret the answer as a hardship or complication appropriate to the situation.\n  * Roll on the table below. If the result doesn’t fit the situation, roll again.\n\n{{table>oracle_rollable:starforged/moves/pay_the_price}}",
+					"text": "__When you suffer the outcome of an action__, choose one.\n\n  * Make the most obvious negative outcome happen.\n  * [Ask the Oracle](move:starforged/fate/ask_the_oracle) for inspiration. Interpret the answer as a hardship or complication appropriate to the situation.\n  * Roll on the table below. If the result doesn’t fit the situation, roll again.\n\n{{table>move.oracle_rollable:starforged/fate/pay_the_price.pay_the_price}}",
 					"_source": {
 						"title": "Ironsworn: Starforged Rulebook",
 						"license": "https://creativecommons.org/licenses/by/4.0",
