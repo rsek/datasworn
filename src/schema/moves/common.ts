@@ -139,9 +139,3 @@ export type MoveOutcomes = Static<typeof MoveOutcomes>
 export type TMoveOutcomes = typeof MoveOutcomes
 
 export type SchemaOf<T> = Exclude<TAnySchema, TBigInt> & { static: T }
-
-export type AnyMoveSchema =
-	| typeof MoveNoRoll
-	| typeof MoveActionRoll
-	| typeof MoveProgressRoll
-	| typeof MoveSpecialTrack

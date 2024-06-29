@@ -31,34 +31,51 @@ pub struct RulesPackageExpansion {
     #[serde(rename = "_id")]
     pub id: ExpansionId,
 
+    /// A dictionary object containing asset collections, which contain assets.
+    #[serde(rename = "assets")]
+    pub assets: HashMap<String, AssetCollection>,
+
+    /// Lists authors credited by the source material.
+    #[serde(rename = "authors")]
+    pub authors: Vec<AuthorInfo>,
+
     /// The version of the Datasworn format used by this data.
     #[serde(rename = "datasworn_version")]
     pub dataswornVersion: RulesPackageExpansionDataswornVersion,
 
+    /// The date of the source documents's last update, formatted YYYY-MM-DD.
+    /// Required because it's used to determine whether the data needs updating.
+    #[serde(rename = "date")]
+    pub date: DateTime<FixedOffset>,
+
+    #[serde(rename = "license")]
+    pub license: License,
+
+    /// A dictionary object containing move categories, which contain moves.
+    #[serde(rename = "moves")]
+    pub moves: HashMap<String, MoveCategory>,
+
+    /// A dictionary object containing oracle collections, which may contain
+    /// oracle tables and/or oracle collections.
+    #[serde(rename = "oracles")]
+    pub oracles: HashMap<String, OracleTablesCollection>,
+
     #[serde(rename = "ruleset")]
     pub ruleset: RulesetId,
 
-    /// A dictionary object containing asset collections, which contain assets.
-    #[serde(rename = "assets")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub assets: Option<Box<HashMap<String, AssetCollection>>>,
+    /// The title of the source document.
+    #[serde(rename = "title")]
+    pub title: String,
+
+    /// A URL where the source document is available.
+    #[serde(rename = "url")]
+    pub url: WebUrl,
 
     /// A dictionary object containing atlas collections, which contain atlas
     /// entries.
     #[serde(rename = "atlas")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub atlas: Option<Box<HashMap<String, AtlasCollection>>>,
-
-    /// Lists authors credited by the source material.
-    #[serde(rename = "authors")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub authors: Option<Box<Vec<AuthorInfo>>>,
-
-    /// The date of the source documents's last update, formatted YYYY-MM-DD.
-    /// Required because it's used to determine whether the data needs updating.
-    #[serde(rename = "date")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub date: Option<Box<DateTime<FixedOffset>>>,
 
     /// A dictionary object of delve sites, like the premade delve sites
     /// presented in Ironsworn: Delve
@@ -70,25 +87,10 @@ pub struct RulesPackageExpansion {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<Box<MarkdownString>>,
 
-    #[serde(rename = "license")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub license: Option<Box<License>>,
-
-    /// A dictionary object containing move categories, which contain moves.
-    #[serde(rename = "moves")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub moves: Option<Box<HashMap<String, MoveCategory>>>,
-
     /// A dictionary object containing NPC collections, which contain NPCs.
     #[serde(rename = "npcs")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub npcs: Option<Box<HashMap<String, NpcCollection>>>,
-
-    /// A dictionary object containing oracle collections, which may contain
-    /// oracle tables and/or oracle collections.
-    #[serde(rename = "oracles")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub oracles: Option<Box<HashMap<String, OracleTablesCollection>>>,
 
     /// A dictionary object containing rarities, like those presented in
     /// Ironsworn: Delve.
@@ -110,20 +112,10 @@ pub struct RulesPackageExpansion {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub siteThemes: Option<Box<HashMap<String, DelveSiteTheme>>>,
 
-    /// The title of the source document.
-    #[serde(rename = "title")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub title: Option<Box<String>>,
-
     /// A dictionary object of truth categories.
     #[serde(rename = "truths")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub truths: Option<Box<HashMap<String, Truth>>>,
-
-    /// A URL where the source document is available.
-    #[serde(rename = "url")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub url: Option<Box<WebUrl>>,
 }
 
 /// The version of the Datasworn format used by this data.
@@ -3344,8 +3336,6 @@ pub struct EmbeddedOracleRollableColumnText3 {
     pub tags: Option<Box<Tags>>,
 }
 
-/// The label at the head of each table column. The `roll` key refers to the
-/// roll column showing the dice range (`min` and `max` on each table row).
 #[derive(Serialize, Deserialize)]
 pub struct EmbeddedOracleRollableTableTextColumnLabels {
     #[serde(rename = "roll")]
@@ -3375,8 +3365,6 @@ pub struct EmbeddedOracleRollableTableText {
     #[serde(rename = "_id")]
     pub id: EmbeddedOracleRollableId,
 
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
     pub columnLabels: EmbeddedOracleRollableTableTextColumnLabels,
 
@@ -3440,8 +3428,6 @@ pub struct EmbeddedOracleRollableTableText {
     pub tags: Option<Box<Tags>>,
 }
 
-/// The label at the head of each table column. The `roll` key refers to the
-/// roll column showing the dice range (`min` and `max` on each table row).
 #[derive(Serialize, Deserialize)]
 pub struct EmbeddedOracleRollableTableText2ColumnLabels {
     #[serde(rename = "roll")]
@@ -3474,8 +3460,6 @@ pub struct EmbeddedOracleRollableTableText2 {
     #[serde(rename = "_id")]
     pub id: EmbeddedOracleRollableId,
 
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
     pub columnLabels: EmbeddedOracleRollableTableText2ColumnLabels,
 
@@ -3539,8 +3523,6 @@ pub struct EmbeddedOracleRollableTableText2 {
     pub tags: Option<Box<Tags>>,
 }
 
-/// The label at the head of each table column. The `roll` key refers to the
-/// roll column showing the dice range (`min` and `max` on each table row).
 #[derive(Serialize, Deserialize)]
 pub struct EmbeddedOracleRollableTableText3ColumnLabels {
     #[serde(rename = "roll")]
@@ -3576,8 +3558,6 @@ pub struct EmbeddedOracleRollableTableText3 {
     #[serde(rename = "_id")]
     pub id: EmbeddedOracleRollableId,
 
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
     pub columnLabels: EmbeddedOracleRollableTableText3ColumnLabels,
 
@@ -3645,8 +3625,6 @@ pub type EmbeddedOracleRollableId = String;
 
 pub type EmbeddedOracleRollableIdWildcard = String;
 
-/// The label at the head of each table column. The `roll` key refers to the
-/// roll column showing the dice range (`min` and `max` on each table row).
 #[derive(Serialize, Deserialize)]
 pub struct EmbeddedOracleTableTextColumnLabels {
     #[serde(rename = "roll")]
@@ -3682,8 +3660,6 @@ pub struct EmbeddedOracleTableText {
     #[serde(rename = "_id")]
     pub id: EmbeddedOracleRollableId,
 
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
     pub columnLabels: EmbeddedOracleTableTextColumnLabels,
 
@@ -3750,8 +3726,6 @@ pub struct EmbeddedOracleTableText {
     pub tags: Option<Box<Tags>>,
 }
 
-/// The label at the head of each table column. The `roll` key refers to the
-/// roll column showing the dice range (`min` and `max` on each table row).
 #[derive(Serialize, Deserialize)]
 pub struct EmbeddedOracleTableText2ColumnLabels {
     #[serde(rename = "roll")]
@@ -3790,8 +3764,6 @@ pub struct EmbeddedOracleTableText2 {
     #[serde(rename = "_id")]
     pub id: EmbeddedOracleRollableId,
 
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
     pub columnLabels: EmbeddedOracleTableText2ColumnLabels,
 
@@ -3858,8 +3830,6 @@ pub struct EmbeddedOracleTableText2 {
     pub tags: Option<Box<Tags>>,
 }
 
-/// The label at the head of each table column. The `roll` key refers to the
-/// roll column showing the dice range (`min` and `max` on each table row).
 #[derive(Serialize, Deserialize)]
 pub struct EmbeddedOracleTableText3ColumnLabels {
     #[serde(rename = "roll")]
@@ -3901,8 +3871,6 @@ pub struct EmbeddedOracleTableText3 {
     #[serde(rename = "_id")]
     pub id: EmbeddedOracleRollableId,
 
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
     pub columnLabels: EmbeddedOracleTableText3ColumnLabels,
 
@@ -4155,37 +4123,54 @@ pub struct Expansion {
     #[serde(rename = "_id")]
     pub id: ExpansionId,
 
+    /// A dictionary object containing asset collections, which contain assets.
+    #[serde(rename = "assets")]
+    pub assets: HashMap<String, AssetCollection>,
+
+    /// Lists authors credited by the source material.
+    #[serde(rename = "authors")]
+    pub authors: Vec<AuthorInfo>,
+
     /// The version of the Datasworn format used by this data.
     #[serde(rename = "datasworn_version")]
     pub dataswornVersion: ExpansionDataswornVersion,
 
+    /// The date of the source documents's last update, formatted YYYY-MM-DD.
+    /// Required because it's used to determine whether the data needs updating.
+    #[serde(rename = "date")]
+    pub date: DateTime<FixedOffset>,
+
+    #[serde(rename = "license")]
+    pub license: License,
+
+    /// A dictionary object containing move categories, which contain moves.
+    #[serde(rename = "moves")]
+    pub moves: HashMap<String, MoveCategory>,
+
+    /// A dictionary object containing oracle collections, which may contain
+    /// oracle tables and/or oracle collections.
+    #[serde(rename = "oracles")]
+    pub oracles: HashMap<String, OracleTablesCollection>,
+
     #[serde(rename = "ruleset")]
     pub ruleset: RulesetId,
+
+    /// The title of the source document.
+    #[serde(rename = "title")]
+    pub title: String,
 
     #[serde(rename = "type")]
     pub type_: ExpansionType,
 
-    /// A dictionary object containing asset collections, which contain assets.
-    #[serde(rename = "assets")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub assets: Option<Box<HashMap<String, AssetCollection>>>,
+    /// A URL where the source document is available.
+    #[serde(rename = "url")]
+    pub url: WebUrl,
 
     /// A dictionary object containing atlas collections, which contain atlas
     /// entries.
     #[serde(rename = "atlas")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub atlas: Option<Box<HashMap<String, AtlasCollection>>>,
-
-    /// Lists authors credited by the source material.
-    #[serde(rename = "authors")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub authors: Option<Box<Vec<AuthorInfo>>>,
-
-    /// The date of the source documents's last update, formatted YYYY-MM-DD.
-    /// Required because it's used to determine whether the data needs updating.
-    #[serde(rename = "date")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub date: Option<Box<DateTime<FixedOffset>>>,
 
     /// A dictionary object of delve sites, like the premade delve sites
     /// presented in Ironsworn: Delve
@@ -4197,25 +4182,10 @@ pub struct Expansion {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub description: Option<Box<MarkdownString>>,
 
-    #[serde(rename = "license")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub license: Option<Box<License>>,
-
-    /// A dictionary object containing move categories, which contain moves.
-    #[serde(rename = "moves")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub moves: Option<Box<HashMap<String, MoveCategory>>>,
-
     /// A dictionary object containing NPC collections, which contain NPCs.
     #[serde(rename = "npcs")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub npcs: Option<Box<HashMap<String, NpcCollection>>>,
-
-    /// A dictionary object containing oracle collections, which may contain
-    /// oracle tables and/or oracle collections.
-    #[serde(rename = "oracles")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub oracles: Option<Box<HashMap<String, OracleTablesCollection>>>,
 
     /// A dictionary object containing rarities, like those presented in
     /// Ironsworn: Delve.
@@ -4237,20 +4207,10 @@ pub struct Expansion {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub siteThemes: Option<Box<HashMap<String, DelveSiteTheme>>>,
 
-    /// The title of the source document.
-    #[serde(rename = "title")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub title: Option<Box<String>>,
-
     /// A dictionary object of truth categories.
     #[serde(rename = "truths")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub truths: Option<Box<HashMap<String, Truth>>>,
-
-    /// A URL where the source document is available.
-    #[serde(rename = "url")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub url: Option<Box<WebUrl>>,
 }
 
 /// The ID of a Datasworn package that relies on an external package to provide
@@ -5846,8 +5806,6 @@ pub struct OracleCollectionTableSharedRolls {
     pub tags: Option<Box<Tags>>,
 }
 
-/// The label at the head of each table column. The `roll` key refers to the
-/// roll column showing the dice range (`min` and `max` on each table row).
 #[derive(Serialize, Deserialize)]
 pub struct OracleCollectionTableSharedTextColumnLabels {
     #[serde(rename = "text")]
@@ -5873,8 +5831,6 @@ pub struct OracleCollectionTableSharedText {
     #[serde(rename = "_source")]
     pub source: SourceInfo,
 
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
     pub columnLabels: OracleCollectionTableSharedTextColumnLabels,
 
@@ -5949,8 +5905,6 @@ pub struct OracleCollectionTableSharedText {
     pub tags: Option<Box<Tags>>,
 }
 
-/// The label at the head of each table column. The `roll` key refers to the
-/// roll column showing the dice range (`min` and `max` on each table row).
 #[derive(Serialize, Deserialize)]
 pub struct OracleCollectionTableSharedText2ColumnLabels {
     #[serde(rename = "text")]
@@ -5979,8 +5933,6 @@ pub struct OracleCollectionTableSharedText2 {
     #[serde(rename = "_source")]
     pub source: SourceInfo,
 
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
     pub columnLabels: OracleCollectionTableSharedText2ColumnLabels,
 
@@ -6056,6 +6008,18 @@ pub struct OracleCollectionTableSharedText2 {
 }
 
 #[derive(Serialize, Deserialize)]
+pub struct OracleCollectionTableSharedText3ColumnLabels {
+    #[serde(rename = "text")]
+    pub text: Label,
+
+    #[serde(rename = "text2")]
+    pub text2: Label,
+
+    #[serde(rename = "text3")]
+    pub text3: Label,
+}
+
+#[derive(Serialize, Deserialize)]
 pub enum OracleCollectionTableSharedText3Type {
     #[serde(rename = "oracle_collection")]
     OracleCollection,
@@ -6074,10 +6038,8 @@ pub struct OracleCollectionTableSharedText3 {
     #[serde(rename = "_source")]
     pub source: SourceInfo,
 
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
-    pub columnLabels: Option<Value>,
+    pub columnLabels: OracleCollectionTableSharedText3ColumnLabels,
 
     #[serde(rename = "contents")]
     pub contents: HashMap<String, OracleColumnText3>,
@@ -6900,8 +6862,6 @@ pub struct OracleRollableColumnText3 {
     pub tags: Option<Box<Tags>>,
 }
 
-/// The label at the head of each table column. The `roll` key refers to the
-/// roll column showing the dice range (`min` and `max` on each table row).
 #[derive(Serialize, Deserialize)]
 pub struct OracleRollableTableTextColumnLabels {
     #[serde(rename = "roll")]
@@ -6939,8 +6899,6 @@ pub struct OracleRollableTableText {
     #[serde(rename = "_source")]
     pub source: SourceInfo,
 
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
     pub columnLabels: OracleRollableTableTextColumnLabels,
 
@@ -7010,8 +6968,6 @@ pub struct OracleRollableTableText {
     pub tags: Option<Box<Tags>>,
 }
 
-/// The label at the head of each table column. The `roll` key refers to the
-/// roll column showing the dice range (`min` and `max` on each table row).
 #[derive(Serialize, Deserialize)]
 pub struct OracleRollableTableText2ColumnLabels {
     #[serde(rename = "roll")]
@@ -7051,8 +7007,6 @@ pub struct OracleRollableTableText2 {
     #[serde(rename = "_source")]
     pub source: SourceInfo,
 
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
     pub columnLabels: OracleRollableTableText2ColumnLabels,
 
@@ -7122,8 +7076,6 @@ pub struct OracleRollableTableText2 {
     pub tags: Option<Box<Tags>>,
 }
 
-/// The label at the head of each table column. The `roll` key refers to the
-/// roll column showing the dice range (`min` and `max` on each table row).
 #[derive(Serialize, Deserialize)]
 pub struct OracleRollableTableText3ColumnLabels {
     #[serde(rename = "roll")]
@@ -7166,8 +7118,6 @@ pub struct OracleRollableTableText3 {
     #[serde(rename = "_source")]
     pub source: SourceInfo,
 
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
     pub columnLabels: OracleRollableTableText3ColumnLabels,
 
@@ -7408,8 +7358,6 @@ pub enum OracleRollableTable {
     TableText3(OracleRollableTableTableText3),
 }
 
-/// The label at the head of each table column. The `roll` key refers to the
-/// roll column showing the dice range (`min` and `max` on each table row).
 #[derive(Serialize, Deserialize)]
 pub struct OracleRollableTableTableTextColumnLabels {
     #[serde(rename = "roll")]
@@ -7447,8 +7395,6 @@ pub struct OracleRollableTableTableText {
     #[serde(rename = "_source")]
     pub source: SourceInfo,
 
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
     pub columnLabels: OracleRollableTableTableTextColumnLabels,
 
@@ -7518,8 +7464,6 @@ pub struct OracleRollableTableTableText {
     pub tags: Option<Box<Tags>>,
 }
 
-/// The label at the head of each table column. The `roll` key refers to the
-/// roll column showing the dice range (`min` and `max` on each table row).
 #[derive(Serialize, Deserialize)]
 pub struct OracleRollableTableTableText2ColumnLabels {
     #[serde(rename = "roll")]
@@ -7559,8 +7503,6 @@ pub struct OracleRollableTableTableText2 {
     #[serde(rename = "_source")]
     pub source: SourceInfo,
 
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
     pub columnLabels: OracleRollableTableTableText2ColumnLabels,
 
@@ -7630,8 +7572,6 @@ pub struct OracleRollableTableTableText2 {
     pub tags: Option<Box<Tags>>,
 }
 
-/// The label at the head of each table column. The `roll` key refers to the
-/// roll column showing the dice range (`min` and `max` on each table row).
 #[derive(Serialize, Deserialize)]
 pub struct OracleRollableTableTableText3ColumnLabels {
     #[serde(rename = "roll")]
@@ -7674,8 +7614,6 @@ pub struct OracleRollableTableTableText3 {
     #[serde(rename = "_source")]
     pub source: SourceInfo,
 
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
     pub columnLabels: OracleRollableTableTableText3ColumnLabels,
 
@@ -7860,8 +7798,6 @@ pub struct OracleTableSharedRolls {
     pub tags: Option<Box<Tags>>,
 }
 
-/// The label at the head of each table column. The `roll` key refers to the
-/// roll column showing the dice range (`min` and `max` on each table row).
 #[derive(Serialize, Deserialize)]
 pub struct OracleTableSharedTextColumnLabels {
     #[serde(rename = "text")]
@@ -7893,8 +7829,6 @@ pub struct OracleTableSharedText {
     #[serde(rename = "_source")]
     pub source: SourceInfo,
 
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
     pub columnLabels: OracleTableSharedTextColumnLabels,
 
@@ -7972,8 +7906,6 @@ pub struct OracleTableSharedText {
     pub tags: Option<Box<Tags>>,
 }
 
-/// The label at the head of each table column. The `roll` key refers to the
-/// roll column showing the dice range (`min` and `max` on each table row).
 #[derive(Serialize, Deserialize)]
 pub struct OracleTableSharedText2ColumnLabels {
     #[serde(rename = "text")]
@@ -8008,8 +7940,6 @@ pub struct OracleTableSharedText2 {
     #[serde(rename = "_source")]
     pub source: SourceInfo,
 
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
     pub columnLabels: OracleTableSharedText2ColumnLabels,
 
@@ -8088,6 +8018,18 @@ pub struct OracleTableSharedText2 {
 }
 
 #[derive(Serialize, Deserialize)]
+pub struct OracleTableSharedText3ColumnLabels {
+    #[serde(rename = "text")]
+    pub text: Label,
+
+    #[serde(rename = "text2")]
+    pub text2: Label,
+
+    #[serde(rename = "text3")]
+    pub text3: Label,
+}
+
+#[derive(Serialize, Deserialize)]
 pub enum OracleTableSharedText3OracleType {
     #[serde(rename = "table_shared_text3")]
     TableSharedText3,
@@ -8112,10 +8054,8 @@ pub struct OracleTableSharedText3 {
     #[serde(rename = "_source")]
     pub source: SourceInfo,
 
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
-    pub columnLabels: Option<Value>,
+    pub columnLabels: OracleTableSharedText3ColumnLabels,
 
     #[serde(rename = "contents")]
     pub contents: HashMap<String, OracleColumnText3>,
@@ -8191,8 +8131,6 @@ pub struct OracleTableSharedText3 {
     pub tags: Option<Box<Tags>>,
 }
 
-/// The label at the head of each table column. The `roll` key refers to the
-/// roll column showing the dice range (`min` and `max` on each table row).
 #[derive(Serialize, Deserialize)]
 pub struct OracleTableTextColumnLabels {
     #[serde(rename = "roll")]
@@ -8236,8 +8174,6 @@ pub struct OracleTableText {
     #[serde(rename = "_source")]
     pub source: SourceInfo,
 
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
     pub columnLabels: OracleTableTextColumnLabels,
 
@@ -8310,8 +8246,6 @@ pub struct OracleTableText {
     pub tags: Option<Box<Tags>>,
 }
 
-/// The label at the head of each table column. The `roll` key refers to the
-/// roll column showing the dice range (`min` and `max` on each table row).
 #[derive(Serialize, Deserialize)]
 pub struct OracleTableText2ColumnLabels {
     #[serde(rename = "roll")]
@@ -8357,8 +8291,6 @@ pub struct OracleTableText2 {
     #[serde(rename = "_source")]
     pub source: SourceInfo,
 
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
     pub columnLabels: OracleTableText2ColumnLabels,
 
@@ -8431,8 +8363,6 @@ pub struct OracleTableText2 {
     pub tags: Option<Box<Tags>>,
 }
 
-/// The label at the head of each table column. The `roll` key refers to the
-/// roll column showing the dice range (`min` and `max` on each table row).
 #[derive(Serialize, Deserialize)]
 pub struct OracleTableText3ColumnLabels {
     #[serde(rename = "roll")]
@@ -8481,8 +8411,6 @@ pub struct OracleTableText3 {
     #[serde(rename = "_source")]
     pub source: SourceInfo,
 
-    /// The label at the head of each table column. The `roll` key refers to the
-    /// roll column showing the dice range (`min` and `max` on each table row).
     #[serde(rename = "column_labels")]
     pub columnLabels: OracleTableText3ColumnLabels,
 

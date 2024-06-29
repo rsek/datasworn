@@ -13,12 +13,13 @@ import { FlatIntersect } from '../utils/FlatIntersect.js'
 import {
 	OracleRollableRowText,
 	OracleRollableRowText2,
-	OracleRollableRowText3,
+	OracleRollableRowText3
+} from './TableRow.js'
+import {
 	TextColumnLabels,
 	Text2ColumnLabels,
-	Text3ColumnLabels,
-	type ColumnLabels
-} from './TableRow.js'
+	Text3ColumnLabels
+} from './Table.js'
 
 // metadata necessary to generate a roll result from an OracleRollable
 const RollableMeta = Type.Object({
@@ -67,7 +68,7 @@ function OracleRollableBase<TBase extends TObject, TSubtype extends string>(
 function RollableTable<TRow extends TObject, TSubtype extends string>(
 	subtype: TSubtype,
 	row: TRef<TRow>,
-	column_labels: ReturnType<typeof ColumnLabels<TRow>> | null,
+	column_labels: TObject | undefined,
 	options: SetRequired<ObjectOptions, '$id'>
 ) {
 	return CollectableSubtypeNode(

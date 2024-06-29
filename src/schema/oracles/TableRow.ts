@@ -1,6 +1,5 @@
 import {
 	Type,
-	type ObjectOptions,
 	type Static,
 	type TObject,
 	type TProperties,
@@ -8,7 +7,7 @@ import {
 	type TSchema,
 	CloneType
 } from '@sinclair/typebox'
-import { mapValues } from 'lodash-es'
+import { keyBy, mapValues } from 'lodash-es'
 import { JsonTypeDef } from '../Symbols.js'
 import * as Generic from '../Generic.js'
 import * as Utils from '../Utils.js'
@@ -139,42 +138,6 @@ type StringDefaultsFor<T extends TObject> = {
 		  >
 		| 'roll']: string | null
 }
-export function ColumnLabels<
-	RowType extends TObject,
-	Defaults extends Partial<StringDefaultsFor<RowType>> = Partial<
-		StringDefaultsFor<RowType>
-	>
->(defaults: Defaults, options: ObjectOptions = {}) {
-	return Type.Object(
-		mapValues(defaults, (v, k) =>
-			Type.Ref(Localize.Label, !v ? {} : { default: v })
-		),
-		{
-			description:
-				'The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).',
-			...options,
-			title: 'ColumnLabels',
-			default: defaults
-		}
-	)
-}
-
-export const TextColumnLabels = ColumnLabels<typeof OracleRollableRowText>({
-	roll: 'Roll',
-	text: 'Result'
-})
-export const Text2ColumnLabels = ColumnLabels<typeof OracleRollableRowText2>({
-	roll: 'Roll',
-	text: 'Result',
-	text2: 'Details'
-})
-
-export const Text3ColumnLabels = ColumnLabels<typeof OracleRollableRowText3>({
-	roll: undefined,
-	text: undefined,
-	text2: undefined,
-	text3: undefined
-})
 
 export const OracleRollableRow = Type.Union(
 	[

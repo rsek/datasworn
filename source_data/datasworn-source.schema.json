@@ -1254,6 +1254,28 @@
 				}
 			]
 		},
+		"AnyOracleRollable": {
+			"title": "AnyOracleRollable",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/OracleRollable"
+				},
+				{
+					"$ref": "#/definitions/EmbeddedOracleRollable"
+				}
+			]
+		},
+		"AnyMove": {
+			"title": "AnyMove",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/Move"
+				},
+				{
+					"$ref": "#/definitions/EmbeddedMove"
+				}
+			]
+		},
 		"AuthorInfo": {
 			"title": "AuthorInfo",
 			"type": "object",
@@ -3935,9 +3957,8 @@
 					}
 				},
 				"column_labels": {
-					"title": "ColumnLabels",
+					"title": "TextColumnLabels",
 					"type": "object",
-					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
 					"default": {
 						"roll": "Roll",
 						"text": "Result"
@@ -3945,12 +3966,10 @@
 					"required": ["roll", "text"],
 					"properties": {
 						"roll": {
-							"$ref": "#/definitions/Label",
-							"default": "Roll"
+							"$ref": "#/definitions/Label"
 						},
 						"text": {
-							"$ref": "#/definitions/Label",
-							"default": "Result"
+							"$ref": "#/definitions/Label"
 						}
 					}
 				},
@@ -4038,9 +4057,8 @@
 					}
 				},
 				"column_labels": {
-					"title": "ColumnLabels",
+					"title": "Text2ColumnLabels",
 					"type": "object",
-					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
 					"default": {
 						"roll": "Roll",
 						"text": "Result",
@@ -4049,16 +4067,13 @@
 					"required": ["roll", "text", "text2"],
 					"properties": {
 						"roll": {
-							"$ref": "#/definitions/Label",
-							"default": "Roll"
+							"$ref": "#/definitions/Label"
 						},
 						"text": {
-							"$ref": "#/definitions/Label",
-							"default": "Result"
+							"$ref": "#/definitions/Label"
 						},
 						"text2": {
-							"$ref": "#/definitions/Label",
-							"default": "Details"
+							"$ref": "#/definitions/Label"
 						}
 					}
 				},
@@ -4086,7 +4101,7 @@
 		"EmbeddedOracleTableText3": {
 			"title": "EmbeddedOracleTableText3",
 			"type": "object",
-			"required": ["type", "name", "oracle_type", "rows"],
+			"required": ["type", "name", "oracle_type", "column_labels", "rows"],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/EmbeddedOracleRollableId"
@@ -4146,10 +4161,8 @@
 					}
 				},
 				"column_labels": {
-					"title": "ColumnLabels",
+					"title": "Text3ColumnLabels",
 					"type": "object",
-					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
-					"default": {},
 					"required": ["roll", "text", "text2", "text3"],
 					"properties": {
 						"roll": {
@@ -4991,7 +5004,7 @@
 					}
 				},
 				"column_labels": {
-					"title": "ColumnLabels",
+					"title": "SharedRollsLabels",
 					"type": "object",
 					"description": "Provides column labels for this table. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row). For all other column labels, see the `name` property of each child `OracleColumn`.",
 					"default": {
@@ -5000,8 +5013,7 @@
 					"required": ["roll"],
 					"properties": {
 						"roll": {
-							"$ref": "#/definitions/Label",
-							"default": "Roll"
+							"$ref": "#/definitions/Label"
 						}
 					}
 				},
@@ -5096,17 +5108,15 @@
 					}
 				},
 				"column_labels": {
-					"title": "ColumnLabels",
+					"title": "SharedTextLabels",
 					"type": "object",
-					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
 					"default": {
 						"text": "Result"
 					},
 					"required": ["text"],
 					"properties": {
 						"text": {
-							"$ref": "#/definitions/Label",
-							"default": "Result"
+							"$ref": "#/definitions/Label"
 						}
 					}
 				},
@@ -5201,9 +5211,8 @@
 					}
 				},
 				"column_labels": {
-					"title": "ColumnLabels",
+					"title": "SharedText2Labels",
 					"type": "object",
-					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
 					"default": {
 						"text": "Result",
 						"text2": "Details"
@@ -5211,12 +5220,10 @@
 					"required": ["text", "text2"],
 					"properties": {
 						"text": {
-							"$ref": "#/definitions/Label",
-							"default": "Result"
+							"$ref": "#/definitions/Label"
 						},
 						"text2": {
-							"$ref": "#/definitions/Label",
-							"default": "Details"
+							"$ref": "#/definitions/Label"
 						}
 					}
 				},
@@ -5311,11 +5318,21 @@
 					}
 				},
 				"column_labels": {
-					"title": "ColumnLabels",
+					"title": "SharedText3Labels",
 					"type": "object",
-					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
 					"default": {},
-					"properties": {}
+					"required": ["text", "text2", "text3"],
+					"properties": {
+						"text": {
+							"$ref": "#/definitions/Label"
+						},
+						"text2": {
+							"$ref": "#/definitions/Label"
+						},
+						"text3": {
+							"$ref": "#/definitions/Label"
+						}
+					}
 				},
 				"suggestions": {
 					"$ref": "#/definitions/Suggestions"
@@ -5406,9 +5423,8 @@
 					}
 				},
 				"column_labels": {
-					"title": "ColumnLabels",
+					"title": "TextColumnLabels",
 					"type": "object",
-					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
 					"default": {
 						"roll": "Roll",
 						"text": "Result"
@@ -5416,12 +5432,10 @@
 					"required": ["roll", "text"],
 					"properties": {
 						"roll": {
-							"$ref": "#/definitions/Label",
-							"default": "Roll"
+							"$ref": "#/definitions/Label"
 						},
 						"text": {
-							"$ref": "#/definitions/Label",
-							"default": "Result"
+							"$ref": "#/definitions/Label"
 						}
 					}
 				},
@@ -5522,9 +5536,8 @@
 					}
 				},
 				"column_labels": {
-					"title": "ColumnLabels",
+					"title": "Text2ColumnLabels",
 					"type": "object",
-					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
 					"default": {
 						"roll": "Roll",
 						"text": "Result",
@@ -5533,16 +5546,13 @@
 					"required": ["roll", "text", "text2"],
 					"properties": {
 						"roll": {
-							"$ref": "#/definitions/Label",
-							"default": "Roll"
+							"$ref": "#/definitions/Label"
 						},
 						"text": {
-							"$ref": "#/definitions/Label",
-							"default": "Result"
+							"$ref": "#/definitions/Label"
 						},
 						"text2": {
-							"$ref": "#/definitions/Label",
-							"default": "Details"
+							"$ref": "#/definitions/Label"
 						}
 					}
 				},
@@ -5575,7 +5585,14 @@
 			"title": "OracleTableText3",
 			"type": "object",
 			"description": "A rollable oracle table with one roll column and 3 text columns.",
-			"required": ["type", "name", "oracle_type", "rows", "_source"],
+			"required": [
+				"type",
+				"name",
+				"oracle_type",
+				"column_labels",
+				"rows",
+				"_source"
+			],
 			"properties": {
 				"_id": {
 					"$ref": "#/definitions/OracleRollableId",
@@ -5643,10 +5660,8 @@
 					}
 				},
 				"column_labels": {
-					"title": "ColumnLabels",
+					"title": "Text3ColumnLabels",
 					"type": "object",
-					"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).",
-					"default": {},
 					"required": ["roll", "text", "text2", "text3"],
 					"properties": {
 						"roll": {

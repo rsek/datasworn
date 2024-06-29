@@ -62,7 +62,7 @@ declare namespace TypeId {
     };
     type EmbeddingWhenEmbeddedType = keyof typeof EmbeddableInEmbeddedTypeMap;
     type EmbeddableInEmbeddedType<T extends EmbeddingWhenEmbeddedType = EmbeddingWhenEmbeddedType> = (typeof EmbeddableInEmbeddedTypeMap)[T][number];
-    function canHaveEmbed(typeId: string, typeIsEmbedded?: boolean): boolean;
+    function canHaveEmbed(typeId: string, typeIsEmbedded?: boolean): typeId is Embedding;
     function canBeEmbedded(typeId: string): boolean;
     function isPrimary(typeId: string): typeId is Primary;
     function isEmbedOnly(typeId: string): typeId is EmbedOnly;

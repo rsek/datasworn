@@ -1,7 +1,15 @@
-import { Type, type TObject } from '@sinclair/typebox'
-import { MarkdownString } from '../common/Localize.js'
-import { type ColumnLabels } from './TableRow.js'
+import {
+	Type,
+	type ObjectOptions,
+	type Static,
+	type TObject,
+	type TRef,
+	type TString
+} from '@sinclair/typebox'
+import { Label, MarkdownString } from '../common/Localize.js'
 import { FlatIntersect } from '../utils/FlatIntersect.js'
+import { OracleRollableRowText3 } from './TableRow.js'
+import { omit } from 'lodash-es'
 
 // metadata relevant to presenting a table
 export const TableMeta = Type.Object({
@@ -27,7 +35,7 @@ export const TableMeta = Type.Object({
 })
 
 export function TableMixin<OracleRow extends TObject>(
-	column_labels: ReturnType<typeof ColumnLabels<OracleRow>>
+	column_labels: ReturnType<typeof ColumnLabels>
 ) {
 	return FlatIntersect([
 		TableMeta,
@@ -36,3 +44,51 @@ export function TableMixin<OracleRow extends TObject>(
 		})
 	])
 }
+function ColumnLabels<
+	TextKeys extends [...(keyof Static<typeof OracleRollableRowText3>)[]]
+>(textKeys: TextKeys, options: ObjectOptions = {}) {
+	const props = {
+		roll: Type.Ref(Label)
+	} as Record<'roll' | TextKeys[number], TRef<TString>>
+	for (const k of textKeys) props[k as keyof typeof props] = Type.Ref(Label)
+
+	return Type.Object(props, options)
+}
+
+export const TextColumnLabels = ColumnLabels(['text'], {
+	title: 'TextColumnLabels',
+	default: { roll: 'Roll', text: 'Result' }
+})
+export const Text2ColumnLabels = ColumnLabels(['text', 'text2'], {
+	title: 'Text2ColumnLabels',
+	default: {
+		roll: 'Roll',
+		text: 'Result',
+		text2: 'Details'
+	}
+})
+
+export const Text3ColumnLabels = ColumnLabels(['text', 'text2', 'text3'], {
+	title: 'Text3ColumnLabels'
+})
+
+export const SharedRollsLabels = Type.Omit(TextColumnLabels, ['text'], {
+	default: omit(TextColumnLabels.default, ['text']),
+	description:
+		'Provides column labels for this table. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row). For all other column labels, see the `name` property of each child `OracleColumn`.',
+	title: 'SharedRollsLabels'
+})
+export const SharedTextLabels = Type.Omit(TextColumnLabels, ['roll'], {
+	default: omit(TextColumnLabels.default, ['roll']),
+	title: 'SharedTextLabels'
+})
+
+export const SharedText2Labels = Type.Omit(Text2ColumnLabels, ['roll'], {
+	default: omit(Text2ColumnLabels.default, ['roll']),
+	title: 'SharedText2Labels'
+})
+
+export const SharedText3Labels = Type.Omit(Text3ColumnLabels, ['roll'], {
+	default: omit(Text3ColumnLabels.default, ['roll']),
+	title: 'SharedText3Labels'
+})

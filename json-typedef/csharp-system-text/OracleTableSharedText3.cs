@@ -24,13 +24,8 @@ namespace Datasworn
         [JsonPropertyName("_source")]
         public SourceInfo Source { get; set; }
 
-        /// <summary>
-        /// The label at the head of each table column. The `roll` key refers
-        /// to the roll column showing the dice range (`min` and `max` on each
-        /// table row).
-        /// </summary>
         [JsonPropertyName("column_labels")]
-        public object ColumnLabels { get; set; }
+        public OracleTableSharedText3ColumnLabels ColumnLabels { get; set; }
 
         [JsonPropertyName("contents")]
         public IDictionary<string, OracleColumnText3> Contents { get; set; }

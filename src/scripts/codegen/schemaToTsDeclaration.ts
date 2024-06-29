@@ -254,7 +254,7 @@ function renderJsValue(value: unknown): string {
 
 		case typeof value === 'object':
 			result =
-				Object.keys(value as any).length > 0
+				Object.keys(value as any).length === 0
 					? `{}`
 					: `{\n${indent(
 							map(value as any, (v, k) => `${k}: ${renderJsValue(v)}`).join(

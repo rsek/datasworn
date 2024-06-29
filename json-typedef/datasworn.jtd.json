@@ -55,9 +55,6 @@
 				"license": {
 					"ref": "License"
 				},
-				"rules": {
-					"ref": "Rules"
-				},
 				"oracles": {
 					"values": {
 						"ref": "OracleTablesCollection"
@@ -84,6 +81,9 @@
 						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object containing asset collections, which contain assets."
 					}
+				},
+				"rules": {
+					"ref": "Rules"
 				}
 			},
 			"optionalProperties": {
@@ -172,14 +172,6 @@
 						"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
 					}
 				},
-				"ruleset": {
-					"ref": "RulesetId"
-				}
-			},
-			"optionalProperties": {
-				"description": {
-					"ref": "MarkdownString"
-				},
 				"title": {
 					"type": "string",
 					"metadata": {
@@ -246,6 +238,14 @@
 						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object containing asset collections, which contain assets."
 					}
+				},
+				"ruleset": {
+					"ref": "RulesetId"
+				}
+			},
+			"optionalProperties": {
+				"description": {
+					"ref": "MarkdownString"
 				},
 				"atlas": {
 					"values": {
@@ -382,9 +382,6 @@
 				"license": {
 					"ref": "License"
 				},
-				"rules": {
-					"ref": "Rules"
-				},
 				"oracles": {
 					"values": {
 						"ref": "OracleTablesCollection"
@@ -411,6 +408,9 @@
 						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object containing asset collections, which contain assets."
 					}
+				},
+				"rules": {
+					"ref": "Rules"
 				}
 			},
 			"optionalProperties": {
@@ -504,14 +504,6 @@
 						"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
 					}
 				},
-				"ruleset": {
-					"ref": "RulesetId"
-				}
-			},
-			"optionalProperties": {
-				"description": {
-					"ref": "MarkdownString"
-				},
 				"title": {
 					"type": "string",
 					"metadata": {
@@ -578,6 +570,14 @@
 						"propertyPattern": "^[a-z][a-z_]*$",
 						"description": "A dictionary object containing asset collections, which contain assets."
 					}
+				},
+				"ruleset": {
+					"ref": "RulesetId"
+				}
+			},
+			"optionalProperties": {
+				"description": {
+					"ref": "MarkdownString"
 				},
 				"atlas": {
 					"values": {
@@ -3150,9 +3150,6 @@
 								"text": {
 									"ref": "Label"
 								}
-							},
-							"metadata": {
-								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 							}
 						},
 						"type": {
@@ -3254,9 +3251,6 @@
 								"text2": {
 									"ref": "Label"
 								}
-							},
-							"metadata": {
-								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 							}
 						},
 						"type": {
@@ -3361,9 +3355,6 @@
 								"text3": {
 									"ref": "Label"
 								}
-							},
-							"metadata": {
-								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 							}
 						},
 						"type": {
@@ -3728,9 +3719,6 @@
 						"text": {
 							"ref": "Label"
 						}
-					},
-					"metadata": {
-						"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 					}
 				},
 				"type": {
@@ -3837,9 +3825,6 @@
 						"text2": {
 							"ref": "Label"
 						}
-					},
-					"metadata": {
-						"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 					}
 				},
 				"type": {
@@ -3949,9 +3934,6 @@
 						"text3": {
 							"ref": "Label"
 						}
-					},
-					"metadata": {
-						"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 					}
 				},
 				"type": {
@@ -4288,9 +4270,6 @@
 								"text": {
 									"ref": "Label"
 								}
-							},
-							"metadata": {
-								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 							}
 						},
 						"type": {
@@ -4407,9 +4386,6 @@
 								"text2": {
 									"ref": "Label"
 								}
-							},
-							"metadata": {
-								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 							}
 						},
 						"type": {
@@ -4519,8 +4495,16 @@
 							}
 						},
 						"column_labels": {
-							"metadata": {
-								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
+							"properties": {
+								"text": {
+									"ref": "Label"
+								},
+								"text2": {
+									"ref": "Label"
+								},
+								"text3": {
+									"ref": "Label"
+								}
 							}
 						},
 						"type": {
@@ -4963,9 +4947,6 @@
 								"text": {
 									"ref": "Label"
 								}
-							},
-							"metadata": {
-								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 							}
 						},
 						"type": {
@@ -5087,9 +5068,6 @@
 								"text2": {
 									"ref": "Label"
 								}
-							},
-							"metadata": {
-								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 							}
 						},
 						"type": {
@@ -5214,9 +5192,6 @@
 								"text3": {
 									"ref": "Label"
 								}
-							},
-							"metadata": {
-								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 							}
 						},
 						"type": {
@@ -5802,9 +5777,6 @@
 								"text": {
 									"ref": "Label"
 								}
-							},
-							"metadata": {
-								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 							}
 						},
 						"type": {
@@ -5926,9 +5898,6 @@
 								"text2": {
 									"ref": "Label"
 								}
-							},
-							"metadata": {
-								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 							}
 						},
 						"type": {
@@ -6053,9 +6022,6 @@
 								"text3": {
 									"ref": "Label"
 								}
-							},
-							"metadata": {
-								"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 							}
 						},
 						"type": {
@@ -6288,9 +6254,6 @@
 						"text": {
 							"ref": "Label"
 						}
-					},
-					"metadata": {
-						"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 					}
 				},
 				"type": {
@@ -6412,9 +6375,6 @@
 						"text2": {
 							"ref": "Label"
 						}
-					},
-					"metadata": {
-						"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 					}
 				},
 				"type": {
@@ -6529,8 +6489,16 @@
 					}
 				},
 				"column_labels": {
-					"metadata": {
-						"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
+					"properties": {
+						"text": {
+							"ref": "Label"
+						},
+						"text2": {
+							"ref": "Label"
+						},
+						"text3": {
+							"ref": "Label"
+						}
 					}
 				},
 				"type": {
@@ -6658,9 +6626,6 @@
 						"text": {
 							"ref": "Label"
 						}
-					},
-					"metadata": {
-						"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 					}
 				},
 				"type": {
@@ -6787,9 +6752,6 @@
 						"text2": {
 							"ref": "Label"
 						}
-					},
-					"metadata": {
-						"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 					}
 				},
 				"type": {
@@ -6919,9 +6881,6 @@
 						"text3": {
 							"ref": "Label"
 						}
-					},
-					"metadata": {
-						"description": "The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row)."
 					}
 				},
 				"type": {

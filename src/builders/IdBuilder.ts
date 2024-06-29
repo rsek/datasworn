@@ -1,4 +1,5 @@
 import {
+	CloneType,
 	Type,
 	type StringOptions,
 	type TRef,
@@ -16,6 +17,7 @@ import type { Join, PascalCase, Split } from 'type-fest'
 import { JsonTypeDef } from '../schema/Symbols.js'
 import JtdType from '../scripts/json-typedef/typedef.js'
 import { TypeGuard } from '../pkg-core/IdElements/index.js'
+import { snakeCase } from 'lodash-es'
 
 type RegexGroupType =
 	| 'none'
@@ -664,11 +666,11 @@ for (const typeId in patternIndex) {
 
 const permutations = {} as Record<string, Set<string>>
 
-function permutate(typeId: string, parentTypeId: string) {
-	if (TypeId.isPrimary(typeId) && !TypeId.isEmbedOnly(parentTypeId)) {
+function permutate(typeId: TypeId.Any, parentTypeComposite: string) {
+	if (TypeId.isPrimary(typeId) && !TypeId.isEmbedOnly(parentTypeComposite)) {
 		const typeSchema = pascalCase(typeId) + 'Id'
 
-		const parentTypePrefix = parentTypeId
+		const parentTypePrefix = parentTypeComposite
 			.split(CONST.TypeSep)
 			.map(pascalCase)
 			.join('')
@@ -693,13 +695,10 @@ function permutate(typeId: string, parentTypeId: string) {
 		permutations[embeddedWildcardSchema].add(thisWildcardSchema)
 	}
 
-	if (TypeId.canHaveEmbed(typeId, true)) {
-		const embeddedTypes = TypeId.getEmbeddableTypes(typeId, true)
+	const embeddedTypes = TypeId.getEmbeddableTypes(typeId, true)
 
-		for (const embeddedTypeId of embeddedTypes) {
-			permutate(embeddedTypeId, `${parentTypeId}${CONST.TypeSep}${typeId}`)
-		}
-	}
+	for (const embeddedTypeId of embeddedTypes)
+		permutate(embeddedTypeId, `${parentTypeComposite}${CONST.TypeSep}${typeId}`)
 }
 
 for (const primaryTypeId in TypeId.EmbedTypeMap) {
@@ -776,5 +775,23 @@ ids.AnyIdWildcard = Type.Union(
 		[JsonTypeDef]: { schema: JtdType.String() }
 	}
 )
+
+// generate union types from IDs that are marked Any*Id
+
+const idUnionNamePattern = /^Any(?<typeName>[A-Z][A-z]+)Id$/
+
+for (const idName in ids) {
+	const match = idName.match(idUnionNamePattern)
+	if (!match?.groups) continue
+	const { typeName } = match.groups
+	const typeId = snakeCase(typeName) as TypeId.Any
+	if (!TypeId.isPrimary(typeId)) continue
+
+	const $id = `Any${typeName}` as keyof typeof ids
+	ids[$id] = Type.Union([Type.Ref(typeName), Type.Ref(`Embedded${typeName}`)], {
+		$id,
+		[JsonTypeDef]: { skip: true }
+	})
+}
 
 export default ids

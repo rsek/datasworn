@@ -141,7 +141,10 @@ namespace TypeId {
 		T extends EmbeddingWhenEmbeddedType = EmbeddingWhenEmbeddedType
 	> = (typeof EmbeddableInEmbeddedTypeMap)[T][number]
 
-	export function canHaveEmbed(typeId: string, typeIsEmbedded = false) {
+	export function canHaveEmbed(
+		typeId: string,
+		typeIsEmbedded = false
+	): typeId is Embedding {
 		return getEmbeddableTypes(typeId as Any, typeIsEmbedded).length > 0
 	}
 

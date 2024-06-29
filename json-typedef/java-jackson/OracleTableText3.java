@@ -115,8 +115,6 @@ public class OracleTableText3 {
 
     /**
      * Getter for columnLabels.<p>
-     * The label at the head of each table column. The `roll` key refers to the
-     * roll column showing the dice range (`min` and `max` on each table row).
      */
     public OracleTableText3ColumnLabels getColumnLabels() {
         return columnLabels;
@@ -124,8 +122,6 @@ public class OracleTableText3 {
 
     /**
      * Setter for columnLabels.<p>
-     * The label at the head of each table column. The `roll` key refers to the
-     * roll column showing the dice range (`min` and `max` on each table row).
      */
     public void setColumnLabels(OracleTableText3ColumnLabels columnLabels) {
         this.columnLabels = columnLabels;

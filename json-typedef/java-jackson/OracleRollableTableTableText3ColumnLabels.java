@@ -5,10 +5,6 @@ package Datasworn;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * The label at the head of each table column. The `roll` key refers to the roll
- * column showing the dice range (`min` and `max` on each table row).
- */
 @JsonSerialize
 public class OracleRollableTableTableText3ColumnLabels {
     @JsonProperty("roll")

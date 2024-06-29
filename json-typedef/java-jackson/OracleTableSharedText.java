@@ -118,8 +118,6 @@ public class OracleTableSharedText {
 
     /**
      * Getter for columnLabels.<p>
-     * The label at the head of each table column. The `roll` key refers to the
-     * roll column showing the dice range (`min` and `max` on each table row).
      */
     public OracleTableSharedTextColumnLabels getColumnLabels() {
         return columnLabels;
@@ -127,8 +125,6 @@ public class OracleTableSharedText {
 
     /**
      * Setter for columnLabels.<p>
-     * The label at the head of each table column. The `roll` key refers to the
-     * roll column showing the dice range (`min` and `max` on each table row).
      */
     public void setColumnLabels(OracleTableSharedTextColumnLabels columnLabels) {
         this.columnLabels = columnLabels;

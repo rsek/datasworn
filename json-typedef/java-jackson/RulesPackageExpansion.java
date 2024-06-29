@@ -18,27 +18,39 @@ public class RulesPackageExpansion extends RulesPackage {
     @JsonProperty("_id")
     private ExpansionId id;
 
+    @JsonProperty("assets")
+    private Map<String, AssetCollection> assets;
+
+    @JsonProperty("authors")
+    private List<AuthorInfo> authors;
+
     @JsonProperty("datasworn_version")
     private RulesPackageExpansionDataswornVersion dataswornVersion;
+
+    @JsonProperty("date")
+    private OffsetDateTime date;
+
+    @JsonProperty("license")
+    private License license;
+
+    @JsonProperty("moves")
+    private Map<String, MoveCategory> moves;
+
+    @JsonProperty("oracles")
+    private Map<String, OracleTablesCollection> oracles;
 
     @JsonProperty("ruleset")
     private RulesetId ruleset;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("assets")
-    private Map<String, AssetCollection> assets;
+    @JsonProperty("title")
+    private String title;
+
+    @JsonProperty("url")
+    private WebUrl url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("atlas")
     private Map<String, AtlasCollection> atlas;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("authors")
-    private List<AuthorInfo> authors;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("date")
-    private OffsetDateTime date;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("delve_sites")
@@ -49,20 +61,8 @@ public class RulesPackageExpansion extends RulesPackage {
     private MarkdownString description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("license")
-    private License license;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("moves")
-    private Map<String, MoveCategory> moves;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("npcs")
     private Map<String, NpcCollection> npcs;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("oracles")
-    private Map<String, OracleTablesCollection> oracles;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("rarities")
@@ -81,16 +81,8 @@ public class RulesPackageExpansion extends RulesPackage {
     private Map<String, DelveSiteTheme> siteThemes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("title")
-    private String title;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("truths")
     private Map<String, Truth> truths;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("url")
-    private WebUrl url;
 
     public RulesPackageExpansion() {
     }
@@ -110,36 +102,6 @@ public class RulesPackageExpansion extends RulesPackage {
     }
 
     /**
-     * Getter for dataswornVersion.<p>
-     * The version of the Datasworn format used by this data.
-     */
-    public RulesPackageExpansionDataswornVersion getDataswornVersion() {
-        return dataswornVersion;
-    }
-
-    /**
-     * Setter for dataswornVersion.<p>
-     * The version of the Datasworn format used by this data.
-     */
-    public void setDataswornVersion(RulesPackageExpansionDataswornVersion dataswornVersion) {
-        this.dataswornVersion = dataswornVersion;
-    }
-
-    /**
-     * Getter for ruleset.<p>
-     */
-    public RulesetId getRuleset() {
-        return ruleset;
-    }
-
-    /**
-     * Setter for ruleset.<p>
-     */
-    public void setRuleset(RulesetId ruleset) {
-        this.ruleset = ruleset;
-    }
-
-    /**
      * Getter for assets.<p>
      * A dictionary object containing asset collections, which contain assets.
      */
@@ -153,24 +115,6 @@ public class RulesPackageExpansion extends RulesPackage {
      */
     public void setAssets(Map<String, AssetCollection> assets) {
         this.assets = assets;
-    }
-
-    /**
-     * Getter for atlas.<p>
-     * A dictionary object containing atlas collections, which contain atlas
-     * entries.
-     */
-    public Map<String, AtlasCollection> getAtlas() {
-        return atlas;
-    }
-
-    /**
-     * Setter for atlas.<p>
-     * A dictionary object containing atlas collections, which contain atlas
-     * entries.
-     */
-    public void setAtlas(Map<String, AtlasCollection> atlas) {
-        this.atlas = atlas;
     }
 
     /**
@@ -190,6 +134,22 @@ public class RulesPackageExpansion extends RulesPackage {
     }
 
     /**
+     * Getter for dataswornVersion.<p>
+     * The version of the Datasworn format used by this data.
+     */
+    public RulesPackageExpansionDataswornVersion getDataswornVersion() {
+        return dataswornVersion;
+    }
+
+    /**
+     * Setter for dataswornVersion.<p>
+     * The version of the Datasworn format used by this data.
+     */
+    public void setDataswornVersion(RulesPackageExpansionDataswornVersion dataswornVersion) {
+        this.dataswornVersion = dataswornVersion;
+    }
+
+    /**
      * Getter for date.<p>
      * The date of the source documents's last update, formatted YYYY-MM-DD.
      * Required because it's used to determine whether the data needs updating.
@@ -205,6 +165,118 @@ public class RulesPackageExpansion extends RulesPackage {
      */
     public void setDate(OffsetDateTime date) {
         this.date = date;
+    }
+
+    /**
+     * Getter for license.<p>
+     */
+    public License getLicense() {
+        return license;
+    }
+
+    /**
+     * Setter for license.<p>
+     */
+    public void setLicense(License license) {
+        this.license = license;
+    }
+
+    /**
+     * Getter for moves.<p>
+     * A dictionary object containing move categories, which contain moves.
+     */
+    public Map<String, MoveCategory> getMoves() {
+        return moves;
+    }
+
+    /**
+     * Setter for moves.<p>
+     * A dictionary object containing move categories, which contain moves.
+     */
+    public void setMoves(Map<String, MoveCategory> moves) {
+        this.moves = moves;
+    }
+
+    /**
+     * Getter for oracles.<p>
+     * A dictionary object containing oracle collections, which may contain
+     * oracle tables and/or oracle collections.
+     */
+    public Map<String, OracleTablesCollection> getOracles() {
+        return oracles;
+    }
+
+    /**
+     * Setter for oracles.<p>
+     * A dictionary object containing oracle collections, which may contain
+     * oracle tables and/or oracle collections.
+     */
+    public void setOracles(Map<String, OracleTablesCollection> oracles) {
+        this.oracles = oracles;
+    }
+
+    /**
+     * Getter for ruleset.<p>
+     */
+    public RulesetId getRuleset() {
+        return ruleset;
+    }
+
+    /**
+     * Setter for ruleset.<p>
+     */
+    public void setRuleset(RulesetId ruleset) {
+        this.ruleset = ruleset;
+    }
+
+    /**
+     * Getter for title.<p>
+     * The title of the source document.
+     */
+    public String getTitle() {
+        return title;
+    }
+
+    /**
+     * Setter for title.<p>
+     * The title of the source document.
+     */
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    /**
+     * Getter for url.<p>
+     * A URL where the source document is available.
+     */
+    public WebUrl getUrl() {
+        return url;
+    }
+
+    /**
+     * Setter for url.<p>
+     * A URL where the source document is available.
+     */
+    public void setUrl(WebUrl url) {
+        this.url = url;
+    }
+
+    /**
+     * Getter for atlas.<p>
+     * A dictionary object containing atlas collections, which contain atlas
+     * entries.
+     */
+    public Map<String, AtlasCollection> getAtlas() {
+        return atlas;
+    }
+
+    /**
+     * Setter for atlas.<p>
+     * A dictionary object containing atlas collections, which contain atlas
+     * entries.
+     */
+    public void setAtlas(Map<String, AtlasCollection> atlas) {
+        this.atlas = atlas;
     }
 
     /**
@@ -240,36 +312,6 @@ public class RulesPackageExpansion extends RulesPackage {
     }
 
     /**
-     * Getter for license.<p>
-     */
-    public License getLicense() {
-        return license;
-    }
-
-    /**
-     * Setter for license.<p>
-     */
-    public void setLicense(License license) {
-        this.license = license;
-    }
-
-    /**
-     * Getter for moves.<p>
-     * A dictionary object containing move categories, which contain moves.
-     */
-    public Map<String, MoveCategory> getMoves() {
-        return moves;
-    }
-
-    /**
-     * Setter for moves.<p>
-     * A dictionary object containing move categories, which contain moves.
-     */
-    public void setMoves(Map<String, MoveCategory> moves) {
-        this.moves = moves;
-    }
-
-    /**
      * Getter for npcs.<p>
      * A dictionary object containing NPC collections, which contain NPCs.
      */
@@ -283,24 +325,6 @@ public class RulesPackageExpansion extends RulesPackage {
      */
     public void setNpcs(Map<String, NpcCollection> npcs) {
         this.npcs = npcs;
-    }
-
-    /**
-     * Getter for oracles.<p>
-     * A dictionary object containing oracle collections, which may contain
-     * oracle tables and/or oracle collections.
-     */
-    public Map<String, OracleTablesCollection> getOracles() {
-        return oracles;
-    }
-
-    /**
-     * Setter for oracles.<p>
-     * A dictionary object containing oracle collections, which may contain
-     * oracle tables and/or oracle collections.
-     */
-    public void setOracles(Map<String, OracleTablesCollection> oracles) {
-        this.oracles = oracles;
     }
 
     /**
@@ -368,22 +392,6 @@ public class RulesPackageExpansion extends RulesPackage {
     }
 
     /**
-     * Getter for title.<p>
-     * The title of the source document.
-     */
-    public String getTitle() {
-        return title;
-    }
-
-    /**
-     * Setter for title.<p>
-     * The title of the source document.
-     */
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    /**
      * Getter for truths.<p>
      * A dictionary object of truth categories.
      */
@@ -397,21 +405,5 @@ public class RulesPackageExpansion extends RulesPackage {
      */
     public void setTruths(Map<String, Truth> truths) {
         this.truths = truths;
-    }
-
-    /**
-     * Getter for url.<p>
-     * A URL where the source document is available.
-     */
-    public WebUrl getUrl() {
-        return url;
-    }
-
-    /**
-     * Setter for url.<p>
-     * A URL where the source document is available.
-     */
-    public void setUrl(WebUrl url) {
-        this.url = url;
     }
 }

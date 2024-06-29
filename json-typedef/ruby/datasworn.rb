@@ -45,74 +45,74 @@ module Datasworn
   # ruleset.
   class RulesPackageExpansion < RulesPackage
     attr_accessor :id
-    attr_accessor :datasworn_version
-    attr_accessor :ruleset
     attr_accessor :assets
-    attr_accessor :atlas
     attr_accessor :authors
+    attr_accessor :datasworn_version
     attr_accessor :date
-    attr_accessor :delve_sites
-    attr_accessor :description
     attr_accessor :license
     attr_accessor :moves
-    attr_accessor :npcs
     attr_accessor :oracles
+    attr_accessor :ruleset
+    attr_accessor :title
+    attr_accessor :url
+    attr_accessor :atlas
+    attr_accessor :delve_sites
+    attr_accessor :description
+    attr_accessor :npcs
     attr_accessor :rarities
     attr_accessor :rules
     attr_accessor :site_domains
     attr_accessor :site_themes
-    attr_accessor :title
     attr_accessor :truths
-    attr_accessor :url
 
     def self.from_json_data(data)
       out = RulesPackageExpansion.new
       out.type = "expansion"
       out.id = Datasworn::from_json_data(ExpansionID, data["_id"])
-      out.datasworn_version = Datasworn::from_json_data(RulesPackageExpansionDataswornVersion, data["datasworn_version"])
-      out.ruleset = Datasworn::from_json_data(RulesetID, data["ruleset"])
       out.assets = Datasworn::from_json_data(Hash[String, AssetCollection], data["assets"])
-      out.atlas = Datasworn::from_json_data(Hash[String, AtlasCollection], data["atlas"])
       out.authors = Datasworn::from_json_data(Array[AuthorInfo], data["authors"])
+      out.datasworn_version = Datasworn::from_json_data(RulesPackageExpansionDataswornVersion, data["datasworn_version"])
       out.date = Datasworn::from_json_data(DateTime, data["date"])
-      out.delve_sites = Datasworn::from_json_data(Hash[String, DelveSite], data["delve_sites"])
-      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.license = Datasworn::from_json_data(License, data["license"])
       out.moves = Datasworn::from_json_data(Hash[String, MoveCategory], data["moves"])
-      out.npcs = Datasworn::from_json_data(Hash[String, NpcCollection], data["npcs"])
       out.oracles = Datasworn::from_json_data(Hash[String, OracleTablesCollection], data["oracles"])
+      out.ruleset = Datasworn::from_json_data(RulesetID, data["ruleset"])
+      out.title = Datasworn::from_json_data(String, data["title"])
+      out.url = Datasworn::from_json_data(WebURL, data["url"])
+      out.atlas = Datasworn::from_json_data(Hash[String, AtlasCollection], data["atlas"])
+      out.delve_sites = Datasworn::from_json_data(Hash[String, DelveSite], data["delve_sites"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.npcs = Datasworn::from_json_data(Hash[String, NpcCollection], data["npcs"])
       out.rarities = Datasworn::from_json_data(Hash[String, Rarity], data["rarities"])
       out.rules = Datasworn::from_json_data(RulesExpansion, data["rules"])
       out.site_domains = Datasworn::from_json_data(Hash[String, DelveSiteDomain], data["site_domains"])
       out.site_themes = Datasworn::from_json_data(Hash[String, DelveSiteTheme], data["site_themes"])
-      out.title = Datasworn::from_json_data(String, data["title"])
       out.truths = Datasworn::from_json_data(Hash[String, Truth], data["truths"])
-      out.url = Datasworn::from_json_data(WebURL, data["url"])
       out
     end
 
     def to_json_data
       data = { "type" => "expansion" }
       data["_id"] = Datasworn::to_json_data(id)
+      data["assets"] = Datasworn::to_json_data(assets)
+      data["authors"] = Datasworn::to_json_data(authors)
       data["datasworn_version"] = Datasworn::to_json_data(datasworn_version)
+      data["date"] = Datasworn::to_json_data(date)
+      data["license"] = Datasworn::to_json_data(license)
+      data["moves"] = Datasworn::to_json_data(moves)
+      data["oracles"] = Datasworn::to_json_data(oracles)
       data["ruleset"] = Datasworn::to_json_data(ruleset)
-      data["assets"] = Datasworn::to_json_data(assets) unless assets.nil?
+      data["title"] = Datasworn::to_json_data(title)
+      data["url"] = Datasworn::to_json_data(url)
       data["atlas"] = Datasworn::to_json_data(atlas) unless atlas.nil?
-      data["authors"] = Datasworn::to_json_data(authors) unless authors.nil?
-      data["date"] = Datasworn::to_json_data(date) unless date.nil?
       data["delve_sites"] = Datasworn::to_json_data(delve_sites) unless delve_sites.nil?
       data["description"] = Datasworn::to_json_data(description) unless description.nil?
-      data["license"] = Datasworn::to_json_data(license) unless license.nil?
-      data["moves"] = Datasworn::to_json_data(moves) unless moves.nil?
       data["npcs"] = Datasworn::to_json_data(npcs) unless npcs.nil?
-      data["oracles"] = Datasworn::to_json_data(oracles) unless oracles.nil?
       data["rarities"] = Datasworn::to_json_data(rarities) unless rarities.nil?
       data["rules"] = Datasworn::to_json_data(rules) unless rules.nil?
       data["site_domains"] = Datasworn::to_json_data(site_domains) unless site_domains.nil?
       data["site_themes"] = Datasworn::to_json_data(site_themes) unless site_themes.nil?
-      data["title"] = Datasworn::to_json_data(title) unless title.nil?
       data["truths"] = Datasworn::to_json_data(truths) unless truths.nil?
-      data["url"] = Datasworn::to_json_data(url) unless url.nil?
       data
     end
   end
@@ -5076,8 +5076,6 @@ module Datasworn
     end
   end
 
-  # The label at the head of each table column. The `roll` key refers to the
-  # roll column showing the dice range (`min` and `max` on each table row).
   class EmbeddedOracleRollableTableTextColumnLabels
     attr_accessor :roll
     attr_accessor :text
@@ -5197,8 +5195,6 @@ module Datasworn
     end
   end
 
-  # The label at the head of each table column. The `roll` key refers to the
-  # roll column showing the dice range (`min` and `max` on each table row).
   class EmbeddedOracleRollableTableText2ColumnLabels
     attr_accessor :roll
     attr_accessor :text
@@ -5321,8 +5317,6 @@ module Datasworn
     end
   end
 
-  # The label at the head of each table column. The `roll` key refers to the
-  # roll column showing the dice range (`min` and `max` on each table row).
   class EmbeddedOracleRollableTableText3ColumnLabels
     attr_accessor :roll
     attr_accessor :text
@@ -5476,8 +5470,6 @@ module Datasworn
     end
   end
 
-  # The label at the head of each table column. The `roll` key refers to the
-  # roll column showing the dice range (`min` and `max` on each table row).
   class EmbeddedOracleTableTextColumnLabels
     attr_accessor :roll
     attr_accessor :text
@@ -5562,9 +5554,6 @@ module Datasworn
 
   class EmbeddedOracleTableText
     attr_accessor :id
-
-    # The label at the head of each table column. The `roll` key refers to the
-    # roll column showing the dice range (`min` and `max` on each table row).
     attr_accessor :column_labels
 
     # The roll used to select a result on this oracle.
@@ -5643,8 +5632,6 @@ module Datasworn
     end
   end
 
-  # The label at the head of each table column. The `roll` key refers to the
-  # roll column showing the dice range (`min` and `max` on each table row).
   class EmbeddedOracleTableText2ColumnLabels
     attr_accessor :roll
     attr_accessor :text
@@ -5732,9 +5719,6 @@ module Datasworn
 
   class EmbeddedOracleTableText2
     attr_accessor :id
-
-    # The label at the head of each table column. The `roll` key refers to the
-    # roll column showing the dice range (`min` and `max` on each table row).
     attr_accessor :column_labels
 
     # The roll used to select a result on this oracle.
@@ -5813,8 +5797,6 @@ module Datasworn
     end
   end
 
-  # The label at the head of each table column. The `roll` key refers to the
-  # roll column showing the dice range (`min` and `max` on each table row).
   class EmbeddedOracleTableText3ColumnLabels
     attr_accessor :roll
     attr_accessor :text
@@ -5905,9 +5887,6 @@ module Datasworn
 
   class EmbeddedOracleTableText3
     attr_accessor :id
-
-    # The label at the head of each table column. The `roll` key refers to the
-    # roll column showing the dice range (`min` and `max` on each table row).
     attr_accessor :column_labels
 
     # The roll used to select a result on this oracle.
@@ -6299,40 +6278,46 @@ module Datasworn
   class Expansion
     attr_accessor :id
 
-    # The version of the Datasworn format used by this data.
-    attr_accessor :datasworn_version
-    attr_accessor :ruleset
-    attr_accessor :type
-
     # A dictionary object containing asset collections, which contain assets.
     attr_accessor :assets
-
-    # A dictionary object containing atlas collections, which contain atlas
-    # entries.
-    attr_accessor :atlas
 
     # Lists authors credited by the source material.
     attr_accessor :authors
 
+    # The version of the Datasworn format used by this data.
+    attr_accessor :datasworn_version
+
     # The date of the source documents's last update, formatted YYYY-MM-DD.
     # Required because it's used to determine whether the data needs updating.
     attr_accessor :date
-
-    # A dictionary object of delve sites, like the premade delve sites presented
-    # in Ironsworn: Delve
-    attr_accessor :delve_sites
-    attr_accessor :description
     attr_accessor :license
 
     # A dictionary object containing move categories, which contain moves.
     attr_accessor :moves
 
-    # A dictionary object containing NPC collections, which contain NPCs.
-    attr_accessor :npcs
-
     # A dictionary object containing oracle collections, which may contain
     # oracle tables and/or oracle collections.
     attr_accessor :oracles
+    attr_accessor :ruleset
+
+    # The title of the source document.
+    attr_accessor :title
+    attr_accessor :type
+
+    # A URL where the source document is available.
+    attr_accessor :url
+
+    # A dictionary object containing atlas collections, which contain atlas
+    # entries.
+    attr_accessor :atlas
+
+    # A dictionary object of delve sites, like the premade delve sites presented
+    # in Ironsworn: Delve
+    attr_accessor :delve_sites
+    attr_accessor :description
+
+    # A dictionary object containing NPC collections, which contain NPCs.
+    attr_accessor :npcs
 
     # A dictionary object containing rarities, like those presented in
     # Ironsworn: Delve.
@@ -6345,64 +6330,58 @@ module Datasworn
     # A dictionary object containing delve site themes.
     attr_accessor :site_themes
 
-    # The title of the source document.
-    attr_accessor :title
-
     # A dictionary object of truth categories.
     attr_accessor :truths
-
-    # A URL where the source document is available.
-    attr_accessor :url
 
     def self.from_json_data(data)
       out = Expansion.new
       out.id = Datasworn::from_json_data(ExpansionID, data["_id"])
-      out.datasworn_version = Datasworn::from_json_data(ExpansionDataswornVersion, data["datasworn_version"])
-      out.ruleset = Datasworn::from_json_data(RulesetID, data["ruleset"])
-      out.type = Datasworn::from_json_data(ExpansionType, data["type"])
       out.assets = Datasworn::from_json_data(Hash[String, AssetCollection], data["assets"])
-      out.atlas = Datasworn::from_json_data(Hash[String, AtlasCollection], data["atlas"])
       out.authors = Datasworn::from_json_data(Array[AuthorInfo], data["authors"])
+      out.datasworn_version = Datasworn::from_json_data(ExpansionDataswornVersion, data["datasworn_version"])
       out.date = Datasworn::from_json_data(DateTime, data["date"])
-      out.delve_sites = Datasworn::from_json_data(Hash[String, DelveSite], data["delve_sites"])
-      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
       out.license = Datasworn::from_json_data(License, data["license"])
       out.moves = Datasworn::from_json_data(Hash[String, MoveCategory], data["moves"])
-      out.npcs = Datasworn::from_json_data(Hash[String, NpcCollection], data["npcs"])
       out.oracles = Datasworn::from_json_data(Hash[String, OracleTablesCollection], data["oracles"])
+      out.ruleset = Datasworn::from_json_data(RulesetID, data["ruleset"])
+      out.title = Datasworn::from_json_data(String, data["title"])
+      out.type = Datasworn::from_json_data(ExpansionType, data["type"])
+      out.url = Datasworn::from_json_data(WebURL, data["url"])
+      out.atlas = Datasworn::from_json_data(Hash[String, AtlasCollection], data["atlas"])
+      out.delve_sites = Datasworn::from_json_data(Hash[String, DelveSite], data["delve_sites"])
+      out.description = Datasworn::from_json_data(MarkdownString, data["description"])
+      out.npcs = Datasworn::from_json_data(Hash[String, NpcCollection], data["npcs"])
       out.rarities = Datasworn::from_json_data(Hash[String, Rarity], data["rarities"])
       out.rules = Datasworn::from_json_data(RulesExpansion, data["rules"])
       out.site_domains = Datasworn::from_json_data(Hash[String, DelveSiteDomain], data["site_domains"])
       out.site_themes = Datasworn::from_json_data(Hash[String, DelveSiteTheme], data["site_themes"])
-      out.title = Datasworn::from_json_data(String, data["title"])
       out.truths = Datasworn::from_json_data(Hash[String, Truth], data["truths"])
-      out.url = Datasworn::from_json_data(WebURL, data["url"])
       out
     end
 
     def to_json_data
       data = {}
       data["_id"] = Datasworn::to_json_data(id)
+      data["assets"] = Datasworn::to_json_data(assets)
+      data["authors"] = Datasworn::to_json_data(authors)
       data["datasworn_version"] = Datasworn::to_json_data(datasworn_version)
+      data["date"] = Datasworn::to_json_data(date)
+      data["license"] = Datasworn::to_json_data(license)
+      data["moves"] = Datasworn::to_json_data(moves)
+      data["oracles"] = Datasworn::to_json_data(oracles)
       data["ruleset"] = Datasworn::to_json_data(ruleset)
+      data["title"] = Datasworn::to_json_data(title)
       data["type"] = Datasworn::to_json_data(type)
-      data["assets"] = Datasworn::to_json_data(assets) unless assets.nil?
+      data["url"] = Datasworn::to_json_data(url)
       data["atlas"] = Datasworn::to_json_data(atlas) unless atlas.nil?
-      data["authors"] = Datasworn::to_json_data(authors) unless authors.nil?
-      data["date"] = Datasworn::to_json_data(date) unless date.nil?
       data["delve_sites"] = Datasworn::to_json_data(delve_sites) unless delve_sites.nil?
       data["description"] = Datasworn::to_json_data(description) unless description.nil?
-      data["license"] = Datasworn::to_json_data(license) unless license.nil?
-      data["moves"] = Datasworn::to_json_data(moves) unless moves.nil?
       data["npcs"] = Datasworn::to_json_data(npcs) unless npcs.nil?
-      data["oracles"] = Datasworn::to_json_data(oracles) unless oracles.nil?
       data["rarities"] = Datasworn::to_json_data(rarities) unless rarities.nil?
       data["rules"] = Datasworn::to_json_data(rules) unless rules.nil?
       data["site_domains"] = Datasworn::to_json_data(site_domains) unless site_domains.nil?
       data["site_themes"] = Datasworn::to_json_data(site_themes) unless site_themes.nil?
-      data["title"] = Datasworn::to_json_data(title) unless title.nil?
       data["truths"] = Datasworn::to_json_data(truths) unless truths.nil?
-      data["url"] = Datasworn::to_json_data(url) unless url.nil?
       data
     end
   end
@@ -8722,8 +8701,6 @@ module Datasworn
     end
   end
 
-  # The label at the head of each table column. The `roll` key refers to the
-  # roll column showing the dice range (`min` and `max` on each table row).
   class OracleCollectionTableSharedTextColumnLabels
     attr_accessor :text
 
@@ -8829,8 +8806,6 @@ module Datasworn
     end
   end
 
-  # The label at the head of each table column. The `roll` key refers to the
-  # roll column showing the dice range (`min` and `max` on each table row).
   class OracleCollectionTableSharedText2ColumnLabels
     attr_accessor :text
     attr_accessor :text2
@@ -8939,6 +8914,28 @@ module Datasworn
     end
   end
 
+  class OracleCollectionTableSharedText3ColumnLabels
+    attr_accessor :text
+    attr_accessor :text2
+    attr_accessor :text3
+
+    def self.from_json_data(data)
+      out = OracleCollectionTableSharedText3ColumnLabels.new
+      out.text = Datasworn::from_json_data(Label, data["text"])
+      out.text2 = Datasworn::from_json_data(Label, data["text2"])
+      out.text3 = Datasworn::from_json_data(Label, data["text3"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["text"] = Datasworn::to_json_data(text)
+      data["text2"] = Datasworn::to_json_data(text2)
+      data["text3"] = Datasworn::to_json_data(text3)
+      data
+    end
+  end
+
   class OracleCollectionTableSharedText3Type
     attr_accessor :value
 
@@ -8987,7 +8984,7 @@ module Datasworn
       out.oracle_type = "table_shared_text3"
       out.id = Datasworn::from_json_data(OracleCollectionID, data["_id"])
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
-      out.column_labels = Datasworn::from_json_data(Object, data["column_labels"])
+      out.column_labels = Datasworn::from_json_data(OracleCollectionTableSharedText3ColumnLabels, data["column_labels"])
       out.contents = Datasworn::from_json_data(Hash[String, OracleColumnText3], data["contents"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.type = Datasworn::from_json_data(OracleCollectionTableSharedText3Type, data["type"])
@@ -10029,8 +10026,6 @@ module Datasworn
     end
   end
 
-  # The label at the head of each table column. The `roll` key refers to the
-  # roll column showing the dice range (`min` and `max` on each table row).
   class OracleRollableTableTextColumnLabels
     attr_accessor :roll
     attr_accessor :text
@@ -10158,8 +10153,6 @@ module Datasworn
     end
   end
 
-  # The label at the head of each table column. The `roll` key refers to the
-  # roll column showing the dice range (`min` and `max` on each table row).
   class OracleRollableTableText2ColumnLabels
     attr_accessor :roll
     attr_accessor :text
@@ -10289,8 +10282,6 @@ module Datasworn
     end
   end
 
-  # The label at the head of each table column. The `roll` key refers to the
-  # roll column showing the dice range (`min` and `max` on each table row).
   class OracleRollableTableText3ColumnLabels
     attr_accessor :roll
     attr_accessor :text
@@ -10656,8 +10647,6 @@ module Datasworn
     end
   end
 
-  # The label at the head of each table column. The `roll` key refers to the
-  # roll column showing the dice range (`min` and `max` on each table row).
   class OracleRollableTableTableTextColumnLabels
     attr_accessor :roll
     attr_accessor :text
@@ -10785,8 +10774,6 @@ module Datasworn
     end
   end
 
-  # The label at the head of each table column. The `roll` key refers to the
-  # roll column showing the dice range (`min` and `max` on each table row).
   class OracleRollableTableTableText2ColumnLabels
     attr_accessor :roll
     attr_accessor :text
@@ -10916,8 +10903,6 @@ module Datasworn
     end
   end
 
-  # The label at the head of each table column. The `roll` key refers to the
-  # roll column showing the dice range (`min` and `max` on each table row).
   class OracleRollableTableTableText3ColumnLabels
     attr_accessor :roll
     attr_accessor :text
@@ -11216,8 +11201,6 @@ module Datasworn
     end
   end
 
-  # The label at the head of each table column. The `roll` key refers to the
-  # roll column showing the dice range (`min` and `max` on each table row).
   class OracleTableSharedTextColumnLabels
     attr_accessor :text
 
@@ -11287,9 +11270,6 @@ module Datasworn
     # Attribution for the original source (such as a book or website) of this
     # node, including the author and licensing information.
     attr_accessor :source
-
-    # The label at the head of each table column. The `roll` key refers to the
-    # roll column showing the dice range (`min` and `max` on each table row).
     attr_accessor :column_labels
     attr_accessor :contents
 
@@ -11380,8 +11360,6 @@ module Datasworn
     end
   end
 
-  # The label at the head of each table column. The `roll` key refers to the
-  # roll column showing the dice range (`min` and `max` on each table row).
   class OracleTableSharedText2ColumnLabels
     attr_accessor :text
     attr_accessor :text2
@@ -11454,9 +11432,6 @@ module Datasworn
     # Attribution for the original source (such as a book or website) of this
     # node, including the author and licensing information.
     attr_accessor :source
-
-    # The label at the head of each table column. The `roll` key refers to the
-    # roll column showing the dice range (`min` and `max` on each table row).
     attr_accessor :column_labels
     attr_accessor :contents
 
@@ -11547,6 +11522,28 @@ module Datasworn
     end
   end
 
+  class OracleTableSharedText3ColumnLabels
+    attr_accessor :text
+    attr_accessor :text2
+    attr_accessor :text3
+
+    def self.from_json_data(data)
+      out = OracleTableSharedText3ColumnLabels.new
+      out.text = Datasworn::from_json_data(Label, data["text"])
+      out.text2 = Datasworn::from_json_data(Label, data["text2"])
+      out.text3 = Datasworn::from_json_data(Label, data["text3"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["text"] = Datasworn::to_json_data(text)
+      data["text2"] = Datasworn::to_json_data(text2)
+      data["text3"] = Datasworn::to_json_data(text3)
+      data
+    end
+  end
+
   class OracleTableSharedText3OracleType
     attr_accessor :value
 
@@ -11600,9 +11597,6 @@ module Datasworn
     # Attribution for the original source (such as a book or website) of this
     # node, including the author and licensing information.
     attr_accessor :source
-
-    # The label at the head of each table column. The `roll` key refers to the
-    # roll column showing the dice range (`min` and `max` on each table row).
     attr_accessor :column_labels
     attr_accessor :contents
 
@@ -11650,7 +11644,7 @@ module Datasworn
       out = OracleTableSharedText3.new
       out.id = Datasworn::from_json_data(OracleCollectionID, data["_id"])
       out.source = Datasworn::from_json_data(SourceInfo, data["_source"])
-      out.column_labels = Datasworn::from_json_data(Object, data["column_labels"])
+      out.column_labels = Datasworn::from_json_data(OracleTableSharedText3ColumnLabels, data["column_labels"])
       out.contents = Datasworn::from_json_data(Hash[String, OracleColumnText3], data["contents"])
       out.name = Datasworn::from_json_data(Label, data["name"])
       out.oracle_type = Datasworn::from_json_data(OracleTableSharedText3OracleType, data["oracle_type"])
@@ -11693,8 +11687,6 @@ module Datasworn
     end
   end
 
-  # The label at the head of each table column. The `roll` key refers to the
-  # roll column showing the dice range (`min` and `max` on each table row).
   class OracleTableTextColumnLabels
     attr_accessor :roll
     attr_accessor :text
@@ -11786,9 +11778,6 @@ module Datasworn
     # Attribution for the original source (such as a book or website) of this
     # node, including the author and licensing information.
     attr_accessor :source
-
-    # The label at the head of each table column. The `roll` key refers to the
-    # roll column showing the dice range (`min` and `max` on each table row).
     attr_accessor :column_labels
 
     # The roll used to select a result on this oracle.
@@ -11875,8 +11864,6 @@ module Datasworn
     end
   end
 
-  # The label at the head of each table column. The `roll` key refers to the
-  # roll column showing the dice range (`min` and `max` on each table row).
   class OracleTableText2ColumnLabels
     attr_accessor :roll
     attr_accessor :text
@@ -11970,9 +11957,6 @@ module Datasworn
     # Attribution for the original source (such as a book or website) of this
     # node, including the author and licensing information.
     attr_accessor :source
-
-    # The label at the head of each table column. The `roll` key refers to the
-    # roll column showing the dice range (`min` and `max` on each table row).
     attr_accessor :column_labels
 
     # The roll used to select a result on this oracle.
@@ -12059,8 +12043,6 @@ module Datasworn
     end
   end
 
-  # The label at the head of each table column. The `roll` key refers to the
-  # roll column showing the dice range (`min` and `max` on each table row).
   class OracleTableText3ColumnLabels
     attr_accessor :roll
     attr_accessor :text
@@ -12157,9 +12139,6 @@ module Datasworn
     # Attribution for the original source (such as a book or website) of this
     # node, including the author and licensing information.
     attr_accessor :source
-
-    # The label at the head of each table column. The `roll` key refers to the
-    # roll column showing the dice range (`min` and `max` on each table row).
     attr_accessor :column_labels
 
     # The roll used to select a result on this oracle.

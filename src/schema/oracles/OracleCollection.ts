@@ -7,11 +7,11 @@ import {
 	OracleColumnText3
 } from './OracleRollable.js'
 import {
-	ColumnLabels,
-	OracleRollableRowText,
-	OracleRollableRowText2,
-	OracleRollableRowText3
-} from './TableRow.js'
+	SharedRollsLabels,
+	SharedText2Labels,
+	SharedText3Labels,
+	SharedTextLabels
+} from './Table.js'
 
 // TODO: color property should get its own description: "An optional thematic color for this column. For an example, see \"Basic Creature Form\" (Starforged p. 337)"
 
@@ -54,13 +54,7 @@ export type OracleTablesCollection = Static<TOracleTablesCollection>
 
 export const OracleTableSharedRolls = Generic.CollectionSubtypeNode(
 	Type.Object({
-		column_labels: ColumnLabels<typeof OracleRollableRowText>(
-			{ roll: 'Roll' },
-			{
-				description:
-					'Provides column labels for this table. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row). For all other column labels, see the `name` property of each child `OracleColumn`.'
-			}
-		)
+		column_labels: SharedRollsLabels
 	}),
 	'oracle_collection',
 	subtypeKey,
@@ -79,9 +73,7 @@ export type OracleTableSharedRolls = Static<TOracleTableSharedRolls>
 
 export const OracleTableSharedText = Generic.CollectionSubtypeNode(
 	Type.Object({
-		column_labels: ColumnLabels<typeof OracleRollableRowText>({
-			text: 'Result'
-		})
+		column_labels: SharedTextLabels
 	}),
 	'oracle_collection',
 	subtypeKey,
@@ -100,10 +92,7 @@ export type OracleTableSharedText = Static<TOracleTableSharedText>
 
 export const OracleTableSharedText2 = Generic.CollectionSubtypeNode(
 	Type.Object({
-		column_labels: ColumnLabels<typeof OracleRollableRowText2>({
-			text: 'Result',
-			text2: 'Details'
-		})
+		column_labels: SharedText2Labels
 	}),
 	'oracle_collection',
 	subtypeKey,
@@ -121,7 +110,7 @@ export type OracleTableSharedText2 = Static<TOracleTableSharedText2>
 
 export const OracleTableSharedText3 = Generic.CollectionSubtypeNode(
 	Type.Object({
-		column_labels: ColumnLabels<typeof OracleRollableRowText3>({})
+		column_labels: SharedText3Labels
 	}),
 	'oracle_collection',
 	subtypeKey,

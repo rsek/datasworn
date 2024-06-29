@@ -20,25 +20,25 @@ module Datasworn
 
   class RulesPackageExpansion < RulesPackage
     attr_accessor id: ExpansionID
+    attr_accessor assets: Hash[String, AssetCollection]
+    attr_accessor authors: Array[AuthorInfo]
     attr_accessor datasworn_version: RulesPackageExpansionDataswornVersion
+    attr_accessor date: DateTime
+    attr_accessor license: License
+    attr_accessor moves: Hash[String, MoveCategory]
+    attr_accessor oracles: Hash[String, OracleTablesCollection]
     attr_accessor ruleset: RulesetID
-    attr_accessor assets: Hash[String, AssetCollection]?
+    attr_accessor title: String
+    attr_accessor url: WebURL
     attr_accessor atlas: Hash[String, AtlasCollection]?
-    attr_accessor authors: Array[AuthorInfo]?
-    attr_accessor date: DateTime?
     attr_accessor delve_sites: Hash[String, DelveSite]?
     attr_accessor description: MarkdownString?
-    attr_accessor license: License?
-    attr_accessor moves: Hash[String, MoveCategory]?
     attr_accessor npcs: Hash[String, NpcCollection]?
-    attr_accessor oracles: Hash[String, OracleTablesCollection]?
     attr_accessor rarities: Hash[String, Rarity]?
     attr_accessor rules: RulesExpansion?
     attr_accessor site_domains: Hash[String, DelveSiteDomain]?
     attr_accessor site_themes: Hash[String, DelveSiteTheme]?
-    attr_accessor title: String?
     attr_accessor truths: Hash[String, Truth]?
-    attr_accessor url: WebURL?
 
     def self.from_json_data: (untyped) -> RulesPackageExpansion
     def to_json_data: () -> untyped
@@ -2257,26 +2257,26 @@ module Datasworn
 
   class Expansion
     attr_accessor id: ExpansionID
+    attr_accessor assets: Hash[String, AssetCollection]
+    attr_accessor authors: Array[AuthorInfo]
     attr_accessor datasworn_version: ExpansionDataswornVersion
+    attr_accessor date: DateTime
+    attr_accessor license: License
+    attr_accessor moves: Hash[String, MoveCategory]
+    attr_accessor oracles: Hash[String, OracleTablesCollection]
     attr_accessor ruleset: RulesetID
+    attr_accessor title: String
     attr_accessor type: ExpansionType
-    attr_accessor assets: Hash[String, AssetCollection]?
+    attr_accessor url: WebURL
     attr_accessor atlas: Hash[String, AtlasCollection]?
-    attr_accessor authors: Array[AuthorInfo]?
-    attr_accessor date: DateTime?
     attr_accessor delve_sites: Hash[String, DelveSite]?
     attr_accessor description: MarkdownString?
-    attr_accessor license: License?
-    attr_accessor moves: Hash[String, MoveCategory]?
     attr_accessor npcs: Hash[String, NpcCollection]?
-    attr_accessor oracles: Hash[String, OracleTablesCollection]?
     attr_accessor rarities: Hash[String, Rarity]?
     attr_accessor rules: RulesExpansion?
     attr_accessor site_domains: Hash[String, DelveSiteDomain]?
     attr_accessor site_themes: Hash[String, DelveSiteTheme]?
-    attr_accessor title: String?
     attr_accessor truths: Hash[String, Truth]?
-    attr_accessor url: WebURL?
 
     def self.from_json_data: (untyped) -> Expansion
     def to_json_data: () -> untyped
@@ -3156,6 +3156,15 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class OracleCollectionTableSharedText3ColumnLabels
+    attr_accessor text: Label
+    attr_accessor text2: Label
+    attr_accessor text3: Label
+
+    def self.from_json_data: (untyped) -> OracleCollectionTableSharedText3ColumnLabels
+    def to_json_data: () -> untyped
+  end
+
   class OracleCollectionTableSharedText3Type
     attr_accessor value: String
 
@@ -3168,7 +3177,7 @@ module Datasworn
   class OracleCollectionTableSharedText3 < OracleCollection
     attr_accessor id: OracleCollectionID
     attr_accessor source: SourceInfo
-    attr_accessor column_labels: untyped
+    attr_accessor column_labels: OracleCollectionTableSharedText3ColumnLabels
     attr_accessor contents: Hash[String, OracleColumnText3]
     attr_accessor name: Label
     attr_accessor type: OracleCollectionTableSharedText3Type
@@ -4065,6 +4074,15 @@ module Datasworn
     def to_json_data: () -> untyped
   end
 
+  class OracleTableSharedText3ColumnLabels
+    attr_accessor text: Label
+    attr_accessor text2: Label
+    attr_accessor text3: Label
+
+    def self.from_json_data: (untyped) -> OracleTableSharedText3ColumnLabels
+    def to_json_data: () -> untyped
+  end
+
   class OracleTableSharedText3OracleType
     attr_accessor value: String
 
@@ -4086,7 +4104,7 @@ module Datasworn
   class OracleTableSharedText3
     attr_accessor id: OracleCollectionID
     attr_accessor source: SourceInfo
-    attr_accessor column_labels: untyped
+    attr_accessor column_labels: OracleTableSharedText3ColumnLabels
     attr_accessor contents: Hash[String, OracleColumnText3]
     attr_accessor name: Label
     attr_accessor oracle_type: OracleTableSharedText3OracleType

@@ -25,3 +25,6 @@ export const Inherits = Symbol('Inherits')
  * Sets the namespace/module name for use in code generation.
  */
 export const Namespace = Symbol('Namespace')
+
+/** Marks a property as being inherited from another schema. */
+export const InheritedFrom = Symbol('InheritedFrom')

@@ -21,7 +21,7 @@ public class OracleCollectionTableSharedText3 extends OracleCollection {
     private SourceInfo source;
 
     @JsonProperty("column_labels")
-    private Object columnLabels;
+    private OracleCollectionTableSharedText3ColumnLabels columnLabels;
 
     @JsonProperty("contents")
     private Map<String, OracleColumnText3> contents;
@@ -115,19 +115,15 @@ public class OracleCollectionTableSharedText3 extends OracleCollection {
 
     /**
      * Getter for columnLabels.<p>
-     * The label at the head of each table column. The `roll` key refers to the
-     * roll column showing the dice range (`min` and `max` on each table row).
      */
-    public Object getColumnLabels() {
+    public OracleCollectionTableSharedText3ColumnLabels getColumnLabels() {
         return columnLabels;
     }
 
     /**
      * Setter for columnLabels.<p>
-     * The label at the head of each table column. The `roll` key refers to the
-     * roll column showing the dice range (`min` and `max` on each table row).
      */
-    public void setColumnLabels(Object columnLabels) {
+    public void setColumnLabels(OracleCollectionTableSharedText3ColumnLabels columnLabels) {
         this.columnLabels = columnLabels;
     }
 

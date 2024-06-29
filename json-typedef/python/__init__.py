@@ -49,32 +49,54 @@ class RulesPackageExpansion(RulesPackage):
     """
 
     id: 'ExpansionID'
+    assets: 'Dict[str, AssetCollection]'
+    """
+    A dictionary object containing asset collections, which contain assets.
+    """
+
+    authors: 'List[AuthorInfo]'
+    """
+    Lists authors credited by the source material.
+    """
+
     datasworn_version: 'RulesPackageExpansionDataswornVersion'
     """
     The version of the Datasworn format used by this data.
     """
 
-    ruleset: 'RulesetID'
-    assets: 'Optional[Dict[str, AssetCollection]]'
+    date: 'datetime'
     """
-    A dictionary object containing asset collections, which contain assets.
+    The date of the source documents's last update, formatted YYYY-MM-DD.
+    Required because it's used to determine whether the data needs updating.
+    """
+
+    license: 'License'
+    moves: 'Dict[str, MoveCategory]'
+    """
+    A dictionary object containing move categories, which contain moves.
+    """
+
+    oracles: 'Dict[str, OracleTablesCollection]'
+    """
+    A dictionary object containing oracle collections, which may contain oracle
+    tables and/or oracle collections.
+    """
+
+    ruleset: 'RulesetID'
+    title: 'str'
+    """
+    The title of the source document.
+    """
+
+    url: 'WebURL'
+    """
+    A URL where the source document is available.
     """
 
     atlas: 'Optional[Dict[str, AtlasCollection]]'
     """
     A dictionary object containing atlas collections, which contain atlas
     entries.
-    """
-
-    authors: 'Optional[List[AuthorInfo]]'
-    """
-    Lists authors credited by the source material.
-    """
-
-    date: 'Optional[datetime]'
-    """
-    The date of the source documents's last update, formatted YYYY-MM-DD.
-    Required because it's used to determine whether the data needs updating.
     """
 
     delve_sites: 'Optional[Dict[str, DelveSite]]'
@@ -84,21 +106,9 @@ class RulesPackageExpansion(RulesPackage):
     """
 
     description: 'Optional[MarkdownString]'
-    license: 'Optional[License]'
-    moves: 'Optional[Dict[str, MoveCategory]]'
-    """
-    A dictionary object containing move categories, which contain moves.
-    """
-
     npcs: 'Optional[Dict[str, NpcCollection]]'
     """
     A dictionary object containing NPC collections, which contain NPCs.
-    """
-
-    oracles: 'Optional[Dict[str, OracleTablesCollection]]'
-    """
-    A dictionary object containing oracle collections, which may contain oracle
-    tables and/or oracle collections.
     """
 
     rarities: 'Optional[Dict[str, Rarity]]'
@@ -118,19 +128,9 @@ class RulesPackageExpansion(RulesPackage):
     A dictionary object containing delve site themes.
     """
 
-    title: 'Optional[str]'
-    """
-    The title of the source document.
-    """
-
     truths: 'Optional[Dict[str, Truth]]'
     """
     A dictionary object of truth categories.
-    """
-
-    url: 'Optional[WebURL]'
-    """
-    A URL where the source document is available.
     """
 
 
@@ -139,52 +139,48 @@ class RulesPackageExpansion(RulesPackage):
         return cls(
             "expansion",
             _from_json_data(ExpansionID, data.get("_id")),
+            _from_json_data(Dict[str, AssetCollection], data.get("assets")),
+            _from_json_data(List[AuthorInfo], data.get("authors")),
             _from_json_data(RulesPackageExpansionDataswornVersion, data.get("datasworn_version")),
+            _from_json_data(datetime, data.get("date")),
+            _from_json_data(License, data.get("license")),
+            _from_json_data(Dict[str, MoveCategory], data.get("moves")),
+            _from_json_data(Dict[str, OracleTablesCollection], data.get("oracles")),
             _from_json_data(RulesetID, data.get("ruleset")),
-            _from_json_data(Optional[Dict[str, AssetCollection]], data.get("assets")),
+            _from_json_data(str, data.get("title")),
+            _from_json_data(WebURL, data.get("url")),
             _from_json_data(Optional[Dict[str, AtlasCollection]], data.get("atlas")),
-            _from_json_data(Optional[List[AuthorInfo]], data.get("authors")),
-            _from_json_data(Optional[datetime], data.get("date")),
             _from_json_data(Optional[Dict[str, DelveSite]], data.get("delve_sites")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
-            _from_json_data(Optional[License], data.get("license")),
-            _from_json_data(Optional[Dict[str, MoveCategory]], data.get("moves")),
             _from_json_data(Optional[Dict[str, NpcCollection]], data.get("npcs")),
-            _from_json_data(Optional[Dict[str, OracleTablesCollection]], data.get("oracles")),
             _from_json_data(Optional[Dict[str, Rarity]], data.get("rarities")),
             _from_json_data(Optional[RulesExpansion], data.get("rules")),
             _from_json_data(Optional[Dict[str, DelveSiteDomain]], data.get("site_domains")),
             _from_json_data(Optional[Dict[str, DelveSiteTheme]], data.get("site_themes")),
-            _from_json_data(Optional[str], data.get("title")),
             _from_json_data(Optional[Dict[str, Truth]], data.get("truths")),
-            _from_json_data(Optional[WebURL], data.get("url")),
         )
 
     def to_json_data(self) -> Any:
         data = { "type": "expansion" }
         data["_id"] = _to_json_data(self.id)
+        data["assets"] = _to_json_data(self.assets)
+        data["authors"] = _to_json_data(self.authors)
         data["datasworn_version"] = _to_json_data(self.datasworn_version)
+        data["date"] = _to_json_data(self.date)
+        data["license"] = _to_json_data(self.license)
+        data["moves"] = _to_json_data(self.moves)
+        data["oracles"] = _to_json_data(self.oracles)
         data["ruleset"] = _to_json_data(self.ruleset)
-        if self.assets is not None:
-             data["assets"] = _to_json_data(self.assets)
+        data["title"] = _to_json_data(self.title)
+        data["url"] = _to_json_data(self.url)
         if self.atlas is not None:
              data["atlas"] = _to_json_data(self.atlas)
-        if self.authors is not None:
-             data["authors"] = _to_json_data(self.authors)
-        if self.date is not None:
-             data["date"] = _to_json_data(self.date)
         if self.delve_sites is not None:
              data["delve_sites"] = _to_json_data(self.delve_sites)
         if self.description is not None:
              data["description"] = _to_json_data(self.description)
-        if self.license is not None:
-             data["license"] = _to_json_data(self.license)
-        if self.moves is not None:
-             data["moves"] = _to_json_data(self.moves)
         if self.npcs is not None:
              data["npcs"] = _to_json_data(self.npcs)
-        if self.oracles is not None:
-             data["oracles"] = _to_json_data(self.oracles)
         if self.rarities is not None:
              data["rarities"] = _to_json_data(self.rarities)
         if self.rules is not None:
@@ -193,12 +189,8 @@ class RulesPackageExpansion(RulesPackage):
              data["site_domains"] = _to_json_data(self.site_domains)
         if self.site_themes is not None:
              data["site_themes"] = _to_json_data(self.site_themes)
-        if self.title is not None:
-             data["title"] = _to_json_data(self.title)
         if self.truths is not None:
              data["truths"] = _to_json_data(self.truths)
-        if self.url is not None:
-             data["url"] = _to_json_data(self.url)
         return data
 
 class RulesPackageRulesetDataswornVersion(Enum):
@@ -5862,11 +5854,6 @@ class EmbeddedOracleRollableColumnText3(EmbeddedOracleRollable):
 
 @dataclass
 class EmbeddedOracleRollableTableTextColumnLabels:
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     roll: 'Label'
     text: 'Label'
 
@@ -5914,11 +5901,6 @@ class EmbeddedOracleRollableTableTextRecommendedRolls:
 class EmbeddedOracleRollableTableText(EmbeddedOracleRollable):
     id: 'EmbeddedOracleRollableID'
     column_labels: 'EmbeddedOracleRollableTableTextColumnLabels'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     dice: 'DiceExpression'
     """
     The roll used to select a result on this oracle.
@@ -6019,11 +6001,6 @@ class EmbeddedOracleRollableTableText(EmbeddedOracleRollable):
 
 @dataclass
 class EmbeddedOracleRollableTableText2ColumnLabels:
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     roll: 'Label'
     text: 'Label'
     text2: 'Label'
@@ -6074,11 +6051,6 @@ class EmbeddedOracleRollableTableText2RecommendedRolls:
 class EmbeddedOracleRollableTableText2(EmbeddedOracleRollable):
     id: 'EmbeddedOracleRollableID'
     column_labels: 'EmbeddedOracleRollableTableText2ColumnLabels'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     dice: 'DiceExpression'
     """
     The roll used to select a result on this oracle.
@@ -6179,11 +6151,6 @@ class EmbeddedOracleRollableTableText2(EmbeddedOracleRollable):
 
 @dataclass
 class EmbeddedOracleRollableTableText3ColumnLabels:
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     roll: 'Label'
     text: 'Label'
     text2: 'Label'
@@ -6237,11 +6204,6 @@ class EmbeddedOracleRollableTableText3RecommendedRolls:
 class EmbeddedOracleRollableTableText3(EmbeddedOracleRollable):
     id: 'EmbeddedOracleRollableID'
     column_labels: 'EmbeddedOracleRollableTableText3ColumnLabels'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     dice: 'DiceExpression'
     """
     The roll used to select a result on this oracle.
@@ -6364,11 +6326,6 @@ class EmbeddedOracleRollableIDWildcard:
 
 @dataclass
 class EmbeddedOracleTableTextColumnLabels:
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     roll: 'Label'
     text: 'Label'
 
@@ -6425,11 +6382,6 @@ class EmbeddedOracleTableTextRecommendedRolls:
 class EmbeddedOracleTableText:
     id: 'EmbeddedOracleRollableID'
     column_labels: 'EmbeddedOracleTableTextColumnLabels'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     dice: 'DiceExpression'
     """
     The roll used to select a result on this oracle.
@@ -6532,11 +6484,6 @@ class EmbeddedOracleTableText:
 
 @dataclass
 class EmbeddedOracleTableText2ColumnLabels:
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     roll: 'Label'
     text: 'Label'
     text2: 'Label'
@@ -6596,11 +6543,6 @@ class EmbeddedOracleTableText2RecommendedRolls:
 class EmbeddedOracleTableText2:
     id: 'EmbeddedOracleRollableID'
     column_labels: 'EmbeddedOracleTableText2ColumnLabels'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     dice: 'DiceExpression'
     """
     The roll used to select a result on this oracle.
@@ -6703,11 +6645,6 @@ class EmbeddedOracleTableText2:
 
 @dataclass
 class EmbeddedOracleTableText3ColumnLabels:
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     roll: 'Label'
     text: 'Label'
     text2: 'Label'
@@ -6770,11 +6707,6 @@ class EmbeddedOracleTableText3RecommendedRolls:
 class EmbeddedOracleTableText3:
     id: 'EmbeddedOracleRollableID'
     column_labels: 'EmbeddedOracleTableText3ColumnLabels'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     dice: 'DiceExpression'
     """
     The roll used to select a result on this oracle.
@@ -7163,33 +7095,55 @@ class Expansion:
     """
 
     id: 'ExpansionID'
+    assets: 'Dict[str, AssetCollection]'
+    """
+    A dictionary object containing asset collections, which contain assets.
+    """
+
+    authors: 'List[AuthorInfo]'
+    """
+    Lists authors credited by the source material.
+    """
+
     datasworn_version: 'ExpansionDataswornVersion'
     """
     The version of the Datasworn format used by this data.
     """
 
-    ruleset: 'RulesetID'
-    type: 'ExpansionType'
-    assets: 'Optional[Dict[str, AssetCollection]]'
+    date: 'datetime'
     """
-    A dictionary object containing asset collections, which contain assets.
+    The date of the source documents's last update, formatted YYYY-MM-DD.
+    Required because it's used to determine whether the data needs updating.
+    """
+
+    license: 'License'
+    moves: 'Dict[str, MoveCategory]'
+    """
+    A dictionary object containing move categories, which contain moves.
+    """
+
+    oracles: 'Dict[str, OracleTablesCollection]'
+    """
+    A dictionary object containing oracle collections, which may contain oracle
+    tables and/or oracle collections.
+    """
+
+    ruleset: 'RulesetID'
+    title: 'str'
+    """
+    The title of the source document.
+    """
+
+    type: 'ExpansionType'
+    url: 'WebURL'
+    """
+    A URL where the source document is available.
     """
 
     atlas: 'Optional[Dict[str, AtlasCollection]]'
     """
     A dictionary object containing atlas collections, which contain atlas
     entries.
-    """
-
-    authors: 'Optional[List[AuthorInfo]]'
-    """
-    Lists authors credited by the source material.
-    """
-
-    date: 'Optional[datetime]'
-    """
-    The date of the source documents's last update, formatted YYYY-MM-DD.
-    Required because it's used to determine whether the data needs updating.
     """
 
     delve_sites: 'Optional[Dict[str, DelveSite]]'
@@ -7199,21 +7153,9 @@ class Expansion:
     """
 
     description: 'Optional[MarkdownString]'
-    license: 'Optional[License]'
-    moves: 'Optional[Dict[str, MoveCategory]]'
-    """
-    A dictionary object containing move categories, which contain moves.
-    """
-
     npcs: 'Optional[Dict[str, NpcCollection]]'
     """
     A dictionary object containing NPC collections, which contain NPCs.
-    """
-
-    oracles: 'Optional[Dict[str, OracleTablesCollection]]'
-    """
-    A dictionary object containing oracle collections, which may contain oracle
-    tables and/or oracle collections.
     """
 
     rarities: 'Optional[Dict[str, Rarity]]'
@@ -7233,19 +7175,9 @@ class Expansion:
     A dictionary object containing delve site themes.
     """
 
-    title: 'Optional[str]'
-    """
-    The title of the source document.
-    """
-
     truths: 'Optional[Dict[str, Truth]]'
     """
     A dictionary object of truth categories.
-    """
-
-    url: 'Optional[WebURL]'
-    """
-    A URL where the source document is available.
     """
 
 
@@ -7253,54 +7185,50 @@ class Expansion:
     def from_json_data(cls, data: Any) -> 'Expansion':
         return cls(
             _from_json_data(ExpansionID, data.get("_id")),
+            _from_json_data(Dict[str, AssetCollection], data.get("assets")),
+            _from_json_data(List[AuthorInfo], data.get("authors")),
             _from_json_data(ExpansionDataswornVersion, data.get("datasworn_version")),
+            _from_json_data(datetime, data.get("date")),
+            _from_json_data(License, data.get("license")),
+            _from_json_data(Dict[str, MoveCategory], data.get("moves")),
+            _from_json_data(Dict[str, OracleTablesCollection], data.get("oracles")),
             _from_json_data(RulesetID, data.get("ruleset")),
+            _from_json_data(str, data.get("title")),
             _from_json_data(ExpansionType, data.get("type")),
-            _from_json_data(Optional[Dict[str, AssetCollection]], data.get("assets")),
+            _from_json_data(WebURL, data.get("url")),
             _from_json_data(Optional[Dict[str, AtlasCollection]], data.get("atlas")),
-            _from_json_data(Optional[List[AuthorInfo]], data.get("authors")),
-            _from_json_data(Optional[datetime], data.get("date")),
             _from_json_data(Optional[Dict[str, DelveSite]], data.get("delve_sites")),
             _from_json_data(Optional[MarkdownString], data.get("description")),
-            _from_json_data(Optional[License], data.get("license")),
-            _from_json_data(Optional[Dict[str, MoveCategory]], data.get("moves")),
             _from_json_data(Optional[Dict[str, NpcCollection]], data.get("npcs")),
-            _from_json_data(Optional[Dict[str, OracleTablesCollection]], data.get("oracles")),
             _from_json_data(Optional[Dict[str, Rarity]], data.get("rarities")),
             _from_json_data(Optional[RulesExpansion], data.get("rules")),
             _from_json_data(Optional[Dict[str, DelveSiteDomain]], data.get("site_domains")),
             _from_json_data(Optional[Dict[str, DelveSiteTheme]], data.get("site_themes")),
-            _from_json_data(Optional[str], data.get("title")),
             _from_json_data(Optional[Dict[str, Truth]], data.get("truths")),
-            _from_json_data(Optional[WebURL], data.get("url")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["_id"] = _to_json_data(self.id)
+        data["assets"] = _to_json_data(self.assets)
+        data["authors"] = _to_json_data(self.authors)
         data["datasworn_version"] = _to_json_data(self.datasworn_version)
+        data["date"] = _to_json_data(self.date)
+        data["license"] = _to_json_data(self.license)
+        data["moves"] = _to_json_data(self.moves)
+        data["oracles"] = _to_json_data(self.oracles)
         data["ruleset"] = _to_json_data(self.ruleset)
+        data["title"] = _to_json_data(self.title)
         data["type"] = _to_json_data(self.type)
-        if self.assets is not None:
-             data["assets"] = _to_json_data(self.assets)
+        data["url"] = _to_json_data(self.url)
         if self.atlas is not None:
              data["atlas"] = _to_json_data(self.atlas)
-        if self.authors is not None:
-             data["authors"] = _to_json_data(self.authors)
-        if self.date is not None:
-             data["date"] = _to_json_data(self.date)
         if self.delve_sites is not None:
              data["delve_sites"] = _to_json_data(self.delve_sites)
         if self.description is not None:
              data["description"] = _to_json_data(self.description)
-        if self.license is not None:
-             data["license"] = _to_json_data(self.license)
-        if self.moves is not None:
-             data["moves"] = _to_json_data(self.moves)
         if self.npcs is not None:
              data["npcs"] = _to_json_data(self.npcs)
-        if self.oracles is not None:
-             data["oracles"] = _to_json_data(self.oracles)
         if self.rarities is not None:
              data["rarities"] = _to_json_data(self.rarities)
         if self.rules is not None:
@@ -7309,12 +7237,8 @@ class Expansion:
              data["site_domains"] = _to_json_data(self.site_domains)
         if self.site_themes is not None:
              data["site_themes"] = _to_json_data(self.site_themes)
-        if self.title is not None:
-             data["title"] = _to_json_data(self.title)
         if self.truths is not None:
              data["truths"] = _to_json_data(self.truths)
-        if self.url is not None:
-             data["url"] = _to_json_data(self.url)
         return data
 
 @dataclass
@@ -9996,11 +9920,6 @@ class OracleCollectionTableSharedRolls(OracleCollection):
 
 @dataclass
 class OracleCollectionTableSharedTextColumnLabels:
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     text: 'Label'
 
     @classmethod
@@ -10042,11 +9961,6 @@ class OracleCollectionTableSharedText(OracleCollection):
     """
 
     column_labels: 'OracleCollectionTableSharedTextColumnLabels'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     contents: 'Dict[str, OracleColumnText]'
     name: 'Label'
     """
@@ -10162,11 +10076,6 @@ class OracleCollectionTableSharedText(OracleCollection):
 
 @dataclass
 class OracleCollectionTableSharedText2ColumnLabels:
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     text: 'Label'
     text2: 'Label'
 
@@ -10211,11 +10120,6 @@ class OracleCollectionTableSharedText2(OracleCollection):
     """
 
     column_labels: 'OracleCollectionTableSharedText2ColumnLabels'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     contents: 'Dict[str, OracleColumnText2]'
     name: 'Label'
     """
@@ -10329,6 +10233,27 @@ class OracleCollectionTableSharedText2(OracleCollection):
              data["tags"] = _to_json_data(self.tags)
         return data
 
+@dataclass
+class OracleCollectionTableSharedText3ColumnLabels:
+    text: 'Label'
+    text2: 'Label'
+    text3: 'Label'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleCollectionTableSharedText3ColumnLabels':
+        return cls(
+            _from_json_data(Label, data.get("text")),
+            _from_json_data(Label, data.get("text2")),
+            _from_json_data(Label, data.get("text3")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["text"] = _to_json_data(self.text)
+        data["text2"] = _to_json_data(self.text2)
+        data["text3"] = _to_json_data(self.text3)
+        return data
+
 class OracleCollectionTableSharedText3Type(Enum):
     ORACLE_COLLECTION = "oracle_collection"
     @classmethod
@@ -10356,12 +10281,7 @@ class OracleCollectionTableSharedText3(OracleCollection):
     node, including the author and licensing information.
     """
 
-    column_labels: 'Any'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
+    column_labels: 'OracleCollectionTableSharedText3ColumnLabels'
     contents: 'Dict[str, OracleColumnText3]'
     name: 'Label'
     """
@@ -10426,7 +10346,7 @@ class OracleCollectionTableSharedText3(OracleCollection):
             "table_shared_text3",
             _from_json_data(OracleCollectionID, data.get("_id")),
             _from_json_data(SourceInfo, data.get("_source")),
-            _from_json_data(Any, data.get("column_labels")),
+            _from_json_data(OracleCollectionTableSharedText3ColumnLabels, data.get("column_labels")),
             _from_json_data(Dict[str, OracleColumnText3], data.get("contents")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(OracleCollectionTableSharedText3Type, data.get("type")),
@@ -11682,11 +11602,6 @@ class OracleRollableColumnText3(OracleRollable):
 
 @dataclass
 class OracleRollableTableTextColumnLabels:
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     roll: 'Label'
     text: 'Label'
 
@@ -11749,11 +11664,6 @@ class OracleRollableTableText(OracleRollable):
     """
 
     column_labels: 'OracleRollableTableTextColumnLabels'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     dice: 'DiceExpression'
     """
     The roll used to select a result on this oracle.
@@ -11865,11 +11775,6 @@ class OracleRollableTableText(OracleRollable):
 
 @dataclass
 class OracleRollableTableText2ColumnLabels:
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     roll: 'Label'
     text: 'Label'
     text2: 'Label'
@@ -11934,11 +11839,6 @@ class OracleRollableTableText2(OracleRollable):
     """
 
     column_labels: 'OracleRollableTableText2ColumnLabels'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     dice: 'DiceExpression'
     """
     The roll used to select a result on this oracle.
@@ -12050,11 +11950,6 @@ class OracleRollableTableText2(OracleRollable):
 
 @dataclass
 class OracleRollableTableText3ColumnLabels:
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     roll: 'Label'
     text: 'Label'
     text2: 'Label'
@@ -12122,11 +12017,6 @@ class OracleRollableTableText3(OracleRollable):
     """
 
     column_labels: 'OracleRollableTableText3ColumnLabels'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     dice: 'DiceExpression'
     """
     The roll used to select a result on this oracle.
@@ -12521,11 +12411,6 @@ class OracleRollableTable:
 
 @dataclass
 class OracleRollableTableTableTextColumnLabels:
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     roll: 'Label'
     text: 'Label'
 
@@ -12588,11 +12473,6 @@ class OracleRollableTableTableText(OracleRollableTable):
     """
 
     column_labels: 'OracleRollableTableTableTextColumnLabels'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     dice: 'DiceExpression'
     """
     The roll used to select a result on this oracle.
@@ -12704,11 +12584,6 @@ class OracleRollableTableTableText(OracleRollableTable):
 
 @dataclass
 class OracleRollableTableTableText2ColumnLabels:
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     roll: 'Label'
     text: 'Label'
     text2: 'Label'
@@ -12773,11 +12648,6 @@ class OracleRollableTableTableText2(OracleRollableTable):
     """
 
     column_labels: 'OracleRollableTableTableText2ColumnLabels'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     dice: 'DiceExpression'
     """
     The roll used to select a result on this oracle.
@@ -12889,11 +12759,6 @@ class OracleRollableTableTableText2(OracleRollableTable):
 
 @dataclass
 class OracleRollableTableTableText3ColumnLabels:
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     roll: 'Label'
     text: 'Label'
     text2: 'Label'
@@ -12961,11 +12826,6 @@ class OracleRollableTableTableText3(OracleRollableTable):
     """
 
     column_labels: 'OracleRollableTableTableText3ColumnLabels'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     dice: 'DiceExpression'
     """
     The roll used to select a result on this oracle.
@@ -13256,11 +13116,6 @@ class OracleTableSharedRolls:
 
 @dataclass
 class OracleTableSharedTextColumnLabels:
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     text: 'Label'
 
     @classmethod
@@ -13311,11 +13166,6 @@ class OracleTableSharedText:
     """
 
     column_labels: 'OracleTableSharedTextColumnLabels'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     contents: 'Dict[str, OracleColumnText]'
     name: 'Label'
     """
@@ -13433,11 +13283,6 @@ class OracleTableSharedText:
 
 @dataclass
 class OracleTableSharedText2ColumnLabels:
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     text: 'Label'
     text2: 'Label'
 
@@ -13491,11 +13336,6 @@ class OracleTableSharedText2:
     """
 
     column_labels: 'OracleTableSharedText2ColumnLabels'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     contents: 'Dict[str, OracleColumnText2]'
     name: 'Label'
     """
@@ -13611,6 +13451,27 @@ class OracleTableSharedText2:
              data["tags"] = _to_json_data(self.tags)
         return data
 
+@dataclass
+class OracleTableSharedText3ColumnLabels:
+    text: 'Label'
+    text2: 'Label'
+    text3: 'Label'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'OracleTableSharedText3ColumnLabels':
+        return cls(
+            _from_json_data(Label, data.get("text")),
+            _from_json_data(Label, data.get("text2")),
+            _from_json_data(Label, data.get("text3")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["text"] = _to_json_data(self.text)
+        data["text2"] = _to_json_data(self.text2)
+        data["text3"] = _to_json_data(self.text3)
+        return data
+
 class OracleTableSharedText3OracleType(Enum):
     TABLE_SHARED_TEXT3 = "table_shared_text3"
     @classmethod
@@ -13647,12 +13508,7 @@ class OracleTableSharedText3:
     node, including the author and licensing information.
     """
 
-    column_labels: 'Any'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
+    column_labels: 'OracleTableSharedText3ColumnLabels'
     contents: 'Dict[str, OracleColumnText3]'
     name: 'Label'
     """
@@ -13717,7 +13573,7 @@ class OracleTableSharedText3:
         return cls(
             _from_json_data(OracleCollectionID, data.get("_id")),
             _from_json_data(SourceInfo, data.get("_source")),
-            _from_json_data(Any, data.get("column_labels")),
+            _from_json_data(OracleTableSharedText3ColumnLabels, data.get("column_labels")),
             _from_json_data(Dict[str, OracleColumnText3], data.get("contents")),
             _from_json_data(Label, data.get("name")),
             _from_json_data(OracleTableSharedText3OracleType, data.get("oracle_type")),
@@ -13770,11 +13626,6 @@ class OracleTableSharedText3:
 
 @dataclass
 class OracleTableTextColumnLabels:
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     roll: 'Label'
     text: 'Label'
 
@@ -13846,11 +13697,6 @@ class OracleTableText:
     """
 
     column_labels: 'OracleTableTextColumnLabels'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     dice: 'DiceExpression'
     """
     The roll used to select a result on this oracle.
@@ -13964,11 +13810,6 @@ class OracleTableText:
 
 @dataclass
 class OracleTableText2ColumnLabels:
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     roll: 'Label'
     text: 'Label'
     text2: 'Label'
@@ -14042,11 +13883,6 @@ class OracleTableText2:
     """
 
     column_labels: 'OracleTableText2ColumnLabels'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     dice: 'DiceExpression'
     """
     The roll used to select a result on this oracle.
@@ -14160,11 +13996,6 @@ class OracleTableText2:
 
 @dataclass
 class OracleTableText3ColumnLabels:
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     roll: 'Label'
     text: 'Label'
     text2: 'Label'
@@ -14241,11 +14072,6 @@ class OracleTableText3:
     """
 
     column_labels: 'OracleTableText3ColumnLabels'
-    """
-    The label at the head of each table column. The `roll` key refers to the
-    roll column showing the dice range (`min` and `max` on each table row).
-    """
-
     dice: 'DiceExpression'
     """
     The roll used to select a result on this oracle.

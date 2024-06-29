@@ -65,24 +65,39 @@ const (
 type RulesPackageExpansion struct {
 	ID ExpansionID `json:"_id"`
 
+	// A dictionary object containing asset collections, which contain assets.
+	Assets map[string]AssetCollection `json:"assets"`
+
+	// Lists authors credited by the source material.
+	Authors []AuthorInfo `json:"authors"`
+
 	// The version of the Datasworn format used by this data.
 	DataswornVersion RulesPackageExpansionDataswornVersion `json:"datasworn_version"`
 
+	// The date of the source documents's last update, formatted YYYY-MM-DD.
+	// Required because it's used to determine whether the data needs updating.
+	Date time.Time `json:"date"`
+
+	License License `json:"license"`
+
+	// A dictionary object containing move categories, which contain moves.
+	Moves map[string]MoveCategory `json:"moves"`
+
+	// A dictionary object containing oracle collections, which may contain oracle
+	// tables and/or oracle collections.
+	Oracles map[string]OracleTablesCollection `json:"oracles"`
+
 	Ruleset RulesetID `json:"ruleset"`
 
-	// A dictionary object containing asset collections, which contain assets.
-	Assets map[string]AssetCollection `json:"assets,omitempty"`
+	// The title of the source document.
+	Title string `json:"title"`
+
+	// A URL where the source document is available.
+	URL WebURL `json:"url"`
 
 	// A dictionary object containing atlas collections, which contain atlas
 	// entries.
 	Atlas map[string]AtlasCollection `json:"atlas,omitempty"`
-
-	// Lists authors credited by the source material.
-	Authors []AuthorInfo `json:"authors,omitempty"`
-
-	// The date of the source documents's last update, formatted YYYY-MM-DD.
-	// Required because it's used to determine whether the data needs updating.
-	Date *time.Time `json:"date,omitempty"`
 
 	// A dictionary object of delve sites, like the premade delve sites presented
 	// in Ironsworn: Delve
@@ -90,17 +105,8 @@ type RulesPackageExpansion struct {
 
 	Description *MarkdownString `json:"description,omitempty"`
 
-	License *License `json:"license,omitempty"`
-
-	// A dictionary object containing move categories, which contain moves.
-	Moves map[string]MoveCategory `json:"moves,omitempty"`
-
 	// A dictionary object containing NPC collections, which contain NPCs.
 	Npcs map[string]NpcCollection `json:"npcs,omitempty"`
-
-	// A dictionary object containing oracle collections, which may contain oracle
-	// tables and/or oracle collections.
-	Oracles map[string]OracleTablesCollection `json:"oracles,omitempty"`
 
 	// A dictionary object containing rarities, like those presented in Ironsworn:
 	// Delve.
@@ -114,14 +120,8 @@ type RulesPackageExpansion struct {
 	// A dictionary object containing delve site themes.
 	SiteThemes map[string]DelveSiteTheme `json:"site_themes,omitempty"`
 
-	// The title of the source document.
-	Title *string `json:"title,omitempty"`
-
 	// A dictionary object of truth categories.
 	Truths map[string]Truth `json:"truths,omitempty"`
-
-	// A URL where the source document is available.
-	URL *WebURL `json:"url,omitempty"`
 }
 
 // The version of the Datasworn format used by this data.
@@ -2801,8 +2801,6 @@ type EmbeddedOracleRollableColumnText3 struct {
 	Tags *Tags `json:"tags,omitempty"`
 }
 
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
 type EmbeddedOracleRollableTableTextColumnLabels struct {
 	Roll Label `json:"roll"`
 
@@ -2824,8 +2822,6 @@ type EmbeddedOracleRollableTableTextRecommendedRolls struct {
 type EmbeddedOracleRollableTableText struct {
 	ID EmbeddedOracleRollableID `json:"_id"`
 
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels EmbeddedOracleRollableTableTextColumnLabels `json:"column_labels"`
 
 	// The roll used to select a result on this oracle.
@@ -2866,8 +2862,6 @@ type EmbeddedOracleRollableTableText struct {
 	Tags *Tags `json:"tags,omitempty"`
 }
 
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
 type EmbeddedOracleRollableTableText2ColumnLabels struct {
 	Roll Label `json:"roll"`
 
@@ -2891,8 +2885,6 @@ type EmbeddedOracleRollableTableText2RecommendedRolls struct {
 type EmbeddedOracleRollableTableText2 struct {
 	ID EmbeddedOracleRollableID `json:"_id"`
 
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels EmbeddedOracleRollableTableText2ColumnLabels `json:"column_labels"`
 
 	// The roll used to select a result on this oracle.
@@ -2933,8 +2925,6 @@ type EmbeddedOracleRollableTableText2 struct {
 	Tags *Tags `json:"tags,omitempty"`
 }
 
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
 type EmbeddedOracleRollableTableText3ColumnLabels struct {
 	Roll Label `json:"roll"`
 
@@ -2960,8 +2950,6 @@ type EmbeddedOracleRollableTableText3RecommendedRolls struct {
 type EmbeddedOracleRollableTableText3 struct {
 	ID EmbeddedOracleRollableID `json:"_id"`
 
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels EmbeddedOracleRollableTableText3ColumnLabels `json:"column_labels"`
 
 	// The roll used to select a result on this oracle.
@@ -3006,8 +2994,6 @@ type EmbeddedOracleRollableID = string
 
 type EmbeddedOracleRollableIDWildcard = string
 
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
 type EmbeddedOracleTableTextColumnLabels struct {
 	Roll Label `json:"roll"`
 
@@ -3035,8 +3021,6 @@ type EmbeddedOracleTableTextRecommendedRolls struct {
 type EmbeddedOracleTableText struct {
 	ID EmbeddedOracleRollableID `json:"_id"`
 
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels EmbeddedOracleTableTextColumnLabels `json:"column_labels"`
 
 	// The roll used to select a result on this oracle.
@@ -3079,8 +3063,6 @@ type EmbeddedOracleTableText struct {
 	Tags *Tags `json:"tags,omitempty"`
 }
 
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
 type EmbeddedOracleTableText2ColumnLabels struct {
 	Roll Label `json:"roll"`
 
@@ -3110,8 +3092,6 @@ type EmbeddedOracleTableText2RecommendedRolls struct {
 type EmbeddedOracleTableText2 struct {
 	ID EmbeddedOracleRollableID `json:"_id"`
 
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels EmbeddedOracleTableText2ColumnLabels `json:"column_labels"`
 
 	// The roll used to select a result on this oracle.
@@ -3154,8 +3134,6 @@ type EmbeddedOracleTableText2 struct {
 	Tags *Tags `json:"tags,omitempty"`
 }
 
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
 type EmbeddedOracleTableText3ColumnLabels struct {
 	Roll Label `json:"roll"`
 
@@ -3187,8 +3165,6 @@ type EmbeddedOracleTableText3RecommendedRolls struct {
 type EmbeddedOracleTableText3 struct {
 	ID EmbeddedOracleRollableID `json:"_id"`
 
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels EmbeddedOracleTableText3ColumnLabels `json:"column_labels"`
 
 	// The roll used to select a result on this oracle.
@@ -3365,26 +3341,41 @@ const (
 type Expansion struct {
 	ID ExpansionID `json:"_id"`
 
+	// A dictionary object containing asset collections, which contain assets.
+	Assets map[string]AssetCollection `json:"assets"`
+
+	// Lists authors credited by the source material.
+	Authors []AuthorInfo `json:"authors"`
+
 	// The version of the Datasworn format used by this data.
 	DataswornVersion ExpansionDataswornVersion `json:"datasworn_version"`
 
+	// The date of the source documents's last update, formatted YYYY-MM-DD.
+	// Required because it's used to determine whether the data needs updating.
+	Date time.Time `json:"date"`
+
+	License License `json:"license"`
+
+	// A dictionary object containing move categories, which contain moves.
+	Moves map[string]MoveCategory `json:"moves"`
+
+	// A dictionary object containing oracle collections, which may contain oracle
+	// tables and/or oracle collections.
+	Oracles map[string]OracleTablesCollection `json:"oracles"`
+
 	Ruleset RulesetID `json:"ruleset"`
+
+	// The title of the source document.
+	Title string `json:"title"`
 
 	Type ExpansionType `json:"type"`
 
-	// A dictionary object containing asset collections, which contain assets.
-	Assets map[string]AssetCollection `json:"assets,omitempty"`
+	// A URL where the source document is available.
+	URL WebURL `json:"url"`
 
 	// A dictionary object containing atlas collections, which contain atlas
 	// entries.
 	Atlas map[string]AtlasCollection `json:"atlas,omitempty"`
-
-	// Lists authors credited by the source material.
-	Authors []AuthorInfo `json:"authors,omitempty"`
-
-	// The date of the source documents's last update, formatted YYYY-MM-DD.
-	// Required because it's used to determine whether the data needs updating.
-	Date *time.Time `json:"date,omitempty"`
 
 	// A dictionary object of delve sites, like the premade delve sites presented
 	// in Ironsworn: Delve
@@ -3392,17 +3383,8 @@ type Expansion struct {
 
 	Description *MarkdownString `json:"description,omitempty"`
 
-	License *License `json:"license,omitempty"`
-
-	// A dictionary object containing move categories, which contain moves.
-	Moves map[string]MoveCategory `json:"moves,omitempty"`
-
 	// A dictionary object containing NPC collections, which contain NPCs.
 	Npcs map[string]NpcCollection `json:"npcs,omitempty"`
-
-	// A dictionary object containing oracle collections, which may contain oracle
-	// tables and/or oracle collections.
-	Oracles map[string]OracleTablesCollection `json:"oracles,omitempty"`
 
 	// A dictionary object containing rarities, like those presented in Ironsworn:
 	// Delve.
@@ -3416,14 +3398,8 @@ type Expansion struct {
 	// A dictionary object containing delve site themes.
 	SiteThemes map[string]DelveSiteTheme `json:"site_themes,omitempty"`
 
-	// The title of the source document.
-	Title *string `json:"title,omitempty"`
-
 	// A dictionary object of truth categories.
 	Truths map[string]Truth `json:"truths,omitempty"`
-
-	// A URL where the source document is available.
-	URL *WebURL `json:"url,omitempty"`
 }
 
 // The ID of a Datasworn package that relies on an external package to provide
@@ -4698,8 +4674,6 @@ type OracleCollectionTableSharedRolls struct {
 	Tags *Tags `json:"tags,omitempty"`
 }
 
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
 type OracleCollectionTableSharedTextColumnLabels struct {
 	Text Label `json:"text"`
 }
@@ -4720,8 +4694,6 @@ type OracleCollectionTableSharedText struct {
 	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleCollectionTableSharedTextColumnLabels `json:"column_labels"`
 
 	Contents map[string]OracleColumnText `json:"contents"`
@@ -4769,8 +4741,6 @@ type OracleCollectionTableSharedText struct {
 	Tags *Tags `json:"tags,omitempty"`
 }
 
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
 type OracleCollectionTableSharedText2ColumnLabels struct {
 	Text Label `json:"text"`
 
@@ -4793,8 +4763,6 @@ type OracleCollectionTableSharedText2 struct {
 	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleCollectionTableSharedText2ColumnLabels `json:"column_labels"`
 
 	Contents map[string]OracleColumnText2 `json:"contents"`
@@ -4842,6 +4810,14 @@ type OracleCollectionTableSharedText2 struct {
 	Tags *Tags `json:"tags,omitempty"`
 }
 
+type OracleCollectionTableSharedText3ColumnLabels struct {
+	Text Label `json:"text"`
+
+	Text2 Label `json:"text2"`
+
+	Text3 Label `json:"text3"`
+}
+
 type OracleCollectionTableSharedText3Type string
 
 const (
@@ -4858,9 +4834,7 @@ type OracleCollectionTableSharedText3 struct {
 	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
-	ColumnLabels interface{} `json:"column_labels"`
+	ColumnLabels OracleCollectionTableSharedText3ColumnLabels `json:"column_labels"`
 
 	Contents map[string]OracleColumnText3 `json:"contents"`
 
@@ -5477,8 +5451,6 @@ type OracleRollableColumnText3 struct {
 	Tags *Tags `json:"tags,omitempty"`
 }
 
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
 type OracleRollableTableTextColumnLabels struct {
 	Roll Label `json:"roll"`
 
@@ -5507,8 +5479,6 @@ type OracleRollableTableText struct {
 	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleRollableTableTextColumnLabels `json:"column_labels"`
 
 	// The roll used to select a result on this oracle.
@@ -5553,8 +5523,6 @@ type OracleRollableTableText struct {
 	Tags *Tags `json:"tags,omitempty"`
 }
 
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
 type OracleRollableTableText2ColumnLabels struct {
 	Roll Label `json:"roll"`
 
@@ -5584,8 +5552,6 @@ type OracleRollableTableText2 struct {
 	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleRollableTableText2ColumnLabels `json:"column_labels"`
 
 	// The roll used to select a result on this oracle.
@@ -5630,8 +5596,6 @@ type OracleRollableTableText2 struct {
 	Tags *Tags `json:"tags,omitempty"`
 }
 
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
 type OracleRollableTableText3ColumnLabels struct {
 	Roll Label `json:"roll"`
 
@@ -5663,8 +5627,6 @@ type OracleRollableTableText3 struct {
 	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleRollableTableText3ColumnLabels `json:"column_labels"`
 
 	// The roll used to select a result on this oracle.
@@ -5856,8 +5818,6 @@ func (v *OracleRollableTable) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
 type OracleRollableTableTableTextColumnLabels struct {
 	Roll Label `json:"roll"`
 
@@ -5886,8 +5846,6 @@ type OracleRollableTableTableText struct {
 	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleRollableTableTableTextColumnLabels `json:"column_labels"`
 
 	// The roll used to select a result on this oracle.
@@ -5932,8 +5890,6 @@ type OracleRollableTableTableText struct {
 	Tags *Tags `json:"tags,omitempty"`
 }
 
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
 type OracleRollableTableTableText2ColumnLabels struct {
 	Roll Label `json:"roll"`
 
@@ -5963,8 +5919,6 @@ type OracleRollableTableTableText2 struct {
 	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleRollableTableTableText2ColumnLabels `json:"column_labels"`
 
 	// The roll used to select a result on this oracle.
@@ -6009,8 +5963,6 @@ type OracleRollableTableTableText2 struct {
 	Tags *Tags `json:"tags,omitempty"`
 }
 
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
 type OracleRollableTableTableText3ColumnLabels struct {
 	Roll Label `json:"roll"`
 
@@ -6042,8 +5994,6 @@ type OracleRollableTableTableText3 struct {
 	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleRollableTableTableText3ColumnLabels `json:"column_labels"`
 
 	// The roll used to select a result on this oracle.
@@ -6169,8 +6119,6 @@ type OracleTableSharedRolls struct {
 	Tags *Tags `json:"tags,omitempty"`
 }
 
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
 type OracleTableSharedTextColumnLabels struct {
 	Text Label `json:"text"`
 }
@@ -6197,8 +6145,6 @@ type OracleTableSharedText struct {
 	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleTableSharedTextColumnLabels `json:"column_labels"`
 
 	Contents map[string]OracleColumnText `json:"contents"`
@@ -6248,8 +6194,6 @@ type OracleTableSharedText struct {
 	Tags *Tags `json:"tags,omitempty"`
 }
 
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
 type OracleTableSharedText2ColumnLabels struct {
 	Text Label `json:"text"`
 
@@ -6278,8 +6222,6 @@ type OracleTableSharedText2 struct {
 	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleTableSharedText2ColumnLabels `json:"column_labels"`
 
 	Contents map[string]OracleColumnText2 `json:"contents"`
@@ -6329,6 +6271,14 @@ type OracleTableSharedText2 struct {
 	Tags *Tags `json:"tags,omitempty"`
 }
 
+type OracleTableSharedText3ColumnLabels struct {
+	Text Label `json:"text"`
+
+	Text2 Label `json:"text2"`
+
+	Text3 Label `json:"text3"`
+}
+
 type OracleTableSharedText3OracleType string
 
 const (
@@ -6351,9 +6301,7 @@ type OracleTableSharedText3 struct {
 	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
-	ColumnLabels interface{} `json:"column_labels"`
+	ColumnLabels OracleTableSharedText3ColumnLabels `json:"column_labels"`
 
 	Contents map[string]OracleColumnText3 `json:"contents"`
 
@@ -6402,8 +6350,6 @@ type OracleTableSharedText3 struct {
 	Tags *Tags `json:"tags,omitempty"`
 }
 
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
 type OracleTableTextColumnLabels struct {
 	Roll Label `json:"roll"`
 
@@ -6438,8 +6384,6 @@ type OracleTableText struct {
 	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleTableTextColumnLabels `json:"column_labels"`
 
 	// The roll used to select a result on this oracle.
@@ -6486,8 +6430,6 @@ type OracleTableText struct {
 	Tags *Tags `json:"tags,omitempty"`
 }
 
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
 type OracleTableText2ColumnLabels struct {
 	Roll Label `json:"roll"`
 
@@ -6523,8 +6465,6 @@ type OracleTableText2 struct {
 	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleTableText2ColumnLabels `json:"column_labels"`
 
 	// The roll used to select a result on this oracle.
@@ -6571,8 +6511,6 @@ type OracleTableText2 struct {
 	Tags *Tags `json:"tags,omitempty"`
 }
 
-// The label at the head of each table column. The `roll` key refers to the roll
-// column showing the dice range (`min` and `max` on each table row).
 type OracleTableText3ColumnLabels struct {
 	Roll Label `json:"roll"`
 
@@ -6610,8 +6548,6 @@ type OracleTableText3 struct {
 	// node, including the author and licensing information.
 	Source SourceInfo `json:"_source"`
 
-	// The label at the head of each table column. The `roll` key refers to the
-	// roll column showing the dice range (`min` and `max` on each table row).
 	ColumnLabels OracleTableText3ColumnLabels `json:"column_labels"`
 
 	// The roll used to select a result on this oracle.

@@ -85,8 +85,6 @@ public class EmbeddedOracleTableText3 {
 
     /**
      * Getter for columnLabels.<p>
-     * The label at the head of each table column. The `roll` key refers to the
-     * roll column showing the dice range (`min` and `max` on each table row).
      */
     public EmbeddedOracleTableText3ColumnLabels getColumnLabels() {
         return columnLabels;
@@ -94,8 +92,6 @@ public class EmbeddedOracleTableText3 {
 
     /**
      * Setter for columnLabels.<p>
-     * The label at the head of each table column. The `roll` key refers to the
-     * roll column showing the dice range (`min` and `max` on each table row).
      */
     public void setColumnLabels(EmbeddedOracleTableText3ColumnLabels columnLabels) {
         this.columnLabels = columnLabels;

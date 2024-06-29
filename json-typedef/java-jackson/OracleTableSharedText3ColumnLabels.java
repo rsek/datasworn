@@ -6,31 +6,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
-public class EmbeddedOracleTableText2ColumnLabels {
-    @JsonProperty("roll")
-    private Label roll;
-
+public class OracleTableSharedText3ColumnLabels {
     @JsonProperty("text")
     private Label text;
 
     @JsonProperty("text2")
     private Label text2;
 
-    public EmbeddedOracleTableText2ColumnLabels() {
-    }
+    @JsonProperty("text3")
+    private Label text3;
 
-    /**
-     * Getter for roll.<p>
-     */
-    public Label getRoll() {
-        return roll;
-    }
-
-    /**
-     * Setter for roll.<p>
-     */
-    public void setRoll(Label roll) {
-        this.roll = roll;
+    public OracleTableSharedText3ColumnLabels() {
     }
 
     /**
@@ -59,5 +45,19 @@ public class EmbeddedOracleTableText2ColumnLabels {
      */
     public void setText2(Label text2) {
         this.text2 = text2;
+    }
+
+    /**
+     * Getter for text3.<p>
+     */
+    public Label getText3() {
+        return text3;
+    }
+
+    /**
+     * Setter for text3.<p>
+     */
+    public void setText3(Label text3) {
+        this.text3 = text3;
     }
 }

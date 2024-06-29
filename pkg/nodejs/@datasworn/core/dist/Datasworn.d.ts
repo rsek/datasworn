@@ -32,248 +32,72 @@ export interface Ruleset {
      */
     url: WebUrl;
     license: License;
-    rules: Rules;
     /**
      * A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections.
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     oracles: Record<DictKey, OracleTablesCollection>;
     /**
      * A dictionary object containing move categories, which contain moves.
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     moves: Record<DictKey, MoveCategory>;
     /**
      * A dictionary object containing asset collections, which contain assets.
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     assets: Record<DictKey, AssetCollection>;
     /**
      * A dictionary object containing atlas collections, which contain atlas entries.
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     atlas?: Record<DictKey, AtlasCollection>;
     /**
      * A dictionary object containing NPC collections, which contain NPCs.
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     npcs?: Record<DictKey, NpcCollection>;
     /**
      * A dictionary object of truth categories.
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     truths?: Record<DictKey, Truth>;
     /**
      * A dictionary object containing rarities, like those presented in Ironsworn: Delve.
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     rarities?: Record<DictKey, Rarity>;
     /**
      * A dictionary object of delve sites, like the premade delve sites presented in Ironsworn: Delve
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     delve_sites?: Record<DictKey, DelveSite>;
     /**
      * A dictionary object containing delve site themes.
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     site_themes?: Record<DictKey, DelveSiteTheme>;
     /**
      * A dictionary object containing delve site domains.
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     site_domains?: Record<DictKey, DelveSiteDomain>;
+    rules: Rules;
 }
 /**
  * A Datasworn package that relies on an external package to provide its ruleset.
  */
 export interface Expansion {
-    description?: MarkdownString;
-    title?: SourceTitle;
-    /**
-     * Lists authors credited by the source material.
-     */
-    authors?: AuthorInfo[];
-    /**
-     * The date of the source documents's last update, formatted YYYY-MM-DD. Required because it's used to determine whether the data needs updating.
-     */
-    date?: Date;
-    /**
-     * A URL where the source document is available.
-     * @example "https://ironswornrpg.com"
-     */
-    url?: WebUrl;
-    license?: License;
-    /**
-     * A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections.
-     * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
-     */
-    oracles?: Record<DictKey, OracleTablesCollection>;
-    /**
-     * A dictionary object containing move categories, which contain moves.
-     * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
-     */
-    moves?: Record<DictKey, MoveCategory>;
-    /**
-     * A dictionary object containing asset collections, which contain assets.
-     * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
-     */
-    assets?: Record<DictKey, AssetCollection>;
-    /**
-     * A dictionary object containing atlas collections, which contain atlas entries.
-     * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
-     */
-    atlas?: Record<DictKey, AtlasCollection>;
-    /**
-     * A dictionary object containing NPC collections, which contain NPCs.
-     * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
-     */
-    npcs?: Record<DictKey, NpcCollection>;
-    /**
-     * A dictionary object of truth categories.
-     * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
-     */
-    truths?: Record<DictKey, Truth>;
-    /**
-     * A dictionary object containing rarities, like those presented in Ironsworn: Delve.
-     * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
-     */
-    rarities?: Record<DictKey, Rarity>;
-    /**
-     * A dictionary object of delve sites, like the premade delve sites presented in Ironsworn: Delve
-     * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
-     */
-    delve_sites?: Record<DictKey, DelveSite>;
-    /**
-     * A dictionary object containing delve site themes.
-     * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
-     */
-    site_themes?: Record<DictKey, DelveSiteTheme>;
-    /**
-     * A dictionary object containing delve site domains.
-     * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
-     */
-    site_domains?: Record<DictKey, DelveSiteDomain>;
     _id: ExpansionId;
     type: 'expansion';
     /**
@@ -283,6 +107,82 @@ export interface Expansion {
      * ```
      */
     datasworn_version: '0.1.0';
+    description?: MarkdownString;
+    title: SourceTitle;
+    /**
+     * Lists authors credited by the source material.
+     */
+    authors: AuthorInfo[];
+    /**
+     * The date of the source documents's last update, formatted YYYY-MM-DD. Required because it's used to determine whether the data needs updating.
+     */
+    date: Date;
+    /**
+     * A URL where the source document is available.
+     * @example "https://ironswornrpg.com"
+     */
+    url: WebUrl;
+    license: License;
+    /**
+     * A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections.
+     * @remarks Deserialize as a dictionary object.
+     * @default {}
+     */
+    oracles: Record<DictKey, OracleTablesCollection>;
+    /**
+     * A dictionary object containing move categories, which contain moves.
+     * @remarks Deserialize as a dictionary object.
+     * @default {}
+     */
+    moves: Record<DictKey, MoveCategory>;
+    /**
+     * A dictionary object containing asset collections, which contain assets.
+     * @remarks Deserialize as a dictionary object.
+     * @default {}
+     */
+    assets: Record<DictKey, AssetCollection>;
+    /**
+     * A dictionary object containing atlas collections, which contain atlas entries.
+     * @remarks Deserialize as a dictionary object.
+     * @default {}
+     */
+    atlas?: Record<DictKey, AtlasCollection>;
+    /**
+     * A dictionary object containing NPC collections, which contain NPCs.
+     * @remarks Deserialize as a dictionary object.
+     * @default {}
+     */
+    npcs?: Record<DictKey, NpcCollection>;
+    /**
+     * A dictionary object of truth categories.
+     * @remarks Deserialize as a dictionary object.
+     * @default {}
+     */
+    truths?: Record<DictKey, Truth>;
+    /**
+     * A dictionary object containing rarities, like those presented in Ironsworn: Delve.
+     * @remarks Deserialize as a dictionary object.
+     * @default {}
+     */
+    rarities?: Record<DictKey, Rarity>;
+    /**
+     * A dictionary object of delve sites, like the premade delve sites presented in Ironsworn: Delve
+     * @remarks Deserialize as a dictionary object.
+     * @default {}
+     */
+    delve_sites?: Record<DictKey, DelveSite>;
+    /**
+     * A dictionary object containing delve site themes.
+     * @remarks Deserialize as a dictionary object.
+     * @default {}
+     */
+    site_themes?: Record<DictKey, DelveSiteTheme>;
+    /**
+     * A dictionary object containing delve site domains.
+     * @remarks Deserialize as a dictionary object.
+     * @default {}
+     */
+    site_domains?: Record<DictKey, DelveSiteDomain>;
     ruleset: RulesetId;
     rules?: RulesExpansion;
 }
@@ -765,9 +665,16 @@ export type AnyId = AtlasEntryId | NpcId | NpcVariantId | OracleRollableId | Ass
  * Represents any kind of wildcard ID, including IDs of embedded objects.
  */
 export type AnyIdWildcard = AtlasEntryIdWildcard | NpcIdWildcard | NpcVariantIdWildcard | OracleRollableIdWildcard | AssetAbilityOracleRollableIdWildcard | MoveOracleRollableIdWildcard | TruthOptionOracleRollableIdWildcard | OracleRollableRowIdWildcard | AssetAbilityOracleRollableRowIdWildcard | MoveOracleRollableRowIdWildcard | TruthOptionOracleRollableRowIdWildcard | AssetIdWildcard | AssetAbilityIdWildcard | AssetAbilityMoveIdWildcard | MoveIdWildcard | AtlasCollectionIdWildcard | NpcCollectionIdWildcard | OracleCollectionIdWildcard | AssetCollectionIdWildcard | MoveCategoryIdWildcard | DelveSiteIdWildcard | DelveSiteDenizenIdWildcard | DelveSiteDomainIdWildcard | DelveSiteDomainFeatureIdWildcard | DelveSiteThemeFeatureIdWildcard | DelveSiteDomainDangerIdWildcard | DelveSiteThemeDangerIdWildcard | DelveSiteThemeIdWildcard | RarityIdWildcard | TruthIdWildcard | TruthOptionIdWildcard;
+export type AnyOracleRollable = OracleRollable | EmbeddedOracleRollable;
+export type AnyMove = Move | EmbeddedMove;
 /**
  * Information on the original creator of this material.
- * @example {}
+ * @example ```javascript
+ * 	{
+ * 		name: "Shawn Tomkin",
+ * 		url: "https://ironswornrpg.com"
+ * 	}
+ * ```
  */
 export interface AuthorInfo {
     /**
@@ -977,12 +884,7 @@ export interface ImpactCategory {
     /**
      * A dictionary object of the Impacts in this category.
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     contents: Record<DictKey, ImpactRule>;
 }
@@ -1023,55 +925,30 @@ export interface Rules {
     /**
      * Describes the standard stats used by player characters in this ruleset.
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     stats: Record<DictKey, StatRule>;
     /**
      * Describes the standard condition meters used by player characters in this ruleset.
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     condition_meters: Record<DictKey, ConditionMeterRule>;
     /**
      * Describes the standard impacts/debilities used by player characters in this ruleset.
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     impacts: Record<DictKey, ImpactCategory>;
     /**
      * Describes the special tracks used by player characters in this ruleset, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     special_tracks: Record<DictKey, SpecialTrackRule>;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      * @experimental
      */
     tags: Record<DictKey, TagRule>;
@@ -1084,55 +961,30 @@ export interface RulesExpansion {
     /**
      * Describes the standard stats used by player characters in this ruleset.
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     stats?: Record<DictKey, StatRule>;
     /**
      * Describes the standard condition meters used by player characters in this ruleset.
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     condition_meters?: Record<DictKey, ConditionMeterRule>;
     /**
      * Describes the standard impacts/debilities used by player characters in this ruleset.
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     impacts?: Record<DictKey, ImpactCategory>;
     /**
      * Describes the special tracks used by player characters in this ruleset, like Bonds (classic Ironsworn), Failure (Delve), or Legacies (Starforged).
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     special_tracks?: Record<DictKey, SpecialTrackRule>;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      * @experimental
      */
     tags?: Record<DictKey, TagRule>;
@@ -1459,12 +1311,7 @@ export interface ProgressTrackTypeInfo {
     category: Label;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     controls?: Record<DictKey, {}>;
 }
@@ -1635,12 +1482,7 @@ export interface Npc {
     tactics: MarkdownString[];
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     variants?: Record<DictKey, NpcVariant>;
     type: 'npc';
@@ -1695,22 +1537,12 @@ export interface NpcCollection {
     description?: MarkdownString;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     contents: Record<DictKey, Npc>;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     collections: Record<DictKey, NpcCollection>;
     type: 'npc_collection';
@@ -2047,17 +1879,16 @@ export interface EmbeddedOracleTableText {
      */
     rows: OracleRollableRowText[];
     /**
-     * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
-     * @default {}
+     * @default
+     * ```javascript
+     * 	{
+     * 		roll: "Roll",
+     * 		text: "Result"
+     * 	}
+     * ```
      */
     column_labels: {
-        /**
-         * @default "Roll"
-         */
         roll: Label;
-        /**
-         * @default "Result"
-         */
         text: Label;
     };
     type: 'oracle_rollable';
@@ -2112,21 +1943,18 @@ export interface EmbeddedOracleTableText2 {
      */
     rows: Array<OracleRollableRowText2>;
     /**
-     * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
-     * @default {}
+     * @default
+     * ```javascript
+     * 	{
+     * 		roll: "Roll",
+     * 		text: "Result",
+     * 		text2: "Details"
+     * 	}
+     * ```
      */
     column_labels: {
-        /**
-         * @default "Roll"
-         */
         roll: Label;
-        /**
-         * @default "Result"
-         */
         text: Label;
-        /**
-         * @default "Details"
-         */
         text2: Label;
     };
     type: 'oracle_rollable';
@@ -2180,10 +2008,6 @@ export interface EmbeddedOracleTableText3 {
      * An array of objects, each representing a single row of the table.
      */
     rows: Array<OracleRollableRowText3>;
-    /**
-     * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
-     * @default {}
-     */
     column_labels: {
         roll: Label;
         text: Label;
@@ -2554,22 +2378,19 @@ export interface OracleTableSharedRolls {
     description?: MarkdownString;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     contents: Record<DictKey, OracleColumnText>;
     /**
      * Provides column labels for this table. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row). For all other column labels, see the `name` property of each child `OracleColumn`.
-     * @default {}
+     * @default
+     * ```javascript
+     * 	{
+     * 		roll: "Roll"
+     * 	}
+     * ```
      */
     column_labels: {
-        /**
-         * @default "Roll"
-         */
         roll: Label;
     };
     type: 'oracle_collection';
@@ -2628,22 +2449,18 @@ export interface OracleTableSharedText {
     description?: MarkdownString;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     contents: Record<DictKey, OracleColumnText>;
     /**
-     * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
-     * @default {}
+     * @default
+     * ```javascript
+     * 	{
+     * 		text: "Result"
+     * 	}
+     * ```
      */
     column_labels: {
-        /**
-         * @default "Result"
-         */
         text: Label;
     };
     type: 'oracle_collection';
@@ -2702,26 +2519,20 @@ export interface OracleTableSharedText2 {
     description?: MarkdownString;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     contents: Record<DictKey, OracleColumnText2>;
     /**
-     * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
-     * @default {}
+     * @default
+     * ```javascript
+     * 	{
+     * 		text: "Result",
+     * 		text2: "Details"
+     * 	}
+     * ```
      */
     column_labels: {
-        /**
-         * @default "Result"
-         */
         text: Label;
-        /**
-         * @default "Details"
-         */
         text2: Label;
     };
     type: 'oracle_collection';
@@ -2780,24 +2591,17 @@ export interface OracleTableSharedText3 {
     description?: MarkdownString;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     contents: Record<DictKey, OracleColumnText3>;
     /**
-     * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
-    column_labels: {};
+    column_labels: {
+        text: Label;
+        text2: Label;
+        text3: Label;
+    };
     type: 'oracle_collection';
     oracle_type: 'table_shared_text3';
 }
@@ -2864,17 +2668,16 @@ export interface OracleTableText {
      */
     rows: OracleRollableRowText[];
     /**
-     * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
-     * @default {}
+     * @default
+     * ```javascript
+     * 	{
+     * 		roll: "Roll",
+     * 		text: "Result"
+     * 	}
+     * ```
      */
     column_labels: {
-        /**
-         * @default "Roll"
-         */
         roll: Label;
-        /**
-         * @default "Result"
-         */
         text: Label;
     };
     type: 'oracle_rollable';
@@ -2943,21 +2746,18 @@ export interface OracleTableText2 {
      */
     rows: Array<OracleRollableRowText2>;
     /**
-     * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
-     * @default {}
+     * @default
+     * ```javascript
+     * 	{
+     * 		roll: "Roll",
+     * 		text: "Result",
+     * 		text2: "Details"
+     * 	}
+     * ```
      */
     column_labels: {
-        /**
-         * @default "Roll"
-         */
         roll: Label;
-        /**
-         * @default "Result"
-         */
         text: Label;
-        /**
-         * @default "Details"
-         */
         text2: Label;
     };
     type: 'oracle_rollable';
@@ -3025,10 +2825,6 @@ export interface OracleTableText3 {
      * An array of objects, each representing a single row of the table.
      */
     rows: Array<OracleRollableRowText3>;
-    /**
-     * The label at the head of each table column. The `roll` key refers to the roll column showing the dice range (`min` and `max` on each table row).
-     * @default {}
-     */
     column_labels: {
         roll: Label;
         text: Label;
@@ -3091,22 +2887,12 @@ export interface OracleTablesCollection {
     description?: MarkdownString;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     contents: Record<DictKey, OracleRollableTable>;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     collections: Record<DictKey, OracleCollection>;
     type: 'oracle_collection';
@@ -3347,12 +3133,7 @@ export interface MoveActionRoll {
     text: MarkdownString;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     oracles?: Record<DictKey, EmbeddedOracleRollable>;
     /**
@@ -3433,22 +3214,12 @@ export interface MoveCategory {
     description?: MarkdownString;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     contents: Record<DictKey, Move>;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     collections: Record<DictKey, MoveCategory>;
     type: 'move_category';
@@ -3502,12 +3273,7 @@ export interface MoveNoRoll {
     text: MarkdownString;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     oracles?: Record<DictKey, EmbeddedOracleRollable>;
     /**
@@ -3604,12 +3370,7 @@ export interface MoveProgressRoll {
     text: MarkdownString;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     oracles?: Record<DictKey, EmbeddedOracleRollable>;
     /**
@@ -3695,12 +3456,7 @@ export interface MoveSpecialTrack {
     text: MarkdownString;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     oracles?: Record<DictKey, EmbeddedOracleRollable>;
     /**
@@ -4028,12 +3784,7 @@ export interface Asset {
     /**
      * Options are input fields set when the player purchases the asset. They're likely to remain the same through the life of the asset. Typically, they are rendered at the top of the asset card.
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     options?: Record<DictKey, AssetOptionField>;
     /**
@@ -4044,12 +3795,7 @@ export interface Asset {
     /**
      * Controls are condition meters, clocks, counters, and other asset input fields whose values are expected to change throughout the life of the asset.
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     controls?: Record<DictKey, AssetControlField>;
     /**
@@ -4093,44 +3839,24 @@ export interface AssetAbility {
     /**
      * Unique moves added by this asset ability.
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     moves?: Record<DictKey, EmbeddedMove>;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     oracles?: Record<DictKey, EmbeddedOracleRollable>;
     /**
      * Fields that are expected to be set once and remain the same through the life of the asset.
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     options?: Record<DictKey, AssetAbilityOptionField>;
     /**
      * Fields whose values are expected to change over the life of the asset.
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     controls?: Record<DictKey, AssetAbilityControlField>;
     /**
@@ -4261,22 +3987,12 @@ export interface AssetCollection {
     description?: MarkdownString;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     contents: Record<DictKey, Asset>;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     collections: Record<DictKey, AssetCollection>;
     type: 'asset_collection';
@@ -4326,12 +4042,7 @@ export interface AssetConditionMeter {
     /**
      * Checkbox controls rendered as part of the condition meter.
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     controls?: Record<DictKey, AssetConditionMeterControlField>;
 }
@@ -4480,12 +4191,7 @@ export interface SelectEnhancementField {
     value: DictKey | null;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     choices: Record<DictKey, SelectEnhancementFieldChoice | SelectEnhancementFieldChoiceGroup>;
     field_type: 'select_enhancement';
@@ -4516,12 +4222,7 @@ export interface SelectEnhancementFieldChoiceGroup {
     choice_type: 'choice_group';
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     choices: Record<DictKey, SelectEnhancementFieldChoice>;
 }
@@ -4538,12 +4239,7 @@ export interface SelectValueField {
     value: DictKey | null;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     choices: Record<DictKey, SelectValueFieldChoice>;
     field_type: 'select_value';
@@ -4724,12 +4420,7 @@ export interface TruthOption {
     quest_starter: MarkdownString;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     oracles?: Record<DictKey, EmbeddedOracleRollable>;
 }
@@ -4783,22 +4474,12 @@ export interface AtlasCollection {
     description?: MarkdownString;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     contents: Record<DictKey, AtlasEntry>;
     /**
      * @remarks Deserialize as a dictionary object.
-     * @default
-     * ```javascript
-     * 	{
-     *
-     * 	}
-     * ```
+     * @default {}
      */
     collections: Record<DictKey, AtlasCollection>;
     type: 'atlas_collection';

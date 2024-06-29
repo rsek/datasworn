@@ -13,11 +13,6 @@ namespace Datasworn
         [JsonPropertyName("_id")]
         public EmbeddedOracleRollableId Id { get; set; }
 
-        /// <summary>
-        /// The label at the head of each table column. The `roll` key refers
-        /// to the roll column showing the dice range (`min` and `max` on each
-        /// table row).
-        /// </summary>
         [JsonPropertyName("column_labels")]
         public EmbeddedOracleRollableTableText2ColumnLabels ColumnLabels { get; set; }
 

@@ -4,12 +4,15 @@ using System.Text.Json.Serialization;
 
 namespace Datasworn
 {
-    public class EmbeddedOracleTableTextColumnLabels
+    public class OracleTableSharedText3ColumnLabels
     {
-        [JsonPropertyName("roll")]
-        public Label Roll { get; set; }
-
         [JsonPropertyName("text")]
         public Label Text { get; set; }
+
+        [JsonPropertyName("text2")]
+        public Label Text2 { get; set; }
+
+        [JsonPropertyName("text3")]
+        public Label Text3 { get; set; }
     }
 }
