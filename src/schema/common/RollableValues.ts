@@ -5,8 +5,9 @@ import {
 	type TObject
 } from '@sinclair/typebox'
 import * as Utils from '../Utils.js'
-import { Id, Localize, Player } from './index.js'
-import { mapValues } from 'lodash-es'
+import Id from './Id.js'
+import * as Localize from './Localize.js'
+import * as Player from './Player.js'
 import { Assign } from '../utils/FlatIntersect.js'
 
 const RollableValueType = Utils.UnionEnumFromRecord(

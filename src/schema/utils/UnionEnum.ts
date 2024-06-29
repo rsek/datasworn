@@ -16,8 +16,13 @@ import { JsonTypeDef } from '../Symbols.js'
 export const EnumDescription = Symbol('EnumDescription')
 export const Description = Symbol('Description')
 
-export interface TUnionEnum<T extends (string | number)[] = (string | number)[]>
-	extends TSchema {
+export interface TUnionEnum<
+	T extends string[] | number[] | readonly string[] | readonly number[] =
+		| string[]
+		| number[]
+		| readonly string[]
+		| readonly number[]
+> extends TSchema {
 	[Kind]: 'UnionEnum'
 	[EnumDescription]: Record<T[number], string>
 	[Description]?: string | undefined
@@ -25,10 +30,9 @@ export interface TUnionEnum<T extends (string | number)[] = (string | number)[]>
 	enum: [...T]
 }
 
-export function UnionEnum<T extends string[] | number[]>(
-	literals: [...T],
-	options: SchemaOptions = {}
-) {
+export function UnionEnum<
+	T extends string[] | number[] | readonly string[] | readonly number[]
+>(literals: [...T], options: SchemaOptions = {}) {
 	if (!TypeRegistry.Has('UnionEnum'))
 		TypeRegistry.Set('UnionEnum', UnionEnumCheck)
 

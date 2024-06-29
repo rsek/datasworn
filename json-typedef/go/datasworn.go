@@ -262,6 +262,11 @@ type Asset struct {
 	// The primary name/label for this node.
 	Name Label `json:"name"`
 
+	// Options are input fields set when the player purchases the asset. They're
+	// likely to remain the same through the life of the asset. Typically, they are
+	// rendered at the top of the asset card.
+	Options map[string]AssetOptionField `json:"options"`
+
 	// Most assets only benefit to their owner, but certain assets (like
 	// Starforged's module and command vehicle assets) are shared amongst the
 	// player's allies, too.
@@ -290,11 +295,6 @@ type Asset struct {
 	Icon *SvgImageURL `json:"icon,omitempty"`
 
 	Images []WebpImageURL `json:"images,omitempty"`
-
-	// Options are input fields set when the player purchases the asset. They're
-	// likely to remain the same through the life of the asset. Typically, they are
-	// rendered at the top of the asset card.
-	Options map[string]AssetOptionField `json:"options,omitempty"`
 
 	// This node replaces all nodes that match these wildcards. References to the
 	// replaced nodes can be considered equivalent to this node.
@@ -697,6 +697,9 @@ type AssetConditionMeterMoves struct {
 // may also include their own controls, such as the checkboxes that Starforged
 // companion assets use to indicate they are "out of action".
 type AssetConditionMeter struct {
+	// Checkbox controls rendered as part of the condition meter.
+	Controls map[string]AssetConditionMeterControlField `json:"controls"`
+
 	FieldType AssetConditionMeterFieldType `json:"field_type"`
 
 	Label Label `json:"label"`
@@ -712,9 +715,6 @@ type AssetConditionMeter struct {
 
 	// The current value of this meter.
 	Value int8 `json:"value"`
-
-	// Checkbox controls rendered as part of the condition meter.
-	Controls map[string]AssetConditionMeterControlField `json:"controls,omitempty"`
 
 	// An icon associated with this input.
 	Icon *SvgImageURL `json:"icon,omitempty"`
@@ -925,6 +925,9 @@ type AssetControlFieldConditionMeterMoves struct {
 // may also include their own controls, such as the checkboxes that Starforged
 // companion assets use to indicate they are "out of action".
 type AssetControlFieldConditionMeter struct {
+	// Checkbox controls rendered as part of the condition meter.
+	Controls map[string]AssetConditionMeterControlField `json:"controls"`
+
 	Label Label `json:"label"`
 
 	// The maximum value of this meter.
@@ -938,9 +941,6 @@ type AssetControlFieldConditionMeter struct {
 
 	// The current value of this meter.
 	Value int8 `json:"value"`
-
-	// Checkbox controls rendered as part of the condition meter.
-	Controls map[string]AssetConditionMeterControlField `json:"controls,omitempty"`
 
 	// An icon associated with this input.
 	Icon *SvgImageURL `json:"icon,omitempty"`
@@ -4398,6 +4398,8 @@ type Npc struct {
 
 	Type NpcType `json:"type"`
 
+	Variants map[string]NpcVariant `json:"variants"`
+
 	// Implementation hints or other developer-facing comments on this node. These
 	// should be omitted when presenting the node for gameplay.
 	Comment *string `json:"_comment,omitempty"`
@@ -4425,8 +4427,6 @@ type Npc struct {
 	Summary *MarkdownString `json:"summary,omitempty"`
 
 	Tags *Tags `json:"tags,omitempty"`
-
-	Variants map[string]NpcVariant `json:"variants,omitempty"`
 
 	YourTruth *MarkdownString `json:"your_truth,omitempty"`
 }

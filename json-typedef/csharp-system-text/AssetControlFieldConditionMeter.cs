@@ -16,6 +16,12 @@ namespace Datasworn
         [JsonPropertyName("field_type")]
         public string FieldType { get => "condition_meter"; }
 
+        /// <summary>
+        /// Checkbox controls rendered as part of the condition meter.
+        /// </summary>
+        [JsonPropertyName("controls")]
+        public IDictionary<string, AssetConditionMeterControlField> Controls { get; set; }
+
         [JsonPropertyName("label")]
         public Label Label { get; set; }
 
@@ -42,13 +48,6 @@ namespace Datasworn
         /// </summary>
         [JsonPropertyName("value")]
         public sbyte Value { get; set; }
-
-        /// <summary>
-        /// Checkbox controls rendered as part of the condition meter.
-        /// </summary>
-        [JsonPropertyName("controls")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IDictionary<string, AssetConditionMeterControlField> Controls { get; set; }
 
         /// <summary>
         /// An icon associated with this input.

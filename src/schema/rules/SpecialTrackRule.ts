@@ -1,5 +1,5 @@
 import { type Static, Type } from '@sinclair/typebox'
-import { Localize } from '../common/index.js'
+import * as Localize from '../common/Localize.js'
 
 export const SpecialTrackRule = Type.Object(
 	{

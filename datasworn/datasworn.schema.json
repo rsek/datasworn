@@ -3033,6 +3033,7 @@
 				"features",
 				"drives",
 				"tactics",
+				"variants",
 				"description",
 				"_source"
 			],
@@ -7372,6 +7373,7 @@
 				"type",
 				"name",
 				"category",
+				"options",
 				"count_as_impact",
 				"shared",
 				"abilities",
@@ -7879,7 +7881,15 @@
 			"title": "AssetConditionMeter",
 			"type": "object",
 			"description": "Some assets provide a special condition meter of their own. The most common example is the health meters on companion assets. Asset condition meters may also include their own controls, such as the checkboxes that Starforged companion assets use to indicate they are \"out of action\".",
-			"required": ["label", "field_type", "rollable", "min", "max", "value"],
+			"required": [
+				"label",
+				"field_type",
+				"rollable",
+				"min",
+				"max",
+				"value",
+				"controls"
+			],
 			"properties": {
 				"label": {
 					"$ref": "#/definitions/Label"

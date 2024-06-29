@@ -1,6 +1,6 @@
 import { Type, type Static } from '@sinclair/typebox'
 import { setSourceDataSchema } from './Utils.js'
-import { Id } from './common/index.js'
+import Id from './common/Id.js'
 import { NonCollectableNode } from './Generic.js'
 
 export const Rarity = setSourceDataSchema(

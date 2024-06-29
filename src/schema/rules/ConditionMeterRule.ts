@@ -1,7 +1,6 @@
-import { type Static, Type } from '@sinclair/typebox'
-import { Localize } from '../common/index.js'
+import { Type, type Static } from '@sinclair/typebox'
 import * as Inputs from '../common/Inputs.js'
-import * as Utils from '../Utils.js'
+import * as Localize from '../common/Localize.js'
 import { Assign } from '../utils/FlatIntersect.js'
 
 export const ConditionMeterRule = Assign(

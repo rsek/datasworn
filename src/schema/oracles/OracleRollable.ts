@@ -8,7 +8,7 @@ import {
 import { type SetRequired } from 'type-fest'
 import { CollectableSubtypeNode } from '../generic/CollectableNode.js'
 import * as Utils from '../Utils.js'
-import { Rolls } from '../common/index.js'
+import * as Rolls from '../common/Rolls.js'
 import { FlatIntersect } from '../utils/FlatIntersect.js'
 import {
 	OracleRollableRowText,

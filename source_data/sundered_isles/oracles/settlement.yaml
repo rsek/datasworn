@@ -269,6 +269,40 @@ oracles:
               - auto: false
                 number_of_rolls: 1
                 oracle: oracle_rollable:sundered_isles/weather/cursed
+      focus_cursed:
+        name: Cursed Settlement Focus
+        type: oracle_rollable
+        oracle_type: table_text
+        tags:
+          sundered_isles:
+            cursed_version_of:
+              - oracle_rollable:sundered_isles/settlement/focus/*
+            curse_behavior: replace_result
+        _source:
+          <<: *Source
+        rows:
+          - roll: { min: 1, max: 10 }
+            text: Acting to fulfill a dreadful bargain with a cursed power
+          - roll: { min: 11, max: 20 }
+            text: Bound unwillingly to the service of a cursed power
+          - roll: { min: 21, max: 30 }
+            text: Corrupted or sickened by the effects of a cursed location or relic
+          - roll: { min: 31, max: 40 }
+            text: Desperately working in defiance of a cursed power
+          - roll: { min: 41, max: 50 }
+            text: Enduring dreadful conditions
+          - roll: { min: 51, max: 60 }
+            text: Granted unusual abilities or resources by a cursed power
+          - roll: { min: 61, max: 70 }
+            text: In zealous service of a cursed power
+          - roll: { min: 71, max: 80 }
+            text: Suffering under the deprivations of a cursed power
+          - roll: { min: 81, max: 90 }
+            text: Targeted by a cursed power
+          - roll: { min: 91, max: 100 }
+            text: Unwittingly helping or unleashing a cursed power
+
+
       details:
         name: Settlement Details
         type: oracle_rollable
@@ -1085,336 +1119,6 @@ oracles:
                     <<: *ControllingFaction.3
                   - roll: { min: 96, max: 100 }
                     <<: *ControllingFaction.4
-          focus:
-            name: Settlement Focus
-            type: oracle_collection
-            oracle_type: table_shared_text2
-            column_labels:
-              text: Activity
-              text2: Typical Facilities and Services
-            _source:
-              <<: *Source
-            contents:
-              shore:
-                name: Shore
-                type: oracle_rollable
-                oracle_type: column_text2
-                tags:
-                  sundered_isles:
-                    cursed_by: oracle_rollable:sundered_isles/settlement/identity/focus_cursed
-                    location: shore
-                rows:
-                  - roll: { min: 1, max: 3 }
-                    <<: &Focus.0
-                      text: Piracy
-                      text2: Pirate court, smuggler dens, taverns
-                  - roll: { min: 4, max: 6 }
-                    <<: &Focus.1
-                      text: Whaling
-                      text2: Whaling ships, processing plants, wharfs
-                  - roll: { min: 7, max: 8 }
-                    <<: &Focus.2
-                      text: Wrecking
-                      text2: Ship graveyard
-                  - roll: { min: 9, max: 14 }
-                    <<: &Focus.3
-                      text: Shipbuilding
-                      text2: Dry docks, lumber mills, shipwrights
-                  - roll: { min: 15, max: 22 }
-                    <<: &Focus.4
-                      text: Fishing
-                      text2: Boatwrights, fishmongers, net makers
-                  - roll: { min: 23, max: 24 }
-                    <<: &Focus.5
-                      text: Alcohol Production
-                      text2: Breweries, distilleries, wineries
-                  - roll: { min: 25, max: 25 }
-                    <<: &Focus.6
-                      text: Archeology
-                      text2: Excavation sites, field camps, relic hunters
-                  - roll: { min: 26, max: 27 }
-                    <<: &Focus.7
-                      text: Crafts
-                      text2: Artisans, markets, workshops
-                  - roll: { min: 28, max: 29 }
-                    <<: &Focus.8
-                      text: Culture
-                      text2: Archives, festivals, historical sites
-                  - roll: { min: 30, max: 35 }
-                    <<: &Focus.9
-                      text: Defense
-                      text2: Armories, fortifications, militia
-                  - roll: { min: 36, max: 36 }
-                    <<: &Focus.10
-                      text: Dueling
-                      text2: Dueling grounds, fencing schools
-                  - roll: { min: 37, max: 38 }
-                    <<: &Focus.11
-                      text: Education
-                      text2: Libraries, universities
-                  - roll: { min: 39, max: 40 }
-                    <<: &Focus.12
-                      text: Entertainment
-                      text2: Arenas, fairs, street performers, theaters
-                  - roll: { min: 41, max: 42 }
-                    <<: &Focus.13
-                      text: Espionage
-                      text2: Assassin guild, spy network
-                  - roll: { min: 43, max: 44 }
-                    <<: &Focus.14
-                      text: Exploration
-                      text2: Navigators guild, outfitters, scouts
-                  - roll: { min: 45, max: 48 }
-                    <<: &Focus.15
-                      text: Farming
-                      text2: Fields, granaries, mills, orchards
-                  - roll: { min: 49, max: 54 }
-                    <<: &Focus.16
-                      text: Hospitality
-                      text2: Bath houses, brothels, inns, taverns
-                  - roll: { min: 55, max: 55 }
-                    <<: &Focus.17
-                      text: Hunting
-                      text2: Animal trainers, taxidermists, tanners
-                  - roll: { min: 56, max: 57 }
-                    <<: &Focus.18
-                      text: Law
-                      text2: Courts, gallows, patrols, prisons
-                  - roll: { min: 58, max: 58 }
-                    <<: &Focus.19
-                      text: Livestock / horses
-                      text2: Ranches, slaughterhouses, stables
-                  - roll: { min: 59, max: 59 }
-                    <<: &Focus.20
-                      text: Logging
-                      text2: Logging camps, sawmills
-                  - roll: { min: 60, max: 61 }
-                    <<: &Focus.21
-                      text: Medicine
-                      text2: Apothecaries, herbalists, infirmaries
-                  - roll: { min: 62, max: 62 }
-                    <<: &Focus.22
-                      text: Metalworking
-                      text2: Artificers, blacksmiths, forges
-                  - roll: { min: 63, max: 63 }
-                    <<: &Focus.23
-                      text: Mining
-                      text2: Foundries, mines, smelters
-                  - roll: { min: 64, max: 65 }
-                    <<: &Focus.24
-                      text: Mysticism
-                      text2: Alchemists, curio dealers, enclaves, mystics
-                  - roll: { min: 66, max: 66 }
-                    <<: &Focus.25
-                      text: Nature
-                      text2: Animal sanctuaries, gardens, groves
-                  - roll: { min: 67, max: 68 }
-                    <<: &Focus.26
-                      text: Religion
-                      text2: Monasteries, sacred sites, temples
-                  - roll: { min: 69, max: 70 }
-                    <<: &Focus.27
-                      text: Science
-                      text2: Academies, naturalist guild, observatories
-                  - roll: { min: 71, max: 73 }
-                    <<: &Focus.28
-                      text: Smuggling
-                      text2: Black market, fences, smugglers
-                  - roll: { min: 74, max: 75 }
-                    <<: &Focus.29
-                      text: Society
-                      text2: Balls, boutiques, social clubs, tailors
-                  - roll: { min: 76, max: 77 }
-                    <<: &Focus.30
-                      text: Statecraft
-                      text2: Embassies, envoys, court or council
-                  - roll: { min: 78, max: 78 }
-                    <<: &Focus.31
-                      text: Stoneworking
-                      text2: Masons, quarries, stone yards
-                  - roll: { min: 79, max: 86 }
-                    <<: &Focus.32
-                      text: Trade
-                      text2: Auction house, markets, merchant guild
-                  - roll: { min: 87, max: 89 }
-                    <<: &Focus.33
-                      text: Vices
-                      text2: Brothels, drug dens, gambling halls, taverns
-                  - roll: { min: 90, max: 93 }
-                    <<: &Focus.34
-                      text: Warfare
-                      text2: Armies or fleets, command post, forts
-                  - roll: { min: 94, max: 95 }
-                    <<: &Focus.35
-                      text: Weaponry
-                      text2: Cannon foundries, gunsmiths, powder mills
-                  - roll: { min: 96, max: 100 }
-                    <<: &Focus.36
-                      text: '[Action](oracle_rollable:sundered_isles/core/action) + [Theme](oracle_rollable:sundered_isles/core/theme)'
-                      oracle_rolls:
-                        - auto: true
-                          oracle: oracle_rollable:sundered_isles/core/action
-                        - auto: true
-                          oracle: oracle_rollable:sundered_isles/core/theme
-                      text2:
-              inland:
-                name: Inland
-                type: oracle_rollable
-                oracle_type: column_text2
-                tags:
-                  sundered_isles:
-                    cursed_by: oracle_rollable:sundered_isles/settlement/identity/focus_cursed
-                    location: inland
-                rows:
-                  - <<: *Focus.0
-                  - <<: *Focus.1
-                  - <<: *Focus.2
-                  - <<: *Focus.3
-                  - <<: *Focus.4
-                  - <<: *Focus.5
-                    roll: { min: 1, max: 2 }
-                  - <<: *Focus.6
-                    roll: { min: 3, max: 3 }
-                  - <<: *Focus.7
-                    roll: { min: 4, max: 5 }
-                  - <<: *Focus.8
-                    roll: { min: 6, max: 11 }
-                  - <<: *Focus.9
-                    roll: { min: 12, max: 13 }
-                  - <<: *Focus.10
-                    roll: { min: 14, max: 14 }
-                  - <<: *Focus.11
-                    roll: { min: 15, max: 16 }
-                  - <<: *Focus.12
-                    roll: { min: 17, max: 17 }
-                  - <<: *Focus.13
-                    roll: { min: 18, max: 18 }
-                  - <<: *Focus.14
-                    roll: { min: 19, max: 20 }
-                  - <<: *Focus.15
-                    roll: { min: 21, max: 32 }
-                  - <<: *Focus.16
-                    roll: { min: 33, max: 34 }
-                  - <<: *Focus.17
-                    roll: { min: 35, max: 40 }
-                  - <<: *Focus.18
-                    roll: { min: 41, max: 41 }
-                  - <<: *Focus.19
-                    roll: { min: 42, max: 49 }
-                  - <<: *Focus.20
-                    roll: { min: 50, max: 53 }
-                  - <<: *Focus.21
-                    roll: { min: 54, max: 55 }
-                  - <<: *Focus.22
-                    roll: { min: 56, max: 61 }
-                  - <<: *Focus.23
-                    roll: { min: 62, max: 67 }
-                  - <<: *Focus.24
-                    roll: { min: 68, max: 69 }
-                  - <<: *Focus.25
-                    roll: { min: 70, max: 71 }
-                  - <<: *Focus.26
-                    roll: { min: 72, max: 73 }
-                  - <<: *Focus.27
-                    roll: { min: 74, max: 75 }
-                  - <<: *Focus.28
-                    roll: { min: 76, max: 76 }
-                  - <<: *Focus.29
-                    roll: { min: 77, max: 77 }
-                  - <<: *Focus.30
-                    roll: { min: 78, max: 78 }
-                  - <<: *Focus.31
-                    roll: { min: 79, max: 84 }
-                  - <<: *Focus.32
-                    roll: { min: 85, max: 90 }
-                  - <<: *Focus.33
-                    roll: { min: 91, max: 91 }
-                  - <<: *Focus.34
-                    roll: { min: 92, max: 93 }
-                  - <<: *Focus.35
-                    roll: { min: 94, max: 95 }
-                  - <<: *Focus.36
-                    roll: { min: 96, max: 100 }
-              waterside:
-                name: Waterside
-                type: oracle_rollable
-                oracle_type: column_text2
-                tags:
-                  sundered_isles:
-                    cursed_by: oracle_rollable:sundered_isles/settlement/identity/focus_cursed
-                    location: waterside
-                rows:
-                  - <<: *Focus.0
-                  - <<: *Focus.1
-                  - <<: *Focus.2
-                  - <<: *Focus.3
-                    roll: { min: 1, max: 3 }
-                  - <<: *Focus.4
-                    roll: { min: 4, max: 11 }
-                  - <<: *Focus.5
-                    roll: { min: 12, max: 13 }
-                  - <<: *Focus.6
-                    roll: { min: 14, max: 14 }
-                  - <<: *Focus.7
-                    roll: { min: 15, max: 16 }
-                  - <<: *Focus.8
-                    roll: { min: 17, max: 20 }
-                  - <<: *Focus.9
-                    roll: { min: 21, max: 24 }
-                  - <<: *Focus.10
-                    roll: { min: 25, max: 25 }
-                  - <<: *Focus.11
-                    roll: { min: 26, max: 27 }
-                  - <<: *Focus.12
-                    roll: { min: 28, max: 28 }
-                  - <<: *Focus.13
-                    roll: { min: 29, max: 29 }
-                  - <<: *Focus.14
-                    roll: { min: 30, max: 31 }
-                  - <<: *Focus.15
-                    roll: { min: 32, max: 39 }
-                  - <<: *Focus.16
-                    roll: { min: 40, max: 43 }
-                  - <<: *Focus.17
-                    roll: { min: 44, max: 46 }
-                  - <<: *Focus.18
-                    roll: { min: 47, max: 47 }
-                  - <<: *Focus.19
-                    roll: { min: 48, max: 51 }
-                  - <<: *Focus.20
-                    roll: { min: 52, max: 57 }
-                  - <<: *Focus.21
-                    roll: { min: 58, max: 59 }
-                  - <<: *Focus.22
-                    roll: { min: 60, max: 63 }
-                  - <<: *Focus.23
-                    roll: { min: 64, max: 67 }
-                  - <<: *Focus.24
-                    roll: { min: 68, max: 69 }
-                  - <<: *Focus.25
-                    roll: { min: 70, max: 71 }
-                  - <<: *Focus.26
-                    roll: { min: 72, max: 73 }
-                  - <<: *Focus.27
-                    roll: { min: 74, max: 75 }
-                  - <<: *Focus.28
-                    roll: { min: 76, max: 77 }
-                  - <<: *Focus.29
-                    roll: { min: 78, max: 78 }
-                  - <<: *Focus.30
-                    roll: { min: 79, max: 79 }
-                  - <<: *Focus.31
-                    roll: { min: 80, max: 83 }
-                  - <<: *Focus.32
-                    roll: { min: 84, max: 89 }
-                  - <<: *Focus.33
-                    roll: { min: 90, max: 91 }
-                  - <<: *Focus.34
-                    roll: { min: 92, max: 93 }
-                  - <<: *Focus.35
-                    roll: { min: 94, max: 95 }
-                  - <<: *Focus.36
-                    roll: { min: 96, max: 100 }
         contents:
           disposition:
             name: Settlement Disposition
@@ -1470,35 +1174,333 @@ oracles:
                 text: Protective
               - roll: { min: 91, max: 100 }
                 text: Benevolent
-          focus_cursed:
-            name: Cursed Settlement Focus
+      focus:
+        name: Settlement Focus
+        type: oracle_collection
+        oracle_type: table_shared_text2
+        column_labels:
+          text: Activity
+          text2: Typical Facilities and Services
+        _source:
+          <<: *Source
+        contents:
+          shore:
+            name: Shore
             type: oracle_rollable
-            oracle_type: table_text
+            oracle_type: column_text2
             tags:
               sundered_isles:
-                cursed_version_of:
-                  - oracle_rollable:sundered_isles/settlement/focus/*
-                curse_behavior: replace_result
-            _source:
-              <<: *Source
+                cursed_by: oracle_rollable:sundered_isles/settlement/focus_cursed
+                location: shore
             rows:
-              - roll: { min: 1, max: 10 }
-                text: Acting to fulfill a dreadful bargain with a cursed power
-              - roll: { min: 11, max: 20 }
-                text: Bound unwillingly to the service of a cursed power
-              - roll: { min: 21, max: 30 }
-                text: Corrupted or sickened by the effects of a cursed location or relic
-              - roll: { min: 31, max: 40 }
-                text: Desperately working in defiance of a cursed power
-              - roll: { min: 41, max: 50 }
-                text: Enduring dreadful conditions
-              - roll: { min: 51, max: 60 }
-                text: Granted unusual abilities or resources by a cursed power
-              - roll: { min: 61, max: 70 }
-                text: In zealous service of a cursed power
-              - roll: { min: 71, max: 80 }
-                text: Suffering under the deprivations of a cursed power
-              - roll: { min: 81, max: 90 }
-                text: Targeted by a cursed power
-              - roll: { min: 91, max: 100 }
-                text: Unwittingly helping or unleashing a cursed power
+              - roll: { min: 1, max: 3 }
+                <<: &Focus.0
+                  text: Piracy
+                  text2: Pirate court, smuggler dens, taverns
+              - roll: { min: 4, max: 6 }
+                <<: &Focus.1
+                  text: Whaling
+                  text2: Whaling ships, processing plants, wharfs
+              - roll: { min: 7, max: 8 }
+                <<: &Focus.2
+                  text: Wrecking
+                  text2: Ship graveyard
+              - roll: { min: 9, max: 14 }
+                <<: &Focus.3
+                  text: Shipbuilding
+                  text2: Dry docks, lumber mills, shipwrights
+              - roll: { min: 15, max: 22 }
+                <<: &Focus.4
+                  text: Fishing
+                  text2: Boatwrights, fishmongers, net makers
+              - roll: { min: 23, max: 24 }
+                <<: &Focus.5
+                  text: Alcohol Production
+                  text2: Breweries, distilleries, wineries
+              - roll: { min: 25, max: 25 }
+                <<: &Focus.6
+                  text: Archeology
+                  text2: Excavation sites, field camps, relic hunters
+              - roll: { min: 26, max: 27 }
+                <<: &Focus.7
+                  text: Crafts
+                  text2: Artisans, markets, workshops
+              - roll: { min: 28, max: 29 }
+                <<: &Focus.8
+                  text: Culture
+                  text2: Archives, festivals, historical sites
+              - roll: { min: 30, max: 35 }
+                <<: &Focus.9
+                  text: Defense
+                  text2: Armories, fortifications, militia
+              - roll: { min: 36, max: 36 }
+                <<: &Focus.10
+                  text: Dueling
+                  text2: Dueling grounds, fencing schools
+              - roll: { min: 37, max: 38 }
+                <<: &Focus.11
+                  text: Education
+                  text2: Libraries, universities
+              - roll: { min: 39, max: 40 }
+                <<: &Focus.12
+                  text: Entertainment
+                  text2: Arenas, fairs, street performers, theaters
+              - roll: { min: 41, max: 42 }
+                <<: &Focus.13
+                  text: Espionage
+                  text2: Assassin guild, spy network
+              - roll: { min: 43, max: 44 }
+                <<: &Focus.14
+                  text: Exploration
+                  text2: Navigators guild, outfitters, scouts
+              - roll: { min: 45, max: 48 }
+                <<: &Focus.15
+                  text: Farming
+                  text2: Fields, granaries, mills, orchards
+              - roll: { min: 49, max: 54 }
+                <<: &Focus.16
+                  text: Hospitality
+                  text2: Bath houses, brothels, inns, taverns
+              - roll: { min: 55, max: 55 }
+                <<: &Focus.17
+                  text: Hunting
+                  text2: Animal trainers, taxidermists, tanners
+              - roll: { min: 56, max: 57 }
+                <<: &Focus.18
+                  text: Law
+                  text2: Courts, gallows, patrols, prisons
+              - roll: { min: 58, max: 58 }
+                <<: &Focus.19
+                  text: Livestock / horses
+                  text2: Ranches, slaughterhouses, stables
+              - roll: { min: 59, max: 59 }
+                <<: &Focus.20
+                  text: Logging
+                  text2: Logging camps, sawmills
+              - roll: { min: 60, max: 61 }
+                <<: &Focus.21
+                  text: Medicine
+                  text2: Apothecaries, herbalists, infirmaries
+              - roll: { min: 62, max: 62 }
+                <<: &Focus.22
+                  text: Metalworking
+                  text2: Artificers, blacksmiths, forges
+              - roll: { min: 63, max: 63 }
+                <<: &Focus.23
+                  text: Mining
+                  text2: Foundries, mines, smelters
+              - roll: { min: 64, max: 65 }
+                <<: &Focus.24
+                  text: Mysticism
+                  text2: Alchemists, curio dealers, enclaves, mystics
+              - roll: { min: 66, max: 66 }
+                <<: &Focus.25
+                  text: Nature
+                  text2: Animal sanctuaries, gardens, groves
+              - roll: { min: 67, max: 68 }
+                <<: &Focus.26
+                  text: Religion
+                  text2: Monasteries, sacred sites, temples
+              - roll: { min: 69, max: 70 }
+                <<: &Focus.27
+                  text: Science
+                  text2: Academies, naturalist guild, observatories
+              - roll: { min: 71, max: 73 }
+                <<: &Focus.28
+                  text: Smuggling
+                  text2: Black market, fences, smugglers
+              - roll: { min: 74, max: 75 }
+                <<: &Focus.29
+                  text: Society
+                  text2: Balls, boutiques, social clubs, tailors
+              - roll: { min: 76, max: 77 }
+                <<: &Focus.30
+                  text: Statecraft
+                  text2: Embassies, envoys, court or council
+              - roll: { min: 78, max: 78 }
+                <<: &Focus.31
+                  text: Stoneworking
+                  text2: Masons, quarries, stone yards
+              - roll: { min: 79, max: 86 }
+                <<: &Focus.32
+                  text: Trade
+                  text2: Auction house, markets, merchant guild
+              - roll: { min: 87, max: 89 }
+                <<: &Focus.33
+                  text: Vices
+                  text2: Brothels, drug dens, gambling halls, taverns
+              - roll: { min: 90, max: 93 }
+                <<: &Focus.34
+                  text: Warfare
+                  text2: Armies or fleets, command post, forts
+              - roll: { min: 94, max: 95 }
+                <<: &Focus.35
+                  text: Weaponry
+                  text2: Cannon foundries, gunsmiths, powder mills
+              - roll: { min: 96, max: 100 }
+                <<: &Focus.36
+                  text: '[Action](oracle_rollable:sundered_isles/core/action) + [Theme](oracle_rollable:sundered_isles/core/theme)'
+                  oracle_rolls:
+                    - auto: true
+                      oracle: oracle_rollable:sundered_isles/core/action
+                    - auto: true
+                      oracle: oracle_rollable:sundered_isles/core/theme
+                  text2:
+          inland:
+            name: Inland
+            type: oracle_rollable
+            oracle_type: column_text2
+            tags:
+              sundered_isles:
+                cursed_by: oracle_rollable:sundered_isles/settlement/focus_cursed
+                location: inland
+            rows:
+              - <<: *Focus.0
+              - <<: *Focus.1
+              - <<: *Focus.2
+              - <<: *Focus.3
+              - <<: *Focus.4
+              - <<: *Focus.5
+                roll: { min: 1, max: 2 }
+              - <<: *Focus.6
+                roll: { min: 3, max: 3 }
+              - <<: *Focus.7
+                roll: { min: 4, max: 5 }
+              - <<: *Focus.8
+                roll: { min: 6, max: 11 }
+              - <<: *Focus.9
+                roll: { min: 12, max: 13 }
+              - <<: *Focus.10
+                roll: { min: 14, max: 14 }
+              - <<: *Focus.11
+                roll: { min: 15, max: 16 }
+              - <<: *Focus.12
+                roll: { min: 17, max: 17 }
+              - <<: *Focus.13
+                roll: { min: 18, max: 18 }
+              - <<: *Focus.14
+                roll: { min: 19, max: 20 }
+              - <<: *Focus.15
+                roll: { min: 21, max: 32 }
+              - <<: *Focus.16
+                roll: { min: 33, max: 34 }
+              - <<: *Focus.17
+                roll: { min: 35, max: 40 }
+              - <<: *Focus.18
+                roll: { min: 41, max: 41 }
+              - <<: *Focus.19
+                roll: { min: 42, max: 49 }
+              - <<: *Focus.20
+                roll: { min: 50, max: 53 }
+              - <<: *Focus.21
+                roll: { min: 54, max: 55 }
+              - <<: *Focus.22
+                roll: { min: 56, max: 61 }
+              - <<: *Focus.23
+                roll: { min: 62, max: 67 }
+              - <<: *Focus.24
+                roll: { min: 68, max: 69 }
+              - <<: *Focus.25
+                roll: { min: 70, max: 71 }
+              - <<: *Focus.26
+                roll: { min: 72, max: 73 }
+              - <<: *Focus.27
+                roll: { min: 74, max: 75 }
+              - <<: *Focus.28
+                roll: { min: 76, max: 76 }
+              - <<: *Focus.29
+                roll: { min: 77, max: 77 }
+              - <<: *Focus.30
+                roll: { min: 78, max: 78 }
+              - <<: *Focus.31
+                roll: { min: 79, max: 84 }
+              - <<: *Focus.32
+                roll: { min: 85, max: 90 }
+              - <<: *Focus.33
+                roll: { min: 91, max: 91 }
+              - <<: *Focus.34
+                roll: { min: 92, max: 93 }
+              - <<: *Focus.35
+                roll: { min: 94, max: 95 }
+              - <<: *Focus.36
+                roll: { min: 96, max: 100 }
+          waterside:
+            name: Waterside
+            type: oracle_rollable
+            oracle_type: column_text2
+            tags:
+              sundered_isles:
+                cursed_by: oracle_rollable:sundered_isles/settlement/focus_cursed
+                location: waterside
+            rows:
+              - <<: *Focus.0
+              - <<: *Focus.1
+              - <<: *Focus.2
+              - <<: *Focus.3
+                roll: { min: 1, max: 3 }
+              - <<: *Focus.4
+                roll: { min: 4, max: 11 }
+              - <<: *Focus.5
+                roll: { min: 12, max: 13 }
+              - <<: *Focus.6
+                roll: { min: 14, max: 14 }
+              - <<: *Focus.7
+                roll: { min: 15, max: 16 }
+              - <<: *Focus.8
+                roll: { min: 17, max: 20 }
+              - <<: *Focus.9
+                roll: { min: 21, max: 24 }
+              - <<: *Focus.10
+                roll: { min: 25, max: 25 }
+              - <<: *Focus.11
+                roll: { min: 26, max: 27 }
+              - <<: *Focus.12
+                roll: { min: 28, max: 28 }
+              - <<: *Focus.13
+                roll: { min: 29, max: 29 }
+              - <<: *Focus.14
+                roll: { min: 30, max: 31 }
+              - <<: *Focus.15
+                roll: { min: 32, max: 39 }
+              - <<: *Focus.16
+                roll: { min: 40, max: 43 }
+              - <<: *Focus.17
+                roll: { min: 44, max: 46 }
+              - <<: *Focus.18
+                roll: { min: 47, max: 47 }
+              - <<: *Focus.19
+                roll: { min: 48, max: 51 }
+              - <<: *Focus.20
+                roll: { min: 52, max: 57 }
+              - <<: *Focus.21
+                roll: { min: 58, max: 59 }
+              - <<: *Focus.22
+                roll: { min: 60, max: 63 }
+              - <<: *Focus.23
+                roll: { min: 64, max: 67 }
+              - <<: *Focus.24
+                roll: { min: 68, max: 69 }
+              - <<: *Focus.25
+                roll: { min: 70, max: 71 }
+              - <<: *Focus.26
+                roll: { min: 72, max: 73 }
+              - <<: *Focus.27
+                roll: { min: 74, max: 75 }
+              - <<: *Focus.28
+                roll: { min: 76, max: 77 }
+              - <<: *Focus.29
+                roll: { min: 78, max: 78 }
+              - <<: *Focus.30
+                roll: { min: 79, max: 79 }
+              - <<: *Focus.31
+                roll: { min: 80, max: 83 }
+              - <<: *Focus.32
+                roll: { min: 84, max: 89 }
+              - <<: *Focus.33
+                roll: { min: 90, max: 91 }
+              - <<: *Focus.34
+                roll: { min: 92, max: 93 }
+              - <<: *Focus.35
+                roll: { min: 94, max: 95 }
+              - <<: *Focus.36
+                roll: { min: 96, max: 100 }

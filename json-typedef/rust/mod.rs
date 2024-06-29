@@ -297,6 +297,12 @@ pub struct Asset {
     #[serde(rename = "name")]
     pub name: Label,
 
+    /// Options are input fields set when the player purchases the asset.
+    /// They're likely to remain the same through the life of the asset.
+    /// Typically, they are rendered at the top of the asset card.
+    #[serde(rename = "options")]
+    pub options: HashMap<String, AssetOptionField>,
+
     /// Most assets only benefit to their owner, but certain assets (like
     /// Starforged's module and command vehicle assets) are shared amongst the
     /// player's allies, too.
@@ -342,13 +348,6 @@ pub struct Asset {
     #[serde(rename = "images")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub images: Option<Box<Vec<WebpImageUrl>>>,
-
-    /// Options are input fields set when the player purchases the asset.
-    /// They're likely to remain the same through the life of the asset.
-    /// Typically, they are rendered at the top of the asset card.
-    #[serde(rename = "options")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub options: Option<Box<HashMap<String, AssetOptionField>>>,
 
     /// This node replaces all nodes that match these wildcards. References to
     /// the replaced nodes can be considered equivalent to this node.
@@ -800,6 +799,10 @@ pub struct AssetConditionMeterMoves {
 /// companion assets use to indicate they are "out of action".
 #[derive(Serialize, Deserialize)]
 pub struct AssetConditionMeter {
+    /// Checkbox controls rendered as part of the condition meter.
+    #[serde(rename = "controls")]
+    pub controls: HashMap<String, AssetConditionMeterControlField>,
+
     #[serde(rename = "field_type")]
     pub fieldType: AssetConditionMeterFieldType,
 
@@ -821,11 +824,6 @@ pub struct AssetConditionMeter {
     /// The current value of this meter.
     #[serde(rename = "value")]
     pub value: i8,
-
-    /// Checkbox controls rendered as part of the condition meter.
-    #[serde(rename = "controls")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub controls: Option<Box<HashMap<String, AssetConditionMeterControlField>>>,
 
     /// An icon associated with this input.
     #[serde(rename = "icon")]
@@ -1005,6 +1003,10 @@ pub struct AssetControlFieldConditionMeterMoves {
 /// companion assets use to indicate they are "out of action".
 #[derive(Serialize, Deserialize)]
 pub struct AssetControlFieldConditionMeter {
+    /// Checkbox controls rendered as part of the condition meter.
+    #[serde(rename = "controls")]
+    pub controls: HashMap<String, AssetConditionMeterControlField>,
+
     #[serde(rename = "label")]
     pub label: Label,
 
@@ -1023,11 +1025,6 @@ pub struct AssetControlFieldConditionMeter {
     /// The current value of this meter.
     #[serde(rename = "value")]
     pub value: i8,
-
-    /// Checkbox controls rendered as part of the condition meter.
-    #[serde(rename = "controls")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub controls: Option<Box<HashMap<String, AssetConditionMeterControlField>>>,
 
     /// An icon associated with this input.
     #[serde(rename = "icon")]
@@ -5475,6 +5472,9 @@ pub struct Npc {
     #[serde(rename = "type")]
     pub type_: NpcType,
 
+    #[serde(rename = "variants")]
+    pub variants: HashMap<String, NpcVariant>,
+
     /// Implementation hints or other developer-facing comments on this node.
     /// These should be omitted when presenting the node for gameplay.
     #[serde(rename = "_comment")]
@@ -5522,10 +5522,6 @@ pub struct Npc {
     #[serde(rename = "tags")]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub tags: Option<Box<Tags>>,
-
-    #[serde(rename = "variants")]
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub variants: Option<Box<HashMap<String, NpcVariant>>>,
 
     #[serde(rename = "your_truth")]
     #[serde(skip_serializing_if = "Option::is_none")]

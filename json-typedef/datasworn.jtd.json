@@ -2476,6 +2476,14 @@
 						"ref": "MarkdownString"
 					}
 				},
+				"variants": {
+					"values": {
+						"ref": "NpcVariant"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$"
+					}
+				},
 				"type": {
 					"enum": [
 						"npc"
@@ -2537,14 +2545,6 @@
 				},
 				"your_truth": {
 					"ref": "MarkdownString"
-				},
-				"variants": {
-					"values": {
-						"ref": "NpcVariant"
-					},
-					"metadata": {
-						"propertyPattern": "^[a-z][a-z_]*$"
-					}
 				}
 			},
 			"metadata": {
@@ -9407,6 +9407,15 @@
 						]
 					}
 				},
+				"options": {
+					"values": {
+						"ref": "AssetOptionField"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "Options are input fields set when the player purchases the asset. They're likely to remain the same through the life of the asset. Typically, they are rendered at the top of the asset card."
+					}
+				},
 				"abilities": {
 					"elements": {
 						"ref": "AssetAbility",
@@ -9478,15 +9487,6 @@
 					"ref": "SvgImageUrl",
 					"metadata": {
 						"description": "An SVG icon associated with this collection."
-					}
-				},
-				"options": {
-					"values": {
-						"ref": "AssetOptionField"
-					},
-					"metadata": {
-						"propertyPattern": "^[a-z][a-z_]*$",
-						"description": "Options are input fields set when the player purchases the asset. They're likely to remain the same through the life of the asset. Typically, they are rendered at the top of the asset card."
 					}
 				},
 				"requirement": {
@@ -9999,6 +9999,15 @@
 					"enum": [
 						"condition_meter"
 					]
+				},
+				"controls": {
+					"values": {
+						"ref": "AssetConditionMeterControlField"
+					},
+					"metadata": {
+						"propertyPattern": "^[a-z][a-z_]*$",
+						"description": "Checkbox controls rendered as part of the condition meter."
+					}
 				}
 			},
 			"optionalProperties": {
@@ -10045,15 +10054,6 @@
 					},
 					"metadata": {
 						"description": "Provides hints for moves that interact with this condition meter, such as suffer and recovery moves."
-					}
-				},
-				"controls": {
-					"values": {
-						"ref": "AssetConditionMeterControlField"
-					},
-					"metadata": {
-						"propertyPattern": "^[a-z][a-z_]*$",
-						"description": "Checkbox controls rendered as part of the condition meter."
 					}
 				}
 			},
@@ -10184,6 +10184,15 @@
 							"metadata": {
 								"description": "Is this meter's `value` usable as a stat in an action roll?"
 							}
+						},
+						"controls": {
+							"values": {
+								"ref": "AssetConditionMeterControlField"
+							},
+							"metadata": {
+								"propertyPattern": "^[a-z][a-z_]*$",
+								"description": "Checkbox controls rendered as part of the condition meter."
+							}
 						}
 					},
 					"optionalProperties": {
@@ -10230,15 +10239,6 @@
 							},
 							"metadata": {
 								"description": "Provides hints for moves that interact with this condition meter, such as suffer and recovery moves."
-							}
-						},
-						"controls": {
-							"values": {
-								"ref": "AssetConditionMeterControlField"
-							},
-							"metadata": {
-								"propertyPattern": "^[a-z][a-z_]*$",
-								"description": "Checkbox controls rendered as part of the condition meter."
 							}
 						}
 					},

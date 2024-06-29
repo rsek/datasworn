@@ -2,7 +2,10 @@ import { TypeCompiler } from '@sinclair/typebox/compiler'
 import * as Generic from '../../schema/Generic.js'
 import { Dictionary } from '../../schema/Generic.js'
 import * as Utils from '../../schema/Utils.js'
-import { Localize, Metadata } from '../../schema/common/index.js'
+
+import * as Localize from '../../schema/common/Localize.js'
+import * as Metadata from '../../schema/common/Metadata.js'
+
 
 /** Type validators */
 namespace Assert {

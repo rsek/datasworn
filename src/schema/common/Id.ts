@@ -57,4 +57,7 @@ const Id = {
 
 export default Id
 
-export type TAnyId = TRef<TString | TUnion<(TString | TRef<TString>)[]>>
+export type TAnyId =
+	| TRef<TString>
+	| TRef<TUnion<TString[]>>
+	| TUnion<TRef<TString>[]>

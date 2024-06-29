@@ -2,14 +2,19 @@ import {
 	Type,
 	type ObjectOptions,
 	type Static,
-	type TNull,
-	type TRef,
-	type TObject,
+	type TBoolean,
 	type TLiteral,
-	type TBoolean
+	type TNull,
+	type TRef
 } from '@sinclair/typebox'
+import * as Localize from '../common/Localize.js'
 import { ExtractLiteralFromEnum } from '../utils/ExtractLiteralFromEnum.js'
-import { Id, Localize } from '../common/index.js'
+
+import type { SetRequired } from 'type-fest'
+import * as Generic from '../Generic.js'
+import Id from '../common/Id.js'
+import { EmbeddedOracleRollable } from '../oracles/EmbeddedOracleRollable.js'
+import { FlatIntersect } from '../utils/FlatIntersect.js'
 import {
 	type TTrigger,
 	type TTriggerEnhancement,
@@ -20,12 +25,6 @@ import {
 	type MoveOutcomes,
 	type TMoveOutcomes
 } from './common.js'
-import * as Generic from '../Generic.js'
-import * as Utils from '../utils/Assign.js'
-import type { ObjectProperties } from '../utils/ObjectProperties.js'
-import { EmbeddedOracleRollable } from '../oracles/EmbeddedOracleRollable.js'
-import { FlatIntersect } from '../utils/FlatIntersect.js'
-import type { SetRequired } from 'type-fest'
 
 /** The property key used to discriminate move subtypes */
 export const moveDiscriminator = 'roll_type'

@@ -1,17 +1,18 @@
 import {
-	CloneType,
 	Type,
 	type ObjectOptions,
 	type Static,
 	type TObject,
 	type TRef,
-	type TString
+	type TString,
+	type TUnion
 } from '@sinclair/typebox'
 import { Label } from '../common/Localize.js'
 import { SourceInfo, Suggestions } from '../common/Metadata.js'
-import { IdNode, type TIdNode } from './IdNode.js'
-import { type Tags } from '../rules/TagRule.js'
+import { Tags } from '../rules/TagRule.js'
 import { FlatIntersect, type TAssign } from '../utils/FlatIntersect.js'
+import { IdNode, type TIdNode } from './IdNode.js'
+import type { TAnyId } from '../common/Id.js'
 
 const SourcedNodeBase = Type.Object({
 	name: Type.Ref(Label, {
@@ -28,15 +29,14 @@ const SourcedNodeBase = Type.Object({
 			'Attribution for the original source (such as a book or website) of this node, including the author and licensing information.'
 	}),
 	suggestions: Type.Optional(Type.Ref(Suggestions)),
-
-	tags: Type.Optional(Type.Ref<typeof Tags>('Tags'))
+	tags: Type.Optional(Type.Ref(Tags))
 })
 
 /** Interface shared by objects with source attribute. */
 
 export function SourcedNode<TBase extends TObject>(
 	base: TBase,
-	_id: TRef<TString>,
+	_id: TAnyId,
 	options: ObjectOptions = {}
 ) {
 	const enhancedBase = FlatIntersect([SourcedNodeBase, base])

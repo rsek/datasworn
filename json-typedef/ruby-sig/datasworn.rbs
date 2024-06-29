@@ -165,6 +165,7 @@ module Datasworn
     attr_accessor category: Label
     attr_accessor count_as_impact: bool
     attr_accessor name: Label
+    attr_accessor options: Hash[String, AssetOptionField]
     attr_accessor shared: bool
     attr_accessor type: AssetType
     attr_accessor comment: String?
@@ -174,7 +175,6 @@ module Datasworn
     attr_accessor controls: Hash[String, AssetControlField]?
     attr_accessor icon: SvgImageURL?
     attr_accessor images: Array[WebpImageURL]?
-    attr_accessor options: Hash[String, AssetOptionField]?
     attr_accessor replaces: Array[AssetIDWildcard]?
     attr_accessor requirement: MarkdownString?
     attr_accessor suggestions: Suggestions?
@@ -439,13 +439,13 @@ module Datasworn
   end
 
   class AssetConditionMeter
+    attr_accessor controls: Hash[String, AssetConditionMeterControlField]
     attr_accessor field_type: AssetConditionMeterFieldType
     attr_accessor label: Label
     attr_accessor max: Integer
     attr_accessor min: Integer
     attr_accessor rollable: bool
     attr_accessor value: Integer
-    attr_accessor controls: Hash[String, AssetConditionMeterControlField]?
     attr_accessor icon: SvgImageURL?
     attr_accessor moves: AssetConditionMeterMoves?
 
@@ -537,12 +537,12 @@ module Datasworn
   end
 
   class AssetControlFieldConditionMeter < AssetControlField
+    attr_accessor controls: Hash[String, AssetConditionMeterControlField]
     attr_accessor label: Label
     attr_accessor max: Integer
     attr_accessor min: Integer
     attr_accessor rollable: bool
     attr_accessor value: Integer
-    attr_accessor controls: Hash[String, AssetConditionMeterControlField]?
     attr_accessor icon: SvgImageURL?
     attr_accessor moves: AssetControlFieldConditionMeterMoves?
 
@@ -2920,6 +2920,7 @@ module Datasworn
     attr_accessor rank: ChallengeRank
     attr_accessor tactics: Array[MarkdownString]
     attr_accessor type: NpcType
+    attr_accessor variants: Hash[String, NpcVariant]
     attr_accessor comment: String?
     attr_accessor canonical_name: Label?
     attr_accessor color: CSSColor?
@@ -2930,7 +2931,6 @@ module Datasworn
     attr_accessor suggestions: Suggestions?
     attr_accessor summary: MarkdownString?
     attr_accessor tags: Tags?
-    attr_accessor variants: Hash[String, NpcVariant]?
     attr_accessor your_truth: MarkdownString?
 
     def self.from_json_data: (untyped) -> Npc

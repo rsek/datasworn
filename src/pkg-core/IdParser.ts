@@ -15,6 +15,7 @@ import type { Tree } from './Tree.js'
 import type TypeNode from './TypeNode.js'
 import type { DropFirst, Head, LastElementOf } from './Utils/Array.js'
 import type { Join, Split } from './Utils/String.js'
+import { match } from 'assert'
 
 interface RecursiveId<
 	TypeIds extends StringId.TypeIdParts = StringId.TypeIdParts,
@@ -791,9 +792,7 @@ abstract class IdParser<
 	}
 
 	/** @internal */
-	protected _getUnsafe(tree: (typeof IdParser)['tree'] = IdParser.tree): {
-		_id: string
-	} {
+	protected _getUnsafe(tree: (typeof IdParser)['tree'] = IdParser.tree) {
 		const typeBranch = this._getTypeBranch(tree)
 
 		if (typeBranch == null)
@@ -801,7 +800,7 @@ abstract class IdParser<
 				`RulesPackage <${this.rulesPackageId}> doesn't have a "${this.typeBranchKey}" type branch.`
 			)
 
-		const [rulesPackageKey, key, ..._tailKeys] = this.primaryPathKeys
+		const [_rulesPackageId, key, ..._tailKeys] = this.primaryPathKeys
 
 		let result: { _id: string } | undefined
 
@@ -831,9 +830,7 @@ abstract class IdParser<
 
 	/**
 	 * @internal */
-	protected _getMatchesUnsafe(
-		tree = IdParser.tree
-	): Map<string, { _id: string }> {
+	_getMatchesUnsafe(tree = IdParser.tree): Map<string, { _id: string }> {
 		const pkgs = this._matchRulesPackages(tree)
 		const results = new Map<string, { _id: string }>()
 
@@ -844,9 +841,10 @@ abstract class IdParser<
 				| Record<string, { _id: string }>
 				| Map<string, { _id: string }>
 			if (typeBranch == null) continue
-			const matches = IdParser._getMatchesFrom(typeBranch, nextKey).values()
-			for (const match of matches) results.set(match._id, match)
+			const matches = IdParser._getMatchesFrom(typeBranch, nextKey)
+			for (const [_, match] of matches) results.set(match._id, match)
 		}
+
 		return results
 	}
 }
@@ -1136,7 +1134,32 @@ class CollectableId<
 	}
 
 	/** @internal */
-	protected _getMatchesUnsafe(
+	override _getUnsafe(
+		tree: (typeof IdParser)['tree'] = IdParser.tree
+	): TypeNode.Collectable<TTypeId> {
+		const parent = this.getCollectionIdParent()
+		const parentNode = parent._getUnsafe(tree)
+
+		// console.log(`<${this.id}> got parent`, parentNode)
+		const thisKey = this.primaryPathKeys.at(-1)
+
+		const { contents } = parentNode
+
+		let result: TypeNode.Collectable<TTypeId>
+
+		if (contents instanceof Map) result = contents.get(thisKey)
+		else if (Object.hasOwn(contents, thisKey))
+			result = contents[
+				thisKey as keyof typeof contents
+			] as TypeNode.Collectable<TTypeId>
+
+		if (result == null) throw new Error(`No result for <${this.id}>`)
+
+		return result
+	}
+
+	/** @internal */
+	_getMatchesUnsafe(
 		tree = IdParser.tree
 	): Map<string, TypeNode.Collectable<TTypeId>> {
 		const parentId = this.getCollectionIdParent()
@@ -1144,8 +1167,10 @@ class CollectableId<
 		let matches: Map<string, TypeNode.Collectable<TTypeId>>
 		const thisKey = this.primaryPathKeys.at(-1)
 
-		for (const colMatch of parentId._getMatchesUnsafe(tree).values()) {
-			const contents = colMatch[CONST.ContentsKey] as
+		const parentMatches = parentId._getMatchesUnsafe(tree)
+
+		for (const parentMatch of parentMatches.values()) {
+			const contents = parentMatch[CONST.ContentsKey] as
 				| Record<string, TypeNode.Collectable<TTypeId>>
 				| Map<string, TypeNode.Collectable<TTypeId>>
 			if (contents == null) continue
@@ -1377,18 +1402,18 @@ class CollectionId<
 	}
 
 	/** @internal */
-	protected override _getUnsafe(
+	override _getUnsafe(
 		tree?:
 			| Record<string, Datasworn.RulesPackage>
 			| Map<string, Datasworn.RulesPackage>
 	): TypeNode.Collection<TTypeId> {
 		const ancestorNode = super._getUnsafe(tree) as TypeNode.Collection<TTypeId>
-		const [_ancestorKey, ...keys] = this.primaryPathKeys
+		const [_rulesPackage, _ancestorKey, ...keys] = this.primaryPathKeys
 
-		const ancestors = [ancestorNode]
+		const ancestorNodes = [ancestorNode]
 
 		for (const key of keys) {
-			const currentNode = ancestors.at(-1)
+			const currentNode = ancestorNodes.at(-1)
 			if (!(CONST.CollectionsKey in currentNode))
 				throw new Error(
 					`Couldn't find collection <${key}> in <${currentNode._id}>`
@@ -1400,10 +1425,10 @@ class CollectionId<
 				throw new Error(
 					`Expected collection <${key}> in <${currentNode._id}>, but got ${String(nextNode)}`
 				)
-			ancestors.push(nextNode)
+			ancestorNodes.push(nextNode)
 		}
 
-		return ancestors.at(-1)
+		return ancestorNodes.at(-1)
 	}
 
 	/** @internal */
@@ -1413,6 +1438,8 @@ class CollectionId<
 		matches = new Map<string, T>(),
 		depth = 0
 	): Map<string, T> {
+		// console.log(keys)
+
 		if (keys.length === 0) return matches.set(from._id, from)
 
 		if (depth > CONST.COLLECTION_DEPTH_MAX) {
@@ -1424,15 +1451,19 @@ class CollectionId<
 
 		const [currentKey, ...tailKeys] = keys
 
-		const children = from[CONST.CollectionsKey]
+		const childCollections = from[CONST.CollectionsKey] as
+			| Record<string, T>
+			| Map<string, T>
 
-		if (children != null) return matches
+		if (childCollections == null) return matches
 
-		for (const child of IdParser._getMatchesFrom<T>(
-			children,
+		const childMatches = IdParser._getMatchesFrom<T>(
+			childCollections,
 			currentKey
-		).values()) {
-			if (TypeGuard.Globstar(currentKey))
+		)
+
+		for (const child of childMatches.values()) {
+			if (TypeGuard.Globstar(currentKey)) {
 				// recurse through children without consuming the globstar
 				for (const [matchId, match] of CollectionId._recurseMatches<T>(
 					child,
@@ -1441,6 +1472,7 @@ class CollectionId<
 					depth + 1
 				))
 					matches.set(matchId, match)
+			}
 			// regular key + * matches
 			for (const [matchId, match] of CollectionId._recurseMatches<T>(
 				child,
@@ -1463,7 +1495,7 @@ class CollectionId<
 		// defer creating this until we need it
 		let matches: Map<string, TypeNode.Collection<TTypeId>>
 
-		const [rulesPackageId, branchChildKey, ...tailKeys] = this.primaryPathKeys
+		const [rulesPackageId, currentKey, ...tailKeys] = this.primaryPathKeys
 
 		for (const pkg of pkgs.values()) {
 			const typeBranch = pkg[this.typeBranchKey] as
@@ -1472,17 +1504,36 @@ class CollectionId<
 
 			if (typeBranch == null) continue
 
-			for (const collection of IdParser._getMatchesFrom<
+			const collectionMatches = IdParser._getMatchesFrom<
 				TypeNode.Collection<TTypeId>
-			>(typeBranch, branchChildKey).values())
-				if (TypeGuard.Globstar(rulesPackageId))
+			>(typeBranch, currentKey)
+
+			for (const collection of collectionMatches.values())
+				if (TypeGuard.Globstar(rulesPackageId)) {
 					// carry forward the rules package globstar if it's present
-					matches = CollectionId._recurseMatches(
-						collection,
-						[branchChildKey, ...tailKeys],
-						matches
-					)
-				else
+					matches = new Map([
+						...CollectionId._recurseMatches(
+							collection,
+							[CONST.GlobstarString, currentKey, ...tailKeys],
+							matches
+						),
+						...CollectionId._recurseMatches(
+							collection,
+							[currentKey, ...tailKeys],
+							matches
+						)
+					])
+				} else if (TypeGuard.Globstar(currentKey)) {
+					// carry forward current key if it's a globstar
+					matches = new Map([
+						...CollectionId._recurseMatches(
+							collection,
+							[currentKey, ...tailKeys],
+							matches
+						),
+						...CollectionId._recurseMatches(collection, tailKeys, matches)
+					])
+				} else
 					matches = CollectionId._recurseMatches(collection, tailKeys, matches)
 		}
 

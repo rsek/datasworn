@@ -657,7 +657,7 @@ oracles:
               sundered_isles:
                 curse_behavior: replace_result
                 cursed_version_of:
-                  - oracle_rollable:sundered_isles/overland/regional_landmark/*
+                  - oracle_rollable:sundered_isles/overland/region_landmarks/*
             _source:
               <<: *Source
             rows:

@@ -3,17 +3,12 @@ import {
 	Type,
 	type ObjectOptions,
 	type Static,
-	type TObject,
-	type TRef,
-	type TString
+	type TObject
 } from '@sinclair/typebox'
 import { Computed } from '../Utils.js'
 import { setDescriptions } from '../utils/typebox.js'
-import {
-	FlatIntersect,
-	type Assign,
-	type TFlatIntersect
-} from '../utils/FlatIntersect.js'
+import { FlatIntersect } from '../utils/FlatIntersect.js'
+import type { TAnyId } from '../common/Id.js'
 
 const IdNodeBase = Type.Object({
 	_id: Computed(Type.String()),
@@ -27,7 +22,7 @@ const IdNodeBase = Type.Object({
 
 export function IdNode<TBase extends TObject>(
 	base: TBase,
-	_id: TRef<TString>,
+	_id: TAnyId,
 	options: ObjectOptions = {}
 ) {
 	const enhancedBase = FlatIntersect(

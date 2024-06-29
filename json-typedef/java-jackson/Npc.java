@@ -44,6 +44,9 @@ public class Npc {
     @JsonProperty("type")
     private NpcType type;
 
+    @JsonProperty("variants")
+    private Map<String, NpcVariant> variants;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("_comment")
     private String comment;
@@ -83,10 +86,6 @@ public class Npc {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("tags")
     private Tags tags;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("variants")
-    private Map<String, NpcVariant> variants;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("your_truth")
@@ -244,6 +243,20 @@ public class Npc {
     }
 
     /**
+     * Getter for variants.<p>
+     */
+    public Map<String, NpcVariant> getVariants() {
+        return variants;
+    }
+
+    /**
+     * Setter for variants.<p>
+     */
+    public void setVariants(Map<String, NpcVariant> variants) {
+        this.variants = variants;
+    }
+
+    /**
      * Getter for comment.<p>
      * Implementation hints or other developer-facing comments on this node.
      * These should be omitted when presenting the node for gameplay.
@@ -397,20 +410,6 @@ public class Npc {
      */
     public void setTags(Tags tags) {
         this.tags = tags;
-    }
-
-    /**
-     * Getter for variants.<p>
-     */
-    public Map<String, NpcVariant> getVariants() {
-        return variants;
-    }
-
-    /**
-     * Setter for variants.<p>
-     */
-    public void setVariants(Map<String, NpcVariant> variants) {
-        this.variants = variants;
     }
 
     /**

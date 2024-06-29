@@ -1,6 +1,5 @@
 import { type Static, Type } from '@sinclair/typebox'
-import * as Utils from '../Utils.js'
-import { Progress } from '../common/index.js'
+import * as Progress from '../common/Progress.js'
 import {
 	Trigger,
 	TriggerCondition,

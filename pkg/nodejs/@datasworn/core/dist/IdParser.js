@@ -356,7 +356,7 @@ class IdParser {
         const typeBranch = this._getTypeBranch(tree);
         if (typeBranch == null)
             throw new Error(`RulesPackage <${this.rulesPackageId}> doesn't have a "${this.typeBranchKey}" type branch.`);
-        const [rulesPackageKey, key, ..._tailKeys] = this.primaryPathKeys;
+        const [_rulesPackageId, key, ..._tailKeys] = this.primaryPathKeys;
         let result;
         if (typeBranch instanceof Map)
             result = (_b = typeBranch.get(key)) !== null && _b !== void 0 ? _b : undefined;
@@ -382,8 +382,8 @@ class IdParser {
             const typeBranch = pkg[this.typeBranchKey];
             if (typeBranch == null)
                 continue;
-            const matches = _a._getMatchesFrom(typeBranch, nextKey).values();
-            for (const match of matches)
+            const matches = _a._getMatchesFrom(typeBranch, nextKey);
+            for (const [_, match] of matches)
                 results.set(match._id, match);
         }
         return results;
@@ -606,12 +606,29 @@ class CollectableId extends EmbeddingId {
         return new CollectionId(this.parentTypeId, ...ancestorKeys);
     }
     /** @internal */
+    _getUnsafe(tree = IdParser.tree) {
+        const parent = this.getCollectionIdParent();
+        const parentNode = parent._getUnsafe(tree);
+        // console.log(`<${this.id}> got parent`, parentNode)
+        const thisKey = this.primaryPathKeys.at(-1);
+        const { contents } = parentNode;
+        let result;
+        if (contents instanceof Map)
+            result = contents.get(thisKey);
+        else if (Object.hasOwn(contents, thisKey))
+            result = contents[thisKey];
+        if (result == null)
+            throw new Error(`No result for <${this.id}>`);
+        return result;
+    }
+    /** @internal */
     _getMatchesUnsafe(tree = IdParser.tree) {
         const parentId = this.getCollectionIdParent();
         let matches;
         const thisKey = this.primaryPathKeys.at(-1);
-        for (const colMatch of parentId._getMatchesUnsafe(tree).values()) {
-            const contents = colMatch[CONST_js_1.default.ContentsKey];
+        const parentMatches = parentId._getMatchesUnsafe(tree);
+        for (const parentMatch of parentMatches.values()) {
+            const contents = parentMatch[CONST_js_1.default.ContentsKey];
             if (contents == null)
                 continue;
             const collectables = IdParser._getMatchesFrom(contents, thisKey);
@@ -714,21 +731,22 @@ class CollectionId extends IdParser {
     /** @internal */
     _getUnsafe(tree) {
         const ancestorNode = super._getUnsafe(tree);
-        const [_ancestorKey, ...keys] = this.primaryPathKeys;
-        const ancestors = [ancestorNode];
+        const [_rulesPackage, _ancestorKey, ...keys] = this.primaryPathKeys;
+        const ancestorNodes = [ancestorNode];
         for (const key of keys) {
-            const currentNode = ancestors.at(-1);
+            const currentNode = ancestorNodes.at(-1);
             if (!(CONST_js_1.default.CollectionsKey in currentNode))
                 throw new Error(`Couldn't find collection <${key}> in <${currentNode._id}>`);
             const nextNode = currentNode[CONST_js_1.default.CollectionsKey][key];
             if (nextNode == null)
                 throw new Error(`Expected collection <${key}> in <${currentNode._id}>, but got ${String(nextNode)}`);
-            ancestors.push(nextNode);
+            ancestorNodes.push(nextNode);
         }
-        return ancestors.at(-1);
+        return ancestorNodes.at(-1);
     }
     /** @internal */
     static _recurseMatches(from, keys, matches = new Map(), depth = 0) {
+        // console.log(keys)
         if (keys.length === 0)
             return matches.set(from._id, from);
         if (depth > CONST_js_1.default.COLLECTION_DEPTH_MAX) {
@@ -736,14 +754,16 @@ class CollectionId extends IdParser {
             return matches;
         }
         const [currentKey, ...tailKeys] = keys;
-        const children = from[CONST_js_1.default.CollectionsKey];
-        if (children != null)
+        const childCollections = from[CONST_js_1.default.CollectionsKey];
+        if (childCollections == null)
             return matches;
-        for (const child of IdParser._getMatchesFrom(children, currentKey).values()) {
-            if (TypeGuard_js_1.default.Globstar(currentKey))
+        const childMatches = IdParser._getMatchesFrom(childCollections, currentKey);
+        for (const child of childMatches.values()) {
+            if (TypeGuard_js_1.default.Globstar(currentKey)) {
                 // recurse through children without consuming the globstar
                 for (const [matchId, match] of CollectionId._recurseMatches(child, keys, matches, depth + 1))
                     matches.set(matchId, match);
+            }
             // regular key + * matches
             for (const [matchId, match] of CollectionId._recurseMatches(child, tailKeys, matches, depth + 1))
                 matches.set(matchId, match);
@@ -755,15 +775,27 @@ class CollectionId extends IdParser {
         const pkgs = this._matchRulesPackages(tree);
         // defer creating this until we need it
         let matches;
-        const [rulesPackageId, branchChildKey, ...tailKeys] = this.primaryPathKeys;
+        const [rulesPackageId, currentKey, ...tailKeys] = this.primaryPathKeys;
         for (const pkg of pkgs.values()) {
             const typeBranch = pkg[this.typeBranchKey];
             if (typeBranch == null)
                 continue;
-            for (const collection of IdParser._getMatchesFrom(typeBranch, branchChildKey).values())
-                if (TypeGuard_js_1.default.Globstar(rulesPackageId))
+            const collectionMatches = IdParser._getMatchesFrom(typeBranch, currentKey);
+            for (const collection of collectionMatches.values())
+                if (TypeGuard_js_1.default.Globstar(rulesPackageId)) {
                     // carry forward the rules package globstar if it's present
-                    matches = CollectionId._recurseMatches(collection, [branchChildKey, ...tailKeys], matches);
+                    matches = new Map([
+                        ...CollectionId._recurseMatches(collection, [CONST_js_1.default.GlobstarString, currentKey, ...tailKeys], matches),
+                        ...CollectionId._recurseMatches(collection, [currentKey, ...tailKeys], matches)
+                    ]);
+                }
+                else if (TypeGuard_js_1.default.Globstar(currentKey)) {
+                    // carry forward current key if it's a globstar
+                    matches = new Map([
+                        ...CollectionId._recurseMatches(collection, [currentKey, ...tailKeys], matches),
+                        ...CollectionId._recurseMatches(collection, tailKeys, matches)
+                    ]);
+                }
                 else
                     matches = CollectionId._recurseMatches(collection, tailKeys, matches);
         }

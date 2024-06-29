@@ -3,10 +3,12 @@ import * as Generic from '../Generic.js'
 import { EmbeddedMove } from '../moves/EmbeddedMove.js'
 import { MoveEnhancement } from '../moves/MoveEnhancement.js'
 import { type Tags } from '../Rules.js'
-import { Id, Localize } from '../common/index.js'
 import { AssetEnhancement } from './Enhancement.js'
 import { AssetAbilityControlField, AssetAbilityOptionField } from './Fields.js'
 import { EmbeddedOracleRollable } from '../oracles/EmbeddedOracleRollable.js'
+
+import Id from '../common/Id.js'
+import * as Localize from '../common/Localize.js'
 
 export const AssetAbility = Generic.IdNode(
 	Type.Object({

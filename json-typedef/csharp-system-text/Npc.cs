@@ -51,6 +51,9 @@ namespace Datasworn
         [JsonPropertyName("type")]
         public NpcType Type_ { get; set; }
 
+        [JsonPropertyName("variants")]
+        public IDictionary<string, NpcVariant> Variants { get; set; }
+
         /// <summary>
         /// Implementation hints or other developer-facing comments on this
         /// node. These should be omitted when presenting the node for gameplay.
@@ -108,10 +111,6 @@ namespace Datasworn
         [JsonPropertyName("tags")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public Tags? Tags { get; set; }
-
-        [JsonPropertyName("variants")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IDictionary<string, NpcVariant> Variants { get; set; }
 
         [JsonPropertyName("your_truth")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

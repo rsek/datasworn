@@ -532,6 +532,13 @@ class Asset:
     The primary name/label for this node.
     """
 
+    options: 'Dict[str, AssetOptionField]'
+    """
+    Options are input fields set when the player purchases the asset. They're
+    likely to remain the same through the life of the asset. Typically, they are
+    rendered at the top of the asset card.
+    """
+
     shared: 'bool'
     """
     Most assets only benefit to their owner, but certain assets (like
@@ -570,13 +577,6 @@ class Asset:
     """
 
     images: 'Optional[List[WebpImageURL]]'
-    options: 'Optional[Dict[str, AssetOptionField]]'
-    """
-    Options are input fields set when the player purchases the asset. They're
-    likely to remain the same through the life of the asset. Typically, they are
-    rendered at the top of the asset card.
-    """
-
     replaces: 'Optional[List[AssetIDWildcard]]'
     """
     This node replaces all nodes that match these wildcards. References to the
@@ -600,6 +600,7 @@ class Asset:
             _from_json_data(Label, data.get("category")),
             _from_json_data(bool, data.get("count_as_impact")),
             _from_json_data(Label, data.get("name")),
+            _from_json_data(Dict[str, AssetOptionField], data.get("options")),
             _from_json_data(bool, data.get("shared")),
             _from_json_data(AssetType, data.get("type")),
             _from_json_data(Optional[str], data.get("_comment")),
@@ -609,7 +610,6 @@ class Asset:
             _from_json_data(Optional[Dict[str, AssetControlField]], data.get("controls")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[List[WebpImageURL]], data.get("images")),
-            _from_json_data(Optional[Dict[str, AssetOptionField]], data.get("options")),
             _from_json_data(Optional[List[AssetIDWildcard]], data.get("replaces")),
             _from_json_data(Optional[MarkdownString], data.get("requirement")),
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
@@ -624,6 +624,7 @@ class Asset:
         data["category"] = _to_json_data(self.category)
         data["count_as_impact"] = _to_json_data(self.count_as_impact)
         data["name"] = _to_json_data(self.name)
+        data["options"] = _to_json_data(self.options)
         data["shared"] = _to_json_data(self.shared)
         data["type"] = _to_json_data(self.type)
         if self.comment is not None:
@@ -640,8 +641,6 @@ class Asset:
              data["icon"] = _to_json_data(self.icon)
         if self.images is not None:
              data["images"] = _to_json_data(self.images)
-        if self.options is not None:
-             data["options"] = _to_json_data(self.options)
         if self.replaces is not None:
              data["replaces"] = _to_json_data(self.replaces)
         if self.requirement is not None:
@@ -1486,6 +1485,11 @@ class AssetConditionMeter:
     companion assets use to indicate they are "out of action".
     """
 
+    controls: 'Dict[str, AssetConditionMeterControlField]'
+    """
+    Checkbox controls rendered as part of the condition meter.
+    """
+
     field_type: 'AssetConditionMeterFieldType'
     label: 'Label'
     max: 'int'
@@ -1508,11 +1512,6 @@ class AssetConditionMeter:
     The current value of this meter.
     """
 
-    controls: 'Optional[Dict[str, AssetConditionMeterControlField]]'
-    """
-    Checkbox controls rendered as part of the condition meter.
-    """
-
     icon: 'Optional[SvgImageURL]'
     """
     An icon associated with this input.
@@ -1528,27 +1527,26 @@ class AssetConditionMeter:
     @classmethod
     def from_json_data(cls, data: Any) -> 'AssetConditionMeter':
         return cls(
+            _from_json_data(Dict[str, AssetConditionMeterControlField], data.get("controls")),
             _from_json_data(AssetConditionMeterFieldType, data.get("field_type")),
             _from_json_data(Label, data.get("label")),
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(bool, data.get("rollable")),
             _from_json_data(int, data.get("value")),
-            _from_json_data(Optional[Dict[str, AssetConditionMeterControlField]], data.get("controls")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[AssetConditionMeterMoves], data.get("moves")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
+        data["controls"] = _to_json_data(self.controls)
         data["field_type"] = _to_json_data(self.field_type)
         data["label"] = _to_json_data(self.label)
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["rollable"] = _to_json_data(self.rollable)
         data["value"] = _to_json_data(self.value)
-        if self.controls is not None:
-             data["controls"] = _to_json_data(self.controls)
         if self.icon is not None:
              data["icon"] = _to_json_data(self.icon)
         if self.moves is not None:
@@ -1859,6 +1857,11 @@ class AssetControlFieldConditionMeter(AssetControlField):
     companion assets use to indicate they are "out of action".
     """
 
+    controls: 'Dict[str, AssetConditionMeterControlField]'
+    """
+    Checkbox controls rendered as part of the condition meter.
+    """
+
     label: 'Label'
     max: 'int'
     """
@@ -1880,11 +1883,6 @@ class AssetControlFieldConditionMeter(AssetControlField):
     The current value of this meter.
     """
 
-    controls: 'Optional[Dict[str, AssetConditionMeterControlField]]'
-    """
-    Checkbox controls rendered as part of the condition meter.
-    """
-
     icon: 'Optional[SvgImageURL]'
     """
     An icon associated with this input.
@@ -1901,25 +1899,24 @@ class AssetControlFieldConditionMeter(AssetControlField):
     def from_json_data(cls, data: Any) -> 'AssetControlFieldConditionMeter':
         return cls(
             "condition_meter",
+            _from_json_data(Dict[str, AssetConditionMeterControlField], data.get("controls")),
             _from_json_data(Label, data.get("label")),
             _from_json_data(int, data.get("max")),
             _from_json_data(int, data.get("min")),
             _from_json_data(bool, data.get("rollable")),
             _from_json_data(int, data.get("value")),
-            _from_json_data(Optional[Dict[str, AssetConditionMeterControlField]], data.get("controls")),
             _from_json_data(Optional[SvgImageURL], data.get("icon")),
             _from_json_data(Optional[AssetControlFieldConditionMeterMoves], data.get("moves")),
         )
 
     def to_json_data(self) -> Any:
         data = { "field_type": "condition_meter" }
+        data["controls"] = _to_json_data(self.controls)
         data["label"] = _to_json_data(self.label)
         data["max"] = _to_json_data(self.max)
         data["min"] = _to_json_data(self.min)
         data["rollable"] = _to_json_data(self.rollable)
         data["value"] = _to_json_data(self.value)
-        if self.controls is not None:
-             data["controls"] = _to_json_data(self.controls)
         if self.icon is not None:
              data["icon"] = _to_json_data(self.icon)
         if self.moves is not None:
@@ -9335,6 +9332,7 @@ class Npc:
 
     tactics: 'List[MarkdownString]'
     type: 'NpcType'
+    variants: 'Dict[str, NpcVariant]'
     comment: 'Optional[str]'
     """
     Implementation hints or other developer-facing comments on this node. These
@@ -9368,7 +9366,6 @@ class Npc:
     suggestions: 'Optional[Suggestions]'
     summary: 'Optional[MarkdownString]'
     tags: 'Optional[Tags]'
-    variants: 'Optional[Dict[str, NpcVariant]]'
     your_truth: 'Optional[MarkdownString]'
 
     @classmethod
@@ -9384,6 +9381,7 @@ class Npc:
             _from_json_data(ChallengeRank, data.get("rank")),
             _from_json_data(List[MarkdownString], data.get("tactics")),
             _from_json_data(NpcType, data.get("type")),
+            _from_json_data(Dict[str, NpcVariant], data.get("variants")),
             _from_json_data(Optional[str], data.get("_comment")),
             _from_json_data(Optional[Label], data.get("canonical_name")),
             _from_json_data(Optional[CSSColor], data.get("color")),
@@ -9394,7 +9392,6 @@ class Npc:
             _from_json_data(Optional[Suggestions], data.get("suggestions")),
             _from_json_data(Optional[MarkdownString], data.get("summary")),
             _from_json_data(Optional[Tags], data.get("tags")),
-            _from_json_data(Optional[Dict[str, NpcVariant]], data.get("variants")),
             _from_json_data(Optional[MarkdownString], data.get("your_truth")),
         )
 
@@ -9410,6 +9407,7 @@ class Npc:
         data["rank"] = _to_json_data(self.rank)
         data["tactics"] = _to_json_data(self.tactics)
         data["type"] = _to_json_data(self.type)
+        data["variants"] = _to_json_data(self.variants)
         if self.comment is not None:
              data["_comment"] = _to_json_data(self.comment)
         if self.canonical_name is not None:
@@ -9430,8 +9428,6 @@ class Npc:
              data["summary"] = _to_json_data(self.summary)
         if self.tags is not None:
              data["tags"] = _to_json_data(self.tags)
-        if self.variants is not None:
-             data["variants"] = _to_json_data(self.variants)
         if self.your_truth is not None:
              data["your_truth"] = _to_json_data(self.your_truth)
         return data

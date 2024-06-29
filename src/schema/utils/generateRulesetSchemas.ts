@@ -22,7 +22,7 @@ import {
 	type Rules,
 	type TagRule
 } from '../Rules.js'
-import { Player } from '../common/index.js'
+import * as Player from '../common/Player.js'
 import { UnionEnum } from './UnionEnum.js'
 import { pascalCase } from './string.js'
 

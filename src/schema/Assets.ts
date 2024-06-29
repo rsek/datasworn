@@ -27,12 +27,11 @@ const AssetMixin = Type.Object({
 			'Support Vehicle'
 		]
 	}),
-	options: Type.Optional(
-		Dictionary(Type.Ref<TAssetOptionField>('AssetOptionField'), {
-			description:
-				"Options are input fields set when the player purchases the asset. They're likely to remain the same through the life of the asset. Typically, they are rendered at the top of the asset card."
-		})
-	),
+	options: Dictionary(Type.Ref<TAssetOptionField>('AssetOptionField'), {
+		description:
+			"Options are input fields set when the player purchases the asset. They're likely to remain the same through the life of the asset. Typically, they are rendered at the top of the asset card.",
+		default: {}
+	}),
 	requirement: Type.Optional(
 		Type.Ref(MarkdownString, {
 			description: 'Describes prerequisites for purchasing or using this asset.'

@@ -144,7 +144,7 @@ declare abstract class IdParser<TypeIds extends StringId.TypeIdParts = StringId.
     protected _matchRulesPackages(tree?: Map<string, Datasworn.RulesPackage> | Record<string, Datasworn.RulesPackage>): Map<string, Datasworn.RulesPackage>;
     /**
      * @internal */
-    protected _getMatchesUnsafe(tree?: Map<string, Datasworn.RulesPackage> | Record<string, Datasworn.RulesPackage>): Map<string, {
+    _getMatchesUnsafe(tree?: Map<string, Datasworn.RulesPackage> | Record<string, Datasworn.RulesPackage>): Map<string, {
         _id: string;
     }>;
 }
@@ -213,7 +213,9 @@ declare class CollectableId<TTypeId extends TypeId.Collectable = TypeId.Collecta
     get parentTypeId(): TypeId.CollectionOf<TTypeId>;
     getCollectionIdParent(): CollectionId<TypeId.CollectionOf<TTypeId>, RulesPackage, Head<CollectableAncestorKeys> & CollectionAncestorKeys, LastElementOf<CollectableAncestorKeys>>;
     /** @internal */
-    protected _getMatchesUnsafe(tree?: Map<string, Datasworn.RulesPackage> | Record<string, Datasworn.RulesPackage>): Map<string, TypeNode.Collectable<TTypeId>>;
+    _getUnsafe(tree?: (typeof IdParser)['tree']): TypeNode.Collectable<TTypeId>;
+    /** @internal */
+    _getMatchesUnsafe(tree?: Map<string, Datasworn.RulesPackage> | Record<string, Datasworn.RulesPackage>): Map<string, TypeNode.Collectable<TTypeId>>;
 }
 interface CollectableId<TTypeId extends TypeId.Collectable = TypeId.Collectable, RulesPackage extends string = string, CollectableAncestorKeys extends PathKeys.CollectableAncestorKeys = PathKeys.CollectableAncestorKeys, Key extends string = string> extends RecursiveId<[
     TTypeId
@@ -288,7 +290,7 @@ declare class CollectionId<TTypeId extends TypeId.Collection = TypeId.Collection
      */
     getCollectionIdParent(): CollectionId.ParentCollectionOf<this>;
     /** @internal */
-    protected _getUnsafe(tree?: Record<string, Datasworn.RulesPackage> | Map<string, Datasworn.RulesPackage>): TypeNode.Collection<TTypeId>;
+    _getUnsafe(tree?: Record<string, Datasworn.RulesPackage> | Map<string, Datasworn.RulesPackage>): TypeNode.Collection<TTypeId>;
     /** @internal */
     protected static _recurseMatches<T extends TypeNode.Collection>(from: T, keys: string[], matches?: Map<string, T>, depth?: number): Map<string, T>;
     /** @internal */

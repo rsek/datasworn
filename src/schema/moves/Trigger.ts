@@ -8,7 +8,7 @@ import {
 	type TSchema,
 	type TObject
 } from '@sinclair/typebox'
-import { Localize } from '../common/index.js'
+import * as Localize from '../common/Localize.js'
 import {
 	setDescriptions,
 	type TFuzzyNull,

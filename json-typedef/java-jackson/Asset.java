@@ -28,6 +28,9 @@ public class Asset {
     @JsonProperty("name")
     private Label name;
 
+    @JsonProperty("options")
+    private Map<String, AssetOptionField> options;
+
     @JsonProperty("shared")
     private Boolean shared;
 
@@ -61,10 +64,6 @@ public class Asset {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("images")
     private List<WebpImageUrl> images;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("options")
-    private Map<String, AssetOptionField> options;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("replaces")
@@ -183,6 +182,26 @@ public class Asset {
      */
     public void setName(Label name) {
         this.name = name;
+    }
+
+    /**
+     * Getter for options.<p>
+     * Options are input fields set when the player purchases the asset. They're
+     * likely to remain the same through the life of the asset. Typically, they
+     * are rendered at the top of the asset card.
+     */
+    public Map<String, AssetOptionField> getOptions() {
+        return options;
+    }
+
+    /**
+     * Setter for options.<p>
+     * Options are input fields set when the player purchases the asset. They're
+     * likely to remain the same through the life of the asset. Typically, they
+     * are rendered at the top of the asset card.
+     */
+    public void setOptions(Map<String, AssetOptionField> options) {
+        this.options = options;
     }
 
     /**
@@ -333,26 +352,6 @@ public class Asset {
      */
     public void setImages(List<WebpImageUrl> images) {
         this.images = images;
-    }
-
-    /**
-     * Getter for options.<p>
-     * Options are input fields set when the player purchases the asset. They're
-     * likely to remain the same through the life of the asset. Typically, they
-     * are rendered at the top of the asset card.
-     */
-    public Map<String, AssetOptionField> getOptions() {
-        return options;
-    }
-
-    /**
-     * Setter for options.<p>
-     * Options are input fields set when the player purchases the asset. They're
-     * likely to remain the same through the life of the asset. Typically, they
-     * are rendered at the top of the asset card.
-     */
-    public void setOptions(Map<String, AssetOptionField> options) {
-        this.options = options;
     }
 
     /**

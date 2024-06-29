@@ -4,14 +4,8 @@ import {
 	type TAnySchema,
 	type TBigInt
 } from '@sinclair/typebox'
-import {
-	type MoveActionRoll,
-	type MoveNoRoll,
-	type MoveProgressRoll,
-	type MoveSpecialTrack
-} from '../Moves.js'
+import * as Localize from '../common/Localize.js'
 import { type TOracleRoll } from '../common/Rolls.js'
-import { Localize } from '../common/index.js'
 import { UnionEnumFromRecord } from '../utils/UnionEnumFromRecord.js'
 
 enum Outcome {

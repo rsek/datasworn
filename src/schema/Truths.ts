@@ -1,11 +1,10 @@
 import { Type, type Static, type TString } from '@sinclair/typebox'
 import * as Generic from './Generic.js'
-import { Computed, Discriminable } from './Utils.js'
 import { DiceRange } from './common/Range.js'
 import { DiceExpression } from './common/Rolls.js'
-import { Id, Localize, Metadata } from './common/index.js'
-import { EmbeddedOracleRollable } from './oracles/EmbeddedOracleRollable.js'
+import * as Localize from './common/Localize.js'
 import { EntityPrompt } from './entities/EntityPrompt.js'
+import { EmbeddedOracleRollable } from './oracles/EmbeddedOracleRollable.js'
 
 export type TruthOption = Static<typeof TruthOption>
 

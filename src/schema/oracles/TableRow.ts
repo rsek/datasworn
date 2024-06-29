@@ -1,28 +1,26 @@
 import {
+	CloneType,
 	Type,
 	type Static,
 	type TObject,
-	type TProperties,
 	type TRef,
-	type TSchema,
-	CloneType
+	type TSchema
 } from '@sinclair/typebox'
-import { keyBy, mapValues } from 'lodash-es'
+import { type Tags } from '../Rules.js'
 import { JsonTypeDef } from '../Symbols.js'
-import * as Generic from '../Generic.js'
 import * as Utils from '../Utils.js'
-import { Id, Localize, Metadata, Rolls } from '../common/index.js'
-import {
-	WithDefaults,
-	setDescriptions,
-	type PickByType
-} from '../utils/typebox.js'
-import type { ObjectProperties } from '../utils/ObjectProperties.js'
-import JtdType from '../../scripts/json-typedef/typedef.js'
-import { Tags } from '../Rules.js'
 import { DiceRange, StaticDiceRange } from '../common/Range.js'
-import type { SetRequired } from 'type-fest'
+
+import Id from '../common/Id.js'
+
+import * as Localize from '../common/Localize.js'
+
+import * as Metadata from '../common/Metadata.js'
+
+import * as Rolls from '../common/Rolls.js'
 import { Assign } from '../utils/FlatIntersect.js'
+import type { ObjectProperties } from '../utils/ObjectProperties.js'
+import { setDescriptions, type PickByType } from '../utils/typebox.js'
 
 const TableRowBase = Type.Object({
 	text: Type.Ref(Localize.MarkdownString, {

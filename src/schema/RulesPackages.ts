@@ -1,6 +1,9 @@
 import { Type, type Static, type TUnsafe } from '@sinclair/typebox'
 import * as Generic from './Generic.js'
-import { Localize, type Id } from './common/index.js'
+
+
+import type Id from './common/Id.js'
+import * as Localize from './common/Localize.js'
 
 import { mapValues } from 'lodash-es'
 import * as CONST from '../scripts/const.js'

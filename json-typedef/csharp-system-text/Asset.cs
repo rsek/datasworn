@@ -44,6 +44,14 @@ namespace Datasworn
         public Label Name { get; set; }
 
         /// <summary>
+        /// Options are input fields set when the player purchases the asset.
+        /// They're likely to remain the same through the life of the asset.
+        /// Typically, they are rendered at the top of the asset card.
+        /// </summary>
+        [JsonPropertyName("options")]
+        public IDictionary<string, AssetOptionField> Options { get; set; }
+
+        /// <summary>
         /// Most assets only benefit to their owner, but certain assets (like
         /// Starforged's module and command vehicle assets) are shared amongst
         /// the player's allies, too.
@@ -100,15 +108,6 @@ namespace Datasworn
         [JsonPropertyName("images")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public IList<WebpImageUrl> Images { get; set; }
-
-        /// <summary>
-        /// Options are input fields set when the player purchases the asset.
-        /// They're likely to remain the same through the life of the asset.
-        /// Typically, they are rendered at the top of the asset card.
-        /// </summary>
-        [JsonPropertyName("options")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        public IDictionary<string, AssetOptionField> Options { get; set; }
 
         /// <summary>
         /// This node replaces all nodes that match these wildcards. References

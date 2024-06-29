@@ -1,5 +1,4 @@
 import fastGlob from 'fast-glob'
-import fs from 'fs-extra'
 import path from 'path'
 import { cwd } from 'process'
 import {
@@ -72,11 +71,10 @@ export async function buildRulesPackages(
 
 	const toWrite: Promise<any>[] = []
 
-	const tree = new Map(
+	IdParser.tree = new Map(
 		(await Promise.all(toBuild)).map((pkg) => [pkg.id, pkg.build().toJSON()])
 	)
-
-	IdParser.tree = tree
+	if (IdParser.tree == null) throw new Error('IdParser is null?')
 
 	// console.log(new Set(index.keys()))
 
@@ -84,15 +82,15 @@ export async function buildRulesPackages(
 
 	const visitedIds = new Set<string>()
 
-	for (const [pkgId, pkg] of tree)
+	for (const [pkgId, pkg] of IdParser.tree)
 		try {
 			forEachIdRef(pkg, (id) => {
 				if (visitedIds.has(id)) return
 
 				try {
 					const parsedId = IdParser.parse(id as any)
-					const matches = parsedId.getMatches(tree)
-					if (matches.length === 0) throw new Error('No matches')
+					const matches = parsedId.getMatches(IdParser.tree)
+					if (matches.size === 0) throw new Error('No matches')
 					visitedIds.add(id)
 				} catch (e) {
 					errors.push(`Couldn't reach <${id}> ${String(e)}`)
@@ -176,7 +174,7 @@ async function assemblePkgFiles(
 	)
 
 	builder.build()
-	for (const entry of builder.index) index.set(...entry)
+	for (const [k, v] of builder.index) index.set(k, v)
 
 	return builder
 }

@@ -415,6 +415,11 @@ module Datasworn
     # The primary name/label for this node.
     attr_accessor :name
 
+    # Options are input fields set when the player purchases the asset. They're
+    # likely to remain the same through the life of the asset. Typically, they
+    # are rendered at the top of the asset card.
+    attr_accessor :options
+
     # Most assets only benefit to their owner, but certain assets (like
     # Starforged's module and command vehicle assets) are shared amongst the
     # player's allies, too.
@@ -442,11 +447,6 @@ module Datasworn
     attr_accessor :icon
     attr_accessor :images
 
-    # Options are input fields set when the player purchases the asset. They're
-    # likely to remain the same through the life of the asset. Typically, they
-    # are rendered at the top of the asset card.
-    attr_accessor :options
-
     # This node replaces all nodes that match these wildcards. References to the
     # replaced nodes can be considered equivalent to this node.
     attr_accessor :replaces
@@ -464,6 +464,7 @@ module Datasworn
       out.category = Datasworn::from_json_data(Label, data["category"])
       out.count_as_impact = Datasworn::from_json_data(TrueClass, data["count_as_impact"])
       out.name = Datasworn::from_json_data(Label, data["name"])
+      out.options = Datasworn::from_json_data(Hash[String, AssetOptionField], data["options"])
       out.shared = Datasworn::from_json_data(TrueClass, data["shared"])
       out.type = Datasworn::from_json_data(AssetType, data["type"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
@@ -473,7 +474,6 @@ module Datasworn
       out.controls = Datasworn::from_json_data(Hash[String, AssetControlField], data["controls"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
       out.images = Datasworn::from_json_data(Array[WebpImageURL], data["images"])
-      out.options = Datasworn::from_json_data(Hash[String, AssetOptionField], data["options"])
       out.replaces = Datasworn::from_json_data(Array[AssetIDWildcard], data["replaces"])
       out.requirement = Datasworn::from_json_data(MarkdownString, data["requirement"])
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
@@ -489,6 +489,7 @@ module Datasworn
       data["category"] = Datasworn::to_json_data(category)
       data["count_as_impact"] = Datasworn::to_json_data(count_as_impact)
       data["name"] = Datasworn::to_json_data(name)
+      data["options"] = Datasworn::to_json_data(options)
       data["shared"] = Datasworn::to_json_data(shared)
       data["type"] = Datasworn::to_json_data(type)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
@@ -498,7 +499,6 @@ module Datasworn
       data["controls"] = Datasworn::to_json_data(controls) unless controls.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
       data["images"] = Datasworn::to_json_data(images) unless images.nil?
-      data["options"] = Datasworn::to_json_data(options) unless options.nil?
       data["replaces"] = Datasworn::to_json_data(replaces) unless replaces.nil?
       data["requirement"] = Datasworn::to_json_data(requirement) unless requirement.nil?
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
@@ -1217,6 +1217,8 @@ module Datasworn
   # may also include their own controls, such as the checkboxes that Starforged
   # companion assets use to indicate they are "out of action".
   class AssetConditionMeter
+    # Checkbox controls rendered as part of the condition meter.
+    attr_accessor :controls
     attr_accessor :field_type
     attr_accessor :label
 
@@ -1232,9 +1234,6 @@ module Datasworn
     # The current value of this meter.
     attr_accessor :value
 
-    # Checkbox controls rendered as part of the condition meter.
-    attr_accessor :controls
-
     # An icon associated with this input.
     attr_accessor :icon
 
@@ -1244,13 +1243,13 @@ module Datasworn
 
     def self.from_json_data(data)
       out = AssetConditionMeter.new
+      out.controls = Datasworn::from_json_data(Hash[String, AssetConditionMeterControlField], data["controls"])
       out.field_type = Datasworn::from_json_data(AssetConditionMeterFieldType, data["field_type"])
       out.label = Datasworn::from_json_data(Label, data["label"])
       out.max = Datasworn::from_json_data(Integer, data["max"])
       out.min = Datasworn::from_json_data(Integer, data["min"])
       out.rollable = Datasworn::from_json_data(TrueClass, data["rollable"])
       out.value = Datasworn::from_json_data(Integer, data["value"])
-      out.controls = Datasworn::from_json_data(Hash[String, AssetConditionMeterControlField], data["controls"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
       out.moves = Datasworn::from_json_data(AssetConditionMeterMoves, data["moves"])
       out
@@ -1258,13 +1257,13 @@ module Datasworn
 
     def to_json_data
       data = {}
+      data["controls"] = Datasworn::to_json_data(controls)
       data["field_type"] = Datasworn::to_json_data(field_type)
       data["label"] = Datasworn::to_json_data(label)
       data["max"] = Datasworn::to_json_data(max)
       data["min"] = Datasworn::to_json_data(min)
       data["rollable"] = Datasworn::to_json_data(rollable)
       data["value"] = Datasworn::to_json_data(value)
-      data["controls"] = Datasworn::to_json_data(controls) unless controls.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
       data["moves"] = Datasworn::to_json_data(moves) unless moves.nil?
       data
@@ -1490,24 +1489,24 @@ module Datasworn
   # may also include their own controls, such as the checkboxes that Starforged
   # companion assets use to indicate they are "out of action".
   class AssetControlFieldConditionMeter < AssetControlField
+    attr_accessor :controls
     attr_accessor :label
     attr_accessor :max
     attr_accessor :min
     attr_accessor :rollable
     attr_accessor :value
-    attr_accessor :controls
     attr_accessor :icon
     attr_accessor :moves
 
     def self.from_json_data(data)
       out = AssetControlFieldConditionMeter.new
       out.field_type = "condition_meter"
+      out.controls = Datasworn::from_json_data(Hash[String, AssetConditionMeterControlField], data["controls"])
       out.label = Datasworn::from_json_data(Label, data["label"])
       out.max = Datasworn::from_json_data(Integer, data["max"])
       out.min = Datasworn::from_json_data(Integer, data["min"])
       out.rollable = Datasworn::from_json_data(TrueClass, data["rollable"])
       out.value = Datasworn::from_json_data(Integer, data["value"])
-      out.controls = Datasworn::from_json_data(Hash[String, AssetConditionMeterControlField], data["controls"])
       out.icon = Datasworn::from_json_data(SvgImageURL, data["icon"])
       out.moves = Datasworn::from_json_data(AssetControlFieldConditionMeterMoves, data["moves"])
       out
@@ -1515,12 +1514,12 @@ module Datasworn
 
     def to_json_data
       data = { "field_type" => "condition_meter" }
+      data["controls"] = Datasworn::to_json_data(controls)
       data["label"] = Datasworn::to_json_data(label)
       data["max"] = Datasworn::to_json_data(max)
       data["min"] = Datasworn::to_json_data(min)
       data["rollable"] = Datasworn::to_json_data(rollable)
       data["value"] = Datasworn::to_json_data(value)
-      data["controls"] = Datasworn::to_json_data(controls) unless controls.nil?
       data["icon"] = Datasworn::to_json_data(icon) unless icon.nil?
       data["moves"] = Datasworn::to_json_data(moves) unless moves.nil?
       data
@@ -8230,6 +8229,7 @@ module Datasworn
     attr_accessor :rank
     attr_accessor :tactics
     attr_accessor :type
+    attr_accessor :variants
 
     # Implementation hints or other developer-facing comments on this node.
     # These should be omitted when presenting the node for gameplay.
@@ -8253,7 +8253,6 @@ module Datasworn
     attr_accessor :suggestions
     attr_accessor :summary
     attr_accessor :tags
-    attr_accessor :variants
     attr_accessor :your_truth
 
     def self.from_json_data(data)
@@ -8268,6 +8267,7 @@ module Datasworn
       out.rank = Datasworn::from_json_data(ChallengeRank, data["rank"])
       out.tactics = Datasworn::from_json_data(Array[MarkdownString], data["tactics"])
       out.type = Datasworn::from_json_data(NpcType, data["type"])
+      out.variants = Datasworn::from_json_data(Hash[String, NpcVariant], data["variants"])
       out.comment = Datasworn::from_json_data(String, data["_comment"])
       out.canonical_name = Datasworn::from_json_data(Label, data["canonical_name"])
       out.color = Datasworn::from_json_data(CSSColor, data["color"])
@@ -8278,7 +8278,6 @@ module Datasworn
       out.suggestions = Datasworn::from_json_data(Suggestions, data["suggestions"])
       out.summary = Datasworn::from_json_data(MarkdownString, data["summary"])
       out.tags = Datasworn::from_json_data(Tags, data["tags"])
-      out.variants = Datasworn::from_json_data(Hash[String, NpcVariant], data["variants"])
       out.your_truth = Datasworn::from_json_data(MarkdownString, data["your_truth"])
       out
     end
@@ -8295,6 +8294,7 @@ module Datasworn
       data["rank"] = Datasworn::to_json_data(rank)
       data["tactics"] = Datasworn::to_json_data(tactics)
       data["type"] = Datasworn::to_json_data(type)
+      data["variants"] = Datasworn::to_json_data(variants)
       data["_comment"] = Datasworn::to_json_data(comment) unless comment.nil?
       data["canonical_name"] = Datasworn::to_json_data(canonical_name) unless canonical_name.nil?
       data["color"] = Datasworn::to_json_data(color) unless color.nil?
@@ -8305,7 +8305,6 @@ module Datasworn
       data["suggestions"] = Datasworn::to_json_data(suggestions) unless suggestions.nil?
       data["summary"] = Datasworn::to_json_data(summary) unless summary.nil?
       data["tags"] = Datasworn::to_json_data(tags) unless tags.nil?
-      data["variants"] = Datasworn::to_json_data(variants) unless variants.nil?
       data["your_truth"] = Datasworn::to_json_data(your_truth) unless your_truth.nil?
       data
     end

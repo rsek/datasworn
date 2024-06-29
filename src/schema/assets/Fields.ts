@@ -1,7 +1,7 @@
 import { Type, type Static } from '@sinclair/typebox'
 import { type Simplify } from 'type-fest'
 import * as Generic from '../Generic.js'
-import { Fields } from '../common/index.js'
+import * as Fields from '../common/Fields.js'
 import { Assign } from '../utils/FlatIntersect.js'
 import { DiscriminatedUnion } from '../Utils.js'
 
@@ -128,11 +128,10 @@ const AssetConditionMeterMixin = Type.Object({
 			}
 		)
 	),
-	controls: Type.Optional(
-		Generic.Dictionary(Type.Ref(AssetConditionMeterControlField), {
-			description: 'Checkbox controls rendered as part of the condition meter.'
-		})
-	)
+	controls: Generic.Dictionary(Type.Ref(AssetConditionMeterControlField), {
+		description: 'Checkbox controls rendered as part of the condition meter.',
+		default: {}
+	})
 })
 
 export const AssetConditionMeter = Assign(

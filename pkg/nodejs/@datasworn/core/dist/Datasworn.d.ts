@@ -1484,7 +1484,7 @@ export interface Npc {
      * @remarks Deserialize as a dictionary object.
      * @default {}
      */
-    variants?: Record<DictKey, NpcVariant>;
+    variants: Record<DictKey, NpcVariant>;
     type: 'npc';
 }
 export interface NpcCollection {
@@ -3786,7 +3786,7 @@ export interface Asset {
      * @remarks Deserialize as a dictionary object.
      * @default {}
      */
-    options?: Record<DictKey, AssetOptionField>;
+    options: Record<DictKey, AssetOptionField>;
     /**
      * Describes prerequisites for purchasing or using this asset.
      */
@@ -4044,7 +4044,7 @@ export interface AssetConditionMeter {
      * @remarks Deserialize as a dictionary object.
      * @default {}
      */
-    controls?: Record<DictKey, AssetConditionMeterControlField>;
+    controls: Record<DictKey, AssetConditionMeterControlField>;
 }
 /**
  * A checkbox control field, rendered as part of an asset condition meter.

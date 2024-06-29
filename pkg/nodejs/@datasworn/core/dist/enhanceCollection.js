@@ -1,8 +1,34 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.enhanceCollection = void 0;
+// import fs from 'fs-extra'
+// import { IdParser, type Datasworn } from './index.js'
 // const classic = fs.readJSONSync(
 // 	'./pkg/nodejs/@datasworn/ironsworn-classic/json/classic.json'
+// ) as Datasworn.Ruleset
+// const starforged = fs.readJSONSync(
+// 	'./pkg/nodejs/@datasworn/starforged/json/starforged.json'
+// ) as Datasworn.Ruleset
+// const sundered_isles = fs.readJSONSync(
+// 	'./pkg/nodejs/@datasworn/sundered-isles/json/sundered_isles.json'
+// ) as Datasworn.Expansion
+// const delve = fs.readJSONSync(
+// 	'./pkg/nodejs/@datasworn/ironsworn-classic-delve/json/delve.json'
+// ) as Datasworn.Expansion
+// IdParser.tree = new Map(
+// 	[classic, starforged, sundered_isles, delve].map((pkg) => [pkg._id, pkg])
+// )
+// const collectionId = IdParser.parse('oracle_collection:sundered_isles/**')
+// const collectableId = IdParser.parse('oracle_rollable:*/**/peril')
+// const collectionResults = Array.from(collectionId.getMatches().keys())
+// const collectableResults = Array.from(collectableId.getMatches().keys())
+// console.log(collectionResults)
+// console.log(collectableResults)
+// const f = IdParser.parse('move_category:classic/suffer')
+// const fff = IdParser.parse('move:classic/suffer/endure_stress')
+// console.log(f.id)
+// console.log(fff.id)
+// console.log(fff._getUnsafe())
 // ) as Datasworn.Ruleset
 // const delve = fs.readJSONSync(
 // 	'./pkg/nodejs/@datasworn/ironsworn-classic-delve/json/delve.json'

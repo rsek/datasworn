@@ -1,11 +1,11 @@
-import { Type, type Static, type TString } from '@sinclair/typebox'
-import { Id, Localize, Progress } from './common/index.js'
+import { Type, type Static } from '@sinclair/typebox'
 import * as Generic from './Generic.js'
-import * as Utils from './Utils.js'
-import { Assign, FlatIntersect } from './utils/FlatIntersect.js'
 import { Namespace } from './Symbols.js'
-import { EmbeddedPrimaryNode } from './utils/EmbeddedNode.js'
+
+import * as Localize from './common/Localize.js'
+import * as Progress from './common/Progress.js'
 import { EmbedOnlyNode } from './generic/EmbedOnlyNode.js'
+import { FlatIntersect } from './utils/FlatIntersect.js'
 
 const ns = 'Npcs'
 
@@ -57,7 +57,7 @@ export const Npc = Generic.CollectableNode(
 	FlatIntersect([
 		NpcMixin,
 		Type.Object({
-			variants: Type.Optional(Generic.Dictionary(Type.Ref(NpcVariant)))
+			variants: Generic.Dictionary(Type.Ref(NpcVariant), { default: {} })
 		})
 	]),
 	'npc',

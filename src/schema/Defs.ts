@@ -10,15 +10,15 @@ import * as Rules from './Rules.js'
 import * as Truths from './Truths.js'
 import * as Entities from './Entities.js'
 import { RulesPackage, Ruleset, Expansion } from './RulesPackages.js'
-import {
-	Id,
-	Localize,
-	Metadata,
-	Player,
-	Progress,
-	Rolls,
-	RollableValues
-} from './common/index.js'
+
+import Id from './common/Id.js'
+import * as Localize from './common/Localize.js'
+import * as Metadata from './common/Metadata.js'
+import * as Player from './common/Player.js'
+import * as Progress from './common/Progress.js'
+import * as Rolls from './common/Rolls.js'
+import * as RollableValues from './common/RollableValues.js'
+
 import Log from '../scripts/utils/Log.js'
 import { pickBy } from 'lodash-es'
 import { DefsKey } from '../scripts/const.js'

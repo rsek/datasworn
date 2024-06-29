@@ -1,6 +1,7 @@
 import { Type, type Static } from '@sinclair/typebox'
 import * as Generic from '../Generic.js'
-import { Id, Localize } from './index.js'
+import Id from './Id.js'
+import * as Localize from './Localize.js'
 import { UnionEnumFromRecord } from '../utils/UnionEnumFromRecord.js'
 
 export const ChallengeRank = UnionEnumFromRecord(

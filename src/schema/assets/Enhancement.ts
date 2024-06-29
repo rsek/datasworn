@@ -4,7 +4,9 @@ import { Nullable } from '../utils/Nullable.js'
 import { AssetConditionMeter } from './Fields.js'
 import { AssetPropertiesEnhanceable } from './common.js'
 import { DiscriminatedUnion } from '../utils/DiscriminatedUnion.js'
-import { Fields, Id } from '../common/index.js'
+import Id from '../common/Id.js'
+import * as Fields from '../common/Fields.js'
+
 
 export const AssetAttachment = Type.Object(
 	{

@@ -1,6 +1,7 @@
 import { type TString, Type, type Static } from '@sinclair/typebox'
-import { Id, Localize } from './index.js'
 import * as Utils from '../Utils.js'
+import * as Localize from './Localize.js'
+import Id from './Id.js'
 
 export const DiceExpression = Type.String({
 	pattern: /([1-9][0-9]*)d([1-9][0-9]*)([+-]([1-9][0-9]*))?/.source,

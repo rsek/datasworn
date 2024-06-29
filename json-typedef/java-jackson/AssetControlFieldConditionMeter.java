@@ -15,6 +15,9 @@ import java.util.Map;
  */
 @JsonSerialize
 public class AssetControlFieldConditionMeter extends AssetControlField {
+    @JsonProperty("controls")
+    private Map<String, AssetConditionMeterControlField> controls;
+
     @JsonProperty("label")
     private Label label;
 
@@ -31,10 +34,6 @@ public class AssetControlFieldConditionMeter extends AssetControlField {
     private Byte value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("controls")
-    private Map<String, AssetConditionMeterControlField> controls;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("icon")
     private SvgImageUrl icon;
 
@@ -43,6 +42,22 @@ public class AssetControlFieldConditionMeter extends AssetControlField {
     private AssetControlFieldConditionMeterMoves moves;
 
     public AssetControlFieldConditionMeter() {
+    }
+
+    /**
+     * Getter for controls.<p>
+     * Checkbox controls rendered as part of the condition meter.
+     */
+    public Map<String, AssetConditionMeterControlField> getControls() {
+        return controls;
+    }
+
+    /**
+     * Setter for controls.<p>
+     * Checkbox controls rendered as part of the condition meter.
+     */
+    public void setControls(Map<String, AssetConditionMeterControlField> controls) {
+        this.controls = controls;
     }
 
     /**
@@ -121,22 +136,6 @@ public class AssetControlFieldConditionMeter extends AssetControlField {
      */
     public void setValue(Byte value) {
         this.value = value;
-    }
-
-    /**
-     * Getter for controls.<p>
-     * Checkbox controls rendered as part of the condition meter.
-     */
-    public Map<String, AssetConditionMeterControlField> getControls() {
-        return controls;
-    }
-
-    /**
-     * Setter for controls.<p>
-     * Checkbox controls rendered as part of the condition meter.
-     */
-    public void setControls(Map<String, AssetConditionMeterControlField> controls) {
-        this.controls = controls;
     }
 
     /**

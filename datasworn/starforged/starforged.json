@@ -61133,7 +61133,7 @@
 							"enhance_asset": {
 								"attachments": {
 									"max": 1,
-									"assets": ["asset:*/modules/*"]
+									"assets": ["asset:*/module/*"]
 								}
 							},
 							"enabled": false,
@@ -65306,8 +65306,8 @@
 					},
 					"suggestions": [
 						"oracle_rollable:starforged/misc/story_complication",
-						"oracle_rollable:**/*/peril",
-						"oracle_rollable:**/peril/**"
+						"oracle_rollable:*/**/peril",
+						"oracle_rollable:*/**/peril/**"
 					],
 					"oracles": {
 						"pay_the_price": {

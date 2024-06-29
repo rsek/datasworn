@@ -34892,7 +34892,7 @@
 								"sundered_isles": {
 									"curse_behavior": "replace_result",
 									"cursed_version_of": [
-										"oracle_rollable:sundered_isles/overland/regional_landmark/*"
+										"oracle_rollable:sundered_isles/overland/region_landmarks/*"
 									]
 								}
 							},
@@ -44661,6 +44661,118 @@
 					},
 					"_id": "oracle_rollable:sundered_isles/settlement/first_look_cursed"
 				},
+				"focus_cursed": {
+					"name": "Cursed Settlement Focus",
+					"type": "oracle_rollable",
+					"oracle_type": "table_text",
+					"tags": {
+						"sundered_isles": {
+							"cursed_version_of": [
+								"oracle_rollable:sundered_isles/settlement/focus/*"
+							],
+							"curse_behavior": "replace_result"
+						}
+					},
+					"_source": {
+						"date": "2024-06-11",
+						"title": "Sundered Isles",
+						"url": "https://ironswornrpg.com",
+						"license": null,
+						"authors": [
+							{
+								"name": "Shawn Tomkin"
+							}
+						]
+					},
+					"rows": [
+						{
+							"roll": {
+								"min": 1,
+								"max": 10
+							},
+							"text": "Acting to fulfill a dreadful bargain with a cursed power",
+							"_id": "oracle_rollable.row:sundered_isles/settlement/focus_cursed.0"
+						},
+						{
+							"roll": {
+								"min": 11,
+								"max": 20
+							},
+							"text": "Bound unwillingly to the service of a cursed power",
+							"_id": "oracle_rollable.row:sundered_isles/settlement/focus_cursed.1"
+						},
+						{
+							"roll": {
+								"min": 21,
+								"max": 30
+							},
+							"text": "Corrupted or sickened by the effects of a cursed location or relic",
+							"_id": "oracle_rollable.row:sundered_isles/settlement/focus_cursed.2"
+						},
+						{
+							"roll": {
+								"min": 31,
+								"max": 40
+							},
+							"text": "Desperately working in defiance of a cursed power",
+							"_id": "oracle_rollable.row:sundered_isles/settlement/focus_cursed.3"
+						},
+						{
+							"roll": {
+								"min": 41,
+								"max": 50
+							},
+							"text": "Enduring dreadful conditions",
+							"_id": "oracle_rollable.row:sundered_isles/settlement/focus_cursed.4"
+						},
+						{
+							"roll": {
+								"min": 51,
+								"max": 60
+							},
+							"text": "Granted unusual abilities or resources by a cursed power",
+							"_id": "oracle_rollable.row:sundered_isles/settlement/focus_cursed.5"
+						},
+						{
+							"roll": {
+								"min": 61,
+								"max": 70
+							},
+							"text": "In zealous service of a cursed power",
+							"_id": "oracle_rollable.row:sundered_isles/settlement/focus_cursed.6"
+						},
+						{
+							"roll": {
+								"min": 71,
+								"max": 80
+							},
+							"text": "Suffering under the deprivations of a cursed power",
+							"_id": "oracle_rollable.row:sundered_isles/settlement/focus_cursed.7"
+						},
+						{
+							"roll": {
+								"min": 81,
+								"max": 90
+							},
+							"text": "Targeted by a cursed power",
+							"_id": "oracle_rollable.row:sundered_isles/settlement/focus_cursed.8"
+						},
+						{
+							"roll": {
+								"min": 91,
+								"max": 100
+							},
+							"text": "Unwittingly helping or unleashing a cursed power",
+							"_id": "oracle_rollable.row:sundered_isles/settlement/focus_cursed.9"
+						}
+					],
+					"dice": "1d100",
+					"column_labels": {
+						"roll": "Roll",
+						"text": "Result"
+					},
+					"_id": "oracle_rollable:sundered_isles/settlement/focus_cursed"
+				},
 				"details": {
 					"name": "Settlement Details",
 					"type": "oracle_rollable",
@@ -47671,1097 +47783,6 @@
 								"text": "Result"
 							},
 							"_id": "oracle_collection:sundered_isles/settlement/identity/controlling_faction"
-						},
-						"focus": {
-							"name": "Settlement Focus",
-							"type": "oracle_collection",
-							"oracle_type": "table_shared_text2",
-							"column_labels": {
-								"text": "Activity",
-								"text2": "Typical Facilities and Services"
-							},
-							"_source": {
-								"date": "2024-06-11",
-								"title": "Sundered Isles",
-								"url": "https://ironswornrpg.com",
-								"license": null,
-								"authors": [
-									{
-										"name": "Shawn Tomkin"
-									}
-								]
-							},
-							"contents": {
-								"shore": {
-									"name": "Shore",
-									"type": "oracle_rollable",
-									"oracle_type": "column_text2",
-									"tags": {
-										"sundered_isles": {
-											"cursed_by": "oracle_rollable:sundered_isles/settlement/identity/focus_cursed",
-											"location": "shore"
-										}
-									},
-									"rows": [
-										{
-											"roll": {
-												"min": 1,
-												"max": 3
-											},
-											"text": "Piracy",
-											"text2": "Pirate court, smuggler dens, taverns",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.0"
-										},
-										{
-											"roll": {
-												"min": 4,
-												"max": 6
-											},
-											"text": "Whaling",
-											"text2": "Whaling ships, processing plants, wharfs",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.1"
-										},
-										{
-											"roll": {
-												"min": 7,
-												"max": 8
-											},
-											"text": "Wrecking",
-											"text2": "Ship graveyard",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.2"
-										},
-										{
-											"roll": {
-												"min": 9,
-												"max": 14
-											},
-											"text": "Shipbuilding",
-											"text2": "Dry docks, lumber mills, shipwrights",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.3"
-										},
-										{
-											"roll": {
-												"min": 15,
-												"max": 22
-											},
-											"text": "Fishing",
-											"text2": "Boatwrights, fishmongers, net makers",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.4"
-										},
-										{
-											"roll": {
-												"min": 23,
-												"max": 24
-											},
-											"text": "Alcohol Production",
-											"text2": "Breweries, distilleries, wineries",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.5"
-										},
-										{
-											"roll": {
-												"min": 25,
-												"max": 25
-											},
-											"text": "Archeology",
-											"text2": "Excavation sites, field camps, relic hunters",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.6"
-										},
-										{
-											"roll": {
-												"min": 26,
-												"max": 27
-											},
-											"text": "Crafts",
-											"text2": "Artisans, markets, workshops",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.7"
-										},
-										{
-											"roll": {
-												"min": 28,
-												"max": 29
-											},
-											"text": "Culture",
-											"text2": "Archives, festivals, historical sites",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.8"
-										},
-										{
-											"roll": {
-												"min": 30,
-												"max": 35
-											},
-											"text": "Defense",
-											"text2": "Armories, fortifications, militia",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.9"
-										},
-										{
-											"roll": {
-												"min": 36,
-												"max": 36
-											},
-											"text": "Dueling",
-											"text2": "Dueling grounds, fencing schools",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.10"
-										},
-										{
-											"roll": {
-												"min": 37,
-												"max": 38
-											},
-											"text": "Education",
-											"text2": "Libraries, universities",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.11"
-										},
-										{
-											"roll": {
-												"min": 39,
-												"max": 40
-											},
-											"text": "Entertainment",
-											"text2": "Arenas, fairs, street performers, theaters",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.12"
-										},
-										{
-											"roll": {
-												"min": 41,
-												"max": 42
-											},
-											"text": "Espionage",
-											"text2": "Assassin guild, spy network",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.13"
-										},
-										{
-											"roll": {
-												"min": 43,
-												"max": 44
-											},
-											"text": "Exploration",
-											"text2": "Navigators guild, outfitters, scouts",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.14"
-										},
-										{
-											"roll": {
-												"min": 45,
-												"max": 48
-											},
-											"text": "Farming",
-											"text2": "Fields, granaries, mills, orchards",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.15"
-										},
-										{
-											"roll": {
-												"min": 49,
-												"max": 54
-											},
-											"text": "Hospitality",
-											"text2": "Bath houses, brothels, inns, taverns",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.16"
-										},
-										{
-											"roll": {
-												"min": 55,
-												"max": 55
-											},
-											"text": "Hunting",
-											"text2": "Animal trainers, taxidermists, tanners",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.17"
-										},
-										{
-											"roll": {
-												"min": 56,
-												"max": 57
-											},
-											"text": "Law",
-											"text2": "Courts, gallows, patrols, prisons",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.18"
-										},
-										{
-											"roll": {
-												"min": 58,
-												"max": 58
-											},
-											"text": "Livestock / horses",
-											"text2": "Ranches, slaughterhouses, stables",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.19"
-										},
-										{
-											"roll": {
-												"min": 59,
-												"max": 59
-											},
-											"text": "Logging",
-											"text2": "Logging camps, sawmills",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.20"
-										},
-										{
-											"roll": {
-												"min": 60,
-												"max": 61
-											},
-											"text": "Medicine",
-											"text2": "Apothecaries, herbalists, infirmaries",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.21"
-										},
-										{
-											"roll": {
-												"min": 62,
-												"max": 62
-											},
-											"text": "Metalworking",
-											"text2": "Artificers, blacksmiths, forges",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.22"
-										},
-										{
-											"roll": {
-												"min": 63,
-												"max": 63
-											},
-											"text": "Mining",
-											"text2": "Foundries, mines, smelters",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.23"
-										},
-										{
-											"roll": {
-												"min": 64,
-												"max": 65
-											},
-											"text": "Mysticism",
-											"text2": "Alchemists, curio dealers, enclaves, mystics",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.24"
-										},
-										{
-											"roll": {
-												"min": 66,
-												"max": 66
-											},
-											"text": "Nature",
-											"text2": "Animal sanctuaries, gardens, groves",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.25"
-										},
-										{
-											"roll": {
-												"min": 67,
-												"max": 68
-											},
-											"text": "Religion",
-											"text2": "Monasteries, sacred sites, temples",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.26"
-										},
-										{
-											"roll": {
-												"min": 69,
-												"max": 70
-											},
-											"text": "Science",
-											"text2": "Academies, naturalist guild, observatories",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.27"
-										},
-										{
-											"roll": {
-												"min": 71,
-												"max": 73
-											},
-											"text": "Smuggling",
-											"text2": "Black market, fences, smugglers",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.28"
-										},
-										{
-											"roll": {
-												"min": 74,
-												"max": 75
-											},
-											"text": "Society",
-											"text2": "Balls, boutiques, social clubs, tailors",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.29"
-										},
-										{
-											"roll": {
-												"min": 76,
-												"max": 77
-											},
-											"text": "Statecraft",
-											"text2": "Embassies, envoys, court or council",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.30"
-										},
-										{
-											"roll": {
-												"min": 78,
-												"max": 78
-											},
-											"text": "Stoneworking",
-											"text2": "Masons, quarries, stone yards",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.31"
-										},
-										{
-											"roll": {
-												"min": 79,
-												"max": 86
-											},
-											"text": "Trade",
-											"text2": "Auction house, markets, merchant guild",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.32"
-										},
-										{
-											"roll": {
-												"min": 87,
-												"max": 89
-											},
-											"text": "Vices",
-											"text2": "Brothels, drug dens, gambling halls, taverns",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.33"
-										},
-										{
-											"roll": {
-												"min": 90,
-												"max": 93
-											},
-											"text": "Warfare",
-											"text2": "Armies or fleets, command post, forts",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.34"
-										},
-										{
-											"roll": {
-												"min": 94,
-												"max": 95
-											},
-											"text": "Weaponry",
-											"text2": "Cannon foundries, gunsmiths, powder mills",
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.35"
-										},
-										{
-											"roll": {
-												"min": 96,
-												"max": 100
-											},
-											"text": "[Action](oracle_rollable:sundered_isles/core/action) + [Theme](oracle_rollable:sundered_isles/core/theme)",
-											"oracle_rolls": [
-												{
-													"auto": true,
-													"oracle": "oracle_rollable:sundered_isles/core/action",
-													"dice": null,
-													"duplicates": "reroll",
-													"number_of_rolls": 1
-												},
-												{
-													"auto": true,
-													"oracle": "oracle_rollable:sundered_isles/core/theme",
-													"dice": null,
-													"duplicates": "reroll",
-													"number_of_rolls": 1
-												}
-											],
-											"text2": null,
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/shore.36"
-										}
-									],
-									"dice": "1d100",
-									"_id": "oracle_rollable:sundered_isles/settlement/identity/focus/shore"
-								},
-								"inland": {
-									"name": "Inland",
-									"type": "oracle_rollable",
-									"oracle_type": "column_text2",
-									"tags": {
-										"sundered_isles": {
-											"cursed_by": "oracle_rollable:sundered_isles/settlement/identity/focus_cursed",
-											"location": "inland"
-										}
-									},
-									"rows": [
-										{
-											"text": "Piracy",
-											"text2": "Pirate court, smuggler dens, taverns",
-											"roll": null,
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.0"
-										},
-										{
-											"text": "Whaling",
-											"text2": "Whaling ships, processing plants, wharfs",
-											"roll": null,
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.1"
-										},
-										{
-											"text": "Wrecking",
-											"text2": "Ship graveyard",
-											"roll": null,
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.2"
-										},
-										{
-											"text": "Shipbuilding",
-											"text2": "Dry docks, lumber mills, shipwrights",
-											"roll": null,
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.3"
-										},
-										{
-											"text": "Fishing",
-											"text2": "Boatwrights, fishmongers, net makers",
-											"roll": null,
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.4"
-										},
-										{
-											"text": "Alcohol Production",
-											"text2": "Breweries, distilleries, wineries",
-											"roll": {
-												"min": 1,
-												"max": 2
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.5"
-										},
-										{
-											"text": "Archeology",
-											"text2": "Excavation sites, field camps, relic hunters",
-											"roll": {
-												"min": 3,
-												"max": 3
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.6"
-										},
-										{
-											"text": "Crafts",
-											"text2": "Artisans, markets, workshops",
-											"roll": {
-												"min": 4,
-												"max": 5
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.7"
-										},
-										{
-											"text": "Culture",
-											"text2": "Archives, festivals, historical sites",
-											"roll": {
-												"min": 6,
-												"max": 11
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.8"
-										},
-										{
-											"text": "Defense",
-											"text2": "Armories, fortifications, militia",
-											"roll": {
-												"min": 12,
-												"max": 13
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.9"
-										},
-										{
-											"text": "Dueling",
-											"text2": "Dueling grounds, fencing schools",
-											"roll": {
-												"min": 14,
-												"max": 14
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.10"
-										},
-										{
-											"text": "Education",
-											"text2": "Libraries, universities",
-											"roll": {
-												"min": 15,
-												"max": 16
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.11"
-										},
-										{
-											"text": "Entertainment",
-											"text2": "Arenas, fairs, street performers, theaters",
-											"roll": {
-												"min": 17,
-												"max": 17
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.12"
-										},
-										{
-											"text": "Espionage",
-											"text2": "Assassin guild, spy network",
-											"roll": {
-												"min": 18,
-												"max": 18
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.13"
-										},
-										{
-											"text": "Exploration",
-											"text2": "Navigators guild, outfitters, scouts",
-											"roll": {
-												"min": 19,
-												"max": 20
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.14"
-										},
-										{
-											"text": "Farming",
-											"text2": "Fields, granaries, mills, orchards",
-											"roll": {
-												"min": 21,
-												"max": 32
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.15"
-										},
-										{
-											"text": "Hospitality",
-											"text2": "Bath houses, brothels, inns, taverns",
-											"roll": {
-												"min": 33,
-												"max": 34
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.16"
-										},
-										{
-											"text": "Hunting",
-											"text2": "Animal trainers, taxidermists, tanners",
-											"roll": {
-												"min": 35,
-												"max": 40
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.17"
-										},
-										{
-											"text": "Law",
-											"text2": "Courts, gallows, patrols, prisons",
-											"roll": {
-												"min": 41,
-												"max": 41
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.18"
-										},
-										{
-											"text": "Livestock / horses",
-											"text2": "Ranches, slaughterhouses, stables",
-											"roll": {
-												"min": 42,
-												"max": 49
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.19"
-										},
-										{
-											"text": "Logging",
-											"text2": "Logging camps, sawmills",
-											"roll": {
-												"min": 50,
-												"max": 53
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.20"
-										},
-										{
-											"text": "Medicine",
-											"text2": "Apothecaries, herbalists, infirmaries",
-											"roll": {
-												"min": 54,
-												"max": 55
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.21"
-										},
-										{
-											"text": "Metalworking",
-											"text2": "Artificers, blacksmiths, forges",
-											"roll": {
-												"min": 56,
-												"max": 61
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.22"
-										},
-										{
-											"text": "Mining",
-											"text2": "Foundries, mines, smelters",
-											"roll": {
-												"min": 62,
-												"max": 67
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.23"
-										},
-										{
-											"text": "Mysticism",
-											"text2": "Alchemists, curio dealers, enclaves, mystics",
-											"roll": {
-												"min": 68,
-												"max": 69
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.24"
-										},
-										{
-											"text": "Nature",
-											"text2": "Animal sanctuaries, gardens, groves",
-											"roll": {
-												"min": 70,
-												"max": 71
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.25"
-										},
-										{
-											"text": "Religion",
-											"text2": "Monasteries, sacred sites, temples",
-											"roll": {
-												"min": 72,
-												"max": 73
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.26"
-										},
-										{
-											"text": "Science",
-											"text2": "Academies, naturalist guild, observatories",
-											"roll": {
-												"min": 74,
-												"max": 75
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.27"
-										},
-										{
-											"text": "Smuggling",
-											"text2": "Black market, fences, smugglers",
-											"roll": {
-												"min": 76,
-												"max": 76
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.28"
-										},
-										{
-											"text": "Society",
-											"text2": "Balls, boutiques, social clubs, tailors",
-											"roll": {
-												"min": 77,
-												"max": 77
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.29"
-										},
-										{
-											"text": "Statecraft",
-											"text2": "Embassies, envoys, court or council",
-											"roll": {
-												"min": 78,
-												"max": 78
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.30"
-										},
-										{
-											"text": "Stoneworking",
-											"text2": "Masons, quarries, stone yards",
-											"roll": {
-												"min": 79,
-												"max": 84
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.31"
-										},
-										{
-											"text": "Trade",
-											"text2": "Auction house, markets, merchant guild",
-											"roll": {
-												"min": 85,
-												"max": 90
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.32"
-										},
-										{
-											"text": "Vices",
-											"text2": "Brothels, drug dens, gambling halls, taverns",
-											"roll": {
-												"min": 91,
-												"max": 91
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.33"
-										},
-										{
-											"text": "Warfare",
-											"text2": "Armies or fleets, command post, forts",
-											"roll": {
-												"min": 92,
-												"max": 93
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.34"
-										},
-										{
-											"text": "Weaponry",
-											"text2": "Cannon foundries, gunsmiths, powder mills",
-											"roll": {
-												"min": 94,
-												"max": 95
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.35"
-										},
-										{
-											"text": "[Action](oracle_rollable:sundered_isles/core/action) + [Theme](oracle_rollable:sundered_isles/core/theme)",
-											"oracle_rolls": [
-												{
-													"auto": true,
-													"oracle": "oracle_rollable:sundered_isles/core/action",
-													"dice": null,
-													"duplicates": "reroll",
-													"number_of_rolls": 1
-												},
-												{
-													"auto": true,
-													"oracle": "oracle_rollable:sundered_isles/core/theme",
-													"dice": null,
-													"duplicates": "reroll",
-													"number_of_rolls": 1
-												}
-											],
-											"text2": null,
-											"roll": {
-												"min": 96,
-												"max": 100
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/inland.36"
-										}
-									],
-									"dice": "1d100",
-									"_id": "oracle_rollable:sundered_isles/settlement/identity/focus/inland"
-								},
-								"waterside": {
-									"name": "Waterside",
-									"type": "oracle_rollable",
-									"oracle_type": "column_text2",
-									"tags": {
-										"sundered_isles": {
-											"cursed_by": "oracle_rollable:sundered_isles/settlement/identity/focus_cursed",
-											"location": "waterside"
-										}
-									},
-									"rows": [
-										{
-											"text": "Piracy",
-											"text2": "Pirate court, smuggler dens, taverns",
-											"roll": null,
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.0"
-										},
-										{
-											"text": "Whaling",
-											"text2": "Whaling ships, processing plants, wharfs",
-											"roll": null,
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.1"
-										},
-										{
-											"text": "Wrecking",
-											"text2": "Ship graveyard",
-											"roll": null,
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.2"
-										},
-										{
-											"text": "Shipbuilding",
-											"text2": "Dry docks, lumber mills, shipwrights",
-											"roll": {
-												"min": 1,
-												"max": 3
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.3"
-										},
-										{
-											"text": "Fishing",
-											"text2": "Boatwrights, fishmongers, net makers",
-											"roll": {
-												"min": 4,
-												"max": 11
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.4"
-										},
-										{
-											"text": "Alcohol Production",
-											"text2": "Breweries, distilleries, wineries",
-											"roll": {
-												"min": 12,
-												"max": 13
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.5"
-										},
-										{
-											"text": "Archeology",
-											"text2": "Excavation sites, field camps, relic hunters",
-											"roll": {
-												"min": 14,
-												"max": 14
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.6"
-										},
-										{
-											"text": "Crafts",
-											"text2": "Artisans, markets, workshops",
-											"roll": {
-												"min": 15,
-												"max": 16
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.7"
-										},
-										{
-											"text": "Culture",
-											"text2": "Archives, festivals, historical sites",
-											"roll": {
-												"min": 17,
-												"max": 20
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.8"
-										},
-										{
-											"text": "Defense",
-											"text2": "Armories, fortifications, militia",
-											"roll": {
-												"min": 21,
-												"max": 24
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.9"
-										},
-										{
-											"text": "Dueling",
-											"text2": "Dueling grounds, fencing schools",
-											"roll": {
-												"min": 25,
-												"max": 25
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.10"
-										},
-										{
-											"text": "Education",
-											"text2": "Libraries, universities",
-											"roll": {
-												"min": 26,
-												"max": 27
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.11"
-										},
-										{
-											"text": "Entertainment",
-											"text2": "Arenas, fairs, street performers, theaters",
-											"roll": {
-												"min": 28,
-												"max": 28
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.12"
-										},
-										{
-											"text": "Espionage",
-											"text2": "Assassin guild, spy network",
-											"roll": {
-												"min": 29,
-												"max": 29
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.13"
-										},
-										{
-											"text": "Exploration",
-											"text2": "Navigators guild, outfitters, scouts",
-											"roll": {
-												"min": 30,
-												"max": 31
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.14"
-										},
-										{
-											"text": "Farming",
-											"text2": "Fields, granaries, mills, orchards",
-											"roll": {
-												"min": 32,
-												"max": 39
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.15"
-										},
-										{
-											"text": "Hospitality",
-											"text2": "Bath houses, brothels, inns, taverns",
-											"roll": {
-												"min": 40,
-												"max": 43
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.16"
-										},
-										{
-											"text": "Hunting",
-											"text2": "Animal trainers, taxidermists, tanners",
-											"roll": {
-												"min": 44,
-												"max": 46
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.17"
-										},
-										{
-											"text": "Law",
-											"text2": "Courts, gallows, patrols, prisons",
-											"roll": {
-												"min": 47,
-												"max": 47
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.18"
-										},
-										{
-											"text": "Livestock / horses",
-											"text2": "Ranches, slaughterhouses, stables",
-											"roll": {
-												"min": 48,
-												"max": 51
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.19"
-										},
-										{
-											"text": "Logging",
-											"text2": "Logging camps, sawmills",
-											"roll": {
-												"min": 52,
-												"max": 57
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.20"
-										},
-										{
-											"text": "Medicine",
-											"text2": "Apothecaries, herbalists, infirmaries",
-											"roll": {
-												"min": 58,
-												"max": 59
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.21"
-										},
-										{
-											"text": "Metalworking",
-											"text2": "Artificers, blacksmiths, forges",
-											"roll": {
-												"min": 60,
-												"max": 63
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.22"
-										},
-										{
-											"text": "Mining",
-											"text2": "Foundries, mines, smelters",
-											"roll": {
-												"min": 64,
-												"max": 67
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.23"
-										},
-										{
-											"text": "Mysticism",
-											"text2": "Alchemists, curio dealers, enclaves, mystics",
-											"roll": {
-												"min": 68,
-												"max": 69
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.24"
-										},
-										{
-											"text": "Nature",
-											"text2": "Animal sanctuaries, gardens, groves",
-											"roll": {
-												"min": 70,
-												"max": 71
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.25"
-										},
-										{
-											"text": "Religion",
-											"text2": "Monasteries, sacred sites, temples",
-											"roll": {
-												"min": 72,
-												"max": 73
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.26"
-										},
-										{
-											"text": "Science",
-											"text2": "Academies, naturalist guild, observatories",
-											"roll": {
-												"min": 74,
-												"max": 75
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.27"
-										},
-										{
-											"text": "Smuggling",
-											"text2": "Black market, fences, smugglers",
-											"roll": {
-												"min": 76,
-												"max": 77
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.28"
-										},
-										{
-											"text": "Society",
-											"text2": "Balls, boutiques, social clubs, tailors",
-											"roll": {
-												"min": 78,
-												"max": 78
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.29"
-										},
-										{
-											"text": "Statecraft",
-											"text2": "Embassies, envoys, court or council",
-											"roll": {
-												"min": 79,
-												"max": 79
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.30"
-										},
-										{
-											"text": "Stoneworking",
-											"text2": "Masons, quarries, stone yards",
-											"roll": {
-												"min": 80,
-												"max": 83
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.31"
-										},
-										{
-											"text": "Trade",
-											"text2": "Auction house, markets, merchant guild",
-											"roll": {
-												"min": 84,
-												"max": 89
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.32"
-										},
-										{
-											"text": "Vices",
-											"text2": "Brothels, drug dens, gambling halls, taverns",
-											"roll": {
-												"min": 90,
-												"max": 91
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.33"
-										},
-										{
-											"text": "Warfare",
-											"text2": "Armies or fleets, command post, forts",
-											"roll": {
-												"min": 92,
-												"max": 93
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.34"
-										},
-										{
-											"text": "Weaponry",
-											"text2": "Cannon foundries, gunsmiths, powder mills",
-											"roll": {
-												"min": 94,
-												"max": 95
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.35"
-										},
-										{
-											"text": "[Action](oracle_rollable:sundered_isles/core/action) + [Theme](oracle_rollable:sundered_isles/core/theme)",
-											"oracle_rolls": [
-												{
-													"auto": true,
-													"oracle": "oracle_rollable:sundered_isles/core/action",
-													"dice": null,
-													"duplicates": "reroll",
-													"number_of_rolls": 1
-												},
-												{
-													"auto": true,
-													"oracle": "oracle_rollable:sundered_isles/core/theme",
-													"dice": null,
-													"duplicates": "reroll",
-													"number_of_rolls": 1
-												}
-											],
-											"text2": null,
-											"roll": {
-												"min": 96,
-												"max": 100
-											},
-											"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus/waterside.36"
-										}
-									],
-									"dice": "1d100",
-									"_id": "oracle_rollable:sundered_isles/settlement/identity/focus/waterside"
-								}
-							},
-							"_id": "oracle_collection:sundered_isles/settlement/identity/focus"
 						}
 					},
 					"contents": {
@@ -48972,121 +47993,1100 @@
 								"text": "Result"
 							},
 							"_id": "oracle_rollable:sundered_isles/settlement/identity/authority"
-						},
-						"focus_cursed": {
-							"name": "Cursed Settlement Focus",
+						}
+					},
+					"_id": "oracle_collection:sundered_isles/settlement/identity"
+				},
+				"focus": {
+					"name": "Settlement Focus",
+					"type": "oracle_collection",
+					"oracle_type": "table_shared_text2",
+					"column_labels": {
+						"text": "Activity",
+						"text2": "Typical Facilities and Services"
+					},
+					"_source": {
+						"date": "2024-06-11",
+						"title": "Sundered Isles",
+						"url": "https://ironswornrpg.com",
+						"license": null,
+						"authors": [
+							{
+								"name": "Shawn Tomkin"
+							}
+						]
+					},
+					"contents": {
+						"shore": {
+							"name": "Shore",
 							"type": "oracle_rollable",
-							"oracle_type": "table_text",
+							"oracle_type": "column_text2",
 							"tags": {
 								"sundered_isles": {
-									"cursed_version_of": [
-										"oracle_rollable:sundered_isles/settlement/focus/*"
-									],
-									"curse_behavior": "replace_result"
+									"cursed_by": "oracle_rollable:sundered_isles/settlement/focus_cursed",
+									"location": "shore"
 								}
-							},
-							"_source": {
-								"date": "2024-06-11",
-								"title": "Sundered Isles",
-								"url": "https://ironswornrpg.com",
-								"license": null,
-								"authors": [
-									{
-										"name": "Shawn Tomkin"
-									}
-								]
 							},
 							"rows": [
 								{
 									"roll": {
 										"min": 1,
-										"max": 10
+										"max": 3
 									},
-									"text": "Acting to fulfill a dreadful bargain with a cursed power",
-									"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus_cursed.0"
+									"text": "Piracy",
+									"text2": "Pirate court, smuggler dens, taverns",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.0"
 								},
 								{
 									"roll": {
-										"min": 11,
-										"max": 20
+										"min": 4,
+										"max": 6
 									},
-									"text": "Bound unwillingly to the service of a cursed power",
-									"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus_cursed.1"
+									"text": "Whaling",
+									"text2": "Whaling ships, processing plants, wharfs",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.1"
 								},
 								{
 									"roll": {
-										"min": 21,
-										"max": 30
+										"min": 7,
+										"max": 8
 									},
-									"text": "Corrupted or sickened by the effects of a cursed location or relic",
-									"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus_cursed.2"
+									"text": "Wrecking",
+									"text2": "Ship graveyard",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.2"
 								},
 								{
 									"roll": {
-										"min": 31,
+										"min": 9,
+										"max": 14
+									},
+									"text": "Shipbuilding",
+									"text2": "Dry docks, lumber mills, shipwrights",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.3"
+								},
+								{
+									"roll": {
+										"min": 15,
+										"max": 22
+									},
+									"text": "Fishing",
+									"text2": "Boatwrights, fishmongers, net makers",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.4"
+								},
+								{
+									"roll": {
+										"min": 23,
+										"max": 24
+									},
+									"text": "Alcohol Production",
+									"text2": "Breweries, distilleries, wineries",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.5"
+								},
+								{
+									"roll": {
+										"min": 25,
+										"max": 25
+									},
+									"text": "Archeology",
+									"text2": "Excavation sites, field camps, relic hunters",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.6"
+								},
+								{
+									"roll": {
+										"min": 26,
+										"max": 27
+									},
+									"text": "Crafts",
+									"text2": "Artisans, markets, workshops",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.7"
+								},
+								{
+									"roll": {
+										"min": 28,
+										"max": 29
+									},
+									"text": "Culture",
+									"text2": "Archives, festivals, historical sites",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.8"
+								},
+								{
+									"roll": {
+										"min": 30,
+										"max": 35
+									},
+									"text": "Defense",
+									"text2": "Armories, fortifications, militia",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.9"
+								},
+								{
+									"roll": {
+										"min": 36,
+										"max": 36
+									},
+									"text": "Dueling",
+									"text2": "Dueling grounds, fencing schools",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.10"
+								},
+								{
+									"roll": {
+										"min": 37,
+										"max": 38
+									},
+									"text": "Education",
+									"text2": "Libraries, universities",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.11"
+								},
+								{
+									"roll": {
+										"min": 39,
 										"max": 40
 									},
-									"text": "Desperately working in defiance of a cursed power",
-									"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus_cursed.3"
+									"text": "Entertainment",
+									"text2": "Arenas, fairs, street performers, theaters",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.12"
 								},
 								{
 									"roll": {
 										"min": 41,
-										"max": 50
+										"max": 42
 									},
-									"text": "Enduring dreadful conditions",
-									"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus_cursed.4"
+									"text": "Espionage",
+									"text2": "Assassin guild, spy network",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.13"
 								},
 								{
 									"roll": {
-										"min": 51,
-										"max": 60
+										"min": 43,
+										"max": 44
 									},
-									"text": "Granted unusual abilities or resources by a cursed power",
-									"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus_cursed.5"
+									"text": "Exploration",
+									"text2": "Navigators guild, outfitters, scouts",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.14"
 								},
 								{
 									"roll": {
-										"min": 61,
+										"min": 45,
+										"max": 48
+									},
+									"text": "Farming",
+									"text2": "Fields, granaries, mills, orchards",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.15"
+								},
+								{
+									"roll": {
+										"min": 49,
+										"max": 54
+									},
+									"text": "Hospitality",
+									"text2": "Bath houses, brothels, inns, taverns",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.16"
+								},
+								{
+									"roll": {
+										"min": 55,
+										"max": 55
+									},
+									"text": "Hunting",
+									"text2": "Animal trainers, taxidermists, tanners",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.17"
+								},
+								{
+									"roll": {
+										"min": 56,
+										"max": 57
+									},
+									"text": "Law",
+									"text2": "Courts, gallows, patrols, prisons",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.18"
+								},
+								{
+									"roll": {
+										"min": 58,
+										"max": 58
+									},
+									"text": "Livestock / horses",
+									"text2": "Ranches, slaughterhouses, stables",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.19"
+								},
+								{
+									"roll": {
+										"min": 59,
+										"max": 59
+									},
+									"text": "Logging",
+									"text2": "Logging camps, sawmills",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.20"
+								},
+								{
+									"roll": {
+										"min": 60,
+										"max": 61
+									},
+									"text": "Medicine",
+									"text2": "Apothecaries, herbalists, infirmaries",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.21"
+								},
+								{
+									"roll": {
+										"min": 62,
+										"max": 62
+									},
+									"text": "Metalworking",
+									"text2": "Artificers, blacksmiths, forges",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.22"
+								},
+								{
+									"roll": {
+										"min": 63,
+										"max": 63
+									},
+									"text": "Mining",
+									"text2": "Foundries, mines, smelters",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.23"
+								},
+								{
+									"roll": {
+										"min": 64,
+										"max": 65
+									},
+									"text": "Mysticism",
+									"text2": "Alchemists, curio dealers, enclaves, mystics",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.24"
+								},
+								{
+									"roll": {
+										"min": 66,
+										"max": 66
+									},
+									"text": "Nature",
+									"text2": "Animal sanctuaries, gardens, groves",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.25"
+								},
+								{
+									"roll": {
+										"min": 67,
+										"max": 68
+									},
+									"text": "Religion",
+									"text2": "Monasteries, sacred sites, temples",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.26"
+								},
+								{
+									"roll": {
+										"min": 69,
 										"max": 70
 									},
-									"text": "In zealous service of a cursed power",
-									"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus_cursed.6"
+									"text": "Science",
+									"text2": "Academies, naturalist guild, observatories",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.27"
 								},
 								{
 									"roll": {
 										"min": 71,
-										"max": 80
+										"max": 73
 									},
-									"text": "Suffering under the deprivations of a cursed power",
-									"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus_cursed.7"
+									"text": "Smuggling",
+									"text2": "Black market, fences, smugglers",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.28"
 								},
 								{
 									"roll": {
-										"min": 81,
-										"max": 90
+										"min": 74,
+										"max": 75
 									},
-									"text": "Targeted by a cursed power",
-									"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus_cursed.8"
+									"text": "Society",
+									"text2": "Balls, boutiques, social clubs, tailors",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.29"
 								},
 								{
 									"roll": {
-										"min": 91,
+										"min": 76,
+										"max": 77
+									},
+									"text": "Statecraft",
+									"text2": "Embassies, envoys, court or council",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.30"
+								},
+								{
+									"roll": {
+										"min": 78,
+										"max": 78
+									},
+									"text": "Stoneworking",
+									"text2": "Masons, quarries, stone yards",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.31"
+								},
+								{
+									"roll": {
+										"min": 79,
+										"max": 86
+									},
+									"text": "Trade",
+									"text2": "Auction house, markets, merchant guild",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.32"
+								},
+								{
+									"roll": {
+										"min": 87,
+										"max": 89
+									},
+									"text": "Vices",
+									"text2": "Brothels, drug dens, gambling halls, taverns",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.33"
+								},
+								{
+									"roll": {
+										"min": 90,
+										"max": 93
+									},
+									"text": "Warfare",
+									"text2": "Armies or fleets, command post, forts",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.34"
+								},
+								{
+									"roll": {
+										"min": 94,
+										"max": 95
+									},
+									"text": "Weaponry",
+									"text2": "Cannon foundries, gunsmiths, powder mills",
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.35"
+								},
+								{
+									"roll": {
+										"min": 96,
 										"max": 100
 									},
-									"text": "Unwittingly helping or unleashing a cursed power",
-									"_id": "oracle_rollable.row:sundered_isles/settlement/identity/focus_cursed.9"
+									"text": "[Action](oracle_rollable:sundered_isles/core/action) + [Theme](oracle_rollable:sundered_isles/core/theme)",
+									"oracle_rolls": [
+										{
+											"auto": true,
+											"oracle": "oracle_rollable:sundered_isles/core/action",
+											"dice": null,
+											"duplicates": "reroll",
+											"number_of_rolls": 1
+										},
+										{
+											"auto": true,
+											"oracle": "oracle_rollable:sundered_isles/core/theme",
+											"dice": null,
+											"duplicates": "reroll",
+											"number_of_rolls": 1
+										}
+									],
+									"text2": null,
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/shore.36"
 								}
 							],
 							"dice": "1d100",
-							"column_labels": {
-								"roll": "Roll",
-								"text": "Result"
+							"_id": "oracle_rollable:sundered_isles/settlement/focus/shore"
+						},
+						"inland": {
+							"name": "Inland",
+							"type": "oracle_rollable",
+							"oracle_type": "column_text2",
+							"tags": {
+								"sundered_isles": {
+									"cursed_by": "oracle_rollable:sundered_isles/settlement/focus_cursed",
+									"location": "inland"
+								}
 							},
-							"_id": "oracle_rollable:sundered_isles/settlement/identity/focus_cursed"
+							"rows": [
+								{
+									"text": "Piracy",
+									"text2": "Pirate court, smuggler dens, taverns",
+									"roll": null,
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.0"
+								},
+								{
+									"text": "Whaling",
+									"text2": "Whaling ships, processing plants, wharfs",
+									"roll": null,
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.1"
+								},
+								{
+									"text": "Wrecking",
+									"text2": "Ship graveyard",
+									"roll": null,
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.2"
+								},
+								{
+									"text": "Shipbuilding",
+									"text2": "Dry docks, lumber mills, shipwrights",
+									"roll": null,
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.3"
+								},
+								{
+									"text": "Fishing",
+									"text2": "Boatwrights, fishmongers, net makers",
+									"roll": null,
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.4"
+								},
+								{
+									"text": "Alcohol Production",
+									"text2": "Breweries, distilleries, wineries",
+									"roll": {
+										"min": 1,
+										"max": 2
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.5"
+								},
+								{
+									"text": "Archeology",
+									"text2": "Excavation sites, field camps, relic hunters",
+									"roll": {
+										"min": 3,
+										"max": 3
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.6"
+								},
+								{
+									"text": "Crafts",
+									"text2": "Artisans, markets, workshops",
+									"roll": {
+										"min": 4,
+										"max": 5
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.7"
+								},
+								{
+									"text": "Culture",
+									"text2": "Archives, festivals, historical sites",
+									"roll": {
+										"min": 6,
+										"max": 11
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.8"
+								},
+								{
+									"text": "Defense",
+									"text2": "Armories, fortifications, militia",
+									"roll": {
+										"min": 12,
+										"max": 13
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.9"
+								},
+								{
+									"text": "Dueling",
+									"text2": "Dueling grounds, fencing schools",
+									"roll": {
+										"min": 14,
+										"max": 14
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.10"
+								},
+								{
+									"text": "Education",
+									"text2": "Libraries, universities",
+									"roll": {
+										"min": 15,
+										"max": 16
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.11"
+								},
+								{
+									"text": "Entertainment",
+									"text2": "Arenas, fairs, street performers, theaters",
+									"roll": {
+										"min": 17,
+										"max": 17
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.12"
+								},
+								{
+									"text": "Espionage",
+									"text2": "Assassin guild, spy network",
+									"roll": {
+										"min": 18,
+										"max": 18
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.13"
+								},
+								{
+									"text": "Exploration",
+									"text2": "Navigators guild, outfitters, scouts",
+									"roll": {
+										"min": 19,
+										"max": 20
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.14"
+								},
+								{
+									"text": "Farming",
+									"text2": "Fields, granaries, mills, orchards",
+									"roll": {
+										"min": 21,
+										"max": 32
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.15"
+								},
+								{
+									"text": "Hospitality",
+									"text2": "Bath houses, brothels, inns, taverns",
+									"roll": {
+										"min": 33,
+										"max": 34
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.16"
+								},
+								{
+									"text": "Hunting",
+									"text2": "Animal trainers, taxidermists, tanners",
+									"roll": {
+										"min": 35,
+										"max": 40
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.17"
+								},
+								{
+									"text": "Law",
+									"text2": "Courts, gallows, patrols, prisons",
+									"roll": {
+										"min": 41,
+										"max": 41
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.18"
+								},
+								{
+									"text": "Livestock / horses",
+									"text2": "Ranches, slaughterhouses, stables",
+									"roll": {
+										"min": 42,
+										"max": 49
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.19"
+								},
+								{
+									"text": "Logging",
+									"text2": "Logging camps, sawmills",
+									"roll": {
+										"min": 50,
+										"max": 53
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.20"
+								},
+								{
+									"text": "Medicine",
+									"text2": "Apothecaries, herbalists, infirmaries",
+									"roll": {
+										"min": 54,
+										"max": 55
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.21"
+								},
+								{
+									"text": "Metalworking",
+									"text2": "Artificers, blacksmiths, forges",
+									"roll": {
+										"min": 56,
+										"max": 61
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.22"
+								},
+								{
+									"text": "Mining",
+									"text2": "Foundries, mines, smelters",
+									"roll": {
+										"min": 62,
+										"max": 67
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.23"
+								},
+								{
+									"text": "Mysticism",
+									"text2": "Alchemists, curio dealers, enclaves, mystics",
+									"roll": {
+										"min": 68,
+										"max": 69
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.24"
+								},
+								{
+									"text": "Nature",
+									"text2": "Animal sanctuaries, gardens, groves",
+									"roll": {
+										"min": 70,
+										"max": 71
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.25"
+								},
+								{
+									"text": "Religion",
+									"text2": "Monasteries, sacred sites, temples",
+									"roll": {
+										"min": 72,
+										"max": 73
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.26"
+								},
+								{
+									"text": "Science",
+									"text2": "Academies, naturalist guild, observatories",
+									"roll": {
+										"min": 74,
+										"max": 75
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.27"
+								},
+								{
+									"text": "Smuggling",
+									"text2": "Black market, fences, smugglers",
+									"roll": {
+										"min": 76,
+										"max": 76
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.28"
+								},
+								{
+									"text": "Society",
+									"text2": "Balls, boutiques, social clubs, tailors",
+									"roll": {
+										"min": 77,
+										"max": 77
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.29"
+								},
+								{
+									"text": "Statecraft",
+									"text2": "Embassies, envoys, court or council",
+									"roll": {
+										"min": 78,
+										"max": 78
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.30"
+								},
+								{
+									"text": "Stoneworking",
+									"text2": "Masons, quarries, stone yards",
+									"roll": {
+										"min": 79,
+										"max": 84
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.31"
+								},
+								{
+									"text": "Trade",
+									"text2": "Auction house, markets, merchant guild",
+									"roll": {
+										"min": 85,
+										"max": 90
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.32"
+								},
+								{
+									"text": "Vices",
+									"text2": "Brothels, drug dens, gambling halls, taverns",
+									"roll": {
+										"min": 91,
+										"max": 91
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.33"
+								},
+								{
+									"text": "Warfare",
+									"text2": "Armies or fleets, command post, forts",
+									"roll": {
+										"min": 92,
+										"max": 93
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.34"
+								},
+								{
+									"text": "Weaponry",
+									"text2": "Cannon foundries, gunsmiths, powder mills",
+									"roll": {
+										"min": 94,
+										"max": 95
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.35"
+								},
+								{
+									"text": "[Action](oracle_rollable:sundered_isles/core/action) + [Theme](oracle_rollable:sundered_isles/core/theme)",
+									"oracle_rolls": [
+										{
+											"auto": true,
+											"oracle": "oracle_rollable:sundered_isles/core/action",
+											"dice": null,
+											"duplicates": "reroll",
+											"number_of_rolls": 1
+										},
+										{
+											"auto": true,
+											"oracle": "oracle_rollable:sundered_isles/core/theme",
+											"dice": null,
+											"duplicates": "reroll",
+											"number_of_rolls": 1
+										}
+									],
+									"text2": null,
+									"roll": {
+										"min": 96,
+										"max": 100
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/inland.36"
+								}
+							],
+							"dice": "1d100",
+							"_id": "oracle_rollable:sundered_isles/settlement/focus/inland"
+						},
+						"waterside": {
+							"name": "Waterside",
+							"type": "oracle_rollable",
+							"oracle_type": "column_text2",
+							"tags": {
+								"sundered_isles": {
+									"cursed_by": "oracle_rollable:sundered_isles/settlement/focus_cursed",
+									"location": "waterside"
+								}
+							},
+							"rows": [
+								{
+									"text": "Piracy",
+									"text2": "Pirate court, smuggler dens, taverns",
+									"roll": null,
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.0"
+								},
+								{
+									"text": "Whaling",
+									"text2": "Whaling ships, processing plants, wharfs",
+									"roll": null,
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.1"
+								},
+								{
+									"text": "Wrecking",
+									"text2": "Ship graveyard",
+									"roll": null,
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.2"
+								},
+								{
+									"text": "Shipbuilding",
+									"text2": "Dry docks, lumber mills, shipwrights",
+									"roll": {
+										"min": 1,
+										"max": 3
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.3"
+								},
+								{
+									"text": "Fishing",
+									"text2": "Boatwrights, fishmongers, net makers",
+									"roll": {
+										"min": 4,
+										"max": 11
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.4"
+								},
+								{
+									"text": "Alcohol Production",
+									"text2": "Breweries, distilleries, wineries",
+									"roll": {
+										"min": 12,
+										"max": 13
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.5"
+								},
+								{
+									"text": "Archeology",
+									"text2": "Excavation sites, field camps, relic hunters",
+									"roll": {
+										"min": 14,
+										"max": 14
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.6"
+								},
+								{
+									"text": "Crafts",
+									"text2": "Artisans, markets, workshops",
+									"roll": {
+										"min": 15,
+										"max": 16
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.7"
+								},
+								{
+									"text": "Culture",
+									"text2": "Archives, festivals, historical sites",
+									"roll": {
+										"min": 17,
+										"max": 20
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.8"
+								},
+								{
+									"text": "Defense",
+									"text2": "Armories, fortifications, militia",
+									"roll": {
+										"min": 21,
+										"max": 24
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.9"
+								},
+								{
+									"text": "Dueling",
+									"text2": "Dueling grounds, fencing schools",
+									"roll": {
+										"min": 25,
+										"max": 25
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.10"
+								},
+								{
+									"text": "Education",
+									"text2": "Libraries, universities",
+									"roll": {
+										"min": 26,
+										"max": 27
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.11"
+								},
+								{
+									"text": "Entertainment",
+									"text2": "Arenas, fairs, street performers, theaters",
+									"roll": {
+										"min": 28,
+										"max": 28
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.12"
+								},
+								{
+									"text": "Espionage",
+									"text2": "Assassin guild, spy network",
+									"roll": {
+										"min": 29,
+										"max": 29
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.13"
+								},
+								{
+									"text": "Exploration",
+									"text2": "Navigators guild, outfitters, scouts",
+									"roll": {
+										"min": 30,
+										"max": 31
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.14"
+								},
+								{
+									"text": "Farming",
+									"text2": "Fields, granaries, mills, orchards",
+									"roll": {
+										"min": 32,
+										"max": 39
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.15"
+								},
+								{
+									"text": "Hospitality",
+									"text2": "Bath houses, brothels, inns, taverns",
+									"roll": {
+										"min": 40,
+										"max": 43
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.16"
+								},
+								{
+									"text": "Hunting",
+									"text2": "Animal trainers, taxidermists, tanners",
+									"roll": {
+										"min": 44,
+										"max": 46
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.17"
+								},
+								{
+									"text": "Law",
+									"text2": "Courts, gallows, patrols, prisons",
+									"roll": {
+										"min": 47,
+										"max": 47
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.18"
+								},
+								{
+									"text": "Livestock / horses",
+									"text2": "Ranches, slaughterhouses, stables",
+									"roll": {
+										"min": 48,
+										"max": 51
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.19"
+								},
+								{
+									"text": "Logging",
+									"text2": "Logging camps, sawmills",
+									"roll": {
+										"min": 52,
+										"max": 57
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.20"
+								},
+								{
+									"text": "Medicine",
+									"text2": "Apothecaries, herbalists, infirmaries",
+									"roll": {
+										"min": 58,
+										"max": 59
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.21"
+								},
+								{
+									"text": "Metalworking",
+									"text2": "Artificers, blacksmiths, forges",
+									"roll": {
+										"min": 60,
+										"max": 63
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.22"
+								},
+								{
+									"text": "Mining",
+									"text2": "Foundries, mines, smelters",
+									"roll": {
+										"min": 64,
+										"max": 67
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.23"
+								},
+								{
+									"text": "Mysticism",
+									"text2": "Alchemists, curio dealers, enclaves, mystics",
+									"roll": {
+										"min": 68,
+										"max": 69
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.24"
+								},
+								{
+									"text": "Nature",
+									"text2": "Animal sanctuaries, gardens, groves",
+									"roll": {
+										"min": 70,
+										"max": 71
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.25"
+								},
+								{
+									"text": "Religion",
+									"text2": "Monasteries, sacred sites, temples",
+									"roll": {
+										"min": 72,
+										"max": 73
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.26"
+								},
+								{
+									"text": "Science",
+									"text2": "Academies, naturalist guild, observatories",
+									"roll": {
+										"min": 74,
+										"max": 75
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.27"
+								},
+								{
+									"text": "Smuggling",
+									"text2": "Black market, fences, smugglers",
+									"roll": {
+										"min": 76,
+										"max": 77
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.28"
+								},
+								{
+									"text": "Society",
+									"text2": "Balls, boutiques, social clubs, tailors",
+									"roll": {
+										"min": 78,
+										"max": 78
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.29"
+								},
+								{
+									"text": "Statecraft",
+									"text2": "Embassies, envoys, court or council",
+									"roll": {
+										"min": 79,
+										"max": 79
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.30"
+								},
+								{
+									"text": "Stoneworking",
+									"text2": "Masons, quarries, stone yards",
+									"roll": {
+										"min": 80,
+										"max": 83
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.31"
+								},
+								{
+									"text": "Trade",
+									"text2": "Auction house, markets, merchant guild",
+									"roll": {
+										"min": 84,
+										"max": 89
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.32"
+								},
+								{
+									"text": "Vices",
+									"text2": "Brothels, drug dens, gambling halls, taverns",
+									"roll": {
+										"min": 90,
+										"max": 91
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.33"
+								},
+								{
+									"text": "Warfare",
+									"text2": "Armies or fleets, command post, forts",
+									"roll": {
+										"min": 92,
+										"max": 93
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.34"
+								},
+								{
+									"text": "Weaponry",
+									"text2": "Cannon foundries, gunsmiths, powder mills",
+									"roll": {
+										"min": 94,
+										"max": 95
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.35"
+								},
+								{
+									"text": "[Action](oracle_rollable:sundered_isles/core/action) + [Theme](oracle_rollable:sundered_isles/core/theme)",
+									"oracle_rolls": [
+										{
+											"auto": true,
+											"oracle": "oracle_rollable:sundered_isles/core/action",
+											"dice": null,
+											"duplicates": "reroll",
+											"number_of_rolls": 1
+										},
+										{
+											"auto": true,
+											"oracle": "oracle_rollable:sundered_isles/core/theme",
+											"dice": null,
+											"duplicates": "reroll",
+											"number_of_rolls": 1
+										}
+									],
+									"text2": null,
+									"roll": {
+										"min": 96,
+										"max": 100
+									},
+									"_id": "oracle_rollable.row:sundered_isles/settlement/focus/waterside.36"
+								}
+							],
+							"dice": "1d100",
+							"_id": "oracle_rollable:sundered_isles/settlement/focus/waterside"
 						}
 					},
-					"_id": "oracle_collection:sundered_isles/settlement/identity"
+					"_id": "oracle_collection:sundered_isles/settlement/focus"
 				}
 			},
 			"_id": "oracle_collection:sundered_isles/settlement"

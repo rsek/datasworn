@@ -2324,8 +2324,8 @@ moves:
           text: When you suffer the outcome of an action...
         suggestions:
           - oracle_rollable:starforged/misc/story_complication
-          - oracle_rollable:**/*/peril
-          - oracle_rollable:**/peril/**
+          - oracle_rollable:*/**/peril
+          - oracle_rollable:*/**/peril/**
         oracles:
           pay_the_price:
             name: Pay the Price
