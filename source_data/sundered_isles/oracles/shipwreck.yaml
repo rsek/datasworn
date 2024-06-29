@@ -220,6 +220,9 @@ oracles:
         name: Shipwreck Details
         type: oracle_rollable
         oracle_type: table_text
+        recommended_rolls:
+          min: 1
+          max: 3
         tags:
           sundered_isles:
             cursed_by: oracle_rollable:sundered_isles/shipwreck/details_cursed
