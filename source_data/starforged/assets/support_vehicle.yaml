@@ -158,7 +158,7 @@ assets:
               attachments:
                 max: 1
                 assets:
-                  - 'asset:*/modules/*'
+                  - 'asset:*/module/*'
           - text: |-
               When you [Face Danger](move:starforged/adventure/face_danger) or [React Under Fire](move:starforged/combat/react_under_fire) by taking a hit or crashing through an obstacle, you may roll +integrity. If you do, take +1 momentum on a hit.
             enhance_moves:
