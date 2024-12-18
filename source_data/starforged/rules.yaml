@@ -1,6 +1,8 @@
 _id: starforged
 datasworn_version: "0.1.0"
 type: ruleset
+#  rules_package:starforged
+#  *:fe_runners/**
 <<: &Source
   authors:
     - name: Shawn Tomkin

@@ -105,6 +105,35 @@ export const SunderedIsles: RulesPackageConfig = {
 	},
 }
 
+export const Fe_Runners: RulesPackageConfig = {
+	type: 'expansion',
+	paths: {
+		source: path.join(ROOT_SOURCE_DATA, 'fe_runners'),
+	},
+	id: 'fe_runners',
+	pkg: {
+		name: 'fe-runners',
+		private: true,
+		scope: PKG_SCOPE_OFFICIAL,
+		description:
+			'Datasworn JSON data for the Fe-Runners expansion.',
+		keywords: [
+			'ironsworn',
+			'datasworn',
+			'TTRPG',
+			'starforged',
+			'fe-runners',
+		],
+		authors: [
+			{
+				name: 'Craig Smith',
+				email: 'craig@hacktop.com',
+				url: 'https://github.com/zombieCraig',
+			},
+		],
+	},
+}
+
 // // currently these just exist for testing purposes
 
 // export const Rsek: RulesPackageConfig = {

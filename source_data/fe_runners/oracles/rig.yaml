@@ -1,0 +1,110 @@
+_id: fe_runners
+datasworn_version: '0.1.0'
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-08-10
+  title: 'Fe-Runners Rulebook'
+  url: ttps://zombiecraig.itch.io/fe-runners
+  license: https://creativecommons.org/licenses/by-nc-sa/4.0
+  authors:
+    - name: Craig Smith
+oracles: 
+  rig:
+    name: Rig Oracles
+    type: oracle_collection
+    oracle_type: tables
+    _source:
+      <<: *Source
+      page: 119
+    contents: 
+      random:
+        name: Random Rigs
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 119
+        rows:
+          - roll: { min: 1, max: 10 }
+            text: Desktop or Laptop
+          - roll: { min: 11, max: 20 }
+            text: Mobile Device
+          - roll: { min: 21, max: 30 }
+            text: VR/MR/AR Headset
+          - roll: { min: 31, max: 40 }
+            text: Neural Implant
+          - roll: { min: 41, max: 50 }
+            text: Cybernetic Eyes
+          - roll: { min: 51, max: 60 }
+            text: Cybernetic Wrist Cable
+          - roll: { min: 61, max: 70 }
+            text: Device that requires an access point
+          - roll: { min: 71, max: 80 }
+            text: Wrist worn device
+          - roll: { min: 81, max: 90 }
+            text: Personal Server Room
+          - roll: { min: 91, max: 100 }
+            text: Spine Connection
+      damage:
+        name: Rig Damage
+        type: oracle_rollable
+        oracle_type: table_text3
+        _source:
+          <<: *Source
+          page: 119
+        column_labels:
+          roll: Roll
+          text: Bothersome Damage
+          text2: Bad Damage
+          text3: Critical Damage
+        description: |-
+          Envision how the damage impacts your system and what will happen if you don’t repair it soon.  Damage 
+          by default should be considered bothersome at first.  If the narrative is bad or critical then use those 
+          columns.  If you wish for the damage to be more random than you can roll and use Odd rolls as 
+          bothersome, even as bad and any roll divisible by 10 as critical (ie: 10, 20, 30, etc)
+        rows:
+          - roll: { min: 1, max: 10 }
+            text: Partial Static
+            text2: Moderate Static
+            text3: Complete Static
+          - roll: { min: 11, max: 20 }
+            text: Audio breaking up
+            text2: 50% audio
+            text3: No audio
+          - roll: { min: 21, max: 30 }
+            text: Cracked visuals
+            text2: Shattered Visuals
+            text3: No visuals
+          - roll: { min: 31, max: 40 }
+            text: Sparking interface
+            text2: Overheating interface
+            text3: Interface on fire
+          - roll: { min: 41, max: 50 }
+            text: Reduced CPU capacity
+            text2: Sporadic Lag
+            text3: Crippling Lag
+          - roll: { min: 51, max: 60 }
+            text: Storage restrictions
+            text2: No Empty Storage
+            text3: Data Loss
+          - roll: { min: 61, max: 70 }
+            text: Ghostly images
+            text2: Duplicate objects
+            text3: Altered reality
+          - roll: { min: 71, max: 80 }
+            text: Inverted navigation
+            text2: Broken Navigation
+            text3: No Navigation
+          - roll: { min: 81, max: 90 }
+            text: Invisible objects
+            text2: Invisible People
+            text3: Invisible Environments
+          - roll: { min: 91, max: 100 }
+            text: Roll twice.  If same result, increase criticality
+            text2: Roll twice.  If same result, increase criticality
+            text3: Roll twice.  If same result, increase criticality
+            oracle_rolls:
+              - oracle: oracle_rollable:fe_runners/rig/damage
+                auto: false
+                number_of_rolls: 2

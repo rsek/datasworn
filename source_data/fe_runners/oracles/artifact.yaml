@@ -1,0 +1,90 @@
+_id: fe_runners
+datasworn_version: '0.1.0'
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-08-10
+  title: 'Fe-Runners Rulebook'
+  url: ttps://zombiecraig.itch.io/fe-runners
+  license: https://creativecommons.org/licenses/by-nc-sa/4.0
+  authors:
+    - name: Craig Smith
+oracles: 
+  artifact:
+    name: Artifacts
+    type: oracle_collection
+    oracle_type: tables
+    summary: |-
+      Artifacts are unique programs that have special abilities.  In the world of Fe-Runners, an artifact is a virus, worm, bot, AI, or specialized piece of software.  These artifacts often alter some aspect of gameplay by providing bonuses or allowing unique access or capabilities.  They typically have limited lifespan or their own health progress bars.  A Fe-Runner can not make an artifact by themselves unless they have a specific Path that allows it.  Artifacts have to be discovered during play.
+    _source:
+      <<: *Source
+      page: 107
+    contents:
+      type:
+        name: Artifact Types
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 107
+        rows:
+          - roll: { min: 1, max: 10 }
+            text: Bot / Aid
+          - roll: { min: 11, max: 20 }
+            text: Clothing
+          - roll: { min: 21, max: 30 }
+            text: Investigation Tool
+          - roll: { min: 31, max: 40 }
+            text: Cracking Tool
+          - roll: { min: 41, max: 50 }
+            text: Protective
+          - roll: { min: 51, max: 60 }
+            text: Storage
+          - roll: { min: 61, max: 70 }
+            text: Trap
+          - roll: { min: 71, max: 80 }
+            text: Virus
+          - roll: { min: 81, max: 90 }
+            text: Vision
+          - roll: { min: 91, max: 100 }
+            text: Weapon
+      ability:
+        name: Artifact Ability
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 107
+        rows:
+          - roll: { min: 1, max: 7 }
+            text: Autonomous
+          - roll: { min: 8, max: 16 }
+            text: Bonded
+          - roll: { min: 17, max: 23 }
+            text: Bypass
+          - roll: { min: 24, max: 30 }
+            text: Clarity
+          - roll: { min: 31, max: 34 }
+            text: Connected
+          - roll: { min: 35, max: 39 }
+            text: Faction Specific
+          - roll: { min: 40, max: 45 }
+            text: Intelligence
+          - roll: { min: 46, max: 49 }
+            text: Malicious
+          - roll: { min: 50, max: 55 }
+            text: Pain
+          - roll: { min: 56, max: 61 }
+            text: Power
+          - roll: { min: 62, max: 67 }
+            text: Repair
+          - roll: { min: 68, max: 73 }
+            text: Secrecy
+          - roll: { min: 74, max: 80 }
+            text: Social Enhancement
+          - roll: { min: 81, max: 87 }
+            text: Speed
+          - roll: { min: 88, max: 93 }
+            text: Stress
+          - roll: { min: 94, max: 100 }
+            text: Strong

@@ -1,0 +1,50 @@
+_id: fe_runners
+datasworn_version: "0.1.0"
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-08-10
+  title: 'Fe-Runners Rulebook'
+  url: ttps://zombiecraig.itch.io/fe-runners
+  license: https://creativecommons.org/licenses/by-nc-sa/4.0
+  authors:
+    - name: Craig Smith
+rules:
+  impacts:
+    misfortunes:
+      label: misfortunes
+      description: As with all impacts, misfortunes affect your max momentum and momentum reset. In addition, if you are wounded, shaken, or unprepared, you cannot increase the associated condition meter.
+      contents:
+        wounded:
+          label: wounded
+          description: Wounded may be marked when you are at 0 health and fail to [Endure Harm](datasworn:move:starforged/suffer/endure_harm). You are severely injured.
+          prevents_recovery:
+            - health
+        shaken:
+          label: shaken
+          description: Shaken may be marked when you are at 0 spirit and fail to [Endure Stress](datasworn:move:starforged/suffer/endure_stress). You are despairing or distraught.
+          prevents_recovery:
+            - spirit
+        unregulated:
+          label: unregulated (power)
+          description: Unregulated is marked when you [Sacrifice Power](datasworn:move:fe_runners/suffer/sacrifice_power) and are reduced to 0 supply. if you lose resources consider losing Fe or portions of the data you are trying to collect.  If it's related to supply, imagine that with lower power you can’t multitask as well.
+          shared: true
+          prevents_recovery:
+            - supply
+    current_rig:
+      label: Current Rig
+      description: This impact related to your rig and it's integrity.
+      contents:
+        overheated:
+          label: overheated
+          description: Overheated is marked when you [Withstand Damange](datasworn:move:fe_runners/suffer/withstand_damage) and are reduced to 0 integrity. Coolant is depleted and the system is so hot that components are locking up.
+          prevents_recovery:
+            - integrity
+        infected:
+          label: infected
+          description:  May be marked when your rig is at 0 integrity and you fail to [Withstand Damage](datasworn:move:fe_runners/suffer/withstand_damage). Your defenses were down and your systems core processor has been directly infected.  A virus is embedded into your system permanently.  Only a specific VX Author path has the ability to remove an infection.
+          prevents_recovery:
+            - integrity
+    vehicle_troubles:
+      label: Vehicle Trouble
+      description: Not applicable for Fe-Runners

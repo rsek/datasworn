@@ -1,0 +1,2541 @@
+_id: fe_runners
+datasworn_version: "0.1.0"
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-08-10
+  title: 'Fe-Runners Rulebook'
+  url: ttps://zombiecraig.itch.io/fe-runners
+  license: https://creativecommons.org/licenses/by-nc-sa/4.0
+  authors:
+    - name: Craig Smith
+moves:
+  session:
+    name: Session Moves
+    type: move_category
+    color: '#3F8C8A'
+    _source:
+      <<: *Source
+      page: 121
+    summary: |-
+      __Session moves__ provide methods for setting up content boundaries, adjusting content in the midst of play, and starting and ending your Fe-Runners sessions.
+    description: |-
+      The __session moves__ fit into the flow of mechanics and fiction before, during, and after play. They provide methods for setting up content boundaries, adjusting content in the midst of play, and starting and ending your Fe-Runners sessions. They are intended for solo, co-op, and guided modes.
+
+      Unlike most other moves, these session moves function primarily from the perspective of the players instead of your characters. They are a tool to moderate and facilitate safe and enjoyable play.
+    contents:
+      begin_a_session:
+        name: Begin a Session
+        roll_type: no_roll
+        type: move
+        trigger:
+          text: When you begin a significant session or chapter of play...
+        oracles:
+          begin_a_session:
+            name: Begin a Session
+            oracle_type: table_text
+            type: oracle_rollable
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: 'Flashback reveals an aspect of your background or nature'
+                # suggestions: [*roll:Event]
+              - roll: { min: 11, max: 20 }
+                text: 'Flashback reveals an aspect of another character, place, or faction'
+                # suggestions: [*roll:Event, *obj:Faction]
+              - roll: { min: 21, max: 30 }
+                text: 'Influential character or faction is introduced or given new detail'
+                # suggestions: [*obj:Npc, *obj:Faction]
+              - roll: { min: 31, max: 40 }
+                text: 'Seemingly unrelated situations are shown to be connected'
+              - roll: { min: 41, max: 50 }
+                text: 'External factors create new danger, urgency, or importance for a quest'
+                # suggestions: [*roll:Event]
+              - roll: { min: 51, max: 60 }
+                text: 'Important character is put in danger or suffers a misadventure'
+              - roll: { min: 61, max: 70 }
+                text: 'Key location is made unsafe or becomes mired in conflict'
+              - roll: { min: 71, max: 80 }
+                text: 'Unexpected return of an enemy or threat'
+              - roll: { min: 81, max: 90 }
+                text: 'Peril lies ahead or lurks just out of view'
+              - roll: { min: 91, max: 100 }
+                text: 'Unforeseen aid is on the way or within reach'
+        text: |-
+          __When you begin a significant session or chapter of play__, do all of the following.
+
+            * Identify or adjust flagged content and [Set a Flag](datasworn:move:fe_runners/session/set_a_flag).
+            * Review or recap what happened last session.
+            * Set the scene by envisioning your character’s current situation and intent.
+
+          In addition, you may spotlight a new danger, opportunity, or insight. This can include a scene hidden from your character’s perspective. If you do, envision a brief vignette (you may roll or choose on the table below for inspiration). Then, all players take +1 momentum as you return to play from the viewpoint of your characters.
+
+          {{table>move.oracle_rollable:fe_runners/session/begin_a_session.begin_a_session}}
+        _source:
+          <<: *Source
+          page: 124
+      set_a_flag:
+        name: Set a Flag
+        roll_type: no_roll
+        type: move
+        trigger:
+          text: When you identify situations or topics you don’t want to include, don’t want to envision in detail, or otherwise may need mindfulness when approaching...
+        text: |-
+          __When you identify situations or topics you don’t want to include, don’t want to envision in detail, or otherwise may need mindfulness when approaching__, that content is now flagged.
+
+          When you encounter content flagged as something to approach mindfully, pause to consider or discuss its role in your story. When you come across flagged content that you would rather adjust or omit, [Change Your Fate](datasworn:move:fe_runners/session/change_your_fate).
+        _source:
+          <<: *Source
+          page: 124
+      change_your_fate:
+        name: Change Your Fate
+        roll_type: no_roll
+        type: move
+        trigger:
+          text: When you encounter flagged content, reject an oracle, resist a consequence, or otherwise need to shift your circumstances within the game for your comfort or enjoyment...
+        text: |-
+          __When you encounter flagged content, reject an oracle, resist a consequence, or otherwise need to shift your circumstances within the game for your comfort or enjoyment__, pause and identify what needs to be changed. Choose as many options as appropriate.
+
+            * __Reframe:__ This didn’t happen the way you first thought. Envision the moment from another perspective in a way that diminishes or changes the content.
+            * __Refocus:__ This is not the most important thing happening right now. Envision how the spotlight shifts to change the focus.
+            * __Replace:__ This happens but with a small adjustment. Switch out an element and envision how this new detail changes the scenario.
+            * __Redirect:__ Adjust the trajectory to involve a helping hand. Envision how another person or party becomes involved.
+            * __Reshape:__ The situation changes completely. Envision what happened instead.
+        _source:
+          <<: *Source
+          page: 125
+      take_a_break:
+        name: Take a Break
+        roll_type: no_roll
+        type: move
+        trigger:
+          text: When you resolve a progress move or complete an intense scenario...
+        text: |-
+          __When you resolve a progress move or complete an intense scenario__, take a few deep breaths and take some time to attend to the needs of your body. Reflect on what just happened and how it made you feel. Then, choose one.
+
+            * Move on: Continue the session. You or an ally may add +1 on the next move (not a progress move), bolstered by your reflection and past experiences.
+            * Stop for now: [End a Session](datasworn:move:fe_runners/session/end_a_session).
+        _source:
+          <<: *Source
+          page: 125
+      end_a_session:
+        name: End a Session
+        roll_type: no_roll
+        type: move
+        trigger:
+          text: When you end a significant session or chapter of play...
+        text: |-
+          __When you end a significant session or chapter of play__, reflect on the events of the game and identify any missed opportunities to mark progress.
+
+            * If you strengthened your ties to a connection, [Develop Your Relationship](datasworn:move:fe_runners/connection/develop_your_relationship).
+            * If you moved forward on a quest, [Reach a Milestone](datasworn:move:fe_runners/quest/reach_a_milestone).
+
+          If there is a quest, connection, or other situation you would like to give focus in your next session, make note of it and take +1 momentum.
+        _source:
+          <<: *Source
+          page: 125
+  adventure:
+    name: Adventure Moves
+    type: move_category
+    color: &adventure.color '#206087'
+    _source:
+      <<: *Source
+      page: 146
+    summary: |-
+      The __adventure moves__ encompass broadly useful actions to overcome obstacles, reinforce your position, conduct investigations, influence others, and support your fellow protagonists.
+    description: |-
+      The __adventure moves__ encompass broadly useful actions to overcome obstacles, reinforce your position, conduct investigations, influence others, and support your fellow protagonists. When you face a peril or try to gain leverage, and another move does not apply, you'll likely find your answer among these moves.
+    contents: 
+      face_danger:
+        name: Face Danger
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you attempt something risky or react to an imminent threat...
+          conditions:
+            - method: player_choice
+              text: With speed, mobility, or agility
+              roll_options:
+                - using: stat
+                  stat: edge
+            - method: player_choice
+              text: With resolve, command, or sociability
+              roll_options:
+                - using: stat
+                  stat: heart
+            - method: player_choice
+              text: With strength, endurance, or aggression
+              roll_options:
+                - using: stat
+                  stat: iron
+            - method: player_choice
+              text: With deception, stealth, or trickery
+              roll_options:
+                - using: stat
+                  stat: shadow
+            - method: player_choice
+              text: With expertise, focus, or observation
+              roll_options:
+                - using: stat
+                  stat: wits
+        text: |-
+          __When you attempt something risky or react to an imminent threat__, envision your action and roll. If you act...
+
+            * With speed, mobility, or agility: Roll +edge
+            * With resolve, command, or sociability: Roll +heart
+            * With strength, endurance, or aggression: Roll +iron
+            * With deception, stealth, or trickery: Roll +shadow
+            * With expertise, focus, or observation: Roll +wits
+
+          On a __strong hit__, you are successful. Take +1 momentum.
+
+          On a __weak hit__, you succeed, but not without a cost. Make a suffer move (-1).
+
+          On a __miss__, you fail, or a momentary success is undermined by a dire turn of events. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, you are successful. Take +1 momentum.
+          weak_hit:
+            text: On a __weak hit__, you succeed, but not without a cost. Make a suffer move (-1).
+          miss:
+            text: On a __miss__, you fail, or a momentary success is undermined by a dire turn of events. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        _source:
+          <<: *Source
+          page: 126
+      secure_an_advantage:
+        name: Secure an Advantage
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you assess a situation, make preparations, or attempt to gain leverage...
+          conditions:
+            - method: player_choice
+              text: With speed, mobility, or agility
+              roll_options:
+                - using: stat
+                  stat: edge
+            - method: player_choice
+              text: With resolve, command, or sociability
+              roll_options:
+                - using: stat
+                  stat: heart
+            - method: player_choice
+              text: With strength, endurance, aggression
+              roll_options:
+                - using: stat
+                  stat: iron
+            - method: player_choice
+              text: With deception, stealth, or trickery
+              roll_options:
+                - using: stat
+                  stat: shadow
+            - method: player_choice
+              text: With expertise, focus, or observation
+              roll_options:
+                - using: stat
+                  stat: wits
+        text: |-
+          __When you assess a situation, make preparations, or attempt to gain leverage__, envision your action and roll. If you act...
+
+            * With speed, mobility, or agility: Roll +edge
+            * With resolve, command, or sociability: Roll +heart
+            * With strength, endurance, aggression: Roll +iron
+            * With deception, stealth, or trickery: Roll +shadow
+            * With expertise, focus, or observation: Roll +wits
+
+          On a __hit__, you succeed. On a __strong hit__, take both. On a __weak hit__, choose one.
+
+            * Take +2 momentum
+            * Add +1 on your next move (not a progress move)
+
+          On a __miss__, you fail or your assumptions betray you. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, you succeed. Take +2 momentum. Add +1 on your next move (not a progress move).
+          weak_hit:
+            text: |-
+              On a __weak hit__, you succeed. Choose one.
+
+                * Take +2 momentum
+                * Add +1 on your next move (not a progress move)
+          miss:
+            text: On a __miss__, you fail or your assumptions betray you. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        _source:
+          <<: *Source
+          page: 126
+      gather_information:
+        name: Gather Information
+        suggestions:
+          - oracle_rollable:fe_runners/core/story_clue
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you search for clues, conduct an investigation, analyze evidence, or do research...
+          conditions:
+            - method: player_choice
+              roll_options:
+                - using: stat
+                  stat: wits
+        text: |-
+          __When you search for clues, conduct an investigation, analyze evidence, or do research__, roll +wits.
+
+          On a __strong hit__, you discover something helpful and specific. The path you must follow or action you must take to make progress is made clear. Envision what you learn. Then, take +2 momentum.
+
+          On a __weak hit__, the information provides new insight, but also complicates your quest. Envision what you discover. Then, take +1 momentum.
+
+          On a __miss__, your investigation unearths a dire threat or reveals an unwelcome truth that undermines your quest. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+
+          You may also use the [Story Clue](oracle_rollable:fe_runners/core/story_clue) to help in an investigation.  Depending on whether it is a strong hit, weak hit, or a miss will determine if the clue provides opportunity or a complication.
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, you discover something helpful and specific. The path you must follow or action you must take to make progress is made clear. Envision what you learn. Then, take +2 momentum.
+          weak_hit:
+            text: On a __weak hit__, the information provides new insight, but also complicates your quest. Envision what you discover. Then, take +1 momentum.
+          miss:
+            text: On a __miss__, your investigation unearths a dire threat or reveals an unwelcome truth that undermines your quest. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        _source:
+          <<: *Source
+          page: 126
+      compel:
+        name: Compel
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you try to persuade someone or make them an offer...
+          conditions:
+            - method: player_choice
+              text: Charm, pacify, encourage, or barter
+              roll_options:
+                - using: stat
+                  stat: heart
+            - method: player_choice
+              text: Threaten or incite
+              roll_options:
+                - using: stat
+                  stat: iron
+            - method: player_choice
+              text: Lie or swindle
+              roll_options:
+                - using: stat
+                  stat: shadow
+        text: |-
+          __When you try to persuade someone or make them an offer__, envision your approach. If you...
+
+            * Charm, pacify, encourage, or barter: Roll +heart
+            * Threaten or incite: Roll +iron
+            * Lie or swindle: Roll +shadow
+
+          On a __strong hit__, they'll do what you want or agree to your conditions. Take +1 momentum.
+
+          On a __weak hit__, as above, but their agreement comes with a demand or complication. Envision their counteroffer.
+
+          On a __miss__, they refuse or make a demand that costs you greatly. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, they'll do what you want or agree to your conditions. Take +1 momentum.
+          weak_hit:
+            text: On a __weak hit__, they'll do what you want or agree to your conditions, but their agreement comes with a demand or complication. Envision their counteroffer and take +1 momentum.
+          miss:
+            text: On a __miss__, they refuse or make a demand that costs you greatly. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        _source:
+          <<: *Source
+          page: 127
+      aid_your_ally:
+        name: Aid Your Ally
+        roll_type: no_roll
+        type: move
+        trigger:
+          text: When you act in direct support of an ally...
+        text: |-
+          __When you act in direct support of an ally__, envision how you aid them. Then, [Secure an Advantage](datasworn:move:fe_runners/adventure/secure_an_advantage) or [Gain Ground](datasworn:move:fe_runners/combat/gain_ground) to take action. If you score a hit, they (instead of you) take the benefits of the move.
+
+          If you [Gain Ground](datasworn:move:fe_runners/combat/gain_ground) and score a strong hit, you are both in control. On a __weak hit__, your ally is in control but you are in a bad spot.
+        _source:
+          <<: *Source
+          page: 127
+  quest:
+    name: Quest Moves
+    type: move_category
+    color: '#805A90'
+    summary: Make these __quest moves__ when you swear vows, make progress on your quests, and resolve vows.
+    description: |-
+      In the fiction of the *Fe-Runners* setting, those who swear vows are the Ironsworn, and their promises are binding. Vows can be made to yourself, as a solemn representation of your personal commitment, or as a promise to someone else. Some vows might be made grudgingly—out of duty, necessity, or tradition. Others will be made with your whole heart.
+
+      Make these __quest moves__ when you swear vows, make progress on your quests, and resolve vows.
+    _source:
+      <<: *Source
+      page: 128
+    contents: 
+      swear_an_iron_vow:
+        name: Swear an Iron Vow
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you swear upon iron to complete a quest...
+          conditions:
+            - method: player_choice
+              roll_options:
+                - using: stat
+                  stat: heart
+        text: |-
+          __When you swear upon iron to complete a quest__, write your vow and give it a rank. Then, roll +heart. If you swear this vow to a connection, add +1; if you share a bond, add +2.
+
+          On a __strong hit__, you are emboldened and it is clear what you must do next. Take +2 momentum.
+
+          On a __weak hit__, you are determined but begin your quest with more questions than answers. Take +1 momentum, and envision what you do to find a path forward.
+
+          On a __miss__, you must overcome a significant obstacle before you begin your quest. Envision what stands in your way.
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, you are emboldened and it is clear what you must do next. Take +2 momentum.
+          weak_hit:
+            text: On a __weak hit__, you are determined but begin your quest with more questions than answers. Take +1 momentum, and envision what you do to find a path forward.
+          miss:
+            text: On a __miss__, you must overcome a significant obstacle before you begin your quest. Envision what stands in your way.
+        _source:
+          <<: *Source
+          page: 128
+      reach_a_milestone:
+        name: Reach a Milestone
+        roll_type: no_roll
+        type: move
+        trigger:
+          text: When you make headway in your quest...
+        text: |-
+          __When you make headway in your quest__ by doing any of the following...
+
+            * overcoming a critical obstacle
+            * gaining meaningful insight
+            * completing a perilous expedition
+            * acquiring a crucial item or resource
+            * earning vital support
+            * defeating a notable foe
+
+          ...you may mark progress per the rank of the vow.
+        _source:
+          <<: *Source
+          page: 128
+      fulfill_your_vow:
+        name: Fulfill Your Vow
+        roll_type: progress_roll
+        type: move
+        tracks:
+          category: Vow
+        trigger:
+          text: When you reach the end of your quest...
+          conditions:
+            - roll_options:
+                - using: progress_track
+        text: |-
+          __When you reach the end of your quest__, roll the challenge dice and compare to your progress.
+
+          On a __strong hit__, your vow is fulfilled. Mark a reward on your quests legacy track per the vow's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Any allies who shared this vow also mark the reward.
+
+          On a __weak hit__, as above, but there is more to be done or you realize the truth of your quest. If you [Swear an Iron Vow](datasworn:move:fe_runners/quest/swear_an_iron_vow) to set things right, take your full legacy reward. Otherwise, make the reward one rank lower.
+
+          On a __miss__, your vow is undone through an unexpected complication or realization. Envision what happens and choose one.
+
+            * Give up on the quest: [Forsake Your Vow](datasworn:move:fe_runners/quest/forsake_your_vow).
+            * Recommit to the quest: Roll both challenge dice, take the lowest value, and clear that number of progress boxes. Then, raise the vow's rank by one (if not already epic).
+        outcomes:
+          strong_hit:
+            text: |-
+              On a __strong hit__, your vow is fulfilled. Mark a reward on your quests legacy track per the vow's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Any allies who shared this vow also mark the reward.
+          weak_hit:
+            text: |-
+              On a __weak hit__, your vow is fulfilled, but there is more to be done or you realize the truth of your quest. If you [Swear an Iron Vow](datasworn:move:fe_runners/quest/swear_an_iron_vow) to set things right, take your full legacy reward per the vow's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Otherwise, make the reward one rank lower. Any allies who shared this vow also mark the reward.
+          miss:
+            text: |-
+              On a __miss__, your vow is undone through an unexpected complication or realization. Envision what happens and choose one.
+
+                * Give up on the quest: [Forsake Your Vow](datasworn:move:fe_runners/quest/forsake_your_vow).
+                * Recommit to the quest: Roll both challenge dice, take the lowest value, and clear that number of progress boxes. Then, raise the vow's rank by one (if not already epic).
+        _source:
+          <<: *Source
+          page: 129
+      forsake_your_vow:
+        name: Forsake Your Vow
+        roll_type: no_roll
+        type: move
+        trigger:
+          text: When you renounce your quest, betray your promise, or the goal is lost to you...
+        text: |-
+          __When you renounce your quest, betray your promise, or the goal is lost to you__, clear the vow.
+
+          Then, envision the impact of this failure and choose one or more as appropriate to the nature of the vow. Any allies who shared this vow may also envision a cost.
+
+            * You are demoralized or dispirited: [Endure Stress](datasworn:move:fe_runners/suffer/endure_stress).
+            * A connection loses faith: [Test Your Relationship](datasworn:move:fe_runners/connection/test_your_relationship) when you next interact.
+            * You must abandon a path or resource: Discard an asset.
+            * Someone else pays a price: Envision how a person, being, or community bears the cost of the failure.
+            * Someone else takes advantage: Envision how an enemy gains power.
+            * Your reputation suffers: Envision how this failure marks you.
+        _source:
+          <<: *Source
+          page: 129
+  connection:
+    name: Connection Moves
+    type: move_category
+    color: '#4A5791'
+    _source:
+      <<: *Source
+      page: 130
+    summary: |-
+      Make these __connection moves__ when you introduce connections and as you build influence or understanding with them.
+    description: |-
+      __Connections__ are NPCs (non-player characters) who represent a deep, vital, or interesting relationship in your story. They are your tethers to the people and places of the Forge.
+
+      Make these __connection moves__ when you introduce connections and as you build influence or understanding with them.
+    contents: 
+      make_a_connection:
+        name: Make a Connection
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you search out a new relationship or give focus to an existing relationship (not an ally or companion)...
+          conditions:
+            - method: player_choice
+              roll_options:
+                - using: stat
+                  stat: heart
+        text: |-
+          __When you search out a new relationship or give focus to an existing relationship (not an ally or companion)__, roll +heart.
+
+          On a __strong hit__, you create a connection. Give them a role and rank. Whenever your connection aids you on a move closely associated with their role, add +1 and take +1 momentum on a hit.
+
+          On a __weak hit__, as above, but this connection comes with a complication or cost. Envision what they reveal or demand.
+
+          On a __miss__, you don't make a connection and the situation worsens. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, you create a connection. Give them a role and rank. Whenever your connection aids you on a move closely associated with their role, add +1 and take +1 momentum on a hit.
+          weak_hit:
+            text: |-
+              On a __weak hit__, you create a connection, but it comes with a complication or cost. Envision what they reveal or demand.
+
+              Give the connection a role and rank. Whenever your connection aids you on a move closely associated with their role, add +1 and take +1 momentum on a hit.
+          miss:
+            text: On a __miss__, you don't make a connection and the situation worsens. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        _source:
+          <<: *Source
+          page: 130
+      develop_your_relationship:
+        name: Develop Your Relationship
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you reinforce your relationship with a connection...
+          conditions:
+            - method: player_choice
+              text: If you already share a bond with the connection
+              roll_options:
+                - label: troublesome
+                  using: custom
+                  value: 1
+                - label: dangerous
+                  using: custom
+                  value: 2
+                - label: formidable
+                  using: custom
+                  value: 3
+                - label: extreme
+                  using: custom
+                  value: 4
+                - label: epic
+                  using: custom
+                  value: 5
+        text: |-
+          __When you reinforce your relationship with a connection__ by doing any of the following...
+
+            * swearing a vow to undertake a perilous quest in their service
+            * completing a quest to their benefit
+            * leveraging their help in desperate circumstances
+            * giving them something of worth
+            * sharing a profound moment
+            * standing with them against hardship
+            * overcoming a test of your relationship
+
+          ...you may mark progress per the rank of the connection.
+
+          If you already share a bond with the connection, do not mark progress. Instead, roll +their rank to learn the impact on your legacy: troublesome=+1; dangerous=+2; formidable=+3; extreme=+4; epic=+5. On a __strong hit__, mark 2 ticks on your bonds legacy track. On a __strong hit with a match__, you may also envision how recent events bolstered your connection’s standing and raise their rank by one (if not already epic). On a __weak hit__, take +2 momentum. On a __miss__, take no lasting benefit.
+        outcomes:
+          strong_hit:
+            text: |-
+              On a __strong hit__, mark 2 ticks on your bonds legacy track.
+
+              On a __strong hit with a match__, you may also envision how recent events bolstered your connection’s standing and raise their rank by one (if not already epic).
+          weak_hit:
+            text: On a __weak hit__, take +2 momentum.
+          miss:
+            text: On a __miss__, take no lasting benefit.
+        _source:
+          <<: *Source
+          page: 131
+      test_your_relationship:
+        name: Test Your Relationship
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When your relationship with a connection is tested through conflict, betrayal, or circumstance...
+          conditions:
+            - method: player_choice
+              roll_options:
+                - using: stat
+                  stat: heart
+        text: |-
+          __When your relationship with a connection is tested through conflict, betrayal, or circumstance__, roll +heart. If you share a bond, add +1.
+
+          On a __strong hit__, [Develop Your Relationship](datasworn:move:fe_runners/connection/develop_your_relationship).
+
+          On a __weak hit__, [Develop Your Relationship](datasworn:move:fe_runners/connection/develop_your_relationship), but also envision a demand or complication as a fallout of this test.
+
+          On a __miss__, or if you have no interest in maintaining this relationship, choose one.
+
+            * Lose the connection: Envision how this impacts you and [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+            * Prove your loyalty: Envision what you offer or what they demand, and [Swear an Iron Vow](datasworn:move:fe_runners/quest/swear_an_iron_vow) (formidable or greater) to see it done. Until you complete the quest, take no benefit for the connection. If you refuse or fail the quest, the connection is permanently undone.
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, [Develop Your Relationship](datasworn:move:fe_runners/connection/develop_your_relationship).
+          weak_hit:
+            text: |-
+              On a __weak hit__, [Develop Your Relationship](datasworn:move:fe_runners/connection/develop_your_relationship), but also envision a demand or complication as a fallout of this test.
+          miss:
+            text: |-
+              On a __miss__, choose one.
+
+                * Lose the connection: Envision how this impacts you and [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+                * Prove your loyalty: Envision what you offer or what they demand, and [Swear an Iron Vow](datasworn:move:fe_runners/quest/swear_an_iron_vow) (formidable or greater) to see it done. Until you complete the quest, take no benefit for the connection. If you refuse or fail the quest, the connection is permanently undone.
+        _source:
+          <<: *Source
+          page: 131
+      forge_a_bond:
+        name: Forge a Bond
+        roll_type: progress_roll
+        type: move
+        tracks:
+          category: Connection
+        trigger:
+          text: When your relationship with a connection is ready to evolve...
+          conditions:
+            - roll_options:
+                - using: progress_track
+        text: |-
+          __When your relationship with a connection is ready to evolve__, roll the challenge dice and compare to your progress.
+
+          On a __strong hit__, you now share a bond. Mark a reward on your bonds legacy track per the connection's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Any allies who share this connection also mark the reward. Then, choose one.
+
+            * Bolster their influence: When they aid you on a move closely associated with their role, add +2 instead of +1.
+            * Expand their influence: Give them a second role. When they aid you on a move closely associated with either role, add +1 and take +1 momentum on a hit.
+
+          On a __weak hit__, as above, but they ask something more of you first. To gain the bond and the legacy reward, envision the nature of the request, and do it (or [Swear an Iron Vow](datasworn:move:fe_runners/quest/swear_an_iron_vow) to see it done).
+
+          On a __miss__, they reveal a motivation or background that puts you at odds. If you recommit to this relationship, roll both challenge dice, take the lowest value, and clear that number of progress boxes. Then, raise the connection's rank by one (if not already epic).
+        outcomes:
+          strong_hit:
+            text: |-
+              On a __strong hit__, you now share a bond. Mark a reward on your bonds legacy track per the connection's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Any allies who share this connection also mark the reward. Then, choose one.
+
+                * Bolster their influence: When they aid you on a move closely associated with their role, add +2 instead of +1.
+                * Expand their influence: Give them a second role. When they aid you on a move closely associated with either role, add +1 and take +1 momentum on a hit.
+          weak_hit:
+            text: |-
+              On a __weak hit__, they ask something more of you first. To gain the bond and the legacy reward, envision the nature of the request, and do it (or [Swear an Iron Vow](datasworn:move:fe_runners/quest/swear_an_iron_vow) to see it done).
+
+              If you do, you now share a bond. Mark a reward on your bonds legacy track per the connection's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Any allies who share this connection also mark the reward. Then, choose one.
+
+                * Bolster their influence: When they aid you on a move closely associated with their role, add +2 instead of +1.
+                * Expand their influence: Give them a second role. When they aid you on a move closely associated with either role, add +1 and take +1 momentum on a hit.
+          miss:
+            text: On a __miss__, they reveal a motivation or background that puts you at odds. If you recommit to this relationship, roll both challenge dice, take the lowest value, and clear that number of progress boxes. Then, raise the connection's rank by one (if not already epic).
+        _source:
+          <<: *Source
+          page: 131
+  combat:
+    name: Combat Moves
+    type: move_category
+    color: '#818992'
+    _source:
+      <<: *Source
+      page: 132
+    summary: |-
+      When you face one or more foes in high-stakes, action-oriented conflict, use the __combat moves__. These moves encompass on-foot action and vehicle sorties—or both as part of the same challenge.
+    description: |-
+      The Forge is a perilous galaxy. Factions fight for control. Pirates hunt the spaceways. Raiders prey on vulnerable settlements. Dangerous creatures and chaotic terrors stalk the unwary. Dreaded foes and powerful forces will oppose your sworn quests. Eventually, you'll be forced to fight.
+
+      When you face one or more foes in high-stakes, action-oriented conflict, use the __combat moves__. These moves encompass on-foot action and vehicle sorties—or both as part of the same challenge.
+    contents:
+      enter_the_fray:
+        name: Enter the Fray
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you initiate combat or are forced into a fight...
+          conditions:
+            - method: player_choice
+              text: On the move
+              roll_options:
+                - using: stat
+                  stat: edge
+            - method: player_choice
+              text: Facing off against your foe
+              roll_options:
+                - using: stat
+                  stat: heart
+            - method: player_choice
+              text: In the thick of it at close quarters
+              roll_options:
+                - using: stat
+                  stat: iron
+            - method: player_choice
+              text: Preparing to act against an unaware foe
+              roll_options:
+                - using: stat
+                  stat: shadow
+            - method: player_choice
+              text: Caught in a trap or sizing up the situation
+              roll_options:
+                - using: stat
+                  stat: wits
+        text: |-
+          __When you initiate combat or are forced into a fight__, envision your objective and give it a rank. If the combat includes discrete challenges or phases, set an objective with a rank for each.
+
+          Then, roll to see if you are in control. If you are...
+
+            * On the move: Roll +edge
+            * Facing off against your foe: Roll +heart
+            * In the thick of it at close quarters: Roll +iron
+            * Preparing to act against an unaware foe: Roll +shadow
+            * Caught in a trap or sizing up the situation: Roll +wits
+
+          On a __strong hit__, take both. On a __weak hit__, choose one.
+
+            * Take +2 momentum
+            * You are in control
+
+          On a __miss__, the fight begins with you in a bad spot.
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, take +2 momentum. You are in control.
+          weak_hit:
+            text: |-
+              On a __weak hit__, choose one.
+
+                * Take +2 momentum
+                * You are in control
+          miss:
+            text: On a __miss__, the fight begins with you in a bad spot.
+        _source:
+          <<: *Source
+          page: 132
+      gain_ground:
+        name: Gain Ground
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you are in control and take action in a fight to reinforce your position or move toward an objective...
+          conditions:
+            - method: player_choice
+              text: In pursuit, fleeing, or maneuvering
+              roll_options:
+                - using: stat
+                  stat: edge
+            - method: player_choice
+              text: By charging boldly into action, coming to the aid of others, negotiating, or commanding
+              roll_options:
+                - using: stat
+                  stat: heart
+            - method: player_choice
+              text: Gaining leverage with force, powering through, or making a threat
+              roll_options:
+                - using: stat
+                  stat: iron
+            - method: player_choice
+              text: Hiding, preparing an ambush, or misdirecting
+              roll_options:
+                - using: stat
+                  stat: shadow
+            - method: player_choice
+              text: Coordinating a plan, studying a situation, or cleverly gaining leverage
+              roll_options:
+                - using: stat
+                  stat: wits
+        text: |-
+          __When you are in control and take action in a fight to reinforce your position or move toward an objective__, envision your approach and roll. If you are...
+
+            * In pursuit, fleeing, or maneuvering: Roll +edge
+            * Charging boldly into action, coming to the aid of others, negotiating, or commanding: Roll +heart
+            * Gaining leverage with force, powering through, or making a threat: Roll +iron
+            * Hiding, preparing an ambush, or misdirecting: Roll +shadow
+            * Coordinating a plan, studying a situation, or cleverly gaining leverage: Roll +wits
+
+          On a __hit__, you stay in control. On a __strong hit__, choose two. On a __weak hit__, choose one.
+
+            * Mark progress
+            * Take +2 momentum
+            * Add +1 on your next move (not a progress move)
+
+          On a __miss__, your foe gains the upper hand, the fight moves to a new location, or you encounter a new peril. You are in a bad spot and must [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        outcomes:
+          strong_hit:
+            text: |-
+              On a __strong hit__, you stay in control. Choose two.
+
+                * Mark progress
+                * Take +2 momentum
+                * Add +1 on your next move (not a progress move)
+          weak_hit:
+            text: |-
+              On a __weak hit__, you stay in control. Choose one.
+
+                * Mark progress
+                * Take +2 momentum
+                * Add +1 on your next move (not a progress move)
+          miss:
+            text: On a __miss__, your foe gains the upper hand, the fight moves to a new location, or you encounter a new peril. You are in a bad spot and must [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        _source:
+          <<: *Source
+          page: 132
+      react_under_fire:
+        name: React Under Fire
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you are in a bad spot and take action in a fight to avoid danger or overcome an obstacle...
+          conditions:
+            - method: player_choice
+              text: In pursuit, fleeing, dodging, getting back into position, or taking cover
+              roll_options:
+                - using: stat
+                  stat: edge
+            - method: player_choice
+              text: Remaining stalwart against fear or temptation
+              roll_options:
+                - using: stat
+                  stat: heart
+            - method: player_choice
+              text: Blocking or diverting with force, or taking the hit
+              roll_options:
+                - using: stat
+                  stat: iron
+            - method: player_choice
+              text: Moving into hiding or creating a distraction
+              roll_options:
+                - using: stat
+                  stat: shadow
+            - method: player_choice
+              text: Changing the plan, finding a way out, or cleverly bypassing an obstacle
+              roll_options:
+                - using: stat
+                  stat: wits
+        text: |-
+          __When you are in a bad spot and take action in a fight to avoid danger or overcome an obstacle__, envision your approach and roll. If you are...
+
+            * In pursuit, fleeing, dodging, getting back into position, or taking cover: Roll +edge
+            * Remaining stalwart against fear or temptation: Roll +heart
+            * Blocking or diverting with force, or taking the hit: Roll +iron
+            * Moving into hiding or creating a distraction: Roll +shadow
+            * Changing the plan, finding a way out, or cleverly bypassing an obstacle: Roll +wits
+
+          On a __strong hit__, you succeed and are in control. Take +1 momentum.
+
+          On a __weak hit__, you avoid the worst of the danger or overcome the obstacle, but not without a cost. Make a suffer move (-1). You stay in a bad spot.
+
+          On a __miss__, the situation worsens. You stay in a bad spot and must [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, you succeed and are in control. Take +1 momentum.
+          weak_hit:
+            text: On a __weak hit__, you avoid the worst of the danger or overcome the obstacle, but not without a cost. Make a suffer move (-1). You stay in a bad spot.
+          miss:
+            text: On a __miss__, the situation worsens. You stay in a bad spot and must [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        _source:
+          <<: *Source
+          page: 133
+      strike:
+        name: Strike
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you are in control and assault a foe at close quarters, or when you attack at a distance...
+          conditions:
+            - method: player_choice
+              text: Assault a foe at close quarters
+              roll_options:
+                - using: stat
+                  stat: iron
+            - method: player_choice
+              text: Attack at a distance
+              roll_options:
+                - using: stat
+                  stat: edge
+        text: |-
+          __When you are in control and assault a foe at close quarters__, roll +iron; __when you attack at a distance__, roll +edge.
+
+          On a __strong hit__, mark progress twice. You dominate your foe and stay in control.
+
+          On a __weak hit__, mark progress twice, but you expose yourself to danger. You are in a bad spot.
+
+          On a __miss__, the fight turns against you. You are in a bad spot and must [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, mark progress twice. You dominate your foe and stay in control.
+          weak_hit:
+            text: On a __weak hit__, mark progress twice, but you expose yourself to danger. You are in a bad spot.
+          miss:
+            text: On a __miss__, the fight turns against you. You are in a bad spot and must [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        _source:
+          <<: *Source
+          page: 133
+      clash:
+        name: Clash
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you are in a bad spot and fight back against a foe at close quarters, or when you exchange fire at a distance...
+          conditions:
+            - method: player_choice
+              text: Fight back against a foe at close quarters
+              roll_options:
+                - using: stat
+                  stat: iron
+            - method: player_choice
+              text: Exchange fire at a distance
+              roll_options:
+                - using: stat
+                  stat: edge
+        text: |-
+          __When you are in a bad spot and fight back against a foe at close quarters__, roll +iron; __when you exchange fire at a distance__, roll +edge.
+
+          On a __strong hit__, mark progress twice. You overwhelm your foe and are in control.
+
+          On a __weak hit__, mark progress, but you are dealt a counterblow or setback. You stay in a bad spot and must [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+
+          On a __miss__, your foe dominates this exchange. You stay in a bad spot and must [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, mark progress twice. You overwhelm your foe and are in control.
+          weak_hit:
+            text: On a __weak hit__, mark progress, but you are dealt a counterblow or setback. You stay in a bad spot and must [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+          miss:
+            text: On a __miss__, your foe dominates this exchange. You stay in a bad spot and must [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        _source:
+          <<: *Source
+          page: 133
+      take_decisive_action:
+        name: Take Decisive Action
+        roll_type: progress_roll
+        type: move
+        tracks:
+          category: Combat
+        trigger:
+          text: When you seize an objective in a fight...
+          conditions:
+            - roll_options:
+                - using: progress_track
+        oracles:
+          take_decisive_action:
+            name: Take Decisive Action
+            oracle_type: table_text
+            type: oracle_rollable
+            # content:
+            #   part_of_speech: [sentences]
+            rows:
+              - roll: { min: 1, max: 40 }
+                text: 'It’s worse than you thought: Make a suffer move (-2)'
+              - roll: { min: 41, max: 52 }
+                text: 'Victory is short-lived: A new peril or foe appears'
+              - roll: { min: 53, max: 64 }
+                text: 'You face collateral damage: Something is lost, damaged, or broken'
+              - roll: { min: 65, max: 76 }
+                text: 'Others pay the price: Someone else suffers the cost'
+              - roll: { min: 77, max: 88 }
+                text: 'Others won’t forget: You are marked for vengeance'
+              - roll: { min: 89, max: 100 }
+                text: 'It gets complicated: The true nature of a foe or objective is revealed'
+
+        text: |-
+          __When you seize an objective in a fight__, envision how you take decisive action. Then, roll the challenge dice and compare to your progress.
+
+          If you are in control, check the result as normal. If you are in a bad spot, count a strong hit without a match as a weak hit, and a weak hit as a miss.
+
+          On a __strong hit__, you prevail. Take +1 momentum. If any objectives remain and the fight continues, you are in control.
+
+          On a __weak hit__, you achieve your objective, but not without cost. Roll on the table below or choose one. If the fight continues, you are in a bad spot.
+
+          {{table>move.oracle_rollable:fe_runners/combat/take_decisive_action.take_decisive_action}}
+
+          On a __miss__, you are defeated or your objective is lost. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, you prevail. Take +1 momentum. If any objectives remain and the fight continues, you are in control.
+          weak_hit:
+            text: |-
+              On a __weak hit__, you achieve your objective, but not without cost. Roll on the table below or choose one. If the fight continues, you are in a bad spot.
+
+              {{table>move.oracle_rollable:fe_runners/combat/take_decisive_action.take_decisive_action}}
+          miss:
+            text: On a __miss__, you are defeated or your objective is lost. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        _source:
+          <<: *Source
+          page: 134
+      automate_attack:
+        name: Automate Attack
+        roll_type: action_roll
+        type: move
+        trigger:
+          text:  When you want to automate the entire battle and get to the outcome...
+          conditions:
+            - method: player_choice
+              text: At range, or using your speed and the environment to your advantage
+              roll_options:
+                - using: stat
+                  stat: edge
+            - method: player_choice
+              text: Depending on your courage, leadership, or companions
+              roll_options:
+                - using: stat
+                  stat: heart
+            - method: player_choice
+              text: In close to overpower your foe
+              roll_options:
+                - using: stat
+                  stat: iron
+            - method: player_choice
+              text: Using trickery to befuddle your foe
+              roll_options:
+                - using: stat
+                  stat: shadow
+            - method: player_choice
+              text: Using careful tactics to outsmart your foe
+              roll_options:
+                - using: stat
+                  stat: wits
+        text: |-
+          __When you want to automate the entire battle and get to the outcome__, envision your objective and roll. If you primarily...
+
+            * Fight at range, or using your speed and the environment to your advantage: Roll +edge.
+            * Fight depending on your courage, leadership, or companions: Roll +heart.
+            * Fight in close to overpower your foe: Roll +iron.
+            * Fight using trickery to befuddle your foe: Roll +shadow.
+            * Fight using careful tactics to outsmart your foe: Roll +wits.
+
+          On a __strong hit__, you achieve your objective unconditionally. You and any allies who joined the battle may take +2 momentum.
+
+          On a __weak hit__, you achieve your objective, but not without cost. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+
+          On a __miss__, you are defeated or the objective is lost. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, you achieve your objective unconditionally. You and any allies who joined the battle may take +2 momentum.
+          weak_hit:
+            text: On a __weak hit__, you achieve your objective, but not without cost. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+          miss:
+            text: On a __miss__, you are defeated or the objective is lost. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        _source:
+          <<: *Source
+          page: 134
+  exploration:
+    name: Exploration Moves
+    type: move_category
+    color: '#427FAA'
+    summary: |-
+      Make __exploration moves__ as you explore the Net and its different segments and nodes. 
+    description: |-
+      The Net is filled with strange and unique nodes, devices and obstacles.  Your sworn vows will take you into the far reaches of the DarkNet.
+
+      Will you survive the perils of the Net? What will they cost you? What crazy technolgy will you discover and what mysteries will you solve? Use the __exploration moves__ to find out.
+    _source:
+      <<: *Source
+      page: 135
+    contents:
+      jacking_in:
+        name: Jacking in
+        roll_type: no_roll
+        type: move
+        trigger:
+          text:  When you are connecting to network and are playing Fe-Runners as an extension...
+        text: |-
+          __When you are connecting to network and are playing Fe-Runners as an extension__, transfer the 
+          health and spirit values to your Fe-Runners character sheet. Envision how you are jacking into the Net 
+          and take +1 momentum for coming into the online world refreshed.
+        _source:
+          <<: *Source
+          page: 135
+      infiltrate_segment:
+        name: Infiltrate a Segment
+        roll_type: progress_roll
+        type: move
+        tracks:
+          category: Segment
+        trigger:
+          conditions:
+            - roll_options:
+                - using: progress_track
+          text: When you are traveling the network to reach your desired segment... 
+        text: |-
+           __When you are traveling the network to reach your desired segment__.  Roll the challenge dice and 
+            compare it to your progress.
+            On a __strong hit__, you successfully enter the segment.
+            On a __weak hit__, you succeed but you face an unforeseen consequence.  Envision what you encounter.
+            On a __miss__, you can’t enter the segment.  Envision what happens and either:
+            ●  You forcibly [Disconnect](datasworn:move:fe_runners/exploration/disconnect).
+            ●  You [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+            ●  Experience a setback and loose progress.  Roll both challenge dice and take the lowest value, 
+            clear that number of progress.  Then increase the difficult ranking by one.
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, you successfully enter the segment.
+          weak_hit:
+            text: On a __weak hit__, you succeed but you face an unforeseen consequence.  Envision what you encounter.
+          miss:
+            text: |-
+              On a __miss__, you can’t enter the segment.  Envision what happens and either:
+              ●  You forcibly [Disconnect](datasworn:move:fe_runners/exploration/disconnect).
+              ●  You [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+              ●  Experience a setback and loose progress.  Roll both challenge dice and take the lowest value, 
+              clear that number of progress.  Then increase the difficult ranking by one.
+        _source:
+          <<: *Source
+          page: 135
+      map_route:
+        name: Map Route
+        roll_type: action_roll
+        type: move
+        trigger:
+          conditions:
+            - method: player_choice
+              text: Travel quickly
+              roll_options:
+                - using: stat
+                  stat: edge
+            - method: player_choice
+              text: Setup relays, and extra bounce locations
+              roll_options:
+                - using: stat
+                  stat: shadow
+            - method: player_choice
+              text:  Spray and pray tactics
+              roll_options:
+                - using: stat
+                  stat: iron
+            - method: player_choice
+              text:  Blend in, social engineering
+              roll_options:
+                - using: stat
+                  stat: wits
+          text:  When you plan out a new route to a new segment...
+        text: |-
+           __When you plan out a new route to a new segment__, give the route a name and rank.
+
+            Then for each segment envision how you want to traverse the network:
+            ●  Travel quickly: Roll +edge
+            ●  Setup relays, and extra bounce locations: Roll +shadow
+            ●  Spray and pray tactics: Roll +iron
+            ●  Blend in, social engineering: Roll +wits
+            On a __strong hit__, based on which skill you used above, use the chart to determine what happens.
+            +edge    Establish a tunnel, portal or shortcut
+            +shadow  Establish a relay through a simple server or device
+            +iron    An automated attack scan identified a vulnerable server to jump from
+            +wits    Bypass or get clearance through social engineering or fake credentials
+            
+            Envision what this may look like or entail.  You can use the Miscellaneous Node Oracle for inspiration. 
+            Mark progress on your route.
+
+            On a __weak hit__, same as above but at a cost:
+            ●  Suffer [Sacrifice Power](datasworn:move:fe_runners/suffer/sacrifice_power) (-1)
+            ●  Face a peril. Roll on the [Node Encounter Oracle](datasowrn:oracle_rollable:fe_runners/node/node_encounter)
+            On a __miss__, you can not establish your next route.  Do not mark progress, [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price)
+        outcomes:
+          strong_hit:
+            text: |-
+              On a __strong hit__, based on which skill you used above, use the chart to determine what happens.
+              +edge    Establish a tunnel, portal or shortcut
+              +shadow  Establish a relay through a simple server or device
+              +iron    An automated attack scan identified a vulnerable server to jump from
+              +wits    Bypass or get clearance through social engineering or fake credentials
+              
+              Envision what this may look like or entail.  You can use the Miscellaneous Node Oracle for inspiration. 
+              Mark progress on your route.
+          weak_hit:
+            text: |-
+              On a __weak hit__, same as above but at a cost:
+              ●  Suffer [Sacrifice Power](datasworn:move:fe_runners/suffer/sacrifice_power) (-1)
+              ●  Face a peril. Roll on the [Node Encounter Oracle](datasowrn:oracle_rollable:fe_runners/node/node_encounter)
+          miss:
+            text: |-
+              On a __miss__, you can not establish your next route.  Do not mark progress, [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price)
+        _source:
+          <<: *Source
+          page: 136
+      gain_entry:
+        name: Gain Entry
+        roll_type: action_roll
+        type: move
+        trigger:
+          conditions:
+            - method: player_choice
+              text: Find a backdoor of vulnerability to the system
+              roll_options:
+                - using: stat
+                  stat: shadow
+            - method: player_choice
+              text:  Social engineering, faking ID
+              roll_options:
+                - using: stat
+                  stat: heart
+            - method: player_choice
+              text: Use the system against itself, find a gap
+              roll_options:
+                - using: stat
+                  stat: wits
+          text: When you are in the proper segment for the system you are trying to gain access to a system node...
+        text: |-
+          __When you are in the proper segment for the system you are trying to gain access to a system node__.  
+          Envision how you will gain access to the system and roll:
+          ●  Find a backdoor of vulnerability to the system: Roll +shadow
+          ●  Social engineering, faking ID: Roll +heart
+          ●  Use the system against itself, find a gap: Roll +wits
+          On a __strong hit__, you gain entry.  Create a progress bar and assign the system a rank.  Then use the 
+          [Explore the System](datasworn:move:fe_runners/exploration/explore_the_system) move to reach your goal.
+          On a __weak hit__, you gain entry but there is a consequence.  Envision the issue, set the progress bar as 
+          above but increase the difficulty.
+          On a __miss__, you do not gain entry. Things have gone bad. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price)
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, you gain entry.  Create a progress bar and assign the system a rank.  Then use the [Explore the System](datasworn:move:fe_runners/exploration/explore_the_system) move to reach your goal.
+          weak_hit:
+            text: On a __weak hit__, you gain entry but there is a consequence.  Envision the issue, set the progress bar as above but increase the difficulty.
+          miss:
+            text: On a __miss__, you do not gain entry. Things have gone bad. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price)
+        _source:
+          <<: *Source
+          page: 137
+      explore_the_system:
+        name: Explore the System
+        roll_type: action_roll
+        type: move
+        trigger:
+          conditions:
+            - method: player_choice
+              text: With haste
+              roll_options:
+                - using: stat
+                  stat: edge
+            - method: player_choice
+              text: With stealth or trickery
+              roll_options:
+                - using: stat
+                  stat: shadow
+            - method: player_choice
+              text:  With observation, intuition or expertise
+              roll_options:
+                - using: stat
+                  stat: wits
+          text:  When you delve into the inner systems of a node you have gained entry to...
+        oracles: 
+          edge:
+            name: Edge
+            <<: &ExploreTheSystem
+              oracle_type: column_text
+              type: oracle_rollable
+            rows:
+              - roll: {min: 1, max: 45}
+                text: &ExploreTheSystem.0 'Mark progress and [Reveal a Danger](datasworn:move:fe_runners/exploration/reveal_danger)'
+              - roll: { min: 46, max: 65}
+                text: &ExploreTheSystem.1 'Mark Progress'
+              - roll: { min: 66, max: 75}
+                text: &ExploreTheSystem.2 'Choose one: Mark progress or [Find an Opportunity](datasworn:move:fe_runners/exploration/find_an_opportunity).'
+              - roll: { min: 76, max: 80}
+                text: &ExploreTheSystem.3 'Take both: Mark progress and [Find an Opportunity](datasworn:move:fe_runners/exploration/find_an_opportunity).'
+              - roll: { min: 81, max: 100}
+                text: &ExploreTheSystem.4 'Mark progresses twice and [Reveal a Danger](datasworn:move:fe_runners/exploration/reveal_danger).'
+          shadow:
+            name: Shadow
+            <<: *ExploreTheSystem
+            rows:
+              - roll: {min: 1, max: 30}
+                text:  *ExploreTheSystem.0 
+              - roll: { min: 31, max: 65}
+                text: *ExploreTheSystem.1 
+              - roll: { min: 66, max: 90}
+                text: *ExploreTheSystem.2 
+              - roll: { min: 91, max: 99}
+                text: *ExploreTheSystem.3 
+              - roll: { min: 100, max: 100}
+                text: *ExploreTheSystem.4 
+          wits:
+            name: Wits
+            <<: *ExploreTheSystem
+            rows:
+              - roll: {min: 1, max: 40}
+                text: *ExploreTheSystem.0
+              - roll: { min: 41, max: 55}
+                text: *ExploreTheSystem.1
+              - roll: { min: 56, max: 80}
+                text: *ExploreTheSystem.2
+              - roll: { min: 81, max: 99}
+                text: *ExploreTheSystem.3
+              - roll: { min: 100, max: 100}
+                text: *ExploreTheSystem.4
+        text: |-
+          __When you delve into the inner systems of a node you have gained entry to__.  Envision your surroundings, use the [System Area Oracle](datasowrn:oracle_rollable:fe_runners/node/system_area) for inspiration.
+          If you navigate the system with:
+
+            ●  With haste: Roll +edge
+            ●  With stealth or trickery: Roll +shadow
+            ●  With observation, intuition or expertise: Roll +wits
+
+          On a __strong hit__, you explore deeper into the system.  Mark progress and [Find an Opportunity](datasworn:move:fe_runners/exploration/find_an_opportunity).
+          
+          On a __weak hit__, roll on the following table according to your stat. 
+          
+          On a __miss__, [Reveal a Danger](datasworn:move:fe_runners/exploration/reveal_danger)
+
+          {{table_columns>move:fe_runners/exploration/explore_the_system}}
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, you explore deeper into the system.  Mark progress and [Find an Opportunity](datasworn:move:fe_runners/exploration/find_an_opportunity)
+          weak_hit:
+            text: |-
+              On a __weak hit__, roll on the following table according to your stat. 
+              
+              {{table_columns>move:fe_runners/exploration/explore_the_system}}
+          miss:
+            text: On a __miss__, [Reveal a Danger](datasworn:move:fe_runners/exploration/reveal_danger)
+        _source:
+          <<: *Source
+          page: 137
+      locate_your_objective:
+        name: Locate Your Objective
+        roll_type: progress_roll
+        type: move
+        tracks:
+          category: Exploration
+        trigger:
+          conditions:
+            - roll_options:
+                - using: progress_track
+          text:  When your exploration of a system comes to an end...
+        text: |-
+          __When your exploration of a system comes to an end__, roll the challenge dice and compare to your 
+          progress.  Momentum is ignored on this roll.
+          On a __strong hit__, you locate your objective and the situation favors you.  Choose one.
+          ●  Make another move now (not a progress move), and add +1
+          ●  Take +1 momentum
+          On a __weak hit__, You locate your objective but face an unforeseen hazard or complication.  Envision what 
+          you find (Ask the Oracle if unsure).
+          On a __miss__, your objective falls out of reach, you have been misled about the nature of your objective, or 
+          you discover that this system holds unexpected depths.  If you continue your exploration, clear all but one 
+          filled progress and raise the system’s rank by one (if not already epic)
+        outcomes:
+          strong_hit:
+            text: |-
+              On a __strong hit__, you locate your objective and the situation favors you.  Choose one.
+              ●  Make another move now (not a progress move), and add +1
+              ●  Take +1 momentum
+          weak_hit:
+            text:  On a __weak hit__, You locate your objective but face an unforeseen hazard or complication.  Envision what you find (Ask the Oracle if unsure).
+          miss:
+            text: |-
+              On a __miss__, your objective falls out of reach, you have been misled about the nature of your objective, or 
+              you discover that this system holds unexpected depths.  If you continue your exploration, clear all but one 
+              filled progress and raise the system’s rank by one (if not already epic)
+        _source:
+          <<: *Source
+          page: 138
+      find_an_opportunity:
+        name: Find an Opportunity
+        roll_type: no_roll
+        type: move
+        trigger:
+          text: When you uncover a helpful situation or feature when exploring a system...
+        oracles: 
+          find_an_opportunity:
+            name: Find an Opportunity
+            oracle_type: table_text
+            type: oracle_rollable
+            rows:
+              - roll: { min: 1, max: 30 }
+                text: Roll on your [Node Type](datasowrn:oracle_collection:fe_runners/node_type) Opportunity or [Story Clue](oracle_rollable:fe_runners/core/story_clue)
+              - roll: { min: 31, max: 45 }
+                text: Roll on your [Segment Node](datasowrn:oracle_collection:fe_runners/segment) Opportunity or [Story Clue](oracle_rollable:fe_runners/core/story_clue)
+              - roll: { min: 46, max: 57 }
+                text: You locate a shortcut or hidden path
+              - roll: { min: 58, max: 68 }
+                text: An aspect of this system is revealed
+              - roll: { min: 69, max: 76 }
+                text: You locate a secure area
+              - roll: { min: 77, max: 79 }
+                text: A clue offers insight or direction
+              - roll: { min: 80, max: 82 }
+                text: You get the drop on an enemy or security system
+              - roll: { min: 83, max: 85 }
+                text: This area provides an opportunity to scavenge
+              - roll: { min: 86, max: 88 }
+                text: You locate an interesting or helpful object
+              - roll: { min: 89, max: 91 }
+                text: You are alerted to a potential threat
+              - roll: { min: 92, max: 94 }
+                text: You encounter someone or something that might support you
+              - roll: { min: 95, max: 100 }
+                text: You encounter someone in need of help
+        text: |-
+          __When you uncover a helpful situation or feature when exploring a system__, roll on the following 
+          table.  If you are making this move as a result of a strong hit on the [Explore the System](datasworn:move:fe_runners/exploration/explore_the_system) move, you may 
+          pick or envision an opportunity instead of rolling.  Most systems have their own opportunity tables you 
+          may also roll on in the [Node Types](datasowrn:oracle_collection:fe_runners/node_type) Section.
+          Then choose one.
+          ●  Gain insight or prepare: Take +1 momentum
+          ●  Take action now: You and your allies may make a move (not a progress move) which directly 
+          leverages the opportunity.  When you do, add +1 and take +1 momentum on a hit.
+
+          {{table>move.oracle_rollable:fe_runners/exploration/find_an_opportunity.find_an_opportunity}}}}
+        _source:
+          <<: *Source
+          page: 138
+      reveal_danger:
+        name: Reveal a Danger
+        roll_type: no_roll
+        type: move
+        trigger:
+          text:  When you encounter a risky situation within a system...
+        oracles: 
+          reveal_danger:
+            name: Reveal a Danger
+            oracle_type: table_text
+            type: oracle_rollable
+            rows:
+              - roll: { min: 1, max: 30 }
+                text: Roll on [Node Type](datasowrn:oracle_collection:fe_runners/node_type) Peril or [Story Complication](oracle_rollable:fe_runners/core/story_complication)
+              - roll: { min: 31, max: 45 }
+                text: Roll on [Segment Oracle](datasowrn:oracle_collection:fe_runners/segment) Peril or [[Story Complication]](oracle_rollable:fe_runners/core/story_complication)
+              - roll: { min: 46, max: 57 }
+                text: You encounter a hostile person or thing
+              - roll: { min: 58, max: 68 }
+                text: You face an architectural hazard or security system
+              - roll: { min: 69, max: 76 }
+                text: A discovery complicates your quest
+              - roll: { min: 77, max: 79 }
+                text: You confront a harrowing situation or sensation
+              - roll: { min: 80, max: 82 }
+                text: You face the consequences of an earlier choice or approach
+              - roll: { min: 83, max: 85 }
+                text: You way is blocked or trapped
+              - roll: { min: 86, max: 88 }
+                text: A resource is diminished, broken or lost
+              - roll: { min: 89, max: 91 }
+                text: You face a perplexing mystery, puzzle or tough choice
+              - roll: { min: 92, max: 94 }
+                text: You lose your way or are delayed
+              - roll: { min: 95, max: 100 }
+                text: Roll twice more on this table.  Both results occur.  If they are the same result, make it worse
+        text: |-
+          __When you encounter a risky situation within a system__, envision the danger or roll on the following 
+          table.  If making this roll based on [[Explore the System]](datasworn:move:fe_runners/exploration/explore_the_system) move, you can instead roll on that nodes specific 
+          Perils table in the [[Node Types]](datasowrn:oracle_collection:fe_runners/node_type) section.
+
+          {{table>move.oracle_rollable:fe_runners/exploration/reveal_danger.reveal_danger}}}}
+        _source:
+          <<: *Source
+          page: 139
+      disconnect:
+        name: Disconnect
+        roll_type: action_roll
+        type: move
+        trigger:
+          conditions:
+            - method: player_choice
+              text: Being chased, evading
+              roll_options:
+                - using: stat
+                  stat: edge
+            - method: player_choice
+              text: Forced disconnect
+              roll_options:
+                - using: stat
+                  stat: iron
+            - method: player_choice
+              text: Covering tracks while disconnecting
+              roll_options:
+                - using: stat
+                  stat: shadow
+          text: When you forcibly need to disconnect from the network or a system...
+        text: |-
+          __When you forcibly need to disconnect from the network or a system__, envision the situation and how you are disconnecting.  If you are at a safe location you may simply disconnect without making a roll and  assume a __strong hit__.  If playing Fe-Runners as an extension of another game, transfer the health and spirit  values to your other character sheet. Ensure you advance any tension clocks while disconnected.
+
+            * Being chased, evading: Roll +edge
+            * Forced disconnect: Roll +iron
+            * Covering tracks while disconnecting: Roll +shadow
+
+          On a __strong hit__, you successfully disconnect as intended.  Next time you connect you will start at the Core segment.  You can retrace your steps back without having to [[Map Route]](datasworn:move:fe_runners/exploration/map_route) or [[Infiltrate Segment]](datasworn:move:fe_runners/exploration/infiltrate_segment).  If this was a system, you can attempt to [[Gain Entry]](datasworn:move:fe_runners/exploration/gain_entry) at a later time with a +1 to the roll.
+
+          On a __weak hit__, You manage to disconnect but your route is burned, mapping progress and relay nodes have been compromised and can not be used again.  You will need to use [[Map Route]](datasworn:move:fe_runners/exploration/map_route) and [[Infiltrate Segment]](datasworn:move:fe_runners/exploration/infiltrate_segment) again.
+
+          On a __miss__, You disconnect it the worst way.  Envision what happens and apply the appropriate Suffer Move.  On a match, [[Endure Harm]](datasworn:move:fe_runners/suffer/endure_harm) (-2).
+        outcomes:
+          strong_hit:
+            text: |-
+              On a __strong hit__, you successfully disconnect as intended.  Next time you connect you will start at the Core segment.  You can retrace your steps back without having to [[Map Route]](datasworn:move:fe_runners/exploration/map_route) or [[Infiltrate Segment]](datasworn:move:fe_runners/exploration/infiltrate_segment).  If this was a system, you can attempt to [[Gain Entry]](datasworn:move:fe_runners/exploration/gain_entry) at a later time with a +1 to the roll.
+          weak_hit:
+            text: |-
+              On a __weak hit__, You manage to disconnect but your route is burned, mapping progress and relay nodes have been compromised and can not be used again.  You will need to use [[Map Route]](datasworn:move:fe_runners/exploration/map_route) and [[Infiltrate Segment]](datasworn:move:fe_runners/exploration/infiltrate_segment) again.
+          miss:
+            text: On a __miss__, You disconnect it the worst way.  Envision what happens and apply the appropriate Suffer Move.  On a match, [[Endure Harm]](datasworn:move:fe_runners/suffer/endure_harm) (-2).
+        _source:
+          <<: *Source
+          page: 139
+  artifact:
+    name: Artifact Moves
+    type: move_category
+    color: '#A77600'
+    _source:
+      <<: *Source
+      page: 140
+    summary: Artifacts are the special digital tools that Fe-Runners use to crack software, bypass security and other unique programs.
+    description: The __Artifact Moves__ encompass what it takes to create, reverse engineer and use a special digital artifact.  Only specific paths can develop their own artifacts.  Those paths specify their skill on their card.
+    contents: 
+      develop_an_artifact:
+        name: Develop an Artifact
+        roll_type: action_roll
+        type: move
+        trigger:
+          conditions:
+            - method: player_choice
+              roll_options:
+                - using: stat
+                  stat: wits
+          text: When you develop a virus, bot, AI, tool with special capabilities...
+        text: |-
+          __When you develop a virus, bot, AI, tool with special capabilities__, and you have a Path or special circumstance that allows you to create an artifact.  Envision what special ability the artifact will have and Roll +wits.
+
+          On a __strong hit__, you create what you were after.  It also has an additional feature or capability.  Envision what that is or roll on Artifact Ability for inspiration.  Give your artifact a name.
+
+          On a __weak hit__, You create what you are after but it is frail and has limited use, lifespan or an obvious weakness or flaw. Give your artifact a name.
+
+          On a __miss__, You are unable to create the artifact.  You must envision a Suffer move, or [[Pay the Price]](datasworn:move:fe_runners/fate/pay_the_price)
+          
+          On __hit__ with a __match__, the code is a very unique attribute such as a flashy animation, or unique flare.  When someone uses or sees this tool it is unforgettable.
+        outcomes:
+          strong_hit:
+            text: |-
+              On a __strong hit__, you create what you were after.  It also has an additional feature or capability.  Envision what that is or roll on Artifact Ability for inspiration.  Give your artifact a name.
+          weak_hit:
+            text: |-
+              On a __weak hit__, You create what you are after but it is frail and has limited use, lifespan or an obvious weakness or flaw. Give your artifact a name.
+          miss:
+            text: On a __miss__, You are unable to create the artifact.  You must envision a Suffer move, or [[Pay the Price]](datasworn:move:fe_runners/fate/pay_the_price)
+        _source:
+          <<: *Source
+          page: 140
+      utilize_an_artifact:
+        name: Utilize an Artifact
+        roll_type: action_roll
+        type: move
+        trigger:
+          conditions:
+            - method: player_choice
+              text: When speed is of the essence
+              roll_options:
+                - using: stat
+                  stat: edge
+            - method: player_choice
+              text: When utilizing social engineering
+              roll_options:
+                - using: stat
+                  stat: heart
+            - method: player_choice
+              text: When needing to use brute force
+              roll_options:
+                - using: stat
+                  stat: iron
+            - method: player_choice
+              text: When trying to go undetected
+              roll_options:
+                - using: stat
+                  stat: shadow
+            - method: player_choice
+              text:  When solving a puzzle or riddle
+              roll_options:
+                - using: stat
+                  stat: wits
+          text:  When you have an artifact that requires skill of the user in order to use its special feature...
+        text: |-
+          __When you have an artifact that requires skill of the user in order to use its special feature__, think about what the tool is doing and what you need to do to help.
+
+            * When speed is of the essence: +edge
+            * When utilizing social engineering: +heart
+            * When needing to use brute force: +iron
+            * When trying to go undetected: +shadow
+            * When solving a puzzle or riddle: +wits
+
+          On a __strong hit__, you are successful and the artifact works brilliantly.  +2 Momentum
+          On a __weak hit__, the artifact is successful but has caused an additional complication or problem.
+          On a __miss__, you failed to use the artifact correctly.  [[Pay the Price]](datasworn:move:fe_runners/fate/pay_the_price)
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, you are successful and the artifact works brilliantly.  +2 Momentum
+          weak_hit:
+            text: On a __weak hit__, the artifact is successful but has caused an additional complication or problem.
+          miss:
+            text: On a __miss__, you failed to use the artifact correctly.  [[Pay the Price]](datasworn:move:fe_runners/fate/pay_the_price)
+        _source:
+          <<: *Source
+          page: 140
+      reverse_engineer_an_artifact:
+        name: Reverse Engineer an Artifact
+        roll_type: action_roll
+        type: move
+        trigger:
+          conditions:
+            - method: player_choice
+              roll_options:
+                - using: stat
+                  stat: wits
+          text:  When you have control of an artifact and you need to learn its inner secrets...
+        text: |-
+          __When you have control of an artifact and you need to learn its inner secrets__, roll +wits.
+
+          On a __strong hit__, you reveal the information you were looking for.
+          On a __weak hit__, you find part of the information but the rest is beyond your reach.  You can not try again.
+          On a __miss__, you are unsuccessful.  -3 Momentum
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, you reveal the information you were looking for.
+          weak_hit:
+            text: On a __weak hit__, you find part of the information but the rest is beyond your reach.  You can not try again. 
+          miss:
+            text: On a __miss__, you are unsuccessful.  -3 Momentum
+        _source:
+          <<: *Source
+          page: 140
+  suffer:
+    name: Suffer Moves
+    type: move_category
+    color: '#883529'
+    summary: |-
+      When you bear the brunt of a failed action or make a concession, the suffer moves help resolve the cost.
+    description: |-
+      When you bear the brunt of a failed action or make a concession, the suffer moves help resolve the cost. These moves are typically made when you must [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price) and face a hardship that directly impacts your well-being and readiness, or as prompted by a move or asset.
+    _source:
+      <<: *Source
+      page: 141
+    contents:
+      lose_momentum:
+        name: Lose Momentum
+        roll_type: no_roll
+        type: move
+        trigger:
+          text: When you are delayed or disadvantaged...
+        text: |-
+          __When you are delayed or disadvantaged__. Suffer -1 momentum for a minor setback, -2 for a serious 
+          setback or -3 for a major setback.
+
+          When your momentum is at a minimum (-6) and you must suffer -momentum, choose one:
+
+            * Envision how the price is paid and apply the cost to a different move
+            *  Envision how this undermines your progress on a vow, expedition, connection, combat and clear 1 unit of progress. Troublesome = 3 boxes, dangerous = 2 boxes, formidable = 1 box, extreme = 2 ticks, epic = 1 tick.
+        _source:
+          <<: *Source
+          page: 141
+      endure_harm:
+        name: Endure Harm
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you face physical injury, fatigue, or illness...
+          conditions:
+            - method: highest
+              roll_options:
+                - using: stat
+                  stat: iron
+                - using: condition_meter
+                  condition_meter: health
+        oracles:
+          endure_harm:
+            name: Endure Harm
+            oracle_type: table_text
+            type: oracle_rollable
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: 'You suffer mortal harm. [Face Death](datasworn:move:fe_runners/threshold/face_death).'
+              - roll: { min: 11, max: 20 }
+                text: 'You are dying. Within an hour or two, you must [Heal](datasworn:move:fe_runners/recover/heal) and raise your health above 0, or [Face Death](datasworn:move:fe_runners/threshold/face_death).'
+              - roll: { min: 21, max: 35 }
+                text: 'You are unconscious and out of action. If left alone, you come back to your senses in an hour or two. If you are vulnerable to ongoing harm, [Face Death](datasworn:move:fe_runners/threshold/face_death).'
+              - roll: { min: 36, max: 50 }
+                text: 'You are reeling and fighting to stay conscious. If you engage in any vigorous activity before taking a breather for a few minutes, roll on this table again (before resolving the other move).'
+              - roll: { min: 51, max: 100 }
+                text: You are still standing.
+        text: |-
+          __When you face physical injury, fatigue, or illness__, suffer -1 health for minor harm, -2 for serious harm, or -3 for major harm. If your health is 0, [Lose Momentum](datasworn:move:fe_runners/suffer/lose_momentum) equal to any remaining harm.
+
+          Then, if your health is 0 or you choose to resist the harm, roll +health or +iron, whichever is higher.
+
+          On a __strong hit__, choose one.
+
+            * Shake it off: If you are not wounded, take +1 health
+            * Embrace the pain: Take +1 momentum
+
+          On a __weak hit__, if you are not wounded, you may [Lose Momentum](datasworn:move:fe_runners/suffer/lose_momentum) (-1) in exchange for +1 health. Otherwise, press on.
+
+          On a __miss__, it’s worse than you thought. Suffer an additional -1 health or [Lose Momentum](datasworn:move:fe_runners/suffer/lose_momentum) (-2). If your health is 0, you must also mark wounded or permanently harmed, or roll on the table below.
+
+          {{table>move.oracle_rollable:fe_runners/suffer/endure_harm.endure_harm}}
+        outcomes:
+          strong_hit:
+            text: |-
+              On a __strong hit__, choose one.
+
+                * Shake it off: If you are not wounded, take +1 health
+                * Embrace the pain: Take +1 momentum
+          weak_hit:
+            text: On a __weak hit__, if you are not wounded, you may [Lose Momentum](datasworn:move:fe_runners/suffer/lose_momentum) (-1) in exchange for +1 health. Otherwise, press on.
+          miss:
+            text: |-
+              On a __miss__, it’s worse than you thought. Suffer an additional -1 health or [Lose Momentum](datasworn:move:fe_runners/suffer/lose_momentum) (-2). If your health is 0, you must also mark wounded or permanently harmed, or roll on the table below.
+
+              {{table>move.oracle_rollable:fe_runners/suffer/endure_harm.endure_harm}}
+        _source:
+          <<: *Source
+          page: 141
+      endure_stress:
+        name: Endure Stress
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you face mental strain, shock, or despair...
+          conditions:
+            - method: highest
+              roll_options:
+                - using: stat
+                  stat: heart
+                - using: condition_meter
+                  condition_meter: spirit
+        oracles:
+          endure_stress:
+            name: Endure Stress
+            oracle_type: table_text
+            type: oracle_rollable
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: 'You are overwhelmed. [Face Desolation](datasworn:move:fe_runners/threshold/face_desolation).'
+              - roll: { min: 11, max: 25 }
+                text: 'You give up. [Forsake Your Vow](datasworn:move:fe_runners/quest/forsake_your_vow).'
+              - roll: { min: 26, max: 50 }
+                text: 'You give in to fear or compulsion, and act against your better instincts.'
+              - roll: { min: 51, max: 100 }
+                text: You persevere.
+        text: |-
+          __When you face mental strain, shock, or despair__, suffer -1 spirit for minor stress, -2 for serious stress, or -3 for major stress. If your spirit is 0, [Lose Momentum](datasworn:move:fe_runners/suffer/lose_momentum) equal to any remaining stress.
+
+          Then, if your spirit is 0 or you choose to resist the stress, roll +spirit or +heart, whichever is higher.
+
+          On a __strong hit__, choose one.
+
+            * Shake it off: If you are not shaken, take +1 spirit
+            * Embrace the darkness: Take +1 momentum
+
+          On a __weak hit__, if you are not shaken, you may [Lose Momentum](datasworn:move:fe_runners/suffer/lose_momentum) (-1) in exchange for +1 spirit. Otherwise, press on.
+
+          On a __miss__, it's worse than you thought. Suffer an additional -1 spirit or [Lose Momentum](datasworn:move:fe_runners/suffer/lose_momentum) (-2). If your spirit is 0, you must also mark shaken or traumatized, or roll on the table below.
+
+          {{table>move.oracle_rollable:fe_runners/suffer/endure_stress.endure_stress}}
+        outcomes:
+          strong_hit:
+            text: |-
+              On a __strong hit__, choose one.
+
+                * Shake it off: If you are not shaken, take +1 spirit
+                * Embrace the darkness: Take +1 momentum
+          weak_hit:
+            text: On a __weak hit__, if you are not shaken, you may [Lose Momentum](datasworn:move:fe_runners/suffer/lose_momentum) (-1) in exchange for +1 spirit. Otherwise, press on.
+          miss:
+            text: |-
+              On a __miss__, it's worse than you thought. Suffer an additional -1 spirit or [Lose Momentum](datasworn:move:fe_runners/suffer/lose_momentum) (-2). If your spirit is 0, you must also mark shaken or traumatized, or roll on the table below.
+
+              {{table>move.oracle_rollable:fe_runners/suffer/endure_stress.endure_stress}}
+        _source:
+          <<: *Source
+          page: 142
+      companion_takes_a_hit:
+        name: Companion Takes a Hit
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When your companion faces physical hardship...
+          conditions:
+            - method: player_choice
+              roll_options:
+                - using: asset_control
+                  assets:
+                    - 'asset:*/companion/*'
+                  control: health
+        text: |-
+          __When your companion faces physical hardship__, they suffer -1 health for minor harm, -2 for serious harm, or -3 for major harm. If your companion's health is 0, [Lose Momentum](datasworn:move:fe_runners/suffer/lose_momentum) equal to any remaining harm.
+
+          Then, if their health is 0 or you choose to test their resilience, roll +your companion's health.
+
+          On a __strong hit__, your companion rallies. Give them +1 health.
+
+          On a __weak hit__, if your companion's health is not 0, you may [Lose Momentum](datasworn:move:fe_runners/suffer/lose_momentum) (-1) and give them +1 health. Otherwise, they press on.
+
+          On a __miss__, it's worse than you thought. They suffer an additional -1 health or you [Lose Momentum](datasworn:move:fe_runners/suffer/lose_momentum) (-2). If your companion's health is 0, they are out of action until given aid. If their health is 0 and you rolled a miss with a match on this move, they are dead or destroyed; discard the asset.
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, your companion rallies. Give them +1 health.
+          weak_hit:
+            text: On a __weak hit__, if your companion's health is not 0, you may [Lose Momentum](datasworn:move:fe_runners/suffer/lose_momentum) (-1) and give them +1 health. Otherwise, they press on.
+          miss:
+            text: |-
+              On a __miss__, it's worse than you thought. They suffer an additional -1 health or you [Lose Momentum](datasworn:move:fe_runners/suffer/lose_momentum) (-2). If your companion's health is 0, they are out of action until given aid.
+
+              If their health is 0 and you rolled a miss with a match on this move, they are dead or destroyed; discard the asset.
+        _source:
+          <<: *Source
+          page: 142
+      sacrifice_power:
+        name: Sacrifice Power
+        roll_type: no_roll
+        type: move
+        trigger:
+          text:  Whenever you lose or consume extra power...
+        text: |-
+          __Whenever you lose or consume extra power__, suffer -1 supply for a minor loss, -2 for a serious loss and -3 for a major loss.
+
+          If your supply is exhausted (reduced to 0), mark __unregulated__.  When you suffer a loss of power while unregulated, envision how this will cause hardship and apply the cost to a different suffer move.
+        _source:
+          <<: *Source
+          page: 142
+      withstand_damage:
+        name: Withstand Damage
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When your rig faces a damaging situation or environment...
+          conditions:
+            - method: player_choice
+              roll_options:
+                - using: asset_control
+                  assets:
+                    - 'asset:*/rig/*'
+                  control: integrity
+        oracles:
+          withstand_damage:
+            name: Withstand Damage
+            oracle_type: table_text
+            type: oracle_rollable
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: 'Immediate catastrophic destruction.  You must [[Endure Harm]](datasworn:move:fe_runners/suffer/endure_harm) or [[Face Death]](datasworn:move:fe_runners/threshold/face_death) as appropriate.'
+              - roll: { min: 11, max: 25 }
+                text: 'Destruction is imminent.  You will need to immediately [[Disconnect]](datasworn:move:fe_runners/exploration/disconnect) or else [[Endure Harm]](datasworn:move:fe_runners/suffer/endure_harm) / [[Face Death]](datasworn:move:fe_runners/threshold/face_death) as appropriate.'
+              - roll: { min: 26, max: 40 }
+                text: ' Destruction is imminent, but can be averted if you [[Repair]](datasworn:move:fe_runners/recover/repair) your rig and raise its health above 0.  If you fail, see 11-25.'
+              - roll: { min: 41, max: 55 }
+                text: 'You will need extra power to repair your rig.  You must [[Recharge]](datasworn:move:fe_runners/recover/recharge) then attempt a [[Repair]](datasworn:move:fe_runners/recover/repair).  If you roll this result again before you can repair, see 1125.'
+              - roll: { min: 56, max: 70 }
+                text: 'You are partially disconnected.  You must successfully [[Repair]](datasworn:move:fe_runners/recover/repair) or forcibly [[Disconnect]](datasworn:move:fe_runners/exploration/disconnect).'
+              - roll: { min: 71, max: 85 }
+                text: " You must make an [[Endure Harm]](datasworn:move:fe_runners/suffer/endure_harm), [[Endure Stress]](datasworn:move:fe_runners/suffer/endure_stress) or [[Companion Takes a Hit]](datasworn:move:fe_runners/suffer/companion_takes_a_hit) move, suffering a serious (-2) cost"
+              - roll: { min: 86, max: 95 }
+                text: 'You’ve lost a lot of power.  [[Sacrifice Power]](datasworn:move:fe_runners/suffer/sacrifice_power) (-2)'
+              - roll: { min: 96, max: 100 }
+                text: 'Your rig is hot but somehow still seems functional.'
+        text: |-
+          __When your rig faces a damaging situation or environment__, suffer -1 rig health for minor damage, -2 for serious damage and -3 for major damage.  If your rig’s health is 0, [[Lose Momentum]](datasworn:move:fe_runners/suffer/lose_momentum) equal to any remaining damage.
+
+          Then if your rig’s health is 0 and you choose to resist damage, roll +rig health.
+
+          On a __strong hit__, choose one:
+
+            * If your rig is not overheated, take +1 rig health
+            * Maintain focus: take +1 momentum
+
+          On a __weak hit__, if your rig is not overheated, you may [[Lose Momentum]](datasworn:move:fe_runners/suffer/lose_momentum) (-1) in exchange for +1 rig health.  Otherwise, carry on.
+
+          On a __miss__, it’s worse than you thought.  Suffer an additional -1 rig health or [[Lose Momentum]](datasworn:move:fe_runners/suffer/lose_momentum) (-2).  If your rig’s health is 0, mark the rig as __overheated__ or __infected__, mark a module as broken, destroy a broken module by discarding it or roll on the table below.  If your rig is destroyed, [[Overcome Destruction]](datasworn:move:fe_runners/threshold/overcome_destruction).
+
+          {{table>move.oracle_rollable:fe_runners/suffer/withstand_damage.withstand_damage}}
+        outcomes:
+          strong_hit:
+            text: |-
+              On a __strong hit__, choose one:
+
+                * If your rig is not overheated, take +1 rig health
+                * Maintain focus: take +1 momentum
+          weak_hit:
+            text: On a __weak hit__, if your rig is not overheated, you may [[Lose Momentum]](datasworn:move:fe_runners/suffer/lose_momentum) (-1) in exchange for +1 rig health. Otherwise, carry on.
+          miss:
+            text: |-
+              On a __miss__, it’s worse than you thought.  Suffer an additional -1 rig health or [[Lose Momentum]](datasworn:move:fe_runners/suffer/lose_momentum) (-2).  If your rig’s health is 0, mark the rig as __overheated__ or __infected__, mark a module as broken, destroy a broken module by discarding it or roll on the table below.  If your rig is destroyed, [[Overcome Destruction]](datasworn:move:fe_runners/threshold/overcome_destruction).
+
+              {{table>move.oracle_rollable:starforged/suffer/withstand_damage.withstand_damage}}
+        _source:
+          <<: *Source
+          page: 143
+  recover:
+    name: Recover Moves
+    type: move_category
+    color: '#488B44'
+    summary: Make these __recover moves__ when you attempt to rest, recover, or refit.
+    description: |-
+      Life as an Ironsworn is not easy or comfortable. When your resources are strained, your health and spirit ebbing, your equipment and rig are in disrepair, you'll need to find relief from the perils of the Forge and the burdens of your sworn oaths.
+
+      Make these __recover moves__ when you attempt to rest, recover, or refit.
+    _source:
+      <<: *Source
+      page: 144
+    contents: 
+      sojourn:
+        name: Sojourn
+        roll_type: action_roll
+        type: move
+        trigger:
+          text:  When you are disconnected and spend time recovering...
+          conditions:
+            - method: player_choice
+              roll_options:
+                - using: stat
+                  stat: heart
+        text: |-
+          __When you are disconnected and spend time recovering__, roll +heart.
+
+          On a __strong hit__, this personal reset was perfect. You and your allies can choose two recovery moves: [[Heal]](datasworn:move:fe_runners/recover/heal), [[Repair]](datasworn:move:fe_runners/recover/repair) or [[Recharge]](datasworn:move:fe_runners/recover/recharge). Instead of rolling, assume an automatic strong hit for each. An individual move can be taken more than once.
+          On a __weak hit__, same as above, but time is short or resources are strained.  You and your allies make one recovery move instead of two, with no more than three moves total for the group.
+          On a __miss__, choose one:
+
+            * The community needs your help or makes a costly demand in exchange.  Envision what they ask you for.  If you agree then [[Swear an Iron Vow]](datasworn:move:fe_runners/quest/swear_an_iron_vow) and resolve this move as a strong hit.
+            * You find no relief and your situation worsens. [[Pay the Price]](datasworn:move:fe_runners/fate/pay_the_price).
+        outcomes:
+          strong_hit:
+            text: |-
+              On a __strong hit__, this personal reset was perfect. You and your allies can choose two recovery moves: [[Heal]](datasworn:move:fe_runners/recover/heal), [[Repair]](datasworn:move:fe_runners/recover/repair) or [[Recharge]](datasworn:move:fe_runners/recover/recharge). Instead of rolling, assume an automatic strong hit for each. An individual move can be taken more than once.
+          weak_hit:
+            text: |-
+              On a __weak hit__, same as above, but time is short or resources are strained.  You and your allies make one recovery move instead of two, with no more than three moves total for the group.
+          miss:
+            text: |-
+              On a __miss__, choose one:
+
+                * The community needs your help or makes a costly demand in exchange.  Envision what they ask you for.  If you agree then [[Swear an Iron Vow]](datasworn:move:fe_runners/quest/swear_an_iron_vow) and resolve this move as a strong hit.
+                * You find no relief and your situation worsens. [[Pay the Price]](datasworn:move:fe_runners/fate/pay_the_price).
+        _source:
+          <<: *Source
+          page: 144
+      heal:
+        name: Heal
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you are disconnected and receive medical care or provide treatment...
+          conditions:
+            - method: player_choice
+              text: Receive treatment from someone (not an ally)
+              roll_options:
+                - using: stat
+                  stat: iron
+            - text: Mend your own wounds
+              method: lowest
+              roll_options:
+                - using: stat
+                  stat: iron
+                - using: stat
+                  stat: wits
+            - method: player_choice
+              text: Obtain treatment for a companion
+              roll_options:
+                - using: stat
+                  stat: heart
+            - method: player_choice
+              text: Provide care
+              roll_options:
+                - using: stat
+                  stat: wits
+        text: |-
+          __When you are disconnected and receive medical care or provide treatment__, envision the situation and roll. If you...
+
+            * Receive treatment from someone (not an ally): Roll +iron
+            * Mend your own wounds: Roll +iron or +wits, whichever is lower
+            * Obtain treatment for a companion: Roll +heart
+            * Provide care: Roll +wits
+
+          On a __strong hit__, the care is helpful. If you (or the ally under your care) are wounded, clear the impact and take or give +2 health. Otherwise, take or give +3 health.
+
+          On a __weak hit__, as above, but the recovery costs extra time.  [[Lose Momentum]](datasworn:move:fe_runners/suffer/lose_momentum) -2.
+
+          On a __miss__, the aid is ineffective and the situation worsens. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, the care is helpful. If you (or the ally under your care) are wounded, clear the impact and take or give +2 health. Otherwise, take or give +3 health.
+          weak_hit:
+            text: |-
+              On a __weak hit__, as above, but the recovery costs extra time.  [[Lose Momentum]](datasworn:move:fe_runners/suffer/lose_momentum) -2.
+          miss:
+            text: On a __miss__, the aid is ineffective and the situation worsens. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        _source:
+          <<: *Source
+          page: 144
+      hearten:
+        name: Hearten
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you socialize, share intimacy, or find a moment of peace...
+          conditions:
+            - method: player_choice
+              roll_options:
+                - using: stat
+                  stat: heart
+        text: |-
+          __When you socialize, share intimacy, or find a moment of peace__, roll +heart.
+
+          On a __strong hit__, you find companionship or comfort and your spirit is strengthened. If you are shaken, clear the impact and take +1 spirit. Otherwise, take +2 spirit. If you make this move as you [Sojourn](datasworn:move:fe_runners/recover/sojourn), take +1 more.
+
+          On a __weak hit__, as above, but this indulgence is fleeting. Envision an interruption, complication, or inner conflict. Then, [Lose Momentum](datasworn:move:fe_runners/suffer/lose_momentum) (-1).
+
+          On a __miss__, you take no comfort and the situation worsens. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, you find companionship or comfort and your spirit is strengthened. If you are shaken, clear the impact and take +1 spirit. Otherwise, take +2 spirit. If you make this move as you [Sojourn](datasworn:move:fe_runners/recover/sojourn), take +1 more.
+          weak_hit:
+            text: |-
+              On a __weak hit__, you find companionship or comfort and your spirit is strengthened. If you are shaken, clear the impact and take +1 spirit. Otherwise, take +2 spirit. If you make this move as you [Sojourn](datasworn:move:fe_runners/recover/sojourn), take +1 more.
+
+              However, this indulgence is fleeting. Envision an interruption, complication, or inner conflict. Then, [Lose Momentum](datasworn:move:fe_runners/suffer/lose_momentum) (-1).
+          miss:
+            text: On a __miss__, you take no comfort and the situation worsens. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        _source:
+          <<: *Source
+          page: 145
+      repair:
+        name: Repair
+        roll_type: action_roll
+        type: move
+        trigger:
+          text:  When you make repairs to your rig or other equipment...
+          conditions:
+            - method: player_choice
+              text: Make your own repairs, or direct a companion to make repairs
+              roll_options:
+                - using: stat
+                  stat: wits
+            - method: player_choice
+              text: Obtain repairs from someone (not an ally)
+              roll_options:
+                - using: condition_meter
+                  condition_meter: supply
+        text: |-
+          __ When you make repairs to your rig or other equipment__, envision the situation and roll, +wits.  If you are making repairs to your core rig, you will need to disconnect to repair it.
+          
+          On a __hit__ you gain repair points appropriate for the situation, see the chart below.  With aid, is when someone or something is helping you and you are in a non-hostile area.  By yourself is when you are in a non-hostile area that you can work from.  Under fire is when you are repairing in a crisis such as when being attacked or in a hazardous environment.
+
+          Situation     | Strong Hit | Weak Hit
+          --------------|------------|---------
+          With Aid      | 4 points   | 2 points
+          By Yourself   | 3 points   | 1 points
+          Under Fire    | 2 points   | 0 points
+
+          Spend repair points as follows. Unused points are discarded.
+
+            * Clear the overheated impact of your rig: 2 points
+            * Repair a module: 2 points
+            * Take +1 health for the rig: 1 point
+            * Repair any other component: 3 points
+            * Repair any other component but suffer a complication or malfunction: 2 points
+
+          On a __miss__, the repairs are not made and the situation worsens. [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+        outcomes:
+          strong_hit:
+            text: |-
+              On a __strong hit__ you gain repair points appropriate for the situation, see the chart below.  With aid, is when someone or something is helping you and you are in a non-hostile area.  By yourself is when you are in a non-hostile area that you can work from.  Under fire is when you are repairing in a crisis such as when being attacked or in a hazardous environment.
+
+              Situation     | Strong Hit | Weak Hit
+              --------------|------------|---------
+              With Aid      | 4 points   | 2 points
+              By Yourself   | 3 points   | 1 points
+              Under Fire    | 2 points   | 0 points
+
+              Spend repair points as follows. Unused points are discarded.
+
+                * Clear the overheated impact of your rig: 2 points
+                * Repair a module: 2 points
+                * Take +1 health for the rig: 1 point
+                * Repair any other component: 3 points
+                * Repair any other component but suffer a complication or malfunction: 2 points
+          weak_hit:
+            text: |-
+              On a __weak hit__ you gain repair points appropriate for the situation, see the chart below.  With aid, is when someone or something is helping you and you are in a non-hostile area.  By yourself is when you are in a non-hostile area that you can work from.  Under fire is when you are repairing in a crisis such as when being attacked or in a hazardous environment.
+
+              Situation     | Strong Hit | Weak Hit
+              --------------|------------|---------
+              With Aid      | 4 points   | 2 points
+              By Yourself   | 3 points   | 1 points
+              Under Fire    | 2 points   | 0 points
+
+              Spend repair points as follows. Unused points are discarded.
+
+                * Clear the overheated impact of your rig: 2 points
+                * Repair a module: 2 points
+                * Take +1 health for the rig: 1 point
+                * Repair any other component: 3 points
+                * Repair any other component but suffer a complication or malfunction: 2 points
+          miss:
+            text: On a __miss__, the repairs are not made and the situation worsens. [Pay the Price](datasworn:move:starforged/fate/pay_the_price).
+        _source:
+          <<: *Source
+          page: 214
+      recharge:
+        name: Recharge
+        roll_type: action_roll
+        type: move
+        trigger:
+          conditions:
+            - method: player_choice
+              text: If bartering or asking for juice
+              roll_options:
+                - using: stat
+                  stat: heart
+            - method: player_choice
+              text: Forcibly patching into a power source
+              roll_options:
+                - using: stat
+                  stat: iron
+            - method: player_choice
+              text: Secretively draining power from an existing source
+              roll_options:
+                - using: stat
+                  stat: shadow
+            - method: player_choice
+              text: Scavenge power or batteries
+              roll_options:
+                - using: stat
+                  stat: wits
+          text:  When you attempt to recharge your rig...
+        text: |-
+          __When you attempt to recharge your rig__. Imagine how you are obtaining power to recharge your rig:
+
+            * If bartering or asking for juice: Roll +heart
+            * Forcibly patching into a power source: Roll +iron
+            * Secretively draining power from an existing source: Roll +shadow
+            * Scavenge power or batteries: Roll +wits
+
+          On a __strong hit__, choose one:
+            * If you are UNREGULATED, clear the impact and take +1 supply, otherwise take +2 supply.
+            * If you are in need of a resource or service that can be reasonably obtained, you acquire it. Take +1 momentum.
+
+          On a __weak hit__, as above but you must first deal with a cost, complication or demand.  Envision the nature of the obstacle.  You can use the Theme oracle for inspiration.
+          On a __miss__, you gain nothing and your situation worsens.  [[Pay the Price]](datasworn:move:fe_runners/fate/pay_the_price).
+        outcomes:
+          strong_hit:
+            text: |-
+              On a __strong hit__, choose one:
+                * If you are UNREGULATED, clear the impact and take +1 supply, otherwise take +2 supply.
+                * If you are in need of a resource or service that can be reasonably obtained, you acquire it. Take +1 momentum.
+          weak_hit:
+            text: On a __weak hit__, as above but you must first deal with a cost, complication or demand.  Envision the nature of the obstacle.  You can use the Theme oracle for inspiration.
+          miss:
+            text: On a __miss__, you gain nothing and your situation worsens.  [[Pay the Price]](datasworn:move:fe_runners/fate/pay_the_price).
+        _source:
+          <<: *Source
+          page: 146
+  threshold:
+    name: Threshold Moves
+    type: move_category
+    color: '#1D1D1B'
+    summary: |-
+      Despite your best efforts to overcome the perils of the Net, calamitous events may bring you to the precipice of life and death, redemption and desolation, perseverance and destruction.
+    description: |-
+      Despite your best efforts to overcome the perils of the Net, calamitous events may bring you to the precipice of life and death, redemption and desolation, perseverance and destruction.
+
+      In these moments you face your greatest tests. What will become of you when all seems lost? Will you see your character undone, or find yourself on a path of renewed purpose? Make these __threshold moves__ to find out.
+    _source:
+      <<: *Source
+      page: 147
+    contents:
+      face_death:
+        name: Face Death
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you are brought to the brink of death with a chance for recovery or redemption...
+          conditions:
+            - method: player_choice
+              roll_options:
+                - using: stat
+                  stat: heart
+        text: |-
+          __When you encounter a situation where death is an immediate and unavoidable outcome__, you are dead. __When you are instead brought to the brink of death with a chance for recovery or redemption__, roll +heart.
+
+          On a __strong hit__, you are cast back into the mortal world.
+
+          On a __weak hit__, choose one.
+
+            * You die, but not before making a noble sacrifice. Envision your final moments.
+            * There is more to be done. Envision what is revealed or asked of you at death's door, and [Swear an Iron Vow](datasworn:move:fe_runners/quest/swear_an_iron_vow) to complete an extreme quest. You return to the mortal world and must mark __doomed__. When you complete the deathbound quest, clear the impact.
+
+          On a __miss__, you are dead.
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, you are cast back into the mortal world.
+          weak_hit:
+            text: |-
+              On a __weak hit__, choose one.
+
+                * You die, but not before making a noble sacrifice. Envision your final moments.
+                * There is more to be done. Envision what is revealed or asked of you at death's door, and [Swear an Iron Vow](datasworn:move:fe_runners/quest/swear_an_iron_vow) to complete an extreme quest. You return to the mortal world and must mark __doomed__. When you complete the deathbound quest, clear the impact.
+          miss:
+            text: On a __miss__, you are dead.
+        _source:
+          <<: *Source
+          page: 147
+      face_desolation:
+        name: Face Desolation
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you are brought to the brink of desolation...
+          conditions:
+            - method: player_choice
+              roll_options:
+                - using: stat
+                  stat: heart
+        text: |-
+          __When you are brought to the brink of desolation__, roll +heart.
+
+          On a __strong hit__, you resist and press on.
+
+          On a __weak hit__, choose one.
+
+            * Your spirit breaks, but not before you make a noble sacrifice. Envision your final moments.
+            * You see a vision of a dreaded event coming to pass. Envision that dark future, and [Swear an Iron Vow](datasworn:move:fe_runners/quest/swear_an_iron_vow) to prevent it through an extreme quest. You return to your senses and must mark __tormented__. When you complete the soul-bound quest, clear the impact.
+
+          On a __miss__, you succumb to despair or horror and are lost.
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, you resist and press on.
+          weak_hit:
+            text: |-
+              On a __weak hit__, choose one.
+
+                * Your spirit breaks, but not before you make a noble sacrifice. Envision your final moments.
+                * You see a vision of a dreaded event coming to pass. Envision that dark future, and [Swear an Iron Vow](datasworn:move:fe_runners/quest/swear_an_iron_vow) to prevent it through an extreme quest. You return to your senses and must mark __tormented__. When you complete the soul-bound quest, clear the impact.
+          miss:
+            text: On a __miss__, you succumb to despair or horror and are lost.
+        _source:
+          <<: *Source
+          page: 147
+      overcome_destruction:
+        name: Overcome Destruction
+        roll_type: special_track
+        type: move
+        trigger:
+          text:  When your rig is destroyed or irrevocably damaged...
+          conditions:
+            - method: player_choice
+              roll_options:
+                - using: bonds_legacy
+        text: |-
+          __When your rig is destroyed or irrevocably damaged__, You must discard the asset and any modules attached or associated with it.  You must forcibly [[Disconnect]](datasworn:move:fe_runners/exploration/disconnect).
+          
+          If you survive, you may use your connections to replace some of what is lost  To learn the cost, roll the challenge dice and compare to the progress on your bonds legacy track.
+
+          On a __strong hit__, you can call in a favor.  This comes without conditions.
+          On a __weak hit__, you owe someone. You must mark __indebted__ and [[Swear an Iron Vow]](datasworn:move:fe_runners/quest/swear_an_iron_vow) to complete an extreme quest in their service.  When you complete the duty-bound quest, clear the impact.
+          On a __miss__, as with the weak hit result but the quest is against your nature, forces you to [[Forsake Your Vow]](datasworn:move:fe_runners/quest/forsake_your_vow) on another quest, or is in the service of an enemy.
+          
+          If you accept the cost, take 1 experience for every marked ability on the discarded assets (minimum 3 experience).  Spend the experience only on a new rig and modules.
+        outcomes:
+          strong_hit:
+            text: |-
+              On a __strong hit__, you can call in a favor.  This comes without conditions.
+
+              If you accept the cost, take 1 experience for every marked ability on the discarded assets (minimum 3 experience). Spend this experience only on a new command vehicle, modules, and support vehicles.
+          weak_hit:
+            text: |-
+              On a __weak hit__, you owe someone. You must mark __indebted__ and [[Swear an Iron Vow]](datasworn:move:fe_runners/quest/swear_an_iron_vow) to complete an extreme quest in their service.  When you complete the duty-bound quest, clear the impact.
+
+              If you accept the cost, take 1 experience for every marked ability on the discarded assets (minimum 3 experience). Spend this experience only on a new command vehicle, modules, and support vehicles.
+          miss:
+            text: |-
+              On a __miss__, as with the weak hit result but the quest is against your nature, forces you to [[Forsake Your Vow]](datasworn:move:fe_runners/quest/forsake_your_vow) on another quest, or is in the service of an enemy.
+
+              When you complete the duty-bound quest, clear the impact.
+
+              If you accept the cost, take 1 experience for every marked ability on the discarded assets (minimum 3 experience). Spend this experience only on a new command vehicle, modules, and support vehicles.
+        _source:
+          <<: *Source
+          page: 148
+  legacy:
+    name: Legacy Moves
+    type: move_category
+    color: '#4F5A69'
+    _source:
+      <<: *Source
+      page: 149
+    summary: |-
+      Make these __legacy moves__ to gain and spend experience, and when you face a final test to learn how your accomplishments and failures will echo through time.
+    description:
+      The three __legacy tracks__—quests, bonds, and discoveries—are a special type of progress track to show the evolution of your character. As you fulfill vows, build relationships, and explore the Forge, you'll mark progress on these tracks and gain experience. This experience is then spent on character assets to represent your character's growing skills, influence, and resources.
+
+      Make these __legacy moves__ to gain and spend experience, and when you face a final test to learn how your accomplishments and failures will echo through time.
+    contents:
+      earn_experience:
+        name: Earn Experience
+        roll_type: no_roll
+        type: move
+        trigger:
+          text: When you fill a box (four ticks) on any legacy track...
+        text: |-
+          __When you fill a box (four ticks) on any legacy track__, take 2 experience. This experience may be spent when you [Advance](datasworn:move:fe_runners/legacy/advance).
+
+          Once you completely fill the tenth box on any legacy track, clear that track. You may start again marking progress on the cleared track, but earn experience at a reduced rate of 1 experience (instead of 2) for each filled progress box. If you make a progress roll against this track, resolve the outcome as if at 10 progress.
+        _source:
+          <<: *Source
+          page: 149
+      advance:
+        name: Advance
+        roll_type: no_roll
+        type: move
+        trigger:
+          text: When you develop your abilities, improve your resources, gain a reward, or boost your influence...
+        text: |-
+          __When you develop your abilities, improve your resources, gain a reward, or boost your influence__, you may spend 3 experience to add a new asset, or 2 experience to upgrade an asset. Choose from the following categories as appropriate to your focus and opportunities.
+
+            * Module: Upgrade your rig
+            * Support Vehicle: Acquire or improve a secondary vehicle
+            * Path: Bolster your personal capabilities or follow a new calling
+            * Companion: Gain or improve a trusted helper
+            * Deed: Learn from your experiences or build a legacy
+        _source:
+          <<: *Source
+          page: 149
+      continue_a_legacy:
+        name: Continue a Legacy
+        roll_type: special_track
+        type: move
+        trigger:
+          text: When you retire from your life as Ironsworn, or succumb to death or desolation...
+          conditions:
+            - method: all
+              roll_options:
+                - using: quests_legacy
+                - using: bonds_legacy
+                - using: discoveries_legacy
+        text: |-
+          __When you retire from your life as Ironsworn, or succumb to death or desolation__, you may create a new character in your established setting. If you do, roll the challenge dice and compare to each of the former character's legacy tracks: quests, bonds, and discoveries (one roll per track).
+
+          For each __strong hit__, choose one from below, or one from the weak hit or miss options.
+
+            * Follow their path: Take one path or companion asset from the former character (at no cost), including any marked abilities.
+            * Share a connection: Take one connection from the former character, including any accrued progress or bond benefits.
+            * Accept an inheritance: Take the former character's command vehicle and one module or support vehicle (at no cost), including any marked abilities.
+
+          For each __weak hit__, choose one from below, or one from the miss options.
+
+            * See it through: Choose one of the former character's unfinished quests, and [Swear an Iron Vow](datasworn:move:fe_runners/quest/swear_an_iron_vow) (with an automatic strong hit) to see it done. You may immediately mark up to half their earned progress (round down) on this quest.
+            * Rebuild a connection: Name one of the former character's connections, and envision how time or circumstances have changed them in a dramatic way. When you [Make a Connection](datasworn:move:fe_runners/connection/make_a_connection) with them, take an automatic strong hit and mark two ticks on your bonds legacy track.
+            * Explore familiar ground: Name a location that was meaningful to the former character. When you first visit that place, envision how it has changed or is endangered. Then, mark two ticks on your discoveries legacy track.
+
+          For each __miss__, choose one.
+
+            * Deal with the aftermath: Envision how one of your former character's foes has gained power or influence.
+            * Switch loyalties: Envision how you begin in opposition to your former character's beliefs, goals, or allegiances.
+            * Open Pandora's Box: Envision how an advancement or discovery has unleashed unexpectedly dire consequences.
+        outcomes:
+          strong_hit:
+            text: |-
+              On a __strong hit__, choose one:
+
+                * Follow their path: Take one path or companion asset from the former character (at no cost), including any marked abilities.
+                * Share a connection: Take one connection from the former character, including any accrued progress or bond benefits.
+                * Accept an inheritance: Take the former character's command vehicle and one module or support vehicle (at no cost), including any marked abilities.
+
+              Alternatively, you may choose a weak hit option:
+
+                * See it through: Choose one of the former character's unfinished quests, and [Swear an Iron Vow](datasworn:move:fe_runners/quest/swear_an_iron_vow) (with an automatic strong hit) to see it done. You may immediately mark up to half their earned progress (round down) on this quest.
+                * Rebuild a connection: Name one of the former character's connections, and envision how time or circumstances have changed them in a dramatic way. When you [Make a Connection](datasworn:move:fe_runners/connection/make_a_connection) with them, take an automatic strong hit and mark two ticks on your bonds legacy track.
+                * Explore familiar ground: Name a location that was meaningful to the former character. When you first visit that place, envision how it has changed or is endangered. Then, mark two ticks on your discoveries legacy track.
+
+              Or a miss option:
+
+                * Deal with the aftermath: Envision how one of your former character's foes has gained power or influence.
+                * Switch loyalties: Envision how you begin in opposition to your former character's beliefs, goals, or allegiances.
+                * Open Pandora's Box: Envision how an advancement or discovery has unleashed unexpectedly dire consequences.
+          weak_hit:
+            text: |-
+              On a __weak hit__, choose one:
+
+                * See it through: Choose one of the former character's unfinished quests, and [Swear an Iron Vow](datasworn:move:fe_runners/quest/swear_an_iron_vow) (with an automatic strong hit) to see it done. You may immediately mark up to half their earned progress (round down) on this quest.
+                * Rebuild a connection: Name one of the former character's connections, and envision how time or circumstances have changed them in a dramatic way. When you [Make a Connection](datasworn:move:fe_runners/connection/make_a_connection) with them, take an automatic strong hit and mark two ticks on your bonds legacy track.
+                * Explore familiar ground: Name a location that was meaningful to the former character. When you first visit that place, envision how it has changed or is endangered. Then, mark two ticks on your discoveries legacy track.
+
+              Alternatively, you may choose a miss option:
+
+                * Deal with the aftermath: Envision how one of your former character's foes has gained power or influence.
+                * Switch loyalties: Envision how you begin in opposition to your former character's beliefs, goals, or allegiances.
+                * Open Pandora's Box: Envision how an advancement or discovery has unleashed unexpectedly dire consequences.
+          miss:
+            text: |-
+              On a __miss__, choose one:
+
+                * Deal with the aftermath: Envision how one of your former character's foes has gained power or influence.
+                * Switch loyalties: Envision how you begin in opposition to your former character's beliefs, goals, or allegiances.
+                * Open Pandora's Box: Envision how an advancement or discovery has unleashed unexpectedly dire consequences.
+        _source:
+          <<: *Source
+          page: 150
+  fate:
+    name: Fate Moves
+    type: move_category
+    color: '#8F477B'
+    summary: |-
+      In solo and co-op play, the __fate moves__ mediate the result of other moves or serve as inspirational prompts for your story.
+    description: |-
+      In solo and co-op play, the __fate moves__ mediate the result of other moves or serve as inspirational prompts for your story. When you face the uncertain outcome of a move, want to know what happens next, or have a question about people, places, and events, these moves help reveal the answer.
+    _source:
+      <<: *Source
+      page: 228
+    contents:
+      ask_the_oracle:
+        name: Ask the Oracle
+        roll_type: no_roll
+        type: move
+        trigger:
+          text: When you seek to resolve questions, reveal details, discover locations, determine how other characters respond, or trigger encounters or events...
+        oracles:
+          almost_certain:
+            name: Almost Certain
+            <<: &AtO
+              match:
+                text: On a match, envision an extreme result or twist.
+              oracle_type: column_text
+              type: oracle_rollable
+            rows:
+              - roll: { min: 1, max: 90 }
+                text: 'Yes'
+              - roll: { min: 91, max: 100 }
+                text: 'No'
+          likely:
+            name: Likely
+            <<: *AtO
+            rows:
+              - roll: { min: 1, max: 75 }
+                text: 'Yes'
+              - roll: { min: 76, max: 100 }
+                text: 'No'
+          fifty_fifty:
+            name: 50/50
+            <<: *AtO
+            rows:
+              - roll: { min: 1, max: 50 }
+                text: 'Yes'
+              - roll: { min: 51, max: 100 }
+                text: 'No'
+          unlikely:
+            <<: *AtO
+            name: Unlikely
+            rows:
+              - roll: { min: 1, max: 25 }
+                text: 'Yes'
+              - roll: { min: 26, max: 100 }
+                text: 'No'
+          small_chance:
+            <<: *AtO
+            name: Small Chance
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: 'Yes'
+              - roll: { min: 11, max: 100 }
+                text: 'No'
+        text: |-
+          __When you seek to resolve questions, reveal details, discover locations, determine how other characters respond, or trigger encounters or events__, you may...
+
+            * Draw a conclusion: Decide the answer based on the most interesting and obvious result.
+            * Spark an idea: Use an oracle table or other random prompt.
+            * Ask a yes/no question: Decide the odds of a yes, and roll on the table below to check the answer.
+            * Pick two: Envision two options. Rate one as likely, and roll on the table below to see if it is true. If not, it is the other.
+
+          Odds           | The answer is yes if you roll...
+          ---------------|---------------------------------
+          Small Chance   | 10 or less
+          Unlikely       | 25 or less
+          50/50          | 50 or less
+          Likely         | 75 or less
+          Almost Certain | 90 or less
+
+          On a match, envision an extreme result or twist.
+        _source:
+          <<: *Source
+          page: 151
+      pay_the_price:
+        name: Pay the Price
+        roll_type: no_roll
+        type: move
+        trigger:
+          text: When you suffer the outcome of an action...
+        suggestions:
+          - oracle_rollable:fe_runners/core/story_complication
+          - oracle_rollable:*/**/peril
+          - oracle_rollable:*/**/peril/**
+        oracles:
+          pay_the_price:
+            name: Pay the Price
+            oracle_type: table_text
+            type: oracle_rollable
+            # content:
+            #   part_of_speech: [fragment]
+            rows:
+              - roll: { min: 1, max: 2 }
+                text: A trusted individual or community acts against you
+              - roll: { min: 3, max: 4 }
+                text: An individual or community you care about is exposed to danger
+              - roll: { min: 5, max: 7 }
+                text: You encounter signs of a looming threat
+              - roll: { min: 8, max: 10 }
+                text: You create an opportunity for an enemy
+              - roll: { min: 11, max: 14 }
+                text: You face a tough choice
+              - roll: { min: 15, max: 18 }
+                text: You face the consequences of an earlier choice
+              - roll: { min: 19, max: 22 }
+                text: A surprising development complicates your quest
+              - roll: { min: 23, max: 26 }
+                text: You are separated from something or someone
+              - roll: { min: 27, max: 32 }
+                text: Your action causes collateral damage or has an unintended effect
+              - roll: { min: 33, max: 38 }
+                text: Something of value is lost or destroyed
+              - roll: { min: 39, max: 44 }
+                text: The environment or terrain introduces a new hazard
+              - roll: { min: 45, max: 50 }
+                text: A new enemy is revealed
+              - roll: { min: 51, max: 56 }
+                text: 'A friend, companion, or ally is in harm’s way (or you are, if alone)'
+              - roll: { min: 57, max: 62 }
+                text: Your equipment malfunctions
+              - roll: { min: 63, max: 68 }
+                text: Your rig suffers damage
+              - roll: { min: 69, max: 74 }
+                text: You waste resources
+              - roll: { min: 75, max: 81 }
+                text: You are harmed
+              - roll: { min: 82, max: 88 }
+                text: You are stressed
+              - roll: { min: 89, max: 95 }
+                text: You are delayed or put at a disadvantage
+              - roll: { min: 96, max: 100 }
+                text: Roll twice
+                oracle_rolls:
+                  - number_of_rolls: 2
+                    auto: true
+
+        text: |-
+          __When you suffer the outcome of an action__, choose one.
+
+            * Make the most obvious negative outcome happen.
+            * [Ask the Oracle](datasworn:move:fe_runners/fate/ask_the_oracle) for inspiration. Interpret the answer as a hardship or complication appropriate to the situation.
+            * Roll on the table below. If the result doesn’t fit the situation, roll again.
+
+          {{table>move.oracle_rollable:fe_runners/fate/pay_the_price.pay_the_price}}
+        _source:
+          <<: *Source
+          page: 152

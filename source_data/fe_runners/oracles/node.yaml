@@ -1,0 +1,370 @@
+_id: fe_runners
+datasworn_version: '0.1.0'
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-08-10
+  title: 'Fe-Runners Rulebook'
+  url: ttps://zombiecraig.itch.io/fe-runners
+  license: https://creativecommons.org/licenses/by-nc-sa/4.0
+  authors:
+    - name: Craig Smith
+oracles: 
+  node:
+    name: Node Discovery Oracles
+    type: oracle_collection
+    oracle_type: tables
+    _source:
+      <<: *Source
+      page: 64
+    summary: |-
+      You will come across new nodes on the network as you scour the Net.  Different network segments have 
+      different types of nodes that will exist on them.  Each node has a card for the network segment as well 
+      as a Node type card.  You will first roll to determine the initial node type by rolling on the nature of the 
+      node.
+    contents: 
+      segment:
+        name: Segment
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 64
+        rows:
+          - roll: { min: 1, max: 30 }
+            text: Core Segment
+          - roll: { min: 31, max: 60 }
+            text: Corporate Segment (CorpNet)
+          - roll: { min: 61, max: 85 }
+            text: Government Segment (GovNet)
+          - roll: { min: 86, max: 100 }
+            text: Underground Segment (Darknet)
+      core_segment_node_type:
+        name: Core Segment Node Type
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 64
+        rows:
+          - roll: { min: 1, max: 15 }
+            text: '[Social / Communications](datasowrn:oracle_collection:fe_runners/node_type/social)'
+          - roll: { min: 16, max: 30 }
+            text: '[Commerce](datasowrn:oracle_collection:fe_runners/node_type/commerce)'
+          - roll: { min: 31, max: 45 }
+            text: '[Gaming](datasowrn:oracle_collection:fe_runners/node_type/gaming)'
+          - roll: { min: 46, max: 60 }
+            text: '[Entertainment](datasowrn:oracle_collection:fe_runners/node_type/entertainment)'
+          - roll: { min: 61, max: 75 }
+            text: '[Education](datasowrn:oracle_collection:fe_runners/node_type/education)'
+          - roll: { min: 76, max: 90 }
+            text: '[News & Media](datasowrn:oracle_collection:fe_runners/node_type/news)'
+          - roll: { min: 91, max: 100 }
+            text: '[Science & Research](datasowrn:oracle_collection:fe_runners/node_type/science)'
+      corporate_segment_node_type:
+        name: Corporate Segment Node Type
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 64
+        rows:
+          - roll: { min: 1, max: 15 }
+            text: '[Manufacturing](datasowrn:oracle_collection:fe_runners/node_type/manufacturing)'
+          - roll: { min: 16, max: 30 }
+            text: '[Infrastructure](datasowrn:oracle_collection:fe_runners/node_type/infrastructure)'
+          - roll: { min: 31, max: 45 }
+            text: '[Legal](datasowrn:oracle_collection:fe_runners/node_type/legal)'
+          - roll: { min: 46, max: 60 }
+            text: '[Hospitality](datasowrn:oracle_collection:fe_runners/node_type/hospitality)'
+          - roll: { min: 61, max: 75 }
+            text: '[Advertising & Marketing](datasowrn:oracle_collection:fe_runners/node_type/advertising)'
+          - roll: { min: 76, max: 90 }
+            text: '[Security](datasowrn:oracle_collection:fe_runners/node_type/security)'
+          - roll: { min: 91, max: 100 }
+            text: '[Social / Communications](datasowrn:oracle_collection:fe_runners/node_type/social)'
+      government_segment_node_type:
+        name: Government Segment Node Type
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 64
+        rows:
+          - roll: { min: 1, max: 9 }
+            text: '[Legal](datasowrn:oracle_collection:fe_runners/node_type/legal)'
+          - roll: { min: 10, max: 19 }
+            text: '[Law Enforcement](datasowrn:oracle_collection:fe_runners/node_type/law_enforcement)'
+          - roll: { min: 20, max: 29 }
+            text: '[Military](datasowrn:oracle_collection:fe_runners/node_type/military)'
+          - roll: { min: 30, max: 39 }
+            text: '[Education](datasowrn:oracle_collection:fe_runners/node_type/education)'
+          - roll: { min: 40, max: 49 }
+            text: '[Healthcare](datasowrn:oracle_collection:fe_runners/node_type/healthcare)'
+          - roll: { min: 50, max: 59 }
+            text: '[Infrastructure](datasowrn:oracle_collection:fe_runners/node_type/infrastructure)'
+          - roll: { min: 60, max: 69 }
+            text: '[Social Services](datasowrn:oracle_collection:fe_runners/node_type/social_service)'
+          - roll: { min: 70, max: 79 }
+            text: '[Foreign Affairs](datasowrn:oracle_collection:fe_runners/node_type/foreign_affairs)'
+          - roll: { min: 80, max: 89 }
+            text: '[Social / Communications](datasowrn:oracle_collection:fe_runners/node_type/social)'
+          - roll: { min: 90, max: 100 }
+            text: '[Security](datasowrn:oracle_collection:fe_runners/node_type/security)'
+      underground_segment_node_type:
+        name: Underground Segment Node Type
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 65
+        rows:
+          - roll: { min: 1, max: 13 }
+            text: '[Gambling (Entertainment)](datasowrn:oracle_collection:fe_runners/node_type/entertainment)'
+          - roll: { min: 14, max: 26 }
+            text: '[Programming](datasowrn:oracle_collection:fe_runners/node_type/programming)'
+          - roll: { min: 27, max: 39 }
+            text: '[Commerce](datasowrn:oracle_collection:fe_runners/node_type/commerce)'
+          - roll: { min: 40, max: 52 }
+            text: '[Criminal Activity](datasowrn:oracle_collection:fe_runners/node_type/criminal)'
+          - roll: { min: 53, max: 65 }
+            text: '[Manufacturing](datasowrn:oracle_collection:fe_runners/node_type/manufacturing)'
+          - roll: { min: 66, max: 78 }
+            text: '[Social / Communications](datasowrn:oracle_collection:fe_runners/node_type/social)'
+          - roll: { min: 79, max: 91 }
+            text: '[Political / Radical Groups](datasowrn:oracle_collection:fe_runners/node_type/political)'
+          - roll: { min: 92, max: 100 }
+            text: '[Security](datasowrn:oracle_collection:fe_runners/node_type/security)'
+      misc_node:
+        name: Miscellaneous Node
+        type: oracle_rollable
+        oracle_type: table_text
+        summary: |-
+           Random devices and nodes that can be found in Core, Corporate and Government sectors.  These are often forgotten devices.  Roll on [[Theme]](datasworn:oracle_rollable:fe_runners/core/theme) or additional context inspiration.
+        _source:
+          <<: *Source
+          page: 65
+        rows:
+          - roll: { min: 1, max: 9 }
+            text: Router
+          - roll: { min: 10, max: 18 }
+            text: Forgotten website
+          - roll: { min: 19, max: 27 }
+            text: Media device
+          - roll: { min: 28, max: 36 }
+            text: Infrastructure Equipment
+          - roll: { min: 37, max: 45 }
+            text: Insecure Workstation
+          - roll: { min: 46, max: 54 }
+            text: Consumer Product
+          - roll: { min: 55, max: 63 }
+            text: Vending Machine
+          - roll: { min: 64, max: 72 }
+            text: Billboard
+          - roll: { min: 73, max: 81 }
+            text: Nanny Cam
+          - roll: { min: 82, max: 90 }
+            text: Toy
+          - roll: { min: 91, max: 98 }
+            text: Appliance
+          - roll: { min: 99, max: 100 }
+            text: Transit Vehicle
+      node_popularity:
+        name: Node Popularity
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 65
+        rows:
+          - roll: { min: 1, max: 14 }
+            text: Abandoned
+          - roll: { min: 15, max: 35 }
+            text: Handful
+          - roll: { min: 36, max: 59 }
+            text: Dozens
+          - roll: { min: 60, max: 84 }
+            text: Hundreds
+          - roll: { min: 85, max: 100 }
+            text: Thousands
+      node_cluster_size:
+        name: Node Cluster Size
+        type: oracle_rollable
+        oracle_type: table_text
+        summary: Nodes can be clustered into larger entities.  Use this article to envision the type of environment the node exists in.
+        _source:
+          <<: *Source
+          page: 65
+        rows:
+          - roll: { min: 1, max: 15 }
+            text: Solitary Node
+          - roll: { min: 16, max: 34 }
+            text: A few loosely connected nodes
+          - roll: { min: 35, max: 47 }
+            text: Several nodes attached to a large node
+          - roll: { min: 48, max: 62 }
+            text: A large complex of nodes
+          - roll: { min: 63, max: 75 }
+            text: A city of nodes
+          - roll: { min: 76, max: 86 }
+            text: A densely populated block of nodes
+          - roll: { min: 87, max: 95 }
+            text: A terrain of nodes with their own clusters
+          - roll: { min: 96, max: 100 }
+            text: A planet containing nodes
+      node_cluster_theme:
+        name: Node Cluster Theme
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 66
+        rows:
+        - roll: { min: 1, max: 2 }
+          text: Abstract
+        - roll: { min: 3, max: 4 }
+          text: Alien
+        - roll: { min: 5, max: 7 }
+          text: Apocalyptic
+        - roll: { min: 8, max: 9 }
+          text: Asian Fusion
+        - roll: { min: 10, max: 11 }
+          text: Black & White
+        - roll: { min: 12, max: 13 }
+          text: Cavernous
+        - roll: { min: 14, max: 17 }
+          text: Cinematic
+        - roll: { min: 18, max: 19 }
+          text: Comic
+        - roll: { min: 20, max: 23}
+          text: Dystopian
+        - roll: { min: 24, max: 25 }
+          text: Fantasy
+        - roll: { min: 26, max: 27 }
+          text: Floating
+        - roll: { min: 28, max: 29 }
+          text: Forest
+        - roll: { min: 30, max: 32 }
+          text: Friendly
+        - roll: { min: 33, max: 35 }
+          text: Frozen
+        - roll: { min: 36, max: 39 }
+          text: Futuristic
+        - roll: { min: 40, max: 42 }
+          text: Glitches
+        - roll: { min: 43, max: 44 }
+          text: Glitzy
+        - roll: { min: 45, max: 46 }
+          text: Holograms
+        - roll: { min: 47, max: 48 }
+          text: Horror
+        - roll: { min: 49, max: 51 }
+          text: Industrial
+        - roll: { min: 52, max: 55 }
+          text: Luxury
+        - roll: { min: 56, max: 57 }
+          text: Medieval
+        - roll: { min: 58, max: 59 }
+          text: Metallic
+        - roll: { min: 60, max: 62 }
+          text: Minimalistic
+        - roll: { min: 63, max: 65 }
+          text: Modern
+        - roll: { min: 66, max: 67 }
+          text: Mountainous
+        - roll: { min: 68, max: 69 }
+          text: Neon
+        - roll: { min: 70, max: 71 }
+          text: Overgrown
+        - roll: { min: 72, max: 73 }
+          text: Prehistoric
+        - roll: { min: 74, max: 75 }
+          text: Public Events
+        - roll: { min: 76, max: 77 }
+          text: Rainy
+        - roll: { min: 78, max: 79 }
+          text: Realistic
+        - roll: { min: 80, max: 82 }
+          text: Retro
+        - roll: { min: 83, max: 84 }
+          text: Sandy
+        - roll: { min: 85, max: 86 }
+          text: Space
+        - roll: { min: 87, max: 88 }
+          text: Swamp
+        - roll: { min: 89, max: 90 }
+          text: Traditional
+        - roll: { min: 91, max: 92 }
+          text: Volcanic
+        - roll: { min: 93, max: 94 }
+          text: Water
+        - roll: { min: 95, max: 96 }
+          text: Waterfalls
+        - roll: { min: 97, max: 98 }
+          text: Western
+        - roll: { min: 99, max: 100 }
+          text: Wintery
+      node_encounter:
+        name: Node Encounter
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 66 
+        rows:
+          - roll: { min: 1, max: 10 }
+            text: Security bot / drone
+          - roll: { min: 11, max: 20 }
+            text: Virus / Malicious Entity
+          - roll: { min: 21, max: 30 }
+            text: Fe-Runner
+          - roll: { min: 31, max: 40 }
+            text: Encrypted data / media
+          - roll: { min: 41, max: 50 }
+            text: A robot
+          - roll: { min: 51, max: 60 }
+            text: A trap
+          - roll: { min: 61, max: 70 }
+            text: An animal
+          - roll: { min: 71, max: 80 }
+            text: An unexpected discovery
+          - roll: { min: 81, max: 90 }
+            text: An item
+          - roll: { min: 91, max: 100 }
+            text: A person
+      system_area:
+        name: System Area
+        type: oracle_rollable
+        oracle_type: table_text
+        summary: |-
+           When exploring a node type not listed under Node Types, you can use this chart for inspiration for what type of area you are in.
+        _source:
+          <<: *Source
+          page: 66
+        rows:
+          - roll: { min: 1, max: 10 }
+            text: Lobby
+          - roll: { min: 11, max: 20 }
+            text: Meeting
+          - roll: { min: 21, max: 30 }
+            text: Recreational
+          - roll: { min: 31, max: 40 }
+            text: Research
+          - roll: { min: 41, max: 50 }
+            text: Production
+          - roll: { min: 51, max: 60 }
+            text: Observation
+          - roll: { min: 61, max: 70 }
+            text: Security
+          - roll: { min: 71, max: 80 }
+            text: Roll [Theme](datasworn:oracle_rollable:fe_runners/core/theme)
+            oracle_rolls:
+              - oracle: oracle_rollable:fe_runners/core/theme
+                auto: true
+          - roll: { min: 81, max: 90 }
+            text: Roll [Focus](datasworn:oracle_rollable:fe_runners/core/focus)
+            oracle_rolls:
+            - oracle: oracle_rollable:fe_runners/core/focus
+              auto: true
+          - roll: { min: 91, max: 100 }
+            text: Storage

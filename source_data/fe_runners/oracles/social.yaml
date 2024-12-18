@@ -1,0 +1,894 @@
+_id: fe_runners
+datasworn_version: '0.1.0'
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-08-10
+  title: 'Fe-Runners Rulebook'
+  url: ttps://zombiecraig.itch.io/fe-runners
+  license: https://creativecommons.org/licenses/by-nc-sa/4.0
+  authors:
+    - name: Craig Smith
+oracles: 
+  social:
+    name: Social Oracles
+    type: oracle_collection
+    oracle_type: tables
+    _source:
+      <<: *Source
+      page: 70
+    contents:
+      hub:
+        name: Hub Oracle
+        type: oracle_rollable
+        oracle_type: table_text
+        summary: These are casual nodes in the network where people socialize.
+        _source:
+          <<: *Source
+          page: 70
+        rows:
+          - roll: { min: 1, max: 8 }
+            text: Bar
+          - roll: { min: 9, max: 16 }
+            text: Night Market
+          - roll: { min: 17, max: 24 }
+            text: Trading post
+          - roll: { min: 25, max: 32 }
+            text: Shopping Complex
+          - roll: { min: 33, max: 40 }
+            text: Remote outpost
+          - roll: { min: 41, max: 48 }
+            text: An oasis
+          - roll: { min: 49, max: 56 }
+            text: Old arcade spot
+          - roll: { min: 57, max: 64 }
+            text: Park
+          - roll: { min: 65, max: 72 }
+            text: Boats tethered together
+          - roll: { min: 73, max: 80 }
+            text: Hidden bunker
+          - roll: { min: 81, max: 88 }
+            text: Night club
+          - roll: { min: 89, max: 96 }
+            text: Transit station
+          - roll: { min: 97, max: 98 }
+            text: Desert Gathering
+          - roll: { min: 99, max: 100 }
+            text: Party under a bridge
+      hanging_out:
+        name: Hanging out oracle
+        type: oracle_rollable
+        oracle_type: table_text
+        summary:  An oracle for casual down time.  Envision this as an incoming invite.
+        _source:
+          <<: *Source
+          page: 70
+        rows:
+          - roll: { min: 1, max: 5 }
+            text: Retro Arcade Bar
+          - roll: { min: 6, max:  10 }
+            text: Neon Karaoke Bar
+          - roll: { min: 11, max: 15 }
+            text: Art Gallery
+          - roll: { min: 16, max: 20 }
+            text: Hidden Rooftop Garden
+          - roll: { min: 21, max: 25 }
+            text: Dance Club
+          - roll: { min: 26, max: 30 }
+            text: Stream and Chill
+          - roll: { min: 31, max: 35 }
+            text: AI Cafe
+          - roll: { min: 36, max: 40 }
+            text: Concert
+          - roll: { min: 41, max: 45 }
+            text: Maze
+          - roll: { min: 46, max: 50 }
+            text: Puzzle Room
+          - roll: { min: 51, max: 55 }
+            text: Target Range / Lazer Tag
+          - roll: { min: 56, max: 60 }
+            text: E-Sporting Event
+          - roll: { min: 61, max: 65 }
+            text: Astral Projection Simulator
+          - roll: { min: 66, max: 70 }
+            text: Forest Walk
+          - roll: { min: 71, max: 75 }
+            text: Scavenger Hunt
+          - roll: { min: 76, max: 80 }
+            text: Game Night
+          - roll: { min: 81, max: 85 }
+            text: Virtual Pet Park
+          - roll: { min: 86, max: 90 }
+            text: Virtual World Building
+          - roll: { min: 91, max: 95 }
+            text: Premier Night
+          - roll: { min: 96, max: 100 }
+            text: Racing
+      location_name:
+        name: Location Name Oracle
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 70
+        rows:
+          - roll: { min: 1, max: 16 }
+            text: '[Descriptor](oracle_rollable:fe_runners/core/descriptor) + [Action](oracle_rollable:fe_runners/core/action)'
+            template:
+              text: '{{text>oracle_rollable:fe_runners/core/descriptor}} {{text>oracle_rollable:fe_runners/core/action}}'
+          - roll: { min: 17, max: 32 }
+            text: '[Theme](oracle_rollable:fe_runners/core/action) + [Focus](oracle_rollable:fe_runners/core/focus)'
+            template:
+              text: '{{text>oracle_rollable:fe_runners/core/action}} {{text>oracle_rollable:fe_runners/core/focus}}'
+          - roll: { min: 33, max: 48 }
+            text: '[Theme](oracle_rollable:fe_runners/core/focus) + [Theme](oracle_rollable:fe_runners/core/theme)'
+            template:
+              text: '{{text>oracle_rollable:fe_runners/core/focus}} {{text>oracle_rollable:fe_runners/core/theme}}'
+          - roll: { min: 49, max: 64 }
+            text: '[Descriptor](oracle_rollable:fe_runners/core/descriptor) + [Focus](oracle_rollable:fe_runners/core/focus)'
+            template:
+              text: '{{text>oracle_rollable:fe_runners/core/descriptor}} {{text>oracle_rollable:fe_runners/core/focus}}'
+          - roll: { min: 65, max: 82 }
+            text: '[Theme](oracle_rollable:fe_runners/core/theme) + Location Type'
+            template:
+              text: '{{text>oracle_rollable:fe_runners/core/theme}} <Location Type>'
+          - roll: { min: 83, max: 100 }
+            text: '[Descriptor](oracle_rollable:fe_runners/core/descriptor) + Location Type'
+            template:
+              text: '{{text>oracle_rollable:fe_runners/core/descriptor}} <Location Type>'
+      fe_runner_handles:
+        name: Fe-Runner Handles
+        type: oracle_rollable
+        oracle_type: table_text
+        recommended_rolls:
+          min: 1
+          max: 2
+        summary: 'Handles are code names that people use online.  Roll once or twice on the following table.  You can add numbers or additional descriptions to make them more unique, Example: Black_Alchemist47'
+        _source:
+          <<: *Source
+          page: 71
+        rows:
+          - roll: { min: 1, max: 2 }
+            text: Binary
+          - roll: { min: 3, max: 4 }
+            text: Phoenix
+          - roll: { min: 5, max: 6 }
+            text: Packet
+          - roll: { min: 7, max: 8 }
+            text: Byt3
+          - roll: { min: 9, max: 10 }
+            text: Wisper
+          - roll: { min: 11, max: 12 }
+            text: Night
+          - roll: { min: 13, max: 14 }
+            text: Enigma
+          - roll: { min: 15, max: 16 }
+            text: Kernel
+          - roll: { min: 17, max: 18 }
+            text: 0Day
+          - roll: { min: 19, max: 20 }
+            text: Master
+          - roll: { min: 21, max: 22 }
+            text: Exploit
+          - roll: { min: 23, max: 24 }
+            text: Heart
+          - roll: { min: 25, max: 26 }
+            text: King
+          - roll: { min: 27, max: 28 }
+            text: Zombie
+          - roll: { min: 29, max: 30 }
+            text: Krypto
+          - roll: { min: 31, max: 32 }
+            text: N1ght
+          - roll: { min: 33, max: 34 }
+            text: Ghost
+          - roll: { min: 35, max: 36 }
+            text: Phones
+          - roll: { min: 37, max: 38 }
+            text: R1der
+          - roll: { min: 39, max: 40 }
+            text: 0verflow
+          - roll: { min: 41, max: 42 }
+            text: Cyber
+          - roll: { min: 43, max: 44 }
+            text: 0wl
+          - roll: { min: 45, max: 46 }
+            text: Digital
+          - roll: { min: 47, max: 48 }
+            text: Pan1c
+          - roll: { min: 49, max: 50 }
+            text: Savior
+          - roll: { min: 51, max: 52 }
+            text: Circuit
+          - roll: { min: 53, max: 54 }
+            text: Data
+          - roll: { min: 55, max: 56 }
+            text: Rabbit
+          - roll: { min: 57, max: 58 }
+            text: Queen
+          - roll: { min: 59, max: 60 }
+            text: Virus
+          - roll: { min: 61, max: 62 }
+            text: X or Z
+          - roll: { min: 63, max: 64 }
+            text: Ace
+          - roll: { min: 65, max: 66 }
+            text: Fire
+          - roll: { min: 67, max: 68 }
+            text: C0d3
+          - roll: { min: 69, max: 70 }
+            text: 'Null'
+          - roll: { min: 71, max: 72 }
+            text: Scr1pt
+          - roll: { min: 73, max: 74 }
+            text: Maverick
+          - roll: { min: 75, max: 76 }
+            text: Exa
+          - roll: { min: 77, max: 78 }
+            text: Alchemist
+          - roll: { min: 79, max: 80 }
+            text: Bug
+          - roll: { min: 81, max: 82 }
+            text: Shell
+          - roll: { min: 83, max: 84 }
+            text: Weaver
+          - roll: { min: 85, max: 86 }
+            text: Spectre
+          - roll: { min: 87, max: 88 }
+            text: Lurker
+          - roll: { min: 89, max: 90 }
+            text: Raven
+          - roll: { min: 91, max: 92 }
+            text: Damien
+          - roll: { min: 93, max: 94 }
+            text: Gorilla
+          - roll: { min: 95, max: 100 }
+            text: Roll [Focus](oracle_rollable:fe_runners/core/focus)
+            oracle_rolls:
+              - oracle: oracle_rollable:fe_runners/core/focus
+                auto: true
+      character_first_look:
+        name: Character First Look
+        type: oracle_rollable
+        oracle_type: table_text
+        recommended_rolls:
+          min: 1
+          max: 2
+        _source:
+          <<: *Source
+          page: 71
+        rows:
+          - roll: { min: 1, max: 3 }
+            text: Flashy
+          - roll: { min: 4, max: 6 }
+            text: Accompanied
+          - roll: { min: 7, max: 9 }
+            text: Glows
+          - roll: { min: 10, max: 12 }
+            text: Aged
+          - roll: { min: 13, max: 15 }
+            text: Athletic
+          - roll: { min: 16, max: 18 }
+            text: Distracted
+          - roll: { min: 19, max: 21 }
+            text: Augmented
+          - roll: { min: 22, max: 24 }
+            text: Eccentric
+          - roll: { min: 25, max: 27 }
+            text: Energetic
+          - roll: { min: 28, max: 29 }
+            text: Gloomy
+          - roll: { min: 30, max: 31 }
+            text: Angered
+          - roll: { min: 32, max: 33 }
+            text: Graceful
+          - roll: { min: 34, max: 35 }
+            text: Haggard
+          - roll: { min: 36, max: 37 }
+            text: Ill-equipped
+          - roll: { min: 38, max: 39 }
+            text: Imposing
+          - roll: { min: 40, max: 41 }
+            text: Large
+          - roll: { min: 42, max: 44 }
+            text: Animal
+          - roll: { min: 45, max: 47 }
+            text: Alien
+          - roll: { min: 48, max: 50 }
+            text: Plain
+          - roll: { min: 51, max: 52 }
+            text: Poised
+          - roll: { min: 53, max: 54 }
+            text: Scarred
+          - roll: { min: 55, max: 57 }
+            text: Exotic
+          - roll: { min: 58, max: 59 }
+            text: Scruffy
+          - roll: { min: 60, max: 61 }
+            text: Shifty
+          - roll: { min: 62, max: 63 }
+            text: Obese
+          - roll: { min: 64, max: 66 }
+            text: Drunk
+          - roll: { min: 67, max: 69 }
+            text: Tattooed
+          - roll: { min: 70, max: 72 }
+            text: Threatened
+          - roll: { min: 73, max: 74 }
+            text: Uncanny
+          - roll: { min: 75, max: 76 }
+            text: Disabled
+          - roll: { min: 77, max: 79 }
+            text: Well-equipmed
+          - roll: { min: 80, max: 81 }
+            text: Deathly
+          - roll: { min: 82, max: 84 }
+            text: Youthful
+          - roll: { min: 85, max: 87 }
+            text: Model
+          - roll: { min: 88, max: 90 }
+            text: Hybrid
+          - roll: { min: 91, max: 93 }
+            text: Robotic
+          - roll: { min: 94, max: 95 }
+            text: Translucent
+          - roll: { min: 96, max: 97 }
+            text: Spikes
+          - roll: { min: 98, max: 100 }
+            text: Anti-social
+      character_disposition:
+        name: Character Disposition
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 72
+        rows:
+          - roll: { min: 1, max: 6 }
+            text: Helpful
+          - roll: { min: 7, max: 14 }
+            text: Friendly
+          - roll: { min: 15, max: 22 }
+            text: Cooperative
+          - roll: { min: 23, max: 30 }
+            text: Curious
+          - roll: { min: 31, max: 40 }
+            text: Indifferent
+          - roll: { min: 41, max: 50 }
+            text: Suspicious
+          - roll: { min: 51, max: 60 }
+            text: Wanting
+          - roll: { min: 61, max: 70 }
+            text: Desperate         
+          - roll: { min: 71, max: 78 }
+            text: Demanding
+          - roll: { min: 79, max: 86 }
+            text: Unfriendly
+          - roll: { min: 87, max: 94 }
+            text: Threatening
+          - roll: { min: 95, max: 100 }
+            text: Hostile
+      trademark_avatar:
+        name: Trademark Avatar Characteristic
+        type: oracle_rollable
+        oracle_type: table_text
+        recommended_rolls:
+          min: 1
+          max: 2
+        _source:
+          <<: *Source
+          page: 72
+        rows:
+          - roll: { min: 1, max: 2 }
+            text: Animalistic features
+          - roll: { min: 3, max: 4 }
+            text: Animated shadow
+          - roll: { min: 5, max: 6 }
+            text: Antique artifact
+          - roll: { min: 7, max: 8 }
+            text: Armor or shield  
+          - roll: { min: 9, max: 10 }
+            text: Body mods and piercings
+          - roll: { min: 11, max: 12 }
+            text: Cartoonish
+          - roll: { min: 13, max: 14 }
+            text: Chains and spikes
+          - roll: { min: 15, max: 16 }
+            text: Compulsive collector
+          - roll: { min: 17, max: 18 }
+            text: Constant Humming
+          - roll: { min: 19, max: 20 }
+            text: Constantly singing
+          - roll: { min: 21, max: 22 }
+            text: Covered in Ads
+          - roll: { min: 23, max: 24 }
+            text: Cybernetic appendage
+          - roll: { min: 25, max: 26 }
+            text: Digital compass
+          - roll: { min: 27, max: 28 }
+            text: Excessive gesturing
+          - roll: { min: 29, max: 30 }
+            text: Exotic language
+          - roll: { min: 31, max: 32 }
+            text: Exposed brain
+          - roll: { min: 33, max: 34 }
+            text: Extensive Tattoos
+          - roll: { min: 35, max: 36 }
+            text: Eye attachment
+          - roll: { min: 37, max: 38 }
+            text: Fluid or Liquid Chrome form
+          - roll: { min: 39, max: 40 }
+            text: Formal speech at all times
+          - roll: { min: 41, max: 42 }
+            text: Ghostly presence
+          - roll: { min: 43, max: 44 }
+            text: Glitches
+          - roll: { min: 45, max: 46 }
+            text: Glowing Skin
+          - roll: { min: 47, max: 48 }
+            text: Holograms
+          - roll: { min: 49, max: 50 }
+            text: Hoodie
+          - roll: { min: 51, max: 52 }
+            text: Hover
+          - roll: { min: 53, max: 54 }
+            text: Loves food
+          - roll: { min: 55, max: 56 }
+            text: Mask wearer
+          - roll: { min: 57, max: 58 }
+            text: Master of disguise
+          - roll: { min: 59, max: 60 }
+            text: Mismatched clothing
+          - roll: { min: 61, max: 62 }
+            text: Monocle
+          - roll: { min: 63, max: 64 }
+            text: Music Lover
+          - roll: { min: 65, max: 66 }
+            text: Neon Hair
+          - roll: { min: 67, max: 68 }
+            text: Obsessive compulsive behavior
+          - roll: { min: 69, max: 70 }
+            text: Oversized weapon
+          - roll: { min: 71, max: 72 }
+            text: Particle trail
+          - roll: { min: 73, max: 74 }
+            text: Pet companion (non-interactive)
+          - roll: { min: 75, max: 76 }
+            text: Pixelated
+          - roll: { min: 77, max: 78 }
+            text: Rapid-fire speech
+          - roll: { min: 79, max: 80 }
+            text: Scarred
+          - roll: { min: 81, max: 82 }
+            text: Speaks in riddles
+          - roll: { min: 83, max: 84 }
+            text: Specific Uniform
+          - roll: { min: 85, max: 86 }
+            text: Stuttering speech
+          - roll: { min: 87, max: 88 }
+            text: Talking to themselves
+          - roll: { min: 89, max: 90 }
+            text: Three eyes
+          - roll: { min: 91, max: 92 }
+            text: Unique Facial Feature
+          - roll: { min: 93, max: 94 }
+            text: Unique hat
+          - roll: { min: 95, max: 96 }
+            text: Unpredictable mood swings
+          - roll: { min: 97, max: 98 }
+            text: Virtual flames
+          - roll: { min: 99, max: 100 }
+            text: Voice amplifier
+      character_role:
+        name: Character Role
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 73
+        rows:
+          - roll: { min: 1, max: 2 }
+            text: Agent
+          - roll: { min: 3, max: 4 }
+            text: AI
+          - roll: { min: 5, max: 6 }
+            text: Activist
+          - roll: { min: 7, max: 8 }
+            text: Admin
+          - roll: { min: 9, max: 10 }
+            text: Anarchist
+          - roll: { min: 11, max: 12 }
+            text: Artisan
+          - roll: { min: 13, max: 14 }
+            text: Bounty Hunter
+          - roll: { min: 15, max: 16 }
+            text: Courier
+          - roll: { min: 17, max: 18 }
+            text: Criminal
+          - roll: { min: 19, max: 20 }
+            text: Cryptologist
+          - roll: { min: 21, max: 22 }
+            text: Cultist
+          - roll: { min: 23, max: 24 }
+            text: Developer
+          - roll: { min: 25, max: 26 }
+            text: Diplomat
+          - roll: { min: 27, max: 28 }
+            text: Doomsday Prepper
+          - roll: { min: 29, max: 30 }
+            text: Engineer
+          - roll: { min: 31, max: 32 }
+            text: Entertainer
+          - roll: { min: 33, max: 34 }
+            text: Fe-Runner
+          - roll: { min: 35, max: 36 }
+            text: Fugitive
+          - roll: { min: 37, max: 38 }
+            text: Gamer
+          - roll: { min: 39, max: 40 }
+            text: Guard
+          - roll: { min: 41, max: 42 }
+            text: Guide
+          - roll: { min: 43, max: 44 }
+            text: Historian
+          - roll: { min: 45, max: 46 }
+            text: Hunter
+          - roll: { min: 47, max: 48 }
+            text: Investigator
+          - roll: { min: 49, max: 50 }
+            text: Laborer
+          - roll: { min: 51, max: 52 }
+            text: Lawkeeper
+          - roll: { min: 53, max: 54 }
+            text: Leader
+          - roll: { min: 55, max: 56 }
+            text: Mercenary
+          - roll: { min: 57, max: 58 }
+            text: Merchant
+          - roll: { min: 59, max: 60 }
+            text: Net Specialist
+          - roll: { min: 61, max: 62 }
+            text: Outcast
+          - roll: { min: 63, max: 64 }
+            text: Pirate
+          - roll: { min: 65, max: 66 }
+            text: Psychic
+          - roll: { min: 67, max: 68 }
+            text: Preacher
+          - roll: { min: 69, max: 70 }
+            text: Prophet
+          - roll: { min: 71, max: 72 }
+            text: Raider
+          - roll: { min: 73, max: 74 }
+            text: Researcher
+          - roll: { min: 75, max: 76 }
+            text: Scammer
+          - roll: { min: 77, max: 78 }
+            text: Scholar
+          - roll: { min: 79, max: 80 }
+            text: Scout
+          - roll: { min: 81, max: 82 }
+            text: Smuggler
+          - roll: { min: 83, max: 84 }
+            text: Soldier
+          - roll: { min: 85, max: 86 }
+            text: Technician
+          - roll: { min: 87, max: 88 }
+            text: Thief
+          - roll: { min: 89, max: 90 }
+            text: Threat Hunter
+          - roll: { min: 91, max: 92 }
+            text: Wanderer
+          - roll: { min: 93, max: 95 }
+            text: '[Action](oracle_rollable:fe_runners/core/action) + [Theme](oracle_rollable:fe_runners/core/theme)'
+            template:
+              text: "{{text>oracle_rollable:fe_runners/core/action}} {{text>(oracle_rollable:fe_runners/core/theme)}}"
+          - roll: { min: 96, max: 100 }
+            text: Roll twice
+            oracle_rolls:
+              - oracle: oracle_rollable:fe_runners/social/character_role
+                auto: true
+                number_of_rolls: 2
+      character_details:
+        name: Character Details
+        type: oracle_rollable
+        oracle_type: table_text
+        recommended_rolls:
+          min: 1
+          max: 2
+        _source:
+          <<: *Source
+          page: 74
+        rows:
+          - roll: { min: 1, max: 1 }
+            text: Adventurous
+          - roll: { min: 2, max: 2 }
+            text: Afflicted
+          - roll: { min: 3, max: 3 }
+            text: Aggressive
+          - roll: { min: 4, max: 4 }
+            text: Ambitious
+          - roll: { min: 5, max: 5 }
+            text: Anxious
+          - roll: { min: 6, max: 6 }
+            text: Apathetic
+          - roll: { min: 7, max: 7 }
+            text: Artistic
+          - roll: { min: 8, max: 8 }
+            text: Bitter
+          - roll: { min: 9, max: 9 }
+            text: Black-hearted
+          - roll: { min: 10, max: 10 }
+            text: Boastful
+          - roll: { min: 11, max: 11 }
+            text: Boisterous
+          - roll: { min: 12, max: 12 }
+            text: Bold
+          - roll: { min: 13, max: 13 }
+            text: Brave
+          - roll: { min: 14, max: 14 }
+            text: Cautious
+          - roll: { min: 15, max: 15 }
+            text: Charismatic
+          - roll: { min: 16, max: 16 }
+            text: Compassionate
+          - roll: { min: 17, max: 17 }
+            text: Conceited
+          - roll: { min: 18, max: 18 }
+            text: Confident
+          - roll: { min: 19, max: 19 }
+            text: Connected
+          - roll: { min: 20, max: 20 }
+            text: Cowardly
+          - roll: { min: 21, max: 21 }
+            text: Criminal
+          - roll: { min: 22, max: 22 }
+            text: Critical
+          - roll: { min: 23, max: 23 }
+            text: Cunning
+          - roll: { min: 24, max: 24 }
+            text: Curious
+          - roll: { min: 25, max: 25 }
+            text: Dangerous
+          - roll: { min: 26, max: 26 }
+            text: Deceitful
+          - roll: { min: 27, max: 27 }
+            text: Defiant
+          - roll: { min: 28, max: 28 }
+            text: Determined
+          - roll: { min: 29, max: 29 }
+            text: Disabled
+          - roll: { min: 30, max: 30 }
+            text: Disguised
+          - roll: { min: 31, max: 31 }
+            text: Driven
+          - roll: { min: 32, max: 32 }
+            text: Dying
+          - roll: { min: 33, max: 33 }
+            text: Envious
+          - roll: { min: 34, max: 34 }
+            text: Experienced
+          - roll: { min: 35, max: 35 }
+            text: Faithful
+          - roll: { min: 36, max: 36 }
+            text: Faithless
+          - roll: { min: 37, max: 37 }
+            text: Flirtatious
+          - roll: { min: 38, max: 38 }
+            text: Generous
+          - roll: { min: 39, max: 39 }
+            text: Gifted
+          - roll: { min: 40, max: 40 }
+            text: Greedy
+          - roll: { min: 41, max: 41 }
+            text: Grief-stricken
+          - roll: { min: 42, max: 42 }
+            text: Hardhearted
+          - roll: { min: 43, max: 43 }
+            text: Heartbroken
+          - roll: { min: 44, max: 44 }
+            text: Honorable
+          - roll: { min: 45, max: 45 }
+            text: Hot-tempered
+          - roll: { min: 46, max: 46 }
+            text: Hunted
+          - roll: { min: 47, max: 47 }
+            text: Impulsive
+          - roll: { min: 48, max: 48 }
+            text: Incompetent
+          - roll: { min: 49, max: 49 }
+            text: Indebted
+          - roll: { min: 50, max: 50 }
+            text: Independent
+          - roll: { min: 51, max: 51 }
+            text: Indulgent
+          - roll: { min: 52, max: 52 }
+            text: Infamous
+          - roll: { min: 53, max: 53 }
+            text: Influential
+          - roll: { min: 54, max: 54 }
+            text: Insensitive
+          - roll: { min: 55, max: 55 }
+            text: Insightful
+          - roll: { min: 56, max: 56 }
+            text: Intelligent
+          - roll: { min: 57, max: 57 }
+            text: Intolerant
+          - roll: { min: 58, max: 58 }
+            text: Ironsworn
+          - roll: { min: 59, max: 59 }
+            text: Kind
+          - roll: { min: 60, max: 60 }
+            text: Lonely
+          - roll: { min: 61, max: 61 }
+            text: Loving
+          - roll: { min: 62, max: 62 }
+            text: Loyal
+          - roll: { min: 63, max: 63 }
+            text: Manipulative
+          - roll: { min: 64, max: 64 }
+            text: Misled
+          - roll: { min: 65, max: 65 }
+            text: Oblivious
+          - roll: { min: 66, max: 66 }
+            text: Obsessed
+          - roll: { min: 67, max: 67 }
+            text: Oppressed
+          - roll: { min: 68, max: 68 }
+            text: Powerful
+          - roll: { min: 69, max: 69 }
+            text: Proud
+          - roll: { min: 70, max: 70 }
+            text: Quiet
+          - roll: { min: 71, max: 71 }
+            text: Quirky
+          - roll: { min: 72, max: 72 }
+            text: Rebellious
+          - roll: { min: 73, max: 73 }
+            text: Reclusive
+          - roll: { min: 74, max: 74 }
+            text: Relaxed
+          - roll: { min: 75, max: 75 }
+            text: Remorseful
+          - roll: { min: 76, max: 76 }
+            text: Resourceful
+          - roll: { min: 77, max: 77 }
+            text: Ruthless
+          - roll: { min: 78, max: 78 }
+            text: Secretive
+          - roll: { min: 79, max: 79 }
+            text: Selfish
+          - roll: { min: 80, max: 80 }
+            text: Sociable
+          - roll: { min: 81, max: 81 }
+            text: Stealthy
+          - roll: { min: 82, max: 82 }
+            text: Stern
+          - roll: { min: 83, max: 83 }
+            text: Stingy
+          - roll: { min: 84, max: 84 }
+            text: Stoic
+          - roll: { min: 85, max: 85 }
+            text: Strong
+          - roll: { min: 86, max: 86 }
+            text: Stubborn
+          - roll: { min: 87, max: 87 }
+            text: Successful
+          - roll: { min: 88, max: 88 }
+            text: Superstitious
+          - roll: { min: 89, max: 89 }
+            text: Suspicious
+          - roll: { min: 90, max: 90 }
+            text: Talented
+          - roll: { min: 91, max: 91 }
+            text: Tough
+          - roll: { min: 92, max: 92 }
+            text: Traitorous
+          - roll: { min: 93, max: 93 }
+            text: Vengeful
+          - roll: { min: 94, max: 94 }
+            text: Villainous
+          - roll: { min: 95, max: 95 }
+            text: Violent
+          - roll: { min: 96, max: 96 }
+            text: Wary
+          - roll: { min: 97, max: 97 }
+            text: Weak
+          - roll: { min: 98, max: 98 }
+            text: Weary
+          - roll: { min: 99, max: 99 }
+            text: Wild
+          - roll: { min: 100, max: 100 }
+            text: Wise
+      character_goals:
+        name: Character Goals
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 75
+        rows:
+          - roll: { min: 1, max: 2 }
+            text: Avenge a wrong
+          - roll: { min: 3, max: 4 }
+            text: Build a home
+          - roll: { min: 5, max: 7 }
+            text: Build a relationship
+          - roll: { min: 8, max: 10 }
+            text: Claim a resource
+          - roll: { min: 11, max: 12 }
+            text: Collect a debt
+          - roll: { min: 13, max: 14 }
+            text: Craft an object
+          - roll: { min: 15, max: 16 }
+            text: Cure an ill
+          - roll: { min: 17, max: 18 }
+            text: Defeat a rival
+          - roll: { min: 19, max: 20 }
+            text: Defend a person
+          - roll: { min: 21, max: 23 }
+            text: Defend a place
+          - roll: { min: 24, max: 25 }
+            text: Discover a truth
+          - roll: { min: 26, max: 27 }
+            text: End a conflict
+          - roll: { min: 28, max: 29 }
+            text: Escape a captor
+          - roll: { min: 30, max: 31 }
+            text: Fight injustice
+          - roll: { min: 32, max: 33 }
+            text: Find a person
+          - roll: { min: 34, max: 35 }
+            text: Forge an alliance
+          - roll: { min: 36, max: 37 }
+            text: Gain knowledge
+          - roll: { min: 38, max: 39 }
+            text: Gain riches
+          - roll: { min: 40, max: 41 }
+            text: Maintain order
+          - roll: { min: 42, max: 43 }
+            text: Make an agreement
+          - roll: { min: 44, max: 45 }
+            text: Obtain an object
+          - roll: { min: 46, max: 47 }
+            text: Pay a debt
+          - roll: { min: 48, max: 49 }
+            text: Protect a lifeform
+          - roll: { min: 50, max: 51 }
+            text: Protect a secret
+          - roll: { min: 52, max: 53 }
+            text: Prove worthiness
+          - roll: { min: 54, max: 55 }
+            text: Rebel against power
+          - roll: { min: 56, max: 57 }
+            text: Refute a falsehood
+          - roll: { min: 58, max: 59 }
+            text: Repair a technology
+          - roll: { min: 60, max: 61 }
+            text: Resolve a dispute
+          - roll: { min: 62, max: 63 }
+            text: Restore a relationship
+          - roll: { min: 64, max: 65 }
+            text: Sabotage a technology
+          - roll: { min: 66, max: 68 }
+            text: Secure a resource
+          - roll: { min: 69, max: 70 }
+            text: Seek redemption
+          - roll: { min: 71, max: 72 }
+            text: Seize power
+          - roll: { min: 73, max: 74 }
+            text: Solve a mystery
+          - roll: { min: 75, max: 76 }
+            text: Spread faith
+          - roll: { min: 77, max: 78 }
+            text: Travel to a place
+          - roll: { min: 79, max: 80 }
+            text: Undermine a relationship
+          - roll: { min: 81, max: 90 }
+            text: '[Action](oracle_rollable:fe_runners/core/action) + [Theme](oracle_rollable:fe_runners/core/theme)'
+          - roll: { min: 91, max: 100 }
+            text: Roll twice
+            oracle_rolls:
+              - oracle: oracle_rollable:fe_runners/social/character_goals
+                auto: true
+                number_of_rolls: 2

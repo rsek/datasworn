@@ -1,0 +1,425 @@
+_id: fe_runners
+datasworn_version: '0.1.0'
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-08-10
+  title: 'Fe-Runners Rulebook'
+  url: ttps://zombiecraig.itch.io/fe-runners
+  license: https://creativecommons.org/licenses/by-nc-sa/4.0
+  authors:
+    - name: Craig Smith
+oracles: 
+  segment:
+    name: Segment Oracles
+    oracle_type: tables
+    type: oracle_collection
+    _source:
+      <<: *Source
+      page: 75
+    summary:  The Segment oracles cover general features, perils and opportunities for an overall segment.  These tables are often called from the [Node Types](datasowrn:oracle_collection:fe_runners/node_type) oracles.
+    collections: 
+      core:
+        name: Core Segment
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: &CollectionSource
+            <<: *Source
+            page: 75
+        contents: 
+          feature:
+            <<: &Feature
+              name: Feature
+              summary: The general feeling of an area
+              oracle_type: table_text
+              type: oracle_rollable
+            _source:
+              <<: *CollectionSource
+            rows:
+              - roll: { min: 1, max: 6 }
+                text: Unusually quiet
+              - roll: { min: 7, max: 12 }
+                text: A fight breaks out
+              - roll: { min: 13, max: 18 }
+                text: Someone is watching you
+              - roll: { min: 19, max: 24 }
+                text: Active protest
+              - roll: { min: 25, max: 30 }
+                text: Party
+              - roll: { min: 31, max: 36 }
+                text: Loitering
+              - roll: { min: 37, max: 42 }
+                text: Influencer is here
+              - roll: { min: 43, max: 48 }
+                text: Popup store/event
+              - roll: { min: 49, max: 54 }
+                text: Elderly person causing a stir
+              - roll: { min: 55, max: 60 }
+                text: Littered with Ads
+              - roll: { min: 61, max: 66 }
+                text: Very Busy
+              - roll: { min: 67, max: 72 }
+                text: Gang or squad present
+              - roll: { min: 73, max: 78 }
+                text: Broken / Damaged
+              - roll: { min: 79, max: 84 }
+                text: Political Representation
+              - roll: { min: 85, max: 90 }
+                text: Political Representation
+              - roll: { min: 91, max: 100 }
+                text: 'Roll [Descriptor](oracle_rollable:fe_runners/core/descriptor) + [Focus](oracle_rollable:fe_runners/core/focus)'
+                template:
+                  text: '{{text>oracle_rollable:fe_runners/core/descriptor}} {{text>oracle_rollable:fe_runners/core/focus}}'
+          peril:
+            <<: &Peril
+              name: Peril
+              summary: Peril for an area
+              oracle_type: table_text
+              type: oracle_rollable
+            _source:
+              <<: *CollectionSource
+            rows:
+              - roll: { min: 1, max: 8 }
+                text: You get an update, it’s not good
+              - roll: { min: 9, max: 16 }
+                text: Arrival of an enemy
+              - roll: { min: 17, max: 24 }
+                text: Your Ex is here
+              - roll: { min: 25, max: 32 }
+                text: Area sectioned off for maintenance
+              - roll: { min: 33, max: 40 }
+                text: Disturbing evidence
+              - roll: { min: 41, max: 48 }
+                text: Lured to danger
+              - roll: { min: 49, max: 56 }
+                text: Being watched or followed
+              - roll: { min: 57, max: 64 }
+                text: A fight breaks out involving you
+              - roll: { min: 65, max: 72 }
+                text: Unwanted attention from authorities
+              - roll: { min: 73, max: 80 }
+                text: A person from your past is in trouble
+              - roll: { min: 81, max: 85 }
+                text: The area is unstable
+              - roll: { min: 86, max: 90 }
+                text: Corruption
+              - roll: { min: 91, max: 98 }
+                text: Roll [Action](oracle_rollable:fe_runners/core/action) + [Theme](oracle_rollable:fe_runners/core/theme)
+                template:
+                  text: '{{text>oracle_rollable:fe_runners/core/action}} {{text>oracle_rollable:fe_runners/core/theme}}'
+              - roll: { min: 99, max: 100 }
+                text: Roll twice, if same, make it worse
+                oracle_rolls:
+                  - oracle: oracle_rollable:fe_runners/segment/core/peril
+                    auto: true
+                    number_of_rolls: 2
+          opportunity:
+            <<: &Opportunity
+              name: Opportunity
+              summary: Opportunity for an area
+              oracle_type: table_text
+              type: oracle_rollable
+            _source:
+              <<: *CollectionSource
+            rows:
+              - roll: { min: 1, max: 13 }
+                text: Intriguing offer, unexpected source
+              - roll: { min: 14, max: 28 }
+                text: An old friend
+              - roll: { min: 29, max: 43 }
+                text: Festival with social opportunity
+              - roll: { min: 44, max: 58 }
+                text: Needed item, resource
+              - roll: { min: 59, max: 73 }
+                text: A path becomes more clear
+              - roll: { min: 74, max: 88 }
+                text: You’ve attracted attention, but good
+              - roll: { min: 89, max: 94 }
+                text: Easy to maneuver unnoticed
+              - roll: { min: 95, max: 100 }
+                text: Local gossip provides opportunity
+      corporate:
+        name: Corporate Segment (CorpNet)
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: *CollectionSource
+        contents:
+          feature:
+            <<: *Feature
+            _source:
+              <<: *CollectionSource
+            rows:
+              - roll: { min: 1, max: 8 }
+                text: A meeting / Gathering
+              - roll: { min: 9, max: 16 }
+                text:  Busy environment
+              - roll: { min: 17, max: 24 }
+                text: Lots of screens and terminals
+              - roll: { min: 25, max: 32 }
+                text: Elegant decor
+              - roll: { min: 33, max: 40 }
+                text: New hire
+              - roll: { min: 41, max: 48 }
+                text: Restructuring
+              - roll: { min: 49, max: 56 }
+                text: Party / Celebration
+              - roll: { min: 57, max: 64 }
+                text: A team building event
+              - roll: { min: 65, max: 72 }
+                text: An exec is present
+              - roll: { min: 73, max: 80 }
+                text: Maintenance is here
+              - roll: { min: 81, max: 90 }
+                text: New product or feature
+              - roll: { min: 91, max: 100 }
+                text: Roll [Descriptor](oracle_rollable:fe_runners/core/descriptor) + [Focus](oracle_rollable:fe_runners/core/focus)
+                template:
+                  text: '{{text>oracle_rollable:fe_runners/core/descriptor}} {{text>oracle_rollable:fe_runners/core/focus}}'
+          peril:
+            <<: *Peril
+            _source:
+              <<: *CollectionSource
+            rows:
+              - roll: { min: 1, max: 9 }
+                text: Lots of cameras, sensors
+              - roll: { min: 10, max: 18 }
+                text: A guard has taken notice of you
+              - roll: { min: 19, max: 27 }
+                text: Lured into a trap
+              - roll: { min: 28, max: 36 }
+                text: System malfunction blocking you
+              - roll: { min: 37, max: 45 }
+                text: An enemy Fe-Runner
+              - roll: { min: 46, max: 54 }
+                text: An enemy from your past is here
+              - roll: { min: 55, max: 63 }
+                text: Evidence of injustice or blackmail
+              - roll: { min: 64, max: 72 }
+                text: An Affair
+              - roll: { min: 73, max: 81 }
+                text: Chaotic virus present
+              - roll: { min: 82, max: 90 }
+                text: Extra security blocking passage
+              - roll: { min: 91, max: 98 }
+                text: Roll [Action](oracle_rollable:fe_runners/core/action) + [Theme](oracle_rollable:fe_runners/core/theme)
+                template:
+                  text: '{{text>oracle_rollable:fe_runners/core/action}} {{text>oracle_rollable:fe_runners/core/theme}}'
+              - roll: { min: 99, max: 100 }
+                text: Roll twice, if same, make it worse
+                oracle_rolls:
+                  - oracle: oracle_rollable:fe_runners/segment/corporate/peril
+                    auto: true
+                    number_of_rolls: 2
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *CollectionSource
+            rows:
+              - roll: { min: 1, max: 17 }
+                text: Located backups
+              - roll: { min: 18, max: 34 }
+                text: Information for security found
+              - roll: { min: 35, max: 50 }
+                text: Knowledge, tool or resource
+              - roll: { min: 51, max: 66 }
+                text: A friend works here
+              - roll: { min: 67, max: 83 }
+                text:  Backdoor or shortcut
+              - roll: { min: 84, max: 100 }
+                text: Unprotected area
+      government:
+        name: Government Segment (GovNet)
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: *CollectionSource
+        contents: 
+          feature:
+            <<: *Feature
+            _source:
+              <<: *CollectionSource
+            rows:
+              - roll: { min: 1, max: 8 }
+                text: Older technology
+              - roll: { min: 9, max: 16 }
+                text: Maps and graphs
+              - roll: { min: 17, max: 24 }
+                text: Patrol
+              - roll: { min: 25, max: 32 }
+                text: Storage areas
+              - roll: { min: 33, max: 40 }
+                text: Someone important
+              - roll: { min: 41, max: 48 }
+                text: Restructuring
+              - roll: { min: 49, max: 56 }
+                text: Announcements are playing
+              - roll: { min: 57, max: 64 }
+                text: Practice drills
+              - roll: { min: 65, max: 72 }
+                text: Strangely empty
+              - roll: { min: 73, max: 80 }
+                text: New technology
+              - roll: { min: 81, max: 90 }
+                text: Important meeting / discussion
+              - roll: { min: 91, max: 100 }
+                text: Roll [Descriptor](oracle_rollable:fe_runners/core/descriptor) + [Focus](oracle_rollable:fe_runners/core/focus)
+                template:
+                  text: '{{text>oracle_rollable:fe_runners/core/descriptor}} {{text>oracle_rollable:fe_runners/core/focus}}'
+          peril:
+            <<: *Peril
+            _source:
+              <<: *CollectionSource
+            rows:
+              - roll: { min: 1, max: 8 }
+                text: Additional security
+              - roll: { min: 9, max: 16 }
+                text: Area blocks comms
+              - roll: { min: 17, max: 24 }
+                text: You have been noticed
+              - roll: { min: 25, max: 32 }
+                text: Attack bot
+              - roll: { min: 33, max: 40 }
+                text: Additional protection blocks you
+              - roll: { min: 41, max: 48 }
+                text: Detailed ID required
+              - roll: { min: 49, max: 56 }
+                text: Something is on the move
+              - roll: { min: 57, max: 64 }
+                text: You are being hunted
+              - roll: { min: 65, max: 72 }
+                text: Alarms triggered
+              - roll: { min: 73, max: 80 }
+                text: A trace has started
+              - roll: { min: 81, max: 84 }
+                text: A fight has broken out
+              - roll: { min: 85, max: 90 }
+                text: Uncover a conspiracy
+              - roll: { min: 91, max: 98 }
+                text: Roll [Action](oracle_rollable:fe_runners/core/action) + [Theme](oracle_rollable:fe_runners/core/theme)
+                template:
+                  text: '{{text>oracle_rollable:fe_runners/core/action}} {{text>oracle_rollable:fe_runners/core/theme}}'
+              - roll: { min: 99, max: 100 }
+                text: Roll twice, if same, make it worse
+                oracle_rolls:
+                  - oracle: oracle_rollable:fe_runners/segment/corporate/peril
+                    auto: true
+                    number_of_rolls: 2
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *CollectionSource
+            rows:
+              - roll: { min: 1, max: 12 }
+                text: Confidential information
+              - roll: { min: 13, max: 24 }
+                text: Detailed insight
+              - roll: { min: 25, max: 36 }
+                text: Overhead a useful conversation
+              - roll: { min: 37, max: 48 }
+                text: Got the code for something
+              - roll: { min: 49, max: 62 }
+                text: Found a new useful technology
+              - roll: { min: 63, max: 74 }
+                text: An open comms channel
+              - roll: { min: 75, max: 86 }
+                text: Needed item or resource
+              - roll: { min: 87, max: 100 }
+                text: Someone is willing to help
+      underground:
+        name: Underground Segment (DarkNet)
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: *CollectionSource
+        contents:
+          feature:
+            <<: *Feature
+            _source:
+              <<: *CollectionSource
+            rows:
+              - roll: { min: 1, max: 8 }
+                text: Abstract shapes and neon
+              - roll: { min: 9, max: 16 }
+                text: Avatars all look the same
+              - roll: { min: 17, max: 24 }
+                text: Empty but for a single person
+              - roll: { min: 25, max: 32 }
+                text: Bustling area
+              - roll: { min: 33, max: 40 }
+                text: Normal physics/rules don’t apply
+              - roll: { min: 41, max: 48 }
+                text: Extremely intricate art
+              - roll: { min: 49, max: 56 }
+                text: Stacks of unsorted information
+              - roll: { min: 57, max: 64 }
+                text: Everything is in a foreign language
+              - roll: { min: 65, max: 72 }
+                text: Loud underground music playing
+              - roll: { min: 73, max: 80 }
+                text: Dark themed environment
+              - roll: { min: 81, max: 90 }
+                text: Fantastical setting
+              - roll: { min: 91, max: 100 }
+                text: Roll [Descriptor](oracle_rollable:fe_runners/core/descriptor) + [Focus](oracle_rollable:fe_runners/core/focus)
+                template:
+                  text: '{{text>oracle_rollable:fe_runners/core/descriptor}} {{text>oracle_rollable:fe_runners/core/focus}}'
+          peril:
+            <<: *Peril
+            _source:
+              <<: *CollectionSource
+            rows:
+              - roll: { min: 1, max: 8 }
+                text: Active raid in progress
+              - roll: { min: 9, max: 16 }
+                text: Enemy Fe-Runner spotted you
+              - roll: { min: 17, max: 24 }
+                text: Something feels off with gear
+              - roll: { min: 25, max: 32 }
+                text: Additional access required
+              - roll: { min: 33, max: 40 }
+                text: Challenged to a dual
+              - roll: { min: 41, max: 48 }
+                text: You are trapped
+              - roll: { min: 49, max: 56 }
+                text: People from GovNet
+              - roll: { min: 57, max: 64 }
+                text: A corporation you know
+              - roll: { min: 65, max: 72 }
+                text: A fight has broken out
+              - roll: { min: 73, max: 80 }
+                text: An injustice is taking place
+              - roll: { min: 81, max: 85 }
+                text: A new (bad) virus is discovered
+              - roll: { min: 86, max: 90 }
+                text: A new (bad) weapon / tool
+              - roll: { min: 91, max: 98 }
+                text: Roll [Action](oracle_rollable:fe_runners/core/action) + [Theme](oracle_rollable:fe_runners/core/theme)
+                template:
+                  text: '{{text>oracle_rollable:fe_runners/core/action}} {{text>oracle_rollable:fe_runners/core/theme}}'
+              - roll: { min: 99, max: 100 }
+                text: Roll twice, if same, make it worse
+                oracle_rolls:
+                  - oracle: oracle_rollable:fe_runners/segment/core/peril
+                    auto: true
+                    number_of_rolls: 2
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *CollectionSource
+            rows:
+              - roll: { min: 1, max: 16 }
+                text:  Someone you know is here
+              - roll: { min: 17, max: 32 }
+                text: A source, tool or person is here
+              - roll: { min: 33, max: 48 }
+                text: You learn something secret
+              - roll: { min: 49, max: 64 }
+                text: Someone is on your side
+              - roll: { min: 65, max: 80 }
+                text: You discover a backdoor
+              - roll: { min: 81, max: 100 }
+                text: You learn of a new tool
+
+            

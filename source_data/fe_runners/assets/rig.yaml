@@ -1,0 +1,63 @@
+_id: fe_runners
+datasworn_version: "0.1.0"
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-08-10
+  title: 'Fe-Runners Rulebook'
+  url: ttps://zombiecraig.itch.io/fe-runners
+  license: https://creativecommons.org/licenses/by-nc-sa/4.0
+  authors:
+    - name: Craig Smith
+assets: 
+  rig:
+    type: asset_collection
+    name: Base Rigs
+    _source: *Source
+    summary: This is your base rig and your lifeblood to connecting online.
+    contents:
+      base_rig:
+        name: Base Rig
+        type: asset
+        <<: &BaseRigAsset
+          category: Base Rig
+          _source: &AssetSource
+            <<: *Source
+            title: 'Fe-Runner Assets'
+          attachments:
+            max: null
+            assets:
+              - 'asset:*/module/*'
+          options: &Options_Name
+            name:
+              field_type: text
+              label: name
+        controls: 
+          integrity:
+            max: 5
+            value: 5
+            <<: &RigIntegrity
+              label: integrity
+              field_type: condition_meter
+              min: 0
+              moves:
+                suffer:
+                  - move:fe_runners/suffer/withstand_damage
+                recover:
+                  - move:fe_runners/recover/repair
+              controls:
+                overheated: &Rig.Overheated
+                  label: overheated
+                  field_type: checkbox
+                  is_impact: true
+                infected:
+                  label: infected
+                  field_type: checkbox
+                  is_impact: true
+        abilities:
+          - enabled: true
+            text: This is your base rig.  It has up to 5 health and can overheat and/or be infected
+          - enabled: false
+            text: Overclocking.  Once per situation you can add +1 Momentum.
+          - enabled: false
+            text: Secure Enclave.  Can store one piece of data in an encrypted storage that can't be lost or stolen.

@@ -1,0 +1,150 @@
+_id: fe_runners
+datasworn_version: "0.1.0"
+type: expansion
+ruleset: starforged
+oracles:
+  campaign_launch:
+    name: Campaign Launch Oracles
+    oracle_type: tables
+    type: oracle_collection
+    _source:
+      <<: &Source
+        date: 2024-08-10
+        title: 'Fe-Runners Rulebook'
+        url: ttps://zombiecraig.itch.io/fe-runners
+        license: https://creativecommons.org/licenses/by-nc-sa/4.0
+        authors:
+          - name: Craig Smith
+      page: 49
+    contents:
+      character_path:
+        name: Character Path
+        _source:
+          <<: *Source
+          page: 49
+        summary: You will want to select two path assets.  This will help shape your character's goals and personality.  You can roll on the below paths table if you are undecided.
+        oracle_type: table_text
+        type: oracle_rollable
+        rows:
+          - roll: { min: 1, max: 5 }
+            text: '[Admin](datasworn:asset:fe_runners/path/admin)'
+          - roll: { min: 6, max: 8 }
+            text: '[Anarchist](datasworn:asset:fe_runners/path/anarchist)'
+          - roll: { min: 9, max: 11 }
+            text: '[Archivist](datasworn:asset:fe_runners/path/archivist)'
+          - roll: { min: 12, max: 14 }
+            text: '[Augmented](datasworn:asset:fe_runners/path/augmented)'
+          - roll: { min: 15, max: 17 }
+            text: '[Automation](datasworn:asset:fe_runners/path/automation)'
+          - roll: { min: 18, max: 20 }
+            text: '[Cloak](datasworn:asset:fe_runners/path/cloak)'
+          - roll: { min: 21, max: 23 }
+            text: '[Cryptologist](datasworn:asset:fe_runners/path/cryptologist)'
+          - roll: { min: 24, max: 26 }
+            text: '[Cyber Psychotic](datasworn:asset:fe_runners/path/cyber_psychotic)'
+          - roll: { min: 27, max: 29 }
+            text: '[Exploit Developer](datasworn:asset:fe_runners/path/exploit_developer)'
+          - roll: { min: 30, max: 32 }
+            text: '[Fugitive](datasworn:asset:fe_runners/path/fugitive)'
+          - roll: { min: 33, max: 37 }
+            text: '[Gamer](datasworn:asset:fe_runners/path/gamer)'
+          - roll: { min: 38, max: 40 }
+            text: '[Hacktivist](datasworn:asset:fe_runners/path/hacktivist)'
+          - roll: { min: 41, max: 43 }
+            text: '[Kernel Dev](datasworn:asset:fe_runners/path/kernel_dev)'
+          - roll: { min: 44, max: 46 }
+            text: '[Kinetic](datasworn:asset:fe_runners/path/kinetic)'
+          - roll: { min: 47, max: 49 }
+            text: '[Leader](datasworn:asset:fe_runners/path/leader)'
+          - roll: { min: 50, max: 53 }
+            text: '[Mercenary](datasworn:asset:fe_runners/path/mercenary)'
+          - roll: { min: 54, max: 56 }
+            text: '[Negotiator](datasworn:asset:fe_runners/path/negotiator)'
+          - roll: { min: 57, max: 59 }
+            text: '[Net Analyst](datasworn:asset:fe_runners/path/net_analyst)'
+          - roll: { min: 60, max: 63 }
+            text: '[Net Whisperer](datasworn:asset:fe_runners/path/net_whisperer)'
+          - roll: { min: 64, max: 66 }
+            text: '[Pen Tester](datasworn:asset:fe_runners/path/pen_tester)'
+          - roll: { min: 67, max: 69 }
+            text: '[Pirate](datasworn:asset:fe_runners/path/pirate)'
+          - roll: { min: 70, max: 72 }
+            text: '[Policy Maker](datasworn:asset:fe_runners/path/policy_maker)'
+          - roll: { min: 73, max: 75 }
+            text: '[Prepper](datasworn:asset:fe_runners/path/prepper)'
+          - roll: { min: 76, max: 78 }
+            text: '[Recluse](datasworn:asset:fe_runners/path/recluse)'
+          - roll: { min: 79, max: 81 }
+            text: '[Researcher](datasworn:asset:fe_runners/path/researcher)'
+          - roll: { min: 82, max: 86 }
+            text: '[Scammer](datasworn:asset:fe_runners/path/scammer)'
+          - roll: { min: 87, max: 89 }
+            text: '[Steganographer](datasworn:asset:fe_runners/path/steganographer)'
+          - roll: { min: 90, max: 92 }
+            text: '[Technician](datasworn:asset:fe_runners/path/technician)'
+          - roll: { min: 93, max: 95 }
+            text: '[Threat Hunter](datasworn:asset:fe_runners/path/threat_hunter)'
+          - roll: { min: 96, max: 100 }
+            text: '[VX Author](datasworn:asset:fe_runners/path/vx_author)'
+      backstory_prompts:
+        name: Backstory Prompts
+        oracle_type: table_text
+        type: oracle_rollable
+        _source:
+          <<: *Source
+          page: 51
+        summary: |-
+          For some backstory inspiration, roll or pick from the table below. Then, take a moment to elaborate on the suggestion. Or just leave it a bit vague and mysterious for now; you can flesh it out in play.
+        rows:
+          - roll: { min: 1, max: 3 }
+            text: Witnessed a family tragedy caused by corporate greed, sparking rebellion.
+          - roll: { min: 4, max: 7 }
+            text: Child prodigy, recruited by a mysterious online mentor.
+          - roll: { min: 8, max: 11 }
+            text: Born into a Fe-Runner family, trained from a young age.
+          - roll: { min: 12, max: 15 }
+            text: Discovered a hidden truth about the world that changed their path.
+          - roll: { min: 16, max: 19 }
+            text: Was framed for a crime they didn't commit, forced to become a fugitive.
+          - roll: { min: 20, max: 23 }
+            text: Lost someone close due to corporate negligence, seeks revenge.
+          - roll: { min: 24, max: 27 }
+            text: Possesses a strange connection to the digital world, almost mystical.
+          - roll: { min: 28, max: 31 }
+            text: Witnessed the brutality of the government enforcers, vowed to fight back.
+          - roll: { min: 32, max: 35 }
+            text: Ex-military data analyst turned rogue hacker.
+          - roll: { min: 36, max: 39 }
+            text: Self-taught tech whiz, a master of improvisation.
+          - roll: { min: 40, max: 43 }
+            text: Former corporate drone, disillusioned with the system.
+          - roll: { min: 44, max: 48 }
+            text: Streetwise hustler with unmatched social engineering skills.
+          - roll: { min: 49, max: 52 }
+            text: A talented artist whose coding is a form of digital graffiti.
+          - roll: { min: 53, max: 56 }
+            text: Driven by a thirst for knowledge, uncovering the secrets of the world.
+          - roll: { min: 57, max: 60 }
+            text: Fights for the underdog, protecting the marginalized from corporate control.
+          - roll: { min: 61, max: 64 }
+            text: Obsessed with a personal vendetta against a specific corporation.
+          - roll: { min: 65, max: 68 }
+            text: Seeks to dismantle the corporate power structure, create a new world.
+          - roll: { min: 69, max: 72 }
+            text: Driven by the thrill of the challenge, the ultimate puzzle to solve.
+          - roll: { min: 73, max: 76 }
+            text: Haunted by a past mistake, atonement fuels their hacking.
+          - roll: { min: 77, max: 80 }
+            text: Struggles with addiction, using their skills to support it.
+          - roll: { min: 81, max: 84 }
+            text: Morally ambiguous, willing to play both sides for their own ends.
+          - roll: { min: 85, max: 88 }
+            text: Hates humanity, sees the digital world as the future.
+          - roll: { min: 89, max: 92 }
+            text: Has a unique trait or implant that enhances their hacking abilities.
+          - roll: { min: 93, max: 96 }
+            text: Carries a hidden past, a secret identity they desperately protect.
+          - roll: { min: 97, max: 100 }
+            text: Famous (or infamous) in the Fe-Runner underworld, a legend among hackers.
+
+          

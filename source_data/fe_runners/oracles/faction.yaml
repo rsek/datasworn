@@ -1,0 +1,733 @@
+_id: fe_runners
+datasworn_version: '0.1.0'
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-08-10
+  title: 'Fe-Runners Rulebook'
+  url: ttps://zombiecraig.itch.io/fe-runners
+  license: https://creativecommons.org/licenses/by-nc-sa/4.0
+  authors:
+    - name: Craig Smith
+oracles: 
+  faction:
+    name: Faction Oracles
+    canonical_name: Factions
+    type: oracle_collection
+    oracle_type: tables
+    _source:
+      <<: *Source
+      page: 100
+    contents: 
+      type:
+        name: Faction Type
+        _source:
+          <<: *Source
+          page: 100
+        oracle_type: table_text2
+        type: oracle_rollable
+        column_labels:
+          roll: Roll
+          text: Result
+          text2: Summary
+        rows:
+          - roll: { min: 1, max: 40 }
+            text: Corporate Faction
+            text2:  Corporate Conglomerate
+          - roll: { min: 41, max: 70 }
+            text: Political Faction
+            text2: Political party or government group
+          - roll: { min: 71, max: 100 }
+            text: Underground Guild
+            text2: Specialist or fringe groupsf
+      influence:
+        name: Influence
+        _source:
+          <<: *Source
+          page: 100
+        oracle_type: table_text2
+        type: oracle_rollable
+        column_labels:
+          roll: Roll
+          text: Result
+          text2: Summary
+        rows:
+          - roll: { min: 1, max: 10 }
+            text: Forsaken
+            text2:  Banished or forgotten group
+          - roll: { min: 11, max: 30 }
+            text: Isolated
+            text2: Limited influence, remote location
+          - roll: { min: 31, max: 50 }
+            text: Localized
+            text2: Marginal influence of a specific area
+          - roll: { min: 51, max: 70 }
+            text: Established
+            text2: Strong influence of a specific area
+          - roll: { min: 71, max: 85 }
+            text: Notable
+            text2: Dispersed influence over several areas
+          - roll: { min: 86, max: 95 }
+            text: Dominant
+            text2: Far-reaching influence across many areas
+          - roll: { min: 96, max: 100 }
+            text: Inescapable
+            text2: Pervasive influence across just about everything
+      leadership_style:
+        name: Leadership Style
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 100
+        rows:
+          - roll: { min: 1, max: 5 }
+            text: Anarchist
+          - roll: { min: 6, max: 15 }
+            text: Disputed Leadership
+          - roll: { min: 16, max: 30 }
+            text: Authoritarian Dictatorship
+          - roll: { min: 31, max: 45 }
+            text: Oligarchical Elite
+          - roll: { min: 46, max: 60 }
+            text: Dynastic Lineage
+          - roll: { min: 61, max: 70 }
+            text: Fated or prophesied leader
+          - roll: { min: 71, max: 80 }
+            text: Clan chiefs or elders
+          - roll: { min: 81, max: 90 }
+            text: Elected Representatives
+          - roll: { min: 91, max: 95 }
+            text: Machine Intelligence
+          - roll: { min: 96, max: 100 }
+            text: Varied / Decentralized
+      corporate:
+        name: Corporate Faction
+        type: oracle_rollable
+        oracle_type: table_text
+        recommended_rolls:
+          min: 1
+          max: 3
+        _source: 
+          <<: *Source
+          page: 100
+        rows:
+          - roll: { min: 1, max: 5 }
+            text: Agriculture
+          - roll: { min: 6, max: 9 }
+            text: Artistry
+          - roll: { min: 10, max: 14 }
+            text: Commerce
+          - roll: { min: 15, max: 18 }
+            text: Construction
+          - roll: { min: 19, max: 22 }
+            text: Crypto
+          - roll: { min: 23, max: 26 }
+            text: Education
+          - roll: { min: 27, max: 30 }
+            text: Environmentalism
+          - roll: { min: 31, max: 34 }
+            text: Entertainment
+          - roll: { min: 35, max: 38 }
+            text: Exploration
+          - roll: { min: 39, max: 42 }
+            text: Faith
+          - roll: { min: 43, max: 46 }
+            text: Gaming
+          - roll: { min: 47, max: 50 }
+            text: History
+          - roll: { min: 51, max: 55 }
+            text: Industrial
+          - roll: { min: 56, max: 59 }
+            text: Law
+          - roll: { min: 60, max: 63 }
+            text: Medical
+          - roll: { min: 64, max: 67 }
+            text: News
+          - roll: { min: 68, max: 71 }
+            text: Science
+          - roll: { min: 72, max: 75 }
+            text: Secrecy
+          - roll: { min: 76, max: 79 }
+            text: Sports
+          - roll: { min: 80, max: 83 }
+            text: Social
+          - roll: { min: 84, max: 87 }
+            text: Technology
+          - roll: { min: 88, max: 91 }
+            text: Treachery
+          - roll: { min: 92, max: 96 }
+            text: Warfare
+          - roll: { min: 97, max: 100 }
+            text: Wealth
+      political:
+        name: Political Faction
+        type: oracle_rollable
+        oracle_type: table_text
+        recommended_rolls:
+          min: 1
+          max: 2
+        _source:
+          <<: *Source
+          page: 101
+        rows:
+          - roll: { min: 1, max: 5 }
+            text: Assassins
+          - roll: { min: 6, max: 10 }
+            text: Agriculture
+          - roll: { min: 11, max: 25 }
+            text: Diplomacy
+          - roll: { min: 26, max: 29 }
+            text: Conquest
+          - roll: { min: 30, max: 35 }
+            text: Couriers
+          - roll: { min: 36, max: 39 }
+            text: Education
+          - roll: { min: 40, max: 43 }
+            text: Exploration
+          - roll: { min: 44, max: 46 }
+            text: Faith
+          - roll: { min: 47, max: 50 }
+            text: History
+          - roll: { min: 51, max: 54 }
+            text: Honor
+          - roll: { min: 55, max: 56 }
+            text: Law
+          - roll: { min: 57, max: 60 }
+            text: Militant
+          - roll: { min: 61, max: 65 }
+            text: Pacifism
+          - roll: { min: 66, max: 68 }
+            text: Researchers
+          - roll: { min: 69, max: 73 }
+            text: Resistance
+          - roll: { min: 74, max: 78 }
+            text: Science
+          - roll: { min: 79, max: 83 }
+            text: Secrecy
+          - roll: { min: 84, max: 87 }
+            text: Spies
+          - roll: { min: 88, max: 91 }
+            text: Treachery
+          - roll: { min: 92, max: 96 }
+            text: Warfare
+          - roll: { min: 97, max: 100 }
+            text: Wealth
+      underground:
+        name: Underground Guild
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 101
+        rows:
+          - roll: { min: 1, max: 7 }
+            text: Anarchists
+          - roll: { min: 8, max: 14 }
+            text: Cryptologists
+          - roll: { min: 15, max: 20 }
+            text: Cultist
+          - roll: { min: 21, max: 29 }
+            text: Exiles
+          - roll: { min: 30, max: 39 }
+            text: Gangsters
+          - roll: { min: 40, max: 46 }
+            text: Gamblers
+          - roll: { min: 47, max: 54 }
+            text: Fe-Runners
+          - roll: { min: 55, max: 63 }
+            text: Pirates
+          - roll: { min: 64, max: 69 }
+            text: Raiders
+          - roll: { min: 70, max: 74 }
+            text: Rebels
+          - roll: { min: 75, max: 78 }
+            text: Rogue AI
+          - roll: { min: 79, max: 84 }
+            text: Scavengers
+          - roll: { min: 85, max: 91 }
+            text: Traffickers
+          - roll: { min: 92, max: 95 }
+            text: Virus Writers
+          - roll: { min: 96, max: 100 }
+            text: Roll Twice
+            oracle_rolls:
+              - oracle: oracle_rollable:fe_runners/faction/underground
+                auto: true
+                number_of_rolls: 2
+      projects:
+        name: Faction Projects
+        type: oracle_rollable
+        oracle_type: table_text
+        recommended_rolls:
+          min: 1
+          max: 2
+        _source:
+          <<: *Source
+          page: 102
+        rows:
+          - roll: { min: 1, max: 3 }
+            text: Broaden scope of faction to include new focus
+          - roll: { min: 4, max: 6 }
+            text: Build or secure a powerful device
+          - roll: { min: 7, max: 9 }
+            text: Consolidate control of a valuable commodity
+          - roll: { min: 10, max: 12 }
+            text: Destroy or defeat a rival
+          - roll: { min: 13, max: 15 }
+            text: Disrupt the operations of a rival
+          - roll: { min: 16, max: 18 }
+            text: Escape the control of another faction or power
+          - roll: { min: 19, max: 21 }
+            text: Establish a monument or memorial
+          - roll: { min: 22, max: 24 }
+            text: Establish a new headquarter
+          - roll: { min: 25, max: 27 }
+            text: Expand operations
+          - roll: { min: 28, max: 30 }
+            text: Form an alliance
+          - roll: { min: 31, max: 33 }
+            text: Fulfill a prophecy
+          - roll: { min: 34, max: 36 }
+            text: Give aid to a faction
+          - roll: { min: 37, max: 39 }
+            text: Harness unnatural or forbidden power
+          - roll: { min: 40, max: 42 }
+            text: Hunt down a rogue asset
+          - roll: { min: 43, max: 45 }
+            text: Incite conflict amongst rivals
+          - roll: { min: 46, max: 48 }
+            text: Negotiate an agreement
+          - roll: { min: 49, max: 51 }
+            text: Obtain a needed commodity
+          - roll: { min: 52, max: 54 }
+            text: Obtain an important cultural artifact
+          - roll: { min: 55, max: 57 }
+            text: Obtain crucial data or information
+          - roll: { min: 58, max: 60 }
+            text: Obtain incriminating information about a rival
+          - roll: { min: 61, max: 63 }
+            text: Prevent a prophecy
+          - roll: { min: 64, max: 66 }
+            text: Put down an internal revolt or rebellion
+          - roll: { min: 67, max: 69 }
+            text: Repay a debt
+          - roll: { min: 70, max: 72 }
+            text: Rescue or recover a group or asset
+          - roll: { min: 73, max: 75 }
+            text: Research an innovation
+          - roll: { min: 76, max: 78 }
+            text: Resolve a conflict with another faction
+          - roll: { min: 79, max: 81 }
+            text: Reunite splintered elements of the faction
+          - roll: { min: 82, max: 84 }
+            text: Seize a powerful artifact or valuable treasure
+          - roll: { min: 85, max: 87 }
+            text: Seize rival territory or operations
+          - roll: { min: 88, max: 90 }
+            text: Subsume another faction
+          - roll: { min: 91, max: 93 }
+            text: Transport a valid asset
+          - roll: { min: 94, max: 96 }
+            text: Usurp leadership within a rival faction
+          - roll: { min: 97, max: 100 }
+            text: Roll [Action](datasworn:oracle_rollable:starforged/core/action) + [Theme](datasworn:oracle_rollable:fe_runners/core/theme)
+            template:
+              text: '{{text>oracle_rollable:starforged/core/action}} {{text>oracle_rollable:fe_runners/core/theme}}'
+      relationships:
+        name: Faction Relaionships
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 103
+        rows:
+          - roll: { min: 1, max: 4 }
+            text: Agnostic towards
+          - roll: { min: 5, max: 8 }
+            text: Apathetic or unaware of
+          - roll: { min: 9, max: 11 }
+            text: Betrayed by
+          - roll: { min: 12, max: 14 }
+            text: Broke faith with
+          - roll: { min: 15, max: 18 }
+            text: Distrustful of
+          - roll: { min: 19, max: 22 }
+            text: Does business with
+          - roll: { min: 23, max: 25 }
+            text: Extorted By
+          - roll: { min: 26, max: 29 }
+            text: Holds contempt for
+          - roll: { min: 30, max: 33 }
+            text: Holds leverage over
+          - roll: { min: 34, max: 36 }
+            text: In control of
+          - roll: { min: 37, max: 40 }
+            text: Maneuvering against
+          - roll: { min: 41, max: 44 }
+            text: Needs aid from
+          - roll: { min: 45, max: 47 }
+            text: Negotiating with
+          - roll: { min: 48, max: 51 }
+            text: Open alliance with
+          - roll: { min: 52, max: 54 }
+            text: Owes a debt to
+          - roll: { min: 55, max: 58 }
+            text: Shares a rivalry with
+          - roll: { min: 59, max: 61 }
+            text: Shares power with
+          - roll: { min: 62, max: 64 }
+            text: Shows respect for
+          - roll: { min: 65, max: 67 }
+            text: Splintered from
+          - roll: { min: 68, max: 70 }
+            text: Subordinate to
+          - roll: { min: 71, max: 74 }
+            text: Supplied with resources by
+          - roll: { min: 75, max: 78 }
+            text: Supplies resources to
+          - roll: { min: 79, max: 81 }
+            text: Temporary alliance with
+          - roll: { min: 82, max: 85 }
+            text: Tolerates
+          - roll: { min: 86, max: 89 }
+            text: Trades favors with
+          - roll: { min: 90, max: 92 }
+            text: Unjustly accused by
+          - roll: { min: 93, max: 96 }
+            text: Warring with
+          - roll: { min: 97, max: 100 }
+            text: Roll twice
+            oracle_rolls:
+              - oracle: oracle_rollable:fe_runners/faction/relationships
+                auto: true
+                number_of_rolls: 2
+      corporate_name:
+        name: Corporate Name
+        type: oracle_rollable
+        oracle_type: table_text2
+        _source:
+          <<: *Source
+          page: 103
+        column_labels:
+          roll: Roll
+          text: Prefix
+          text2: Suffix
+        rows:
+          - roll: { min: 1, max: 5 }
+            text: Zenith
+            text2: Technologies
+          - roll: { min: 6, max: 10 }
+            text: Axiom
+            text2: Corp
+          - roll: { min: 11, max: 15 }
+            text: Aphelion
+            text2: Industries
+          - roll: { min: 16, max: 20 }
+            text: Meridian
+            text2: Global
+          - roll: { min: 21, max: 25 }
+            text: Nimbus
+            text2: Network
+          - roll: { min: 26, max: 30 }
+            text: Catalyst
+            text2: Dynamics
+          - roll: { min: 31, max: 35 }
+            text: Elysian
+            text2: Systems
+          - roll: { min: 36, max: 40 }
+            text: Voltaic
+            text2: Solutions
+          - roll: { min: 41, max: 45 }
+            text: Aegis
+            text2: Sec
+          - roll: { min: 46, max: 50 }
+            text: Aurora
+            text2: Soft
+          - roll: { min: 51, max: 55 }
+            text: Chrono
+            text2: Pharm
+          - roll: { min: 56, max: 60 }
+            text: NovaGen
+            text2: Robotics
+          - roll: { min: 61, max: 65 }
+            text: Aetherial
+            text2: Holdings
+          - roll: { min: 66, max: 70 }
+            text: Cerberos
+            text2: Group
+          - roll: { min: 71, max: 75 }
+            text: Mosaic
+            text2: Software
+          - roll: { min: 76, max: 80 }
+            text: Symphonic
+            text2: Logistics
+          - roll: { min: 81, max: 85 }
+            text: Apex
+            text2: Labs
+          - roll: { min: 86, max: 90 }
+            text: Quantum
+            text2: Data
+          - roll: { min: 91, max: 95 }
+            text: Mnemosyne
+            text2: Enterprise
+          - roll: { min: 96, max: 100 }
+            text: Nexus
+            text2: Inc
+      political_name:
+        name: Political Group Name
+        type: oracle_rollable
+        oracle_type: table_text2
+        _source:
+          <<: *Source
+          page: 104
+        column_labels:
+          roll: Roll
+          text: Prefix
+          text2: Suffix
+        rows:
+          - roll: { min: 1, max: 5 }
+            text: Progressive
+            text2: Vanguard
+          - roll: { min: 6, max: 10 }
+            text: United Citizens
+            text2: Alliance
+          - roll: { min: 11, max: 15 }
+            text: Green
+            text2: Party
+          - roll: { min: 16, max: 20 }
+            text: Liberty
+            text2: Front
+          - roll: { min: 21, max: 25 }
+            text: Freedom
+            text2: Movement
+          - roll: { min: 26, max: 30 }
+            text: National
+            text2: Future
+          - roll: { min: 31, max: 35 }
+            text: Renewal
+            text2: Initiative
+          - roll: { min: 36, max: 40 }
+            text: Democratic
+            text2: Coalition
+          - roll: { min: 41, max: 45 }
+            text: Social Justice
+            text2: Collective
+          - roll: { min: 46, max: 50 }
+            text: Terra Firma
+            text2: Network
+          - roll: { min: 51, max: 55 }
+            text: Innovation
+            text2: Guild
+          - roll: { min: 56, max: 60 }
+            text: Ascendency
+            text2: League
+          - roll: { min: 61, max: 65 }
+            text: Economic
+            text2: Pact
+          - roll: { min: 66, max: 70 }
+            text: Prosperity
+            text2: Treaty
+          - roll: { min: 71, max: 75 }
+            text: Globalist
+            text2: Bloc
+          - roll: { min: 76, max: 80 }
+            text: Moral
+            text2: Federation
+          - roll: { min: 81, max: 85 }
+            text: Independent
+            text2: Consortium
+          - roll: { min: 86, max: 90 }
+            text: Neo
+            text2: Syndicate
+          - roll: { min: 91, max: 95 }
+            text: Common
+            text2: Society
+          - roll: { min: 96, max: 100 }
+            text: Digital Rights
+            text2: Brotherhood
+      underground_name:
+        name: Underground Guild Name
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 104
+        rows:
+          - roll: { min: 1, max: 9 }
+            text: Anonymous
+          - roll: { min: 10, max: 40 }
+            text: '[Descriptor](datasworn:oracle_rollable:fe_runners/core/descriptor) + [Political Group Name](datasworn:oracle_rollable:fe_runners/faction/political_name) Suffix'
+          - roll: { min: 41, max: 60 }
+            text: '[Action](datasworn:oracle_rollable:starforged/core/action) (Replace vowels with numbers)'
+          - roll: { min: 61, max: 84 }
+            text: '[Theme](datasworn:oracle_rollable:fe_runners/core/theme) + [Focus](datasworn:oracle_rollable:fe_runners/core/focus)'
+            template:
+              text: '{{text>oracle_rollable:fe_runners/core/theme}} {{text>oracle_rollable:fe_runners/core/focus}}'
+          - roll: { min: 85, max: 91 }
+            text: '[Theme](datasworn:oracle_rollable:fe_runners/core/theme) + Squad'
+            template:
+              text: '{{text>oracle_rollable:fe_runners/core/theme Squad}}'
+          - roll: { min: 92, max: 100 }
+            text: 'Ghost + [Theme](datasworn:oracle_rollable:fe_runners/core/theme)'
+            template:
+              text: 'Ghost {{text>oracle_rollable:fe_runners/core/theme}}'
+      quirks:
+        name: Faction Quirks
+        type: oracle_rollable
+        oracle_type: table_text
+        recommended_rolls:
+          min: 1
+          max: 2
+        _source:
+          <<: *Source
+          page: 105
+        rows:
+          - roll: { min: 1, max: 3 }
+            text: Use of an old outdated programming language
+          - roll: { min: 4, max: 6 }
+            text: Animal or creature motif is used as the faction symbol
+          - roll: { min: 7, max: 9 }
+            text: Banishes the disloyal
+          - roll: { min: 10, max: 12 }
+            text: Body augmentations are respected and valued
+          - roll: { min: 13, max: 15 }
+            text: Body ornamentations signify roles
+          - roll: { min: 16, max: 18 }
+            text: Conceals individual identity
+          - roll: { min: 19, max: 21 }
+            text: Dependent on a resource
+          - roll: { min: 22, max: 24 }
+            text: Distinctive or elaborate clothing
+          - roll: { min: 25, max: 27 }
+            text: Use of bodyguards or soldiers
+          - roll: { min: 28, max: 30 }
+            text: Favors a signature weapon or tool
+          - roll: { min: 31, max: 33 }
+            text: Guided by a superstition or prophecy
+          - roll: { min: 34, max: 36 }
+            text: Heavily stratified social structure
+          - roll: { min: 37, max: 39 }
+            text: Hoards artifacts
+          - roll: { min: 40, max: 42 }
+            text: Honors the fallen through unusual death rites
+          - roll: { min: 43, max: 45 }
+            text: Idolizes a long dead founder or martyr
+          - roll: { min: 46, max: 48 }
+            text: Keeps exhaustive records or archives
+          - roll: { min: 49, max: 51 }
+            text: Offshore base
+          - roll: { min: 52, max: 54 }
+            text: Members take a new name when joining the faction
+          - roll: { min: 55, max: 57 }
+            text: Nomadic with mobile operations
+          - roll: { min: 58, max: 60 }
+            text: Operates under strict codes or laws
+          - roll: { min: 61, max: 63 }
+            text: Recognizes other through a distinctive gesture or greeting
+          - roll: { min: 64, max: 66 }
+            text: Reliant on machine intelligence
+          - roll: { min: 67, max: 69 }
+            text: Resolves disputes through formal duels
+          - roll: { min: 70, max: 72 }
+            text: Nepotism
+          - roll: { min: 73, max: 75 }
+            text: Shuns or distrusts machine intelligence
+          - roll: { min: 76, max: 78 }
+            text: Distinct and recognizable logo
+          - roll: { min: 79, max: 81 }
+            text: Suspicious of outsiders
+          - roll: { min: 82, max: 84 }
+            text: Symbiotic relationship with their equipment or systems
+          - roll: { min: 85, max: 87 }
+            text: Trades in a unique currency or commodity
+          - roll: { min: 88, max: 90 }
+            text: Trained in a very disciplined fighting technique
+          - roll: { min: 91, max: 93 }
+            text: Wields unnatural abilities or strange technology
+          - roll: { min: 94, max: 96 }
+            text: Operating in an altered environment
+          - roll: { min: 97, max: 100 }
+            text: '[Action](datasworn:oracle_rollable:starforged/core/action) + [Theme](datasworn:oracle_rollable:fe_runners/core/theme)'
+            template:
+              text: '{{text>oracle_rollable:starforged/core/action}} {{text>oracle_rollable:fe_runners/core/theme}}'
+      rumors:
+        name: Faction Rumors
+        type: oracle_rollable
+        oracle_type: table_text
+        recommended_rolls:
+          min: 1
+          max: 2
+        _source:
+          <<: *Source
+          page: 106
+        rows:
+          - roll: { min: 1, max: 3 }
+            text: Caught in the crossfire of feuding factions
+          - roll: { min: 4, max: 6 }
+            text: Colluding with criminal enterprise
+          - roll: { min: 7, max: 9 }
+            text: Corrupted by a dangerous power
+          - roll: { min: 10, max: 12 }
+            text: Critical resource in short supply
+          - roll: { min: 13, max: 15 }
+            text: Defenses are over extended
+          - roll: { min: 16, max: 18 }
+            text: Developing revolutionary technology
+          - roll: { min: 19, max: 21 }
+            text: Digital systems are corrupted or infiltrated
+          - roll: { min: 22, max: 24 }
+            text: Heavily in debt
+          - roll: { min: 25, max: 27 }
+            text: Hit hard by recent attack or calamity
+          - roll: { min: 28, max: 30 }
+            text: Holds a powerful artifact
+          - roll: { min: 31, max: 33 }
+            text: Holds incriminating information against a leader or faction
+          - roll: { min: 34, max: 36 }
+            text: Hoarding a valuable commodity
+          - roll: { min: 37, max: 39 }
+            text: Infiltrated by a rival faction
+          - roll: { min: 40, max: 42 }
+            text: Knows the location of a fabled treasure or lost technology
+          - roll: { min: 43, max: 45 }
+            text: Leaders are haunted by a dark prophecy
+          - roll: { min: 46, max: 48 }
+            text: Leaders are incompetent
+          - roll: { min: 49, max: 51 }
+            text: Leaders are puppets of another power or faction
+          - roll: { min: 52, max: 54 }
+            text: Lesser members of the faction are planning a coup
+          - roll: { min: 55, max: 57 }
+            text: New belief or religion is causing a schism among members
+          - roll: { min: 58, max: 60 }
+            text: Operations are a false front for their true purpose
+          - roll: { min: 61, max: 63 }
+            text: Overdependence on failing or vulnerable technology
+          - roll: { min: 64, max: 66 }
+            text: Plagued by infighting or low morale
+          - roll: { min: 67, max: 69 }
+            text: Plotting to betray an allied faction
+          - roll: { min: 70, max: 72 }
+            text: Preparing a major offense or operation
+          - roll: { min: 73, max: 75 }
+            text: Pulling the strings of a leader or faction
+          - roll: { min: 76, max: 78 }
+            text: Recently acquired an unexpected fortune
+          - roll: { min: 79, max: 81 }
+            text: Secretly supporting a reviled faction
+          - roll: { min: 82, max: 84 }
+            text: Sheltering an infamous or dangerous fugitive
+          - roll: { min: 85, max: 87 }
+            text: Suffered destructive sabotage from within
+          - roll: { min: 88, max: 90 }
+            text: Suffering a shortage of key workers or personnel
+          - roll: { min: 91, max: 93 }
+            text: Uprising or revolt is brewing from within
+          - roll: { min: 94, max: 96 }
+            text: Vulnerable to attack or aggression
+          - roll: { min: 97, max: 100 }
+            text: '[Action](datasworn:oracle_rollable:starforged/core/action) + [Theme](datasworn:oracle_rollable:fe_runners/core/theme)'
+            template:
+              text: '{{text>oracle_rollable:starforged/core/action}} {{text>oracle_rollable:fe_runners/core/theme}}'
+          

@@ -1,0 +1,373 @@
+_id: fe_runners
+datasworn_version: '0.1.0'
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-08-10
+  title: 'Fe-Runners Rulebook'
+  url: ttps://zombiecraig.itch.io/fe-runners
+  license: https://creativecommons.org/licenses/by-nc-sa/4.0
+  authors:
+    - name: Craig Smith
+oracles: 
+  malicious_entities:
+    name: Malicious Entities
+    oracle_type: tables
+    type: oracle_collection
+    _source:
+      <<: *Source
+      page: 67
+    summary: Use these tables for unknown viruses, worms, robots, AI and other programs you run into.
+    collections: 
+      entity:
+        name: Malicious Entity Oracles
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: &CollectionSource
+            <<: *Source
+            page: 67
+        contents:
+          scale:
+            name: Scale
+            oracle_type: table_text
+            type: oracle_rollable
+            _source:
+              <<: *CollectionSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Miniscule (bug size)
+              - roll: { min: 4, max: 10 }
+                text: Tiny (rodent size)
+              - roll: { min: 11, max: 25 }
+                text: Small (dog size)
+              - roll: { min: 26, max: 60 }
+                text: Medium (person size)
+              - roll: { min: 61, max: 90 }
+                text: Large (vehicle size)
+              - roll: { min: 91, max: 100 }
+                text: Huge (whale size)
+          basic_form:
+            name: Basic Form
+            oracle_type: table_text
+            type: oracle_rollable
+            _source:
+              <<: *CollectionSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Amoeba / pseudopod
+              - roll: { min: 4, max: 6 }
+                text: Amorphous / elemental
+              - roll: { min: 7, max: 12 }
+                text: Avian / winged
+              - roll: { min: 13, max: 19 }
+                text: Beast / mammal
+              - roll: { min: 20, max: 22 }
+                text: Crustation / shelled
+              - roll: { min: 23, max: 24 }
+                text: Fish / torpedo-shaped
+              - roll: { min: 25, max: 37 }
+                text: Humanoid / bi-pedal
+              - roll: { min: 38, max: 49 }
+                text: Insectoid / exoskeleton
+              - roll: { min: 50, max: 51 }
+                text: Jellyfish / gasbag
+              - roll: { min: 52, max: 56 }
+                text: Lizard / reptilian
+              - roll: { min: 57, max: 58 }
+                text: Octopoid / tentacled
+              - roll: { min: 59, max: 63 }
+                text: Plant / fungus
+              - roll: { min: 64, max: 65 }
+                text: Ray / flat-bodied
+              - roll: { min: 66, max: 68 }
+                text: Snake / eel
+              - roll: { min: 69, max: 83 }
+                text: Spider / web-weaver
+              - roll: { min: 84, max: 85 }
+                text: Starfish / symmetrical
+              - roll: { min: 86, max: 90 }
+                text: Worm / slug / larva
+              - roll: { min: 91, max: 100 }
+                text: Roll Twice
+                oracle_rolls:
+                  - oracle: oracle_rollable:fe_runners/malicious_entities/entity/basic_form
+                    auto: true
+                    number_of_rolls: 2
+          first_look:
+            name: Malicious Entity First Look
+            type: oracle_rollable
+            oracle_type: table_text
+            recommended_rolls:
+              min: 1
+              max: 2
+            _source:
+              <<: *CollectionSource
+            rows:
+              - roll: { min: 1, max: 2 }
+                text: Antennae or sensors
+              - roll: { min: 3, max: 4 }
+                text: Armored
+              - roll: { min: 5, max: 6 }
+                text: Beautiful
+              - roll: { min: 7, max: 8 }
+                text: Biotech
+              - roll: { min: 9, max: 10 }
+                text: Bony or gaunt
+              - roll: { min: 11, max: 12 }
+                text: Brutish or muscled
+              - roll: { min: 13, max: 14 }
+                text: Camouflage
+              - roll: { min: 15, max: 16 }
+                text: Claws or talons
+              - roll: { min: 17, max: 18 }
+                text: Comprised of many entities
+              - roll: { min: 19, max: 20 }
+                text: Corrupted or Infected
+              - roll: { min: 21, max: 22 }
+                text: Crystalline
+              - roll: { min: 23, max: 24 }
+                text: Dead or undead
+              - roll: { min: 25, max: 26 }
+                text: Distinctive Markings
+              - roll: { min: 27, max: 28 }
+                text: Distinctive Sounds
+              - roll: { min: 29, max: 30 }
+                text: Elongated Neck
+              - roll: { min: 31, max: 32 }
+                text: Energy Emissions
+              - roll: { min: 33, max: 34 }
+                text: Extra limbs
+              - roll: { min: 35, max: 36 }
+                text: Faceless or inexpressive
+              - roll: { min: 37, max: 38 }
+                text: Fangs or rows of teeth
+              - roll: { min: 39, max: 40 }
+                text: Feathered
+              - roll: { min: 41, max: 42 }
+                text: Fungal growth
+              - roll: { min: 43, max: 44 }
+                text: Fur, hair or filaments
+              - roll: { min: 45, max: 46 }
+                text: Glowing eyes
+              - roll: { min: 47, max: 48 }
+                text: Graceful
+              - roll: { min: 49, max: 50 }
+                text: Hideous
+              - roll: { min: 51, max: 52 }
+                text: Hooded or crested
+              - roll: { min: 53, max: 54 }
+                text: Immobile or trapped
+              - roll: { min: 55, max: 56 }
+                text: Injured or scarred
+              - roll: { min: 57, max: 58 }
+                text: Iridescent
+              - roll: { min: 59, max: 60 }
+                text: Long-limbed
+              - roll: { min: 61, max: 62 }
+                text: Luminescent
+              - roll: { min: 63, max: 64 }
+                text: Mandible or pincers
+              - roll: { min: 65, max: 66 }
+                text: Many-eyed
+              - roll: { min: 67, max: 68 }
+                text: Mechanical
+              - roll: { min: 69, max: 70 }
+                text: Mineral or metallic
+              - roll: { min: 71, max: 72 }
+                text: Multi-jointed
+              - roll: { min: 73, max: 74 }
+                text: Multi-segmented body
+              - roll: { min: 75, max: 76 }
+                text: Ornamented or colorful
+              - roll: { min: 77, max: 78 }
+                text: Oversized mouth
+              - roll: { min: 79, max: 80 }
+                text: Prominent tail
+              - roll: { min: 81, max: 82 }
+                text: Prominent wings or fins
+              - roll: { min: 83, max: 84 }
+                text: Ridges or plates
+              - roll: { min: 85, max: 86 }
+                text: Scaled
+              - roll: { min: 87, max: 88 }
+                text: Single-eyed or oversized eyes
+              - roll: { min: 89, max: 90 }
+                text: Spikes or spines
+              - roll: { min: 91, max: 92 }
+                text: Stinger or barbs
+              - roll: { min: 93, max: 94 }
+                text: Tentacles or tendrils
+              - roll: { min: 95, max: 96 }
+                text: Translucent
+              - roll: { min: 97, max: 98 }
+                text: Treaded locomotion
+              - roll: { min: 99, max: 100 }
+                text: Visible symbiote
+          encountered_behavior:
+            name: Encountered Behavior
+            type: oracle_rollable
+            oracle_type: table_text
+            _source:
+              <<: *CollectionSource
+            rows:
+              - roll: { min: 1, max: 5 }
+                text: Ambusher
+              - roll: { min: 6, max: 10 }
+                text: Predator
+              - roll: { min: 11, max: 14 }
+                text: Builder
+              - roll: { min: 15, max: 19 }
+                text: Camouflager
+              - roll: { min: 20, max: 24 }
+                text: Chaotic
+              - roll: { min: 25, max: 29 }
+                text: Hibernator
+              - roll: { min: 30, max: 33 }
+                text: Hoarder
+              - roll: { min: 34, max: 37 }
+                text: Hunter
+              - roll: { min: 38, max: 41 }
+                text: Inquisitive
+              - roll: { min: 42, max: 46 }
+                text: Lurer
+              - roll: { min: 47, max: 51 }
+                text: Migratory
+              - roll: { min: 52, max: 55 }
+                text: Mimic
+              - roll: { min: 56, max: 60 }
+                text: Nester
+              - roll: { min: 61, max: 65 }
+                text: Pack hunter
+              - roll: { min: 66, max: 70 }
+                text: Parasitic
+              - roll: { min: 71, max: 75 }
+                text: Power drainer
+              - roll: { min: 76, max: 80 }
+                text: Prey
+              - roll: { min: 81, max: 85 }
+                text: Protector
+              - roll: { min: 86, max: 90 }
+                text: Scavenger
+              - roll: { min: 91, max: 95 }
+                text: Tracker
+              - roll: { min: 96, max: 100 }
+                text: Roll twice
+                oracle_rolls: 
+                  - oracle: oracle_rollable:fe_runners/malicious_entities/entity/encountered_behavior
+                    auto: true
+                    number_of_rolls: 2
+          revealed_entity_aspect:
+            name: Revealed Entity Aspect
+            type: oracle_rollable
+            oracle_type: table_text
+            recommended_rolls:
+              min: 1
+              max: 2
+            _source:
+              <<: *CollectionSource
+            rows:
+              - roll: { min: 1, max: 2 }
+                text: Adaptable
+              - roll: { min: 3, max: 4 }
+                text: Alternative movement
+              - roll: { min: 5, max: 6 }
+                text: Alternative senses / detection
+              - roll: { min: 7, max: 8 }
+                text: Broadcaster
+              - roll: { min: 9, max: 10 }
+                text: Burrower
+              - roll: { min: 11, max: 12 }
+                text: Causes interference
+              - roll: { min: 13, max: 14 }
+                text: Chameleon
+              - roll: { min: 15, max: 16 }
+                text: Clever
+              - roll: { min: 17, max: 18 }
+                text: Consumes Energy
+              - roll: { min: 19, max: 20 }
+                text: Controlled or puppeteered
+              - roll: { min: 21, max: 22 }
+                text: Controls lesser entities
+              - roll: { min: 23, max: 24 }
+                text: Corrupting
+              - roll: { min: 25, max: 26 }
+                text: Data thief
+              - roll: { min: 27, max: 28 }
+                text: Death fascination
+              - roll: { min: 29, max: 30 }
+                text: Electric shock
+              - roll: { min: 31, max: 32 }
+                text: Encryptor
+              - roll: { min: 33, max: 34 }
+                text: Energy manipulation
+              - roll: { min: 35, max: 36 }
+                text: Enhanced senses
+              - roll: { min: 37, max: 38 }
+                text: Enhanced strength
+              - roll: { min: 39, max: 40 }
+                text: Enhanced protections
+              - roll: { min: 41, max: 42 }
+                text: Entangling
+              - roll: { min: 43, max: 44 }
+                text: Extradimensional
+              - roll: { min: 45, max: 46 }
+                text: Hallucinogenic
+              - roll: { min: 47, max: 48 }
+                text: Hidden symbiote
+              - roll: { min: 49, max: 50 }
+                text: Hive mind
+              - roll: { min: 51, max: 52 }
+                text: Honeypot
+              - roll: { min: 53, max: 54 }
+                text: Illusionary
+              - roll: { min: 55, max: 56 }
+                text: Imprisoner
+              - roll: { min: 57, max: 58 }
+                text: Infected
+              - roll: { min: 59, max: 60 }
+                text: Infectious
+              - roll: { min: 61, max: 62 }
+                text: Intimidating threat display
+              - roll: { min: 63, max: 64 }
+                text: Limited sense
+              - roll: { min: 65, max: 66 }
+                text: Linked to environment
+              - roll: { min: 67, max: 68 }
+                text: Mental influence or control
+              - roll: { min: 69, max: 70 }
+                text: Metamorphic
+              - roll: { min: 71, max: 72 }
+                text: Misinformation
+              - roll: { min: 73, max: 74 }
+                text: Paralytic toxin
+              - roll: { min: 75, max: 76 }
+                text: Parasitic
+              - roll: { min: 77, max: 78 }
+                text: Power source
+              - roll: { min: 79, max: 80 }
+                text: Projectile attack
+              - roll: { min: 81, max: 82 }
+                text: Regeneration
+              - roll: { min: 83, max: 84 }
+                text: Replication
+              - roll: { min: 85, max: 86 }
+                text: Sacrificial defense
+              - roll: { min: 87, max: 88 }
+                text: Shapechanger
+              - roll: { min: 89, max: 90 }
+                text: Spawns offspring
+              - roll: { min: 91, max: 92 }
+                text: Telekinetic
+              - roll: { min: 93, max: 94 }
+                text: Teleportation
+              - roll: { min: 95, max: 96 }
+                text: Territorial
+              - roll: { min: 97, max: 98 }
+                text: Warps time
+              - roll: { min: 99, max: 100 }
+                text: Unreliable
+
+
+
+

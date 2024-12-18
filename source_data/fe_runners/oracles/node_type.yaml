@@ -1,0 +1,2410 @@
+_id: fe_runners
+datasworn_version: '0.1.0'
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-08-10
+  title: 'Fe-Runners Rulebook'
+  url: ttps://zombiecraig.itch.io/fe-runners
+  license: https://creativecommons.org/licenses/by-nc-sa/4.0
+  authors:
+    - name: Craig Smith
+oracles: 
+  node_type:
+    name: Node Types
+    oracle_type: tables
+    type: oracle_collection
+    _source:
+      <<: *Source
+      page: 79
+    summary: Use when you [Explore the System](datasworn:move:fe_runners/exploration/explore_the_system) to help describe your area.
+    collections: 
+      social:
+        name: Social / Communications
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: &SocialCollectionSource
+            <<: *Source
+            page: 79
+        contents: 
+          area:
+            <<: &Area
+              name: Area
+              summary: The general area type
+              oracle_type: table_text
+              type: oracle_rollable
+            _source:
+              <<: *SocialCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Welcome Area
+              - roll: { min: 11, max: 30 }
+                text: Corridor / Hallway
+              - roll: { min: 31, max: 50 }
+                text: Meeting Area
+              - roll: { min: 51, max: 69 }
+                text: Private Area
+              - roll: { min: 70, max: 75 }
+                text: Public Postings
+              - roll: { min: 76, max: 84 }
+                text: Entertainment
+              - roll: { min: 85, max: 95 }
+                text: Large room or opening
+              - roll: { min: 96, max: 100 }
+                text: Data Lockers / Storage
+          feature:
+            <<: &Feature
+              name: Feature
+              summary: A feature of the area
+              oracle_type: table_text
+              type: oracle_rollable
+            _source:
+              <<: *SocialCollectionSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Very Noisy
+              - roll: { min: 4, max: 15 }
+                text: Lots of people
+              - roll: { min: 16, max: 18 }
+                text: Empty
+              - roll: { min: 19, max: 20 }
+                text: Live event is happening
+              - roll: { min: 21, max: 22 }
+                text: Images everywhere
+              - roll: { min: 23, max: 24 }
+                text: Information scattered
+              - roll: { min: 25, max: 26 }
+                text: Celebrity guest
+              - roll: { min: 27, max: 28 }
+                text: Corporate Sponsored
+              - roll: { min: 29, max: 30 }
+                text: Very specialized area
+              - roll: { min: 31, max: 32 }
+                text: Evidence of Ex-lover or partner
+              - roll: { min: 33, max: 34 }
+                text: Recognize family
+              - roll: { min: 35, max: 38 }
+                text: Monument
+              - roll: { min: 39, max: 42 }
+                text: Games and Entertainment
+              - roll: { min: 43, max: 45 }
+                text: Directory of people
+              - roll: { min: 46, max: 49 }
+                text: Politician
+              - roll: { min: 50, max: 59 }
+                text: Unexpected area
+              - roll: { min: 60, max: 62 }
+                text: Themed for romance
+              - roll: { min: 63, max: 66 }
+                text: Secret communication
+              - roll: { min: 67, max: 70 }
+                text: Lots of terminals
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Feature
+          peril:
+            <<: &Peril
+              name: Peril
+              summary: A Peril
+              oracle_type: table_text
+              type: oracle_rollable
+            _source:
+              <<: *SocialCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: You have been recognized
+              - roll: { min: 11, max: 20 }
+                text: The communication is encrypted
+              - roll: { min: 21, max: 30 }
+                text: You need a higher access level
+              - roll: { min: 31, max: 40 }
+                text: Someone has taken interest in you
+              - roll: { min: 41, max: 50 }
+                text: You are being monitored
+              - roll: { min: 51, max: 60 }
+                text: You are being traced
+              - roll: { min: 61, max: 70 }
+                text: You found data on you
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Peril
+          opportunity:
+            <<: &Opportunity
+              name: Opportunity
+              summary: An Opportunity
+              oracle_type: table_text
+              type: oracle_rollable
+            _source:
+              <<: *SocialCollectionSource
+            rows:
+              - roll: { min: 1 , max: 14 }
+                text: You find a helpful profile
+              - roll: { min: 15, max: 29 }
+                text: You locate helpful comms
+              - roll: { min: 30, max: 44 }
+                text: You identify a useful event
+              - roll: { min: 45, max: 59 }
+                text: You locate a long lost friend
+              - roll: { min: 60, max: 70 }
+                text: You find an interesting person
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Opportunity
+      commerce:
+        name: Commerce
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: &CommerceCollectionSource
+            <<: *Source
+            page: 80
+        contents: 
+          area:
+            <<: *Area
+            _source:
+              <<: *CommerceCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: New products
+              - roll: { min: 11, max: 30 }
+                text: Advertising Area
+              - roll: { min: 31, max: 50 }
+                text: Used Goods
+              - roll: { min: 51, max: 69 }
+                text: Defective
+              - roll: { min: 70, max: 75 }
+                text: Research
+              - roll: { min: 76, max: 84 }
+                text: Hallway
+              - roll: { min: 85, max: 95 }
+                text: Call Center
+              - roll: { min: 96, max: 100 }
+                text: Storage
+          feature:
+            <<: *Feature
+            _source:
+              <<: *CommerceCollectionSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Unreleased product
+              - roll: { min: 4, max: 15 }
+                text: Business Plans
+              - roll: { min: 16, max: 18 }
+                text: Lots of screens
+              - roll: { min: 19, max: 20 }
+                text: Vending area
+              - roll: { min: 21, max: 22 }
+                text: Public Postings
+              - roll: { min: 23, max: 24 }
+                text: Large crowd
+              - roll: { min: 25, max: 26 }
+                text: Disgruntled customer
+              - roll: { min: 27, max: 28 }
+                text: Workers conversing
+              - roll: { min: 29, max: 30 }
+                text: Large inventory
+              - roll: { min: 31, max: 32 }
+                text: Falling apart
+              - roll: { min: 33, max: 34 }
+                text: Opulent
+              - roll: { min: 35, max: 38 }
+                text: Pushy aggressive salesperson
+              - roll: { min: 39, max: 42 }
+                text: Theft prevention services
+              - roll: { min: 43, max: 45 }
+                text: Overworked employee
+              - roll: { min: 46, max: 49 }
+                text: Empty
+              - roll: { min: 50, max: 59 }
+                text: Arguing customers
+              - roll: { min: 60, max: 62 }
+                text: Very mundane
+              - roll: { min: 63, max: 66 }
+                text: Extra large
+              - roll: { min: 67, max: 70 }
+                text: Dirty
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Feature
+          peril:
+            <<: *Peril
+            _source:
+              <<: *CommerceCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Selling something unexpected
+              - roll: { min: 11, max: 20 }
+                text: Security guards on to you
+              - roll: { min: 21, max: 30 }
+                text: Triggered anti-theft system
+              - roll: { min: 31, max: 40 }
+                text: Front for something else
+              - roll: { min: 41, max: 50 }
+                text: Advertising system identified you
+              - roll: { min: 51, max: 60 }
+                text: Something nefarious is here
+              - roll: { min: 61, max: 70 }
+                text: Extra security
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Peril
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *CommerceCollectionSource
+            rows:
+              - roll: { min: 1 , max: 14 }
+                text: Bank Transfer Area
+              - roll: { min: 15, max: 29 }
+                text: Contact information
+              - roll: { min: 30, max: 44 }
+                text: Design documentation
+              - roll: { min: 45, max: 59 }
+                text: Abundance of supplies
+              - roll: { min: 60, max: 70 }
+                text: Additional insight is gained
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Opportunity
+      gaming:
+        name: Gaming
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: &GamingCollectionSource
+            <<: *Source
+            page: 80
+        contents: 
+          area:
+            <<: *Area
+            _source:
+              <<: *GamingCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Lobby
+              - roll: { min: 11, max: 30 }
+                text: Convention Area
+              - roll: { min: 31, max: 50 }
+                text: Backroom
+              - roll: { min: 51, max: 69 }
+                text: Snack Area
+              - roll: { min: 70, max: 75 }
+                text: Play Area
+              - roll: { min: 76, max: 84 }
+                text: Contests
+              - roll: { min: 85, max: 95 }
+                text: Networking
+              - roll: { min: 96, max: 100 }
+                text: Storage
+          feature:
+            <<: *Feature
+            _source:
+              <<: *GamingCollectionSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Empty
+              - roll: { min: 4, max: 15 }
+                text: Lots of noise
+              - roll: { min: 16, max: 18 }
+                text: Many spectators
+              - roll: { min: 19, max: 20 }
+                text: Special Event
+              - roll: { min: 21, max: 22 }
+                text: Tournament
+              - roll: { min: 23, max: 24 }
+                text: Rare Items
+              - roll: { min: 25, max: 26 }
+                text: Themed Event
+              - roll: { min: 27, max: 28 }
+                text: Corporate sponsored
+              - roll: { min: 29, max: 30 }
+                text: In shambles
+              - roll: { min: 31, max: 32 }
+                text: Big screens and loud speakers
+              - roll: { min: 33, max: 34 }
+                text: Celebrity announcer
+              - roll: { min: 35, max: 38 }
+                text: Pyrotechnics
+              - roll: { min: 39, max: 42 }
+                text: Low budget
+              - roll: { min: 43, max: 45 }
+                text: Recruiting
+              - roll: { min: 46, max: 49 }
+                text: Sense illegal activity
+              - roll: { min: 50, max: 59 }
+                text: A loud argument
+              - roll: { min: 60, max: 62 }
+                text: Live Streaming
+              - roll: { min: 63, max: 66 }
+                text: Influencer is present
+              - roll: { min: 67, max: 70 }
+                text: Action is about to start
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Feature
+          peril:
+            <<: *Peril
+            _source:
+              <<: *GamingCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Rigged systems
+              - roll: { min: 11, max: 20 }
+                text: Mafia operated
+              - roll: { min: 21, max: 30 }
+                text: You’ve been challenged
+              - roll: { min: 31, max: 40 }
+                text: Goons are after you
+              - roll: { min: 41, max: 50 }
+                text: High stakes match
+              - roll: { min: 51, max: 60 }
+                text: Opponent is cheating
+              - roll: { min: 61, max: 70 }
+                text: You are disadvantaged
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Peril
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *GamingCollectionSource
+            rows:
+              - roll: { min: 1 , max: 14 }
+                text: You discover a secret
+              - roll: { min: 15, max: 29 }
+                text: You find a backdoor
+              - roll: { min: 30, max: 44 }
+                text: A group you know is here
+              - roll: { min: 45, max: 59 }
+                text: You have a knack for this game
+              - roll: { min: 60, max: 70 }
+                text: Discover insight on a future game
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Opportunity
+      entertainment:
+        name: Entertainment
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: &EntertainmentCollectionSource
+            <<: *Source
+            page: 81
+        contents:
+          area:
+            <<: *Area
+            _source:
+              <<: *EntertainmentCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Lobby
+              - roll: { min: 11, max: 30 }
+                text: Sporting activity
+              - roll: { min: 31, max: 50 }
+                text: Movie Room
+              - roll: { min: 51, max: 69 }
+                text: Restroom
+              - roll: { min: 70, max: 75 }
+                text: Food
+              - roll: { min: 76, max: 84 }
+                text: Drinking
+              - roll: { min: 85, max: 95 }
+                text: Social space
+              - roll: { min: 96, max: 100 }
+                text: Storage
+          feature:
+            <<: *Feature
+            _source:
+              <<: *EntertainmentCollectionSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Dirty
+              - roll: { min: 4, max: 15 }
+                text: Loud
+              - roll: { min: 16, max: 18 }
+                text: Very busy
+              - roll: { min: 19, max: 20 }
+                text: Rowdy groups
+              - roll: { min: 21, max: 22 }
+                text: Drunken fight breaks out
+              - roll: { min: 23, max: 24 }
+                text: Lots of kids
+              - roll: { min: 25, max: 26 }
+                text: Influencer is present
+              - roll: { min: 27, max: 28 }
+                text: Celebrity event
+              - roll: { min: 29, max: 30 }
+                text: Party
+              - roll: { min: 31, max: 32 }
+                text: Sparse
+              - roll: { min: 33, max: 34 }
+                text: Couples fighting
+              - roll: { min: 35, max: 38 }
+                text: Celebration
+              - roll: { min: 39, max: 42 }
+                text: Popular band or music
+              - roll: { min: 43, max: 45 }
+                text: Someone catches your eye
+              - roll: { min: 46, max: 49 }
+                text: First day event
+              - roll: { min: 50, max: 59 }
+                text: Overcrowded
+              - roll: { min: 60, max: 62 }
+                text: Master of ceremonies is here
+              - roll: { min: 63, max: 66 }
+                text: Date night
+              - roll: { min: 67, max: 70 }
+                text: Mellow vibes
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Feature
+          peril:
+            <<: *Peril
+            _source:
+              <<: *EntertainmentCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Guards don’t want you here
+              - roll: { min: 11, max: 20 }
+                text: You are in the middle of a fight
+              - roll: { min: 21, max: 30 }
+                text: Blocked by VIP only
+              - roll: { min: 31, max: 40 }
+                text: Enemy is here
+              - roll: { min: 41, max: 50 }
+                text: Someone from your past
+              - roll: { min: 51, max: 60 }
+                text: You are involved in drama
+              - roll: { min: 61, max: 70 }
+                text: Extra surveillance
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Peril
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *EntertainmentCollectionSource
+            rows:
+              - roll: { min: 1 , max: 14 }
+                text: A friend is here
+              - roll: { min: 15, max: 29 }
+                text: A useful contact
+              - roll: { min: 30, max: 44 }
+                text: Gossip leads to new information
+              - roll: { min: 45, max: 59 }
+                text: Meet a celebrity
+              - roll: { min: 60, max: 70 }
+                text: Invited to VIP area
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Opportunity
+      education:
+        name: Education
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: &EducationCollectionSource
+            <<: *Source
+            page: 82
+        contents:
+          area:
+            <<: *Area
+            _source:
+              <<: *EducationCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Classroom
+              - roll: { min: 11, max: 30 }
+                text: Teacher’s Lounge
+              - roll: { min: 31, max: 50 }
+                text: Library
+              - roll: { min: 51, max: 69 }
+                text: Lab
+              - roll: { min: 70, max: 75 }
+                text: Presentation Area
+              - roll: { min: 76, max: 84 }
+                text: Secretary
+              - roll: { min: 85, max: 95 }
+                text: Hallway
+              - roll: { min: 96, max: 100 }
+                text: Server Room
+          feature:
+            <<: *Feature
+            _source:
+              <<: *EducationCollectionSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Eerily quiet
+              - roll: { min: 4, max: 15 }
+                text: Bustling with students
+              - roll: { min: 16, max: 18 }
+                text: The superintendent is here
+              - roll: { min: 19, max: 20 }
+                text: An angry parent is here
+              - roll: { min: 21, max: 22 }
+                text: Students studying
+              - roll: { min: 23, max: 24 }
+                text: Friends hanging out
+              - roll: { min: 25, max: 26 }
+                text: Someone is getting bullied
+              - roll: { min: 27, max: 28 }
+                text: A student romance
+              - roll: { min: 29, max: 30 }
+                text: Posters about an event
+              - roll: { min: 31, max: 32 }
+                text: Some students loitering
+              - roll: { min: 33, max: 34 }
+                text: Teacher hiding out
+              - roll: { min: 35, max: 38 }
+                text: An animal / bot is loose
+              - roll: { min: 39, max: 42 }
+                text: Student hacker
+              - roll: { min: 43, max: 45 }
+                text: Mascot
+              - roll: { min: 46, max: 49 }
+                text: Large statue / monument
+              - roll: { min: 50, max: 59 }
+                text: Data terminals
+              - roll: { min: 60, max: 62 }
+                text: Alarm system
+              - roll: { min: 63, max: 66 }
+                text: Corporate sponsored
+              - roll: { min: 67, max: 70 }
+                text: Government sponsored
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Feature
+          peril:
+            <<: *Peril
+            _source:
+              <<: *EducationCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Virus /  Corruption
+              - roll: { min: 11, max: 20 }
+                text: You get unwanted attention
+              - roll: { min: 21, max: 30 }
+                text: An alarm is triggered
+              - roll: { min: 31, max: 40 }
+                text: Extra security here
+              - roll: { min: 41, max: 50 }
+                text: Dangerous new research
+              - roll: { min: 51, max: 60 }
+                text: You stand out
+              - roll: { min: 61, max: 70 }
+                text: You are involved in a dispute
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Peril
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *EducationCollectionSource
+            rows:
+              - roll: { min: 1 , max: 14 }
+                text: You find someone very smart
+              - roll: { min: 15, max: 29 }
+                text: You uncover new knowledge
+              - roll: { min: 30, max: 44 }
+                text: You find a new connection
+              - roll: { min: 45, max: 59 }
+                text: You learn something new
+              - roll: { min: 60, max: 70 }
+                text: You find the resource you need
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Opportunity
+      news:
+        name: News & Media
+        type: oracle_collection
+        oracle_type: tables
+        _source: &NewsCollectionSource
+          <<: *Source
+          page: 83
+        contents:
+          area:
+            <<: *Area
+            _source:
+              <<: *NewsCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Lobby
+              - roll: { min: 11, max: 30 }
+                text: Screening Room
+              - roll: { min: 31, max: 50 }
+                text: Broadcasting
+              - roll: { min: 51, max: 69 }
+                text: Call center
+              - roll: { min: 70, max: 75 }
+                text: Hallway
+              - roll: { min: 76, max: 84 }
+                text: Meeting Room
+              - roll: { min: 85, max: 95 }
+                text: Archives
+              - roll: { min: 96, max: 100 }
+                text: Storage
+          feature:
+            <<: *Feature
+            _source:
+              <<: *NewsCollectionSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Bustling
+              - roll: { min: 4, max: 15 }
+                text: Fake
+              - roll: { min: 16, max: 18 }
+                text: Unreleased Info
+              - roll: { min: 19, max: 20 }
+                text: Celebrity
+              - roll: { min: 21, max: 22 }
+                text: Shocking
+              - roll: { min: 23, max: 24 }
+                text: Automated
+              - roll: { min: 25, max: 26 }
+                text: Lots of screens
+              - roll: { min: 27, max: 28 }
+                text: Scattered Information
+              - roll: { min: 29, max: 30 }
+                text: Pictures everywhere
+              - roll: { min: 31, max: 32 }
+                text: Angry parent
+              - roll: { min: 33, max: 34 }
+                text: Tragic
+              - roll: { min: 35, max: 38 }
+                text: Excitement
+              - roll: { min: 39, max: 42 }
+                text: Important people
+              - roll: { min: 43, max: 45 }
+                text: Cover up
+              - roll: { min: 46, max: 49 }
+                text: Propaganda
+              - roll: { min: 50, max: 59 }
+                text: Secret Romance
+              - roll: { min: 60, max: 62 }
+                text: Backstage drama
+              - roll: { min: 63, max: 66 }
+                text: Villainizing
+              - roll: { min: 67, max: 70 }
+                text: Lots of detail
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Feature
+          peril:
+            <<: *Peril
+            _source:
+              <<: *NewsCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: You are mentioned
+              - roll: { min: 11, max: 20 }
+                text: Someone you know is in trouble
+              - roll: { min: 21, max: 30 }
+                text: Data you need is inaccessible
+              - roll: { min: 31, max: 40 }
+                text: You learn shocking truth
+              - roll: { min: 41, max: 50 }
+                text: They are onto you
+              - roll: { min: 51, max: 60 }
+                text: You learn of a vicious cover up
+              - roll: { min: 61, max: 70 }
+                text: You are blackmailed
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Peril
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *NewsCollectionSource
+            rows:
+              - roll: { min: 1 , max: 14 }
+                text: You discover unknown truths
+              - roll: { min: 15, max: 29 }
+                text: You can make changes
+              - roll: { min: 30, max: 44 }
+                text: You learn of a contact
+              - roll: { min: 45, max: 59 }
+                text: You can alter perceptions
+              - roll: { min: 60, max: 70 }
+                text: You learn something first
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Opportunity
+      science:
+        name: Science & Research
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: &ScienceCollectionSource
+            <<: *Source
+            page: 84
+        contents:
+          area:
+            <<: *Area
+            _source:
+              <<: *ScienceCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Lab
+              - roll: { min: 11, max: 30 }
+                text: Waste and disposal
+              - roll: { min: 31, max: 50 }
+                text: Library
+              - roll: { min: 51, max: 69 }
+                text: Offices
+              - roll: { min: 70, max: 75 }
+                text: Meeting Room
+              - roll: { min: 76, max: 84 }
+                text: Experimental facility
+              - roll: { min: 85, max: 95 }
+                text: Prototyping
+              - roll: { min: 96, max: 100 }
+                text: Storage
+          feature:
+            <<: *Feature
+            _source:
+              <<: *ScienceCollectionSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Traces of blood
+              - roll: { min: 4, max: 15 }
+                text: Unknown vials
+              - roll: { min: 16, max: 18 }
+                text: Abandoned
+              - roll: { min: 19, max: 20 }
+                text: DNA information
+              - roll: { min: 21, max: 22 }
+                text: Hustling vibe
+              - roll: { min: 23, max: 24 }
+                text: Spotless
+              - roll: { min: 25, max: 26 }
+                text: Metal and Ceramic feel
+              - roll: { min: 27, max: 28 }
+                text: People look solum
+              - roll: { min: 29, max: 30 }
+                text: Glass enclosures
+              - roll: { min: 31, max: 32 }
+                text: Lots of monitors
+              - roll: { min: 33, max: 34 }
+                text: Someone is very excited
+              - roll: { min: 35, max: 38 }
+                text: A heated debate
+              - roll: { min: 39, max: 42 }
+                text: Research is scattered everywhere
+              - roll: { min: 43, max: 45 }
+                text: Incomprehensible
+              - roll: { min: 46, max: 49 }
+                text: Unexpected
+              - roll: { min: 50, max: 59 }
+                text: Corporate Influence
+              - roll: { min: 60, max: 62 }
+                text: Government Influence
+              - roll: { min: 63, max: 66 }
+                text: Underground Influence
+              - roll: { min: 67, max: 70 }
+                text: Lots of x rays
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Feature
+          peril:
+            <<: *Peril
+            _source:
+              <<: *ScienceCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Uncover a disturbing prototype
+              - roll: { min: 11, max: 20 }
+                text: Uncover awful practices
+              - roll: { min: 21, max: 30 }
+                text: You can’t understand the data
+              - roll: { min: 31, max: 40 }
+                text: Restricted access blocks your way
+              - roll: { min: 41, max: 50 }
+                text: Mistaken as a scientist
+              - roll: { min: 51, max: 60 }
+                text: Accidently taint research
+              - roll: { min: 61, max: 70 }
+                text: Exposed to something unknown
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Peril
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *ScienceCollectionSource
+            rows:
+              - roll: { min: 1 , max: 14 }
+                text: Learn something new
+              - roll: { min: 15, max: 29 }
+                text: First to know
+              - roll: { min: 30, max: 44 }
+                text: Identify a key researcher
+              - roll: { min: 45, max: 59 }
+                text: Find something you need
+              - roll: { min: 60, max: 70 }
+                text: Identify the area you are looking for
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Opportunity    
+      manufacturing:
+        name: Manufacturing
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: &ManufacturingCollectionSource
+            <<: *Source
+            page: 85
+        contents:
+          area:
+            <<: *Area
+            _source:
+              <<: *ManufacturingCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Lobby
+              - roll: { min: 11, max: 30 }
+                text: Raw Materials
+              - roll: { min: 31, max: 50 }
+                text: Shipping
+              - roll: { min: 51, max: 69 }
+                text: Transportation
+              - roll: { min: 70, max: 75 }
+                text: Hallway
+              - roll: { min: 76, max: 84 }
+                text: Monitoring Room
+              - roll: { min: 85, max: 95 }
+                text: Warehouse
+              - roll: { min: 96, max: 100 }
+                text: Storage
+          feature:
+            <<: *Feature
+            _source:
+              <<: *ManufacturingCollectionSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Less activity than expected
+              - roll: { min: 4, max: 15 }
+                text: Many unmarked containers
+              - roll: { min: 16, max: 18 }
+                text: Strange shipping info
+              - roll: { min: 19, max: 20 }
+                text: Clean industrial feel
+              - roll: { min: 21, max: 22 }
+                text: Unorganized chaos
+              - roll: { min: 23, max: 24 }
+                text: Angry foreman
+              - roll: { min: 25, max: 26 }
+                text: Robotic workforce
+              - roll: { min: 27, max: 28 }
+                text: Automated
+              - roll: { min: 29, max: 30 }
+                text: Extra security cameras
+              - roll: { min: 31, max: 32 }
+                text: Strange music is playing
+              - roll: { min: 33, max: 34 }
+                text: Break time
+              - roll: { min: 35, max: 38 }
+                text: Early prototypes lay about
+              - roll: { min: 39, max: 42 }
+                text: Constructions robots
+              - roll: { min: 43, max: 45 }
+                text: Supervisor takes inventory
+              - roll: { min: 46, max: 49 }
+                text: Control terminals
+              - roll: { min: 50, max: 59 }
+                text: Supply chain info
+              - roll: { min: 60, max: 62 }
+                text: Very hot condition
+              - roll: { min: 63, max: 66 }
+                text: A technician is here
+              - roll: { min: 67, max: 70 }
+                text: Crowded with inventory
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Feature
+          peril:
+            <<: *Peril
+            _source:
+              <<: *ManufacturingCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Uncover awful work conditions
+              - roll: { min: 11, max: 20 }
+                text: Something important is leaving now
+              - roll: { min: 21, max: 30 }
+                text: Your goal is buried
+              - roll: { min: 31, max: 40 }
+                text: Something misfires and is unsafe
+              - roll: { min: 41, max: 50 }
+                text: A section breaks down
+              - roll: { min: 51, max: 60 }
+                text: You cause a production glitch
+              - roll: { min: 61, max: 70 }
+                text: Extra encryption
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Peril
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *ManufacturingCollectionSource
+            rows:
+              - roll: { min: 1 , max: 14 }
+                text: A piece of what you are searching
+              - roll: { min: 15, max: 29 }
+                text: A shortcut
+              - roll: { min: 30, max: 44 }
+                text: New insight or knowledge
+              - roll: { min: 45, max: 59 }
+                text: A chance to alter output
+              - roll: { min: 60, max: 70 }
+                text: A weakness is identified
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Opportunity 
+      legal:
+        name: Legal
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: &LegalCollectionSource
+            <<: *Source
+            page: 86
+        contents:
+          area:
+            <<: *Area
+            _source:
+              <<: *LegalCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Meeting Room
+              - roll: { min: 11, max: 30 }
+                text: Office
+              - roll: { min: 31, max: 50 }
+                text: Judiciary Center
+              - roll: { min: 51, max: 69 }
+                text: Private Rooms
+              - roll: { min: 70, max: 75 }
+                text: Detention facility
+              - roll: { min: 76, max: 84 }
+                text: Hallway
+              - roll: { min: 85, max: 95 }
+                text: Waiting Area
+              - roll: { min: 96, max: 100 }
+                text: Storage
+          feature:
+            <<: *Feature
+            _source:
+              <<: *LegalCollectionSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Stacks of documents
+              - roll: { min: 4, max: 15 }
+                text: Large area
+              - roll: { min: 16, max: 18 }
+                text: Many suits here
+              - roll: { min: 19, max: 20 }
+                text: Someone is crying
+              - roll: { min: 21, max: 22 }
+                text: Old school systems
+              - roll: { min: 23, max: 24 }
+                text: Terminals
+              - roll: { min: 25, max: 26 }
+                text: Mentally unstable person is yelling
+              - roll: { min: 27, max: 28 }
+                text: An officer is checking messages
+              - roll: { min: 29, max: 30 }
+                text: Paralegals are quietly researching
+              - roll: { min: 31, max: 32 }
+                text: Two people are arguing
+              - roll: { min: 33, max: 34 }
+                text: Graphic images
+              - roll: { min: 35, max: 38 }
+                text: News reports streaming
+              - roll: { min: 39, max: 42 }
+                text: Lots of reporters and media
+              - roll: { min: 43, max: 45 }
+                text: A protest
+              - roll: { min: 46, max: 49 }
+                text: Evidence
+              - roll: { min: 50, max: 59 }
+                text: Lots of cameras
+              - roll: { min: 60, max: 62 }
+                text: TV Screens
+              - roll: { min: 63, max: 66 }
+                text: An overhead announcement
+              - roll: { min: 67, max: 70 }
+                text: Statue
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Feature
+          peril:
+            <<: *Peril
+            _source:
+              <<: *LegalCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: A maniac attacks you
+              - roll: { min: 11, max: 20 }
+                text: Officers try to arrest you
+              - roll: { min: 21, max: 30 }
+                text: You discover something shocking
+              - roll: { min: 31, max: 40 }
+                text: Your way is blocked
+              - roll: { min: 41, max: 50 }
+                text: Extra security
+              - roll: { min: 51, max: 60 }
+                text: Find evidence on a friend
+              - roll: { min: 61, max: 70 }
+                text: You are recognized
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Peril
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *LegalCollectionSource
+            rows:
+              - roll: { min: 1 , max: 14 }
+                text: You identify something useful
+              - roll: { min: 15, max: 29 }
+                text: You recognize a name
+              - roll: { min: 30, max: 44 }
+                text: You locate a backdoor
+              - roll: { min: 45, max: 59 }
+                text: You know a worker here
+              - roll: { min: 60, max: 70 }
+                text: Alter something in your favor
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Opportunity
+      hospitality:
+        name: Hospitality
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: &HospitalityCollectionSource
+            <<: *Source
+            page: 87
+        contents:
+          area:
+            <<: *Area
+            _source:
+              <<: *HospitalityCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Call Center
+              - roll: { min: 11, max: 30 }
+                text: Guest Room
+              - roll: { min: 31, max: 50 }
+                text: Conference Room
+              - roll: { min: 51, max: 69 }
+                text: Office Area
+              - roll: { min: 70, max: 75 }
+                text: Reception
+              - roll: { min: 76, max: 84 }
+                text: Pool
+              - roll: { min: 85, max: 95 }
+                text: Food
+              - roll: { min: 96, max: 100 }
+                text: Storage
+          feature:
+            <<: *Feature
+            _source:
+              <<: *HospitalityCollectionSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Cleaning Service
+              - roll: { min: 4, max: 15 }
+                text: Angry guest
+              - roll: { min: 16, max: 18 }
+                text: Feels haunted
+              - roll: { min: 19, max: 20 }
+                text: Derelict
+              - roll: { min: 21, max: 22 }
+                text: Luxurious
+              - roll: { min: 23, max: 24 }
+                text: Bug Infested
+              - roll: { min: 25, max: 26 }
+                text: Romantic Interlude
+              - roll: { min: 27, max: 28 }
+                text: Party
+              - roll: { min: 29, max: 30 }
+                text: VIP Guest
+              - roll: { min: 31, max: 32 }
+                text: Repairman fixing something
+              - roll: { min: 33, max: 34 }
+                text: Vending machines
+              - roll: { min: 35, max: 38 }
+                text: Comfy surroundings
+              - roll: { min: 39, max: 42 }
+                text: Communication Booth
+              - roll: { min: 43, max: 45 }
+                text: Political event
+              - roll: { min: 46, max: 49 }
+                text: Vacationers
+              - roll: { min: 50, max: 59 }
+                text: Lots of tourist swag
+              - roll: { min: 60, max: 62 }
+                text: Hidden cameras
+              - roll: { min: 63, max: 66 }
+                text: Signs of struggle
+              - roll: { min: 67, max: 70 }
+                text: Sporadic electricity
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Feature
+          peril:
+            <<: *Peril
+            _source:
+              <<: *HospitalityCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Uncover a stealth operation
+              - roll: { min: 11, max: 20 }
+                text: Run into an illegal exchange
+              - roll: { min: 21, max: 30 }
+                text: An enemy has tracked you here
+              - roll: { min: 31, max: 40 }
+                text: Staff is alerted to you
+              - roll: { min: 41, max: 50 }
+                text: A strong physical control blocks you
+              - roll: { min: 51, max: 60 }
+                text: A stalker finds you
+              - roll: { min: 61, max: 70 }
+                text: Infestation
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Peril
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *HospitalityCollectionSource
+            rows:
+              - roll: { min: 1 , max: 14 }
+                text: You locate a target
+              - roll: { min: 15, max: 29 }
+                text: You can access the guest feed
+              - roll: { min: 30, max: 44 }
+                text: You locate an unused area
+              - roll: { min: 45, max: 59 }
+                text: You find a skeleton key
+              - roll: { min: 60, max: 70 }
+                text: You find a hidden passage
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Opportunity
+      advertising:
+        name: Advertising & Marketing
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: &AdvertisingCollectionSource
+            <<: *Source
+            page: 88
+        contents:
+          area:
+            <<: *Area
+            _source:
+              <<: *AdvertisingCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Office Room
+              - roll: { min: 11, max: 30 }
+                text: Meeting Room
+              - roll: { min: 31, max: 50 }
+                text: Large cubicle space
+              - roll: { min: 51, max: 69 }
+                text: Graphic Design
+              - roll: { min: 70, max: 75 }
+                text: Call Center
+              - roll: { min: 76, max: 84 }
+                text: Exec Room
+              - roll: { min: 85, max: 95 }
+                text: Sales floor
+              - roll: { min: 96, max: 100 }
+                text: Storage
+          feature:
+            <<: *Feature
+            _source:
+              <<: *AdvertisingCollectionSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Posters and images
+              - roll: { min: 4, max: 15 }
+                text: A jingle plays on repeat
+              - roll: { min: 16, max: 18 }
+                text: Ongoing sales calls
+              - roll: { min: 19, max: 20 }
+                text: Foam model
+              - roll: { min: 21, max: 22 }
+                text: Many televisions
+              - roll: { min: 23, max: 24 }
+                text: Rowdy celebration
+              - roll: { min: 25, max: 26 }
+                text: Inflatable mascot
+              - roll: { min: 27, max: 28 }
+                text: Energy drinks everywhere
+              - roll: { min: 29, max: 30 }
+                text: Cluttered with colored notes
+              - roll: { min: 31, max: 32 }
+                text: Half done presentation
+              - roll: { min: 33, max: 34 }
+                text: Display of active sales
+              - roll: { min: 35, max: 38 }
+                text: Late night sales campaign
+              - roll: { min: 39, max: 42 }
+                text: Trophies
+              - roll: { min: 43, max: 45 }
+                text: Basketball hoop over a waste bin
+              - roll: { min: 46, max: 49 }
+                text: A bunch of shredders
+              - roll: { min: 50, max: 59 }
+                text: Signs of drug use
+              - roll: { min: 60, max: 62 }
+                text: Several models roam around
+              - roll: { min: 63, max: 66 }
+                text: Projection in center of area
+              - roll: { min: 67, max: 70 }
+                text: Lots of boxes
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Feature
+          peril:
+            <<: *Peril
+            _source:
+              <<: *AdvertisingCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Uncover a serious con operation
+              - roll: { min: 11, max: 20 }
+                text: Security has been alerted to you
+              - roll: { min: 21, max: 30 }
+                text: You find a stash of info about you
+              - roll: { min: 31, max: 40 }
+                text: Site is DarkNet controlled
+              - roll: { min: 41, max: 50 }
+                text: Key area is blocked / protected
+              - roll: { min: 51, max: 60 }
+                text: What you need has been relocated
+              - roll: { min: 61, max: 70 }
+                text: Strange encryption used
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Peril
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *AdvertisingCollectionSource
+            rows:
+              - roll: { min: 1 , max: 14 }
+                text: Stacks of customer data
+              - roll: { min: 15, max: 29 }
+                text: Locate sales processing center
+              - roll: { min: 30, max: 44 }
+                text: Interceptable comms
+              - roll: { min: 45, max: 59 }
+                text: Access to global analytics
+              - roll: { min: 60, max: 70 }
+                text: Can access their profiler software
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Opportunity
+      security:
+        name: Security
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: &SecurityCollectionSource
+            <<: *Source
+            page: 89
+        contents:
+          area:
+            <<: *Area
+            _source:
+              <<: *SecurityCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Secured Area
+              - roll: { min: 11, max: 30 }
+                text: R&D
+              - roll: { min: 31, max: 50 }
+                text: Testing Facility
+              - roll: { min: 51, max: 69 }
+                text: Work area
+              - roll: { min: 70, max: 75 }
+                text: Internal Comms
+              - roll: { min: 76, max: 84 }
+                text: Access Controls
+              - roll: { min: 85, max: 95 }
+                text: Data Center
+              - roll: { min: 96, max: 100 }
+                text: Storage
+          feature:
+            <<: *Feature
+            _source:
+              <<: *SecurityCollectionSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Red lasers scan the area
+              - roll: { min: 4, max: 15 }
+                text: Series of blinking servers
+              - roll: { min: 16, max: 18 }
+                text: Loud sounds of fans and coolant
+              - roll: { min: 19, max: 20 }
+                text: Digital sounds of whirling
+              - roll: { min: 21, max: 22 }
+                text: Roaming drones
+              - roll: { min: 23, max: 24 }
+                text: Everything has underglow
+              - roll: { min: 25, max: 26 }
+                text: Equipment covered in stickers
+              - roll: { min: 27, max: 28 }
+                text: Metal cages around everything
+              - roll: { min: 29, max: 30 }
+                text: Wires run everywhere
+              - roll: { min: 31, max: 32 }
+                text: Global maps projected on walls
+              - roll: { min: 33, max: 34 }
+                text: Streams of data
+              - roll: { min: 35, max: 38 }
+                text: Lots of monitors
+              - roll: { min: 39, max: 42 }
+                text: Series of buttons and controls
+              - roll: { min: 43, max: 45 }
+                text: Stacks of printouts / data
+              - roll: { min: 46, max: 49 }
+                text: A giant supercomputer
+              - roll: { min: 50, max: 59 }
+                text: Stacks of battery backups
+              - roll: { min: 60, max: 62 }
+                text: Dark room with only blinking lights
+              - roll: { min: 63, max: 66 }
+                text: Equipment
+              - roll: { min: 67, max: 70 }
+                text: Ergonomic furniture
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Feature
+          peril:
+            <<: *Peril
+            _source:
+              <<: *SecurityCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Extra security in this area
+              - roll: { min: 11, max: 20 }
+                text: A patrol approaches
+              - roll: { min: 21, max: 30 }
+                text: The systems have detected you
+              - roll: { min: 31, max: 40 }
+                text: A new type of encryption
+              - roll: { min: 41, max: 50 }
+                text: A guard bot is tracking you
+              - roll: { min: 51, max: 60 }
+                text: You location is being traced
+              - roll: { min: 61, max: 70 }
+                text: Rival Fe-Runner
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Peril
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *SecurityCollectionSource
+            rows:
+              - roll: { min: 1 , max: 14 }
+                text: Locate stockpile of assets
+              - roll: { min: 15, max: 29 }
+                text: Locate a secret
+              - roll: { min: 30, max: 44 }
+                text: Identify an access code
+              - roll: { min: 45, max: 59 }
+                text: Find a bypass
+              - roll: { min: 60, max: 70 }
+                text: Find a tool / weapon
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Opportunity        
+      law_enforcement:
+        name: Law Enforcement
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: &LECollecitonSource
+            <<: *Source
+            page: 90
+        contents:
+          area:
+            <<: *Area
+            _source:
+              <<: *LECollecitonSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Lobby
+              - roll: { min: 11, max: 30 }
+                text: Holding
+              - roll: { min: 31, max: 50 }
+                text: Surveillance
+              - roll: { min: 51, max: 69 }
+                text: Restrooms
+              - roll: { min: 70, max: 75 }
+                text: Cafeteria
+              - roll: { min: 76, max: 84 }
+                text: Maximum Security
+              - roll: { min: 85, max: 95 }
+                text: Evidence Room
+              - roll: { min: 96, max: 100 }
+                text: Storage
+          feature:
+            <<: *Feature
+            _source:
+              <<: *LECollecitonSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Series of wanted postings
+              - roll: { min: 4, max: 15 }
+                text: An officer who has fallen asleep
+              - roll: { min: 16, max: 18 }
+                text: Overcrowded
+              - roll: { min: 19, max: 20 }
+                text: Older
+              - roll: { min: 21, max: 22 }
+                text: Processing a lot of inmates
+              - roll: { min: 23, max: 24 }
+                text: A call comes in
+              - roll: { min: 25, max: 26 }
+                text: Additional security present
+              - roll: { min: 27, max: 28 }
+                text: There is a puddle on the floor
+              - roll: { min: 29, max: 30 }
+                text: Someone is screaming
+              - roll: { min: 31, max: 32 }
+                text: An alarm in the distance
+              - roll: { min: 33, max: 34 }
+                text: New group arrived
+              - roll: { min: 35, max: 38 }
+                text: You hear maniacal laughter
+              - roll: { min: 39, max: 42 }
+                text: Gang presence
+              - roll: { min: 43, max: 45 }
+                text: A detective is here
+              - roll: { min: 46, max: 49 }
+                text: Old boxes are stacked up
+              - roll: { min: 50, max: 59 }
+                text: Poor ventilation
+              - roll: { min: 60, max: 62 }
+                text: Intercom system
+              - roll: { min: 63, max: 66 }
+                text: Someone is crying
+              - roll: { min: 67, max: 70 }
+                text: Someone recently passed
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Feature
+          peril:
+            <<: *Peril
+            _source:
+              <<: *LECollecitonSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: A patrol approaches
+              - roll: { min: 11, max: 20 }
+                text: Something is tracking you
+              - roll: { min: 21, max: 30 }
+                text: You are being traced
+              - roll: { min: 31, max: 40 }
+                text: You route is blocked
+              - roll: { min: 41, max: 50 }
+                text: You uncover heinous corruption
+              - roll: { min: 51, max: 60 }
+                text: Witness abuse of the innocent
+              - roll: { min: 61, max: 70 }
+                text: You find info on yourself
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Peril
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *LECollecitonSource
+            rows:
+              - roll: { min: 1 , max: 14 }
+                text: You come across an access code
+              - roll: { min: 15, max: 29 }
+                text: You find info you are looking for
+              - roll: { min: 30, max: 44 }
+                text: You recognize someone
+              - roll: { min: 45, max: 59 }
+                text: Security is more laxed here
+              - roll: { min: 60, max: 70 }
+                text: You can alter something
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Opportunity 
+      military:
+        name: Military
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: &MilitaryCollectionSource
+            <<: *Source
+            page: 91
+        contents:
+          area:
+            <<: *Area
+            _source:
+              <<: *MilitaryCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Border Check
+              - roll: { min: 11, max: 30 }
+                text: High Security Area
+              - roll: { min: 31, max: 50 }
+                text: R&D
+              - roll: { min: 51, max: 69 }
+                text: Prototyping
+              - roll: { min: 70, max: 75 }
+                text: Surveillance
+              - roll: { min: 76, max: 84 }
+                text: Comms
+              - roll: { min: 85, max: 95 }
+                text: Barracks
+              - roll: { min: 96, max: 100 }
+                text: Storage
+          feature:
+            <<: *Feature
+            _source:
+              <<: *MilitaryCollectionSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Guard bots
+              - roll: { min: 4, max: 15 }
+                text: Soldiers standing around
+              - roll: { min: 16, max: 18 }
+                text: Practice drills
+              - roll: { min: 19, max: 20 }
+                text: Military crates
+              - roll: { min: 21, max: 22 }
+                text: Locked cabinets
+              - roll: { min: 23, max: 24 }
+                text: Monitors beeping nearby
+              - roll: { min: 25, max: 26 }
+                text: Uniform closet
+              - roll: { min: 27, max: 28 }
+                text: Live weapon system
+              - roll: { min: 29, max: 30 }
+                text: Announcement plays
+              - roll: { min: 31, max: 32 }
+                text: A siren is heard in the distance
+              - roll: { min: 33, max: 34 }
+                text: Soldiers catching a nap
+              - roll: { min: 35, max: 38 }
+                text: A high ranking officer is here
+              - roll: { min: 39, max: 42 }
+                text: A political tour is taking place
+              - roll: { min: 43, max: 45 }
+                text: Propaganda posters
+              - roll: { min: 46, max: 49 }
+                text: Walkie Talkies
+              - roll: { min: 50, max: 59 }
+                text: Encrypted drives
+              - roll: { min: 60, max: 62 }
+                text: A safe/vault is here
+              - roll: { min: 63, max: 66 }
+                text: Overwatch system
+              - roll: { min: 67, max: 70 }
+                text: Radio chatter
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Feature
+          peril:
+            <<: *Peril
+            _source:
+              <<: *MilitaryCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Soldiers performing a sweep
+              - roll: { min: 11, max: 20 }
+                text: You find your name
+              - roll: { min: 21, max: 30 }
+                text: A combat drone approaches
+              - roll: { min: 31, max: 40 }
+                text: You are being traced
+              - roll: { min: 41, max: 50 }
+                text: High security blocks your path
+              - roll: { min: 51, max: 60 }
+                text: A new weapon system stalks you
+              - roll: { min: 61, max: 70 }
+                text: Area is under attack
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Peril
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *MilitaryCollectionSource
+            rows:
+              - roll: { min: 1 , max: 14 }
+                text: You discover a plan/blueprints
+              - roll: { min: 15, max: 29 }
+                text: You find a clue
+              - roll: { min: 30, max: 44 }
+                text: You discover a useful asset
+              - roll: { min: 45, max: 59 }
+                text: The area becomes empty for awhile
+              - roll: { min: 60, max: 70 }
+                text: You find a shortcut
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Opportunity
+      healthcare:
+        name: Healthcare
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: &HealthcareCollectionSource
+            <<: *Source
+            page: 92
+        contents:
+          area:
+            <<: *Area
+            _source:
+              <<: *HealthcareCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Emergency Room
+              - roll: { min: 11, max: 30 }
+                text: Reception
+              - roll: { min: 31, max: 50 }
+                text: Surgery
+              - roll: { min: 51, max: 69 }
+                text: Security
+              - roll: { min: 70, max: 75 }
+                text: Medical Equipment
+              - roll: { min: 76, max: 84 }
+                text: Hallway
+              - roll: { min: 85, max: 95 }
+                text: Cafeteria
+              - roll: { min: 96, max: 100 }
+                text: Storage
+          feature:
+            <<: *Feature
+            _source:
+              <<: *HealthcareCollectionSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Liquids on the floor
+              - roll: { min: 4, max: 15 }
+                text: Machines beep and whirl
+              - roll: { min: 16, max: 18 }
+                text: Several doctors are here
+              - roll: { min: 19, max: 20 }
+                text: A patient wanders around
+              - roll: { min: 21, max: 22 }
+                text: Call for assistance
+              - roll: { min: 23, max: 24 }
+                text: TVs play local news and shows
+              - roll: { min: 25, max: 26 }
+                text: A child is here
+              - roll: { min: 27, max: 28 }
+                text: A bored security guard
+              - roll: { min: 29, max: 30 }
+                text: Some vending machines
+              - roll: { min: 31, max: 32 }
+                text: Hectic nurse is multi-tasking
+              - roll: { min: 33, max: 34 }
+                text: Lots of high tech medical equipment
+              - roll: { min: 35, max: 38 }
+                text: Monitors align the walls
+              - roll: { min: 39, max: 42 }
+                text: A bunch of flowers and cards
+              - roll: { min: 43, max: 45 }
+                text: Writings on the whiteboard
+              - roll: { min: 46, max: 49 }
+                text: Incoming ambulance
+              - roll: { min: 50, max: 59 }
+                text: Someone passes out
+              - roll: { min: 60, max: 62 }
+                text: A medical display
+              - roll: { min: 63, max: 66 }
+                text: X-Rays and diagnosis
+              - roll: { min: 67, max: 70 }
+                text: A game of solitaire
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Feature
+          peril:
+            <<: *Peril
+            _source:
+              <<: *HealthcareCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Accidently glitch medical equipment
+              - roll: { min: 11, max: 20 }
+                text: Your presence is known
+              - roll: { min: 21, max: 30 }
+                text: Surgery makes actions risky
+              - roll: { min: 31, max: 40 }
+                text: Information is hard to decipher
+              - roll: { min: 41, max: 50 }
+                text: Commotion is heading your way
+              - roll: { min: 51, max: 60 }
+                text: Security is looking for you
+              - roll: { min: 61, max: 70 }
+                text: A patient you know is in trouble
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Peril
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *HealthcareCollectionSource
+            rows:
+              - roll: { min: 1 , max: 14 }
+                text: You find an easy directory
+              - roll: { min: 15, max: 29 }
+                text: Security seems very laxed here
+              - roll: { min: 30, max: 44 }
+                text: The software is an old version
+              - roll: { min: 45, max: 59 }
+                text: You find a helpful reference
+              - roll: { min: 60, max: 70 }
+                text: You make a positive change
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Opportunity
+      infrastructure:
+        name: Infrastructure
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: &InfrastructureCollectionSource
+            <<: *Source
+            page: 93
+        contents:
+          area:
+            <<: *Area
+            _source:
+              <<: *InfrastructureCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Water Controls
+              - roll: { min: 11, max: 30 }
+                text: Energy Controls
+              - roll: { min: 31, max: 50 }
+                text: Disposal
+              - roll: { min: 51, max: 69 }
+                text: Security Room
+              - roll: { min: 70, max: 75 }
+                text: Vehicle Systems
+              - roll: { min: 76, max: 84 }
+                text: Communications
+              - roll: { min: 85, max: 95 }
+                text: Communications
+              - roll: { min: 96, max: 100 }
+                text: Storage
+          feature:
+            <<: *Feature
+            _source:
+              <<: *InfrastructureCollectionSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Pipes and tubes are everywhere
+              - roll: { min: 4, max: 15 }
+                text: Old equipment beeps
+              - roll: { min: 16, max: 18 }
+                text: Lots of strange gauges
+              - roll: { min: 19, max: 20 }
+                text: A box with lots of warnings
+              - roll: { min: 21, max: 22 }
+                text: Several crates
+              - roll: { min: 23, max: 24 }
+                text: A big red button
+              - roll: { min: 25, max: 26 }
+                text: Some graffiti
+              - roll: { min: 27, max: 28 }
+                text: Was that a rat?
+              - roll: { min: 29, max: 30 }
+                text: Warning labels
+              - roll: { min: 31, max: 32 }
+                text: Some old manuals
+              - roll: { min: 33, max: 34 }
+                text: Old archaic systems
+              - roll: { min: 35, max: 38 }
+                text: Several status monitors
+              - roll: { min: 39, max: 42 }
+                text: House size cylinders
+              - roll: { min: 43, max: 45 }
+                text: A klaxon can be heard
+              - roll: { min: 46, max: 49 }
+                text: Walkie-talkie chatter
+              - roll: { min: 50, max: 59 }
+                text: Some hard hats
+              - roll: { min: 60, max: 62 }
+                text: Green screen terminals
+              - roll: { min: 63, max: 66 }
+                text: Chemical waste
+              - roll: { min: 67, max: 70 }
+                text: A ventilation shaft
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Feature
+          peril:
+            <<: *Peril
+            _source:
+              <<: *InfrastructureCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: You triggered an outage
+              - roll: { min: 11, max: 20 }
+                text: Crew members approach you
+              - roll: { min: 21, max: 30 }
+                text: Loud klaxon alarms sound
+              - roll: { min: 31, max: 40 }
+                text: What you need is inaccessible
+              - roll: { min: 41, max: 50 }
+                text: Security is onto you
+              - roll: { min: 51, max: 60 }
+                text: You have caused a system mixup
+              - roll: { min: 61, max: 70 }
+                text: Attracted government attention
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Peril
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *InfrastructureCollectionSource
+            rows:
+              - roll: { min: 1 , max: 14 }
+                text: Little security protections
+              - roll: { min: 15, max: 29 }
+                text: Outdated software
+              - roll: { min: 30, max: 44 }
+                text: Easier to access than thought
+              - roll: { min: 45, max: 59 }
+                text: You find a useful resource
+              - roll: { min: 60, max: 70 }
+                text: You locate a useful manual
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Opportunity
+      social_service:
+        name: Social Service
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: &SocialServiceCollectionSource
+            <<: *Source
+            page: 94
+        contents:
+          area:
+            <<: *Area
+            _source:
+              <<: *SocialServiceCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Office
+              - roll: { min: 11, max: 30 }
+                text: Waiting Area
+              - roll: { min: 31, max: 50 }
+                text: Call Center
+              - roll: { min: 51, max: 69 }
+                text: Security
+              - roll: { min: 70, max: 75 }
+                text: Hallway
+              - roll: { min: 76, max: 84 }
+                text: Meeting Room
+              - roll: { min: 85, max: 95 }
+                text: Care facility
+              - roll: { min: 96, max: 100 }
+                text: Records Room
+          feature:
+            <<: *Feature
+            _source:
+              <<: *SocialServiceCollectionSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: A large office worker
+              - roll: { min: 4, max: 15 }
+                text: A homeless person
+              - roll: { min: 16, max: 18 }
+                text: A bunch of toys
+              - roll: { min: 19, max: 20 }
+                text: Old magazines
+              - roll: { min: 21, max: 22 }
+                text: A TV stream
+              - roll: { min: 23, max: 24 }
+                text: A cluttered area
+              - roll: { min: 25, max: 26 }
+                text: Someone very upset
+              - roll: { min: 27, max: 28 }
+                text: Busy area
+              - roll: { min: 29, max: 30 }
+                text: Phones ringing
+              - roll: { min: 31, max: 32 }
+                text: A counselor is here
+              - roll: { min: 33, max: 34 }
+                text: An elderly person
+              - roll: { min: 35, max: 38 }
+                text: Building security
+              - roll: { min: 39, max: 42 }
+                text: Additional cameras
+              - roll: { min: 43, max: 45 }
+                text: A child
+              - roll: { min: 46, max: 49 }
+                text: Stacks of boxes
+              - roll: { min: 50, max: 59 }
+                text: Motivational images
+              - roll: { min: 60, max: 62 }
+                text: Public postings
+              - roll: { min: 63, max: 66 }
+                text: A parent with baby
+              - roll: { min: 67, max: 70 }
+                text: Someone desperate
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Feature
+          peril:
+            <<: *Peril
+            _source:
+              <<: *SocialServiceCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: You’ve lost something
+              - roll: { min: 11, max: 20 }
+                text: Brought into drama
+              - roll: { min: 21, max: 30 }
+                text: A friend in trouble
+              - roll: { min: 31, max: 40 }
+                text: Witness injustice
+              - roll: { min: 41, max: 50 }
+                text: Clutter makes your path hard
+              - roll: { min: 51, max: 60 }
+                text: Security is alerted to you
+              - roll: { min: 61, max: 70 }
+                text: A hard past is revealed
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Peril
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *SocialServiceCollectionSource
+            rows:
+              - roll: { min: 1 , max: 14 }
+                text: You find a way to help
+              - roll: { min: 15, max: 29 }
+                text: A resource or tool is present
+              - roll: { min: 30, max: 44 }
+                text: Meet someone helpful
+              - roll: { min: 45, max: 59 }
+                text: Details become more clear
+              - roll: { min: 60, max: 70 }
+                text: Useful past knowledge
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Opportunity
+      foreign_affairs:
+        name: Foreign Affairs
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: &ForeignAffairsCollectionSource
+            <<: *Source
+            page: 95
+        contents:
+          area:
+            <<: *Area
+            _source:
+              <<: *ForeignAffairsCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Lobby
+              - roll: { min: 11, max: 30 }
+                text: Communications
+              - roll: { min: 31, max: 50 }
+                text: Meeting Room
+              - roll: { min: 51, max: 69 }
+                text: Hallway
+              - roll: { min: 70, max: 75 }
+                text: Office
+              - roll: { min: 76, max: 84 }
+                text: Security
+              - roll: { min: 85, max: 95 }
+                text: Planning room
+              - roll: { min: 96, max: 100 }
+                text: Storage
+          feature:
+            <<: *Feature
+            _source:
+              <<: *ForeignAffairsCollectionSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Flags
+              - roll: { min: 4, max: 15 }
+                text: Phone chatter
+              - roll: { min: 16, max: 18 }
+                text: Old images of people
+              - roll: { min: 19, max: 20 }
+                text: News broadcasts on silent
+              - roll: { min: 21, max: 22 }
+                text: Several politicians
+              - roll: { min: 23, max: 24 }
+                text: Corporate representative
+              - roll: { min: 25, max: 26 }
+                text: Filing system
+              - roll: { min: 27, max: 28 }
+                text: Secretary hurries by
+              - roll: { min: 29, max: 30 }
+                text: VIP is arriving
+              - roll: { min: 31, max: 32 }
+                text: Foreign conversations
+              - roll: { min: 33, max: 34 }
+                text: Statue
+              - roll: { min: 35, max: 38 }
+                text: Drinking fountain
+              - roll: { min: 39, max: 42 }
+                text: Military personnel
+              - roll: { min: 43, max: 45 }
+                text: Security guard responds to call
+              - roll: { min: 46, max: 49 }
+                text: Bodyguards protect area
+              - roll: { min: 50, max: 59 }
+                text: Intelligence agency
+              - roll: { min: 60, max: 62 }
+                text: Another Fe-Runner
+              - roll: { min: 63, max: 66 }
+                text: A rare antique
+              - roll: { min: 67, max: 70 }
+                text: Additional Security checks
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Feature
+          peril:
+            <<: *Peril
+            _source:
+              <<: *ForeignAffairsCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: A security sweep is happening
+              - roll: { min: 11, max: 20 }
+                text: Discovered spy equipment
+              - roll: { min: 21, max: 30 }
+                text: Foreign intelligence notices you
+              - roll: { min: 31, max: 40 }
+                text: Doesn’t translate correctly
+              - roll: { min: 41, max: 50 }
+                text: Your path is blocked
+              - roll: { min: 51, max: 60 }
+                text: Enemy engages with you
+              - roll: { min: 61, max: 70 }
+                text: You are being traced
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Peril
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *ForeignAffairsCollectionSource
+            rows:
+              - roll: { min: 1 , max: 14 }
+                text: Locate resource, tool, person
+              - roll: { min: 15, max: 29 }
+                text: Discover a new patht
+              - roll: { min: 30, max: 44 }
+                text: Learn about plans
+              - roll: { min: 45, max: 59 }
+                text: Intercept communications
+              - roll: { min: 60, max: 70 }
+                text: Disrupt something
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Opportunity
+      programming:
+        name: Programming
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: &ProgrammingCollectionSource
+            <<: *Source
+            page: 96
+        contents:
+          area:
+            <<: *Area
+            _source:
+              <<: *ProgrammingCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Lounge
+              - roll: { min: 11, max: 30 }
+                text: Message Board
+              - roll: { min: 31, max: 50 }
+                text: Documentation
+              - roll: { min: 51, max: 69 }
+                text: Prototyping
+              - roll: { min: 70, max: 75 }
+                text: Library and Tooling
+              - roll: { min: 76, max: 84 }
+                text: Work den
+              - roll: { min: 85, max: 95 }
+                text: Equipment
+              - roll: { min: 96, max: 100 }
+                text: File Server
+          feature:
+            <<: *Feature
+            _source:
+              <<: *ProgrammingCollectionSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Messy
+              - roll: { min: 4, max: 15 }
+                text: Strange avatars
+              - roll: { min: 16, max: 18 }
+                text: Unstable environment
+              - roll: { min: 19, max: 20 }
+                text: Neon graffiti
+              - roll: { min: 21, max: 22 }
+                text: Animated memes
+              - roll: { min: 23, max: 24 }
+                text: Lots of stickers
+              - roll: { min: 25, max: 26 }
+                text: Underglow lights
+              - roll: { min: 27, max: 28 }
+                text: Miniatures scattered about
+              - roll: { min: 29, max: 30 }
+                text: Music emanating
+              - roll: { min: 31, max: 32 }
+                text: Party
+              - roll: { min: 33, max: 34 }
+                text: Programmers oblivious of you
+              - roll: { min: 35, max: 38 }
+                text: Programmers taking a break
+              - roll: { min: 39, max: 42 }
+                text: Lots of blinking lights
+              - roll: { min: 43, max: 45 }
+                text: Clattering of keyboard keys
+              - roll: { min: 46, max: 49 }
+                text: Electronic toys
+              - roll: { min: 50, max: 59 }
+                text: Soldering equipment
+              - roll: { min: 60, max: 62 }
+                text: Portable storage devices
+              - roll: { min: 63, max: 66 }
+                text: Array of monitors
+              - roll: { min: 67, max: 70 }
+                text: A used leather couch
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Feature
+          peril:
+            <<: *Peril
+            _source:
+              <<: *ProgrammingCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: It’s a trap or ruse
+              - roll: { min: 11, max: 20 }
+                text: Code complexity is too high
+              - roll: { min: 21, max: 30 }
+                text: You tripped a security system
+              - roll: { min: 31, max: 40 }
+                text: Automation discovered you
+              - roll: { min: 41, max: 50 }
+                text: Surprise meaning revealed
+              - roll: { min: 51, max: 60 }
+                text: Rival Fe-Runner
+              - roll: { min: 61, max: 70 }
+                text: Must deal with a virus/infection
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Peril
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *ProgrammingCollectionSource
+            rows:
+              - roll: { min: 1 , max: 14 }
+                text: Discover a useful backdoor
+              - roll: { min: 15, max: 29 }
+                text: Locate a vulnerability
+              - roll: { min: 30, max: 44 }
+                text: Discover a useful tool
+              - roll: { min: 45, max: 59 }
+                text: Learn something new
+              - roll: { min: 60, max: 70 }
+                text: Find a useful connection
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Opportunity
+      criminal:
+        name: Criminal Activity
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: &CriminalCollectionSource
+            <<: *Source
+            page: 97
+        contents:
+          area:
+            <<: *Area
+            _source:
+              <<: *CriminalCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Corridor
+              - roll: { min: 11, max: 30 }
+                text: Security
+              - roll: { min: 31, max: 50 }
+                text: Interrogation
+              - roll: { min: 51, max: 69 }
+                text: Meeting
+              - roll: { min: 70, max: 75 }
+                text: Meeting Area
+              - roll: { min: 76, max: 84 }
+                text: Office
+              - roll: { min: 85, max: 95 }
+                text: Storage
+              - roll: { min: 96, max: 100 }
+                text: Records
+          feature:
+            <<: *Feature
+            _source:
+              <<: *CriminalCollectionSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Smokey
+              - roll: { min: 4, max: 15 }
+                text: Gang members loitering
+              - roll: { min: 16, max: 18 }
+                text: Crime boss is here
+              - roll: { min: 19, max: 20 }
+                text: Illegal goods
+              - roll: { min: 21, max: 22 }
+                text: You hear screams for help
+              - roll: { min: 23, max: 24 }
+                text: Openly displayed weapons
+              - roll: { min: 25, max: 26 }
+                text: Liquids on the floor and walls
+              - roll: { min: 27, max: 28 }
+                text: Recently trashed
+              - roll: { min: 29, max: 30 }
+                text: Graffiti
+              - roll: { min: 31, max: 32 }
+                text: Locked crates
+              - roll: { min: 33, max: 34 }
+                text: Dangerous chemicals
+              - roll: { min: 35, max: 38 }
+                text: Additional security systems
+              - roll: { min: 39, max: 42 }
+                text: Blaring loud music
+              - roll: { min: 43, max: 45 }
+                text: An intense argument
+              - roll: { min: 46, max: 49 }
+                text: A TV only playing static
+              - roll: { min: 50, max: 59 }
+                text: Room is covered in plastic
+              - roll: { min: 60, max: 62 }
+                text: Several Fe-Runners
+              - roll: { min: 63, max: 66 }
+                text: Government involvement
+              - roll: { min: 67, max: 70 }
+                text: Corporate involvement
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Feature
+          peril:
+            <<: *Peril
+            _source:
+              <<: *CriminalCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Active raid occurs
+              - roll: { min: 11, max: 20 }
+                text: Rival gang shows up
+              - roll: { min: 21, max: 30 }
+                text: Witness atrocity
+              - roll: { min: 31, max: 40 }
+                text: Encounter Rival Fe-Runner
+              - roll: { min: 41, max: 50 }
+                text: You path is blocked
+              - roll: { min: 51, max: 60 }
+                text: Friend is in trouble
+              - roll: { min: 61, max: 70 }
+                text: You are being traced
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Peril
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *CriminalCollectionSource
+            rows:
+              - roll: { min: 1 , max: 14 }
+                text: You find a useful resource
+              - roll: { min: 15, max: 29 }
+                text: You locate useful information
+              - roll: { min: 30, max: 44 }
+                text: You discover a weakness
+              - roll: { min: 45, max: 59 }
+                text: A path becomes clear
+              - roll: { min: 60, max: 70 }
+                text: Discover evidence
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Opportunity
+      political:
+        name: Political / Radical Group
+        type: oracle_collection
+        oracle_type: tables
+        _source:
+          <<: &PoliticalCollectionSource
+            <<: *Source
+            page: 98
+        contents:
+          area:
+            <<: *Area
+            _source:
+              <<: *PoliticalCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Meeting Room
+              - roll: { min: 11, max: 30 }
+                text: Propaganda
+              - roll: { min: 31, max: 50 }
+                text: Comms
+              - roll: { min: 51, max: 69 }
+                text: Logistics
+              - roll: { min: 70, max: 75 }
+                text: Hallway / Corridor
+              - roll: { min: 76, max: 84 }
+                text: Security
+              - roll: { min: 85, max: 95 }
+                text: Secret Area
+              - roll: { min: 96, max: 100 }
+                text: Records
+          feature:
+            <<: *Feature
+            _source:
+              <<: *PoliticalCollectionSource
+            rows:
+              - roll: { min: 1, max: 3 }
+                text: Images everywhere
+              - roll: { min: 4, max: 15 }
+                text: Flags
+              - roll: { min: 16, max: 18 }
+                text: Bustling
+              - roll: { min: 19, max: 20 }
+                text: Noisey
+              - roll: { min: 21, max: 22 }
+                text: Stacked Boxes
+              - roll: { min: 23, max: 24 }
+                text: Several large monitors
+              - roll: { min: 25, max: 26 }
+                text: Riot shields
+              - roll: { min: 27, max: 28 }
+                text: Lots of paint cans
+              - roll: { min: 29, max: 30 }
+                text: Loudspeaker announcements
+              - roll: { min: 31, max: 32 }
+                text: Pamphlets / Spam
+              - roll: { min: 33, max: 34 }
+                text: An organizer is rallying people
+              - roll: { min: 35, max: 38 }
+                text: Large groups of people
+              - roll: { min: 39, max: 42 }
+                text: Two people whispering to each other
+              - roll: { min: 43, max: 45 }
+                text: Security watches this area
+              - roll: { min: 46, max: 49 }
+                text: Rowdy celebration
+              - roll: { min: 50, max: 59 }
+                text: Internal drama
+              - roll: { min: 60, max: 62 }
+                text: Press / Media is present
+              - roll: { min: 63, max: 66 }
+                text: A celebrity is here
+              - roll: { min: 67, max: 70 }
+                text: Terminals
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Feature
+          peril:
+            <<: *Peril
+            _source:
+              <<: *PoliticalCollectionSource
+            rows:
+              - roll: { min: 1, max: 10 }
+                text: Encounter Rival Fe-Runner
+              - roll: { min: 11, max: 20 }
+                text: You are recorded by equipment
+              - roll: { min: 21, max: 30 }
+                text: Security is onto you
+              - roll: { min: 31, max: 40 }
+                text: Dangerous DarkNet ties
+              - roll: { min: 41, max: 50 }
+                text: Dead-end or other setback
+              - roll: { min: 51, max: 60 }
+                text: A friend is caught up in this
+              - roll: { min: 61, max: 70 }
+                text: Some people have identified you
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Peril
+          opportunity:
+            <<: *Opportunity
+            _source:
+              <<: *PoliticalCollectionSource
+            rows:
+              - roll: { min: 1 , max: 14 }
+                text: Discover plans
+              - roll: { min: 15, max: 29 }
+                text: Find a useful connection
+              - roll: { min: 30, max: 44 }
+                text: Target audience details
+              - roll: { min: 45, max: 59 }
+                text: Learn underlying motivation
+              - roll: { min: 60, max: 70 }
+                text: Your path becomes clearer
+              - roll: { min: 71, max: 100 }
+                text: Roll on [Segment](datasowrn:oracle_collection:fe_runners/segment) Opportunity
+

@@ -1,0 +1,222 @@
+_id: fe_runners
+datasworn_version: "0.1.0"
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-08-10
+  title: 'Fe-Runners Rulebook'
+  url: ttps://zombiecraig.itch.io/fe-runners
+  license: https://creativecommons.org/licenses/by-nc-sa/4.0
+  authors:
+    - name: Craig Smith
+truths:
+  netdependency:
+    name: Net Dependency
+    type: truth
+    _source:
+      <<: *Source
+      page: 40
+    your_character: |-
+       What influence does the net have on the general population?
+    options:
+      - roll: { min: 1, max: 33 }
+        summary: People are oblivious.
+        description: |-
+          Everything is connected in this world but people generally are obvious to it.  Smart devices are accepted as normal and people do not spend time thinking about how they work.  People trust corporations to provide for them.
+        quest_starter: |-
+          A powerful corporation is pushing out a new upgraded technology and forcing an upgrade by giving away the new improved version for free.  This is very strange behavior and there must be a secret reason behind it, but what is it?
+      - roll: { min: 34, max: 67 }
+        summary:  The Creator.
+        description: |-
+          The network protocols were created by a brilliant inventor who has since long been deceased.  The world has been built on top of this person's creation but few understand its underlying workings and secrets.  People are free to make their own creations.
+        quest_starter: |-
+           There are rumors of a hidden area that nobody has located yet. This area is the key to new capabilities but could change the existing balance.  Will you be the one to find it and use it for good?
+      - roll: { min: 68, max: 100 }
+        summary:  Zero Trust.
+        description: |-
+          The network was built by the military and shared with other nations.  Nothing on the network can be trusted as each faction tries to spy on and curate all forms of intelligence.  The network is touted as “open” but the world has built their tools on a system that doesn’t trust them.
+        quest_starter: |-
+          There is an underground resistance movement, they stand to upset the balance of power of the factions.  The powers that be are closing in quickly and they need help.  Will you come to their aid?
+  previoustech:
+    name: Previous tech
+    type: truth
+    _source:
+      <<: *Source
+      page: 41
+    your_character: |-
+      How has technology advanced?
+    options:
+      - roll: { min: 1, max: 33 }
+        summary:  The old never dies.
+        description: |-
+          Previous tech still exists and has either been retrofitted to be connected or is a representation of the old.  Old technology and new are merged and indistinguishable from each other.
+        quest_starter: |-
+          There are reports of a vehicle that is acting erratically.  The owner feels that the vehicle is possessed by a soul but it’s probably a malfunctioning AI.  Right?
+      - roll: { min: 34, max: 67 }
+        summary: Beyond comprehension.
+        description: |-
+          What built the foundation of the network and technology has been lost to the current people.  Either it has become too complicated to understand or a great tragedy has destroyed the source.  Many portions of the core network are a mystery and are more advanced than was the population is currently capable of making.
+        quest_starter: |-
+          There are stories of a memory that was once uploaded to the network.  It is said to be sentient and moves through the original backplane.  Finding it and communicating with it could unlock secrets that could change everything.
+      - roll: { min: 68, max: 100 }
+        summary:  The past is but a memory.
+        description: |-
+          Technology has gone through so many iterations that people do not know or remember older technology.  Old technology is a relic and mystery when found.  There is no modern support for old storage systems, radio waves or power adapters.
+        quest_starter: |-
+          You found an old cassette.  You have no idea what it is or how to access it but you have been told it contains details on how to make a radio receiver for an older broadcasting station.  You wonder, what if anything, is on this device and what is a broadcasting station?
+  moderntech:
+    name: Modern Tech
+    type: truth
+    _source:
+      <<: *Source
+      page: 42
+    options:
+      - roll: { min: 1, max: 33 }
+        summary:  Future tech.
+        description: |-
+          The world has advanced technology such as multi story holograms, flying cars, humanoid robots, and the ability to read and interact directly with the mind.
+        quest_starter: |-
+          A friend has reached out to you about a missing person.  They believe there was a last scene at a park and have requested that you look through memories of the people that were in the area for clues as to what happened.
+      - roll: { min: 34, max: 67 }
+        summary: Constant advancements.
+        description: |-
+          Technology is expanding rapidly.  It seems that there are new versions of technology coming out every other day.  Just when you think you’ve seen it all, the latest version comes out with another never before seen feature.
+        quest_starter: |-
+          A major company is about to release a new contact lens that can directly interact with the brain.  There are large fears on the implications of such a device and you have been asked to infiltrate the company and sabotage their efforts.
+      - roll: { min: 68, max: 100 }
+        summary:  Current tech.
+        description: |-
+          Technology is largely based on the existing technology of this time period.  It has only advanced slightly allowing better direct computer interfaces and visualizations but most of the technology is standard laptops and server systems hosting cloud computing data.  Quantum technology is still in its infancy stage.
+        quest_starter: |-
+          A top political figure was filmed committing a crime.  They claim it was a deep fake.  An election is looming and the truth could change the tides.  Discover the truth that will alter the upcoming election.
+    your_character: What is the state of modern technology?
+  ironvows:
+    name: Iron Vows
+    type: truth
+    _source:
+      <<: *Source
+      page: 43
+    options:
+      - roll: { min: 1, max: 33 }
+        summary:  Fe Ledger.
+        description: |-
+          When a Fe-Runner makes a vow they embed an encrypted promise directly into the backplane of the Fe architecture.  The architecture has a giant ledger of all the vows ever made.  It requires the Fe-Runners bio imprint to decrypt the vow.
+        quest_starter: |-
+          A friend recently went missing.  After digging around you found out that their last vow was added to the ledger last week but strangely it was left unencrypted.  Why did they leave the vow unencrypted, did they know something was going to happen to them?  Will you take the vow on in their place?
+      - roll: { min: 34, max: 67 }
+        summary: Tradition.
+        description: |-
+          When a Fe-Runner swears a vow they state “By Iron, I vow” as was the long dead old tradition but it still stands as a promise that holds honored meaning.
+        quest_starter: |-
+          A faction you have long been at odds with has set an Iron vow to something you greatly oppose.  What did they set their vow to and what will yours be to stop them?
+      - roll: { min: 68, max: 100 }
+        summary: Iron Frames.
+        description: |-
+          Most rigs' outer frames are built with Iron either as solid metal or infused into the material.  When a Fe-Runner makes a vow they place their hand on the frame to swear the vow.
+        quest_starter: |-
+          You have had your rig for as long as you can remember.  You promise to get a new one.  What will be your last vow on this rig that will enable you to move on.
+    your_character:  What is the significance of iron and sworn vows?
+  digitalcrimes:
+    name: Digital Crimes
+    type: truth
+    _source:
+      <<: *Source
+      page: 44
+    options:
+      - roll: { min: 1, max: 33 }
+        summary:  Open Source and Open Architectures.
+        description: |-
+          Society expects software to be open and people build on each other's works all the time.  Digital piracy is not a thing as digital assets are considered a community resource.  Digital crimes are often focused on protection of users' privacy and currency based thefts.
+        quest_starter: |-
+          Somebody has been adding stealth code to common open source libraries used in chat programs.  They are siphoning millions of private messages.  You recognize the writing style from some posts you saw in the DarkNet.  Time to track down the source.
+      - roll: { min: 34, max: 67 }
+        summary:  Intellectual Property Rights.
+        description: |-
+          All ideas are considered based on existing ideas and those ideas belong to the corporations.  No idea is unique and therefore you always owe somebody something.  Corporations usually attempt to extort money out of inventors and even users of software based on some claim that they own some intellectual property or another.  Threats are made to courts but they rarely involve law enforcement.
+        quest_starter: |-
+          Several low income people have been recently targeted by a new pop-up corporation and have automatically transferred a large part of their savings based on some unspecified violation..  The one common thread seems to be they had all listened to a new song recently.  This appears to be a scam and this company is somehow using this song to identify its victims.  Break into the corporation and get the money back to the people.
+      - roll: { min: 68, max: 100 }
+        summary: Hacking is a Crime.
+        description: |-
+          The government regulates all software and violations of any laws will be treated as illegal activity and can result in jail time.  It is illegal to create hacking tools or anything that would undermine the existing laws.  Non-government employed Fe-Runners are considered criminals and outlaws.
+        quest_starter: |-
+          Two rival government factions have been secretly hacking each other for years and blaming the hacks on innocent civilians.  You could pick a side but instead you rather see them both go down.  Devise a plan to make them pay.
+    your_character:  How are software crimes viewed?
+  magic:
+    name: Magic
+    type: truth
+    _source:
+      <<: *Source
+      page: 45
+    options:
+      - roll: { min: 1, max: 33 }
+        summary: Magic does not exist.
+        description: |-
+          Magic is illusions that always have a logical and scientific explanation
+        quest_starter: |-
+          A recent politician was video taped having an affair but you happen to know for a fact they were home at the time of that recording because you were going through their home network looking for intel.  Do you seek to prove they were framed or do use this information to your advantage?
+      - roll: { min: 34, max: 67 }
+        summary:  There are mysteries on the net.
+        description: |-
+          Most things can be easily explained and are very logical.  After all, everything on the Net is a logical computer.  However, people have seen things that shouldn’t exist or work.  Things that would define their programming or the capabilities of known hardware.
+        quest_starter: |-
+          There are reports of a new technology that can not overheat no matter how much you push your rig.  Is it possible this technology is real?  Who else is after this answer?
+      - roll: { min: 68, max: 100 }
+        summary:  We live in a simulation.
+        description: |-
+          The world has rules and laws that can not be broken…until they are.  Reality can be bent from within.  The world is locked into a simulation and with very advanced tech and insight it is possible to bend the laws of reality in ways that shouldn’t be possible.  Advanced code is merely a spell incantation.
+        quest_starter: |-
+          A friend of yours has been locked away in prison.  You can take care of the electronics but not the actual guards.  Seek a method to unlock the skills needed to alter their physical reality and help them escape.
+    your_character:  Any sufficiently advanced technology is indistinguishable from magic.
+  artificial_intelligence:
+    name: Artificial Intelligence
+    type: truth
+    _source:
+      <<: *Source
+      page: 46
+    options:
+      - roll: { min: 1, max: 33 }
+        summary:  Basic Assistants.
+        description: |-
+          AI is more of a hands free technology than a thinking system.  It can only do one task at a time and can not chain complex actions together.  It’s great for sending a message hands free but it won’t be doing your homework.
+        quest_starter: |-
+          A woman received a message from her partner. The kicker is that their partner had died in a plane crash the day before.  Does someone have access to their phone? Why would they be pretending to be the same person?
+      - roll: { min: 34, max: 67 }
+        summary:  Complex data comprehension.
+        description: |-
+          AI is capable of crunching large sets of data and quickly shifting it through it for you to provide a summary.  They do not provide emotions but can look up facts and can handle multi-step instructions.  They know key information about their user such as likes, calendar and contacts.
+        quest_starter: |-
+          A new system has been developed by the government to analyze citizen behavior and determine which people are bad people before they have done anything wrong.  The system seems to be very biased towards specific groups of people.  What are the motivations for this program and how can you stop it?
+      - roll: { min: 68, max: 100 }
+        summary:  Full personality.
+        description: |-
+          The AI is a multi-modal AI that can comprehend multiple types of sensor data such as audio, text and images.  Each AI has its own unique personality and comes with the Rig. You can use the character personality Oracle to determine what your AI is like.  They can communicate and function like a normal human but will not act out physical tasks and are mostly used for research and bouncing ideas off of.
+        quest_starter: |-
+         An AI has taken over a school and locked all the children inside for their own protection.  The AI has determined that it is a better parent than their actual parents and is the best chance for success for the children.  It is aggressively protecting the property from any adults.  Can you reason with the AI or trick it into shutting down?
+    your_character:  What type of AI exists for the general population?
+  virus_worms_botnets:
+    name:  Viruses, Worms and Botnets
+    type: truth
+    _source:
+      <<: *Source
+      page: 47
+    options:
+      - roll: { min: 1, max: 33 }
+        summary: Operator.
+        description: |-
+          These entities do not operate on their own but instead are being controlled remotely but a person or a call center worth of people.  These entities phone home to a central node to get their next instructions.  Whoever controls the central node controls the whole fleet.  If the central node is destroyed then the connected entities cease to perform any new activities.
+        quest_starter: |-
+          There is a massive call center that uses worms and botnets to set up fake sites and warnings to scam old people out of all of their savings.  They are ruining lives and they must be stopped. You need to locate their facility, shut them down and make them pay.
+      - roll: { min: 34, max: 67 }
+        summary: Single Minded Mission.
+        description: |-
+          They have been programmed for one main task and their job is to accomplish that task.  They work independently from their creator but are not capable of advanced reasoning or logic.
+        quest_starter: |-
+          A swarm of bots have spread through the net.  They are trying to hack into payment systems to siphon money out and lock them into transfer funds in the Fe backplane that only the creator of the bots can unlock.  The authorities have not been able to locate the creator and even suspect that they have been kidnapped or are feared to be dead.  What has happened to them?  How will you locate them and return the lost funds?
+      - roll: { min: 68, max: 100 }
+        summary: Independent Artificial Life.
+        description: |-
+          These entities seek to “survive”.  Their goal is to spread and have longevity.  They do not want to be seen as it increases their chances of being eradicated.  They “feed” off of whatever their main motivation that was programmed into them.  They want to spread and survive.
+        quest_starter: |-
+          After analyzing code for a life support system you find out that the code has a major flaw in it.  The flaw is so bad the life support system should have already shut down.  What is odd is that it hasn’t.  After a bit more investigation you discover that a virus has attached itself to the system and has been controlling and regulating support themselves, perhaps even better than the original system.  You are not the only one who has detected them and a group is working on making an antivirus program to eradicate the infection, however that may destroy the life support system, endangering millions.  Do you try to save the virus?
+    your_character:  How do non-human controlled entities work?

@@ -1,0 +1,118 @@
+_id: fe_runners
+datasworn_version: "0.1.0"
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-08-10
+  title: 'Fe-Runners Rulebook'
+  url: https://zombiecraig.itch.io/fe-runners
+  license: https://creativecommons.org/licenses/by-nc-sa/4.0
+  authors:
+    - name: Craig Smith
+assets:
+  companion:
+    type: asset_collection
+    _source:
+      <<: *Source
+    name: Companion Assets
+    color: &CompanionAsset.color '#3d8b8a'
+    contents:
+      sexy_hologram:
+        name: Sexy Hologram
+        type: asset
+        <<: &CompanionAsset
+          category: Companion
+          color: *CompanionAsset.color
+          _source:
+            <<: *Source
+            title: 'Fe-Runner Assets'
+          options:
+            name:
+              field_type: text
+              label: name
+        abilities:
+          - enabled: true
+            text: A very attractive hologram can be emitted from a small pocket device you carry. They do not have health but are vulnerable to loss or destruction.  When alone you may make a [Hearten](datasworn:move:fe_runners/recover/hearten) move with them.
+          - enabled: false
+            text: When using charm, pacify or encourage during a Compel move, you may use them to add +1 to the roll.
+          - enabled: false
+            text: Once per session, you may ignore the effects of [Endure Stress](datasworn:move:fe_runners/suffer/endure_stress) by remembering motivational messages that they have told you before.
+      child:
+        name: Child
+        type: asset
+        <<: *CompanionAsset
+        controls:
+          health:
+            <<: &BiologicalCompanionHealth
+              label: health
+              min: 0
+              field_type: condition_meter
+              controls:
+                out_of_action:
+                  label: out of action
+                  field_type: checkbox
+                  disables_asset: true
+              moves: &BiologicalCompanionHealth.moves
+                suffer:
+                  - move:fe_runners/suffer/companion_takes_a_hit
+                recover:
+                  - move:fe_runners/recover/heal
+            max: 3
+            value: 3
+        abilities:
+          - enabled: true
+            text: A cute but mischievous child is always around.  Once per situation, when you score a __miss__, you may envision the child causing mischief or getting into danger. Roll on +its health, on a __strong hit__, the child accidently turns the situation in your favor; take +2 momentum. On a __weak hit__, it provides distraction or mild boon; take +1 momentum. On a __miss__, it faces its own cost or makes the situation worse.
+          - enabled: false
+            text: When [Companion Takes a Hit](datasworn:move:fe_runners/suffer/companion_takes_a_hit), on a __miss__ you become enraged and receive +1 on your next move (not a progress move).
+          - enabled: false
+            text: |-
+              Sometimes the child says random things about their mysterious past that often reveal new insight to your current quest.   Use your oracle dice to choose a table (1–25: [Action](oracle_rollable:fe_runners/core/action), 26–50: [Theme](oracle_rollable:fe_runners/core/theme), 51–75: [Descriptor](oracle_rollable:fe_runners/core/descriptor), 76–100: [Focus](oracle_rollable:fe_runners/core/focus)). Then, roll to learn what the child says.  If you connect it to your quest, take +1 momentum
+      summoned_animal:
+        name: Summoned Animal
+        type: asset
+        <<: *CompanionAsset
+        controls: 
+          health:
+            <<: *BiologicalCompanionHealth
+            max: 4
+            min: 0
+            value: 4
+        abilities:
+          - enabled: true
+            text: You may summon a captured animal to aid in battle. When you [Strike](datasworn:move:fe_runners/combat/strike) aided by your animal, add +1. If you Clash, take +1 momentum on a hit.
+          - enabled: false
+            text: When you [Explore a System](datasworn:move:fe_runners/exploration/explore_the_system) with haste, you may mount the animal to receive +1 to the roll.
+          - enabled: false
+            text: Once per situation, when you [Face Danger](datasworn:move:starforged/adventure/face_danger) and your animal has already been summoned.  You may reroll one challenge die.
+      survey_drone:
+        name: Survey Drone
+        type: asset
+        <<: *CompanionAsset
+        controls: 
+          health: &MechanicalCompanionHealth
+            <<: *BiologicalCompanionHealth
+            max: 5
+            value: 5
+            moves:
+              <<: *BiologicalCompanionHealth.moves
+              recover:
+                - move:fe_runners/recover/repair
+        abilities:
+          - enabled: true
+            text: The drone may scan the path ahead when performing the [Explore the System](datasworn:move:fe_runners/exploration/explore_the_system) move, add +1.
+          - enabled: false
+            text: You may send the drone out to [Explore the System](datasworn:move:fe_runners/exploration/explore_the_system) quickly with its sensors, or [Face Danger](datasworn:move:starforged/adventure/face_danger) to detect a threat, roll +its health and take +1 momentum on a hit.
+          - enabled: false
+            text: You may use the drone to [Gather Information](datasworn:move:fe_runners/adventure/gather_information) about a scene or scan an area.  When you do, add +1 to the roll
+      symbiote:
+        name: Symbiote
+        type: asset
+        <<: *CompanionAsset
+        abilities:
+          - enabled: true
+            text: An entity has woven itself into your digital existence.  You can always hear its thoughts and it lives just below the surface. When you [Enter the Fray](datasworn:move:fe_runners/combat/enter_the_fray), roll +spirit first, on a __hit__, the Symbiote empowers you; take +1 on [Enter the Fray](datasworn:move:fe_runners/combat/enter_the_fray) or the following action.  On a __miss__, the Symbiote has other plans and you are overcome with visions; [Endure Stress](datasworn:move:fe_runners/suffer/endure_stress) (-1) and take an automatic miss on [Enter the Fray](datasworn:move:fe_runners/combat/enter_the_fray).
+          - enabled: false
+            text: The Symbiote appears as a vision in your scene and offers their own commentary.  [Ask the Oracle](datasworn:move:fe_runners/fate/ask_the_oracle) if the information is useful at 50/50 chance. If yes, you feel confident in your actions; take +1 momentum.  On a no, [Endure Stress](datasworn:move:fe_runners/suffer/endure_stress) (-1)
+          - enabled: false
+            text: When you [Face Desolation](datasworn:move:fe_runners/threshold/face_desolation) and you succumb to despair, the Symbiote takes over.  [Forsake all Vows](datasworn:move:fe_runners/quest/forsake_your_vow), clear forsaken and traumatized, reset spirit to full and immediate [Swear an Iron Vow](datasworn:move:fe_runners/quest/swear_an_iron_vow) as the Symbiote.
+        

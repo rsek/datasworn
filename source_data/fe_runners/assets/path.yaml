@@ -1,0 +1,388 @@
+_id: fe_runners
+datasworn_version: "0.1.0"
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-08-10
+  title: 'Fe-Runners Rulebook'
+  url: ttps://zombiecraig.itch.io/fe-runners
+  license: https://creativecommons.org/licenses/by-nc-sa/4.0
+  authors:
+    - name: Craig Smith
+assets:
+  path:
+    type: asset_collection
+    _source:
+      <<: *Source
+    name: Path Assets
+    color: &PathAsset.color '#3f7faa'
+    description: |-
+      __Paths__ are your background, interests, training, skills, powers, and key equipment. They provide mechanical and narrative advantages, but also reflect who you are and how you interact with the world. When you create your character in the next chapter, you'll select at least two paths to get started.
+    contents:
+      scammer:
+        name: Scammer
+        type: asset
+        <<: &PathAsset
+          category: Path
+          color: *PathAsset.color
+          _source: &AssetSource
+            <<: *Source
+            title: 'Fe-Runner Assets'
+        abilities:
+          - enabled: true
+            text: When you make a move by lying, bluffing, stealing or cheating +2.  On a __strong hit__ with a __match__, your deception creates an unexpected opportunity; take the value of your shadow as +momentum.
+          - enabled: false
+            text: When you [Make a Connection](datasworn:move:fe_runners/connection/make_a_connection), you may roll +shadow.  On a __strong hit__ you gain an additional connection or knowledge unbeknown to the person you connected with.
+          - enabled: false
+            text: When you make a quick escape or con your way out of a situation and burn momentum to gain a __strong hit__, take +1 momentum after you reset.  Envision how this success leaves you fated for future trouble, mark 2 ticks on your quest legacy track.
+      hacktivist:
+        name: Hacktivist
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: After you [Swear an Iron Vow](datasworn:move:fe_runners/quest/swear_an_iron_vow) against a specific company, organization or faction that is an enemy to your cause.  After you [Fulfill Your Vow](datasworn:move:fe_runners/quest/fulfill_your_vow), you may take an extra legacy reward of one rank higher.
+          - enabled: false
+            text: When you Compel someone to assist against an enemy company, organization or faction, you may roll +1 when using +heart.
+          - enabled: false
+            text: When [Paying the Price](datasworn:move:fe_runners/fate/pay_the_price) against a sworn enemy, you may convert the roll into a strong hit, once per session.
+      vx_author:
+        name: VX Author
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: May [Develop an Artifact](datasworn:move:fe_runners/artifact/develop_an_artifact) to create a Virus or Worm that can not be directly controlled once released.  Envision its goal or objective that it uses once released.
+          - enabled: false
+            text: May clear the __Infected__ impact on your rig or an Ally’s rig once per rig.
+          - enabled: false
+            text: May [Develop an Artifact](datasworn:move:fe_runners/artifact/develop_an_artifact) to create a botnet that once spread can be controlled as a swarm. Use [Automated Attack](datasworn:move:fe_runners/combat/automate_attack) to determine the outcome.
+      exploit_developer:
+        name: Exploit Developer
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: When making the [Gain Entry](datasworn:move:fe_runners/exploration/gain_entry) move, you can take additional +1 at the cost of supply
+          - enabled: false
+            text: May [Develop an Artifact](datasworn:move:fe_runners/artifact/develop_an_artifact) to produce cracking tools that assist in gaining entry or finding security weaknesses.  These tools require [Utilize an Artifact](datasworn:move:fe_runners/artifact/utilize_an_artifact) to use.
+          - enabled: false
+            text: When [Reversing an Artifact](datasworn:move:fe_runners/artifact/reverse_engineer_an_artifact), take +1 on the roll.  On a miss, only suffer -1 momentum.
+      pen_tester:
+        name: Pen Tester
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: When making the [Gain Entry](datasworn:move:fe_runners/exploration/gain_entry) move, take +2 bonus to the roll.
+          - enabled: false
+            text: When making a [Utilize an Artifact](datasworn:move:fe_runners/artifact/utilize_an_artifact) specialized in gaining entry, you may burn -2 Momentum for a +2 bonus to the roll.
+          - enabled: false
+            text: When [Exploring a System](datasworn:move:fe_runners/exploration/explore_the_system), you may convert a [Reveal a Danger](datasworn:move:fe_runners/exploration/reveal_danger) to [Find an Opportunity](datasworn:move:fe_runners/exploration/find_an_opportunity), once per session.
+      admin:
+        name: Admin
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: When you [Secure an Advantage](datasworn:move:fe_runners/adventure/secure_an_advantage) you may lean on defensive past expertise to gain a +2 to the roll.
+          - enabled: false
+            text: When you [Endure Harm](datasworn:move:fe_runners/suffer/endure_harm) you may instead, let your rig take the hit.
+          - enabled: false
+            text: When you [React Under Fire](datasworn:move:fe_runners/combat/react_under_fire) you may roll on your rig’s +integrity
+      researcher:
+        name: Researcher
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: When you [Gather Information](datasworn:move:fe_runners/adventure/gather_information) on new technology you can take +1 to the roll and take +1 to momentum on a hit.
+          - enabled: false
+            text: You may aid an ally that is using the [Develop an Artifact](datasworn:move:fe_runners/artifact/develop_an_artifact) move by providing newly discovered techniques or information.  Add +1 to their roll.
+          - enabled: false
+            text: When [Reversing an Artifact](datasworn:move:fe_runners/artifact/reverse_engineer_an_artifact), you may rely on colleagues and use +heart or +edge instead of +wits.
+      threat_hunter:
+        name: Threat Hunter
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: When you are hunting someone, [Swear an Iron](datasworn:move:fe_runners/quest/swear_an_iron_vow) Vow and see it done. Add +1. On a strong hit, you have a solid lead and may mark progress on the quest.  When you Fulfill your Vow on a hunt, make the legacy reward one rank higher.
+          - enabled: false
+            text: |-
+              When you [Gather Information](datasworn:move:fe_runners/adventure/gather_information) related to a hunt, add +1.  On a match, you reveal a surprising or sinister aspect to the hunt. Choose one:
+
+                * __Forge ahead__: Mark progress on the quest.  If you matched on a __strong hit__, also take +2 momentum
+                * __Change loyalties__: Forsake your Vow and mark 2 ticks on your bonds legacy track.
+          - enabled: false
+            text: When you [Take Decisive Action](datasworn:move:fe_runners/combat/take_decisive_action) against your hunt, you may reroll one challenge die.
+      cryptologist:
+        name: Cryptologist
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: When using a move involving deciphering encrypted content, add +2.  On a __strong hit__, also take +1 momentum.
+          - enabled: false
+            text: When you [Infiltrate a Segment](datasworn:move:fe_runners/exploration/infiltrate_segment), you may utilize your knowledge of weak cryptography to reroll one challenge die.
+          - enabled: false
+            text: When [Reversing an Artifact](datasworn:move:fe_runners/artifact/reverse_engineer_an_artifact) that utilizes encryption, may roll +supply instead, in order to break the encryption without locating a key.
+      steganographer:
+        name: Steganographer
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: Steganography is the art of hiding data in plain sight.  This skill may be used to hide items outside of themselves from view.  If an item is actively being searched for, roll +shadow, on a hit it item stays hidden.
+          - enabled: false
+            text: When being traced.  You may roll +shadow, on a hit, erase one progress from the Threat Clock
+          - enabled: false
+            text: On a forcible [Disconnect](datasworn:move:fe_runners/exploration/disconnect) where your route would be lost.  Roll +stealth to maintain the route but suffer the rest of the disconnect penalties.
+      kernel_dev:
+        name: Kernel Dev
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: When using [Develop an Artifact](datasworn:move:fe_runners/artifact/develop_an_artifact) move, can develop a one time use artifact that bends normal reality
+          - enabled: false
+            text: When using [Overcome Destruction](datasworn:move:fe_runners/threshold/overcome_destruction), you may reroll one action dice.
+          - enabled: false
+            text: Whenever using [Repair](datasworn:move:fe_runners/recover/repair), your depth of knowledge is so great, it is considered to be with aid.
+      net_analyst:
+        name: Net Analyst
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: When using [Map Route](datasworn:move:fe_runners/exploration/map_route), when you have a __weak hit__,  you do not have to suffer a cost.
+          - enabled: false
+            text: When using [Explore the System](datasworn:move:fe_runners/exploration/explore_the_system), you may take a +1 on the roll
+          - enabled: false
+            text: When using [Map Route](datasworn:move:fe_runners/exploration/map_route) and you get a __strong hit__, mark an extra progress on your route.
+      policy_maker:
+        name: Policy Maker
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: When you [Swear an Iron Vow](datasworn:move:fe_runners/quest/swear_an_iron_vow) to resolve a dispute, negotiate an agreement, or gather support, add +1. On a strong hit, mark progress on the quest. When you [Fulfill your Vow](datasworn:move:fe_runners/quest/fulfill_your_vow) on a diplomatic mission (formidable or greater) and score a hit, also mark 2 ticks on your bonds legacy track.
+          - enabled: false
+            text: When you make a move to diffuse, reason, or negotiate, add +1.  On a __miss__, you may take a different tack. Envision this new approach, reroll all dice and add +2.  If you score a miss yet again, face a dire complication or blow to your reputation, [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+          - enabled: false
+            text: When you [Make a Connection](datasworn:move:fe_runners/connection/make_a_connection) or [Sojourn](datasworn:move:fe_runners/recover/sojourn), add +1.  If you [Sojourn](datasworn:move:fe_runners/recover/sojourn) and score a __strong hit__ with a __match__, you are shown great kindness or respect; take +2 momentum or make an extra recovery with an automatic __strong hit__.
+      automation:
+        name: Automation
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: You can chain actions together in an automated way.  Describe how you are chaining things and  spend -1 Supply, you immediately make up to three moves back to back.  All actions must be resolved regardless of the outcome.
+          - enabled: false
+            text: When using [Develop an Artifact](datasworn:move:fe_runners/artifact/develop_an_artifact) move, develop an automated tool by stringing together actions or other tools.  When using this artifact, roll on [Automate Attack](datasworn:move:fe_runners/combat/automate_attack) to see if it succeeds.
+          - enabled: false
+            text: When using [Automate Attack](datasworn:move:fe_runners/combat/automate_attack) you may rely on your knowledge of cause and effect to improve your outcome.  Add +1 to the roll
+      gamer:
+        name: Gamer
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: |-
+              Choose an initial skill:
+
+                * __FPS__ - You may add +1 when you are involved in ranged combat.
+                * __RPG__ - You may add +1 when you are involved in armed melee combat.
+                * __Fighter__ - You may add +1 in a brawl.
+          - enabled: false
+            text: On a __strong hit__, take an extra +1 momentum
+      augmented:
+        name: Augmented
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: You are equipped with an advanced implant or custom mod to your avatar.  When you make a move directly aided by your augment, envision how it gives you exceptional capabilities and add +1.  On a __strong hit__ with a __match__, your augment exceeds expectations; take +2 momentum. On a __miss__ with a __match__, the augment is broken; You must [Repair](datasworn:move:fe_runners/recover/repair) and spend 3 repair points to bring it back to working condition.
+          - enabled: false
+            text: You have a second augment.  It functions as above but the benefits do not stack
+          - enabled: false
+            text: When you must [Endure Harm](datasworn:move:fe_runners/suffer/endure_harm) or [Face Death](datasworn:move:fe_runners/threshold/face_death), you may instead, mark an augment as broken.  [Repair](datasworn:move:fe_runners/recover/repair) it as detailed above.
+      pirate:
+        name: Pirate
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: You can make a digital copy of just about anything instantaneously.  If there are protections on the data, use [Reverse Engineer an Artifact](datasworn:move:fe_runners/artifact/reverse_engineer_an_artifact), and apply it to removal of the protection on the duplicate copy only.
+          - enabled: false
+            text: When using [Compel](datasworn:move:fe_runners/adventure/compel) involving trading or bartering, add +1.  If they want something in return, you may [Ask the Oracle](datasworn:move:fe_runners/fate/ask_the_oracle) to see if you already have a copy of what they need.
+          - enabled: false
+            text: When you [Swear an Iron Vow](datasworn:move:fe_runners/quest/swear_an_iron_vow) to acquire something rare, add +1. On a __strong hit__, you already have an idea where to start.  Mark progress.  When you [Fulfill your Vow](datasworn:move:fe_runners/quest/fulfill_your_vow) mark +2 ticks on your legacy bonds.
+      fugitive:
+        name: Fugitive
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: You are hunted by a power or authority.  When you make a move you may improve the result to a __strong hit__.  If you do, mark 1 segment of a 4 segment clock to indicate hunters closing in.  When the clock is filled, a notable foe or force has tracked you down. If you overcome or escape them, reset the clock and mark +1 tick on your quests legacy track.
+          - enabled: false
+            text: When you make a move by hiding, concealing your identity or fleeing from a pursuer, add +1.  On a hit add +1 momentum.
+          - enabled: false
+            text: When you [Fulfill your Vow](datasworn:move:fe_runners/quest/fulfill_your_vow) of extreme or greater by clearing your name or defeating the power or authority who marked you as a fugitive, gain this ability at no cost. You may then exchange this asset for another with the same number of marked abilities.
+        controls: 
+          guise_meter:
+            label: Hunted
+            field_type: condition_meter
+            max: 3
+            value: 0
+            min: 0
+      technician:
+        name: Technician
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: When you make a move [Repair](datasworn:move:fe_runners/recover/repair) a rig or equipment, add +1 and take +1 momentum on a hit
+          - enabled: false
+            text: You can find alternative power sources to give your equipment a surge of extra juice.  Use [Secure an Advantage](datasworn:move:fe_runners/adventure/secure_an_advantage) and for each hit take +1 Supply.
+          - enabled: false
+            text: You can utilize real world infrastructure to forcibly disconnect another user but it is risky.  Roll +supply, on a __strong hit__ they are knocked offline for a few rounds. On a __miss__ you must [Disconnect](datasworn:move:fe_runners/exploration/disconnect). On a __weak hit__ nothing noticeable happens.
+      cyber_psychotic:
+        name: Cyber Psychotic
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: A vision of someone often manifests in your environment, only you can see them.  You can call on them to talk to them for insight, add +1.  On a __weak hit__, also [Endure Stress](datasworn:move:fe_runners/suffer/endure_stress) (-1).  On a __strong hit__ with a __match__, add 1 tick on your bonds legacy track.
+          - enabled: false
+            text: When you [Face Death](datasworn:move:fe_runners/threshold/face_death) the vision will appear to help, add +1. On a __strong hit__, envision what they share with you and mark 2 ticks on your bonds legacy track
+          - enabled: false
+            text: |-
+              One time only, when you [Fulfill your Vow](datasworn:move:fe_runners/quest/fulfill_your_vow) (extreme or greater) in service to the vision, take this ability at no cost and choose one:
+
+                * __Let them go__: Mark 2 ticks on your bonds legacy for each marked ability and discard this asset
+                * __Bolster your link__: When you use a Cyber Psychotic ability take +1 momentum.
+      kinetic:
+        name: Kinetic
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: You have learned to move things around in your digital world with mind.  You may push, pull, lift or constrict objects and beings about your size or smaller. When you are in a risky situation and draw on your powers to make a move, add +2 and [Lose Momentum](datasworn:move:fe_runners/suffer/lose_momentum) (-2).
+          - enabled: false
+            text: As above, you may instead draw on your powers to change the outcome of an action. If you do, add +2 (after you roll) and [Lose Momentum](datasworn:move:fe_runners/suffer/lose_momentum) (-3).
+          - enabled: false
+            text: When your momentum is at its max, you may attempt great kinetic feats, such as manipulating large objects and creating destructive bursts of concussive force. To do so, reset momentum. Then, as you make a single move fueled by your powers, take a __strong hit__. If in a fight, mark progress.
+      leader:
+        name: Leader
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: When you [Aid an Ally](datasworn:move:fe_runners/adventure/aid_your_ally) through leadership, coordination or planning, add +1. On a __strong hit__, any allies who are present take +1 momentum.
+          - enabled: false
+            text: When you [Enter the Fray](datasworn:move:fe_runners/combat/enter_the_fray) (+heart) by coordinating with your team as they wade into the fight, make your move before your allies act. On a __strong hit__, all allies may take an automatic strong hit.  On a __strong hit__ with a __match__, also mark progress on any objectives in this fight.
+          - enabled: false
+            text: When you make a move to influence someone (not an ally) through leadership, add +1 and take +1 momentum on a hit. On a __strong hit__, with a __match__, your command galvanized them to unexpected action. Take another +1 momentum, and mark 1 tick on your bonds legacy.
+      archivist:
+        name: Archivist
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: When you [Swear an Iron Vow](datasworn:move:fe_runners/quest/swear_an_iron_vow) (formidable or greater) to recover valuable knowledge or an extraordinary artifact, reroll any dice. When you [Reach a Milestone](datasworn:move:fe_runners/quest/reach_a_milestone) in the pursuit of that quest, take +2 momentum.  When you [Fulfill your Vow](datasworn:move:fe_runners/quest/fulfill_your_vow) and score a hit, also mark 2 ticks on your discoveries legacy track.
+          - enabled: false
+            text: When you make a roll to conduct extended research or study, reroll any challenge dice.  On a __match__, you may piece together an extraordinary or harrowing new theory; envision the nature of this revelation and mark 1 tick on your discovery legacy track.
+          - enabled: false
+            text: When you recall esoteric knowledge to [Secure an Advantage](datasworn:move:starforged/adventure/secure_an_advantage) or [Gain Ground](datasworn:move:fe_runners/combat/gain_ground), add +1. On a __hit__, envision the obscure but helpful fact, or technique you put to use, and take +1 momentum.
+      mercenary:
+        name: Mercenary
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: You have military cyber training.  When you [Swear an Iron Vow](datasworn:move:fe_runners/quest/swear_an_iron_vow) to attack or defend from a large scale war operation, you may reroll any dice.  When you [Fulfill your Vow](datasworn:move:fe_runners/quest/fulfill_your_vow), make the legacy reward one rank higher.
+          - enabled: false
+            text: When you [Make a Connection](datasworn:move:fe_runners/connection/make_a_connection) by searching out or making contact with someone, add +1 and take +1 momentum on a hit.  On a __strong hit__ with a __match__, this mission pits you up against an unresolved aspect of your past or a hated foe; mark 2 ticks on your quests legacy track
+          - enabled: false
+            text: After defeating someone, you may [Recharge](datasworn:move:fe_runners/recover/recharge) off of the remnants of their connection.
+      anarchist:
+        name: Anarchist
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: When [Swearing an Iron Vow](datasworn:move:fe_runners/quest/swear_an_iron_vow) against a stronger political power or institution, reroll any dice.  When you [Reach a Milestone](datasworn:move:fe_runners/quest/reach_a_milestone) in pursuit of this quest, take +2 momentum.  When you [Fulfill your Vow](datasworn:move:fe_runners/quest/fulfill_your_vow) mark 2 ticks on your legacy bonds.
+          - enabled: false
+            text: When using [Compel](datasworn:move:fe_runners/adventure/compel) (+heart) to convince someone to switch sides or abandon a side, add +1 and take +1 momentum on a hit.
+          - enabled: false
+            text: You tend to frequent a lot of hubs, When [Making a Connection](datasworn:move:fe_runners/connection/make_a_connection) in a hub, you may reroll one die.  On a __strong hit__ with a __match__ this person is also uniquely suited for what you are looking for.  On a miss with a match this person turns out to be associated with a conflicting political power or institution and puts your current mission in immediate jeopardy.
+      recluse:
+        name: Recluse
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: You may use [Hearten](datasworn:move:fe_runners/recover/hearten) in isolation.  If you attempt to [Hearten](datasworn:move:fe_runners/recover/hearten) with another person, subtract -1 from your roll.
+          - enabled: false
+            text: You may [Make a Connection](datasworn:move:fe_runners/connection/make_a_connection) with a bot, AI, or any semi-intelligent artifact as if it was a person.  If you [Make a Connection](datasworn:move:fe_runners/connection/make_a_connection) with a person it must be remote and not face-to-face.
+          - enabled: false
+            text: When using [Compel](datasworn:move:fe_runners/adventure/compel) not in isolation, you may add +1 to your roll at the cost of [Endure Stress](datasworn:move:fe_runners/suffer/endure_stress) (-2)
+      net_whisperer:
+        name: Net Whisperer
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: You can analyze the vast digital streams and pull visions and information from them.  You may [Ask the Oracle](datasworn:move:fe_runners/fate/ask_the_oracle) for details using interpretive oracles such as [Action](oracle_rollable:fe_runners/core/action), [Theme](oracle_rollable:fe_runners/core/theme), [Descriptor](oracle_rollable:fe_runners/core/descriptor), [Focus](oracle_rollable:fe_runners/core/focus). If you record the answer and later face a situation which gives truth to the vision, take an automatic __strong hit__ (one time only) when making a move to act on the foresight.  Then clear the vision, only one may be used at a time.
+          - enabled: false
+            text: You may shift through the vast data streams to [Gather Information](datasworn:move:fe_runners/adventure/gather_information) about a place, person or artifact to gain some more insight.  Roll +supply and take +1 momentum on a hit.
+          - enabled: false
+            text: If playing with a Sentient AI, and it appears, you may [Ask the Oracle](datasworn:move:fe_runners/fate/ask_the_oracle) if the outcome is positive using Likely odds.  If not, you may add +1 when peacefully interacting with an AI or semi-intelligent system.
+      cloak:
+        name: Cloak
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: You may cloak yourself to be nearly invisible in an environment. When you are cloaked and make a move to ambush, hide, or sneak, you may preset your action die to 5.  On a miss, in addition to any other cost, you are revealed and can’t cloak again until the situation is resolved.
+          - enabled: false
+            text: You may attempt to cloak others near you.  Roll +shadow, on a hit you are successful.  On a miss you fail and draw unwanted attention.
+          - enabled: false
+            text: When you intentionally drop your cloak for dramatic effect, foregoing its further use in this situation, add +2 momentum
+      negotiator:
+        name: Negotiator
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: When using [Compel](datasworn:move:fe_runners/adventure/compel) to de-escalate a situation, add +1 and take +1 momentum on a hit.
+          - enabled: false
+            text: May attempt to [Make a Connection](datasworn:move:fe_runners/connection/make_a_connection) (+heart) with an enemy.  On success, they will start to feel conflicted.  You can continue to make progress on the bond even while having conflicting objectives.  Use [Test Your Relationship](datasworn:move:fe_runners/connection/test_your_relationship) to resolve their internal conflict.
+          - enabled: false
+            text: Being a negotiator also makes you quite savvy at bartering.  You may reroll your action dice once but [Lose Momentum](datasworn:move:fe_runners/suffer/lose_momentum) (-1).
+      prepper:
+        name: Prepper
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: You have a stash of useful things like batteries.  When using [Recharge](datasworn:move:fe_runners/recover/recharge), add +1.  On a __strong hit__ take +1 supply and +1 momentum.
+          - enabled: false
+            text: You may use your survivalist knowledge when you [Secure an Advantage](datasworn:move:fe_runners/adventure/secure_an_advantage) or try to [Gain Ground](datasworn:move:fe_runners/combat/gain_ground), add +1. On a __hit__, envision the helpful fact, or technique you put to use, and take +1 momentum.
+          - enabled: false
+            text: When you attempt a [Repair](datasworn:move:fe_runners/recover/repair), add +1 to the roll.  On a hit,  you can add +1 additional repair point to the outcome.
+      artist:
+        name: Artist
+        type: asset
+        <<: *PathAsset
+        abilities:
+          - enabled: true
+            text: You may create digital artwork that can be placed or implemented in an artifact.  Upon creation, roll the action die.  If it is less than your spirit, add +1 spirit and +1 momentum.
+          - enabled: false
+            text: When you embed your artwork into an artifact, roll +stat that represents the artifact's nature.  On a __strong hit__, the artifact becomes legendary and extends the life of the artifact.  Mark 2 ticks on your bonds legacy track.  On a __weak hit__, the artifact becomes famous but short-lived, mark 1 tick instead.  On a __miss__, the art is severely disliked, or fails in some way.  [Pay the Price](datasworn:move:fe_runners/fate/pay_the_price).
+          - enabled: false
+            text: You may use your artwork to build a brand. Use the rules above, on a __hit__, it becomes the brand, logo or representation of the artifact, group or product. When the art is visible in a situation that involves [Compel](datasworn:move:fe_runners/adventure/compel) you may reroll any one die. On a hit, add +1 momentum.
+
+
+    

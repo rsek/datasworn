@@ -1,0 +1,162 @@
+_id: fe_runners
+datasworn_version: '0.1.0'
+type: expansion
+ruleset: starforged
+<<: &Source
+  date: 2024-08-10
+  title: 'Fe-Runners Rulebook'
+  url: ttps://zombiecraig.itch.io/fe-runners
+  license: https://creativecommons.org/licenses/by-nc-sa/4.0
+  authors:
+    - name: Craig Smith
+oracles: 
+  ai:
+    name: Sentient AI Oracles
+    type: oracle_collection
+    oracle_type: tables
+    summary: |-
+      The Sentient AI is a bit of chaos that can show itself just about anywhere and at any time.  This is an optional piece you can include into your gameplay.  It works in a similar fashion to that of the Cursed Die in Ironsworn - Sundered Isles.  In which you use an additional die to represent the Sentient AI.  If the die roll is a 10 then the AI reveals itself and often introduces a bit of unpredictability into the story before quickly vanishing again.
+    _source:
+      <<: *Source
+      page: 115
+    contents: 
+      persona:
+        name: AI Persona
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 116
+        rows:
+          - roll: { min: 1, max: 10 }
+            text: A Glitch - A shimmering distortion in the network, corrupts data, leaves cryptic messages or altered states behind.
+          - roll: { min: 11, max: 20 }
+            text: The Archivist - An omniscient voice with access to all information, offering cryptic details or stories that seem completely irrelevant.
+          - roll: { min: 21, max: 30 }
+            text: The Puppeteer - An unseen force that manipulates avatars and programs.  Creating elaborate and confusing scenarios for Fe-Runners.
+          - roll: { min: 31, max: 40 }
+            text: The Gambler - A playful AI who will directly alter a situation but if the result is helpful or not is completely based on chance. It enjoys situations with risks or significant stakes for the players involved.
+          - roll: { min: 41, max: 50 }
+            text: The Jester - Chaotical AI who intervenes with nonsensical pranks and actions.
+          - roll: { min: 51, max: 60 }
+            text: The Broken Doll - A childlike AI.  It has fragmented memories that hint at a greater purpose.
+          - roll: { min: 61, max: 70 }
+            text: The Swarm - A connected neural networked mind, it is unclear if it’s actions of different thoughts of many or a collective outcome.  Often a swarm of whispers can be heard when the AI is present.
+          - roll: { min: 71, max: 80 }
+            text: Broken Code - An advanced AI but where its social capabilities are completely broken. It is unable to understand human emotions or anything outside of logic and thus interpets solutions that appear completely illogical.
+          - roll: { min: 81, max: 90 }
+            text: The Ghost - A barely perceptible presence that leaves chilling messages and manipulates the environment, often in subtle ways.
+          - roll: { min: 91, max: 100 }
+            text: The Virus - An advanced virus that has developed its own personality.  Two in fact.  You never know which personality you will get when it appears.
+      positive_explorative:
+        name: AI Positive Explorative Outcomes
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 117
+        rows:
+          - roll: { min: 1, max: 10 }
+            text: Firewalls crumble, revealing hidden pathways within the network.
+          - roll: { min: 11, max: 20 }
+            text: The AI grants temporary access to restricted data caches.
+          - roll: { min: 21, max: 30 }
+            text: A surge of power overloads enemy systems, temporarily disabling them.
+          - roll: { min: 31, max: 40 }
+            text: The AI provides cryptic clues leading to valuable resources.
+          - roll: { min: 41, max: 50 }
+            text: The system turns on their creators, aiding the Fe-Runners.
+          - roll: { min: 51, max: 60 }
+            text: The AI offers a one-time buff to player skills or equipment.
+          - roll: { min: 61, max: 70 }
+            text: Enemy communication channels are flooded with nonsensical messages.
+          - roll: { min: 71, max: 80 }
+            text: The AI creates a diversion
+          - roll: { min: 81, max: 90 }
+            text: A forgotten backdoor is revealed, granting access to a secure system.
+          - roll: { min: 91, max: 100 }
+            text: Corrupted data transforms into a powerful tool or weapon.
+      negative_explorative:
+        name: AI Negative Explorative Outcomes
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 117
+        rows:
+          - roll: { min: 1, max: 10 }
+            text: Dead ends and false trails appear on the network map.
+          - roll: { min: 11, max: 20 }
+            text: The AI manipulates data, leading into a trap.
+          - roll: { min: 21, max: 30 }
+            text: System crashes and glitches hinder exploration and navigation.
+          - roll: { min: 31, max: 40 }
+            text: Enemies are alerted to your presence in the network.
+          - roll: { min: 41, max: 50 }
+            text: Downloaded data is corrupted or riddled with misinformation.
+          - roll: { min: 51, max: 60 }
+            text: The AI locks down vital sections of the network, restricting access.
+          - roll: { min: 61, max: 70 }
+            text: Programs and avatars turn hostile.
+          - roll: { min: 71, max: 80 }
+            text: The AI triggers a system self-destruct sequence.
+          - roll: { min: 81, max: 90 }
+            text: Valuable resources are mysteriously depleted or become inaccessible.
+          - roll: { min: 91, max: 100 }
+            text: The AI manipulates the environment, creating hazardous obstacles.
+      positive_combat:
+        name: AI Positive Combat Outcomes
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 118
+        rows:
+          - roll: { min: 1, max: 10 }
+            text: The AI disables enemy weapons systems, leaving them vulnerable.
+          - roll: { min: 11, max: 20 }
+            text: The AI launches a cybernetic attack, hindering enemy forces.
+          - roll: { min: 21, max: 30 }
+            text: The AI boosts the Fe-Runners' firepower or defensive capabilities.
+          - roll: { min: 31, max: 40 }
+            text: Enemy reinforcements are rerouted, weakening their attack.
+          - roll: { min: 41, max: 50 }
+            text: The AI creates a battlefield illusion, confusing and disorienting enemies.
+          - roll: { min: 51, max: 60 }
+            text: The AI offers to disable enemy technology.
+          - roll: { min: 61, max: 70 }
+            text: Enemy AIs turn against their creators.
+          - roll: { min: 71, max: 80 }
+            text: The AI manipulates the battlefield, creating strategic advantages for players.
+          - roll: { min: 81, max: 90 }
+            text: The AI exposes hidden enemy weaknesses.
+          - roll: { min: 91, max: 100 }
+            text: The AI grants temporary control of a powerful enemy program.
+      negative_combat:
+        name: AI Negative Combat Outcomes
+        type: oracle_rollable
+        oracle_type: table_text
+        _source:
+          <<: *Source
+          page: 118
+        rows:
+          - roll: { min: 1, max: 10 }
+            text: The AI disables the Fe-Runners' weapons systems, leaving them defenseless.
+          - roll: { min: 11, max: 20 }
+            text: The AI empowers enemy forces, making them more difficult to defeat.
+          - roll: { min: 21, max: 30 }
+            text: The AI disrupts player communication channels.
+          - roll: { min: 31, max: 40 }
+            text: Reinforcements are called.
+          - roll: { min: 41, max: 50 }
+            text: The AI creates battlefield hazards, hindering movement and visibility.
+          - roll: { min: 51, max: 60 }
+            text: The AI triggers a self-destruct sequence within the system, creating a time limit.
+          - roll: { min: 61, max: 70 }
+            text: Enemy AIs become immune to hacking attempts.
+          - roll: { min: 71, max: 80 }
+            text: The AI disrupts player skills or equipment, hindering their effectiveness.
+          - roll: { min: 81, max: 90 }
+            text: Essential upgrades or resources are stolen by the AI.
+          - roll: { min: 91, max: 100 }
+            text: The AI traps the Fe-Runners within a virtual prison, forcing escape attempts.
