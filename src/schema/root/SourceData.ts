@@ -133,7 +133,7 @@ const transforms: SchemaTransforms = {
 
 		return result
 	},
-	DiscriminatedUnion: <T extends TDiscriminatedUnion<TObject[], string>>(
+	DiscriminatedUnion: (<T extends TDiscriminatedUnion<any, string>>(
 		schema: T,
 		options: SchemaOptions
 	) => {
@@ -146,5 +146,5 @@ const transforms: SchemaTransforms = {
 		// result.oneOf = result.oneOf.map((member) => SourceData(member)) as any
 
 		return result
-	}
+	}) as any
 }

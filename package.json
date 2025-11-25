@@ -12,6 +12,8 @@
     "pkg/nodejs/@datasworn/sundered-isles"
   ],
   "scripts": {
+    "test": "bun test",
+    "test:build": "bun test src/tests/build.test.ts",
     "check": "tsc --project tsconfig.json --noEmit",
     "build:schema": "bun ./src/scripts/schema/buildSchema.ts",
     "build:jtd": "bun ./src/scripts/json-typedef/index.ts",
@@ -38,21 +40,21 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
-    "@release-it/bumper": "^6.0.1",
+    "@release-it/bumper": "^7.0.0",
     "@types/bun": "^1.1.6",
     "@types/json-pointer": "^1.0.34",
     "@types/json-schema": "^7.0.15",
     "@types/lodash-es": "^4.17.12",
-    "esbuild": "0.23.0",
+    "esbuild": "^0.25.0",
     "json-schema": "^0.4.0",
-    "release-it": "^17.6.0",
+    "release-it": "^19.0.0",
     "tsconfig-paths": "^4.2.0",
     "type-fest": "^4.24.0",
     "typescript": "^5.5.4"
   },
   "dependencies": {
-    "@sinclair/typebox": "^0.33.4",
-    "@sinclair/typebox-codegen": "^0.10.4",
+    		"@sinclair/typebox": "^0.34.41",
+		"@sinclair/typebox-codegen": "^0.10.4",
     "@swc/core": "^1.7.10",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
@@ -64,5 +66,9 @@
     "semver": "^7.6.3",
     "winston": "^3.14.1",
     "yaml": "^2.5.0"
+  },
+  "overrides": {
+    "cross-spawn": "^7.0.6",
+    "micromatch": "^4.0.8"
   }
 }

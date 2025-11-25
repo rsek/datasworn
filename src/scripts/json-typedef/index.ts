@@ -9,10 +9,10 @@ import { JTD_JSON_PATH } from './const.js'
 import { emptyDir, writeJSON } from '../utils/readWrite.js'
 import { shellPromise } from '../../shellify.js'
 
-const jtdRoot: JTD.Schema = toJtdRoot(DataswornSchema)
+const jtdRoot = toJtdRoot(DataswornSchema) as JTD.Schema
 
 for (const name of refTracker)
-	if (!(name in jtdRoot?.definitions ?? {}))
+	if (!(name in (jtdRoot.definitions ?? {})))
 		throw new Error(`Missing definition for ${name}`)
 
 const filePath = JTD_JSON_PATH

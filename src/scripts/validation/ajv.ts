@@ -29,6 +29,7 @@ for (const format in FORMATS) AJV.addFormat(format, FORMATS[format])
 for (const keyword in KEYWORDS)
 	AJV.addKeyword({ keyword, ...KEYWORDS[keyword] })
 
-addFormats(AJV)
+// Type assertion needed due to ajv-formats bundling its own ajv types
+addFormats(AJV as unknown as Parameters<typeof addFormats>[0])
 
 export default AJV

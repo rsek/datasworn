@@ -16,4 +16,5 @@ export const AtlasCollection = Generic.CollectionNode(
 )
 
 export type TAtlasCollection = typeof AtlasCollection
-export type AtlasCollection = Static<typeof AtlasCollection>
+/** Infer static type to avoid deep instantiation */
+export type AtlasCollection = (typeof AtlasCollection)['static']

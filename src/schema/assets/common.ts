@@ -21,7 +21,7 @@ export function AssetPropertiesEnhanceable<Control extends TSchema>(
 			description:
 				'If `true`, this asset counts as an impact (Starforged) or a debility (classic Ironsworn).'
 		}),
-		attachments: Type.Optional(Type.Ref<TAssetAttachment>('AssetAttachment')),
+		attachments: Type.Optional(Type.Ref('AssetAttachment')),
 		shared: Type.Boolean({
 			default: false,
 			description:

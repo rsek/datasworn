@@ -11,7 +11,7 @@ function validate(collection) {
             }
             catch (e) {
                 // console.table(renderMultiTable(collection.contents, ['roll']))
-                throw new Error(`${oracle_type} child OracleRollables must have the same roll ranges in their rows, in the same order. The following rows array indices don't match:\n${e.toString()}`);
+                throw new Error(`${oracle_type} child OracleRollables must have the same roll ranges in their rows, in the same order. The following rows array indices don't match:\n${String(e)}`);
             }
             break;
         case 'table_shared_text':
@@ -22,7 +22,7 @@ function validate(collection) {
             }
             catch (e) {
                 // console.table(renderMultiTable(collection.contents, ['text']))
-                throw new Error(`${oracle_type} child OracleRollables must have the same text content in their rows, in the same order. The following rows array indices don't match:\n${e.toString()}`);
+                throw new Error(`${oracle_type} child OracleRollables must have the same text content in their rows, in the same order. The following rows array indices don't match:\n${String(e)}`);
             }
             break;
         case 'tables':
@@ -49,7 +49,7 @@ function oracleRowsEqualBy(equalityFn, oracleRollables) {
             }
             catch (e) {
                 badRowMessages[rowIndex] || (badRowMessages[rowIndex] = []);
-                badRowMessages[rowIndex].push(`<${secondaryKey}> ${e.toString()}`);
+                badRowMessages[rowIndex].push(`<${secondaryKey}> ${String(e)}`);
             }
         }
     }
@@ -59,7 +59,8 @@ function oracleRowsEqualBy(equalityFn, oracleRollables) {
     return true;
 }
 function rowHasSameRolls(a, b) {
-    if (a.roll.min === b.roll.min && a.roll.max === b.roll.max)
+    var _a, _b, _c, _d;
+    if (((_a = a.roll) === null || _a === void 0 ? void 0 : _a.min) === ((_b = b.roll) === null || _b === void 0 ? void 0 : _b.min) && ((_c = a.roll) === null || _c === void 0 ? void 0 : _c.max) === ((_d = b.roll) === null || _d === void 0 ? void 0 : _d.max))
         return true;
     throw new Error(`Expected roll range of ${JSON.stringify(a.roll)} but got ${JSON.stringify(b.roll)}`);
 }

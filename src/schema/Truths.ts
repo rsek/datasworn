@@ -1,4 +1,4 @@
-import { Type, type Static, type TString } from '@sinclair/typebox'
+import { Type, type Static } from '@sinclair/typebox'
 import * as Generic from './Generic.js'
 import { DiceRange } from './common/Range.js'
 import { DiceExpression } from './common/Rolls.js'
@@ -25,7 +25,7 @@ export const TruthOption = Generic.IdNode(
 			)
 		)
 	}),
-	Type.Ref<TString>('TruthOptionId'),
+	Type.Ref('TruthOptionId'),
 	{ $id: 'TruthOption' }
 )
 

@@ -128,7 +128,8 @@ export function TriggerConditionEnhancement<T extends TTriggerCondition>(
 		method
 	} as TNullableRollOptions
 
-	return Type.Object(nuProps, options)
+	// Cast to Record<string, TSchema> to avoid deep type instantiation
+	return Type.Object(nuProps as Record<string, TSchema>, options)
 }
 
 const TriggerMixin = Type.Object({

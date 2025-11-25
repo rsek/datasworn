@@ -23,7 +23,7 @@ const replacesDescription =
 	'This node replaces all nodes that match these wildcards. References to the replaced nodes can be considered equivalent to this node.'
 const PrimaryNodeBase = Type.Object({
 	replaces: Type.Optional(
-		Type.Array(Type.String() as TString | TRef<TString>, {
+		Type.Array(Type.String() as TString | TRef<string>, {
 			description: replacesDescription
 		})
 	),
@@ -50,33 +50,36 @@ export function PrimaryTypeNode<
 	TBase extends TObject,
 	TType extends TypeId.Primary
 >(base: TBase, type: TType, options: ObjectOptions = {}) {
-	const _id = Type.Ref<TString>(pascalCase(type) + 'Id')
+	const _id = Type.Ref(pascalCase(type) + 'Id')
 
-	const replaces = Type.Ref<TString>(pascalCase(type) + 'IdWildcard')
+	const replaces = Type.Ref(pascalCase(type) + 'IdWildcard')
 
-	const mixin = Assign(
-		PrimaryNodeBase,
-		Type.Object({
-			replaces: Type.Optional(
-				Type.Array(replaces, { description: replacesDescription })
-			)
-		})
-	)
+	// Explicit TObject type to avoid deep type chain
+	const replacesObj = Type.Object({
+		replaces: Type.Optional(
+			Type.Array(replaces, { description: replacesDescription })
+		)
+	})
+	const mixin: TObject = Assign(
+		PrimaryNodeBase as TObject,
+		replacesObj as TObject
+	) as TObject
 
-	const enhancedBase = Discriminable(Assign(mixin, base), 'type', type)
+	// Use explicit TObject casts to break deep type chain
+	const merged: TObject = Assign(mixin, base as TObject) as TObject
+	const enhancedBase: TObject = Discriminable(merged, 'type', type) as TObject
 
-	return SourcedNode(enhancedBase, _id, options) as TPrimaryTypeNode<
+	return SourcedNode(enhancedBase, _id, options) as unknown as TPrimaryTypeNode<
 		TBase,
 		TType
 	>
 }
 
+/** Simplified type to avoid deep instantiation */
 export type TPrimaryTypeNode<
-	TBase extends TObject,
-	TType extends TypeId.Primary
-> = TSourcedNode<
-	TDiscriminable<'type', TType, TAssign<typeof PrimaryNodeBase, TBase>>
-> & { static: PrimaryTypeNode<Static<TBase>, TType> }
+	TBase extends TObject = TObject,
+	TType extends TypeId.Primary = TypeId.Primary
+> = TObject & { _primaryType: TType; _primaryBase: TBase }
 
 export type PrimaryTypeNode<
 	TBase extends object,
@@ -102,11 +105,13 @@ export function PrimarySubtypeNode<
 		subtypeKey,
 		subtype,
 		options
-	) as TPrimarySubtypeNode<TBase, TType, TSubtypeKey, TSubtype>
+	) as unknown as TPrimarySubtypeNode<TBase, TType, TSubtypeKey, TSubtype>
 }
+
+/** Simplified type to avoid deep instantiation */
 export type TPrimarySubtypeNode<
-	TBase extends TObject,
-	TType extends TypeId.Primary,
-	TSubtypeKey extends string,
-	TSubtype extends string
-> = TDiscriminable<TSubtypeKey, TSubtype, TPrimaryTypeNode<TBase, TType>>
+	TBase extends TObject = TObject,
+	TType extends TypeId.Primary = TypeId.Primary,
+	TSubtypeKey extends string = string,
+	TSubtype extends string = string
+> = TPrimaryTypeNode<TBase, TType> & { _subtypeKey: TSubtypeKey; _subtype: TSubtype }

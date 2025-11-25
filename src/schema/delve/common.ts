@@ -25,7 +25,7 @@ export function EmbeddedType<
 	const schema = CloneType(base, options)
 
 	schema.$id = schemaName
-	schema.properties._id = Computed(Type.Ref<TString>(idSchemaName))
+	schema.properties._id = Computed(Type.Ref(idSchemaName))
 
 
 	// @ts-expect-error

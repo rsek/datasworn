@@ -53,12 +53,12 @@ export function simplifyRecursive(schema: TSchema, allowNumberEnums = false) {
 			}
 		}
 		case TypeGuard.IsUnion(base): {
-			base.anyOf = base.anyOf.map(simplifyRecursive)
+			base.anyOf = base.anyOf.map((s) => simplifyRecursive(s)) as TSchema[]
 			return omit(base, 'required')
 		}
 		case TDiscriminatedUnion(base): {
 			base = ToUnion(base as any)
-			base.anyOf = base.anyOf?.map(simplifyRecursive)
+			base.anyOf = base.anyOf?.map((s: TSchema) => simplifyRecursive(s)) as TSchema[]
 			break
 		}
 		case TUnionEnum(base):
@@ -66,12 +66,12 @@ export function simplifyRecursive(schema: TSchema, allowNumberEnums = false) {
 				return Type.Integer(pick(base, 'description', 'title'))
 			return ToEnum(base as any)
 		case TypeGuard.IsObject(base): {
-			base.properties = mapValues(base.properties, simplifyRecursive)
+			base.properties = mapValues(base.properties, (s) => simplifyRecursive(s)) as typeof base.properties
 			base.additionalProperties ||= false
 			break
 		}
 		case TypeGuard.IsArray(base): {
-			base.items = simplifyRecursive(base.items)
+			base.items = simplifyRecursive(base.items) as TSchema
 			break
 		}
 	}

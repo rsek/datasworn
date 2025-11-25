@@ -149,7 +149,7 @@ function validateIdsInStrings(data, index) {
         // }
     });
     if (errors.length > 0)
-        throw new Error(errors.map((e) => e.toString()).join('\n'));
+        throw new Error(errors.map((e) => String(e)).join('\n'));
     return true;
 }
 function validateMacroIdPointers(text, validIds) {
@@ -187,7 +187,7 @@ function validateMarkdownIdPointers(text, validIds) {
         }
     }
     if (errors.length > 0)
-        throw new Error(errors.map((e) => e.toString()).join('\n'));
+        throw new Error(errors.map((e) => String(e)).join('\n'));
     return true;
 }
 const testStr = '[Bannersworn](datasworn:asset:starforged/path/bannersworn); [Diplomat](datasworn:asset:starforged/path/diplomat)';

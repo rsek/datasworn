@@ -14,7 +14,7 @@ export function validate<T extends Datasworn.OracleCollection>(collection: T) {
 			} catch (e) {
 				// console.table(renderMultiTable(collection.contents, ['roll']))
 				throw new Error(
-					`${oracle_type} child OracleRollables must have the same roll ranges in their rows, in the same order. The following rows array indices don't match:\n${e.toString()}`
+					`${oracle_type} child OracleRollables must have the same roll ranges in their rows, in the same order. The following rows array indices don't match:\n${String(e)}`
 				)
 			}
 			break
@@ -26,7 +26,7 @@ export function validate<T extends Datasworn.OracleCollection>(collection: T) {
 			} catch (e) {
 				// console.table(renderMultiTable(collection.contents, ['text']))
 				throw new Error(
-					`${oracle_type} child OracleRollables must have the same text content in their rows, in the same order. The following rows array indices don't match:\n${e.toString()}`
+					`${oracle_type} child OracleRollables must have the same text content in their rows, in the same order. The following rows array indices don't match:\n${String(e)}`
 				)
 			}
 			break
@@ -64,7 +64,7 @@ function oracleRowsEqualBy(
 				equalityFn(rowA, rowB)
 			} catch (e) {
 				badRowMessages[rowIndex] ||= []
-				badRowMessages[rowIndex].push(`<${secondaryKey}> ${e.toString()}`)
+				badRowMessages[rowIndex].push(`<${secondaryKey}> ${String(e)}`)
 			}
 		}
 	}
@@ -81,7 +81,7 @@ function rowHasSameRolls(
 	a: Datasworn.OracleRollableRow,
 	b: Datasworn.OracleRollableRow
 ) {
-	if (a.roll.min === b.roll.min && a.roll.max === b.roll.max) return true
+	if (a.roll?.min === b.roll?.min && a.roll?.max === b.roll?.max) return true
 	throw new Error(
 		`Expected roll range of ${JSON.stringify(a.roll)} but got ${JSON.stringify(b.roll)}`
 	)
@@ -100,9 +100,9 @@ function rowHasSameText(
 		// neither has key -- skip it
 		if (!(k in a) && !(k in b)) continue
 
-		if (a[k] !== b[k])
+		if ((a as unknown as Record<string, unknown>)[k] !== (b as unknown as Record<string, unknown>)[k])
 			throw new Error(
-				`expected "${k}" to be ${JSON.stringify(a[k])}, but got ${JSON.stringify(b[k])}`
+				`expected "${k}" to be ${JSON.stringify((a as unknown as Record<string, unknown>)[k])}, but got ${JSON.stringify((b as unknown as Record<string, unknown>)[k])}`
 			)
 	}
 
@@ -124,7 +124,7 @@ function renderMultiTable<
 			const row = oracleRollable.rows[rowIndex]
 			let content = ''
 			for (const contentKey of showContent) {
-				const contentValue = row[contentKey]
+				const contentValue = (row as unknown as Record<string, unknown>)[contentKey]
 				switch (typeof contentValue) {
 					case 'object':
 						if (contentValue === null) content += '(none): '

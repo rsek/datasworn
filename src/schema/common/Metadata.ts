@@ -127,7 +127,8 @@ export const SourceInfo = Type.Object(
 	},
 	{
 		description: 'Metadata describing the original source of this node',
-		$id: 'SourceInfo'
+		$id: 'SourceInfo',
+		additionalProperties: true
 	}
 )
 

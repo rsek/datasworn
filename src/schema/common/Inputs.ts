@@ -6,7 +6,7 @@ import {
 	type TInteger,
 	type TLiteral,
 	type TObject,
-	type TRef,
+	type TRefUnsafe,
 	type TSchema,
 	type TString
 } from '@sinclair/typebox'
@@ -45,7 +45,7 @@ export function Input<Value extends TSchema>(
 	) satisfies TInput<Value>
 }
 export type TInput<Value extends TSchema> = TObject<{
-	label: TRef<TString>
+	label: TRefUnsafe<TString>
 	value: Value
 }>
 export interface Input<Value> {
@@ -120,7 +120,7 @@ export type TIntegerInput<
 	Max extends TFuzzySchemaOf<number> = TFuzzySchemaOf<number>,
 	Rollable extends TLiteral<boolean> = TLiteral<boolean>
 > = TObject<{
-	label: TRef<TString>
+	label: TRefUnsafe<TString>
 	min: Min
 	max: Max
 	rollable: Rollable
@@ -296,7 +296,7 @@ const SelectChoicesGroupBase = Type.Object({
 	choice_type: Type.Literal('choice_group')
 })
 export function SelectChoicesGroup<
-	TOption extends TRef<TSelectChoice<TObject>> | TSelectChoice<TObject>
+	TOption extends TRefUnsafe<TSelectChoice<TObject>> | TSelectChoice<TObject>
 >(optionSchema: TOption, options: ObjectOptions = {}) {
 	const mixin = Choices(optionSchema)
 	return Assign(SelectChoicesGroupBase, mixin, {
@@ -310,7 +310,7 @@ export function SelectChoicesGroup<
 	>
 }
 export type TSelectChoicesGroup<
-	TOption extends TRef<TSelectChoice<TObject>> | TSelectChoice<TObject>
+	TOption extends TRefUnsafe<TSelectChoice<TObject>> | TSelectChoice<TObject>
 > = ReturnType<typeof SelectChoicesGroup<TOption>>
 
 export type SelectChoicesGroup<Option extends SelectChoice<any>> = Static<
@@ -319,7 +319,7 @@ export type SelectChoicesGroup<Option extends SelectChoice<any>> = Static<
 	Choices<Option>
 
 const SelectBase = Input(
-	Utils.Nullable(Type.Ref<typeof Id.DictKey>('DictKey'), {
+	Utils.Nullable(Type.Ref('DictKey'), {
 		description:
 			'The key of the currently selected choice from the `choices` property, or `null` if none is selected.',
 		default: null
@@ -328,7 +328,7 @@ const SelectBase = Input(
 
 export function SelectWithGroups<Option extends TSelectChoice<TObject>>(
 	choiceSchema: Option,
-	choicesGroupSchema: TSelectChoicesGroup<TRef<Option> | Option>,
+	choicesGroupSchema: TSelectChoicesGroup<TRefUnsafe<Option> | Option>,
 	options: ObjectOptions = {}
 ) {
 	const mixin = Choices(
@@ -354,7 +354,7 @@ export function SelectWithGroups<Option extends TSelectChoice<TObject>>(
  * @remarks Semantics are similar to the HTML `<select>` element.
  */
 export function Select<
-	Option extends TRef<
+	Option extends TRefUnsafe<
 		| TSelectChoice<TObject>
 		| Utils.TDiscriminatedUnion<TSelectChoice<TObject>, string>
 	>
@@ -369,7 +369,7 @@ export function Select<
 		ObjectProperties<typeof SelectBase> & ObjectProperties<typeof mixin>
 	>
 }
-export type TSelect<Option extends TRef<TSelectChoice<TObject>>> = ReturnType<
+export type TSelect<Option extends TRefUnsafe<TSelectChoice<TObject>>> = ReturnType<
 	typeof Select<Option>
 >
 export type Select<Option extends SelectChoice<any>> = Static<

@@ -3,7 +3,7 @@ import {
 	Type,
 	type Static,
 	type TObject,
-	type TRef,
+	type TRefUnsafe,
 	type TSchema
 } from '@sinclair/typebox'
 import type { Tags } from '../Rules.js'
@@ -54,7 +54,7 @@ export const TableRowMixin = Assign(
 	TableRowBase,
 	Type.Object({
 		roll: Type.Ref(DiceRange),
-		tags: Type.Optional(Type.Ref<typeof Tags>('Tags')),
+		tags: Type.Optional(Type.Ref('Tags')),
 		_id: Utils.Computed(Type.Ref('AnyOracleRollableRowId'))
 	})
 )
@@ -128,7 +128,7 @@ type StringDefaultsFor<T extends TObject> = {
 	[K in
 		| keyof PickByType<
 				T['properties'],
-				TRef<typeof Text.Label> | Utils.TNullable<TRef<typeof Text.Label>>
+				TRefUnsafe<typeof Text.Label> | Utils.TNullable<TRefUnsafe<typeof Text.Label>>
 		  >
 		| 'roll']: string | null
 }

@@ -101,7 +101,7 @@ export const MoveOutcome = Type.Object(
 			// pattern: /On a __(strong hit|weak hit|miss)__/.source,
 			// type: 'string'
 		}),
-		oracle_rolls: Type.Optional(Type.Array(Type.Ref<TOracleRoll>('OracleRoll')))
+		oracle_rolls: Type.Optional(Type.Array(Type.Ref('OracleRoll')))
 		// count_as: Type.Optional(Type.Ref(MoveOutcomeType))
 	},
 	{ $id: 'MoveOutcome' }
@@ -116,10 +116,10 @@ export type MoveOutcome = Static<typeof MoveOutcome>
 
 export const MoveOutcomes = Type.Object(
 	{
-		[Outcome.StrongHit]: Type.Ref<typeof MoveOutcome>('MoveOutcome'),
+		[Outcome.StrongHit]: Type.Ref('MoveOutcome'),
 		// [Outcome.StrongHit]: Type.Ref<typeof MoveOutcomeMatchable>('MoveOutcomeMatchable'),
-		[Outcome.WeakHit]: Type.Ref<typeof MoveOutcome>('MoveOutcome'),
-		[Outcome.Miss]: Type.Ref<typeof MoveOutcome>('MoveOutcome')
+		[Outcome.WeakHit]: Type.Ref('MoveOutcome'),
+		[Outcome.Miss]: Type.Ref('MoveOutcome')
 		// [Outcome.Miss]: Type.Ref<typeof MoveOutcomeMatchable>('MoveOutcomeMatchable'),
 	},
 	{

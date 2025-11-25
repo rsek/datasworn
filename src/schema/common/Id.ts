@@ -2,6 +2,7 @@ import {
 	Type,
 	type Static,
 	type TRef,
+	type TRefUnsafe,
 	type TString,
 	type TUnion
 } from '@sinclair/typebox'
@@ -57,6 +58,7 @@ const Id = {
 export default Id
 
 export type TAnyId =
-	| TRef<TString>
-	| TRef<TUnion<TString[]>>
-	| TUnion<TRef<TString>[]>
+	| TRef<string>
+	| TRefUnsafe<TString>
+	| TRefUnsafe<TString | TUnion<TRef<string>[]>>
+	| TUnion<TRef<string>[]>

@@ -68,7 +68,7 @@ export const AssetAbility = Generic.IdNode(
 				// releaseStage: 'experimental'
 			})
 		),
-		tags: Type.Optional(Type.Ref<typeof Tags>('Tags'))
+		tags: Type.Optional(Type.Ref('Tags'))
 	}),
 	Type.Ref(Id.AssetAbilityId),
 	{

@@ -144,7 +144,7 @@ export const TagSchema = Type.Intersect(
 	{
 		$id: TagSchemaId,
 		// TODO: JTD schema for JSON schema of JSON schema? :sob:
-		[JsonTypeDef]: { schema: JtdType.Any() },
+		[JsonTypeDef]: { schema: JtdType.Any() as any },
 		// TODO: add json schema type stub lib as dependency; point at this type
 		[Typescript]: (identifier: string, _schema: TSchema) =>
 			`export type ${identifier} = Record<string, unknown>`,

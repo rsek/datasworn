@@ -12,7 +12,9 @@ import {
 import { escapeRegExp } from 'lodash-es'
 import Pattern from '../pkg-core/IdElements/Pattern.js'
 import { ROOT_HISTORY } from '../scripts/const.js'
-import { index, tree } from '../tests/loadJson.js'
+import { loadDatasworn } from '../tests/loadJson.js'
+
+const { index, tree } = await loadDatasworn()
 import { idReplacers } from './migrations.js'
 import { CONST, TypeGuard } from '../pkg-core/IdElements/index.js'
 import { IdParser } from '../pkg-core/IdParser.js'

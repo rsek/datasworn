@@ -658,7 +658,7 @@ type IdSuffix = 'Id' | 'IdWildcard'
 type IdSchemaName =
 	`${EmbeddedPrimaryNodePrefix | PrimaryNodePrefix | PrimaryNodeUnionPrefix | EmbedOnlyPrefix | 'Any'}${IdSuffix}`
 
-const ids = {} as Record<IdSchemaName, TString | TUnion<TRef<TString>[]>>
+const ids = {} as Record<IdSchemaName, TString | TUnion<TRef<string>[]>>
 
 for (const typeId in patternIndex) {
 	const typePatterns = patternIndex[typeId as TypeId.Any]
@@ -713,12 +713,12 @@ for (const primaryTypeId in TypeId.EmbedTypeMap) {
 		permutate(embeddedTypeId, primaryTypeId)
 }
 
-const anyIdSchemata: TRef<TString>[] = []
-const anyIdWildcardSchemata: TRef<TString>[] = []
+const anyIdSchemata: TRef<string>[] = []
+const anyIdWildcardSchemata: TRef<string>[] = []
 
 for (const $id in permutations) {
 	const schemaIds = Array.from(permutations[$id]).map((id) =>
-		Type.Ref<TString>(id)
+		Type.Ref(id)
 	)
 	ids[$id as IdSchemaName] = Type.Union(schemaIds, {
 		$id,

@@ -162,16 +162,16 @@ namespace TypeId {
 		embeddingType: Any,
 		typeIsEmbedded = false
 	): Embeddable[] {
-		if (typeIsEmbedded) return EmbeddableInEmbeddedTypeMap[embeddingType] ?? []
+		if (typeIsEmbedded) return (EmbeddableInEmbeddedTypeMap as Record<string, Embeddable[]>)[embeddingType] ?? []
 
-		return EmbedTypeMap[embeddingType] ?? []
+		return (EmbedTypeMap as Record<string, Embeddable[]>)[embeddingType] ?? []
 	}
 
 	export function getTypesThatCanHaveEmbedOfType(typeId: string): Embedding[] {
 		const typeIds: Embedding[] = []
 
 		for (const embedder in EmbedTypeMap) {
-			const embeddables = EmbedTypeMap[embedder]
+			const embeddables = (EmbedTypeMap as Record<string, string[]>)[embedder]
 			if (embeddables.includes(typeId)) typeIds.push(embedder as Embedding)
 		}
 
@@ -189,10 +189,10 @@ namespace TypeId {
 		const thisPath = [...path, typeId]
 		if (!isPrimary) EmbeddedTypePath.push(thisPath.join(TypeSep))
 		if (typeId in EmbedTypeMap) {
-			for (const childTypeId of EmbedTypeMap[typeId])
+			for (const childTypeId of (EmbedTypeMap as Record<string, string[]>)[typeId])
 				if (
 					isPrimary ||
-					(EmbeddableInEmbeddedTypeMap[typeId] ?? []).includes(childTypeId)
+					((EmbeddableInEmbeddedTypeMap as Record<string, string[]>)[typeId] ?? []).includes(childTypeId)
 				)
 					expandTypePath(childTypeId as Embedding, thisPath)
 		}

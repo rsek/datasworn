@@ -47,7 +47,7 @@ export function generateRulesetSchemas(rulesPackage: string, rules: Rules) {
 function generateTagSchema(
 	rulesPackage: string,
 	tagKey: string,
-	tagRule: TagRule
+	tagRule: any // TODO: update TagRule type to match expected shape
 ): SetRequired<TSchema, '$id' | 'description'> {
 	const $id = pascalCase(rulesPackage) + pascalCase(tagKey) + 'Tag'
 	const { description } = tagRule
@@ -59,15 +59,15 @@ function generateTagSchema(
 	switch (tagRule.value_type) {
 		case 'boolean':
 		case 'integer': {
-			const base = Type[pascalCase(tagRule.value_type)]()
+			const base = (Type as any)[pascalCase(tagRule.value_type)]()
 			return tagRule.array
-				? Type.Array(base, options)
+				? Type.Array(base, options) as any
 				: ({ ...base, ...options } as any)
 		}
 		case 'enum': {
 			const base = UnionEnum(tagRule.enum)
 			return tagRule.array
-				? Type.Array(base, options)
+				? Type.Array(base, options) as any
 				: ({ ...base, ...options } as any)
 		}
 		case 'move':
@@ -83,8 +83,10 @@ function generateTagSchema(
 			return tagRule.wildcard
 				? Type.Array(Type.Ref(pascalCase(tagRule.value_type) + 'WildcardId'), {
 						description
-					})
+					}) as any
 				: (Type.Ref(pascalCase(tagRule.value_type) + 'Id', options) as any)
+		default:
+			throw new Error(`Unknown tag value type: ${tagRule.value_type}`)
 	}
 }
 
@@ -92,7 +94,7 @@ const anyType = [...CollectableType.enum, ...NonCollectableType.enum]
 
 function generateTagSchemas(
 	rulesPackage: SnakeCase<string>,
-	tags: Record<SnakeCase<string>, TagRule>
+	tags: Record<SnakeCase<string>, any> // TODO: update TagRule type to match expected shape
 ) {
 	const allowedTagProperties = Object.fromEntries(
 		anyType.map((k: CollectableType | NonCollectableType) => [
@@ -108,7 +110,7 @@ function generateTagSchemas(
 		tagSchemas[schema.$id] = schema
 		const pushTo = isNull(tag.node_types) ? anyType : tag.node_types
 
-		pushTo.forEach((objectType) =>
+		pushTo.forEach((objectType: string) =>
 			set(
 				allowedTagProperties,
 				[objectType, tagKey].join('.'),

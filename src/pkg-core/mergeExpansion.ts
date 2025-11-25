@@ -96,9 +96,9 @@ function enhanceCollection<T extends TypeNode.Collection>(
 		source[ContentsKey]
 	)
 
-	target[CollectionsKey] = applyDictionaryEnhancements(
-		target[CollectionsKey],
-		source[CollectionsKey]
+	;(target as unknown as Record<string, unknown>)[CollectionsKey] = applyDictionaryEnhancements(
+		(target as unknown as Record<string, unknown>)[CollectionsKey] as Record<string, T>,
+		(source as unknown as Record<string, unknown>)[CollectionsKey] as Record<string, T>
 	)
 
 	return target
@@ -215,21 +215,23 @@ export function mergeExpansion(
 
 	for (const branchKey of collections) {
 		if (!(branchKey in expansion)) continue
+		const expansionBranch = (expansion as unknown as Record<string, unknown>)[branchKey]
 		if (!(branchKey in ruleset))
 			// @ts-expect-error
-			ruleset[branchKey] = expansion[branchKey]
+			ruleset[branchKey] = expansionBranch
 		else {
-			if (ReplacesKey in expansion[branchKey]) {
+			const rulesetBranch = (ruleset as unknown as Record<string, unknown>)[branchKey]
+			if (expansionBranch && typeof expansionBranch === 'object' && ReplacesKey in expansionBranch) {
 				// @ts-expect-error
 				ruleset[branchKey] = applyDictionaryReplacements(
-					ruleset[branchKey],
-					expansion[branchKey]
+					rulesetBranch as Record<string, TypeNode.Collection>,
+					expansionBranch as Record<string, TypeNode.Collection>
 				)
 			} else {
 				// @ts-expect-error
 				ruleset[branchKey] = applyDictionaryEnhancements(
-					ruleset[branchKey],
-					expansion[branchKey]
+					rulesetBranch as Record<string, TypeNode.Collection>,
+					expansionBranch as Record<string, TypeNode.Collection>
 				)
 			}
 		}

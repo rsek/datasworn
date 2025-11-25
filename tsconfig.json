@@ -40,7 +40,7 @@
 		"noImplicitAny": true,
 		"skipLibCheck": true,
 		"strict": true,
-		// "types": ["./src/types/index.d.ts"],
+		"types": ["bun", "node", "json-pointer", "json-schema", "lodash-es"],
 		"typeRoots": ["./src/types", "./node_modules/@types"]
 	}
 }

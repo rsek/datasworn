@@ -23,10 +23,10 @@ export const ProgressRollOption = Type.Object(
 export type ProgressRollOption = Static<typeof ProgressRollOption>
 
 export const TriggerProgressRollCondition = TriggerCondition(
-	Type.Ref<typeof ProgressRollMethod>('ProgressRollMethod', {
+	Type.Ref('ProgressRollMethod', {
 		default: 'progress_roll'
 	}),
-	Type.Array(Type.Ref<typeof ProgressRollOption>('ProgressRollOption')),
+	Type.Array(Type.Ref('ProgressRollOption')),
 	{
 		$id: 'TriggerProgressRollCondition',
 		title: 'TriggerProgressRollCondition'
@@ -50,8 +50,9 @@ export type TriggerProgressRoll = Static<typeof TriggerProgressRoll>
 export const MoveProgressRoll = Assign(
 	Move(
 		'progress_roll',
-		Type.Ref<typeof TriggerProgressRoll>('TriggerProgressRoll'),
-		Type.Ref<typeof MoveOutcomes>('MoveOutcomes')
+		Type.Ref('TriggerProgressRoll'),
+		Type.Ref('MoveOutcomes'),
+		{ $id: 'MoveProgressRollBase' }
 	),
 	Type.Object({
 		// is_progress_move: Type.Literal(true, { default: true }),
@@ -83,9 +84,7 @@ export type TriggerProgressRollConditionEnhancement = Static<
 
 export const TriggerProgressRollEnhancement = TriggerEnhancement(
 	Type.Array(
-		Type.Ref<typeof TriggerProgressRollConditionEnhancement>(
-			'TriggerProgressRollConditionEnhancement'
-		)
+		Type.Ref('TriggerProgressRollConditionEnhancement')
 	),
 	{
 		$id: 'TriggerProgressRollEnhancement',
@@ -111,7 +110,7 @@ export type MoveProgressRollEnhancement = Static<
 
 export const TriggerSpecialTrackConditionOption = Type.Object(
 	{
-		using: Type.Ref<typeof Progress.SpecialTrackType>('SpecialTrackType')
+		using: Type.Ref('SpecialTrackType')
 	},
 	{
 		$id: 'TriggerSpecialTrackConditionOption',
@@ -123,11 +122,9 @@ export type TriggerSpecialTrackConditionOption = Static<
 >
 
 export const TriggerSpecialTrackCondition = TriggerCondition(
-	Type.Ref<typeof SpecialTrackRollMethod>('SpecialTrackRollMethod'),
+	Type.Ref('SpecialTrackRollMethod'),
 	Type.Array(
-		Type.Ref<typeof TriggerSpecialTrackConditionOption>(
-			'TriggerSpecialTrackConditionOption'
-		)
+		Type.Ref('TriggerSpecialTrackConditionOption')
 	),
 	{
 		$id: 'TriggerSpecialTrackCondition',
@@ -151,8 +148,8 @@ export type TriggerSpecialTrack = Static<typeof TriggerSpecialTrack>
 export const MoveSpecialTrack = Move(
 	'special_track',
 	// is_progress_move: Type.Literal(true, { default: true }),
-	Type.Ref<typeof TriggerSpecialTrack>('TriggerSpecialTrack'),
-	Type.Ref<typeof MoveOutcomes>('MoveOutcomes'),
+	Type.Ref('TriggerSpecialTrack'),
+	Type.Ref('MoveOutcomes'),
 
 	{
 		title: 'Progress Move (special track roll)',
@@ -177,18 +174,14 @@ export type TriggerSpecialTrackConditionEnhancement = Static<
 
 export const TriggerSpecialTrackEnhancement = TriggerEnhancement(
 	Type.Array(
-		Type.Ref<typeof TriggerSpecialTrackConditionEnhancement>(
-			'TriggerSpecialTrackConditionEnhancement'
-		)
+		Type.Ref('TriggerSpecialTrackConditionEnhancement')
 	),
 	{
 		$id: 'TriggerSpecialTrackEnhancement',
 		title: 'TriggerSpecialTrackEnhancement'
 	}
 )
-export type TriggerSpecialTrackEnhancement = TriggerEnhancement<
-	TriggerSpecialTrackConditionEnhancement[]
->
+export type TriggerSpecialTrackEnhancement = TriggerEnhancement<any>
 
 export const MoveSpecialTrackEnhancement = MoveEnhancement(
 	'special_track',

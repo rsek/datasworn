@@ -140,17 +140,19 @@ function mergeExpansion(ruleset, expansion, strict = true) {
     for (const branchKey of collections) {
         if (!(branchKey in expansion))
             continue;
+        const expansionBranch = expansion[branchKey];
         if (!(branchKey in ruleset))
             // @ts-expect-error
-            ruleset[branchKey] = expansion[branchKey];
+            ruleset[branchKey] = expansionBranch;
         else {
-            if (CONST_js_1.ReplacesKey in expansion[branchKey]) {
+            const rulesetBranch = ruleset[branchKey];
+            if (expansionBranch && typeof expansionBranch === 'object' && CONST_js_1.ReplacesKey in expansionBranch) {
                 // @ts-expect-error
-                ruleset[branchKey] = applyDictionaryReplacements(ruleset[branchKey], expansion[branchKey]);
+                ruleset[branchKey] = applyDictionaryReplacements(rulesetBranch, expansionBranch);
             }
             else {
                 // @ts-expect-error
-                ruleset[branchKey] = applyDictionaryEnhancements(ruleset[branchKey], expansion[branchKey]);
+                ruleset[branchKey] = applyDictionaryEnhancements(rulesetBranch, expansionBranch);
             }
         }
     }

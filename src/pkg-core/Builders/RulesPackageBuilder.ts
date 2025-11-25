@@ -172,7 +172,7 @@ export class RulesPackageBuilder<
 			if (!('type' in typeNode)) continue
 			if (typeNode.type == null || typeof typeNode.type !== 'string') continue
 			const typeValidation =
-				RulesPackageBuilder.postSchemaValidators[typeNode.type]
+				(RulesPackageBuilder.postSchemaValidators as Record<string, Function>)[typeNode.type]
 			if (typeof typeValidation !== 'function') continue
 			try {
 				typeValidation(typeNode)

@@ -2,7 +2,6 @@
  * Regenerates the schemas and write them to file.
  */
 
-import JsonPointer from 'json-pointer'
 import type { JsonSchema } from 'json-schema-library'
 import {
 	SCHEMA_NAME,
@@ -19,12 +18,9 @@ import Log from '../utils/Log.js'
 import AJV from '../validation/ajv.js'
 import * as Schema from '../../schema/index.js'
 
-import JSL from 'json-schema-library'
 import type { TRoot } from '../../schema/root/Root.js'
 import path from 'node:path'
 import { kebabCase } from 'lodash-es'
-
-const draft7 = new JSL.Draft07()
 
 interface SchemaOptions {
 	name: string
@@ -94,17 +90,11 @@ const writeOps: Promise<unknown>[] = []
 for (const { rootSchema, name, paths, messages } of schemaOptions) {
 	AJV.addSchema(rootSchema as JsonSchema, name)
 
-	let sortedSchema: Record<string, unknown> = {}
-
 	try {
 		Log.info(messages.writeStart)
 
-		draft7.eachSchema((schema, pointer) => {
-			const newSchema = sortSchemaKeys(JSON.parse(JSON.stringify(schema)))
-
-			if (pointer === '') sortedSchema = newSchema
-			else JsonPointer.set(sortedSchema, pointer, newSchema)
-		}, rootSchema)
+		// Recursively sort all keys in the schema
+		const sortedSchema = sortSchemaKeys(JSON.parse(JSON.stringify(rootSchema)))
 
 		writeOps.push(
 			writeJSON(paths, sortedSchema, {

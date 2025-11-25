@@ -26,9 +26,9 @@ const TagsSunderedIsles = {
 	}),
 	cursed_version_of: Type.Array(Type.Ref('OracleRollableIdWildcard')),
 	// wrap these into their own objects: "cursed" and "curses"?
-	curse_behavior: Type.Array(), // TODO: enum
-	cursed_by: Type.Array(),
-	region: null // TODO: enum
+	curse_behavior: Type.Array(Type.String()), // TODO: enum
+	cursed_by: Type.Array(Type.String()),
+	region: Type.String() // TODO: enum
 	// overland_region
 	// location
 	// faction_type

@@ -12,7 +12,7 @@ export const RulesPackageConfig = Type.Object({
 			'The namespace ID for this data set. This is the first path element of all its object IDs.',
 	}),
 	description: Type.Optional(Type.String()),
-	type: CloneType(RulesPackage.properties.type),
+	type: Type.Union([Type.Literal('ruleset'), Type.Literal('expansion')]),
 	pkg: Type.Object({
 		name: Type.String({
 			description: 'The package ID, not including its scope (see `scope`).',
