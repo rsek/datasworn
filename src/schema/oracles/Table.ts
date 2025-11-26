@@ -3,7 +3,7 @@ import {
 	type ObjectOptions,
 	type Static,
 	type TObject,
-	type TRef,
+	type TRefUnsafe,
 	type TString
 } from '@sinclair/typebox'
 import { Label, MarkdownString } from '../common/Text.js'
@@ -49,7 +49,7 @@ function ColumnLabels<
 >(textKeys: TextKeys, options: ObjectOptions = {}) {
 	const props = {
 		roll: Type.Ref(Label)
-	} as Record<'roll' | TextKeys[number], TRef<TString>>
+	} as Record<'roll' | TextKeys[number], TRefUnsafe<TString>>
 	for (const k of textKeys) props[k as keyof typeof props] = Type.Ref(Label)
 
 	return Type.Object(props, options)

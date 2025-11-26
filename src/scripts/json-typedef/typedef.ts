@@ -150,7 +150,7 @@ type InferUnion<
 	?
 			| Types.Evaluate<{ [_ in D]: Index } & Types.Static<Types.AssertType<L>>>
 			| InferUnion<
-					Types.AssertRest<R>,
+					Types.AssertRest<R, TStruct[]>,
 					D,
 					Increment<Types.Assert<Index, string>>
 			  >

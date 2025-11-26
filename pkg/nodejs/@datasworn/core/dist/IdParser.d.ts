@@ -357,7 +357,7 @@ declare class EmbeddedId<ParentId extends EmbeddingId = EmbeddingId, TTypeId ext
      * Returns the embedding ID parent of this ID.
      */
     getEmbeddingIdParent(): ParentId;
-    _getUnsafe(tree: any): any;
+    _getUnsafe(tree: (typeof IdParser)['tree']): TypeNode.Embedded<TTypeId>;
     _getPathRegExpSource(): string;
     /** @internal */
     constructor(parent: ParentId, typeId: TTypeId, key: string);

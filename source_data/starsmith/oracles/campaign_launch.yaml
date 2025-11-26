@@ -1,818 +1,1142 @@
 _id: starsmith
-source: &Source
+datasworn_version: "0.1.0"
+type: expansion
+ruleset: starforged
+<<: &Source
+  title: Starsmith Expanded Oracles
+  date: 2024-03-22
+  url: https://playeveryrole.com/starsmith-products/
+  license: https://creativecommons.org/licenses/by/4.0
   authors:
     - name: Eric Bright
-  date: '2023-03-19'
-  title: Starsmith
-  license: https://creativecommons.org/licenses/by/4.0/
-  url: https://playeveryrole.com/
 oracles:
   campaign_launch:
-    name: Character Creation
+    name: Campaign Launch Oracles
+    oracle_type: tables
+    # summary: Extension of the oracle table
+    # description: Extension of the oracle table
+    enhances:
+    - oracle_collection:starforged/launching_your_campaign
+    _source: &Source
+      title: Starsmith
+      authors:
+      - name: Eric Bright
+      date: 2024-03-22
+      url: https://playeveryrole.com/starsmith-products/
+      license: https://creativecommons.org/licenses/by/4.0
     contents:
-      backstory_prompt:
-        name: ''
-        replaces: starforged/oracles/campaign_launch/backstory_prompt
+      # no replacement to background_assets
+      backstory_prompts:
+        name: Backstory Prompts
+        oracle_type: table_text
         dice: 1d300
+        # summary: Extension of the oracle table
+        replaces:
+        - oracle_rollable:starforged/launching_your_campaign/character/backstory
+        _source: *Source
         rows:
-          - min: 1
+        - text: You abandoned your kin after learning a troubling truth
+          roll:
+            min: 1
             max: 7
-            result: You abandoned your kin after learning a troubling truth
-          - min: 8
+        - text: You are guided by a vision or prophecy
+          roll:
+            min: 8
             max: 13
-            result: You are guided by a vision or prophecy
-          - min: 14
+        - text: You are haunted by past actions or failures
+          roll:
+            min: 14
             max: 20
-            result: You are haunted by past actions or failures
-          - min: 21
+        - text: You are running from a criminal past
+          roll:
+            min: 21
             max: 27
-            result: You are running from a criminal past
-          - min: 28
+        - text: You are the sole survivor of an attack or calamity
+          roll:
+            min: 28
             max: 34
-            result: You are the sole survivor of an attack or calamity
-          - min: 35
+        - text: You escaped an abusive or unjust situation
+          roll:
+            min: 35
             max: 40
-            result: You escaped an abusive or unjust situation
-          - min: 41
+        - text: You have no memory of your former life
+          roll:
+            min: 41
             max: 46
-            result: You have no memory of your former life
-          - min: 47
+        - text: You rejected a duty or destiny
+          roll:
+            min: 47
             max: 53
-            result: You rejected a duty or destiny
-          - min: 54
+        - text: You were banished from your former home
+          roll:
+            min: 54
             max: 60
-            result: You were banished from your former home
-          - min: 61
+        - text: You were denied a birthright
+          roll:
+            min: 61
             max: 67
-            result: You were denied a birthright
-          - min: 68
+        - text: You were on your own for as long as you can remember
+          roll:
+            min: 68
             max: 74
-            result: You were on your own for as long as you can remember
-          - min: 75
+        - text: You were sent away on a prolonged mission
+          roll:
+            min: 75
             max: 81
-            result: You were sent away on a prolonged mission
-          - min: 82
+        - text: You were taken or lured away by someone
+          roll:
+            min: 82
             max: 87
-            result: You were taken or lured away by someone
-          - min: 88
+        - text: Your ambitions outgrew your humble origins
+          roll:
+            min: 88
             max: 94
-            result: Your ambitions outgrew your humble origins
-          - min: 95
+        - text: Your wanderlust carried you far away
+          roll:
+            min: 95
             max: 100
-            result: Your wanderlust carried you far away
-          - min: 101
+        - text: You are plagued by a failed relationship
+          roll:
+            min: 101
             max: 107
-            result: You are plagued by a failed relationship
-          - min: 108
+        - text: You fled an overwhelming debt that came due
+          roll:
+            min: 108
             max: 113
-            result: You fled an overwhelming debt that came due
-          - min: 114
+        - text: You fled an unwanted birthright or family obligation
+          roll:
+            min: 114
             max: 120
-            result: You fled an unwanted birthright or family obligation
-          - min: 121
+        - text: You have unexplained knowledge beyond your understanding
+          roll:
+            min: 121
             max: 127
-            result: You have unexplained knowledge beyond your understanding
-          - min: 128
+        - text: You hold dearly to a noble and philanthropic cause
+          roll:
+            min: 128
             max: 134
-            result: You hold dearly to a noble and philanthropic cause
-          - min: 135
+        - text: You left a corporation who wanted you to move up or get out
+          roll:
+            min: 135
             max: 140
-            result: You left a corporation who wanted you to move up or get out
-          - min: 141
+        - text: You participated in a fierce attack and now seek atonement
+          roll:
+            min: 141
             max: 146
-            result: You participated in a fierce attack and now seek atonement
-          - min: 147
+        - text: You seek to prove yourself worthy of a duty or destiny
+          roll:
+            min: 147
             max: 153
-            result: You seek to prove yourself worthy of a duty or destiny
-          - min: 154
+        - text: You wander aimlessly after losing a faithful companion
+          roll:
+            min: 154
             max: 160
-            result: You wander aimlessly after losing a faithful companion
-          - min: 161
+        - text: You were adrift in space long enough to lose yourself
+          roll:
+            min: 161
             max: 167
-            result: You were adrift in space long enough to lose yourself
-          - min: 168
+        - text: You were away on a long-term research mission when everything changed
+          roll:
+            min: 168
             max: 174
-            result: You were away on a long-term research mission when everything changed
-          - min: 175
+        - text: You were falsely accused of criminal activity and fled
+          roll:
+            min: 175
             max: 181
-            result: You were falsely accused of criminal activity and fled
-          - min: 182
+        - text: You work to see that a vision or prophecy will not come to pass
+          roll:
+            min: 182
             max: 187
-            result: You work to see that a vision or prophecy will not come to pass
-          - min: 188
+        - text: Your home did not survive a natural disaster
+          roll:
+            min: 188
             max: 194
-            result: Your home did not survive a natural disaster
-          - min: 195
+        - text: Your kin abandoned you after learning a troubling truth
+          roll:
+            min: 195
             max: 200
-            result: Your kin abandoned you after learning a troubling truth
-          - min: 201
+        - text: You abandoned the wealth that made you a target
+          roll:
+            min: 201
             max: 207
-            result: You abandoned the wealth that made you a target
-          - min: 208
+        - text: You are guided by a mission passed down to you by kin
+          roll:
+            min: 208
             max: 213
-            result: You are guided by a mission passed down to you by kin
-          - min: 214
+        - text: You have knowledge others want to erase
+          roll:
+            min: 214
             max: 220
-            result: You have knowledge others want to erase
-          - min: 221
+        - text: You just recovered from a dangerous addiction that still tempts you
+          roll:
+            min: 221
             max: 227
-            result: You just recovered from a dangerous addiction that still tempts you
-          - min: 228
+        - text: You know the truth is out there
+          roll:
+            min: 228
             max: 234
-            result: You know the truth is out there
-          - min: 235
+        - text: You offended a benefactor or patron
+          roll:
+            min: 235
             max: 240
-            result: You offended a benefactor or patron
-          - min: 241
+        - text: You participated in an unethical or illegal experiment
+          roll:
+            min: 241
             max: 246
-            result: You participated in an unethical or illegal experiment
-          - min: 247
+        - text: You squandered the security of a normal life
+          roll:
+            min: 247
             max: 253
-            result: You squandered the security of a normal life
-          - min: 254
+        - text: You survived a crash landing in the Expanse but at a great cost
+          roll:
+            min: 254
             max: 260
-            result: You survived a crash landing in the Expanse but at a great cost
-          - min: 261
+        - text: You were duped into a shady action
+          roll:
+            min: 261
             max: 267
-            result: You were duped into a shady action
-          - min: 268
+        - text: You were shamed by a failed tech experiment
+          roll:
+            min: 268
             max: 274
-            result: You were shamed by a failed tech experiment
-          - min: 275
+        - text: You were shunned for your beliefs
+          roll:
+            min: 275
             max: 281
-            result: You were shunned for your beliefs
-          - min: 282
+        - text: You were viewed as a pariah
+          roll:
+            min: 282
             max: 287
-            result: You were viewed as a pariah
-          - min: 288
+        - text: Your search for knowledge carried you far away
+          roll:
+            min: 288
             max: 294
-            result: Your search for knowledge carried you far away
-          - min: 295
+        - text: Your unique genetic markers make you a target for illegal research
+          roll:
+            min: 295
             max: 300
-            result: Your unique genetic markers make you a target for illegal research
+        type: oracle_rollable
       starship_history:
         name: Starship History
-        replaces: starforged/oracles/campaign_launch/starship_history
+        oracle_type: table_text
+        replaces:
+        - oracle_rollable:starforged/launching_your_campaign/character/starship/history
         dice: 1d300
+        # summary: Extension of the oracle table
+        _source: *Source
         rows:
-          - min: 1
+        - text: Acquired in trade for a precious family heirloom
+          roll:
+            min: 1
             max: 8
-            result: Acquired in trade for a precious family heirloom
-          - min: 9
+        - text: Built out of repurposed scrap
+          roll:
+            min: 9
             max: 17
-            result: Built out of repurposed scrap
-          - min: 18
+        - text: Claimed as spoils of war
+          roll:
+            min: 18
             max: 25
-            result: Claimed as spoils of war
-          - min: 26
+        - text: Discovered as a derelict, and patched back together
+          roll:
+            min: 26
             max: 34
-            result: Discovered as a derelict, and patched back together
-          - min: 35
+        - text: Earned in exchange for a promise or vow
+          roll:
+            min: 35
             max: 42
-            result: Earned in exchange for a promise or vow
-          - min: 43
+        - text: Found abandoned in perfect condition
+          roll:
+            min: 43
             max: 50
-            result: Found abandoned in perfect condition
-          - min: 51
+        - text: Granted by an organization or community
+          roll:
+            min: 51
             max: 58
-            result: Granted by an organization or community
-          - min: 59
+        - text: Inherited from a relative or mentor
+          roll:
+            min: 59
             max: 67
-            result: Inherited from a relative or mentor
-          - min: 68
+        - text: Purchased at a suspiciously cheap price
+          roll:
+            min: 68
             max: 75
-            result: Purchased at a suspiciously cheap price
-          - min: 76
+        - text: Stolen from a notorious crime boss or criminal organization
+          roll:
+            min: 76
             max: 84
-            result: Stolen from a notorious crime boss or criminal organization
-          - min: 85
+        - text: Taken while fleeing an attack or disaster
+          roll:
+            min: 85
             max: 92
-            result: Taken while fleeing an attack or disaster
-          - min: 93
+        - text: Won in a bet
+          roll:
+            min: 93
             max: 100
-            result: Won in a bet
-          - min: 101
+        - text: Abandoned as a cursed vessel that no one else dared to take
+          roll:
+            min: 101
             max: 108
-            result: Abandoned as a cursed vessel that no one else dared to take
-          - min: 109
+        - text: Bought at auction from an estate sale
+          roll:
+            min: 109
             max: 117
-            result: Bought at auction from an estate sale
-          - min: 118
+        - text: Claimed as a corporate cast-off after upgrading their fleet
+          roll:
+            min: 118
             max: 125
-            result: Claimed as a corporate cast-off after upgrading their fleet
-          - min: 126
+        - text: Gifted from a notorious crime boss in exchange for a favor to be called
+            in later
+          roll:
+            min: 126
             max: 134
-            result: Gifted from a notorious crime boss in exchange for a favor to be called in later
-          - min: 135
+        - text: Given as a resolution to a promise or vow
+          roll:
+            min: 135
             max: 142
-            result: Given as a resolution to a promise or vow
-          - min: 143
+        - text: Glitchy corporate prototype given away
+          roll:
+            min: 143
             max: 150
-            result: Glitchy corporate prototype given away
-          - min: 151
+        - text: Granted by an unknown benefactor
+          roll:
+            min: 151
             max: 158
-            result: Granted by an unknown benefactor
-          - min: 159
+        - text: Purchased at a suspiciously expensive price
+          roll:
+            min: 159
             max: 167
-            result: Purchased at a suspiciously expensive price
-          - min: 168
+        - text: Retrofitted vessel from original generation ships
+          roll:
+            min: 168
             max: 175
-            result: Retrofitted vessel from original generation ships
-          - min: 176
+        - text: Saved from the recycling heap and repaired
+          roll:
+            min: 176
             max: 184
-            result: Saved from the recycling heap and repaired
-          - min: 185
+        - text: Secondhand market purchase with poorly repaired battle damage
+          roll:
+            min: 185
             max: 192
-            result: Secondhand market purchase with poorly repaired battle damage
-          - min: 193
+        - text: Won in a lottery
+          roll:
+            min: 193
             max: 200
-            result: Won in a lottery
-          - min: 201
+        - text: Bought at auction after repossession by authorities
+          roll:
+            min: 201
             max: 208
-            result: Bought at auction after repossession by authorities
-          - min: 209
+        - text: Custom built over the years as a hobby project
+          roll:
+            min: 209
             max: 217
-            result: Custom built over the years as a hobby project
-          - min: 218
+        - text: Discarded training vessel that has been retrofitted
+          roll:
+            min: 218
             max: 225
-            result: Discarded training vessel that has been retrofitted
-          - min: 226
+        - text: Found unfinished in orbital drydock in an abandoned sector
+          roll:
+            min: 226
             max: 234
-            result: Found unfinished in orbital drydock in an abandoned sector
-          - min: 235
+        - text: Given as a down payment for a job needing done
+          roll:
+            min: 235
             max: 242
-            result: Given as a down payment for a job needing done
-          - min: 243
+        - text: Given as collateral for a debt you are owed
+          roll:
+            min: 243
             max: 250
-            result: Given as collateral for a debt you are owed
-          - min: 251
+        - text: Granted as a dying wish with strings attached
+          roll:
+            min: 251
             max: 258
-            result: Granted as a dying wish with strings attached
-          - min: 259
+        - text: Perk of a previous leadership position
+          roll:
+            min: 259
             max: 267
-            result: Perk of a previous leadership position
-          - min: 268
+        - text: Purchased from a disgraced captain forced into retirement
+          roll:
+            min: 268
             max: 275
-            result: Purchased from a disgraced captain forced into retirement
-          - min: 276
+        - text: Retrofitted museum vessel
+          roll:
+            min: 276
             max: 284
-            result: Retrofitted museum vessel
-          - min: 285
+        - text: Stolen from a faction or corporation
+          roll:
+            min: 285
             max: 292
-            result: Stolen from a faction or corporation
-          - min: 293
+        - text: Won as a corporate prize
+          roll:
+            min: 293
             max: 300
-            result: Won as a corporate prize
-      starship_quirk:
-        name: Starship Quirks
-        replaces: starforged/oracles/campaign_launch/starship_quirk
+        type: oracle_rollable
+      starship_quirks:
+        name: Starship Quirk
+        oracle_type: table_text
         dice: 1d300
+        replaces:
+        # summary: Extension of the oracle table
+        - oracle_rollable:starforged/launching_your_campaign/character/starship/quirks
+        _source: *Source
         rows:
-          - min: 1
+        - text: Engine room is scorched with old burn marks
+          roll:
+            min: 1
             max: 5
-            result: Engine room is scorched with old burn marks
-          - min: 6
+        - text: Exterior is marred by rust and grime
+          roll:
+            min: 6
             max: 10
-            result: Exterior is marred by rust and grime
-          - min: 11
+        - text: Faint, phantom music sometimes echoes through the corridors
+          roll:
+            min: 11
             max: 15
-            result: Faint, phantom music sometimes echoes through the corridors
-          - min: 16
+        - text: Gravity generator is notoriously fickle
+          roll:
+            min: 16
             max: 20
-            result: Gravity generator is notoriously fickle
-          - min: 21
+        - text: Hull is fused with organic growths
+          roll:
+            min: 21
             max: 25
-            result: Hull is fused with organic growths
-          - min: 26
+        - text: Hull rattles and groans in atmospheric flight
+          roll:
+            min: 26
             max: 30
-            result: Hull rattles and groans in atmospheric flight
-          - min: 31
+        - text: Interior spaces are crowded with exposed cables and conduits
+          roll:
+            min: 31
             max: 35
-            result: Interior spaces are crowded with exposed cables and conduits
-          - min: 36
+        - text: Looks defenseless, but exterior panels open to reveal weapons
+          roll:
+            min: 36
             max: 40
-            result: Looks defenseless, but exterior panels open to reveal weapons
-          - min: 41
+        - text: Navigation logs contain coordinates to locations that do not—or should
+            not—exist
+          roll:
+            min: 41
             max: 45
-            result: Navigation logs contain coordinates to locations that do not—or should not—exist
-          - min: 46
+        - text: Old bloodstain in the airlock reappears even when painted over
+          roll:
+            min: 46
             max: 50
-            result: Old bloodstain in the airlock reappears even when painted over
-          - min: 51
+        - text: Once a beautiful ship, now scarred by a devastating battle
+          roll:
+            min: 51
             max: 55
-            result: Once a beautiful ship, now scarred by a devastating battle
-          - min: 56
+        - text: Patched hull covers a recent catastrophic breach
+          roll:
+            min: 56
             max: 60
-            result: Patched hull covers a recent catastrophic breach
-          - min: 61
+        - text: Placards and control labels are in an uncommon language
+          roll:
+            min: 61
             max: 65
-            result: Placards and control labels are in an uncommon language
-          - min: 66
+        - text: Removable plate decks provide access to hidden storage
+          roll:
+            min: 66
             max: 70
-            result: Removable plate decks provide access to hidden storage
-          - min: 71
+        - text: Segmented landing gear unfold like gangly spider legs
+          roll:
+            min: 71
             max: 75
-            result: Segmented landing gear unfold like gangly spider legs
-          - min: 76
+        - text: Ship is powered by an ancient precursor device
+          roll:
+            min: 76
             max: 80
-            result: Ship is powered by an ancient precursor device
-          - min: 81
+        - text: Someone marked the hull with graffiti during a recent layover
+          roll:
+            min: 81
             max: 85
-            result: Someone marked the hull with graffiti during a recent layover
-          - min: 86
+        - text: Strange symbols are scrawled on the deck and bulkheads in the main
+            corridor
+          roll:
+            min: 86
             max: 90
-            result: Strange symbols are scrawled on the deck and bulkheads in the main corridor
-          - min: 91
+        - text: Things tend to go missing for no logical reason
+          roll:
+            min: 91
             max: 95
-            result: Things tend to go missing for no logical reason
-          - min: 96
+        - text: Timers and clocks are always just a bit off
+          roll:
+            min: 96
             max: 100
-            result: Timers and clocks are always just a bit off
-          - min: 101
+        - text: Ablative armor means constant patching
+          roll:
+            min: 101
             max: 105
-            result: Ablative armor means constant patching
-          - min: 106
+        - text: Bulkhead doors often either slowly close or jam while closing
+          roll:
+            min: 106
             max: 110
-            result: Bulkhead doors often either slowly close or jam while closing
-          - min: 111
+        - text: Day and night cycles are constantly miscalibrated when in planetary
+            orbit
+          roll:
+            min: 111
             max: 115
-            result: Day and night cycles are constantly miscalibrated when in planetary orbit
-          - min: 116
+        - text: Engine room reacts poorly to tools made of a certain alloy
+          roll:
+            min: 116
             max: 120
-            result: Engine room reacts poorly to tools made of a certain alloy
-          - min: 121
+        - text: Equipment only works after being hit with a certain pattern
+          roll:
+            min: 121
             max: 125
-            result: Equipment only works after being hit with a certain pattern
-          - min: 126
+        - text: Exterior is garishly painted leaving no room for subtlety
+          roll:
+            min: 126
             max: 130
-            result: Exterior is garishly painted leaving no room for subtlety
-          - min: 131
+        - text: Hull and nacelles reconfigure for Eidolon jumps
+          roll:
+            min: 131
             max: 135
-            result: Hull and nacelles reconfigure for Eidolon jumps
-          - min: 136
+        - text: Hull is marked with a limerick, haiku, or joke
+          roll:
+            min: 136
             max: 140
-            result: Hull is marked with a limerick, haiku, or joke
-          - min: 141
+        - text: Internal comms sometimes activate on their own, usually at inappropriate
+            times
+          roll:
+            min: 141
             max: 145
-            result: Internal comms sometimes activate on their own, usually at inappropriate times
-          - min: 146
+        - text: Internal wiring runs off organic neural gel packs
+          roll:
+            min: 146
             max: 150
-            result: Internal wiring runs off organic neural gel packs
-          - min: 151
+        - text: Landing gear can slide like skis on inclines without warning
+          roll:
+            min: 151
             max: 155
-            result: Landing gear can slide like skis on inclines without warning
-          - min: 156
+        - text: Lighting randomly shuts down a section at a time in long hallways
+            before resetting
+          roll:
+            min: 156
             max: 160
-            result: Lighting randomly shuts down a section at a time in long hallways before resetting
-          - min: 161
+        - text: Main crew quarters has an aquarium built into the wall that is impossible
+            to clean
+          roll:
+            min: 161
             max: 165
-            result: Main crew quarters has an aquarium built into the wall that is impossible to clean
-          - min: 166
+        - text: Placards and control labels only use icons instead of language
+          roll:
+            min: 166
             max: 170
-            result: Placards and control labels only use icons instead of language
-          - min: 171
+        - text: Previous captain or crew logs randomly plays despite being purged
+            from the system
+          roll:
+            min: 171
             max: 175
-            result: Previous captain or crew logs randomly plays despite being purged from the system
-          - min: 176
+        - text: Removable wall plates provide access to maintenance crawl spaces
+          roll:
+            min: 176
             max: 180
-            result: Removable wall plates provide access to maintenance crawl spaces
-          - min: 181
+        - text: Rerouting power must be done manually with a large circuit board of
+            wires and plugs
+          roll:
+            min: 181
             max: 185
-            result: Rerouting power must be done manually with a large circuit board of wires and plugs
-          - min: 186
+        - text: Rooms are just a little too small as the builder tried to cut costs
+          roll:
+            min: 186
             max: 190
-            result: Rooms are just a little too small as the builder tried to cut costs
-          - min: 191
+        - text: Rooms have their own gravity generators but all in different orientations
+          roll:
+            min: 191
             max: 195
-            result: Rooms have their own gravity generators but all in different orientations
-          - min: 196
+        - text: Ship painted and decorated to look like a lifeform
+          roll:
+            min: 196
             max: 200
-            result: Ship painted and decorated to look like a lifeform
-          - min: 201
+        - text: Air recycler often leaves an unusual odor
+          roll:
+            min: 201
             max: 205
-            result: Air recycler often leaves an unusual odor
-          - min: 206
+        - text: Computer has an unusual acknowledgment when responding to commands
+          roll:
+            min: 206
             max: 210
-            result: Computer has an unusual acknowledgment when responding to commands
-          - min: 211
+        - text: Critical piece of equipment requires manual pumping to restart
+          roll:
+            min: 211
             max: 215
-            result: Critical piece of equipment requires manual pumping to restart
-          - min: 216
+        - text: Diagnostic program returns data from the wrong system
+          roll:
+            min: 216
             max: 220
-            result: Diagnostic program returns data from the wrong system
-          - min: 221
+        - text: Each piece of major equipment is labeled with an ostentatious name
+          roll:
+            min: 221
             max: 225
-            result: Each piece of major equipment is labeled with an ostentatious name
-          - min: 226
+        - text: Exterior is marred by pits or dimples from micro-strikes during shield
+            failure
+          roll:
+            min: 226
             max: 230
-            result: Exterior is marred by pits or dimples from micro-strikes during shield failure
-          - min: 231
+        - text: Exterior sensors lack either visual data or the ability to zoom in
+            visually
+          roll:
+            min: 231
             max: 235
-            result: Exterior sensors lack either visual data or the ability to zoom in visually
-          - min: 236
+        - text: Hull rattles and groans during Eidolon jumps
+          roll:
+            min: 236
             max: 240
-            result: Hull rattles and groans during Eidolon jumps
-          - min: 241
+        - text: Maneuvering thrusters can hiccup before fully firing
+          roll:
+            min: 241
             max: 245
-            result: Maneuvering thrusters can hiccup before fully firing
-          - min: 246
+        - text: Manual flight mode requires wearing a headset and pair of chunky tech
+            gloves
+          roll:
+            min: 246
             max: 250
-            result: Manual flight mode requires wearing a headset and pair of chunky tech gloves
-          - min: 251
+        - text: Restroom is only accessible via a long vertical shaft with a ladder
+          roll:
+            min: 251
             max: 255
-            result: Restroom is only accessible via a long vertical shaft with a ladder
-          - min: 256
+        - text: Rudimentary AI program attempts to add appropriate emojis to logs
+            and fails
+          roll:
+            min: 256
             max: 260
-            result: Rudimentary AI program attempts to add appropriate emojis to logs and fails
-          - min: 261
+        - text: Rudimentary holodeck often malfunctions by disregarding safety protocols
+          roll:
+            min: 261
             max: 265
-            result: Rudimentary holodeck often malfunctions by disregarding safety protocols
-          - min: 266
+        - text: Ship or system alerts have unnecessarily long beep or chime patterns
+          roll:
+            min: 266
             max: 270
-            result: Ship or system alerts have unnecessarily long beep or chime patterns
-          - min: 271
+        - text: Space rodent nests show up randomly despite extermination
+          roll:
+            min: 271
             max: 275
-            result: Space rodent nests show up randomly despite extermination
-          - min: 276
+        - text: The pilot chair is the most uncomfortable chair on the ship
+          roll:
+            min: 276
             max: 280
-            result: The pilot chair is the most uncomfortable chair on the ship
-          - min: 281
+        - text: Video comms often malfunction by adding visual filters
+          roll:
+            min: 281
             max: 285
-            result: Video comms often malfunction by adding visual filters
-          - min: 286
+        - text: Voice commands for core computer only respond to absurd name
+          roll:
+            min: 286
             max: 290
-            result: Voice commands for core computer only respond to absurd name
-          - min: 291
+        - text: Voice options for the computer system all have outrageous accents
+          roll:
+            min: 291
             max: 295
-            result: Voice options for the computer system all have outrageous accents
-          - min: 296
+        - text: Water recycler leaves the water with an unpleasant color
+          roll:
+            min: 296
             max: 300
-            result: Water recycler leaves the water with an unpleasant color
+        type: oracle_rollable
       sector_trouble:
-        replaces: starforged/oracles/campaign_launch/sector_trouble
+        name: Sector Trouble
+        oracle_type: table_text
+        replaces:
+        - oracle_rollable:starforged/launching_your_campaign/starting_sector/trouble
         dice: 1d300
+        # summary: Extension of the oracle table
+        _source: *Source
         rows:
-          - min: 1
+        - text: Blockade prevents trade with other sectors
+          roll:
+            min: 1
             max: 5
-            result: Blockade prevents trade with other sectors
-          - min: 6
+        - text: Bounty hunters search for an infamous fugitive
+          roll:
+            min: 6
             max: 10
-            result: Bounty hunters search for an infamous fugitive
-          - min: 11
+        - text: Chaotic breaches in spacetime spread like wildfire
+          roll:
+            min: 11
             max: 15
-            result: Chaotic breaches in spacetime spread like wildfire
-          - min: 16
+        - text: Criminal faction corrupts local authorities
+          roll:
+            min: 16
             max: 20
-            result: Criminal faction corrupts local authorities
-          - min: 21
+        - text: Devastating superweapon has fallen into the wrong hands
+          roll:
+            min: 21
             max: 25
-            result: Devastating superweapon has fallen into the wrong hands
-          - min: 26
+        - text: Energy storms are rampant
+          roll:
+            min: 26
             max: 30
-            result: Energy storms are rampant
-          - min: 31
+        - text: Magnetic disturbances disrupt communication
+          roll:
+            min: 31
             max: 35
-            result: Magnetic disturbances disrupt communication
-          - min: 36
+        - text: Newly found resource lures greedy fortune hunters to the sector
+          roll:
+            min: 36
             max: 40
-            result: Newly found resource lures greedy fortune hunters to the sector
-          - min: 41
+        - text: Notorious pirate clan preys on starships
+          roll:
+            min: 41
             max: 45
-            result: Notorious pirate clan preys on starships
-          - min: 46
+        - text: Parasitic lifeforms spread like a plague
+          roll:
+            min: 46
             max: 50
-            result: Parasitic lifeforms spread like a plague
-          - min: 51
+        - text: Precursor sites throughout the sector emit strange signals
+          roll:
+            min: 51
             max: 55
-            result: Precursor sites throughout the sector emit strange signals
-          - min: 56
+        - text: Prophecies foretell an imminent awakening of a dreadful power
+          roll:
+            min: 56
             max: 60
-            result: Prophecies foretell an imminent awakening of a dreadful power
-          - min: 61
+        - text: Raider clan emerges as a dominant threat under a new leader
+          roll:
+            min: 61
             max: 65
-            result: Raider clan emerges as a dominant threat under a new leader
-          - min: 66
+        - text: Religious zealots overrun the sector
+          roll:
+            min: 66
             max: 70
-            result: Religious zealots overrun the sector
-          - min: 71
+        - text: Rogue AI infiltrates systems throughout the sector
+          roll:
+            min: 71
             max: 75
-            result: Rogue AI infiltrates systems throughout the sector
-          - min: 76
+        - text: Settlements or factions are on the brink of war
+          roll:
+            min: 76
             max: 80
-            result: Settlements or factions are on the brink of war
-          - min: 81
+        - text: Ships regularly go missing
+          roll:
+            min: 81
             max: 85
-            result: Ships regularly go missing
-          - min: 86
+        - text: Sickness spreads among ships and settlements
+          roll:
+            min: 86
             max: 90
-            result: Sickness spreads among ships and settlements
-          - min: 91
+        - text: Supernova is imminent
+          roll:
+            min: 91
             max: 95
-            result: Supernova is imminent
-          - min: 96
+        - text: Titanic spaceborne lifeform stalks the spaceways
+          roll:
+            min: 96
             max: 100
-            result: Titanic spaceborne lifeform stalks the spaceways
-          - min: 101
+        - text: Advanced technology is being weaponized
+          roll:
+            min: 101
             max: 105
-            result: Advanced technology is being weaponized
-          - min: 106
+        - text: Automated defense network has been hacked
+          roll:
+            min: 106
             max: 110
-            result: Automated defense network has been hacked
-          - min: 111
+        - text: Cargo vessels with desperately needed supplies have gone missing
+          roll:
+            min: 111
             max: 115
-            result: Cargo vessels with desperately needed supplies have gone missing
-          - min: 116
+        - text: Cold war between settlements or factions takes its toll
+          roll:
+            min: 116
             max: 120
-            result: Cold war between settlements or factions takes its toll
-          - min: 121
+        - text: Dangerous lifeforms have escaped from an illegal experimentation site
+          roll:
+            min: 121
             max: 125
-            result: Dangerous lifeforms have escaped from an illegal experimentation site
-          - min: 126
+        - text: Disinformation is fomenting insurrection
+          roll:
+            min: 126
             max: 130
-            result: Disinformation is fomenting insurrection
-          - min: 131
+        - text: Enhanced military presence causes tension with local citizens
+          roll:
+            min: 131
             max: 135
-            result: Enhanced military presence causes tension with local citizens
-          - min: 136
+        - text: Greedy corporations charge astronomical tolls for travel
+          roll:
+            min: 136
             max: 140
-            result: Greedy corporations charge astronomical tolls for travel
-          - min: 141
+        - text: Leadership has raised taxes for personal enrichment
+          roll:
+            min: 141
             max: 145
-            result: Leadership has raised taxes for personal enrichment
-          - min: 146
+        - text: Local government may shut down due to underfunding
+          roll:
+            min: 146
             max: 150
-            result: Local government may shut down due to underfunding
-          - min: 151
+        - text: Morphing star plays havoc with energy systems
+          roll:
+            min: 151
             max: 155
-            result: Morphing star plays havoc with energy systems
-          - min: 156
+        - text: Necessary trade negotiations stand on the brink of failure
+          roll:
+            min: 156
             max: 160
-            result: Necessary trade negotiations stand on the brink of failure
-          - min: 161
+        - text: Oppressive faction takes dominion over the sector
+          roll:
+            min: 161
             max: 165
-            result: Oppressive faction takes dominion over the sector
-          - min: 166
+        - text: Pirates hold a beloved leader hostage
+          roll:
+            min: 166
             max: 170
-            result: Pirates hold a beloved leader hostage
-          - min: 171
+        - text: Political dissenters are disappearing
+          roll:
+            min: 171
             max: 175
-            result: Political dissenters are disappearing
-          - min: 176
+        - text: Religious zealots take a slim majority in leadership and enact drastic
+            changes
+          roll:
+            min: 176
             max: 180
-            result: Religious zealots take a slim majority in leadership and enact drastic changes
-          - min: 181
+        - text: Rumors and sightings of a ship captained by the dead cause panic
+          roll:
+            min: 181
             max: 185
-            result: Rumors and sightings of a ship captained by the dead cause panic
-          - min: 186
+        - text: Scarce resources lead to price gouging
+          roll:
+            min: 186
             max: 190
-            result: Scarce resources lead to price gouging
-          - min: 191
+        - text: Starship sabotage is rampant at the largest spaceport
+          roll:
+            min: 191
             max: 195
-            result: Starship sabotage is rampant at the largest spaceport
-          - min: 196
+        - text: Strange energy field suppresses Eidolon drives
+          roll:
+            min: 196
             max: 200
-            result: Strange energy field suppresses Eidolon drives
-          - min: 201
+        - text: Access to vital resources and medication is suddenly rationed without
+            explanation
+          roll:
+            min: 201
             max: 205
-            result: Access to vital resources and medication is suddenly rationed without explanation
-          - min: 206
+        - text: Armada of unidentified vessels is headed to the sector with weapons
+            hot
+          roll:
+            min: 206
             max: 210
-            result: Armada of unidentified vessels is headed to the sector with weapons hot
-          - min: 211
+        - text: Central space hub is quarantined at the wrong time
+          roll:
+            min: 211
             max: 215
-            result: Central space hub is quarantined at the wrong time
-          - min: 216
+        - text: Chaos reigns after the assassination of a beloved leader
+          roll:
+            min: 216
             max: 220
-            result: Chaos reigns after the assassination of a beloved leader
-          - min: 221
+        - text: Corporations prioritize profits over people and release unproven tech
+          roll:
+            min: 221
             max: 225
-            result: Corporations prioritize profits over people and release unproven tech
-          - min: 226
+        - text: Damaged power supply leaves huge segments of the population without
+            power
+          roll:
+            min: 226
             max: 230
-            result: Damaged power supply leaves huge segments of the population without power
-          - min: 231
+        - text: Economy built on exploiting workers oppresses citizens
+          roll:
+            min: 231
             max: 235
-            result: Economy built on exploiting workers oppresses citizens
-          - min: 236
+        - text: Highly addictive new drug with dangerous side effects sweeps through
+            the system
+          roll:
+            min: 236
             max: 240
-            result: Highly addictive new drug with dangerous side effects sweeps through the system
-          - min: 241
+        - text: Iconic cultural artifacts are being destroyed or stolen in a war
+          roll:
+            min: 241
             max: 245
-            result: Iconic cultural artifacts are being destroyed or stolen in a war
-          - min: 246
+        - text: Lack of infrastructure investment puts communities on the verge of
+            collapse
+          roll:
+            min: 246
             max: 250
-            result: Lack of infrastructure investment puts communities on the verge of collapse
-          - min: 251
+        - text: Natural disaster is imminent
+          roll:
+            min: 251
             max: 255
-            result: Natural disaster is imminent
-          - min: 256
+        - text: Population experiences mass visions from an unknown source
+          roll:
+            min: 256
             max: 260
-            result: Population experiences mass visions from an unknown source
-          - min: 261
+        - text: Protests gather strength against an unpopular law
+          roll:
+            min: 261
             max: 265
-            result: Protests gather strength against an unpopular law
-          - min: 266
+        - text: Punishments for crime are wildly and unfairly increased
+          roll:
+            min: 266
             max: 270
-            result: Punishments for crime are wildly and unfairly increased
-          - min: 271
+        - text: Rampant inflation leads to overwhelming poor
+          roll:
+            min: 271
             max: 275
-            result: Rampant inflation leads to overwhelming poor
-          - min: 276
+        - text: Resources mined from the asteroid belt just ran out
+          roll:
+            min: 276
             max: 280
-            result: Resources mined from the asteroid belt just ran out
-          - min: 281
+        - text: Social unrest and riots become common under the brutality of authority
+          roll:
+            min: 281
             max: 285
-            result: Social unrest and riots become common under the brutality of authority
-          - min: 286
+        - text: The class of super-rich flaunt their power and immunity to authority
+          roll:
+            min: 286
             max: 290
-            result: The class of super-rich flaunt their power and immunity to authority
-          - min: 291
+        - text: Vast sections of the population must relocate after a disaster
+          roll:
+            min: 291
             max: 295
-            result: Vast sections of the population must relocate after a disaster
-          - min: 296
+        - text: Violation of a peace treaty sets off new tensions
+          roll:
+            min: 296
             max: 300
-            result: Violation of a peace treaty sets off new tensions
+        type: oracle_rollable
       inciting_incident:
-        replaces: starforged/oracles/campaign_launch/inciting_incident
+        name: Inciting Incident
+        oracle_type: table_text
         dice: 1d300
+        # summary: Extension of the oracle table
+        _source: *Source
         rows:
-          - min: 1
+        - text: Aid a starship caught in a spacetime fracture.
+          roll:
+            min: 1
             max: 5
-            result: Aid a starship caught in a spacetime fracture.
-          - min: 6
+        - text: Broker peace between two feuding settlements
+          roll:
+            min: 6
             max: 10
-            result: Broker peace between two feuding settlements
-          - min: 11
+        - text: Chart a new passage between isolated settlements
+          roll:
+            min: 11
             max: 15
-            result: Chart a new passage between isolated settlements
-          - min: 16
+        - text: Defend the people of a beleaguered settlement against raiders
+          roll:
+            min: 16
             max: 20
-            result: Defend the people of a beleaguered settlement against raiders
-          - min: 21
+        - text: Discover who sabotaged a settlement’s air processors
+          roll:
+            min: 21
             max: 25
-            result: Discover who sabotaged a settlement’s air processors
-          - min: 26
+        - text: Escort a tradeship carrying prized cargo
+          roll:
+            min: 26
             max: 30
-            result: Escort a tradeship carrying prized cargo
-          - min: 31
+        - text: Ferry a rescue team to a perilous disaster site
+          roll:
+            min: 31
             max: 35
-            result: Ferry a rescue team to a perilous disaster site
-          - min: 36
+        - text: Infiltrate a fortified base to steal crucial data
+          roll:
+            min: 36
             max: 40
-            result: Infiltrate a fortified base to steal crucial data
-          - min: 41
+        - text: Investigate terrifying manifestations at a remote settlement
+          roll:
+            min: 41
             max: 45
-            result: Investigate terrifying manifestations at a remote settlement
-          - min: 46
+        - text: Liberate prisoners at a cruel labor camp
+          roll:
+            min: 46
             max: 50
-            result: Liberate prisoners at a cruel labor camp
-          - min: 51
+        - text: Locate a downed spacer on an uninhabited planet
+          roll:
+            min: 51
             max: 55
-            result: Locate a downed spacer on an uninhabited planet
-          - min: 56
+        - text: Protect a fugitive from a relentless bounty hunter
+          roll:
+            min: 56
             max: 60
-            result: Protect a fugitive from a relentless bounty hunter
-          - min: 61
+        - text: Recover a cherished pre-exodus artifact from an enemy
+          roll:
+            min: 61
             max: 65
-            result: Recover a cherished pre-exodus artifact from an enemy
-          - min: 66
+        - text: Rescue a starship crew held captive by mutineers
+          roll:
+            min: 66
             max: 70
-            result: Rescue a starship crew held captive by mutineers
-          - min: 71
+        - text: Retrieve a cache of stolen weapons from a pirate ship
+          roll:
+            min: 71
             max: 75
-            result: Retrieve a cache of stolen weapons from a pirate ship
-          - min: 76
+        - text: Sabotage an enemy installation
+          roll:
+            min: 76
             max: 80
-            result: Sabotage an enemy installation
-          - min: 81
+        - text: Search for a missing expedition in the depths of a precursor vault
+          roll:
+            min: 81
             max: 85
-            result: Search for a missing expedition in the depths of a precursor vault
-          - min: 86
+        - text: Shield a wondrous lifeform from those who seek to destroy it
+          roll:
+            min: 86
             max: 90
-            result: Shield a wondrous lifeform from those who seek to destroy it
-          - min: 91
+        - text: Track and slay a marauding beast
+          roll:
+            min: 91
             max: 95
-            result: Track and slay a marauding beast
-          - min: 96
+        - text: Transport a displaced people to their new home
+          roll:
+            min: 96
             max: 100
-            result: Transport a displaced people to their new home
-          - min: 101
+        - text: Aid a starship in escaping pirates
+          roll:
+            min: 101
             max: 105
-            result: Aid a starship in escaping pirates
-          - min: 106
+        - text: Apprehend escaped criminals
+          roll:
+            min: 106
             max: 110
-            result: Apprehend escaped criminals
-          - min: 111
+        - text: Break an innocent out of prison
+          roll:
+            min: 111
             max: 115
-            result: Break an innocent out of prison
-          - min: 116
+        - text: Break through the blockade to deliver needed supplies
+          roll:
+            min: 116
             max: 120
-            result: Break through the blockade to deliver needed supplies
-          - min: 121
+        - text: Discover a murderer before they strike again
+          roll:
+            min: 121
             max: 125
-            result: Discover a murderer before they strike again
-          - min: 126
+        - text: Escort a diplomat on an important mission of peace
+          roll:
+            min: 126
             max: 130
-            result: Escort a diplomat on an important mission of peace
-          - min: 131
+        - text: Evacuate the population before disaster strikes
+          roll:
+            min: 131
             max: 135
-            result: Evacuate the population before disaster strikes
-          - min: 136
+        - text: Ferret out the mole before they do more damage
+          roll:
+            min: 136
             max: 140
-            result: Ferret out the mole before they do more damage
-          - min: 141
+        - text: Find a rogue agent before they sell their secrets
+          roll:
+            min: 141
             max: 145
-            result: Find a rogue agent before they sell their secrets
-          - min: 146
+        - text: Infiltrate a secure corporate site to steal a prototype
+          roll:
+            min: 146
             max: 150
-            result: Infiltrate a secure corporate site to steal a prototype
-          - min: 151
+        - text: Pull a heist to help someone pay off their crushing debt
+          roll:
+            min: 151
             max: 155
-            result: Pull a heist to help someone pay off their crushing debt
-          - min: 156
+        - text: Recover goods from a crash site
+          roll:
+            min: 156
             max: 160
-            result: Recover goods from a crash site
-          - min: 161
+        - text: Rescue a political hostage
+          roll:
+            min: 161
             max: 165
-            result: Rescue a political hostage
-          - min: 166
+        - text: Retrieve stolen tech from a pirate ship
+          roll:
+            min: 166
             max: 170
-            result: Retrieve stolen tech from a pirate ship
-          - min: 171
+        - text: Scrub evidence of a clandestine operation
+          roll:
+            min: 171
             max: 175
-            result: Scrub evidence of a clandestine operation
-          - min: 176
+        - text: Secretly deliver an encrypted data chip
+          roll:
+            min: 176
             max: 180
-            result: Secretly deliver an encrypted data chip
-          - min: 181
+        - text: Smuggle a fugitive to safety
+          roll:
+            min: 181
             max: 185
-            result: Smuggle a fugitive to safety
-          - min: 186
+        - text: Steal a symbolic artifact from an enemy
+          roll:
+            min: 186
             max: 190
-            result: Steal a symbolic artifact from an enemy
-          - min: 191
+        - text: Survey a desolate planet for potential to build a settlement
+          roll:
+            min: 191
             max: 195
-            result: Survey a desolate planet for potential to build a settlement
-          - min: 196
+        - text: Transport experimental tech to a dangerous location for testing
+          roll:
+            min: 196
             max: 200
-            result: Transport experimental tech to a dangerous location for testing
-          - min: 201
+        - text: Provide security while transporting hardened criminals
+          roll:
+            min: 201
             max: 205
-            result: Provide security while transporting hardened criminals
-          - min: 206
+        - text: Uncover a criminal safehouse
+          roll:
+            min: 206
             max: 210
-            result: Uncover a criminal safehouse
-          - min: 211
+        - text: Take a political hostage for leverage
+          roll:
+            min: 211
             max: 215
-            result: Take a political hostage for leverage
-          - min: 216
+        - text: Track down a person for bounty
+          roll:
+            min: 216
             max: 220
-            result: Track down a person for bounty
-          - min: 221
+        - text: Help an engineering crew perform emergency fixes at a dangerous location
+          roll:
+            min: 221
             max: 225
-            result: Help an engineering crew perform emergency fixes at a dangerous location
-          - min: 226
+        - text: Shut down a minor ring of criminals
+          roll:
+            min: 226
             max: 230
-            result: Shut down a minor ring of criminals
-          - min: 231
+        - text: Rescue the trapped miners
+          roll:
+            min: 231
             max: 235
-            result: Rescue the trapped miners
-          - min: 236
+        - text: Find evidence of innocence for one unjustly accused
+          roll:
+            min: 236
             max: 240
-            result: Find evidence of innocence for one unjustly accused
-          - min: 241
+        - text: Get a resource processing facility up and running again after a revolt
+          roll:
+            min: 241
             max: 245
-            result: Get a resource processing facility up and running again after a revolt
-          - min: 246
+        - text: Gather incriminating evidence against a corrupt authority
+          roll:
+            min: 246
             max: 250
-            result: Gather incriminating evidence against a corrupt authority
-          - min: 251
+        - text: Ferry a medical team into a hotspot of disease
+          roll:
+            min: 251
             max: 255
-            result: Ferry a medical team into a hotspot of disease
-          - min: 256
+        - text: Access physical data servers to upload a virus
+          roll:
+            min: 256
             max: 260
-            result: Access physical data servers to upload a virus
-          - min: 261
+        - text: Retrace the steps of a known smuggler to find their hideout
+          roll:
+            min: 261
             max: 265
-            result: Retrace the steps of a known smuggler to find their hideout
-          - min: 266
+        - text: Deliver a ransom
+          roll:
+            min: 266
             max: 270
-            result: Deliver a ransom
-          - min: 271
+        - text: Spy on a para-military organization
+          roll:
+            min: 271
             max: 275
-            result: Spy on a para-military organization
-          - min: 276
+        - text: Return a runaway child to their VIP parent
+          roll:
+            min: 276
             max: 280
-            result: Return a runaway child to their VIP parent
-          - min: 281
+        - text: Gather data on a set of dangerous stellar phenomena
+          roll:
+            min: 281
             max: 285
-            result: Gather data on a set of dangerous stellar phenomena
-          - min: 286
+        - text: Convince a stalker there are better uses of time than harassing a
+            local celebrity
+          roll:
+            min: 286
             max: 290
-            result: Convince a stalker there are better uses of time than harassing a local celebrity
-          - min: 291
+        - text: Assist someone in faking their death
+          roll:
+            min: 291
             max: 295
-            result: Assist someone in faking their death
-          - min: 296
+        - text: Intercept a critical shipment to reroute it to where it is needed
+            most
+          roll:
+            min: 296
             max: 300
-            result: Intercept a critical shipment to reroute it to where it is needed most
+        type: oracle_rollable
+    type: oracle_collection

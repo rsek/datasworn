@@ -103,7 +103,7 @@ function createKeyRenamersForType(typeId: TypeId.Primary) {
 
 		// generate renames for Collectable descendents of renamed collections
 		if (collectionTypeId != null && collectionTypeId in pkgRenames) {
-			const collectionTypeRenames = pkgRenames[collectionTypeId]
+			const collectionTypeRenames = (pkgRenames as Record<string, Record<string, string>>)[collectionTypeId]
 
 			for (const newKey in collectionTypeRenames) {
 				const oldKey = collectionTypeRenames[newKey]
@@ -187,8 +187,8 @@ function getAncestorKeyCount(typeId: TypeId.Any) {
 
 
 
-function createIdMappers(typeId: TypeId.Any) {
-	const oldType = (legacyTypeMap[typeId] ?? legacyTypeMap[typeId]) as string
+function createIdMappers(typeId: TypeId.Primary) {
+	const oldType = legacyTypeMap[typeId] as string
 	const { min, max } = getPathKeyCount(typeId)
 	let pathKeyCount: string
 
@@ -403,9 +403,9 @@ export const idReplacers = {
 const genericIdReplacers = new Map<RegExp, string | null>()
 
 for (const typeId in legacyTypeMap) {
-  const mappers = createIdMappers(typeId as keyof typeof legacyTypeMap)
-		idReplacers[typeId as keyof typeof legacyTypeMap] ||= []
-		idReplacers[typeId as keyof typeof legacyTypeMap].push(...mappers)
+	const mappers = createIdMappers(typeId as TypeId.Primary)
+	;(idReplacers as Record<string, IdReplacer[]>)[typeId] ||= []
+	;(idReplacers as Record<string, IdReplacer[]>)[typeId].push(...mappers)
 		for (const { oldId, newId } of mappers) {
 			if (newId?.includes('starforged')) continue
 			genericIdReplacers.set(oldId, newId)
@@ -497,7 +497,7 @@ export function updateIdsInMarkdown(md: string) {
 export function updateId(oldId: string, typeHint?: keyof IdReplacementMap) {
 	if (typeHint != null && typeHint in idReplacers) {
 		// type is already known, so we can skip straight to running the replacements
-		const replacers = idReplacers[typeHint]
+		const replacers = (idReplacers as Record<string, IdReplacer[]>)[typeHint]
 		return applyReplacements(oldId, replacers) ?? oldId
 	} // unknown type, run all of them until one sticks
 	for (const typeId in idReplacers) {

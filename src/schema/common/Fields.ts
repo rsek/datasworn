@@ -4,7 +4,7 @@ import {
 	type Static,
 	type TLiteral,
 	type TObject,
-	type TRef,
+	type TRefUnsafe,
 	type TSchema
 } from '@sinclair/typebox'
 import { Mapping, Members } from '../Symbols.js'
@@ -135,7 +135,7 @@ export type TConditionMeterField = typeof ConditionMeterField
 export type ConditionMeterField = Static<TConditionMeterField>
 
 function SelectField<
-	Choice extends TRef<TObject>,
+	Choice extends TRefUnsafe<TObject>,
 	Discriminator extends string
 >(choiceSchema: Choice, type: Discriminator, options: ObjectOptions = {}) {
 	return InputField(
@@ -151,7 +151,7 @@ function SelectFieldWithGroups<
 	Discriminator extends string
 >(
 	choiceSchema: Choice,
-	choiceGroupSchema: Base.TSelectChoicesGroup<TRef<Choice>>,
+	choiceGroupSchema: Base.TSelectChoicesGroup<TRefUnsafe<Choice>>,
 	type: Discriminator,
 	// _id:Id.TAnyId,
 	options: ObjectOptions = {}
@@ -204,10 +204,10 @@ export type SelectValueField = Static<TSelectValueField>
 export const SelectEnhancementFieldChoice = Base.SelectOption(
 	Type.Partial(
 		Type.Object({
-			enhance_asset: Type.Ref<TAssetEnhancement>('AssetEnhancement'),
+			enhance_asset: Type.Ref('AssetEnhancement'),
 			// TODO
 			// enhance_player: Type.Object({}, { description: 'NYI' }),
-			enhance_moves: Type.Array(Type.Ref<TMoveEnhancement>('MoveEnhancement'))
+			enhance_moves: Type.Array(Type.Ref('MoveEnhancement'))
 		})
 	),
 	{ $id: 'SelectEnhancementFieldChoice' }

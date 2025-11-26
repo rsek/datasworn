@@ -32,7 +32,7 @@ export const Version = Type.Literal(VERSION, {
 })
 
 const RulesPackageBase = Type.Object({
-	_id: Type.Ref<typeof Id.RulesPackageId>('RulesPackageId'),
+	_id: Type.Ref('RulesPackageId'),
 	type: Type.String(),
 	// name: Utils.SourceOptional(Type.Ref(Text.Label)),
 	datasworn_version: Version,
@@ -42,7 +42,7 @@ const RulesPackageBase = Type.Object({
 	),
 	oracles: Utils.setSourceOptional(
 		Generic.Dictionary(
-			Type.Ref<TOracleTablesCollection>('OracleTablesCollection'),
+			Type.Ref('OracleTablesCollection'),
 			{
 				description:
 					'A dictionary object containing oracle collections, which may contain oracle tables and/or oracle collections.'
@@ -50,53 +50,53 @@ const RulesPackageBase = Type.Object({
 		)
 	),
 	moves: Utils.setSourceOptional(
-		Generic.Dictionary(Type.Ref<TUnsafe<MoveCategory>>('MoveCategory'), {
+		Generic.Dictionary(Type.Ref('MoveCategory'), {
 			description:
 				'A dictionary object containing move categories, which contain moves.'
 		})
 	),
 	assets: Utils.setSourceOptional(
-		Generic.Dictionary(Type.Ref<TAssetCollection>('AssetCollection'), {
+		Generic.Dictionary(Type.Ref('AssetCollection'), {
 			description:
 				'A dictionary object containing asset collections, which contain assets.'
 		})
 	),
 	atlas: Type.Optional(
-		Generic.Dictionary(Type.Ref<TAtlasCollection>('AtlasCollection'), {
+		Generic.Dictionary(Type.Ref('AtlasCollection'), {
 			description:
 				'A dictionary object containing atlas collections, which contain atlas entries.'
 		})
 	),
 	npcs: Type.Optional(
-		Generic.Dictionary(Type.Ref<TNpcCollection>('NpcCollection'), {
+		Generic.Dictionary(Type.Ref('NpcCollection'), {
 			description:
 				'A dictionary object containing NPC collections, which contain NPCs.'
 		})
 	),
 	truths: Type.Optional(
-		Generic.Dictionary(Type.Ref<TTruth>('Truth'), {
+		Generic.Dictionary(Type.Ref('Truth'), {
 			description: 'A dictionary object of truth categories.'
 		})
 	),
 	rarities: Type.Optional(
-		Generic.Dictionary(Type.Ref<TRarity>('Rarity'), {
+		Generic.Dictionary(Type.Ref('Rarity'), {
 			description:
 				'A dictionary object containing rarities, like those presented in Ironsworn: Delve.'
 		})
 	),
 	delve_sites: Type.Optional(
-		Generic.Dictionary(Type.Ref<TDelveSite>('DelveSite'), {
+		Generic.Dictionary(Type.Ref('DelveSite'), {
 			description:
 				'A dictionary object of delve sites, like the premade delve sites presented in Ironsworn: Delve'
 		})
 	),
 	site_themes: Type.Optional(
-		Generic.Dictionary(Type.Ref<TDelveSiteTheme>('DelveSiteTheme'), {
+		Generic.Dictionary(Type.Ref('DelveSiteTheme'), {
 			description: 'A dictionary object containing delve site themes.'
 		})
 	),
 	site_domains: Type.Optional(
-		Generic.Dictionary(Type.Ref<TDelveSiteDomain>('DelveSiteDomain'), {
+		Generic.Dictionary(Type.Ref('DelveSiteDomain'), {
 			description: 'A dictionary object containing delve site domains.'
 		})
 	)
@@ -105,7 +105,7 @@ const RulesPackageBase = Type.Object({
 export const Ruleset = Assign(
 	RulesPackageBase,
 	Type.Object({
-		_id: Type.Ref<typeof Id.RulesetId>('RulesetId'),
+		_id: Type.Ref('RulesetId'),
 		type: Type.Literal('ruleset'),
 		rules: Utils.setSourceOptional(Type.Ref(Rules.Rules))
 	}),
@@ -122,9 +122,9 @@ export type Ruleset = Static<typeof Ruleset>
 export const Expansion = Assign(
 	Type.Omit(RulesPackageBase, ['rules']),
 	Type.Object({
-		_id: Type.Ref<typeof Id.ExpansionId>('ExpansionId'),
+		_id: Type.Ref('ExpansionId'),
 		type: Type.Literal('expansion'),
-		ruleset: Type.Ref<typeof Id.RulesetId>('RulesetId'),
+		ruleset: Type.Ref('RulesetId'),
 		rules: Type.Optional(Type.Ref(Rules.RulesExpansion))
 	}),
 	{

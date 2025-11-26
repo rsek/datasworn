@@ -3,7 +3,8 @@ import {
 	type ObjectOptions,
 	type Static,
 	type TObject,
-	type TRef
+	type TRefUnsafe,
+	type TSchema
 } from '@sinclair/typebox'
 import type { SetRequired } from 'type-fest'
 import { CollectableSubtypeNode } from '../generic/CollectableNode.js'
@@ -45,7 +46,7 @@ const subtypeKey = 'oracle_type' as const
 
 function OracleRollableBase<TBase extends TObject, TSubtype extends string>(
 	base: TBase,
-	row: TRef,
+	row: TRefUnsafe<TObject>,
 	options: ObjectOptions = {}
 ) {
 	const enhancedBase = FlatIntersect(
@@ -67,13 +68,13 @@ function OracleRollableBase<TBase extends TObject, TSubtype extends string>(
 }
 function RollableTable<TRow extends TObject, TSubtype extends string>(
 	subtype: TSubtype,
-	row: TRef<TRow>,
-	column_labels: TObject | undefined,
+	row: TRefUnsafe<TRow>,
+	column_labels: TSchema,
 	options: SetRequired<ObjectOptions, '$id'>
 ) {
 	return CollectableSubtypeNode(
 		OracleRollableBase(
-			Type.Object({ column_labels: column_labels ?? undefined }),
+			Type.Object({ column_labels }),
 			row
 		),
 		'oracle_rollable',
@@ -85,7 +86,7 @@ function RollableTable<TRow extends TObject, TSubtype extends string>(
 
 function RollableColumn<TRow extends TObject, TSubtype extends string>(
 	subtype: TSubtype,
-	row: TRef<TRow>,
+	row: TRefUnsafe<TRow>,
 	options: SetRequired<ObjectOptions, '$id'>
 ) {
 	return Type.Omit(

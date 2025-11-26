@@ -21,7 +21,7 @@ export type SetOptional<
 export type TSetOptional<
 	T extends TObject,
 	K extends (keyof Static<T>)[]
-> = TAssign<TOmit<T, K>, TPartial<TPick<T, K>>>
+> = TAssign<TObject, TObject> // Simplified due to TComputed type issues
 /** Make the provided keys optional */
 export function SetOptional<
 	T extends TObject,

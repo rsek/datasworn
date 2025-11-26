@@ -20,7 +20,7 @@ export function validate<
 	if (CollectionsKey in obj) {
 		const collectionChildren = obj[CollectionsKey]
 		for (const k in collectionChildren)
-			validate(collectionChildren[k], collectionValidator, collectableValidator)
+			validate(collectionChildren[k] as T, collectionValidator, collectableValidator)
 	}
 
 	return true

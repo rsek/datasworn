@@ -1,103 +1,132 @@
 _id: starsmith
-datasworn_version: 0.0.9
-package_type: expansion
+datasworn_version: "0.1.0"
+type: expansion
 ruleset: starforged
 <<: &Source
-  title: Starsmith
-  authors:
-    - name: Eric Bright
+  title: Starsmith Expanded Oracles
   date: 2024-03-22
   url: https://playeveryrole.com/starsmith-products/
   license: https://creativecommons.org/licenses/by/4.0
+  authors:
+    - name: Eric Bright
 oracles:
   location_themes:
     name: Location Themes
     oracle_type: tables
-    _source: *Source
-    enhances: starforged/collections/oracles/location_themes
+    _source: &Source
+      title: Starsmith
+      authors:
+      - name: Eric Bright
+      date: 2024-03-22
+      url: https://playeveryrole.com/starsmith-products/
+      license: https://creativecommons.org/licenses/by/4.0
+    enhances:
+    - oracle_collection:starforged/location_theme
     contents:
       type:
         name: Type
-        replaces: starforged/oracles/location_themes/type
+        replaces:
+        - oracle_rollable:starforged/location_theme/type
         _comment: Extension of the oracle table
         oracle_type: table_text2
         dice: 1d200
         _source: *Source
         rows:
         # begin rows copied from replaced table
-          - min: 1
+        - text: '[Chaotic](starforged/oracles/location_themes/chaotic)'
+          text2: Reality is corrupted or warped in this place.
+          roll:
+            min: 1
             max: 15
-            text: '[Chaotic](starforged/oracles/location_themes/chaotic)'
-            text2: Reality is corrupted or warped in this place.
-          - min: 16
+        - text: '[Fortified](starforged/oracles/location_themes/fortified)'
+          text2: Enemies defend this place against intruders.
+          roll:
+            min: 16
             max: 25
-            text: '[Fortified](starforged/oracles/location_themes/fortified)'
-            text2: Enemies defend this place against intruders.
-          - min: 26
+        - text: '[Haunted](starforged/oracles/location_themes/haunted)'
+          text2: Restless spirits are bound in this place.
+          roll:
+            min: 26
             max: 35
-            text: '[Haunted](starforged/oracles/location_themes/haunted)'
-            text2: Restless spirits are bound in this place.
-          - min: 36
+        - text: '[Infested](starforged/oracles/location_themes/infested)'
+          text2: Foul creatures have overrun this place.
+          roll:
+            min: 36
             max: 50
-            text: '[Infested](starforged/oracles/location_themes/infested)'
-            text2: Foul creatures have overrun this place.
-          - min: 51
+        - text: '[Inhabited](starforged/oracles/location_themes/inhabited)'
+          text2: People have built a community in this place.
+          roll:
+            min: 51
             max: 60
-            text: '[Inhabited](starforged/oracles/location_themes/inhabited)'
-            text2: People have built a community in this place.
-          - min: 61
+        - text: '[Mechanical](starforged/oracles/location_themes/mechanical)'
+          text2: Machines and technology hold sway in this place.
+          roll:
+            min: 61
             max: 75
-            text: '[Mechanical](starforged/oracles/location_themes/mechanical)'
-            text2: Machines and technology hold sway in this place.
-          - min: 76
+        - text: '[Ruined](starforged/oracles/location_themes/ruined)'
+          text2: Time, disaster, or war have ravaged this place.
+          roll:
+            min: 76
             max: 90
-            text: '[Ruined](starforged/oracles/location_themes/ruined)'
-            text2: Time, disaster, or war have ravaged this place.
-          - min: 91
-            max: 100
-            text: '[Sacred](starforged/oracles/location_themes/sacred)'
-            text2: Worshipers glorify strange powers in this place.
+        - text: '[Sacred](starforged/oracles/location_themes/sacred)'
+          text2: Worshipers glorify strange powers in this place.
           # end rows copied from replaced table
-          - min: 101
+          roll:
+            min: 91
+            max: 100
+        - text: '[Arid](starsmith/oracles/location_themes/arid)'
+          text2: &Arid.summary Wind and heat cover this place in a thick blanket.
+          roll:
+            min: 101
             max: 110
-            text: '[Arid](starsmith/oracles/location_themes/arid)'
-            text2: &Arid.summary Wind and heat cover this place in a thick blanket.
-          - min: 111
+        - text: '[Chronal](starsmith/oracles/location_themes/chronal)'
+          text2: &Chronal.summary Time flits back and forth in this place.
+          roll:
+            min: 111
             max: 120
-            text: '[Chronal](starsmith/oracles/location_themes/chronal)'
-            text2: &Chronal.summary Time flits back and forth in this place.
-          - min: 121
+        - text: '[Floating](starsmith/oracles/location_themes/floating)'
+          text2: &Floating.summary Pockets of stable ground dance on gravity waves
+            in this place.
+          roll:
+            min: 121
             max: 130
-            text: '[Floating](starsmith/oracles/location_themes/floating)'
-            text2: &Floating.summary Pockets of stable ground dance on gravity waves in this place.
-          - min: 131
+        - text: '[Flooded](starsmith/oracles/location_themes/flooded)'
+          text2: &Flooded.summary Murky waters or thick vapors have overtaken this
+            place.
+          roll:
+            min: 131
             max: 140
-            text: '[Flooded](starsmith/oracles/location_themes/flooded)'
-            text2: &Flooded.summary Murky waters or thick vapors have overtaken this place.
-          - min: 141
+        - text: '[Frozen](starsmith/oracles/location_themes/frozen)'
+          text2: &Frozen.summary Winter holds a permanent grip in this place.
+          roll:
+            min: 141
             max: 150
-            text: '[Frozen](starsmith/oracles/location_themes/frozen)'
-            text2: &Frozen.summary Winter holds a permanent grip in this place.
-          - min: 151
+        - text: '[Inferno](starsmith/oracles/location_themes/inferno)'
+          text2: &Inferno.summary Flame and noxious gases fill this place.
+          roll:
+            min: 151
             max: 160
-            text: '[Inferno](starsmith/oracles/location_themes/inferno)'
-            text2: &Inferno.summary Flame and noxious gases fill this place.
-          - min: 161
+        - text: '[Lifeform](starsmith/oracles/location_themes/lifeform)'
+          text2: &Lifeform.summary Inside a living creature, microscopic or colossal.
+          roll:
+            min: 161
             max: 170
-            text: '[Lifeform](starsmith/oracles/location_themes/lifeform)'
-            text2: &Lifeform.summary Inside a living creature, microscopic or colossal.
-          - min: 171
+        - text: '[Mystical](starsmith/oracles/location_themes/mystical)'
+          text2: &Mystical.summary Arcane energies permeate this place.
+          roll:
+            min: 171
             max: 180
-            text: '[Mystical](starsmith/oracles/location_themes/mystical)'
-            text2: &Mystical.summary Arcane energies permeate this place.
-          - min: 181
+        - text: '[Overgrown](starsmith/oracles/location_themes/overgrown)'
+          text2: &Overgrown.summary Thriving ecosystems abound in this place.
+          roll:
+            min: 181
             max: 190
-            text: '[Overgrown](starsmith/oracles/location_themes/overgrown)'
-            text2: &Overgrown.summary Thriving ecosystems abound in this place.
-          - min: 191
+        - text: '[War Zone](starsmith/oracles/location_themes/war_zone)'
+          text2: &WarZone.summary Combatants trade fire tensely in this place.
+          roll:
+            min: 191
             max: 200
-            text: '[War Zone](starsmith/oracles/location_themes/war_zone)'
-            text2: &WarZone.summary Combatants trade fire tensely in this place.
+        type: oracle_rollable
     collections:
       arid:
         name: Arid
@@ -111,151 +140,185 @@ oracles:
               _source: *Source
               oracle_type: table_text
             rows:
-              - <<: &Feature.0
+            - <<: &Feature.0
+                roll:
                   min: 1
                   max: 8
-                text: Dried wadi awaiting the rainy season
-              - <<: &Feature.1
+              text: Dried wadi awaiting the rainy season
+            - <<: &Feature.1
+                roll:
                   min: 9
                   max: 16
-                text: Intricate rock formation sculpted by the wind
-              - <<: &Feature.2
+              text: Intricate rock formation sculpted by the wind
+            - <<: &Feature.2
+                roll:
                   min: 17
                   max: 24
-                text: Large sinkhole of swirling sand
-              - <<: &Feature.3
+              text: Large sinkhole of swirling sand
+            - <<: &Feature.3
+                roll:
                   min: 25
                   max: 32
-                text: Light-bending waves of heat or cold
-              - <<: &Feature.4
+              text: Light-bending waves of heat or cold
+            - <<: &Feature.4
+                roll:
                   min: 33
                   max: 40
-                text: Mazelike passageways through canyons
-              - <<: &Feature.5
+              text: Mazelike passageways through canyons
+            - <<: &Feature.5
+                roll:
                   min: 41
                   max: 48
-                text: Mountainous dunes of sand
-              - <<: &Feature.6
+              text: Mountainous dunes of sand
+            - <<: &Feature.6
+                roll:
                   min: 49
                   max: 56
-                text: Natural bridge or arch of stone
-              - <<: &Feature.7
+              text: Natural bridge or arch of stone
+            - <<: &Feature.7
+                roll:
                   min: 57
                   max: 64
-                text: Remains of a long dead colossal beast
-              - <<: &Feature.8
+              text: Remains of a long dead colossal beast
+            - <<: &Feature.8
+                roll:
                   min: 65
                   max: 72
-                text: Rocks worn smooth over time
-              - <<: &Feature.9
+              text: Rocks worn smooth over time
+            - <<: &Feature.9
+                roll:
                   min: 73
                   max: 80
-                text: Row upon row of hoodoos
-              - <<: &Feature.10
+              text: Row upon row of hoodoos
+            - <<: &Feature.10
+                roll:
                   min: 81
                   max: 88
-                text: Tiny dunes rippling like waves
-              - <<: &Feature.11
+              text: Tiny dunes rippling like waves
+            - <<: &Feature.11
+                roll:
                   min: 89
                   max: 96
-                text: Unending stretch of cracked, flat ground
-              - &Feature.12
+              text: Unending stretch of cracked, flat ground
+            - &Feature.12
+              text: '[Descriptor](id:starsmith/oracles/core/descriptor) + [Focus](id:starsmith/oracles/core/focus)'
+              oracle_rolls:
+              - oracle: oracle_rollable:starsmith/core/descriptor
+                auto: true
+              - oracle: oracle_rollable:starsmith/core/focus
+                auto: true
+              roll:
                 min: 97
                 max: 100
-                text: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
-                oracle_rolls:
-                  - oracle: starforged/oracles/core/descriptor
-                    auto: true
-                  - oracle: starforged/oracles/core/focus
-                    auto: true
+            type: oracle_rollable
           peril:
             <<: &Peril
               name: Peril
               _source: *Source
               oracle_type: table_text
             rows:
-              - <<: &Peril.0
+            - <<: &Peril.0
+                roll:
                   min: 1
                   max: 9
-                text: Billowing sandstorm chokes the air
-              - <<: &Peril.1
+              text: Billowing sandstorm chokes the air
+            - <<: &Peril.1
+                roll:
                   min: 10
                   max: 18
-                text: Extreme temperatures
-              - <<: &Peril.2
+              text: Extreme temperatures
+            - <<: &Peril.2
+                roll:
                   min: 19
                   max: 27
-                text: Foe hidden beneath the sand reveals itself
-              - <<: &Peril.3
+              text: Foe hidden beneath the sand reveals itself
+            - <<: &Peril.3
+                roll:
                   min: 28
                   max: 36
-                text: Grit-filled equipment malfunctions
-              - <<: &Peril.4
+              text: Grit-filled equipment malfunctions
+            - <<: &Peril.4
+                roll:
                   min: 37
                   max: 45
-                text: Having no place to hide attracts unwanted attention
-              - <<: &Peril.5
+              text: Having no place to hide attracts unwanted attention
+            - <<: &Peril.5
+                roll:
                   min: 46
                   max: 54
-                text: Hurricane force winds
-              - <<: &Peril.6
+              text: Hurricane force winds
+            - <<: &Peril.6
+                roll:
                   min: 55
                   max: 63
-                text: Lack of shelter from the elements
-              - <<: &Peril.7
+              text: Lack of shelter from the elements
+            - <<: &Peril.7
+                roll:
                   min: 64
                   max: 72
-                text: Lost without landmarks to guide you
-              - <<: &Peril.8
+              text: Lost without landmarks to guide you
+            - <<: &Peril.8
+                roll:
                   min: 73
                   max: 81
-                text: Rain storm brings flash floods
-              - <<: &Peril.9
+              text: Rain storm brings flash floods
+            - <<: &Peril.9
+                roll:
                   min: 82
                   max: 90
-                text: Whirlpool of sand pulls you down
-              - &Peril.10
+              text: Whirlpool of sand pulls you down
+            - &Peril.10
+              text: '[Action](starsmith/oracles/core/action) + [Theme](starsmith/oracles/core/theme)'
+              oracle_rolls:
+              - oracle: oracle_rollable:starsmith/core/action
+                auto: true
+              - oracle: oracle_rollable:starsmith/core/theme
+                auto: true
+              roll:
                 min: 91
                 max: 98
-                text: '[Action + Theme](starforged/oracles/core/action)'
-                oracle_rolls:
-                  - oracle: starforged/oracles/core/action
-                    auto: true
-                  - oracle: starforged/oracles/core/theme
-                    auto: true
-              - &Peril.11
+            - &Peril.11
+              text: Roll twice
+              oracle_rolls:
+              - auto: true
+                number_of_rolls: 2
+              roll:
                 min: 99
                 max: 100
-                text: Roll twice
-                oracle_rolls:
-                  - auto: true
-                    number_of_rolls: 2
+            type: oracle_rollable
           opportunity:
             <<: &Opportunity
               name: Opportunity
               _source: *Source
               oracle_type: table_text
             rows:
-              - <<: &Opportunity.0
+            - <<: &Opportunity.0
+                roll:
                   min: 1
                   max: 20
-                text: Blowing sands reveal rare resource deposit
-              - <<: &Opportunity.1
+              text: Blowing sands reveal rare resource deposit
+            - <<: &Opportunity.1
+                roll:
                   min: 21
                   max: 40
-                text: Cave entrance offers shelter
-              - <<: &Opportunity.2
+              text: Cave entrance offers shelter
+            - <<: &Opportunity.2
+                roll:
                   min: 41
                   max: 60
-                text: Evidence of previous explorers offers a clue
-              - <<: &Opportunity.3
+              text: Evidence of previous explorers offers a clue
+            - <<: &Opportunity.3
+                roll:
                   min: 61
                   max: 80
-                text: Oasis offers respite
-              - <<: &Opportunity.4
+              text: Oasis offers respite
+            - <<: &Opportunity.4
+                roll:
                   min: 81
                   max: 100
-                text: Opening to bypass the most difficult terrain
+              text: Opening to bypass the most difficult terrain
+            type: oracle_rollable
+        type: oracle_collection
       chronal:
         name: Chronal
         summary: *Chronal.summary
@@ -265,69 +328,73 @@ oracles:
           feature:
             <<: *Feature
             rows:
-              - <<: *Feature.0
-                text: Ambient lifeforms feeding off chronal energy
-              - <<: *Feature.1
-                text: Artifact or natural occurrence acting as a focal point
-              - <<: *Feature.2
-                text: Beings, objects, or events stuck in a short time loop
-              - <<: *Feature.3
-                text: Conflicting visions of future events
-              - <<: *Feature.4
-                text: Glimpses of past events
-              - <<: *Feature.5
-                text: Glowing spacetime rifts emanating chronal energy
-              - <<: *Feature.6
-                text: Incongruent trappings of different time periods
-              - <<: *Feature.7
-                text: Instantaneous changes to layout or aesthetics of equipment
-              - <<: *Feature.8
-                text: Rapid movements become slowed
-              - <<: *Feature.9
-                text: Shifting landscapes
-              - <<: *Feature.10
-                text: Slow movements become rapid
-              - <<: *Feature.11
-                text: Visions of parallel universes
-              - *Feature.12
+            - <<: *Feature.0
+              text: Ambient lifeforms feeding off chronal energy
+            - <<: *Feature.1
+              text: Artifact or natural occurrence acting as a focal point
+            - <<: *Feature.2
+              text: Beings, objects, or events stuck in a short time loop
+            - <<: *Feature.3
+              text: Conflicting visions of future events
+            - <<: *Feature.4
+              text: Glimpses of past events
+            - <<: *Feature.5
+              text: Glowing spacetime rifts emanating chronal energy
+            - <<: *Feature.6
+              text: Incongruent trappings of different time periods
+            - <<: *Feature.7
+              text: Instantaneous changes to layout or aesthetics of equipment
+            - <<: *Feature.8
+              text: Rapid movements become slowed
+            - <<: *Feature.9
+              text: Shifting landscapes
+            - <<: *Feature.10
+              text: Slow movements become rapid
+            - <<: *Feature.11
+              text: Visions of parallel universes
+            - *Feature.12
+            type: oracle_rollable
           peril:
             <<: *Peril
             rows:
-              - <<: *Peril.0
-                text: Caught in a time paradox
-              - <<: *Peril.1
-                text: Changes in timeline slip from memory
-              - <<: *Peril.2
-                text: Chronal energies build to a tipping point
-              - <<: *Peril.3
-                text: Equipment yields faulty or conflicting readings
-              - <<: *Peril.4
-                text: Foe from the future uses future knowledge against you
-              - <<: *Peril.5
-                text: Meeting another version of yourself threatens reality
-              - <<: *Peril.6
-                text: Rapid growth or rebirth of environment
-              - <<: *Peril.7
-                text: Rapid time decay of environment
-              - <<: *Peril.8
-                text: Shunted backward in time
-              - <<: *Peril.9
-                text: Shunted forward in time
-              - *Peril.10
-              - *Peril.11
+            - <<: *Peril.0
+              text: Caught in a time paradox
+            - <<: *Peril.1
+              text: Changes in timeline slip from memory
+            - <<: *Peril.2
+              text: Chronal energies build to a tipping point
+            - <<: *Peril.3
+              text: Equipment yields faulty or conflicting readings
+            - <<: *Peril.4
+              text: Foe from the future uses future knowledge against you
+            - <<: *Peril.5
+              text: Meeting another version of yourself threatens reality
+            - <<: *Peril.6
+              text: Rapid growth or rebirth of environment
+            - <<: *Peril.7
+              text: Rapid time decay of environment
+            - <<: *Peril.8
+              text: Shunted backward in time
+            - <<: *Peril.9
+              text: Shunted forward in time
+            - *Peril.10
+            - *Peril.11
+            type: oracle_rollable
           opportunity:
             <<: *Opportunity
             rows:
-              - <<: *Opportunity.0
-                text: Butterfly point offers a dangerous gamble
-              - <<: *Opportunity.1
-                text: Contact with a helpful ally outside your time
-              - <<: *Opportunity.2
-                text: Future visions allow an option to avoid hardship
-              - <<: *Opportunity.3
-                text: Insight into a past event offers a new perspective
-              - <<: *Opportunity.4
-                text: Yawning portal through spacetime
+            - <<: *Opportunity.0
+              text: Butterfly point offers a dangerous gamble
+            - <<: *Opportunity.1
+              text: Contact with a helpful ally outside your time
+            - <<: *Opportunity.2
+              text: Future visions allow an option to avoid hardship
+            - <<: *Opportunity.3
+              text: Insight into a past event offers a new perspective
+            - <<: *Opportunity.4
+              text: Yawning portal through spacetime
+            type: oracle_rollable
+        type: oracle_collection
       inferno:
         name: Inferno
         summary: *Inferno.summary
@@ -337,69 +404,73 @@ oracles:
           feature:
             <<: *Feature
             rows:
-              - <<: *Feature.0
-                text: Ash-covered terrain
-              - <<: *Feature.1
-                text: Geysers of lava
-              - <<: *Feature.2
-                text: Giant rock columns or boulders
-              - <<: *Feature.3
-                text: Heat-induced electromagnetic field
-              - <<: *Feature.4
-                text: Islands floating on lava
-              - <<: *Feature.5
-                text: Maze of lava tubes
-              - <<: *Feature.6
-                text: Mineral deposits fused together
-              - <<: *Feature.7
-                text: Obscuring soot and smoke
-              - <<: *Feature.8
-                text: Rivulets of lava or liquid flame
-              - <<: *Feature.9
-                text: Slowly cooling sections of lava
-              - <<: *Feature.10
-                text: Stable islands separated by lava
-              - <<: *Feature.11
-                text: Vents spewing steaming gases
-              - *Feature.12
+            - <<: *Feature.0
+              text: Ash-covered terrain
+            - <<: *Feature.1
+              text: Geysers of lava
+            - <<: *Feature.2
+              text: Giant rock columns or boulders
+            - <<: *Feature.3
+              text: Heat-induced electromagnetic field
+            - <<: *Feature.4
+              text: Islands floating on lava
+            - <<: *Feature.5
+              text: Maze of lava tubes
+            - <<: *Feature.6
+              text: Mineral deposits fused together
+            - <<: *Feature.7
+              text: Obscuring soot and smoke
+            - <<: *Feature.8
+              text: Rivulets of lava or liquid flame
+            - <<: *Feature.9
+              text: Slowly cooling sections of lava
+            - <<: *Feature.10
+              text: Stable islands separated by lava
+            - <<: *Feature.11
+              text: Vents spewing steaming gases
+            - *Feature.12
+            type: oracle_rollable
           peril:
             <<: *Peril
             rows:
-              - <<: *Peril.0
-                text: Ash, soot, and smoke hide dangers
-              - <<: *Peril.1
-                text: Explosive eruption
-              - <<: *Peril.2
-                text: Foe uses heat to its advantage
-              - <<: *Peril.3
-                text: Gaping pit of lava
-              - <<: *Peril.4
-                text: Heat, lava, or plasma threatens a crucial location
-              - <<: *Peril.5
-                text: Noxious fumes
-              - <<: *Peril.6
-                text: Overpowering heat
-              - <<: *Peril.7
-                text: Razor-sharp rocks hardened by heat and pressure
-              - <<: *Peril.8
-                text: Rising lava levels
-              - <<: *Peril.9
-                text: Violent tremors
-              - *Peril.10
-              - *Peril.11
+            - <<: *Peril.0
+              text: Ash, soot, and smoke hide dangers
+            - <<: *Peril.1
+              text: Explosive eruption
+            - <<: *Peril.2
+              text: Foe uses heat to its advantage
+            - <<: *Peril.3
+              text: Gaping pit of lava
+            - <<: *Peril.4
+              text: Heat, lava, or plasma threatens a crucial location
+            - <<: *Peril.5
+              text: Noxious fumes
+            - <<: *Peril.6
+              text: Overpowering heat
+            - <<: *Peril.7
+              text: Razor-sharp rocks hardened by heat and pressure
+            - <<: *Peril.8
+              text: Rising lava levels
+            - <<: *Peril.9
+              text: Violent tremors
+            - *Peril.10
+            - *Peril.11
+            type: oracle_rollable
           opportunity:
             <<: *Opportunity
             rows:
-              - <<: *Opportunity.0
-                text: Ancient complex that used the heat as a power source
-              - <<: *Opportunity.1
-                text: Chance to observe a scientific curiosity
-              - <<: *Opportunity.2
-                text: Opening to circumvent the most dangerous zones
-              - <<: *Opportunity.3
-                text: Opening to harness the energy here
-              - <<: *Opportunity.4
-                text: Rare minerals naturally refined by the heat
+            - <<: *Opportunity.0
+              text: Ancient complex that used the heat as a power source
+            - <<: *Opportunity.1
+              text: Chance to observe a scientific curiosity
+            - <<: *Opportunity.2
+              text: Opening to circumvent the most dangerous zones
+            - <<: *Opportunity.3
+              text: Opening to harness the energy here
+            - <<: *Opportunity.4
+              text: Rare minerals naturally refined by the heat
+            type: oracle_rollable
+        type: oracle_collection
       floating:
         name: Floating
         summary: *Floating.summary
@@ -409,69 +480,73 @@ oracles:
           feature:
             <<: *Feature
             rows:
-              - <<: *Feature.0
-                text: Areas of variable gravity
-              - <<: *Feature.1
-                text: Bridge connecting islands or platforms
-              - <<: *Feature.2
-                text: Central control hub
-              - <<: *Feature.3
-                text: Dust shower from above
-              - <<: *Feature.4
-                text: Generator or other energy powering the islands
-              - <<: *Feature.5
-                text: Low gravity area allows large leaps
-              - <<: *Feature.6
-                text: Rhythmic movements and rotations
-              - <<: *Feature.7
-                text: Signs of eyrie-like nests
-              - <<: *Feature.8
-                text: Slowly spinning sections of land or platforms
-              - <<: *Feature.9
-                text: Staircase of floating sections
-              - <<: *Feature.10
-                text: Tethers of iron or energy
-              - <<: *Feature.11
-                text: Zipline or tube transport connecting areas
-              - *Feature.12
+            - <<: *Feature.0
+              text: Areas of variable gravity
+            - <<: *Feature.1
+              text: Bridge connecting islands or platforms
+            - <<: *Feature.2
+              text: Central control hub
+            - <<: *Feature.3
+              text: Dust shower from above
+            - <<: *Feature.4
+              text: Generator or other energy powering the islands
+            - <<: *Feature.5
+              text: Low gravity area allows large leaps
+            - <<: *Feature.6
+              text: Rhythmic movements and rotations
+            - <<: *Feature.7
+              text: Signs of eyrie-like nests
+            - <<: *Feature.8
+              text: Slowly spinning sections of land or platforms
+            - <<: *Feature.9
+              text: Staircase of floating sections
+            - <<: *Feature.10
+              text: Tethers of iron or energy
+            - <<: *Feature.11
+              text: Zipline or tube transport connecting areas
+            - *Feature.12
+            type: oracle_rollable
           peril:
             <<: *Peril
             rows:
-              - <<: *Peril.0
-                text: Airborne foe moves to attack
-              - <<: *Peril.1
-                text: Crumbling islands beneath your feet
-              - <<: *Peril.2
-                text: Dramatic shift in orientation
-              - <<: *Peril.3
-                text: Failure of forces keeping everything aloft
-              - <<: *Peril.4
-                text: Guard rail, ladder, or natural barrier gives way
-              - <<: *Peril.5
-                text: Hail-like rain of earth from above
-              - <<: *Peril.6
-                text: Precarious ledge
-              - <<: *Peril.7
-                text: Spinning forces of inertia threaten balance
-              - <<: *Peril.8
-                text: Sudden shift in gravity or gravity's direction
-              - <<: *Peril.9
-                text: Wide gulf of open air
-              - *Peril.10
-              - *Peril.11
+            - <<: *Peril.0
+              text: Airborne foe moves to attack
+            - <<: *Peril.1
+              text: Crumbling islands beneath your feet
+            - <<: *Peril.2
+              text: Dramatic shift in orientation
+            - <<: *Peril.3
+              text: Failure of forces keeping everything aloft
+            - <<: *Peril.4
+              text: Guard rail, ladder, or natural barrier gives way
+            - <<: *Peril.5
+              text: Hail-like rain of earth from above
+            - <<: *Peril.6
+              text: Precarious ledge
+            - <<: *Peril.7
+              text: Spinning forces of inertia threaten balance
+            - <<: *Peril.8
+              text: Sudden shift in gravity or gravity's direction
+            - <<: *Peril.9
+              text: Wide gulf of open air
+            - *Peril.10
+            - *Peril.11
+            type: oracle_rollable
           opportunity:
             <<: *Opportunity
             rows:
-              - <<: *Opportunity.0
-                text: Access to a rare resource
-              - <<: *Opportunity.1
-                text: Access to useful equipment
-              - <<: *Opportunity.2
-                text: Changes in gravity hamper your foes
-              - <<: *Opportunity.3
-                text: Landscape allows access to significant location
-              - <<: *Opportunity.4
-                text: Three-dimensional battlefied hampers your foes
+            - <<: *Opportunity.0
+              text: Access to a rare resource
+            - <<: *Opportunity.1
+              text: Access to useful equipment
+            - <<: *Opportunity.2
+              text: Changes in gravity hamper your foes
+            - <<: *Opportunity.3
+              text: Landscape allows access to significant location
+            - <<: *Opportunity.4
+              text: Three-dimensional battlefied hampers your foes
+            type: oracle_rollable
+        type: oracle_collection
       flooded:
         name: Flooded
         summary: *Flooded.summary
@@ -481,69 +556,73 @@ oracles:
           feature:
             <<: *Feature
             rows:
-              - <<: *Feature.0
-                text: Deep and murky waters
-              - <<: *Feature.1
-                text: Flotsam and jetsam
-              - <<: *Feature.2
-                text: Pockets of thin-membraned atmosphere
-              - <<: *Feature.3
-                text: Prolific mold, slime, or fungus
-              - <<: *Feature.4
-                text: Signs of what once was here
-              - <<: *Feature.5
-                text: Small patches of dry ground
-              - <<: *Feature.6
-                text: Strong currents
-              - <<: *Feature.7
-                text: Submerged structure or formation
-              - <<: *Feature.8
-                text: Thick spray and vapors
-              - <<: *Feature.9
-                text: Underwater tunnels of unknown distance
-              - <<: *Feature.10
-                text: Unseen obstacles just beneath the surface
-              - <<: *Feature.11
-                text: Water bursting through cracked barrier
-              - *Feature.12
+            - <<: *Feature.0
+              text: Deep and murky waters
+            - <<: *Feature.1
+              text: Flotsam and jetsam
+            - <<: *Feature.2
+              text: Pockets of thin-membraned atmosphere
+            - <<: *Feature.3
+              text: Prolific mold, slime, or fungus
+            - <<: *Feature.4
+              text: Signs of what once was here
+            - <<: *Feature.5
+              text: Small patches of dry ground
+            - <<: *Feature.6
+              text: Strong currents
+            - <<: *Feature.7
+              text: Submerged structure or formation
+            - <<: *Feature.8
+              text: Thick spray and vapors
+            - <<: *Feature.9
+              text: Underwater tunnels of unknown distance
+            - <<: *Feature.10
+              text: Unseen obstacles just beneath the surface
+            - <<: *Feature.11
+              text: Water bursting through cracked barrier
+            - *Feature.12
+            type: oracle_rollable
           peril:
             <<: *Peril
             rows:
-              - <<: *Peril.0
-                text: Eroding passageways
-              - <<: *Peril.1
-                text: Large, swift moving debris
-              - <<: *Peril.2
-                text: Lifeforms stirring in the deep
-              - <<: *Peril.3
-                text: Perilous chemical spill
-              - <<: *Peril.4
-                text: Rising tides
-              - <<: *Peril.5
-                text: Spreading biological contaminants
-              - <<: *Peril.6
-                text: Swift undertow
-              - <<: *Peril.7
-                text: Thundering rapids
-              - <<: *Peril.8
-                text: Vortex pulling you down
-              - <<: *Peril.9
-                text: Waterfall into the darkness
-              - *Peril.10
-              - *Peril.11
+            - <<: *Peril.0
+              text: Eroding passageways
+            - <<: *Peril.1
+              text: Large, swift moving debris
+            - <<: *Peril.2
+              text: Lifeforms stirring in the deep
+            - <<: *Peril.3
+              text: Perilous chemical spill
+            - <<: *Peril.4
+              text: Rising tides
+            - <<: *Peril.5
+              text: Spreading biological contaminants
+            - <<: *Peril.6
+              text: Swift undertow
+            - <<: *Peril.7
+              text: Thundering rapids
+            - <<: *Peril.8
+              text: Vortex pulling you down
+            - <<: *Peril.9
+              text: Waterfall into the darkness
+            - *Peril.10
+            - *Peril.11
+            type: oracle_rollable
           opportunity:
             <<: *Opportunity
             rows:
-              - <<: *Opportunity.0
-                text: Draining water reveals a secret or clue
-              - <<: *Opportunity.1
-                text: Erosion opens a shortcut or safer passage
-              - <<: *Opportunity.2
-                text: Opening for foes to be washed away
-              - <<: *Opportunity.3
-                text: Salvageable equipment
-              - <<: *Opportunity.4
-                text: Submerged vehicle intact
+            - <<: *Opportunity.0
+              text: Draining water reveals a secret or clue
+            - <<: *Opportunity.1
+              text: Erosion opens a shortcut or safer passage
+            - <<: *Opportunity.2
+              text: Opening for foes to be washed away
+            - <<: *Opportunity.3
+              text: Salvageable equipment
+            - <<: *Opportunity.4
+              text: Submerged vehicle intact
+            type: oracle_rollable
+        type: oracle_collection
       frozen:
         name: Frozen
         summary: *Frozen.summary
@@ -553,69 +632,73 @@ oracles:
           feature:
             <<: *Feature
             rows:
-              - <<: *Feature.0
-                text: Abandoned equipment frozen solid
-              - <<: *Feature.1
-                text: Frozen river or lake
-              - <<: *Feature.2
-                text: Frozen waterfalls
-              - <<: *Feature.3
-                text: Huge snow drifts
-              - <<: *Feature.4
-                text: Intricate crystalline structures of ice
-              - <<: *Feature.5
-                text: Layers of ice coating surfaces
-              - <<: *Feature.6
-                text: Lifeform of a different age encased in ice
-              - <<: *Feature.7
-                text: Movement or lights beneath the ice
-              - <<: *Feature.8
-                text: Multi-colored layers of ice
-              - <<: *Feature.9
-                text: Slick surfaces
-              - <<: *Feature.10
-                text: Sparkling icicles
-              - <<: *Feature.11
-                text: Tiny rivulets of melt water
-              - *Feature.12
+            - <<: *Feature.0
+              text: Abandoned equipment frozen solid
+            - <<: *Feature.1
+              text: Frozen river or lake
+            - <<: *Feature.2
+              text: Frozen waterfalls
+            - <<: *Feature.3
+              text: Huge snow drifts
+            - <<: *Feature.4
+              text: Intricate crystalline structures of ice
+            - <<: *Feature.5
+              text: Layers of ice coating surfaces
+            - <<: *Feature.6
+              text: Lifeform of a different age encased in ice
+            - <<: *Feature.7
+              text: Movement or lights beneath the ice
+            - <<: *Feature.8
+              text: Multi-colored layers of ice
+            - <<: *Feature.9
+              text: Slick surfaces
+            - <<: *Feature.10
+              text: Sparkling icicles
+            - <<: *Feature.11
+              text: Tiny rivulets of melt water
+            - *Feature.12
+            type: oracle_rollable
           peril:
             <<: *Peril
             rows:
-              - <<: *Peril.0
-                text: Avalanche
-              - <<: *Peril.1
-                text: Deceptively deep snow
-              - <<: *Peril.2
-                text: Falling icicles or hail
-              - <<: *Peril.3
-                text: Freezing rain quickly coats all in ice
-              - <<: *Peril.4
-                text: Frozen equipment malfunctions
-              - <<: *Peril.5
-                text: Frozen to a surface
-              - <<: *Peril.6
-                text: Path blocked by wall of ice
-              - <<: *Peril.7
-                text: Subzero temperatures
-              - <<: *Peril.8
-                text: Unexpected heat melts key support structure
-              - <<: *Peril.9
-                text: White-out conditions
-              - *Peril.10
-              - *Peril.11
+            - <<: *Peril.0
+              text: Avalanche
+            - <<: *Peril.1
+              text: Deceptively deep snow
+            - <<: *Peril.2
+              text: Falling icicles or hail
+            - <<: *Peril.3
+              text: Freezing rain quickly coats all in ice
+            - <<: *Peril.4
+              text: Frozen equipment malfunctions
+            - <<: *Peril.5
+              text: Frozen to a surface
+            - <<: *Peril.6
+              text: Path blocked by wall of ice
+            - <<: *Peril.7
+              text: Subzero temperatures
+            - <<: *Peril.8
+              text: Unexpected heat melts key support structure
+            - <<: *Peril.9
+              text: White-out conditions
+            - *Peril.10
+            - *Peril.11
+            type: oracle_rollable
           opportunity:
             <<: *Opportunity
             rows:
-              - <<: *Opportunity.0
-                text: Condensed ice crystal acts as temporary power booster
-              - <<: *Opportunity.1
-                text: Evidence of prior explorers preserved in ice
-              - <<: *Opportunity.2
-                text: Nearly enclosed space offers a moment of relative warmth
-              - <<: *Opportunity.3
-                text: Rare specimen preserved in ice
-              - <<: *Opportunity.4
-                text: Thin wall of ice offers a shortcut
+            - <<: *Opportunity.0
+              text: Condensed ice crystal acts as temporary power booster
+            - <<: *Opportunity.1
+              text: Evidence of prior explorers preserved in ice
+            - <<: *Opportunity.2
+              text: Nearly enclosed space offers a moment of relative warmth
+            - <<: *Opportunity.3
+              text: Rare specimen preserved in ice
+            - <<: *Opportunity.4
+              text: Thin wall of ice offers a shortcut
+            type: oracle_rollable
+        type: oracle_collection
       lifeform:
         name: Lifeform
         summary: *Lifeform.summary
@@ -625,69 +708,73 @@ oracles:
           feature:
             <<: *Feature
             rows:
-              - <<: *Feature.0
-                text: Bundles of nerve fibers
-              - <<: *Feature.1
-                text: Decaying or dying cells
-              - <<: *Feature.2
-                text: Dilating openings
-              - <<: *Feature.3
-                text: Large bending joints
-              - <<: *Feature.4
-                text: Protruding bones
-              - <<: *Feature.5
-                text: Rivers of blood
-              - <<: *Feature.6
-                text: Sacs of fluid
-              - <<: *Feature.7
-                text: Strange growths or nodules
-              - <<: *Feature.8
-                text: Symbiotic lifeforms at work
-              - <<: *Feature.9
-                text: Tendons or connective tissues
-              - <<: *Feature.10
-                text: Undulating halls
-              - <<: *Feature.11
-                text: Winding nutrient passageways
-              - *Feature.12
+            - <<: *Feature.0
+              text: Bundles of nerve fibers
+            - <<: *Feature.1
+              text: Decaying or dying cells
+            - <<: *Feature.2
+              text: Dilating openings
+            - <<: *Feature.3
+              text: Large bending joints
+            - <<: *Feature.4
+              text: Protruding bones
+            - <<: *Feature.5
+              text: Rivers of blood
+            - <<: *Feature.6
+              text: Sacs of fluid
+            - <<: *Feature.7
+              text: Strange growths or nodules
+            - <<: *Feature.8
+              text: Symbiotic lifeforms at work
+            - <<: *Feature.9
+              text: Tendons or connective tissues
+            - <<: *Feature.10
+              text: Undulating halls
+            - <<: *Feature.11
+              text: Winding nutrient passageways
+            - *Feature.12
+            type: oracle_rollable
           peril:
             <<: *Peril
             rows:
-              - <<: *Peril.0
-                text: Acidic digestive juices
-              - <<: *Peril.1
-                text: Biological contaminants
-              - <<: *Peril.2
-                text: Caught in the waste stream
-              - <<: *Peril.3
-                text: Contracting muscles
-              - <<: *Peril.4
-                text: Defense mechanisms target you as invasive
-              - <<: *Peril.5
-                text: Lack of atmosphere
-              - <<: *Peril.6
-                text: Rising bodily fluids
-              - <<: *Peril.7
-                text: Surges of rapid expellant
-              - <<: *Peril.8
-                text: Symbiotic lifeforms attack
-              - <<: *Peril.9
-                text: Virulent disease
-              - *Peril.10
-              - *Peril.11
+            - <<: *Peril.0
+              text: Acidic digestive juices
+            - <<: *Peril.1
+              text: Biological contaminants
+            - <<: *Peril.2
+              text: Caught in the waste stream
+            - <<: *Peril.3
+              text: Contracting muscles
+            - <<: *Peril.4
+              text: Defense mechanisms target you as invasive
+            - <<: *Peril.5
+              text: Lack of atmosphere
+            - <<: *Peril.6
+              text: Rising bodily fluids
+            - <<: *Peril.7
+              text: Surges of rapid expellant
+            - <<: *Peril.8
+              text: Symbiotic lifeforms attack
+            - <<: *Peril.9
+              text: Virulent disease
+            - *Peril.10
+            - *Peril.11
+            type: oracle_rollable
           opportunity:
             <<: *Opportunity
             rows:
-              - <<: *Opportunity.0
-                text: Access to rare biological resource
-              - <<: *Opportunity.1
-                text: Genetic clue or evidence
-              - <<: *Opportunity.2
-                text: Opening to heal or benefit the lifeform
-              - <<: *Opportunity.3
-                text: Opening to influence the lifeform to your benefit
-              - <<: *Opportunity.4
-                text: Rare scientific observation
+            - <<: *Opportunity.0
+              text: Access to rare biological resource
+            - <<: *Opportunity.1
+              text: Genetic clue or evidence
+            - <<: *Opportunity.2
+              text: Opening to heal or benefit the lifeform
+            - <<: *Opportunity.3
+              text: Opening to influence the lifeform to your benefit
+            - <<: *Opportunity.4
+              text: Rare scientific observation
+            type: oracle_rollable
+        type: oracle_collection
       mystical:
         name: Mystical
         summary: *Mystical.summary
@@ -697,69 +784,73 @@ oracles:
           feature:
             <<: *Feature
             rows:
-              - <<: *Feature.0
-                text: Accoutrements of ceremony
-              - <<: *Feature.1
-                text: Animated cleaning tools or equipment
-              - <<: *Feature.2
-                text: Arcane symbols, runes, or sigils
-              - <<: *Feature.3
-                text: Chamber of mystical rituals
-              - <<: *Feature.4
-                text: Ethereal sounds and lights
-              - <<: *Feature.5
-                text: Foci or conduits of mystic energy
-              - <<: *Feature.6
-                text: Ley line of great pulsing power
-              - <<: *Feature.7
-                text: Library or database of indecipherable texts
-              - <<: *Feature.8
-                text: Lifeforms anthropomorphized as servants
-              - <<: *Feature.9
-                text: Lifeforms warped by magic
-              - <<: *Feature.10
-                text: Magic-infused technology
-              - <<: *Feature.11
-                text: Strange specimens magically caged
-              - *Feature.12
+            - <<: *Feature.0
+              text: Accoutrements of ceremony
+            - <<: *Feature.1
+              text: Animated cleaning tools or equipment
+            - <<: *Feature.2
+              text: Arcane symbols, runes, or sigils
+            - <<: *Feature.3
+              text: Chamber of mystical rituals
+            - <<: *Feature.4
+              text: Ethereal sounds and lights
+            - <<: *Feature.5
+              text: Foci or conduits of mystic energy
+            - <<: *Feature.6
+              text: Ley line of great pulsing power
+            - <<: *Feature.7
+              text: Library or database of indecipherable texts
+            - <<: *Feature.8
+              text: Lifeforms anthropomorphized as servants
+            - <<: *Feature.9
+              text: Lifeforms warped by magic
+            - <<: *Feature.10
+              text: Magic-infused technology
+            - <<: *Feature.11
+              text: Strange specimens magically caged
+            - *Feature.12
+            type: oracle_rollable
           peril:
             <<: *Peril
             rows:
-              - <<: *Peril.0
-                text: Arcane knowledge in the wrong hands
-              - <<: *Peril.1
-                text: Important equipment malfunctions
-              - <<: *Peril.2
-                text: Lost in the illusions
-              - <<: *Peril.3
-                text: Magically locked areas
-              - <<: *Peril.4
-                text: Mystic energies growing unbounded
-              - <<: *Peril.5
-                text: Relic or artifact with a frightening cost
-              - <<: *Peril.6
-                text: Surges of wild magic
-              - <<: *Peril.7
-                text: Technological interfaces only respond to magic
-              - <<: *Peril.8
-                text: Temptations to unlease a darker force
-              - <<: *Peril.9
-                text: Trapped by mystic energies
-              - *Peril.10
-              - *Peril.11
+            - <<: *Peril.0
+              text: Arcane knowledge in the wrong hands
+            - <<: *Peril.1
+              text: Important equipment malfunctions
+            - <<: *Peril.2
+              text: Lost in the illusions
+            - <<: *Peril.3
+              text: Magically locked areas
+            - <<: *Peril.4
+              text: Mystic energies growing unbounded
+            - <<: *Peril.5
+              text: Relic or artifact with a frightening cost
+            - <<: *Peril.6
+              text: Surges of wild magic
+            - <<: *Peril.7
+              text: Technological interfaces only respond to magic
+            - <<: *Peril.8
+              text: Temptations to unlease a darker force
+            - <<: *Peril.9
+              text: Trapped by mystic energies
+            - *Peril.10
+            - *Peril.11
+            type: oracle_rollable
           opportunity:
             <<: *Opportunity
             rows:
-              - <<: *Opportunity.0
-                text: Ability to tap into a ley line's power
-              - <<: *Opportunity.1
-                text: Artifact of arcane might or significance
-              - <<: *Opportunity.2
-                text: Helpful magical device or lifeform
-              - <<: *Opportunity.3
-                text: Regenerative empowerment
-              - <<: *Opportunity.4
-                text: Valuable notes on mystic powers
+            - <<: *Opportunity.0
+              text: Ability to tap into a ley line's power
+            - <<: *Opportunity.1
+              text: Artifact of arcane might or significance
+            - <<: *Opportunity.2
+              text: Helpful magical device or lifeform
+            - <<: *Opportunity.3
+              text: Regenerative empowerment
+            - <<: *Opportunity.4
+              text: Valuable notes on mystic powers
+            type: oracle_rollable
+        type: oracle_collection
       overgrown:
         name: Overgrown
         summary: *Overgrown.summary
@@ -769,69 +860,73 @@ oracles:
           feature:
             <<: *Feature
             rows:
-              - <<: *Feature.0
-                text: Cacophony of calls and shrieks
-              - <<: *Feature.1
-                text: Caracass picked clean
-              - <<: *Feature.2
-                text: Colonies of insects or tiny lifeforms
-              - <<: *Feature.3
-                text: Evidence of a failed hunting expedition
-              - <<: *Feature.4
-                text: Huge footprints in the ground
-              - <<: *Feature.5
-                text: Larger than life plants
-              - <<: *Feature.6
-                text: Lifeforms lounging after a feast or kill
-              - <<: *Feature.7
-                text: Site of a large attack or skirmish
-              - <<: *Feature.8
-                text: Sticky sap coating surfaces
-              - <<: *Feature.9
-                text: Structures or formations covered in thick vines
-              - <<: *Feature.10
-                text: Traveling herds of herbivores
-              - <<: *Feature.11
-                text: Well-traveled game trail
-              - *Feature.12
+            - <<: *Feature.0
+              text: Cacophony of calls and shrieks
+            - <<: *Feature.1
+              text: Caracass picked clean
+            - <<: *Feature.2
+              text: Colonies of insects or tiny lifeforms
+            - <<: *Feature.3
+              text: Evidence of a failed hunting expedition
+            - <<: *Feature.4
+              text: Huge footprints in the ground
+            - <<: *Feature.5
+              text: Larger than life plants
+            - <<: *Feature.6
+              text: Lifeforms lounging after a feast or kill
+            - <<: *Feature.7
+              text: Site of a large attack or skirmish
+            - <<: *Feature.8
+              text: Sticky sap coating surfaces
+            - <<: *Feature.9
+              text: Structures or formations covered in thick vines
+            - <<: *Feature.10
+              text: Traveling herds of herbivores
+            - <<: *Feature.11
+              text: Well-traveled game trail
+            - *Feature.12
+            type: oracle_rollable
           peril:
             <<: *Peril
             rows:
-              - <<: *Peril.0
-                text: Aggressive and armored lifeforms
-              - <<: *Peril.1
-                text: Apex predator on the prowl
-              - <<: *Peril.2
-                text: Evidence of exploitation of lifeforms
-              - <<: *Peril.3
-                text: Horned lifeforms bellowing before a charge
-              - <<: *Peril.4
-                text: Lifeform stalks from the shadows
-              - <<: *Peril.5
-                text: Pack of predators on the hunt
-              - <<: *Peril.6
-                text: Poisonous plant life or venomous lifeforms
-              - <<: *Peril.7
-                text: Protective parent lifeform attacks
-              - <<: *Peril.8
-                text: Spiked or razor-edged plants blocking the path
-              - <<: *Peril.9
-                text: Swarms of parasitic lifeforms
-              - *Peril.10
-              - *Peril.11
+            - <<: *Peril.0
+              text: Aggressive and armored lifeforms
+            - <<: *Peril.1
+              text: Apex predator on the prowl
+            - <<: *Peril.2
+              text: Evidence of exploitation of lifeforms
+            - <<: *Peril.3
+              text: Horned lifeforms bellowing before a charge
+            - <<: *Peril.4
+              text: Lifeform stalks from the shadows
+            - <<: *Peril.5
+              text: Pack of predators on the hunt
+            - <<: *Peril.6
+              text: Poisonous plant life or venomous lifeforms
+            - <<: *Peril.7
+              text: Protective parent lifeform attacks
+            - <<: *Peril.8
+              text: Spiked or razor-edged plants blocking the path
+            - <<: *Peril.9
+              text: Swarms of parasitic lifeforms
+            - *Peril.10
+            - *Peril.11
+            type: oracle_rollable
           opportunity:
             <<: *Opportunity
             rows:
-              - <<: *Opportunity.0
-                text: Access to area untouched for ages
-              - <<: *Opportunity.1
-                text: Access to rare biological specimen
-              - <<: *Opportunity.2
-                text: Lost artifact found
-              - <<: *Opportunity.3
-                text: Opening to avoid a conflict with lifeforms
-              - <<: *Opportunity.4
-                text: Opening to connect with a helpful lifeform
+            - <<: *Opportunity.0
+              text: Access to area untouched for ages
+            - <<: *Opportunity.1
+              text: Access to rare biological specimen
+            - <<: *Opportunity.2
+              text: Lost artifact found
+            - <<: *Opportunity.3
+              text: Opening to avoid a conflict with lifeforms
+            - <<: *Opportunity.4
+              text: Opening to connect with a helpful lifeform
+            type: oracle_rollable
+        type: oracle_collection
       war_zone:
         name: War Zone
         summary: *WarZone.summary
@@ -841,66 +936,71 @@ oracles:
           feature:
             <<: *Feature
             rows:
-              - <<: *Feature.0
-                text: Battle standard or beacon buoy
-              - <<: *Feature.1
-                text: Combatants fleeing the battle
-              - <<: *Feature.2
-                text: Command ship or center
-              - <<: *Feature.3
-                text: Damaged engines of war now abandoned
-              - <<: *Feature.4
-                text: Debris and wrecked terrain
-              - <<: *Feature.5
-                text: Fallen combatants
-              - <<: *Feature.6
-                text: Nervous units held in reserve
-              - <<: *Feature.7
-                text: Officer barking orders to a squad
-              - <<: *Feature.8
-                text: Perimeter guards on patrol
-              - <<: *Feature.9
-                text: Scout observing enemy movements
-              - <<: *Feature.10
-                text: Vehicular wreckage
-              - <<: *Feature.11
-                text: Wounded troops hunkering down
-              - *Feature.12
+            - <<: *Feature.0
+              text: Battle standard or beacon buoy
+            - <<: *Feature.1
+              text: Combatants fleeing the battle
+            - <<: *Feature.2
+              text: Command ship or center
+            - <<: *Feature.3
+              text: Damaged engines of war now abandoned
+            - <<: *Feature.4
+              text: Debris and wrecked terrain
+            - <<: *Feature.5
+              text: Fallen combatants
+            - <<: *Feature.6
+              text: Nervous units held in reserve
+            - <<: *Feature.7
+              text: Officer barking orders to a squad
+            - <<: *Feature.8
+              text: Perimeter guards on patrol
+            - <<: *Feature.9
+              text: Scout observing enemy movements
+            - <<: *Feature.10
+              text: Vehicular wreckage
+            - <<: *Feature.11
+              text: Wounded troops hunkering down
+            - *Feature.12
+            type: oracle_rollable
           peril:
             <<: *Peril
             rows:
-              - <<: *Peril.0
-                text: Ambushed by a lurking foe
-              - <<: *Peril.1
-                text: Automated suppressing fire
-              - <<: *Peril.2
-                text: Battlefield tech is triggered
-              - <<: *Peril.3
-                text: Caught in the crossfire
-              - <<: *Peril.4
-                text: Enemy sniper pins you down
-              - <<: *Peril.5
-                text: Explosive change in the battlefield
-              - <<: *Peril.6
-                text: Lost in the chaos or debris
-              - <<: *Peril.7
-                text: Mistaken for the enemy
-              - <<: *Peril.8
-                text: Opportunistic looters take notice
-              - <<: *Peril.9
-                text: Shrapnel or collateral damage
-              - *Peril.10
-              - *Peril.11
+            - <<: *Peril.0
+              text: Ambushed by a lurking foe
+            - <<: *Peril.1
+              text: Automated suppressing fire
+            - <<: *Peril.2
+              text: Battlefield tech is triggered
+            - <<: *Peril.3
+              text: Caught in the crossfire
+            - <<: *Peril.4
+              text: Enemy sniper pins you down
+            - <<: *Peril.5
+              text: Explosive change in the battlefield
+            - <<: *Peril.6
+              text: Lost in the chaos or debris
+            - <<: *Peril.7
+              text: Mistaken for the enemy
+            - <<: *Peril.8
+              text: Opportunistic looters take notice
+            - <<: *Peril.9
+              text: Shrapnel or collateral damage
+            - *Peril.10
+            - *Peril.11
+            type: oracle_rollable
           opportunity:
             <<: *Opportunity
             rows:
-              - <<: *Opportunity.0
-                text: Helping a combatant in need may yield an ally
-              - <<: *Opportunity.1
-                text: Insight into the nature of the conflict
-              - <<: *Opportunity.2
-                text: Opening to avoid the fiercest section of battle
-              - <<: *Opportunity.3
-                text: Opening to bring the immediate conflict to a close
-              - <<: *Opportunity.4
-                text: Salvageable equipment or weapons
+            - <<: *Opportunity.0
+              text: Helping a combatant in need may yield an ally
+            - <<: *Opportunity.1
+              text: Insight into the nature of the conflict
+            - <<: *Opportunity.2
+              text: Opening to avoid the fiercest section of battle
+            - <<: *Opportunity.3
+              text: Opening to bring the immediate conflict to a close
+            - <<: *Opportunity.4
+              text: Salvageable equipment or weapons
+            type: oracle_rollable
+        type: oracle_collection
+    type: oracle_collection

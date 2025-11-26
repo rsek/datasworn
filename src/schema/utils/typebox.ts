@@ -14,6 +14,7 @@ import {
 	type TOptional,
 	type TProperties,
 	type TRef,
+	type TRefUnsafe,
 	type TSchema,
 	type TString
 } from '@sinclair/typebox'
@@ -121,14 +122,14 @@ export function setDescriptions<T extends TObject>(
 
 	return schema
 }
-export type TFuzzyRef<T extends TSchema> = T | TRef<T>
+export type TFuzzyRef<T extends TSchema> = T | TRefUnsafe<T> | TRef<string>
 
 export type TFuzzyString = TFuzzyRef<
 	TString | TLiteral<string> | TUnionEnum<string[]>
 >
 export type TFuzzyObject<Props extends TProperties = TProperties> = TFuzzyRef<
 	| TObject<Props>
-	| (TDiscriminatedUnion<TObject[], string> & {
+	| (TDiscriminatedUnion<any, string> & {
 			static: Static<TObject<Props>>
 	  })
 >

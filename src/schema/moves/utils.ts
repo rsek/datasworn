@@ -5,7 +5,8 @@ import {
 	type TBoolean,
 	type TLiteral,
 	type TNull,
-	type TRef
+	type TRef,
+	type TRefUnsafe
 } from '@sinclair/typebox'
 import * as Text from '../common/Text.js'
 import { ExtractLiteralFromEnum } from '../utils/ExtractLiteralFromEnum.js'
@@ -45,8 +46,8 @@ const MoveBase = Type.Object({
 
 export function Move<
 	RollType extends MoveRollType,
-	Trigger extends TRef<TTrigger>,
-	Outcomes extends TRef<TMoveOutcomes> | TNull
+	Trigger extends TRefUnsafe<TTrigger> | TRef<string>,
+	Outcomes extends TRefUnsafe<TMoveOutcomes> | TRef<string> | TNull
 >(
 	rollType: RollType,
 	trigger: Trigger,
@@ -92,8 +93,8 @@ export function Move<
 }
 export type TMove<
 	RollType extends MoveRollType,
-	MoveTrigger extends TRef<TTrigger>,
-	Outcomes extends TRef<TMoveOutcomes> | TNull
+	MoveTrigger extends TRefUnsafe<TTrigger>,
+	Outcomes extends TRefUnsafe<TMoveOutcomes> | TNull
 > = ReturnType<typeof Move<RollType, MoveTrigger, Outcomes>>
 
 export type Move<
@@ -111,7 +112,7 @@ export type Move<
 
 export function MoveEnhancement<
 	RollType extends MoveRollType,
-	Trigger extends TRef<TTriggerEnhancement>
+	Trigger extends TRefUnsafe<TTriggerEnhancement>
 >(rollType: RollType, trigger: Trigger, options: ObjectOptions = {}) {
 	const base = Type.Object({
 		[moveDiscriminator]: ExtractLiteralFromEnum(MoveRollType, rollType, {

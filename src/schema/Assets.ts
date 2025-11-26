@@ -24,7 +24,7 @@ const AssetMixin = Type.Object({
 			'Support Vehicle'
 		]
 	}),
-	options: Dictionary(Type.Ref<TAssetOptionField>('AssetOptionField'), {
+	options: Dictionary(Type.Ref('AssetOptionField'), {
 		description:
 			"Options are input fields set when the player purchases the asset. They're likely to remain the same through the life of the asset. Typically, they are rendered at the top of the asset card."
 	}),
@@ -34,7 +34,7 @@ const AssetMixin = Type.Object({
 		})
 	),
 	abilities: Type.Array(
-		Type.Ref<TAssetAbility>('AssetAbility', {
+		Type.Ref('AssetAbility', {
 			description: 'Abilities provided by this asset. Most assets have 3.'
 		})
 	)
@@ -44,7 +44,7 @@ export const Asset = CollectableNode(
 	FlatIntersect([
 		AssetMixin,
 		AssetPropertiesEnhanceable(
-			Type.Ref<TAssetControlField>('AssetControlField')
+			Type.Ref('AssetControlField')
 		)
 	]),
 	'asset'

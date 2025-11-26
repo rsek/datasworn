@@ -105,22 +105,33 @@ export const SunderedIsles: RulesPackageConfig = {
 	},
 }
 
-// // currently these just exist for testing purposes
+// Community content packages
 
-// export const Rsek: RulesPackageConfig = {
-// 	type: 'expansion',
-// 	paths: {
-// 		source: path.join(ROOT_SOURCE_DATA, 'rsek')
-// 	},
-// 	id: 'rsek',
-// 	pkg: { name: 'rsek', scope: PKG_SCOPE_COMMUNITY }
-// }
-
-// export const Starsmith: RulesPackageConfig = {
-// 	type: 'expansion',
-// 	paths: {
-// 		source: path.join(ROOT_SOURCE_DATA, 'starsmith')
-// 	},
-// 	id: 'starsmith',
-// 	pkg: { name: 'starsmith', scope: PKG_SCOPE_COMMUNITY }
-// }
+export const Starsmith: RulesPackageConfig = {
+	type: 'expansion',
+	paths: {
+		source: path.join(ROOT_SOURCE_DATA, 'starsmith'),
+	},
+	id: 'starsmith',
+	pkg: {
+		name: 'starsmith',
+		private: true, // Don't publish to NPM yet
+		scope: PKG_SCOPE_COMMUNITY,
+		description:
+			'Datasworn JSON data for Starsmith Expanded Oracles by Eric Bright.',
+		keywords: [
+			'ironsworn',
+			'datasworn',
+			'TTRPG',
+			'starforged',
+			'starsmith',
+		],
+		authors: [
+			{
+				name: 'Eric Bright',
+				email: 'noreply@playeveryrole.com',
+				url: 'https://playeveryrole.com/',
+			},
+		],
+	},
+}

@@ -754,13 +754,13 @@ class CollectableId extends EmbeddingId {
         const thisKey = this.primaryPathKeys.at(-1);
         // these aren't the targets, so they don't get forEach passed to them
         const parentMatches = parentId._getMatchesUnsafe(tree);
-        for (const [parentId, parentMatch] of parentMatches) {
+        for (const [parentIdStr, parentMatch] of parentMatches) {
             const contents = parentMatch[CONST_js_1.ContentsKey];
             if (contents == null)
                 continue;
             const collectables = IdParser._getMatchesFrom(contents, thisKey);
             for (const [currentKey, match] of collectables) {
-                const [_parentTypeId, parentPath] = parentId.split(CONST_js_1.PrefixSep);
+                const [_parentTypeId, parentPath] = parentIdStr.split(CONST_js_1.PrefixSep);
                 const currentPath = parentPath + CONST_js_1.PathKeySep + currentKey;
                 const currentId = this.compositeTypeId + CONST_js_1.PrefixSep + currentPath;
                 matches || (matches = new Map());
@@ -910,7 +910,7 @@ class CollectionId extends IdParser {
     _getMatchesUnsafe(tree, forEach) {
         const pkgs = this._matchRulesPackages(tree);
         // defer creating this until we need it
-        let matches;
+        let matches = new Map();
         const [_pkgMatchKey, matchKey, ...tailKeys] = this.primaryPathKeys;
         for (const [rulesPackageId, pkg] of pkgs) {
             const typeBranch = pkg[this.typeBranchKey];
@@ -945,7 +945,7 @@ _b = CollectionId, _CollectionId_getPositionId = function _CollectionId_getPosit
     const pathStr = path.join(CONST_js_1.PathKeySep);
     return [node.type, pathStr].join(CONST_js_1.PrefixSep);
 };
-// @ts-expect-error
+// @ts-expect-error Complex generic type constraints
 class EmbeddedId extends EmbeddingId {
     /**
      * Returns the embedding ID parent of this ID.
@@ -957,7 +957,7 @@ class EmbeddedId extends EmbeddingId {
         const parentNode = __classPrivateFieldGet(this, _EmbeddedId_parent, "f").get(tree);
         const property = TypeId_js_1.default.getEmbeddedPropertyKey(this.typeId);
         const obj = parentNode === null || parentNode === void 0 ? void 0 : parentNode[property];
-        return obj[this.pathSegments.at(-1)];
+        return obj === null || obj === void 0 ? void 0 : obj[this.pathSegments.at(-1)];
     }
     _getPathRegExpSource() {
         let basePath = __classPrivateFieldGet(this, _EmbeddedId_parent, "f")._getPathRegExpSource();

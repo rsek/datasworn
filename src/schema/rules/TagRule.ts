@@ -126,12 +126,12 @@ export const Tag = Type.Union(
 			])
 		)
 	],
-	{ $id: 'Tag', [JsonTypeDef]: { schema: JtdType.Any() } }
+	{ $id: 'Tag', [JsonTypeDef]: { schema: JtdType.Any() as any } }
 )
 
 export const Tags = Type.Record(
 	RulesetId,
-	Dictionary(Type.Ref<typeof Tag>('Tag'), { title: 'RulesPackageTags' }),
+	Dictionary(Type.Ref('Tag'), { title: 'RulesPackageTags' }),
 	{
 		releaseStage: 'experimental',
 		$id: 'Tags',

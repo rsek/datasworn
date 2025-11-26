@@ -1,1119 +1,1544 @@
 _id: starsmith
-source: &Source
+datasworn_version: "0.1.0"
+type: expansion
+ruleset: starforged
+<<: &Source
+  title: Starsmith Expanded Oracles
+  date: 2024-03-22
+  url: https://playeveryrole.com/starsmith-products/
+  license: https://creativecommons.org/licenses/by/4.0
   authors:
     - name: Eric Bright
-  date: '2023-03-19'
-  title: Starsmith
-  license: https://creativecommons.org/licenses/by/4.0/
-  url: https://playeveryrole.com/
 oracles:
   creatures:
     name: Creatures
+    oracle_type: tables
+    enhances:
+    # summary: Extension of the oracle table
+    # description: Extension of the oracle table
+    - oracle_collection:starforged/creature
+    _source: &Source
+      title: Starsmith
+      authors:
+      - name: Eric Bright
+      date: 2024-03-22
+      url: https://playeveryrole.com/starsmith-products/
+      license: https://creativecommons.org/licenses/by/4.0
     contents:
+      # environment unchanged
+      # scale unchanged
+      # ultra_scale unchanged
       first_look:
-        replaces: starforged/oracles/creatures/first_look
+        name: Creature First Look
+        oracle_type: table_text
         dice: 1d300
+        replaces:
+        # summary: Extension of the oracle table
+        - oracle_rollable:starforged/creature/first_look
+        _source: *Source
         rows:
-          - min: 1
+        # begin rows copied from original
+        - text: Antennae or sensory organs
+          roll:
+            min: 1
             max: 2
-            result: Antennae or sensory organs
-          - min: 3
+        - text: Armored
+          roll:
+            min: 3
             max: 4
-            result: Armored
-          - min: 5
+        - text: Beautiful
+          roll:
+            min: 5
             max: 6
-            result: Beautiful
-          - min: 7
+        - text: Biotech
+          roll:
+            min: 7
             max: 8
-            result: Biotech
-          - min: 9
+        - text: Bony or gaunt
+          roll:
+            min: 9
             max: 10
-            result: Bony or gaunt
-          - min: 11
+        - text: Brutish or muscled
+          roll:
+            min: 11
             max: 12
-            result: Brutish or muscled
-          - min: 13
+        - text: Camouflaged
+          roll:
+            min: 13
             max: 14
-            result: Camouflaged
-          - min: 15
+        - text: Claws or talons
+          roll:
+            min: 15
             max: 16
-            result: Claws or talons
-          - min: 17
+        - text: Compound eyes
+          roll:
+            min: 17
             max: 18
-            result: Compound eyes
-          - min: 19
+        - text: Comprised of many creatures
+          roll:
+            min: 19
             max: 20
-            result: Comprised of many creatures
-          - min: 21
+        - text: Corrupted
+          roll:
+            min: 21
             max: 22
-            result: Corrupted
-          - min: 23
+        - text: Crystalline
+          roll:
+            min: 23
             max: 24
-            result: Crystalline
-          - min: 25
+        - text: Dead or undead
+          roll:
+            min: 25
             max: 26
-            result: Dead or undead
-          - min: 27
+        - text: Distinctive markings
+          roll:
+            min: 27
             max: 28
-            result: Distinctive markings
-          - min: 29
+        - text: Distinctive smell
+          roll:
+            min: 29
             max: 30
-            result: Distinctive smell
-          - min: 31
+        - text: Distinctive sound
+          roll:
+            min: 31
             max: 32
-            result: Distinctive sound
-          - min: 33
+        - text: Dripping mucus
+          roll:
+            min: 33
             max: 34
-            result: Dripping mucus
-          - min: 35
+        - text: Elongated Neck
+          roll:
+            min: 35
             max: 36
-            result: Elongated Neck
-          - min: 37
+        - text: Energy emissions
+          roll:
+            min: 37
             max: 38
-            result: Energy emissions
-          - min: 39
+        - text: Extra limbs
+          roll:
+            min: 39
             max: 40
-            result: Extra limbs
-          - min: 41
+        - text: Faceless or inexpressive
+          roll:
+            min: 41
             max: 42
-            result: Faceless or inexpressive
-          - min: 43
+        - text: Fangs or rows of teeth
+          roll:
+            min: 43
             max: 44
-            result: Fangs or rows of teeth
-          - min: 45
+        - text: Feathered
+          roll:
+            min: 45
             max: 46
-            result: Feathered
-          - min: 47
+        - text: Fungal growth
+          roll:
+            min: 47
             max: 48
-            result: Fungal growth
-          - min: 49
+        - text: Fur, hair, or filaments
+          roll:
+            min: 49
             max: 50
-            result: Fur, hair, or filaments
-          - min: 51
+        - text: Graceful
+          roll:
+            min: 51
             max: 52
-            result: Graceful
-          - min: 53
+        - text: Hideous
+          roll:
+            min: 53
             max: 54
-            result: Hideous
-          - min: 55
+        - text: Hooded or crested
+          roll:
+            min: 55
             max: 56
-            result: Hooded or crested
-          - min: 57
+        - text: Immobile or trapped
+          roll:
+            min: 57
             max: 58
-            result: Immobile or trapped
-          - min: 59
+        - text: Injured or scarred
+          roll:
+            min: 59
             max: 60
-            result: Injured or scarred
-          - min: 61
+        - text: Iridescent
+          roll:
+            min: 61
             max: 62
-            result: Iridescent
-          - min: 63
+        - text: Long-limbed
+          roll:
+            min: 63
             max: 64
-            result: Long-limbed
-          - min: 65
+        - text: Luminescent
+          roll:
+            min: 65
             max: 66
-            result: Luminescent
-          - min: 67
+        - text: Mandibles or pincers
+          roll:
+            min: 67
             max: 68
-            result: Mandibles or pincers
-          - min: 69
+        - text: Many-eyed
+          roll:
+            min: 69
             max: 70
-            result: Many-eyed
-          - min: 71
+        - text: Mineral or metallic
+          roll:
+            min: 71
             max: 72
-            result: Mineral or metallic
-          - min: 73
+        - text: Multi-jointed
+          roll:
+            min: 73
             max: 74
-            result: Multi-jointed
-          - min: 75
+        - text: Multi-segmented body
+          roll:
+            min: 75
             max: 76
-            result: Multi-segmented body
-          - min: 77
+        - text: Ornamented or colorful
+          roll:
+            min: 77
             max: 78
-            result: Ornamented or colorful
-          - min: 79
+        - text: Oversized mouth
+          roll:
+            min: 79
             max: 80
-            result: Oversized mouth
-          - min: 81
+        - text: Prominent tail
+          roll:
+            min: 81
             max: 82
-            result: Prominent tail
-          - min: 83
+        - text: Prominent wings or fins
+          roll:
+            min: 83
             max: 84
-            result: Prominent wings or fins
-          - min: 85
+        - text: Ridges or plates
+          roll:
+            min: 85
             max: 86
-            result: Ridges or plates
-          - min: 87
+        - text: Scaled
+          roll:
+            min: 87
             max: 88
-            result: Scaled
-          - min: 89
+        - text: Single eye or oversized eyes
+          roll:
+            min: 89
             max: 90
-            result: Single eye or oversized eyes
-          - min: 91
+        - text: Spikes or spines
+          roll:
+            min: 91
             max: 92
-            result: Spikes or spines
-          - min: 93
+        - text: Stinger or barbs
+          roll:
+            min: 93
             max: 94
-            result: Stinger or barbs
-          - min: 95
+        - text: Tentacles or tendrils
+          roll:
+            min: 95
             max: 96
-            result: Tentacles or tendrils
-          - min: 97
+        - text: Translucent
+          roll:
+            min: 97
             max: 98
-            result: Translucent
-          - min: 99
+        - text: Visible symbiote
+        # end rows copied from original
+          roll:
+            min: 99
             max: 100
-            result: Visible symbiote
-          - min: 101
+        - text: Aged
+          roll:
+            min: 101
             max: 102
-            result: Aged
-          - min: 103
+        - text: Bark-like skin
+          roll:
+            min: 103
             max: 104
-            result: Bark-like skin
-          - min: 105
+        - text: Body pouch
+          roll:
+            min: 105
             max: 106
-            result: Body pouch
-          - min: 107
+        - text: Bulbous nose
+          roll:
+            min: 107
             max: 108
-            result: Bulbous nose
-          - min: 109
+        - text: Carrying young
+          roll:
+            min: 109
             max: 110
-            result: Carrying young
-          - min: 111
+        - text: Coarse skin
+          roll:
+            min: 111
             max: 112
-            result: Coarse skin
-          - min: 113
+        - text: Colorful plumage
+          roll:
+            min: 113
             max: 114
-            result: Colorful plumage
-          - min: 115
+        - text: Confusing sounds
+          roll:
+            min: 115
             max: 116
-            result: Confusing sounds
-          - min: 117
+        - text: Crackling electricity
+          roll:
+            min: 117
             max: 118
-            result: Crackling electricity
-          - min: 119
+        - text: Dexterous trunk
+          roll:
+            min: 119
             max: 120
-            result: Dexterous trunk
-          - min: 121
+        - text: Distinct walking gait
+          roll:
+            min: 121
             max: 122
-            result: Distinct walking gait
-          - min: 123
+        - text: Embedded weapon
+          roll:
+            min: 123
             max: 124
-            result: Embedded weapon
-          - min: 125
+        - text: Entangled object
+          roll:
+            min: 125
             max: 126
-            result: Entangled object
-          - min: 127
+        - text: Extremely wide
+          roll:
+            min: 127
             max: 128
-            result: Extremely wide
-          - min: 129
+        - text: Flabby skin
+          roll:
+            min: 129
             max: 130
-            result: Flabby skin
-          - min: 131
+        - text: Flicking tongue
+          roll:
+            min: 131
             max: 132
-            result: Flicking tongue
-          - min: 133
+        - text: Flushed skin
+          roll:
+            min: 133
             max: 134
-            result: Flushed skin
-          - min: 135
+        - text: Fully rotating head
+          roll:
+            min: 135
             max: 136
-            result: Fully rotating head
-          - min: 137
+        - text: Gel/mucus covered skin
+          roll:
+            min: 137
             max: 138
-            result: Gel/mucus covered skin
-          - min: 139
+        - text: Gliding skin flaps
+          roll:
+            min: 139
             max: 140
-            result: Gliding skin flaps
-          - min: 141
+        - text: Hoofed feet
+          roll:
+            min: 141
             max: 142
-            result: Hoofed feet
-          - min: 143
+        - text: Horns
+          roll:
+            min: 143
             max: 144
-            result: Horns
-          - min: 145
+        - text: Ill-proportioned
+          roll:
+            min: 145
             max: 146
-            result: Ill-proportioned
-          - min: 147
+        - text: Long snout
+          roll:
+            min: 147
             max: 148
-            result: Long snout
-          - min: 149
+        - text: Missing appendage
+          roll:
+            min: 149
             max: 150
-            result: Missing appendage
-          - min: 151
+        - text: Multi-spectrum eyes
+          roll:
+            min: 151
             max: 152
-            result: Multi-spectrum eyes
-          - min: 153
+        - text: Oily secretions
+          roll:
+            min: 153
             max: 154
-            result: Oily secretions
-          - min: 155
+        - text: Opposable thumb/toe
+          roll:
+            min: 155
             max: 156
-            result: Opposable thumb/toe
-          - min: 157
+        - text: Oversized legs
+          roll:
+            min: 157
             max: 158
-            result: Oversized legs
-          - min: 159
+        - text: Pointed beak
+          roll:
+            min: 159
             max: 160
-            result: Pointed beak
-          - min: 161
+        - text: Prime of life
+          roll:
+            min: 161
             max: 162
-            result: Prime of life
-          - min: 163
+        - text: Projectile quills
+          roll:
+            min: 163
             max: 164
-            result: Projectile quills
-          - min: 165
+        - text: Protective shell
+          roll:
+            min: 165
             max: 166
-            result: Protective shell
-          - min: 167
+        - text: Pulsing or undulating
+          roll:
+            min: 167
             max: 168
-            result: Pulsing or undulating
-          - min: 169
+        - text: Reflective skin
+          roll:
+            min: 169
             max: 170
-            result: Reflective skin
-          - min: 171
+        - text: Retractable claws
+          roll:
+            min: 171
             max: 172
-            result: Retractable claws
-          - min: 173
+        - text: Rubbery skin
+          roll:
+            min: 173
             max: 174
-            result: 'Rubbery skin '
-          - min: 175
+        - text: Single, spiraled horn
+          roll:
+            min: 175
             max: 176
-            result: Single, spiraled horn
-          - min: 177
+        - text: Slotted eyes
+          roll:
+            min: 177
             max: 178
-            result: Slotted eyes
-          - min: 179
+        - text: Sound / speech mimicry
+          roll:
+            min: 179
             max: 180
-            result: Sound / speech mimicry
-          - min: 181
+        - text: Sticky tongue
+          roll:
+            min: 181
             max: 182
-            result: Sticky tongue
-          - min: 183
+        - text: Swollen or bloated
+          roll:
+            min: 183
             max: 184
-            result: Swollen or bloated
-          - min: 185
+        - text: Thick hide
+          roll:
+            min: 185
             max: 186
-            result: Thick hide
-          - min: 187
+        - text: Thin ears
+          roll:
+            min: 187
             max: 188
-            result: Thin ears
-          - min: 189
+        - text: Tusks
+          roll:
+            min: 189
             max: 190
-            result: Tusks
-          - min: 191
+        - text: Unnatural
+          roll:
+            min: 191
             max: 192
-            result: Unnatural
-          - min: 193
+        - text: Unusual blood color
+          roll:
+            min: 193
             max: 194
-            result: Unusual blood color
-          - min: 195
+        - text: Vestigial limbs
+          roll:
+            min: 195
             max: 196
-            result: Vestigial limbs
-          - min: 197
+        - text: Webbed hands or feet
+          roll:
+            min: 197
             max: 198
-            result: Webbed hands or feet
-          - min: 199
+        - text: Wide ears
+          roll:
+            min: 199
             max: 200
-            result: Wide ears
-          - min: 201
+        - text: Antlers
+          roll:
+            min: 201
             max: 202
-            result: Antlers
-          - min: 203
+        - text: Bloodshot eyes
+          roll:
+            min: 203
             max: 204
-            result: Bloodshot eyes
-          - min: 205
+        - text: Bristles
+          roll:
+            min: 205
             max: 206
-            result: Bristles
-          - min: 207
+        - text: Carapace
+          roll:
+            min: 207
             max: 208
-            result: Carapace
-          - min: 209
+        - text: Cheek flaps
+          roll:
+            min: 209
             max: 210
-            result: Cheek flaps
-          - min: 211
+        - text: Color changing
+          roll:
+            min: 211
             max: 212
-            result: Color changing
-          - min: 213
+        - text: Compound eyes
+          roll:
+            min: 213
             max: 214
-            result: Compound eyes
-          - min: 215
+        - text: Covered in cilia
+          roll:
+            min: 215
             max: 216
-            result: Covered in cilia
-          - min: 217
+        - text: Curly fur
+          roll:
+            min: 217
             max: 218
-            result: Curly fur
-          - min: 219
+        - text: Diseased sores
+          roll:
+            min: 219
             max: 220
-            result: Diseased sores
-          - min: 221
+        - text: Dying
+          roll:
+            min: 221
             max: 222
-            result: Dying
-          - min: 223
+        - text: Emitting vapors
+          roll:
+            min: 223
             max: 224
-            result: Emitting vapors
-          - min: 225
+        - text: Extremely thin
+          roll:
+            min: 225
             max: 226
-            result: Extremely thin
-          - min: 227
+        - text: Filthy
+          roll:
+            min: 227
             max: 228
-            result: Filthy
-          - min: 229
+        - text: Flat nostrils or blowhole
+          roll:
+            min: 229
             max: 230
-            result: Flat nostrils or blowhole
-          - min: 231
+        - text: Flightless wings
+          roll:
+            min: 231
             max: 232
-            result: Flightless wings
-          - min: 233
+        - text: Frantic movements
+          roll:
+            min: 233
             max: 234
-            result: Frantic movements
-          - min: 235
+        - text: Ganglia on head
+          roll:
+            min: 235
             max: 236
-            result: Ganglia on head
-          - min: 237
+        - text: Giving birth
+          roll:
+            min: 237
             max: 238
-            result: Giving birth
-          - min: 239
+        - text: Headless
+          roll:
+            min: 239
             max: 240
-            result: Headless
-          - min: 241
+        - text: Hooked beak
+          roll:
+            min: 241
             max: 242
-            result: Hooked beak
-          - min: 243
+        - text: Ice cold skin
+          roll:
+            min: 243
             max: 244
-            result: Ice cold skin
-          - min: 245
+        - text: Iridescent secretions
+          roll:
+            min: 245
             max: 246
-            result: Iridescent secretions
-          - min: 247
+        - text: Matted fur
+          roll:
+            min: 247
             max: 248
-            result: Matted fur
-          - min: 249
+        - text: Multiple mouths
+          roll:
+            min: 249
             max: 250
-            result: Multiple mouths
-          - min: 251
+        - text: Near total silence
+          roll:
+            min: 251
             max: 252
-            result: Near total silence
-          - min: 253
+        - text: Oozing wound
+          roll:
+            min: 253
             max: 254
-            result: Oozing wound
-          - min: 255
+        - text: Oversized arms
+          roll:
+            min: 255
             max: 256
-            result: Oversized arms
-          - min: 257
+        - text: Patterned skin/fur
+          roll:
+            min: 257
             max: 258
-            result: Patterned skin/fur
-          - min: 259
+        - text: Pouch for young
+          roll:
+            min: 259
             max: 260
-            result: Pouch for young
-          - min: 261
+        - text: Projectile excretions
+          roll:
+            min: 261
             max: 262
-            result: Projectile excretions
-          - min: 263
+        - text: Prominent spots / stripes
+          roll:
+            min: 263
             max: 264
-            result: Prominent spots / stripes
-          - min: 265
+        - text: Pseudopods
+          roll:
+            min: 265
             max: 266
-            result: Pseudopods
-          - min: 267
+        - text: Reflective eyes
+          roll:
+            min: 267
             max: 268
-            result: Reflective eyes
-          - min: 269
+        - text: Rocky components
+          roll:
+            min: 269
             max: 270
-            result: Rocky components
-          - min: 271
+        - text: Serrated teeth
+          roll:
+            min: 271
             max: 272
-            result: Serrated teeth
-          - min: 273
+        - text: Shifting form
+          roll:
+            min: 273
             max: 274
-            result: Shifting form
-          - min: 275
+        - text: Skin absorbs light
+          roll:
+            min: 275
             max: 276
-            result: Skin absorbs light
-          - min: 277
+        - text: Small ear holes
+          roll:
+            min: 277
             max: 278
-            result: Small ear holes
-          - min: 279
+        - text: Steaming skin
+          roll:
+            min: 279
             max: 280
-            result: Steaming skin
-          - min: 281
+        - text: Swift movements
+          roll:
+            min: 281
             max: 282
-            result: Swift movements
-          - min: 283
+        - text: Tagged or blinking tracker
+          roll:
+            min: 283
             max: 284
-            result: Tagged or blinking tracker
-          - min: 285
+        - text: Thick secretions
+          roll:
+            min: 285
             max: 286
-            result: Thick secretions
-          - min: 287
+        - text: Thorny hide
+          roll:
+            min: 287
             max: 288
-            result: Thorny hide
-          - min: 289
+        - text: Twisted or malformed
+          roll:
+            min: 289
             max: 290
-            result: Twisted or malformed
-          - min: 291
+        - text: Unnerving shape
+          roll:
+            min: 291
             max: 292
-            result: Unnerving shape
-          - min: 293
+        - text: Unusual shape
+          roll:
+            min: 293
             max: 294
-            result: Unusual shape
-          - min: 295
+        - text: Visible parasites
+          roll:
+            min: 295
             max: 296
-            result: Visible parasites
-          - min: 297
+        - text: Whiskers
+          roll:
+            min: 297
             max: 298
-            result: Whiskers
-          - min: 299
+        - text: Young or adolescent
+          roll:
+            min: 299
             max: 300
-            result: Young or adolescent
+        type: oracle_rollable
       encountered_behavior:
-        replaces: starforged/oracles/creatures/encountered_behavior
+        name: Encountered Behavior
+        oracle_type: table_text
         dice: 1d300
+        # summary: Extension of the oracle table
+        _source: *Source
         rows:
-          - min: 1
+        # begin rows copied from original
+        - text: Ambusher
+          _i18n: &CommonNoun
+            text:
+              part_of_speech: common_noun
+          roll:
+            min: 1
             max: 5
-            result: Ambusher
-          - min: 6
+        - text: Apex predator
+          _i18n: *CommonNoun
+          roll:
+            min: 6
             max: 10
-            result: Apex predator
-          - min: 11
+        - text: Builder
+          _i18n: *CommonNoun
+          roll:
+            min: 11
             max: 14
-            result: Builder
-          - min: 15
+        - text: Camouflager
+          _i18n: *CommonNoun
+          roll:
+            min: 15
             max: 19
-            result: Camouflager
-          - min: 20
+        - text: Forager
+          _i18n: *CommonNoun
+          roll:
+            min: 20
             max: 24
-            result: Forager
-          - min: 25
+        - text: Grazer
+          _i18n: *CommonNoun
+          roll:
+            min: 25
             max: 29
-            result: Grazer
-          - min: 30
+        - text: Herder
+          _i18n: *CommonNoun
+          roll:
+            min: 30
             max: 33
-            result: Herder
-          - min: 34
+        - text: Hibernator
+          _i18n: *CommonNoun
+          roll:
+            min: 34
             max: 37
-            result: Hibernator
-          - min: 38
+        - text: Hoarder
+          _i18n: *CommonNoun
+          roll:
+            min: 38
             max: 41
-            result: Hoarder
-          - min: 42
+        - text: Hunter
+          _i18n: *CommonNoun
+          roll:
+            min: 42
             max: 46
-            result: Hunter
-          - min: 47
+        - text: Lurer
+          _i18n: *CommonNoun
+          roll:
+            min: 47
             max: 51
-            result: Lurer
-          - min: 52
+        - text: Migratory
+          _i18n: *CommonNoun
+          roll:
+            min: 52
             max: 55
-            result: Migratory
-          - min: 56
+        - text: Mimic
+          _i18n: *CommonNoun
+          roll:
+            min: 56
             max: 60
-            result: Mimic
-          - min: 61
+        - text: Nester
+          _i18n: *CommonNoun
+          roll:
+            min: 61
             max: 65
-            result: Nester
-          - min: 66
+        - text: Pack hunter
+          _i18n: *CommonNoun
+          roll:
+            min: 66
             max: 70
-            result: Pack hunter
-          - min: 71
+        - text: Prey
+          _i18n: *CommonNoun
+          roll:
+            min: 71
             max: 75
-            result: Prey
-          - min: 76
+        - text: Protector
+          _i18n: *CommonNoun
+          roll:
+            min: 76
             max: 80
-            result: Protector
-          - min: 81
+        - text: Scavenger
+          _i18n: *CommonNoun
+          roll:
+            min: 81
             max: 85
-            result: Scavenger
-          - min: 86
+        - text: Tracker
+          _i18n: *CommonNoun
+          roll:
+            min: 86
             max: 90
-            result: Tracker
-          - min: 91
+        - text: Trapper
+          _i18n: *CommonNoun
+          roll:
+            min: 91
             max: 95
-            result: Trapper
-          - min: 96
+        - roll:
+            min: 96
             max: 100
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
-          - min: 101
+          <<: &RollTwice
+            text: Roll twice
+            oracle_rolls:
+            - number_of_rolls: 2
+              auto: true
+            # end rows copied from original
+        - text: Alarm giver
+          roll:
+            min: 101
             max: 105
-            result: Alarm giver
-          - min: 106
+        - text: Bobber / weaver
+          roll:
+            min: 106
             max: 110
-            result: Bobber / weaver
-          - min: 111
+        - text: Cannibalizer
+          roll:
+            min: 111
             max: 114
-            result: Cannibalizer
-          - min: 115
+        - text: Carnivore
+          roll:
+            min: 115
             max: 119
-            result: Carnivore
-          - min: 120
+        - text: Climber
+          roll:
+            min: 120
             max: 124
-            result: Climber
-          - min: 125
+        - text: Distracter
+          roll:
+            min: 125
             max: 129
-            result: Distracter
-          - min: 130
+        - text: Fainter
+          roll:
+            min: 130
             max: 133
-            result: Fainter
-          - min: 134
+        - text: Geophagia (soil eater)
+          roll:
+            min: 134
             max: 137
-            result: Geophagia (soil eater)
-          - min: 138
+        - text: Habituation (ignores humans)
+          roll:
+            min: 138
             max: 141
-            result: Habituation (ignores humans)
-          - min: 142
+        - text: Hider
+          roll:
+            min: 142
             max: 146
-            result: Hider
-          - min: 147
+        - text: Jumper
+          roll:
+            min: 147
             max: 151
-            result: Jumper
-          - min: 152
+        - text: Look out
+          roll:
+            min: 152
             max: 155
-            result: Look out
-          - min: 156
+        - text: Mentor
+          roll:
+            min: 156
             max: 160
-            result: Mentor
-          - min: 161
+        - text: Omnivore
+          roll:
+            min: 161
             max: 165
-            result: Omnivore
-          - min: 166
+        - text: Pacer
+          roll:
+            min: 166
             max: 170
-            result: Pacer
-          - min: 171
+        - text: Playing with peers
+          roll:
+            min: 171
             max: 175
-            result: Playing with peers
-          - min: 176
+        - text: Posturer
+          roll:
+            min: 176
             max: 180
-            result: Posturer
-          - min: 181
+        - text: Shelter seeker
+          roll:
+            min: 181
             max: 185
-            result: Shelter seeker
-          - min: 186
+        - text: Stalker
+          roll:
+            min: 186
             max: 190
-            result: Stalker
-          - min: 191
+        - text: Stone chewer
+          roll:
+            min: 191
             max: 195
-            result: Stone chewer
-          - min: 196
+        - roll:
+            min: 196
             max: 200
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
-          - min: 201
+          <<: *RollTwice
+        - text: Blood sucker
+          roll:
+            min: 201
             max: 205
-            result: Blood sucker
-          - min: 206
+        - text: Burrower
+          roll:
+            min: 206
             max: 210
-            result: Burrower
-          - min: 211
+        - text: Caregiver for weak
+          roll:
+            min: 211
             max: 214
-            result: Caregiver for weak
-          - min: 215
+        - text: Challenger for dominance
+          roll:
+            min: 215
             max: 219
-            result: Challenger for dominance
-          - min: 220
+        - text: Dancer
+          roll:
+            min: 220
             max: 224
-            result: Dancer
-          - min: 225
+        - text: Excessive cleaner
+          roll:
+            min: 225
             max: 229
-            result: Excessive cleaner
-          - min: 230
+        - text: Gatherer
+          roll:
+            min: 230
             max: 233
-            result: Gatherer
-          - min: 234
+        - text: Gorger of kills
+          roll:
+            min: 234
             max: 237
-            result: Gorger of kills
-          - min: 238
+        - text: Herbivore
+          roll:
+            min: 238
             max: 241
-            result: Herbivore
-          - min: 242
+        - text: Infanticide
+          roll:
+            min: 242
             max: 246
-            result: Infanticide
-          - min: 247
+        - text: Lignophagia (wood eater)
+          roll:
+            min: 247
             max: 251
-            result: Lignophagia (wood eater)
-          - min: 252
+        - text: Mating display
+          roll:
+            min: 252
             max: 255
-            result: Mating display
-          - min: 256
+        - text: Metamorphizer
+          roll:
+            min: 256
             max: 260
-            result: Metamorphizer
-          - min: 261
+        - text: Osteophagia (bone eater)
+          roll:
+            min: 261
             max: 265
-            result: Osteophagia (bone eater)
-          - min: 266
+        - text: Pack leader
+          roll:
+            min: 266
             max: 270
-            result: Pack leader
-          - min: 271
+        - text: Polydipsia (excess drinker)
+          roll:
+            min: 271
             max: 275
-            result: Polydipsia (excess drinker)
-          - min: 276
+        - text: Self-cleaner
+          roll:
+            min: 276
             max: 280
-            result: Self-cleaner
-          - min: 281
+        - text: Sleeper
+          roll:
+            min: 281
             max: 285
-            result: Sleeper
-          - min: 286
+        - text: Stereotypy (repeated purposeless behavior)
+          roll:
+            min: 286
             max: 290
-            result: Stereotypy (repeated purposeless behavior)
-          - min: 291
+        - text: Tool user
+          roll:
+            min: 291
             max: 295
-            result: Tool user
-          - min: 296
+        - roll:
+            min: 296
             max: 300
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
+          <<: *RollTwice
+        type: oracle_rollable
       revealed_aspect:
-        replaces: starforged/oracles/creatures/revealed_aspect
+        name: Revealed Creature Aspect
+        oracle_type: table_text
+        replaces:
+        - oracle_rollable:starforged/creature/revealed_aspect
         dice: 1d300
+        # summary: Extension of the oracle table
+        _source: *Source
         rows:
-          - min: 1
+        # begin rows copied from original
+        - text: Alternative environment
+          roll:
+            min: 1
             max: 2
-            result: Alternative environment
-          - min: 3
+        - text: Alternative movement
+          roll:
+            min: 3
             max: 4
-            result: Alternative movement
-          - min: 5
+        - text: Alternative senses
+          roll:
+            min: 5
             max: 6
-            result: Alternative senses
-          - min: 7
+        - text: Burrower
+          roll:
+            min: 7
             max: 8
-            result: Burrower
-          - min: 9
+        - text: Chameleon
+          roll:
+            min: 9
             max: 10
-            result: Chameleon
-          - min: 11
+        - text: Clever
+          roll:
+            min: 11
             max: 12
-            result: Clever
-          - min: 13
+        - text: Consumes energy
+          roll:
+            min: 13
             max: 14
-            result: Consumes energy
-          - min: 15
+        - text: Consumes inorganic matter
+          roll:
+            min: 15
             max: 16
-            result: Consumes inorganic matter
-          - min: 17
+        - text: Controlled or puppeteered
+          roll:
+            min: 17
             max: 18
-            result: Controlled or puppeteered
-          - min: 19
+        - text: Controls lesser creatures
+          roll:
+            min: 19
             max: 20
-            result: Controls lesser creatures
-          - min: 21
+        - text: Corrosive excretion
+          roll:
+            min: 21
             max: 22
-            result: Corrosive excretion
-          - min: 23
+        - text: Crusher or constrictor
+          roll:
+            min: 23
             max: 24
-            result: Crusher or constrictor
-          - min: 25
+        - text: Egg sac or carried offspring
+          roll:
+            min: 25
             max: 26
-            result: Egg sac or carried offspring
-          - min: 27
+        - text: Electric shock
+          roll:
+            min: 27
             max: 28
-            result: Electric shock
-          - min: 29
+        - text: Electromagnetic pulse
+          roll:
+            min: 29
             max: 30
-            result: Electromagnetic pulse
-          - min: 31
+        - text: Energy breath
+          roll:
+            min: 31
             max: 32
-            result: Energy breath
-          - min: 33
+        - text: Energy manipulation
+          roll:
+            min: 33
             max: 34
-            result: Energy manipulation
-          - min: 35
+        - text: Engineered biology
+          roll:
+            min: 35
             max: 36
-            result: Engineered biology
-          - min: 37
+        - text: Enhanced senses
+          roll:
+            min: 37
             max: 38
-            result: Enhanced senses
-          - min: 39
+        - text: Enhanced strength
+          roll:
+            min: 39
             max: 40
-            result: Enhanced strength
-          - min: 41
+        - text: Entangling secretion
+          roll:
+            min: 41
             max: 42
-            result: Entangling secretion
-          - min: 43
+        - text: Extradimensional
+          roll:
+            min: 43
             max: 44
-            result: Extradimensional
-          - min: 45
+        - text: Hallucinogen secretion
+          roll:
+            min: 45
             max: 46
-            result: Hallucinogen secretion
-          - min: 47
+        - text: Hidden symbiote
+          roll:
+            min: 47
             max: 48
-            result: Hidden symbiote
-          - min: 49
+        - text: Hive mind
+          roll:
+            min: 49
             max: 50
-            result: Hive mind
-          - min: 51
+        - text: Illusionary
+          roll:
+            min: 51
             max: 52
-            result: Illusionary
-          - min: 53
+        - text: Infectious
+          roll:
+            min: 53
             max: 54
-            result: Infectious
-          - min: 55
+        - text: Infested with parasites
+          roll:
+            min: 55
             max: 56
-            result: Infested with parasites
-          - min: 57
+        - text: Intimidating threat display
+          roll:
+            min: 57
             max: 58
-            result: Intimidating threat display
-          - min: 59
+        - text: Limited sense
+          roll:
+            min: 59
             max: 60
-            result: Limited sense
-          - min: 61
+        - text: Magnetic
+          roll:
+            min: 61
             max: 62
-            result: Magnetic
-          - min: 63
+        - text: Mental influence or control
+          roll:
+            min: 63
             max: 64
-            result: Mental influence or control
-          - min: 65
+        - text: Metamorphic
+          roll:
+            min: 65
             max: 66
-            result: Metamorphic
-          - min: 67
+        - text: Noxious cloud or spores
+          roll:
+            min: 67
             max: 68
-            result: Noxious cloud or spores
-          - min: 69
+        - text: Paralytic toxin
+          roll:
+            min: 69
             max: 70
-            result: Paralytic toxin
-          - min: 71
+        - text: Parasitic
+          roll:
+            min: 71
             max: 72
-            result: Parasitic
-          - min: 73
+        - text: Pheromones
+          roll:
+            min: 73
             max: 74
-            result: Pheromones
-          - min: 75
+        - text: Poisonous
+          roll:
+            min: 75
             max: 76
-            result: Poisonous
-          - min: 77
+        - text: Powerful bite
+          roll:
+            min: 77
             max: 78
-            result: Powerful bite
-          - min: 79
+        - text: Proboscis or inner jaw
+          roll:
+            min: 79
             max: 80
-            result: Proboscis or inner jaw
-          - min: 81
+        - text: Projectile attack
+          roll:
+            min: 81
             max: 82
-            result: Projectile attack
-          - min: 83
+        - text: Radioactive
+          roll:
+            min: 83
             max: 84
-            result: Radioactive
-          - min: 85
+        - text: Regeneration
+          roll:
+            min: 85
             max: 86
-            result: Regeneration
-          - min: 87
+        - text: Replication
+          roll:
+            min: 87
             max: 88
-            result: Replication
-          - min: 89
+        - text: Sacrificial defense
+          roll:
+            min: 89
             max: 90
-            result: Sacrificial defense
-          - min: 91
+        - text: Shapechanger
+          roll:
+            min: 91
             max: 92
-            result: Shapechanger
-          - min: 93
+        - text: Telekinetic
+          roll:
+            min: 93
             max: 94
-            result: Telekinetic
-          - min: 95
+        - text: Teleportation
+          roll:
+            min: 95
             max: 96
-            result: Teleportation
-          - min: 97
+        - text: Territorial
+          roll:
+            min: 97
             max: 98
-            result: Territorial
-          - min: 99
+        - text: Toxic spew
+          # end rows copied from original
+          roll:
+            min: 99
             max: 100
-            result: Toxic spew
-          - min: 101
+        - text: Acidic blood
+          roll:
+            min: 101
             max: 102
-            result: Acidic blood
-          - min: 103
+        - text: Behavioral weakness
+          roll:
+            min: 103
             max: 104
-            result: Behavioral weakness
-          - min: 105
+        - text: Blinding light flashes
+          roll:
+            min: 105
             max: 106
-            result: Blinding light flashes
-          - min: 107
+        - text: Blindsight
+          roll:
+            min: 107
             max: 108
-            result: Blindsight
-          - min: 109
+        - text: Bury self
+          roll:
+            min: 109
             max: 110
-            result: Bury self
-          - min: 111
+        - text: Cat-like reflexes
+          roll:
+            min: 111
             max: 112
-            result: Cat-like reflexes
-          - min: 113
+        - text: Climber
+          roll:
+            min: 113
             max: 114
-            result: Climber
-          - min: 115
+        - text: Confusion-inducing fog
+          roll:
+            min: 115
             max: 116
-            result: Confusion-inducing fog
-          - min: 117
+        - text: Darkvision
+          roll:
+            min: 117
             max: 118
-            result: Darkvision
-          - min: 119
+        - text: Detachable limbs
+          roll:
+            min: 119
             max: 120
-            result: Detachable limbs
-          - min: 121
+        - text: Elemental aura
+          roll:
+            min: 121
             max: 122
-            result: Elemental aura
-          - min: 123
+        - text: Emits shadow
+          roll:
+            min: 123
             max: 124
-            result: Emits shadow
-          - min: 125
+        - text: Energy discharges
+          roll:
+            min: 125
             max: 126
-            result: Energy discharges
-          - min: 127
+        - text: Enhanced intelligence
+          roll:
+            min: 127
             max: 128
-            result: Enhanced intelligence
-          - min: 129
+        - text: Enhanced stamina
+          roll:
+            min: 129
             max: 130
-            result: Enhanced stamina
-          - min: 131
+        - text: Evasive maneuvers
+          roll:
+            min: 131
             max: 132
-            result: Evasive maneuvers
-          - min: 133
+        - text: Extendable tendrils
+          roll:
+            min: 133
             max: 134
-            result: Extendable tendrils
-          - min: 135
+        - text: Fear eater
+          roll:
+            min: 135
             max: 136
-            result: Fear eater
-          - min: 137
+        - text: Feinting attack
+          roll:
+            min: 137
             max: 138
-            result: Feinting attack
-          - min: 139
+        - text: Flier
+          roll:
+            min: 139
             max: 140
-            result: Flier
-          - min: 141
+        - text: Gore attack
+          roll:
+            min: 141
             max: 142
-            result: Gore attack
-          - min: 143
+        - text: Hovering
+          roll:
+            min: 143
             max: 144
-            result: Hovering
-          - min: 145
+        - text: Icy touch
+          roll:
+            min: 145
             max: 146
-            result: Icy touch
-          - min: 147
+        - text: Immunity to energy
+          roll:
+            min: 147
             max: 148
-            result: Immunity to energy
-          - min: 149
+        - text: Ink cloud excretion
+          roll:
+            min: 149
             max: 150
-            result: Ink cloud excretion
-          - min: 151
+        - text: Jumper
+          roll:
+            min: 151
             max: 152
-            result: Jumper
-          - min: 153
+        - text: Levitation
+          roll:
+            min: 153
             max: 154
-            result: Levitation
-          - min: 155
+        - text: Meld into shadow
+          roll:
+            min: 155
             max: 156
-            result: Meld into shadow
-          - min: 157
+        - text: Mounted tech
+          roll:
+            min: 157
             max: 158
-            result: Mounted tech
-          - min: 159
+        - text: Mystic ability
+          roll:
+            min: 159
             max: 160
-            result: Mystic ability
-          - min: 161
+        - text: Organic projectiles
+          roll:
+            min: 161
             max: 162
-            result: Organic projectiles
-          - min: 163
+        - text: Phasing
+          roll:
+            min: 163
             max: 164
-            result: Phasing
-          - min: 165
+        - text: Pinning attack
+          roll:
+            min: 165
             max: 166
-            result: Pinning attack
-          - min: 167
+        - text: Playing dead
+          roll:
+            min: 167
             max: 168
-            result: Playing dead
-          - min: 169
+        - text: Rapid color shifts
+          roll:
+            min: 169
             max: 170
-            result: Rapid color shifts
-          - min: 171
+        - text: Rapid healing
+          roll:
+            min: 171
             max: 172
-            result: Rapid healing
-          - min: 173
+        - text: Released swarm
+          roll:
+            min: 173
             max: 174
-            result: Released swarm
-          - min: 175
+        - text: Resistance to damage
+          roll:
+            min: 175
             max: 176
-            result: Resistance to damage
-          - min: 177
+        - text: Self-harming attack
+          roll:
+            min: 177
             max: 178
-            result: Self-harming attack
-          - min: 179
+        - text: Slashing attack
+          roll:
+            min: 179
             max: 180
-            result: Slashing attack
-          - min: 181
+        - text: Sonic attack
+          roll:
+            min: 181
             max: 182
-            result: Sonic attack
-          - min: 183
+        - text: Splits into smaller parts
+          roll:
+            min: 183
             max: 184
-            result: Splits into smaller parts
-          - min: 185
+        - text: Stone thrower
+          roll:
+            min: 185
             max: 186
-            result: Stone thrower
-          - min: 187
+        - text: Swarm summoner
+          roll:
+            min: 187
             max: 188
-            result: Swarm summoner
-          - min: 189
+        - text: Telepathic
+          roll:
+            min: 189
             max: 190
-            result: Telepathic
-          - min: 191
+        - text: Temporary vaporous form
+          roll:
+            min: 191
             max: 192
-            result: Temporary vaporous form
-          - min: 193
+        - text: Transformation
+          roll:
+            min: 193
             max: 194
-            result: Transformation
-          - min: 195
+        - text: Tripping attack
+          roll:
+            min: 195
             max: 196
-            result: Tripping attack
-          - min: 197
+        - text: Visual displacement
+          roll:
+            min: 197
             max: 198
-            result: Visual displacement
-          - min: 199
+        - text: Vulnerability to energy
+          roll:
+            min: 199
             max: 200
-            result: Vulnerability to energy
-          - min: 201
+        - text: Animates the dead
+          roll:
+            min: 201
             max: 202
-            result: Animates the dead
-          - min: 203
+        - text: Berserker rage
+          roll:
+            min: 203
             max: 204
-            result: Berserker rage
-          - min: 205
+        - text: Blinding strike
+          roll:
+            min: 205
             max: 206
-            result: Blinding strike
-          - min: 207
+        - text: Blunt attack
+          roll:
+            min: 207
             max: 208
-            result: Blunt attack
-          - min: 209
+        - text: Calling the pack
+          roll:
+            min: 209
             max: 210
-            result: Calling the pack
-          - min: 211
+        - text: Charge or overrun
+          roll:
+            min: 211
             max: 212
-            result: Charge or overrun
-          - min: 213
+        - text: Compulsion giver
+          roll:
+            min: 213
             max: 214
-            result: Compulsion giver
-          - min: 215
+        - text: Danger sense
+          roll:
+            min: 215
             max: 216
-            result: Danger sense
-          - min: 217
+        - text: Deafening scream
+          roll:
+            min: 217
             max: 218
-            result: Deafening scream
-          - min: 219
+        - text: Eerie glow
+          roll:
+            min: 219
             max: 220
-            result: Eerie glow
-          - min: 221
+        - text: Elemental control
+          roll:
+            min: 221
             max: 222
-            result: Elemental control
-          - min: 223
+        - text: Emotion control
+          roll:
+            min: 223
             max: 224
-            result: Emotion control
-          - min: 225
+        - text: Energy draining
+          roll:
+            min: 225
             max: 226
-            result: Energy draining
-          - min: 227
+        - text: Enhanced speed
+          roll:
+            min: 227
             max: 228
-            result: Enhanced speed
-          - min: 229
+        - text: Entangling tentacles
+          roll:
+            min: 229
             max: 230
-            result: Entangling tentacles
-          - min: 231
+        - text: Explosive projectiles
+          roll:
+            min: 231
             max: 232
-            result: Explosive projectiles
-          - min: 233
+        - text: Extraordinary balance
+          roll:
+            min: 233
             max: 234
-            result: Extraordinary balance
-          - min: 235
+        - text: Fear-inducing
+          roll:
+            min: 235
             max: 236
-            result: Fear-inducing
-          - min: 237
+        - text: Fiery breath
+          roll:
+            min: 237
             max: 238
-            result: Fiery breath
-          - min: 239
+        - text: Ghostly aura
+          roll:
+            min: 239
             max: 240
-            result: Ghostly aura
-          - min: 241
+        - text: Grappler
+          roll:
+            min: 241
             max: 242
-            result: Grappler
-          - min: 243
+        - text: Hypnosis
+          roll:
+            min: 243
             max: 244
-            result: Hypnosis
-          - min: 245
+        - text: Immunity to damage
+          roll:
+            min: 245
             max: 246
-            result: Immunity to damage
-          - min: 247
+        - text: Implantation of young
+          roll:
+            min: 247
             max: 248
-            result: Implantation of young
-          - min: 249
+        - text: Invisibility
+          roll:
+            min: 249
             max: 250
-            result: Invisibility
-          - min: 251
+        - text: Lethargy-inducing gas
+          roll:
+            min: 251
             max: 252
-            result: Lethargy-inducing gas
-          - min: 253
+        - text: Loud buzzing
+          roll:
+            min: 253
             max: 254
-            result: Loud buzzing
-          - min: 255
+        - text: Menacing stance
+          roll:
+            min: 255
             max: 256
-            result: Menacing stance
-          - min: 257
+        - text: Movement detection
+          roll:
+            min: 257
             max: 258
-            result: Movement detection
-          - min: 259
+        - text: Nightmare giving
+          roll:
+            min: 259
             max: 260
-            result: Nightmare giving
-          - min: 261
+        - text: Overwhelming odor
+          roll:
+            min: 261
             max: 262
-            result: Overwhelming odor
-          - min: 263
+        - text: Piercing attack
+          roll:
+            min: 263
             max: 264
-            result: Piercing attack
-          - min: 265
+        - text: Plant control
+          roll:
+            min: 265
             max: 266
-            result: Plant control
-          - min: 267
+        - text: Pounce attack
+          roll:
+            min: 267
             max: 268
-            result: Pounce attack
-          - min: 269
+        - text: Rapid growth
+          roll:
+            min: 269
             max: 270
-            result: Rapid growth
-          - min: 271
+        - text: Rapid shrinking
+          roll:
+            min: 271
             max: 272
-            result: Rapid shrinking
-          - min: 273
+        - text: Rending attack
+          roll:
+            min: 273
             max: 274
-            result: Rending attack
-          - min: 275
+        - text: Resistance to energy
+          roll:
+            min: 275
             max: 276
-            result: Resistance to energy
-          - min: 277
+        - text: Shifting armor plates
+          roll:
+            min: 277
             max: 278
-            result: Shifting armor plates
-          - min: 279
+        - text: Sleep-inducing fumes
+          roll:
+            min: 279
             max: 280
-            result: Sleep-inducing fumes
-          - min: 281
+        - text: Sound projection
+          roll:
+            min: 281
             max: 282
-            result: Sound projection
-          - min: 283
+        - text: Stinger
+          roll:
+            min: 283
             max: 284
-            result: Stinger
-          - min: 285
+        - text: Stunning attack
+          roll:
+            min: 285
             max: 286
-            result: Stunning attack
-          - min: 287
+        - text: Swimmer
+          roll:
+            min: 287
             max: 288
-            result: Swimmer
-          - min: 289
+        - text: Temporary ethereal form
+          roll:
+            min: 289
             max: 290
-            result: Temporary ethereal form
-          - min: 291
+        - text: Trample attack
+          roll:
+            min: 291
             max: 292
-            result: Trample attack
-          - min: 293
+        - text: Trap setter
+          roll:
+            min: 293
             max: 294
-            result: Trap setter
-          - min: 295
+        - text: Uncanny luck
+          roll:
+            min: 295
             max: 296
-            result: Uncanny luck
-          - min: 297
+        - text: Vulnerability to damage
+          roll:
+            min: 297
             max: 298
-            result: Vulnerability to damage
-          - min: 299
+        - text: Web spinner
+    # collections (basic_form) unchanged
+          roll:
+            min: 299
             max: 300
-            result: Web spinner
+        type: oracle_rollable
+    type: oracle_collection

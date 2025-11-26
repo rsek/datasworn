@@ -1,0 +1,3459 @@
+_id: starsmith
+datasworn_version: "0.1.0"
+type: expansion
+ruleset: starforged
+<<: &Source
+  title: Starsmith Expanded Oracles
+  date: 2024-03-22
+  url: https://playeveryrole.com/starsmith-products/
+  license: https://creativecommons.org/licenses/by/4.0
+  authors:
+    - name: Eric Bright
+oracles:
+  starships:
+    name: Starships
+    oracle_type: tables
+    _comment: Extension of the oracle table
+    _source: &Source
+      title: Starsmith
+      authors:
+      - name: Eric Bright
+      date: 2024-03-22
+      url: https://playeveryrole.com/starsmith-products/
+      license: https://creativecommons.org/licenses/by/4.0
+    contents:
+      type:
+        name: Starship Type
+        canonical_name: Type
+        oracle_type: table_text2
+        column_labels:
+          roll: Roll
+          text: Class
+          text2: Typical Role
+        dice: 1d300
+        replaces:
+        - oracle_rollable:starforged/starship/type
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+        # begin copied rows
+        - text: Carrier
+          text2: Launches fighters
+          _i18n: &CommonNoun
+            text:
+              part_of_speech: common_noun
+          roll:
+            min: 1
+            max: 2
+        - text: Corvette
+          text2: Light attack ship
+          _i18n: *CommonNoun
+          roll:
+            min: 3
+            max: 6
+        - text: Courier
+          text2: Fast transport
+          _i18n: *CommonNoun
+          roll:
+            min: 7
+            max: 11
+        - text: Cruiser
+          text2: Medium attack ship
+          _i18n: *CommonNoun
+          roll:
+            min: 12
+            max: 14
+        - text: Dreadnought
+          text2: Heavy attack ship
+          _i18n: *CommonNoun
+          roll:
+            min: 15
+            max: 16
+        - text: Escape pod
+          text2: Survival craft
+          _i18n: *CommonNoun
+          roll:
+            min: 17
+            max: 19
+        - text: Foundry
+          text2: Mobile construction platform
+          _i18n: *CommonNoun
+          roll:
+            min: 20
+            max: 22
+        - text: Harvester
+          text2: Fuel or energy excavator
+          _i18n: *CommonNoun
+          roll:
+            min: 23
+            max: 27
+        - text: Hauler
+          text2: Heavy transport
+          _i18n: *CommonNoun
+          roll:
+            min: 28
+            max: 33
+        - text: Hunter
+          text2: Stealthy attack ship
+          _i18n: *CommonNoun
+          roll:
+            min: 34
+            max: 36
+        - text: Ironhome
+          text2: Habitat
+          _i18n: *CommonNoun
+          roll:
+            min: 37
+            max: 38
+        - text: Mender
+          text2: Utility or repair
+          _i18n: *CommonNoun
+          roll:
+            min: 39
+            max: 42
+        - text: Outbounder
+          text2: Remote survey or research
+          _i18n: *CommonNoun
+          roll:
+            min: 43
+            max: 47
+        - text: Pennant
+          text2: Command ship
+          _i18n: *CommonNoun
+          roll:
+            min: 48
+            max: 50
+        - text: Prospector
+          text2: Mineral excavator
+          _i18n: *CommonNoun
+          roll:
+            min: 51
+            max: 56
+        - text: Reclaimer
+          text2: Salvage or rescue
+          _i18n: *CommonNoun
+          roll:
+            min: 57
+            max: 61
+        - text: Shuttle
+          text2: Short-range transport
+          _i18n: *CommonNoun
+          roll:
+            min: 62
+            max: 64
+        - text: Snub fighter
+          text2: Small attack craft
+          _i18n: *CommonNoun
+          roll:
+            min: 65
+            max: 67
+        - roll:
+            min: 68
+            max: 82
+          <<: &Multipurpose
+            text: Multipurpose
+            text2: '[Starship Mission](id:starforged/oracles/starships/mission)'
+            # oracle_rolls removed (was invalid collection reference)
+            _i18n: &Adjective
+              text:
+                part_of_speech: adjective
+        - roll:
+            min: 83
+            max: 84
+          <<: &UnusualOrUnknown
+            text: Unusual or unknown
+            text2:
+            _i18n: *Adjective
+        - roll:
+            min: 85
+            max: 94
+          <<: &Fleet
+            text: '[Fleet](oracle_rollable:starsmith/starships/fleet)'
+            text2:
+            oracle_rolls:
+            - oracle: oracle_rollable:starsmith/starships/fleet
+        - roll:
+            min: 95
+            max: 100
+          <<: &ShipsInConflict
+            text: Ships in conflict (roll twice)
+            text2:
+            oracle_rolls:
+            - duplicates: keep
+              number_of_rolls: 2
+        # end copied rows
+        - text: Scorpion
+          text2: Launches atmospheric fighters
+          roll:
+            min: 101
+            max: 102
+        - text: Lightning
+          text2: Light bomber
+          roll:
+            min: 103
+            max: 106
+        - text: Knight
+          text2: Escort fighter
+          roll:
+            min: 107
+            max: 111
+        - text: Thunder
+          text2: Medium bomber
+          roll:
+            min: 112
+            max: 114
+        - text: Storm
+          text2: Heavy bomber
+          roll:
+            min: 115
+            max: 116
+        - text: Montgomery
+          text2: Maintenance craft
+          roll:
+            min: 117
+            max: 119
+        - text: Fabricator
+          text2: Mobile production plant
+          roll:
+            min: 120
+            max: 122
+        - text: Generator
+          text2: Mobile power supplier
+          roll:
+            min: 123
+            max: 127
+        - text: Conveyor
+          text2: Medium transport
+          roll:
+            min: 128
+            max: 133
+        - text: Infiltrator
+          text2: Stealthy surveillance craft
+          roll:
+            min: 134
+            max: 136
+        - text: Devastator
+          text2: Vessel of mass destruction
+          roll:
+            min: 137
+            max: 138
+        - text: Explorer
+          text2: Deep space cruiser
+          roll:
+            min: 139
+            max: 142
+        - text: Caduceus
+          text2: Medical ship
+          roll:
+            min: 143
+            max: 147
+        - text: Horizon
+          text2: Mobile communications array
+          roll:
+            min: 148
+            max: 150
+        - text: Compass
+          text2: Surveyor ship
+          roll:
+            min: 151
+            max: 156
+        - text: Tug
+          text2: Wreckage transport
+          roll:
+            min: 157
+            max: 161
+        - text: Coach
+          text2: Interplanetary transport
+          roll:
+            min: 162
+            max: 164
+        - text: Schooner
+          text2: Solar sail vessel
+          roll:
+            min: 165
+            max: 167
+        - roll:
+            min: 168
+            max: 182
+          <<: *Multipurpose
+        - roll:
+            min: 183
+            max: 184
+          <<: *UnusualOrUnknown
+        - roll:
+            min: 185
+            max: 194
+          <<: *Fleet
+        - roll:
+            min: 195
+            max: 200
+          <<: *ShipsInConflict
+        - text: Frigate
+          text2: Troop carrier
+          roll:
+            min: 201
+            max: 202
+        - text: Spartan
+          text2: Light defender
+          roll:
+            min: 203
+            max: 206
+        - text: Garrison
+          text2: System patrol ship
+          roll:
+            min: 207
+            max: 211
+        - text: Corinthian
+          text2: Medium defender
+          roll:
+            min: 212
+            max: 214
+        - text: Centurion
+          text2: Heavy defender
+          roll:
+            min: 215
+            max: 216
+        - text: Flier
+          text2: Solo racing ship
+          roll:
+            min: 217
+            max: 219
+        - text: Castle
+          text2: Mobile fortress
+          roll:
+            min: 220
+            max: 222
+        - text: Respirator
+          text2: Gas collector
+          roll:
+            min: 223
+            max: 227
+        - text: Invader
+          text2: Massive troop transport
+          roll:
+            min: 228
+            max: 233
+        - text: Crawler
+          text2: Mine layer
+          roll:
+            min: 234
+            max: 236
+        - text: Destroyer
+          text2: Planet killer
+          roll:
+            min: 237
+            max: 238
+        - text: Oracle
+          text2: Deep space science vessel
+          roll:
+            min: 239
+            max: 242
+        - text: Discovery
+          text2: Science vessel
+          roll:
+            min: 243
+            max: 247
+        - text: Shipwright
+          text2: Mobile drydock
+          roll:
+            min: 248
+            max: 250
+        - text: Distiller
+          text2: Mobile mineral processor
+          roll:
+            min: 251
+            max: 256
+        - text: Amphibian
+          text2: Planetary lander
+          roll:
+            min: 257
+            max: 261
+        - text: Train
+          text2: Unmanned transport
+          roll:
+            min: 262
+            max: 264
+        - text: Jumper
+          text2: Short burst Eidolon drive ship
+          roll:
+            min: 265
+            max: 267
+        - roll:
+            min: 268
+            max: 282
+          <<: *Multipurpose
+        - roll:
+            min: 283
+            max: 284
+          <<: *UnusualOrUnknown
+        - roll:
+            min: 285
+            max: 294
+          <<: *Fleet
+        - roll:
+            min: 295
+            max: 300
+          <<: *ShipsInConflict
+        type: oracle_rollable
+      fleet:
+        name: Fleet
+        oracle_type: table_text
+        dice: 1d300
+        replaces:
+        - oracle_rollable:starforged/starship/fleet
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          # begin copied rows
+        - text: Battle fleet
+          _i18n: *CommonNoun
+          roll:
+            min: 1
+            max: 10
+        - text: Pirate wing
+          _i18n: *CommonNoun
+          roll:
+            min: 11
+            max: 25
+        - text: Raider horde
+          _i18n: *CommonNoun
+          roll:
+            min: 26
+            max: 35
+        - text: Salvager hive
+          _i18n: *CommonNoun
+          roll:
+            min: 36
+            max: 50
+        - text: Settler caravan
+          _i18n: *CommonNoun
+          roll:
+            min: 51
+            max: 60
+        - text: Trade caravan
+          _i18n: *CommonNoun
+          roll:
+            min: 61
+            max: 70
+        - text: Transport and escorts
+          _i18n: *CommonNoun
+          roll:
+            min: 71
+            max: 90
+        - roll:
+            min: 91
+            max: 100
+          <<: &StarshipMission
+            text: '[Starship Mission](oracle_collection:starsmith/starships/mission)'
+            # oracle_rolls removed (was invalid collection reference)
+          # end copied rows
+        - text: Border patrol
+          roll:
+            min: 101
+            max: 110
+        - text: Mercenary force
+          roll:
+            min: 111
+            max: 125
+        - text: Engineering team
+          roll:
+            min: 126
+            max: 135
+        - text: Corporate excavators
+          roll:
+            min: 136
+            max: 150
+        - text: Automated cryo-sleepers
+          roll:
+            min: 151
+            max: 160
+        - text: Religious caravan
+          roll:
+            min: 161
+            max: 170
+        - text: Unaligned sanctuary ships
+          roll:
+            min: 171
+            max: 190
+        - roll:
+            min: 191
+            max: 200
+          <<: *StarshipMission
+        - text: Battle training group
+          roll:
+            min: 201
+            max: 210
+        - text: Crippled battle group
+          roll:
+            min: 211
+            max: 225
+        - text: Construction team
+          roll:
+            min: 226
+            max: 235
+        - text: Corporate survey team
+          roll:
+            min: 236
+            max: 250
+        - text: Sight-seeing tour
+          roll:
+            min: 251
+            max: 260
+        - text: Entertainment caravan
+          roll:
+            min: 261
+            max: 270
+        - text: Exploratory caravan
+          roll:
+            min: 271
+            max: 290
+        - roll:
+            min: 291
+            max: 300
+          <<: *StarshipMission
+        type: oracle_rollable
+      initial_contact:
+        name: Initial Contact
+        oracle_type: table_text
+        dice: 1d300
+        replaces:
+        - oracle_rollable:starforged/starship/initial_contact
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+        # begin copied rows
+        - text: Familiar
+          roll:
+            min: 1
+            max: 3
+        - text: Friendly
+          roll:
+            min: 4
+            max: 15
+        - text: Neutral / automated
+          roll:
+            min: 16
+            max: 25
+        - text: Wary
+          roll:
+            min: 26
+            max: 35
+        - text: Dismissive
+          roll:
+            min: 36
+            max: 40
+        - text: Uncooperative
+          roll:
+            min: 41
+            max: 50
+        - text: Hostile
+          roll:
+            min: 51
+            max: 65
+        - text: Asking for help
+          roll:
+            min: 66
+            max: 80
+        - text: In battle
+          roll:
+            min: 81
+            max: 85
+        - text: Unresponsive
+          roll:
+            min: 86
+            max: 90
+        - text: Destroyed
+          roll:
+            min: 91
+            max: 95
+        - roll:
+            min: 96
+            max: 100
+          <<: &Derelict
+            text: '[Derelict](oracle_collection:starsmith/derelicts)'
+          # end copied rows
+        - text: Helpful
+          roll:
+            min: 101
+            max: 103
+        - text: All business
+          roll:
+            min: 104
+            max: 115
+        - text: Tolerant
+          roll:
+            min: 116
+            max: 125
+        - text: Defensive
+          roll:
+            min: 126
+            max: 135
+        - text: Reckless showboating
+          roll:
+            min: 136
+            max: 140
+        - text: Asking for a bribe
+          roll:
+            min: 141
+            max: 150
+        - text: Easily offended
+          roll:
+            min: 151
+            max: 165
+        - text: Demanding
+          roll:
+            min: 166
+            max: 180
+        - text: In crisis
+          roll:
+            min: 181
+            max: 185
+        - text: On emergency power
+          roll:
+            min: 186
+            max: 190
+        - text: Drifting dead in space
+          roll:
+            min: 191
+            max: 195
+        - roll:
+            min: 196
+            max: 200
+          <<: *Derelict
+        - text: Informative
+          roll:
+            min: 201
+            max: 203
+        - text: Seeking mutual benefit
+          roll:
+            min: 204
+            max: 215
+        - text: Bureaucratic protocols
+          roll:
+            min: 216
+            max: 225
+        - text: Apathetic
+          roll:
+            min: 226
+            max: 235
+        - text: Stubborn contrarian
+          roll:
+            min: 236
+            max: 240
+        - text: Arrogant jerk
+          roll:
+            min: 241
+            max: 250
+        - text: Apathetic
+          roll:
+            min: 251
+            max: 265
+        - text: Wants to travel together
+          roll:
+            min: 266
+            max: 280
+        - text: In a time crunch
+          roll:
+            min: 281
+            max: 285
+        - text: Looped distress call
+          roll:
+            min: 286
+            max: 290
+        - text: Core going critical
+          roll:
+            min: 291
+            max: 295
+        - roll:
+            min: 296
+            max: 300
+          <<: *Derelict
+        type: oracle_rollable
+      first_look:
+        name: First Look
+        oracle_type: table_text
+        dice: 1d300
+        replaces:
+        - oracle_rollable:starforged/starship/first_look
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+        # begin copied rows
+        - text: Abnormal sensor readings
+          roll:
+            min: 1
+            max: 4
+        - text: Brightly painted
+          roll:
+            min: 5
+            max: 8
+        - text: Bristling with weapons
+          roll:
+            min: 9
+            max: 13
+        - text: Dark or stealthy
+          roll:
+            min: 14
+            max: 18
+        - text: Heavy armor
+          roll:
+            min: 19
+            max: 23
+        - text: Immobile
+          roll:
+            min: 24
+            max: 28
+        - text: Intimidating profile
+          roll:
+            min: 29
+            max: 33
+        - text: Large sensor arrays
+          roll:
+            min: 34
+            max: 37
+        - text: Leaking radiation
+          roll:
+            min: 38
+            max: 41
+        - text: Low-profile or disguised
+          roll:
+            min: 42
+            max: 45
+        - text: Modern or advanced design
+          roll:
+            min: 46
+            max: 49
+        - text: Obsolete design
+          roll:
+            min: 50
+            max: 54
+        - text: Obvious damage
+          roll:
+            min: 55
+            max: 59
+        - text: Biological components
+          roll:
+            min: 60
+            max: 63
+        - text: Ornate markings
+          roll:
+            min: 64
+            max: 67
+        - text: Oversized engines
+          roll:
+            min: 68
+            max: 71
+        - text: Prominent guild emblem
+          roll:
+            min: 72
+            max: 75
+        - text: Refitted or repurposed hull
+          roll:
+            min: 76
+            max: 80
+        - text: Scarred hull
+          roll:
+            min: 81
+            max: 85
+        - text: Built from scrap
+          roll:
+            min: 86
+            max: 90
+        - text: Towing or linked
+          roll:
+            min: 91
+            max: 94
+        - roll:
+            min: 95
+            max: 100
+          <<: &DescriptorFocus
+            text: '[Descriptor](oracle_rollable:starsmith/core/descriptor) + [Focus](oracle_rollable:starsmith/core/focus)'
+            oracle_rolls:
+            - oracle: oracle_rollable:starsmith/core/descriptor
+              auto: true
+            - oracle: oracle_rollable:starsmith/core/focus
+              auto: true
+        # end copied rows
+        - text: Strange energy spikes
+          roll:
+            min: 101
+            max: 104
+        - text: Highly reflective
+          roll:
+            min: 105
+            max: 108
+        - text: Large, central weapon
+          roll:
+            min: 109
+            max: 113
+        - text: Atmosphere thrusters
+          roll:
+            min: 114
+            max: 118
+        - text: Ablative armor
+          roll:
+            min: 119
+            max: 123
+        - text: Swift vector changes
+          roll:
+            min: 124
+            max: 128
+        - text: Ceremonial profile
+          roll:
+            min: 129
+            max: 133
+        - text: Specialized sensors
+          roll:
+            min: 134
+            max: 137
+        - text: Bussard ramscoop
+          roll:
+            min: 138
+            max: 141
+        - text: ID markings defaced
+          roll:
+            min: 142
+            max: 145
+        - text: Fluid design
+          roll:
+            min: 146
+            max: 149
+        - text: Retro-fitted
+          roll:
+            min: 150
+            max: 154
+        - text: Fresh damage
+          roll:
+            min: 155
+            max: 159
+        - text: AI pilot
+          roll:
+            min: 160
+            max: 163
+        - text: Cultural markings
+          roll:
+            min: 164
+            max: 167
+        - text: Streamlined engines
+          roll:
+            min: 168
+            max: 171
+        - text: Prominent political emblem
+          roll:
+            min: 172
+            max: 175
+        - text: Cobbled together hull
+          roll:
+            min: 176
+            max: 180
+        - text: New exterior
+          roll:
+            min: 181
+            max: 185
+        - text: Hull of unknown alloy
+          roll:
+            min: 186
+            max: 190
+        - text: Ejected life pods
+          roll:
+            min: 191
+            max: 194
+        - roll:
+            min: 195
+            max: 200
+          <<: *DescriptorFocus
+        - text: Sensor ghosts
+          roll:
+            min: 201
+            max: 204
+        - text: Light sails
+          roll:
+            min: 205
+            max: 208
+        - text: No signs of weapons
+          roll:
+            min: 209
+            max: 213
+        - text: Ostentatious running lights
+          roll:
+            min: 214
+            max: 218
+        - text: Lack of combat armor
+          roll:
+            min: 219
+            max: 223
+        - text: Rotational gravity generator
+          roll:
+            min: 224
+            max: 228
+        - text: Designed for speed
+          roll:
+            min: 229
+            max: 233
+        - text: Sensor scrambler
+          roll:
+            min: 234
+            max: 237
+        - text: Singularity power source
+          roll:
+            min: 238
+            max: 241
+        - text: Vessel reported as destroyed
+          roll:
+            min: 242
+            max: 245
+        - text: Superfluous design
+          roll:
+            min: 246
+            max: 249
+        - text: Recent upgrades
+          roll:
+            min: 250
+            max: 254
+        - text: Non-functioning subsystem
+          roll:
+            min: 255
+            max: 259
+        - text: Biological rated cargo hold
+          roll:
+            min: 260
+            max: 263
+        - text: Kill count markings
+          roll:
+            min: 264
+            max: 267
+        - text: Experimental engines
+          roll:
+            min: 268
+            max: 271
+        - text: Prominent religious emblem
+          roll:
+            min: 272
+            max: 275
+        - text: Robotic appendages
+          roll:
+            min: 276
+            max: 280
+        - text: Hull breach
+          roll:
+            min: 281
+            max: 285
+        - text: Nano-tech hull
+          roll:
+            min: 286
+            max: 290
+        - text: Active maintenance bots
+          roll:
+            min: 291
+            max: 294
+        - roll:
+            min: 295
+            max: 300
+          <<: *DescriptorFocus
+        type: oracle_rollable
+      name:
+        name: Name
+        oracle_type: table_text
+        dice: 1d300
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+        - text: Arclight
+          roll:
+            min: 1
+            max: 1
+        - text: Argent Arrow
+          roll:
+            min: 2
+            max: 2
+        - text: Artemis
+          roll:
+            min: 3
+            max: 3
+        - text: Astral Explorer
+          roll:
+            min: 4
+            max: 4
+        - text: Atlas
+          roll:
+            min: 5
+            max: 5
+        - text: Aurora
+          roll:
+            min: 6
+            max: 6
+        - text: Avari’s Wake
+          roll:
+            min: 7
+            max: 7
+        - text: Banshee’s Cry
+          roll:
+            min: 8
+            max: 8
+        - text: Beowulf
+          roll:
+            min: 9
+            max: 9
+        - text: Bloody Jaw
+          roll:
+            min: 10
+            max: 10
+        - text: Broken Sword
+          roll:
+            min: 11
+            max: 11
+        - text: Buccaneer
+          roll:
+            min: 12
+            max: 12
+        - text: Cerelis Nine
+          roll:
+            min: 13
+            max: 13
+        - text: Clarion Call
+          roll:
+            min: 14
+            max: 14
+        - text: Dawn’s Herald
+          roll:
+            min: 15
+            max: 15
+        - text: Dead Reckoning
+          roll:
+            min: 16
+            max: 16
+        - text: Drift Runner
+          roll:
+            min: 17
+            max: 17
+        - text: Eclipse
+          roll:
+            min: 18
+            max: 18
+        - text: Elara Five
+          roll:
+            min: 19
+            max: 19
+        - text: Enchantress
+          roll:
+            min: 20
+            max: 20
+        - text: Endurance
+          roll:
+            min: 21
+            max: 21
+        - text: Excalibur
+          roll:
+            min: 22
+            max: 22
+        - text: Eye of the Void
+          roll:
+            min: 23
+            max: 23
+        - text: Fall of Icarus
+          roll:
+            min: 24
+            max: 24
+        - text: Fallen Light
+          roll:
+            min: 25
+            max: 25
+        - text: False Hope
+          roll:
+            min: 26
+            max: 26
+        - text: Firebreak
+          roll:
+            min: 27
+            max: 27
+        - text: First Light
+          roll:
+            min: 28
+            max: 28
+        - text: Forge Flier
+          roll:
+            min: 29
+            max: 29
+        - text: Fortune’s Favor
+          roll:
+            min: 30
+            max: 30
+        - text: Freya’s Wrath
+          roll:
+            min: 31
+            max: 31
+        - text: Ghost
+          roll:
+            min: 32
+            max: 32
+        - text: Guiding Star
+          roll:
+            min: 33
+            max: 33
+        - text: Hand of Fate
+          roll:
+            min: 34
+            max: 34
+        - text: Herald of Doom
+          roll:
+            min: 35
+            max: 35
+        - text: Implacable
+          roll:
+            min: 36
+            max: 36
+        - text: Implicit
+          roll:
+            min: 37
+            max: 37
+        - text: Inferno
+          roll:
+            min: 38
+            max: 38
+        - text: Invictus
+          roll:
+            min: 39
+            max: 39
+        - text: Iron Cairn
+          roll:
+            min: 40
+            max: 40
+        - text: Karena’s Reverie
+          roll:
+            min: 41
+            max: 41
+        - text: Kraken
+          roll:
+            min: 42
+            max: 42
+        - text: Kuno’s Hammer
+          roll:
+            min: 43
+            max: 43
+        - text: Lightline
+          roll:
+            min: 44
+            max: 44
+        - text: Lodestar
+          roll:
+            min: 45
+            max: 45
+        - text: Long Haul
+          roll:
+            min: 46
+            max: 46
+        - text: Lost Fortune
+          roll:
+            min: 47
+            max: 47
+        - text: Luminous Sorrow
+          roll:
+            min: 48
+            max: 48
+        - text: Manta
+          roll:
+            min: 49
+            max: 49
+        - text: Mercy
+          roll:
+            min: 50
+            max: 50
+        - text: Mutara
+          roll:
+            min: 51
+            max: 51
+        - text: Nebula Prowler
+          roll:
+            min: 52
+            max: 52
+        - text: Newton’s Folly
+          roll:
+            min: 53
+            max: 53
+        - text: Nightfall
+          roll:
+            min: 54
+            max: 54
+        - text: Nomad
+          roll:
+            min: 55
+            max: 55
+        - text: Obsidian Trident
+          roll:
+            min: 56
+            max: 56
+        - text: Onslaught
+          roll:
+            min: 57
+            max: 57
+        - text: Orca
+          roll:
+            min: 58
+            max: 58
+        - text: Outward Bound
+          roll:
+            min: 59
+            max: 59
+        - text: Phantom
+          roll:
+            min: 60
+            max: 60
+        - text: Photon
+          roll:
+            min: 61
+            max: 61
+        - text: Poltergeist
+          roll:
+            min: 62
+            max: 62
+        - text: Profit Margin
+          roll:
+            min: 63
+            max: 63
+        - text: Raven’s Call
+          roll:
+            min: 64
+            max: 64
+        - text: Raya’s Promise
+          roll:
+            min: 65
+            max: 65
+        - text: Reaper
+          roll:
+            min: 66
+            max: 66
+        - text: Reforged Hope
+          roll:
+            min: 67
+            max: 67
+        - text: Relentless
+          roll:
+            min: 68
+            max: 68
+        - text: Royal Signet
+          roll:
+            min: 69
+            max: 69
+        - text: Rubicon
+          roll:
+            min: 70
+            max: 70
+        - text: Sareea’s Tribute
+          roll:
+            min: 71
+            max: 71
+        - text: Second Chance
+          roll:
+            min: 72
+            max: 72
+        - text: Shard of the Sun
+          roll:
+            min: 73
+            max: 73
+        - text: Shattered Siege
+          roll:
+            min: 74
+            max: 74
+        - text: Shattered Star
+          roll:
+            min: 75
+            max: 75
+        - text: Silver Talon
+          roll:
+            min: 76
+            max: 76
+        - text: Smoldering Flame
+          roll:
+            min: 77
+            max: 77
+        - text: Sovereign Skies
+          roll:
+            min: 78
+            max: 78
+        - text: Sparrowhawk
+          roll:
+            min: 79
+            max: 79
+        - text: Stardust
+          roll:
+            min: 80
+            max: 80
+        - text: Starfall
+          roll:
+            min: 81
+            max: 81
+        - text: Stellar Hawk
+          roll:
+            min: 82
+            max: 82
+        - text: Stormswept
+          roll:
+            min: 83
+            max: 83
+        - text: Sundered Aegis
+          roll:
+            min: 84
+            max: 84
+        - text: Sundown
+          roll:
+            min: 85
+            max: 85
+        - text: Sureshot
+          roll:
+            min: 86
+            max: 86
+        - text: Terminus Clipper
+          roll:
+            min: 87
+            max: 87
+        - text: Terrapin
+          roll:
+            min: 88
+            max: 88
+        - text: Timber Wolf
+          roll:
+            min: 89
+            max: 89
+        - text: Tip of the Spear
+          roll:
+            min: 90
+            max: 90
+        - text: Titan
+          roll:
+            min: 91
+            max: 91
+        - text: Tormentor
+          roll:
+            min: 92
+            max: 92
+        - text: Trithia Six
+          roll:
+            min: 93
+            max: 93
+        - text: Ultraviolet
+          roll:
+            min: 94
+            max: 94
+        - text: Valora’s Comet
+          roll:
+            min: 95
+            max: 95
+        - text: Vengeance
+          roll:
+            min: 96
+            max: 96
+        - text: Venture
+          roll:
+            min: 97
+            max: 97
+        - text: Vigilant
+          roll:
+            min: 98
+            max: 98
+        - text: Voidtreader
+          roll:
+            min: 99
+            max: 99
+        - text: Vulture
+          roll:
+            min: 100
+            max: 100
+        - text: Aegean Foil
+          roll:
+            min: 101
+            max: 101
+        - text: Alpha Strike
+          roll:
+            min: 102
+            max: 102
+        - text: Antioch
+          roll:
+            min: 103
+            max: 103
+        - text: Ascender
+          roll:
+            min: 104
+            max: 104
+        - text: Avalon
+          roll:
+            min: 105
+            max: 105
+        - text: Belled Cat
+          roll:
+            min: 106
+            max: 106
+        - text: Beta Beast
+          roll:
+            min: 107
+            max: 107
+        - text: Blazing Inferno
+          roll:
+            min: 108
+            max: 108
+        - text: Blue Lancer
+          roll:
+            min: 109
+            max: 109
+        - text: Breacher
+          roll:
+            min: 110
+            max: 110
+        - text: Capricorn
+          roll:
+            min: 111
+            max: 111
+        - text: Castle Crasher
+          roll:
+            min: 112
+            max: 112
+        - text: Chosen Folly
+          roll:
+            min: 113
+            max: 113
+        - text: Cobra Strike
+          roll:
+            min: 114
+            max: 114
+        - text: Contessa
+          roll:
+            min: 115
+            max: 115
+        - text: Crane's Leap
+          roll:
+            min: 116
+            max: 116
+        - text: Cydonia
+          roll:
+            min: 117
+            max: 117
+        - text: Data Lore
+          roll:
+            min: 118
+            max: 118
+        - text: Deep Space Wine
+          roll:
+            min: 119
+            max: 119
+        - text: Delta Flier
+          roll:
+            min: 120
+            max: 120
+        - text: Destiny
+          roll:
+            min: 121
+            max: 121
+        - text: Dreamweaver
+          roll:
+            min: 122
+            max: 122
+        - text: Errant Fool
+          roll:
+            min: 123
+            max: 123
+        - text: Expeditor
+          roll:
+            min: 124
+            max: 124
+        - text: Fairlight
+          roll:
+            min: 125
+            max: 125
+        - text: Fighting Falcon
+          roll:
+            min: 126
+            max: 126
+        - text: Fisher King
+          roll:
+            min: 127
+            max: 127
+        - text: Fortitude
+          roll:
+            min: 128
+            max: 128
+        - text: Gale Force
+          roll:
+            min: 129
+            max: 129
+        - text: Gamma Ghost
+          roll:
+            min: 130
+            max: 130
+        - text: Golden Dragon
+          roll:
+            min: 131
+            max: 131
+        - text: Gosling
+          roll:
+            min: 132
+            max: 132
+        - text: Grey Mantis
+          roll:
+            min: 133
+            max: 133
+        - text: Hawker Hurricane
+          roll:
+            min: 134
+            max: 134
+        - text: Hellcat
+          roll:
+            min: 135
+            max: 135
+        - text: Hermes
+          roll:
+            min: 136
+            max: 136
+        - text: High Fidelity
+          roll:
+            min: 137
+            max: 137
+        - text: Hummingbird
+          roll:
+            min: 138
+            max: 138
+        - text: Icy Unicorn
+          roll:
+            min: 139
+            max: 139
+        - text: Infinite Horizon
+          roll:
+            min: 140
+            max: 140
+        - text: Iron Blade
+          roll:
+            min: 141
+            max: 141
+        - text: Ironclad Lady
+          roll:
+            min: 142
+            max: 142
+        - text: Joint Expedition
+          roll:
+            min: 143
+            max: 143
+        - text: Karma
+          roll:
+            min: 144
+            max: 144
+        - text: King's Lark
+          roll:
+            min: 145
+            max: 145
+        - text: Knight's Helm
+          roll:
+            min: 146
+            max: 146
+        - text: Lady's Lake
+          roll:
+            min: 147
+            max: 147
+        - text: Lavish Victor
+          roll:
+            min: 148
+            max: 148
+        - text: Lodestar Lock
+          roll:
+            min: 149
+            max: 149
+        - text: Long Shot
+          roll:
+            min: 150
+            max: 150
+        - text: Loyal Chancellor
+          roll:
+            min: 151
+            max: 151
+        - text: Market's Edge
+          roll:
+            min: 152
+            max: 152
+        - text: Megalodon
+          roll:
+            min: 153
+            max: 153
+        - text: Mighty Ranger
+          roll:
+            min: 154
+            max: 154
+        - text: Misty Eyes
+          roll:
+            min: 155
+            max: 155
+        - text: Navigator
+          roll:
+            min: 156
+            max: 156
+        - text: Nemesis
+          roll:
+            min: 157
+            max: 157
+        - text: Night Out
+          roll:
+            min: 158
+            max: 158
+        - text: Nightingale
+          roll:
+            min: 159
+            max: 159
+        - text: Nova Gremlin
+          roll:
+            min: 160
+            max: 160
+        - text: Odysseus
+          roll:
+            min: 161
+            max: 161
+        - text: Olympia
+          roll:
+            min: 162
+            max: 162
+        - text: Opportunity
+          roll:
+            min: 163
+            max: 163
+        - text: Owl's Wisdom
+          roll:
+            min: 164
+            max: 164
+        - text: Peak Velocity
+          roll:
+            min: 165
+            max: 165
+        - text: Piper's Tune
+          roll:
+            min: 166
+            max: 166
+        - text: Priceless Discovery
+          roll:
+            min: 167
+            max: 167
+        - text: Purple Raven
+          roll:
+            min: 168
+            max: 168
+        - text: Queen's Consort
+          roll:
+            min: 169
+            max: 169
+        - text: Reliant
+          roll:
+            min: 170
+            max: 170
+        - text: Rim Razor
+          roll:
+            min: 171
+            max: 171
+        - text: Risky Enterprise
+          roll:
+            min: 172
+            max: 172
+        - text: Running Gambler
+          roll:
+            min: 173
+            max: 173
+        - text: Scaled Drake
+          roll:
+            min: 174
+            max: 174
+        - text: Serendipity
+          roll:
+            min: 175
+            max: 175
+        - text: Shrike
+          roll:
+            min: 176
+            max: 176
+        - text: Siren Song
+          roll:
+            min: 177
+            max: 177
+        - text: Skymaster
+          roll:
+            min: 178
+            max: 178
+        - text: Space Madness
+          roll:
+            min: 179
+            max: 179
+        - text: Starburst
+          roll:
+            min: 180
+            max: 180
+        - text: Starlight
+          roll:
+            min: 181
+            max: 181
+        - text: Starwolf
+          roll:
+            min: 182
+            max: 182
+        - text: Stellar Mystery
+          roll:
+            min: 183
+            max: 183
+        - text: Stunning Six
+          roll:
+            min: 184
+            max: 184
+        - text: Swift Viper
+          roll:
+            min: 185
+            max: 185
+        - text: Tachyon Burst
+          roll:
+            min: 186
+            max: 186
+        - text: Theseus' Bones
+          roll:
+            min: 187
+            max: 187
+        - text: Tigercat
+          roll:
+            min: 188
+            max: 188
+        - text: Traveling Tutor
+          roll:
+            min: 189
+            max: 189
+        - text: True Talisman
+          roll:
+            min: 190
+            max: 190
+        - text: Ventura
+          roll:
+            min: 191
+            max: 191
+        - text: Visund
+          roll:
+            min: 192
+            max: 192
+        - text: Wanderlust
+          roll:
+            min: 193
+            max: 193
+        - text: Wellington Way
+          roll:
+            min: 194
+            max: 194
+        - text: White Wyrm
+          roll:
+            min: 195
+            max: 195
+        - text: Wildcat
+          roll:
+            min: 196
+            max: 196
+        - text: Winged Ex
+          roll:
+            min: 197
+            max: 197
+        - text: Wolverine
+          roll:
+            min: 198
+            max: 198
+        - text: Xerxes
+          roll:
+            min: 199
+            max: 199
+        - text: Zealous Gnat
+          roll:
+            min: 200
+            max: 200
+        - text: Alexandrite
+          roll:
+            min: 201
+            max: 201
+        - text: Ambition
+          roll:
+            min: 202
+            max: 202
+        - text: Argus Watch
+          roll:
+            min: 203
+            max: 203
+        - text: Asperity
+          roll:
+            min: 204
+            max: 204
+        - text: Barden
+          roll:
+            min: 205
+            max: 205
+        - text: Bermuda Trip
+          roll:
+            min: 206
+            max: 206
+        - text: Black Lion
+          roll:
+            min: 207
+            max: 207
+        - text: Bloodhound
+          roll:
+            min: 208
+            max: 208
+        - text: Bold Endeavor
+          roll:
+            min: 209
+            max: 209
+        - text: Breaking Wind
+          roll:
+            min: 210
+            max: 210
+        - text: Carpe Diem
+          roll:
+            min: 211
+            max: 211
+        - text: Catalina
+          roll:
+            min: 212
+            max: 212
+        - text: Cobalt Reaver
+          roll:
+            min: 213
+            max: 213
+        - text: Constellation Lock
+          roll:
+            min: 214
+            max: 214
+        - text: Coranado Corsair
+          roll:
+            min: 215
+            max: 215
+        - text: Cyclopse
+          roll:
+            min: 216
+            max: 216
+        - text: Dark Void
+          roll:
+            min: 217
+            max: 217
+        - text: Dauntless
+          roll:
+            min: 218
+            max: 218
+        - text: Defiance
+          roll:
+            min: 219
+            max: 219
+        - text: Descender
+          roll:
+            min: 220
+            max: 220
+        - text: Dominator
+          roll:
+            min: 221
+            max: 221
+        - text: Dusty Skimmer
+          roll:
+            min: 222
+            max: 222
+        - text: Euphoria
+          roll:
+            min: 223
+            max: 223
+        - text: Fairchild
+          roll:
+            min: 224
+            max: 224
+        - text: Fell Hammer
+          roll:
+            min: 225
+            max: 225
+        - text: Firelight
+          roll:
+            min: 226
+            max: 226
+        - text: Fleetwood Hack
+          roll:
+            min: 227
+            max: 227
+        - text: Galaxy's Guide
+          roll:
+            min: 228
+            max: 228
+        - text: Galloping Mustang
+          roll:
+            min: 229
+            max: 229
+        - text: Gladius
+          roll:
+            min: 230
+            max: 230
+        - text: Good Hope
+          roll:
+            min: 231
+            max: 231
+        - text: Green Havoc
+          roll:
+            min: 232
+            max: 232
+        - text: Haughty Bear
+          roll:
+            min: 233
+            max: 233
+        - text: Hedged Bet
+          roll:
+            min: 234
+            max: 234
+        - text: Helldiver
+          roll:
+            min: 235
+            max: 235
+        - text: Hidden Pearl
+          roll:
+            min: 236
+            max: 236
+        - text: Hoverfly
+          roll:
+            min: 237
+            max: 237
+        - text: Hypothetical Dilemma
+          roll:
+            min: 238
+            max: 238
+        - text: Infineon
+          roll:
+            min: 239
+            max: 239
+        - text: Ionic Boom
+          roll:
+            min: 240
+            max: 240
+        - text: Iron Shield
+          roll:
+            min: 241
+            max: 241
+        - text: Isolde
+          roll:
+            min: 242
+            max: 242
+        - text: Journey's Prize
+          roll:
+            min: 243
+            max: 243
+        - text: Kelvin Hopper
+          roll:
+            min: 244
+            max: 244
+        - text: Kittyhawk
+          roll:
+            min: 245
+            max: 245
+        - text: Kraken Released
+          roll:
+            min: 246
+            max: 246
+        - text: Last Hope
+          roll:
+            min: 247
+            max: 247
+        - text: Legacy
+          roll:
+            min: 248
+            max: 248
+        - text: Lonestar's Jam
+          roll:
+            min: 249
+            max: 249
+        - text: Long Weekend
+          roll:
+            min: 250
+            max: 250
+        - text: Mariner's Trident
+          roll:
+            min: 251
+            max: 251
+        - text: Marquise
+          roll:
+            min: 252
+            max: 252
+        - text: Meteor
+          roll:
+            min: 253
+            max: 253
+        - text: Millennium Raptor
+          roll:
+            min: 254
+            max: 254
+        - text: Myth Adventure
+          roll:
+            min: 255
+            max: 255
+        - text: Nebula Chaser
+          roll:
+            min: 256
+            max: 256
+        - text: Niagara
+          roll:
+            min: 257
+            max: 257
+        - text: Nighthawk
+          roll:
+            min: 258
+            max: 258
+        - text: Northrup Ram
+          roll:
+            min: 259
+            max: 259
+        - text: Obsidian Heart
+          roll:
+            min: 260
+            max: 260
+        - text: Old Buoy
+          roll:
+            min: 261
+            max: 261
+        - text: Opal Star
+          roll:
+            min: 262
+            max: 262
+        - text: Ormen Lange
+          roll:
+            min: 263
+            max: 263
+        - text: Paladin
+          roll:
+            min: 264
+            max: 264
+        - text: Pinched Penny
+          roll:
+            min: 265
+            max: 265
+        - text: Polaris
+          roll:
+            min: 266
+            max: 266
+        - text: Pura Vida
+          roll:
+            min: 267
+            max: 267
+        - text: Quantum Jump
+          roll:
+            min: 268
+            max: 268
+        - text: Red Zeppelin
+          roll:
+            min: 269
+            max: 269
+        - text: Resplendent
+          roll:
+            min: 270
+            max: 270
+        - text: Rising Tide
+          roll:
+            min: 271
+            max: 271
+        - text: Rosenberg Bridge
+          roll:
+            min: 272
+            max: 272
+        - text: Sapphira
+          roll:
+            min: 273
+            max: 273
+        - text: Sentinel
+          roll:
+            min: 274
+            max: 274
+        - text: Shallow Pass
+          roll:
+            min: 275
+            max: 275
+        - text: Silent Night
+          roll:
+            min: 276
+            max: 276
+        - text: Skyfall
+          roll:
+            min: 277
+            max: 277
+        - text: Slim Vector
+          roll:
+            min: 278
+            max: 278
+        - text: Star Voyager
+          roll:
+            min: 279
+            max: 279
+        - text: Stargazer
+          roll:
+            min: 280
+            max: 280
+        - text: Starling Jay
+          roll:
+            min: 281
+            max: 281
+        - text: Stellar Kart
+          roll:
+            min: 282
+            max: 282
+        - text: Stinson's Rocket
+          roll:
+            min: 283
+            max: 283
+        - text: Sunny Day
+          roll:
+            min: 284
+            max: 284
+        - text: Swoose Goose
+          roll:
+            min: 285
+            max: 285
+        - text: Taloned Eagle
+          roll:
+            min: 286
+            max: 286
+        - text: Thunderbolt
+          roll:
+            min: 287
+            max: 287
+        - text: Tiger's Claw
+          roll:
+            min: 288
+            max: 288
+        - text: Triumph
+          roll:
+            min: 289
+            max: 289
+        - text: Valiant
+          roll:
+            min: 290
+            max: 290
+        - text: Vindicator
+          roll:
+            min: 291
+            max: 291
+        - text: Vulpine Prize
+          roll:
+            min: 292
+            max: 292
+        - text: Wayfarer
+          roll:
+            min: 293
+            max: 293
+        - text: Whirlwind
+          roll:
+            min: 294
+            max: 294
+        - text: Wide Berth
+          roll:
+            min: 295
+            max: 295
+        - text: Willow Wisp
+          roll:
+            min: 296
+            max: 296
+        - text: Wichita Two-Step
+          roll:
+            min: 297
+            max: 297
+        - text: Wraith
+          roll:
+            min: 298
+            max: 298
+        - text: Xenial Traveler
+          roll:
+            min: 299
+            max: 299
+        - text: Zephyr
+          roll:
+            min: 300
+            max: 300
+        type: oracle_rollable
+    collections:
+      mission:
+        name: Mission
+        oracle_type: table_shared_text
+        _source:
+          <<: *Source
+        column_labels:
+          text: Mission
+        contents:
+          terminus:
+            name: Terminus
+            tags:
+              starforged:
+                region: terminus
+            oracle_type: column_text
+            dice: 1d300
+            replaces:
+            - oracle_rollable:starforged/starship/mission/terminus
+            _comment: Extension of the oracle table
+            rows:
+            - &Mission.0
+              text: Blockade a location
+              roll:
+                min: 1
+                max: 3
+            - &Mission.1
+              text: Break a blockade
+              roll:
+                min: 4
+                max: 6
+            - &Mission.2
+              text: Collect a resource
+              roll:
+                min: 7
+                max: 9
+            - &Mission.3
+              text: Command others
+              roll:
+                min: 10
+                max: 11
+            - &Mission.4
+              text: Conduct diplomacy
+              roll:
+                min: 12
+                max: 14
+            - &Mission.5
+              text: Conduct espionage
+              roll:
+                min: 15
+                max: 17
+            - &Mission.6
+              text: Conduct piracy
+              roll:
+                min: 18
+                max: 20
+            - &Mission.7
+              text: Conduct research
+              roll:
+                min: 21
+                max: 23
+            - &Mission.8
+              text: Defend against an attack
+              roll:
+                min: 24
+                max: 26
+            - &Mission.9
+              text: Deliver messages or data
+              roll:
+                min: 27
+                max: 29
+            - &Mission.10
+              text: Establish a settlement
+              roll:
+                min: 30
+                max: 32
+            - &Mission.11
+              text: Evacuate a location
+              roll:
+                min: 33
+                max: 35
+            - &Mission.12
+              text: Explore a region
+              roll:
+                min: 36
+                max: 37
+            - &Mission.13
+              text: Hold prisoners
+              roll:
+                min: 38
+                max: 39
+            - &Mission.14
+              text: Hunt down another ship
+              roll:
+                min: 40
+                max: 42
+            - &Mission.15
+              text: Launch an attack
+              roll:
+                min: 43
+                max: 45
+            - &Mission.16
+              text: Patrol an area
+              roll:
+                min: 46
+                max: 48
+            - &Mission.17
+              text: Provide medical aid
+              roll:
+                min: 49
+                max: 51
+            - &Mission.18
+              text: Provide repairs
+              roll:
+                min: 52
+                max: 54
+            - &Mission.19
+              text: Provide shelter
+              roll:
+                min: 55
+                max: 57
+            - &Mission.20
+              text: Quarantine a danger
+              roll:
+                min: 58
+                max: 59
+            - &Mission.21
+              text: Raid a settlement
+              roll:
+                min: 60
+                max: 62
+            - &Mission.22
+              text: Resupply a settlement
+              roll:
+                min: 63
+                max: 65
+            - &Mission.23
+              text: Retrieve salvage
+              roll:
+                min: 66
+                max: 68
+            - &Mission.24
+              text: Search and rescue
+              roll:
+                min: 69
+                max: 71
+            - &Mission.25
+              text: Smuggle cargo
+              roll:
+                min: 72
+                max: 74
+            - &Mission.26
+              text: Survey a site
+              roll:
+                min: 75
+                max: 77
+            - &Mission.27
+              text: Test a technology
+              roll:
+                min: 78
+                max: 79
+            - &Mission.28
+              text: Transport cargo
+              roll:
+                min: 80
+                max: 82
+            - &Mission.29
+              text: Transport passengers
+              roll:
+                min: 83
+                max: 85
+            - &Mission.30
+              text: '[Action](oracle_rollable:starsmith/core/action) + [Theme](oracle_rollable:starsmith/core/theme)'
+              oracle_rolls:
+              - oracle: oracle_rollable:starsmith/core/action
+                auto: true
+              - oracle: oracle_rollable:starsmith/core/theme
+                auto: true
+              roll:
+                min: 86
+                max: 90
+            - &Mission.31
+              text: Roll twice
+              oracle_rolls:
+              - number_of_rolls: 2
+                auto: true
+              roll:
+                min: 91
+                max: 100
+            - &Mission.32
+              text: Enforce martial law
+              roll:
+                min: 101
+                max: 103
+            - &Mission.33
+              text: Reinforce supply lines
+              roll:
+                min: 104
+                max: 106
+            - &Mission.34
+              text: Destroy a resource
+              roll:
+                min: 107
+                max: 109
+            - &Mission.35
+              text: Follow orders
+              roll:
+                min: 110
+                max: 111
+            - &Mission.36
+              text: Disrupt diplomatic relations
+              roll:
+                min: 112
+                max: 114
+            - &Mission.37
+              text: Infiltrate territory
+              roll:
+                min: 115
+                max: 117
+            - &Mission.38
+              text: Negotiate a treaty
+              roll:
+                min: 118
+                max: 120
+            - &Mission.39
+              text: Conduct questionable experiments
+              roll:
+                min: 121
+                max: 123
+            - &Mission.40
+              text: Prepare for impending disaster
+              roll:
+                min: 124
+                max: 126
+            - &Mission.41
+              text: Confiscate data
+              roll:
+                min: 127
+                max: 129
+            - &Mission.42
+              text: Establish a passage
+              roll:
+                min: 130
+                max: 132
+            - &Mission.43
+              text: Rebuild location
+              roll:
+                min: 133
+                max: 135
+            - &Mission.44
+              text: Investigate space lifeforms
+              roll:
+                min: 136
+                max: 137
+            - &Mission.45
+              text: Apprehend criminals
+              roll:
+                min: 138
+                max: 139
+            - &Mission.46
+              text: Uncover hidden location
+              roll:
+                min: 140
+                max: 142
+            - &Mission.47
+              text: Search and destroy
+              roll:
+                min: 143
+                max: 145
+            - &Mission.48
+              text: Protect location
+              roll:
+                min: 146
+                max: 148
+            - &Mission.49
+              text: Provide supplies
+              roll:
+                min: 149
+                max: 151
+            - &Mission.50
+              text: Perform satellite/probe maintenance
+              roll:
+                min: 152
+                max: 154
+            - &Mission.51
+              text: Protect valuable witness
+              roll:
+                min: 155
+                max: 157
+            - &Mission.52
+              text: Assess quarantined zone danger
+              roll:
+                min: 158
+                max: 159
+            - &Mission.53
+              text: Extort a settlement
+              roll:
+                min: 160
+                max: 162
+            - &Mission.54
+              text: Pickup sensitive cargo
+              roll:
+                min: 163
+                max: 165
+            - &Mission.55
+              text: Scrub evidence
+              roll:
+                min: 166
+                max: 168
+            - &Mission.56
+              text: Take hostage
+              roll:
+                min: 169
+                max: 171
+            - &Mission.57
+              text: Establish new trade routes
+              roll:
+                min: 172
+                max: 174
+            - &Mission.58
+              text: Map a sector
+              roll:
+                min: 175
+                max: 177
+            - &Mission.59
+              text: Test a weapon
+              roll:
+                min: 178
+                max: 179
+            - &Mission.60
+              text: Transport vehicles
+              roll:
+                min: 180
+                max: 182
+            - &Mission.61
+              text: Transport leaders in secret
+              roll:
+                min: 183
+                max: 185
+            - &Mission.62
+              text: '[Action](oracle_rollable:starsmith/core/action) + [Theme](oracle_rollable:starsmith/core/theme)'
+              roll:
+                min: 186
+                max: 190
+              <<: *Mission.30
+            - &Mission.63
+              text: Roll twice
+              roll:
+                min: 191
+                max: 200
+              <<: *Mission.31
+            - &Mission.64
+              text: Escalate regional tensions
+              roll:
+                min: 201
+                max: 203
+            - &Mission.65
+              text: Setup defensive perimeter
+              roll:
+                min: 204
+                max: 206
+            - &Mission.66
+              text: Trade a resource
+              roll:
+                min: 207
+                max: 209
+            - &Mission.67
+              text: Flee duty or orders
+              roll:
+                min: 210
+                max: 211
+            - &Mission.68
+              text: Stoke rebellion
+              roll:
+                min: 212
+                max: 214
+            - &Mission.69
+              text: Sabotage the competition
+              roll:
+                min: 215
+                max: 217
+            - &Mission.70
+              text: Broker a deal
+              roll:
+                min: 218
+                max: 220
+            - &Mission.71
+              text: Eliminate evidence of research
+              roll:
+                min: 221
+                max: 223
+            - &Mission.72
+              text: Perform saber rattling
+              roll:
+                min: 224
+                max: 226
+            - &Mission.73
+              text: Proselytize belief
+              roll:
+                min: 227
+                max: 229
+            - &Mission.74
+              text: Lay claim to territory
+              roll:
+                min: 230
+                max: 232
+            - &Mission.75
+              text: Mobilize a location against a threat
+              roll:
+                min: 233
+                max: 235
+            - &Mission.76
+              text: Study stellar phenomenon
+              roll:
+                min: 236
+                max: 237
+            - &Mission.77
+              text: Transfer dangerous prisoner
+              roll:
+                min: 238
+                max: 239
+            - &Mission.78
+              text: Collect a bounty
+              roll:
+                min: 240
+                max: 242
+            - &Mission.79
+              text: Preemptive strike mission
+              roll:
+                min: 243
+                max: 245
+            - &Mission.80
+              text: Upgrade infrastructure
+              roll:
+                min: 246
+                max: 248
+            - &Mission.81
+              text: Transport medical specialist
+              roll:
+                min: 249
+                max: 251
+            - &Mission.82
+              text: Transport engineering specialist
+              roll:
+                min: 252
+                max: 254
+            - &Mission.83
+              text: Prevent stellar disaster
+              roll:
+                min: 255
+                max: 257
+            - &Mission.84
+              text: Research quarantined environment
+              roll:
+                min: 258
+                max: 259
+            - &Mission.85
+              text: Reinforce settlement defenses
+              roll:
+                min: 260
+                max: 262
+            - &Mission.86
+              text: Pickup valuable cargo
+              roll:
+                min: 263
+                max: 265
+            - &Mission.87
+              text: Deliver salvage
+              roll:
+                min: 266
+                max: 268
+            - &Mission.88
+              text: Break out prisoner
+              roll:
+                min: 269
+                max: 271
+            - &Mission.89
+              text: Smuggle people
+              roll:
+                min: 272
+                max: 274
+            - &Mission.90
+              text: Shutdown illegal activity
+              roll:
+                min: 275
+                max: 277
+            - &Mission.91
+              text: Test an alliance
+              roll:
+                min: 278
+                max: 279
+            - &Mission.92
+              text: Transport energy source
+              roll:
+                min: 280
+                max: 282
+            - &Mission.93
+              text: Transport lifeforms
+              roll:
+                min: 283
+                max: 285
+            - &Mission.94
+              text: '[Action](oracle_rollable:starsmith/core/action) + [Theme](oracle_rollable:starsmith/core/theme)'
+              roll:
+                min: 286
+                max: 290
+              <<: *Mission.30
+            - &Mission.95
+              text: Roll twice
+              roll:
+                min: 291
+                max: 300
+              <<: *Mission.31
+            type: oracle_rollable
+          outlands:
+            name: Outlands
+            tags:
+              starforged:
+                region: outlands
+            oracle_type: column_text
+            dice: 1d300
+            replaces:
+            - oracle_rollable:starforged/starship/mission/outlands
+            _comment: Extension of the oracle table
+            rows:
+            # begin copied rows
+            - <<: *Mission.0
+              roll:
+                min: 1
+                max: 2
+            - <<: *Mission.1
+              roll:
+                min: 3
+                max: 4
+            - <<: *Mission.2
+              roll:
+                min: 5
+                max: 7
+            - <<: *Mission.3
+              roll:
+                min: 8
+                max: 9
+            - <<: *Mission.4
+              roll:
+                min: 10
+                max: 11
+            - <<: *Mission.5
+              roll:
+                min: 12
+                max: 13
+            - <<: *Mission.6
+              roll:
+                min: 14
+                max: 16
+            - <<: *Mission.7
+              roll:
+                min: 17
+                max: 20
+            - <<: *Mission.8
+              roll:
+                min: 21
+                max: 24
+            - <<: *Mission.9
+              roll:
+                min: 25
+                max: 28
+            - <<: *Mission.10
+              roll:
+                min: 29
+                max: 32
+            - <<: *Mission.11
+              roll:
+                min: 33
+                max: 36
+            - <<: *Mission.12
+              roll:
+                min: 37
+                max: 40
+            - <<: *Mission.13
+              roll:
+                min: 41
+                max: 42
+            - <<: *Mission.14
+              roll:
+                min: 43
+                max: 45
+            - <<: *Mission.15
+              roll:
+                min: 46
+                max: 48
+            - <<: *Mission.16
+              roll:
+                min: 49
+                max: 50
+            - <<: *Mission.17
+              roll:
+                min: 51
+                max: 53
+            - <<: *Mission.18
+              roll:
+                min: 54
+                max: 56
+            - <<: *Mission.19
+              roll:
+                min: 57
+                max: 59
+            - <<: *Mission.20
+              roll:
+                min: 60
+                max: 61
+            - <<: *Mission.21
+              roll:
+                min: 62
+                max: 64
+            - <<: *Mission.22
+              roll:
+                min: 65
+                max: 68
+            - <<: *Mission.23
+              roll:
+                min: 69
+                max: 71
+            - <<: *Mission.24
+              roll:
+                min: 72
+                max: 73
+            - <<: *Mission.25
+              roll:
+                min: 74
+                max: 75
+            - <<: *Mission.26
+              roll:
+                min: 76
+                max: 78
+            - <<: *Mission.27
+              roll:
+                min: 79
+                max: 80
+            - <<: *Mission.28
+              roll:
+                min: 81
+                max: 83
+            - <<: *Mission.29
+              roll:
+                min: 84
+                max: 85
+            - *Mission.30
+            - *Mission.31
+              # end copied rows
+            - roll:
+                min: 101
+                max: 102
+              <<: *Mission.32
+            - roll:
+                min: 103
+                max: 104
+              <<: *Mission.33
+            - roll:
+                min: 105
+                max: 107
+              <<: *Mission.34
+            - roll:
+                min: 108
+                max: 109
+              <<: *Mission.35
+            - roll:
+                min: 110
+                max: 111
+              <<: *Mission.36
+            - roll:
+                min: 112
+                max: 113
+              <<: *Mission.37
+            - roll:
+                min: 114
+                max: 116
+              <<: *Mission.38
+            - roll:
+                min: 117
+                max: 120
+              <<: *Mission.39
+            - roll:
+                min: 121
+                max: 124
+              <<: *Mission.40
+            - roll:
+                min: 125
+                max: 128
+              <<: *Mission.41
+            - roll:
+                min: 129
+                max: 132
+              <<: *Mission.42
+            - roll:
+                min: 133
+                max: 136
+              <<: *Mission.43
+            - roll:
+                min: 137
+                max: 140
+              <<: *Mission.44
+            - roll:
+                min: 141
+                max: 142
+              <<: *Mission.45
+            - roll:
+                min: 143
+                max: 145
+              <<: *Mission.46
+            - roll:
+                min: 146
+                max: 148
+              <<: *Mission.47
+            - roll:
+                min: 149
+                max: 150
+              <<: *Mission.48
+            - roll:
+                min: 151
+                max: 153
+              <<: *Mission.49
+            - roll:
+                min: 154
+                max: 156
+              <<: *Mission.50
+            - roll:
+                min: 157
+                max: 159
+              <<: *Mission.51
+            - roll:
+                min: 160
+                max: 161
+              <<: *Mission.52
+            - roll:
+                min: 162
+                max: 164
+              <<: *Mission.53
+            - roll:
+                min: 165
+                max: 168
+              <<: *Mission.54
+            - roll:
+                min: 169
+                max: 171
+              <<: *Mission.55
+            - roll:
+                min: 172
+                max: 173
+              <<: *Mission.56
+            - roll:
+                min: 174
+                max: 175
+              <<: *Mission.57
+            - roll:
+                min: 176
+                max: 178
+              <<: *Mission.58
+            - roll:
+                min: 179
+                max: 180
+              <<: *Mission.59
+            - roll:
+                min: 181
+                max: 183
+              <<: *Mission.60
+            - roll:
+                min: 184
+                max: 185
+              <<: *Mission.61
+            - roll:
+                min: 186
+                max: 190
+              <<: *Mission.62
+            - roll:
+                min: 191
+                max: 200
+              <<: *Mission.63
+            - roll:
+                min: 201
+                max: 202
+              <<: *Mission.64
+            - roll:
+                min: 203
+                max: 204
+              <<: *Mission.65
+            - roll:
+                min: 205
+                max: 207
+              <<: *Mission.66
+            - roll:
+                min: 208
+                max: 209
+              <<: *Mission.67
+            - roll:
+                min: 210
+                max: 211
+              <<: *Mission.68
+            - roll:
+                min: 212
+                max: 213
+              <<: *Mission.69
+            - roll:
+                min: 214
+                max: 216
+              <<: *Mission.70
+            - roll:
+                min: 217
+                max: 220
+              <<: *Mission.71
+            - roll:
+                min: 221
+                max: 224
+              <<: *Mission.72
+            - roll:
+                min: 225
+                max: 228
+              <<: *Mission.73
+            - roll:
+                min: 229
+                max: 232
+              <<: *Mission.74
+            - roll:
+                min: 233
+                max: 236
+              <<: *Mission.75
+            - roll:
+                min: 237
+                max: 240
+              <<: *Mission.76
+            - roll:
+                min: 241
+                max: 242
+              <<: *Mission.77
+            - roll:
+                min: 243
+                max: 245
+              <<: *Mission.78
+            - roll:
+                min: 246
+                max: 248
+              <<: *Mission.79
+            - roll:
+                min: 249
+                max: 250
+              <<: *Mission.80
+            - roll:
+                min: 251
+                max: 253
+              <<: *Mission.81
+            - roll:
+                min: 254
+                max: 256
+              <<: *Mission.82
+            - roll:
+                min: 257
+                max: 259
+              <<: *Mission.83
+            - roll:
+                min: 260
+                max: 261
+              <<: *Mission.84
+            - roll:
+                min: 262
+                max: 264
+              <<: *Mission.85
+            - roll:
+                min: 265
+                max: 268
+              <<: *Mission.86
+            - roll:
+                min: 269
+                max: 271
+              <<: *Mission.87
+            - roll:
+                min: 272
+                max: 273
+              <<: *Mission.88
+            - roll:
+                min: 274
+                max: 275
+              <<: *Mission.89
+            - roll:
+                min: 276
+                max: 278
+              <<: *Mission.90
+            - roll:
+                min: 279
+                max: 280
+              <<: *Mission.91
+            - roll:
+                min: 281
+                max: 283
+              <<: *Mission.92
+            - roll:
+                min: 284
+                max: 285
+              <<: *Mission.93
+            - roll:
+                min: 286
+                max: 290
+              <<: *Mission.94
+            - roll:
+                min: 291
+                max: 300
+              <<: *Mission.95
+            type: oracle_rollable
+          expanse:
+            name: Expanse
+            tags:
+              starforged:
+                region: expanse
+            oracle_type: column_text
+            dice: 1d300
+            replaces:
+            - oracle_rollable:starforged/starship/mission/expanse
+            _comment: Extension of the oracle table
+            rows:
+ # begin copied rows
+            - <<: *Mission.0
+              roll:
+                min: 1
+                max: 2
+            - <<: *Mission.1
+              roll:
+                min: 3
+                max: 4
+            - <<: *Mission.2
+              roll:
+                min: 5
+                max: 8
+            - <<: *Mission.3
+              roll:
+                min: 9
+                max: 10
+            - <<: *Mission.4
+              roll:
+                min: 11
+                max: 12
+            - <<: *Mission.5
+              roll:
+                min: 13
+                max: 14
+            - <<: *Mission.6
+              roll:
+                min: 15
+                max: 16
+            - <<: *Mission.7
+              roll:
+                min: 17
+                max: 22
+            - <<: *Mission.8
+              roll:
+                min: 23
+                max: 25
+            - <<: *Mission.9
+              roll:
+                min: 26
+                max: 29
+            - <<: *Mission.10
+              roll:
+                min: 30
+                max: 35
+            - <<: *Mission.11
+              roll:
+                min: 36
+                max: 39
+            - <<: *Mission.12
+              roll:
+                min: 40
+                max: 45
+            - <<: *Mission.13
+              roll:
+                min: 46
+                max: 47
+            - <<: *Mission.14
+              roll:
+                min: 48
+                max: 49
+            - <<: *Mission.15
+              roll:
+                min: 50
+                max: 51
+            - <<: *Mission.16
+              roll:
+                min: 52
+                max: 53
+            - <<: *Mission.17
+              roll:
+                min: 54
+                max: 55
+            - <<: *Mission.18
+              roll:
+                min: 56
+                max: 57
+            - <<: *Mission.19
+              roll:
+                min: 58
+                max: 61
+            - <<: *Mission.20
+              roll:
+                min: 62
+                max: 63
+            - <<: *Mission.21
+              roll:
+                min: 64
+                max: 65
+            - <<: *Mission.22
+              roll:
+                min: 66
+                max: 69
+            - <<: *Mission.23
+              roll:
+                min: 70
+                max: 71
+            - <<: *Mission.24
+              roll:
+                min: 72
+                max: 73
+            - <<: *Mission.25
+              roll:
+                min: 74
+                max: 75
+            - <<: *Mission.26
+              roll:
+                min: 76
+                max: 77
+            - <<: *Mission.27
+              roll:
+                min: 78
+                max: 79
+            - <<: *Mission.28
+              roll:
+                min: 80
+                max: 83
+            - <<: *Mission.29
+              roll:
+                min: 84
+                max: 85
+            - *Mission.30
+            - *Mission.31
+            - roll:
+                min: 101
+                max: 102
+              <<: *Mission.32
+            - roll:
+                min: 103
+                max: 104
+              <<: *Mission.33
+            - roll:
+                min: 105
+                max: 108
+              <<: *Mission.34
+            - roll:
+                min: 109
+                max: 110
+              <<: *Mission.35
+            - roll:
+                min: 111
+                max: 112
+              <<: *Mission.36
+            - roll:
+                min: 113
+                max: 114
+              <<: *Mission.37
+            - roll:
+                min: 115
+                max: 116
+              <<: *Mission.38
+            - roll:
+                min: 117
+                max: 122
+              <<: *Mission.39
+            - roll:
+                min: 123
+                max: 125
+              <<: *Mission.40
+            - roll:
+                min: 126
+                max: 129
+              <<: *Mission.41
+            - roll:
+                min: 130
+                max: 135
+              <<: *Mission.42
+            - roll:
+                min: 136
+                max: 139
+              <<: *Mission.43
+            - roll:
+                min: 140
+                max: 145
+              <<: *Mission.44
+            - roll:
+                min: 146
+                max: 147
+              <<: *Mission.45
+            - roll:
+                min: 148
+                max: 149
+              <<: *Mission.46
+            - roll:
+                min: 150
+                max: 151
+              <<: *Mission.47
+            - roll:
+                min: 152
+                max: 153
+              <<: *Mission.48
+            - roll:
+                min: 154
+                max: 155
+              <<: *Mission.49
+            - roll:
+                min: 156
+                max: 157
+              <<: *Mission.50
+            - roll:
+                min: 158
+                max: 161
+              <<: *Mission.51
+            - roll:
+                min: 162
+                max: 163
+              <<: *Mission.52
+            - roll:
+                min: 164
+                max: 165
+              <<: *Mission.53
+            - roll:
+                min: 166
+                max: 169
+              <<: *Mission.54
+            - roll:
+                min: 170
+                max: 171
+              <<: *Mission.55
+            - roll:
+                min: 172
+                max: 173
+              <<: *Mission.56
+            - roll:
+                min: 174
+                max: 175
+              <<: *Mission.57
+            - roll:
+                min: 176
+                max: 177
+              <<: *Mission.58
+            - roll:
+                min: 178
+                max: 179
+              <<: *Mission.59
+            - roll:
+                min: 180
+                max: 183
+              <<: *Mission.60
+            - roll:
+                min: 184
+                max: 185
+              <<: *Mission.61
+            - roll:
+                min: 186
+                max: 190
+              <<: *Mission.62
+            - roll:
+                min: 191
+                max: 200
+              <<: *Mission.63
+            - roll:
+                min: 201
+                max: 202
+              <<: *Mission.64
+            - roll:
+                min: 203
+                max: 204
+              <<: *Mission.65
+            - roll:
+                min: 205
+                max: 208
+              <<: *Mission.66
+            - roll:
+                min: 209
+                max: 210
+              <<: *Mission.67
+            - roll:
+                min: 211
+                max: 212
+              <<: *Mission.68
+            - roll:
+                min: 213
+                max: 214
+              <<: *Mission.69
+            - roll:
+                min: 215
+                max: 216
+              <<: *Mission.70
+            - roll:
+                min: 217
+                max: 222
+              <<: *Mission.71
+            - roll:
+                min: 223
+                max: 225
+              <<: *Mission.72
+            - roll:
+                min: 226
+                max: 229
+              <<: *Mission.73
+            - roll:
+                min: 230
+                max: 235
+              <<: *Mission.74
+            - roll:
+                min: 236
+                max: 239
+              <<: *Mission.75
+            - roll:
+                min: 240
+                max: 245
+              <<: *Mission.76
+            - roll:
+                min: 246
+                max: 247
+              <<: *Mission.77
+            - roll:
+                min: 248
+                max: 249
+              <<: *Mission.78
+            - roll:
+                min: 250
+                max: 251
+              <<: *Mission.79
+            - roll:
+                min: 252
+                max: 253
+              <<: *Mission.80
+            - roll:
+                min: 254
+                max: 255
+              <<: *Mission.81
+            - roll:
+                min: 256
+                max: 257
+              <<: *Mission.82
+            - roll:
+                min: 258
+                max: 261
+              <<: *Mission.83
+            - roll:
+                min: 262
+                max: 263
+              <<: *Mission.84
+            - roll:
+                min: 264
+                max: 265
+              <<: *Mission.85
+            - roll:
+                min: 266
+                max: 269
+              <<: *Mission.86
+            - roll:
+                min: 270
+                max: 271
+              <<: *Mission.87
+            - roll:
+                min: 272
+                max: 273
+              <<: *Mission.88
+            - roll:
+                min: 274
+                max: 275
+              <<: *Mission.89
+            - roll:
+                min: 276
+                max: 277
+              <<: *Mission.90
+            - roll:
+                min: 278
+                max: 279
+              <<: *Mission.91
+            - roll:
+                min: 280
+                max: 283
+              <<: *Mission.92
+            - roll:
+                min: 284
+                max: 285
+              <<: *Mission.93
+            - roll:
+                min: 286
+                max: 290
+              <<: *Mission.94
+            - roll:
+                min: 291
+                max: 300
+              <<: *Mission.95
+            type: oracle_rollable
+        type: oracle_collection
+    type: oracle_collection

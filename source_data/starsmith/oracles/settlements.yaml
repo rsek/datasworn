@@ -1,1945 +1,3064 @@
 _id: starsmith
-source: &Source
+datasworn_version: "0.1.0"
+type: expansion
+ruleset: starforged
+<<: &Source
+  title: Starsmith Expanded Oracles
+  date: 2024-03-22
+  url: https://playeveryrole.com/starsmith-products/
+  license: https://creativecommons.org/licenses/by/4.0
   authors:
     - name: Eric Bright
-  date: '2023-03-19'
-  title: Starsmith
-  license: https://creativecommons.org/licenses/by/4.0/
-  url: https://playeveryrole.com/
 oracles:
   settlements:
     name: Settlements
+    oracle_type: tables
+    _comment: Extension of the oracle table
+    # description: Extension of the oracle table
+    _source: &Source
+      title: Starsmith
+      authors:
+      - name: Eric Bright
+      date: 2024-03-22
+      url: https://playeveryrole.com/starsmith-products/
+      license: https://creativecommons.org/licenses/by/4.0
     contents:
       location:
-        replaces: starforged/oracles/settlements/location
+        name: Location
+        oracle_type: table_text
         dice: 1d300
+        replaces:
+        - oracle_rollable:starforged/settlement/location
+        _comment: Extension of the oracle table
+        _source: *Source
         rows:
-          - min: 1
+          # begin copied rows
+        - text: Planetside
+          icon: icon/oracles/location/planetside.svg
+          roll:
+            min: 1
             max: 40
-            result: Planetside
-          - min: 41
+        - text: Orbital
+          icon: icon/oracles/location/orbital.svg
+          roll:
+            min: 41
             max: 75
-            result: Orbital
-          - min: 76
+        - text: Deep Space
+          icon: icon/oracles/location/deep_space.svg
+          # end copied rows
+          roll:
+            min: 76
             max: 100
-            result: Deepspace
-          - min: 101
+        - text: Asteroid belt
+          roll:
+            min: 101
             max: 140
-            result: Asteroid belt
-          - min: 141
+        - text: Nebula cloud
+          roll:
+            min: 141
             max: 175
-            result: Nebula cloud
-          - min: 176
+        - text: Wormhole
+          roll:
+            min: 176
             max: 200
-            result: Wormhole
-          - min: 201
+        - text: Asteroid
+          roll:
+            min: 201
             max: 240
-            result: Asteroid
-          - min: 241
+        - text: Planetary ring
+          roll:
+            min: 241
             max: 275
-            result: Planetary ring
-          - min: 276
+        - text: Exoplanet
+          roll:
+            min: 276
             max: 300
-            result: Exoplanet
+        type: oracle_rollable
       first_look:
-        replaces: starforged/oracles/settlements/first_look
+        name: First Look
+        oracle_type: table_text
         dice: 1d300
+        replaces:
+        - oracle_rollable:starforged/settlement/first_look
+        _comment: Extension of the oracle table
+        _source: *Source
         rows:
-          - min: 1
-            max: 4
-            result: Beautiful architecture
-          - min: 5
-            max: 8
-            result: Built from natural materials
-          - min: 9
-            max: 14
-            result: Built from scrap metal
-          - min: 15
-            max: 20
-            result: Built within repurposed ship
-          - min: 21
-            max: 25
-            result: Built within terrain or asteroid
-          - min: 26
-            max: 29
-            result: Elevated or multi-level construction
-          - min: 30
-            max: 34
-            result: Hidden or subsurface location
-          - min: 35
-            max: 37
-            result: High-tech construction
-          - min: 38
-            max: 43
-            result: Industrial architecture
-          - min: 44
-            max: 48
-            result: Intimidating defenses
-          - min: 49
-            max: 51
-            result: Moving or transforming
-          - min: 52
-            max: 56
-            result: Obvious social stratification
-          - min: 57
-            max: 61
-            result: Precarious location
-          - min: 62
-            max: 65
-            result: Prominent emblems or signage
-          - min: 66
-            max: 71
-            result: Rustic architecture
-          - min: 72
-            max: 76
-            result: Significant structural damage
-          - min: 77
-            max: 80
-            result: Sprawling or dispersed structures
-          - min: 81
-            max: 83
-            result: Temporary or seasonal location
-          - min: 84
-            max: 87
-            result: Toxic or polluted habitat
-          - min: 88
-            max: 90
-            result: Within or near [Precursor Vault](starforged/oracles/vaults)
-          - min: 91
-            max: 100
-            <<: &DescriptorFocus
-              result: '[Descriptor](id:starforged/oracles/core/descriptor) + [Focus](id:starforged/oracles/core/focus)'
-              oracle_rolls:
-                - oracle: starforged/oracles/core/descriptor
-                  auto: true
-                - oracle: starforged/oracles/core/focus
-                  auto: true
-          - min: 101
-            max: 104
-            result: Mix of cultural architecture
-          - min: 105
-            max: 108
-            result: Built within a dome
-          - min: 109
-            max: 114
-            result: Built upon previous settlement
-          - min: 115
-            max: 120
-            result: Built with freshly fabricated materials
-          - min: 121
-            max: 125
-            result: Takes advantage of natural terrain defenses
-          - min: 126
-            max: 129
-            result: Large greenhouse or arboretum
-          - min: 130
-            max: 134
-            result: Shielding or camouflage system
-          - min: 135
-            max: 137
-            result: Construction cobbled together
-          - min: 138
-            max: 143
-            result: Utilitarian architecture
-          - min: 144
-            max: 148
-            result: Ineffective defenses
-          - min: 149
-            max: 151
-            result: Independent modules
-          - min: 152
-            max: 156
-            result: Strong presence of authority
-          - min: 157
-            max: 161
-            result: Location of natural beauty
-          - min: 162
-            max: 165
-            result: Lack of emblems or signage
-          - min: 166
-            max: 171
-            result: Geometric architecture
-          - min: 172
-            max: 176
-            result: Significant repairs underway
-          - min: 177
-            max: 180
-            result: Structures tightly packed
-          - min: 181
-            max: 183
-            result: Permanent structures in progress
-          - min: 184
-            max: 187
-            result: Vibrant or verdant habitat
-          - min: 188
-            max: 190
-            result: Within or near [Precursor Vault](starforged/oracles/vaults)
-          - min: 191
-            max: 200
-            <<: *DescriptorFocus
-          - min: 201
-            max: 204
-            result: Rounded or curved architecture
-          - min: 205
-            max: 208
-            result: Built side by side with ancient structures
-          - min: 209
-            max: 214
-            result: Transit tubes connecting areas
-          - min: 215
-            max: 220
-            result: Industrial vehicles or tools
-          - min: 221
-            max: 225
-            result: Settlement itself is a working ship
-          - min: 226
-            max: 229
-            result: Spaceport or docking area
-          - min: 230
-            max: 234
-            result: Sensor or detection grid
-          - min: 235
-            max: 237
-            result: Prominent power plant
-          - min: 238
-            max: 243
-            result: Neon lights and attention grabbing signs
-          - min: 244
-            max: 248
-            result: Damaged defenses
-          - min: 249
-            max: 251
-            result: Heavy vehicle traffic
-          - min: 252
-            max: 256
-            result: Large, shared spaces
-          - min: 257
-            max: 261
-            result: Location with unusual atmospheric conditions
-          - min: 262
-            max: 265
-            result: Emphasis on the arts
-          - min: 266
-            max: 271
-            result: Brutalist architecture
-          - min: 272
-            max: 276
-            result: Aqueduct or water purification plant
-          - min: 277
-            max: 280
-            result: Structures stacked vertically
-          - min: 281
-            max: 283
-            result: Structures being dismantled
-          - min: 284
-            max: 287
-            result: Stertile or pristine habitat
-          - min: 288
-            max: 290
-            result: Within or near [Precursor Vault](starforged/oracles/vaults)
-          - min: 291
-            max: 300
-            <<: *DescriptorFocus
-      initial_contact:
-        replaces: starforged/oracles/settlements/initial_contact
-        dice: 1d300
-        rows:
-          - min: 1
-            max: 20
-            result: Welcoming
-          - min: 21
-            max: 30
-            result: Neutral / automated
-          - min: 31
-            max: 50
-            result: Wary
-          - min: 51
-            max: 60
-            result: Uncooperative
-          - min: 61
-            max: 70
-            result: Hostile
-          - min: 71
-            max: 83
-            result: Asking for help
-          - min: 84
-            max: 86
-            result: In battle
-          - min: 87
-            max: 89
-            result: Captured
-          - min: 90
-            max: 92
-            result: Unresponsive
-          - min: 93
-            max: 95
-            result: Destroyed
-          - min: 96
-            max: 100
-            result: '[Derelict](starforged/oracles/derelicts)'
-          - min: 101
-            max: 120
-            result: Helpful
-          - min: 121
-            max: 130
-            result: All business
-          - min: 131
-            max: 150
-            result: Tolerant
-          - min: 151
-            max: 160
-            result: Defensive
-          - min: 161
-            max: 170
-            result: Easily offended
-          - min: 171
-            max: 183
-            result: Asking for bribe
-          - min: 184
-            max: 186
-            result: Environmental crisis
-          - min: 187
-            max: 189
-            result: Quarantined
-          - min: 190
-            max: 192
-            result: Looped distress call
-          - min: 193
-            max: 195
-            result: Completely shielded
-          - min: 196
-            max: 200
-            result: '[Derelict](starforged/oracles/derelicts)'
-          - min: 201
-            max: 220
-            result: Informative
-          - min: 221
-            max: 230
-            result: Apathetic
-          - min: 231
-            max: 250
-            result: Settlement first
-          - min: 251
-            max: 260
-            result: Stubborn contrarian
-          - min: 261
-            max: 270
-            result: Arrogant jerk
-          - min: 271
-            max: 283
-            result: Bureaucratic protocols
-          - min: 284
-            max: 286
-            result: Social upheaval
-          - min: 287
-            max: 289
-            result: Cultural observance
-          - min: 290
-            max: 292
-            result: Communications down
-          - min: 293
-            max: 295
-            result: Attacks on sight
-          - min: 296
-            max: 300
-            result: '[Derelict](starforged/oracles/derelicts)'
-      authority:
-        replaces: starforged/oracles/settlements/authority
-        dice: 1d300
-        rows:
-          - min: 1
-            max: 15
-            result: None / lawless
-          - min: 16
-            max: 30
-            result: Ineffectual
-          - min: 31
-            max: 45
-            result: Tolerant
-          - min: 46
-            max: 55
-            result: Fair
-          - min: 56
-            max: 70
-            result: Unyielding
-          - min: 71
-            max: 85
-            result: Corrupt
-          - min: 86
-            max: 100
-            result: Oppressive
-          - min: 101
-            max: 115
-            result: Tribal
-          - min: 116
-            max: 130
-            result: Theocratic
-          - min: 131
-            max: 145
-            result: Feudalistic
-          - min: 146
-            max: 155
-            result: Democratic
-          - min: 156
-            max: 170
-            result: Authoritarian
-          - min: 171
-            max: 185
-            result: Oligarchic
-          - min: 186
-            max: 200
-            result: Tyrannical
-          - min: 201
-            max: 215
-            result: Cult-like
-          - min: 216
-            max: 230
-            result: Legalistic
-          - min: 231
-            max: 245
-            result: Collective good first
-          - min: 246
-            max: 255
-            result: Charitable
-          - min: 256
-            max: 270
-            result: Single-minded
-          - min: 271
-            max: 285
-            result: Prejudiced
-          - min: 286
-            max: 300
-            result: Takes advantage
-      projects:
-        replaces: starforged/oracles/settlements/projects
-        dice: 1d300
-        rows:
-          - min: 1
-            max: 5
-            result: Agriculture
-          - min: 6
-            max: 7
-            result: Archaeology
-          - min: 8
-            max: 9
-            result: Automation
-          - min: 10
-            max: 11
-            result: Black market
-          - min: 12
-            max: 13
-            result: Command
-          - min: 14
-            max: 17
-            result: Defense
-          - min: 18
-            max: 22
-            result: Energy
-          - min: 23
-            max: 25
-            result: Engineering
-          - min: 26
-            max: 27
-            result: Entertainment
-          - min: 28
-            max: 29
-            result: Environmentalism
-          - min: 30
-            max: 31
-            result: Evacuation
-          - min: 32
-            max: 33
-            result: Expansion
-          - min: 34
-            max: 37
-            result: Exploration
-          - min: 38
-            max: 39
-            result: Festival
-          - min: 40
-            max: 41
-            result: History
-          - min: 42
-            max: 43
-            result: Hunting
-          - min: 44
-            max: 46
-            result: Manufacturing
-          - min: 47
-            max: 49
-            result: Medical
-          - min: 50
-            max: 51
-            result: Migration
-          - min: 52
-            max: 57
-            result: Mining
-          - min: 58
-            max: 59
-            result: Pacifism
-          - min: 60
-            max: 62
-            result: Raiding
-          - min: 63
-            max: 65
-            result: Research
-          - min: 66
-            max: 69
-            result: Salvage
-          - min: 70
-            max: 72
-            result: Secrecy
-          - min: 73
-            max: 75
-            result: Shipbuilding
-          - min: 76
-            max: 78
-            result: Spirituality
-          - min: 79
-            max: 84
-            result: Subsistence
-          - min: 85
-            max: 86
-            result: Surveillance
-          - min: 87
-            max: 88
-            result: Terraforming
-          - min: 89
-            max: 92
-            result: Trade
-          - min: 93
-            max: 95
-            result: Warfare
-          - min: 96
-            max: 100
-            result: '[Action + Theme](starforged/oracles/core/action)'
-            oracle_rolls:
-              - oracle: starforged/oracles/core/action
-              - oracle: starforged/oracles/core/theme
-          - min: 101
-            max: 105
-            result: Air supply
-          - min: 106
-            max: 107
-            result: Cultural arts
-          - min: 108
-            max: 109
-            result: Coding
-          - min: 110
-            max: 111
-            result: Trade routes
-          - min: 112
-            max: 113
-            result: Communications
-          - min: 114
-            max: 117
-            result: Fortification
-          - min: 118
-            max: 122
-            result: Fuel
-          - min: 123
-            max: 125
-            result: Architecture
-          - min: 126
-            max: 127
-            result: Gambling
-          - min: 128
-            max: 129
-            result: Waste recycling
-          - min: 130
-            max: 131
-            result: Housing
-          - min: 132
-            max: 133
-            result: Repurposing
-          - min: 134
-            max: 137
-            result: Planetary mapping
-          - min: 138
-            max: 139
-            result: Laws
-          - min: 140
-            max: 141
-            result: Education
-          - min: 142
-            max: 143
-            result: Trapping
-          - min: 144
-            max: 146
-            result: Infrastructure
-          - min: 147
-            max: 149
-            result: Psychological
-          - min: 150
-            max: 151
-            result: Xenobiology
-          - min: 152
-            max: 157
-            result: Animal husbandry
-          - min: 158
-            max: 159
-            result: Political activism
-          - min: 160
-            max: 162
-            result: Patrolling
-          - min: 163
-            max: 165
-            result: Weaponry
-          - min: 166
-            max: 169
-            result: Piracy
-          - min: 170
-            max: 172
-            result: Espionage
-          - min: 173
-            max: 175
-            result: Planning new settlement
-          - min: 176
-            max: 178
-            result: Community identity
-          - min: 179
-            max: 184
-            result: Rationing
-          - min: 185
-            max: 186
-            result: Perimeter fencing
-          - min: 187
-            max: 188
-            result: Atmosphere building
-          - min: 189
-            max: 192
-            result: Peace treaty
-          - min: 193
-            max: 195
-            result: Security
-          - min: 196
-            max: 200
-            result: '[Action + Theme](starforged/oracles/core/action)'
-            oracle_rolls:
-              - oracle: starforged/oracles/core/action
-              - oracle: starforged/oracles/core/theme
-          - min: 201
-            max: 205
-            result: Water supply
-          - min: 206
-            max: 207
-            result: Beautification
-          - min: 208
-            max: 209
-            result: Job creation
-          - min: 210
-            max: 211
-            result: Economy building
-          - min: 212
-            max: 213
-            result: Restructuring command
-          - min: 214
-            max: 217
-            result: Spaceport
-          - min: 218
-            max: 222
-            result: Pollution control
-          - min: 223
-            max: 225
-            result: Technology
-          - min: 226
-            max: 227
-            result: Mindfulness
-          - min: 228
-            max: 229
-            result: Soil health
-          - min: 230
-            max: 231
-            result: Emergency planning
-          - min: 232
-            max: 233
-            result: Territory withdrawal
-          - min: 234
-            max: 237
-            result: Resource surveying
-          - min: 238
-            max: 239
-            result: Political ceremony
-          - min: 240
-            max: 241
-            result: Journalism
-          - min: 242
-            max: 243
-            result: Population growth
-          - min: 244
-            max: 246
-            result: Industrialization
-          - min: 247
-            max: 249
-            result: Community health
-          - min: 250
-            max: 251
-            result: Habitat building
-          - min: 252
-            max: 257
-            result: Resource management
-          - min: 258
-            max: 259
-            result: Weather manipulation
-          - min: 260
-            max: 262
-            result: Demolition
-          - min: 263
-            max: 265
-            result: Data mining
-          - min: 266
-            max: 269
-            result: Reclamation
-          - min: 270
-            max: 272
-            result: Intelligence gathering
-          - min: 273
-            max: 275
-            result: Eidolon drive upgrades
-          - min: 276
-            max: 278
-            result: Encouraging diversity
-          - min: 279
-            max: 284
-            result: Nutrition
-          - min: 285
-            max: 286
-            result: Defining authority
-          - min: 287
-            max: 288
-            result: Warmongering
-          - min: 289
-            max: 292
-            result: Connecting settlements
-          - min: 293
-            max: 295
-            result: Alliance building
-          - min: 296
-            max: 300
-            result: '[Action + Theme](starforged/oracles/core/action)'
-            oracle_rolls:
-              - oracle: starforged/oracles/core/action
-              - oracle: starforged/oracles/core/theme
-      trouble:
-        replaces: starforged/oracles/settlements/trouble
-        dice: 1d300
-        rows:
-          - min: 1
+        # begin copied rows
+        - text: Beautiful architecture
+          roll:
+            min: 1
             max: 3
-            result: Battle for leadership
-          - min: 4
-            max: 6
-            result: Betrayal from within
-          - min: 7
-            max: 8
-            result: Caught in the crossfire
-          - min: 9
-            max: 11
-            result: Changing environment
-          - min: 12
-            max: 13
-            result: Clash of cultures
-          - min: 14
-            max: 17
-            result: Dangerous discovery
-          - min: 18
-            max: 21
-            result: Depleted supplies
-          - min: 22
-            max: 24
-            result: Deprived of a resource
-          - min: 25
-            max: 28
-            result: Failing technology
-          - min: 29
-            max: 32
-            result: Feuding factions
-          - min: 33
-            max: 34
-            result: Ghostly visitations
-          - min: 35
-            max: 38
-            result: Hazardous environment
-          - min: 39
-            max: 42
-            result: Hostile lifeforms
-          - min: 43
-            max: 45
-            result: Impassable route
-          - min: 46
-            max: 48
-            result: Impending attack
-          - min: 49
-            max: 51
-            result: Impending natural disaster
-          - min: 52
-            max: 53
-            result: Invasive organism
-          - min: 54
-            max: 55
-            result: Mounting debt
-          - min: 56
-            max: 57
-            result: Mysterious deaths
-          - min: 58
-            max: 60
-            result: Overdue delivery
-          - min: 61
-            max: 62
-            result: Plagued by sickness
-          - min: 63
-            max: 65
-            result: Preyed upon by raiders
-          - min: 66
-            max: 67
-            result: Revolt against leadership
-          - min: 68
-            max: 69
-            result: Sabotaged technology
-          - min: 70
-            max: 71
-            result: Shunned by others
-          - min: 72
-            max: 74
-            result: Social strife
-          - min: 75
-            max: 76
-            result: Someone is ill or injured
-          - min: 77
-            max: 78
-            result: Someone is missing
-          - min: 79
-            max: 80
-            result: Stolen technology or object
-          - min: 81
-            max: 83
-            result: Strange phenomenon
-          - min: 84
-            max: 86
-            result: Toxic waste or pollution
-          - min: 87
-            max: 88
-            result: Volatile energy source
-          - min: 89
-            max: 90
-            result: Vulnerable lifeforms
-          - min: 91
-            max: 100
-            result: '[Action + Theme](starforged/oracles/core/action)'
-            oracle_rolls:
-              - oracle: starforged/oracles/core/action
-              - oracle: starforged/oracles/core/theme
-          - min: 101
-            max: 103
-            result: Personal rivalry
-          - min: 104
-            max: 106
-            result: Haunted by past wrong
-          - min: 107
-            max: 108
-            result: Production halted
-          - min: 109
-            max: 111
-            result: Unjust leadership
-          - min: 112
-            max: 113
-            result: Disastrous accident
-          - min: 114
-            max: 117
-            result: Innocent accused
-          - min: 118
-            max: 121
-            result: Lost trade cargo
-          - min: 122
-            max: 124
-            result: Urgent expedition
-          - min: 125
-            max: 128
-            result: Water poisoned
-          - min: 129
-            max: 132
-            result: Political schism
-          - min: 133
-            max: 134
-            result: Dark omens
-          - min: 135
-            max: 138
-            result: Environmental change
-          - min: 139
-            max: 142
-            result: Lifeform on the hunt
-          - min: 143
-            max: 145
-            result: Infrastructure damaged
-          - min: 146
-            max: 148
-            result: Criminal organization
-          - min: 149
-            max: 151
-            result: Cleanup from disaster
-          - min: 152
-            max: 153
-            result: Scourge of vermin
-          - min: 154
-            max: 155
-            result: Debt collectors arrive
-          - min: 156
-            max: 157
-            result: Mysterious thefts
-          - min: 158
-            max: 160
-            result: Citizens trapped
-          - min: 161
-            max: 162
-            result: Dangerous mutations
-          - min: 163
-            max: 165
-            result: Surge of refugees
-          - min: 166
-            max: 167
-            result: Disregard for democracy
-          - min: 168
-            max: 169
-            result: Vehicle crash
-          - min: 170
-            max: 171
-            result: Outcast seeks revenge
-          - min: 172
-            max: 174
-            result: Elaborate hoax
-          - min: 175
-            max: 176
-            result: Someone is captured
-          - min: 177
-            max: 178
-            result: Conspiratorial cover up
-          - min: 179
-            max: 180
-            result: Destroyed tech or object
-          - min: 181
-            max: 183
-            result: Mass hysteria
-          - min: 184
-            max: 186
-            result: Radiation surge
-          - min: 187
-            max: 188
-            result: Unstable technology
-          - min: 189
-            max: 190
-            result: Vulnerable supply line
-          - min: 191
-            max: 200
-            result: '[Action + Theme](starforged/oracles/core/action)'
-            oracle_rolls:
-              - oracle: starforged/oracles/core/action
-              - oracle: starforged/oracles/core/theme
-          - min: 201
-            max: 203
-            result: Rival settlement
-          - min: 204
-            max: 206
-            result: There’s a score to settle
-          - min: 207
-            max: 208
-            result: Mine collapse
-          - min: 209
-            max: 211
-            result: Incompetent leadership
-          - min: 212
-            max: 213
-            result: Dangerous tradition
-          - min: 214
-            max: 217
-            result: Reckless warmongering
-          - min: 218
-            max: 221
-            result: Pirates plague travelers
-          - min: 222
-            max: 224
-            result: Resources stolen
-          - min: 225
-            max: 228
-            result: Blighted crops
-          - min: 229
-            max: 232
-            result: Political protests
-          - min: 233
-            max: 234
-            result: Detrimental isolationism
-          - min: 235
-            max: 238
-            result: Defying of physics
-          - min: 239
-            max: 242
-            result: Prolific lifeforms
-          - min: 243
-            max: 245
-            result: Loss of vehicles
-          - min: 246
-            max: 248
-            result: Treaty abandoned
-          - min: 249
-            max: 251
-            result: Communications lost
-          - min: 252
-            max: 253
-            result: Symbiotic lifeforms lost
-          - min: 254
-            max: 255
-            result: People refusing taxes
-          - min: 256
-            max: 257
-            result: Open defiance of laws
-          - min: 258
-            max: 260
-            result: Dangerous celestial event
-          - min: 261
-            max: 262
-            result: Nutrient deficiencies
-          - min: 263
-            max: 265
-            result: War erupts
-          - min: 266
-            max: 267
-            result: Oligarchs tighten grip
-          - min: 268
-            max: 269
-            result: Habitat compromised
-          - min: 270
-            max: 271
-            result: Stranger sows discord
-          - min: 272
-            max: 274
-            result: Fleecing the population
-          - min: 275
-            max: 276
-            result: Someone is threatened
-          - min: 277
-            max: 278
-            result: Assassination attempt
-          - min: 279
-            max: 280
-            result: Defenses compromised
-          - min: 281
-            max: 283
-            result: Fearful witch hunts
-          - min: 284
-            max: 286
-            result: Shift in gravity
-          - min: 287
-            max: 288
-            result: Inconsistent energy supply
-          - min: 289
-            max: 290
-            result: Vulnerable people group
-          - min: 291
-            max: 300
-            result: '[Action + Theme](starforged/oracles/core/action)'
-            oracle_rolls:
-              - oracle: starforged/oracles/core/action
-              - oracle: starforged/oracles/core/theme
-      name:
-        replaces: starforged/oracles/settlements/name
-        dice: 1d300
-        rows:
-          - min: 1
-            max: 1
-            result: Aegis
-          - min: 2
-            max: 2
-            result: Altair
-          - min: 3
-            max: 3
-            result: Altura
-          - min: 4
-            max: 4
-            result: Amity
-          - min: 5
-            max: 5
-            result: Apex
-          - min: 6
-            max: 6
-            result: Apogee
-          - min: 7
-            max: 7
-            result: Argosy
-          - min: 8
-            max: 8
-            result: Astra
-          - min: 9
+        - text: Built from organic materials
+          roll:
+            min: 4
             max: 9
-            result: Aurora
-          - min: 10
-            max: 10
-            result: Beacon
-          - min: 11
-            max: 11
-            result: Brink
-          - min: 12
-            max: 12
-            result: Bulwark
-          - min: 13
-            max: 13
-            result: Burnell
-          - min: 14
-            max: 14
-            result: Burrow
-          - min: 15
+        - text: Built from random scrap
+          roll:
+            min: 10
             max: 15
-            result: Concord
-          - min: 16
-            max: 16
-            result: Crux
-          - min: 17
-            max: 17
-            result: Deadrock
-          - min: 18
-            max: 18
-            result: Deception
-          - min: 19
-            max: 19
-            result: Elysium
-          - min: 20
-            max: 20
-            result: Enigma
-          - min: 21
+        - text: Built within repurposed ship
+          roll:
+            min: 16
             max: 21
-            result: Erebus
-          - min: 22
-            max: 22
-            result: Eris
-          - min: 23
-            max: 23
-            result: Evenfall
-          - min: 24
-            max: 24
-            result: Eventide
-          - min: 25
-            max: 25
-            result: Farpoint
-          - min: 26
+        - text: Built within terrain or asteroid
+          roll:
+            min: 22
             max: 26
-            result: Felicity
-          - min: 27
-            max: 27
-            result: Florin
-          - min: 28
-            max: 28
-            result: Forlorn
-          - min: 29
-            max: 29
-            result: Forsaken
-          - min: 30
-            max: 30
-            result: Freya
-          - min: 31
+        - text: Defensible location
+          roll:
+            min: 27
             max: 31
-            result: Glimmer
-          - min: 32
-            max: 32
-            result: Gloam
-          - min: 33
-            max: 33
-            result: Hearth
-          - min: 34
-            max: 34
-            result: Helia
-          - min: 35
+        - text: Elevated or multi-level construction
+          roll:
+            min: 32
             max: 35
-            result: Hypatia
-          - min: 36
-            max: 36
-            result: Hyperion
-          - min: 37
-            max: 37
-            result: Janus
-          - min: 38
-            max: 38
-            result: Karma
-          - min: 39
-            max: 39
-            result: Kepler
-          - min: 40
+        - text: Hidden or subsurface location
+          roll:
+            min: 36
             max: 40
-            result: Koshiba
-          - min: 41
-            max: 41
-            result: Lagrange
-          - min: 42
-            max: 42
-            result: Larissa
-          - min: 43
+        - text: High-tech construction
+          roll:
+            min: 41
             max: 43
-            result: Lasthope
-          - min: 44
-            max: 44
-            result: Lastport
-          - min: 45
-            max: 45
-            result: Legacy
-          - min: 46
-            max: 46
-            result: Lodestar
-          - min: 47
-            max: 47
-            result: Luminus
-          - min: 48
-            max: 48
-            result: Lyra
-          - min: 49
+        - text: Industrial architecture
+          roll:
+            min: 44
             max: 49
-            result: Marrow
-          - min: 50
-            max: 50
-            result: Meridian
-          - min: 51
-            max: 51
-            result: Moirai
-          - min: 52
-            max: 52
-            result: Mudd
-          - min: 53
+        - text: Intimidating defenses
+          roll:
+            min: 50
             max: 53
-            result: Neoma
-          - min: 54
-            max: 54
-            result: Nerio
-          - min: 55
-            max: 55
-            result: Nova
-          - min: 56
+        - text: Moving or transforming
+          roll:
+            min: 54
             max: 56
-            result: Nyx
-          - min: 57
-            max: 57
-            result: Osseus
-          - min: 58
-            max: 58
-            result: Paradox
-          - min: 59
-            max: 59
-            result: Paragon
-          - min: 60
-            max: 60
-            result: Paxton
-          - min: 61
+        - text: Obvious social stratification
+          roll:
+            min: 57
             max: 61
-            result: Perchance
-          - min: 62
-            max: 62
-            result: Pinnacle
-          - min: 63
-            max: 63
-            result: Polaris
-          - min: 64
-            max: 64
-            result: Portent
-          - min: 65
-            max: 65
-            result: Prism
-          - min: 66
+        - text: Precarious location
+          roll:
+            min: 62
             max: 66
-            result: Providence
-          - min: 67
-            max: 67
-            result: Purgatory
-          - min: 68
-            max: 68
-            result: Rampart
-          - min: 69
-            max: 69
-            result: Ramshackle
-          - min: 70
-            max: 70
-            result: Redemption
-          - min: 71
-            max: 71
-            result: Redhaven
-          - min: 72
+        - text: Rustic architecture
+          roll:
+            min: 67
             max: 72
-            result: Relic
-          - min: 73
-            max: 73
-            result: Reprise
-          - min: 74
-            max: 74
-            result: Reverie
-          - min: 75
-            max: 75
-            result: Rhiannon
-          - min: 76
+        - text: Significant structural damage
+          roll:
+            min: 73
             max: 76
-            result: Rockhome
-          - min: 77
-            max: 77
-            result: Rust
-          - min: 78
-            max: 78
-            result: Sagan
-          - min: 79
-            max: 79
-            result: Sanctity
-          - min: 80
+        - text: Sprawling or dispersed structures
+          roll:
+            min: 77
             max: 80
-            result: Selena
-          - min: 81
-            max: 81
-            result: Sepulcher
-          - min: 82
-            max: 82
-            result: Sigil
-          - min: 83
+        - text: Temporary or seasonal location
+          roll:
+            min: 81
             max: 83
-            result: Silvana
-          - min: 84
-            max: 84
-            result: Sirius
-          - min: 85
-            max: 85
-            result: Sisyphus
-          - min: 86
-            max: 86
-            result: Solitude
-          - min: 87
+        - text: Toxic or polluted habitat
+          roll:
+            min: 84
             max: 87
-            result: Spire
-          - min: 88
-            max: 88
-            result: Starfall
-          - min: 89
-            max: 89
-            result: Summit
-          - min: 90
+        - roll:
+            min: 88
             max: 90
-            result: Tranquility
-          - min: 91
-            max: 91
-            result: Tyson
-          - min: 92
-            max: 92
-            result: Unity
-          - min: 93
-            max: 93
-            result: Utopia
-          - min: 94
-            max: 94
-            result: Vega
-          - min: 95
-            max: 95
-            result: Vesper
-          - min: 96
-            max: 96
-            result: Wayward
-          - min: 97
-            max: 97
-            result: Welkin
-          - min: 98
-            max: 98
-            result: Wellspring
-          - min: 99
-            max: 99
-            result: Weyland
-          - min: 100
+          <<: &NearPrecursorVault
+            text: Within or near [Precursor Vault](oracle_collection:starsmith/vaults)
+        - roll:
+            min: 91
             max: 100
-            result: Wreck
-          - min: 101
-            max: 101
-            result: Achilles
-          - min: 102
-            max: 102
-            result: Adin
-          - min: 103
-            max: 103
-            result: Aeternitas
-          - min: 104
+          <<: &DescriptorFocus
+            text: '[Descriptor](oracle_rollable:starsmith/core/descriptor) + [Focus](oracle_rollable:starsmith/core/focus)'
+            oracle_rolls:
+            - oracle: oracle_rollable:starsmith/core/descriptor
+              auto: true
+            - oracle: oracle_rollable:starsmith/core/focus
+              auto: true
+        # end copied rows
+        - text: Mix of cultural architecture
+          roll:
+            min: 101
             max: 104
-            result: Aion
-          - min: 105
-            max: 105
-            result: Amphitrite
-          - min: 106
-            max: 106
-            result: Ananta
-          - min: 107
-            max: 107
-            result: Anytos
-          - min: 108
+        - text: Built within a dome
+          roll:
+            min: 105
             max: 108
-            result: Apollo
-          - min: 109
-            max: 109
-            result: Artemis
-          - min: 110
-            max: 110
-            result: Ashta
-          - min: 111
-            max: 111
-            result: Asteria
-          - min: 112
-            max: 112
-            result: Athena
-          - min: 113
-            max: 113
-            result: Atmos
-          - min: 114
+        - text: Built upon previous settlement
+          roll:
+            min: 109
             max: 114
-            result: Ayeliski
-          - min: 115
-            max: 115
-            result: Bacchus
-          - min: 116
-            max: 116
-            result: Balder
-          - min: 117
-            max: 117
-            result: Beyla
-          - min: 118
-            max: 118
-            result: Borealis
-          - min: 119
-            max: 119
-            result: Brahma
-          - min: 120
+        - text: Built with freshly fabricated materials
+          roll:
+            min: 115
             max: 120
-            result: Caelus
-          - min: 121
-            max: 121
-            result: Chronos
-          - min: 122
-            max: 122
-            result: Crescent
-          - min: 123
-            max: 123
-            result: Cronus
-          - min: 124
-            max: 124
-            result: Cybele
-          - min: 125
+        - text: Takes advantage of natural terrain defenses
+          roll:
+            min: 121
             max: 125
-            result: Deimos
-          - min: 126
-            max: 126
-            result: Demeter
-          - min: 127
-            max: 127
-            result: Dionysus
-          - min: 128
-            max: 128
-            result: Eir
-          - min: 129
+        - text: Large greenhouse or arboretum
+          roll:
+            min: 126
             max: 129
-            result: Eos
-          - min: 130
-            max: 130
-            result: Epimetheus
-          - min: 131
-            max: 131
-            result: Eternis
-          - min: 132
-            max: 132
-            result: Forseti
-          - min: 133
-            max: 133
-            result: Freyr
-          - min: 134
+        - text: Shielding or camouflage system
+          roll:
+            min: 130
             max: 134
-            result: Gersemi
-          - min: 135
-            max: 135
-            result: Govinda
-          - min: 136
-            max: 136
-            result: Hades
-          - min: 137
+        - text: Construction cobbled together
+          roll:
+            min: 135
             max: 137
-            result: Harmonia
-          - min: 138
-            max: 138
-            result: Heirloom
-          - min: 139
-            max: 139
-            result: Hemera
-          - min: 140
-            max: 140
-            result: Hera
-          - min: 141
-            max: 141
-            result: Hodor
-          - min: 142
-            max: 142
-            result: Horus
-          - min: 143
+        - text: Utilitarian architecture
+          roll:
+            min: 138
             max: 143
-            result: Hymn
-          - min: 144
-            max: 144
-            result: Idunn
-          - min: 145
-            max: 145
-            result: Inception
-          - min: 146
-            max: 146
-            result: Kali
-          - min: 147
-            max: 147
-            result: Kanati
-          - min: 148
+        - text: Ineffective defenses
+          roll:
+            min: 144
             max: 148
-            result: Lelantos
-          - min: 149
-            max: 149
-            result: Liberty
-          - min: 150
-            max: 150
-            result: Lodurr
-          - min: 151
+        - text: Independent modules
+          roll:
+            min: 149
             max: 151
-            result: Lunis
-          - min: 152
-            max: 152
-            result: Magni
-          - min: 153
-            max: 153
-            result: Mahavidya
-          - min: 154
-            max: 154
-            result: Marvel
-          - min: 155
-            max: 155
-            result: Meili
-          - min: 156
+        - text: Strong presence of authority
+          roll:
+            min: 152
             max: 156
-            result: Menoetius
-          - min: 157
-            max: 157
-            result: Mimir
-          - min: 158
-            max: 158
-            result: Mohini
-          - min: 159
-            max: 159
-            result: Narayana
-          - min: 160
-            max: 160
-            result: Nemesis
-          - min: 161
+        - text: Location of natural beauty
+          roll:
+            min: 157
             max: 161
-            result: Nerthus
-          - min: 162
-            max: 162
-            result: Nimbus
-          - min: 163
-            max: 163
-            result: Novis
-          - min: 164
-            max: 164
-            result: Ocasta
-          - min: 165
+        - text: Lack of emblems or signage
+          roll:
+            min: 162
             max: 165
-            result: Omega
-          - min: 166
-            max: 166
-            result: Ourea
-          - min: 167
-            max: 167
-            result: Parvati
-          - min: 168
-            max: 168
-            result: Perses
-          - min: 169
-            max: 169
-            result: Phantom
-          - min: 170
-            max: 170
-            result: Phoenix
-          - min: 171
+        - text: Geometric architecture
+          roll:
+            min: 166
             max: 171
-            result: Pioneer
-          - min: 172
-            max: 172
-            result: Pontus
-          - min: 173
-            max: 173
-            result: Prodigy
-          - min: 174
-            max: 174
-            result: Proserpina
-          - min: 175
-            max: 175
-            result: Rebus
-          - min: 176
+        - text: Significant repairs underway
+          roll:
+            min: 172
             max: 176
-            result: Rindar
-          - min: 177
-            max: 177
-            result: Rudron
-          - min: 178
-            max: 178
-            result: Sandraudiga
-          - min: 179
-            max: 179
-            result: Sati
-          - min: 180
+        - text: Structures tightly packed
+          roll:
+            min: 177
             max: 180
-            result: Selu
-          - min: 181
-            max: 181
-            result: Shangris
-          - min: 182
-            max: 182
-            result: Shiva
-          - min: 183
+        - text: Permanent structures in progress
+          roll:
+            min: 181
             max: 183
-            result: Silenus
-          - min: 184
-            max: 184
-            result: Sita
-          - min: 185
-            max: 185
-            result: Sunna
-          - min: 186
-            max: 186
-            result: Tanfana
-          - min: 187
+        - text: Vibrant or verdant habitat
+          roll:
+            min: 184
             max: 187
-            result: Terminus
-          - min: 188
-            max: 188
-            result: Thalassa
-          - min: 189
-            max: 189
-            result: Theia
-          - min: 190
+        - roll:
+            min: 188
             max: 190
-            result: Thiasos
-          - min: 191
-            max: 191
-            result: Thyrsus
-          - min: 192
-            max: 192
-            result: Titan
-          - min: 193
-            max: 193
-            result: Tyr
-          - min: 194
-            max: 194
-            result: Upulvan
-          - min: 195
-            max: 195
-            result: Vali
-          - min: 196
-            max: 196
-            result: Vasus
-          - min: 197
-            max: 197
-            result: Vesta
-          - min: 198
-            max: 198
-            result: Virtue
-          - min: 199
-            max: 199
-            result: Vishnu
-          - min: 200
+          <<: *NearPrecursorVault
+        - roll:
+            min: 191
             max: 200
-            result: Warden
-          - min: 201
-            max: 201
-            result: Achlys
-          - min: 202
-            max: 202
-            result: Adityas
-          - min: 203
-            max: 203
-            result: Aether
-          - min: 204
+          <<: *DescriptorFocus
+        - text: Rounded or curved architecture
+          roll:
+            min: 201
             max: 204
-            result: Alpha
-          - min: 205
-            max: 205
-            result: Ananke
-          - min: 206
-            max: 206
-            result: Anemone
-          - min: 207
-            max: 207
-            result: Aphrodite
-          - min: 208
+        - text: Built side by side with ancient structures
+          roll:
+            min: 205
             max: 208
-            result: Ares
-          - min: 209
-            max: 209
-            result: Asgaya
-          - min: 210
-            max: 210
-            result: Ashvins
-          - min: 211
-            max: 211
-            result: Astraeus
-          - min: 212
-            max: 212
-            result: Atlas
-          - min: 213
-            max: 213
-            result: Avatar
-          - min: 214
+        - text: Transit tubes connecting areas
+          roll:
+            min: 209
             max: 214
-            result: Azura
-          - min: 215
-            max: 215
-            result: Baduhenna
-          - min: 216
-            max: 216
-            result: Bellona
-          - min: 217
-            max: 217
-            result: Bholenath
-          - min: 218
-            max: 218
-            result: Bragi
-          - min: 219
-            max: 219
-            result: Caravel
-          - min: 220
+        - text: Industrial vehicles or tools
+          roll:
+            min: 215
             max: 220
-            result: Ceres
-          - min: 221
-            max: 221
-            result: Coeus
-          - min: 222
-            max: 222
-            result: Crius
-          - min: 223
-            max: 223
-            result: Curiosity
-          - min: 224
-            max: 224
-            result: Dawn
-          - min: 225
+        - text: Settlement itself is a working ship
+          roll:
+            min: 221
             max: 225
-            result: Dellinger
-          - min: 226
-            max: 226
-            result: Dione
-          - min: 227
-            max: 227
-            result: Durga
-          - min: 228
-            max: 228
-            result: Empyrea
-          - min: 229
+        - text: Spaceport or docking area
+          roll:
+            min: 226
             max: 229
-            result: Eostre
-          - min: 230
-            max: 230
-            result: Epiphany
-          - min: 231
-            max: 231
-            result: Fable
-          - min: 232
-            max: 232
-            result: Fortuna
-          - min: 233
-            max: 233
-            result: Ganga
-          - min: 234
+        - text: Sensor or detection grid
+          roll:
+            min: 230
             max: 234
-            result: Gigagei
-          - min: 235
-            max: 235
-            result: Gullveig
-          - min: 236
-            max: 236
-            result: Halo
-          - min: 237
+        - text: Prominent power plant
+          roll:
+            min: 235
             max: 237
-            result: Hayagriva
-          - min: 238
-            max: 238
-            result: Helios
-          - min: 239
-            max: 239
-            result: Hephaestus
-          - min: 240
-            max: 240
-            result: Hermes
-          - min: 241
-            max: 241
-            result: Hoenir
-          - min: 242
-            max: 242
-            result: Hretha
-          - min: 243
+        - text: Neon lights and attention grabbing signs
+          roll:
+            min: 238
             max: 243
-            result: Iapetus
-          - min: 244
-            max: 244
-            result: Ignis
-          - min: 245
-            max: 245
-            result: Irpa
-          - min: 246
-            max: 246
-            result: Kalona
-          - min: 247
-            max: 247
-            result: Lakshmi
-          - min: 248
+        - text: Damaged defenses
+          roll:
+            min: 244
             max: 248
-            result: Leto
-          - min: 249
-            max: 249
-            result: Lingo
-          - min: 250
-            max: 250
-            result: Lofin
-          - min: 251
+        - text: Heavy vehicle traffic
+          roll:
+            min: 249
             max: 251
-            result: Madhava
-          - min: 252
-            max: 252
-            result: Mahadevi
-          - min: 253
-            max: 253
-            result: Mani
-          - min: 254
-            max: 254
-            result: Matrikas
-          - min: 255
-            max: 255
-            result: Memnto
-          - min: 256
+        - text: Large, shared spaces
+          roll:
+            min: 252
             max: 256
-            result: Metis
-          - min: 257
-            max: 257
-            result: Minerva
-          - min: 258
-            max: 258
-            result: Mythos
-          - min: 259
-            max: 259
-            result: Narmada
-          - min: 260
-            max: 260
-            result: Nemo
-          - min: 261
+        - text: Location with unusual atmospheric conditions
+          roll:
+            min: 257
             max: 261
-            result: Nesoi
-          - min: 262
-            max: 262
-            result: Njorder
-          - min: 263
-            max: 263
-            result: Nox
-          - min: 264
-            max: 264
-            result: Olympus
-          - min: 265
+        - text: Emphasis on the arts
+          roll:
+            min: 262
             max: 265
-            result: Orphan
-          - min: 266
-            max: 266
-            result: Pallas
-          - min: 267
-            max: 267
-            result: Periboea
-          - min: 268
-            max: 268
-            result: Perumal
-          - min: 269
-            max: 269
-            result: Phobos
-          - min: 270
-            max: 270
-            result: Pilgrim
-          - min: 271
+        - text: Brutalist architecture
+          roll:
+            min: 266
             max: 271
-            result: Pomona
-          - min: 272
-            max: 272
-            result: Poseidon
-          - min: 273
-            max: 273
-            result: Prometheus
-          - min: 274
-            max: 274
-            result: Rangana
-          - min: 275
-            max: 275
-            result: Rhea
-          - min: 276
+        - text: Aqueduct or water purification plant
+          roll:
+            min: 272
             max: 276
-            result: Rudras
-          - min: 277
-            max: 277
-            result: Saga
-          - min: 278
-            max: 278
-            result: Saraswati
-          - min: 279
-            max: 279
-            result: Selene
-          - min: 280
+        - text: Structures stacked vertically
+          roll:
+            min: 277
             max: 280
-            result: Serenity
-          - min: 281
-            max: 281
-            result: Shepherd
-          - min: 282
-            max: 282
-            result: Shu
-          - min: 283
+        - text: Structures being dismantled
+          roll:
+            min: 281
             max: 283
-            result: Sinthgunt
-          - min: 284
-            max: 284
-            result: Spectrum
-          - min: 285
-            max: 285
-            result: Syceus
-          - min: 286
-            max: 286
-            result: Tartarus
-          - min: 287
+        - text: Stertile or pristine habitat
+          roll:
+            min: 284
             max: 287
-            result: Tethys
-          - min: 288
-            max: 288
-            result: Thanatos
-          - min: 289
-            max: 289
-            result: Themis
-          - min: 290
+        - roll:
+            min: 288
             max: 290
-            result: Thirumal
-          - min: 291
-            max: 291
-            result: Timi
-          - min: 292
-            max: 292
-            result: Titanus
-          - min: 293
-            max: 293
-            result: Unelauhi
-          - min: 294
-            max: 294
-            result: Uyaga
-          - min: 295
-            max: 295
-            result: Valor
-          - min: 296
-            max: 296
-            result: Veritas
-          - min: 297
-            max: 297
-            result: Vidarr
-          - min: 298
-            max: 298
-            result: Visage
-          - min: 299
-            max: 299
-            result: Vor
-          - min: 300
+          <<: *NearPrecursorVault
+        - roll:
+            min: 291
             max: 300
-            result: Zisa
+          <<: *DescriptorFocus
+        type: oracle_rollable
+      contact:
+        name: Initial Contact
+        oracle_type: table_text
+        dice: 1d300
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+          # begin copied rows
+        - text: Welcoming
+          roll:
+            min: 1
+            max: 20
+        - text: Neutral / automated
+          roll:
+            min: 21
+            max: 30
+        - text: Wary
+          roll:
+            min: 31
+            max: 50
+        - text: Uncooperative
+          roll:
+            min: 51
+            max: 60
+        - text: Hostile
+          roll:
+            min: 61
+            max: 70
+        - text: Asking for help
+          roll:
+            min: 71
+            max: 83
+        - text: In battle
+          roll:
+            min: 84
+            max: 86
+        - text: Captured
+          roll:
+            min: 87
+            max: 89
+        - text: Unresponsive
+          roll:
+            min: 90
+            max: 92
+        - text: Destroyed
+          roll:
+            min: 93
+            max: 95
+        - roll:
+            min: 96
+            max: 100
+          <<: &Derelict
+            text: '[Derelict](oracle_collection:starsmith/derelicts)'
+          # end copied rows
+        - text: Helpful
+          roll:
+            min: 101
+            max: 120
+        - text: All business
+          roll:
+            min: 121
+            max: 130
+        - text: Tolerant
+          roll:
+            min: 131
+            max: 150
+        - text: Defensive
+          roll:
+            min: 151
+            max: 160
+        - text: Easily offended
+          roll:
+            min: 161
+            max: 170
+        - text: Asking for bribe
+          roll:
+            min: 171
+            max: 183
+        - text: Environmental crisis
+          roll:
+            min: 184
+            max: 186
+        - text: Quarantined
+          roll:
+            min: 187
+            max: 189
+        - text: Looped distress call
+          roll:
+            min: 190
+            max: 192
+        - text: Completely shielded
+          roll:
+            min: 193
+            max: 195
+        - roll:
+            min: 196
+            max: 200
+          <<: *Derelict
+        - text: Informative
+          roll:
+            min: 201
+            max: 220
+        - text: Apathetic
+          roll:
+            min: 221
+            max: 230
+        - text: Settlement first
+          roll:
+            min: 231
+            max: 250
+        - text: Stubborn contrarian
+          roll:
+            min: 251
+            max: 260
+        - text: Arrogant jerk
+          roll:
+            min: 261
+            max: 270
+        - text: Bureaucratic protocols
+          roll:
+            min: 271
+            max: 283
+        - text: Social upheaval
+          roll:
+            min: 284
+            max: 286
+        - text: Cultural observance
+          roll:
+            min: 287
+            max: 289
+        - text: Communications down
+          roll:
+            min: 290
+            max: 292
+        - text: Attacks on sight
+          roll:
+            min: 293
+            max: 295
+        - roll:
+            min: 296
+            max: 300
+          <<: *Derelict
+        type: oracle_rollable
+      authority:
+        name: Authority
+        oracle_type: table_text
+        dice: 1d300
+        replaces:
+        - oracle_rollable:starforged/settlement/authority
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+        # begin copied rows
+        - text: None / lawless
+          _i18n: &Adjective
+            text:
+              part_of_speech: adjective
+          roll:
+            min: 1
+            max: 15
+        - text: Ineffectual
+          _i18n: *Adjective
+          roll:
+            min: 16
+            max: 30
+        - text: Tolerant
+          _i18n: *Adjective
+          roll:
+            min: 31
+            max: 45
+        - text: Fair
+          _i18n: *Adjective
+          roll:
+            min: 46
+            max: 55
+        - text: Unyielding
+          _i18n: *Adjective
+          roll:
+            min: 56
+            max: 70
+        - text: Corrupt
+          _i18n: *Adjective
+          roll:
+            min: 71
+            max: 85
+        - text: Oppressive
+          _i18n: *Adjective
+          roll:
+            min: 86
+            max: 100
+        # end copied rows
+        - text: Tribal
+          _i18n: *Adjective
+          roll:
+            min: 101
+            max: 115
+        - text: Theocratic
+          _i18n: *Adjective
+          roll:
+            min: 116
+            max: 130
+        - text: Feudalistic
+          _i18n: *Adjective
+          roll:
+            min: 131
+            max: 145
+        - text: Democratic
+          _i18n: *Adjective
+          roll:
+            min: 146
+            max: 155
+        - text: Authoritarian
+          _i18n: *Adjective
+          roll:
+            min: 156
+            max: 170
+        - text: Oligarchic
+          _i18n: *Adjective
+          roll:
+            min: 171
+            max: 185
+        - text: Tyrannical
+          _i18n: *Adjective
+          roll:
+            min: 186
+            max: 200
+        - text: Cult-like
+          _i18n: *Adjective
+          roll:
+            min: 201
+            max: 215
+        - text: Legalistic
+          _i18n: *Adjective
+          roll:
+            min: 216
+            max: 230
+        - text: Collective good first
+          roll:
+            min: 231
+            max: 245
+        - text: Charitable
+          _i18n: *Adjective
+          roll:
+            min: 246
+            max: 255
+        - text: Single-minded
+          _i18n: *Adjective
+          roll:
+            min: 256
+            max: 270
+        - text: Prejudiced
+          _i18n: *Adjective
+          roll:
+            min: 271
+            max: 285
+        - text: Takes advantage
+          roll:
+            min: 286
+            max: 300
+        type: oracle_rollable
+      projects:
+        name: Settlement Projects
+        oracle_type: table_text
+        dice: 1d300
+        replaces:
+        - oracle_rollable:starforged/settlement/projects
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+        # begin copied rows
+        - text: Agriculture
+          _i18n: &CommonNoun
+            text:
+              part_of_speech: common_noun
+          roll:
+            min: 1
+            max: 5
+        - text: Archeology
+          _i18n: *CommonNoun
+          roll:
+            min: 6
+            max: 7
+        - text: Automation
+          _i18n: *CommonNoun
+          roll:
+            min: 8
+            max: 9
+        - text: Black market
+          _i18n: *CommonNoun
+          roll:
+            min: 10
+            max: 11
+        - text: Command
+          _i18n: *CommonNoun
+          roll:
+            min: 12
+            max: 13
+        - text: Defense
+          _i18n: *CommonNoun
+          roll:
+            min: 14
+            max: 17
+        - text: Energy
+          _i18n: *CommonNoun
+          roll:
+            min: 18
+            max: 22
+        - text: Engineering
+          _i18n: &Gerund
+            text:
+              part_of_speech: gerund
+          roll:
+            min: 23
+            max: 25
+        - text: Entertainment
+          _i18n: *CommonNoun
+          roll:
+            min: 26
+            max: 27
+        - text: Environmentalism
+          _i18n: *CommonNoun
+          roll:
+            min: 28
+            max: 29
+        - text: Evacuation
+          _i18n: *CommonNoun
+          roll:
+            min: 30
+            max: 31
+        - text: Expansion
+          _i18n: *CommonNoun
+          roll:
+            min: 32
+            max: 33
+        - text: Exploration
+          _i18n: *CommonNoun
+          roll:
+            min: 34
+            max: 37
+        - text: Festival
+          _i18n: *CommonNoun
+          roll:
+            min: 38
+            max: 39
+        - text: History
+          _i18n: *CommonNoun
+          roll:
+            min: 40
+            max: 41
+        - text: Hunting
+          _i18n: *Gerund
+          roll:
+            min: 42
+            max: 43
+        - text: Manufacturing
+          _i18n: *Gerund
+          roll:
+            min: 44
+            max: 46
+        - text: Medical
+          _i18n: *CommonNoun
+          roll:
+            min: 47
+            max: 49
+        - text: Migration
+          _i18n: *CommonNoun
+          roll:
+            min: 50
+            max: 51
+        - text: Mining
+          _i18n: *Gerund
+          roll:
+            min: 52
+            max: 57
+        - text: Pacifism
+          _i18n: *CommonNoun
+          roll:
+            min: 58
+            max: 59
+        - text: Raiding
+          _i18n: *Gerund
+          roll:
+            min: 60
+            max: 62
+        - text: Research
+          _i18n: *CommonNoun
+          roll:
+            min: 63
+            max: 65
+        - text: Salvage
+          _i18n: *CommonNoun
+          roll:
+            min: 66
+            max: 69
+        - text: Secrecy
+          _i18n: *CommonNoun
+          roll:
+            min: 70
+            max: 72
+        - text: Shipbuilding
+          _i18n: *Gerund
+          roll:
+            min: 73
+            max: 75
+        - text: Spirituality
+          _i18n: *CommonNoun
+          roll:
+            min: 76
+            max: 78
+        - text: Subsistence
+          _i18n: *CommonNoun
+          roll:
+            min: 79
+            max: 84
+        - text: Surveillance
+          _i18n: *CommonNoun
+          roll:
+            min: 85
+            max: 86
+        - text: Terraforming
+          _i18n: *Gerund
+          roll:
+            min: 87
+            max: 88
+        - text: Trade
+          _i18n: *CommonNoun
+          roll:
+            min: 89
+            max: 92
+        - text: Warfare
+          _i18n: *CommonNoun
+          roll:
+            min: 93
+            max: 95
+        - roll:
+            min: 96
+            max: 100
+          <<: &ActionTheme
+            text: '[Action](oracle_rollable:starsmith/core/action) + [Theme](oracle_rollable:starsmith/core/theme)'
+            oracle_rolls:
+            - oracle: oracle_rollable:starsmith/core/action
+              auto: true
+            - oracle: oracle_rollable:starsmith/core/theme
+              auto: true
+        # end copied rows
+        - text: Air supply
+          _i18n: *CommonNoun
+          roll:
+            min: 101
+            max: 105
+        - text: Cultural arts
+          _i18n: *CommonNoun
+          roll:
+            min: 106
+            max: 107
+        - text: Coding
+          _i18n: *Gerund
+          roll:
+            min: 108
+            max: 109
+        - text: Trade routes
+          _i18n: *CommonNoun
+          roll:
+            min: 110
+            max: 111
+        - text: Communications
+          _i18n: *CommonNoun
+          roll:
+            min: 112
+            max: 113
+        - text: Fortification
+          _i18n: *CommonNoun
+          roll:
+            min: 114
+            max: 117
+        - text: Fuel
+          _i18n: *CommonNoun
+          roll:
+            min: 118
+            max: 122
+        - text: Architecture
+          _i18n: *CommonNoun
+          roll:
+            min: 123
+            max: 125
+        - text: Gambling
+          _i18n: *Gerund
+          roll:
+            min: 126
+            max: 127
+        - text: Waste recycling
+          _i18n: *Gerund
+          roll:
+            min: 128
+            max: 129
+        - text: Housing
+          _i18n: *Gerund
+          roll:
+            min: 130
+            max: 131
+        - text: Repurposing
+          _i18n: *Gerund
+          roll:
+            min: 132
+            max: 133
+        - text: Planetary mapping
+          _i18n: *Gerund
+          roll:
+            min: 134
+            max: 137
+        - text: Laws
+          _i18n: *CommonNoun
+          roll:
+            min: 138
+            max: 139
+        - text: Education
+          _i18n: *CommonNoun
+          roll:
+            min: 140
+            max: 141
+        - text: Trapping
+          _i18n: *Gerund
+          roll:
+            min: 142
+            max: 143
+        - text: Infrastructure
+          _i18n: *CommonNoun
+          roll:
+            min: 144
+            max: 146
+        - text: Psychological
+          _i18n: *CommonNoun
+          roll:
+            min: 147
+            max: 149
+        - text: Xenobiology
+          _i18n: *CommonNoun
+          roll:
+            min: 150
+            max: 151
+        - text: Animal husbandry
+          _i18n: *CommonNoun
+          roll:
+            min: 152
+            max: 157
+        - text: Political activism
+          _i18n: *CommonNoun
+          roll:
+            min: 158
+            max: 159
+        - text: Patrolling
+          _i18n: *Gerund
+          roll:
+            min: 160
+            max: 162
+        - text: Weaponry
+          _i18n: *CommonNoun
+          roll:
+            min: 163
+            max: 165
+        - text: Piracy
+          _i18n: *CommonNoun
+          roll:
+            min: 166
+            max: 169
+        - text: Espionage
+          _i18n: *CommonNoun
+          roll:
+            min: 170
+            max: 172
+        - text: Planning new settlement
+            # _i18n: *CommonNoun
+          roll:
+            min: 173
+            max: 175
+        - text: Community identity
+          _i18n: *CommonNoun
+          roll:
+            min: 176
+            max: 178
+        - text: Rationing
+          _i18n: *Gerund
+          roll:
+            min: 179
+            max: 184
+        - text: Perimeter fencing
+          _i18n: *Gerund
+          roll:
+            min: 185
+            max: 186
+        - text: Atmosphere building
+          _i18n: *Gerund
+          roll:
+            min: 187
+            max: 188
+        - text: Peace treaty
+          _i18n: *CommonNoun
+          roll:
+            min: 189
+            max: 192
+        - text: Security
+          _i18n: *CommonNoun
+          roll:
+            min: 193
+            max: 195
+        - roll:
+            min: 196
+            max: 200
+          <<: *ActionTheme
+        - text: Water supply
+          _i18n: *CommonNoun
+          roll:
+            min: 201
+            max: 205
+        - text: Beautification
+          _i18n: *CommonNoun
+          roll:
+            min: 206
+            max: 207
+        - text: Job creation
+          _i18n: *CommonNoun
+          roll:
+            min: 208
+            max: 209
+        - text: Economy building
+          _i18n: *Gerund
+          roll:
+            min: 210
+            max: 211
+        - text: Restructuring command
+          _i18n: *CommonNoun
+          roll:
+            min: 212
+            max: 213
+        - text: Spaceport
+          _i18n: *CommonNoun
+          roll:
+            min: 214
+            max: 217
+        - text: Pollution control
+          _i18n: *CommonNoun
+          roll:
+            min: 218
+            max: 222
+        - text: Technology
+          _i18n: *CommonNoun
+          roll:
+            min: 223
+            max: 225
+        - text: Mindfulness
+          _i18n: *CommonNoun
+          roll:
+            min: 226
+            max: 227
+        - text: Soil health
+          _i18n: *CommonNoun
+          roll:
+            min: 228
+            max: 229
+        - text: Emergency planning
+          _i18n: *Gerund
+          roll:
+            min: 230
+            max: 231
+        - text: Territory withdrawal
+          _i18n: *CommonNoun
+          roll:
+            min: 232
+            max: 233
+        - text: Resource surveying
+          _i18n: *Gerund
+          roll:
+            min: 234
+            max: 237
+        - text: Political ceremony
+          _i18n: *CommonNoun
+          roll:
+            min: 238
+            max: 239
+        - text: Journalism
+          _i18n: *CommonNoun
+          roll:
+            min: 240
+            max: 241
+        - text: Population growth
+          _i18n: *CommonNoun
+          roll:
+            min: 242
+            max: 243
+        - text: Industrialization
+          _i18n: *CommonNoun
+          roll:
+            min: 244
+            max: 246
+        - text: Community health
+          _i18n: *CommonNoun
+          roll:
+            min: 247
+            max: 249
+        - text: Habitat building
+          _i18n: *Gerund
+          roll:
+            min: 250
+            max: 251
+        - text: Resource management
+          _i18n: *CommonNoun
+          roll:
+            min: 252
+            max: 257
+        - text: Weather manipulation
+          _i18n: *CommonNoun
+          roll:
+            min: 258
+            max: 259
+        - text: Demolition
+          _i18n: *CommonNoun
+          roll:
+            min: 260
+            max: 262
+        - text: Data mining
+          _i18n: *Gerund
+          roll:
+            min: 263
+            max: 265
+        - text: Reclamation
+          _i18n: *CommonNoun
+          roll:
+            min: 266
+            max: 269
+        - text: Intelligence gathering
+          _i18n: *Gerund
+          roll:
+            min: 270
+            max: 272
+        - text: Eidolon drive upgrades
+          _i18n: *CommonNoun
+          roll:
+            min: 273
+            max: 275
+        - text: Encouraging diversity
+            # _i18n: *CommonNoun
+          roll:
+            min: 276
+            max: 278
+        - text: Nutrition
+          _i18n: *CommonNoun
+          roll:
+            min: 279
+            max: 284
+        - text: Defining authority
+            # _i18n: *CommonNoun
+          roll:
+            min: 285
+            max: 286
+        - text: Warmongering
+          _i18n: *Gerund
+          roll:
+            min: 287
+            max: 288
+        - text: Connecting settlements
+            # _i18n: *CommonNoun
+          roll:
+            min: 289
+            max: 292
+        - text: Alliance building
+          _i18n: *Gerund
+          roll:
+            min: 293
+            max: 295
+        - roll:
+            min: 296
+            max: 300
+          <<: *ActionTheme
+        type: oracle_rollable
+      trouble:
+        name: Settlement Trouble
+        oracle_type: table_text
+        dice: 1d300
+        replaces:
+        - oracle_rollable:starforged/settlement/trouble
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+        # begin copied rows
+        - text: Battle for leadership
+          roll:
+            min: 1
+            max: 3
+        - text: Betrayal from within
+          roll:
+            min: 4
+            max: 6
+        - text: Caught in the crossfire
+          roll:
+            min: 7
+            max: 8
+        - text: Changing environment
+          roll:
+            min: 9
+            max: 11
+        - text: Clash of cultures
+          roll:
+            min: 12
+            max: 13
+        - text: Dangerous discovery
+          roll:
+            min: 14
+            max: 17
+        - text: Depleted supplies
+          roll:
+            min: 18
+            max: 21
+        - text: Deprived of a resource
+          roll:
+            min: 22
+            max: 24
+        - text: Failing technology
+          roll:
+            min: 25
+            max: 28
+        - text: Feuding factions
+          roll:
+            min: 29
+            max: 32
+        - text: Ghostly visitations
+          roll:
+            min: 33
+            max: 34
+        - text: Hazardous environment
+          roll:
+            min: 35
+            max: 38
+        - text: Hostile lifeforms
+          roll:
+            min: 39
+            max: 42
+        - text: Impassable route
+          roll:
+            min: 43
+            max: 45
+        - text: Impending attack
+          roll:
+            min: 46
+            max: 48
+        - text: Impending natural disaster
+          roll:
+            min: 49
+            max: 51
+        - text: Invasive organisms
+          roll:
+            min: 52
+            max: 53
+        - text: Mounting debt
+          roll:
+            min: 54
+            max: 55
+        - text: Mysterious deaths
+          roll:
+            min: 56
+            max: 57
+        - text: Overdue delivery
+          roll:
+            min: 58
+            max: 60
+        - text: Plagued by sickness
+          roll:
+            min: 61
+            max: 62
+        - text: Preyed upon by raiders
+          roll:
+            min: 63
+            max: 65
+        - text: Revolt against leadership
+          roll:
+            min: 66
+            max: 67
+        - text: Sabotaged technology
+          roll:
+            min: 68
+            max: 69
+        - text: Shunned by others
+          roll:
+            min: 70
+            max: 71
+        - text: Social strife
+          roll:
+            min: 72
+            max: 74
+        - text: Someone is ill or injured
+          roll:
+            min: 75
+            max: 76
+        - text: Someone is missing
+          roll:
+            min: 77
+            max: 78
+        - text: Stolen technology or object
+          roll:
+            min: 79
+            max: 80
+        - text: Strange phenomenon
+          roll:
+            min: 81
+            max: 83
+        - text: Toxic waste or pollution
+          roll:
+            min: 84
+            max: 86
+        - text: Volatile energy source
+          roll:
+            min: 87
+            max: 88
+        - text: Vulnerable lifeforms
+          roll:
+            min: 89
+            max: 90
+        - roll:
+            min: 91
+            max: 100
+          <<: *ActionTheme
+        # end copied rows
+        - text: Personal rivalry
+          roll:
+            min: 101
+            max: 103
+        - text: Haunted by past wrong
+          roll:
+            min: 104
+            max: 106
+        - text: Production halted
+          roll:
+            min: 107
+            max: 108
+        - text: Unjust leadership
+          roll:
+            min: 109
+            max: 111
+        - text: Disastrous accident
+          roll:
+            min: 112
+            max: 113
+        - text: Innocent accused
+          roll:
+            min: 114
+            max: 117
+        - text: Lost trade cargo
+          roll:
+            min: 118
+            max: 121
+        - text: Urgent expedition
+          roll:
+            min: 122
+            max: 124
+        - text: Water poisoned
+          roll:
+            min: 125
+            max: 128
+        - text: Political schism
+          roll:
+            min: 129
+            max: 132
+        - text: Dark omens
+          roll:
+            min: 133
+            max: 134
+        - text: Environmental change
+          roll:
+            min: 135
+            max: 138
+        - text: Lifeform on the hunt
+          roll:
+            min: 139
+            max: 142
+        - text: Infrastructure damaged
+          roll:
+            min: 143
+            max: 145
+        - text: Criminal organization
+          roll:
+            min: 146
+            max: 148
+        - text: Cleanup from disaster
+          roll:
+            min: 149
+            max: 151
+        - text: Scourge of vermin
+          roll:
+            min: 152
+            max: 153
+        - text: Debt collectors arrive
+          roll:
+            min: 154
+            max: 155
+        - text: Mysterious thefts
+          roll:
+            min: 156
+            max: 157
+        - text: Citizens trapped
+          roll:
+            min: 158
+            max: 160
+        - text: Dangerous mutations
+          roll:
+            min: 161
+            max: 162
+        - text: Surge of refugees
+          roll:
+            min: 163
+            max: 165
+        - text: Disregard for democracy
+          roll:
+            min: 166
+            max: 167
+        - text: Vehicle crash
+          roll:
+            min: 168
+            max: 169
+        - text: Outcast seeks revenge
+          roll:
+            min: 170
+            max: 171
+        - text: Elaborate hoax
+          roll:
+            min: 172
+            max: 174
+        - text: Someone is captured
+          roll:
+            min: 175
+            max: 176
+        - text: Conspiratorial cover up
+          roll:
+            min: 177
+            max: 178
+        - text: Destroyed tech or object
+          roll:
+            min: 179
+            max: 180
+        - text: Mass hysteria
+          roll:
+            min: 181
+            max: 183
+        - text: Radiation surge
+          roll:
+            min: 184
+            max: 186
+        - text: Unstable technology
+          roll:
+            min: 187
+            max: 188
+        - text: Vulnerable supply line
+          roll:
+            min: 189
+            max: 190
+        - roll:
+            min: 191
+            max: 200
+          <<: *ActionTheme
+        - text: Rival settlement
+          roll:
+            min: 201
+            max: 203
+        - text: There’s a score to settle
+          roll:
+            min: 204
+            max: 206
+        - text: Mine collapse
+          roll:
+            min: 207
+            max: 208
+        - text: Incompetent leadership
+          roll:
+            min: 209
+            max: 211
+        - text: Dangerous tradition
+          roll:
+            min: 212
+            max: 213
+        - text: Reckless warmongering
+          roll:
+            min: 214
+            max: 217
+        - text: Pirates plague travelers
+          roll:
+            min: 218
+            max: 221
+        - text: Resources stolen
+          roll:
+            min: 222
+            max: 224
+        - text: Blighted crops
+          roll:
+            min: 225
+            max: 228
+        - text: Political protests
+          roll:
+            min: 229
+            max: 232
+        - text: Detrimental isolationism
+          roll:
+            min: 233
+            max: 234
+        - text: Defying of physics
+          roll:
+            min: 235
+            max: 238
+        - text: Prolific lifeforms
+          roll:
+            min: 239
+            max: 242
+        - text: Loss of vehicles
+          roll:
+            min: 243
+            max: 245
+        - text: Treaty abandoned
+          roll:
+            min: 246
+            max: 248
+        - text: Communications lost
+          roll:
+            min: 249
+            max: 251
+        - text: Symbiotic lifeforms lost
+          roll:
+            min: 252
+            max: 253
+        - text: People refusing taxes
+          roll:
+            min: 254
+            max: 255
+        - text: Open defiance of laws
+          roll:
+            min: 256
+            max: 257
+        - text: Dangerous celestial event
+          roll:
+            min: 258
+            max: 260
+        - text: Nutrient deficiencies
+          roll:
+            min: 261
+            max: 262
+        - text: War erupts
+          roll:
+            min: 263
+            max: 265
+        - text: Oligarchs tighten grip
+          roll:
+            min: 266
+            max: 267
+        - text: Habitat compromised
+          roll:
+            min: 268
+            max: 269
+        - text: Stranger sows discord
+          roll:
+            min: 270
+            max: 271
+        - text: Fleecing the population
+          roll:
+            min: 272
+            max: 274
+        - text: Someone is threatened
+          roll:
+            min: 275
+            max: 276
+        - text: Assassination attempt
+          roll:
+            min: 277
+            max: 278
+        - text: Defenses compromised
+          roll:
+            min: 279
+            max: 280
+        - text: Fearful witch hunts
+          roll:
+            min: 281
+            max: 283
+        - text: Shift in gravity
+          roll:
+            min: 284
+            max: 286
+        - text: Inconsistent energy supply
+          roll:
+            min: 287
+            max: 288
+        - text: Vulnerable people group
+          roll:
+            min: 289
+            max: 290
+        - roll:
+            min: 291
+            max: 300
+          <<: *ActionTheme
+        type: oracle_rollable
+      name:
+        name: Name
+        oracle_type: table_text
+        dice: 1d300
+        replaces:
+        - oracle_rollable:starforged/settlement/name
+        _comment: Extension of the oracle table
+        _source: *Source
+        rows:
+        # begin copied rows
+        - text: Aegis
+          _i18n: &CommonNounAsProperNoun
+            text:
+              part_of_speech: common_noun_as_proper_noun
+          roll:
+            min: 1
+            max: 1
+        - text: Altair
+          _i18n: &ProperNoun
+            text:
+              part_of_speech: proper_noun
+          roll:
+            min: 2
+            max: 2
+        - text: Altura
+          _i18n: *ProperNoun
+          roll:
+            min: 3
+            max: 3
+        - text: Amity
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 4
+            max: 4
+        - text: Apex
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 5
+            max: 5
+        - text: Apogee
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 6
+            max: 6
+        - text: Argosy
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 7
+            max: 7
+        - text: Astra
+          _i18n: *ProperNoun
+          roll:
+            min: 8
+            max: 8
+        - text: Aurora
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 9
+            max: 9
+        - text: Beacon
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 10
+            max: 10
+        - text: Brink
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 11
+            max: 11
+        - text: Bulwark
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 12
+            max: 12
+        - text: Burnell
+          _i18n: *ProperNoun
+          roll:
+            min: 13
+            max: 13
+        - text: Burrow
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 14
+            max: 14
+        - text: Concord
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 15
+            max: 15
+        - text: Crux
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 16
+            max: 16
+        - text: Deadrock
+          _i18n: *ProperNoun
+          roll:
+            min: 17
+            max: 17
+            # content: {part_of_speech: [compound noun]}
+        - text: Deception
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 18
+            max: 18
+        - text: Elysium
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 19
+            max: 19
+        - text: Enigma
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 20
+            max: 20
+        - text: Erebus
+          _i18n: *ProperNoun
+          roll:
+            min: 21
+            max: 21
+        - text: Eris
+          _i18n: *ProperNoun
+          roll:
+            min: 22
+            max: 22
+        - text: Evenfall
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 23
+            max: 23
+        - text: Eventide
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 24
+            max: 24
+        - text: Farpoint
+          _i18n: *ProperNoun
+          roll:
+            min: 25
+            max: 25
+            # content: {part_of_speech: [compound noun]}
+        - text: Felicity
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 26
+            max: 26
+        - text: Florin
+          _i18n: *ProperNoun
+          roll:
+            min: 27
+            max: 27
+        - text: Forlorn
+          _i18n: &AdjectiveAsProperNoun
+            text:
+              part_of_speech: adjective_as_proper_noun
+          roll:
+            min: 28
+            max: 28
+        - text: Forsaken
+          _i18n: *AdjectiveAsProperNoun
+          roll:
+            min: 29
+            max: 29
+        - text: Freya
+          _i18n: *ProperNoun
+          roll:
+            min: 30
+            max: 30
+        - text: Glimmer
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 31
+            max: 31
+        - text: Gloam
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 32
+            max: 32
+        - text: Hearth
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 33
+            max: 33
+        - text: Helia
+          _i18n: *ProperNoun
+          roll:
+            min: 34
+            max: 34
+        - text: Hypatia
+          _i18n: *ProperNoun
+          roll:
+            min: 35
+            max: 35
+        - text: Hyperion
+          _i18n: *ProperNoun
+          roll:
+            min: 36
+            max: 36
+        - text: Janus
+          _i18n: *ProperNoun
+          roll:
+            min: 37
+            max: 37
+        - text: Karma
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 38
+            max: 38
+        - text: Kepler
+          _i18n: *ProperNoun
+          roll:
+            min: 39
+            max: 39
+        - text: Koshiba
+          _i18n: *ProperNoun
+          roll:
+            min: 40
+            max: 40
+        - text: Lagrange
+          _i18n: *ProperNoun
+          roll:
+            min: 41
+            max: 41
+        - text: Larissa
+          _i18n: *ProperNoun
+          roll:
+            min: 42
+            max: 42
+        - text: Lasthope
+            # content: {part_of_speech: [compound noun]}
+          roll:
+            min: 43
+            max: 43
+        - text: Lastport
+            # content: {part_of_speech: [compound noun]}
+          roll:
+            min: 44
+            max: 44
+        - text: Legacy
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 45
+            max: 45
+        - text: Lodestar
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 46
+            max: 46
+        - text: Luminus
+          _i18n: *ProperNoun
+          roll:
+            min: 47
+            max: 47
+        - text: Lyra
+          _i18n: *ProperNoun
+          roll:
+            min: 48
+            max: 48
+        - text: Marrow
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 49
+            max: 49
+        - text: Meridian
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 50
+            max: 50
+        - text: Moirai
+          _i18n: *ProperNoun
+          roll:
+            min: 51
+            max: 51
+        - text: Mudd
+          _i18n: *ProperNoun
+          roll:
+            min: 52
+            max: 52
+        - text: Neoma
+          _i18n: *ProperNoun
+          roll:
+            min: 53
+            max: 53
+        - text: Nerio
+          _i18n: *ProperNoun
+          roll:
+            min: 54
+            max: 54
+        - text: Nova
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 55
+            max: 55
+        - text: Nyx
+          _i18n: *ProperNoun
+          roll:
+            min: 56
+            max: 56
+        - text: Osseus
+          _i18n: *ProperNoun
+          roll:
+            min: 57
+            max: 57
+        - text: Paradox
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 58
+            max: 58
+        - text: Paragon
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 59
+            max: 59
+        - text: Paxton
+          _i18n: *ProperNoun
+          roll:
+            min: 60
+            max: 60
+        - text: Perchance
+            # _i18n: *AdverbAsProperNoun
+          roll:
+            min: 61
+            max: 61
+        - text: Pinnacle
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 62
+            max: 62
+        - text: Polaris
+          _i18n: *ProperNoun
+          roll:
+            min: 63
+            max: 63
+        - text: Portent
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 64
+            max: 64
+        - text: Prism
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 65
+            max: 65
+        - text: Providence
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 66
+            max: 66
+        - text: Purgatory
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 67
+            max: 67
+        - text: Rampart
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 68
+            max: 68
+        - text: Ramshackle
+          _i18n: *AdjectiveAsProperNoun
+          roll:
+            min: 69
+            max: 69
+        - text: Redemption
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 70
+            max: 70
+        - text: Redhaven
+          _i18n: *ProperNoun
+          roll:
+            min: 71
+            max: 71
+            # content: {part_of_speech: [compound noun]}
+        - text: Relic
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 72
+            max: 72
+        - text: Reprise
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 73
+            max: 73
+        - text: Reverie
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 74
+            max: 74
+        - text: Rhiannon
+          _i18n: *ProperNoun
+          roll:
+            min: 75
+            max: 75
+        - text: Rockhome
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 76
+            max: 76
+        - text: Rust
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 77
+            max: 77
+        - text: Sagan
+          _i18n: *ProperNoun
+          roll:
+            min: 78
+            max: 78
+        - text: Sanctity
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 79
+            max: 79
+        - text: Selena
+          _i18n: *ProperNoun
+          roll:
+            min: 80
+            max: 80
+        - text: Sepulcher
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 81
+            max: 81
+        - text: Sigil
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 82
+            max: 82
+        - text: Silvana
+          _i18n: *ProperNoun
+          roll:
+            min: 83
+            max: 83
+        - text: Sirius
+          _i18n: *ProperNoun
+          roll:
+            min: 84
+            max: 84
+        - text: Sisyphus
+          _i18n: *ProperNoun
+          roll:
+            min: 85
+            max: 85
+        - text: Solitude
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 86
+            max: 86
+        - text: Spire
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 87
+            max: 87
+        - text: Starfall
+          _i18n: *ProperNoun
+          roll:
+            min: 88
+            max: 88
+            # content: {part_of_speech: [compound noun]}
+        - text: Summit
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 89
+            max: 89
+        - text: Tranquility
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 90
+            max: 90
+        - text: Tyson
+          _i18n: *ProperNoun
+          roll:
+            min: 91
+            max: 91
+        - text: Unity
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 92
+            max: 92
+        - text: Utopia
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 93
+            max: 93
+        - text: Vega
+          _i18n: *ProperNoun
+          roll:
+            min: 94
+            max: 94
+        - text: Vesper
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 95
+            max: 95
+        - text: Wayward
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 96
+            max: 96
+        - text: Welkin
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 97
+            max: 97
+        - text: Wellspring
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 98
+            max: 98
+        - text: Weyland
+          _i18n: *ProperNoun
+          roll:
+            min: 99
+            max: 99
+        - text: Wreck
+          _i18n: *CommonNounAsProperNoun
+          roll:
+            min: 100
+            max: 100
+        # end copied rows
+        - text: Achilles
+          _i18n: *ProperNoun
+          roll:
+            min: 101
+            max: 101
+        - text: Adin
+          _i18n: *ProperNoun
+          roll:
+            min: 102
+            max: 102
+        - text: Aeternitas
+          _i18n: *ProperNoun
+          roll:
+            min: 103
+            max: 103
+        - text: Aion
+          _i18n: *ProperNoun
+          roll:
+            min: 104
+            max: 104
+        - text: Amphitrite
+          _i18n: *ProperNoun
+          roll:
+            min: 105
+            max: 105
+        - text: Ananta
+          _i18n: *ProperNoun
+          roll:
+            min: 106
+            max: 106
+        - text: Anytos
+          _i18n: *ProperNoun
+          roll:
+            min: 107
+            max: 107
+        - text: Apollo
+          _i18n: *ProperNoun
+          roll:
+            min: 108
+            max: 108
+        - text: Artemis
+          _i18n: *ProperNoun
+          roll:
+            min: 109
+            max: 109
+        - text: Ashta
+          _i18n: *ProperNoun
+          roll:
+            min: 110
+            max: 110
+        - text: Asteria
+          _i18n: *ProperNoun
+          roll:
+            min: 111
+            max: 111
+        - text: Athena
+          _i18n: *ProperNoun
+          roll:
+            min: 112
+            max: 112
+        - text: Atmos
+          _i18n: *ProperNoun
+          roll:
+            min: 113
+            max: 113
+        - text: Ayeliski
+          _i18n: *ProperNoun
+          roll:
+            min: 114
+            max: 114
+        - text: Bacchus
+          _i18n: *ProperNoun
+          roll:
+            min: 115
+            max: 115
+        - text: Balder
+          _i18n: *ProperNoun
+          roll:
+            min: 116
+            max: 116
+        - text: Beyla
+          _i18n: *ProperNoun
+          roll:
+            min: 117
+            max: 117
+        - text: Borealis
+          _i18n: *ProperNoun
+          roll:
+            min: 118
+            max: 118
+        - text: Brahma
+          _i18n: *ProperNoun
+          roll:
+            min: 119
+            max: 119
+        - text: Caelus
+          _i18n: *ProperNoun
+          roll:
+            min: 120
+            max: 120
+        - text: Chronos
+          _i18n: *ProperNoun
+          roll:
+            min: 121
+            max: 121
+        - text: Crescent
+          _i18n: *ProperNoun
+          roll:
+            min: 122
+            max: 122
+        - text: Cronus
+          _i18n: *ProperNoun
+          roll:
+            min: 123
+            max: 123
+        - text: Cybele
+          _i18n: *ProperNoun
+          roll:
+            min: 124
+            max: 124
+        - text: Deimos
+          _i18n: *ProperNoun
+          roll:
+            min: 125
+            max: 125
+        - text: Demeter
+          _i18n: *ProperNoun
+          roll:
+            min: 126
+            max: 126
+        - text: Dionysus
+          _i18n: *ProperNoun
+          roll:
+            min: 127
+            max: 127
+        - text: Eir
+          _i18n: *ProperNoun
+          roll:
+            min: 128
+            max: 128
+        - text: Eos
+          _i18n: *ProperNoun
+          roll:
+            min: 129
+            max: 129
+        - text: Epimetheus
+          _i18n: *ProperNoun
+          roll:
+            min: 130
+            max: 130
+        - text: Eternis
+          _i18n: *ProperNoun
+          roll:
+            min: 131
+            max: 131
+        - text: Forseti
+          _i18n: *ProperNoun
+          roll:
+            min: 132
+            max: 132
+        - text: Freyr
+          _i18n: *ProperNoun
+          roll:
+            min: 133
+            max: 133
+        - text: Gersemi
+          _i18n: *ProperNoun
+          roll:
+            min: 134
+            max: 134
+        - text: Govinda
+          _i18n: *ProperNoun
+          roll:
+            min: 135
+            max: 135
+        - text: Hades
+          _i18n: *ProperNoun
+          roll:
+            min: 136
+            max: 136
+        - text: Harmonia
+          _i18n: *ProperNoun
+          roll:
+            min: 137
+            max: 137
+        - text: Heirloom
+          _i18n: *ProperNoun
+          roll:
+            min: 138
+            max: 138
+        - text: Hemera
+          _i18n: *ProperNoun
+          roll:
+            min: 139
+            max: 139
+        - text: Hera
+          _i18n: *ProperNoun
+          roll:
+            min: 140
+            max: 140
+        - text: Hodor
+          _i18n: *ProperNoun
+          roll:
+            min: 141
+            max: 141
+        - text: Horus
+          _i18n: *ProperNoun
+          roll:
+            min: 142
+            max: 142
+        - text: Hymn
+          _i18n: *ProperNoun
+          roll:
+            min: 143
+            max: 143
+        - text: Idunn
+          _i18n: *ProperNoun
+          roll:
+            min: 144
+            max: 144
+        - text: Inception
+          _i18n: *ProperNoun
+          roll:
+            min: 145
+            max: 145
+        - text: Kali
+          _i18n: *ProperNoun
+          roll:
+            min: 146
+            max: 146
+        - text: Kanati
+          _i18n: *ProperNoun
+          roll:
+            min: 147
+            max: 147
+        - text: Lelantos
+          _i18n: *ProperNoun
+          roll:
+            min: 148
+            max: 148
+        - text: Liberty
+          _i18n: *ProperNoun
+          roll:
+            min: 149
+            max: 149
+        - text: Lodurr
+          _i18n: *ProperNoun
+          roll:
+            min: 150
+            max: 150
+        - text: Lunis
+          _i18n: *ProperNoun
+          roll:
+            min: 151
+            max: 151
+        - text: Magni
+          _i18n: *ProperNoun
+          roll:
+            min: 152
+            max: 152
+        - text: Mahavidya
+          _i18n: *ProperNoun
+          roll:
+            min: 153
+            max: 153
+        - text: Marvel
+          _i18n: *ProperNoun
+          roll:
+            min: 154
+            max: 154
+        - text: Meili
+          _i18n: *ProperNoun
+          roll:
+            min: 155
+            max: 155
+        - text: Menoetius
+          _i18n: *ProperNoun
+          roll:
+            min: 156
+            max: 156
+        - text: Mimir
+          _i18n: *ProperNoun
+          roll:
+            min: 157
+            max: 157
+        - text: Mohini
+          _i18n: *ProperNoun
+          roll:
+            min: 158
+            max: 158
+        - text: Narayana
+          _i18n: *ProperNoun
+          roll:
+            min: 159
+            max: 159
+        - text: Nemesis
+          _i18n: *ProperNoun
+          roll:
+            min: 160
+            max: 160
+        - text: Nerthus
+          _i18n: *ProperNoun
+          roll:
+            min: 161
+            max: 161
+        - text: Nimbus
+          _i18n: *ProperNoun
+          roll:
+            min: 162
+            max: 162
+        - text: Novis
+          _i18n: *ProperNoun
+          roll:
+            min: 163
+            max: 163
+        - text: Ocasta
+          _i18n: *ProperNoun
+          roll:
+            min: 164
+            max: 164
+        - text: Omega
+          _i18n: *ProperNoun
+          roll:
+            min: 165
+            max: 165
+        - text: Ourea
+          _i18n: *ProperNoun
+          roll:
+            min: 166
+            max: 166
+        - text: Parvati
+          _i18n: *ProperNoun
+          roll:
+            min: 167
+            max: 167
+        - text: Perses
+          _i18n: *ProperNoun
+          roll:
+            min: 168
+            max: 168
+        - text: Phantom
+          _i18n: *ProperNoun
+          roll:
+            min: 169
+            max: 169
+        - text: Phoenix
+          _i18n: *ProperNoun
+          roll:
+            min: 170
+            max: 170
+        - text: Pioneer
+          _i18n: *ProperNoun
+          roll:
+            min: 171
+            max: 171
+        - text: Pontus
+          _i18n: *ProperNoun
+          roll:
+            min: 172
+            max: 172
+        - text: Prodigy
+          _i18n: *ProperNoun
+          roll:
+            min: 173
+            max: 173
+        - text: Proserpina
+          _i18n: *ProperNoun
+          roll:
+            min: 174
+            max: 174
+        - text: Rebus
+          _i18n: *ProperNoun
+          roll:
+            min: 175
+            max: 175
+        - text: Rindar
+          _i18n: *ProperNoun
+          roll:
+            min: 176
+            max: 176
+        - text: Rudron
+          _i18n: *ProperNoun
+          roll:
+            min: 177
+            max: 177
+        - text: Sandraudiga
+          _i18n: *ProperNoun
+          roll:
+            min: 178
+            max: 178
+        - text: Sati
+          _i18n: *ProperNoun
+          roll:
+            min: 179
+            max: 179
+        - text: Selu
+          _i18n: *ProperNoun
+          roll:
+            min: 180
+            max: 180
+        - text: Shangris
+          _i18n: *ProperNoun
+          roll:
+            min: 181
+            max: 181
+        - text: Shiva
+          _i18n: *ProperNoun
+          roll:
+            min: 182
+            max: 182
+        - text: Silenus
+          _i18n: *ProperNoun
+          roll:
+            min: 183
+            max: 183
+        - text: Sita
+          _i18n: *ProperNoun
+          roll:
+            min: 184
+            max: 184
+        - text: Sunna
+          _i18n: *ProperNoun
+          roll:
+            min: 185
+            max: 185
+        - text: Tanfana
+          _i18n: *ProperNoun
+          roll:
+            min: 186
+            max: 186
+        - text: Terminus
+          _i18n: *ProperNoun
+          roll:
+            min: 187
+            max: 187
+        - text: Thalassa
+          _i18n: *ProperNoun
+          roll:
+            min: 188
+            max: 188
+        - text: Theia
+          _i18n: *ProperNoun
+          roll:
+            min: 189
+            max: 189
+        - text: Thiasos
+          _i18n: *ProperNoun
+          roll:
+            min: 190
+            max: 190
+        - text: Thyrsus
+          _i18n: *ProperNoun
+          roll:
+            min: 191
+            max: 191
+        - text: Titan
+          _i18n: *ProperNoun
+          roll:
+            min: 192
+            max: 192
+        - text: Tyr
+          _i18n: *ProperNoun
+          roll:
+            min: 193
+            max: 193
+        - text: Upulvan
+          _i18n: *ProperNoun
+          roll:
+            min: 194
+            max: 194
+        - text: Vali
+          _i18n: *ProperNoun
+          roll:
+            min: 195
+            max: 195
+        - text: Vasus
+          _i18n: *ProperNoun
+          roll:
+            min: 196
+            max: 196
+        - text: Vesta
+          _i18n: *ProperNoun
+          roll:
+            min: 197
+            max: 197
+        - text: Virtue
+          _i18n: *ProperNoun
+          roll:
+            min: 198
+            max: 198
+        - text: Vishnu
+          _i18n: *ProperNoun
+          roll:
+            min: 199
+            max: 199
+        - text: Warden
+          _i18n: *ProperNoun
+          roll:
+            min: 200
+            max: 200
+        - text: Achlys
+          _i18n: *ProperNoun
+          roll:
+            min: 201
+            max: 201
+        - text: Adityas
+          _i18n: *ProperNoun
+          roll:
+            min: 202
+            max: 202
+        - text: Aether
+          _i18n: *ProperNoun
+          roll:
+            min: 203
+            max: 203
+        - text: Alpha
+          _i18n: *ProperNoun
+          roll:
+            min: 204
+            max: 204
+        - text: Ananke
+          _i18n: *ProperNoun
+          roll:
+            min: 205
+            max: 205
+        - text: Anemone
+          _i18n: *ProperNoun
+          roll:
+            min: 206
+            max: 206
+        - text: Aphrodite
+          _i18n: *ProperNoun
+          roll:
+            min: 207
+            max: 207
+        - text: Ares
+          _i18n: *ProperNoun
+          roll:
+            min: 208
+            max: 208
+        - text: Asgaya
+          _i18n: *ProperNoun
+          roll:
+            min: 209
+            max: 209
+        - text: Ashvins
+          _i18n: *ProperNoun
+          roll:
+            min: 210
+            max: 210
+        - text: Astraeus
+          _i18n: *ProperNoun
+          roll:
+            min: 211
+            max: 211
+        - text: Atlas
+          _i18n: *ProperNoun
+          roll:
+            min: 212
+            max: 212
+        - text: Avatar
+          _i18n: *ProperNoun
+          roll:
+            min: 213
+            max: 213
+        - text: Azura
+          _i18n: *ProperNoun
+          roll:
+            min: 214
+            max: 214
+        - text: Baduhenna
+          _i18n: *ProperNoun
+          roll:
+            min: 215
+            max: 215
+        - text: Bellona
+          _i18n: *ProperNoun
+          roll:
+            min: 216
+            max: 216
+        - text: Bholenath
+          _i18n: *ProperNoun
+          roll:
+            min: 217
+            max: 217
+        - text: Bragi
+          _i18n: *ProperNoun
+          roll:
+            min: 218
+            max: 218
+        - text: Caravel
+          _i18n: *ProperNoun
+          roll:
+            min: 219
+            max: 219
+        - text: Ceres
+          _i18n: *ProperNoun
+          roll:
+            min: 220
+            max: 220
+        - text: Coeus
+          _i18n: *ProperNoun
+          roll:
+            min: 221
+            max: 221
+        - text: Crius
+          _i18n: *ProperNoun
+          roll:
+            min: 222
+            max: 222
+        - text: Curiosity
+          _i18n: *ProperNoun
+          roll:
+            min: 223
+            max: 223
+        - text: Dawn
+          _i18n: *ProperNoun
+          roll:
+            min: 224
+            max: 224
+        - text: Dellinger
+          _i18n: *ProperNoun
+          roll:
+            min: 225
+            max: 225
+        - text: Dione
+          _i18n: *ProperNoun
+          roll:
+            min: 226
+            max: 226
+        - text: Durga
+          _i18n: *ProperNoun
+          roll:
+            min: 227
+            max: 227
+        - text: Empyrea
+          _i18n: *ProperNoun
+          roll:
+            min: 228
+            max: 228
+        - text: Eostre
+          _i18n: *ProperNoun
+          roll:
+            min: 229
+            max: 229
+        - text: Epiphany
+          _i18n: *ProperNoun
+          roll:
+            min: 230
+            max: 230
+        - text: Fable
+          _i18n: *ProperNoun
+          roll:
+            min: 231
+            max: 231
+        - text: Fortuna
+          _i18n: *ProperNoun
+          roll:
+            min: 232
+            max: 232
+        - text: Ganga
+          _i18n: *ProperNoun
+          roll:
+            min: 233
+            max: 233
+        - text: Gigagei
+          _i18n: *ProperNoun
+          roll:
+            min: 234
+            max: 234
+        - text: Gullveig
+          _i18n: *ProperNoun
+          roll:
+            min: 235
+            max: 235
+        - text: Halo
+          _i18n: *ProperNoun
+          roll:
+            min: 236
+            max: 236
+        - text: Hayagriva
+          _i18n: *ProperNoun
+          roll:
+            min: 237
+            max: 237
+        - text: Helios
+          _i18n: *ProperNoun
+          roll:
+            min: 238
+            max: 238
+        - text: Hephaestus
+          _i18n: *ProperNoun
+          roll:
+            min: 239
+            max: 239
+        - text: Hermes
+          _i18n: *ProperNoun
+          roll:
+            min: 240
+            max: 240
+        - text: Hoenir
+          _i18n: *ProperNoun
+          roll:
+            min: 241
+            max: 241
+        - text: Hretha
+          _i18n: *ProperNoun
+          roll:
+            min: 242
+            max: 242
+        - text: Iapetus
+          _i18n: *ProperNoun
+          roll:
+            min: 243
+            max: 243
+        - text: Ignis
+          _i18n: *ProperNoun
+          roll:
+            min: 244
+            max: 244
+        - text: Irpa
+          _i18n: *ProperNoun
+          roll:
+            min: 245
+            max: 245
+        - text: Kalona
+          _i18n: *ProperNoun
+          roll:
+            min: 246
+            max: 246
+        - text: Lakshmi
+          _i18n: *ProperNoun
+          roll:
+            min: 247
+            max: 247
+        - text: Leto
+          _i18n: *ProperNoun
+          roll:
+            min: 248
+            max: 248
+        - text: Lingo
+          _i18n: *ProperNoun
+          roll:
+            min: 249
+            max: 249
+        - text: Lofin
+          _i18n: *ProperNoun
+          roll:
+            min: 250
+            max: 250
+        - text: Madhava
+          _i18n: *ProperNoun
+          roll:
+            min: 251
+            max: 251
+        - text: Mahadevi
+          _i18n: *ProperNoun
+          roll:
+            min: 252
+            max: 252
+        - text: Mani
+          _i18n: *ProperNoun
+          roll:
+            min: 253
+            max: 253
+        - text: Matrikas
+          _i18n: *ProperNoun
+          roll:
+            min: 254
+            max: 254
+        - text: Memnto
+          _i18n: *ProperNoun
+          roll:
+            min: 255
+            max: 255
+        - text: Metis
+          _i18n: *ProperNoun
+          roll:
+            min: 256
+            max: 256
+        - text: Minerva
+          _i18n: *ProperNoun
+          roll:
+            min: 257
+            max: 257
+        - text: Mythos
+          _i18n: *ProperNoun
+          roll:
+            min: 258
+            max: 258
+        - text: Narmada
+          _i18n: *ProperNoun
+          roll:
+            min: 259
+            max: 259
+        - text: Nemo
+          _i18n: *ProperNoun
+          roll:
+            min: 260
+            max: 260
+        - text: Nesoi
+          _i18n: *ProperNoun
+          roll:
+            min: 261
+            max: 261
+        - text: Njorder
+          _i18n: *ProperNoun
+          roll:
+            min: 262
+            max: 262
+        - text: Nox
+          _i18n: *ProperNoun
+          roll:
+            min: 263
+            max: 263
+        - text: Olympus
+          _i18n: *ProperNoun
+          roll:
+            min: 264
+            max: 264
+        - text: Orphan
+          _i18n: *ProperNoun
+          roll:
+            min: 265
+            max: 265
+        - text: Pallas
+          _i18n: *ProperNoun
+          roll:
+            min: 266
+            max: 266
+        - text: Periboea
+          _i18n: *ProperNoun
+          roll:
+            min: 267
+            max: 267
+        - text: Perumal
+          _i18n: *ProperNoun
+          roll:
+            min: 268
+            max: 268
+        - text: Phobos
+          _i18n: *ProperNoun
+          roll:
+            min: 269
+            max: 269
+        - text: Pilgrim
+          _i18n: *ProperNoun
+          roll:
+            min: 270
+            max: 270
+        - text: Pomona
+          _i18n: *ProperNoun
+          roll:
+            min: 271
+            max: 271
+        - text: Poseidon
+          _i18n: *ProperNoun
+          roll:
+            min: 272
+            max: 272
+        - text: Prometheus
+          _i18n: *ProperNoun
+          roll:
+            min: 273
+            max: 273
+        - text: Rangana
+          _i18n: *ProperNoun
+          roll:
+            min: 274
+            max: 274
+        - text: Rhea
+          _i18n: *ProperNoun
+          roll:
+            min: 275
+            max: 275
+        - text: Rudras
+          _i18n: *ProperNoun
+          roll:
+            min: 276
+            max: 276
+        - text: Saga
+          _i18n: *ProperNoun
+          roll:
+            min: 277
+            max: 277
+        - text: Saraswati
+          _i18n: *ProperNoun
+          roll:
+            min: 278
+            max: 278
+        - text: Selene
+          _i18n: *ProperNoun
+          roll:
+            min: 279
+            max: 279
+        - text: Serenity
+          _i18n: *ProperNoun
+          roll:
+            min: 280
+            max: 280
+        - text: Shepherd
+          _i18n: *ProperNoun
+          roll:
+            min: 281
+            max: 281
+        - text: Shu
+          _i18n: *ProperNoun
+          roll:
+            min: 282
+            max: 282
+        - text: Sinthgunt
+          _i18n: *ProperNoun
+          roll:
+            min: 283
+            max: 283
+        - text: Spectrum
+          _i18n: *ProperNoun
+          roll:
+            min: 284
+            max: 284
+        - text: Syceus
+          _i18n: *ProperNoun
+          roll:
+            min: 285
+            max: 285
+        - text: Tartarus
+          _i18n: *ProperNoun
+          roll:
+            min: 286
+            max: 286
+        - text: Tethys
+          _i18n: *ProperNoun
+          roll:
+            min: 287
+            max: 287
+        - text: Thanatos
+          _i18n: *ProperNoun
+          roll:
+            min: 288
+            max: 288
+        - text: Themis
+          _i18n: *ProperNoun
+          roll:
+            min: 289
+            max: 289
+        - text: Thirumal
+          _i18n: *ProperNoun
+          roll:
+            min: 290
+            max: 290
+        - text: Timi
+          _i18n: *ProperNoun
+          roll:
+            min: 291
+            max: 291
+        - text: Titanus
+          _i18n: *ProperNoun
+          roll:
+            min: 292
+            max: 292
+        - text: Unelauhi
+          _i18n: *ProperNoun
+          roll:
+            min: 293
+            max: 293
+        - text: Uyaga
+          _i18n: *ProperNoun
+          roll:
+            min: 294
+            max: 294
+        - text: Valor
+          _i18n: *ProperNoun
+          roll:
+            min: 295
+            max: 295
+        - text: Veritas
+          _i18n: *ProperNoun
+          roll:
+            min: 296
+            max: 296
+        - text: Vidarr
+          _i18n: *ProperNoun
+          roll:
+            min: 297
+            max: 297
+        - text: Visage
+          _i18n: *ProperNoun
+          roll:
+            min: 298
+            max: 298
+        - text: Vor
+          _i18n: *ProperNoun
+          roll:
+            min: 299
+            max: 299
+        - text: Zisa
+          _i18n: *ProperNoun
+          roll:
+            min: 300
+            max: 300
+        type: oracle_rollable
+    type: oracle_collection

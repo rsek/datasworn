@@ -66,8 +66,8 @@ abstract class IdParser<
 		IdParser.#tree = value
 	}
 
-	#pathSegments: PathSegments
-	#typeIds: TypeIds
+	#pathSegments!: PathSegments
+	#typeIds!: TypeIds
 
 	/**
 	 * The object used for log messages.
@@ -892,7 +892,7 @@ abstract class IdParser<
 
 		const results = new Map<K, V>()
 
-		if (map.has(matchKey)) results.set(matchKey, map.get(matchKey))
+		if (map.has(matchKey)) results.set(matchKey, map.get(matchKey)!)
 
 		return results
 	}
@@ -1087,7 +1087,7 @@ abstract class EmbeddingId<
 
 				if (!(property in node)) continue
 
-				const childNodes = node[property] as
+				const childNodes = (node as Record<string, unknown>)[property] as
 					| Record<string, { _id?: string }>
 					| Map<string, { _id?: string }>
 					| Array<{ _id?: string }>
@@ -1332,17 +1332,17 @@ class CollectableId<
 		tree: (typeof IdParser)['tree']
 	): TypeNode.Collectable<TTypeId> {
 		const parent = this.getCollectionIdParent()
-		const parentNode = parent._getUnsafe(tree)
+		const parentNode = parent._getUnsafe(tree!)
 
 		// console.log(`<${this}> got parent`, parentNode)
-		const thisKey = this.primaryPathKeys.at(-1)
+		const thisKey = this.primaryPathKeys.at(-1)!
 
 		const { contents } = parentNode
 
-		let result: TypeNode.Collectable<TTypeId>
+		let result: TypeNode.Collectable<TTypeId> | undefined
 
 		if (contents instanceof Map) result = contents.get(thisKey)
-		else if (Object.hasOwn(contents, thisKey))
+		else if (Object.hasOwn(contents, thisKey as PropertyKey))
 			result = contents[
 				thisKey as keyof typeof contents
 			] as TypeNode.Collectable<TTypeId>
@@ -1359,26 +1359,26 @@ class CollectableId<
 	): Map<string, TypeNode.Collectable<TTypeId>> {
 		const parentId = this.getCollectionIdParent()
 
-		let matches: Map<string, TypeNode.Collectable<TTypeId>>
-		const thisKey = this.primaryPathKeys.at(-1)
+		let matches: Map<string, TypeNode.Collectable<TTypeId>> | undefined
+		const thisKey = this.primaryPathKeys.at(-1)!
 
 		// these aren't the targets, so they don't get forEach passed to them
 		const parentMatches = parentId._getMatchesUnsafe(tree)
 
-		for (const [parentId, parentMatch] of parentMatches) {
+		for (const [parentIdStr, parentMatch] of parentMatches) {
 			const contents = parentMatch[ContentsKey] as DictionaryLike<
 				TypeNode.Collectable<TTypeId>
 			>
 			if (contents == null) continue
 			const collectables = IdParser._getMatchesFrom(contents, thisKey)
 			for (const [currentKey, match] of collectables) {
-				const [_parentTypeId, parentPath] = parentId.split(PrefixSep)
+				const [_parentTypeId, parentPath] = parentIdStr.split(PrefixSep)
 
 				const currentPath = parentPath + PathKeySep + currentKey
 				const currentId = this.compositeTypeId + PrefixSep + currentPath
 
 				matches ||= new Map()
-				matches.set(currentId, match)
+				matches.set(currentId, match as TypeNode.Collectable<TTypeId>)
 				if (typeof forEach === 'function' && forEach(currentId, match))
 					return matches
 			}
@@ -1615,7 +1615,7 @@ class CollectionId<
 		const ancestorNodes = [ancestorNode]
 
 		for (const key of keys) {
-			const currentNode = ancestorNodes.at(-1)
+			const currentNode = ancestorNodes.at(-1)!
 			if (!(CollectionsKey in currentNode))
 				throw new Error(
 					`Couldn't find collection <${key}> in <${currentNode._id}>`
@@ -1665,7 +1665,7 @@ class CollectionId<
 
 		const [keyToMatch, ...tailKeys] = nextPath
 
-		const childCollections = from[CollectionsKey] as
+		const childCollections = (from as unknown as Record<string, unknown>)[CollectionsKey] as
 			| Record<string, T>
 			| Map<string, T>
 
@@ -1713,7 +1713,7 @@ class CollectionId<
 		const pkgs = this._matchRulesPackages(tree)
 
 		// defer creating this until we need it
-		let matches: Map<string, TypeNode.Collection<TTypeId>>
+		let matches: Map<string, TypeNode.Collection<TTypeId>> = new Map()
 
 		const [_pkgMatchKey, matchKey, ...tailKeys] = this.primaryPathKeys
 
@@ -1866,7 +1866,7 @@ namespace CollectionId {
 					: never
 }
 
-// @ts-expect-error
+// @ts-expect-error Complex generic type constraints
 class EmbeddedId<
 	ParentId extends EmbeddingId = EmbeddingId,
 	TTypeId extends TypeId.Embeddable = TypeId.Embeddable,
@@ -1887,12 +1887,12 @@ class EmbeddedId<
 		return this.#parent
 	}
 
-	override _getUnsafe(tree) {
+	override _getUnsafe(tree: (typeof IdParser)['tree']): TypeNode.Embedded<TTypeId> {
 		const parentNode = this.#parent.get(tree)
 		const property = TypeId.getEmbeddedPropertyKey(this.typeId)
-		const obj = parentNode?.[property as any]
+		const obj = (parentNode as Record<string, unknown>)?.[property]
 
-		return obj[this.pathSegments.at(-1)]
+		return (obj as Record<string, unknown>)?.[this.pathSegments.at(-1)!] as TypeNode.Embedded<TTypeId>
 	}
 
 	override _getPathRegExpSource(): string {

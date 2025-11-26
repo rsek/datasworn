@@ -32,17 +32,17 @@ export interface TUnionEnum<
 
 export function UnionEnum<
 	T extends string[] | number[] | readonly string[] | readonly number[]
->(literals: [...T], options: SchemaOptions = {}) {
+>(literals: T, options: SchemaOptions = {}) {
 	if (!TypeRegistry.Has('UnionEnum'))
 		TypeRegistry.Set('UnionEnum', UnionEnumCheck)
 
 	const result = {
 		...options,
 		[Kind]: 'UnionEnum',
-		enum: literals
-	} as TUnionEnum<[...T]>
+		enum: [...literals]
+	} as TUnionEnum<T>
 
-	if (result.enum.every(isInteger))
+	if (result.enum.every(isInteger) && result[JsonTypeDef])
 		set(result[JsonTypeDef], 'metadata.typescriptType', literals.join(' | '))
 	return result
 }
@@ -50,13 +50,13 @@ export function UnionEnum<
 export function TUnionEnum(schema: any): schema is TUnionEnum {
 	if (!Array.isArray(schema?.enum)) return false
 	return (
-		schema.enum.every((item) => typeof item === 'string') ||
-		schema.enum.every((item) => typeof item === 'number')
+		schema.enum.every((item: any) => typeof item === 'string') ||
+		schema.enum.every((item: any) => typeof item === 'number')
 	)
 }
 
 function UnionEnumCheck(
-	schema: TUnionEnum<(string | number)[]>,
+	schema: TUnionEnum<any>,
 	value: unknown
 ) {
 	return schema.enum.includes(value as string | number)
@@ -74,12 +74,12 @@ export function ToEnum<T extends TUnionEnum>(schema: T) {
 		'enum'
 	])
 
-	const result: TEnum = Type.Union(anyOf, {
+	const result = Type.Union(anyOf, {
 		...options,
 		description: schema[Description],
 
 		[Hint]: 'Enum'
-	})
+	}) as unknown as TEnum
 
 	return result
 }

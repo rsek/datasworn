@@ -1,630 +1,858 @@
 _id: starsmith
-source: &Source
+datasworn_version: "0.1.0"
+type: expansion
+ruleset: starforged
+<<: &Source
+  title: Starsmith Expanded Oracles
+  date: 2024-03-22
+  url: https://playeveryrole.com/starsmith-products/
+  license: https://creativecommons.org/licenses/by/4.0
   authors:
     - name: Eric Bright
-  date: '2023-03-19'
-  title: Starsmith
-  license: https://creativecommons.org/licenses/by/4.0/
-  url: https://playeveryrole.com/
 oracles:
   moves:
     name: Moves
+    # enhances: (no Starforged moves oracle collection)
+    _source:
+      <<: &Source
+        title: 'Ironsworn: Starforged Rulebook'
+        license: https://creativecommons.org/licenses/by/4.0
+        url: https://ironswornrpg.com
+        date: 2022-05-06
+        authors:
+        - name: Shawn Tomkin
     contents:
       make_a_discovery:
-        replaces: starforged/oracles/moves/make_a_discovery
+        name: Make a Discovery
+        oracle_type: table_text
+        _source: *Source
+        replaces:
+        - oracle_rollable:starforged/misc/story_clue
         dice: 1d300
         rows:
-          - min: 1
+        # begin rows copied from original
+        - text: Advanced technology waiting to be harnessed or salvaged
+          roll:
+            min: 1
             max: 4
-            result: Advanced technology waiting to be harnessed or salvaged
-          - min: 5
+        - text: Ancient archive or message
+          roll:
+            min: 5
             max: 8
-            result: Ancient archive or message
-          - min: 9
+        - text: Artificial consciousness evolved to a higher state
+          roll:
+            min: 9
             max: 10
-            result: Artificial consciousness evolved to a higher state
-          - min: 11
+        - text: Clues to a crucial resource or uncharted domain
+          roll:
+            min: 11
             max: 12
-            result: Clues to a crucial resource or uncharted domain
-          - min: 13
+        - text: Envoy from another time or reality
+          roll:
+            min: 13
             max: 14
-            result: Envoy from another time or reality
-          - min: 15
+        - text: Extraordinary natural phenomenon
+          roll:
+            min: 15
             max: 22
-            result: Extraordinary natural phenomenon
-          - min: 23
+        - text: First contact with intelligent life
+          roll:
+            min: 23
             max: 24
-            result: First contact with intelligent life
-          - min: 25
+        - text: Gateway to another time or alternate reality
+          roll:
+            min: 25
             max: 26
-            result: Gateway to another time or alternate reality
-          - min: 27
+        - text: Key to unlocking a language or method of communication
+          roll:
+            min: 27
             max: 28
-            result: Key to unlocking a language or method of communication
-          - min: 29
+        - text: Lost or hidden people
+          roll:
+            min: 29
             max: 34
-            result: Lost or hidden people
-          - min: 35
+        - text: Majestic or unusual lifeforms
+          roll:
+            min: 35
             max: 42
-            result: Majestic or unusual lifeforms
-          - min: 43
+        - text: Marvel of ancient engineering
+          roll:
+            min: 43
             max: 46
-            result: Marvel of ancient engineering
-          - min: 47
+        - text: Miraculously preserved artifact or specimen
+          roll:
+            min: 47
             max: 50
-            result: Miraculously preserved artifact or specimen
-          - min: 51
+        - text: Monumental architecture or artistry of an ancient civilization
+          roll:
+            min: 51
             max: 56
-            result: Monumental architecture or artistry of an ancient civilization
-          - min: 57
+        - text: Mysterious device or artifact of potential value
+          roll:
+            min: 57
             max: 62
-            result: Mysterious device or artifact of potential value
-          - min: 63
+        - text: New understanding of an enduring mystery
+          roll:
+            min: 63
             max: 66
-            result: New understanding of an enduring mystery
-          - min: 67
+        - text: Pathway or means of travel to a distant location
+          roll:
+            min: 67
             max: 68
-            result: Pathway or means of travel to a distant location
-          - min: 69
+        - text: Person or lifeform with phenomenal abilities
+          roll:
+            min: 69
             max: 70
-            result: Person or lifeform with phenomenal abilities
-          - min: 71
+        - text: Place of awe-inspiring beauty
+          roll:
+            min: 71
             max: 78
-            result: Place of awe-inspiring beauty
-          - min: 79
+        - text: Rare and valuable resource
+          roll:
+            min: 79
             max: 86
-            result: Rare and valuable resource
-          - min: 87
+        - text: Safeguarded or idyllic location
+          roll:
+            min: 87
             max: 88
-            result: Safeguarded or idyllic location
-          - min: 89
+        - text: Visions or prophesies of the future
+          roll:
+            min: 89
             max: 90
-            result: Visions or prophesies of the future
-          - min: 91
+        - roll:
+            min: 91
             max: 100
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
-          - min: 101
+          <<: &RollTwice
+            text: Roll twice
+            oracle_rolls:
+            - number_of_rolls: 2
+              auto: true
+            # end rows copied from original
+        - text: Ancient technology useful because of its low-tech nature
+          roll:
+            min: 101
             max: 104
-            result: Ancient technology useful because of its low-tech nature
-          - min: 105
+        - text: Archive or message from the future
+          roll:
+            min: 105
             max: 108
-            result: Archive or message from the future
-          - min: 109
+        - text: Artificial consciousness hyper-evolved to solve a single problem of
+            epic scope
+          roll:
+            min: 109
             max: 110
-            result: Artificial consciousness hyper-evolved to solve a single problem of epic scope
-          - min: 111
+        - text: Clues to a resource thought lost to the universe
+          roll:
+            min: 111
             max: 112
-            result: Clues to a resource thought lost to the universe
-          - min: 113
+        - text: Envoy from a distant galaxy
+          roll:
+            min: 113
             max: 114
-            result: Envoy from a distant galaxy
-          - min: 115
+        - text: Extraordinary supernatural phenomenon
+          roll:
+            min: 115
             max: 122
-            result: Extraordinary supernatural phenomenon
-          - min: 123
+        - text: Contact with intelligent life thought to be extinct or mythical
+          roll:
+            min: 123
             max: 124
-            result: Contact with intelligent life thought to be extinct or mythical
-          - min: 125
+        - text: Gateway to a pocket dimension
+          roll:
+            min: 125
             max: 126
-            result: Gateway to a pocket dimension
-          - min: 127
+        - text: Key to unlocking a new method of FTL travel
+          roll:
+            min: 127
             max: 128
-            result: Key to unlocking a new method of FTL travel
-          - min: 129
+        - text: People group who have hidden their level of advancement
+          roll:
+            min: 129
             max: 134
-            result: People group who have hidden their level of advancement
-          - min: 135
+        - text: Lifeform evolved to a multi-dimensional state
+          roll:
+            min: 135
             max: 142
-            result: Lifeform evolved to a multi-dimensional state
-          - min: 143
+        - text: Marvel of ancient bioengineering
+          roll:
+            min: 143
             max: 146
-            result: Marvel of ancient bioengineering
-          - min: 147
+        - text: Miraculously preserved lifeform ready to re-awaken
+          roll:
+            min: 147
             max: 150
-            result: Miraculously preserved lifeform ready to re-awaken
-          - min: 151
+        - text: Magnificent machine of an ancient civilization
+          roll:
+            min: 151
             max: 156
-            result: Magnificent machine of an ancient civilization
-          - min: 157
+        - text: Mysterious lifeform or natural phenomenon of potential value
+          roll:
+            min: 157
             max: 162
-            result: Mysterious lifeform or natural phenomenon of potential value
-          - min: 163
+        - text: New understanding of a complex scientific field
+          roll:
+            min: 163
             max: 166
-            result: New understanding of a complex scientific field
-          - min: 167
+        - text: Pathway or means of faster travel between nearby locations
+          roll:
+            min: 167
             max: 168
-            result: Pathway or means of faster travel between nearby locations
-          - min: 169
+        - text: Location with phenomenal characteristics
+          roll:
+            min: 169
             max: 170
-            result: Location with phenomenal characteristics
-          - min: 171
+        - text: Place of ancient destruction beginning to heal
+          roll:
+            min: 171
             max: 178
-            result: Place of ancient destruction beginning to heal
-          - min: 179
+        - text: Rare and valuable data
+          roll:
+            min: 179
             max: 186
-            result: Rare and valuable data
-          - min: 187
+        - text: Fortified and available location
+          roll:
+            min: 187
             max: 188
-            result: Fortified and available location
-          - min: 189
+        - text: Visions of the past that shed light on the present
+          roll:
+            min: 189
             max: 190
-            result: Visions of the past that shed light on the present
-          - min: 191
+        - roll:
+            min: 191
             max: 200
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
-          - min: 201
+          <<: *RollTwice
+        - text: Advanced starship or module waiting to be harnessed
+          roll:
+            min: 201
             max: 204
-            result: Advanced starship or module waiting to be harnessed
-          - min: 205
+        - text: Intact doomsday archive
+          roll:
+            min: 205
             max: 208
-            result: Intact doomsday archive
-          - min: 209
+        - text: Artificial consciousness evolved beyond the physical realm
+          roll:
+            min: 209
             max: 210
-            result: Artificial consciousness evolved beyond the physical realm
-          - min: 211
+        - text: Clues to hidden areas within a known domain
+          roll:
+            min: 211
             max: 212
-            result: Clues to hidden areas within a known domain
-          - min: 213
+        - text: Envoy from subspace or dark matter beings
+          roll:
+            min: 213
             max: 214
-            result: Envoy from subspace or dark matter beings
-          - min: 215
+        - text: Extraordinary technology manipulating nature
+          roll:
+            min: 215
             max: 222
-            result: Extraordinary technology manipulating nature
-          - min: 223
+        - text: Final contact from dying life
+          roll:
+            min: 223
             max: 224
-            result: Final contact from dying life
-          - min: 225
+        - text: Gateway to a specific person or being
+          roll:
+            min: 225
             max: 226
-            result: Gateway to a specific person or being
-          - min: 227
+        - text: Key to unlocking the next evolution of life
+          roll:
+            min: 227
             max: 228
-            result: Key to unlocking the next evolution of life
-          - min: 229
+        - text: Lost or hidden lifeforms
+          roll:
+            min: 229
             max: 234
-            result: Lost or hidden lifeforms
-          - min: 235
+        - text: Lifeforms exhibiting rare and awe-inspiring behavior
+          roll:
+            min: 235
             max: 242
-            result: Lifeforms exhibiting rare and awe-inspiring behavior
-          - min: 243
+        - text: Marvel of ancient energy source or power
+          roll:
+            min: 243
             max: 246
-            result: Marvel of ancient energy source or power
-          - min: 247
+        - text: Miraculously preserved historical or cultural data
+          roll:
+            min: 247
             max: 250
-            result: Miraculously preserved historical or cultural data
-          - min: 251
+        - text: Drones or machine intelligence still attempting to serve a dead civilization
+          roll:
+            min: 251
             max: 256
-            result: Drones or machine intelligence still attempting to serve a dead civilization
-          - min: 257
+        - text: Mysterious data of potential value
+          roll:
+            min: 257
             max: 262
-            result: Mysterious data of potential value
-          - min: 263
+        - text: New understanding of personal significance
+          roll:
+            min: 263
             max: 266
-            result: New understanding of personal significance
-          - min: 267
+        - text: Means to affect events at a distant location
+          roll:
+            min: 267
             max: 268
-            result: Means to affect events at a distant location
-          - min: 269
+        - text: Council of powerful beings sworn to secretly shepherd the galaxy
+          roll:
+            min: 269
             max: 270
-            result: Council of powerful beings sworn to secretly shepherd the galaxy
-          - min: 271
+        - text: Place of cultural significance rediscovered
+          roll:
+            min: 271
             max: 278
-            result: Place of cultural significance rediscovered
-          - min: 279
+        - text: Resource never before seen
+          roll:
+            min: 279
             max: 286
-            result: Resource never before seen
-          - min: 287
+        - text: Serene or rejuvenating location
+          roll:
+            min: 287
             max: 288
-            result: Serene or rejuvenating location
-          - min: 289
+        - text: Vision of critical event happening simultaneously
+          roll:
+            min: 289
             max: 290
-            result: Vision of critical event happening simultaneously
-          - min: 291
+        - roll:
+            min: 291
             max: 300
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
+          <<: *RollTwice
+        type: oracle_rollable
       confront_chaos:
-        replaces: starforged/oracles/moves/confront_chaos
+        name: Confront Chaos
+        oracle_type: table_text
+        _source: *Source
+        replaces:
+        - oracle_rollable:starforged/misc/story_complication
         dice: 1d300
         rows:
-          - min: 1
+            # begin rows copied from original
+        - text: Baneful weapon of mass destruction
+          roll:
+            min: 1
             max: 4
-            result: Baneful weapon of mass destruction
-          - min: 5
+        - text: Cataclysmic environmental effects
+          roll:
+            min: 5
             max: 9
-            result: Cataclysmic environmental effects
-          - min: 10
+        - text: Dead given unnatural life
+          roll:
+            min: 10
             max: 12
-            result: Dead given unnatural life
-          - min: 13
+        - text: Destructive lifeform of monstrous proportion
+          roll:
+            min: 13
             max: 17
-            result: Destructive lifeform of monstrous proportion
-          - min: 18
+        - text: Dread hallucinations or illusions
+          roll:
+            min: 18
             max: 20
-            result: Dread hallucinations or illusions
-          - min: 21
+        - text: Harbingers of an imminent invasion
+          roll:
+            min: 21
             max: 24
-            result: Harbingers of an imminent invasion
-          - min: 25
+        - text: Horde of insatiable hunger or fury
+          roll:
+            min: 25
             max: 27
-            result: Horde of insatiable hunger or fury
-          - min: 28
+        - text: Horrific lifeforms of inscrutable purpose
+          roll:
+            min: 28
             max: 32
-            result: Horrific lifeforms of inscrutable purpose
-          - min: 33
+        - text: Impostors in human form
+          roll:
+            min: 33
             max: 36
-            result: Impostors in human form
-          - min: 37
+        - text: Machines made enemy
+          roll:
+            min: 37
             max: 41
-            result: Machines made enemy
-          - min: 42
+        - text: Malignant contagion or parasite
+          roll:
+            min: 42
             max: 45
-            result: Malignant contagion or parasite
-          - min: 46
+        - text: Messenger or signal with a dire warning
+          roll:
+            min: 46
             max: 50
-            result: Messenger or signal with a dire warning
-          - min: 51
+        - text: Passage to a grim alternate reality
+          roll:
+            min: 51
             max: 53
-            result: Passage to a grim alternate reality
-          - min: 54
+        - text: People corrupted by chaos
+          roll:
+            min: 54
             max: 58
-            result: People corrupted by chaos
-          - min: 59
+        - text: Powerful distortions of time or space
+          roll:
+            min: 59
             max: 63
-            result: Powerful distortions of time or space
-          - min: 64
+        - text: Signs of an impending catastrophe
+          roll:
+            min: 64
             max: 68
-            result: Signs of an impending catastrophe
-          - min: 69
+        - text: Site of a baffling disappearance
+          roll:
+            min: 69
             max: 72
-            result: Site of a baffling disappearance
-          - min: 73
+        - text: Site of a horrible disaster
+          roll:
+            min: 73
             max: 77
-            result: Site of a horrible disaster
-          - min: 78
+        - text: Site of terrible carnage
+          roll:
+            min: 78
             max: 82
-            result: Site of terrible carnage
-          - min: 83
+        - text: Technology nullified or made unstable
+          roll:
+            min: 83
             max: 87
-            result: Technology nullified or made unstable
-          - min: 88
+        - text: Technology warped for dark purpose
+          roll:
+            min: 88
             max: 92
-            result: Technology warped for dark purpose
-          - min: 93
+        - text: Vault of dread technology or power
+          roll:
+            min: 93
             max: 96
-            result: Vault of dread technology or power
-          - min: 97
+        - text: Worshipers of great and malevolent powers
+            # end rows copied from original
+          roll:
+            min: 97
             max: 100
-            result: Worshipers of great and malevolent powers
-          - min: 101
+        - text: Baneful weapon genetically keyed
+          roll:
+            min: 101
             max: 104
-            result: Baneful weapon genetically keyed
-          - min: 105
+        - text: Cataclysmic spatial anomaly
+          roll:
+            min: 105
             max: 109
-            result: Cataclysmic spatial anomaly
-          - min: 110
+        - text: Dead returned to true life driven mad by their experience
+          roll:
+            min: 110
             max: 112
-            result: Dead returned to true life driven mad by their experience
-          - min: 113
+        - text: Destructive AI making brutal calculations
+          roll:
+            min: 113
             max: 117
-            result: Destructive AI making brutal calculations
-          - min: 118
+        - text: Ill omens or portents
+          roll:
+            min: 118
             max: 120
-            result: Ill omens or portents
-          - min: 121
+        - text: Caught in the hunters trap
+          roll:
+            min: 121
             max: 124
-            result: Caught in the hunters trap
-          - min: 125
+        - text: Sudden appearance of insatiable black hole
+          roll:
+            min: 125
             max: 127
-            result: Sudden appearance of insatiable black hole
-          - min: 128
+        - text: Horrific lifeform that feeds on terror and fear
+          roll:
+            min: 128
             max: 132
-            result: Horrific lifeform that feeds on terror and fear
-          - min: 133
+        - text: Humankind betrayed by their own
+          roll:
+            min: 133
             max: 136
-            result: Humankind betrayed by their own
-          - min: 137
+        - text: Inorganic matter gains life and malevolent purpose
+          roll:
+            min: 137
             max: 141
-            result: Inorganic matter gains life and malevolent purpose
-          - min: 142
+        - text: Swarm of deadly nanites
+          roll:
+            min: 142
             max: 145
-            result: Swarm of deadly nanites
-          - min: 146
+        - text: Message or signal reporting a dire loss
+          roll:
+            min: 146
             max: 150
-            result: Message or signal reporting a dire loss
-          - min: 151
+        - text: Trapped in a time loop
+          roll:
+            min: 151
             max: 153
-            result: Trapped in a time loop
-          - min: 154
+        - text: Lifeforms corrupted by chaos
+          roll:
+            min: 154
             max: 158
-            result: Lifeforms corrupted by chaos
-          - min: 159
+        - text: Powerful distortions of reality
+          roll:
+            min: 159
             max: 163
-            result: Powerful distortions of reality
-          - min: 164
+        - text: Stellar object going nova
+          roll:
+            min: 164
             max: 168
-            result: Stellar object going nova
-          - min: 169
+        - text: Dangerous and deadly hostage situation
+          roll:
+            min: 169
             max: 172
-            result: Dangerous and deadly hostage situation
-          - min: 173
+        - text: Site of disturbing event
+          roll:
+            min: 173
             max: 177
-            result: Site of disturbing event
-          - min: 178
+        - text: Site of horrific exploitation
+          roll:
+            min: 178
             max: 182
-            result: Site of horrific exploitation
-          - min: 183
+        - text: Technology turns on its owners
+          roll:
+            min: 183
             max: 187
-            result: Technology turns on its owners
-          - min: 188
+        - text: People warped for dark purpose
+          roll:
+            min: 188
             max: 192
-            result: People warped for dark purpose
-          - min: 193
+        - text: Seemingly innocuous device holds truly dreadful power
+          roll:
+            min: 193
             max: 196
-            result: Seemingly innocuous device holds truly dreadful power
-          - min: 197
+        - text: Vanguard of oppressive regime
+          roll:
+            min: 197
             max: 200
-            result: Vanguard of oppressive regime
-          - min: 201
+        - text: Baneful weapon that destroys time or space
+          roll:
+            min: 201
             max: 204
-            result: Baneful weapon that destroys time or space
-          - min: 205
+        - text: Rogue planet on a collision course
+          roll:
+            min: 205
             max: 209
-            result: Rogue planet on a collision course
-          - min: 210
+        - text: Dead feasting on the living
+          roll:
+            min: 210
             max: 212
-            result: Dead feasting on the living
-          - min: 213
+        - text: Colossal lifeform unaware of the damage it causes
+          roll:
+            min: 213
             max: 217
-            result: Colossal lifeform unaware of the damage it causes
-          - min: 218
+        - text: Specters of the past come back to haunt
+          roll:
+            min: 218
             max: 220
-            result: Specters of the past come back to haunt
-          - min: 221
+        - text: Evidence of hidden invaders already in control
+          roll:
+            min: 221
             max: 224
-            result: Evidence of hidden invaders already in control
-          - min: 225
+        - text: Destructive force of nature unleashed
+          roll:
+            min: 225
             max: 227
-            result: Destructive force of nature unleashed
-          - min: 228
+        - text: Half of all life lost in a snap
+          roll:
+            min: 228
             max: 232
-            result: Half of all life lost in a snap
-          - min: 233
+        - text: Clones come for their progenitors
+          roll:
+            min: 233
             max: 236
-            result: Clones come for their progenitors
-          - min: 237
+        - text: Living beings puppeted against their will
+          roll:
+            min: 237
             max: 241
-            result: Living beings puppeted against their will
-          - min: 242
+        - text: Debilitating contagion or parasite
+          roll:
+            min: 242
             max: 245
-            result: Debilitating contagion or parasite
-          - min: 246
+        - text: Total communications black out
+          roll:
+            min: 246
             max: 250
-            result: Total communications black out
-          - min: 251
+        - text: Transported to a grim future
+          roll:
+            min: 251
             max: 253
-            result: Transported to a grim future
-          - min: 254
+        - text: Location or landscapes corrupted by chaos
+          roll:
+            min: 254
             max: 258
-            result: Location or landscapes corrupted by chaos
-          - min: 259
+        - text: Gravitational waves unbalance the universe
+          roll:
+            min: 259
             max: 263
-            result: Gravitational waves unbalance the universe
-          - min: 264
+        - text: Source of incredible power running out of control
+          roll:
+            min: 264
             max: 268
-            result: Source of incredible power running out of control
-          - min: 269
+        - text: Impossible and crippling reappearance
+          roll:
+            min: 269
             max: 272
-            result: Impossible and crippling reappearance
-          - min: 273
+        - text: Site of an extinction level event
+          roll:
+            min: 273
             max: 277
-            result: Site of an extinction level event
-          - min: 278
+        - text: Site of a dark ritual
+          roll:
+            min: 278
             max: 282
-            result: Site of a dark ritual
-          - min: 283
+        - text: Fundamental law of physics breaks
+          roll:
+            min: 283
             max: 287
-            result: Fundamental law of physics breaks
-          - min: 288
+        - text: Explosion of mind-altering psychic energy
+          roll:
+            min: 288
             max: 292
-            result: Explosion of mind-altering psychic energy
-          - min: 293
+        - text: Site of dark mystic power
+          roll:
+            min: 293
             max: 296
-            result: Site of dark mystic power
-          - min: 297
+        - text: Appearance of a great and malevolent power
+          roll:
+            min: 297
             max: 300
-            result: Appearance of a great and malevolent power
+        type: oracle_rollable
       pay_the_price:
-        replaces: starforged/oracles/moves/pay_the_price
+        name: Pay the Price
+        oracle_type: table_text
+        _source: *Source
+        replaces:
+        - oracle_rollable:starforged/misc/story_complication
         dice: 1d300
         rows:
-          - min: 1
+          # begin rows
+        - text: A trusted individual or community acts against you
+          roll:
+            min: 1
             max: 2
-            result: A trusted individual or community acts against you
-          - min: 3
+        - text: An individual or community you care about is exposed to danger
+          roll:
+            min: 3
             max: 4
-            result: An individual or community you care about is exposed to danger
-          - min: 5
+        - text: You encounter signs of a looming threat
+          roll:
+            min: 5
             max: 7
-            result: You encounter signs of a looming threat
-          - min: 8
+        - text: You create an opportunity for an enemy
+          roll:
+            min: 8
             max: 10
-            result: You create an opportunity for an enemy
-          - min: 11
+        - text: You face a tough choice
+          roll:
+            min: 11
             max: 14
-            result: You face a tough choice
-          - min: 15
+        - text: You face the consequences of an earlier choice
+          roll:
+            min: 15
             max: 18
-            result: You face the consequences of an earlier choice
-          - min: 19
+        - text: A surprising development complicates your quest
+          roll:
+            min: 19
             max: 22
-            result: A surprising development complicates your quest
-          - min: 23
+        - text: You are separated from something or someone
+          roll:
+            min: 23
             max: 26
-            result: You are separated from something or someone
-          - min: 27
+        - text: Your action causes collateral damage or has an unintended effect
+          roll:
+            min: 27
             max: 32
-            result: Your action causes collateral damage or has an unintended effect
-          - min: 33
+        - text: Something of value is lost or destroyed
+          roll:
+            min: 33
             max: 38
-            result: Something of value is lost or destroyed
-          - min: 39
+        - text: The environment or terrain introduces a new hazard
+          roll:
+            min: 39
             max: 44
-            result: The environment or terrain introduces a new hazard
-          - min: 45
+        - text: A new enemy is revealed
+          roll:
+            min: 45
             max: 50
-            result: A new enemy is revealed
-          - min: 51
+        - text: A friend, companion, or ally is in harm’s way (or you are, if alone)
+          roll:
+            min: 51
             max: 56
-            result: A friend, companion, or ally is in harm’s way (or you are, if alone)
-          - min: 57
+        - text: Your equipment or vehicle malfunctions
+          roll:
+            min: 57
             max: 62
-            result: Your equipment or vehicle malfunctions
-          - min: 63
+        - text: Your vehicle suffers damage
+          roll:
+            min: 63
             max: 68
-            result: Your vehicle suffers damage
-          - min: 69
+        - text: You waste resources
+          roll:
+            min: 69
             max: 74
-            result: You waste resources
-          - min: 75
+        - text: You are harmed
+          roll:
+            min: 75
             max: 81
-            result: You are harmed
-          - min: 82
+        - text: You are stressed
+          roll:
+            min: 82
             max: 88
-            result: You are stressed
-          - min: 89
+        - text: You are delayed or put at a disadvantage
+          roll:
+            min: 89
             max: 95
-            result: You are delayed or put at a disadvantage
-          - min: 96
+        - roll:
+            min: 96
             max: 100
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
-          - min: 101
+          <<: *RollTwice
+            # end rows copied from original
+        - text: An individual or community you care about unintentionally hinders
+            you
+          roll:
+            min: 101
             max: 102
-            result: An individual or community you care about unintentionally hinders you
-          - min: 103
+        - text: The wrong person shows up at the wrong time
+          roll:
+            min: 103
             max: 104
-            result: The wrong person shows up at the wrong time
-          - min: 105
+        - text: An ill omen appears repeatedly
+          roll:
+            min: 105
             max: 107
-            result: An ill omen appears repeatedly
-          - min: 108
+        - text: The enemy exploits your weakness
+          roll:
+            min: 108
             max: 110
-            result: The enemy exploits your weakness
-          - min: 111
+        - text: You are tempted to abandon a vow
+          roll:
+            min: 111
             max: 114
-            result: You are tempted to abandon a vow
-          - min: 115
+        - text: You are falsely accused of a crime
+          roll:
+            min: 115
             max: 118
-            result: You are falsely accused of a crime
-          - min: 119
+        - text: An unexpected guardian impedes your progress
+          roll:
+            min: 119
             max: 122
-            result: An unexpected guardian impedes your progress
-          - min: 123
+        - text: You lose communication with someone
+          roll:
+            min: 123
             max: 126
-            result: You lose communication with someone
-          - min: 127
+        - text: Rumors spread to ruin your reputation
+          roll:
+            min: 127
             max: 132
-            result: Rumors spread to ruin your reputation
-          - min: 133
+        - text: Something of value is stolen
+          roll:
+            min: 133
             max: 138
-            result: Something of value is stolen
-          - min: 139
+        - text: A trap or environmental circumstance forces you to work with the enemy
+          roll:
+            min: 139
             max: 144
-            result: A trap or environmental circumstance forces you to work with the enemy
-          - min: 145
+        - text: A foe thought defeated returns
+          roll:
+            min: 145
             max: 150
-            result: A foe thought defeated returns
-          - min: 151
+        - text: A friend, companion, or ally is captured
+          roll:
+            min: 151
             max: 156
-            result: A friend, companion, or ally is captured
-          - min: 157
+        - text: A reliable ability is suddenly unreliable
+          roll:
+            min: 157
             max: 162
-            result: A reliable ability is suddenly unreliable
-          - min: 163
+        - text: A module suffers damage
+          roll:
+            min: 163
             max: 168
-            result: A module suffers damage
-          - min: 169
+        - text: You cross paths with someone or something best avoided
+          roll:
+            min: 169
             max: 174
-            result: You cross paths with someone or something best avoided
-          - min: 175
+        - text: You draw attention to yourself in an unwanted way
+          roll:
+            min: 175
             max: 181
-            result: You draw attention to yourself in an unwanted way
-          - min: 182
+        - text: A tactical advantage is lost
+          roll:
+            min: 182
             max: 188
-            result: A tactical advantage is lost
-          - min: 189
+        - text: Critical information is lost or withheld
+          roll:
+            min: 189
             max: 195
-            result: Critical information is lost or withheld
-          - min: 196
+        - roll:
+            min: 196
             max: 200
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
-          - min: 201
+          <<: *RollTwice
+        - text: A friend, companion, or ally abandons the quest
+          roll:
+            min: 201
             max: 202
-            result: A friend, companion, or ally abandons the quest
-          - min: 203
+        - text: A fracture forms in a previously solid alliance
+          roll:
+            min: 203
             max: 204
-            result: A fracture forms in a previously solid alliance
-          - min: 205
+        - text: Things are worse than they seem
+          roll:
+            min: 205
             max: 207
-            result: Things are worse than they seem
-          - min: 208
+        - text: The enemy knows of your plans
+          roll:
+            min: 208
             max: 210
-            result: The enemy knows of your plans
-          - min: 211
+        - text: You face the choice of the lesser of two evils
+          roll:
+            min: 211
             max: 214
-            result: You face the choice of the lesser of two evils
-          - min: 215
+        - text: A bounty has been put out for you or a friend, companion, or ally.
+          roll:
+            min: 215
             max: 218
-            result: A bounty has been put out for you or a friend, companion, or ally.
-          - min: 219
+        - text: Something you thought false is revealed to be true
+          roll:
+            min: 219
             max: 222
-            result: Something you thought false is revealed to be true
-          - min: 223
+        - text: An albatross hangs about your neck
+          roll:
+            min: 223
             max: 226
-            result: An albatross hangs about your neck
-          - min: 227
+        - text: Your action was more effective than you thought which complicates
+            things
+          roll:
+            min: 227
             max: 232
-            result: Your action was more effective than you thought which complicates things
-          - min: 233
+        - text: The location of something of value has changed
+          roll:
+            min: 233
             max: 238
-            result: The location of something of value has changed
-          - min: 239
+        - text: An objective is complicated through a cultural taboo
+          roll:
+            min: 239
             max: 244
-            result: An objective is complicated through a cultural taboo
-          - min: 245
+        - text: A trusted authority is shown to be corrupt
+          roll:
+            min: 245
             max: 250
-            result: A trusted authority is shown to be corrupt
-          - min: 251
+        - text: Innocent lives are endangered by your actions
+          roll:
+            min: 251
             max: 256
-            result: Innocent lives are endangered by your actions
-          - min: 257
+        - text: Your actions were interpreted in a detrimental way
+          roll:
+            min: 257
             max: 262
-            result: Your actions were interpreted in a detrimental way
-          - min: 263
+        - text: A friend, companion, or ally does more harm than good
+          roll:
+            min: 263
             max: 268
-            result: A friend, companion, or ally does more harm than good
-          - min: 269
+        - text: You are made to look the fool
+          roll:
+            min: 269
             max: 274
-            result: You are made to look the fool
-          - min: 275
+        - text: You lose support for your cause
+          roll:
+            min: 275
             max: 281
-            result: You lose support for your cause
-          - min: 282
+        - text: You suffer an impact
+          roll:
+            min: 282
             max: 288
-            result: You suffer an impact
-          - min: 289
+        - text: Your progress is undone
+          roll:
+            min: 289
             max: 295
-            result: Your progress is undone
-          - min: 296
+        - roll:
+            min: 296
             max: 300
-            result: Roll twice
-            multiple_rolls:
-              amount: 2
+          <<: *RollTwice
+        type: oracle_rollable
+    type: oracle_collection
+    oracle_type: tables

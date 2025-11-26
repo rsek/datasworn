@@ -163,7 +163,7 @@ export function validateIdsInStrings(
 	})
 
 	if (errors.length > 0)
-		throw new Error(errors.map((e) => e.toString()).join('\n'))
+		throw new Error(errors.map((e) => String(e)).join('\n'))
 
 	return true
 }
@@ -218,7 +218,7 @@ export function validateMarkdownIdPointers(
 	}
 
 	if (errors.length > 0)
-		throw new Error(errors.map((e) => e.toString()).join('\n'))
+		throw new Error(errors.map((e) => String(e)).join('\n'))
 
 	return true
 }

@@ -1,6 +1,6 @@
 {
 	"name": "@datasworn/core",
-	"version": "0.1.0-0",
+	"version": "0.1.0",
 	"description": "Typings and JSON schema common to Datasworn. This is a pre-release package, provided for developer feedback. It will almost certainly receive breaking changes.",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",

@@ -26,32 +26,32 @@ export function CollectableNode<
 		$id,
 		...options,
 		[CollectableBrand]: 'Collectable'
-	}) as TCollectableNode<TBase, TType>
+	})
 
 	return setSourceDataSchema(enhancedBase, (schema: TObject) => ({
 		...CloneType(schema),
 		additionalProperties: true
-	}))
+	})) as unknown as TCollectableNode<TBase, TType>
 }
+
+/** Simplified type to avoid deep instantiation - uses TObject as base */
 export type TCollectableNode<
-	TBase extends TObject,
-	TType extends TypeId.Collectable
-> = TCollectableBranded<TPrimaryTypeNode<TBase, TType>>
+	TBase extends TObject = TObject,
+	TType extends TypeId.Collectable = TypeId.Collectable
+> = TObject & TCollectableBranded<TObject> & { _type: TType; _base: TBase }
 
 export type CollectableNode<
 	TBase extends object,
 	TType extends TypeId.Collectable
 > = PrimaryTypeNode<TBase, TType>
 
+/** Simplified type to avoid deep instantiation */
 export type TCollectableSubtypeNode<
-	TBase extends TObject,
-	TType extends TypeId.Collectable,
-	TSubtypeKey extends string,
-	TSubtype extends string
-> = TCollectableBranded<
-	TPrimarySubtypeNode<TBase, TType, TSubtypeKey, TSubtype>
-> &
-	TCollectableNode<TBase, TType>
+	TBase extends TObject = TObject,
+	TType extends TypeId.Collectable = TypeId.Collectable,
+	TSubtypeKey extends string = string,
+	TSubtype extends string = string
+> = TCollectableNode<TBase, TType> & { _subtypeKey: TSubtypeKey; _subtype: TSubtype }
 
 export function CollectableSubtypeNode<
 	TBase extends TObject,
@@ -68,10 +68,10 @@ export function CollectableSubtypeNode<
 	const enhancedBase = PrimarySubtypeNode(base, type, subtypeKey, subtype, {
 		...options,
 		[CollectableBrand]: 'Collectable'
-	}) as TCollectableSubtypeNode<TBase, TType, TSubtypeKey, TSubtype>
+	})
 
 	return setSourceDataSchema(enhancedBase, (schema: TObject) => ({
 		...CloneType(schema),
 		additionalProperties: true
-	}))
+	})) as unknown as TCollectableSubtypeNode<TBase, TType, TSubtypeKey, TSubtype>
 }

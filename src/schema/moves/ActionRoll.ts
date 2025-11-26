@@ -5,7 +5,7 @@ import {
 	TriggerConditionEnhancement,
 	TriggerEnhancement
 } from './Trigger.js'
-import { ActionRollMethod, type MoveOutcomes } from './common.js'
+import { ActionRollMethod, MoveOutcomes, type MoveOutcomes as MoveOutcomesType } from './common.js'
 import { Move, MoveEnhancement } from './utils.js'
 import * as Utils from '../Utils.js'
 import { RollableValue } from '../common/RollableValues.js'
@@ -33,7 +33,7 @@ export type TriggerActionRoll = Static<typeof TriggerActionRoll>
 export const MoveActionRoll = Move(
 	'action_roll',
 	Type.Ref(TriggerActionRoll),
-	Type.Ref<typeof MoveOutcomes>('MoveOutcomes'),
+	Type.Ref(MoveOutcomes),
 	{
 		title: 'Move (action roll)',
 		description: 'A move that makes an action roll.',
@@ -44,7 +44,7 @@ export const MoveActionRoll = Move(
 export type MoveActionRoll = Move<
 	'action_roll',
 	TriggerActionRoll,
-	MoveOutcomes
+	MoveOutcomesType
 >
 
 export const TriggerActionRollConditionEnhancement =

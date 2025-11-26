@@ -1,3643 +1,6085 @@
 _id: starsmith
+datasworn_version: "0.1.0"
+type: expansion
 ruleset: starforged
-source: &Source
+<<: &Source
+  title: Starsmith Expanded Oracles
+  date: 2024-03-22
+  url: https://playeveryrole.com/starsmith-products/
+  license: https://creativecommons.org/licenses/by/4.0
   authors:
     - name: Eric Bright
-  date: '2023-03-19'
-  title: Starsmith
-  license: https://creativecommons.org/licenses/by/4.0/
-  url: https://playeveryrole.com/
-package_type: expansion
 oracles:
   core:
     name: Core
-    _source: *Source
+    oracle_type: tables
+    # summary: Extension of the oracle table
+    # description: Extension of the oracle table
+    enhances:
+    - oracle_collection:starforged/core
+    _source: &Source
+      title: Starsmith
+      authors:
+      - name: Eric Bright
+      date: 2024-03-22
+      url: https://playeveryrole.com/starsmith-products/
+      license: https://creativecommons.org/licenses/by/4.0
     contents:
       action:
         name: Action
-        _source: *Source
         oracle_type: table_text
-        replaces: starforged/oracles/core/action
         dice: 1d300
+        replaces:
+        - oracle_rollable:starforged/core/action
+        summary: Extension of the oracle table
+        _source: *Source
         rows:
-          - min: 1
+        # begin copy from original table
+        - _i18n: &Verb
+            text:
+              part_of_speech: verb
+          text: Abandon
+          roll:
+            min: 1
             max: 1
-            text: Abandon
-          - min: 2
+        - text: Acquire
+          _i18n: *Verb
+          roll:
+            min: 2
             max: 2
-            text: Acquire
-          - min: 3
+        - text: Advance
+          _i18n: *Verb
+          roll:
+            min: 3
             max: 3
-            text: Advance
-          - min: 4
+        - text: Affect
+          _i18n: *Verb
+          roll:
+            min: 4
             max: 4
-            text: Affect
-          - min: 5
+        - text: Aid
+          _i18n: *Verb
+          roll:
+            min: 5
             max: 5
-            text: Aid
-          - min: 6
+        - text: Arrive
+          _i18n: *Verb
+          roll:
+            min: 6
             max: 6
-            text: Arrive
-          - min: 7
+        - text: Assault
+          _i18n: *Verb
+          roll:
+            min: 7
             max: 7
-            text: Assault
-          - min: 8
+        - text: Attack
+          _i18n: *Verb
+          roll:
+            min: 8
             max: 8
-            text: Attack
-          - min: 9
+        - text: Avenge
+          _i18n: *Verb
+          roll:
+            min: 9
             max: 9
-            text: Avenge
-          - min: 10
+        - text: Avoid
+          _i18n: *Verb
+          roll:
+            min: 10
             max: 10
-            text: Avoid
-          - min: 11
+        - text: Await
+          _i18n: *Verb
+          roll:
+            min: 11
             max: 11
-            text: Await
-          - min: 12
+        - text: Begin
+          _i18n: *Verb
+          roll:
+            min: 12
             max: 12
-            text: Begin
-          - min: 13
+        - text: Betray
+          _i18n: *Verb
+          roll:
+            min: 13
             max: 13
-            text: Betray
-          - min: 14
+        - text: Bolster
+          _i18n: *Verb
+          roll:
+            min: 14
             max: 14
-            text: Bolster
-          - min: 15
+        - text: Breach
+          _i18n: *Verb
+          roll:
+            min: 15
             max: 15
-            text: Breach
-          - min: 16
+        - text: Break
+          _i18n: *Verb
+          roll:
+            min: 16
             max: 16
-            text: Break
-          - min: 17
+        - text: Capture
+          _i18n: *Verb
+          roll:
+            min: 17
             max: 17
-            text: Capture
-          - min: 18
+        - text: Challenge
+          _i18n: *Verb
+          roll:
+            min: 18
             max: 18
-            text: Challenge
-          - min: 19
+        - text: Change
+          _i18n: *Verb
+          roll:
+            min: 19
             max: 19
-            text: Change
-          - min: 20
+        - text: Charge
+          _i18n: *Verb
+          roll:
+            min: 20
             max: 20
-            text: Charge
-          - min: 21
+        - text: Clash
+          _i18n: *Verb
+          roll:
+            min: 21
             max: 21
-            text: Clash
-          - min: 22
+        - text: Command
+          _i18n: *Verb
+          roll:
+            min: 22
             max: 22
-            text: Command
-          - min: 23
+        - text: Communicate
+          _i18n: *Verb
+          roll:
+            min: 23
             max: 23
-            text: Communicate
-          - min: 24
+        - text: Construct
+          _i18n: *Verb
+          roll:
+            min: 24
             max: 24
-            text: Construct
-          - min: 25
+        - text: Control
+          _i18n: *Verb
+          roll:
+            min: 25
             max: 25
-            text: Control
-          - min: 26
+        - text: Coordinate
+          _i18n: *Verb
+          roll:
+            min: 26
             max: 26
-            text: Coordinate
-          - min: 27
+        - text: Create
+          _i18n: *Verb
+          roll:
+            min: 27
             max: 27
-            text: Create
-          - min: 28
+        - text: Debate
+          _i18n: *Verb
+          roll:
+            min: 28
             max: 28
-            text: Debate
-          - min: 29
+        - text: Defeat
+          _i18n: *Verb
+          roll:
+            min: 29
             max: 29
-            text: Defeat
-          - min: 30
+        - text: Defend
+          _i18n: *Verb
+          roll:
+            min: 30
             max: 30
-            text: Defend
-          - min: 31
+        - text: Deflect
+          _i18n: *Verb
+          roll:
+            min: 31
             max: 31
-            text: Deflect
-          - min: 32
+        - text: Defy
+          _i18n: *Verb
+          roll:
+            min: 32
             max: 32
-            text: Defy
-          - min: 33
+        - text: Deliver
+          _i18n: *Verb
+          roll:
+            min: 33
             max: 33
-            text: Deliver
-          - min: 34
+        - text: Demand
+          _i18n: *Verb
+          roll:
+            min: 34
             max: 34
-            text: Demand
-          - min: 35
+        - text: Depart
+          _i18n: *Verb
+          roll:
+            min: 35
             max: 35
-            text: Depart
-          - min: 36
+        - text: Destroy
+          _i18n: *Verb
+          roll:
+            min: 36
             max: 36
-            text: Destroy
-          - min: 37
+        - text: Distract
+          _i18n: *Verb
+          roll:
+            min: 37
             max: 37
-            text: Distract
-          - min: 38
+        - text: Eliminate
+          _i18n: *Verb
+          roll:
+            min: 38
             max: 38
-            text: Eliminate
-          - min: 39
+        - text: Endure
+          _i18n: *Verb
+          roll:
+            min: 39
             max: 39
-            text: Endure
-          - min: 40
+        - text: Escalate
+          _i18n: *Verb
+          roll:
+            min: 40
             max: 40
-            text: Escalate
-          - min: 41
+        - text: Escort
+          _i18n: *Verb
+          roll:
+            min: 41
             max: 41
-            text: Escort
-          - min: 42
+        - text: Evade
+          _i18n: *Verb
+          roll:
+            min: 42
             max: 42
-            text: Evade
-          - min: 43
+        - text: Explore
+          _i18n: *Verb
+          roll:
+            min: 43
             max: 43
-            text: Explore
-          - min: 44
+        - text: Falter
+          _i18n: *Verb
+          roll:
+            min: 44
             max: 44
-            text: Falter
-          - min: 45
+        - text: Find
+          _i18n: *Verb
+          roll:
+            min: 45
             max: 45
-            text: Find
-          - min: 46
+        - text: Finish
+          _i18n: *Verb
+          roll:
+            min: 46
             max: 46
-            text: Finish
-          - min: 47
+        - text: Focus
+          _i18n: *Verb
+          roll:
+            min: 47
             max: 47
-            text: Focus
-          - min: 48
+        - text: Follow
+          _i18n: *Verb
+          roll:
+            min: 48
             max: 48
-            text: Follow
-          - min: 49
+        - text: Fortify
+          _i18n: *Verb
+          roll:
+            min: 49
             max: 49
-            text: Fortify
-          - min: 50
+        - text: Gather
+          _i18n: *Verb
+          roll:
+            min: 50
             max: 50
-            text: Gather
-          - min: 51
+        - text: Guard
+          _i18n: *Verb
+          roll:
+            min: 51
             max: 51
-            text: Guard
-          - min: 52
+        - text: Hide
+          _i18n: *Verb
+          roll:
+            min: 52
             max: 52
-            text: Hide
-          - min: 53
+        - text: Hold
+          _i18n: *Verb
+          roll:
+            min: 53
             max: 53
-            text: Hold
-          - min: 54
+        - text: Hunt
+          _i18n: *Verb
+          roll:
+            min: 54
             max: 54
-            text: Hunt
-          - min: 55
+        - text: Impress
+          _i18n: *Verb
+          roll:
+            min: 55
             max: 55
-            text: Impress
-          - min: 56
+        - text: Initiate
+          _i18n: *Verb
+          roll:
+            min: 56
             max: 56
-            text: Initiate
-          - min: 57
+        - text: Inspect
+          _i18n: *Verb
+          roll:
+            min: 57
             max: 57
-            text: Inspect
-          - min: 58
+        - text: Investigate
+          _i18n: *Verb
+          roll:
+            min: 58
             max: 58
-            text: Investigate
-          - min: 59
+        - text: Journey
+          _i18n: *Verb
+          roll:
+            min: 59
             max: 59
-            text: Journey
-          - min: 60
+        - text: Learn
+          _i18n: *Verb
+          roll:
+            min: 60
             max: 60
-            text: Learn
-          - min: 61
+        - text: Leave
+          _i18n: *Verb
+          roll:
+            min: 61
             max: 61
-            text: Leave
-          - min: 62
+        - text: Locate
+          _i18n: *Verb
+          roll:
+            min: 62
             max: 62
-            text: Locate
-          - min: 63
+        - text: Lose
+          _i18n: *Verb
+          roll:
+            min: 63
             max: 63
-            text: Lose
-          - min: 64
+        - text: Manipulate
+          _i18n: *Verb
+          roll:
+            min: 64
             max: 64
-            text: Manipulate
-          - min: 65
+        - text: Mourn
+          _i18n: *Verb
+          roll:
+            min: 65
             max: 65
-            text: Mourn
-          - min: 66
+        - text: Move
+          _i18n: *Verb
+          roll:
+            min: 66
             max: 66
-            text: Move
-          - min: 67
+        - text: Oppose
+          _i18n: *Verb
+          roll:
+            min: 67
             max: 67
-            text: Oppose
-          - min: 68
+        - text: Overwhelm
+          _i18n: *Verb
+          roll:
+            min: 68
             max: 68
-            text: Overwhelm
-          - min: 69
+        - text: Persevere
+          _i18n: *Verb
+          roll:
+            min: 69
             max: 69
-            text: Persevere
-          - min: 70
+        - text: Preserve
+          _i18n: *Verb
+          roll:
+            min: 70
             max: 70
-            text: Preserve
-          - min: 71
+        - text: Protect
+          _i18n: *Verb
+          roll:
+            min: 71
             max: 71
-            text: Protect
-          - min: 72
+        - text: Raid
+          _i18n: *Verb
+          roll:
+            min: 72
             max: 72
-            text: Raid
-          - min: 73
+        - text: Reduce
+          _i18n: *Verb
+          roll:
+            min: 73
             max: 73
-            text: Reduce
-          - min: 74
+        - text: Refuse
+          _i18n: *Verb
+          roll:
+            min: 74
             max: 74
-            text: Refuse
-          - min: 75
+        - text: Reject
+          _i18n: *Verb
+          roll:
+            min: 75
             max: 75
-            text: Reject
-          - min: 76
+        - text: Release
+          _i18n: *Verb
+          roll:
+            min: 76
             max: 76
-            text: Release
-          - min: 77
+        - text: Remove
+          _i18n: *Verb
+          roll:
+            min: 77
             max: 77
-            text: Remove
-          - min: 78
+        - text: Research
+          _i18n: *Verb
+          roll:
+            min: 78
             max: 78
-            text: Research
-          - min: 79
+        - text: Resist
+          _i18n: *Verb
+          roll:
+            min: 79
             max: 79
-            text: Resist
-          - min: 80
+        - text: Restore
+          _i18n: *Verb
+          roll:
+            min: 80
             max: 80
-            text: Restore
-          - min: 81
+        - text: Reveal
+          _i18n: *Verb
+          roll:
+            min: 81
             max: 81
-            text: Reveal
-          - min: 82
+        - text: Risk
+          _i18n: *Verb
+          roll:
+            min: 82
             max: 82
-            text: Risk
-          - min: 83
+        - text: Scheme
+          _i18n: *Verb
+          roll:
+            min: 83
             max: 83
-            text: Scheme
-          - min: 84
+        - text: Search
+          _i18n: *Verb
+          roll:
+            min: 84
             max: 84
-            text: Search
-          - min: 85
+        - text: Secure
+          _i18n: *Verb
+          roll:
+            min: 85
             max: 85
-            text: Secure
-          - min: 86
+        - text: Seize
+          _i18n: *Verb
+          roll:
+            min: 86
             max: 86
-            text: Seize
-          - min: 87
+        - text: Serve
+          _i18n: *Verb
+          roll:
+            min: 87
             max: 87
-            text: Serve
-          - min: 88
+        - text: Share
+          _i18n: *Verb
+          roll:
+            min: 88
             max: 88
-            text: Share
-          - min: 89
+        - text: Strengthen
+          _i18n: *Verb
+          roll:
+            min: 89
             max: 89
-            text: Strengthen
-          - min: 90
+        - text: Summon
+          _i18n: *Verb
+          roll:
+            min: 90
             max: 90
-            text: Summon
-          - min: 91
+        - text: Support
+          _i18n: *Verb
+          roll:
+            min: 91
             max: 91
-            text: Support
-          - min: 92
+        - text: Suppress
+          _i18n: *Verb
+          roll:
+            min: 92
             max: 92
-            text: Suppress
-          - min: 93
+        - text: Surrender
+          _i18n: *Verb
+          roll:
+            min: 93
             max: 93
-            text: Surrender
-          - min: 94
+        - text: Swear
+          _i18n: *Verb
+          roll:
+            min: 94
             max: 94
-            text: Swear
-          - min: 95
+        - text: Threaten
+          _i18n: *Verb
+          roll:
+            min: 95
             max: 95
-            text: Threaten
-          - min: 96
+        - text: Transform
+          _i18n: *Verb
+          roll:
+            min: 96
             max: 96
-            text: Transform
-          - min: 97
+        - text: Uncover
+          _i18n: *Verb
+          roll:
+            min: 97
             max: 97
-            text: Uncover
-          - min: 98
+        - text: Uphold
+          _i18n: *Verb
+          roll:
+            min: 98
             max: 98
-            text: Uphold
-          - min: 99
+        - text: Weaken
+          _i18n: *Verb
+          roll:
+            min: 99
             max: 99
-            text: Weaken
-          - min: 100
+        - text: Withdraw
+          _i18n: *Verb
+          roll:
+            min: 100
             max: 100
-            text: Withdraw
-          - min: 101
+        # end copy from original table
+        - text: Agitate
+          _i18n: *Verb
+          roll:
+            min: 101
             max: 101
-            text: Agitate
-          - min: 102
+        - text: Alter
+          _i18n: *Verb
+          roll:
+            min: 102
             max: 102
-            text: Alter
-          - min: 103
+        - text: Amass
+          _i18n: *Verb
+          roll:
+            min: 103
             max: 103
-            text: Amass
-          - min: 104
+        - text: Ambush
+          _i18n: *Verb
+          roll:
+            min: 104
             max: 104
-            text: Ambush
-          - min: 105
+        - text: Arouse
+          _i18n: *Verb
+          roll:
+            min: 105
             max: 105
-            text: Arouse
-          - min: 106
+        - text: Assail
+          _i18n: *Verb
+          roll:
+            min: 106
             max: 106
-            text: Assail
-          - min: 107
+        - text: Atone
+          _i18n: *Verb
+          roll:
+            min: 107
             max: 107
-            text: Atone
-          - min: 108
+        - text: Augment
+          _i18n: *Verb
+          roll:
+            min: 108
             max: 108
-            text: Augment
-          - min: 109
+        - text: Awaken
+          _i18n: *Verb
+          roll:
+            min: 109
             max: 109
-            text: Awaken
-          - min: 110
+        - text: Bury
+          _i18n: *Verb
+          roll:
+            min: 110
             max: 110
-            text: Bury
-          - min: 111
+        - text: Conceal
+          _i18n: *Verb
+          roll:
+            min: 111
             max: 111
-            text: Conceal
-          - min: 112
+        - text: Condemn
+          _i18n: *Verb
+          roll:
+            min: 112
             max: 112
-            text: Condemn
-          - min: 113
+        - text: Condense
+          _i18n: *Verb
+          roll:
+            min: 113
             max: 113
-            text: Condense
-          - min: 114
+        - text: Conquer
+          _i18n: *Verb
+          roll:
+            min: 114
             max: 114
-            text: Conquer
-          - min: 115
+        - text: Consecrate
+          _i18n: *Verb
+          roll:
+            min: 115
             max: 115
-            text: Consecrate
-          - min: 116
+        - text: Contaminate
+          _i18n: *Verb
+          roll:
+            min: 116
             max: 116
-            text: Contaminate
-          - min: 117
+        - text: Corrupt
+          _i18n: *Verb
+          roll:
+            min: 117
             max: 117
-            text: Corrupt
-          - min: 118
+        - text: Crush
+          _i18n: *Verb
+          roll:
+            min: 118
             max: 118
-            text: Crush
-          - min: 119
+        - text: Deceive
+          _i18n: *Verb
+          roll:
+            min: 119
             max: 119
-            text: Deceive
-          - min: 120
+        - text: Decline
+          _i18n: *Verb
+          roll:
+            min: 120
             max: 120
-            text: Decline
-          - min: 121
+        - text: Decrease
+          _i18n: *Verb
+          roll:
+            min: 121
             max: 121
-            text: Decrease
-          - min: 122
+        - text: Defuse
+          _i18n: *Verb
+          roll:
+            min: 122
             max: 122
-            text: Defuse
-          - min: 123
+        - text: Desecrate
+          _i18n: *Verb
+          roll:
+            min: 123
             max: 123
-            text: Desecrate
-          - min: 124
+        - text: Desire
+          _i18n: *Verb
+          roll:
+            min: 124
             max: 124
-            text: Desire
-          - min: 125
+        - text: Deter
+          _i18n: *Verb
+          roll:
+            min: 125
             max: 125
-            text: Deter
-          - min: 126
+        - text: Deteriorate
+          _i18n: *Verb
+          roll:
+            min: 126
             max: 126
-            text: Deteriorate
-          - min: 127
+        - text: Dilute
+          _i18n: *Verb
+          roll:
+            min: 127
             max: 127
-            text: Dilute
-          - min: 128
+        - text: Discern
+          _i18n: *Verb
+          roll:
+            min: 128
             max: 128
-            text: Discern
-          - min: 129
+        - text: Disguise
+          _i18n: *Verb
+          roll:
+            min: 129
             max: 129
-            text: Disguise
-          - min: 130
+        - text: Disrupt
+          _i18n: *Verb
+          roll:
+            min: 130
             max: 130
-            text: Disrupt
-          - min: 131
+        - text: Dissect
+          _i18n: *Verb
+          roll:
+            min: 131
             max: 131
-            text: Dissect
-          - min: 132
+        - text: Distort
+          _i18n: *Verb
+          roll:
+            min: 132
             max: 132
-            text: Distort
-          - min: 133
+        - text: Elude
+          _i18n: *Verb
+          roll:
+            min: 133
             max: 133
-            text: Elude
-          - min: 134
+        - text: Embrace
+          _i18n: *Verb
+          roll:
+            min: 134
             max: 134
-            text: Embrace
-          - min: 135
+        - text: Emit
+          _i18n: *Verb
+          roll:
+            min: 135
             max: 135
-            text: Emit
-          - min: 136
+        - text: Empower
+          _i18n: *Verb
+          roll:
+            min: 136
             max: 136
-            text: Empower
-          - min: 137
+        - text: Engender
+          _i18n: *Verb
+          roll:
+            min: 137
             max: 137
-            text: Engender
-          - min: 138
+        - text: Entice
+          _i18n: *Verb
+          roll:
+            min: 138
             max: 138
-            text: Entice
-          - min: 139
+        - text: Erode
+          _i18n: *Verb
+          roll:
+            min: 139
             max: 139
-            text: Erode
-          - min: 140
+        - text: Evoke
+          _i18n: *Verb
+          roll:
+            min: 140
             max: 140
-            text: Evoke
-          - min: 141
+        - text: Exacerbate
+          _i18n: *Verb
+          roll:
+            min: 141
             max: 141
-            text: Exacerbate
-          - min: 142
+        - text: Excite
+          _i18n: *Verb
+          roll:
+            min: 142
             max: 142
-            text: Excite
-          - min: 143
+        - text: Extinguish
+          _i18n: *Verb
+          roll:
+            min: 143
             max: 143
-            text: Extinguish
-          - min: 144
+        - text: Forge
+          _i18n: *Verb
+          roll:
+            min: 144
             max: 144
-            text: Forge
-          - min: 145
+        - text: Fracture
+          _i18n: *Verb
+          roll:
+            min: 145
             max: 145
-            text: Fracture
-          - min: 146
+        - text: Fuse
+          _i18n: *Verb
+          roll:
+            min: 146
             max: 146
-            text: Fuse
-          - min: 147
+        - text: Grapple
+          _i18n: *Verb
+          roll:
+            min: 147
             max: 147
-            text: Grapple
-          - min: 148
+        - text: Grasp
+          _i18n: *Verb
+          roll:
+            min: 148
             max: 148
-            text: Grasp
-          - min: 149
+        - text: Grieve
+          _i18n: *Verb
+          roll:
+            min: 149
             max: 149
-            text: Grieve
-          - min: 150
+        - text: Harden
+          _i18n: *Verb
+          roll:
+            min: 150
             max: 150
-            text: Harden
-          - min: 151
+        - text: Harvest
+          _i18n: *Verb
+          roll:
+            min: 151
             max: 151
-            text: Harvest
-          - min: 152
+        - text: Heal
+          _i18n: *Verb
+          roll:
+            min: 152
             max: 152
-            text: Heal
-          - min: 153
+        - text: Hinder
+          _i18n: *Verb
+          roll:
+            min: 153
             max: 153
-            text: Hinder
-          - min: 154
+        - text: Ignite
+          _i18n: *Verb
+          roll:
+            min: 154
             max: 154
-            text: Ignite
-          - min: 155
+        - text: Illuminate
+          _i18n: *Verb
+          roll:
+            min: 155
             max: 155
-            text: Illuminate
-          - min: 156
+        - text: Imbue
+          _i18n: *Verb
+          roll:
+            min: 156
             max: 156
-            text: Imbue
-          - min: 157
+        - text: Immerse
+          _i18n: *Verb
+          roll:
+            min: 157
             max: 157
-            text: Immerse
-          - min: 158
+        - text: Incite
+          _i18n: *Verb
+          roll:
+            min: 158
             max: 158
-            text: Incite
-          - min: 159
+        - text: Increase
+          _i18n: *Verb
+          roll:
+            min: 159
             max: 159
-            text: Increase
-          - min: 160
+        - text: Induce
+          _i18n: *Verb
+          roll:
+            min: 160
             max: 160
-            text: Induce
-          - min: 161
+        - text: Inflame
+          _i18n: *Verb
+          roll:
+            min: 161
             max: 161
-            text: Inflame
-          - min: 162
+        - text: Insulate
+          _i18n: *Verb
+          roll:
+            min: 162
             max: 162
-            text: Insulate
-          - min: 163
+        - text: Intensify
+          _i18n: *Verb
+          roll:
+            min: 163
             max: 163
-            text: Intensify
-          - min: 164
+        - text: Intrude
+          _i18n: *Verb
+          roll:
+            min: 164
             max: 164
-            text: Intrude
-          - min: 165
+        - text: Isolate
+          _i18n: *Verb
+          roll:
+            min: 165
             max: 165
-            text: Isolate
-          - min: 166
+        - text: Join
+          _i18n: *Verb
+          roll:
+            min: 166
             max: 166
-            text: Join
-          - min: 167
+        - text: Kindle
+          _i18n: *Verb
+          roll:
+            min: 167
             max: 167
-            text: Kindle
-          - min: 168
+        - text: Merge
+          _i18n: *Verb
+          roll:
+            min: 168
             max: 168
-            text: Merge
-          - min: 169
+        - text: Mingle
+          _i18n: *Verb
+          roll:
+            min: 169
             max: 169
-            text: Mingle
-          - min: 170
+        - text: Obscure
+          _i18n: *Verb
+          roll:
+            min: 170
             max: 170
-            text: Obscure
-          - min: 171
+        - text: Oppress
+          _i18n: *Verb
+          roll:
+            min: 171
             max: 171
-            text: Oppress
-          - min: 172
+        - text: Plunder
+          _i18n: *Verb
+          roll:
+            min: 172
             max: 172
-            text: Plunder
-          - min: 173
+        - text: Provoke
+          _i18n: *Verb
+          roll:
+            min: 173
             max: 173
-            text: Provoke
-          - min: 174
+        - text: Purge
+          _i18n: *Verb
+          roll:
+            min: 174
             max: 174
-            text: Purge
-          - min: 175
+        - text: Pursue
+          _i18n: *Verb
+          roll:
+            min: 175
             max: 175
-            text: Pursue
-          - min: 176
+        - text: Repel
+          _i18n: *Verb
+          roll:
+            min: 176
             max: 176
-            text: Repel
-          - min: 177
+        - text: Repulse
+          _i18n: *Verb
+          roll:
+            min: 177
             max: 177
-            text: Repulse
-          - min: 178
+        - text: Restrain
+          _i18n: *Verb
+          roll:
+            min: 178
             max: 178
-            text: Restrain
-          - min: 179
+        - text: Revoke
+          _i18n: *Verb
+          roll:
+            min: 179
             max: 179
-            text: Revoke
-          - min: 180
+        - text: Sabotage
+          _i18n: *Verb
+          roll:
+            min: 180
             max: 180
-            text: Sabotage
-          - min: 181
+        - text: Salvage
+          _i18n: *Verb
+          roll:
+            min: 181
             max: 181
-            text: Salvage
-          - min: 182
+        - text: Save
+          _i18n: *Verb
+          roll:
+            min: 182
             max: 182
-            text: Save
-          - min: 183
+        - text: Scatter
+          _i18n: *Verb
+          roll:
+            min: 183
             max: 183
-            text: Scatter
-          - min: 184
+        - text: Seek
+          _i18n: *Verb
+          roll:
+            min: 184
             max: 184
-            text: Seek
-          - min: 185
+        - text: Separate
+          _i18n: *Verb
+          roll:
+            min: 185
             max: 185
-            text: Separate
-          - min: 186
+        - text: Soften
+          _i18n: *Verb
+          roll:
+            min: 186
             max: 186
-            text: Soften
-          - min: 187
+        - text: Solidify
+          _i18n: *Verb
+          roll:
+            min: 187
             max: 187
-            text: Solidify
-          - min: 188
+        - text: Spawn
+          _i18n: *Verb
+          roll:
+            min: 188
             max: 188
-            text: Spawn
-          - min: 189
+        - text: Strike
+          _i18n: *Verb
+          roll:
+            min: 189
             max: 189
-            text: Strike
-          - min: 190
+        - text: Subdue
+          _i18n: *Verb
+          roll:
+            min: 190
             max: 190
-            text: Subdue
-          - min: 191
+        - text: Suffocate
+          _i18n: *Verb
+          roll:
+            min: 191
             max: 191
-            text: Suffocate
-          - min: 192
+        - text: Sunder
+          _i18n: *Verb
+          roll:
+            min: 192
             max: 192
-            text: Sunder
-          - min: 193
+        - text: Sustain
+          _i18n: *Verb
+          roll:
+            min: 193
             max: 193
-            text: Sustain
-          - min: 194
+        - text: Tangle
+          _i18n: *Verb
+          roll:
+            min: 194
             max: 194
-            text: Tangle
-          - min: 195
+        - text: Undermine
+          _i18n: *Verb
+          roll:
+            min: 195
             max: 195
-            text: Undermine
-          - min: 196
+        - text: Unravel
+          _i18n: *Verb
+          roll:
+            min: 196
             max: 196
-            text: Unravel
-          - min: 197
+        - text: Usurp
+          _i18n: *Verb
+          roll:
+            min: 197
             max: 197
-            text: Usurp
-          - min: 198
+        - text: Vanquish
+          _i18n: *Verb
+          roll:
+            min: 198
             max: 198
-            text: Vanquish
-          - min: 199
+        - text: Warp
+          _i18n: *Verb
+          roll:
+            min: 199
             max: 199
-            text: Warp
-          - min: 200
+        - text: Winnow
+          _i18n: *Verb
+          roll:
+            min: 200
             max: 200
-            text: Winnow
-          - min: 201
+        - text: Absorb
+          _i18n: *Verb
+          roll:
+            min: 201
             max: 201
-            text: Absorb
-          - min: 202
+        - text: Advise
+          _i18n: *Verb
+          roll:
+            min: 202
             max: 202
-            text: Advise
-          - min: 203
+        - text: Affirm
+          _i18n: *Verb
+          roll:
+            min: 203
             max: 203
-            text: Affirm
-          - min: 204
+        - text: Amend
+          _i18n: *Verb
+          roll:
+            min: 204
             max: 204
-            text: Amend
-          - min: 205
+        - text: Amplify
+          _i18n: *Verb
+          roll:
+            min: 205
             max: 205
-            text: Amplify
-          - min: 206
+        - text: Assert
+          _i18n: *Verb
+          roll:
+            min: 206
             max: 206
-            text: Assert
-          - min: 207
+        - text: Beguile
+          _i18n: *Verb
+          roll:
+            min: 207
             max: 207
-            text: Beguile
-          - min: 208
+        - text: Bless
+          _i18n: *Verb
+          roll:
+            min: 208
             max: 208
-            text: Bless
-          - min: 209
+        - text: Boost
+          _i18n: *Verb
+          roll:
+            min: 209
             max: 209
-            text: Boost
-          - min: 210
+        - text: Broadcast
+          _i18n: *Verb
+          roll:
+            min: 210
             max: 210
-            text: Broadcast
-          - min: 211
+        - text: Catch
+          _i18n: *Verb
+          roll:
+            min: 211
             max: 211
-            text: Catch
-          - min: 212
+        - text: End
+          _i18n: *Verb
+          roll:
+            min: 212
             max: 212
-            text: End
-          - min: 213
+        - text: Commune
+          _i18n: *Verb
+          roll:
+            min: 213
             max: 213
-            text: Commune
-          - min: 214
+        - text: Compel
+          _i18n: *Verb
+          roll:
+            min: 214
             max: 214
-            text: Compel
-          - min: 215
+        - text: Conspire
+          _i18n: *Verb
+          roll:
+            min: 215
             max: 215
-            text: Conspire
-          - min: 216
+        - text: Contract
+          _i18n: *Verb
+          roll:
+            min: 216
             max: 216
-            text: Contract
-          - min: 217
+        - text: Covet
+          _i18n: *Verb
+          roll:
+            min: 217
             max: 217
-            text: Covet
-          - min: 218
+        - text: Demolish
+          _i18n: *Verb
+          roll:
+            min: 218
             max: 218
-            text: Demolish
-          - min: 219
+        - text: Denounce
+          _i18n: *Verb
+          roll:
+            min: 219
             max: 219
-            text: Denounce
-          - min: 220
+        - text: Detonate
+          _i18n: *Verb
+          roll:
+            min: 220
             max: 220
-            text: Detonate
-          - min: 221
+        - text: Devastate
+          _i18n: *Verb
+          roll:
+            min: 221
             max: 221
-            text: Devastate
-          - min: 222
+        - text: Deviate
+          _i18n: *Verb
+          roll:
+            min: 222
             max: 222
-            text: Deviate
-          - min: 223
+        - text: Direct
+          _i18n: *Verb
+          roll:
+            min: 223
             max: 223
-            text: Direct
-          - min: 224
+        - text: Disarm
+          _i18n: *Verb
+          roll:
+            min: 224
             max: 224
-            text: Disarm
-          - min: 225
+        - text: Discover
+          _i18n: *Verb
+          roll:
+            min: 225
             max: 225
-            text: Discover
-          - min: 226
+        - text: Drop
+          _i18n: *Verb
+          roll:
+            min: 226
             max: 226
-            text: Drop
-          - min: 227
+        - text: Embolden
+          _i18n: *Verb
+          roll:
+            min: 227
             max: 227
-            text: Embolden
-          - min: 228
+        - text: Enhance
+          _i18n: *Verb
+          roll:
+            min: 228
             max: 228
-            text: Enhance
-          - min: 229
+        - text: Ensnare
+          _i18n: *Verb
+          roll:
+            min: 229
             max: 229
-            text: Ensnare
-          - min: 230
+        - text: Eradicate
+          _i18n: *Verb
+          roll:
+            min: 230
             max: 230
-            text: Eradicate
-          - min: 231
+        - text: Erase
+          _i18n: *Verb
+          roll:
+            min: 231
             max: 231
-            text: Erase
-          - min: 232
+        - text: Expand
+          _i18n: *Verb
+          roll:
+            min: 232
             max: 232
-            text: Expand
-          - min: 233
+        - text: Expose
+          _i18n: *Verb
+          roll:
+            min: 233
             max: 233
-            text: Expose
-          - min: 234
+        - text: Extend
+          _i18n: *Verb
+          roll:
+            min: 234
             max: 234
-            text: Extend
-          - min: 235
+        - text: Extract
+          _i18n: *Verb
+          roll:
+            min: 235
             max: 235
-            text: Extract
-          - min: 236
+        - text: Flood
+          _i18n: *Verb
+          roll:
+            min: 236
             max: 236
-            text: Flood
-          - min: 237
+        - text: Force
+          _i18n: *Verb
+          roll:
+            min: 237
             max: 237
-            text: Force
-          - min: 238
+        - text: Forgive
+          _i18n: *Verb
+          roll:
+            min: 238
             max: 238
-            text: Forgive
-          - min: 239
+        - text: Generate
+          _i18n: *Verb
+          roll:
+            min: 239
             max: 239
-            text: Generate
-          - min: 240
+        - text: Govern
+          _i18n: *Verb
+          roll:
+            min: 240
             max: 240
-            text: Govern
-          - min: 241
+        - text: Guide
+          _i18n: *Verb
+          roll:
+            min: 241
             max: 241
-            text: Guide
-          - min: 242
+        - text: Hack
+          _i18n: *Verb
+          roll:
+            min: 242
             max: 242
-            text: Hack
-          - min: 243
+        - text: Harass
+          _i18n: *Verb
+          roll:
+            min: 243
             max: 243
-            text: Harass
-          - min: 244
+        - text: Hobble
+          _i18n: *Verb
+          roll:
+            min: 244
             max: 244
-            text: Hobble
-          - min: 245
+        - text: Impart
+          _i18n: *Verb
+          roll:
+            min: 245
             max: 245
-            text: Impart
-          - min: 246
+        - text: Inject
+          _i18n: *Verb
+          roll:
+            min: 246
             max: 246
-            text: Inject
-          - min: 247
+        - text: Inspire
+          _i18n: *Verb
+          roll:
+            min: 247
             max: 247
-            text: Inspire
-          - min: 248
+        - text: Instruct
+          _i18n: *Verb
+          roll:
+            min: 248
             max: 248
-            text: Instruct
-          - min: 249
+        - text: Intertwine
+          _i18n: *Verb
+          roll:
+            min: 249
             max: 249
-            text: Intertwine
-          - min: 250
+        - text: Invigorate
+          _i18n: *Verb
+          roll:
+            min: 250
             max: 250
-            text: Invigorate
-          - min: 251
+        - text: Judge
+          _i18n: *Verb
+          roll:
+            min: 251
             max: 251
-            text: Judge
-          - min: 252
+        - text: Lead
+          _i18n: *Verb
+          roll:
+            min: 252
             max: 252
-            text: Lead
-          - min: 253
+        - text: Liberate
+          _i18n: *Verb
+          roll:
+            min: 253
             max: 253
-            text: Liberate
-          - min: 254
+        - text: Magnify
+          _i18n: *Verb
+          roll:
+            min: 254
             max: 254
-            text: Magnify
-          - min: 255
+        - text: Maneuver
+          _i18n: *Verb
+          roll:
+            min: 255
             max: 255
-            text: Maneuver
-          - min: 256
+        - text: Mediate
+          _i18n: *Verb
+          roll:
+            min: 256
             max: 256
-            text: Mediate
-          - min: 257
+        - text: Mimic
+          _i18n: *Verb
+          roll:
+            min: 257
             max: 257
-            text: Mimic
-          - min: 258
+        - text: Mutate
+          _i18n: *Verb
+          roll:
+            min: 258
             max: 258
-            text: Mutate
-          - min: 259
+        - text: Notify
+          _i18n: *Verb
+          roll:
+            min: 259
             max: 259
-            text: Notify
-          - min: 260
+        - text: Nurture
+          _i18n: *Verb
+          roll:
+            min: 260
             max: 260
-            text: Nurture
-          - min: 261
+        - text: Obtain
+          _i18n: *Verb
+          roll:
+            min: 261
             max: 261
-            text: Obtain
-          - min: 262
+        - text: Order
+          _i18n: *Verb
+          roll:
+            min: 262
             max: 262
-            text: Order
-          - min: 263
+        - text: Overcome
+          _i18n: *Verb
+          roll:
+            min: 263
             max: 263
-            text: Overcome
-          - min: 264
+        - text: Overthrow
+          _i18n: *Verb
+          roll:
+            min: 264
             max: 264
-            text: Overthrow
-          - min: 265
+        - text: Pierce
+          _i18n: *Verb
+          roll:
+            min: 265
             max: 265
-            text: Pierce
-          - min: 266
+        - text: Plant
+          _i18n: *Verb
+          roll:
+            min: 266
             max: 266
-            text: Plant
-          - min: 267
+        - text: Prepare
+          _i18n: *Verb
+          roll:
+            min: 267
             max: 267
-            text: Prepare
-          - min: 268
+        - text: Probe
+          _i18n: *Verb
+          roll:
+            min: 268
             max: 268
-            text: Probe
-          - min: 269
+        - text: Propel
+          _i18n: *Verb
+          roll:
+            min: 269
             max: 269
-            text: Propel
-          - min: 270
+        - text: Quell
+          _i18n: *Verb
+          roll:
+            min: 270
             max: 270
-            text: Quell
-          - min: 271
+        - text: Race
+          _i18n: *Verb
+          roll:
+            min: 271
             max: 271
-            text: Race
-          - min: 272
+        - text: Rally
+          _i18n: *Verb
+          roll:
+            min: 272
             max: 272
-            text: Rally
-          - min: 273
+        - text: Rebuke
+          _i18n: *Verb
+          roll:
+            min: 273
             max: 273
-            text: Rebuke
-          - min: 274
+        - text: Redeem
+          _i18n: *Verb
+          roll:
+            min: 274
             max: 274
-            text: Redeem
-          - min: 275
+        - text: Refine
+          _i18n: *Verb
+          roll:
+            min: 275
             max: 275
-            text: Refine
-          - min: 276
+        - text: Relinquish
+          _i18n: *Verb
+          roll:
+            min: 276
             max: 276
-            text: Relinquish
-          - min: 277
+        - text: Renew
+          _i18n: *Verb
+          roll:
+            min: 277
             max: 277
-            text: Renew
-          - min: 278
+        - text: Report
+          _i18n: *Verb
+          roll:
+            min: 278
             max: 278
-            text: Report
-          - min: 279
+        - text: Rescue
+          _i18n: *Verb
+          roll:
+            min: 279
             max: 279
-            text: Rescue
-          - min: 280
+        - text: Resurrect
+          _i18n: *Verb
+          roll:
+            min: 280
             max: 280
-            text: Resurrect
-          - min: 281
+        - text: Retreat
+          _i18n: *Verb
+          roll:
+            min: 281
             max: 281
-            text: Retreat
-          - min: 282
+        - text: Revitalize
+          _i18n: *Verb
+          roll:
+            min: 282
             max: 282
-            text: Revitalize
-          - min: 283
+        - text: Revive
+          _i18n: *Verb
+          roll:
+            min: 283
             max: 283
-            text: Revive
-          - min: 284
+        - text: Revolutionize
+          _i18n: *Verb
+          roll:
+            min: 284
             max: 284
-            text: Revolutionize
-          - min: 285
+        - text: Ruin
+          _i18n: *Verb
+          roll:
+            min: 285
             max: 285
-            text: Ruin
-          - min: 286
+        - text: Scan
+          _i18n: *Verb
+          roll:
+            min: 286
             max: 286
-            text: Scan
-          - min: 287
+        - text: Scorch
+          _i18n: *Verb
+          roll:
+            min: 287
             max: 287
-            text: Scorch
-          - min: 288
+        - text: Sharpen
+          _i18n: *Verb
+          roll:
+            min: 288
             max: 288
-            text: Sharpen
-          - min: 289
+        - text: Shepherd
+          _i18n: *Verb
+          roll:
+            min: 289
             max: 289
-            text: Shepherd
-          - min: 290
+        - text: Smite
+          _i18n: *Verb
+          roll:
+            min: 290
             max: 290
-            text: Smite
-          - min: 291
+        - text: Spy
+          _i18n: *Verb
+          roll:
+            min: 291
             max: 291
-            text: Spy
-          - min: 292
+        - text: Steal
+          _i18n: *Verb
+          roll:
+            min: 292
             max: 292
-            text: Steal
-          - min: 293
+        - text: Steer
+          _i18n: *Verb
+          roll:
+            min: 293
             max: 293
-            text: Steer
-          - min: 294
+        - text: Struggle
+          _i18n: *Verb
+          roll:
+            min: 294
             max: 294
-            text: Struggle
-          - min: 295
+        - text: Survey
+          _i18n: *Verb
+          roll:
+            min: 295
             max: 295
-            text: Survey
-          - min: 296
+        - text: Travel
+          _i18n: *Verb
+          roll:
+            min: 296
             max: 296
-            text: Travel
-          - min: 297
+        - text: Trigger
+          _i18n: *Verb
+          roll:
+            min: 297
             max: 297
-            text: Trigger
-          - min: 298
+        - text: Trim
+          _i18n: *Verb
+          roll:
+            min: 298
             max: 298
-            text: Trim
-          - min: 299
+        - text: Vow
+          _i18n: *Verb
+          roll:
+            min: 299
             max: 299
-            text: Vow
-          - min: 300
+        - text: Wield
+          _i18n: *Verb
+          roll:
+            min: 300
             max: 300
-            text: Wield
+        type: oracle_rollable
       theme:
         name: Theme
-        _source: *Source
         oracle_type: table_text
-        replaces: starforged/oracles/core/theme
         dice: 1d300
+        replaces:
+        - oracle_rollable:starforged/core/theme
+        summary: Extension of the oracle table
+        _source: *Source
         rows:
-          - min: 1
+        # begin copy from original table
+        - text: Ability
+          _i18n: &CommonNoun
+            text:
+              part_of_speech: common_noun
+          roll:
+            min: 1
             max: 1
-            text: Ability
-          - min: 2
+        - text: Advantage
+          _i18n: *CommonNoun
+          roll:
+            min: 2
             max: 2
-            text: Advantage
-          - min: 3
+        - text: Alliance
+          _i18n: *CommonNoun
+          roll:
+            min: 3
             max: 3
-            text: Alliance
-          - min: 4
+        - text: Authority
+          _i18n: *CommonNoun
+          roll:
+            min: 4
             max: 4
-            text: Authority
-          - min: 5
+        - text: Balance
+          _i18n: *CommonNoun
+          roll:
+            min: 5
             max: 5
-            text: Balance
-          - min: 6
+        - text: Barrier
+          _i18n: *CommonNoun
+          roll:
+            min: 6
             max: 6
-            text: Barrier
-          - min: 7
+        - text: Belief
+          _i18n: *CommonNoun
+          roll:
+            min: 7
             max: 7
-            text: Belief
-          - min: 8
+        - text: Blood
+          _i18n: *CommonNoun
+          roll:
+            min: 8
             max: 8
-            text: Blood
-          - min: 9
+        - text: Bond
+          _i18n: *CommonNoun
+          roll:
+            min: 9
             max: 9
-            text: Bond
-          - min: 10
+        - text: Burden
+          _i18n: *CommonNoun
+          roll:
+            min: 10
             max: 10
-            text: Burden
-          - min: 11
+        - text: Commerce
+          _i18n: *CommonNoun
+          roll:
+            min: 11
             max: 11
-            text: Commerce
-          - min: 12
+        - text: Community
+          _i18n: *CommonNoun
+          roll:
+            min: 12
             max: 12
-            text: Community
-          - min: 13
+        - text: Corruption
+          _i18n: *CommonNoun
+          roll:
+            min: 13
             max: 13
-            text: Corruption
-          - min: 14
+        - text: Creation
+          _i18n: *CommonNoun
+          roll:
+            min: 14
             max: 14
-            text: Creation
-          - min: 15
+        - text: Crime
+          _i18n: *CommonNoun
+          roll:
+            min: 15
             max: 15
-            text: Crime
-          - min: 16
+        - text: Culture
+          _i18n: *CommonNoun
+          roll:
+            min: 16
             max: 16
-            text: Culture
-          - min: 17
+        - text: Cure
+          _i18n: *CommonNoun
+          roll:
+            min: 17
             max: 17
-            text: Cure
-          - min: 18
+        - text: Danger
+          _i18n: *CommonNoun
+          roll:
+            min: 18
             max: 18
-            text: Danger
-          - min: 19
+        - text: Death
+          _i18n: *CommonNoun
+          roll:
+            min: 19
             max: 19
-            text: Death
-          - min: 20
+        - text: Debt
+          _i18n: *CommonNoun
+          roll:
+            min: 20
             max: 20
-            text: Debt
-          - min: 21
+        - text: Decay
+          _i18n: *CommonNoun
+          roll:
+            min: 21
             max: 21
-            text: Decay
-          - min: 22
+        - text: Deception
+          _i18n: *CommonNoun
+          roll:
+            min: 22
             max: 22
-            text: Deception
-          - min: 23
+        - text: Defense
+          _i18n: *CommonNoun
+          roll:
+            min: 23
             max: 23
-            text: Defense
-          - min: 24
+        - text: Destiny
+          _i18n: *CommonNoun
+          roll:
+            min: 24
             max: 24
-            text: Destiny
-          - min: 25
+        - text: Disaster
+          _i18n: *CommonNoun
+          roll:
+            min: 25
             max: 25
-            text: Disaster
-          - min: 26
+        - text: Discovery
+          _i18n: *CommonNoun
+          roll:
+            min: 26
             max: 26
-            text: Discovery
-          - min: 27
+        - text: Disease
+          _i18n: *CommonNoun
+          roll:
+            min: 27
             max: 27
-            text: Disease
-          - min: 28
+        - text: Dominion
+          _i18n: *CommonNoun
+          roll:
+            min: 28
             max: 28
-            text: Dominion
-          - min: 29
+        - text: Dream
+          _i18n: *CommonNoun
+          roll:
+            min: 29
             max: 29
-            text: Dream
-          - min: 30
+        - text: Duty
+          _i18n: *CommonNoun
+          roll:
+            min: 30
             max: 30
-            text: Duty
-          - min: 31
+        - text: Enemy
+          _i18n: *CommonNoun
+          roll:
+            min: 31
             max: 31
-            text: Enemy
-          - min: 32
+        - text: Expedition
+          _i18n: *CommonNoun
+          roll:
+            min: 32
             max: 32
-            text: Expedition
-          - min: 33
+        - text: Faction
+          _i18n: *CommonNoun
+          roll:
+            min: 33
             max: 33
-            text: Faction
-          - min: 34
+        - text: Fame
+          _i18n: *CommonNoun
+          roll:
+            min: 34
             max: 34
-            text: Fame
-          - min: 35
+        - text: Family
+          _i18n: *CommonNoun
+          roll:
+            min: 35
             max: 35
-            text: Family
-          - min: 36
+        - text: Fear
+          _i18n: *CommonNoun
+          roll:
+            min: 36
             max: 36
-            text: Fear
-          - min: 37
+        - text: Fellowship
+          _i18n: *CommonNoun
+          roll:
+            min: 37
             max: 37
-            text: Fellowship
-          - min: 38
+        - text: Freedom
+          _i18n: *CommonNoun
+          roll:
+            min: 38
             max: 38
-            text: Freedom
-          - min: 39
+        - text: Greed
+          _i18n: *CommonNoun
+          roll:
+            min: 39
             max: 39
-            text: Greed
-          - min: 40
+        - text: Hardship
+          _i18n: *CommonNoun
+          roll:
+            min: 40
             max: 40
-            text: Hardship
-          - min: 41
+        - text: Hate
+          _i18n: *CommonNoun
+          roll:
+            min: 41
             max: 41
-            text: Hate
-          - min: 42
+        - text: Health
+          _i18n: *CommonNoun
+          roll:
+            min: 42
             max: 42
-            text: Health
-          - min: 43
+        - text: History
+          _i18n: *CommonNoun
+          roll:
+            min: 43
             max: 43
-            text: History
-          - min: 44
+        - text: Home
+          _i18n: *CommonNoun
+          roll:
+            min: 44
             max: 44
-            text: Home
-          - min: 45
+        - text: Honor
+          _i18n: *CommonNoun
+          roll:
+            min: 45
             max: 45
-            text: Honor
-          - min: 46
+        - text: Hope
+          _i18n: *CommonNoun
+          roll:
+            min: 46
             max: 46
-            text: Hope
-          - min: 47
+        - text: Humanity
+          _i18n: *CommonNoun
+          roll:
+            min: 47
             max: 47
-            text: Humanity
-          - min: 48
+        - text: Innocence
+          _i18n: *CommonNoun
+          roll:
+            min: 48
             max: 48
-            text: Innocence
-          - min: 49
+        - text: Knowledge
+          _i18n: *CommonNoun
+          roll:
+            min: 49
             max: 49
-            text: Knowledge
-          - min: 50
+        - text: Labor
+          _i18n: *CommonNoun
+          roll:
+            min: 50
             max: 50
-            text: Labor
-          - min: 51
+        - text: Language
+          _i18n: *CommonNoun
+          roll:
+            min: 51
             max: 51
-            text: Language
-          - min: 52
+        - text: Law
+          _i18n: *CommonNoun
+          roll:
+            min: 52
             max: 52
-            text: Law
-          - min: 53
+        - text: Legacy
+          _i18n: *CommonNoun
+          roll:
+            min: 53
             max: 53
-            text: Legacy
-          - min: 54
+        - text: Life
+          _i18n: *CommonNoun
+          roll:
+            min: 54
             max: 54
-            text: Life
-          - min: 55
+        - text: Love
+          _i18n: *CommonNoun
+          roll:
+            min: 55
             max: 55
-            text: Love
-          - min: 56
+        - text: Memory
+          _i18n: *CommonNoun
+          roll:
+            min: 56
             max: 56
-            text: Memory
-          - min: 57
+        - text: Nature
+          _i18n: *CommonNoun
+          roll:
+            min: 57
             max: 57
-            text: Nature
-          - min: 58
+        - text: Opportunity
+          _i18n: *CommonNoun
+          roll:
+            min: 58
             max: 58
-            text: Opportunity
-          - min: 59
+        - text: Passage
+          _i18n: *CommonNoun
+          roll:
+            min: 59
             max: 59
-            text: Passage
-          - min: 60
+        - text: Peace
+          _i18n: *CommonNoun
+          roll:
+            min: 60
             max: 60
-            text: Peace
-          - min: 61
+        - text: Phenomenon
+          _i18n: *CommonNoun
+          roll:
+            min: 61
             max: 61
-            text: Phenomenon
-          - min: 62
+        - text: Possession
+          _i18n: *CommonNoun
+          roll:
+            min: 62
             max: 62
-            text: Possession
-          - min: 63
+        - text: Power
+          _i18n: *CommonNoun
+          roll:
+            min: 63
             max: 63
-            text: Power
-          - min: 64
+        - text: Price
+          _i18n: *CommonNoun
+          roll:
+            min: 64
             max: 64
-            text: Price
-          - min: 65
+        - text: Pride
+          _i18n: *CommonNoun
+          roll:
+            min: 65
             max: 65
-            text: Pride
-          - min: 66
+        - text: Prize
+          _i18n: *CommonNoun
+          roll:
+            min: 66
             max: 66
-            text: Prize
-          - min: 67
+        - text: Prophesy
+          _i18n: *CommonNoun
+          roll:
+            min: 67
             max: 67
-            text: Prophesy
-          - min: 68
+        - text: Protection
+          _i18n: *CommonNoun
+          roll:
+            min: 68
             max: 68
-            text: Protection
-          - min: 69
+        - text: Quest
+          _i18n: *CommonNoun
+          roll:
+            min: 69
             max: 69
-            text: Quest
-          - min: 70
+        - text: Relationship
+          _i18n: *CommonNoun
+          roll:
+            min: 70
             max: 70
-            text: Relationship
-          - min: 71
+        - text: Religion
+          _i18n: *CommonNoun
+          roll:
+            min: 71
             max: 71
-            text: Religion
-          - min: 72
+        - text: Reputation
+          _i18n: *CommonNoun
+          roll:
+            min: 72
             max: 72
-            text: Reputation
-          - min: 73
+        - text: Resource
+          _i18n: *CommonNoun
+          roll:
+            min: 73
             max: 73
-            text: Resource
-          - min: 74
+        - text: Revenge
+          _i18n: *CommonNoun
+          roll:
+            min: 74
             max: 74
-            text: Revenge
-          - min: 75
+        - text: Rival
+          _i18n: *CommonNoun
+          roll:
+            min: 75
             max: 75
-            text: Rival
-          - min: 76
+        - text: Rumor
+          _i18n: *CommonNoun
+          roll:
+            min: 76
             max: 76
-            text: Rumor
-          - min: 77
+        - text: Safety
+          _i18n: *CommonNoun
+          roll:
+            min: 77
             max: 77
-            text: Safety
-          - min: 78
+        - text: Sanctuary
+          _i18n: *CommonNoun
+          roll:
+            min: 78
             max: 78
-            text: Sanctuary
-          - min: 79
+        - text: Secret
+          _i18n: *CommonNoun
+          roll:
+            min: 79
             max: 79
-            text: Secret
-          - min: 80
+        - text: Solution
+          _i18n: *CommonNoun
+          roll:
+            min: 80
             max: 80
-            text: Solution
-          - min: 81
+        - text: Spirit
+          _i18n: *CommonNoun
+          roll:
+            min: 81
             max: 81
-            text: Spirit
-          - min: 82
+        - text: Stranger
+          _i18n: *CommonNoun
+          roll:
+            min: 82
             max: 82
-            text: Stranger
-          - min: 83
+        - text: Strategy
+          _i18n: *CommonNoun
+          roll:
+            min: 83
             max: 83
-            text: Strategy
-          - min: 84
+        - text: Strength
+          _i18n: *CommonNoun
+          roll:
+            min: 84
             max: 84
-            text: Strength
-          - min: 85
+        - text: Superstition
+          _i18n: *CommonNoun
+          roll:
+            min: 85
             max: 85
-            text: Superstition
-          - min: 86
+        - text: Supply
+          _i18n: *CommonNoun
+          roll:
+            min: 86
             max: 86
-            text: Supply
-          - min: 87
+        - text: Survival
+          _i18n: *CommonNoun
+          roll:
+            min: 87
             max: 87
-            text: Survival
-          - min: 88
+        - text: Technology
+          _i18n: *CommonNoun
+          roll:
+            min: 88
             max: 88
-            text: Technology
-          - min: 89
+        - text: Time
+          _i18n: *CommonNoun
+          roll:
+            min: 89
             max: 89
-            text: Time
-          - min: 90
+        - text: Tool
+          _i18n: *CommonNoun
+          roll:
+            min: 90
             max: 90
-            text: Tool
-          - min: 91
+        - text: Trade
+          _i18n: *CommonNoun
+          roll:
+            min: 91
             max: 91
-            text: Trade
-          - min: 92
+        - text: Truth
+          _i18n: *CommonNoun
+          roll:
+            min: 92
             max: 92
-            text: Truth
-          - min: 93
+        - text: Vengeance
+          _i18n: *CommonNoun
+          roll:
+            min: 93
             max: 93
-            text: Vengeance
-          - min: 94
+        - text: Vow
+          _i18n: *CommonNoun
+          roll:
+            min: 94
             max: 94
-            text: Vow
-          - min: 95
+        - text: War
+          _i18n: *CommonNoun
+          roll:
+            min: 95
             max: 95
-            text: War
-          - min: 96
+        - text: Warning
+          _i18n: &Gerund
+            text:
+              part_of_speech: gerund
+          roll:
+            min: 96
             max: 96
-            text: Warning
-          - min: 97
+        - text: Weakness
+          _i18n: *CommonNoun
+          roll:
+            min: 97
             max: 97
-            text: Weakness
-          - min: 98
+        - text: Wealth
+          _i18n: *CommonNoun
+          roll:
+            min: 98
             max: 98
-            text: Wealth
-          - min: 99
+        - text: Weapon
+          _i18n: *CommonNoun
+          roll:
+            min: 99
             max: 99
-            text: Weapon
-          - min: 100
+        - text: World
+          _i18n: *CommonNoun
+          roll:
+            min: 100
             max: 100
-            text: World
-          - min: 101
+        # end copy from original table
+        - text: Abundance
+          _i18n: *CommonNoun
+          roll:
+            min: 101
             max: 101
-            text: Abundance
-          - min: 102
+        - text: Adventure
+          _i18n: *CommonNoun
+          roll:
+            min: 102
             max: 102
-            text: Adventure
-          - min: 103
+        - text: Anger
+          _i18n: *CommonNoun
+          roll:
+            min: 103
             max: 103
-            text: Anger
-          - min: 104
+        - text: Argument
+          _i18n: *CommonNoun
+          roll:
+            min: 104
             max: 104
-            text: Argument
-          - min: 105
+        - text: Awareness
+          _i18n: *CommonNoun
+          roll:
+            min: 105
             max: 105
-            text: Awareness
-          - min: 106
+        - text: Awe
+          _i18n: *CommonNoun
+          roll:
+            min: 106
             max: 106
-            text: Awe
-          - min: 107
+        - text: Bane
+          _i18n: *CommonNoun
+          roll:
+            min: 107
             max: 107
-            text: Bane
-          - min: 108
+        - text: Beauty
+          _i18n: *CommonNoun
+          roll:
+            min: 108
             max: 108
-            text: Beauty
-          - min: 109
+        - text: Boon
+          _i18n: *CommonNoun
+          roll:
+            min: 109
             max: 109
-            text: Boon
-          - min: 110
+        - text: Bravery
+          _i18n: *CommonNoun
+          roll:
+            min: 110
             max: 110
-            text: Bravery
-          - min: 111
+        - text: Brutality
+          _i18n: *CommonNoun
+          roll:
+            min: 111
             max: 111
-            text: Brutality
-          - min: 112
+        - text: Business
+          _i18n: *CommonNoun
+          roll:
+            min: 112
             max: 112
-            text: Business
-          - min: 113
+        - text: Care
+          _i18n: *CommonNoun
+          roll:
+            min: 113
             max: 113
-            text: Care
-          - min: 114
+        - text: Career
+          _i18n: *CommonNoun
+          roll:
+            min: 114
             max: 114
-            text: Career
-          - min: 115
+        - text: Chaos
+          _i18n: *CommonNoun
+          roll:
+            min: 115
             max: 115
-            text: Chaos
-          - min: 116
+        - text: Charity
+          _i18n: *CommonNoun
+          roll:
+            min: 116
             max: 116
-            text: Charity
-          - min: 117
+        - text: Clarity
+          _i18n: *CommonNoun
+          roll:
+            min: 117
             max: 117
-            text: Clarity
-          - min: 118
+        - text: Comfort
+          _i18n: *CommonNoun
+          roll:
+            min: 118
             max: 118
-            text: Comfort
-          - min: 119
+        - text: Communication
+          _i18n: *CommonNoun
+          roll:
+            min: 119
             max: 119
-            text: Communication
-          - min: 120
+        - text: Company
+          _i18n: *CommonNoun
+          roll:
+            min: 120
             max: 120
-            text: Company
-          - min: 121
+        - text: Compassion
+          _i18n: *CommonNoun
+          roll:
+            min: 121
             max: 121
-            text: Compassion
-          - min: 122
+        - text: Confidence
+          _i18n: *CommonNoun
+          roll:
+            min: 122
             max: 122
-            text: Confidence
-          - min: 123
+        - text: Confusion
+          _i18n: *CommonNoun
+          roll:
+            min: 123
             max: 123
-            text: Confusion
-          - min: 124
+        - text: Dedication
+          _i18n: *CommonNoun
+          roll:
+            min: 124
             max: 124
-            text: Dedication
-          - min: 125
+        - text: Delay
+          _i18n: *CommonNoun
+          roll:
+            min: 125
             max: 125
-            text: Delay
-          - min: 126
+        - text: Despair
+          _i18n: *CommonNoun
+          roll:
+            min: 126
             max: 126
-            text: Despair
-          - min: 127
+        - text: Disadvantage
+          _i18n: *CommonNoun
+          roll:
+            min: 127
             max: 127
-            text: Disadvantage
-          - min: 128
+        - text: Disbelief
+          _i18n: *CommonNoun
+          roll:
+            min: 128
             max: 128
-            text: Disbelief
-          - min: 129
+        - text: Education
+          _i18n: *CommonNoun
+          roll:
+            min: 129
             max: 129
-            text: Education
-          - min: 130
+        - text: Ego
+          _i18n: *CommonNoun
+          roll:
+            min: 130
             max: 130
-            text: Ego
-          - min: 131
+        - text: Energy
+          _i18n: *CommonNoun
+          roll:
+            min: 131
             max: 131
-            text: Energy
-          - min: 132
+        - text: Envy
+          _i18n: *CommonNoun
+          roll:
+            min: 132
             max: 132
-            text: Envy
-          - min: 133
+        - text: Failure
+          _i18n: *CommonNoun
+          roll:
+            min: 133
             max: 133
-            text: Failure
-          - min: 134
+        - text: Faith
+          _i18n: *CommonNoun
+          roll:
+            min: 134
             max: 134
-            text: Faith
-          - min: 135
+        - text: Falsehood
+          _i18n: *CommonNoun
+          roll:
+            min: 135
             max: 135
-            text: Falsehood
-          - min: 136
+        - text: Favoritism
+          _i18n: *CommonNoun
+          roll:
+            min: 136
             max: 136
-            text: Favoritism
-          - min: 137
+        - text: Fragility
+          _i18n: *CommonNoun
+          roll:
+            min: 137
             max: 137
-            text: Fragility
-          - min: 138
+        - text: Friendship
+          _i18n: *CommonNoun
+          roll:
+            min: 138
             max: 138
-            text: Friendship
-          - min: 139
+        - text: Future
+          _i18n: *CommonNoun
+          roll:
+            min: 139
             max: 139
-            text: Future
-          - min: 140
+        - text: Gain
+          _i18n: *CommonNoun
+          roll:
+            min: 140
             max: 140
-            text: Gain
-          - min: 141
+        - text: Generosity
+          _i18n: *CommonNoun
+          roll:
+            min: 141
             max: 141
-            text: Generosity
-          - min: 142
+        - text: Grace
+          _i18n: *CommonNoun
+          roll:
+            min: 142
             max: 142
-            text: Grace
-          - min: 143
+        - text: Growth
+          _i18n: *CommonNoun
+          roll:
+            min: 143
             max: 143
-            text: Growth
-          - min: 144
+        - text: Hatred
+          _i18n: *CommonNoun
+          roll:
+            min: 144
             max: 144
-            text: Hatred
-          - min: 145
+        - text: Hindrance
+          _i18n: *CommonNoun
+          roll:
+            min: 145
             max: 145
-            text: Hindrance
-          - min: 146
+        - text: Honesty
+          _i18n: *CommonNoun
+          roll:
+            min: 146
             max: 146
-            text: Honesty
-          - min: 147
+        - text: Horror
+          _i18n: *CommonNoun
+          roll:
+            min: 147
             max: 147
-            text: Horror
-          - min: 148
+        - text: Humility
+          _i18n: *CommonNoun
+          roll:
+            min: 148
             max: 148
-            text: Humility
-          - min: 149
+        - text: Idea
+          _i18n: *CommonNoun
+          roll:
+            min: 149
             max: 149
-            text: Idea
-          - min: 150
+        - text: Imbalance
+          _i18n: *CommonNoun
+          roll:
+            min: 150
             max: 150
-            text: Imbalance
-          - min: 151
+        - text: Improvement
+          _i18n: *CommonNoun
+          roll:
+            min: 151
             max: 151
-            text: Improvement
-          - min: 152
+        - text: Information
+          _i18n: *CommonNoun
+          roll:
+            min: 152
             max: 152
-            text: Information
-          - min: 153
+        - text: Integrity
+          _i18n: *CommonNoun
+          roll:
+            min: 153
             max: 153
-            text: Integrity
-          - min: 154
+        - text: Justice
+          _i18n: *CommonNoun
+          roll:
+            min: 154
             max: 154
-            text: Justice
-          - min: 155
+        - text: Leadership
+          _i18n: *CommonNoun
+          roll:
+            min: 155
             max: 155
-            text: Leadership
-          - min: 156
+        - text: Liberty
+          _i18n: *CommonNoun
+          roll:
+            min: 156
             max: 156
-            text: Liberty
-          - min: 157
+        - text: Loss
+          _i18n: *CommonNoun
+          roll:
+            min: 157
             max: 157
-            text: Loss
-          - min: 158
+        - text: Loyalty
+          _i18n: *CommonNoun
+          roll:
+            min: 158
             max: 158
-            text: Loyalty
-          - min: 159
+        - text: Luck
+          _i18n: *CommonNoun
+          roll:
+            min: 159
             max: 159
-            text: Luck
-          - min: 160
+        - text: Luxury
+          _i18n: *CommonNoun
+          roll:
+            min: 160
             max: 160
-            text: Luxury
-          - min: 161
+        - text: Mercy
+          _i18n: *CommonNoun
+          roll:
+            min: 161
             max: 161
-            text: Mercy
-          - min: 162
+        - text: Military
+          _i18n: *CommonNoun
+          roll:
+            min: 162
             max: 162
-            text: Military
-          - min: 163
+        - text: Misery
+          _i18n: *CommonNoun
+          roll:
+            min: 163
             max: 163
-            text: Misery
-          - min: 164
+        - text: Misinformation
+          _i18n: *CommonNoun
+          roll:
+            min: 164
             max: 164
-            text: Misinformation
-          - min: 165
+        - text: Motivation
+          _i18n: *CommonNoun
+          roll:
+            min: 165
             max: 165
-            text: Motivation
-          - min: 166
+        - text: Need
+          _i18n: *CommonNoun
+          roll:
+            min: 166
             max: 166
-            text: Need
-          - min: 167
+        - text: Pain
+          _i18n: *CommonNoun
+          roll:
+            min: 167
             max: 167
-            text: Pain
-          - min: 168
+        - text: Past
+          _i18n: *CommonNoun
+          roll:
+            min: 168
             max: 168
-            text: Past
-          - min: 169
+        - text: Philosophy
+          _i18n: *CommonNoun
+          roll:
+            min: 169
             max: 169
-            text: Philosophy
-          - min: 170
+        - text: Pleasure
+          _i18n: *CommonNoun
+          roll:
+            min: 170
             max: 170
-            text: Pleasure
-          - min: 171
+        - text: Poverty
+          _i18n: *CommonNoun
+          roll:
+            min: 171
             max: 171
-            text: Poverty
-          - min: 172
+        - text: Present
+          _i18n: *CommonNoun
+          roll:
+            min: 172
             max: 172
-            text: Present
-          - min: 173
+        - text: Principle
+          _i18n: *CommonNoun
+          roll:
+            min: 173
             max: 173
-            text: Principle
-          - min: 174
+        - text: Privilege
+          _i18n: *CommonNoun
+          roll:
+            min: 174
             max: 174
-            text: Privilege
-          - min: 175
+        - text: Provision
+          _i18n: *CommonNoun
+          roll:
+            min: 175
             max: 175
-            text: Provision
-          - min: 176
+        - text: Relief
+          _i18n: *CommonNoun
+          roll:
+            min: 176
             max: 176
-            text: Relief
-          - min: 177
+        - text: Rift
+          _i18n: *CommonNoun
+          roll:
+            min: 177
             max: 177
-            text: Rift
-          - min: 178
+        - text: Rights
+          _i18n: *CommonNoun
+          roll:
+            min: 178
             max: 178
-            text: Rights
-          - min: 179
+        - text: Rivalry
+          _i18n: *CommonNoun
+          roll:
+            min: 179
             max: 179
-            text: Rivalry
-          - min: 180
+        - text: Sacrifice
+          _i18n: *CommonNoun
+          roll:
+            min: 180
             max: 180
-            text: Sacrifice
-          - min: 181
+        - text: Service
+          _i18n: *CommonNoun
+          roll:
+            min: 181
             max: 181
-            text: Service
-          - min: 182
+        - text: Skill
+          _i18n: *CommonNoun
+          roll:
+            min: 182
             max: 182
-            text: Skill
-          - min: 183
+        - text: Society
+          _i18n: *CommonNoun
+          roll:
+            min: 183
             max: 183
-            text: Society
-          - min: 184
+        - text: Solitude
+          _i18n: *CommonNoun
+          roll:
+            min: 184
             max: 184
-            text: Solitude
-          - min: 185
+        - text: Sorrow
+          _i18n: *CommonNoun
+          roll:
+            min: 185
             max: 185
-            text: Sorrow
-          - min: 186
+        - text: Speed
+          _i18n: *CommonNoun
+          roll:
+            min: 186
             max: 186
-            text: Speed
-          - min: 187
+        - text: Surplus
+          _i18n: *CommonNoun
+          roll:
+            min: 187
             max: 187
-            text: Surplus
-          - min: 188
+        - text: Surprise
+          _i18n: *CommonNoun
+          roll:
+            min: 188
             max: 188
-            text: Surprise
-          - min: 189
+        - text: Talent
+          _i18n: *CommonNoun
+          roll:
+            min: 189
             max: 189
-            text: Talent
-          - min: 190
+        - text: Timing
+          _i18n: *Gerund
+          roll:
+            min: 190
             max: 190
-            text: Timing
-          - min: 191
+        - text: Tolerance
+          _i18n: *CommonNoun
+          roll:
+            min: 191
             max: 191
-            text: Tolerance
-          - min: 192
+        - text: Travel
+          _i18n: *CommonNoun
+          roll:
+            min: 192
             max: 192
-            text: Travel
-          - min: 193
+        - text: Trend
+          _i18n: *CommonNoun
+          roll:
+            min: 193
             max: 193
-            text: Trend
-          - min: 194
+        - text: Trust
+          _i18n: *CommonNoun
+          roll:
+            min: 194
             max: 194
-            text: Trust
-          - min: 195
+        - text: Uncertainty
+          _i18n: *CommonNoun
+          roll:
+            min: 195
             max: 195
-            text: Uncertainty
-          - min: 196
+        - text: Union
+          _i18n: *CommonNoun
+          roll:
+            min: 196
             max: 196
-            text: Union
-          - min: 197
+        - text: Unity
+          _i18n: *CommonNoun
+          roll:
+            min: 197
             max: 197
-            text: Unity
-          - min: 198
+        - text: Victory
+          _i18n: *CommonNoun
+          roll:
+            min: 198
             max: 198
-            text: Victory
-          - min: 199
+        - text: Vulnerability
+          _i18n: *CommonNoun
+          roll:
+            min: 199
             max: 199
-            text: Vulnerability
-          - min: 200
+        - text: Wisdom
+          _i18n: *CommonNoun
+          roll:
+            min: 200
             max: 200
-            text: Wisdom
-          - min: 201
+        - text: Accord
+          _i18n: *CommonNoun
+          roll:
+            min: 201
             max: 201
-            text: Accord
-          - min: 202
+        - text: Achievement
+          _i18n: *CommonNoun
+          roll:
+            min: 202
             max: 202
-            text: Achievement
-          - min: 203
+        - text: Affliction
+          _i18n: *CommonNoun
+          roll:
+            min: 203
             max: 203
-            text: Affliction
-          - min: 204
+        - text: Agony
+          _i18n: *CommonNoun
+          roll:
+            min: 204
             max: 204
-            text: Agony
-          - min: 205
+        - text: Ally
+          _i18n: *CommonNoun
+          roll:
+            min: 205
             max: 205
-            text: Ally
-          - min: 206
+        - text: Ambition
+          _i18n: *CommonNoun
+          roll:
+            min: 206
             max: 206
-            text: Ambition
-          - min: 207
+        - text: Amnesty
+          _i18n: *CommonNoun
+          roll:
+            min: 207
             max: 207
-            text: Amnesty
-          - min: 208
+        - text: Assistance
+          _i18n: *CommonNoun
+          roll:
+            min: 208
             max: 208
-            text: Assistance
-          - min: 209
+        - text: Axiom
+          _i18n: *CommonNoun
+          roll:
+            min: 209
             max: 209
-            text: Axiom
-          - min: 210
+        - text: Belonging
+          _i18n: *Gerund
+          roll:
+            min: 210
             max: 210
-            text: Belonging
-          - min: 211
+        - text: Betrayal
+          _i18n: *CommonNoun
+          roll:
+            min: 211
             max: 211
-            text: Betrayal
-          - min: 212
+        - text: Bitterness
+          _i18n: *CommonNoun
+          roll:
+            min: 212
             max: 212
-            text: Bitterness
-          - min: 213
+        - text: Bondage
+          _i18n: *CommonNoun
+          roll:
+            min: 213
             max: 213
-            text: Bondage
-          - min: 214
+        - text: Camaraderie
+          _i18n: *CommonNoun
+          roll:
+            min: 214
             max: 214
-            text: Camaraderie
-          - min: 215
+        - text: Candor
+          _i18n: *CommonNoun
+          roll:
+            min: 215
             max: 215
-            text: Candor
-          - min: 216
+        - text: Capability
+          _i18n: *CommonNoun
+          roll:
+            min: 216
             max: 216
-            text: Capability
-          - min: 217
+        - text: Capacity
+          _i18n: *CommonNoun
+          roll:
+            min: 217
             max: 217
-            text: Capacity
-          - min: 218
+        - text: Catastrophe
+          _i18n: *CommonNoun
+          roll:
+            min: 218
             max: 218
-            text: Catastrophe
-          - min: 219
+        - text: Competition
+          _i18n: *CommonNoun
+          roll:
+            min: 219
             max: 219
-            text: Competition
-          - min: 220
+        - text: Conflict
+          _i18n: *CommonNoun
+          roll:
+            min: 220
             max: 220
-            text: Conflict
-          - min: 221
+        - text: Connection
+          _i18n: *CommonNoun
+          roll:
+            min: 221
             max: 221
-            text: Connection
-          - min: 222
+        - text: Control
+          _i18n: *CommonNoun
+          roll:
+            min: 222
             max: 222
-            text: Control
-          - min: 223
+        - text: Controversy
+          _i18n: *CommonNoun
+          roll:
+            min: 223
             max: 223
-            text: Controversy
-          - min: 224
+        - text: Conviction
+          _i18n: *CommonNoun
+          roll:
+            min: 224
             max: 224
-            text: Conviction
-          - min: 225
+        - text: Cooperation
+          _i18n: *CommonNoun
+          roll:
+            min: 225
             max: 225
-            text: Cooperation
-          - min: 226
+        - text: Cowardice
+          _i18n: *CommonNoun
+          roll:
+            min: 226
             max: 226
-            text: Cowardice
-          - min: 227
+        - text: Credit
+          _i18n: *CommonNoun
+          roll:
+            min: 227
             max: 227
-            text: Credit
-          - min: 228
+        - text: Cruelty
+          _i18n: *CommonNoun
+          roll:
+            min: 228
             max: 228
-            text: Cruelty
-          - min: 229
+        - text: Custom
+          _i18n: *CommonNoun
+          roll:
+            min: 229
             max: 229
-            text: Custom
-          - min: 230
+        - text: Defiance
+          _i18n: *CommonNoun
+          roll:
+            min: 230
             max: 230
-            text: Defiance
-          - min: 231
+        - text: Deficit
+          _i18n: *CommonNoun
+          roll:
+            min: 231
             max: 231
-            text: Deficit
-          - min: 232
+        - text: Delusion
+          _i18n: *CommonNoun
+          roll:
+            min: 232
             max: 232
-            text: Delusion
-          - min: 233
+        - text: Denial
+          _i18n: *CommonNoun
+          roll:
+            min: 233
             max: 233
-            text: Denial
-          - min: 234
+        - text: Dependence
+          _i18n: *CommonNoun
+          roll:
+            min: 234
             max: 234
-            text: Dependence
-          - min: 235
+        - text: Devotion
+          _i18n: *CommonNoun
+          roll:
+            min: 235
             max: 235
-            text: Devotion
-          - min: 236
+        - text: Difference
+          _i18n: *CommonNoun
+          roll:
+            min: 236
             max: 236
-            text: Difference
-          - min: 237
+        - text: Dignity
+          _i18n: *CommonNoun
+          roll:
+            min: 237
             max: 237
-            text: Dignity
-          - min: 238
+        - text: Disappointment
+          _i18n: *CommonNoun
+          roll:
+            min: 238
             max: 238
-            text: Disappointment
-          - min: 239
+        - text: Disarray
+          _i18n: *CommonNoun
+          roll:
+            min: 239
             max: 239
-            text: Disarray
-          - min: 240
+        - text: Dishonor
+          _i18n: *CommonNoun
+          roll:
+            min: 240
             max: 240
-            text: Dishonor
-          - min: 241
+        - text: Disorder
+          _i18n: *CommonNoun
+          roll:
+            min: 241
             max: 241
-            text: Disorder
-          - min: 242
+        - text: Disregard
+          _i18n: *CommonNoun
+          roll:
+            min: 242
             max: 242
-            text: Disregard
-          - min: 243
+        - text: Disturbance
+          _i18n: *CommonNoun
+          roll:
+            min: 243
             max: 243
-            text: Disturbance
-          - min: 244
+        - text: Dogma
+          _i18n: *CommonNoun
+          roll:
+            min: 244
             max: 244
-            text: Dogma
-          - min: 245
+        - text: Domination
+          _i18n: *CommonNoun
+          roll:
+            min: 245
             max: 245
-            text: Domination
-          - min: 246
+        - text: Drawback
+          _i18n: *CommonNoun
+          roll:
+            min: 246
             max: 246
-            text: Drawback
-          - min: 247
+        - text: Emotion
+          _i18n: *CommonNoun
+          roll:
+            min: 247
             max: 247
-            text: Emotion
-          - min: 248
+        - text: Endurance
+          _i18n: *CommonNoun
+          roll:
+            min: 248
             max: 248
-            text: Endurance
-          - min: 249
+        - text: Fact
+          _i18n: *CommonNoun
+          roll:
+            min: 249
             max: 249
-            text: Fact
-          - min: 250
+        - text: Fate
+          _i18n: *CommonNoun
+          roll:
+            min: 250
             max: 250
-            text: Fate
-          - min: 251
+        - text: Folly
+          _i18n: *CommonNoun
+          roll:
+            min: 251
             max: 251
-            text: Folly
-          - min: 252
+        - text: Fortune
+          _i18n: *CommonNoun
+          roll:
+            min: 252
             max: 252
-            text: Fortune
-          - min: 253
+        - text: Friend
+          _i18n: *CommonNoun
+          roll:
+            min: 253
             max: 253
-            text: Friend
-          - min: 254
+        - text: Gloom
+          _i18n: *CommonNoun
+          roll:
+            min: 254
             max: 254
-            text: Gloom
-          - min: 255
+        - text: Goal
+          _i18n: *CommonNoun
+          roll:
+            min: 255
             max: 255
-            text: Goal
-          - min: 256
+        - text: Guilt
+          _i18n: *CommonNoun
+          roll:
+            min: 256
             max: 256
-            text: Guilt
-          - min: 257
+        - text: Habit
+          _i18n: *CommonNoun
+          roll:
+            min: 257
             max: 257
-            text: Habit
-          - min: 258
+        - text: Hazard
+          _i18n: *CommonNoun
+          roll:
+            min: 258
             max: 258
-            text: Hazard
-          - min: 259
+        - text: Hospitality
+          _i18n: *CommonNoun
+          roll:
+            min: 259
             max: 259
-            text: Hospitality
-          - min: 260
+        - text: Hostility
+          _i18n: *CommonNoun
+          roll:
+            min: 260
             max: 260
-            text: Hostility
-          - min: 261
+        - text: Ignorance
+          _i18n: *CommonNoun
+          roll:
+            min: 261
             max: 261
-            text: Ignorance
-          - min: 262
+        - text: Illusion
+          _i18n: *CommonNoun
+          roll:
+            min: 262
             max: 262
-            text: Illusion
-          - min: 263
+        - text: Impression
+          _i18n: *CommonNoun
+          roll:
+            min: 263
             max: 263
-            text: Impression
-          - min: 264
+        - text: Inability
+          _i18n: *CommonNoun
+          roll:
+            min: 264
             max: 264
-            text: Inability
-          - min: 265
+        - text: Independence
+          _i18n: *CommonNoun
+          roll:
+            min: 265
             max: 265
-            text: Independence
-          - min: 266
+        - text: Injustice
+          _i18n: *CommonNoun
+          roll:
+            min: 266
             max: 266
-            text: Injustice
-          - min: 267
+        - text: Insight
+          _i18n: *CommonNoun
+          roll:
+            min: 267
             max: 267
-            text: Insight
-          - min: 268
+        - text: Insult
+          _i18n: *CommonNoun
+          roll:
+            min: 268
             max: 268
-            text: Insult
-          - min: 269
+        - text: Intelligence
+          _i18n: *CommonNoun
+          roll:
+            min: 269
             max: 269
-            text: Intelligence
-          - min: 270
+        - text: Malady
+          _i18n: *CommonNoun
+          roll:
+            min: 270
             max: 270
-            text: Malady
-          - min: 271
+        - text: Mastery
+          _i18n: *CommonNoun
+          roll:
+            min: 271
             max: 271
-            text: Mastery
-          - min: 272
+        - text: Maturity
+          _i18n: *CommonNoun
+          roll:
+            min: 272
             max: 272
-            text: Maturity
-          - min: 273
+        - text: Membership
+          _i18n: *CommonNoun
+          roll:
+            min: 273
             max: 273
-            text: Membership
-          - min: 274
+        - text: Merit
+          _i18n: *CommonNoun
+          roll:
+            min: 274
             max: 274
-            text: Merit
-          - min: 275
+        - text: Necessity
+          _i18n: *CommonNoun
+          roll:
+            min: 275
             max: 275
-            text: Necessity
-          - min: 276
+        - text: Obligation
+          _i18n: *CommonNoun
+          roll:
+            min: 276
             max: 276
-            text: Obligation
-          - min: 277
+        - text: Offense
+          _i18n: *CommonNoun
+          roll:
+            min: 277
             max: 277
-            text: Offense
-          - min: 278
+        - text: Opinion
+          _i18n: *CommonNoun
+          roll:
+            min: 278
             max: 278
-            text: Opinion
-          - min: 279
+        - text: Ownership
+          _i18n: *CommonNoun
+          roll:
+            min: 279
             max: 279
-            text: Ownership
-          - min: 280
+        - text: Paradox
+          _i18n: *CommonNoun
+          roll:
+            min: 280
             max: 280
-            text: Paradox
-          - min: 281
+        - text: Partnership
+          _i18n: *CommonNoun
+          roll:
+            min: 281
             max: 281
-            text: Partnership
-          - min: 282
+        - text: Passion
+          _i18n: *CommonNoun
+          roll:
+            min: 282
             max: 282
-            text: Passion
-          - min: 283
+        - text: Patience
+          _i18n: *CommonNoun
+          roll:
+            min: 283
             max: 283
-            text: Patience
-          - min: 284
+        - text: Perception
+          _i18n: *CommonNoun
+          roll:
+            min: 284
             max: 284
-            text: Perception
-          - min: 285
+        - text: Perseverance
+          _i18n: *CommonNoun
+          roll:
+            min: 285
             max: 285
-            text: Perseverance
-          - min: 286
+        - text: Proficiency
+          _i18n: *CommonNoun
+          roll:
+            min: 286
             max: 286
-            text: Proficiency
-          - min: 287
+        - text: Progress
+          _i18n: *CommonNoun
+          roll:
+            min: 287
             max: 287
-            text: Progress
-          - min: 288
+        - text: Promise
+          _i18n: *CommonNoun
+          roll:
+            min: 288
             max: 288
-            text: Promise
-          - min: 289
+        - text: Redemption
+          _i18n: *CommonNoun
+          roll:
+            min: 289
             max: 289
-            text: Redemption
-          - min: 290
+        - text: Regret
+          _i18n: *CommonNoun
+          roll:
+            min: 290
             max: 290
-            text: Regret
-          - min: 291
+        - text: Restoration
+          _i18n: *CommonNoun
+          roll:
+            min: 291
             max: 291
-            text: Restoration
-          - min: 292
+        - text: Routine
+          _i18n: *CommonNoun
+          roll:
+            min: 292
             max: 292
-            text: Routine
-          - min: 293
+        - text: Success
+          _i18n: *CommonNoun
+          roll:
+            min: 293
             max: 293
-            text: Success
-          - min: 294
+        - text: Sympathy
+          _i18n: *CommonNoun
+          roll:
+            min: 294
             max: 294
-            text: Sympathy
-          - min: 295
+        - text: System
+          _i18n: *CommonNoun
+          roll:
+            min: 295
             max: 295
-            text: System
-          - min: 296
+        - text: Thought
+          _i18n: *CommonNoun
+          roll:
+            min: 296
             max: 296
-            text: Thought
-          - min: 297
+        - text: Tragedy
+          _i18n: *CommonNoun
+          roll:
+            min: 297
             max: 297
-            text: Tragedy
-          - min: 298
+        - text: Vision
+          _i18n: *CommonNoun
+          roll:
+            min: 298
             max: 298
-            text: Vision
-          - min: 299
+        - text: Windfall
+          _i18n: *CommonNoun
+          roll:
+            min: 299
             max: 299
-            text: Windfall
-          - min: 300
+        - text: Wrath
+          _i18n: *CommonNoun
+          roll:
+            min: 300
             max: 300
-            text: Wrath
+        type: oracle_rollable
       descriptor:
         name: Descriptor
-        _source: *Source
         oracle_type: table_text
-        replaces: starforged/oracles/core/descriptor
         dice: 1d300
+        replaces:
+        - oracle_rollable:starforged/core/descriptor
+        summary: Extension of the oracle table
+        _source: *Source
         rows:
-          - min: 1
+        # begin copy from original table
+        - text: Abandoned
+          _i18n: &Adjective
+            text:
+              part_of_speech: adjective
+          roll:
+            min: 1
             max: 1
-            text: Abandoned
-          - min: 2
+        - text: Abundant
+          _i18n: *Adjective
+          roll:
+            min: 2
             max: 2
-            text: Abundant
-          - min: 3
+        - text: Active
+          _i18n: *Adjective
+          roll:
+            min: 3
             max: 3
-            text: Active
-          - min: 4
+        - text: Advanced
+          _i18n: *Adjective
+          roll:
+            min: 4
             max: 4
-            text: Advanced
-          - min: 5
+        - text: Alien
+          _i18n: *Adjective
+          roll:
+            min: 5
             max: 5
-            text: Alien
-          - min: 6
+        - text: Ancient
+          _i18n: *Adjective
+          roll:
+            min: 6
             max: 6
-            text: Ancient
-          - min: 7
+        - text: Archaic
+          _i18n: *Adjective
+          roll:
+            min: 7
             max: 7
-            text: Archaic
-          - min: 8
+        - text: Automated
+          _i18n: *Adjective
+          roll:
+            min: 8
             max: 8
-            text: Automated
-          - min: 9
+        - text: Barren
+          _i18n: *Adjective
+          roll:
+            min: 9
             max: 9
-            text: Barren
-          - min: 10
+        - text: Biological
+          _i18n: *Adjective
+          roll:
+            min: 10
             max: 10
-            text: Biological
-          - min: 11
+        - text: Blighted
+          _i18n: *Adjective
+          roll:
+            min: 11
             max: 11
-            text: Blighted
-          - min: 12
+        - text: Blocked
+          _i18n: *Adjective
+          roll:
+            min: 12
             max: 12
-            text: Blocked
-          - min: 13
+        - text: Breached
+          _i18n: *Adjective
+          roll:
+            min: 13
             max: 13
-            text: Breached
-          - min: 14
+        - text: Broken
+          _i18n: *Adjective
+          roll:
+            min: 14
             max: 14
-            text: Broken
-          - min: 15
+        - text: Captured
+          _i18n: *Adjective
+          roll:
+            min: 15
             max: 15
-            text: Captured
-          - min: 16
+        - text: Chaotic
+          _i18n: *Adjective
+          roll:
+            min: 16
             max: 16
-            text: Chaotic
-          - min: 17
+        - text: Civilized
+          _i18n: *Adjective
+          roll:
+            min: 17
             max: 17
-            text: Civilized
-          - min: 18
+        - text: Collapsed
+          _i18n: *Adjective
+          roll:
+            min: 18
             max: 18
-            text: Collapsed
-          - min: 19
+        - text: Colossal
+          _i18n: *Adjective
+          roll:
+            min: 19
             max: 19
-            text: Colossal
-          - min: 20
+        - text: Confined
+          _i18n: *Adjective
+          roll:
+            min: 20
             max: 20
-            text: Confined
-          - min: 21
+        - text: Conspicuous
+          _i18n: *Adjective
+          roll:
+            min: 21
             max: 21
-            text: Conspicuous
-          - min: 22
+        - text: Constructed
+          _i18n: *Adjective
+          roll:
+            min: 22
             max: 22
-            text: Constructed
-          - min: 23
+        - text: Contested
+          _i18n: *Adjective
+          roll:
+            min: 23
             max: 23
-            text: Contested
-          - min: 24
+        - text: Corrupted
+          _i18n: *Adjective
+          roll:
+            min: 24
             max: 24
-            text: Corrupted
-          - min: 25
+        - text: Created
+          _i18n: *Adjective
+          roll:
+            min: 25
             max: 25
-            text: Created
-          - min: 26
+        - text: Damaged
+          _i18n: *Adjective
+          roll:
+            min: 26
             max: 26
-            text: Damaged
-          - min: 27
+        - text: Dead
+          _i18n: *Adjective
+          roll:
+            min: 27
             max: 27
-            text: Dead
-          - min: 28
+        - text: Deadly
+          _i18n: *Adjective
+          roll:
+            min: 28
             max: 28
-            text: Deadly
-          - min: 29
+        - text: Decaying
+          _i18n: *Gerund
+          roll:
+            min: 29
             max: 29
-            text: Decaying
-          - min: 30
+        - text: Defended
+          _i18n: *Adjective
+          roll:
+            min: 30
             max: 30
-            text: Defended
-          - min: 31
+        - text: Depleted
+          _i18n: *Adjective
+          roll:
+            min: 31
             max: 31
-            text: Depleted
-          - min: 32
+        - text: Desolate
+          _i18n: *Adjective
+          roll:
+            min: 32
             max: 32
-            text: Desolate
-          - min: 33
+        - text: Destroyed
+          _i18n: *Adjective
+          roll:
+            min: 33
             max: 33
-            text: Destroyed
-          - min: 34
+        - text: Diverse
+          _i18n: *Adjective
+          roll:
+            min: 34
             max: 34
-            text: Diverse
-          - min: 35
+        - text: Empty
+          _i18n: *Adjective
+          roll:
+            min: 35
             max: 35
-            text: Empty
-          - min: 36
+        - text: Engulfed
+          _i18n: *Adjective
+          roll:
+            min: 36
             max: 36
-            text: Engulfed
-          - min: 37
+        - text: Ensnaring
+          _i18n: *Gerund
+          roll:
+            min: 37
             max: 37
-            text: Ensnaring
-          - min: 38
+        - text: Expansive
+          _i18n: *Adjective
+          roll:
+            min: 38
             max: 38
-            text: Expansive
-          - min: 39
+        - text: Exposed
+          _i18n: *Adjective
+          roll:
+            min: 39
             max: 39
-            text: Exposed
-          - min: 40
+        - text: Fiery
+          _i18n: *Adjective
+          roll:
+            min: 40
             max: 40
-            text: Fiery
-          - min: 41
+        - text: Foreboding
+          _i18n: *Gerund
+          roll:
+            min: 41
             max: 41
-            text: Foreboding
-          - min: 42
+        - text: Forgotten
+          _i18n: *Adjective
+          roll:
+            min: 42
             max: 42
-            text: Forgotten
-          - min: 43
+        - text: Forsaken
+          _i18n: *Adjective
+          roll:
+            min: 43
             max: 43
-            text: Forsaken
-          - min: 44
+        - text: Fortified
+          _i18n: *Adjective
+          roll:
+            min: 44
             max: 44
-            text: Fortified
-          - min: 45
+        - text: Foul
+          _i18n: *Adjective
+          roll:
+            min: 45
             max: 45
-            text: Foul
-          - min: 46
+        - text: Fragile
+          _i18n: *Adjective
+          roll:
+            min: 46
             max: 46
-            text: Fragile
-          - min: 47
+        - text: Frozen
+          _i18n: *Adjective
+          roll:
+            min: 47
             max: 47
-            text: Frozen
-          - min: 48
+        - text: Functional
+          _i18n: *Adjective
+          roll:
+            min: 48
             max: 48
-            text: Functional
-          - min: 49
+        - text: Grim
+          _i18n: *Adjective
+          roll:
+            min: 49
             max: 49
-            text: Grim
-          - min: 50
+        - text: Guarded
+          _i18n: *Adjective
+          roll:
+            min: 50
             max: 50
-            text: Guarded
-          - min: 51
+        - text: Haunted
+          _i18n: *Adjective
+          roll:
+            min: 51
             max: 51
-            text: Haunted
-          - min: 52
+        - text: Hidden
+          _i18n: *Adjective
+          roll:
+            min: 52
             max: 52
-            text: Hidden
-          - min: 53
+        - text: Hoarded
+          _i18n: *Adjective
+          roll:
+            min: 53
             max: 53
-            text: Hoarded
-          - min: 54
+        - text: Hostile
+          _i18n: *Adjective
+          roll:
+            min: 54
             max: 54
-            text: Hostile
-          - min: 55
+        - text: Immersed
+          _i18n: *Adjective
+          roll:
+            min: 55
             max: 55
-            text: Immersed
-          - min: 56
+        - text: Inaccessible
+          _i18n: *Adjective
+          roll:
+            min: 56
             max: 56
-            text: Inaccessible
-          - min: 57
+        - text: Infested
+          _i18n: *Adjective
+          roll:
+            min: 57
             max: 57
-            text: Infested
-          - min: 58
+        - text: Inhabited
+          _i18n: *Adjective
+          roll:
+            min: 58
             max: 58
-            text: Inhabited
-          - min: 59
+        - text: Isolated
+          _i18n: *Adjective
+          roll:
+            min: 59
             max: 59
-            text: Isolated
-          - min: 60
+        - text: Living
+          _i18n: *Gerund
+          roll:
+            min: 60
             max: 60
-            text: Living
-          - min: 61
+        - text: Lost
+          _i18n: *Adjective
+          roll:
+            min: 61
             max: 61
-            text: Lost
-          - min: 62
+        - text: Lush
+          _i18n: *Adjective
+          roll:
+            min: 62
             max: 62
-            text: Lush
-          - min: 63
+        - text: Makeshift
+          _i18n: *Adjective
+          roll:
+            min: 63
             max: 63
-            text: Makeshift
-          - min: 64
+        - text: Mechanical
+          _i18n: *Adjective
+          roll:
+            min: 64
             max: 64
-            text: Mechanical
-          - min: 65
+        - text: Misleading
+          _i18n: *Gerund
+          roll:
+            min: 65
             max: 65
-            text: Misleading
-          - min: 66
+        - text: Moving
+          _i18n: *Gerund
+          roll:
+            min: 66
             max: 66
-            text: Moving
-          - min: 67
+        - text: Mysterious
+          _i18n: *Adjective
+          roll:
+            min: 67
             max: 67
-            text: Mysterious
-          - min: 68
+        - text: Natural
+          _i18n: *Adjective
+          roll:
+            min: 68
             max: 68
-            text: Natural
-          - min: 69
+        - text: New
+          _i18n: *Adjective
+          roll:
+            min: 69
             max: 69
-            text: New
-          - min: 70
+        - text: Obscured
+          _i18n: *Adjective
+          roll:
+            min: 70
             max: 70
-            text: Obscured
-          - min: 71
+        - text: Open
+          _i18n: *Adjective
+          roll:
+            min: 71
             max: 71
-            text: Open
-          - min: 72
+        - text: Peaceful
+          _i18n: *Adjective
+          roll:
+            min: 72
             max: 72
-            text: Peaceful
-          - min: 73
+        - text: Perilous
+          _i18n: *Adjective
+          roll:
+            min: 73
             max: 73
-            text: Perilous
-          - min: 74
+        - text: Pillaged
+          _i18n: *Adjective
+          roll:
+            min: 74
             max: 74
-            text: Pillaged
-          - min: 75
+        - text: Powerful
+          _i18n: *Adjective
+          roll:
+            min: 75
             max: 75
-            text: Powerful
-          - min: 76
+        - text: Preserved
+          _i18n: *Adjective
+          roll:
+            min: 76
             max: 76
-            text: Preserved
-          - min: 77
+        - text: Prominent
+          _i18n: *Adjective
+          roll:
+            min: 77
             max: 77
-            text: Prominent
-          - min: 78
+        - text: Protected
+          _i18n: *Adjective
+          roll:
+            min: 78
             max: 78
-            text: Protected
-          - min: 79
+        - text: Radiant
+          _i18n: *Adjective
+          roll:
+            min: 79
             max: 79
-            text: Radiant
-          - min: 80
+        - text: Rare
+          _i18n: *Adjective
+          roll:
+            min: 80
             max: 80
-            text: Rare
-          - min: 81
+        - text: Remote
+          _i18n: *Adjective
+          roll:
+            min: 81
             max: 81
-            text: Remote
-          - min: 82
+        - text: Rich
+          _i18n: *Adjective
+          roll:
+            min: 82
             max: 82
-            text: Rich
-          - min: 83
+        - text: Ruined
+          _i18n: *Adjective
+          roll:
+            min: 83
             max: 83
-            text: Ruined
-          - min: 84
+        - text: Sacred
+          _i18n: *Adjective
+          roll:
+            min: 84
             max: 84
-            text: Sacred
-          - min: 85
+        - text: Safe
+          _i18n: *Adjective
+          roll:
+            min: 85
             max: 85
-            text: Safe
-          - min: 86
+        - text: Sealed
+          _i18n: *Adjective
+          roll:
+            min: 86
             max: 86
-            text: Sealed
-          - min: 87
+        - text: Secret
+          _i18n: *Adjective
+          roll:
+            min: 87
             max: 87
-            text: Secret
-          - min: 88
+        - text: Settled
+          _i18n: *Adjective
+          roll:
+            min: 88
             max: 88
-            text: Settled
-          - min: 89
+        - text: Shrouded
+          _i18n: *Adjective
+          roll:
+            min: 89
             max: 89
-            text: Shrouded
-          - min: 90
+        - text: Stolen
+          _i18n: *Adjective
+          roll:
+            min: 90
             max: 90
-            text: Stolen
-          - min: 91
+        - text: Strange
+          _i18n: *Adjective
+          roll:
+            min: 91
             max: 91
-            text: Strange
-          - min: 92
+        - text: Subsurface
+          _i18n: *Adjective
+          roll:
+            min: 92
             max: 92
-            text: Subsurface
-          - min: 93
+        - text: Toxic
+          _i18n: *Adjective
+          roll:
+            min: 93
             max: 93
-            text: Toxic
-          - min: 94
+        - text: Trapped
+          _i18n: *Adjective
+          roll:
+            min: 94
             max: 94
-            text: Trapped
-          - min: 95
+        - text: Undiscovered
+          _i18n: *Adjective
+          roll:
+            min: 95
             max: 95
-            text: Undiscovered
-          - min: 96
+        - text: Unnatural
+          _i18n: *Adjective
+          roll:
+            min: 96
             max: 96
-            text: Unnatural
-          - min: 97
+        - text: Unstable
+          _i18n: *Adjective
+          roll:
+            min: 97
             max: 97
-            text: Unstable
-          - min: 98
+        - text: Untamed
+          _i18n: *Adjective
+          roll:
+            min: 98
             max: 98
-            text: Untamed
-          - min: 99
+        - text: Valuable
+          _i18n: *Adjective
+          roll:
+            min: 99
             max: 99
-            text: Valuable
-          - min: 100
+        - text: Violent
+          _i18n: *Adjective
+          roll:
+            min: 100
             max: 100
-            text: Violent
-          - min: 101
+        # end copy from original table
+        - text: Abnormal
+          _i18n: *Adjective
+          roll:
+            min: 101
             max: 101
-            text: Abnormal
-          - min: 102
+        - text: Armored
+          _i18n: *Adjective
+          roll:
+            min: 102
             max: 102
-            text: Armored
-          - min: 103
+        - text: Artificial
+          _i18n: *Adjective
+          roll:
+            min: 103
             max: 103
-            text: Artificial
-          - min: 104
+        - text: Barricaded
+          _i18n: *Adjective
+          roll:
+            min: 104
             max: 104
-            text: Barricaded
-          - min: 105
+        - text: Bleak
+          _i18n: *Adjective
+          roll:
+            min: 105
             max: 105
-            text: Bleak
-          - min: 106
+        - text: Brutal
+          _i18n: *Adjective
+          roll:
+            min: 106
             max: 106
-            text: Brutal
-          - min: 107
+        - text: Caged
+          _i18n: *Adjective
+          roll:
+            min: 107
             max: 107
-            text: Caged
-          - min: 108
+        - text: Chained
+          _i18n: *Adjective
+          roll:
+            min: 108
             max: 108
-            text: Chained
-          - min: 109
+        - text: Challenging
+          _i18n: *Gerund
+          roll:
+            min: 109
             max: 109
-            text: Challenging
-          - min: 110
+        - text: Clandestine
+          _i18n: *Adjective
+          roll:
+            min: 110
             max: 110
-            text: Clandestine
-          - min: 111
+        - text: Closed
+          _i18n: *Adjective
+          roll:
+            min: 111
             max: 111
-            text: Closed
-          - min: 112
+        - text: Concealed
+          _i18n: *Adjective
+          roll:
+            min: 112
             max: 112
-            text: Concealed
-          - min: 113
+        - text: Contaminated
+          _i18n: *Adjective
+          roll:
+            min: 113
             max: 113
-            text: Contaminated
-          - min: 114
+        - text: Crumbling
+          _i18n: *Gerund
+          roll:
+            min: 114
             max: 114
-            text: Crumbling
-          - min: 115
+        - text: Cryptic
+          _i18n: *Adjective
+          roll:
+            min: 115
             max: 115
-            text: Cryptic
-          - min: 116
+        - text: Cursed
+          _i18n: *Adjective
+          roll:
+            min: 116
             max: 116
-            text: Cursed
-          - min: 117
+        - text: Dangerous
+          _i18n: *Adjective
+          roll:
+            min: 117
             max: 117
-            text: Dangerous
-          - min: 118
+        - text: Deficient
+          _i18n: *Adjective
+          roll:
+            min: 118
             max: 118
-            text: Deficient
-          - min: 119
+        - text: Delicate
+          _i18n: *Adjective
+          roll:
+            min: 119
             max: 119
-            text: Delicate
-          - min: 120
+        - text: Dense
+          _i18n: *Adjective
+          roll:
+            min: 120
             max: 120
-            text: Dense
-          - min: 121
+        - text: Depraved
+          _i18n: *Adjective
+          roll:
+            min: 121
             max: 121
-            text: Depraved
-          - min: 122
+        - text: Deserted
+          _i18n: *Adjective
+          roll:
+            min: 122
             max: 122
-            text: Deserted
-          - min: 123
+        - text: Destructive
+          _i18n: *Adjective
+          roll:
+            min: 123
             max: 123
-            text: Destructive
-          - min: 124
+        - text: Devastated
+          _i18n: *Adjective
+          roll:
+            min: 124
             max: 124
-            text: Devastated
-          - min: 125
+        - text: Diseased
+          _i18n: *Adjective
+          roll:
+            min: 125
             max: 125
-            text: Diseased
-          - min: 126
+        - text: Distant
+          _i18n: *Adjective
+          roll:
+            min: 126
             max: 126
-            text: Distant
-          - min: 127
+        - text: Divergent
+          _i18n: *Adjective
+          roll:
+            min: 127
             max: 127
-            text: Divergent
-          - min: 128
+        - text: Dominant
+          _i18n: *Adjective
+          roll:
+            min: 128
             max: 128
-            text: Dominant
-          - min: 129
+        - text: Enigmatic
+          _i18n: *Adjective
+          roll:
+            min: 129
             max: 129
-            text: Enigmatic
-          - min: 130
+        - text: Evasive
+          _i18n: *Adjective
+          roll:
+            min: 130
             max: 130
-            text: Evasive
-          - min: 131
+        - text: Exotic
+          _i18n: *Adjective
+          roll:
+            min: 131
             max: 131
-            text: Exotic
-          - min: 132
+        - text: Extensive
+          _i18n: *Adjective
+          roll:
+            min: 132
             max: 132
-            text: Extensive
-          - min: 133
+        - text: Extinct
+          _i18n: *Adjective
+          roll:
+            min: 133
             max: 133
-            text: Extinct
-          - min: 134
+        - text: Extravagant
+          _i18n: *Adjective
+          roll:
+            min: 134
             max: 134
-            text: Extravagant
-          - min: 135
+        - text: Fabricated
+          _i18n: *Adjective
+          roll:
+            min: 135
             max: 135
-            text: Fabricated
-          - min: 136
+        - text: Fallen
+          _i18n: *Adjective
+          roll:
+            min: 136
             max: 136
-            text: Fallen
-          - min: 137
+        - text: Feeble
+          _i18n: *Adjective
+          roll:
+            min: 137
             max: 137
-            text: Feeble
-          - min: 138
+        - text: Fetid
+          _i18n: *Adjective
+          roll:
+            min: 138
             max: 138
-            text: Fetid
-          - min: 139
+        - text: Fierce
+          _i18n: *Adjective
+          roll:
+            min: 139
             max: 139
-            text: Fierce
-          - min: 140
+        - text: Flawed
+          _i18n: *Adjective
+          roll:
+            min: 140
             max: 140
-            text: Flawed
-          - min: 141
+        - text: Flooded
+          _i18n: *Adjective
+          roll:
+            min: 141
             max: 141
-            text: Flooded
-          - min: 142
+        - text: Forbidden
+          _i18n: *Adjective
+          roll:
+            min: 142
             max: 142
-            text: Forbidden
-          - min: 143
+        - text: Forged
+          _i18n: *Adjective
+          roll:
+            min: 143
             max: 143
-            text: Forged
-          - min: 144
+        - text: Fractured
+          _i18n: *Adjective
+          roll:
+            min: 144
             max: 144
-            text: Fractured
-          - min: 145
+        - text: Fragmented
+          _i18n: *Adjective
+          roll:
+            min: 145
             max: 145
-            text: Fragmented
-          - min: 146
+        - text: Frightening
+          _i18n: *Gerund
+          roll:
+            min: 146
             max: 146
-            text: Frightening
-          - min: 147
+        - text: Gruesome
+          _i18n: *Adjective
+          roll:
+            min: 147
             max: 147
-            text: Gruesome
-          - min: 148
+        - text: Hazardous
+          _i18n: *Adjective
+          roll:
+            min: 148
             max: 148
-            text: Hazardous
-          - min: 149
+        - text: Icy
+          _i18n: *Adjective
+          roll:
+            min: 149
             max: 149
-            text: Icy
-          - min: 150
+        - text: Impaired
+          _i18n: *Adjective
+          roll:
+            min: 150
             max: 150
-            text: Impaired
-          - min: 151
+        - text: Impoverished
+          _i18n: *Adjective
+          roll:
+            min: 151
             max: 151
-            text: Impoverished
-          - min: 152
+        - text: Inactive
+          _i18n: *Adjective
+          roll:
+            min: 152
             max: 152
-            text: Inactive
-          - min: 153
+        - text: Incomplete
+          _i18n: *Adjective
+          roll:
+            min: 153
             max: 153
-            text: Incomplete
-          - min: 154
+        - text: Ineffective
+          _i18n: *Adjective
+          roll:
+            min: 154
             max: 154
-            text: Ineffective
-          - min: 155
+        - text: Infinitesimal
+          _i18n: *Adjective
+          roll:
+            min: 155
             max: 155
-            text: Infinitesimal
-          - min: 156
+        - text: Injured
+          _i18n: *Adjective
+          roll:
+            min: 156
             max: 156
-            text: Injured
-          - min: 157
+        - text: Intense
+          _i18n: *Adjective
+          roll:
+            min: 157
             max: 157
-            text: Intense
-          - min: 158
+        - text: Lethal
+          _i18n: *Adjective
+          roll:
+            min: 158
             max: 158
-            text: Lethal
-          - min: 159
+        - text: Lifeless
+          _i18n: *Adjective
+          roll:
+            min: 159
             max: 159
-            text: Lifeless
-          - min: 160
+        - text: Limited
+          _i18n: *Adjective
+          roll:
+            min: 160
             max: 160
-            text: Limited
-          - min: 161
+        - text: Lonely
+          _i18n: *Adjective
+          roll:
+            min: 161
             max: 161
-            text: Lonely
-          - min: 162
+        - text: Marooned
+          _i18n: *Adjective
+          roll:
+            min: 162
             max: 162
-            text: Marooned
-          - min: 163
+        - text: Obliterated
+          _i18n: *Adjective
+          roll:
+            min: 163
             max: 163
-            text: Obliterated
-          - min: 164
+        - text: Obscure
+          _i18n: *Adjective
+          roll:
+            min: 164
             max: 164
-            text: Obscure
-          - min: 165
+        - text: Obsolete
+          _i18n: *Adjective
+          roll:
+            min: 165
             max: 165
-            text: Obsolete
-          - min: 166
+        - text: Obstructed
+          _i18n: *Adjective
+          roll:
+            min: 166
             max: 166
-            text: Obstructed
-          - min: 167
+        - text: Occupied
+          _i18n: *Adjective
+          roll:
+            min: 167
             max: 167
-            text: Occupied
-          - min: 168
+        - text: Old
+          _i18n: *Adjective
+          roll:
+            min: 168
             max: 168
-            text: Old
-          - min: 169
+        - text: Opulent
+          _i18n: *Adjective
+          roll:
+            min: 169
             max: 169
-            text: Opulent
-          - min: 170
+        - text: Outlandish
+          _i18n: *Adjective
+          roll:
+            min: 170
             max: 170
-            text: Outlandish
-          - min: 171
+        - text: Overgrown
+          _i18n: *Adjective
+          roll:
+            min: 171
             max: 171
-            text: Overgrown
-          - min: 172
+        - text: Overwhelmed
+          _i18n: *Adjective
+          roll:
+            min: 172
             max: 172
-            text: Overwhelmed
-          - min: 173
+        - text: Poisonous
+          _i18n: *Adjective
+          roll:
+            min: 173
             max: 173
-            text: Poisonous
-          - min: 174
+        - text: Poor
+          _i18n: *Adjective
+          roll:
+            min: 174
             max: 174
-            text: Poor
-          - min: 175
+        - text: Potent
+          _i18n: *Adjective
+          roll:
+            min: 175
             max: 175
-            text: Potent
-          - min: 176
+        - text: Primitive
+          _i18n: *Adjective
+          roll:
+            min: 176
             max: 176
-            text: Primitive
-          - min: 177
+        - text: Primordial
+          _i18n: *Adjective
+          roll:
+            min: 177
             max: 177
-            text: Primordial
-          - min: 178
+        - text: Reinforced
+          _i18n: *Adjective
+          roll:
+            min: 178
             max: 178
-            text: Reinforced
-          - min: 179
+        - text: Restrained
+          _i18n: *Adjective
+          roll:
+            min: 179
             max: 179
-            text: Restrained
-          - min: 180
+        - text: Restricted
+          _i18n: *Adjective
+          roll:
+            min: 180
             max: 180
-            text: Restricted
-          - min: 181
+        - text: Retired
+          _i18n: *Adjective
+          roll:
+            min: 181
             max: 181
-            text: Retired
-          - min: 182
+        - text: Risky
+          _i18n: *Adjective
+          roll:
+            min: 182
             max: 182
-            text: Risky
-          - min: 183
+        - text: Savage
+          _i18n: *Adjective
+          roll:
+            min: 183
             max: 183
-            text: Savage
-          - min: 184
+        - text: Scarce
+          _i18n: *Adjective
+          roll:
+            min: 184
             max: 184
-            text: Scarce
-          - min: 185
+        - text: Scattered
+          _i18n: *Adjective
+          roll:
+            min: 185
             max: 185
-            text: Scattered
-          - min: 186
+        - text: Secluded
+          _i18n: *Adjective
+          roll:
+            min: 186
             max: 186
-            text: Secluded
-          - min: 187
+        - text: Secured
+          _i18n: *Adjective
+          roll:
+            min: 187
             max: 187
-            text: Secured
-          - min: 188
+        - text: Shielded
+          _i18n: *Adjective
+          roll:
+            min: 188
             max: 188
-            text: Shielded
-          - min: 189
+        - text: Shocking
+          _i18n: *Gerund
+          roll:
+            min: 189
             max: 189
-            text: Shocking
-          - min: 190
+        - text: Shrouded
+          _i18n: *Adjective
+          roll:
+            min: 190
             max: 190
-            text: Shrouded
-          - min: 191
+        - text: Suspicious
+          _i18n: *Adjective
+          roll:
+            min: 191
             max: 191
-            text: Suspicious
-          - min: 192
+        - text: Synthetic
+          _i18n: *Adjective
+          roll:
+            min: 192
             max: 192
-            text: Synthetic
-          - min: 193
+        - text: Tainted
+          _i18n: *Adjective
+          roll:
+            min: 193
             max: 193
-            text: Tainted
-          - min: 194
+        - text: Treacherous
+          _i18n: *Adjective
+          roll:
+            min: 194
             max: 194
-            text: Treacherous
-          - min: 195
+        - text: Unorganized
+          _i18n: *Adjective
+          roll:
+            min: 195
             max: 195
-            text: Unorganized
-          - min: 196
+        - text: Unsafe
+          _i18n: *Adjective
+          roll:
+            min: 196
             max: 196
-            text: Unsafe
-          - min: 197
+        - text: Virulent
+          _i18n: *Adjective
+          roll:
+            min: 197
             max: 197
-            text: Virulent
-          - min: 198
+        - text: Vulnerable
+          _i18n: *Adjective
+          roll:
+            min: 198
             max: 198
-            text: Vulnerable
-          - min: 199
+        - text: Wasted
+          _i18n: *Adjective
+          roll:
+            min: 199
             max: 199
-            text: Wasted
-          - min: 200
+        - text: Weak
+          _i18n: *Adjective
+          roll:
+            min: 200
             max: 200
-            text: Weak
-          - min: 201
+        - text: Abrasive
+          _i18n: *Adjective
+          roll:
+            min: 201
             max: 201
-            text: Abrasive
-          - min: 202
+        - text: Accidental
+          _i18n: *Adjective
+          roll:
+            min: 202
             max: 202
-            text: Accidental
-          - min: 203
+        - text: Adversarial
+          _i18n: *Adjective
+          roll:
+            min: 203
             max: 203
-            text: Adversarial
-          - min: 204
+        - text: Aggressive
+          _i18n: *Adjective
+          roll:
+            min: 204
             max: 204
-            text: Aggressive
-          - min: 205
+        - text: Backwards
+          _i18n: *Adjective
+          roll:
+            min: 205
             max: 205
-            text: Backwards
-          - min: 206
+        - text: Battered
+          _i18n: *Adjective
+          roll:
+            min: 206
             max: 206
-            text: Battered
-          - min: 207
+        - text: Callous
+          _i18n: *Adjective
+          roll:
+            min: 207
             max: 207
-            text: Callous
-          - min: 208
+        - text: Captive
+          _i18n: *Adjective
+          roll:
+            min: 208
             max: 208
-            text: Captive
-          - min: 209
+        - text: Caustic
+          _i18n: *Adjective
+          roll:
+            min: 209
             max: 209
-            text: Caustic
-          - min: 210
+        - text: Cheap
+          _i18n: *Adjective
+          roll:
+            min: 210
             max: 210
-            text: Cheap
-          - min: 211
+        - text: Cold
+          _i18n: *Adjective
+          roll:
+            min: 211
             max: 211
-            text: Cold
-          - min: 212
+        - text: Combative
+          _i18n: *Adjective
+          roll:
+            min: 212
             max: 212
-            text: Combative
-          - min: 213
+        - text: Condemned
+          _i18n: *Adjective
+          roll:
+            min: 213
             max: 213
-            text: Condemned
-          - min: 214
+        - text: Constrictive
+          _i18n: *Adjective
+          roll:
+            min: 214
             max: 214
-            text: Constrictive
-          - min: 215
+        - text: Corrosive
+          _i18n: *Adjective
+          roll:
+            min: 215
             max: 215
-            text: Corrosive
-          - min: 216
+        - text: Criminal
+          _i18n: *Adjective
+          roll:
+            min: 216
             max: 216
-            text: Criminal
-          - min: 217
+        - text: Crooked
+          _i18n: *Adjective
+          roll:
+            min: 217
             max: 217
-            text: Crooked
-          - min: 218
+        - text: Crude
+          _i18n: *Adjective
+          roll:
+            min: 218
             max: 218
-            text: Crude
-          - min: 219
+        - text: Cruel
+          _i18n: *Adjective
+          roll:
+            min: 219
             max: 219
-            text: Cruel
-          - min: 220
+        - text: Cumbersome
+          _i18n: *Adjective
+          roll:
+            min: 220
             max: 220
-            text: Cumbersome
-          - min: 221
+        - text: Decimated
+          _i18n: *Adjective
+          roll:
+            min: 221
             max: 221
-            text: Decimated
-          - min: 222
+        - text: Decrepit
+          _i18n: *Adjective
+          roll:
+            min: 222
             max: 222
-            text: Decrepit
-          - min: 223
+        - text: Defective
+          _i18n: *Adjective
+          roll:
+            min: 223
             max: 223
-            text: Defective
-          - min: 224
+        - text: Defensive
+          _i18n: *Adjective
+          roll:
+            min: 224
             max: 224
-            text: Defensive
-          - min: 225
+        - text: Defiant
+          _i18n: *Adjective
+          roll:
+            min: 225
             max: 225
-            text: Defiant
-          - min: 226
+        - text: Deformed
+          _i18n: *Adjective
+          roll:
+            min: 226
             max: 226
-            text: Deformed
-          - min: 227
+        - text: Degenerative
+          _i18n: *Adjective
+          roll:
+            min: 227
             max: 227
-            text: Degenerative
-          - min: 228
+        - text: Degraded
+          _i18n: *Adjective
+          roll:
+            min: 228
             max: 228
-            text: Degraded
-          - min: 229
+        - text: Depressed
+          _i18n: *Adjective
+          roll:
+            min: 229
             max: 229
-            text: Depressed
-          - min: 230
+        - text: Desperate
+          _i18n: *Adjective
+          roll:
+            min: 230
             max: 230
-            text: Desperate
-          - min: 231
+        - text: Detached
+          _i18n: *Adjective
+          roll:
+            min: 231
             max: 231
-            text: Detached
-          - min: 232
+        - text: Devious
+          _i18n: *Adjective
+          roll:
+            min: 232
             max: 232
-            text: Devious
-          - min: 233
+        - text: Discarded
+          _i18n: *Adjective
+          roll:
+            min: 233
             max: 233
-            text: Discarded
-          - min: 234
+        - text: Disconnected
+          _i18n: *Adjective
+          roll:
+            min: 234
             max: 234
-            text: Disconnected
-          - min: 235
+        - text: Disheartening
+          _i18n: *Gerund
+          roll:
+            min: 235
             max: 235
-            text: Disheartening
-          - min: 236
+        - text: Dishonorable
+          _i18n: *Adjective
+          roll:
+            min: 236
             max: 236
-            text: Dishonorable
-          - min: 237
+        - text: Dismal
+          _i18n: *Adjective
+          roll:
+            min: 237
             max: 237
-            text: Dismal
-          - min: 238
+        - text: Disputed
+          _i18n: *Adjective
+          roll:
+            min: 238
             max: 238
-            text: Disputed
-          - min: 239
+        - text: Divided
+          _i18n: *Adjective
+          roll:
+            min: 239
             max: 239
-            text: Divided
-          - min: 240
+        - text: Divisive
+          _i18n: *Adjective
+          roll:
+            min: 240
             max: 240
-            text: Divisive
-          - min: 241
+        - text: Drastic
+          _i18n: *Adjective
+          roll:
+            min: 241
             max: 241
-            text: Drastic
-          - min: 242
+        - text: Dysfunctional
+          _i18n: *Adjective
+          roll:
+            min: 242
             max: 242
-            text: Dysfunctional
-          - min: 243
+        - text: Eerie
+          _i18n: *Adjective
+          roll:
+            min: 243
             max: 243
-            text: Eerie
-          - min: 244
+        - text: Erratic
+          _i18n: *Adjective
+          roll:
+            min: 244
             max: 244
-            text: Erratic
-          - min: 245
+        - text: Excessive
+          _i18n: *Adjective
+          roll:
+            min: 245
             max: 245
-            text: Excessive
-          - min: 246
+        - text: Exhausted
+          _i18n: *Adjective
+          roll:
+            min: 246
             max: 246
-            text: Exhausted
-          - min: 247
+        - text: Experimental
+          _i18n: *Adjective
+          roll:
+            min: 247
             max: 247
-            text: Experimental
-          - min: 248
+        - text: Explosive
+          _i18n: *Adjective
+          roll:
+            min: 248
             max: 248
-            text: Explosive
-          - min: 249
+        - text: Failed
+          _i18n: *Adjective
+          roll:
+            min: 249
             max: 249
-            text: Failed
-          - min: 250
+        - text: Fake
+          _i18n: *Adjective
+          roll:
+            min: 250
             max: 250
-            text: Fake
-          - min: 251
+        - text: Fanatical
+          _i18n: *Adjective
+          roll:
+            min: 251
             max: 251
-            text: Fanatical
-          - min: 252
+        - text: Fatal
+          _i18n: *Adjective
+          roll:
+            min: 252
             max: 252
-            text: Fatal
-          - min: 253
+        - text: Faulty
+          _i18n: *Adjective
+          roll:
+            min: 253
             max: 253
-            text: Faulty
-          - min: 254
+        - text: Fearsome
+          _i18n: *Adjective
+          roll:
+            min: 254
             max: 254
-            text: Fearsome
-          - min: 255
+        - text: Fractious
+          _i18n: *Adjective
+          roll:
+            min: 255
             max: 255
-            text: Fractious
-          - min: 256
+        - text: Fraudulent
+          _i18n: *Adjective
+          roll:
+            min: 256
             max: 256
-            text: Fraudulent
-          - min: 257
+        - text: Frayed
+          _i18n: *Adjective
+          roll:
+            min: 257
             max: 257
-            text: Frayed
-          - min: 258
+        - text: Haggard
+          _i18n: *Adjective
+          roll:
+            min: 258
             max: 258
-            text: Haggard
-          - min: 259
+        - text: Haphazard
+          _i18n: *Adjective
+          roll:
+            min: 259
             max: 259
-            text: Haphazard
-          - min: 260
+        - text: Harmful
+          _i18n: *Adjective
+          roll:
+            min: 260
             max: 260
-            text: Harmful
-          - min: 261
+        - text: Harsh
+          _i18n: *Adjective
+          roll:
+            min: 261
             max: 261
-            text: Harsh
-          - min: 262
+        - text: Hectic
+          _i18n: *Adjective
+          roll:
+            min: 262
             max: 262
-            text: Hectic
-          - min: 263
+        - text: Illegal
+          _i18n: *Adjective
+          roll:
+            min: 263
             max: 263
-            text: Illegal
-          - min: 264
+        - text: Illogical
+          _i18n: *Adjective
+          roll:
+            min: 264
             max: 264
-            text: Illogical
-          - min: 265
+        - text: Inadequate
+          _i18n: *Adjective
+          roll:
+            min: 265
             max: 265
-            text: Inadequate
-          - min: 266
+        - text: Incompetent
+          _i18n: *Adjective
+          roll:
+            min: 266
             max: 266
-            text: Incompetent
-          - min: 267
+        - text: Inferior
+          _i18n: *Adjective
+          roll:
+            min: 267
             max: 267
-            text: Inferior
-          - min: 268
+        - text: Insecure
+          _i18n: *Adjective
+          roll:
+            min: 268
             max: 268
-            text: Insecure
-          - min: 269
+        - text: Insufficient
+          _i18n: *Adjective
+          roll:
+            min: 269
             max: 269
-            text: Insufficient
-          - min: 270
+        - text: Intact
+          _i18n: *Adjective
+          roll:
+            min: 270
             max: 270
-            text: Intact
-          - min: 271
+        - text: Low-Tech
+          _i18n: *Adjective
+          roll:
+            min: 271
             max: 271
-            text: Low-Tech
-          - min: 272
+        - text: Malicious
+          _i18n: *Adjective
+          roll:
+            min: 272
             max: 272
-            text: Malicious
-          - min: 273
+        - text: Manipulative
+          _i18n: *Adjective
+          roll:
+            min: 273
             max: 273
-            text: Manipulative
-          - min: 274
+        - text: Massive
+          _i18n: *Adjective
+          roll:
+            min: 274
             max: 274
-            text: Massive
-          - min: 275
+        - text: Mutable
+          _i18n: *Adjective
+          roll:
+            min: 275
             max: 275
-            text: Mutable
-          - min: 276
+        - text: Neglected
+          _i18n: *Adjective
+          roll:
+            min: 276
             max: 276
-            text: Neglected
-          - min: 277
+        - text: Nonviolent
+          _i18n: *Adjective
+          roll:
+            min: 277
             max: 277
-            text: Nonviolent
-          - min: 278
+        - text: Offensive
+          _i18n: *Adjective
+          roll:
+            min: 278
             max: 278
-            text: Offensive
-          - min: 279
+        - text: Oppressive
+          _i18n: *Adjective
+          roll:
+            min: 279
             max: 279
-            text: Oppressive
-          - min: 280
+        - text: Parasitic
+          _i18n: *Adjective
+          roll:
+            min: 280
             max: 280
-            text: Parasitic
-          - min: 281
+        - text: Quiet
+          _i18n: *Adjective
+          roll:
+            min: 281
             max: 281
-            text: Quiet
-          - min: 282
+        - text: Reactive
+          _i18n: *Adjective
+          roll:
+            min: 282
             max: 282
-            text: Reactive
-          - min: 283
+        - text: Restrictive
+          _i18n: *Adjective
+          roll:
+            min: 283
             max: 283
-            text: Restrictive
-          - min: 284
+        - text: Rigid
+          _i18n: *Adjective
+          roll:
+            min: 284
             max: 284
-            text: Rigid
-          - min: 285
+        - text: Rough
+          _i18n: *Adjective
+          roll:
+            min: 285
             max: 285
-            text: Rough
-          - min: 286
+        - text: Scheming
+          _i18n: *Gerund
+          roll:
+            min: 286
             max: 286
-            text: Scheming
-          - min: 287
+        - text: Secretive
+          _i18n: *Adjective
+          roll:
+            min: 287
             max: 287
-            text: Secretive
-          - min: 288
+        - text: Squalid
+          _i18n: *Adjective
+          roll:
+            min: 288
             max: 288
-            text: Squalid
-          - min: 289
+        - text: Struggling
+          _i18n: *Gerund
+          roll:
+            min: 289
             max: 289
-            text: Struggling
-          - min: 290
+        - text: Tended
+          _i18n: *Adjective
+          roll:
+            min: 290
             max: 290
-            text: Tended
-          - min: 291
+        - text: Turbulent
+          _i18n: *Adjective
+          roll:
+            min: 291
             max: 291
-            text: Turbulent
-          - min: 292
+        - text: Uncivilized
+          _i18n: *Adjective
+          roll:
+            min: 292
             max: 292
-            text: Uncivilized
-          - min: 293
+        - text: Unrestrained
+          _i18n: *Adjective
+          roll:
+            min: 293
             max: 293
-            text: Unrestrained
-          - min: 294
+        - text: Vengeful
+          _i18n: *Adjective
+          roll:
+            min: 294
             max: 294
-            text: Vengeful
-          - min: 295
+        - text: Volatile
+          _i18n: *Adjective
+          roll:
+            min: 295
             max: 295
-            text: Volatile
-          - min: 296
+        - text: Wasteful
+          _i18n: *Adjective
+          roll:
+            min: 296
             max: 296
-            text: Wasteful
-          - min: 297
+        - text: Wavering
+          _i18n: *Gerund
+          roll:
+            min: 297
             max: 297
-            text: Wavering
-          - min: 298
+        - text: Wealthy
+          _i18n: *Adjective
+          roll:
+            min: 298
             max: 298
-            text: Wealthy
-          - min: 299
+        - text: Wild
+          _i18n: *Adjective
+          roll:
+            min: 299
             max: 299
-            text: Wild
-          - min: 300
+        - text: Worn
+          _i18n: *Adjective
+          roll:
+            min: 300
             max: 300
-            text: Worn
+        type: oracle_rollable
       focus:
         name: Focus
-        _source: *Source
         oracle_type: table_text
-        replaces: starforged/oracles/core/focus
         dice: 1d300
+        replaces:
+        - oracle_rollable:starforged/core/focus
+        summary: Extension of the oracle table
+        _source: *Source
         rows:
-          - min: 1
+        # begin copy from original table
+
+        - text: Alarm
+          _i18n: *CommonNoun
+          roll:
+            min: 1
             max: 1
-            text: Alarm
-          - min: 2
+        - text: Anomaly
+          _i18n: *CommonNoun
+          roll:
+            min: 2
             max: 2
-            text: Anomaly
-          - min: 3
+        - text: Apparition
+          _i18n: *CommonNoun
+          roll:
+            min: 3
             max: 3
-            text: Apparition
-          - min: 4
+        - text: Archive
+          _i18n: *CommonNoun
+          roll:
+            min: 4
             max: 4
-            text: Archive
-          - min: 5
+        - text: Art
+          _i18n: *CommonNoun
+          roll:
+            min: 5
             max: 5
-            text: Art
-          - min: 6
+        - text: Artifact
+          _i18n: *CommonNoun
+          roll:
+            min: 6
             max: 6
-            text: Artifact
-          - min: 7
+        - text: Atmosphere
+          _i18n: *CommonNoun
+          roll:
+            min: 7
             max: 7
-            text: Atmosphere
-          - min: 8
+        - text: Battleground
+          _i18n: *CommonNoun
+          roll:
+            min: 8
             max: 8
-            text: Battleground
-          - min: 9
+        - text: Beacon
+          _i18n: *CommonNoun
+          roll:
+            min: 9
             max: 9
-            text: Beacon
-          - min: 10
+        - text: Being
+          _i18n: *Gerund
+          roll:
+            min: 10
             max: 10
-            text: Being
-          - min: 11
+        - text: Blockade
+          _i18n: *CommonNoun
+          roll:
+            min: 11
             max: 11
-            text: Blockade
-          - min: 12
+        - text: Boundary
+          _i18n: *CommonNoun
+          roll:
+            min: 12
             max: 12
-            text: Boundary
-          - min: 13
+        - text: Cache
+          _i18n: *CommonNoun
+          roll:
+            min: 13
             max: 13
-            text: Cache
-          - min: 14
+        - text: Cargo
+          _i18n: *CommonNoun
+          roll:
+            min: 14
             max: 14
-            text: Cargo
-          - min: 15
+        - text: Commodity
+          _i18n: *CommonNoun
+          roll:
+            min: 15
             max: 15
-            text: Commodity
-          - min: 16
+        - text: Confinement
+          _i18n: *CommonNoun
+          roll:
+            min: 16
             max: 16
-            text: Confinement
-          - min: 17
+        - text: Connection
+          _i18n: *CommonNoun
+          roll:
+            min: 17
             max: 17
-            text: Connection
-          - min: 18
+        - text: Container
+          _i18n: *CommonNoun
+          roll:
+            min: 18
             max: 18
-            text: Container
-          - min: 19
+        - text: Creation
+          _i18n: *CommonNoun
+          roll:
+            min: 19
             max: 19
-            text: Creation
-          - min: 20
+        - text: Creature
+          _i18n: *CommonNoun
+          roll:
+            min: 20
             max: 20
-            text: Creature
-          - min: 21
+        - text: Crossing
+          _i18n: *Gerund
+          roll:
+            min: 21
             max: 21
-            text: Crossing
-          - min: 22
+        - text: Data
+          _i18n: *CommonNoun
+          roll:
+            min: 22
             max: 22
-            text: Data
-          - min: 23
+        - text: Debris
+          _i18n: *CommonNoun
+          roll:
+            min: 23
             max: 23
-            text: Debris
-          - min: 24
+        - text: Device
+          _i18n: *CommonNoun
+          roll:
+            min: 24
             max: 24
-            text: Device
-          - min: 25
+        - text: Dimension
+          _i18n: *CommonNoun
+          roll:
+            min: 25
             max: 25
-            text: Dimension
-          - min: 26
+        - text: Discovery
+          _i18n: *CommonNoun
+          roll:
+            min: 26
             max: 26
-            text: Discovery
-          - min: 27
+        - text: Ecosystem
+          _i18n: *CommonNoun
+          roll:
+            min: 27
             max: 27
-            text: Ecosystem
-          - min: 28
+        - text: Enclosure
+          _i18n: *CommonNoun
+          roll:
+            min: 28
             max: 28
-            text: Enclosure
-          - min: 29
+        - text: Energy
+          _i18n: *CommonNoun
+          roll:
+            min: 29
             max: 29
-            text: Energy
-          - min: 30
+        - text: Environment
+          _i18n: *CommonNoun
+          roll:
+            min: 30
             max: 30
-            text: Environment
-          - min: 31
+        - text: Equipment
+          _i18n: *CommonNoun
+          roll:
+            min: 31
             max: 31
-            text: Equipment
-          - min: 32
+        - text: Experiment
+          _i18n: *CommonNoun
+          roll:
+            min: 32
             max: 32
-            text: Experiment
-          - min: 33
+        - text: Facility
+          _i18n: *CommonNoun
+          roll:
+            min: 33
             max: 33
-            text: Facility
-          - min: 34
+        - text: Faction
+          _i18n: *CommonNoun
+          roll:
+            min: 34
             max: 34
-            text: Faction
-          - min: 35
+        - text: Fleet
+          _i18n: *CommonNoun
+          roll:
+            min: 35
             max: 35
-            text: Fleet
-          - min: 36
+        - text: Force
+          _i18n: *CommonNoun
+          roll:
+            min: 36
             max: 36
-            text: Force
-          - min: 37
+        - text: Fortification
+          _i18n: *CommonNoun
+          roll:
+            min: 37
             max: 37
-            text: Fortification
-          - min: 38
+        - text: Gas
+          _i18n: *CommonNoun
+          roll:
+            min: 38
             max: 38
-            text: Gas
-          - min: 39
+        - text: Grave
+          _i18n: *CommonNoun
+          roll:
+            min: 39
             max: 39
-            text: Grave
-          - min: 40
+        - text: Habitat
+          _i18n: *CommonNoun
+          roll:
+            min: 40
             max: 40
-            text: Habitat
-          - min: 41
+        - text: Hazard
+          _i18n: *CommonNoun
+          roll:
+            min: 41
             max: 41
-            text: Hazard
-          - min: 42
+        - text: Hideaway
+          _i18n: *CommonNoun
+          roll:
+            min: 42
             max: 42
-            text: Hideaway
-          - min: 43
+        - text: Home
+          _i18n: *CommonNoun
+          roll:
+            min: 43
             max: 43
-            text: Home
-          - min: 44
+        - text: Illusion
+          _i18n: *CommonNoun
+          roll:
+            min: 44
             max: 44
-            text: Illusion
-          - min: 45
+        - text: Industry
+          _i18n: *CommonNoun
+          roll:
+            min: 45
             max: 45
-            text: Industry
-          - min: 46
+        - text: Intelligence
+          _i18n: *CommonNoun
+          roll:
+            min: 46
             max: 46
-            text: Intelligence
-          - min: 47
+        - text: Lair
+          _i18n: *CommonNoun
+          roll:
+            min: 47
             max: 47
-            text: Lair
-          - min: 48
+        - text: Lifeform
+          _i18n: *CommonNoun
+          roll:
+            min: 48
             max: 48
-            text: Lifeform
-          - min: 49
+        - text: Liquid
+          _i18n: *CommonNoun
+          roll:
+            min: 49
             max: 49
-            text: Liquid
-          - min: 50
+        - text: Machine
+          _i18n: *CommonNoun
+          roll:
+            min: 50
             max: 50
-            text: Machine
-          - min: 51
+        - text: Material
+          _i18n: *CommonNoun
+          roll:
+            min: 51
             max: 51
-            text: Material
-          - min: 52
+        - text: Mechanism
+          _i18n: *CommonNoun
+          roll:
+            min: 52
             max: 52
-            text: Mechanism
-          - min: 53
+        - text: Message
+          _i18n: *CommonNoun
+          roll:
+            min: 53
             max: 53
-            text: Message
-          - min: 54
+        - text: Mineral
+          _i18n: *CommonNoun
+          roll:
+            min: 54
             max: 54
-            text: Mineral
-          - min: 55
+        - text: Monument
+          _i18n: *CommonNoun
+          roll:
+            min: 55
             max: 55
-            text: Monument
-          - min: 56
+        - text: Obstacle
+          _i18n: *CommonNoun
+          roll:
+            min: 56
             max: 56
-            text: Obstacle
-          - min: 57
+        - text: Organism
+          _i18n: *CommonNoun
+          roll:
+            min: 57
             max: 57
-            text: Organism
-          - min: 58
+        - text: Outbreak
+          _i18n: *CommonNoun
+          roll:
+            min: 58
             max: 58
-            text: Outbreak
-          - min: 59
+        - text: Outpost
+          _i18n: *CommonNoun
+          roll:
+            min: 59
             max: 59
-            text: Outpost
-          - min: 60
+        - text: Path
+          _i18n: *CommonNoun
+          roll:
+            min: 60
             max: 60
-            text: Path
-          - min: 61
+        - text: People
+          _i18n: *CommonNoun
+          roll:
+            min: 61
             max: 61
-            text: People
-          - min: 62
+        - text: Person
+          _i18n: *CommonNoun
+          roll:
+            min: 62
             max: 62
-            text: Person
-          - min: 63
+        - text: Plant
+          _i18n: *CommonNoun
+          roll:
+            min: 63
             max: 63
-            text: Plant
-          - min: 64
+        - text: Portal
+          _i18n: *CommonNoun
+          roll:
+            min: 64
             max: 64
-            text: Portal
-          - min: 65
+        - text: Reality
+          _i18n: *CommonNoun
+          roll:
+            min: 65
             max: 65
-            text: Reality
-          - min: 66
+        - text: Refuge
+          _i18n: *CommonNoun
+          roll:
+            min: 66
             max: 66
-            text: Refuge
-          - min: 67
+        - text: Relic
+          _i18n: *CommonNoun
+          roll:
+            min: 67
             max: 67
-            text: Relic
-          - min: 68
+        - text: Remains
+          _i18n: *CommonNoun
+          roll:
+            min: 68
             max: 68
-            text: Remains
-          - min: 69
+        - text: Rendezvous
+          _i18n: *CommonNoun
+          roll:
+            min: 69
             max: 69
-            text: Rendezvous
-          - min: 70
+        - text: Resource
+          _i18n: *CommonNoun
+          roll:
+            min: 70
             max: 70
-            text: Resource
-          - min: 71
+        - text: Route
+          _i18n: *CommonNoun
+          roll:
+            min: 71
             max: 71
-            text: Route
-          - min: 72
+        - text: Ruins
+          _i18n: *CommonNoun
+          roll:
+            min: 72
             max: 72
-            text: Ruins
-          - min: 73
+        - text: Salvage
+          _i18n: *CommonNoun
+          roll:
+            min: 73
             max: 73
-            text: Salvage
-          - min: 74
+        - text: Settlement
+          _i18n: *CommonNoun
+          roll:
+            min: 74
             max: 74
-            text: Settlement
-          - min: 75
+        - text: Shelter
+          _i18n: *CommonNoun
+          roll:
+            min: 75
             max: 75
-            text: Shelter
-          - min: 76
+        - text: Ship
+          _i18n: *CommonNoun
+          roll:
+            min: 76
             max: 76
-            text: Ship
-          - min: 77
+        - text: Shortcut
+          _i18n: *CommonNoun
+          roll:
+            min: 77
             max: 77
-            text: Shortcut
-          - min: 78
+        - text: Signal
+          _i18n: *CommonNoun
+          roll:
+            min: 78
             max: 78
-            text: Signal
-          - min: 79
+        - text: Sound
+          _i18n: *CommonNoun
+          roll:
+            min: 79
             max: 79
-            text: Sound
-          - min: 80
+        - text: Storage
+          _i18n: *CommonNoun
+          roll:
+            min: 80
             max: 80
-            text: Storage
-          - min: 81
+        - text: Storm
+          _i18n: *CommonNoun
+          roll:
+            min: 81
             max: 81
-            text: Storm
-          - min: 82
+        - text: Structure
+          _i18n: *CommonNoun
+          roll:
+            min: 82
             max: 82
-            text: Structure
-          - min: 83
+        - text: Supply
+          _i18n: *CommonNoun
+          roll:
+            min: 83
             max: 83
-            text: Supply
-          - min: 84
+        - text: Symbol
+          _i18n: *CommonNoun
+          roll:
+            min: 84
             max: 84
-            text: Symbol
-          - min: 85
+        - text: System
+          _i18n: *CommonNoun
+          roll:
+            min: 85
             max: 85
-            text: System
-          - min: 86
+        - text: Technology
+          _i18n: *CommonNoun
+          roll:
+            min: 86
             max: 86
-            text: Technology
-          - min: 87
+        - text: Terrain
+          _i18n: *CommonNoun
+          roll:
+            min: 87
             max: 87
-            text: Terrain
-          - min: 88
+        - text: Territory
+          _i18n: *CommonNoun
+          roll:
+            min: 88
             max: 88
-            text: Territory
-          - min: 89
+        - text: Threshold
+          _i18n: *CommonNoun
+          roll:
+            min: 89
             max: 89
-            text: Threshold
-          - min: 90
+        - text: Time
+          _i18n: *CommonNoun
+          roll:
+            min: 90
             max: 90
-            text: Time
-          - min: 91
+        - text: Transport
+          _i18n: *CommonNoun
+          roll:
+            min: 91
             max: 91
-            text: Transport
-          - min: 92
+        - text: Trap
+          _i18n: *CommonNoun
+          roll:
+            min: 92
             max: 92
-            text: Trap
-          - min: 93
+        - text: Treasure
+          _i18n: *CommonNoun
+          roll:
+            min: 93
             max: 93
-            text: Treasure
-          - min: 94
+        - text: Vault
+          _i18n: *CommonNoun
+          roll:
+            min: 94
             max: 94
-            text: Vault
-          - min: 95
+        - text: Vehicle
+          _i18n: *CommonNoun
+          roll:
+            min: 95
             max: 95
-            text: Vehicle
-          - min: 96
+        - text: Viewpoint
+          _i18n: *CommonNoun
+          roll:
+            min: 96
             max: 96
-            text: Viewpoint
-          - min: 97
+        - text: Void
+          _i18n: *CommonNoun
+          roll:
+            min: 97
             max: 97
-            text: Void
-          - min: 98
+        - text: Weapon
+          _i18n: *CommonNoun
+          roll:
+            min: 98
             max: 98
-            text: Weapon
-          - min: 99
+        - text: World
+          _i18n: *CommonNoun
+          roll:
+            min: 99
             max: 99
-            text: World
-          - min: 100
+        - text: Wreckage
+          _i18n: *CommonNoun
+          roll:
+            min: 100
             max: 100
-            text: Wreckage
-          - min: 101
+        # end copy from original table
+        - text: Agent
+          _i18n: *CommonNoun
+          roll:
+            min: 101
             max: 101
-            text: Agent
-          - min: 102
+        - text: Android
+          _i18n: *CommonNoun
+          roll:
+            min: 102
             max: 102
-            text: Android
-          - min: 103
+        - text: Anti-Gravity
+          _i18n: *CommonNoun
+          roll:
+            min: 103
             max: 103
-            text: Anti-Gravity
-          - min: 104
+        - text: Antimatter
+          _i18n: *CommonNoun
+          roll:
+            min: 104
             max: 104
-            text: Antimatter
-          - min: 105
+        - text: Armor
+          _i18n: *CommonNoun
+          roll:
+            min: 105
             max: 105
-            text: Armor
-          - min: 106
+        - text: Asteroid
+          _i18n: *CommonNoun
+          roll:
+            min: 106
             max: 106
-            text: Asteroid
-          - min: 107
+        - text: Asteroid Belt
+          _i18n: *CommonNoun
+          roll:
+            min: 107
             max: 107
-            text: Asteroid Belt
-          - min: 108
+        - text: Augmentation
+          _i18n: *CommonNoun
+          roll:
+            min: 108
             max: 108
-            text: Augmentation
-          - min: 109
+        - text: Avatar
+          _i18n: *CommonNoun
+          roll:
+            min: 109
             max: 109
-            text: Avatar
-          - min: 110
+        - text: Beam
+          _i18n: *CommonNoun
+          roll:
+            min: 110
             max: 110
-            text: Beam
-          - min: 111
+        - text: Black Hole
+          _i18n: *CommonNoun
+          roll:
+            min: 111
             max: 111
-            text: Black Hole
-          - min: 112
+        - text: Breach
+          _i18n: *CommonNoun
+          roll:
+            min: 112
             max: 112
-            text: Breach
-          - min: 113
+        - text: Breakthrough
+          _i18n: *CommonNoun
+          roll:
+            min: 113
             max: 113
-            text: Breakthrough
-          - min: 114
+        - text: Broker
+          _i18n: *CommonNoun
+          roll:
+            min: 114
             max: 114
-            text: Broker
-          - min: 115
+        - text: Change
+          _i18n: *CommonNoun
+          roll:
+            min: 115
             max: 115
-            text: Change
-          - min: 116
+        - text: Circuit
+          _i18n: *CommonNoun
+          roll:
+            min: 116
             max: 116
-            text: Circuit
-          - min: 117
+        - text: Clone
+          _i18n: *CommonNoun
+          roll:
+            min: 117
             max: 117
-            text: Clone
-          - min: 118
+        - text: Cluster
+          _i18n: *CommonNoun
+          roll:
+            min: 118
             max: 118
-            text: Cluster
-          - min: 119
+        - text: Colony
+          _i18n: *CommonNoun
+          roll:
+            min: 119
             max: 119
-            text: Colony
-          - min: 120
+        - text: Comet
+          _i18n: *CommonNoun
+          roll:
+            min: 120
             max: 120
-            text: Comet
-          - min: 121
+        - text: Communicator
+          _i18n: *CommonNoun
+          roll:
+            min: 121
             max: 121
-            text: Communicator
-          - min: 122
+        - text: Conjunction
+          _i18n: *CommonNoun
+          roll:
+            min: 122
             max: 122
-            text: Conjunction
-          - min: 123
+        - text: Connection
+          _i18n: *CommonNoun
+          roll:
+            min: 123
             max: 123
-            text: Connection
-          - min: 124
+        - text: Coordinates
+          _i18n: *CommonNoun
+          roll:
+            min: 124
             max: 124
-            text: Coordinates
-          - min: 125
+        - text: Corona
+          _i18n: *CommonNoun
+          roll:
+            min: 125
             max: 125
-            text: Corona
-          - min: 126
+        - text: Credit
+          _i18n: *CommonNoun
+          roll:
+            min: 126
             max: 126
-            text: Credit
-          - min: 127
+        - text: Cryonics
+          _i18n: *CommonNoun
+          roll:
+            min: 127
             max: 127
-            text: Cryonics
-          - min: 128
+        - text: Cult
+          _i18n: *CommonNoun
+          roll:
+            min: 128
             max: 128
-            text: Cult
-          - min: 129
+        - text: Culture
+          _i18n: *CommonNoun
+          roll:
+            min: 129
             max: 129
-            text: Culture
-          - min: 130
+        - text: Cybernetics
+          _i18n: *CommonNoun
+          roll:
+            min: 130
             max: 130
-            text: Cybernetics
-          - min: 131
+        - text: Derelict
+          _i18n: *CommonNoun
+          roll:
+            min: 131
             max: 131
-            text: Derelict
-          - min: 132
+        - text: Development
+          _i18n: *CommonNoun
+          roll:
+            min: 132
             max: 132
-            text: Development
-          - min: 133
+        - text: Drive
+          _i18n: *CommonNoun
+          roll:
+            min: 133
             max: 133
-            text: Drive
-          - min: 134
+        - text: Dyson Sphere
+          _i18n: *CommonNoun
+          roll:
+            min: 134
             max: 134
-            text: Dyson Sphere
-          - min: 135
+        - text: Element
+          _i18n: *CommonNoun
+          roll:
+            min: 135
             max: 135
-            text: Element
-          - min: 136
+        - text: Engine
+          _i18n: *CommonNoun
+          roll:
+            min: 136
             max: 136
-            text: Engine
-          - min: 137
+        - text: Enhancement
+          _i18n: *CommonNoun
+          roll:
+            min: 137
             max: 137
-            text: Enhancement
-          - min: 138
+        - text: Entanglement
+          _i18n: *CommonNoun
+          roll:
+            min: 138
             max: 138
-            text: Entanglement
-          - min: 139
+        - text: Entropy
+          _i18n: *CommonNoun
+          roll:
+            min: 139
             max: 139
-            text: Entropy
-          - min: 140
+        - text: Exosuit
+          _i18n: *CommonNoun
+          roll:
+            min: 140
             max: 140
-            text: Exosuit
-          - min: 141
+        - text: Experiment
+          _i18n: *CommonNoun
+          roll:
+            min: 141
             max: 141
-            text: Experiment
-          - min: 142
+        - text: Exploration
+          _i18n: *CommonNoun
+          roll:
+            min: 142
             max: 142
-            text: Exploration
-          - min: 143
+        - text: Explosion
+          _i18n: *CommonNoun
+          roll:
+            min: 143
             max: 143
-            text: Explosion
-          - min: 144
+        - text: Exposure
+          _i18n: *CommonNoun
+          roll:
+            min: 144
             max: 144
-            text: Exposure
-          - min: 145
+        - text: Faction
+          _i18n: *CommonNoun
+          roll:
+            min: 145
             max: 145
-            text: Faction
-          - min: 146
+        - text: Field
+          _i18n: *CommonNoun
+          roll:
+            min: 146
             max: 146
-            text: Field
-          - min: 147
+        - text: Fighter
+          _i18n: *CommonNoun
+          roll:
+            min: 147
             max: 147
-            text: Fighter
-          - min: 148
+        - text: Fission
+          _i18n: *CommonNoun
+          roll:
+            min: 148
             max: 148
-            text: Fission
-          - min: 149
+        - text: Fusion
+          _i18n: *CommonNoun
+          roll:
+            min: 149
             max: 149
-            text: Fusion
-          - min: 150
+        - text: Hologram
+          _i18n: *CommonNoun
+          roll:
+            min: 150
             max: 150
-            text: Hologram
-          - min: 151
+        - text: Humanoid
+          _i18n: *CommonNoun
+          roll:
+            min: 151
             max: 151
-            text: Humanoid
-          - min: 152
+        - text: Hydroponics
+          _i18n: *CommonNoun
+          roll:
+            min: 152
             max: 152
-            text: Hydroponics
-          - min: 153
+        - text: Icon
+          _i18n: *CommonNoun
+          roll:
+            min: 153
             max: 153
-            text: Icon
-          - min: 154
+        - text: Isotope
+          _i18n: *CommonNoun
+          roll:
+            min: 154
             max: 154
-            text: Isotope
-          - min: 155
+        - text: Key
+          _i18n: *CommonNoun
+          roll:
+            min: 155
             max: 155
-            text: Key
-          - min: 156
+        - text: Life
+          _i18n: *CommonNoun
+          roll:
+            min: 156
             max: 156
-            text: Life
-          - min: 157
+        - text: Light Sail
+          _i18n: *CommonNoun
+          roll:
+            min: 157
             max: 157
-            text: Light Sail
-          - min: 158
+        - text: Location
+          _i18n: *CommonNoun
+          roll:
+            min: 158
             max: 158
-            text: Location
-          - min: 159
+        - text: Magnetism
+          _i18n: *CommonNoun
+          roll:
+            min: 159
             max: 159
-            text: Magnetism
-          - min: 160
+        - text: Map
+          _i18n: *CommonNoun
+          roll:
+            min: 160
             max: 160
-            text: Map
-          - min: 161
+        - text: Memorial
+          _i18n: *CommonNoun
+          roll:
+            min: 161
             max: 161
-            text: Memorial
-          - min: 162
+        - text: Microbe
+          _i18n: *CommonNoun
+          roll:
+            min: 162
             max: 162
-            text: Microbe
-          - min: 163
+        - text: Moon
+          _i18n: *CommonNoun
+          roll:
+            min: 163
             max: 163
-            text: Moon
-          - min: 164
+        - text: Motion
+          _i18n: *CommonNoun
+          roll:
+            min: 164
             max: 164
-            text: Motion
-          - min: 165
+        - text: Multiverse
+          _i18n: *CommonNoun
+          roll:
+            min: 165
             max: 165
-            text: Multiverse
-          - min: 166
+        - text: Mutation
+          _i18n: *CommonNoun
+          roll:
+            min: 166
             max: 166
-            text: Mutation
-          - min: 167
+        - text: Nanobots
+          _i18n: *CommonNoun
+          roll:
+            min: 167
             max: 167
-            text: Nanobots
-          - min: 168
+        - text: Nebula
+          _i18n: *CommonNoun
+          roll:
+            min: 168
             max: 168
-            text: Nebula
-          - min: 169
+        - text: Nova
+          _i18n: *CommonNoun
+          roll:
+            min: 169
             max: 169
-            text: Nova
-          - min: 170
+        - text: Organization
+          _i18n: *CommonNoun
+          roll:
+            min: 170
             max: 170
-            text: Organization
-          - min: 171
+        - text: Paradox
+          _i18n: *CommonNoun
+          roll:
+            min: 171
             max: 171
-            text: Paradox
-          - min: 172
+        - text: Planet
+          _i18n: *CommonNoun
+          roll:
+            min: 172
             max: 172
-            text: Planet
-          - min: 173
+        - text: Planetoid
+          _i18n: *CommonNoun
+          roll:
+            min: 173
             max: 173
-            text: Planetoid
-          - min: 174
+        - text: Plans
+          _i18n: *CommonNoun
+          roll:
+            min: 174
             max: 174
-            text: Plans
-          - min: 175
+        - text: Power
+          _i18n: *CommonNoun
+          roll:
+            min: 175
             max: 175
-            text: Power
-          - min: 176
+        - text: Radioactivity
+          _i18n: *CommonNoun
+          roll:
+            min: 176
             max: 176
-            text: Radioactivity
-          - min: 177
+        - text: Ramscoop
+          _i18n: *CommonNoun
+          roll:
+            min: 177
             max: 177
-            text: Ramscoop
-          - min: 178
+        - text: Rays
+          _i18n: *CommonNoun
+          roll:
+            min: 178
             max: 178
-            text: Rays
-          - min: 179
+        - text: Rift
+          _i18n: *CommonNoun
+          roll:
+            min: 179
             max: 179
-            text: Rift
-          - min: 180
+        - text: Ring World
+          _i18n: *CommonNoun
+          roll:
+            min: 180
             max: 180
-            text: Ring World
-          - min: 181
+        - text: Robot
+          _i18n: *CommonNoun
+          roll:
+            min: 181
             max: 181
-            text: Robot
-          - min: 182
+        - text: Rocket
+          _i18n: *CommonNoun
+          roll:
+            min: 182
             max: 182
-            text: Rocket
-          - min: 183
+        - text: Satellite
+          _i18n: *CommonNoun
+          roll:
+            min: 183
             max: 183
-            text: Satellite
-          - min: 184
+        - text: Schematics
+          _i18n: *CommonNoun
+          roll:
+            min: 184
             max: 184
-            text: Schematics
-          - min: 185
+        - text: Shield
+          _i18n: *CommonNoun
+          roll:
+            min: 185
             max: 185
-            text: Shield
-          - min: 186
+        - text: Shipment
+          _i18n: *CommonNoun
+          roll:
+            min: 186
             max: 186
-            text: Shipment
-          - min: 187
+        - text: Shuttle
+          _i18n: *CommonNoun
+          roll:
+            min: 187
             max: 187
-            text: Shuttle
-          - min: 188
+        - text: Sigil
+          _i18n: *CommonNoun
+          roll:
+            min: 188
             max: 188
-            text: Sigil
-          - min: 189
+        - text: Singularity
+          _i18n: *CommonNoun
+          roll:
+            min: 189
             max: 189
-            text: Singularity
-          - min: 190
+        - text: Space
+          _i18n: *CommonNoun
+          roll:
+            min: 190
             max: 190
-            text: Space
-          - min: 191
+        - text: Star
+          _i18n: *CommonNoun
+          roll:
+            min: 191
             max: 191
-            text: Star
-          - min: 192
+        - text: Statue
+          _i18n: *CommonNoun
+          roll:
+            min: 192
             max: 192
-            text: Statue
-          - min: 193
+        - text: Subspace
+          _i18n: *CommonNoun
+          roll:
+            min: 193
             max: 193
-            text: Subspace
-          - min: 194
+        - text: Supplier
+          _i18n: *CommonNoun
+          roll:
+            min: 194
             max: 194
-            text: Supplier
-          - min: 195
+        - text: Terraformer
+          _i18n: *CommonNoun
+          roll:
+            min: 195
             max: 195
-            text: Terraformer
-          - min: 196
+        - text: Time
+          _i18n: *CommonNoun
+          roll:
+            min: 196
             max: 196
-            text: Time
-          - min: 197
+        - text: Transport
+          _i18n: *CommonNoun
+          roll:
+            min: 197
             max: 197
-            text: Transport
-          - min: 198
+        - text: Vector
+          _i18n: *CommonNoun
+          roll:
+            min: 198
             max: 198
-            text: Vector
-          - min: 199
+        - text: Water
+          _i18n: *CommonNoun
+          roll:
+            min: 199
             max: 199
-            text: Water
-          - min: 200
+        - text: Wormhole
+          _i18n: *CommonNoun
+          roll:
+            min: 200
             max: 200
-            text: Wormhole
-          - min: 201
+        - text: Agreement
+          _i18n: *CommonNoun
+          roll:
+            min: 201
             max: 201
-            text: Agreement
-          - min: 202
+        - text: Ambush
+          _i18n: *CommonNoun
+          roll:
+            min: 202
             max: 202
-            text: Ambush
-          - min: 203
+        - text: Ansible
+          _i18n: *CommonNoun
+          roll:
+            min: 203
             max: 203
-            text: Ansible
-          - min: 204
+        - text: Astrogate
+          _i18n: *CommonNoun
+          roll:
+            min: 204
             max: 204
-            text: Astrogate
-          - min: 205
+        - text: Automaton
+          _i18n: *CommonNoun
+          roll:
+            min: 205
             max: 205
-            text: Automaton
-          - min: 206
+        - text: Barrier
+          _i18n: *CommonNoun
+          roll:
+            min: 206
             max: 206
-            text: Barrier
-          - min: 207
+        - text: Base
+          _i18n: *CommonNoun
+          roll:
+            min: 207
             max: 207
-            text: Base
-          - min: 208
+        - text: Battle
+          _i18n: *CommonNoun
+          roll:
+            min: 208
             max: 208
-            text: Battle
-          - min: 209
+        - text: Battlefield
+          _i18n: *CommonNoun
+          roll:
+            min: 209
             max: 209
-            text: Battlefield
-          - min: 210
+        - text: Biotech
+          _i18n: *CommonNoun
+          roll:
+            min: 210
             max: 210
-            text: Biotech
-          - min: 211
+        - text: Boost
+          _i18n: *CommonNoun
+          roll:
+            min: 211
             max: 211
-            text: Boost
-          - min: 212
+        - text: Camp
+          _i18n: *CommonNoun
+          roll:
+            min: 212
             max: 212
-            text: Camp
-          - min: 213
+        - text: Ceasefire
+          _i18n: *CommonNoun
+          roll:
+            min: 213
             max: 213
-            text: Ceasefire
-          - min: 214
+        - text: Chimera
+          _i18n: *CommonNoun
+          roll:
+            min: 214
             max: 214
-            text: Chimera
-          - min: 215
+        - text: Climate
+          _i18n: *CommonNoun
+          roll:
+            min: 215
             max: 215
-            text: Climate
-          - min: 216
+        - text: Cloak
+          _i18n: *CommonNoun
+          roll:
+            min: 216
             max: 216
-            text: Cloak
-          - min: 217
+        - text: Cloud
+          _i18n: *CommonNoun
+          roll:
+            min: 217
             max: 217
-            text: Cloud
-          - min: 218
+        - text: Company
+          _i18n: *CommonNoun
+          roll:
+            min: 218
             max: 218
-            text: Company
-          - min: 219
+        - text: Component
+          _i18n: *CommonNoun
+          roll:
+            min: 219
             max: 219
-            text: Component
-          - min: 220
+        - text: Computer
+          _i18n: *CommonNoun
+          roll:
+            min: 220
             max: 220
-            text: Computer
-          - min: 221
+        - text: Consortium
+          _i18n: *CommonNoun
+          roll:
+            min: 221
             max: 221
-            text: Consortium
-          - min: 222
+        - text: Contract
+          _i18n: *CommonNoun
+          roll:
+            min: 222
             max: 222
-            text: Contract
-          - min: 223
+        - text: Converter
+          _i18n: *CommonNoun
+          roll:
+            min: 223
             max: 223
-            text: Converter
-          - min: 224
+        - text: Cyborg
+          _i18n: *CommonNoun
+          roll:
+            min: 224
             max: 224
-            text: Cyborg
-          - min: 225
+        - text: Documents
+          _i18n: *CommonNoun
+          roll:
+            min: 225
             max: 225
-            text: Documents
-          - min: 226
+        - text: Dome
+          _i18n: *CommonNoun
+          roll:
+            min: 226
             max: 226
-            text: Dome
-          - min: 227
+        - text: Drug
+          _i18n: *CommonNoun
+          roll:
+            min: 227
             max: 227
-            text: Drug
-          - min: 228
+        - text: Economy
+          _i18n: *CommonNoun
+          roll:
+            min: 228
             max: 228
-            text: Economy
-          - min: 229
+        - text: Empath
+          _i18n: *CommonNoun
+          roll:
+            min: 229
             max: 229
-            text: Empath
-          - min: 230
+        - text: Epidemic
+          _i18n: *CommonNoun
+          roll:
+            min: 230
             max: 230
-            text: Epidemic
-          - min: 231
+        - text: Esper
+          _i18n: *CommonNoun
+          roll:
+            min: 231
             max: 231
-            text: Esper
-          - min: 232
+        - text: Flagship
+          _i18n: *CommonNoun
+          roll:
+            min: 232
             max: 232
-            text: Flagship
-          - min: 233
+        - text: Fortress
+          _i18n: *CommonNoun
+          roll:
+            min: 233
             max: 233
-            text: Fortress
-          - min: 234
+        - text: Fund
+          _i18n: *CommonNoun
+          roll:
+            min: 234
             max: 234
-            text: Fund
-          - min: 235
+        - text: Graveyard
+          _i18n: *CommonNoun
+          roll:
+            min: 235
             max: 235
-            text: Graveyard
-          - min: 236
+        - text: Hardware
+          _i18n: *CommonNoun
+          roll:
+            min: 236
             max: 236
-            text: Hardware
-          - min: 237
+        - text: Hindrance
+          _i18n: *CommonNoun
+          roll:
+            min: 237
             max: 237
-            text: Hindrance
-          - min: 238
+        - text: Hivemind
+          _i18n: *CommonNoun
+          roll:
+            min: 238
             max: 238
-            text: Hivemind
-          - min: 239
+        - text: Hyperspace
+          _i18n: *CommonNoun
+          roll:
+            min: 239
             max: 239
-            text: Hyperspace
-          - min: 240
+        - text: Hypospray
+          _i18n: *CommonNoun
+          roll:
+            min: 240
             max: 240
-            text: Hypospray
-          - min: 241
+        - text: Image
+          _i18n: *CommonNoun
+          roll:
+            min: 241
             max: 241
-            text: Image
-          - min: 242
+        - text: Impact
+          _i18n: *CommonNoun
+          roll:
+            min: 242
             max: 242
-            text: Impact
-          - min: 243
+        - text: Information
+          _i18n: *CommonNoun
+          roll:
+            min: 243
             max: 243
-            text: Information
-          - min: 244
+        - text: Interface
+          _i18n: *CommonNoun
+          roll:
+            min: 244
             max: 244
-            text: Interface
-          - min: 245
+        - text: Invasion
+          _i18n: *CommonNoun
+          roll:
+            min: 245
             max: 245
-            text: Invasion
-          - min: 246
+        - text: Invention
+          _i18n: *CommonNoun
+          roll:
+            min: 246
             max: 246
-            text: Invention
-          - min: 247
+        - text: Inventory
+          _i18n: *CommonNoun
+          roll:
+            min: 247
             max: 247
-            text: Inventory
-          - min: 248
+        - text: Knowledge
+          _i18n: *CommonNoun
+          roll:
+            min: 248
             max: 248
-            text: Knowledge
-          - min: 249
+        - text: Leader
+          _i18n: *CommonNoun
+          roll:
+            min: 249
             max: 249
-            text: Leader
-          - min: 250
+        - text: Manifesto
+          _i18n: *CommonNoun
+          roll:
+            min: 250
             max: 250
-            text: Manifesto
-          - min: 251
+        - text: Manuscript
+          _i18n: *CommonNoun
+          roll:
+            min: 251
             max: 251
-            text: Manuscript
-          - min: 252
+        - text: Mass
+          _i18n: *CommonNoun
+          roll:
+            min: 252
             max: 252
-            text: Mass
-          - min: 253
+        - text: Matter
+          _i18n: *CommonNoun
+          roll:
+            min: 253
             max: 253
-            text: Matter
-          - min: 254
+        - text: Media
+          _i18n: *CommonNoun
+          roll:
+            min: 254
             max: 254
-            text: Media
-          - min: 255
+        - text: Military
+          _i18n: *CommonNoun
+          roll:
+            min: 255
             max: 255
-            text: Military
-          - min: 256
+        - text: Miniaturization
+          _i18n: *CommonNoun
+          roll:
+            min: 256
             max: 256
-            text: Miniaturization
-          - min: 257
+        - text: Mutant
+          _i18n: *CommonNoun
+          roll:
+            min: 257
             max: 257
-            text: Mutant
-          - min: 258
+        - text: Myth
+          _i18n: *CommonNoun
+          roll:
+            min: 258
             max: 258
-            text: Myth
-          - min: 259
+        - text: Order
+          _i18n: *CommonNoun
+          roll:
+            min: 259
             max: 259
-            text: Order
-          - min: 260
+        - text: Organ
+          _i18n: *CommonNoun
+          roll:
+            min: 260
             max: 260
-            text: Organ
-          - min: 261
+        - text: Parallel World
+          _i18n: *CommonNoun
+          roll:
+            min: 261
             max: 261
-            text: Parallel World
-          - min: 262
+        - text: Parasite
+          _i18n: *CommonNoun
+          roll:
+            min: 262
             max: 262
-            text: Parasite
-          - min: 263
+        - text: Particle
+          _i18n: *CommonNoun
+          roll:
+            min: 263
             max: 263
-            text: Particle
-          - min: 264
+        - text: Passage
+          _i18n: *CommonNoun
+          roll:
+            min: 264
             max: 264
-            text: Passage
-          - min: 265
+        - text: Pathogen
+          _i18n: *CommonNoun
+          roll:
+            min: 265
             max: 265
-            text: Pathogen
-          - min: 266
+        - text: Phantasm
+          _i18n: *CommonNoun
+          roll:
+            min: 266
             max: 266
-            text: Phantasm
-          - min: 267
+        - text: Prison
+          _i18n: *CommonNoun
+          roll:
+            min: 267
             max: 267
-            text: Prison
-          - min: 268
+        - text: Processor
+          _i18n: *CommonNoun
+          roll:
+            min: 268
             max: 268
-            text: Processor
-          - min: 269
+        - text: Red Shirt
+          _i18n: *CommonNoun
+          roll:
+            min: 269
             max: 269
-            text: Red Shirt
-          - min: 270
+        - text: Regeneration
+          _i18n: *CommonNoun
+          roll:
+            min: 270
             max: 270
-            text: Regeneration
-          - min: 271
+        - text: Replicant
+          _i18n: *CommonNoun
+          roll:
+            min: 271
             max: 271
-            text: Replicant
-          - min: 272
+        - text: Repository
+          _i18n: *CommonNoun
+          roll:
+            min: 272
             max: 272
-            text: Repository
-          - min: 273
+        - text: Reservoir
+          _i18n: *CommonNoun
+          roll:
+            min: 273
             max: 273
-            text: Reservoir
-          - min: 274
+        - text: Revolt
+          _i18n: *CommonNoun
+          roll:
+            min: 274
             max: 274
-            text: Revolt
-          - min: 275
+        - text: Revolution
+          _i18n: *CommonNoun
+          roll:
+            min: 275
             max: 275
-            text: Revolution
-          - min: 276
+        - text: Scapegoat
+          _i18n: *CommonNoun
+          roll:
+            min: 276
             max: 276
-            text: Scapegoat
-          - min: 277
+        - text: Sensor
+          _i18n: *CommonNoun
+          roll:
+            min: 277
             max: 277
-            text: Sensor
-          - min: 278
+        - text: Shipyard
+          _i18n: *CommonNoun
+          roll:
+            min: 278
             max: 278
-            text: Shipyard
-          - min: 279
+        - text: Skirmish
+          _i18n: *CommonNoun
+          roll:
+            min: 279
             max: 279
-            text: Skirmish
-          - min: 280
+        - text: Slipstream
+          _i18n: *CommonNoun
+          roll:
+            min: 280
             max: 280
-            text: Slipstream
-          - min: 281
+        - text: Software
+          _i18n: *CommonNoun
+          roll:
+            min: 281
             max: 281
-            text: Software
-          - min: 282
+        - text: Spirit
+          _i18n: *CommonNoun
+          roll:
+            min: 282
             max: 282
-            text: Spirit
-          - min: 283
+        - text: Stockpile
+          _i18n: *CommonNoun
+          roll:
+            min: 283
             max: 283
-            text: Stockpile
-          - min: 284
+        - text: Stronghold
+          _i18n: *CommonNoun
+          roll:
+            min: 284
             max: 284
-            text: Stronghold
-          - min: 285
+        - text: Surplus
+          _i18n: *CommonNoun
+          roll:
+            min: 285
             max: 285
-            text: Surplus
-          - min: 286
+        - text: Symbiote
+          _i18n: *CommonNoun
+          roll:
+            min: 286
             max: 286
-            text: Symbiote
-          - min: 287
+        - text: Sympathizer
+          _i18n: *CommonNoun
+          roll:
+            min: 287
             max: 287
-            text: Sympathizer
-          - min: 288
+        - text: Theory
+          _i18n: *CommonNoun
+          roll:
+            min: 288
             max: 288
-            text: Theory
-          - min: 289
+        - text: Threat
+          _i18n: *CommonNoun
+          roll:
+            min: 289
             max: 289
-            text: Threat
-          - min: 290
+        - text: Universe
+          _i18n: *CommonNoun
+          roll:
+            min: 290
             max: 290
-            text: Universe
-          - min: 291
+        - text: Utopia
+          _i18n: *CommonNoun
+          roll:
+            min: 291
             max: 291
-            text: Utopia
-          - min: 292
+        - text: Vestiges
+          _i18n: *CommonNoun
+          roll:
+            min: 292
             max: 292
-            text: Vestiges
-          - min: 293
+        - text: Victim
+          _i18n: *CommonNoun
+          roll:
+            min: 293
             max: 293
-            text: Victim
-          - min: 294
+        - text: Virus
+          _i18n: *CommonNoun
+          roll:
+            min: 294
             max: 294
-            text: Virus
-          - min: 295
+        - text: Voyage
+          _i18n: *CommonNoun
+          roll:
+            min: 295
             max: 295
-            text: Voyage
-          - min: 296
+        - text: War
+          _i18n: *CommonNoun
+          roll:
+            min: 296
             max: 296
-            text: War
-          - min: 297
+        - text: Warp
+          _i18n: *CommonNoun
+          roll:
+            min: 297
             max: 297
-            text: Warp
-          - min: 298
+        - text: Xenobot
+          _i18n: *CommonNoun
+          roll:
+            min: 298
             max: 298
-            text: Xenobot
-          - min: 299
+        - text: Zero-Gravity
+          _i18n: *CommonNoun
+          roll:
+            min: 299
             max: 299
-            text: Zero-Gravity
-          - min: 300
+        - text: Zone
+          _i18n: *CommonNoun
+          roll:
+            min: 300
             max: 300
-            text: Zone
+        type: oracle_rollable
+    type: oracle_collection

@@ -5,7 +5,7 @@ import { mapValues } from 'lodash-es'
 const objectIdPatterns = new Map<string, RegExp>()
 
 for (const k in ID) {
-	const v = ID[k]
+	const v = (ID as Record<string, any>)[k]
 	if (typeof v.pattern !== 'string') continue
 
 	objectIdPatterns.set(k, new RegExp(v.pattern))

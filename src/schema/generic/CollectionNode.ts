@@ -4,7 +4,8 @@ import {
 	type Static,
 	type TObject,
 	type TRef,
-	type TString,
+	type TRefUnsafe,
+	type TSchema,
 	type TUnion
 } from '@sinclair/typebox'
 import {
@@ -28,15 +29,15 @@ import { setSourceOptional } from '../Utils.js'
 export const CollectionBrand = Symbol('Collection')
 
 type TCollectionDictionary =
-	| TDictionary<TRef | TUnion<TRef[]>>
-	| TUnion<TDictionary<TRef | TUnion<TRef[]>>[]>
+	| TDictionary<TRef | TRefUnsafe<TSchema> | TUnion<TRef[]>>
+	| TUnion<TDictionary<TRef | TRefUnsafe<TSchema> | TUnion<TRef[]>>[]>
 
 export function getCollectionNodeMetadata(
-	enhances: TRef<TString>,
+	enhances: TRef<string>,
 	contentChild?: TCollectionDictionary,
 	collectionChild?: TCollectionDictionary
 ) {
-	const props = {
+	const props: Record<string, TSchema> = {
 		[EnhancesKey]: Type.Optional(
 			Type.Array(enhances, {
 				description:
@@ -57,13 +58,10 @@ export function getCollectionNodeMetadata(
 		)
 	}
 
-
 	if (contentChild != null)
-		// @ts-expect-error
 		props[ContentsKey] = contentChild
 
 	if (collectionChild != null)
-		// @ts-expect-error
 		props[CollectionsKey] = collectionChild
 
 	return Type.Object(props)
@@ -78,24 +76,23 @@ export function CollectionNode<
 	const thisSchemaId = pascalCase(type)
 	const thisIdSchemaId = thisSchemaId + 'Id'
 
-	const thisWildcardIdRef = Type.Ref<TString>(thisIdSchemaId + 'Wildcard')
-	const thisIdRef = Type.Ref<TString>(thisIdSchemaId)
+	const thisWildcardIdRef = Type.Ref(thisIdSchemaId + 'Wildcard')
+	const thisIdRef = Type.Ref(thisIdSchemaId)
 	const thisSchemaRef = Type.Ref(thisSchemaId)
 
-	const enhancedBase = Assign(
-		getCollectionNodeMetadata(
-			thisWildcardIdRef,
-			setSourceOptional(Dictionary(collectableSchemaRef)),
-			setSourceOptional(Dictionary(thisSchemaRef))
-		),
-		base
+	// Use explicit TObject casts to avoid deep type instantiation
+	const metadata = getCollectionNodeMetadata(
+		thisWildcardIdRef,
+		setSourceOptional(Dictionary(collectableSchemaRef)),
+		setSourceOptional(Dictionary(thisSchemaRef))
 	)
+	const enhancedBase: TObject = Assign(metadata as TObject, base as TObject) as TObject
 
 	return PrimaryTypeNode(enhancedBase, type, {
 		...options,
 		$id: thisSchemaId,
 		[CollectionBrand]: 'Collection'
-	}) as unknown as TCollectionNode<typeof enhancedBase, TType>
+	}) as unknown as TCollectionNode<TBase, TType>
 }
 
 type TCollectionMeta = ReturnType<typeof getCollectionNodeMetadata>
@@ -106,13 +103,15 @@ export type CollectionNode<
 	TType extends TypeId.Collection
 > = PrimaryTypeNode<TBase & CollectionMeta, TType>
 
+/** Simplified type to avoid deep instantiation */
 export type TCollectionNode<
-	TBase extends TObject,
-	TType extends TypeId.Collection
-> = TPrimaryTypeNode<TAssign<TCollectionMeta, TBase>, TType> & {
+	TBase extends TObject = TObject,
+	TType extends TypeId.Collection = TypeId.Collection
+> = TObject & {
 	$id: string
 	[CollectionBrand]: 'Collection'
-	static: CollectionNode<Static<TBase>, TType>
+	_collectionType: TType
+	_collectionBase: TBase
 }
 
 export function CollectionSubtypeNode<
@@ -132,14 +131,11 @@ export function CollectionSubtypeNode<
 	const baseSchemaName = pascalCase(type)
 	const thisSchemaName = baseSchemaName + pascalCase(subtype)
 
-	const thisId = Type.Ref<TString | TUnion<TString[]>>(baseSchemaName + 'Id')
-	const thisIdWildcardRef = Type.Ref<TString>(baseSchemaName + 'IdWildcard')
+	const thisIdWildcardRef = Type.Ref(baseSchemaName + 'IdWildcard')
 
-	const enhancedBase = Assign(
-		getCollectionNodeMetadata(thisIdWildcardRef, contents, collections),
-		base
-	)
-
+	// Use explicit TObject casts to avoid deep type instantiation
+	const metadata = getCollectionNodeMetadata(thisIdWildcardRef, contents, collections)
+	const enhancedBase: TObject = Assign(metadata as TObject, base as TObject) as TObject
 
 	return PrimarySubtypeNode(enhancedBase, type, subtypeKey, subtype, options)
 }

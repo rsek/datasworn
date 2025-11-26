@@ -5,7 +5,7 @@ import {
 	type TLiteral,
 	type TObject,
 	type TOmit,
-	type TRef,
+	type TRefUnsafe,
 	type TString,
 	type TUnion
 } from '@sinclair/typebox'
@@ -32,11 +32,12 @@ type OmittedEmbedKeys = Writable<typeof OmittedEmbedKeys>
 type TTypeNode = TObject<{ type: TLiteral<string> }>
 
 export function EmbeddedPrimaryNode<
-	TBase extends TTypeNode,
-	TId extends TRef<TString | TUnion<TString[]>>,
+	TBase extends TObject,
+	TId extends TRefUnsafe<TString | TUnion<TString[]>>,
 	TEmbedKeys extends EmbeddedDictionaryKeys[]
 >(base: TBase, allowEmbeds: TEmbedKeys, options: ObjectOptions = {}) {
-	const typeName = `Embedded${pascalCase(base.properties.type.const)}`
+	const typeSchema = (base as unknown as TTypeNode).properties?.type
+	const typeName = `Embedded${pascalCase(typeSchema?.const ?? 'Unknown')}`
 
 	const _id = Computed(Type.Ref(typeName + 'Id'))
 
@@ -69,7 +70,7 @@ export type TEmbeddedNodeTypeLiteral<
 export type TEmbeddedNode<
 	TBase extends TTypeNode,
 	TParentType extends string,
-	TId extends TRef<TString | TUnion<TString[]>>,
+	TId extends TRefUnsafe<TString | TUnion<TString[]>>,
 	TEmbedKeys extends EmbeddedDictionaryKeys[]
 > = TObject<
 	{

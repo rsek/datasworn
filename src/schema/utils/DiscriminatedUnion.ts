@@ -8,7 +8,7 @@ import {
 	type Static,
 	type TLiteral,
 	type TObject,
-	type TRef,
+	type TRefUnsafe,
 	type TSchema,
 	type TUnion
 } from '@sinclair/typebox'
@@ -32,11 +32,12 @@ type ValueIn<T extends Record<any, TSchema>> = T extends Record<
 	? U
 	: never
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type TDiscriminableish<
 	K extends string = string,
 	D extends string = string,
 	TBase extends TObject = TObject
-> = TDiscriminable<K, D, TBase> | TRef<TDiscriminable<K, D, TBase>>
+> = TDiscriminable<K, D, TBase> | TRefUnsafe<TDiscriminable<K, D, TBase>> | TObject<any> | TRefUnsafe<TObject<any>>
 
 export function Discriminable<
 	K extends string,
@@ -95,19 +96,19 @@ export type TDiscriminatorMap<
 // }
 
 export interface TDiscriminatedUnion<
-	M extends TDiscriminatorMap<TDiscriminableish>,
-	D extends TDiscriminableKeyFor<M> = TDiscriminableKeyFor<M>
+	M extends TDiscriminatorMap<TDiscriminableish> = TDiscriminatorMap<TDiscriminableish>,
+	D extends string = string
 > extends TSchema {
 	type: 'object'
 	static: Static<TUnion<ValueIn<M>[]>>
 
-	properties: Record<D, TUnionEnum<(Static<M[keyof M]>[D] & string)[]>>
+	properties: Record<D, TUnionEnum<string[]>>
 
 	// without this, schemata won't validate if they add any new properties (which they almost certainly will)
 	additionalProperties: true
 
 	allOf: TIfThenElse<
-		TObject<{ [K in D]: TDiscriminatorValueOf<ValueIn<M>, D> }>,
+		TObject<{ [K in D]: TDiscriminatorValueOf<ValueIn<M>, any> }>,
 		ValueIn<M>
 	>[]
 
@@ -117,7 +118,7 @@ export interface TDiscriminatedUnion<
 }
 
 export type TDiscriminatorMappingOf<
-	T extends TDiscriminatedUnion<TDiscriminatorMap<TDiscriminableish>>
+	T extends TDiscriminatedUnion<any, string>
 > = T[typeof Mapping]
 
 export type TDiscriminatedMemberType<T extends TDiscriminatedUnion<any>> =
@@ -140,15 +141,15 @@ export function DiscriminatedUnion<
 	if (!TypeRegistry.Has('DiscriminatedUnion'))
 		TypeRegistry.Set('DiscriminatedUnion', DiscriminatedUnionCheck)
 
-	const allOf = Object.entries(mapping).map(
-		([value, schema]: [TDiscriminatorValueFor<M>, M[keyof M]]) =>
-			Discriminated(
+	const allOf = (Object.entries(mapping) as [string, TSchema][]).map(
+		([value, schema]) =>
+			(Discriminated as any)(
 				'$id' in schema ? Type.Ref(schema) : schema,
 				discriminator,
 				value
 			)
 	)
-	const discriminatorValues = UnionEnum(Object.keys(mapping))
+	const discriminatorValues = UnionEnum(Object.keys(mapping) as string[])
 
 	return {
 		...options,
@@ -177,7 +178,7 @@ export function OmitDiscriminatedUnionMembers<
 			// @ts-expect-error
 			remapping[k] = base[Mapping][k]
 
-	return DiscriminatedUnion(
+	return (DiscriminatedUnion as any)(
 		remapping,
 		base[Discriminator],
 		options
@@ -188,14 +189,11 @@ export type TOmitDiscriminatedUnionMembers<
 	TOmitKeys extends (keyof TBase[typeof Mapping])[]
 > = TDiscriminatedUnion<
 	Omit<TBase[typeof Mapping], TOmitKeys[number]>,
-	TBase[typeof Discriminator]
+	TBase[typeof Discriminator] & string
 >
 
 function DiscriminatedUnionCheck(
-	schema: TDiscriminatedUnion<
-		TDiscriminatorMap<TDiscriminableish>,
-		TDiscriminableKeyFor<unknown>
-	>,
+	schema: TDiscriminatedUnion<any, string>,
 	value: unknown
 ) {
 	const discriminator = schema[Discriminator]
@@ -209,8 +207,8 @@ function DiscriminatedUnionCheck(
 }
 
 export function TDiscriminatedUnion<
-	T extends TDiscriminatedUnion<TObject[], string> = TDiscriminatedUnion<
-		TObject[],
+	T extends TDiscriminatedUnion<any, string> = TDiscriminatedUnion<
+		any,
 		string
 	>
 >(schema: unknown): schema is T {
@@ -218,7 +216,7 @@ export function TDiscriminatedUnion<
 }
 
 export function ToUnion<T extends TObject[]>(
-	schema: TDiscriminatedUnion<T, string>
+	schema: TDiscriminatedUnion<any, string>
 ) {
 	const base = omit(CloneType(schema), [
 		'type',
@@ -230,7 +228,7 @@ export function ToUnion<T extends TObject[]>(
 		Members
 	])
 
-	const anyOf = schema.allOf.map(({ then }) => then) as T
+	const anyOf = schema.allOf.map(({ then }) => then) as unknown as T
 
 	return Type.Union(anyOf, omit(base, ['properties']))
 }

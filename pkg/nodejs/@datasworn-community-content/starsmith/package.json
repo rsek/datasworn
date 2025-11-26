@@ -1,0 +1,45 @@
+{
+	"name": "@datasworn-community-content/starsmith",
+	"version": "0.1.0",
+	"description": "Datasworn JSON data for Starsmith Expanded Oracles by Eric Bright.",
+	"files": [
+		"json",
+		"migration"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/rsek/datasworn.git",
+		"directory": "pkg/nodejs/@datasworn-community-content/starsmith"
+	},
+	"keywords": [
+		"ironsworn",
+		"datasworn",
+		"TTRPG",
+		"starforged",
+		"starsmith"
+	],
+	"contributors": [
+		{
+			"name": "Eric Bright",
+			"url": "https://playeveryrole.com/"
+		}
+	],
+	"scripts": {
+		"release": "release-it"
+	},
+	"license": "CC-BY-4.0",
+	"bugs": {
+		"url": "https://github.com/rsek/datasworn/issues"
+	},
+	"dependencies": {
+		"@datasworn/starforged": "0.1.0"
+	},
+	"authors": [
+		{
+			"name": "Eric Bright",
+			"email": "noreply@playeveryrole.com",
+			"url": "https://playeveryrole.com/"
+		}
+	],
+	"private": true
+}

@@ -18,7 +18,7 @@ export function EnhanceMany<T extends TObject, ID extends TSchema = TString>(
 	wildcardID: ID,
 	options: ObjectOptions = {}
 ) {
-	const base = Utils.OmitMeta(schema)
+	const base = Utils.OmitMeta(schema) as TObject
 	const mixin = Type.Object({
 		[EnhancesKey]: Utils.Nullable(Type.Array(wildcardID), {
 			description:

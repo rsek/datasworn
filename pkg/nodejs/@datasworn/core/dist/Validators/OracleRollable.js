@@ -69,7 +69,8 @@ function validateTableRollRanges(oracleRollable, sort = false) {
     return true;
 }
 function getDiceRange(diceExpression) {
-    const parsed = diceExpressionPattern.exec(diceExpression).groups;
+    var _a;
+    const parsed = (_a = diceExpressionPattern.exec(diceExpression)) === null || _a === void 0 ? void 0 : _a.groups;
     if (parsed == null)
         throw new Error(`Could not parse ${String(diceExpression)} as a dice expression.`);
     const [numberOfDice, sides, modifier] = Object.values(parsed).map((numberString, i) => {

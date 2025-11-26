@@ -2,6 +2,7 @@ import {
 	Type,
 	type ObjectOptions,
 	type TObject,
+	type TSchema,
 	CloneType,
 	Kind
 } from '@sinclair/typebox'
@@ -60,10 +61,8 @@ export function Assign<TTarget extends TObject, TSource extends TObject>(
 	source: TSource,
 	options: ObjectOptions = {}
 ) {
-	const mergedProps = CloneType(target).properties as Assign<
-		TTarget['properties'],
-		TSource['properties']
-	>
+	// Use Record<string, TSchema> to allow mutation, then cast result
+	const mergedProps: Record<string, TSchema> = { ...CloneType(target).properties }
 
 	const props = CloneType(source).properties
 	for (const k in props) {
@@ -75,14 +74,13 @@ export function Assign<TTarget extends TObject, TSource extends TObject>(
 		// skip if it's the optional version of the same schema
 		if (isEqual(oldProp, Type.Optional(newProp))) continue
 
-		// @ts-expect-error
 		mergedProps[k] = newProp
 	}
 
 	return Type.Object(mergedProps, {
 		[Kind]: 'Object',
 		...options
-	}) as TAssign<TTarget, TSource>
+	}) as unknown as TAssign<TTarget, TSource>
 }
 
 export function FlatIntersect<T extends TObject[]>(

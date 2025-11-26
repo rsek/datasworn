@@ -66,7 +66,7 @@ function validateTableRollRanges(
 }
 
 function getDiceRange(diceExpression: Datasworn.DiceExpression) {
-	const parsed = diceExpressionPattern.exec(diceExpression).groups
+	const parsed = diceExpressionPattern.exec(diceExpression)?.groups
 
 	if (parsed == null)
 		throw new Error(
@@ -103,5 +103,5 @@ export function compareRanges(a: RowLike, b: RowLike) {
 
 	if (a.roll != null && b.roll == null) return 1
 
-	return a.roll.min < b.roll.min ? -1 : b.roll.min > a.roll.min ? 1 : 0
+	return a.roll!.min < b.roll!.min ? -1 : b.roll!.min > a.roll!.min ? 1 : 0
 }

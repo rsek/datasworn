@@ -3667,8 +3667,7 @@ export interface OracleTableSharedRolls {
 	 * @default 
 	 * ```javascript
 	 * 	{
-	 * 		roll: "Roll",
-	 * 		text: "Result"
+	 * 		roll: "Roll"
 	 * 	}
 	 * ```
 	 */
@@ -3736,7 +3735,6 @@ export interface OracleTableSharedText {
 	 * @default 
 	 * ```javascript
 	 * 	{
-	 * 		roll: "Roll",
 	 * 		text: "Result"
 	 * 	}
 	 * ```
@@ -3805,7 +3803,6 @@ export interface OracleTableSharedText2 {
 	 * @default 
 	 * ```javascript
 	 * 	{
-	 * 		roll: "Roll",
 	 * 		text: "Result",
 	 * 		text2: "Details"
 	 * 	}

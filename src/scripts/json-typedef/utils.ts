@@ -138,7 +138,7 @@ export function toJtdElements<U extends TSchema, T extends TArray<U>>(
 	schema: T
 ) {
 	const { items } = schema
-	return JtdType.Array(toJtdForm(items))
+	return JtdType.Array(toJtdForm(items as unknown as TConvertible) as TSchema)
 }
 
 /** Transform a Typebox object schema into JTD properties */
@@ -146,16 +146,16 @@ export function toJtdProperties<T extends TObject>(schema: T) {
 	const fields = omitBy(
 		mapValues(schema.properties, (subschema) => {
 			if (Utils.TNullable(subschema))
-				return JtdType.Nullable(toJtdForm(subschema.anyOf[0] as any))
+				return JtdType.Nullable(toJtdForm(subschema.anyOf[0] as any) as TSchema)
 
-			const base = toJtdForm(subschema as any)
+			const base = toJtdForm(subschema as any) as TSchema
 
 			if (TypeGuard.IsOptional(subschema)) return Type.Optional(base)
 
 			return base
 		}),
 		isUndefined
-	)
+	) as TFields
 
 	const result = JtdType.Struct(fields)
 
@@ -167,7 +167,7 @@ export function toJtdValues<T extends TRecord<TString, U>, U extends TSchema>(
 	schema: T
 ) {
 	const [propertyPattern, value] = Object.entries(schema.patternProperties)[0]
-	const unwrap = toJtdForm(value as unknown as TConvertible)
+	const unwrap = toJtdForm(value as unknown as TConvertible) as TSchema
 
 	if (!unwrap)
 		throw new Error(
@@ -187,24 +187,24 @@ export function toJtdSingleEnum(schema: TLiteral<string>) {
 }
 
 export function toJtdDiscriminator<
-	M extends Utils.TDiscriminatorMap<Utils.TDiscriminableish<TObject>>,
-	D extends Utils.TDiscriminableKeyFor<M>,
+	M extends Utils.TDiscriminatorMap<Utils.TDiscriminableish>,
+	D extends string,
 >(schema: Utils.TDiscriminatedUnion<M, D>) {
-	const discriminator = schema[Discriminator]
+	const discriminator = schema[Discriminator] as string
 
 	// console.log(schema.$id)
 	// console.log(schema[Mapping])
 
-	const oldMapping = schema[Mapping]
+	const oldMapping = schema[Mapping] as Record<string, TObject>
 	const jtdMapping: Record<string, TStruct<TFields>> = {}
 
 	for (const k in oldMapping)
 		if (Object.prototype.hasOwnProperty.call(oldMapping, k)) {
-			const subschema = oldMapping[k]
+			const subschema = oldMapping[k] as TObject
 			jtdMapping[k] = {
 				...omit(toJtdProperties(subschema), `properties.${discriminator}`),
-				metadata: extractMetadata(subschema),
-			}
+				metadata: extractMetadata(subschema as TAnySchema),
+			} as unknown as TStruct<TFields>
 		}
 
 	// const mapping = Object.fromEntries(
@@ -283,24 +283,24 @@ function toJtdForm(schema: TSchema): JTD.Schema | null {
 			break
 		case KindGuard.IsRecord(schema):
 		case Generic.DictionaryBrand in schema:
-			result = toJtdValues(schema as TRecord)
+			result = toJtdValues(schema as TRecord) as JTD.Schema
 			break
 		case KindGuard.IsArray(schema):
-			result = toJtdElements(schema as TArray)
+			result = toJtdElements(schema as TArray) as JTD.Schema
 			break
 		case KindGuard.IsObject(schema):
 			result = toJtdProperties(schema as TObject)
 			break
 		case Utils.TDiscriminatedUnion(schema):
-			result = toJtdDiscriminator(schema as Utils.TDiscriminatedUnion)
+			result = toJtdDiscriminator(schema as Utils.TDiscriminatedUnion) as JTD.Schema
 			break
 		case KindGuard.IsUnion(schema) && schema[Hint] === 'Enum':
 			result = JtdType.Enum(
-				schema.anyOf.map((item: TLiteral) => item.const),
+				(schema.anyOf as TLiteral[]).map((item) => item.const as string),
 				{
 					enumDescription: Object.fromEntries(
-						schema.anyOf.map((item: TLiteral) => [item.const, item.description])
-					)
+						(schema.anyOf as TLiteral[]).map((item) => [item.const, item.description ?? ''])
+					) as Record<string, string>
 				}
 			)
 			break
@@ -328,8 +328,8 @@ export function toJtdRoot<T extends TRoot>(schemaRoot: T) {
 		if (k === rootSchemaName) continue
 		try {
 
-			defs[k] = toJtdForm(schemaRoot[DefsKey][k])
-		} catch (err) {
+			defs[k] = toJtdForm(schemaRoot[DefsKey][k] as TConvertible)
+		} catch (err: any) {
       console.log(`${k}:`, schemaRoot[DefsKey][k])
 
 						throw new Error(`Couldn't convert ${k}. ${err?.message ?? err}`)
@@ -341,7 +341,7 @@ export function toJtdRoot<T extends TRoot>(schemaRoot: T) {
 	// 	omit(Assets.SelectEnhancementFieldChoice, JsonTypeDef)
 	// )
 
-	const base = toJtdForm(schemaRoot[DefsKey][rootSchemaName])
+	const base = toJtdForm(schemaRoot[DefsKey][rootSchemaName] as TConvertible)
 
 	if (typeof base === 'undefined')
 		throw new Error(
@@ -349,7 +349,7 @@ export function toJtdRoot<T extends TRoot>(schemaRoot: T) {
 		)
 
 	return {
-		...base,
+		...(base as object),
 		definitions: omitBy(defs, (v, k) => {
 			if (v === null) {
 				Log.info(`Skipping JTD for "${k}"`)

@@ -100,9 +100,9 @@ const defsBase = pickBy(
 validateSchemaDefinitions(defsBase)
 
 export type Defs = Record<string, TSchema>
-const entries: [string, TSchema][] = Object.values<TSchema>(defsBase).map(
-	(entry) => [entry.$id, entry]
-)
+const entries: [string, TSchema][] = Object.values<TSchema>(defsBase)
+	.filter((entry): entry is TSchema & { $id: string } => entry.$id != null)
+	.map((entry) => [entry.$id, entry])
 
 const Defs: Defs = Object.fromEntries(
 	entries.sort(([a], [b]) => a.localeCompare(b))
@@ -122,6 +122,6 @@ for (const k in Defs) {
 
 const union = Rules.TagSchema.allOf[0]
 const dataswornRef = union.anyOf[0]
-union.anyOf[0] = Type.Object({ $ref: UnionEnum(enumValues) })
+union.anyOf[0] = Type.Object({ $ref: UnionEnum(enumValues) }, { additionalProperties: true })
 
 export default Defs
