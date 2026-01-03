@@ -371,6 +371,54 @@ moves:
 
                 * Make another move now (not a progress move), and add +1.
                 * Take +1 momentum.
+      follow_a_path:
+        name: Follow a Path
+        type: move
+        roll_type: action_roll
+        trigger:
+          text: When you journey along a known route, and one day blends into the next...
+          conditions:
+            - method: player_choice
+              roll_options:
+                - using: condition_meter
+                  condition_meter: supply
+        _source:
+          <<: &Lodestar
+            title: Ironsworn Lodestar
+            authors:
+              - name: Shawn Tomkin
+            license: https://creativecommons.org/licenses/by-nc-sa/4.0/
+            url: https://ironswornrpg.com
+            date: 2025-05-01
+          page: 10
+        text: |-
+          When __you journey along a known route, and one day blends into the next__, roll +supply.
+
+          On a __strong hit__, you reach your destination and the situation favors you. Take +1 momentum.
+
+          On a __weak hit__, you complete the journey, but face a cost or complication. Choose one or more.
+
+            * You took longer than expected.
+            * You pressed on through pain, sickness, or weariness: [Endure Harm](datasworn:move:classic/suffer/endure_harm).
+            * You suffered under the burden of foul weather, worries, or fearful locations: [Endure Stress](datasworn:move:classic/suffer/endure_stress).
+            * You wasted resources.
+            * You face a complication or hazard at the destination. Envision what you find ([Ask the Oracle](datasworn:move:classic/fate/ask_the_oracle) if unsure).
+
+          On a __miss__, you are waylaid by a dire threat and must [Pay the Price](datasworn:move:classic/fate/pay_the_price). If you overcome this obstacle, you may push on safely to your destination.
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, you reach your destination and the situation favors you. Take +1 momentum.
+          weak_hit:
+            text: |-
+              On a __weak hit__, you complete the journey, but face a cost or complication. Choose one or more.
+
+                * You took longer than expected.
+                * You pressed on through pain, sickness, or weariness: [Endure Harm](datasworn:move:classic/suffer/endure_harm).
+                * You suffered under the burden of foul weather, worries, or fearful locations: [Endure Stress](datasworn:move:classic/suffer/endure_stress).
+                * You wasted resources.
+                * You face a complication or hazard at the destination. Envision what you find ([Ask the Oracle](datasworn:move:classic/fate/ask_the_oracle) if unsure).
+          miss:
+            text: On a __miss__, you are waylaid by a dire threat and must [Pay the Price](datasworn:move:classic/fate/pay_the_price). If you overcome this obstacle, you may push on safely to your destination.
   relationship:
     name: Relationship Moves
     type: move_category
@@ -1464,3 +1512,181 @@ moves:
           Small Chance   | 91 or greater
 
           On a match, an extreme result or twist has occurred.
+  scene_challenge:
+    name: Scene Challenge Moves
+    type: move_category
+    summary: |-
+      A scene challenge is an optional approach you can use to resolve an extended challenge against an obstacle or NPCs.
+    _source:
+      <<: *Source
+      page: 234
+    contents:
+      begin_the_scene:
+        name: Begin the Scene
+        roll_type: no_roll
+        type: move
+        trigger:
+          text: When you face an extended or complex challenge...
+        _source:
+          <<: *Lodestar
+          page: 11
+        text: |-
+          When __you face an extended or complex challenge__, name your objective and choose a rank as appropriate to the situation.
+
+            * You have a clear advantage: Troublesome
+            * You are ready to act: Dangerous
+            * You are unprepared or outmatched: Formidable
+
+          Then, activate a four-segment countdown track and [Face Danger](datasworn:move:classic/scene_challenge/face_danger) or [Secure an Advantage](datasworn:move:classic/scene_challenge/secure_an_advantage) to take action.
+      face_danger:
+        name: Face Danger (Scene Challenge)
+        # variant_of: move:classic/adventure/face_danger
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you attempt something risky or react to an imminent threat within a scene challenge...
+          conditions:
+            - method: player_choice
+              text: With speed, mobility, or agility
+              roll_options:
+                - using: stat
+                  stat: edge
+            - method: player_choice
+              text: With charm, loyalty, or courage
+              roll_options:
+                - using: stat
+                  stat: heart
+            - method: player_choice
+              text: With aggressive action, forceful defense, strength, or endurance
+              roll_options:
+                - using: stat
+                  stat: iron
+            - method: player_choice
+              text: With deception, stealth, or trickery
+              roll_options:
+                - using: stat
+                  stat: shadow
+            - method: player_choice
+              text: With expertise, insight, or observation
+              roll_options:
+                - using: stat
+                  stat: wits
+        _source:
+          <<: *Lodestar
+          page: 11
+        text: |-
+          When __you attempt something risky or react to an imminent threat within a scene challenge__, envision your action and roll. If you act...
+
+            * With speed, agility, or precision: Roll +edge.
+            * With charm, loyalty, or courage: Roll +heart.
+            * With aggressive action, forceful defense, strength, or endurance: Roll +iron.
+            * With deception, stealth, or trickery: Roll +shadow.
+            * With expertise, insight, or observation: Roll +wits.
+
+          On a __strong hit__, you are successful and mark progress. On a __strong hit with a match__, mark progress twice.
+
+          On a __weak hit__, you are successful and mark progress, but also encounter a complication or setback. Envision what occurs and mark a countdown segment.
+
+          On a __miss__, you fail, or a momentary success is undermined by a dramatic turn of events. Mark a countdown segment and [Pay the Price](datasworn:move:classic/fate/pay_the_price). On a __miss with a match__, mark two segments and [Pay the Price](datasworn:move:classic/fate/pay_the_price).
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, you are successful and mark progress. On a __strong hit with a match__, mark progress twice.
+          weak_hit:
+            text: On a __weak hit__, you are successful and mark progress, but also encounter a complication or setback. Envision what occurs and mark a countdown segment.
+          miss:
+            text: On a __miss__, you fail, or a momentary success is undermined by a dramatic turn of events. Mark a countdown segment and [Pay the Price](datasworn:move:classic/fate/pay_the_price). On a __miss with a match__, mark two segments and [Pay the Price](datasworn:move:classic/fate/pay_the_price).
+      secure_an_advantage:
+        name: Secure an Advantage (Scene Challenge)
+        # variant_of: move:classic/adventure/secure_an_advantage
+        roll_type: action_roll
+        type: move
+        trigger:
+          text: When you assess a situation, make preparations, or attempt to gain leverage within a scene challenge...
+          conditions:
+            - text: With speed, agility, or precision
+              method: player_choice
+              roll_options:
+                - using: stat
+                  stat: edge
+            - text: With charm, loyalty, or courage
+              method: player_choice
+              roll_options:
+                - using: stat
+                  stat: heart
+            - text: With aggressive action, forceful defense, strength, or endurance
+              method: player_choice
+              roll_options:
+                - using: stat
+                  stat: iron
+            - text: With deception, stealth, or trickery
+              method: player_choice
+              roll_options:
+                - using: stat
+                  stat: shadow
+            - text: With expertise, insight, or observation
+              method: player_choice
+              roll_options:
+                - using: stat
+                  stat: wits
+        _source:
+          <<: *Lodestar
+          page: 11
+        text: |-
+          When __you assess a situation, make preparations, or attempt to gain leverage__, envision your action and roll. If you act...
+
+            * With speed, agility, or precision: Roll +edge.
+            * With charm, loyalty, or courage: Roll +heart.
+            * With aggressive action, forceful defense, strength, or endurance: Roll +iron.
+            * With deception, stealth, or trickery: Roll +shadow.
+            * With expertise, insight, or observation: Roll +wits.
+
+          On a __strong hit__, take both. On a __string hit with a match__, take both and mark progress. On a __weak hit__, choose one.
+
+            * Take +2 momentum
+            * Add +1 on your next move (not a progress move)
+
+          On a __miss__, you fail or your assumptions betray you. Mark a countdown segment and [Pay the Price](datasworn:move:classic/fate/pay_the_price). On a __miss with a match__, mark two segments and [Pay the Price](datasworn:move:classic/fate/pay_the_price).
+        outcomes:
+          strong_hit:
+            text: |-
+              On a __strong hit__, take +2 momentum and add +1 on your next move (not a progress move).
+
+              On a __strong hit with a match__, take +2 momentum, add +1 on your next move (not a progress move), and mark progress.
+          weak_hit:
+            text: |-
+              On a __weak hit__, choose one.
+
+                * Take +2 momentum
+                * Add +1 on your next move (not a progress move)
+          miss:
+            text: |-
+              On a __miss__, you fail or your assumptions betray you. Mark a countdown segment and [Pay the Price](datasworn:move:classic/fate/pay_the_price). On a __miss with a match__, mark two segments and [Pay the Price](datasworn:move:classic/fate/pay_the_price).
+      finish_the_scene:
+        name: Finish the Scene
+        roll_type: progress_roll
+        type: move
+        tracks:
+          category: Scene Challenge
+        trigger:
+          text: When the scene challenge countdown track or progress track is filled, or when events lead to the scene’s conclusion...
+          conditions:
+            - roll_options:
+                - using: progress_track
+        _source:
+          <<: *Lodestar
+          page: 11
+        text: |-
+          When __the scene challenge tension clock or progress track is filled, or when events lead to the scene’s conclusion__, roll the challenge dice and compare to your progress.
+
+          On a __strong hit__, you achieve your objective unconditionally.
+
+          On a __weak hit__, you succeed, but not without cost. You must [Pay the Price](datasworn:move:classic/fate/pay_the_price). Make this a minor cost relative to the scope of the scene.
+
+          On a __miss__, you fail or are undermined by a dire turn of events. [Pay the Price](datasworn:move:classic/fate/pay_the_price).
+        outcomes:
+          strong_hit:
+            text: On a __strong hit__, you achieve your objective unconditionally.
+          weak_hit:
+            text: On a __weak hit__, you succeed, but not without cost. You must [Pay the Price](datasworn:move:classic/fate/pay_the_price). Make this a minor cost relative to the scope of the scene.
+          miss:
+            text: On a __miss__, you fail or are undermined by a dire turn of events. [Pay the Price](datasworn:move:classic/fate/pay_the_price).
