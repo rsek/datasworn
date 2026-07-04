@@ -814,7 +814,7 @@ moves:
             text: |-
               On a __strong hit__, you reach your destination or complete your survey. Mark a reward on your discoveries legacy track per expedition's rank: troublesome=1 tick; dangerous=2 ticks; formidable=1 box; extreme=2 boxes; epic=3 boxes. Any allies who shared this expedition also mark the reward.
           weak_hit:
-            text: On a __weak hit__, you reach your destination or complete your survey, but you face an unforeseen complication at the end of your expedition. Make the legacy reward one rank lower (troublesome=0 ticks; dangerous=1 tick; formidable=2 box; extreme=1 box; epic=2 boxes), and envision what you encounter.
+            text: On a __weak hit__, you reach your destination or complete your survey, but you face an unforeseen complication at the end of your expedition. Make the legacy reward one rank lower (troublesome=0 ticks; dangerous=1 tick; formidable=2 ticks; extreme=1 box; epic=2 boxes), and envision what you encounter.
           miss:
             text: |-
               On a __miss__, your destination is lost to you, or you come to understand the true nature or cost of the expedition. Envision what happens and choose one.
@@ -1494,7 +1494,7 @@ moves:
         text: |-
           __When you spend time recovering within a community__, roll +heart.
 
-          On a __strong hit__, this is a safe refuge. You and your allies may each choose two recover contents: [Heal](id:starforged/moves/recover/heal), [Hearten](id:starforged/moves/recover/hearten), [Repair](id:starforged/moves/recover/repair), or [Resupply](id:starforged/moves/recover/resupply). Instead of rolling, assume an automatic strong hit for each. An individual move can be taken more than once.
+          On a __strong hit__, this is a safe refuge. You and your allies may each choose two recover moves: [Heal](id:starforged/moves/recover/heal), [Hearten](id:starforged/moves/recover/hearten), [Repair](id:starforged/moves/recover/repair), or [Resupply](id:starforged/moves/recover/resupply). Instead of rolling, assume an automatic strong hit for each. An individual move can be taken more than once.
 
           On a __weak hit__, as above, but time is short or resources are strained. You and your allies each make one recover move instead of two, with no more than three moves total among the group.
 
@@ -1505,7 +1505,7 @@ moves:
         outcomes:
           strong_hit:
             text: |-
-              On a __strong hit__, this is a safe refuge. You and your allies may each choose two recover contents: [Heal](id:starforged/moves/recover/heal), [Hearten](id:starforged/moves/recover/hearten), [Repair](id:starforged/moves/recover/repair), or [Resupply](id:starforged/moves/recover/resupply). Instead of rolling, assume an automatic strong hit for each. An individual move can be taken more than once.
+              On a __strong hit__, this is a safe refuge. You and your allies may each choose two recover moves: [Heal](id:starforged/moves/recover/heal), [Hearten](id:starforged/moves/recover/hearten), [Repair](id:starforged/moves/recover/repair), or [Resupply](id:starforged/moves/recover/resupply). Instead of rolling, assume an automatic strong hit for each. An individual move can be taken more than once.
           weak_hit:
             text: |-
               On a __weak hit__, this is a safe refuge, but time is short or resources are strained. You and your allies may each make one recover move (with no more than three moves total among the group): [Heal](id:starforged/moves/recover/heal), [Hearten](id:starforged/moves/recover/hearten), [Repair](id:starforged/moves/recover/repair), or [Resupply](id:starforged/moves/recover/resupply). Instead of rolling, assume an automatic strong hit for each. An individual move can be taken more than once.
